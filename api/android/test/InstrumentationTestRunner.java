@@ -1,6 +1,9 @@
 package android.test;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
+import android.util.Log;
 import droidsafe.annotations.*;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -41,37 +44,446 @@ import com.android.internal.util.Predicates;
 
 
 public class InstrumentationTestRunner extends Instrumentation implements TestSuiteProvider {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.709 -0400", hash_original_field = "DDBF77BBD59535F3FF16689A18C16686", hash_generated_field = "57041D8C5014DE6D87A28603CC7822CE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.796 -0500", hash_original_field = "F6DC7A69727E302F27AAEEE17DCE544E", hash_generated_field = "544F43E7EAEDE0F3FFF2026270B67E8F")
+
+    public static final String ARGUMENT_TEST_CLASS = "class";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.797 -0500", hash_original_field = "DAE47139F19E8856638BBD3D2536C377", hash_generated_field = "61A1CE89468E456A6143B02D9D1238C3")
+
+    public static final String ARGUMENT_TEST_PACKAGE = "package";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.797 -0500", hash_original_field = "850A636A868320D13577B8363E400126", hash_generated_field = "5DC71B94542AF05C060A59423A46A76A")
+
+    public static final String ARGUMENT_TEST_SIZE_PREDICATE = "size";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.798 -0500", hash_original_field = "1FBB4A70C874405F10FC9A9E28EC977A", hash_generated_field = "E4D5A73A648EEA7D95D39635EC2A18DC")
+
+    public static final String ARGUMENT_DELAY_MSEC = "delay_msec";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.799 -0500", hash_original_field = "8BF75D0874F677BE850CEEDAB7BA7F06", hash_generated_field = "3D8236D97469E58570ED55142783479C")
+
+
+    private static final String SMALL_SUITE = "small";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.800 -0500", hash_original_field = "BAC6661461C176FC9824744B578F9BD6", hash_generated_field = "B754DDFB963A97D2415FE8BBB1143D66")
+
+    private static final String MEDIUM_SUITE = "medium";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.801 -0500", hash_original_field = "6D04331DF66BEBBE6F2F4007BCD9B56E", hash_generated_field = "F286B101C789E4032BEE582FB1285143")
+
+    private static final String LARGE_SUITE = "large";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.801 -0500", hash_original_field = "012A4C807171B3370D28FCB605D5D1AA", hash_generated_field = "4876AF80B10E4573D3890A893B4D249A")
+
+
+    private static final String ARGUMENT_LOG_ONLY = "log";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.802 -0500", hash_original_field = "B48D839B19844E1FFD00D9200547FE2B", hash_generated_field = "FDAB7AA5BBA17336BF60EF624D90A67C")
+
+    static final String ARGUMENT_ANNOTATION = "annotation";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.803 -0500", hash_original_field = "823E94A1D6375AFA35B0076F6DAAE791", hash_generated_field = "9CE3F7D7D38797568FD9463120C88BE7")
+
+    static final String ARGUMENT_NOT_ANNOTATION = "notAnnotation";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.804 -0500", hash_original_field = "C30D8F11BFC77FAFFBB31FA8FCCB9D71", hash_generated_field = "091C0D8BF4769827A534FC280151B7B4")
+
+    private static final float SMALL_SUITE_MAX_RUNTIME = 100;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.805 -0500", hash_original_field = "C0B03C0DA0CD55E64EC4F1DC66212205", hash_generated_field = "48420791998550CDA648A038C6122DB7")
+
+    private static final float MEDIUM_SUITE_MAX_RUNTIME = 1000;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:34:08.538 -0500", hash_original_field = "FA35E06B0E20538B6CDBA0D3DD96B1E4", hash_generated_field = "A4E8038785072B6F7F03B3AA288BCAEE")
+
+
+    /**
+     * This value, if stored with key {@link android.app.Instrumentation#REPORT_KEY_IDENTIFIER},
+     * identifies InstrumentationTestRunner as the source of the report.  This is sent with all
+     * status messages.
+     */
+    public static final String REPORT_VALUE_ID = "InstrumentationTestRunner";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.807 -0500", hash_original_field = "0732C7C69EEB33BC76DC1F3D000DA8B2", hash_generated_field = "8604C63F5C7B8CED7552EA19100C1B95")
+
+    public static final String REPORT_KEY_NUM_TOTAL = "numtests";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.808 -0500", hash_original_field = "D5D564311F37AE757CA4BB3B3557750E", hash_generated_field = "184A40546511D88041D0A2C4CFFF8F01")
+
+    public static final String REPORT_KEY_NUM_CURRENT = "current";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.809 -0500", hash_original_field = "B8C41E5D3C5D7BFBC71DBCBEF35371FC", hash_generated_field = "4E399ED5BE42EBBFB03BC37FED768FE3")
+
+    public static final String REPORT_KEY_NAME_CLASS = "class";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.810 -0500", hash_original_field = "47A7A29D6B107DB99CA5147AAD84572E", hash_generated_field = "F8AFCA65D0C7EDEA6238DDEA6C0E2C7A")
+
+    public static final String REPORT_KEY_NAME_TEST = "test";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.811 -0500", hash_original_field = "E13384B2292C92EB288A203EEECFCFE9", hash_generated_field = "0DD89ADF1D7908DBA256A4F78710AC70")
+
+    private static final String REPORT_KEY_RUN_TIME = "runtime";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.812 -0500", hash_original_field = "F7C1236148E2FA25C5DD6E0E41DE797F", hash_generated_field = "0648EBB0AA7417E3FFB0E5664C154E15")
+
+    private static final String REPORT_KEY_NUM_ITERATIONS = "numiterations";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.813 -0500", hash_original_field = "3BC6A57D815FFDF29931F1EB51D67D72", hash_generated_field = "C914CC1AEF0E2AA287E3DE25995A4B65")
+
+    private static final String REPORT_KEY_SUITE_ASSIGNMENT = "suiteassignment";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.814 -0500", hash_original_field = "9F3DDD71326CF699CC23FBD095B73A3B", hash_generated_field = "E33466C3D4AA42A42AC46C0CCFED8A04")
+
+    private static final String REPORT_KEY_COVERAGE_PATH = "coverageFilePath";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.815 -0500", hash_original_field = "F5D746BC7F0BE2F119B48FBBC3DCF9F1", hash_generated_field = "A83BC0A82B464ECC311A8D0492203E1F")
+
+    public static final int REPORT_VALUE_RESULT_START = 1;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.815 -0500", hash_original_field = "E24AD2DF569ADDBB18DC6914DFF82641", hash_generated_field = "648D7DA2045D906D2B1AF3828EE7CF96")
+
+    public static final int REPORT_VALUE_RESULT_OK = 0;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.816 -0500", hash_original_field = "A9A123B319D27FE1EBE9127289CB4842", hash_generated_field = "2D1B0116564943EB2363EBD41735FAFD")
+
+    public static final int REPORT_VALUE_RESULT_ERROR = -1;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.817 -0500", hash_original_field = "553ABD6B895B542408A0126DA8C15372", hash_generated_field = "EB5283F615E0CDF99EB813258804C3EA")
+
+    public static final int REPORT_VALUE_RESULT_FAILURE = -2;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.818 -0500", hash_original_field = "B6BDA7821ADE320C16834F8C18D9F404", hash_generated_field = "D02BF0791E843808157F866DD068993C")
+
+    public static final String REPORT_KEY_STACK = "stack";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.819 -0500", hash_original_field = "F4AF382F7680E6516B2B4AFB27560A0E", hash_generated_field = "B1A8948A59EA4FF3FD3C9F7AC5A8070A")
+
+    private static final String DEFAULT_COVERAGE_FILE_NAME = "coverage.ec";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.820 -0500", hash_original_field = "F19C64FD209D635F9DB5130F38335C7D", hash_generated_field = "797E456CAAADD3A4FF0634549F39725A")
+
+
+    private static final String LOG_TAG = "InstrumentationTestRunner";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.821 -0500", hash_original_field = "7A81CF352B7668AE61BB8040836E73FD", hash_generated_field = "57041D8C5014DE6D87A28603CC7822CE")
+
 
     private final Bundle mResults = new Bundle();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.709 -0400", hash_original_field = "5867CE8CB088E58E6D17882F8EE91C5B", hash_generated_field = "141E060C3952C133ADC3DF31048B4376")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.822 -0500", hash_original_field = "BC54B63AEA85D845C1AC338D041E1ED5", hash_generated_field = "141E060C3952C133ADC3DF31048B4376")
 
     private Bundle mArguments;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.709 -0400", hash_original_field = "8A42FE0F5154C402C775BB7D2ED3E2D6", hash_generated_field = "0C2BC6A40B4FAAAD4ADDFF4CB98782DA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.823 -0500", hash_original_field = "A949B8F5E4E171BD0FB70E396ED98905", hash_generated_field = "0C2BC6A40B4FAAAD4ADDFF4CB98782DA")
 
     private AndroidTestRunner mTestRunner;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.709 -0400", hash_original_field = "B86684C7DC25411EAA00AFA56FDDD301", hash_generated_field = "4C294409170D3110EF12CA3CCED984A1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.824 -0500", hash_original_field = "AEF6B9BB655763364D4271078CA476DE", hash_generated_field = "4C294409170D3110EF12CA3CCED984A1")
 
     private boolean mDebug;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.709 -0400", hash_original_field = "277A3320BD5C49EBD7E492EC22C10058", hash_generated_field = "3F2709EEC2B2C2F043111479DDADB3D4")
+
+    
+    private class StringResultPrinter extends ResultPrinter {
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.850 -0500", hash_original_method = "8278F372BF23485BBE56A9ABFE31E2B0", hash_generated_method = "979D4DF7C20AB12E89D99335FC1CCDD3")
+        public StringResultPrinter(PrintStream writer) {
+            super(writer);
+        }
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.851 -0500", hash_original_method = "D5539E1607000A054CE19EDFAB1372FF", hash_generated_method = "34D3B2CC679CA8D74421C96A2C427A16")
+        synchronized void print(TestResult result, long runTime) {
+            printHeader(runTime);
+            printFooter(result);
+        }
+
+        
+    }
+
+
+    
+    private class SuiteAssignmentPrinter implements TestListener {
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.852 -0500", hash_original_field = "671EF5CCCE64ABF621E6F60CFC0B1CEB", hash_generated_field = "EDD0604A9657EE882307103F9DDCC22C")
+
+
+        private Bundle mTestResult;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.853 -0500", hash_original_field = "3C3A30DDD94D9D47CBB52C3848791CE7", hash_generated_field = "20EEDA67D8E4F20D3E4CA3D911CCA492")
+
+        private long mStartTime;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.854 -0500", hash_original_field = "70C1C345A39DB06FF39288963005B239", hash_generated_field = "CE198E728D2042BC4D1888DF0457D27B")
+
+        private long mEndTime;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.855 -0500", hash_original_field = "DACBF299EB4D1FCA4CBF7E7888FEE933", hash_generated_field = "079233BE186E56546663F1E57D6A9B4C")
+
+        private boolean mTimingValid;
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.856 -0500", hash_original_method = "7306BE02962886D6C53070D35D513D17", hash_generated_method = "88C7580DB352E7C5C79EC31E828B9A7C")
+        public SuiteAssignmentPrinter() {
+        }
+
+        /**
+         * send a status for the start of a each test, so long tests can be seen as "running"
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.857 -0500", hash_original_method = "5FFF4B907A3EDB23E7C228BF47F3F987", hash_generated_method = "76D5886473A7D16C3BEA42F2523EF201")
+        public void startTest(Test test) {
+            mTimingValid = true;
+            mStartTime = System.currentTimeMillis();
+        }
+
+        /**
+         * @see junit.framework.TestListener#addError(Test, Throwable)
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.858 -0500", hash_original_method = "345E3DE2999C1B6FA0060A48165FC0F3", hash_generated_method = "4B50A1FF289293A64154A452B2B48E37")
+        public void addError(Test test, Throwable t) {
+            mTimingValid = false;
+        }
+
+        /**
+         * @see junit.framework.TestListener#addFailure(Test, AssertionFailedError)
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.859 -0500", hash_original_method = "F3D48E32FED097901DB6EC97B8BA5D91", hash_generated_method = "243BC8D2F758A5D490A506B60CA7FFD9")
+        public void addFailure(Test test, AssertionFailedError t) {
+            mTimingValid = false;
+        }
+
+        /**
+         * @see junit.framework.TestListener#endTest(Test)
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.860 -0500", hash_original_method = "689FF998C59CF6C00229049B71C475A7", hash_generated_method = "B00DBFD3E64E1E6FB7A9D062816FA988")
+        public void endTest(Test test) {
+            float runTime;
+            String assignmentSuite;
+            mEndTime = System.currentTimeMillis();
+            mTestResult = new Bundle();
+
+            if (!mTimingValid || mStartTime < 0) {
+                assignmentSuite = "NA";
+                runTime = -1;
+            } else {
+                runTime = mEndTime - mStartTime;
+                if (runTime < SMALL_SUITE_MAX_RUNTIME
+                        && !InstrumentationTestCase.class.isAssignableFrom(test.getClass())) {
+                    assignmentSuite = SMALL_SUITE;
+                } else if (runTime < MEDIUM_SUITE_MAX_RUNTIME) {
+                    assignmentSuite = MEDIUM_SUITE;
+                } else {
+                    assignmentSuite = LARGE_SUITE;
+                }
+            }
+            // Clear mStartTime so that we can verify that it gets set next time.
+            mStartTime = -1;
+
+            mTestResult.putString(Instrumentation.REPORT_KEY_STREAMRESULT,
+                    test.getClass().getName() + "#" + ((TestCase) test).getName()
+                    + "\nin " + assignmentSuite + " suite\nrunTime: "
+                    + String.valueOf(runTime) + "\n");
+            mTestResult.putFloat(REPORT_KEY_RUN_TIME, runTime);
+            mTestResult.putString(REPORT_KEY_SUITE_ASSIGNMENT, assignmentSuite);
+
+            sendStatus(0, mTestResult);
+        }
+
+        
+    }
+
+
+    
+    private class WatcherResultPrinter implements TestListener, PerformanceResultsWriter {
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.862 -0500", hash_original_field = "637248878ECDDA1D198C7713E86C6649", hash_generated_field = "8CC2E860F13B0FB54DCF8D3075E5FD80")
+
+        private  Bundle mResultTemplate;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.863 -0500", hash_original_field = "671EF5CCCE64ABF621E6F60CFC0B1CEB", hash_generated_field = "671EF5CCCE64ABF621E6F60CFC0B1CEB")
+
+        Bundle mTestResult;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.863 -0500", hash_original_field = "2BA1BF5CC1D20E4D04C04FBE333F6E26", hash_generated_field = "2BA1BF5CC1D20E4D04C04FBE333F6E26")
+
+        int mTestNum = 0;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.864 -0500", hash_original_field = "5159AE5BB82C390FF229EF7E789C498A", hash_generated_field = "5159AE5BB82C390FF229EF7E789C498A")
+
+        int mTestResultCode = 0;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.865 -0500", hash_original_field = "74A0FE6C36B53C52A2FFA32CDE32656B", hash_generated_field = "74A0FE6C36B53C52A2FFA32CDE32656B")
+
+        String mTestClass = null;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.866 -0500", hash_original_field = "FB38EF7819F1C7E367EE6C6D724EEE31", hash_generated_field = "FB38EF7819F1C7E367EE6C6D724EEE31")
+
+        PerformanceCollector mPerfCollector = new PerformanceCollector();
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.866 -0500", hash_original_field = "927068CD6900F1BBDDB652AF2FC80A7E", hash_generated_field = "927068CD6900F1BBDDB652AF2FC80A7E")
+
+        boolean mIsTimedTest = false;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.867 -0500", hash_original_field = "142F76D07E81C97A91E7F404C5DD8F94", hash_generated_field = "142F76D07E81C97A91E7F404C5DD8F94")
+
+        boolean mIncludeDetailedStats = false;
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.868 -0500", hash_original_method = "B96CCA607C0FAF94BB8309C0E96C551A", hash_generated_method = "AD1E94C69ADDE10DF5C0013FD501BF1E")
+        public WatcherResultPrinter(int numTests) {
+            mResultTemplate = new Bundle();
+            mResultTemplate.putString(Instrumentation.REPORT_KEY_IDENTIFIER, REPORT_VALUE_ID);
+            mResultTemplate.putInt(REPORT_KEY_NUM_TOTAL, numTests);
+        }
+
+        /**
+         * send a status for the start of a each test, so long tests can be seen
+         * as "running"
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.870 -0500", hash_original_method = "31528962776A4296CB5B735981815A21", hash_generated_method = "186B8F2FBB52DC26F824F7EE78727CF3")
+        public void startTest(Test test) {
+            String testClass = test.getClass().getName();
+            String testName = ((TestCase)test).getName();
+            mTestResult = new Bundle(mResultTemplate);
+            mTestResult.putString(REPORT_KEY_NAME_CLASS, testClass);
+            mTestResult.putString(REPORT_KEY_NAME_TEST, testName);
+            mTestResult.putInt(REPORT_KEY_NUM_CURRENT, ++mTestNum);
+            // pretty printing
+            if (testClass != null && !testClass.equals(mTestClass)) {
+                mTestResult.putString(Instrumentation.REPORT_KEY_STREAMRESULT,
+                        String.format("\n%s:", testClass));
+                mTestClass = testClass;
+            } else {
+                mTestResult.putString(Instrumentation.REPORT_KEY_STREAMRESULT, "");
+            }
+
+            Method testMethod = null;
+            try {
+                testMethod = test.getClass().getMethod(testName);
+                // Report total number of iterations, if test is repetitive
+                if (testMethod.isAnnotationPresent(RepetitiveTest.class)) {
+                    int numIterations = testMethod.getAnnotation(
+                        RepetitiveTest.class).numIterations();
+                    mTestResult.putInt(REPORT_KEY_NUM_ITERATIONS, numIterations);
+                }
+            } catch (NoSuchMethodException e) {
+                // ignore- the test with given name does not exist. Will be handled during test
+                // execution
+            }
+
+            // The delay_msec parameter is normally used to provide buffers of idle time
+            // for power measurement purposes. To make sure there is a delay before and after
+            // every test in a suite, we delay *after* every test (see endTest below) and also
+            // delay *before* the first test. So, delay test1 delay test2 delay.
+
+            try {
+                if (mTestNum == 1) Thread.sleep(mDelayMsec);
+            } catch (InterruptedException e) {
+                throw new IllegalStateException(e);
+            }
+
+            sendStatus(REPORT_VALUE_RESULT_START, mTestResult);
+            mTestResultCode = 0;
+
+            mIsTimedTest = false;
+            mIncludeDetailedStats = false;
+            try {
+                // Look for TimedTest annotation on both test class and test method
+                if (testMethod != null && testMethod.isAnnotationPresent(TimedTest.class)) {
+                    mIsTimedTest = true;
+                    mIncludeDetailedStats = testMethod.getAnnotation(
+                            TimedTest.class).includeDetailedStats();
+                } else if (test.getClass().isAnnotationPresent(TimedTest.class)) {
+                    mIsTimedTest = true;
+                    mIncludeDetailedStats = test.getClass().getAnnotation(
+                            TimedTest.class).includeDetailedStats();
+                }
+            } catch (SecurityException e) {
+                // ignore - the test with given name cannot be accessed. Will be handled during
+                // test execution
+            }
+
+            if (mIsTimedTest && mIncludeDetailedStats) {
+                mPerfCollector.beginSnapshot("");
+            } else if (mIsTimedTest) {
+                mPerfCollector.startTiming("");
+            }
+        }
+
+        /**
+         * @see junit.framework.TestListener#addError(Test, Throwable)
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.871 -0500", hash_original_method = "E1F36AA4D0DD5E9460CB2F9E0E2A187E", hash_generated_method = "A56F47B3FF3D0E4C4593326A5A8A1902")
+        public void addError(Test test, Throwable t) {
+            mTestResult.putString(REPORT_KEY_STACK, BaseTestRunner.getFilteredTrace(t));
+            mTestResultCode = REPORT_VALUE_RESULT_ERROR;
+            // pretty printing
+            mTestResult.putString(Instrumentation.REPORT_KEY_STREAMRESULT,
+                String.format("\nError in %s:\n%s",
+                    ((TestCase)test).getName(), BaseTestRunner.getFilteredTrace(t)));
+        }
+
+        /**
+         * @see junit.framework.TestListener#addFailure(Test, AssertionFailedError)
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.872 -0500", hash_original_method = "61B6781BE7A090882DE772A402FB51FB", hash_generated_method = "CC3EF69BC324FD30E2208E1B2A5D8A48")
+        public void addFailure(Test test, AssertionFailedError t) {
+            mTestResult.putString(REPORT_KEY_STACK, BaseTestRunner.getFilteredTrace(t));
+            mTestResultCode = REPORT_VALUE_RESULT_FAILURE;
+            // pretty printing
+            mTestResult.putString(Instrumentation.REPORT_KEY_STREAMRESULT,
+                String.format("\nFailure in %s:\n%s",
+                    ((TestCase)test).getName(), BaseTestRunner.getFilteredTrace(t)));
+        }
+
+        /**
+         * @see junit.framework.TestListener#endTest(Test)
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.872 -0500", hash_original_method = "A4B38798820C04F560554F93B29FD69B", hash_generated_method = "7C3EC9EA14BA967536321244828364B3")
+        public void endTest(Test test) {
+            if (mIsTimedTest && mIncludeDetailedStats) {
+                mTestResult.putAll(mPerfCollector.endSnapshot());
+            } else if (mIsTimedTest) {
+                writeStopTiming(mPerfCollector.stopTiming(""));
+            }
+
+            if (mTestResultCode == 0) {
+                mTestResult.putString(Instrumentation.REPORT_KEY_STREAMRESULT, ".");
+            }
+            sendStatus(mTestResultCode, mTestResult);
+
+            try { // Sleep after every test, if specified
+                Thread.sleep(mDelayMsec);
+            } catch (InterruptedException e) {
+                throw new IllegalStateException(e);
+            }
+        }
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.873 -0500", hash_original_method = "7E55B7BB14105B0B262F66875CE13D8A", hash_generated_method = "0AD0EE3351627F67617AFC187160B4F6")
+        public void writeBeginSnapshot(String label) {
+            // Do nothing
+        }
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.874 -0500", hash_original_method = "6245AA309FB3DEC287B93FD35979B625", hash_generated_method = "91DEC90CE194A62B8AE86F648E04ECFD")
+        public void writeEndSnapshot(Bundle results) {
+            // Copy all snapshot data fields into mResults, which is outputted
+            // via Instrumentation.finish
+            mResults.putAll(results);
+        }
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.875 -0500", hash_original_method = "FCAABB153F24A8EFE140AE7259EB6B2D", hash_generated_method = "D27473575E876C3BA2327F53FF1B8C11")
+        public void writeStartTiming(String label) {
+            // Do nothing
+        }
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.876 -0500", hash_original_method = "DACFB75F59575B6C3A5EAE9698CE1C2C", hash_generated_method = "58E5F5948F191629F90BD5D13D0E6DF6")
+        public void writeStopTiming(Bundle results) {
+            // Copy results into mTestResult by flattening list of iterations,
+            // which is outputted via WatcherResultPrinter.endTest
+            int i = 0;
+            for (Parcelable p :
+                    results.getParcelableArrayList(PerformanceCollector.METRIC_KEY_ITERATIONS)) {
+                Bundle iteration = (Bundle)p;
+                String index = "iteration" + i + ".";
+                mTestResult.putString(index + PerformanceCollector.METRIC_KEY_LABEL,
+                        iteration.getString(PerformanceCollector.METRIC_KEY_LABEL));
+                mTestResult.putLong(index + PerformanceCollector.METRIC_KEY_CPU_TIME,
+                        iteration.getLong(PerformanceCollector.METRIC_KEY_CPU_TIME));
+                mTestResult.putLong(index + PerformanceCollector.METRIC_KEY_EXECUTION_TIME,
+                        iteration.getLong(PerformanceCollector.METRIC_KEY_EXECUTION_TIME));
+                i++;
+            }
+        }
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.877 -0500", hash_original_method = "1954CD3982E421D110E41B97447F0A1C", hash_generated_method = "D0414868220965DD41EF564A4466742A")
+        public void writeMeasurement(String label, long value) {
+            mTestResult.putLong(label, value);
+        }
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.878 -0500", hash_original_method = "B544B13CC37BDB1BC661657AE2F550F8", hash_generated_method = "CA6B8694A91CCBCC71023787FC9ABF7E")
+        public void writeMeasurement(String label, float value) {
+            mTestResult.putFloat(label, value);
+        }
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.878 -0500", hash_original_method = "6E66D1C63A065784B7DD47BA02ECF676", hash_generated_method = "6D825DAB0F961FC1C7F1C6E000DAEDED")
+        public void writeMeasurement(String label, String value) {
+            mTestResult.putString(label, value);
+        }
+
+        
+    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.824 -0500", hash_original_field = "3EA1F0EA0E7F068FBD0557879F7C5A01", hash_generated_field = "3F2709EEC2B2C2F043111479DDADB3D4")
 
     private boolean mJustCount;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.709 -0400", hash_original_field = "729867D8145207192C1CF4ED19A541F3", hash_generated_field = "ACA828682E2C6ECC613CA27863C2264D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.827 -0500", hash_original_field = "74E7A8567822CE6952812CF05B16F2CA", hash_generated_field = "ACA828682E2C6ECC613CA27863C2264D")
 
     private boolean mSuiteAssignmentMode;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.709 -0400", hash_original_field = "496BE6D2800441EA991050C992DF3112", hash_generated_field = "78B349732F0D9D6BFA04A40FFFB14ACA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.827 -0500", hash_original_field = "82A59D887121587E5640473FCE704234", hash_generated_field = "78B349732F0D9D6BFA04A40FFFB14ACA")
 
     private int mTestCount;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.709 -0400", hash_original_field = "6EAA104784C5B2B8C9B8CAFD565B6B86", hash_generated_field = "AD7F82C5377D8DBE525A22C459787867")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.828 -0500", hash_original_field = "96E52D017FA6349EA7A57834367771EC", hash_generated_field = "AD7F82C5377D8DBE525A22C459787867")
 
     private String mPackageOfTests;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.709 -0400", hash_original_field = "8D4A2FFC67C1BBF157BF0598BB0CBAA2", hash_generated_field = "39025D4B0FB339CA8809220E55135D9A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.829 -0500", hash_original_field = "4AB2BC19D4DC7D0C87171A6197AAEA10", hash_generated_field = "39025D4B0FB339CA8809220E55135D9A")
 
     private boolean mCoverage;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.710 -0400", hash_original_field = "409EB834C72ADBE21423B340E6F22F0C", hash_generated_field = "7CFA27D3752B16D4570E1B9BF2B33568")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.830 -0500", hash_original_field = "66C2EBC9084CDE67722D72F26C6AD864", hash_generated_field = "7CFA27D3752B16D4570E1B9BF2B33568")
 
     private String mCoverageFilePath;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.710 -0400", hash_original_field = "846F714ACC1162A67D468AEB693C0686", hash_generated_field = "DA6E4F18E5C9B928AFD0A314A6DD8344")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.830 -0500", hash_original_field = "31CE8CA58E265F7CDBF4F23A10C86C24", hash_generated_field = "DA6E4F18E5C9B928AFD0A314A6DD8344")
 
     private int mDelayMsec;
     
@@ -81,23 +493,25 @@ public class InstrumentationTestRunner extends Instrumentation implements TestSu
         //Synthesized constructor
     }
 
-
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.713 -0400", hash_original_method = "6DFE69C7BEAD4ACC310BC8D2DE157051", hash_generated_method = "E4410CD32F8592ACBCDDD4BE8990003E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.832 -0500", hash_original_method = "6DFE69C7BEAD4ACC310BC8D2DE157051", hash_generated_method = "5F54A2F119260F58EC3AAFFCECDA7BF4")
     @Override
-    public void onCreate(Bundle arguments) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+public void onCreate(Bundle arguments) {
         super.onCreate(arguments);
         mArguments = arguments;
-        String[] apkPaths = {getTargetContext().getPackageCodePath(), getContext().getPackageCodePath()};
+
+        // Apk paths used to search for test classes when using TestSuiteBuilders.
+        String[] apkPaths =
+                {getTargetContext().getPackageCodePath(), getContext().getPackageCodePath()};
         ClassPathPackageInfoSource.setApkPaths(apkPaths);
+
         Predicate<TestMethod> testSizePredicate = null;
         Predicate<TestMethod> testAnnotationPredicate = null;
         Predicate<TestMethod> testNotAnnotationPredicate = null;
         String testClassesArg = null;
         boolean logOnly = false;
-        if(arguments != null)        
-        {
+
+        if (arguments != null) {
+            // Test class name passed as an argument should override any meta-data declaration.
             testClassesArg = arguments.getString(ARGUMENT_TEST_CLASS);
             mDebug = getBooleanArgument(arguments, "debug");
             mJustCount = getBooleanArgument(arguments, "count");
@@ -109,1016 +523,335 @@ public class InstrumentationTestRunner extends Instrumentation implements TestSu
                     arguments.getString(ARGUMENT_ANNOTATION));
             testNotAnnotationPredicate = getNotAnnotationPredicate(
                     arguments.getString(ARGUMENT_NOT_ANNOTATION));
+
             logOnly = getBooleanArgument(arguments, ARGUMENT_LOG_ONLY);
             mCoverage = getBooleanArgument(arguments, "coverage");
             mCoverageFilePath = arguments.getString("coverageFile");
-            try 
-            {
-                Object delay = arguments.get(ARGUMENT_DELAY_MSEC);
-                if(delay != null)                
-                mDelayMsec = Integer.parseInt(delay.toString());
-            } //End block
-            catch (NumberFormatException e)
-            {
-            } //End block
-        } //End block
+
+            try {
+                Object delay = arguments.get(ARGUMENT_DELAY_MSEC);  // Accept either string or int
+                if (delay != null) mDelayMsec = Integer.parseInt(delay.toString());
+            } catch (NumberFormatException e) {
+                Log.e(LOG_TAG, "Invalid delay_msec parameter", e);
+            }
+        }
+
         TestSuiteBuilder testSuiteBuilder = new TestSuiteBuilder(getClass().getName(),
                 getTargetContext().getClassLoader());
-        if(testSizePredicate != null)        
-        {
+
+        if (testSizePredicate != null) {
             testSuiteBuilder.addRequirements(testSizePredicate);
-        } //End block
-        if(testAnnotationPredicate != null)        
-        {
+        }
+        if (testAnnotationPredicate != null) {
             testSuiteBuilder.addRequirements(testAnnotationPredicate);
-        } //End block
-        if(testNotAnnotationPredicate != null)        
-        {
+        }
+        if (testNotAnnotationPredicate != null) {
             testSuiteBuilder.addRequirements(testNotAnnotationPredicate);
-        } //End block
-        if(testClassesArg == null)        
-        {
-            if(mPackageOfTests != null)            
-            {
+        }
+
+        if (testClassesArg == null) {
+            if (mPackageOfTests != null) {
                 testSuiteBuilder.includePackages(mPackageOfTests);
-            } //End block
-            else
-            {
+            } else {
                 TestSuite testSuite = getTestSuite();
-                if(testSuite != null)                
-                {
+                if (testSuite != null) {
                     testSuiteBuilder.addTestSuite(testSuite);
-                } //End block
-                else
-                {
+                } else {
+                    // no package or class bundle arguments were supplied, and no test suite
+                    // provided so add all tests in application
                     testSuiteBuilder.includePackages("");
-                } //End block
-            } //End block
-        } //End block
-        else
-        {
+                }
+            }
+        } else {
             parseTestClasses(testClassesArg, testSuiteBuilder);
-        } //End block
+        }
+
         testSuiteBuilder.addRequirements(getBuilderRequirements());
+
         mTestRunner = getAndroidTestRunner();
         mTestRunner.setContext(getTargetContext());
         mTestRunner.setInstrumentation(this);
         mTestRunner.setSkipExecution(logOnly);
         mTestRunner.setTest(testSuiteBuilder.build());
         mTestCount = mTestRunner.getTestCases().size();
-        if(mSuiteAssignmentMode)        
-        {
+        if (mSuiteAssignmentMode) {
             mTestRunner.addTestListener(new SuiteAssignmentPrinter());
-        } //End block
-        else
-        {
+        } else {
             WatcherResultPrinter resultPrinter = new WatcherResultPrinter(mTestCount);
             mTestRunner.addTestListener(new TestPrinter("TestRunner", false));
             mTestRunner.addTestListener(resultPrinter);
             mTestRunner.setPerformanceResultsWriter(resultPrinter);
-        } //End block
+        }
         start();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.715 -0400", hash_original_method = "10E6FBEC332CFAAD363071CF1888C5BE", hash_generated_method = "ECBE4C2E42E9267136D1C7F24D1F2537")
-    public Bundle getBundle() {
-Bundle varA1A5383052F874A8109F2B0284C0CCF1_1386932201 =         mArguments;
-        varA1A5383052F874A8109F2B0284C0CCF1_1386932201.addTaint(taint);
-        return varA1A5383052F874A8109F2B0284C0CCF1_1386932201;
-        // ---------- Original Method ----------
-        //return mArguments;
+    /**
+     * Get the Bundle object that contains the arguments
+     *
+     * @return the Bundle object
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.833 -0500", hash_original_method = "10E6FBEC332CFAAD363071CF1888C5BE", hash_generated_method = "6C7A0038EBB9A91141FF4702B527B9B7")
+    public Bundle getBundle(){
+        return mArguments;
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.715 -0400", hash_original_method = "DCDBF8FA39FD6057A0486A2DA30868B2", hash_generated_method = "1EAE2EF4378F4562785665CA9491AF00")
-     List<Predicate<TestMethod>> getBuilderRequirements() {
-List<Predicate<TestMethod>> varB89B9AE74F274E07C099737006AD3C9F_1006187255 =         new ArrayList<Predicate<TestMethod>>();
-        varB89B9AE74F274E07C099737006AD3C9F_1006187255.addTaint(taint);
-        return varB89B9AE74F274E07C099737006AD3C9F_1006187255;
-        // ---------- Original Method ----------
-        //return new ArrayList<Predicate<TestMethod>>();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.834 -0500", hash_original_method = "DCDBF8FA39FD6057A0486A2DA30868B2", hash_generated_method = "DCDBF8FA39FD6057A0486A2DA30868B2")
+    List<Predicate<TestMethod>> getBuilderRequirements() {
+        return new ArrayList<Predicate<TestMethod>>();
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.716 -0400", hash_original_method = "F83C1F460CEFDE714C6876815B6DE46B", hash_generated_method = "29E4380E1330F829CAF50D383EFA7DAF")
+    /**
+     * Parses and loads the specified set of test classes
+     *
+     * @param testClassArg - comma-separated list of test classes and methods
+     * @param testSuiteBuilder - builder to add tests to
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.835 -0500", hash_original_method = "F83C1F460CEFDE714C6876815B6DE46B", hash_generated_method = "13638EB57CF94D33F1BF62C549AFB267")
     private void parseTestClasses(String testClassArg, TestSuiteBuilder testSuiteBuilder) {
-        addTaint(testSuiteBuilder.getTaint());
-        addTaint(testClassArg.getTaint());
         String[] testClasses = testClassArg.split(",");
-for(String testClass : testClasses)
-        {
+        for (String testClass : testClasses) {
             parseTestClass(testClass, testSuiteBuilder);
-        } //End block
-        // ---------- Original Method ----------
-        //String[] testClasses = testClassArg.split(",");
-        //for (String testClass : testClasses) {
-            //parseTestClass(testClass, testSuiteBuilder);
-        //}
+        }
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.717 -0400", hash_original_method = "0276346FF35DC079CD9DD44ABC105E23", hash_generated_method = "C0FEF7A322441C4D6069C4BAA6B343FF")
+    /**
+     * Parse and load the given test class and, optionally, method
+     *
+     * @param testClassName - full package name of test class and optionally method to add.
+     *        Expected format: com.android.TestClass#testMethod
+     * @param testSuiteBuilder - builder to add tests to
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.836 -0500", hash_original_method = "0276346FF35DC079CD9DD44ABC105E23", hash_generated_method = "016A39E64874E99BBB7D8F29F651B09A")
     private void parseTestClass(String testClassName, TestSuiteBuilder testSuiteBuilder) {
-        addTaint(testSuiteBuilder.getTaint());
-        addTaint(testClassName.getTaint());
         int methodSeparatorIndex = testClassName.indexOf('#');
         String testMethodName = null;
-        if(methodSeparatorIndex > 0)        
-        {
+
+        if (methodSeparatorIndex > 0) {
             testMethodName = testClassName.substring(methodSeparatorIndex + 1);
             testClassName = testClassName.substring(0, methodSeparatorIndex);
-        } //End block
+        }
         testSuiteBuilder.addTestClassByName(testClassName, testMethodName, getTargetContext());
-        // ---------- Original Method ----------
-        //int methodSeparatorIndex = testClassName.indexOf('#');
-        //String testMethodName = null;
-        //if (methodSeparatorIndex > 0) {
-            //testMethodName = testClassName.substring(methodSeparatorIndex + 1);
-            //testClassName = testClassName.substring(0, methodSeparatorIndex);
-        //}
-        //testSuiteBuilder.addTestClassByName(testClassName, testMethodName, getTargetContext());
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.718 -0400", hash_original_method = "59FA7210DE5A9B3F31249CF283F3E831", hash_generated_method = "5A6C07F6A2E355936FE5696EB9AA1CF2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.837 -0500", hash_original_method = "59FA7210DE5A9B3F31249CF283F3E831", hash_generated_method = "0583EE806DD8676EAA23920EE014EDF1")
     protected AndroidTestRunner getAndroidTestRunner() {
-AndroidTestRunner var6DED4B728E5CF2C8C96F16BF715A4A14_259250772 =         new AndroidTestRunner();
-        var6DED4B728E5CF2C8C96F16BF715A4A14_259250772.addTaint(taint);
-        return var6DED4B728E5CF2C8C96F16BF715A4A14_259250772;
-        // ---------- Original Method ----------
-        //return new AndroidTestRunner();
+        return new AndroidTestRunner();
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.718 -0400", hash_original_method = "770E3D4317847EA06A1A186F0C988E4F", hash_generated_method = "3C8F15AAC19CC9B91CC20CFC99EFC791")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.838 -0500", hash_original_method = "770E3D4317847EA06A1A186F0C988E4F", hash_generated_method = "666D6986B06EC570ABC5ABBBF814B0DD")
     private boolean getBooleanArgument(Bundle arguments, String tag) {
-        addTaint(tag.getTaint());
-        addTaint(arguments.getTaint());
         String tagString = arguments.getString(tag);
-        boolean var12C8161A76217C24A65B3158A9660316_1812052101 = (tagString != null && Boolean.parseBoolean(tagString));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2115014872 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2115014872;
-        // ---------- Original Method ----------
-        //String tagString = arguments.getString(tag);
-        //return tagString != null && Boolean.parseBoolean(tagString);
+        return tagString != null && Boolean.parseBoolean(tagString);
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.719 -0400", hash_original_method = "778052CD062ADF4C5333CE80FB346BD7", hash_generated_method = "0310B7F9B2AC7F9774C244C13F1D9543")
+    /*
+     * Returns the size predicate object, corresponding to the "size" argument value.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.838 -0500", hash_original_method = "778052CD062ADF4C5333CE80FB346BD7", hash_generated_method = "6017A2C480C7349DEB143945E105F513")
     private Predicate<TestMethod> getSizePredicateFromArg(String sizeArg) {
-        addTaint(sizeArg.getTaint());
-        if(SMALL_SUITE.equals(sizeArg))        
-        {
-Predicate<TestMethod> varE0E1D4210503E46CD449DCD4EB6C9FC6_387244193 =             TestPredicates.SELECT_SMALL;
-            varE0E1D4210503E46CD449DCD4EB6C9FC6_387244193.addTaint(taint);
-            return varE0E1D4210503E46CD449DCD4EB6C9FC6_387244193;
-        } //End block
-        else
-        if(MEDIUM_SUITE.equals(sizeArg))        
-        {
-Predicate<TestMethod> varE61B19BA65D0577F79AB0C2F12D95025_1883320692 =             TestPredicates.SELECT_MEDIUM;
-            varE61B19BA65D0577F79AB0C2F12D95025_1883320692.addTaint(taint);
-            return varE61B19BA65D0577F79AB0C2F12D95025_1883320692;
-        } //End block
-        else
-        if(LARGE_SUITE.equals(sizeArg))        
-        {
-Predicate<TestMethod> varEB1CF173AA2514015C318D7BDAAAC8A2_1997574187 =             TestPredicates.SELECT_LARGE;
-            varEB1CF173AA2514015C318D7BDAAAC8A2_1997574187.addTaint(taint);
-            return varEB1CF173AA2514015C318D7BDAAAC8A2_1997574187;
-        } //End block
-        else
-        {
-Predicate<TestMethod> var540C13E9E156B687226421B24F2DF178_2130351233 =             null;
-            var540C13E9E156B687226421B24F2DF178_2130351233.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_2130351233;
-        } //End block
-        // ---------- Original Method ----------
-        //if (SMALL_SUITE.equals(sizeArg)) {
-            //return TestPredicates.SELECT_SMALL;
-        //} else if (MEDIUM_SUITE.equals(sizeArg)) {
-            //return TestPredicates.SELECT_MEDIUM;
-        //} else if (LARGE_SUITE.equals(sizeArg)) {
-            //return TestPredicates.SELECT_LARGE;
-        //} else {
-            //return null;
-        //}
+
+        if (SMALL_SUITE.equals(sizeArg)) {
+            return TestPredicates.SELECT_SMALL;
+        } else if (MEDIUM_SUITE.equals(sizeArg)) {
+            return TestPredicates.SELECT_MEDIUM;
+        } else if (LARGE_SUITE.equals(sizeArg)) {
+            return TestPredicates.SELECT_LARGE;
+        } else {
+            return null;
+        }
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.719 -0400", hash_original_method = "35F9B1C0A7B938B1EE66EE52909CB858", hash_generated_method = "5D19FD247735297ED947A6B1AF0E9537")
+   /**
+    * Returns the test predicate object, corresponding to the annotation class value provided via
+    * the {@link ARGUMENT_ANNOTATION} argument.
+    *
+    * @return the predicate or <code>null</code>
+    */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.839 -0500", hash_original_method = "35F9B1C0A7B938B1EE66EE52909CB858", hash_generated_method = "674082B19D11D4EEDB83B4F640690211")
     private Predicate<TestMethod> getAnnotationPredicate(String annotationClassName) {
-        addTaint(annotationClassName.getTaint());
         Class<? extends Annotation> annotationClass = getAnnotationClass(annotationClassName);
-        if(annotationClass != null)        
-        {
-Predicate<TestMethod> var652FC47B86EAF5D41957119FBE60A366_371322817 =             new HasAnnotation(annotationClass);
-            var652FC47B86EAF5D41957119FBE60A366_371322817.addTaint(taint);
-            return var652FC47B86EAF5D41957119FBE60A366_371322817;
-        } //End block
-Predicate<TestMethod> var540C13E9E156B687226421B24F2DF178_1953493966 =         null;
-        var540C13E9E156B687226421B24F2DF178_1953493966.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_1953493966;
-        // ---------- Original Method ----------
-        //Class<? extends Annotation> annotationClass = getAnnotationClass(annotationClassName);
-        //if (annotationClass != null) {
-            //return new HasAnnotation(annotationClass);
-        //}
-        //return null;
+        if (annotationClass != null) {
+            return new HasAnnotation(annotationClass);
+        }
+        return null;
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.719 -0400", hash_original_method = "4E674ABAF10B3DBE6E2E2F43854FE054", hash_generated_method = "C41E7F6A6B47B46A60449AB50DB8CB64")
+    /**
+     * Returns the negative test predicate object, corresponding to the annotation class value
+     * provided via the {@link ARGUMENT_NOT_ANNOTATION} argument.
+     *
+     * @return the predicate or <code>null</code>
+     */
+     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.840 -0500", hash_original_method = "4E674ABAF10B3DBE6E2E2F43854FE054", hash_generated_method = "0AD0395672AC23583378108FA947B8B5")
     private Predicate<TestMethod> getNotAnnotationPredicate(String annotationClassName) {
-        addTaint(annotationClassName.getTaint());
-        Class<? extends Annotation> annotationClass = getAnnotationClass(annotationClassName);
-        if(annotationClass != null)        
-        {
-Predicate<TestMethod> varF224C75240B780821E5011903BA420E4_828806003 =             Predicates.not(new HasAnnotation(annotationClass));
-            varF224C75240B780821E5011903BA420E4_828806003.addTaint(taint);
-            return varF224C75240B780821E5011903BA420E4_828806003;
-        } //End block
-Predicate<TestMethod> var540C13E9E156B687226421B24F2DF178_849383843 =         null;
-        var540C13E9E156B687226421B24F2DF178_849383843.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_849383843;
-        // ---------- Original Method ----------
-        //Class<? extends Annotation> annotationClass = getAnnotationClass(annotationClassName);
-        //if (annotationClass != null) {
-             //return Predicates.not(new HasAnnotation(annotationClass));
-         //}
-        //return null;
-    }
+         Class<? extends Annotation> annotationClass = getAnnotationClass(annotationClassName);
+         if (annotationClass != null) {
+             return Predicates.not(new HasAnnotation(annotationClass));
+         }
+         return null;
+     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.720 -0400", hash_original_method = "7CC1EF53DD56AF5F60DBA3D3D6AD7EDD", hash_generated_method = "4CCBA95DBDD02ECED7E68F46D8AE6EC0")
+    /**
+     * Helper method to return the annotation class with specified name
+     *
+     * @param annotationClassName the fully qualified name of the class
+     * @return the annotation class or <code>null</code>
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.841 -0500", hash_original_method = "7CC1EF53DD56AF5F60DBA3D3D6AD7EDD", hash_generated_method = "6B8DF69971E6B2D9583F74567BB2A025")
     private Class<? extends Annotation> getAnnotationClass(String annotationClassName) {
-        addTaint(annotationClassName.getTaint());
-        if(annotationClassName == null)        
-        {
-Class<? extends Annotation> var540C13E9E156B687226421B24F2DF178_1457409968 =             null;
-            var540C13E9E156B687226421B24F2DF178_1457409968.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_1457409968;
-        } //End block
-        try 
-        {
-            Class<?> annotationClass = Class.forName(annotationClassName);
-            if(annotationClass.isAnnotation())            
-            {
-Class<? extends Annotation> varA2F119939EC2C10CB58C692AEA560A23_264102918 =                 (Class<? extends Annotation>)annotationClass;
-                varA2F119939EC2C10CB58C692AEA560A23_264102918.addTaint(taint);
-                return varA2F119939EC2C10CB58C692AEA560A23_264102918;
-            } //End block
-            else
-            {
-            } //End block
-        } //End block
-        catch (ClassNotFoundException e)
-        {
-        } //End block
-Class<? extends Annotation> var540C13E9E156B687226421B24F2DF178_587123545 =         null;
-        var540C13E9E156B687226421B24F2DF178_587123545.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_587123545;
-        // ---------- Original Method ----------
-        //if (annotationClassName == null) {
-            //return null;
-        //}
-        //try {
-           //Class<?> annotationClass = Class.forName(annotationClassName);
-           //if (annotationClass.isAnnotation()) {
-               //return (Class<? extends Annotation>)annotationClass;
-           //} else {
-               //Log.e(LOG_TAG, String.format("Provided annotation value %s is not an Annotation",
-                       //annotationClassName));
-           //}
-        //} catch (ClassNotFoundException e) {
-            //Log.e(LOG_TAG, String.format("Could not find class for specified annotation %s",
-                    //annotationClassName));
-        //}
-        //return null;
+        if (annotationClassName == null) {
+            return null;
+        }
+        try {
+           Class<?> annotationClass = Class.forName(annotationClassName);
+           if (annotationClass.isAnnotation()) {
+               return (Class<? extends Annotation>)annotationClass;
+           } else {
+               Log.e(LOG_TAG, String.format("Provided annotation value %s is not an Annotation",
+                       annotationClassName));
+           }
+        } catch (ClassNotFoundException e) {
+            Log.e(LOG_TAG, String.format("Could not find class for specified annotation %s",
+                    annotationClassName));
+        }
+        return null;
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.720 -0400", hash_original_method = "3F6FAB1D23BC515BB2AF6438AF3536A0", hash_generated_method = "56EE5DBA76486B456591DFDA39E7C473")
-     void prepareLooper() {
+    /**
+     * Initialize the current thread as a looper.
+     * <p/>
+     * Exposed for unit testing.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.842 -0500", hash_original_method = "3F6FAB1D23BC515BB2AF6438AF3536A0", hash_generated_method = "3F6FAB1D23BC515BB2AF6438AF3536A0")
+    void prepareLooper() {
         Looper.prepare();
-        // ---------- Original Method ----------
-        //Looper.prepare();
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.720 -0400", hash_original_method = "13B14429707EB691EB642DFE530B7FBA", hash_generated_method = "2383BFCD59E2DD8C0529D81C8F6F4A37")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.844 -0500", hash_original_method = "13B14429707EB691EB642DFE530B7FBA", hash_generated_method = "8466CB24FAE080769F5F4056B29BECFD")
     @Override
-    public void onStart() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+public void onStart() {
         prepareLooper();
-        if(mJustCount)        
-        {
+
+        if (mJustCount) {
             mResults.putString(Instrumentation.REPORT_KEY_IDENTIFIER, REPORT_VALUE_ID);
             mResults.putInt(REPORT_KEY_NUM_TOTAL, mTestCount);
             finish(Activity.RESULT_OK, mResults);
-        } //End block
-        else
-        {
-            if(mDebug)            
-            {
+        } else {
+            if (mDebug) {
                 Debug.waitForDebugger();
-            } //End block
+            }
+
             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
             PrintStream writer = new PrintStream(byteArrayOutputStream);
-            try 
-            {
+            try {
                 StringResultPrinter resultPrinter = new StringResultPrinter(writer);
+
                 mTestRunner.addTestListener(resultPrinter);
+
                 long startTime = System.currentTimeMillis();
                 mTestRunner.runTest();
                 long runTime = System.currentTimeMillis() - startTime;
+
                 resultPrinter.print(mTestRunner.getTestResult(), runTime);
-            } //End block
-            catch (Throwable t)
-            {
+            } catch (Throwable t) {
+                // catch all exceptions so a more verbose error message can be outputted
                 writer.println(String.format("Test run aborted due to unexpected exception: %s",
                                 t.getMessage()));
                 t.printStackTrace(writer);
-            } //End block
-            finally 
-            {
+            } finally {
                 mResults.putString(Instrumentation.REPORT_KEY_STREAMRESULT,
                         String.format("\nTest results for %s=%s",
                         mTestRunner.getTestClassName(),
                         byteArrayOutputStream.toString()));
-                if(mCoverage)                
-                {
+
+                if (mCoverage) {
                     generateCoverageReport();
-                } //End block
+                }
                 writer.close();
+
                 finish(Activity.RESULT_OK, mResults);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            }
+        }
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.720 -0400", hash_original_method = "C0E8619C87A7687A5C08E209915D7E38", hash_generated_method = "AE486A7BCCB55A3D42B81A9367F8E6A8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.845 -0500", hash_original_method = "C0E8619C87A7687A5C08E209915D7E38", hash_generated_method = "68260EC18F5228FCAE4521B9ED77E2B4")
     public TestSuite getTestSuite() {
-TestSuite varA2793CB316857DCB08182DC971BBC9D6_1335067522 =         getAllTests();
-        varA2793CB316857DCB08182DC971BBC9D6_1335067522.addTaint(taint);
-        return varA2793CB316857DCB08182DC971BBC9D6_1335067522;
-        // ---------- Original Method ----------
-        //return getAllTests();
+        return getAllTests();
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.720 -0400", hash_original_method = "BB818280151C8C17876053BFAB976A70", hash_generated_method = "947AFDE45E0CEB92E1642EC81A1A8445")
+    /**
+     * Override this to define all of the tests to run in your package.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.845 -0500", hash_original_method = "BB818280151C8C17876053BFAB976A70", hash_generated_method = "58939AB9E318F6CEC968766EDE84138B")
     public TestSuite getAllTests() {
-TestSuite var540C13E9E156B687226421B24F2DF178_28625465 =         null;
-        var540C13E9E156B687226421B24F2DF178_28625465.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_28625465;
-        // ---------- Original Method ----------
-        //return null;
+        return null;
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.721 -0400", hash_original_method = "9B48FC3FBC8B24E9AD86091F7F4B768A", hash_generated_method = "E837762D0BD2CFE3BC8611836C4C1090")
+    /**
+     * Override this to provide access to the class loader of your package.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.846 -0500", hash_original_method = "9B48FC3FBC8B24E9AD86091F7F4B768A", hash_generated_method = "F49023EB57B98D8C4E7D99716CF879A7")
     public ClassLoader getLoader() {
-ClassLoader var540C13E9E156B687226421B24F2DF178_1808930861 =         null;
-        var540C13E9E156B687226421B24F2DF178_1808930861.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_1808930861;
-        // ---------- Original Method ----------
-        //return null;
+        return null;
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.721 -0400", hash_original_method = "C84559B4D56F542F69C4278CF0320D22", hash_generated_method = "7586FFDD238FCD1E662ED2708D6E9A63")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.847 -0500", hash_original_method = "C84559B4D56F542F69C4278CF0320D22", hash_generated_method = "A2A56B2752C42F4BF0472BA7D64B9338")
     private void generateCoverageReport() {
+        // use reflection to call emma dump coverage method, to avoid
+        // always statically compiling against emma jar
         String coverageFilePath = getCoverageFilePath();
         java.io.File coverageFile = new java.io.File(coverageFilePath);
-        try 
-        {
+        try {
             Class<?> emmaRTClass = Class.forName("com.vladium.emma.rt.RT");
             Method dumpCoverageMethod = emmaRTClass.getMethod("dumpCoverageData",
                     coverageFile.getClass(), boolean.class, boolean.class);
+
             dumpCoverageMethod.invoke(null, coverageFile, false, false);
+            // output path to generated coverage file so it can be parsed by a test harness if
+            // needed
             mResults.putString(REPORT_KEY_COVERAGE_PATH, coverageFilePath);
+            // also output a more user friendly msg
             final String currentStream = mResults.getString(
                     Instrumentation.REPORT_KEY_STREAMRESULT);
             mResults.putString(Instrumentation.REPORT_KEY_STREAMRESULT,
                 String.format("%s\nGenerated code coverage data to %s", currentStream,
                 coverageFilePath));
-        } //End block
-        catch (ClassNotFoundException e)
-        {
+        } catch (ClassNotFoundException e) {
             reportEmmaError("Is emma jar on classpath?", e);
-        } //End block
-        catch (SecurityException e)
-        {
+        } catch (SecurityException e) {
             reportEmmaError(e);
-        } //End block
-        catch (NoSuchMethodException e)
-        {
+        } catch (NoSuchMethodException e) {
             reportEmmaError(e);
-        } //End block
-        catch (IllegalArgumentException e)
-        {
+        } catch (IllegalArgumentException e) {
             reportEmmaError(e);
-        } //End block
-        catch (IllegalAccessException e)
-        {
+        } catch (IllegalAccessException e) {
             reportEmmaError(e);
-        } //End block
-        catch (InvocationTargetException e)
-        {
+        } catch (InvocationTargetException e) {
             reportEmmaError(e);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        }
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.721 -0400", hash_original_method = "51747DDF7CE66070F16DA4762443E683", hash_generated_method = "CAD4372D6D3E873EF958DF076239A1DD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.848 -0500", hash_original_method = "51747DDF7CE66070F16DA4762443E683", hash_generated_method = "8A68CC7B3FC1640FEA6F440A542A67F3")
     private String getCoverageFilePath() {
-        if(mCoverageFilePath == null)        
-        {
-String varEC5DD3BBABE6F7B2F1198ADC694BDBD0_468447103 =             getTargetContext().getFilesDir().getAbsolutePath() + File.separator +
+        if (mCoverageFilePath == null) {
+            return getTargetContext().getFilesDir().getAbsolutePath() + File.separator +
                    DEFAULT_COVERAGE_FILE_NAME;
-            varEC5DD3BBABE6F7B2F1198ADC694BDBD0_468447103.addTaint(taint);
-            return varEC5DD3BBABE6F7B2F1198ADC694BDBD0_468447103;
-        } //End block
-        else
-        {
-String var9869AA735EFB2F08232388567A171773_388010882 =             mCoverageFilePath;
-            var9869AA735EFB2F08232388567A171773_388010882.addTaint(taint);
-            return var9869AA735EFB2F08232388567A171773_388010882;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mCoverageFilePath == null) {
-            //return getTargetContext().getFilesDir().getAbsolutePath() + File.separator +
-                   //DEFAULT_COVERAGE_FILE_NAME;
-        //} else {
-            //return mCoverageFilePath;
-        //}
+        } else {
+            return mCoverageFilePath;
+        }
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.721 -0400", hash_original_method = "5659030AB519EAF8BB83496F91E164E4", hash_generated_method = "EFF08B4EF5D524F43512C966EA4B7685")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.848 -0500", hash_original_method = "5659030AB519EAF8BB83496F91E164E4", hash_generated_method = "75B804D15CAE486DE73CE7493B35D222")
     private void reportEmmaError(Exception e) {
-        addTaint(e.getTaint());
         reportEmmaError("", e);
-        // ---------- Original Method ----------
-        //reportEmmaError("", e);
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.721 -0400", hash_original_method = "2FAE5EEC06744688E8993112C12E7557", hash_generated_method = "D4E1AE7631A6C6436FB9149D034EA714")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:40.849 -0500", hash_original_method = "2FAE5EEC06744688E8993112C12E7557", hash_generated_method = "E8DAC8932EAC4F9F04ADEBD9C606E86A")
     private void reportEmmaError(String hint, Exception e) {
-        addTaint(e.getTaint());
-        addTaint(hint.getTaint());
         String msg = "Failed to generate emma coverage. " + hint;
+        Log.e(LOG_TAG, msg, e);
         mResults.putString(Instrumentation.REPORT_KEY_STREAMRESULT, "\nError: " + msg);
-        // ---------- Original Method ----------
-        //String msg = "Failed to generate emma coverage. " + hint;
-        //Log.e(LOG_TAG, msg, e);
-        //mResults.putString(Instrumentation.REPORT_KEY_STREAMRESULT, "\nError: " + msg);
     }
-
-    
-    private class StringResultPrinter extends ResultPrinter {
-        
-        @DSModeled(DSC.BAN)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.722 -0400", hash_original_method = "8278F372BF23485BBE56A9ABFE31E2B0", hash_generated_method = "0613F1230B12E10F17EBA162C8C35BAF")
-        public  StringResultPrinter(PrintStream writer) {
-            super(writer);
-            addTaint(writer.getTaint());
-            // ---------- Original Method ----------
-        }
-
-        
-        @DSModeled(DSC.BAN)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.722 -0400", hash_original_method = "D5539E1607000A054CE19EDFAB1372FF", hash_generated_method = "81430FC53C63167CA209CA914C5933D9")
-        synchronized void print(TestResult result, long runTime) {
-            addTaint(runTime);
-            addTaint(result.getTaint());
-            printHeader(runTime);
-            printFooter(result);
-            // ---------- Original Method ----------
-            //printHeader(runTime);
-            //printFooter(result);
-        }
-
-        
-    }
-
-
-    
-    private class SuiteAssignmentPrinter implements TestListener {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.722 -0400", hash_original_field = "AFBAC9716FC2073B5BFEA6A40ED35C25", hash_generated_field = "EDD0604A9657EE882307103F9DDCC22C")
-
-        private Bundle mTestResult;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.722 -0400", hash_original_field = "4FBE52F16DA5DC1AFB86B1520E59C2C0", hash_generated_field = "20EEDA67D8E4F20D3E4CA3D911CCA492")
-
-        private long mStartTime;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.722 -0400", hash_original_field = "A0F28E4F5A99C619D8D824EA80594134", hash_generated_field = "CE198E728D2042BC4D1888DF0457D27B")
-
-        private long mEndTime;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.722 -0400", hash_original_field = "3899E50CCDB8685F1A028A39434397F5", hash_generated_field = "079233BE186E56546663F1E57D6A9B4C")
-
-        private boolean mTimingValid;
-        
-        @DSModeled(DSC.BAN)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.722 -0400", hash_original_method = "7306BE02962886D6C53070D35D513D17", hash_generated_method = "C486C7E9A0E6C1AF5474A05D0F461BFF")
-        public  SuiteAssignmentPrinter() {
-            // ---------- Original Method ----------
-        }
-
-        
-        @DSModeled(DSC.BAN)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.722 -0400", hash_original_method = "5FFF4B907A3EDB23E7C228BF47F3F987", hash_generated_method = "C14208438FD73C35135852E6ECBE60BB")
-        public void startTest(Test test) {
-            addTaint(test.getTaint());
-            mTimingValid = true;
-            mStartTime = System.currentTimeMillis();
-            // ---------- Original Method ----------
-            //mTimingValid = true;
-            //mStartTime = System.currentTimeMillis();
-        }
-
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.739 -0400", hash_original_method = "345E3DE2999C1B6FA0060A48165FC0F3", hash_generated_method = "76C966886074A965651AC5A8F68EE3FF")
-        public void addError(Test test, Throwable t) {
-            addTaint(t.getTaint());
-            addTaint(test.getTaint());
-            mTimingValid = false;
-            // ---------- Original Method ----------
-            //mTimingValid = false;
-        }
-
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.739 -0400", hash_original_method = "F3D48E32FED097901DB6EC97B8BA5D91", hash_generated_method = "B5285F49DABC43D08CC3D83B8937371B")
-        public void addFailure(Test test, AssertionFailedError t) {
-            addTaint(t.getTaint());
-            addTaint(test.getTaint());
-            mTimingValid = false;
-            // ---------- Original Method ----------
-            //mTimingValid = false;
-        }
-
-        
-        @DSModeled(DSC.BAN)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.739 -0400", hash_original_method = "689FF998C59CF6C00229049B71C475A7", hash_generated_method = "7DA7A4F3ED33B3DEFA5267A77C518858")
-        public void endTest(Test test) {
-            addTaint(test.getTaint());
-            float runTime;
-            String assignmentSuite;
-            mEndTime = System.currentTimeMillis();
-            mTestResult = new Bundle();
-            if(!mTimingValid || mStartTime < 0)            
-            {
-                assignmentSuite = "NA";
-                runTime = -1;
-            } //End block
-            else
-            {
-                runTime = mEndTime - mStartTime;
-                if(runTime < SMALL_SUITE_MAX_RUNTIME
-                        && !InstrumentationTestCase.class.isAssignableFrom(test.getClass()))                
-                {
-                    assignmentSuite = SMALL_SUITE;
-                } //End block
-                else
-                if(runTime < MEDIUM_SUITE_MAX_RUNTIME)                
-                {
-                    assignmentSuite = MEDIUM_SUITE;
-                } //End block
-                else
-                {
-                    assignmentSuite = LARGE_SUITE;
-                } //End block
-            } //End block
-            mStartTime = -1;
-            mTestResult.putString(Instrumentation.REPORT_KEY_STREAMRESULT,
-                    test.getClass().getName() + "#" + ((TestCase) test).getName()
-                    + "\nin " + assignmentSuite + " suite\nrunTime: "
-                    + String.valueOf(runTime) + "\n");
-            mTestResult.putFloat(REPORT_KEY_RUN_TIME, runTime);
-            mTestResult.putString(REPORT_KEY_SUITE_ASSIGNMENT, assignmentSuite);
-            sendStatus(0, mTestResult);
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
-        }
-
-        
-    }
-
-
-    
-    private class WatcherResultPrinter implements TestListener, PerformanceResultsWriter {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.740 -0400", hash_original_field = "C0CC6B234496961CA16BD1AFF6688AC9", hash_generated_field = "8CC2E860F13B0FB54DCF8D3075E5FD80")
-
-        private Bundle mResultTemplate;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.740 -0400", hash_original_field = "AFBAC9716FC2073B5BFEA6A40ED35C25", hash_generated_field = "671EF5CCCE64ABF621E6F60CFC0B1CEB")
-
-        Bundle mTestResult;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.740 -0400", hash_original_field = "CAE14EB38976D5A2409EAA598B04B2DB", hash_generated_field = "2BA1BF5CC1D20E4D04C04FBE333F6E26")
-
-        int mTestNum = 0;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.740 -0400", hash_original_field = "6476435AFB794E96877646F5E428426B", hash_generated_field = "5159AE5BB82C390FF229EF7E789C498A")
-
-        int mTestResultCode = 0;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.740 -0400", hash_original_field = "A42465665376C032FD8CBBCCD1CF8CED", hash_generated_field = "74A0FE6C36B53C52A2FFA32CDE32656B")
-
-        String mTestClass = null;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.740 -0400", hash_original_field = "24356C725F6C551190F93ED55DB220B4", hash_generated_field = "FB38EF7819F1C7E367EE6C6D724EEE31")
-
-        PerformanceCollector mPerfCollector = new PerformanceCollector();
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.740 -0400", hash_original_field = "D57CFF79B11BCAC4C5C063A5882BA5CA", hash_generated_field = "927068CD6900F1BBDDB652AF2FC80A7E")
-
-        boolean mIsTimedTest = false;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.740 -0400", hash_original_field = "CF30D2C5294CDF39473EE077B661FE68", hash_generated_field = "142F76D07E81C97A91E7F404C5DD8F94")
-
-        boolean mIncludeDetailedStats = false;
-        
-        @DSModeled(DSC.BAN)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.740 -0400", hash_original_method = "B96CCA607C0FAF94BB8309C0E96C551A", hash_generated_method = "71C7E92BA24911ADEF60606A1A0AB3DF")
-        public  WatcherResultPrinter(int numTests) {
-            addTaint(numTests);
-            mResultTemplate = new Bundle();
-            mResultTemplate.putString(Instrumentation.REPORT_KEY_IDENTIFIER, REPORT_VALUE_ID);
-            mResultTemplate.putInt(REPORT_KEY_NUM_TOTAL, numTests);
-            // ---------- Original Method ----------
-            //mResultTemplate = new Bundle();
-            //mResultTemplate.putString(Instrumentation.REPORT_KEY_IDENTIFIER, REPORT_VALUE_ID);
-            //mResultTemplate.putInt(REPORT_KEY_NUM_TOTAL, numTests);
-        }
-
-        
-        @DSModeled(DSC.BAN)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.741 -0400", hash_original_method = "31528962776A4296CB5B735981815A21", hash_generated_method = "A59DAC45C07D11BE225E5571E6B8737F")
-        public void startTest(Test test) {
-            String testClass = test.getClass().getName();
-            String testName = ((TestCase)test).getName();
-            mTestResult = new Bundle(mResultTemplate);
-            mTestResult.putString(REPORT_KEY_NAME_CLASS, testClass);
-            mTestResult.putString(REPORT_KEY_NAME_TEST, testName);
-            mTestResult.putInt(REPORT_KEY_NUM_CURRENT, ++mTestNum);
-            if(testClass != null && !testClass.equals(mTestClass))            
-            {
-                mTestResult.putString(Instrumentation.REPORT_KEY_STREAMRESULT,
-                        String.format("\n%s:", testClass));
-                mTestClass = testClass;
-            } //End block
-            else
-            {
-                mTestResult.putString(Instrumentation.REPORT_KEY_STREAMRESULT, "");
-            } //End block
-            Method testMethod = null;
-            try 
-            {
-                testMethod = test.getClass().getMethod(testName);
-                if(testMethod.isAnnotationPresent(RepetitiveTest.class))                
-                {
-                    int numIterations = testMethod.getAnnotation(
-                        RepetitiveTest.class).numIterations();
-                    mTestResult.putInt(REPORT_KEY_NUM_ITERATIONS, numIterations);
-                } //End block
-            } //End block
-            catch (NoSuchMethodException e)
-            {
-            } //End block
-            try 
-            {
-                if(mTestNum == 1)                
-                Thread.sleep(mDelayMsec);
-            } //End block
-            catch (InterruptedException e)
-            {
-                IllegalStateException var9CE996783689A44496E32DC249802075_910443545 = new IllegalStateException(e);
-                var9CE996783689A44496E32DC249802075_910443545.addTaint(taint);
-                throw var9CE996783689A44496E32DC249802075_910443545;
-            } //End block
-            sendStatus(REPORT_VALUE_RESULT_START, mTestResult);
-            mTestResultCode = 0;
-            mIsTimedTest = false;
-            mIncludeDetailedStats = false;
-            try 
-            {
-                if(testMethod != null && testMethod.isAnnotationPresent(TimedTest.class))                
-                {
-                    mIsTimedTest = true;
-                    mIncludeDetailedStats = testMethod.getAnnotation(
-                            TimedTest.class).includeDetailedStats();
-                } //End block
-                else
-                if(test.getClass().isAnnotationPresent(TimedTest.class))                
-                {
-                    mIsTimedTest = true;
-                    mIncludeDetailedStats = test.getClass().getAnnotation(
-                            TimedTest.class).includeDetailedStats();
-                } //End block
-            } //End block
-            catch (SecurityException e)
-            {
-            } //End block
-            if(mIsTimedTest && mIncludeDetailedStats)            
-            {
-                mPerfCollector.beginSnapshot("");
-            } //End block
-            else
-            if(mIsTimedTest)            
-            {
-                mPerfCollector.startTiming("");
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
-        }
-
-        
-        @DSModeled(DSC.BAN)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.742 -0400", hash_original_method = "E1F36AA4D0DD5E9460CB2F9E0E2A187E", hash_generated_method = "C819F8C7CED086B627F390906C31A129")
-        public void addError(Test test, Throwable t) {
-            addTaint(t.getTaint());
-            addTaint(test.getTaint());
-            mTestResult.putString(REPORT_KEY_STACK, BaseTestRunner.getFilteredTrace(t));
-            mTestResultCode = REPORT_VALUE_RESULT_ERROR;
-            mTestResult.putString(Instrumentation.REPORT_KEY_STREAMRESULT,
-                String.format("\nError in %s:\n%s",
-                    ((TestCase)test).getName(), BaseTestRunner.getFilteredTrace(t)));
-            // ---------- Original Method ----------
-            //mTestResult.putString(REPORT_KEY_STACK, BaseTestRunner.getFilteredTrace(t));
-            //mTestResultCode = REPORT_VALUE_RESULT_ERROR;
-            //mTestResult.putString(Instrumentation.REPORT_KEY_STREAMRESULT,
-                //String.format("\nError in %s:\n%s",
-                    //((TestCase)test).getName(), BaseTestRunner.getFilteredTrace(t)));
-        }
-
-        
-        @DSModeled(DSC.BAN)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.742 -0400", hash_original_method = "61B6781BE7A090882DE772A402FB51FB", hash_generated_method = "540086748B2F91DB7E079689AB6E4256")
-        public void addFailure(Test test, AssertionFailedError t) {
-            addTaint(t.getTaint());
-            addTaint(test.getTaint());
-            mTestResult.putString(REPORT_KEY_STACK, BaseTestRunner.getFilteredTrace(t));
-            mTestResultCode = REPORT_VALUE_RESULT_FAILURE;
-            mTestResult.putString(Instrumentation.REPORT_KEY_STREAMRESULT,
-                String.format("\nFailure in %s:\n%s",
-                    ((TestCase)test).getName(), BaseTestRunner.getFilteredTrace(t)));
-            // ---------- Original Method ----------
-            //mTestResult.putString(REPORT_KEY_STACK, BaseTestRunner.getFilteredTrace(t));
-            //mTestResultCode = REPORT_VALUE_RESULT_FAILURE;
-            //mTestResult.putString(Instrumentation.REPORT_KEY_STREAMRESULT,
-                //String.format("\nFailure in %s:\n%s",
-                    //((TestCase)test).getName(), BaseTestRunner.getFilteredTrace(t)));
-        }
-
-        
-        @DSModeled(DSC.BAN)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.742 -0400", hash_original_method = "A4B38798820C04F560554F93B29FD69B", hash_generated_method = "7BE38753DCA62EAB7230AFEE39DF90B8")
-        public void endTest(Test test) {
-            addTaint(test.getTaint());
-            if(mIsTimedTest && mIncludeDetailedStats)            
-            {
-                mTestResult.putAll(mPerfCollector.endSnapshot());
-            } //End block
-            else
-            if(mIsTimedTest)            
-            {
-                writeStopTiming(mPerfCollector.stopTiming(""));
-            } //End block
-            if(mTestResultCode == 0)            
-            {
-                mTestResult.putString(Instrumentation.REPORT_KEY_STREAMRESULT, ".");
-            } //End block
-            sendStatus(mTestResultCode, mTestResult);
-            try 
-            {
-                Thread.sleep(mDelayMsec);
-            } //End block
-            catch (InterruptedException e)
-            {
-                IllegalStateException var9CE996783689A44496E32DC249802075_1779347587 = new IllegalStateException(e);
-                var9CE996783689A44496E32DC249802075_1779347587.addTaint(taint);
-                throw var9CE996783689A44496E32DC249802075_1779347587;
-            } //End block
-            // ---------- Original Method ----------
-            //if (mIsTimedTest && mIncludeDetailedStats) {
-                //mTestResult.putAll(mPerfCollector.endSnapshot());
-            //} else if (mIsTimedTest) {
-                //writeStopTiming(mPerfCollector.stopTiming(""));
-            //}
-            //if (mTestResultCode == 0) {
-                //mTestResult.putString(Instrumentation.REPORT_KEY_STREAMRESULT, ".");
-            //}
-            //sendStatus(mTestResultCode, mTestResult);
-            //try { 
-                //Thread.sleep(mDelayMsec);
-            //} catch (InterruptedException e) {
-                //throw new IllegalStateException(e);
-            //}
-        }
-
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.743 -0400", hash_original_method = "7E55B7BB14105B0B262F66875CE13D8A", hash_generated_method = "745BB27702083882F3AAEFD7555CB2D4")
-        public void writeBeginSnapshot(String label) {
-            addTaint(label.getTaint());
-            // ---------- Original Method ----------
-        }
-
-        
-        @DSModeled(DSC.BAN)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.743 -0400", hash_original_method = "6245AA309FB3DEC287B93FD35979B625", hash_generated_method = "3EB31E55FA6984F69CCB349748A83A65")
-        public void writeEndSnapshot(Bundle results) {
-            addTaint(results.getTaint());
-            mResults.putAll(results);
-            // ---------- Original Method ----------
-            //mResults.putAll(results);
-        }
-
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.743 -0400", hash_original_method = "FCAABB153F24A8EFE140AE7259EB6B2D", hash_generated_method = "0DE1640F8BE992C82FE9ECB858F484AE")
-        public void writeStartTiming(String label) {
-            addTaint(label.getTaint());
-            // ---------- Original Method ----------
-        }
-
-        
-        @DSModeled(DSC.BAN)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.743 -0400", hash_original_method = "DACFB75F59575B6C3A5EAE9698CE1C2C", hash_generated_method = "E46FBB119E774AFCF0A9E226BA53D2DE")
-        public void writeStopTiming(Bundle results) {
-            addTaint(results.getTaint());
-            int i = 0;
-for(Parcelable p : results.getParcelableArrayList(PerformanceCollector.METRIC_KEY_ITERATIONS))
-            {
-                Bundle iteration = (Bundle)p;
-                String index = "iteration" + i + ".";
-                mTestResult.putString(index + PerformanceCollector.METRIC_KEY_LABEL,
-                        iteration.getString(PerformanceCollector.METRIC_KEY_LABEL));
-                mTestResult.putLong(index + PerformanceCollector.METRIC_KEY_CPU_TIME,
-                        iteration.getLong(PerformanceCollector.METRIC_KEY_CPU_TIME));
-                mTestResult.putLong(index + PerformanceCollector.METRIC_KEY_EXECUTION_TIME,
-                        iteration.getLong(PerformanceCollector.METRIC_KEY_EXECUTION_TIME));
-                i++;
-            } //End block
-            // ---------- Original Method ----------
-            //int i = 0;
-            //for (Parcelable p :
-                    //results.getParcelableArrayList(PerformanceCollector.METRIC_KEY_ITERATIONS)) {
-                //Bundle iteration = (Bundle)p;
-                //String index = "iteration" + i + ".";
-                //mTestResult.putString(index + PerformanceCollector.METRIC_KEY_LABEL,
-                        //iteration.getString(PerformanceCollector.METRIC_KEY_LABEL));
-                //mTestResult.putLong(index + PerformanceCollector.METRIC_KEY_CPU_TIME,
-                        //iteration.getLong(PerformanceCollector.METRIC_KEY_CPU_TIME));
-                //mTestResult.putLong(index + PerformanceCollector.METRIC_KEY_EXECUTION_TIME,
-                        //iteration.getLong(PerformanceCollector.METRIC_KEY_EXECUTION_TIME));
-                //i++;
-            //}
-        }
-
-        
-        @DSModeled(DSC.BAN)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.743 -0400", hash_original_method = "1954CD3982E421D110E41B97447F0A1C", hash_generated_method = "19FB104ABC338ED5C623D34141479F87")
-        public void writeMeasurement(String label, long value) {
-            addTaint(value);
-            addTaint(label.getTaint());
-            mTestResult.putLong(label, value);
-            // ---------- Original Method ----------
-            //mTestResult.putLong(label, value);
-        }
-
-        
-        @DSModeled(DSC.BAN)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.744 -0400", hash_original_method = "B544B13CC37BDB1BC661657AE2F550F8", hash_generated_method = "207EF24503377CF46E62FC554A00F3AD")
-        public void writeMeasurement(String label, float value) {
-            addTaint(value);
-            addTaint(label.getTaint());
-            mTestResult.putFloat(label, value);
-            // ---------- Original Method ----------
-            //mTestResult.putFloat(label, value);
-        }
-
-        
-        @DSModeled(DSC.BAN)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.744 -0400", hash_original_method = "6E66D1C63A065784B7DD47BA02ECF676", hash_generated_method = "B9F1FB7C9BD0BB35CCC90D8C9E91ACF9")
-        public void writeMeasurement(String label, String value) {
-            addTaint(value.getTaint());
-            addTaint(label.getTaint());
-            mTestResult.putString(label, value);
-            // ---------- Original Method ----------
-            //mTestResult.putString(label, value);
-        }
-
-        
-    }
-
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.744 -0400", hash_original_field = "680B833A8AD8BA3349D1ADDF563FEDA7", hash_generated_field = "544F43E7EAEDE0F3FFF2026270B67E8F")
-
-    public static final String ARGUMENT_TEST_CLASS = "class";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.744 -0400", hash_original_field = "D0B187F87A6783F5E724903CD92D2584", hash_generated_field = "61A1CE89468E456A6143B02D9D1238C3")
-
-    public static final String ARGUMENT_TEST_PACKAGE = "package";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.744 -0400", hash_original_field = "6D16BB028E7F5E104CD27BFC528040E6", hash_generated_field = "5DC71B94542AF05C060A59423A46A76A")
-
-    public static final String ARGUMENT_TEST_SIZE_PREDICATE = "size";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.744 -0400", hash_original_field = "962A45F269C881BDAD99AD7A69CBB866", hash_generated_field = "E4D5A73A648EEA7D95D39635EC2A18DC")
-
-    public static final String ARGUMENT_DELAY_MSEC = "delay_msec";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.744 -0400", hash_original_field = "89E67944601172B93500701CF1FCFBF3", hash_generated_field = "3D8236D97469E58570ED55142783479C")
-
-    private static final String SMALL_SUITE = "small";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.744 -0400", hash_original_field = "AEE89B219BD9AD9AFD827BC8C6705315", hash_generated_field = "B754DDFB963A97D2415FE8BBB1143D66")
-
-    private static final String MEDIUM_SUITE = "medium";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.744 -0400", hash_original_field = "610F4FC5017F82872EC937900CC5E653", hash_generated_field = "F286B101C789E4032BEE582FB1285143")
-
-    private static final String LARGE_SUITE = "large";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.744 -0400", hash_original_field = "17340BAF643C322B8085F65E6D0A6403", hash_generated_field = "4876AF80B10E4573D3890A893B4D249A")
-
-    private static final String ARGUMENT_LOG_ONLY = "log";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.744 -0400", hash_original_field = "40C434885D6A04F28172A0DC0AB5D6DF", hash_generated_field = "FDAB7AA5BBA17336BF60EF624D90A67C")
-
-    static final String ARGUMENT_ANNOTATION = "annotation";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.744 -0400", hash_original_field = "CA34B0ED2808CE1354B10AC76EBC8F4C", hash_generated_field = "9CE3F7D7D38797568FD9463120C88BE7")
-
-    static final String ARGUMENT_NOT_ANNOTATION = "notAnnotation";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.744 -0400", hash_original_field = "175A08AF1E5AED4D9E21D9C5086B5176", hash_generated_field = "091C0D8BF4769827A534FC280151B7B4")
-
-    private static final float SMALL_SUITE_MAX_RUNTIME = 100;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.744 -0400", hash_original_field = "3036AD96CBC39315F56079406883F47C", hash_generated_field = "48420791998550CDA648A038C6122DB7")
-
-    private static final float MEDIUM_SUITE_MAX_RUNTIME = 1000;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.744 -0400", hash_original_field = "9FAE49A170810669AF74B5FA3CCD0470", hash_generated_field = "FF1D554A58D121C00260C5318CCE0D7D")
-
-    public static final String REPORT_VALUE_ID = "InstrumentationTestRunner";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.744 -0400", hash_original_field = "6A407905B155CED52369083024E81CA8", hash_generated_field = "8604C63F5C7B8CED7552EA19100C1B95")
-
-    public static final String REPORT_KEY_NUM_TOTAL = "numtests";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.744 -0400", hash_original_field = "4475CF3EC096881C496DBD0E23046D9F", hash_generated_field = "184A40546511D88041D0A2C4CFFF8F01")
-
-    public static final String REPORT_KEY_NUM_CURRENT = "current";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.745 -0400", hash_original_field = "D7C8BCD6E06BAFC6FE0308F005B0737A", hash_generated_field = "4E399ED5BE42EBBFB03BC37FED768FE3")
-
-    public static final String REPORT_KEY_NAME_CLASS = "class";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.745 -0400", hash_original_field = "81B491500739FA285353E5D9FD7A27CF", hash_generated_field = "F8AFCA65D0C7EDEA6238DDEA6C0E2C7A")
-
-    public static final String REPORT_KEY_NAME_TEST = "test";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.745 -0400", hash_original_field = "41A77F02B14445DC0E04958453A3853D", hash_generated_field = "0DD89ADF1D7908DBA256A4F78710AC70")
-
-    private static final String REPORT_KEY_RUN_TIME = "runtime";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.745 -0400", hash_original_field = "6401EE2ABFFD5AF5A1EDDFF29A1FB48E", hash_generated_field = "0648EBB0AA7417E3FFB0E5664C154E15")
-
-    private static final String REPORT_KEY_NUM_ITERATIONS = "numiterations";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.745 -0400", hash_original_field = "9A5E0ECC5E4084207A474D298AA4B8CB", hash_generated_field = "C914CC1AEF0E2AA287E3DE25995A4B65")
-
-    private static final String REPORT_KEY_SUITE_ASSIGNMENT = "suiteassignment";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.745 -0400", hash_original_field = "05DC77209A5D960E597EB38A4668F741", hash_generated_field = "E33466C3D4AA42A42AC46C0CCFED8A04")
-
-    private static final String REPORT_KEY_COVERAGE_PATH = "coverageFilePath";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.745 -0400", hash_original_field = "CFB9A767DCD032AB4F854E3AD0B3544C", hash_generated_field = "A83BC0A82B464ECC311A8D0492203E1F")
-
-    public static final int REPORT_VALUE_RESULT_START = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.745 -0400", hash_original_field = "BAD8FE26CB656CD83496A23E5B8D1484", hash_generated_field = "648D7DA2045D906D2B1AF3828EE7CF96")
-
-    public static final int REPORT_VALUE_RESULT_OK = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.745 -0400", hash_original_field = "6BCE3519B99C4CF6908F01EB9CCCEBFF", hash_generated_field = "2D1B0116564943EB2363EBD41735FAFD")
-
-    public static final int REPORT_VALUE_RESULT_ERROR = -1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.745 -0400", hash_original_field = "DE4EF8420ECB4D1CDC64B13DBECB5770", hash_generated_field = "EB5283F615E0CDF99EB813258804C3EA")
-
-    public static final int REPORT_VALUE_RESULT_FAILURE = -2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.745 -0400", hash_original_field = "1725F6AFF1A343C0AB49D753C3B85616", hash_generated_field = "D02BF0791E843808157F866DD068993C")
-
-    public static final String REPORT_KEY_STACK = "stack";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.745 -0400", hash_original_field = "FDE93756F572FA4E2E672DD5852767A4", hash_generated_field = "B1A8948A59EA4FF3FD3C9F7AC5A8070A")
-
-    private static final String DEFAULT_COVERAGE_FILE_NAME = "coverage.ec";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.745 -0400", hash_original_field = "4F95FF45110AADC53CCF67A9C3F7A727", hash_generated_field = "797E456CAAADD3A4FF0634549F39725A")
-
-    private static final String LOG_TAG = "InstrumentationTestRunner";
 }
 

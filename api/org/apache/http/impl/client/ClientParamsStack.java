@@ -1,6 +1,8 @@
 package org.apache.http.impl.client;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -13,205 +15,219 @@ import org.apache.http.params.HttpParams;
 
 
 public class ClientParamsStack extends AbstractHttpParams {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.660 -0400", hash_original_field = "0B7469F2850D918A96D1C36E99B23F5C", hash_generated_field = "3FCE5BFF671FE7B3BB3E2D744C5E5D2C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.913 -0500", hash_original_field = "0DA7E40E862C937570CA6B0D96D2555A", hash_generated_field = "3FCE5BFF671FE7B3BB3E2D744C5E5D2C")
+
 
     private final Log log = LogFactory.getLog(getClass());
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.660 -0400", hash_original_field = "B53EE9455AAD23E9E0EA1ED07FD13055", hash_generated_field = "32F39C15B73E9C028569FCAD17E48131")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.914 -0500", hash_original_field = "9066914C0B371C99A27A479B399ED204", hash_generated_field = "32F39C15B73E9C028569FCAD17E48131")
 
-    protected HttpParams applicationParams;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.660 -0400", hash_original_field = "56DB28FA3D8177D1E4C4B572AA551E0D", hash_generated_field = "B6902EA3DF78F5E3948D83F83F61C305")
+    protected  HttpParams applicationParams;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.914 -0500", hash_original_field = "F8DD5F67154F9A5C096C451588BE1350", hash_generated_field = "B6902EA3DF78F5E3948D83F83F61C305")
 
-    protected HttpParams clientParams;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.660 -0400", hash_original_field = "28169C02AAF610040FC1D9A704AD1C86", hash_generated_field = "D0B3BB526219F8C4CF831BDBA8B2E8F9")
+    protected  HttpParams clientParams;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.915 -0500", hash_original_field = "37D0187BDBADA60599300FEB83C86084", hash_generated_field = "D0B3BB526219F8C4CF831BDBA8B2E8F9")
 
-    protected HttpParams requestParams;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.660 -0400", hash_original_field = "3870BE4BDB286515FD1211A71C20B84F", hash_generated_field = "0F3FDC4D6C99FE0F422F50FAC4EC37BE")
+    protected  HttpParams requestParams;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.916 -0500", hash_original_field = "4C35D80FDBD0E6A9EB04CFC579F3F39E", hash_generated_field = "0F3FDC4D6C99FE0F422F50FAC4EC37BE")
 
-    protected HttpParams overrideParams;
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.660 -0400", hash_original_method = "C6D32BE942F9C5459143EF4AC85BAF30", hash_generated_method = "C6E9AF9E1126F00797FE6895060FD1ED")
-    public  ClientParamsStack(HttpParams aparams, HttpParams cparams,
+    protected  HttpParams overrideParams;
+
+
+    /**
+     * Creates a new parameter stack from elements.
+     * The arguments will be stored as-is, there is no copying to
+     * prevent modification.
+     *
+     * @param aparams   application parameters, or <code>null</code>
+     * @param cparams   client parameters, or <code>null</code>
+     * @param rparams   request parameters, or <code>null</code>
+     * @param oparams   override parameters, or <code>null</code>
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.917 -0500", hash_original_method = "C6D32BE942F9C5459143EF4AC85BAF30", hash_generated_method = "78E448BC19E90CE4BEF7D2000846B9F2")
+    public ClientParamsStack(HttpParams aparams, HttpParams cparams,
                              HttpParams rparams, HttpParams oparams) {
         applicationParams = aparams;
         clientParams      = cparams;
         requestParams     = rparams;
         overrideParams    = oparams;
-        // ---------- Original Method ----------
-        //applicationParams = aparams;
-        //clientParams      = cparams;
-        //requestParams     = rparams;
-        //overrideParams    = oparams;
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.660 -0400", hash_original_method = "7E64926BBCDB13033B63B7A286DDA4C5", hash_generated_method = "72B738219595F59BF455D7CE5AF10F63")
-    public  ClientParamsStack(ClientParamsStack stack) {
+
+    /**
+     * Creates a copy of a parameter stack.
+     * The new stack will have the exact same entries as the argument stack.
+     * There is no copying of parameters.
+     *
+     * @param stack     the stack to copy
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.918 -0500", hash_original_method = "7E64926BBCDB13033B63B7A286DDA4C5", hash_generated_method = "4C554BF7EB92A812EF13DC2BDAEC2069")
+    public ClientParamsStack(ClientParamsStack stack) {
         this(stack.getApplicationParams(),
              stack.getClientParams(),
              stack.getRequestParams(),
              stack.getOverrideParams());
-        addTaint(stack.getTaint());
-        // ---------- Original Method ----------
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.661 -0400", hash_original_method = "C87A48D0B50CCC317A58E3CCEC0DEAA5", hash_generated_method = "D691C9357E0E22689975809DB6A25598")
-    public  ClientParamsStack(ClientParamsStack stack,
+
+    /**
+     * Creates a modified copy of a parameter stack.
+     * The new stack will contain the explicitly passed elements.
+     * For elements where the explicit argument is <code>null</code>,
+     * the corresponding element from the argument stack is used.
+     * There is no copying of parameters.
+     *
+     * @param stack     the stack to modify
+     * @param aparams   application parameters, or <code>null</code>
+     * @param cparams   client parameters, or <code>null</code>
+     * @param rparams   request parameters, or <code>null</code>
+     * @param oparams   override parameters, or <code>null</code>
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.919 -0500", hash_original_method = "C87A48D0B50CCC317A58E3CCEC0DEAA5", hash_generated_method = "81AC029FBAFBE2C7A7DBE98659F6CBF4")
+    public ClientParamsStack(ClientParamsStack stack,
                              HttpParams aparams, HttpParams cparams,
                              HttpParams rparams, HttpParams oparams) {
         this((aparams != null) ? aparams : stack.getApplicationParams(),
              (cparams != null) ? cparams : stack.getClientParams(),
              (rparams != null) ? rparams : stack.getRequestParams(),
              (oparams != null) ? oparams : stack.getOverrideParams());
-        addTaint(oparams.getTaint());
-        addTaint(rparams.getTaint());
-        addTaint(cparams.getTaint());
-        addTaint(aparams.getTaint());
-        addTaint(stack.getTaint());
-        // ---------- Original Method ----------
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.661 -0400", hash_original_method = "411C2E82696B2A098C8F744317385115", hash_generated_method = "816A4B5D49BAFF786C2FA06083213C20")
+
+    /**
+     * Obtains the application parameters of this stack.
+     *
+     * @return  the application parameters, or <code>null</code>
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.920 -0500", hash_original_method = "411C2E82696B2A098C8F744317385115", hash_generated_method = "909EF3DFF82EE1B83E4BF4D734BA39A7")
     public final HttpParams getApplicationParams() {
-HttpParams var7945C5CD29912AE84B51B5555B2E3FD1_929271068 =         applicationParams;
-        var7945C5CD29912AE84B51B5555B2E3FD1_929271068.addTaint(taint);
-        return var7945C5CD29912AE84B51B5555B2E3FD1_929271068;
-        // ---------- Original Method ----------
-        //return applicationParams;
+        return applicationParams;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.661 -0400", hash_original_method = "15DA57CD4E641FF95D2F8640F98E0183", hash_generated_method = "BCF880CEF7155110EAC5385E733B4BEC")
+    /**
+     * Obtains the client parameters of this stack.
+     *
+     * @return  the client parameters, or <code>null</code>
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.921 -0500", hash_original_method = "15DA57CD4E641FF95D2F8640F98E0183", hash_generated_method = "D7328670B646B0FBBA50CBB6250EAA77")
     public final HttpParams getClientParams() {
-HttpParams var4ED3C0E8A5C13064D8D55F030D61EBE8_346035161 =         clientParams;
-        var4ED3C0E8A5C13064D8D55F030D61EBE8_346035161.addTaint(taint);
-        return var4ED3C0E8A5C13064D8D55F030D61EBE8_346035161;
-        // ---------- Original Method ----------
-        //return clientParams;
+        return clientParams;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.661 -0400", hash_original_method = "93598125634F09E7FC66E3A21BBB5179", hash_generated_method = "820AB5273EDAC78B66D6EE2CA5C03135")
+    /**
+     * Obtains the request parameters of this stack.
+     *
+     * @return  the request parameters, or <code>null</code>
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.922 -0500", hash_original_method = "93598125634F09E7FC66E3A21BBB5179", hash_generated_method = "E4ABB26903311610D97CC681F0C51655")
     public final HttpParams getRequestParams() {
-HttpParams var62C79F52706619CE99D0ED6A53571A56_1101306739 =         requestParams;
-        var62C79F52706619CE99D0ED6A53571A56_1101306739.addTaint(taint);
-        return var62C79F52706619CE99D0ED6A53571A56_1101306739;
-        // ---------- Original Method ----------
-        //return requestParams;
+        return requestParams;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.661 -0400", hash_original_method = "571781B35D1F87CE8D980CD8A67BB691", hash_generated_method = "56887F93667430EB745EDCEECF333FD5")
+    /**
+     * Obtains the override parameters of this stack.
+     *
+     * @return  the override parameters, or <code>null</code>
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.922 -0500", hash_original_method = "571781B35D1F87CE8D980CD8A67BB691", hash_generated_method = "E9959B1DB27920CF93E4D4B4A13D037C")
     public final HttpParams getOverrideParams() {
-HttpParams var882137B6A0312415D38CC638EFA3E6F8_940761160 =         overrideParams;
-        var882137B6A0312415D38CC638EFA3E6F8_940761160.addTaint(taint);
-        return var882137B6A0312415D38CC638EFA3E6F8_940761160;
-        // ---------- Original Method ----------
-        //return overrideParams;
+        return overrideParams;
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.661 -0400", hash_original_method = "4085DCEEB969FCACB974F3F758D65674", hash_generated_method = "55F10327350B82D258FA32517421DD6F")
+
+    /**
+     * Obtains a parameter from this stack.
+     * See class comment for search order.
+     *
+     * @param name      the name of the parameter to obtain
+     *
+     * @return  the highest-priority value for that parameter, or
+     *          <code>null</code> if it is not set anywhere in this stack
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.923 -0500", hash_original_method = "4085DCEEB969FCACB974F3F758D65674", hash_generated_method = "3B60B51B2857886AD1ED76AD74C35A76")
     public Object getParameter(String name) {
-        addTaint(name.getTaint());
-        if(name == null)        
-        {
-            IllegalArgumentException var3FC67FE07BF58C90BEBF6F753BF67E4C_1238533821 = new IllegalArgumentException
+        if (name == null) {
+            throw new IllegalArgumentException
                 ("Parameter name must not be null.");
-            var3FC67FE07BF58C90BEBF6F753BF67E4C_1238533821.addTaint(taint);
-            throw var3FC67FE07BF58C90BEBF6F753BF67E4C_1238533821;
-        } //End block
+        }
+
         Object result = null;
-        if(overrideParams != null)        
-        {
+
+        if (overrideParams != null) {
             result = overrideParams.getParameter(name);
-        } //End block
-        if((result == null) && (requestParams != null))        
-        {
+        }
+        if ((result == null) && (requestParams != null)) {
             result = requestParams.getParameter(name);
-        } //End block
-        if((result == null) && (clientParams != null))        
-        {
+        }
+        if ((result == null) && (clientParams != null)) {
             result = clientParams.getParameter(name);
-        } //End block
-        if((result == null) && (applicationParams != null))        
-        {
+        }
+        if ((result == null) && (applicationParams != null)) {
             result = applicationParams.getParameter(name);
-        } //End block
-        if(this.log.isDebugEnabled())        
-        {
+        }
+        if (this.log.isDebugEnabled()) {
             this.log.debug("'" + name + "': " + result);
-        } //End block
-Object varDC838461EE2FA0CA4C9BBB70A15456B0_1139863586 =         result;
-        varDC838461EE2FA0CA4C9BBB70A15456B0_1139863586.addTaint(taint);
-        return varDC838461EE2FA0CA4C9BBB70A15456B0_1139863586;
-        // ---------- Original Method ----------
-        //if (name == null) {
-            //throw new IllegalArgumentException
-                //("Parameter name must not be null.");
-        //}
-        //Object result = null;
-        //if (overrideParams != null) {
-            //result = overrideParams.getParameter(name);
-        //}
-        //if ((result == null) && (requestParams != null)) {
-            //result = requestParams.getParameter(name);
-        //}
-        //if ((result == null) && (clientParams != null)) {
-            //result = clientParams.getParameter(name);
-        //}
-        //if ((result == null) && (applicationParams != null)) {
-            //result = applicationParams.getParameter(name);
-        //}
-        //if (this.log.isDebugEnabled()) {
-            //this.log.debug("'" + name + "': " + result);
-        //}
-        //return result;
+        }
+
+        return result;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.661 -0400", hash_original_method = "2A511DFE1F081488F4D79D3E78FD00A2", hash_generated_method = "259EBF2AF4F46AC51A3AA4D995D39E5C")
-    public HttpParams setParameter(String name, Object value) throws UnsupportedOperationException {
-        addTaint(value.getTaint());
-        addTaint(name.getTaint());
-        UnsupportedOperationException var557F47975E6EEF696214487688534EB1_826838041 = new UnsupportedOperationException
+    /**
+     * Does <i>not</i> set a parameter.
+     * Parameter stacks are read-only. It is possible, though discouraged,
+     * to access and modify specific stack entries.
+     * Derived classes may change this behavior.
+     *
+     * @param name      ignored
+     * @param value     ignored
+     *
+     * @return  nothing
+     *
+     * @throws UnsupportedOperationException    always
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.924 -0500", hash_original_method = "2A511DFE1F081488F4D79D3E78FD00A2", hash_generated_method = "77532EA3067990EF30FF1BCA5CE9C991")
+    public HttpParams setParameter(String name, Object value)
+        throws UnsupportedOperationException {
+
+        throw new UnsupportedOperationException
             ("Setting parameters in a stack is not supported.");
-        var557F47975E6EEF696214487688534EB1_826838041.addTaint(taint);
-        throw var557F47975E6EEF696214487688534EB1_826838041;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException
-            //("Setting parameters in a stack is not supported.");
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.661 -0400", hash_original_method = "91EEF8AA1623C8BE2C536A6D8B3A0F15", hash_generated_method = "215EE401F742DCFDB8878699705345FF")
+
+    /**
+     * Does <i>not</i> remove a parameter.
+     * Parameter stacks are read-only. It is possible, though discouraged,
+     * to access and modify specific stack entries.
+     * Derived classes may change this behavior.
+     *
+     * @param name      ignored
+     *
+     * @return  nothing
+     *
+     * @throws UnsupportedOperationException    always
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.925 -0500", hash_original_method = "91EEF8AA1623C8BE2C536A6D8B3A0F15", hash_generated_method = "8F86C0D5E5F61D0CDA67404F7AD0D4E7")
     public boolean removeParameter(String name) {
-        addTaint(name.getTaint());
-        UnsupportedOperationException var5A55E1140B542B4286586C76AEBC5187_304022020 = new UnsupportedOperationException
+        throw new UnsupportedOperationException
         ("Removing parameters in a stack is not supported.");
-        var5A55E1140B542B4286586C76AEBC5187_304022020.addTaint(taint);
-        throw var5A55E1140B542B4286586C76AEBC5187_304022020;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException
-        //("Removing parameters in a stack is not supported.");
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.661 -0400", hash_original_method = "EA9D71906AA8F5EAFC46BDFADD14632A", hash_generated_method = "60F5F8C29F281AB583CEDBDEB8B5190E")
+
+    /**
+     * Does <i>not</i> copy parameters.
+     * Parameter stacks are lightweight objects, expected to be instantiated
+     * as needed and to be used only in a very specific context. On top of
+     * that, they are read-only. The typical copy operation to prevent
+     * accidental modification of parameters passed by the application to
+     * a framework object is therefore pointless and disabled.
+     * Create a new stack if you really need a copy.
+     * <br/>
+     * Derived classes may change this behavior.
+     *
+     * @return <code>this</code> parameter stack
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.926 -0500", hash_original_method = "EA9D71906AA8F5EAFC46BDFADD14632A", hash_generated_method = "8E0909FC1BE211C52A82B36CE39A28C7")
     public HttpParams copy() {
-HttpParams var72A74007B2BE62B849F475C7BDA4658B_1271248732 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_1271248732.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_1271248732;
-        // ---------- Original Method ----------
-        //return this;
+        return this;
     }
 
     

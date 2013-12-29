@@ -1,6 +1,9 @@
 package android.support.v4.app;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
+import android.util.Log;
 import droidsafe.annotations.*;
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
@@ -37,6 +40,19 @@ import android.view.animation.ScaleAnimation;
 
 
 public abstract class FragmentManager {
+
+    /**
+     * Control whether the framework's internal fragment manager debugging
+     * logs are turned on.  If enabled, you will see output in logcat as
+     * the framework performs fragment operations.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.468 -0500", hash_original_method = "F85B69D8648CC374BBF72D9494B795E2", hash_generated_method = "1B390773BA665B18CA47C23EB9D733ED")
+    public static void enableDebugLogging(boolean enabled) {
+        FragmentManagerImpl.DEBUG = enabled;
+    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.455 -0500", hash_original_field = "A37EC55D90220D1054C63CAEF06B11D6", hash_generated_field = "3F74866CBC8F49655F2B8BB97CC17F5E")
+
+    public static final int POP_BACK_STACK_INCLUSIVE = 1<<0;
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.334 -0400", hash_original_method = "0D3FEDE97BC3242ED64134E1F014EA11", hash_generated_method = "0D3FEDE97BC3242ED64134E1F014EA11")
     public FragmentManager ()
@@ -44,93 +60,210 @@ public abstract class FragmentManager {
         //Synthesized constructor
     }
 
-
-    @DSModeled(DSC.SAFE)
+    /**
+     * Start a series of edit operations on the Fragments associated with
+     * this FragmentManager.
+     * 
+     * <p>Note: A fragment transaction can only be created/committed prior
+     * to an activity saving its state.  If you try to commit a transaction
+     * after {@link FragmentActivity#onSaveInstanceState FragmentActivity.onSaveInstanceState()}
+     * (and prior to a following {@link FragmentActivity#onStart FragmentActivity.onStart}
+     * or {@link FragmentActivity#onResume FragmentActivity.onResume()}, you will get an error.
+     * This is because the framework takes care of saving your current fragments
+     * in the state, and if changes are made after the state is saved then they
+     * will be lost.</p>
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.451 -0500", hash_original_method = "BE048CD13A2D9177864E9AE5CA89385C", hash_generated_method = "179BF9392A437EED545CF6A3F093EC20")
     public abstract FragmentTransaction beginTransaction();
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.334 -0400", hash_original_method = "0DA67415D41DB3C4C9D7AB80CD2D78FE", hash_generated_method = "35699A76D42159789F2F1D0523FCF23F")
+    /** @hide -- remove once prebuilts are in. */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.452 -0500", hash_original_method = "0DA67415D41DB3C4C9D7AB80CD2D78FE", hash_generated_method = "7B5BD006136DB217141D24C35BA0CCDB")
     @Deprecated
-    public FragmentTransaction openTransaction() {
-FragmentTransaction var0C52C1DD23EDCBCDDE04269B6A21160A_746011019 =         beginTransaction();
-        var0C52C1DD23EDCBCDDE04269B6A21160A_746011019.addTaint(taint);
-        return var0C52C1DD23EDCBCDDE04269B6A21160A_746011019;
-        // ---------- Original Method ----------
-        //return beginTransaction();
+public FragmentTransaction openTransaction() {
+        return beginTransaction();
     }
-
     
-    @DSModeled(DSC.SAFE)
+    /**
+     * After a {@link FragmentTransaction} is committed with
+     * {@link FragmentTransaction#commit FragmentTransaction.commit()}, it
+     * is scheduled to be executed asynchronously on the process's main thread.
+     * If you want to immediately executing any such pending operations, you
+     * can call this function (only from the main thread) to do so.  Note that
+     * all callbacks and other related behavior will be done from within this
+     * call, so be careful about where this is called from.
+     *
+     * @return Returns true if there were any pending transactions to be
+     * executed.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.452 -0500", hash_original_method = "5B9A3D87E7345C957FA5717C0C10C635", hash_generated_method = "66BAE45C691B1AB5E9BB1A84AE41D8A2")
     public abstract boolean executePendingTransactions();
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Finds a fragment that was identified by the given id either when inflated
+     * from XML or as the container ID when added in a transaction.  This first
+     * searches through fragments that are currently added to the manager's
+     * activity; if no such fragment is found, then all fragments currently
+     * on the back stack associated with this ID are searched.
+     * @return The fragment if found or null otherwise.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.453 -0500", hash_original_method = "F331A49B0DAC9D1709118DA3B3769DC9", hash_generated_method = "4C6F6CF41EE287D45A81567EBA8CB5D6")
     public abstract Fragment findFragmentById(int id);
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Finds a fragment that was identified by the given tag either when inflated
+     * from XML or as supplied when added in a transaction.  This first
+     * searches through fragments that are currently added to the manager's
+     * activity; if no such fragment is found, then all fragments currently
+     * on the back stack are searched.
+     * @return The fragment if found or null otherwise.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.454 -0500", hash_original_method = "06F2C60B02B6436122252A9A18FF6B5B", hash_generated_method = "8A748374863BCFCFE22454ABCA2FE261")
     public abstract Fragment findFragmentByTag(String tag);
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Pop the top state off the back stack.  Returns true if there was one
+     * to pop, else false.  This function is asynchronous -- it enqueues the
+     * request to pop, but the action will not be performed until the application
+     * returns to its event loop.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.456 -0500", hash_original_method = "8DD8850C5659D39934906ED127571123", hash_generated_method = "06152C82F0BE43992BE41413F4D5A3F1")
     public abstract void popBackStack();
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Like {@link #popBackStack()}, but performs the operation immediately
+     * inside of the call.  This is like calling {@link #executePendingTransactions()}
+     * afterwards.
+     * @return Returns true if there was something popped, else false.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.457 -0500", hash_original_method = "7B6675A0CB9AF3263371BDE096DAF2A9", hash_generated_method = "2C3F7FF8856F557CE69F0CF46B2F4937")
     public abstract boolean popBackStackImmediate();
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Pop the last fragment transition from the manager's fragment
+     * back stack.  If there is nothing to pop, false is returned.
+     * This function is asynchronous -- it enqueues the
+     * request to pop, but the action will not be performed until the application
+     * returns to its event loop.
+     * 
+     * @param name If non-null, this is the name of a previous back state
+     * to look for; if found, all states up to that state will be popped.  The
+     * {@link #POP_BACK_STACK_INCLUSIVE} flag can be used to control whether
+     * the named state itself is popped. If null, only the top state is popped.
+     * @param flags Either 0 or {@link #POP_BACK_STACK_INCLUSIVE}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.458 -0500", hash_original_method = "7371282EB954218CB5BB647DBEFB9C4D", hash_generated_method = "DA4FB7A38FD1A9723E0C9FB977608D32")
     public abstract void popBackStack(String name, int flags);
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Like {@link #popBackStack(String, int)}, but performs the operation immediately
+     * inside of the call.  This is like calling {@link #executePendingTransactions()}
+     * afterwards.
+     * @return Returns true if there was something popped, else false.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.459 -0500", hash_original_method = "E1C9735BC76D749F9AAB42E9F89374F3", hash_generated_method = "ADFC94D0AAB8081D7BCE139575F65351")
     public abstract boolean popBackStackImmediate(String name, int flags);
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Pop all back stack states up to the one with the given identifier.
+     * This function is asynchronous -- it enqueues the
+     * request to pop, but the action will not be performed until the application
+     * returns to its event loop.
+     * 
+     * @param id Identifier of the stated to be popped. If no identifier exists,
+     * false is returned.
+     * The identifier is the number returned by
+     * {@link FragmentTransaction#commit() FragmentTransaction.commit()}.  The
+     * {@link #POP_BACK_STACK_INCLUSIVE} flag can be used to control whether
+     * the named state itself is popped.
+     * @param flags Either 0 or {@link #POP_BACK_STACK_INCLUSIVE}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.459 -0500", hash_original_method = "5DFB5C2F3CB06A536CC67665FD5A1850", hash_generated_method = "AFB34329D29F80428B05B6ACD88A1183")
     public abstract void popBackStack(int id, int flags);
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Like {@link #popBackStack(int, int)}, but performs the operation immediately
+     * inside of the call.  This is like calling {@link #executePendingTransactions()}
+     * afterwards.
+     * @return Returns true if there was something popped, else false.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.460 -0500", hash_original_method = "4468A20E5A85CF532490B1BC373EE3E6", hash_generated_method = "B7D3372DC7597245DDCCDC11FB8C5F74")
     public abstract boolean popBackStackImmediate(int id, int flags);
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Return the number of entries currently in the back stack.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.461 -0500", hash_original_method = "8EAEBBF64A73FEF70E3B2DC6C5497EE9", hash_generated_method = "F5E4FA5B0AAD9A1C436033C01C3AAABD")
     public abstract int getBackStackEntryCount();
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Return the BackStackEntry at index <var>index</var> in the back stack;
+     * entries start index 0 being the bottom of the stack.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.462 -0500", hash_original_method = "C6BA46BCDC4C883DD39DC808512584CC", hash_generated_method = "79204E9430B6FA67CEF534DB5F847CAE")
     public abstract BackStackEntry getBackStackEntryAt(int index);
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Add a new listener for changes to the fragment back stack.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.463 -0500", hash_original_method = "4677CACA63B2CFD2A78E39C8A8FB92BF", hash_generated_method = "728832396021C02BD842F607945CFEC0")
     public abstract void addOnBackStackChangedListener(OnBackStackChangedListener listener);
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Remove a listener that was previously added with
+     * {@link #addOnBackStackChangedListener(OnBackStackChangedListener)}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.464 -0500", hash_original_method = "75368BB8382567FE8CD9BFB84C582622", hash_generated_method = "69736F023C3DB7E029FFFB58A3A4877E")
     public abstract void removeOnBackStackChangedListener(OnBackStackChangedListener listener);
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Put a reference to a fragment in a Bundle.  This Bundle can be
+     * persisted as saved state, and when later restoring
+     * {@link #getFragment(Bundle, String)} will return the current
+     * instance of the same fragment.
+     *
+     * @param bundle The bundle in which to put the fragment reference.
+     * @param key The name of the entry in the bundle.
+     * @param fragment The Fragment whose reference is to be stored.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.465 -0500", hash_original_method = "8451101D4DDA3AE9BA2F091778F6ACC9", hash_generated_method = "C529CCC132EFEB14EBA38652ABAFD702")
     public abstract void putFragment(Bundle bundle, String key, Fragment fragment);
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Retrieve the current Fragment instance for a reference previously
+     * placed with {@link #putFragment(Bundle, String, Fragment)}.
+     *
+     * @param bundle The bundle from which to retrieve the fragment reference.
+     * @param key The name of the entry in the bundle.
+     * @return Returns the current Fragment instance that is associated with
+     * the given reference.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.465 -0500", hash_original_method = "1FBEC41A2754AD4627511B440BD8CDF6", hash_generated_method = "0F634E6958A473C8D2E8404CF8C8DB24")
     public abstract Fragment getFragment(Bundle bundle, String key);
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Save the current instance state of the given Fragment.  This can be
+     * used later when creating a new instance of the Fragment and adding
+     * it to the fragment manager, to have it create itself to match the
+     * current state returned here.  Note that there are limits on how
+     * this can be used:
+     *
+     * <ul>
+     * <li>The Fragment must currently be attached to the FragmentManager.
+     * <li>A new Fragment created using this saved state must be the same class
+     * type as the Fragment it was created from.
+     * <li>The saved state can not contain dependencies on other fragments --
+     * that is it can't use {@link #putFragment(Bundle, String, Fragment)} to
+     * store a fragment reference because that reference may not be valid when
+     * this saved state is later used.  Likewise the Fragment's target and
+     * result code are not included in this state.
+     * </ul>
+     *
+     * @param f The Fragment whose state is to be saved.
+     * @return The generated state.  This will be null if there was no
+     * interesting state created by the fragment.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.466 -0500", hash_original_method = "70232028C6041780F1572B4693E04940", hash_generated_method = "D7143037D7EB1134407060B9E85E5B14")
     public abstract Fragment.SavedState saveFragmentInstanceState(Fragment f);
-
-    
-    public abstract void dump(String prefix, FileDescriptor fd, PrintWriter writer, String[] args);
-
-    
-    @DSModeled(DSC.SAFE)
-    public static void enableDebugLogging(boolean enabled) {
-        FragmentManagerImpl.DEBUG = enabled;
-    }
 
     
     public interface BackStackEntry {
@@ -157,149 +290,257 @@ FragmentTransaction var0C52C1DD23EDCBCDDE04269B6A21160A_746011019 =         begi
         
         public void onBackStackChanged();
     }
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.353 -0400", hash_original_field = "F2813E5BD6A379A2985E370BE1887EDA", hash_generated_field = "3F74866CBC8F49655F2B8BB97CC17F5E")
 
-    public static final int POP_BACK_STACK_INCLUSIVE = 1<<0;
+    /**
+     * Print the FragmentManager's state into the given stream.
+     *
+     * @param prefix Text to print at the front of each line.
+     * @param fd The raw file descriptor that the dump is being sent to.
+     * @param writer A PrintWriter to which the dump is to be set.
+     * @param args Additional arguments to the dump request.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.467 -0500", hash_original_method = "9309E77AA4047B9B8316706781ED0A27", hash_generated_method = "3FF3D3380483C9ADF611F5CA2E5A6D00")
+    public abstract void dump(String prefix, FileDescriptor fd, PrintWriter writer, String[] args);
 }
 
 final class FragmentManagerState implements Parcelable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.353 -0400", hash_original_field = "A94EB756C33921574C3064C98AF96788", hash_generated_field = "0C91046A014C3ABDDA41BA020BEE7D35")
-
-    FragmentState[] mActive;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.353 -0400", hash_original_field = "78AB6CD708941FB2B40AE8854D535F2D", hash_generated_field = "4D5C3ED026B5D0195A6077AFCD696836")
-
-    int[] mAdded;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.353 -0400", hash_original_field = "AF7A6AFC6841E10A94129285977CF562", hash_generated_field = "EEA20C5C67D270067553BCDE313A7B27")
-
-    BackStackState[] mBackStack;
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.353 -0400", hash_original_method = "4ADB2DBBD6899E89144480A7958A6490", hash_generated_method = "252DFEAE0ECB79838960A8B564DE42F6")
-    public  FragmentManagerState() {
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.353 -0400", hash_original_method = "020574327F1D57965B67553DD6F7D979", hash_generated_method = "F858C24C16C6DB16663BD3817D53ADD9")
-    public  FragmentManagerState(Parcel in) {
-        mActive = in.createTypedArray(FragmentState.CREATOR);
-        mAdded = in.createIntArray();
-        mBackStack = in.createTypedArray(BackStackState.CREATOR);
-        // ---------- Original Method ----------
-        //mActive = in.createTypedArray(FragmentState.CREATOR);
-        //mAdded = in.createIntArray();
-        //mBackStack = in.createTypedArray(BackStackState.CREATOR);
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.353 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "590789BDDC6B1BC0A07B7D00719AEFC5")
-    public int describeContents() {
-        int varCFCD208495D565EF66E7DFF9F98764DA_1883918233 = (0);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_527899407 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_527899407;
-        // ---------- Original Method ----------
-        //return 0;
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.353 -0400", hash_original_method = "B6654BF7A24842DC15E6AD3A5F27203C", hash_generated_method = "47E7D112A1A5E715EE53E5F5D06C9F8F")
-    public void writeToParcel(Parcel dest, int flags) {
-        addTaint(flags);
-        addTaint(dest.getTaint());
-        dest.writeTypedArray(mActive, flags);
-        dest.writeIntArray(mAdded);
-        dest.writeTypedArray(mBackStack, flags);
-        // ---------- Original Method ----------
-        //dest.writeTypedArray(mActive, flags);
-        //dest.writeIntArray(mAdded);
-        //dest.writeTypedArray(mBackStack, flags);
-    }
 
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.353 -0400", hash_original_field = "D29AA2723BAE7915447DC2F30F3AAA56", hash_generated_field = "EE9672AF4023C35BB0D72B0356E5DA5C")
 
     public static final Parcelable.Creator<FragmentManagerState> CREATOR
             = new Parcelable.Creator<FragmentManagerState>() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.475 -0500", hash_original_method = "ECDC6A4E7C91D1C5B65C994C4484624F", hash_generated_method = "C02CF7F6521D674473A0622E67866AE4")
         public FragmentManagerState createFromParcel(Parcel in) {
             return new FragmentManagerState(in);
         }
         
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.476 -0500", hash_original_method = "91265EDFBDBEA59F353323C915A4EF4F", hash_generated_method = "BC21AC906A7818F48F75A0EFD7490E16")
         public FragmentManagerState[] newArray(int size) {
             return new FragmentManagerState[size];
         }
     };
-}
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.469 -0500", hash_original_field = "0C91046A014C3ABDDA41BA020BEE7D35", hash_generated_field = "0C91046A014C3ABDDA41BA020BEE7D35")
 
-interface FragmentContainer {
-    public View findViewById(int id);
+    FragmentState[] mActive;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.470 -0500", hash_original_field = "4D5C3ED026B5D0195A6077AFCD696836", hash_generated_field = "4D5C3ED026B5D0195A6077AFCD696836")
+
+    int[] mAdded;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.470 -0500", hash_original_field = "EEA20C5C67D270067553BCDE313A7B27", hash_generated_field = "EEA20C5C67D270067553BCDE313A7B27")
+
+    BackStackState[] mBackStack;
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.471 -0500", hash_original_method = "4ADB2DBBD6899E89144480A7958A6490", hash_generated_method = "001680BC3C0AA33814887A60387200FC")
+    public FragmentManagerState() {
+    }
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.472 -0500", hash_original_method = "020574327F1D57965B67553DD6F7D979", hash_generated_method = "0BC13CF9A5CCCFDAA729B873E1891B0B")
+    public FragmentManagerState(Parcel in) {
+        mActive = in.createTypedArray(FragmentState.CREATOR);
+        mAdded = in.createIntArray();
+        mBackStack = in.createTypedArray(BackStackState.CREATOR);
+    }
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.473 -0500", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "D90463461B2A94FF94D13FDF69BB80C9")
+    public int describeContents() {
+        return 0;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.474 -0500", hash_original_method = "B6654BF7A24842DC15E6AD3A5F27203C", hash_generated_method = "EE219290863A0576BAFED6B568C39258")
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeTypedArray(mActive, flags);
+        dest.writeIntArray(mAdded);
+        dest.writeTypedArray(mBackStack, flags);
+    }
 }
 final class FragmentManagerImpl extends FragmentManager {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.354 -0400", hash_original_field = "327C9FAD23CE4030098BE2DE91837CF7", hash_generated_field = "11FD18D208B09E922FC03FBF68E7335B")
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.528 -0500", hash_original_method = "4341065D769972007048C06B6A820CF6", hash_generated_method = "AAEB003EE5CA3BDFC2234E2D6D00CFBC")
+    static Animation makeOpenCloseAnimation(Context context, float startScale,
+            float endScale, float startAlpha, float endAlpha) {
+        AnimationSet set = new AnimationSet(false);
+        ScaleAnimation scale = new ScaleAnimation(startScale, endScale, startScale, endScale,
+                Animation.RELATIVE_TO_SELF, .5f, Animation.RELATIVE_TO_SELF, .5f);
+        scale.setInterpolator(DECELERATE_QUINT);
+        scale.setDuration(ANIM_DUR);
+        set.addAnimation(scale);
+        AlphaAnimation alpha = new AlphaAnimation(startAlpha, endAlpha);
+        alpha.setInterpolator(DECELERATE_CUBIC);
+        alpha.setDuration(ANIM_DUR);
+        set.addAnimation(alpha);
+        return set;
+    }
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.529 -0500", hash_original_method = "90F479F8F611DA10970396B1160BE850", hash_generated_method = "5E695FDA875E0A6653234B0A231739F0")
+    static Animation makeFadeAnimation(Context context, float start, float end) {
+        AlphaAnimation anim = new AlphaAnimation(start, end);
+        anim.setInterpolator(DECELERATE_CUBIC);
+        anim.setDuration(ANIM_DUR);
+        return anim;
+    }
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.584 -0500", hash_original_method = "EF9B1EDACB3DF8AEB2756354C0AEFEDD", hash_generated_method = "2C6BD9C0C59EEBA564136501810F7E77")
+    public static int reverseTransit(int transit) {
+        int rev = 0;
+        switch (transit) {
+            case FragmentTransaction.TRANSIT_FRAGMENT_OPEN:
+                rev = FragmentTransaction.TRANSIT_FRAGMENT_CLOSE;
+                break;
+            case FragmentTransaction.TRANSIT_FRAGMENT_CLOSE:
+                rev = FragmentTransaction.TRANSIT_FRAGMENT_OPEN;
+                break;
+            case FragmentTransaction.TRANSIT_FRAGMENT_FADE:
+                rev = FragmentTransaction.TRANSIT_FRAGMENT_FADE;
+                break;
+        }
+        return rev;
+        
+    }
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.591 -0500", hash_original_method = "1F375F46460B6BDD0777AC7E3A51D7A3", hash_generated_method = "7E675738F6ECD0733DD235E14DD6F080")
+    public static int transitToStyleIndex(int transit, boolean enter) {
+        int animAttr = -1;
+        switch (transit) {
+            case FragmentTransaction.TRANSIT_FRAGMENT_OPEN:
+                animAttr = enter ? ANIM_STYLE_OPEN_ENTER : ANIM_STYLE_OPEN_EXIT;
+                break;
+            case FragmentTransaction.TRANSIT_FRAGMENT_CLOSE:
+                animAttr = enter ? ANIM_STYLE_CLOSE_ENTER : ANIM_STYLE_CLOSE_EXIT;
+                break;
+            case FragmentTransaction.TRANSIT_FRAGMENT_FADE:
+                animAttr = enter ? ANIM_STYLE_FADE_ENTER : ANIM_STYLE_FADE_EXIT;
+                break;
+        }
+        return animAttr;
+    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.479 -0500", hash_original_field = "81DD852ECBE07BA98A61C8F3D0C85F01", hash_generated_field = "99DFF1318F5BF79C590B7B00A696225C")
+
+    static boolean DEBUG = false;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.480 -0500", hash_original_field = "78B476A2173683CB2946F3D345781AC1", hash_generated_field = "82CCA249F4AC6A9E8A18392D953FCA5D")
+
+    static final String TAG = "FragmentManager";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.481 -0500", hash_original_field = "32BF68B99F21EB3682A35A598CF8A71A", hash_generated_field = "47802C2B46813E58B899D23FD9DC343B")
+
+    
+    static final boolean HONEYCOMB = android.os.Build.VERSION.SDK_INT >= 11;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.481 -0500", hash_original_field = "F787E82ABD38F2EA55518D5879BC4223", hash_generated_field = "3B27731C0E9DDDFC7028C0BFB720297D")
+
+
+    static final String TARGET_REQUEST_CODE_STATE_TAG = "android:target_req_state";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.482 -0500", hash_original_field = "93ACE05EC658CB34C742740556D4AAD2", hash_generated_field = "9220E2EDA94C70BA7341F1BFB405D6BF")
+
+    static final String TARGET_STATE_TAG = "android:target_state";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.483 -0500", hash_original_field = "B99484934BE95489FACF4231321AED62", hash_generated_field = "C8F5F7A2B0A3F70631E3897CD07F0E4E")
+
+    static final String VIEW_STATE_TAG = "android:view_state";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.484 -0500", hash_original_field = "4511CE3F50A8FB9DD8837073E45C13C9", hash_generated_field = "43219A21E686E6FEC3DF87B97E67132D")
+
+    static final String USER_VISIBLE_HINT_TAG = "android:user_visible_hint";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.524 -0500", hash_original_field = "DBE88DA536863F5E1852D5C0B17397C0", hash_generated_field = "3A10D2877F43112AA0B7A6A8433E95CB")
+
+
+    static final Interpolator DECELERATE_QUINT = new DecelerateInterpolator(2.5f);
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.524 -0500", hash_original_field = "F24520F51F599A0D5367EFF4AA0763C9", hash_generated_field = "1618232FF2C96BF54619A71799992CCF")
+
+    static final Interpolator DECELERATE_CUBIC = new DecelerateInterpolator(1.5f);
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.525 -0500", hash_original_field = "36FB535971BE228AC055A9B904AAAFE6", hash_generated_field = "50DFC5BE4E88ED2E03493326FAE40E99")
+
+    static final Interpolator ACCELERATE_QUINT = new AccelerateInterpolator(2.5f);
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.526 -0500", hash_original_field = "4A0D62FBAAD9179677ADCF693A7D4F5A", hash_generated_field = "0650545F9518BF159E5600383DFE2395")
+
+    static final Interpolator ACCELERATE_CUBIC = new AccelerateInterpolator(1.5f);
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.527 -0500", hash_original_field = "539442A9D6C409C991FFED1C4320E7CF", hash_generated_field = "71044A5396C27203930538888DCB79FC")
+
+    
+    static final int ANIM_DUR = 220;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.585 -0500", hash_original_field = "070544131F0D684DCD03A48F95E567E9", hash_generated_field = "7BB089DC1B8A242E88755BDA8C8238B9")
+
+    
+    public static final int ANIM_STYLE_OPEN_ENTER = 1;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.586 -0500", hash_original_field = "801447442A6349F42ECEBC29356305B2", hash_generated_field = "3C4C6A69EA30C5B582DE8DD757B46311")
+
+    public static final int ANIM_STYLE_OPEN_EXIT = 2;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.587 -0500", hash_original_field = "94F9664423A38963123B705F50E91B69", hash_generated_field = "B289F5FCA54C37F25FF23F46A1D8D232")
+
+    public static final int ANIM_STYLE_CLOSE_ENTER = 3;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.588 -0500", hash_original_field = "362CB3B6E64E31A8813BFD69F042BDD4", hash_generated_field = "913DA58C0421DE752A939A21044C5DD0")
+
+    public static final int ANIM_STYLE_CLOSE_EXIT = 4;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.589 -0500", hash_original_field = "80DE70A8F64B4FA590EECB2D1A42D1F8", hash_generated_field = "6EE14C70EFD271C2B32055938BC50C20")
+
+    public static final int ANIM_STYLE_FADE_ENTER = 5;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.590 -0500", hash_original_field = "67406C1745F62333EF8CBF7A692B93CF", hash_generated_field = "F489982675E5C10DFACA93BE86E50D4D")
+
+    public static final int ANIM_STYLE_FADE_EXIT = 6;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.485 -0500", hash_original_field = "11FD18D208B09E922FC03FBF68E7335B", hash_generated_field = "11FD18D208B09E922FC03FBF68E7335B")
+
 
     ArrayList<Runnable> mPendingActions;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.354 -0400", hash_original_field = "E3843751CB2154B155E225749A18D620", hash_generated_field = "3A7F97DF5485B6AB6EA8FB5E99EA1CA3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.486 -0500", hash_original_field = "3A7F97DF5485B6AB6EA8FB5E99EA1CA3", hash_generated_field = "3A7F97DF5485B6AB6EA8FB5E99EA1CA3")
 
     Runnable[] mTmpActions;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.354 -0400", hash_original_field = "CDD41116A3EE1465C2308845599CA08D", hash_generated_field = "CD4485F6F525738DAA0EA0DC245911AB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.486 -0500", hash_original_field = "CD4485F6F525738DAA0EA0DC245911AB", hash_generated_field = "CD4485F6F525738DAA0EA0DC245911AB")
 
     boolean mExecutingActions;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.354 -0400", hash_original_field = "A94EB756C33921574C3064C98AF96788", hash_generated_field = "A1650882FA43FC001601740ED87DBA1F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.487 -0500", hash_original_field = "A1650882FA43FC001601740ED87DBA1F", hash_generated_field = "A1650882FA43FC001601740ED87DBA1F")
 
+    
     ArrayList<Fragment> mActive;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.354 -0400", hash_original_field = "78AB6CD708941FB2B40AE8854D535F2D", hash_generated_field = "FF37605B8D813171195C0EBF92B2A116")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.488 -0500", hash_original_field = "FF37605B8D813171195C0EBF92B2A116", hash_generated_field = "FF37605B8D813171195C0EBF92B2A116")
 
     ArrayList<Fragment> mAdded;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.354 -0400", hash_original_field = "CD7D957830B65DDE14B44534836CDCFA", hash_generated_field = "5441838D07CA3D72A0FE3BB98FAAC33E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.488 -0500", hash_original_field = "5441838D07CA3D72A0FE3BB98FAAC33E", hash_generated_field = "5441838D07CA3D72A0FE3BB98FAAC33E")
 
     ArrayList<Integer> mAvailIndices;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.354 -0400", hash_original_field = "AF7A6AFC6841E10A94129285977CF562", hash_generated_field = "A66A7C10189C949E8CDC007D4D07280E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.489 -0500", hash_original_field = "A66A7C10189C949E8CDC007D4D07280E", hash_generated_field = "A66A7C10189C949E8CDC007D4D07280E")
 
     ArrayList<BackStackRecord> mBackStack;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.354 -0400", hash_original_field = "07EBA043D3FF90523B37550E5D9B91E4", hash_generated_field = "9F6E7D7F78C72C3E1BF132D62E1BFDF7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.490 -0500", hash_original_field = "9F6E7D7F78C72C3E1BF132D62E1BFDF7", hash_generated_field = "9F6E7D7F78C72C3E1BF132D62E1BFDF7")
 
     ArrayList<Fragment> mCreatedMenus;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.354 -0400", hash_original_field = "A06EFC21545AC26226ABF57556E73291", hash_generated_field = "89571A39B2AB736200FBD57A213BDB4D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.490 -0500", hash_original_field = "89571A39B2AB736200FBD57A213BDB4D", hash_generated_field = "89571A39B2AB736200FBD57A213BDB4D")
 
     ArrayList<BackStackRecord> mBackStackIndices;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.354 -0400", hash_original_field = "A96F62FC59DD2FAE4327C1E7855AE979", hash_generated_field = "27AED91E8586753C6865FA558A4716C8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.491 -0500", hash_original_field = "27AED91E8586753C6865FA558A4716C8", hash_generated_field = "27AED91E8586753C6865FA558A4716C8")
 
     ArrayList<Integer> mAvailBackStackIndices;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.354 -0400", hash_original_field = "D0295B7D6BE1788760CAFE41F824D774", hash_generated_field = "078DA2C7CA0D4289F90F664D0B3EDB3B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.492 -0500", hash_original_field = "078DA2C7CA0D4289F90F664D0B3EDB3B", hash_generated_field = "078DA2C7CA0D4289F90F664D0B3EDB3B")
+
 
     ArrayList<OnBackStackChangedListener> mBackStackChangeListeners;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.354 -0400", hash_original_field = "C81B2F53A65D169421FFBC0C3AC986EE", hash_generated_field = "9521C64640071A41BA8B18982DEC3BE2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.492 -0500", hash_original_field = "9521C64640071A41BA8B18982DEC3BE2", hash_generated_field = "9521C64640071A41BA8B18982DEC3BE2")
+
 
     int mCurState = Fragment.INITIALIZING;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.354 -0400", hash_original_field = "C145D87741EB407D6B1FF715AD484119", hash_generated_field = "DC6970CAF75184DB6DB1AAC52EA720C0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.493 -0500", hash_original_field = "DC6970CAF75184DB6DB1AAC52EA720C0", hash_generated_field = "DC6970CAF75184DB6DB1AAC52EA720C0")
 
     FragmentActivity mActivity;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.354 -0400", hash_original_field = "C64165C1B15EB68FDC5E7135FFE5DF5B", hash_generated_field = "4716918018B597B9E2482B529B6BAD4A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.494 -0500", hash_original_field = "4716918018B597B9E2482B529B6BAD4A", hash_generated_field = "4716918018B597B9E2482B529B6BAD4A")
 
     FragmentContainer mContainer;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.354 -0400", hash_original_field = "08DEDF480C56042390504EEB5F2B5C59", hash_generated_field = "D9437984C8B60662ED185FA42AA3938D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.495 -0500", hash_original_field = "D9437984C8B60662ED185FA42AA3938D", hash_generated_field = "D9437984C8B60662ED185FA42AA3938D")
 
     Fragment mParent;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.354 -0400", hash_original_field = "1ED82791F588E1B933718ECC0041EE63", hash_generated_field = "19DD0E42F9FC244F37062274E8F2012D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.495 -0500", hash_original_field = "19DD0E42F9FC244F37062274E8F2012D", hash_generated_field = "19DD0E42F9FC244F37062274E8F2012D")
 
+    
     boolean mNeedMenuInvalidate;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.354 -0400", hash_original_field = "5C1552B132EB06695090E74F8854ED21", hash_generated_field = "E68067DB35DA8BD96BFB5C858DBE74BF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.496 -0500", hash_original_field = "E68067DB35DA8BD96BFB5C858DBE74BF", hash_generated_field = "E68067DB35DA8BD96BFB5C858DBE74BF")
 
     boolean mStateSaved;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.354 -0400", hash_original_field = "C724374D1A8B3D38592BCBAA64034D32", hash_generated_field = "708F9D94DA99CD83DBB18AAAFBA8C49F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.497 -0500", hash_original_field = "708F9D94DA99CD83DBB18AAAFBA8C49F", hash_generated_field = "708F9D94DA99CD83DBB18AAAFBA8C49F")
 
     boolean mDestroyed;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.354 -0400", hash_original_field = "1ECE9D4CB2FBE961BEE64D8760E25D34", hash_generated_field = "77A8D08C6FF564B2CE5BCBBFE4C849FE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.497 -0500", hash_original_field = "77A8D08C6FF564B2CE5BCBBFE4C849FE", hash_generated_field = "77A8D08C6FF564B2CE5BCBBFE4C849FE")
 
     String mNoTransactionsBecause;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.354 -0400", hash_original_field = "20E894967D971C1F65FB2EA61F367BAE", hash_generated_field = "79BC4D349D09DCA85692E9FAD9D9C6F7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.498 -0500", hash_original_field = "79BC4D349D09DCA85692E9FAD9D9C6F7", hash_generated_field = "79BC4D349D09DCA85692E9FAD9D9C6F7")
 
     boolean mHavePendingDeferredStart;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.354 -0400", hash_original_field = "D0B68049F76228FB1A7F03664CE569DE", hash_generated_field = "92A56B8032395A53760143DE797F97FA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.499 -0500", hash_original_field = "92A56B8032395A53760143DE797F97FA", hash_generated_field = "92A56B8032395A53760143DE797F97FA")
 
     Bundle mStateBundle = null;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.354 -0400", hash_original_field = "EA03FEC1D1BDCAB5D2BD8A3D0ADCF67E", hash_generated_field = "280BE7FE9228C6CA67328AF4B4B28047")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.501 -0500", hash_original_field = "280BE7FE9228C6CA67328AF4B4B28047", hash_generated_field = "280BE7FE9228C6CA67328AF4B4B28047")
 
     SparseArray<Parcelable> mStateArray = null;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.884 -0400", hash_original_field = "BB4C35BD7F2BC82D3F4C38422B568E9B", hash_generated_field = "9126D3C716AC852A46D1963380A0CE0E")
@@ -322,703 +563,373 @@ final class FragmentManagerImpl extends FragmentManager {
         //Synthesized constructor
     }
 
-
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.354 -0400", hash_original_method = "70ACCC725CBD51E4B696A7DF31DD0DB0", hash_generated_method = "F78E183FC76910FE3ECFA49C795666BF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.503 -0500", hash_original_method = "70ACCC725CBD51E4B696A7DF31DD0DB0", hash_generated_method = "C16DE2EC9D0E5F4F1C992757277ACCC3")
     private void throwException(RuntimeException ex) {
-        addTaint(ex.getTaint());
+        Log.e(TAG, ex.getMessage());
+        Log.e(TAG, "Activity state:");
         LogWriter logw = new LogWriter(TAG);
         PrintWriter pw = new PrintWriter(logw);
-        if(mActivity != null)        
-        {
-            try 
-            {
+        if (mActivity != null) {
+            try {
                 mActivity.dump("  ", null, pw, new String[] { });
-            } //End block
-            catch (Exception e)
-            {
-            } //End block
-        } //End block
-        else
-        {
-            try 
-            {
+            } catch (Exception e) {
+                Log.e(TAG, "Failed dumping state", e);
+            }
+        } else {
+            try {
                 dump("  ", null, pw, new String[] { });
-            } //End block
-            catch (Exception e)
-            {
-            } //End block
-        } //End block
-        ex.addTaint(taint);
+            } catch (Exception e) {
+                Log.e(TAG, "Failed dumping state", e);
+            }
+        }
         throw ex;
-        // ---------- Original Method ----------
-        //Log.e(TAG, ex.getMessage());
-        //Log.e(TAG, "Activity state:");
-        //LogWriter logw = new LogWriter(TAG);
-        //PrintWriter pw = new PrintWriter(logw);
-        //if (mActivity != null) {
-            //try {
-                //mActivity.dump("  ", null, pw, new String[] { });
-            //} catch (Exception e) {
-                //Log.e(TAG, "Failed dumping state", e);
-            //}
-        //} else {
-            //try {
-                //dump("  ", null, pw, new String[] { });
-            //} catch (Exception e) {
-                //Log.e(TAG, "Failed dumping state", e);
-            //}
-        //}
-        //throw ex;
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.355 -0400", hash_original_method = "FD4DF6D1DA8CD9545895F43FA5CF7B0B", hash_generated_method = "122F57B2D7D6B408181CDB0B5037F36F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.504 -0500", hash_original_method = "FD4DF6D1DA8CD9545895F43FA5CF7B0B", hash_generated_method = "901C9AD0A2A75ECA10E98E593A7AB045")
     @Override
-    public FragmentTransaction beginTransaction() {
-FragmentTransaction var693A23640A091F7A17064797B040A100_1556242821 =         new BackStackRecord(this);
-        var693A23640A091F7A17064797B040A100_1556242821.addTaint(taint);
-        return var693A23640A091F7A17064797B040A100_1556242821;
-        // ---------- Original Method ----------
-        //return new BackStackRecord(this);
+public FragmentTransaction beginTransaction() {
+        return new BackStackRecord(this);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.355 -0400", hash_original_method = "082964FFA3913D960E19EEB76BD9505B", hash_generated_method = "CC28217DE6E6E3DEBCB0A8E89D54DB2A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.505 -0500", hash_original_method = "082964FFA3913D960E19EEB76BD9505B", hash_generated_method = "1711C57317FEF53BD66DBCDCF1F50005")
     @Override
-    public boolean executePendingTransactions() {
-        boolean var4856074EF8DA58D94BE6E89BEEA5036C_600248830 = (execPendingActions());
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_954553109 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_954553109;
-        // ---------- Original Method ----------
-        //return execPendingActions();
+public boolean executePendingTransactions() {
+        return execPendingActions();
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.355 -0400", hash_original_method = "5CB88371A39240A7C2FB2F2041C5DD0D", hash_generated_method = "675768D2E1642F830A3161B36D871247")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.507 -0500", hash_original_method = "5CB88371A39240A7C2FB2F2041C5DD0D", hash_generated_method = "045B9A2FE36B9056EDAE06521EEDFC5E")
     @Override
-    public void popBackStack() {
-        enqueueAction(new Runnable() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.355 -0400", hash_original_method = "C15C9D80C4BF4FB6B2AF0B93A4449441", hash_generated_method = "B3F70B584C16FE3B98A16E26008D78C3")
-        @Override
-        public void run() {
-            popBackStackState(mActivity.mHandler, null, -1, 0);
-            // ---------- Original Method ----------
-            //popBackStackState(mActivity.mHandler, null, -1, 0);
-        }
-}, false);
-        // ---------- Original Method ----------
-        //enqueueAction(new Runnable() {
-            //@Override public void run() {
-                //popBackStackState(mActivity.mHandler, null, -1, 0);
-            //}
-        //}, false);
+public void popBackStack() {
+        enqueueAction(new Runnable() {
+            @Override public void run() {
+                popBackStackState(mActivity.mHandler, null, -1, 0);
+            }
+        }, false);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.355 -0400", hash_original_method = "B7072E2D8E1B8CAC03251D641D234641", hash_generated_method = "F8DA2CDE0D901FAE80A77960A24C8A18")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.508 -0500", hash_original_method = "B7072E2D8E1B8CAC03251D641D234641", hash_generated_method = "3B7E724402B0B26FE28D78D5E2981544")
     @Override
-    public boolean popBackStackImmediate() {
+public boolean popBackStackImmediate() {
         checkStateLoss();
         executePendingTransactions();
-        boolean var9954826F15E8D28E4DBF1B5D9A7FCE6F_1621704448 = (popBackStackState(mActivity.mHandler, null, -1, 0));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1571631071 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1571631071;
-        // ---------- Original Method ----------
-        //checkStateLoss();
-        //executePendingTransactions();
-        //return popBackStackState(mActivity.mHandler, null, -1, 0);
+        return popBackStackState(mActivity.mHandler, null, -1, 0);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.355 -0400", hash_original_method = "9E86D2BA46D98A91B2D43097CFA7F639", hash_generated_method = "DB3287CEBCD478CD70E61D97D754BF0E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.510 -0500", hash_original_method = "9E86D2BA46D98A91B2D43097CFA7F639", hash_generated_method = "25AC695BADCB95EC6033649501BF1614")
     @Override
-    public void popBackStack(final String name, final int flags) {
-        addTaint(flags);
-        addTaint(name.getTaint());
-        enqueueAction(new Runnable() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.355 -0400", hash_original_method = "22FC8A6DB6B4AB9E651D01E64BEED72A", hash_generated_method = "3FE29178F98A070A5E0ED21762A74700")
-        @Override
-        public void run() {
-            popBackStackState(mActivity.mHandler, name, -1, flags);
-            // ---------- Original Method ----------
-            //popBackStackState(mActivity.mHandler, name, -1, flags);
-        }
-}, false);
-        // ---------- Original Method ----------
-        //enqueueAction(new Runnable() {
-            //@Override public void run() {
-                //popBackStackState(mActivity.mHandler, name, -1, flags);
-            //}
-        //}, false);
+public void popBackStack(final String name, final int flags) {
+        enqueueAction(new Runnable() {
+            @Override public void run() {
+                popBackStackState(mActivity.mHandler, name, -1, flags);
+            }
+        }, false);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.355 -0400", hash_original_method = "4DEC43188CEAB5FA4EF2839673649ECC", hash_generated_method = "C3E3822ABDDABBE10FF5B84D11C48D30")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.511 -0500", hash_original_method = "4DEC43188CEAB5FA4EF2839673649ECC", hash_generated_method = "E65ED40E729BFDE74201D6481EDD2229")
     @Override
-    public boolean popBackStackImmediate(String name, int flags) {
-        addTaint(flags);
-        addTaint(name.getTaint());
+public boolean popBackStackImmediate(String name, int flags) {
         checkStateLoss();
         executePendingTransactions();
-        boolean varA92FEAD33A189EAD0299E8FE391444CD_1146465800 = (popBackStackState(mActivity.mHandler, name, -1, flags));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_157473138 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_157473138;
-        // ---------- Original Method ----------
-        //checkStateLoss();
-        //executePendingTransactions();
-        //return popBackStackState(mActivity.mHandler, name, -1, flags);
+        return popBackStackState(mActivity.mHandler, name, -1, flags);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.356 -0400", hash_original_method = "DA57C1B5DA7DBD65A6FF7556F6C0B827", hash_generated_method = "FB94C76D3FE4F1666C7CD232A9D8E46F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.513 -0500", hash_original_method = "DA57C1B5DA7DBD65A6FF7556F6C0B827", hash_generated_method = "645643CDB361BBE23BA78834F510A0DB")
     @Override
-    public void popBackStack(final int id, final int flags) {
-        addTaint(flags);
-        addTaint(id);
-        if(id < 0)        
-        {
-            IllegalArgumentException var9E36F4D6900BCA3CCA42D845F29CB5B0_29060673 = new IllegalArgumentException("Bad id: " + id);
-            var9E36F4D6900BCA3CCA42D845F29CB5B0_29060673.addTaint(taint);
-            throw var9E36F4D6900BCA3CCA42D845F29CB5B0_29060673;
-        } //End block
-        enqueueAction(new Runnable() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.355 -0400", hash_original_method = "DBCE7037D51EB5153CDA373E6D392F0E", hash_generated_method = "905DCE3DB8D6804FD0D561A3F3EB2065")
-        @Override
-        public void run() {
-            popBackStackState(mActivity.mHandler, null, id, flags);
-            // ---------- Original Method ----------
-            //popBackStackState(mActivity.mHandler, null, id, flags);
+public void popBackStack(final int id, final int flags) {
+        if (id < 0) {
+            throw new IllegalArgumentException("Bad id: " + id);
         }
-}, false);
-        // ---------- Original Method ----------
-        //if (id < 0) {
-            //throw new IllegalArgumentException("Bad id: " + id);
-        //}
-        //enqueueAction(new Runnable() {
-            //@Override public void run() {
-                //popBackStackState(mActivity.mHandler, null, id, flags);
-            //}
-        //}, false);
+        enqueueAction(new Runnable() {
+            @Override public void run() {
+                popBackStackState(mActivity.mHandler, null, id, flags);
+            }
+        }, false);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.356 -0400", hash_original_method = "C28CBCAD3FA2084F032C85B006AF0CA6", hash_generated_method = "FEF536584963FE65ED79294D948DE890")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.514 -0500", hash_original_method = "C28CBCAD3FA2084F032C85B006AF0CA6", hash_generated_method = "A853E3468A25B84DB29E4E0195D577D6")
     @Override
-    public boolean popBackStackImmediate(int id, int flags) {
-        addTaint(flags);
-        addTaint(id);
+public boolean popBackStackImmediate(int id, int flags) {
         checkStateLoss();
         executePendingTransactions();
-        if(id < 0)        
-        {
-            IllegalArgumentException var9E36F4D6900BCA3CCA42D845F29CB5B0_1874696172 = new IllegalArgumentException("Bad id: " + id);
-            var9E36F4D6900BCA3CCA42D845F29CB5B0_1874696172.addTaint(taint);
-            throw var9E36F4D6900BCA3CCA42D845F29CB5B0_1874696172;
-        } //End block
-        boolean varDBA39B5EE3A31103A5F0342C6B326731_1760285314 = (popBackStackState(mActivity.mHandler, null, id, flags));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_666691024 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_666691024;
-        // ---------- Original Method ----------
-        //checkStateLoss();
-        //executePendingTransactions();
-        //if (id < 0) {
-            //throw new IllegalArgumentException("Bad id: " + id);
-        //}
-        //return popBackStackState(mActivity.mHandler, null, id, flags);
+        if (id < 0) {
+            throw new IllegalArgumentException("Bad id: " + id);
+        }
+        return popBackStackState(mActivity.mHandler, null, id, flags);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.356 -0400", hash_original_method = "81448DC3AD62196301F3A4A762AB09A8", hash_generated_method = "4FE445F95C7B0FAD14D8D96CFB97543B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.515 -0500", hash_original_method = "81448DC3AD62196301F3A4A762AB09A8", hash_generated_method = "87FA987464062DB67C94A14CF163F8A8")
     @Override
-    public int getBackStackEntryCount() {
-        int var6DAE2CE6A7F553D663688107A90FA4CC_1828987850 = (mBackStack != null ? mBackStack.size() : 0);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2097871058 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2097871058;
-        // ---------- Original Method ----------
-        //return mBackStack != null ? mBackStack.size() : 0;
+public int getBackStackEntryCount() {
+        return mBackStack != null ? mBackStack.size() : 0;
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.356 -0400", hash_original_method = "898A7E40DF942FAA7422F0070AE7C2C0", hash_generated_method = "79E06CD5444B07B78EF6F7A9C1156F63")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.516 -0500", hash_original_method = "898A7E40DF942FAA7422F0070AE7C2C0", hash_generated_method = "936D529282443088BF02B3FA798849A8")
     @Override
-    public BackStackEntry getBackStackEntryAt(int index) {
-        addTaint(index);
-BackStackEntry var74F933A734514BD5EE40CF9077B41749_2132902483 =         mBackStack.get(index);
-        var74F933A734514BD5EE40CF9077B41749_2132902483.addTaint(taint);
-        return var74F933A734514BD5EE40CF9077B41749_2132902483;
-        // ---------- Original Method ----------
-        //return mBackStack.get(index);
+public BackStackEntry getBackStackEntryAt(int index) {
+        return mBackStack.get(index);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.356 -0400", hash_original_method = "5B02C223CD8F1AC3632AF80A3BE5FAF1", hash_generated_method = "F3449B7B6237A3D0492048F76360807C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.516 -0500", hash_original_method = "5B02C223CD8F1AC3632AF80A3BE5FAF1", hash_generated_method = "CD42180E56219A3E765F41507C27AA02")
     @Override
-    public void addOnBackStackChangedListener(OnBackStackChangedListener listener) {
-        addTaint(listener.getTaint());
-        if(mBackStackChangeListeners == null)        
-        {
+public void addOnBackStackChangedListener(OnBackStackChangedListener listener) {
+        if (mBackStackChangeListeners == null) {
             mBackStackChangeListeners = new ArrayList<OnBackStackChangedListener>();
-        } //End block
+        }
         mBackStackChangeListeners.add(listener);
-        // ---------- Original Method ----------
-        //if (mBackStackChangeListeners == null) {
-            //mBackStackChangeListeners = new ArrayList<OnBackStackChangedListener>();
-        //}
-        //mBackStackChangeListeners.add(listener);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.356 -0400", hash_original_method = "0EB71E2FD8D5B96EE15FDFA4CFDC7A3A", hash_generated_method = "61303AE4BE82E0861B28C3954E733BCB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.517 -0500", hash_original_method = "0EB71E2FD8D5B96EE15FDFA4CFDC7A3A", hash_generated_method = "4B9CBF708A93EE1CAF39BC728D2E0AAD")
     @Override
-    public void removeOnBackStackChangedListener(OnBackStackChangedListener listener) {
-        addTaint(listener.getTaint());
-        if(mBackStackChangeListeners != null)        
-        {
+public void removeOnBackStackChangedListener(OnBackStackChangedListener listener) {
+        if (mBackStackChangeListeners != null) {
             mBackStackChangeListeners.remove(listener);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mBackStackChangeListeners != null) {
-            //mBackStackChangeListeners.remove(listener);
-        //}
+        }
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.356 -0400", hash_original_method = "3F35630659DD6C09B78E73F7BD07330C", hash_generated_method = "E358D82FE83F56DFF25219B88EF3C7FE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.518 -0500", hash_original_method = "3F35630659DD6C09B78E73F7BD07330C", hash_generated_method = "F8877F0026C40E0DE0A6BF307016E509")
     @Override
-    public void putFragment(Bundle bundle, String key, Fragment fragment) {
-        addTaint(fragment.getTaint());
-        addTaint(key.getTaint());
-        addTaint(bundle.getTaint());
-        if(fragment.mIndex < 0)        
-        {
+public void putFragment(Bundle bundle, String key, Fragment fragment) {
+        if (fragment.mIndex < 0) {
             throwException(new IllegalStateException("Fragment " + fragment
                     + " is not currently in the FragmentManager"));
-        } //End block
+        }
         bundle.putInt(key, fragment.mIndex);
-        // ---------- Original Method ----------
-        //if (fragment.mIndex < 0) {
-            //throwException(new IllegalStateException("Fragment " + fragment
-                    //+ " is not currently in the FragmentManager"));
-        //}
-        //bundle.putInt(key, fragment.mIndex);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.356 -0400", hash_original_method = "4CDB8119120F20E16B511E77159C27B3", hash_generated_method = "BCF2392B5B318FE17E5366E448CD975B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.519 -0500", hash_original_method = "4CDB8119120F20E16B511E77159C27B3", hash_generated_method = "E17E6A66A2A49A4D03E0EAB5BC904E20")
     @Override
-    public Fragment getFragment(Bundle bundle, String key) {
-        addTaint(key.getTaint());
-        addTaint(bundle.getTaint());
+public Fragment getFragment(Bundle bundle, String key) {
         int index = bundle.getInt(key, -1);
-        if(index == -1)        
-        {
-Fragment var540C13E9E156B687226421B24F2DF178_1499204360 =             null;
-            var540C13E9E156B687226421B24F2DF178_1499204360.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_1499204360;
-        } //End block
-        if(index >= mActive.size())        
-        {
+        if (index == -1) {
+            return null;
+        }
+        if (index >= mActive.size()) {
             throwException(new IllegalStateException("Fragement no longer exists for key "
                     + key + ": index " + index));
-        } //End block
+        }
         Fragment f = mActive.get(index);
-        if(f == null)        
-        {
+        if (f == null) {
             throwException(new IllegalStateException("Fragement no longer exists for key "
                     + key + ": index " + index));
-        } //End block
-Fragment varABE3CFB53FE4A79F34CB25BC80BFD6E2_1738041947 =         f;
-        varABE3CFB53FE4A79F34CB25BC80BFD6E2_1738041947.addTaint(taint);
-        return varABE3CFB53FE4A79F34CB25BC80BFD6E2_1738041947;
-        // ---------- Original Method ----------
-        //int index = bundle.getInt(key, -1);
-        //if (index == -1) {
-            //return null;
-        //}
-        //if (index >= mActive.size()) {
-            //throwException(new IllegalStateException("Fragement no longer exists for key "
-                    //+ key + ": index " + index));
-        //}
-        //Fragment f = mActive.get(index);
-        //if (f == null) {
-            //throwException(new IllegalStateException("Fragement no longer exists for key "
-                    //+ key + ": index " + index));
-        //}
-        //return f;
+        }
+        return f;
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.357 -0400", hash_original_method = "D25922C7B1DBFD38B1587BBC1D3E9AF4", hash_generated_method = "9C6D045E3FDB1D1B13EBBD09BAB7C15E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.520 -0500", hash_original_method = "D25922C7B1DBFD38B1587BBC1D3E9AF4", hash_generated_method = "D54FEC4264809A7589A69D11E59B97A8")
     @Override
-    public Fragment.SavedState saveFragmentInstanceState(Fragment fragment) {
-        addTaint(fragment.getTaint());
-        if(fragment.mIndex < 0)        
-        {
+public Fragment.SavedState saveFragmentInstanceState(Fragment fragment) {
+        if (fragment.mIndex < 0) {
             throwException( new IllegalStateException("Fragment " + fragment
                     + " is not currently in the FragmentManager"));
-        } //End block
-        if(fragment.mState > Fragment.INITIALIZING)        
-        {
+        }
+        if (fragment.mState > Fragment.INITIALIZING) {
             Bundle result = saveFragmentBasicState(fragment);
-Fragment.SavedState varDF3960AB579B5B5C742EF8D42A1CE853_652352647 =             result != null ? new Fragment.SavedState(result) : null;
-            varDF3960AB579B5B5C742EF8D42A1CE853_652352647.addTaint(taint);
-            return varDF3960AB579B5B5C742EF8D42A1CE853_652352647;
-        } //End block
-Fragment.SavedState var540C13E9E156B687226421B24F2DF178_1717397304 =         null;
-        var540C13E9E156B687226421B24F2DF178_1717397304.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_1717397304;
-        // ---------- Original Method ----------
-        //if (fragment.mIndex < 0) {
-            //throwException( new IllegalStateException("Fragment " + fragment
-                    //+ " is not currently in the FragmentManager"));
-        //}
-        //if (fragment.mState > Fragment.INITIALIZING) {
-            //Bundle result = saveFragmentBasicState(fragment);
-            //return result != null ? new Fragment.SavedState(result) : null;
-        //}
-        //return null;
+            return result != null ? new Fragment.SavedState(result) : null;
+        }
+        return null;
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.357 -0400", hash_original_method = "809378480DC9ABFE56F2FAE2E163A583", hash_generated_method = "2718C8BE6CD5894FF9584B48F3522B7A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.521 -0500", hash_original_method = "809378480DC9ABFE56F2FAE2E163A583", hash_generated_method = "DA521A7DEB85214D3168FC663436EB63")
     @Override
-    public String toString() {
+public String toString() {
         StringBuilder sb = new StringBuilder(128);
         sb.append("FragmentManager{");
         sb.append(Integer.toHexString(System.identityHashCode(this)));
         sb.append(" in ");
-        if(mParent != null)        
-        {
+        if (mParent != null) {
             DebugUtils.buildShortClassTag(mParent, sb);
-        } //End block
-        else
-        {
+        } else {
             DebugUtils.buildShortClassTag(mActivity, sb);
-        } //End block
+        }
         sb.append("}}");
-String var2460B846747F8B22185AD8BE722266A5_1029441970 =         sb.toString();
-        var2460B846747F8B22185AD8BE722266A5_1029441970.addTaint(taint);
-        return var2460B846747F8B22185AD8BE722266A5_1029441970;
-        // ---------- Original Method ----------
-        //StringBuilder sb = new StringBuilder(128);
-        //sb.append("FragmentManager{");
-        //sb.append(Integer.toHexString(System.identityHashCode(this)));
-        //sb.append(" in ");
-        //if (mParent != null) {
-            //DebugUtils.buildShortClassTag(mParent, sb);
-        //} else {
-            //DebugUtils.buildShortClassTag(mActivity, sb);
-        //}
-        //sb.append("}}");
-        //return sb.toString();
+        return sb.toString();
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.358 -0400", hash_original_method = "69E4EB9F72755E8BD358E210AC6CFB24", hash_generated_method = "989BE1DCEDB356F78BBF3EF20F5C78C9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.523 -0500", hash_original_method = "69E4EB9F72755E8BD358E210AC6CFB24", hash_generated_method = "78C69E761850140AC9D9B5C0B0A94B56")
     @Override
-    public void dump(String prefix, FileDescriptor fd, PrintWriter writer, String[] args) {
-        addTaint(args[0].getTaint());
-        addTaint(writer.getTaint());
-        addTaint(fd.getTaint());
-        addTaint(prefix.getTaint());
+public void dump(String prefix, FileDescriptor fd, PrintWriter writer, String[] args) {
         String innerPrefix = prefix + "    ";
+
         int N;
-        if(mActive != null)        
-        {
+        if (mActive != null) {
             N = mActive.size();
-            if(N > 0)            
-            {
-                writer.print(prefix);
-                writer.print("Active Fragments in ");
-                writer.print(Integer.toHexString(System.identityHashCode(this)));
-                writer.println(":");
-for(int i=0;i<N;i++)
-                {
+            if (N > 0) {
+                writer.print(prefix); writer.print("Active Fragments in ");
+                        writer.print(Integer.toHexString(System.identityHashCode(this)));
+                        writer.println(":");
+                for (int i=0; i<N; i++) {
                     Fragment f = mActive.get(i);
-                    writer.print(prefix);
-                    writer.print("  #");
-                    writer.print(i);
-                    writer.print(": ");
-                    writer.println(f);
-                    if(f != null)                    
-                    {
+                    writer.print(prefix); writer.print("  #"); writer.print(i);
+                            writer.print(": "); writer.println(f);
+                    if (f != null) {
                         f.dump(innerPrefix, fd, writer, args);
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
-        if(mAdded != null)        
-        {
+                    }
+                }
+            }
+        }
+
+        if (mAdded != null) {
             N = mAdded.size();
-            if(N > 0)            
-            {
-                writer.print(prefix);
-                writer.println("Added Fragments:");
-for(int i=0;i<N;i++)
-                {
+            if (N > 0) {
+                writer.print(prefix); writer.println("Added Fragments:");
+                for (int i=0; i<N; i++) {
                     Fragment f = mAdded.get(i);
-                    writer.print(prefix);
-                    writer.print("  #");
-                    writer.print(i);
-                    writer.print(": ");
-                    writer.println(f.toString());
-                } //End block
-            } //End block
-        } //End block
-        if(mCreatedMenus != null)        
-        {
+                    writer.print(prefix); writer.print("  #"); writer.print(i);
+                            writer.print(": "); writer.println(f.toString());
+                }
+            }
+        }
+
+        if (mCreatedMenus != null) {
             N = mCreatedMenus.size();
-            if(N > 0)            
-            {
-                writer.print(prefix);
-                writer.println("Fragments Created Menus:");
-for(int i=0;i<N;i++)
-                {
+            if (N > 0) {
+                writer.print(prefix); writer.println("Fragments Created Menus:");
+                for (int i=0; i<N; i++) {
                     Fragment f = mCreatedMenus.get(i);
-                    writer.print(prefix);
-                    writer.print("  #");
-                    writer.print(i);
-                    writer.print(": ");
-                    writer.println(f.toString());
-                } //End block
-            } //End block
-        } //End block
-        if(mBackStack != null)        
-        {
+                    writer.print(prefix); writer.print("  #"); writer.print(i);
+                            writer.print(": "); writer.println(f.toString());
+                }
+            }
+        }
+
+        if (mBackStack != null) {
             N = mBackStack.size();
-            if(N > 0)            
-            {
-                writer.print(prefix);
-                writer.println("Back Stack:");
-for(int i=0;i<N;i++)
-                {
+            if (N > 0) {
+                writer.print(prefix); writer.println("Back Stack:");
+                for (int i=0; i<N; i++) {
                     BackStackRecord bs = mBackStack.get(i);
-                    writer.print(prefix);
-                    writer.print("  #");
-                    writer.print(i);
-                    writer.print(": ");
-                    writer.println(bs.toString());
+                    writer.print(prefix); writer.print("  #"); writer.print(i);
+                            writer.print(": "); writer.println(bs.toString());
                     bs.dump(innerPrefix, fd, writer, args);
-                } //End block
-            } //End block
-        } //End block
-        synchronized
-(this)        {
-            if(mBackStackIndices != null)            
-            {
+                }
+            }
+        }
+
+        synchronized (this) {
+            if (mBackStackIndices != null) {
                 N = mBackStackIndices.size();
-                if(N > 0)                
-                {
-                    writer.print(prefix);
-                    writer.println("Back Stack Indices:");
-for(int i=0;i<N;i++)
-                    {
+                if (N > 0) {
+                    writer.print(prefix); writer.println("Back Stack Indices:");
+                    for (int i=0; i<N; i++) {
                         BackStackRecord bs = mBackStackIndices.get(i);
-                        writer.print(prefix);
-                        writer.print("  #");
-                        writer.print(i);
-                        writer.print(": ");
-                        writer.println(bs);
-                    } //End block
-                } //End block
-            } //End block
-            if(mAvailBackStackIndices != null && mAvailBackStackIndices.size() > 0)            
-            {
-                writer.print(prefix);
-                writer.print("mAvailBackStackIndices: ");
-                writer.println(Arrays.toString(mAvailBackStackIndices.toArray()));
-            } //End block
-        } //End block
-        if(mPendingActions != null)        
-        {
+                        writer.print(prefix); writer.print("  #"); writer.print(i);
+                                writer.print(": "); writer.println(bs);
+                    }
+                }
+            }
+
+            if (mAvailBackStackIndices != null && mAvailBackStackIndices.size() > 0) {
+                writer.print(prefix); writer.print("mAvailBackStackIndices: ");
+                        writer.println(Arrays.toString(mAvailBackStackIndices.toArray()));
+            }
+        }
+
+        if (mPendingActions != null) {
             N = mPendingActions.size();
-            if(N > 0)            
-            {
-                writer.print(prefix);
-                writer.println("Pending Actions:");
-for(int i=0;i<N;i++)
-                {
+            if (N > 0) {
+                writer.print(prefix); writer.println("Pending Actions:");
+                for (int i=0; i<N; i++) {
                     Runnable r = mPendingActions.get(i);
-                    writer.print(prefix);
-                    writer.print("  #");
-                    writer.print(i);
-                    writer.print(": ");
-                    writer.println(r);
-                } //End block
-            } //End block
-        } //End block
-        writer.print(prefix);
-        writer.println("FragmentManager misc state:");
-        writer.print(prefix);
-        writer.print("  mActivity=");
-        writer.println(mActivity);
-        writer.print(prefix);
-        writer.print("  mContainer=");
-        writer.println(mContainer);
-        if(mParent != null)        
-        {
-            writer.print(prefix);
-            writer.print("  mParent=");
-            writer.println(mParent);
-        } //End block
-        writer.print(prefix);
-        writer.print("  mCurState=");
-        writer.print(mCurState);
-        writer.print(" mStateSaved=");
-        writer.print(mStateSaved);
-        writer.print(" mDestroyed=");
-        writer.println(mDestroyed);
-        if(mNeedMenuInvalidate)        
-        {
-            writer.print(prefix);
-            writer.print("  mNeedMenuInvalidate=");
-            writer.println(mNeedMenuInvalidate);
-        } //End block
-        if(mNoTransactionsBecause != null)        
-        {
-            writer.print(prefix);
-            writer.print("  mNoTransactionsBecause=");
-            writer.println(mNoTransactionsBecause);
-        } //End block
-        if(mAvailIndices != null && mAvailIndices.size() > 0)        
-        {
-            writer.print(prefix);
-            writer.print("  mAvailIndices: ");
-            writer.println(Arrays.toString(mAvailIndices.toArray()));
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
+                    writer.print(prefix); writer.print("  #"); writer.print(i);
+                            writer.print(": "); writer.println(r);
+                }
+            }
+        }
 
-    
-    static Animation makeOpenCloseAnimation(Context context, float startScale,
-            float endScale, float startAlpha, float endAlpha) {
-        AnimationSet set = new AnimationSet(false);
-        ScaleAnimation scale = new ScaleAnimation(startScale, endScale, startScale, endScale,
-                Animation.RELATIVE_TO_SELF, .5f, Animation.RELATIVE_TO_SELF, .5f);
-        scale.setInterpolator(DECELERATE_QUINT);
-        scale.setDuration(ANIM_DUR);
-        set.addAnimation(scale);
-        AlphaAnimation alpha = new AlphaAnimation(startAlpha, endAlpha);
-        alpha.setInterpolator(DECELERATE_CUBIC);
-        alpha.setDuration(ANIM_DUR);
-        set.addAnimation(alpha);
-        return set;
+        writer.print(prefix); writer.println("FragmentManager misc state:");
+        writer.print(prefix); writer.print("  mActivity="); writer.println(mActivity);
+        writer.print(prefix); writer.print("  mContainer="); writer.println(mContainer);
+        if (mParent != null) {
+            writer.print(prefix); writer.print("  mParent="); writer.println(mParent);
+        }
+        writer.print(prefix); writer.print("  mCurState="); writer.print(mCurState);
+                writer.print(" mStateSaved="); writer.print(mStateSaved);
+                writer.print(" mDestroyed="); writer.println(mDestroyed);
+        if (mNeedMenuInvalidate) {
+            writer.print(prefix); writer.print("  mNeedMenuInvalidate=");
+                    writer.println(mNeedMenuInvalidate);
+        }
+        if (mNoTransactionsBecause != null) {
+            writer.print(prefix); writer.print("  mNoTransactionsBecause=");
+                    writer.println(mNoTransactionsBecause);
+        }
+        if (mAvailIndices != null && mAvailIndices.size() > 0) {
+            writer.print(prefix); writer.print("  mAvailIndices: ");
+                    writer.println(Arrays.toString(mAvailIndices.toArray()));
+        }
     }
-
     
-    static Animation makeFadeAnimation(Context context, float start, float end) {
-        AlphaAnimation anim = new AlphaAnimation(start, end);
-        anim.setInterpolator(DECELERATE_CUBIC);
-        anim.setDuration(ANIM_DUR);
-        return anim;
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.359 -0400", hash_original_method = "1D86F34E1479CAC948F0E54CF5418376", hash_generated_method = "EA6A2931017147021905BDE298F5E38C")
-     Animation loadAnimation(Fragment fragment, int transit, boolean enter,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.530 -0500", hash_original_method = "1D86F34E1479CAC948F0E54CF5418376", hash_generated_method = "363C790134E488257F21F18B160FC8D3")
+    Animation loadAnimation(Fragment fragment, int transit, boolean enter,
             int transitionStyle) {
-        addTaint(transitionStyle);
-        addTaint(enter);
-        addTaint(transit);
-        addTaint(fragment.getTaint());
         Animation animObj = fragment.onCreateAnimation(transit, enter,
                 fragment.mNextAnim);
-        if(animObj != null)        
-        {
-Animation varD2C3244304F8F6616E0E174A4084F820_1793179794 =             animObj;
-            varD2C3244304F8F6616E0E174A4084F820_1793179794.addTaint(taint);
-            return varD2C3244304F8F6616E0E174A4084F820_1793179794;
-        } //End block
-        if(fragment.mNextAnim != 0)        
-        {
+        if (animObj != null) {
+            return animObj;
+        }
+        
+        if (fragment.mNextAnim != 0) {
             Animation anim = AnimationUtils.loadAnimation(mActivity, fragment.mNextAnim);
-            if(anim != null)            
-            {
-Animation var6E2178F33F884BED37C5DEBCD18F9A96_811966290 =                 anim;
-                var6E2178F33F884BED37C5DEBCD18F9A96_811966290.addTaint(taint);
-                return var6E2178F33F884BED37C5DEBCD18F9A96_811966290;
-            } //End block
-        } //End block
-        if(transit == 0)        
-        {
-Animation var540C13E9E156B687226421B24F2DF178_101299875 =             null;
-            var540C13E9E156B687226421B24F2DF178_101299875.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_101299875;
-        } //End block
+            if (anim != null) {
+                return anim;
+            }
+        }
+        
+        if (transit == 0) {
+            return null;
+        }
+        
         int styleIndex = transitToStyleIndex(transit, enter);
-        if(styleIndex < 0)        
-        {
-Animation var540C13E9E156B687226421B24F2DF178_845728359 =             null;
-            var540C13E9E156B687226421B24F2DF178_845728359.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_845728359;
-        } //End block
-switch(styleIndex){
-        case ANIM_STYLE_OPEN_ENTER:
-Animation var276C06FC17F5FF9F0FF5EAD4A48362C9_1562713894 =         makeOpenCloseAnimation(mActivity, 1.125f, 1.0f, 0, 1);
-        var276C06FC17F5FF9F0FF5EAD4A48362C9_1562713894.addTaint(taint);
-        return var276C06FC17F5FF9F0FF5EAD4A48362C9_1562713894;
-        case ANIM_STYLE_OPEN_EXIT:
-Animation var635DD9E418A713155BF3E65B80324A80_429984625 =         makeOpenCloseAnimation(mActivity, 1.0f, .975f, 1, 0);
-        var635DD9E418A713155BF3E65B80324A80_429984625.addTaint(taint);
-        return var635DD9E418A713155BF3E65B80324A80_429984625;
-        case ANIM_STYLE_CLOSE_ENTER:
-Animation var222A48FD3247D701484A971C1B5C9668_1434590819 =         makeOpenCloseAnimation(mActivity, .975f, 1.0f, 0, 1);
-        var222A48FD3247D701484A971C1B5C9668_1434590819.addTaint(taint);
-        return var222A48FD3247D701484A971C1B5C9668_1434590819;
-        case ANIM_STYLE_CLOSE_EXIT:
-Animation var4F229A8E17C0C23CE0CCEE3A983ED7C5_1878794006 =         makeOpenCloseAnimation(mActivity, 1.0f, 1.075f, 1, 0);
-        var4F229A8E17C0C23CE0CCEE3A983ED7C5_1878794006.addTaint(taint);
-        return var4F229A8E17C0C23CE0CCEE3A983ED7C5_1878794006;
-        case ANIM_STYLE_FADE_ENTER:
-Animation varEAB8B32CE4CE36EA6025A19566FC181F_900860184 =         makeFadeAnimation(mActivity, 0, 1);
-        varEAB8B32CE4CE36EA6025A19566FC181F_900860184.addTaint(taint);
-        return varEAB8B32CE4CE36EA6025A19566FC181F_900860184;
-        case ANIM_STYLE_FADE_EXIT:
-Animation var61308AA345158F2C39F16F21D18CDC25_581367034 =         makeFadeAnimation(mActivity, 1, 0);
-        var61308AA345158F2C39F16F21D18CDC25_581367034.addTaint(taint);
-        return var61308AA345158F2C39F16F21D18CDC25_581367034;
-}        if(transitionStyle == 0 && mActivity.getWindow() != null)        
-        {
+        if (styleIndex < 0) {
+            return null;
+        }
+        
+        switch (styleIndex) {
+            case ANIM_STYLE_OPEN_ENTER:
+                return makeOpenCloseAnimation(mActivity, 1.125f, 1.0f, 0, 1);
+            case ANIM_STYLE_OPEN_EXIT:
+                return makeOpenCloseAnimation(mActivity, 1.0f, .975f, 1, 0);
+            case ANIM_STYLE_CLOSE_ENTER:
+                return makeOpenCloseAnimation(mActivity, .975f, 1.0f, 0, 1);
+            case ANIM_STYLE_CLOSE_EXIT:
+                return makeOpenCloseAnimation(mActivity, 1.0f, 1.075f, 1, 0);
+            case ANIM_STYLE_FADE_ENTER:
+                return makeFadeAnimation(mActivity, 0, 1);
+            case ANIM_STYLE_FADE_EXIT:
+                return makeFadeAnimation(mActivity, 1, 0);
+        }
+        
+        if (transitionStyle == 0 && mActivity.getWindow() != null) {
             transitionStyle = mActivity.getWindow().getAttributes().windowAnimations;
-        } //End block
-        if(transitionStyle == 0)        
-        {
-Animation var540C13E9E156B687226421B24F2DF178_1958136559 =             null;
-            var540C13E9E156B687226421B24F2DF178_1958136559.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_1958136559;
-        } //End block
-Animation var540C13E9E156B687226421B24F2DF178_957942230 =         null;
-        var540C13E9E156B687226421B24F2DF178_957942230.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_957942230;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        }
+        if (transitionStyle == 0) {
+            return null;
+        }
+        
+        //TypedArray attrs = mActivity.obtainStyledAttributes(transitionStyle,
+        //        com.android.internal.R.styleable.FragmentAnimation);
+        //int anim = attrs.getResourceId(styleIndex, 0);
+        //attrs.recycle();
+        
+        //if (anim == 0) {
+        //    return null;
+        //}
+        
+        //return AnimatorInflater.loadAnimator(mActivity, anim);
+        return null;
     }
-
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.360 -0400", hash_original_method = "53A703CAB9B91DDAE05ABF1E3656A1E0", hash_generated_method = "0268928ADB927F87E1B334E515E7C338")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.531 -0500", hash_original_method = "53A703CAB9B91DDAE05ABF1E3656A1E0", hash_generated_method = "90E358B51EA9A9C0CD1F76745C968E1C")
     public void performPendingDeferredStart(Fragment f) {
-        addTaint(f.getTaint());
-        if(f.mDeferStart)        
-        {
-            if(mExecutingActions)            
-            {
+        if (f.mDeferStart) {
+            if (mExecutingActions) {
+                // Wait until we're done executing our pending transactions
                 mHavePendingDeferredStart = true;
                 return;
-            } //End block
+            }
             f.mDeferStart = false;
             moveToState(f, mCurState, 0, 0, false);
-        } //End block
-        // ---------- Original Method ----------
-        //if (f.mDeferStart) {
-            //if (mExecutingActions) {
-                //mHavePendingDeferredStart = true;
-                //return;
-            //}
-            //f.mDeferStart = false;
-            //moveToState(f, mCurState, 0, 0, false);
-        //}
+        }
     }
 
     
@@ -1226,41 +1137,24 @@ switch(f.mState){
                         final Fragment fragment = f;
                         f.mAnimatingAway = f.mView;
                         f.mStateAfterAnimating = newState;
-                        anim.setAnimationListener(new AnimationListener() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.362 -0400", hash_original_method = "ADB37ED087A6B8FD09A7637E04A46959", hash_generated_method = "D4E741AD38CFCD8C66F7F7C330EF18D9")
-        @Override
-        public void onAnimationEnd(Animation animation) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
-            addTaint(animation.getTaint());
-            if(fragment.mAnimatingAway != null)            
-            {
-                fragment.mAnimatingAway = null;
-                moveToState(fragment, fragment.mStateAfterAnimating,
+                        anim.setAnimationListener(new AnimationListener() {
+                                    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.533 -0500", hash_original_method = "ADB37ED087A6B8FD09A7637E04A46959", hash_generated_method = "053CF852A702205FC2C67D728C4DE83C")
+                                @Override
+public void onAnimationEnd(Animation animation) {
+                                        if (fragment.mAnimatingAway != null) {
+                                            fragment.mAnimatingAway = null;
+                                            moveToState(fragment, fragment.mStateAfterAnimating,
                                                     0, 0, false);
-            } //End block
-            // ---------- Original Method ----------
-            //if (fragment.mAnimatingAway != null) {
-                                            //fragment.mAnimatingAway = null;
-                                            //moveToState(fragment, fragment.mStateAfterAnimating,
-                                                    //0, 0, false);
-                                        //}
-        }
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.362 -0400", hash_original_method = "C6539FC3721A6B610C21747FF87D7A97", hash_generated_method = "58C626A9D98C5CFBF993A93EFEF59553")
-        @Override
-        public void onAnimationRepeat(Animation animation) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
-            addTaint(animation.getTaint());
-            // ---------- Original Method ----------
-        }
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.362 -0400", hash_original_method = "72AD432A5D6B612A6CC4174C0C1E057D", hash_generated_method = "E455F4DC332660DC5ADFD15AC2AD6C17")
-        @Override
-        public void onAnimationStart(Animation animation) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
-            addTaint(animation.getTaint());
-            // ---------- Original Method ----------
-        }
+                                        }
+                                    }
+                                    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.534 -0500", hash_original_method = "C6539FC3721A6B610C21747FF87D7A97", hash_generated_method = "725FC2A3344A4EFF255A4B9E3BABFD36")
+                                @Override
+public void onAnimationRepeat(Animation animation) {
+                                    }
+                                    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.535 -0500", hash_original_method = "72AD432A5D6B612A6CC4174C0C1E057D", hash_generated_method = "A6AC1F92BDB133FFE34989B712783586")
+                                @Override
+public void onAnimationStart(Animation animation) {
+                                    }
 });
                         f.mView.startAnimation(anim);
                     } //End block
@@ -1322,1401 +1216,877 @@ switch(f.mState){
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
-
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.364 -0400", hash_original_method = "253ACA6E8863F76AC823063DED921CB5", hash_generated_method = "56F34721617E29762767CD0271D99AB6")
-     void moveToState(Fragment f) {
-        addTaint(f.getTaint());
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.538 -0500", hash_original_method = "253ACA6E8863F76AC823063DED921CB5", hash_generated_method = "253ACA6E8863F76AC823063DED921CB5")
+    void moveToState(Fragment f) {
         moveToState(f, mCurState, 0, 0, false);
-        // ---------- Original Method ----------
-        //moveToState(f, mCurState, 0, 0, false);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.364 -0400", hash_original_method = "4A2DC4C23578532593EF5B01DCA60326", hash_generated_method = "53B9318E7A6D27AF1F540337F095D441")
-     void moveToState(int newState, boolean always) {
-        addTaint(always);
-        addTaint(newState);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.539 -0500", hash_original_method = "4A2DC4C23578532593EF5B01DCA60326", hash_generated_method = "4A2DC4C23578532593EF5B01DCA60326")
+    void moveToState(int newState, boolean always) {
         moveToState(newState, 0, 0, always);
-        // ---------- Original Method ----------
-        //moveToState(newState, 0, 0, always);
     }
-
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.368 -0400", hash_original_method = "5BD27BFF276D517E1379D91A3F7AF343", hash_generated_method = "EFD23F08D55342DEED5504B5C3CB41B0")
-     void moveToState(int newState, int transit, int transitStyle, boolean always) {
-        addTaint(always);
-        addTaint(transitStyle);
-        addTaint(transit);
-        if(mActivity == null && newState != Fragment.INITIALIZING)        
-        {
-            IllegalStateException varC7A3C53EE722E6B94E737EE4538375FA_387733483 = new IllegalStateException("No activity");
-            varC7A3C53EE722E6B94E737EE4538375FA_387733483.addTaint(taint);
-            throw varC7A3C53EE722E6B94E737EE4538375FA_387733483;
-        } //End block
-        if(!always && mCurState == newState)        
-        {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.540 -0500", hash_original_method = "5BD27BFF276D517E1379D91A3F7AF343", hash_generated_method = "5BD27BFF276D517E1379D91A3F7AF343")
+    void moveToState(int newState, int transit, int transitStyle, boolean always) {
+        if (mActivity == null && newState != Fragment.INITIALIZING) {
+            throw new IllegalStateException("No activity");
+        }
+
+        if (!always && mCurState == newState) {
             return;
-        } //End block
+        }
+
         mCurState = newState;
-        if(mActive != null)        
-        {
+        if (mActive != null) {
             boolean loadersRunning = false;
-for(int i=0;i<mActive.size();i++)
-            {
+            for (int i=0; i<mActive.size(); i++) {
                 Fragment f = mActive.get(i);
-                if(f != null)                
-                {
+                if (f != null) {
                     moveToState(f, newState, transit, transitStyle, false);
-                    if(f.mLoaderManager != null)                    
-                    {
+                    if (f.mLoaderManager != null) {
                         loadersRunning |= f.mLoaderManager.hasRunningLoaders();
-                    } //End block
-                } //End block
-            } //End block
-            if(!loadersRunning)            
-            {
+                    }
+                }
+            }
+
+            if (!loadersRunning) {
                 startPendingDeferredFragments();
-            } //End block
-            if(mNeedMenuInvalidate && mActivity != null && mCurState == Fragment.RESUMED)            
-            {
+            }
+
+            if (mNeedMenuInvalidate && mActivity != null && mCurState == Fragment.RESUMED) {
                 mActivity.supportInvalidateOptionsMenu();
                 mNeedMenuInvalidate = false;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            }
+        }
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.368 -0400", hash_original_method = "CCAA4C21D5B5313253593374D7FC1754", hash_generated_method = "DA1D2CEA990D2C426A9BF529124CB3B6")
-     void startPendingDeferredFragments() {
-        if(mActive == null)        
-        return;
-for(int i=0;i<mActive.size();i++)
-        {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.541 -0500", hash_original_method = "CCAA4C21D5B5313253593374D7FC1754", hash_generated_method = "CCAA4C21D5B5313253593374D7FC1754")
+    void startPendingDeferredFragments() {
+        if (mActive == null) return;
+
+        for (int i=0; i<mActive.size(); i++) {
             Fragment f = mActive.get(i);
-            if(f != null)            
-            {
+            if (f != null) {
                 performPendingDeferredStart(f);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (mActive == null) return;
-        //for (int i=0; i<mActive.size(); i++) {
-            //Fragment f = mActive.get(i);
-            //if (f != null) {
-                //performPendingDeferredStart(f);
-            //}
-        //}
+            }
+        }
     }
-
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.368 -0400", hash_original_method = "47E8AE46DB9C6E9F4895918BFF9C77EF", hash_generated_method = "8AF906A64B39554F8DC748B1AA0175C8")
-     void makeActive(Fragment f) {
-        addTaint(f.getTaint());
-        if(f.mIndex >= 0)        
-        {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.542 -0500", hash_original_method = "47E8AE46DB9C6E9F4895918BFF9C77EF", hash_generated_method = "47E8AE46DB9C6E9F4895918BFF9C77EF")
+    void makeActive(Fragment f) {
+        if (f.mIndex >= 0) {
             return;
-        } //End block
-        if(mAvailIndices == null || mAvailIndices.size() <= 0)        
-        {
-            if(mActive == null)            
-            {
+        }
+        
+        if (mAvailIndices == null || mAvailIndices.size() <= 0) {
+            if (mActive == null) {
                 mActive = new ArrayList<Fragment>();
-            } //End block
+            }
             f.setIndex(mActive.size(), mParent);
             mActive.add(f);
-        } //End block
-        else
-        {
+            
+        } else {
             f.setIndex(mAvailIndices.remove(mAvailIndices.size()-1), mParent);
             mActive.set(f.mIndex, f);
-        } //End block
-        if(DEBUG){ }
-        // ---------- Original Method ----------
-        //if (f.mIndex >= 0) {
-            //return;
-        //}
-        //if (mAvailIndices == null || mAvailIndices.size() <= 0) {
-            //if (mActive == null) {
-                //mActive = new ArrayList<Fragment>();
-            //}
-            //f.setIndex(mActive.size(), mParent);
-            //mActive.add(f);
-        //} else {
-            //f.setIndex(mAvailIndices.remove(mAvailIndices.size()-1), mParent);
-            //mActive.set(f.mIndex, f);
-        //}
-        //if (DEBUG) Log.v(TAG, "Allocated fragment index " + f);
+        }
+        if (DEBUG) Log.v(TAG, "Allocated fragment index " + f);
     }
-
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.368 -0400", hash_original_method = "2838DA3381C6FA665FE83DACB606EE48", hash_generated_method = "39B16E081B43E73E73331AD1338ACECE")
-     void makeInactive(Fragment f) {
-        addTaint(f.getTaint());
-        if(f.mIndex < 0)        
-        {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.543 -0500", hash_original_method = "2838DA3381C6FA665FE83DACB606EE48", hash_generated_method = "2838DA3381C6FA665FE83DACB606EE48")
+    void makeInactive(Fragment f) {
+        if (f.mIndex < 0) {
             return;
-        } //End block
-        if(DEBUG){ }        mActive.set(f.mIndex, null);
-        if(mAvailIndices == null)        
-        {
+        }
+        
+        if (DEBUG) Log.v(TAG, "Freeing fragment index " + f);
+        mActive.set(f.mIndex, null);
+        if (mAvailIndices == null) {
             mAvailIndices = new ArrayList<Integer>();
-        } //End block
+        }
         mAvailIndices.add(f.mIndex);
         mActivity.invalidateSupportFragment(f.mWho);
         f.initState();
-        // ---------- Original Method ----------
-        //if (f.mIndex < 0) {
-            //return;
-        //}
-        //if (DEBUG) Log.v(TAG, "Freeing fragment index " + f);
-        //mActive.set(f.mIndex, null);
-        //if (mAvailIndices == null) {
-            //mAvailIndices = new ArrayList<Integer>();
-        //}
-        //mAvailIndices.add(f.mIndex);
-        //mActivity.invalidateSupportFragment(f.mWho);
-        //f.initState();
     }
-
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.369 -0400", hash_original_method = "A7004D7E770917F1698CC4D8DC4A636A", hash_generated_method = "6132A296DD27AE4A66021E73CAAA1576")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.543 -0500", hash_original_method = "A7004D7E770917F1698CC4D8DC4A636A", hash_generated_method = "5D45CD6D3E99FF60725B0A5E5430390F")
     public void addFragment(Fragment fragment, boolean moveToStateNow) {
-        addTaint(moveToStateNow);
-        if(mAdded == null)        
-        {
+        if (mAdded == null) {
             mAdded = new ArrayList<Fragment>();
-        } //End block
-        if(DEBUG){ }        makeActive(fragment);
-        if(!fragment.mDetached)        
-        {
-            if(mAdded.contains(fragment))            
-            {
-                IllegalStateException varF8622297B19FD38FB90DFF83821629C6_1079475362 = new IllegalStateException("Fragment already added: " + fragment);
-                varF8622297B19FD38FB90DFF83821629C6_1079475362.addTaint(taint);
-                throw varF8622297B19FD38FB90DFF83821629C6_1079475362;
-            } //End block
+        }
+        if (DEBUG) Log.v(TAG, "add: " + fragment);
+        makeActive(fragment);
+        if (!fragment.mDetached) {
+            if (mAdded.contains(fragment)) {
+                throw new IllegalStateException("Fragment already added: " + fragment);
+            }
             mAdded.add(fragment);
             fragment.mAdded = true;
             fragment.mRemoving = false;
-            if(fragment.mHasMenu && fragment.mMenuVisible)            
-            {
+            if (fragment.mHasMenu && fragment.mMenuVisible) {
                 mNeedMenuInvalidate = true;
-            } //End block
-            if(moveToStateNow)            
-            {
+            }
+            if (moveToStateNow) {
                 moveToState(fragment);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (mAdded == null) {
-            //mAdded = new ArrayList<Fragment>();
-        //}
-        //if (DEBUG) Log.v(TAG, "add: " + fragment);
-        //makeActive(fragment);
-        //if (!fragment.mDetached) {
-            //if (mAdded.contains(fragment)) {
-                //throw new IllegalStateException("Fragment already added: " + fragment);
-            //}
-            //mAdded.add(fragment);
-            //fragment.mAdded = true;
-            //fragment.mRemoving = false;
-            //if (fragment.mHasMenu && fragment.mMenuVisible) {
-                //mNeedMenuInvalidate = true;
-            //}
-            //if (moveToStateNow) {
-                //moveToState(fragment);
-            //}
-        //}
+            }
+        }
     }
-
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.369 -0400", hash_original_method = "13B3CB0CAD8C045C67262987362B8EBE", hash_generated_method = "B892B2B64588741F86AB08F708C75035")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.545 -0500", hash_original_method = "13B3CB0CAD8C045C67262987362B8EBE", hash_generated_method = "845DE82CC508519CDA5C39A0AB602C5E")
     public void removeFragment(Fragment fragment, int transition, int transitionStyle) {
-        addTaint(transitionStyle);
-        addTaint(transition);
-        if(DEBUG){ }        final boolean inactive = !fragment.isInBackStack();
-        if(!fragment.mDetached || inactive)        
-        {
-            if(mAdded != null)            
-            {
+        if (DEBUG) Log.v(TAG, "remove: " + fragment + " nesting=" + fragment.mBackStackNesting);
+        final boolean inactive = !fragment.isInBackStack();
+        if (!fragment.mDetached || inactive) {
+            if (mAdded != null) {
                 mAdded.remove(fragment);
-            } //End block
-            if(fragment.mHasMenu && fragment.mMenuVisible)            
-            {
+            }
+            if (fragment.mHasMenu && fragment.mMenuVisible) {
                 mNeedMenuInvalidate = true;
-            } //End block
+            }
             fragment.mAdded = false;
             fragment.mRemoving = true;
             moveToState(fragment, inactive ? Fragment.INITIALIZING : Fragment.CREATED,
                     transition, transitionStyle, false);
-        } //End block
-        // ---------- Original Method ----------
-        //if (DEBUG) Log.v(TAG, "remove: " + fragment + " nesting=" + fragment.mBackStackNesting);
-        //final boolean inactive = !fragment.isInBackStack();
-        //if (!fragment.mDetached || inactive) {
-            //if (mAdded != null) {
-                //mAdded.remove(fragment);
-            //}
-            //if (fragment.mHasMenu && fragment.mMenuVisible) {
-                //mNeedMenuInvalidate = true;
-            //}
-            //fragment.mAdded = false;
-            //fragment.mRemoving = true;
-            //moveToState(fragment, inactive ? Fragment.INITIALIZING : Fragment.CREATED,
-                    //transition, transitionStyle, false);
-        //}
+        }
     }
-
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.371 -0400", hash_original_method = "BED4301A21B487BD6D143A374885F309", hash_generated_method = "45302BF89AA3F40CB3528EA7AE45D526")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.546 -0500", hash_original_method = "BED4301A21B487BD6D143A374885F309", hash_generated_method = "E028155D11E6141129253F8A0FCB33CB")
     public void hideFragment(Fragment fragment, int transition, int transitionStyle) {
-        addTaint(transitionStyle);
-        addTaint(transition);
-        addTaint(fragment.getTaint());
-        if(DEBUG){ }        if(!fragment.mHidden)        
-        {
+        if (DEBUG) Log.v(TAG, "hide: " + fragment);
+        if (!fragment.mHidden) {
             fragment.mHidden = true;
-            if(fragment.mView != null)            
-            {
+            if (fragment.mView != null) {
                 Animation anim = loadAnimation(fragment, transition, false,
                         transitionStyle);
-                if(anim != null)                
-                {
+                if (anim != null) {
                     fragment.mView.startAnimation(anim);
-                } //End block
+                }
                 fragment.mView.setVisibility(View.GONE);
-            } //End block
-            if(fragment.mAdded && fragment.mHasMenu && fragment.mMenuVisible)            
-            {
+            }
+            if (fragment.mAdded && fragment.mHasMenu && fragment.mMenuVisible) {
                 mNeedMenuInvalidate = true;
-            } //End block
+            }
             fragment.onHiddenChanged(true);
-        } //End block
-        // ---------- Original Method ----------
-        //if (DEBUG) Log.v(TAG, "hide: " + fragment);
-        //if (!fragment.mHidden) {
-            //fragment.mHidden = true;
-            //if (fragment.mView != null) {
-                //Animation anim = loadAnimation(fragment, transition, false,
-                        //transitionStyle);
-                //if (anim != null) {
-                    //fragment.mView.startAnimation(anim);
-                //}
-                //fragment.mView.setVisibility(View.GONE);
-            //}
-            //if (fragment.mAdded && fragment.mHasMenu && fragment.mMenuVisible) {
-                //mNeedMenuInvalidate = true;
-            //}
-            //fragment.onHiddenChanged(true);
-        //}
+        }
     }
-
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.371 -0400", hash_original_method = "5884A689188772E4B067D85FA0FE2485", hash_generated_method = "1C17D4C00A40496FFBAA3CF2F8AC9E7C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.547 -0500", hash_original_method = "5884A689188772E4B067D85FA0FE2485", hash_generated_method = "A4C8B7377C9F34FB70B82BC0F478C522")
     public void showFragment(Fragment fragment, int transition, int transitionStyle) {
-        addTaint(transitionStyle);
-        addTaint(transition);
-        addTaint(fragment.getTaint());
-        if(DEBUG){ }        if(fragment.mHidden)        
-        {
+        if (DEBUG) Log.v(TAG, "show: " + fragment);
+        if (fragment.mHidden) {
             fragment.mHidden = false;
-            if(fragment.mView != null)            
-            {
+            if (fragment.mView != null) {
                 Animation anim = loadAnimation(fragment, transition, true,
                         transitionStyle);
-                if(anim != null)                
-                {
+                if (anim != null) {
                     fragment.mView.startAnimation(anim);
-                } //End block
+                }
                 fragment.mView.setVisibility(View.VISIBLE);
-            } //End block
-            if(fragment.mAdded && fragment.mHasMenu && fragment.mMenuVisible)            
-            {
+            }
+            if (fragment.mAdded && fragment.mHasMenu && fragment.mMenuVisible) {
                 mNeedMenuInvalidate = true;
-            } //End block
+            }
             fragment.onHiddenChanged(false);
-        } //End block
-        // ---------- Original Method ----------
-        //if (DEBUG) Log.v(TAG, "show: " + fragment);
-        //if (fragment.mHidden) {
-            //fragment.mHidden = false;
-            //if (fragment.mView != null) {
-                //Animation anim = loadAnimation(fragment, transition, true,
-                        //transitionStyle);
-                //if (anim != null) {
-                    //fragment.mView.startAnimation(anim);
-                //}
-                //fragment.mView.setVisibility(View.VISIBLE);
-            //}
-            //if (fragment.mAdded && fragment.mHasMenu && fragment.mMenuVisible) {
-                //mNeedMenuInvalidate = true;
-            //}
-            //fragment.onHiddenChanged(false);
-        //}
+        }
     }
-
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.374 -0400", hash_original_method = "8ADA384A2A804F3DB8950E51751AE080", hash_generated_method = "07E1DCC0618AAA0D51BE548BF2130014")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.548 -0500", hash_original_method = "8ADA384A2A804F3DB8950E51751AE080", hash_generated_method = "8FEE67764484A2C0857EC0E768956DF6")
     public void detachFragment(Fragment fragment, int transition, int transitionStyle) {
-        addTaint(transitionStyle);
-        addTaint(transition);
-        if(DEBUG){ }        if(!fragment.mDetached)        
-        {
+        if (DEBUG) Log.v(TAG, "detach: " + fragment);
+        if (!fragment.mDetached) {
             fragment.mDetached = true;
-            if(fragment.mAdded)            
-            {
-                if(mAdded != null)                
-                {
-                    if(DEBUG){ }                    mAdded.remove(fragment);
-                } //End block
-                if(fragment.mHasMenu && fragment.mMenuVisible)                
-                {
+            if (fragment.mAdded) {
+                // We are not already in back stack, so need to remove the fragment.
+                if (mAdded != null) {
+                    if (DEBUG) Log.v(TAG, "remove from detach: " + fragment);
+                    mAdded.remove(fragment);
+                }
+                if (fragment.mHasMenu && fragment.mMenuVisible) {
                     mNeedMenuInvalidate = true;
-                } //End block
+                }
                 fragment.mAdded = false;
                 moveToState(fragment, Fragment.CREATED, transition, transitionStyle, false);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (DEBUG) Log.v(TAG, "detach: " + fragment);
-        //if (!fragment.mDetached) {
-            //fragment.mDetached = true;
-            //if (fragment.mAdded) {
-                //if (mAdded != null) {
-                    //if (DEBUG) Log.v(TAG, "remove from detach: " + fragment);
-                    //mAdded.remove(fragment);
-                //}
-                //if (fragment.mHasMenu && fragment.mMenuVisible) {
-                    //mNeedMenuInvalidate = true;
-                //}
-                //fragment.mAdded = false;
-                //moveToState(fragment, Fragment.CREATED, transition, transitionStyle, false);
-            //}
-        //}
+            }
+        }
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.375 -0400", hash_original_method = "C689EB45F7FDDB493496798809CCC982", hash_generated_method = "45240522BDAE2B47974D767A6A835D8B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.549 -0500", hash_original_method = "C689EB45F7FDDB493496798809CCC982", hash_generated_method = "241454DBAFC49A612A7BCF6A616F6F81")
     public void attachFragment(Fragment fragment, int transition, int transitionStyle) {
-        addTaint(transitionStyle);
-        addTaint(transition);
-        if(DEBUG){ }        if(fragment.mDetached)        
-        {
+        if (DEBUG) Log.v(TAG, "attach: " + fragment);
+        if (fragment.mDetached) {
             fragment.mDetached = false;
-            if(!fragment.mAdded)            
-            {
-                if(mAdded == null)                
-                {
+            if (!fragment.mAdded) {
+                if (mAdded == null) {
                     mAdded = new ArrayList<Fragment>();
-                } //End block
-                if(mAdded.contains(fragment))                
-                {
-                    IllegalStateException varF8622297B19FD38FB90DFF83821629C6_1010682735 = new IllegalStateException("Fragment already added: " + fragment);
-                    varF8622297B19FD38FB90DFF83821629C6_1010682735.addTaint(taint);
-                    throw varF8622297B19FD38FB90DFF83821629C6_1010682735;
-                } //End block
-                if(DEBUG){ }                mAdded.add(fragment);
+                }
+                if (mAdded.contains(fragment)) {
+                    throw new IllegalStateException("Fragment already added: " + fragment);
+                }
+                if (DEBUG) Log.v(TAG, "add from attach: " + fragment);
+                mAdded.add(fragment);
                 fragment.mAdded = true;
-                if(fragment.mHasMenu && fragment.mMenuVisible)                
-                {
+                if (fragment.mHasMenu && fragment.mMenuVisible) {
                     mNeedMenuInvalidate = true;
-                } //End block
+                }
                 moveToState(fragment, mCurState, transition, transitionStyle, false);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            }
+        }
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.375 -0400", hash_original_method = "369BBF881289C60802E9A80BDB6F1062", hash_generated_method = "F1A2883CB21F2177F87A6C863FF77AC3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.551 -0500", hash_original_method = "369BBF881289C60802E9A80BDB6F1062", hash_generated_method = "9736C645D83BDCF63F853870AD11DBCE")
     public Fragment findFragmentById(int id) {
-        addTaint(id);
-        if(mAdded != null)        
-        {
-for(int i=mAdded.size()-1;i>=0;i--)
-            {
+        if (mAdded != null) {
+            // First look through added fragments.
+            for (int i=mAdded.size()-1; i>=0; i--) {
                 Fragment f = mAdded.get(i);
-                if(f != null && f.mFragmentId == id)                
-                {
-Fragment varABE3CFB53FE4A79F34CB25BC80BFD6E2_798467115 =                     f;
-                    varABE3CFB53FE4A79F34CB25BC80BFD6E2_798467115.addTaint(taint);
-                    return varABE3CFB53FE4A79F34CB25BC80BFD6E2_798467115;
-                } //End block
-            } //End block
-        } //End block
-        if(mActive != null)        
-        {
-for(int i=mActive.size()-1;i>=0;i--)
-            {
+                if (f != null && f.mFragmentId == id) {
+                    return f;
+                }
+            }
+        }
+        if (mActive != null) {
+            // Now for any known fragment.
+            for (int i=mActive.size()-1; i>=0; i--) {
                 Fragment f = mActive.get(i);
-                if(f != null && f.mFragmentId == id)                
-                {
-Fragment varABE3CFB53FE4A79F34CB25BC80BFD6E2_1269322070 =                     f;
-                    varABE3CFB53FE4A79F34CB25BC80BFD6E2_1269322070.addTaint(taint);
-                    return varABE3CFB53FE4A79F34CB25BC80BFD6E2_1269322070;
-                } //End block
-            } //End block
-        } //End block
-Fragment var540C13E9E156B687226421B24F2DF178_1448717733 =         null;
-        var540C13E9E156B687226421B24F2DF178_1448717733.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_1448717733;
-        // ---------- Original Method ----------
-        //if (mAdded != null) {
-            //for (int i=mAdded.size()-1; i>=0; i--) {
-                //Fragment f = mAdded.get(i);
-                //if (f != null && f.mFragmentId == id) {
-                    //return f;
-                //}
-            //}
-        //}
-        //if (mActive != null) {
-            //for (int i=mActive.size()-1; i>=0; i--) {
-                //Fragment f = mActive.get(i);
-                //if (f != null && f.mFragmentId == id) {
-                    //return f;
-                //}
-            //}
-        //}
-        //return null;
+                if (f != null && f.mFragmentId == id) {
+                    return f;
+                }
+            }
+        }
+        return null;
     }
-
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.376 -0400", hash_original_method = "A116F7F22C8FEEEBB3418EA3417C69EB", hash_generated_method = "19F57F33F23225BDABE4DE41D1AC7499")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.552 -0500", hash_original_method = "A116F7F22C8FEEEBB3418EA3417C69EB", hash_generated_method = "1A1DDE994C81088F0B8A437B3EB43E78")
     public Fragment findFragmentByTag(String tag) {
-        addTaint(tag.getTaint());
-        if(mAdded != null && tag != null)        
-        {
-for(int i=mAdded.size()-1;i>=0;i--)
-            {
+        if (mAdded != null && tag != null) {
+            // First look through added fragments.
+            for (int i=mAdded.size()-1; i>=0; i--) {
                 Fragment f = mAdded.get(i);
-                if(f != null && tag.equals(f.mTag))                
-                {
-Fragment varABE3CFB53FE4A79F34CB25BC80BFD6E2_448022284 =                     f;
-                    varABE3CFB53FE4A79F34CB25BC80BFD6E2_448022284.addTaint(taint);
-                    return varABE3CFB53FE4A79F34CB25BC80BFD6E2_448022284;
-                } //End block
-            } //End block
-        } //End block
-        if(mActive != null && tag != null)        
-        {
-for(int i=mActive.size()-1;i>=0;i--)
-            {
+                if (f != null && tag.equals(f.mTag)) {
+                    return f;
+                }
+            }
+        }
+        if (mActive != null && tag != null) {
+            // Now for any known fragment.
+            for (int i=mActive.size()-1; i>=0; i--) {
                 Fragment f = mActive.get(i);
-                if(f != null && tag.equals(f.mTag))                
-                {
-Fragment varABE3CFB53FE4A79F34CB25BC80BFD6E2_763170087 =                     f;
-                    varABE3CFB53FE4A79F34CB25BC80BFD6E2_763170087.addTaint(taint);
-                    return varABE3CFB53FE4A79F34CB25BC80BFD6E2_763170087;
-                } //End block
-            } //End block
-        } //End block
-Fragment var540C13E9E156B687226421B24F2DF178_1853822038 =         null;
-        var540C13E9E156B687226421B24F2DF178_1853822038.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_1853822038;
-        // ---------- Original Method ----------
-        //if (mAdded != null && tag != null) {
-            //for (int i=mAdded.size()-1; i>=0; i--) {
-                //Fragment f = mAdded.get(i);
-                //if (f != null && tag.equals(f.mTag)) {
-                    //return f;
-                //}
-            //}
-        //}
-        //if (mActive != null && tag != null) {
-            //for (int i=mActive.size()-1; i>=0; i--) {
-                //Fragment f = mActive.get(i);
-                //if (f != null && tag.equals(f.mTag)) {
-                    //return f;
-                //}
-            //}
-        //}
-        //return null;
+                if (f != null && tag.equals(f.mTag)) {
+                    return f;
+                }
+            }
+        }
+        return null;
     }
-
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.377 -0400", hash_original_method = "9082D0FF97F62C4058EE52B6A6365151", hash_generated_method = "59C7FD9473FB02DD5909B2AEB1A7B235")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.553 -0500", hash_original_method = "9082D0FF97F62C4058EE52B6A6365151", hash_generated_method = "81870B04F09304DD497F7A14051F7370")
     public Fragment findFragmentByWho(String who) {
-        addTaint(who.getTaint());
-        if(mActive != null && who != null)        
-        {
-for(int i=mActive.size()-1;i>=0;i--)
-            {
+        if (mActive != null && who != null) {
+            for (int i=mActive.size()-1; i>=0; i--) {
                 Fragment f = mActive.get(i);
-                if(f != null && (f=f.findFragmentByWho(who)) != null)                
-                {
-Fragment varABE3CFB53FE4A79F34CB25BC80BFD6E2_2044892600 =                     f;
-                    varABE3CFB53FE4A79F34CB25BC80BFD6E2_2044892600.addTaint(taint);
-                    return varABE3CFB53FE4A79F34CB25BC80BFD6E2_2044892600;
-                } //End block
-            } //End block
-        } //End block
-Fragment var540C13E9E156B687226421B24F2DF178_2006706304 =         null;
-        var540C13E9E156B687226421B24F2DF178_2006706304.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_2006706304;
-        // ---------- Original Method ----------
-        //if (mActive != null && who != null) {
-            //for (int i=mActive.size()-1; i>=0; i--) {
-                //Fragment f = mActive.get(i);
-                //if (f != null && (f=f.findFragmentByWho(who)) != null) {
-                    //return f;
-                //}
-            //}
-        //}
-        //return null;
+                if (f != null && (f=f.findFragmentByWho(who)) != null) {
+                    return f;
+                }
+            }
+        }
+        return null;
     }
-
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.377 -0400", hash_original_method = "B87B380B690A16EB7F37B7EE1C0A0D26", hash_generated_method = "64DA60204D2CA76D4D3DB55BFC82B84F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.554 -0500", hash_original_method = "B87B380B690A16EB7F37B7EE1C0A0D26", hash_generated_method = "AD151F1BDA94909FC4C898DCA0920366")
     private void checkStateLoss() {
-        if(mStateSaved)        
-        {
-            IllegalStateException var23A2D8DE9FCE1D4473820F88EF278183_444478815 = new IllegalStateException(
+        if (mStateSaved) {
+            throw new IllegalStateException(
                     "Can not perform this action after onSaveInstanceState");
-            var23A2D8DE9FCE1D4473820F88EF278183_444478815.addTaint(taint);
-            throw var23A2D8DE9FCE1D4473820F88EF278183_444478815;
-        } //End block
-        if(mNoTransactionsBecause != null)        
-        {
-            IllegalStateException varD5A6267DF986948EB71369DC13B836F0_1051580463 = new IllegalStateException(
+        }
+        if (mNoTransactionsBecause != null) {
+            throw new IllegalStateException(
                     "Can not perform this action inside of " + mNoTransactionsBecause);
-            varD5A6267DF986948EB71369DC13B836F0_1051580463.addTaint(taint);
-            throw varD5A6267DF986948EB71369DC13B836F0_1051580463;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mStateSaved) {
-            //throw new IllegalStateException(
-                    //"Can not perform this action after onSaveInstanceState");
-        //}
-        //if (mNoTransactionsBecause != null) {
-            //throw new IllegalStateException(
-                    //"Can not perform this action inside of " + mNoTransactionsBecause);
-        //}
+        }
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.377 -0400", hash_original_method = "32359130EC903AF4E096237D1F067453", hash_generated_method = "BEC7AEC94C690A449644CBEBF4A48525")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.555 -0500", hash_original_method = "32359130EC903AF4E096237D1F067453", hash_generated_method = "A32C82F2A4A576D4BCE79316882D08F9")
     public void enqueueAction(Runnable action, boolean allowStateLoss) {
-        addTaint(allowStateLoss);
-        addTaint(action.getTaint());
-        if(!allowStateLoss)        
-        {
+        if (!allowStateLoss) {
             checkStateLoss();
-        } //End block
-        synchronized
-(this)        {
-            if(mActivity == null)            
-            {
-                IllegalStateException var49610257A997B6EC5B28B22BBA4534E2_172666855 = new IllegalStateException("Activity has been destroyed");
-                var49610257A997B6EC5B28B22BBA4534E2_172666855.addTaint(taint);
-                throw var49610257A997B6EC5B28B22BBA4534E2_172666855;
-            } //End block
-            if(mPendingActions == null)            
-            {
+        }
+        synchronized (this) {
+            if (mActivity == null) {
+                throw new IllegalStateException("Activity has been destroyed");
+            }
+            if (mPendingActions == null) {
                 mPendingActions = new ArrayList<Runnable>();
-            } //End block
+            }
             mPendingActions.add(action);
-            if(mPendingActions.size() == 1)            
-            {
+            if (mPendingActions.size() == 1) {
                 mActivity.mHandler.removeCallbacks(mExecCommit);
                 mActivity.mHandler.post(mExecCommit);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (!allowStateLoss) {
-            //checkStateLoss();
-        //}
-        //synchronized (this) {
-            //if (mActivity == null) {
-                //throw new IllegalStateException("Activity has been destroyed");
-            //}
-            //if (mPendingActions == null) {
-                //mPendingActions = new ArrayList<Runnable>();
-            //}
-            //mPendingActions.add(action);
-            //if (mPendingActions.size() == 1) {
-                //mActivity.mHandler.removeCallbacks(mExecCommit);
-                //mActivity.mHandler.post(mExecCommit);
-            //}
-        //}
+            }
+        }
     }
-
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.381 -0400", hash_original_method = "1503673DA6CC1FF53261337C6A89F6BE", hash_generated_method = "8887C80BA6DDD7EA129BB402FE8521DB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.556 -0500", hash_original_method = "1503673DA6CC1FF53261337C6A89F6BE", hash_generated_method = "8EAB5C9686F912917B3BCA15DDEA45E8")
     public int allocBackStackIndex(BackStackRecord bse) {
-        addTaint(bse.getTaint());
-        synchronized
-(this)        {
-            if(mAvailBackStackIndices == null || mAvailBackStackIndices.size() <= 0)            
-            {
-                if(mBackStackIndices == null)                
-                {
+        synchronized (this) {
+            if (mAvailBackStackIndices == null || mAvailBackStackIndices.size() <= 0) {
+                if (mBackStackIndices == null) {
                     mBackStackIndices = new ArrayList<BackStackRecord>();
-                } //End block
+                }
                 int index = mBackStackIndices.size();
-                if(DEBUG){ }                mBackStackIndices.add(bse);
-                int var6A992D5529F459A44FEE58C733255E86_778937521 = (index);
-                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1584378570 = getTaintInt();
-                return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1584378570;
-            } //End block
-            else
-            {
+                if (DEBUG) Log.v(TAG, "Setting back stack index " + index + " to " + bse);
+                mBackStackIndices.add(bse);
+                return index;
+
+            } else {
                 int index = mAvailBackStackIndices.remove(mAvailBackStackIndices.size()-1);
-                if(DEBUG){ }                mBackStackIndices.set(index, bse);
-                int var6A992D5529F459A44FEE58C733255E86_1605950927 = (index);
-                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1588474513 = getTaintInt();
-                return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1588474513;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //if (mAvailBackStackIndices == null || mAvailBackStackIndices.size() <= 0) {
-                //if (mBackStackIndices == null) {
-                    //mBackStackIndices = new ArrayList<BackStackRecord>();
-                //}
-                //int index = mBackStackIndices.size();
-                //if (DEBUG) Log.v(TAG, "Setting back stack index " + index + " to " + bse);
-                //mBackStackIndices.add(bse);
-                //return index;
-            //} else {
-                //int index = mAvailBackStackIndices.remove(mAvailBackStackIndices.size()-1);
-                //if (DEBUG) Log.v(TAG, "Adding back stack index " + index + " with " + bse);
-                //mBackStackIndices.set(index, bse);
-                //return index;
-            //}
-        //}
+                if (DEBUG) Log.v(TAG, "Adding back stack index " + index + " with " + bse);
+                mBackStackIndices.set(index, bse);
+                return index;
+            }
+        }
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.381 -0400", hash_original_method = "F0AF804A23A686630C8F5E2012EB99F7", hash_generated_method = "B84519E754B96726FC67860D93265690")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.557 -0500", hash_original_method = "F0AF804A23A686630C8F5E2012EB99F7", hash_generated_method = "4E2FDC94FAD3569E5524DEE3B958EFF6")
     public void setBackStackIndex(int index, BackStackRecord bse) {
-        addTaint(bse.getTaint());
-        addTaint(index);
-        synchronized
-(this)        {
-            if(mBackStackIndices == null)            
-            {
+        synchronized (this) {
+            if (mBackStackIndices == null) {
                 mBackStackIndices = new ArrayList<BackStackRecord>();
-            } //End block
+            }
             int N = mBackStackIndices.size();
-            if(index < N)            
-            {
-                if(DEBUG){ }                mBackStackIndices.set(index, bse);
-            } //End block
-            else
-            {
-                while
-(N < index)                
-                {
+            if (index < N) {
+                if (DEBUG) Log.v(TAG, "Setting back stack index " + index + " to " + bse);
+                mBackStackIndices.set(index, bse);
+            } else {
+                while (N < index) {
                     mBackStackIndices.add(null);
-                    if(mAvailBackStackIndices == null)                    
-                    {
+                    if (mAvailBackStackIndices == null) {
                         mAvailBackStackIndices = new ArrayList<Integer>();
-                    } //End block
-                    if(DEBUG){ }                    mAvailBackStackIndices.add(N);
+                    }
+                    if (DEBUG) Log.v(TAG, "Adding available back stack index " + N);
+                    mAvailBackStackIndices.add(N);
                     N++;
-                } //End block
-                if(DEBUG){ }                mBackStackIndices.add(bse);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                }
+                if (DEBUG) Log.v(TAG, "Adding back stack index " + index + " with " + bse);
+                mBackStackIndices.add(bse);
+            }
+        }
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.381 -0400", hash_original_method = "A75FE5CB17552EA725360407924677A5", hash_generated_method = "BADE6125AC1A3E42ECD0633B6FD273F9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.558 -0500", hash_original_method = "A75FE5CB17552EA725360407924677A5", hash_generated_method = "34DE1872754C72E290FC496AAAF34C8D")
     public void freeBackStackIndex(int index) {
-        addTaint(index);
-        synchronized
-(this)        {
+        synchronized (this) {
             mBackStackIndices.set(index, null);
-            if(mAvailBackStackIndices == null)            
-            {
+            if (mAvailBackStackIndices == null) {
                 mAvailBackStackIndices = new ArrayList<Integer>();
-            } //End block
-            if(DEBUG){ }            mAvailBackStackIndices.add(index);
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //mBackStackIndices.set(index, null);
-            //if (mAvailBackStackIndices == null) {
-                //mAvailBackStackIndices = new ArrayList<Integer>();
-            //}
-            //if (DEBUG) Log.v(TAG, "Freeing back stack index " + index);
-            //mAvailBackStackIndices.add(index);
-        //}
+            }
+            if (DEBUG) Log.v(TAG, "Freeing back stack index " + index);
+            mAvailBackStackIndices.add(index);
+        }
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.383 -0400", hash_original_method = "2EC9B9D8ABC4926EA1F7FF85BE00D458", hash_generated_method = "85F6CDD30733FC0895C3FCDB90143C72")
+    /**
+     * Only call from main thread!
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.559 -0500", hash_original_method = "2EC9B9D8ABC4926EA1F7FF85BE00D458", hash_generated_method = "204D2702904F445488B280B0FF1C4460")
     public boolean execPendingActions() {
-        if(mExecutingActions)        
-        {
-            IllegalStateException var61DF877DA999CC3CF0E0D581264CFF4D_1756800379 = new IllegalStateException("Recursive entry to executePendingTransactions");
-            var61DF877DA999CC3CF0E0D581264CFF4D_1756800379.addTaint(taint);
-            throw var61DF877DA999CC3CF0E0D581264CFF4D_1756800379;
-        } //End block
-        if(Looper.myLooper() != mActivity.mHandler.getLooper())        
-        {
-            IllegalStateException var40716AFC80613C23595006B91BE64761_920320640 = new IllegalStateException("Must be called from main thread of process");
-            var40716AFC80613C23595006B91BE64761_920320640.addTaint(taint);
-            throw var40716AFC80613C23595006B91BE64761_920320640;
-        } //End block
+        if (mExecutingActions) {
+            throw new IllegalStateException("Recursive entry to executePendingTransactions");
+        }
+        
+        if (Looper.myLooper() != mActivity.mHandler.getLooper()) {
+            throw new IllegalStateException("Must be called from main thread of process");
+        }
+
         boolean didSomething = false;
-        while
-(true)        
-        {
+
+        while (true) {
             int numActions;
-            synchronized
-(this)            {
-                if(mPendingActions == null || mPendingActions.size() == 0)                
-                {
+            
+            synchronized (this) {
+                if (mPendingActions == null || mPendingActions.size() == 0) {
                     break;
-                } //End block
+                }
+                
                 numActions = mPendingActions.size();
-                if(mTmpActions == null || mTmpActions.length < numActions)                
-                {
+                if (mTmpActions == null || mTmpActions.length < numActions) {
                     mTmpActions = new Runnable[numActions];
-                } //End block
+                }
                 mPendingActions.toArray(mTmpActions);
                 mPendingActions.clear();
                 mActivity.mHandler.removeCallbacks(mExecCommit);
-            } //End block
+            }
+            
             mExecutingActions = true;
-for(int i=0;i<numActions;i++)
-            {
+            for (int i=0; i<numActions; i++) {
                 mTmpActions[i].run();
                 mTmpActions[i] = null;
-            } //End block
+            }
             mExecutingActions = false;
             didSomething = true;
-        } //End block
-        if(mHavePendingDeferredStart)        
-        {
+        }
+        
+        if (mHavePendingDeferredStart) {
             boolean loadersRunning = false;
-for(int i=0;i<mActive.size();i++)
-            {
+            for (int i=0; i<mActive.size(); i++) {
                 Fragment f = mActive.get(i);
-                if(f != null && f.mLoaderManager != null)                
-                {
+                if (f != null && f.mLoaderManager != null) {
                     loadersRunning |= f.mLoaderManager.hasRunningLoaders();
-                } //End block
-            } //End block
-            if(!loadersRunning)            
-            {
+                }
+            }
+            if (!loadersRunning) {
                 mHavePendingDeferredStart = false;
                 startPendingDeferredFragments();
-            } //End block
-        } //End block
-        boolean var5E507AE975F73329F3FD0F0DC8E6DE07_1956201751 = (didSomething);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1517108263 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1517108263;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            }
+        }
+        return didSomething;
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.383 -0400", hash_original_method = "480CA24D6CDDA51ECD1DFDE903041169", hash_generated_method = "48F7B93763F7745B9B8D7EDBE4BD21AF")
-     void reportBackStackChanged() {
-        if(mBackStackChangeListeners != null)        
-        {
-for(int i=0;i<mBackStackChangeListeners.size();i++)
-            {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.560 -0500", hash_original_method = "480CA24D6CDDA51ECD1DFDE903041169", hash_generated_method = "480CA24D6CDDA51ECD1DFDE903041169")
+    void reportBackStackChanged() {
+        if (mBackStackChangeListeners != null) {
+            for (int i=0; i<mBackStackChangeListeners.size(); i++) {
                 mBackStackChangeListeners.get(i).onBackStackChanged();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (mBackStackChangeListeners != null) {
-            //for (int i=0; i<mBackStackChangeListeners.size(); i++) {
-                //mBackStackChangeListeners.get(i).onBackStackChanged();
-            //}
-        //}
+            }
+        }
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.384 -0400", hash_original_method = "93C61FA561A07CB0E9B057A7A904C282", hash_generated_method = "F851EE881748A573E0434BC86BF3F067")
-     void addBackStackState(BackStackRecord state) {
-        addTaint(state.getTaint());
-        if(mBackStack == null)        
-        {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.561 -0500", hash_original_method = "93C61FA561A07CB0E9B057A7A904C282", hash_generated_method = "93C61FA561A07CB0E9B057A7A904C282")
+    void addBackStackState(BackStackRecord state) {
+        if (mBackStack == null) {
             mBackStack = new ArrayList<BackStackRecord>();
-        } //End block
+        }
         mBackStack.add(state);
         reportBackStackChanged();
-        // ---------- Original Method ----------
-        //if (mBackStack == null) {
-            //mBackStack = new ArrayList<BackStackRecord>();
-        //}
-        //mBackStack.add(state);
-        //reportBackStackChanged();
     }
-
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.386 -0400", hash_original_method = "2DCA4D0949EEA78B53FF55FD7B1EE1F8", hash_generated_method = "BD50ED4D0044895F7DCD01C70198228D")
-     boolean popBackStackState(Handler handler, String name, int id, int flags) {
-        addTaint(flags);
-        addTaint(id);
-        addTaint(name.getTaint());
-        addTaint(handler.getTaint());
-        if(mBackStack == null)        
-        {
-            boolean var68934A3E9455FA72420237EB05902327_619030040 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_878911841 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_878911841;
-        } //End block
-        if(name == null && id < 0 && (flags&POP_BACK_STACK_INCLUSIVE) == 0)        
-        {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.562 -0500", hash_original_method = "2DCA4D0949EEA78B53FF55FD7B1EE1F8", hash_generated_method = "77498A76B367759D221EC394B1246D3C")
+    boolean popBackStackState(Handler handler, String name, int id, int flags) {
+        if (mBackStack == null) {
+            return false;
+        }
+        if (name == null && id < 0 && (flags&POP_BACK_STACK_INCLUSIVE) == 0) {
             int last = mBackStack.size()-1;
-            if(last < 0)            
-            {
-                boolean var68934A3E9455FA72420237EB05902327_2126376417 = (false);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1199584313 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1199584313;
-            } //End block
+            if (last < 0) {
+                return false;
+            }
             final BackStackRecord bss = mBackStack.remove(last);
             bss.popFromBackStack(true);
             reportBackStackChanged();
-        } //End block
-        else
-        {
+        } else {
             int index = -1;
-            if(name != null || id >= 0)            
-            {
+            if (name != null || id >= 0) {
+                // If a name or ID is specified, look for that place in
+                // the stack.
                 index = mBackStack.size()-1;
-                while
-(index >= 0)                
-                {
+                while (index >= 0) {
                     BackStackRecord bss = mBackStack.get(index);
-                    if(name != null && name.equals(bss.getName()))                    
-                    {
+                    if (name != null && name.equals(bss.getName())) {
                         break;
-                    } //End block
-                    if(id >= 0 && id == bss.mIndex)                    
-                    {
+                    }
+                    if (id >= 0 && id == bss.mIndex) {
                         break;
-                    } //End block
+                    }
                     index--;
-                } //End block
-                if(index < 0)                
-                {
-                    boolean var68934A3E9455FA72420237EB05902327_214666126 = (false);
-                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2134833362 = getTaintBoolean();
-                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_2134833362;
-                } //End block
-                if((flags&POP_BACK_STACK_INCLUSIVE) != 0)                
-                {
+                }
+                if (index < 0) {
+                    return false;
+                }
+                if ((flags&POP_BACK_STACK_INCLUSIVE) != 0) {
                     index--;
-                    while
-(index >= 0)                    
-                    {
+                    // Consume all following entries that match.
+                    while (index >= 0) {
                         BackStackRecord bss = mBackStack.get(index);
-                        if((name != null && name.equals(bss.getName()))
-                                || (id >= 0 && id == bss.mIndex))                        
-                        {
+                        if ((name != null && name.equals(bss.getName()))
+                                || (id >= 0 && id == bss.mIndex)) {
                             index--;
                             continue;
-                        } //End block
+                        }
                         break;
-                    } //End block
-                } //End block
-            } //End block
-            if(index == mBackStack.size()-1)            
-            {
-                boolean var68934A3E9455FA72420237EB05902327_306788914 = (false);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2083929202 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_2083929202;
-            } //End block
-            final ArrayList<BackStackRecord> states = new ArrayList<BackStackRecord>();
-for(int i=mBackStack.size()-1;i>index;i--)
-            {
+                    }
+                }
+            }
+            if (index == mBackStack.size()-1) {
+                return false;
+            }
+            final ArrayList<BackStackRecord> states
+                    = new ArrayList<BackStackRecord>();
+            for (int i=mBackStack.size()-1; i>index; i--) {
                 states.add(mBackStack.remove(i));
-            } //End block
+            }
             final int LAST = states.size()-1;
-for(int i=0;i<=LAST;i++)
-            {
-                if(DEBUG){ }                states.get(i).popFromBackStack(i == LAST);
-            } //End block
+            for (int i=0; i<=LAST; i++) {
+                if (DEBUG) Log.v(TAG, "Popping back stack state: " + states.get(i));
+                states.get(i).popFromBackStack(i == LAST);
+            }
             reportBackStackChanged();
-        } //End block
-        boolean varB326B5062B2F0E69046810717534CB09_1436102659 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_139377461 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_139377461;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        }
+        return true;
     }
-
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.387 -0400", hash_original_method = "4601075007D50CE0BCD1D759D668CB84", hash_generated_method = "001152201C52BF66349414D56E1B7677")
-     ArrayList<Fragment> retainNonConfig() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.563 -0500", hash_original_method = "4601075007D50CE0BCD1D759D668CB84", hash_generated_method = "4601075007D50CE0BCD1D759D668CB84")
+    ArrayList<Fragment> retainNonConfig() {
         ArrayList<Fragment> fragments = null;
-        if(mActive != null)        
-        {
-for(int i=0;i<mActive.size();i++)
-            {
+        if (mActive != null) {
+            for (int i=0; i<mActive.size(); i++) {
                 Fragment f = mActive.get(i);
-                if(f != null && f.mRetainInstance)                
-                {
-                    if(fragments == null)                    
-                    {
+                if (f != null && f.mRetainInstance) {
+                    if (fragments == null) {
                         fragments = new ArrayList<Fragment>();
-                    } //End block
+                    }
                     fragments.add(f);
                     f.mRetaining = true;
                     f.mTargetIndex = f.mTarget != null ? f.mTarget.mIndex : -1;
-                    if(DEBUG){ }
-                } //End block
-            } //End block
-        } //End block
-ArrayList<Fragment> varFEBBCC2DAA2DE5E47E180E56AA61ABE9_945241884 =         fragments;
-        varFEBBCC2DAA2DE5E47E180E56AA61ABE9_945241884.addTaint(taint);
-        return varFEBBCC2DAA2DE5E47E180E56AA61ABE9_945241884;
-        // ---------- Original Method ----------
-        //ArrayList<Fragment> fragments = null;
-        //if (mActive != null) {
-            //for (int i=0; i<mActive.size(); i++) {
-                //Fragment f = mActive.get(i);
-                //if (f != null && f.mRetainInstance) {
-                    //if (fragments == null) {
-                        //fragments = new ArrayList<Fragment>();
-                    //}
-                    //fragments.add(f);
-                    //f.mRetaining = true;
-                    //f.mTargetIndex = f.mTarget != null ? f.mTarget.mIndex : -1;
-                    //if (DEBUG) Log.v(TAG, "retainNonConfig: keeping retained " + f);
-                //}
-            //}
-        //}
-        //return fragments;
+                    if (DEBUG) Log.v(TAG, "retainNonConfig: keeping retained " + f);
+                }
+            }
+        }
+        return fragments;
     }
-
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.388 -0400", hash_original_method = "AB64A806E53952D63B221B8A02A39B9D", hash_generated_method = "8CFAD10F48C37D1DD9C233DA8D2A7FE2")
-     void saveFragmentViewState(Fragment f) {
-        addTaint(f.getTaint());
-        if(f.mInnerView == null)        
-        {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.564 -0500", hash_original_method = "AB64A806E53952D63B221B8A02A39B9D", hash_generated_method = "AB64A806E53952D63B221B8A02A39B9D")
+    void saveFragmentViewState(Fragment f) {
+        if (f.mInnerView == null) {
             return;
-        } //End block
-        if(mStateArray == null)        
-        {
+        }
+        if (mStateArray == null) {
             mStateArray = new SparseArray<Parcelable>();
-        } //End block
-        else
-        {
+        } else {
             mStateArray.clear();
-        } //End block
+        }
         f.mInnerView.saveHierarchyState(mStateArray);
-        if(mStateArray.size() > 0)        
-        {
+        if (mStateArray.size() > 0) {
             f.mSavedViewState = mStateArray;
             mStateArray = null;
-        } //End block
-        // ---------- Original Method ----------
-        //if (f.mInnerView == null) {
-            //return;
-        //}
-        //if (mStateArray == null) {
-            //mStateArray = new SparseArray<Parcelable>();
-        //} else {
-            //mStateArray.clear();
-        //}
-        //f.mInnerView.saveHierarchyState(mStateArray);
-        //if (mStateArray.size() > 0) {
-            //f.mSavedViewState = mStateArray;
-            //mStateArray = null;
-        //}
+        }
     }
-
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.389 -0400", hash_original_method = "4EAE6A1450E2744D0D17A0CBB3487A4E", hash_generated_method = "58F15F89FC926598917D1AA265BB105C")
-     Bundle saveFragmentBasicState(Fragment f) {
-        addTaint(f.getTaint());
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.565 -0500", hash_original_method = "4EAE6A1450E2744D0D17A0CBB3487A4E", hash_generated_method = "E9031779BAB51B2450D4E6B808902980")
+    Bundle saveFragmentBasicState(Fragment f) {
         Bundle result = null;
-        if(mStateBundle == null)        
-        {
+
+        if (mStateBundle == null) {
             mStateBundle = new Bundle();
-        } //End block
+        }
         f.performSaveInstanceState(mStateBundle);
-        if(!mStateBundle.isEmpty())        
-        {
+        if (!mStateBundle.isEmpty()) {
             result = mStateBundle;
             mStateBundle = null;
-        } //End block
-        if(f.mView != null)        
-        {
+        }
+
+        if (f.mView != null) {
             saveFragmentViewState(f);
-        } //End block
-        if(f.mSavedViewState != null)        
-        {
-            if(result == null)            
-            {
+        }
+        if (f.mSavedViewState != null) {
+            if (result == null) {
                 result = new Bundle();
-            } //End block
+            }
             result.putSparseParcelableArray(
                     FragmentManagerImpl.VIEW_STATE_TAG, f.mSavedViewState);
-        } //End block
-        if(!f.mUserVisibleHint)        
-        {
-            if(result == null)            
-            {
+        }
+        if (!f.mUserVisibleHint) {
+            if (result == null) {
                 result = new Bundle();
-            } //End block
+            }
+            // Only add this if it's not the default value
             result.putBoolean(FragmentManagerImpl.USER_VISIBLE_HINT_TAG, f.mUserVisibleHint);
-        } //End block
-Bundle varDC838461EE2FA0CA4C9BBB70A15456B0_1559660254 =         result;
-        varDC838461EE2FA0CA4C9BBB70A15456B0_1559660254.addTaint(taint);
-        return varDC838461EE2FA0CA4C9BBB70A15456B0_1559660254;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        }
+
+        return result;
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.391 -0400", hash_original_method = "10343325EA0A9B349A8A31D89021E4C8", hash_generated_method = "F54B05CE313773DFF7229F26394DF389")
-     Parcelable saveAllState() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.567 -0500", hash_original_method = "10343325EA0A9B349A8A31D89021E4C8", hash_generated_method = "AFB6B001EDEBA5C553B21A06475C8774")
+    Parcelable saveAllState() {
+        // Make sure all pending operations have now been executed to get
+        // our state update-to-date.
         execPendingActions();
-        if(HONEYCOMB)        
-        {
+
+        if (HONEYCOMB) {
+            // As of Honeycomb, we save state after pausing.  Prior to that
+            // it is before pausing.  With fragments this is an issue, since
+            // there are many things you may do after pausing but before
+            // stopping that change the fragment state.  For those older
+            // devices, we will not at this point say that we have saved
+            // the state, so we will allow them to continue doing fragment
+            // transactions.  This retains the same semantics as Honeycomb,
+            // though you do have the risk of losing the very most recent state
+            // if the process is killed...  we'll live with that.
             mStateSaved = true;
-        } //End block
-        if(mActive == null || mActive.size() <= 0)        
-        {
-Parcelable var540C13E9E156B687226421B24F2DF178_1607924735 =             null;
-            var540C13E9E156B687226421B24F2DF178_1607924735.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_1607924735;
-        } //End block
+        }
+
+        if (mActive == null || mActive.size() <= 0) {
+            return null;
+        }
+        
+        // First collect all active fragments.
         int N = mActive.size();
         FragmentState[] active = new FragmentState[N];
         boolean haveFragments = false;
-for(int i=0;i<N;i++)
-        {
+        for (int i=0; i<N; i++) {
             Fragment f = mActive.get(i);
-            if(f != null)            
-            {
-                if(f.mIndex < 0)                
-                {
+            if (f != null) {
+                if (f.mIndex < 0) {
                     throwException(new IllegalStateException(
                             "Failure saving state: active " + f
                             + " has cleared index: " + f.mIndex));
-                } //End block
+                }
+
                 haveFragments = true;
+                
                 FragmentState fs = new FragmentState(f);
                 active[i] = fs;
-                if(f.mState > Fragment.INITIALIZING && fs.mSavedFragmentState == null)                
-                {
+                
+                if (f.mState > Fragment.INITIALIZING && fs.mSavedFragmentState == null) {
                     fs.mSavedFragmentState = saveFragmentBasicState(f);
-                    if(f.mTarget != null)                    
-                    {
-                        if(f.mTarget.mIndex < 0)                        
-                        {
+
+                    if (f.mTarget != null) {
+                        if (f.mTarget.mIndex < 0) {
                             throwException(new IllegalStateException(
                                     "Failure saving state: " + f
                                     + " has target not in fragment manager: " + f.mTarget));
-                        } //End block
-                        if(fs.mSavedFragmentState == null)                        
-                        {
+                        }
+                        if (fs.mSavedFragmentState == null) {
                             fs.mSavedFragmentState = new Bundle();
-                        } //End block
+                        }
                         putFragment(fs.mSavedFragmentState,
                                 FragmentManagerImpl.TARGET_STATE_TAG, f.mTarget);
-                        if(f.mTargetRequestCode != 0)                        
-                        {
+                        if (f.mTargetRequestCode != 0) {
                             fs.mSavedFragmentState.putInt(
                                     FragmentManagerImpl.TARGET_REQUEST_CODE_STATE_TAG,
                                     f.mTargetRequestCode);
-                        } //End block
-                    } //End block
-                } //End block
-                else
-                {
+                        }
+                    }
+
+                } else {
                     fs.mSavedFragmentState = f.mSavedFragmentState;
-                } //End block
-                if(DEBUG){ }
-            } //End block
-        } //End block
-        if(!haveFragments)        
-        {
-            if(DEBUG){ }Parcelable var540C13E9E156B687226421B24F2DF178_534676521 =             null;
-            var540C13E9E156B687226421B24F2DF178_534676521.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_534676521;
-        } //End block
+                }
+                
+                if (DEBUG) Log.v(TAG, "Saved state of " + f + ": "
+                        + fs.mSavedFragmentState);
+            }
+        }
+        
+        if (!haveFragments) {
+            if (DEBUG) Log.v(TAG, "saveAllState: no fragments!");
+            return null;
+        }
+        
         int[] added = null;
         BackStackState[] backStack = null;
-        if(mAdded != null)        
-        {
+        
+        // Build list of currently added fragments.
+        if (mAdded != null) {
             N = mAdded.size();
-            if(N > 0)            
-            {
+            if (N > 0) {
                 added = new int[N];
-for(int i=0;i<N;i++)
-                {
+                for (int i=0; i<N; i++) {
                     added[i] = mAdded.get(i).mIndex;
-                    if(added[i] < 0)                    
-                    {
+                    if (added[i] < 0) {
                         throwException(new IllegalStateException(
                                 "Failure saving state: active " + mAdded.get(i)
                                 + " has cleared index: " + added[i]));
-                    } //End block
-                    if(DEBUG){ }
-                } //End block
-            } //End block
-        } //End block
-        if(mBackStack != null)        
-        {
+                    }
+                    if (DEBUG) Log.v(TAG, "saveAllState: adding fragment #" + i
+                            + ": " + mAdded.get(i));
+                }
+            }
+        }
+        
+        // Now save back stack.
+        if (mBackStack != null) {
             N = mBackStack.size();
-            if(N > 0)            
-            {
+            if (N > 0) {
                 backStack = new BackStackState[N];
-for(int i=0;i<N;i++)
-                {
+                for (int i=0; i<N; i++) {
                     backStack[i] = new BackStackState(this, mBackStack.get(i));
-                    if(DEBUG){ }
-                } //End block
-            } //End block
-        } //End block
+                    if (DEBUG) Log.v(TAG, "saveAllState: adding back stack #" + i
+                            + ": " + mBackStack.get(i));
+                }
+            }
+        }
+        
         FragmentManagerState fms = new FragmentManagerState();
         fms.mActive = active;
         fms.mAdded = added;
         fms.mBackStack = backStack;
-Parcelable var7CFA6661E623A7ACE6CCCD8D42B74674_345192213 =         fms;
-        var7CFA6661E623A7ACE6CCCD8D42B74674_345192213.addTaint(taint);
-        return var7CFA6661E623A7ACE6CCCD8D42B74674_345192213;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        return fms;
     }
-
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.396 -0400", hash_original_method = "83508419770250A244151298D1C277A7", hash_generated_method = "051AB9F28A630ADC8C10130725908604")
-     void restoreAllState(Parcelable state, ArrayList<Fragment> nonConfig) {
-        addTaint(nonConfig.getTaint());
-        addTaint(state.getTaint());
-        if(state == null)        
-        return;
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.569 -0500", hash_original_method = "83508419770250A244151298D1C277A7", hash_generated_method = "B9306D1C9433F0BD1CAFE7B04830BDC9")
+    void restoreAllState(Parcelable state, ArrayList<Fragment> nonConfig) {
+        // If there is no saved state at all, then there can not be
+        // any nonConfig fragments either, so that is that.
+        if (state == null) return;
         FragmentManagerState fms = (FragmentManagerState)state;
-        if(fms.mActive == null)        
-        return;
-        if(nonConfig != null)        
-        {
-for(int i=0;i<nonConfig.size();i++)
-            {
+        if (fms.mActive == null) return;
+        
+        // First re-attach any non-config instances we are retaining back
+        // to their saved state, so we don't try to instantiate them again.
+        if (nonConfig != null) {
+            for (int i=0; i<nonConfig.size(); i++) {
                 Fragment f = nonConfig.get(i);
-                if(DEBUG){ }                FragmentState fs = fms.mActive[f.mIndex];
+                if (DEBUG) Log.v(TAG, "restoreAllState: re-attaching retained " + f);
+                FragmentState fs = fms.mActive[f.mIndex];
                 fs.mInstance = f;
                 f.mSavedViewState = null;
                 f.mBackStackNesting = 0;
                 f.mInLayout = false;
                 f.mAdded = false;
                 f.mTarget = null;
-                if(fs.mSavedFragmentState != null)                
-                {
+                if (fs.mSavedFragmentState != null) {
                     fs.mSavedFragmentState.setClassLoader(mActivity.getClassLoader());
                     f.mSavedViewState = fs.mSavedFragmentState.getSparseParcelableArray(
                             FragmentManagerImpl.VIEW_STATE_TAG);
-                } //End block
-            } //End block
-        } //End block
+                }
+            }
+        }
+        
+        // Build the full list of active fragments, instantiating them from
+        // their saved state.
         mActive = new ArrayList<Fragment>(fms.mActive.length);
-        if(mAvailIndices != null)        
-        {
+        if (mAvailIndices != null) {
             mAvailIndices.clear();
-        } //End block
-for(int i=0;i<fms.mActive.length;i++)
-        {
+        }
+        for (int i=0; i<fms.mActive.length; i++) {
             FragmentState fs = fms.mActive[i];
-            if(fs != null)            
-            {
+            if (fs != null) {
                 Fragment f = fs.instantiate(mActivity, mParent);
-                if(DEBUG){ }                mActive.add(f);
+                if (DEBUG) Log.v(TAG, "restoreAllState: active #" + i + ": " + f);
+                mActive.add(f);
+                // Now that the fragment is instantiated (or came from being
+                // retained above), clear mInstance in case we end up re-restoring
+                // from this FragmentState again.
                 fs.mInstance = null;
-            } //End block
-            else
-            {
+            } else {
                 mActive.add(null);
-                if(mAvailIndices == null)                
-                {
+                if (mAvailIndices == null) {
                     mAvailIndices = new ArrayList<Integer>();
-                } //End block
-                if(DEBUG){ }                mAvailIndices.add(i);
-            } //End block
-        } //End block
-        if(nonConfig != null)        
-        {
-for(int i=0;i<nonConfig.size();i++)
-            {
+                }
+                if (DEBUG) Log.v(TAG, "restoreAllState: avail #" + i);
+                mAvailIndices.add(i);
+            }
+        }
+        
+        // Update the target of all retained fragments.
+        if (nonConfig != null) {
+            for (int i=0; i<nonConfig.size(); i++) {
                 Fragment f = nonConfig.get(i);
-                if(f.mTargetIndex >= 0)                
-                {
-                    if(f.mTargetIndex < mActive.size())                    
-                    {
+                if (f.mTargetIndex >= 0) {
+                    if (f.mTargetIndex < mActive.size()) {
                         f.mTarget = mActive.get(f.mTargetIndex);
-                    } //End block
-                    else
-                    {
+                    } else {
+                        Log.w(TAG, "Re-attaching retained fragment " + f
+                                + " target no longer exists: " + f.mTargetIndex);
                         f.mTarget = null;
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
-        if(fms.mAdded != null)        
-        {
+                    }
+                }
+            }
+        }
+
+        // Build the list of currently added fragments.
+        if (fms.mAdded != null) {
             mAdded = new ArrayList<Fragment>(fms.mAdded.length);
-for(int i=0;i<fms.mAdded.length;i++)
-            {
+            for (int i=0; i<fms.mAdded.length; i++) {
                 Fragment f = mActive.get(fms.mAdded[i]);
-                if(f == null)                
-                {
+                if (f == null) {
                     throwException(new IllegalStateException(
                             "No instantiated fragment for index #" + fms.mAdded[i]));
-                } //End block
+                }
                 f.mAdded = true;
-                if(DEBUG){ }                if(mAdded.contains(f))                
-                {
-                    IllegalStateException var5BC08CE4CC7883538CF6B88A9F67F203_797902549 = new IllegalStateException("Already added!");
-                    var5BC08CE4CC7883538CF6B88A9F67F203_797902549.addTaint(taint);
-                    throw var5BC08CE4CC7883538CF6B88A9F67F203_797902549;
-                } //End block
+                if (DEBUG) Log.v(TAG, "restoreAllState: added #" + i + ": " + f);
+                if (mAdded.contains(f)) {
+                    throw new IllegalStateException("Already added!");
+                }
                 mAdded.add(f);
-            } //End block
-        } //End block
-        else
-        {
+            }
+        } else {
             mAdded = null;
-        } //End block
-        if(fms.mBackStack != null)        
-        {
+        }
+        
+        // Build the back stack.
+        if (fms.mBackStack != null) {
             mBackStack = new ArrayList<BackStackRecord>(fms.mBackStack.length);
-for(int i=0;i<fms.mBackStack.length;i++)
-            {
+            for (int i=0; i<fms.mBackStack.length; i++) {
                 BackStackRecord bse = fms.mBackStack[i].instantiate(this);
-                if(DEBUG)                
-                {
+                if (DEBUG) {
+                    Log.v(TAG, "restoreAllState: back stack #" + i
+                        + " (index " + bse.mIndex + "): " + bse);
                     LogWriter logw = new LogWriter(TAG);
                     PrintWriter pw = new PrintWriter(logw);
                     bse.dump("  ", pw, false);
-                } //End block
+                }
                 mBackStack.add(bse);
-                if(bse.mIndex >= 0)                
-                {
+                if (bse.mIndex >= 0) {
                     setBackStackIndex(bse.mIndex, bse);
-                } //End block
-            } //End block
-        } //End block
-        else
-        {
+                }
+            }
+        } else {
             mBackStack = null;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        }
     }
-
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.397 -0400", hash_original_method = "6B9797EDFBB2C38037CA64E1EEB36778", hash_generated_method = "DAAC442CD460C8DA27F3E254F7FCA020")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.570 -0500", hash_original_method = "6B9797EDFBB2C38037CA64E1EEB36778", hash_generated_method = "0D93A72AFEDFA47ABE55B8BCD69E758E")
     public void attachActivity(FragmentActivity activity,
             FragmentContainer container, Fragment parent) {
-        if(mActivity != null)        
-        {
-        IllegalStateException var32B9641AA4056F45F29BFF8F22758351_586471938 = new IllegalStateException("Already attached");
-        var32B9641AA4056F45F29BFF8F22758351_586471938.addTaint(taint);
-        throw var32B9641AA4056F45F29BFF8F22758351_586471938;
-        }
+        if (mActivity != null) throw new IllegalStateException("Already attached");
         mActivity = activity;
         mContainer = container;
         mParent = parent;
-        // ---------- Original Method ----------
-        //if (mActivity != null) throw new IllegalStateException("Already attached");
-        //mActivity = activity;
-        //mContainer = container;
-        //mParent = parent;
     }
-
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.397 -0400", hash_original_method = "9E4E3FCA42BDE19CBF71140223B4B8D0", hash_generated_method = "B5C7E72CCEE273A62746EE3408615591")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.571 -0500", hash_original_method = "9E4E3FCA42BDE19CBF71140223B4B8D0", hash_generated_method = "AF7BA1CF9453ACC672FADB789538767F")
     public void noteStateNotSaved() {
         mStateSaved = false;
-        // ---------- Original Method ----------
-        //mStateSaved = false;
     }
-
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.397 -0400", hash_original_method = "4EAFC4D017ED2B44474902CD00BD047E", hash_generated_method = "21C3627E95BE86042A719066A2913EA6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.571 -0500", hash_original_method = "4EAFC4D017ED2B44474902CD00BD047E", hash_generated_method = "F80410DFB4B166184E53850E51F367FE")
     public void dispatchCreate() {
         mStateSaved = false;
         moveToState(Fragment.CREATED, false);
-        // ---------- Original Method ----------
-        //mStateSaved = false;
-        //moveToState(Fragment.CREATED, false);
     }
-
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.398 -0400", hash_original_method = "BB3D6B45374259B5EE70270EF5FFE721", hash_generated_method = "1F7202ED50DB7895525D3D5DD1A85A9D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.572 -0500", hash_original_method = "BB3D6B45374259B5EE70270EF5FFE721", hash_generated_method = "C71E1EE3F6A998E19E9FF1B016F6CD0C")
     public void dispatchActivityCreated() {
         mStateSaved = false;
         moveToState(Fragment.ACTIVITY_CREATED, false);
-        // ---------- Original Method ----------
-        //mStateSaved = false;
-        //moveToState(Fragment.ACTIVITY_CREATED, false);
     }
-
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.401 -0400", hash_original_method = "145C9AF81AEB697CB534D8E0C0F599A0", hash_generated_method = "20844DC4E325108731D69AD369D5CB9A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.573 -0500", hash_original_method = "145C9AF81AEB697CB534D8E0C0F599A0", hash_generated_method = "6ED9E59AB5D969020DDB728A38951921")
     public void dispatchStart() {
         mStateSaved = false;
         moveToState(Fragment.STARTED, false);
-        // ---------- Original Method ----------
-        //mStateSaved = false;
-        //moveToState(Fragment.STARTED, false);
     }
-
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.401 -0400", hash_original_method = "35325401D14378833F40C78A6FC3DC5D", hash_generated_method = "9E4D22D120F9A6B67EA4BB2B4DEB3341")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.574 -0500", hash_original_method = "35325401D14378833F40C78A6FC3DC5D", hash_generated_method = "48FF97841DA5605FE7E2DED074D18BF8")
     public void dispatchResume() {
         mStateSaved = false;
         moveToState(Fragment.RESUMED, false);
-        // ---------- Original Method ----------
-        //mStateSaved = false;
-        //moveToState(Fragment.RESUMED, false);
     }
-
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.402 -0400", hash_original_method = "E6EE1A1408209BDB9066272C26AA9863", hash_generated_method = "806CEF702E5812DC1949A4F8EE32F575")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.574 -0500", hash_original_method = "E6EE1A1408209BDB9066272C26AA9863", hash_generated_method = "9AC18B023C47D577819D4FA2F4EA2E8A")
     public void dispatchPause() {
         moveToState(Fragment.STARTED, false);
-        // ---------- Original Method ----------
-        //moveToState(Fragment.STARTED, false);
     }
-
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.402 -0400", hash_original_method = "A6766C0F069AFB58F0A12165F2E095FC", hash_generated_method = "2DD793A778E88D54EE3A335BA8F3FB22")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.576 -0500", hash_original_method = "A6766C0F069AFB58F0A12165F2E095FC", hash_generated_method = "C74F34DF95389EFF82BC807B3C799F2A")
     public void dispatchStop() {
+        // See saveAllState() for the explanation of this.  We do this for
+        // all platform versions, to keep our behavior more consistent between
+        // them.
         mStateSaved = true;
-        moveToState(Fragment.STOPPED, false);
-        // ---------- Original Method ----------
-        //mStateSaved = true;
-        //moveToState(Fragment.STOPPED, false);
-    }
 
+        moveToState(Fragment.STOPPED, false);
+    }
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.402 -0400", hash_original_method = "DCD943307D69805205EE4AFFC6D1EFE3", hash_generated_method = "89E0EF721C47E2DF40831E82789D0DE5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.576 -0500", hash_original_method = "DCD943307D69805205EE4AFFC6D1EFE3", hash_generated_method = "2A0F13191FA233B5356099F97A636B11")
     public void dispatchReallyStop() {
         moveToState(Fragment.ACTIVITY_CREATED, false);
-        // ---------- Original Method ----------
-        //moveToState(Fragment.ACTIVITY_CREATED, false);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.402 -0400", hash_original_method = "69F58A9B4E2F72C0D627B376DB1A1CDC", hash_generated_method = "7C0C65D29ADA12A03B42DDDA4BE52A2A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.577 -0500", hash_original_method = "69F58A9B4E2F72C0D627B376DB1A1CDC", hash_generated_method = "FF7F1FCF352E28EDEC256EC8D6B3999D")
     public void dispatchDestroyView() {
         moveToState(Fragment.CREATED, false);
-        // ---------- Original Method ----------
-        //moveToState(Fragment.CREATED, false);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.402 -0400", hash_original_method = "92EF0F88C8A3B3CDE2712CBD7D916058", hash_generated_method = "4183A75BEA237931F279EC68B16055AF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.578 -0500", hash_original_method = "92EF0F88C8A3B3CDE2712CBD7D916058", hash_generated_method = "7461DD6A949B6E13C5E5CFFD743C3381")
     public void dispatchDestroy() {
         mDestroyed = true;
         execPendingActions();
@@ -2724,338 +2094,125 @@ for(int i=0;i<fms.mBackStack.length;i++)
         mActivity = null;
         mContainer = null;
         mParent = null;
-        // ---------- Original Method ----------
-        //mDestroyed = true;
-        //execPendingActions();
-        //moveToState(Fragment.INITIALIZING, false);
-        //mActivity = null;
-        //mContainer = null;
-        //mParent = null;
     }
-
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.405 -0400", hash_original_method = "3F9069EC8564151620B164A5CADDDD85", hash_generated_method = "9D9F91C10771F338FFF2BFE5D9EA19E6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.579 -0500", hash_original_method = "3F9069EC8564151620B164A5CADDDD85", hash_generated_method = "8D087FF2B777B03F3987C3C1F7A8C59F")
     public void dispatchConfigurationChanged(Configuration newConfig) {
-        addTaint(newConfig.getTaint());
-        if(mAdded != null)        
-        {
-for(int i=0;i<mAdded.size();i++)
-            {
+        if (mAdded != null) {
+            for (int i=0; i<mAdded.size(); i++) {
                 Fragment f = mAdded.get(i);
-                if(f != null)                
-                {
+                if (f != null) {
                     f.performConfigurationChanged(newConfig);
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (mAdded != null) {
-            //for (int i=0; i<mAdded.size(); i++) {
-                //Fragment f = mAdded.get(i);
-                //if (f != null) {
-                    //f.performConfigurationChanged(newConfig);
-                //}
-            //}
-        //}
+                }
+            }
+        }
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.405 -0400", hash_original_method = "423006F51D0218BAC00AF0FAAABB2869", hash_generated_method = "9BBDEC9E08C2DDA39855DECF57386082")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.579 -0500", hash_original_method = "423006F51D0218BAC00AF0FAAABB2869", hash_generated_method = "56410E843CF3C28ACE8632A3BFC44512")
     public void dispatchLowMemory() {
-        if(mAdded != null)        
-        {
-for(int i=0;i<mAdded.size();i++)
-            {
+        if (mAdded != null) {
+            for (int i=0; i<mAdded.size(); i++) {
                 Fragment f = mAdded.get(i);
-                if(f != null)                
-                {
+                if (f != null) {
                     f.performLowMemory();
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (mAdded != null) {
-            //for (int i=0; i<mAdded.size(); i++) {
-                //Fragment f = mAdded.get(i);
-                //if (f != null) {
-                    //f.performLowMemory();
-                //}
-            //}
-        //}
+                }
+            }
+        }
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.406 -0400", hash_original_method = "E04D4A6462A884A432217EF1D5562FD6", hash_generated_method = "A78FA9DFC68478345547C3977C7FF15C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.580 -0500", hash_original_method = "E04D4A6462A884A432217EF1D5562FD6", hash_generated_method = "54DA81345F51ECC604B74FCE4CBC7BD8")
     public boolean dispatchCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        addTaint(inflater.getTaint());
-        addTaint(menu.getTaint());
         boolean show = false;
         ArrayList<Fragment> newMenus = null;
-        if(mAdded != null)        
-        {
-for(int i=0;i<mAdded.size();i++)
-            {
+        if (mAdded != null) {
+            for (int i=0; i<mAdded.size(); i++) {
                 Fragment f = mAdded.get(i);
-                if(f != null)                
-                {
-                    if(f.performCreateOptionsMenu(menu, inflater))                    
-                    {
+                if (f != null) {
+                    if (f.performCreateOptionsMenu(menu, inflater)) {
                         show = true;
-                        if(newMenus == null)                        
-                        {
+                        if (newMenus == null) {
                             newMenus = new ArrayList<Fragment>();
-                        } //End block
+                        }
                         newMenus.add(f);
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
-        if(mCreatedMenus != null)        
-        {
-for(int i=0;i<mCreatedMenus.size();i++)
-            {
+                    }
+                }
+            }
+        }
+        
+        if (mCreatedMenus != null) {
+            for (int i=0; i<mCreatedMenus.size(); i++) {
                 Fragment f = mCreatedMenus.get(i);
-                if(newMenus == null || !newMenus.contains(f))                
-                {
+                if (newMenus == null || !newMenus.contains(f)) {
                     f.onDestroyOptionsMenu();
-                } //End block
-            } //End block
-        } //End block
+                }
+            }
+        }
+        
         mCreatedMenus = newMenus;
-        boolean varA7DD12B1DAB17D25467B0B0A4C8D4A92_830378118 = (show);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1365291064 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1365291064;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        return show;
     }
-
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.409 -0400", hash_original_method = "39A1BE180E5A6D21A2BE9889A37AE1EE", hash_generated_method = "C229B1509154F79F6209097E2CE7829C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.581 -0500", hash_original_method = "39A1BE180E5A6D21A2BE9889A37AE1EE", hash_generated_method = "CA10F0D096C3095D1B614DDEB28C4E4E")
     public boolean dispatchPrepareOptionsMenu(Menu menu) {
-        addTaint(menu.getTaint());
         boolean show = false;
-        if(mAdded != null)        
-        {
-for(int i=0;i<mAdded.size();i++)
-            {
+        if (mAdded != null) {
+            for (int i=0; i<mAdded.size(); i++) {
                 Fragment f = mAdded.get(i);
-                if(f != null)                
-                {
-                    if(f.performPrepareOptionsMenu(menu))                    
-                    {
+                if (f != null) {
+                    if (f.performPrepareOptionsMenu(menu)) {
                         show = true;
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
-        boolean varA7DD12B1DAB17D25467B0B0A4C8D4A92_1180179887 = (show);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1724630768 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1724630768;
-        // ---------- Original Method ----------
-        //boolean show = false;
-        //if (mAdded != null) {
-            //for (int i=0; i<mAdded.size(); i++) {
-                //Fragment f = mAdded.get(i);
-                //if (f != null) {
-                    //if (f.performPrepareOptionsMenu(menu)) {
-                        //show = true;
-                    //}
-                //}
-            //}
-        //}
-        //return show;
+                    }
+                }
+            }
+        }
+        return show;
     }
-
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.409 -0400", hash_original_method = "40C97B67F40ABFD093891951534367FF", hash_generated_method = "EA24A39AA48A19BEA7EA9D663E7AFB34")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.582 -0500", hash_original_method = "40C97B67F40ABFD093891951534367FF", hash_generated_method = "BA5E1824278B227BC5BF7B4DFAFC68B6")
     public boolean dispatchOptionsItemSelected(MenuItem item) {
-        addTaint(item.getTaint());
-        if(mAdded != null)        
-        {
-for(int i=0;i<mAdded.size();i++)
-            {
+        if (mAdded != null) {
+            for (int i=0; i<mAdded.size(); i++) {
                 Fragment f = mAdded.get(i);
-                if(f != null)                
-                {
-                    if(f.performOptionsItemSelected(item))                    
-                    {
-                        boolean varB326B5062B2F0E69046810717534CB09_1603403241 = (true);
-                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1783673083 = getTaintBoolean();
-                        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1783673083;
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
-        boolean var68934A3E9455FA72420237EB05902327_382980564 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1947779309 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1947779309;
-        // ---------- Original Method ----------
-        //if (mAdded != null) {
-            //for (int i=0; i<mAdded.size(); i++) {
-                //Fragment f = mAdded.get(i);
-                //if (f != null) {
-                    //if (f.performOptionsItemSelected(item)) {
-                        //return true;
-                    //}
-                //}
-            //}
-        //}
-        //return false;
+                if (f != null) {
+                    if (f.performOptionsItemSelected(item)) {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
     }
-
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.409 -0400", hash_original_method = "61E677AAD1D9B7A657F2B5668ED52005", hash_generated_method = "1B87F70303936847305C1C3D06F29D92")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.583 -0500", hash_original_method = "61E677AAD1D9B7A657F2B5668ED52005", hash_generated_method = "563463A683F9B91706506BEF0D4E0EC3")
     public boolean dispatchContextItemSelected(MenuItem item) {
-        addTaint(item.getTaint());
-        if(mAdded != null)        
-        {
-for(int i=0;i<mAdded.size();i++)
-            {
+        if (mAdded != null) {
+            for (int i=0; i<mAdded.size(); i++) {
                 Fragment f = mAdded.get(i);
-                if(f != null)                
-                {
-                    if(f.performContextItemSelected(item))                    
-                    {
-                        boolean varB326B5062B2F0E69046810717534CB09_296002325 = (true);
-                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_654089121 = getTaintBoolean();
-                        return var84E2C64F38F78BA3EA5C905AB5A2DA27_654089121;
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
-        boolean var68934A3E9455FA72420237EB05902327_2053905032 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1608328012 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1608328012;
-        // ---------- Original Method ----------
-        //if (mAdded != null) {
-            //for (int i=0; i<mAdded.size(); i++) {
-                //Fragment f = mAdded.get(i);
-                //if (f != null) {
-                    //if (f.performContextItemSelected(item)) {
-                        //return true;
-                    //}
-                //}
-            //}
-        //}
-        //return false;
+                if (f != null) {
+                    if (f.performContextItemSelected(item)) {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
     }
-
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.409 -0400", hash_original_method = "6CB4593DD4D25806442B1A7EB0939595", hash_generated_method = "FBE17855B7CCA4D0B91C54EC777513AF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:38.584 -0500", hash_original_method = "6CB4593DD4D25806442B1A7EB0939595", hash_generated_method = "407DFF5A417A6E6AA48CE8599FBD23EC")
     public void dispatchOptionsMenuClosed(Menu menu) {
-        addTaint(menu.getTaint());
-        if(mAdded != null)        
-        {
-for(int i=0;i<mAdded.size();i++)
-            {
+        if (mAdded != null) {
+            for (int i=0; i<mAdded.size(); i++) {
                 Fragment f = mAdded.get(i);
-                if(f != null)                
-                {
+                if (f != null) {
                     f.performOptionsMenuClosed(menu);
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (mAdded != null) {
-            //for (int i=0; i<mAdded.size(); i++) {
-                //Fragment f = mAdded.get(i);
-                //if (f != null) {
-                    //f.performOptionsMenuClosed(menu);
-                //}
-            //}
-        //}
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    public static int reverseTransit(int transit) {
-        int rev = 0;
-        switch (transit) {
-            case FragmentTransaction.TRANSIT_FRAGMENT_OPEN:
-                rev = FragmentTransaction.TRANSIT_FRAGMENT_CLOSE;
-                break;
-            case FragmentTransaction.TRANSIT_FRAGMENT_CLOSE:
-                rev = FragmentTransaction.TRANSIT_FRAGMENT_OPEN;
-                break;
-            case FragmentTransaction.TRANSIT_FRAGMENT_FADE:
-                rev = FragmentTransaction.TRANSIT_FRAGMENT_FADE;
-                break;
+                }
+            }
         }
-        return rev;
     }
+}
 
-    
-    @DSModeled(DSC.SAFE)
-    public static int transitToStyleIndex(int transit, boolean enter) {
-        int animAttr = -1;
-        switch (transit) {
-            case FragmentTransaction.TRANSIT_FRAGMENT_OPEN:
-                animAttr = enter ? ANIM_STYLE_OPEN_ENTER : ANIM_STYLE_OPEN_EXIT;
-                break;
-            case FragmentTransaction.TRANSIT_FRAGMENT_CLOSE:
-                animAttr = enter ? ANIM_STYLE_CLOSE_ENTER : ANIM_STYLE_CLOSE_EXIT;
-                break;
-            case FragmentTransaction.TRANSIT_FRAGMENT_FADE:
-                animAttr = enter ? ANIM_STYLE_FADE_ENTER : ANIM_STYLE_FADE_EXIT;
-                break;
-        }
-        return animAttr;
-    }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.412 -0400", hash_original_field = "021906CCEC815FC820B74F760E7368C7", hash_generated_field = "99DFF1318F5BF79C590B7B00A696225C")
-
-    static boolean DEBUG = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.412 -0400", hash_original_field = "309AAD3E76F171051A35712763096DE8", hash_generated_field = "82CCA249F4AC6A9E8A18392D953FCA5D")
-
-    static final String TAG = "FragmentManager";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.412 -0400", hash_original_field = "F97D1635AABE57FB12E9B1B2518064C6", hash_generated_field = "47802C2B46813E58B899D23FD9DC343B")
-
-    static final boolean HONEYCOMB = android.os.Build.VERSION.SDK_INT >= 11;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.412 -0400", hash_original_field = "E58DEFB2E4C5F4C4BC898BC35F33C192", hash_generated_field = "3B27731C0E9DDDFC7028C0BFB720297D")
-
-    static final String TARGET_REQUEST_CODE_STATE_TAG = "android:target_req_state";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.412 -0400", hash_original_field = "A8D8A7593440E0D7D4A8A21F4BCD6D54", hash_generated_field = "9220E2EDA94C70BA7341F1BFB405D6BF")
-
-    static final String TARGET_STATE_TAG = "android:target_state";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.412 -0400", hash_original_field = "03990A2696101FE20E375C710E3F3AE1", hash_generated_field = "C8F5F7A2B0A3F70631E3897CD07F0E4E")
-
-    static final String VIEW_STATE_TAG = "android:view_state";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.412 -0400", hash_original_field = "80B57815D7CE7602226A48E51B42D058", hash_generated_field = "43219A21E686E6FEC3DF87B97E67132D")
-
-    static final String USER_VISIBLE_HINT_TAG = "android:user_visible_hint";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.412 -0400", hash_original_field = "6C95BC8E2A60A9F4236FBFC95395E3A2", hash_generated_field = "3A10D2877F43112AA0B7A6A8433E95CB")
-
-    static final Interpolator DECELERATE_QUINT = new DecelerateInterpolator(2.5f);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.412 -0400", hash_original_field = "D8281C96E9514BF04DE392578617576C", hash_generated_field = "1618232FF2C96BF54619A71799992CCF")
-
-    static final Interpolator DECELERATE_CUBIC = new DecelerateInterpolator(1.5f);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.412 -0400", hash_original_field = "D10DC5918CDE7E82CA9095D02FEF8A0C", hash_generated_field = "50DFC5BE4E88ED2E03493326FAE40E99")
-
-    static final Interpolator ACCELERATE_QUINT = new AccelerateInterpolator(2.5f);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.412 -0400", hash_original_field = "838B2B5AA8359A71F94BB598DD8FD304", hash_generated_field = "0650545F9518BF159E5600383DFE2395")
-
-    static final Interpolator ACCELERATE_CUBIC = new AccelerateInterpolator(1.5f);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.412 -0400", hash_original_field = "1A243DE04BDCF448B42B90B6C7D09AB2", hash_generated_field = "71044A5396C27203930538888DCB79FC")
-
-    static final int ANIM_DUR = 220;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.412 -0400", hash_original_field = "260F4A8077B41158EE5084820597CDFE", hash_generated_field = "7BB089DC1B8A242E88755BDA8C8238B9")
-
-    public static final int ANIM_STYLE_OPEN_ENTER = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.412 -0400", hash_original_field = "519D0B58F7134135D9F630C9958BA2A5", hash_generated_field = "3C4C6A69EA30C5B582DE8DD757B46311")
-
-    public static final int ANIM_STYLE_OPEN_EXIT = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.412 -0400", hash_original_field = "809B49B33A269DC9ED63B13FAE899E5D", hash_generated_field = "B289F5FCA54C37F25FF23F46A1D8D232")
-
-    public static final int ANIM_STYLE_CLOSE_ENTER = 3;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.412 -0400", hash_original_field = "B7C90BEFCC36650797B1A5C0EAE37430", hash_generated_field = "913DA58C0421DE752A939A21044C5DD0")
-
-    public static final int ANIM_STYLE_CLOSE_EXIT = 4;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.412 -0400", hash_original_field = "E8EC520365F556FDD343EE5BF52DC8EF", hash_generated_field = "6EE14C70EFD271C2B32055938BC50C20")
-
-    public static final int ANIM_STYLE_FADE_ENTER = 5;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.412 -0400", hash_original_field = "BDA176AA41F039DA1615DEC8A570C95D", hash_generated_field = "F489982675E5C10DFACA93BE86E50D4D")
-
-    public static final int ANIM_STYLE_FADE_EXIT = 6;
+interface FragmentContainer {
+    public View findViewById(int id);
 }
 

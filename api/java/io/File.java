@@ -1,6 +1,8 @@
 package java.io;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import static libcore.io.OsConstants.EEXIST;
 import static libcore.io.OsConstants.F_OK;
@@ -45,79 +47,11 @@ import org.apache.harmony.luni.util.DeleteOnExit;
 import droidsafe.helpers.DSUtils;
 
 public class File implements Serializable, Comparable<File> {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.816 -0400", hash_original_field = "D6FE1D0BE6347B8EF2427FA629C04485", hash_generated_field = "E58B218DC2BC9CF2BD65F7BE2F7C20BE")
 
-    @DSVAModeled
-    private String path;
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.817 -0400", hash_original_method = "A8210D76C41C6A4AAFC6BE2371A42886", hash_generated_method = "B8606CB2576065F12192D6BF4E3AC213")
-    public  File(File dir, String name) {
-        this(dir == null ? null : dir.getPath(), name);
-        addTaint(name.getTaint());
-        addTaint(dir.getTaint());
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.817 -0400", hash_original_method = "2175D562A2B588CC53D616403013683C", hash_generated_method = "F0CF2469DAAFA8B053A90565BD5CE965")
-    public  File(String path) {
-        this.path = fixSlashes(path);
-        // ---------- Original Method ----------
-        //this.path = fixSlashes(path);
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.818 -0400", hash_original_method = "133C96EC98AEE8D59630F091A182C267", hash_generated_method = "C9D8EA190E6F5B02442A96B63D4BAB8F")
-    public  File(String dirPath, String name) {
-        if(name == null)        
-        {
-            NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_1728762900 = new NullPointerException();
-            var7338BC9F48D81FE0BBD6183F4014DCC4_1728762900.addTaint(taint);
-            throw var7338BC9F48D81FE0BBD6183F4014DCC4_1728762900;
-        } //End block
-        if(dirPath == null || dirPath.isEmpty())        
-        {
-            this.path = fixSlashes(name);
-        } //End block
-        else
-        if(name.isEmpty())        
-        {
-            this.path = fixSlashes(dirPath);
-        } //End block
-        else
-        {
-            this.path = fixSlashes(join(dirPath, name));
-        } //End block
-        // ---------- Original Method ----------
-        //if (name == null) {
-            //throw new NullPointerException();
-        //}
-        //if (dirPath == null || dirPath.isEmpty()) {
-            //this.path = fixSlashes(name);
-        //} else if (name.isEmpty()) {
-            //this.path = fixSlashes(dirPath);
-        //} else {
-            //this.path = fixSlashes(join(dirPath, name));
-        //}
-    }
-
-    
-        @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.818 -0400", hash_original_method = "8BC21AA0285296D0787FE6CED7AAF58D", hash_generated_method = "79D164A841B35BD55411DA5A8905C5CC")
-    public  File(URI uri) {
-        checkURI(uri);
-        this.path = fixSlashes(uri.getPath());
-        // ---------- Original Method ----------
-        //checkURI(uri);
-        //this.path = fixSlashes(uri.getPath());
-    }
-
-    
-    @DSModeled(DSC.BAN)
+    // Removes duplicate adjacent slashes and any trailing slash.
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.698 -0500", hash_original_method = "697F450BEC93E79C07B9CD1FF582F761", hash_generated_method = "3C3E10015E26D5B6A8A0B8197CDF731F")
     private static String fixSlashes(String origPath) {
+        // Remove duplicate adjacent slashes.
         boolean lastWasSlash = false;
         char[] newPath = origPath.toCharArray();
         int length = newPath.length;
@@ -134,14 +68,16 @@ public class File implements Serializable, Comparable<File> {
                 lastWasSlash = false;
             }
         }
+        // Remove any trailing slash (unless this is the root of the file system).
         if (lastWasSlash && newLength > 1) {
             newLength--;
         }
+        // Reuse the original string if possible.
         return (newLength != length) ? new String(newPath, 0, newLength) : origPath;
     }
 
-    
-    @DSModeled(DSC.BAN)
+    // Joins two path components, adding a separator only if necessary.
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.699 -0500", hash_original_method = "778D2D76B8ECF025B166D37379F9F4F6", hash_generated_method = "31162CF3D2813878020700A2F7AB6098")
     private static String join(String prefix, String suffix) {
         int prefixLength = prefix.length();
         boolean haveSlash = (prefixLength > 0 && prefix.charAt(prefixLength - 1) == separatorChar);
@@ -151,8 +87,7 @@ public class File implements Serializable, Comparable<File> {
         return haveSlash ? (prefix + suffix) : (prefix + separatorChar + suffix);
     }
 
-    
-    @DSModeled(DSC.BAN)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.700 -0500", hash_original_method = "66A735BA68A634D4A7FA7C62964D6383", hash_generated_method = "CBABE2EEAC6A19A4D72F86BDC646B123")
     private static void checkURI(URI uri) {
         if (!uri.isAbsolute()) {
             throw new IllegalArgumentException("URI is not absolute: " + uri);
@@ -177,147 +112,322 @@ public class File implements Serializable, Comparable<File> {
         }
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Returns the file system roots. On Android and other Unix systems, there is
+     * a single root, {@code /}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.701 -0500", hash_original_method = "25C36B1EFDAF6FF469C16DA6E3BE9FB2", hash_generated_method = "C4D71F0B354DF213A5E92DEF3BC677B6")
     public static File[] listRoots() {
         return new File[] { new File("/") };
     }
 
     
     @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.819 -0400", hash_original_method = "69AF6799D7AA8E2E8441037938ACC088", hash_generated_method = "C20713A48A28F945820A1792C2989DA2")
+    private static String realpath(String path) {
+		return new String();
+	}
+
+    
+    @DSModeled(DSC.SAFE)
+    private static String readlink(String path) {
+		return new String();
+	}
+
+    
+    @DSModeled(DSC.SAFE)
+    private static boolean setLastModifiedImpl(String path, long time) {
+		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_916883677 = DSUtils.UNKNOWN_BOOLEAN;
+		return var84E2C64F38F78BA3EA5C905AB5A2DA27_916883677;
+	}
+
+    
+    @DSModeled(DSC.SAFE)
+    private static String[] listImpl(String path) {
+		return new String[]{"*.*" + path};
+	}
+
+    /**
+     * Creates an empty temporary file using the given prefix and suffix as part
+     * of the file name. If {@code suffix} is null, {@code .tmp} is used. This
+     * method is a convenience method that calls
+     * {@link #createTempFile(String, String, File)} with the third argument
+     * being {@code null}.
+     *
+     * @param prefix
+     *            the prefix to the temp file name.
+     * @param suffix
+     *            the suffix to the temp file name.
+     * @return the temporary file.
+     * @throws IOException
+     *             if an error occurs when writing the file.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.746 -0500", hash_original_method = "F35DD4D2E6395DF1DE5627BA1147A02F", hash_generated_method = "1887394672DF3A2517963CDA02015A8E")
+    public static File createTempFile(String prefix, String suffix) throws IOException {
+        return createTempFile(prefix, suffix, null);
+    }
+
+    /**
+     * Creates an empty temporary file in the given directory using the given
+     * prefix and suffix as part of the file name. If {@code suffix} is null, {@code .tmp} is used.
+     *
+     * <p>Note that this method does <i>not</i> call {@link #deleteOnExit}, but see the
+     * documentation for that method before you call it manually.
+     *
+     * @param prefix
+     *            the prefix to the temp file name.
+     * @param suffix
+     *            the suffix to the temp file name.
+     * @param directory
+     *            the location to which the temp file is to be written, or
+     *            {@code null} for the default location for temporary files,
+     *            which is taken from the "java.io.tmpdir" system property. It
+     *            may be necessary to set this property to an existing, writable
+     *            directory for this method to work properly.
+     * @return the temporary file.
+     * @throws IllegalArgumentException
+     *             if the length of {@code prefix} is less than 3.
+     * @throws IOException
+     *             if an error occurs when writing the file.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.747 -0500", hash_original_method = "300A258AF9CE3367B2E987791B45E579", hash_generated_method = "5A12F0C33269F4818329EA209B0269C7")
+    public static File createTempFile(String prefix, String suffix, File directory)
+            throws IOException {
+        // Force a prefix null check first
+        if (prefix.length() < 3) {
+            throw new IllegalArgumentException("prefix must be at least 3 characters");
+        }
+        if (suffix == null) {
+            suffix = ".tmp";
+        }
+        File tmpDirFile = directory;
+        if (tmpDirFile == null) {
+            String tmpDir = System.getProperty("java.io.tmpdir", ".");
+            tmpDirFile = new File(tmpDir);
+        }
+        File result;
+        do {
+            result = new File(tmpDirFile, prefix + tempFileRandom.nextInt() + suffix);
+        } while (!result.createNewFile());
+        return result;
+    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.687 -0500", hash_original_field = "A717B0E8BB8BB9C8749F8488C4A39112", hash_generated_field = "573261A4844452FF520B7BA941A9349A")
+
+
+    private static final long serialVersionUID = 301077366599181567L;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.688 -0500", hash_original_field = "71ABA57E9B6FC148FE35EF640D431287", hash_generated_field = "E9BF35C3AF9EB264C60B98A12F779A5F")
+
+    private static final Random tempFileRandom = new Random();
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.689 -0500", hash_original_field = "2B68204F7DF12B112653AA6BA91F1B43", hash_generated_field = "29AF355A40323D41E13A60AE4B413BAF")
+
+    public static  char separatorChar;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.691 -0500", hash_original_field = "9B5B4672FF037607BB8CCE0F5B6469A8", hash_generated_field = "E1392EC387AB3DBDD9BD083C730593A3")
+
+    public static  String separator;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.692 -0500", hash_original_field = "C8C0870D553B2FDB134BFEF10EF505BD", hash_generated_field = "21DB87A62EEC8BA87CEF544AB3B690C4")
+
+    public static  char pathSeparatorChar;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.692 -0500", hash_original_field = "6BE2AF10E777193872E98F26779C3458", hash_generated_field = "73B014782B5AE687AFF72A95C3B82D1A")
+
+    public static  String pathSeparator;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.693 -0500", hash_original_field = "4936DBCD90EF1129A7D9F03C4DB55EE0", hash_generated_field = "E58B218DC2BC9CF2BD65F7BE2F7C20BE")
+
+    private String path;
+
+    /**
+     * Constructs a new file using the specified directory and name.
+     *
+     * @param dir
+     *            the directory where the file is stored.
+     * @param name
+     *            the file's name.
+     * @throws NullPointerException
+     *             if {@code name} is {@code null}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.694 -0500", hash_original_method = "A8210D76C41C6A4AAFC6BE2371A42886", hash_generated_method = "C4F8D83E64C44160E188661FCFE7409A")
+    public File(File dir, String name) {
+        this(dir == null ? null : dir.getPath(), name);
+    }
+
+    /**
+     * Constructs a new file using the specified path.
+     *
+     * @param path
+     *            the path to be used for the file.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.695 -0500", hash_original_method = "2175D562A2B588CC53D616403013683C", hash_generated_method = "6E9FD4316F59D7CE7196381057C46B1A")
+    public File(String path) {
+        this.path = fixSlashes(path);
+    }
+
+    /**
+     * Constructs a new File using the specified directory path and file name,
+     * placing a path separator between the two.
+     *
+     * @param dirPath
+     *            the path to the directory where the file is stored.
+     * @param name
+     *            the file's name.
+     * @throws NullPointerException
+     *             if {@code name == null}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.696 -0500", hash_original_method = "133C96EC98AEE8D59630F091A182C267", hash_generated_method = "6F57CB283102230538221213F534B8CF")
+    public File(String dirPath, String name) {
+        if (name == null) {
+            throw new NullPointerException();
+        }
+        if (dirPath == null || dirPath.isEmpty()) {
+            this.path = fixSlashes(name);
+        } else if (name.isEmpty()) {
+            this.path = fixSlashes(dirPath);
+        } else {
+            this.path = fixSlashes(join(dirPath, name));
+        }
+    }
+
+    /**
+     * Constructs a new File using the path of the specified URI. {@code uri}
+     * needs to be an absolute and hierarchical Unified Resource Identifier with
+     * file scheme and non-empty path component, but with undefined authority,
+     * query or fragment components.
+     *
+     * @param uri
+     *            the Unified Resource Identifier that is used to construct this
+     *            file.
+     * @throws IllegalArgumentException
+     *             if {@code uri} does not comply with the conditions above.
+     * @see #toURI
+     * @see java.net.URI
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.697 -0500", hash_original_method = "8BC21AA0285296D0787FE6CED7AAF58D", hash_generated_method = "8D7B2025B352DFD259920003A0518A80")
+    public File(URI uri) {
+        // check pre-conditions
+        checkURI(uri);
+        this.path = fixSlashes(uri.getPath());
+    }
+
+    /**
+     * Tests whether or not this process is allowed to execute this file.
+     * Note that this is a best-effort result; the only way to be certain is
+     * to actually attempt the operation.
+     *
+     * @return {@code true} if this file can be executed, {@code false} otherwise.
+     * @since 1.6
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.702 -0500", hash_original_method = "69AF6799D7AA8E2E8441037938ACC088", hash_generated_method = "871D1891F24D5F57AD2B962D4F6CB2C0")
     public boolean canExecute() {
-        boolean varC901E9B79BA5577EEE7F81ECCABA7C1D_2086521049 = (doAccess(X_OK));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1769692783 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1769692783;
-        // ---------- Original Method ----------
-        //return doAccess(X_OK);
+        return doAccess(X_OK);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.820 -0400", hash_original_method = "7B792954ECFC131D8AE4D0E193C4885E", hash_generated_method = "3638B595A25C0F8780370B48CA94F454")
+    /**
+     * Indicates whether the current context is allowed to read from this file.
+     *
+     * @return {@code true} if this file can be read, {@code false} otherwise.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.703 -0500", hash_original_method = "7B792954ECFC131D8AE4D0E193C4885E", hash_generated_method = "0EB677AB132959DC534CAC8C90D1B544")
     public boolean canRead() {
-        boolean var16CC90803A133688E46C28059E79DEE7_841380928 = (doAccess(R_OK));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_985424957 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_985424957;
-        // ---------- Original Method ----------
-        //return doAccess(R_OK);
+        return doAccess(R_OK);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.820 -0400", hash_original_method = "80B9F14946D459E582021E9E2F6280AD", hash_generated_method = "19A49A44770368D47E061C51C5D15838")
+    /**
+     * Indicates whether the current context is allowed to write to this file.
+     *
+     * @return {@code true} if this file can be written, {@code false}
+     *         otherwise.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.703 -0500", hash_original_method = "80B9F14946D459E582021E9E2F6280AD", hash_generated_method = "CF578D1B801A5F671FA69BBF6907AB62")
     public boolean canWrite() {
-        boolean varBEFAAAD5410F30F686A9D9145A271872_637281649 = (doAccess(W_OK));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1595276196 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1595276196;
-        // ---------- Original Method ----------
-        //return doAccess(W_OK);
+        return doAccess(W_OK);
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.820 -0400", hash_original_method = "66AEEE703F2A5FBBF7F14BCD3C8F63B9", hash_generated_method = "0C44B19CE2464D4E09DE0B876EE2BC5F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.705 -0500", hash_original_method = "66AEEE703F2A5FBBF7F14BCD3C8F63B9", hash_generated_method = "2D9999FA3CDD16B993F2AB1930A20D43")
     private boolean doAccess(int mode) {
-        addTaint(mode);
-        try 
-        {
-            boolean varB9681A08D4EE8BFF06C85294995AA993_728195601 = (Libcore.os.access(path, mode));
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2126232100 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_2126232100;
-        } //End block
-        catch (ErrnoException errnoException)
-        {
-            boolean var68934A3E9455FA72420237EB05902327_666794045 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_655184046 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_655184046;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return Libcore.os.access(path, mode);
-        //} catch (ErrnoException errnoException) {
-            //return false;
-        //}
+        try {
+            return Libcore.os.access(path, mode);
+        } catch (ErrnoException errnoException) {
+            return false;
+        }
     }
 
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.821 -0400", hash_original_method = "B9E553F90A7CDA44D1E185A0919015AC", hash_generated_method = "FC10B56EE7FABDB836C50D11602DF524")
+    /**
+     * Returns the relative sort ordering of the paths for this file and the
+     * file {@code another}. The ordering is platform dependent.
+     *
+     * @param another
+     *            a file to compare this file to
+     * @return an int determined by comparing the two paths. Possible values are
+     *         described in the Comparable interface.
+     * @see Comparable
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.706 -0500", hash_original_method = "B9E553F90A7CDA44D1E185A0919015AC", hash_generated_method = "9246B5974DFCA41CBC6E6EB8589B0456")
     public int compareTo(File another) {
-        addTaint(another.getTaint());
-        int varC3EBE29AE605A15DC4B40B4FA04382FC_511382685 = (this.getPath().compareTo(another.getPath()));
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_668164244 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_668164244;
-        // ---------- Original Method ----------
-        //return this.getPath().compareTo(another.getPath());
+        return this.getPath().compareTo(another.getPath());
     }
 
-    
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.821 -0400", hash_original_method = "5CDCBB522AFEF90E14CEC34C413E4DF5", hash_generated_method = "5EAF3499FCEAD1057DC1A1746F2BFBB1")
+    /**
+     * Deletes this file. Directories must be empty before they will be deleted.
+     *
+     * <p>Note that this method does <i>not</i> throw {@code IOException} on failure.
+     * Callers must check the return value.
+     *
+     * @return {@code true} if this file was deleted, {@code false} otherwise.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.707 -0500", hash_original_method = "5CDCBB522AFEF90E14CEC34C413E4DF5", hash_generated_method = "846E399EF55FCBBB469502891E573429")
     public boolean delete() {
-        try 
-        {
+        try {
             Libcore.os.remove(path);
-            boolean varB326B5062B2F0E69046810717534CB09_1105980689 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_352613774 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_352613774;
-        } //End block
-        catch (ErrnoException errnoException)
-        {
-            boolean var68934A3E9455FA72420237EB05902327_71839150 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1126158210 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1126158210;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //Libcore.os.remove(path);
-            //return true;
-        //} catch (ErrnoException errnoException) {
-            //return false;
-        //}
+            return true;
+        } catch (ErrnoException errnoException) {
+            return false;
+        }
     }
 
-    
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.821 -0400", hash_original_method = "CB1935EF5F2FD9C7C5DF0BCD9272AB92", hash_generated_method = "1DCAE6528A5E92D9050119D34A45FB7D")
+    /**
+     * Schedules this file to be automatically deleted when the VM terminates normally.
+     *
+     * <p><i>Note that on Android, the application lifecycle does not include VM termination,
+     * so calling this method will not ensure that files are deleted</i>. Instead, you should
+     * use the most appropriate out of:
+     * <ul>
+     * <li>Use a {@code finally} clause to manually invoke {@link #delete}.
+     * <li>Maintain your own set of files to delete, and process it at an appropriate point
+     * in your application's lifecycle.
+     * <li>Use the Unix trick of deleting the file as soon as all readers and writers have
+     * opened it. No new readers/writers will be able to access the file, but all existing
+     * ones will still have access until the last one closes the file.
+     * </ul>
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.708 -0500", hash_original_method = "CB1935EF5F2FD9C7C5DF0BCD9272AB92", hash_generated_method = "619F358CAF22F889A790A5205E70805E")
     public void deleteOnExit() {
         DeleteOnExit.getInstance().addFile(getAbsolutePath());
-        // ---------- Original Method ----------
-        //DeleteOnExit.getInstance().addFile(getAbsolutePath());
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.822 -0400", hash_original_method = "CB9025D33A83838782FA748F5EB00F53", hash_generated_method = "89DC8C1483B0AA65F5CCD442432E4C35")
+    /**
+     * Compares {@code obj} to this file and returns {@code true} if they
+     * represent the <em>same</em> object using a path specific comparison.
+     *
+     * @param obj
+     *            the object to compare this file with.
+     * @return {@code true} if {@code obj} is the same as this object,
+     *         {@code false} otherwise.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.708 -0500", hash_original_method = "CB9025D33A83838782FA748F5EB00F53", hash_generated_method = "DF6CC618E6FEC2A320CD341AE4AF4C1F")
     @Override
-    public boolean equals(Object obj) {
-        addTaint(obj.getTaint());
-        if(!(obj instanceof File))        
-        {
-            boolean var68934A3E9455FA72420237EB05902327_1691273854 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1342717241 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1342717241;
-        } //End block
-        boolean varB906D56A2FF677286A447976F1898945_1428302515 = (path.equals(((File) obj).getPath()));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_922879743 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_922879743;
-        // ---------- Original Method ----------
-        //if (!(obj instanceof File)) {
-            //return false;
-        //}
-        //return path.equals(((File) obj).getPath());
+public boolean equals(Object obj) {
+        if (!(obj instanceof File)) {
+            return false;
+        }
+        return path.equals(((File) obj).getPath());
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.822 -0400", hash_original_method = "D48176638CA08E926D8083B62CC7EB27", hash_generated_method = "0448AED004B637B9105ADE023E8782A8")
+    /**
+     * Returns a boolean indicating whether this file can be found on the
+     * underlying file system.
+     *
+     * @return {@code true} if this file exists, {@code false} otherwise.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.709 -0500", hash_original_method = "D48176638CA08E926D8083B62CC7EB27", hash_generated_method = "F8A2DBAD4957C2E8530D4BBC1D7A1A43")
     public boolean exists() {
-        boolean varF8AC394411A576A02E0863588CE659D9_1309869741 = (doAccess(F_OK));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1815584837 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1815584837;
-        // ---------- Original Method ----------
-        //return doAccess(F_OK);
+        return doAccess(F_OK);
     }
 
     
@@ -342,749 +452,630 @@ String var535F4D9720F3B0C96D8143873CE0638C_1405753140 =             path;
         //return path.isEmpty() ? userDir : join(userDir, path);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.823 -0400", hash_original_method = "C817D7800025B01E09F67B96128B6FD2", hash_generated_method = "80B87A604E4F59841DD4FDA8F461E256")
+    /**
+     * Returns a new file constructed using the absolute path of this file.
+     * Equivalent to {@code new File(this.getAbsolutePath())}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.711 -0500", hash_original_method = "C817D7800025B01E09F67B96128B6FD2", hash_generated_method = "762253F33B1D9B859BA14BD84E373A66")
     public File getAbsoluteFile() {
-File var91C0F04A5F15A2E39EBA9EBFE05CB3F9_834863206 =         new File(getAbsolutePath());
-        var91C0F04A5F15A2E39EBA9EBFE05CB3F9_834863206.addTaint(taint);
-        return var91C0F04A5F15A2E39EBA9EBFE05CB3F9_834863206;
-        // ---------- Original Method ----------
-        //return new File(getAbsolutePath());
+        return new File(getAbsolutePath());
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.823 -0400", hash_original_method = "2353D6268FF62C4AA3E4D2A85DA0DDFF", hash_generated_method = "1F14285CBCDC99E0C75610519F2D481D")
+    /**
+     * Returns the canonical path of this file.
+     * An <i>absolute</i> path is one that begins at the root of the file system.
+     * A <i>canonical</i> path is an absolute path with symbolic links
+     * and references to "." or ".." resolved. If a path element does not exist (or
+     * is not searchable), there is a conflict between interpreting canonicalization
+     * as a textual operation (where "a/../b" is "b" even if "a" does not exist) .
+     *
+     * <p>Most callers should use {@link #getAbsolutePath} instead. A canonical path is
+     * significantly more expensive to compute, and not generally useful. The primary
+     * use for canonical paths is determining whether two paths point to the same file by
+     * comparing the canonicalized paths.
+     *
+     * <p>It can be actively harmful to use a canonical path, specifically because
+     * canonicalization removes symbolic links. It's wise to assume that a symbolic link
+     * is present for a reason, and that that reason is because the link may need to change.
+     * Canonicalization removes this layer of indirection. Good code should generally avoid
+     * caching canonical paths.
+     *
+     * @return the canonical path of this file.
+     * @throws IOException
+     *             if an I/O error occurs.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.712 -0500", hash_original_method = "2353D6268FF62C4AA3E4D2A85DA0DDFF", hash_generated_method = "3D68E5C98B6F0441D9B8857E875066A3")
     public String getCanonicalPath() throws IOException {
-String var5E4E102EA6F7E6699A26045AE0D4A4C0_524579559 =         realpath(getAbsolutePath());
-        var5E4E102EA6F7E6699A26045AE0D4A4C0_524579559.addTaint(taint);
-        return var5E4E102EA6F7E6699A26045AE0D4A4C0_524579559;
-        // ---------- Original Method ----------
-        //return realpath(getAbsolutePath());
+        return realpath(getAbsolutePath());
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    private static String realpath(String path) {
-		return new String();
-	}
-
-    
-    @DSModeled(DSC.SAFE)
-    private static String readlink(String path) {
-		return new String();
-	}
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.824 -0400", hash_original_method = "703FA6965000EF35DC5F6EF68FCCB383", hash_generated_method = "C4AB9CE5317602355DB440721A181D13")
+    /**
+     * Returns a new file created using the canonical path of this file.
+     * Equivalent to {@code new File(this.getCanonicalPath())}.
+     *
+     * @return the new file constructed from this file's canonical path.
+     * @throws IOException
+     *             if an I/O error occurs.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.716 -0500", hash_original_method = "703FA6965000EF35DC5F6EF68FCCB383", hash_generated_method = "607D769DE09E9975A9BD8FE6BF604C70")
     public File getCanonicalFile() throws IOException {
-File var1398763BFC9F15F6CE7A7CED1F2E0123_106908479 =         new File(getCanonicalPath());
-        var1398763BFC9F15F6CE7A7CED1F2E0123_106908479.addTaint(taint);
-        return var1398763BFC9F15F6CE7A7CED1F2E0123_106908479;
-        // ---------- Original Method ----------
-        //return new File(getCanonicalPath());
+        return new File(getCanonicalPath());
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.824 -0400", hash_original_method = "6E20F332F3C7773E9502AE9F2437B5A6", hash_generated_method = "459D7934FD8A8F626164EF3F87B29EE2")
+    /**
+     * Returns the name of the file or directory represented by this file.
+     *
+     * @return this file's name or an empty string if there is no name part in
+     *         the file's path.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.717 -0500", hash_original_method = "6E20F332F3C7773E9502AE9F2437B5A6", hash_generated_method = "AB4E3BAE59DBA2943E712F2F58B340A9")
     public String getName() {
         int separatorIndex = path.lastIndexOf(separator);
-String varB9D1E148737978EE546D05465B0A35CE_1553667171 =         (separatorIndex < 0) ? path : path.substring(separatorIndex + 1, path.length());
-        varB9D1E148737978EE546D05465B0A35CE_1553667171.addTaint(taint);
-        return varB9D1E148737978EE546D05465B0A35CE_1553667171;
-        // ---------- Original Method ----------
-        //int separatorIndex = path.lastIndexOf(separator);
-        //return (separatorIndex < 0) ? path : path.substring(separatorIndex + 1, path.length());
+        return (separatorIndex < 0) ? path : path.substring(separatorIndex + 1, path.length());
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.825 -0400", hash_original_method = "160BE3FD42E1931950E2200B6303D787", hash_generated_method = "901904FD9B5536E8CEEA2A71162668CD")
+    /**
+     * Returns the pathname of the parent of this file. This is the path up to
+     * but not including the last name. {@code null} is returned if there is no
+     * parent.
+     *
+     * @return this file's parent pathname or {@code null}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.718 -0500", hash_original_method = "160BE3FD42E1931950E2200B6303D787", hash_generated_method = "D19EE6AE71A6B9F0A19C9A50867DF716")
     public String getParent() {
-        int length = path.length();
-        int firstInPath = 0;
-        if(separatorChar == '\\' && length > 2 && path.charAt(1) == ':')        
-        {
+        int length = path.length(), firstInPath = 0;
+        if (separatorChar == '\\' && length > 2 && path.charAt(1) == ':') {
             firstInPath = 2;
-        } //End block
+        }
         int index = path.lastIndexOf(separatorChar);
-        if(index == -1 && firstInPath > 0)        
-        {
+        if (index == -1 && firstInPath > 0) {
             index = 2;
-        } //End block
-        if(index == -1 || path.charAt(length - 1) == separatorChar)        
-        {
-String var540C13E9E156B687226421B24F2DF178_1437828973 =             null;
-            var540C13E9E156B687226421B24F2DF178_1437828973.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_1437828973;
-        } //End block
-        if(path.indexOf(separatorChar) == index
-                && path.charAt(firstInPath) == separatorChar)        
-        {
-String var357282AC880EAB1E0039AAC475A27A53_1753242990 =             path.substring(0, index + 1);
-            var357282AC880EAB1E0039AAC475A27A53_1753242990.addTaint(taint);
-            return var357282AC880EAB1E0039AAC475A27A53_1753242990;
-        } //End block
-String varB5FC3A328A09035853AC34C6C06DC9DC_2004756439 =         path.substring(0, index);
-        varB5FC3A328A09035853AC34C6C06DC9DC_2004756439.addTaint(taint);
-        return varB5FC3A328A09035853AC34C6C06DC9DC_2004756439;
-        // ---------- Original Method ----------
-        //int length = path.length(), firstInPath = 0;
-        //if (separatorChar == '\\' && length > 2 && path.charAt(1) == ':') {
-            //firstInPath = 2;
-        //}
-        //int index = path.lastIndexOf(separatorChar);
-        //if (index == -1 && firstInPath > 0) {
-            //index = 2;
-        //}
-        //if (index == -1 || path.charAt(length - 1) == separatorChar) {
-            //return null;
-        //}
-        //if (path.indexOf(separatorChar) == index
-                //&& path.charAt(firstInPath) == separatorChar) {
-            //return path.substring(0, index + 1);
-        //}
-        //return path.substring(0, index);
+        }
+        if (index == -1 || path.charAt(length - 1) == separatorChar) {
+            return null;
+        }
+        if (path.indexOf(separatorChar) == index
+                && path.charAt(firstInPath) == separatorChar) {
+            return path.substring(0, index + 1);
+        }
+        return path.substring(0, index);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.825 -0400", hash_original_method = "05B6D7D4A7E04D12316D2DAB95CF61C6", hash_generated_method = "E718C2D61D04FFF97E136FB4D99DC4A1")
+    /**
+     * Returns a new file made from the pathname of the parent of this file.
+     * This is the path up to but not including the last name. {@code null} is
+     * returned when there is no parent.
+     *
+     * @return a new file representing this file's parent or {@code null}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.719 -0500", hash_original_method = "05B6D7D4A7E04D12316D2DAB95CF61C6", hash_generated_method = "87CB15FAAF0F4CE298C7CD4BD98EF741")
     public File getParentFile() {
         String tempParent = getParent();
-        if(tempParent == null)        
-        {
-File var540C13E9E156B687226421B24F2DF178_1286729359 =             null;
-            var540C13E9E156B687226421B24F2DF178_1286729359.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_1286729359;
-        } //End block
-File varD8B3B9F37F2A78EA9F84CD2AE0544A52_1305558277 =         new File(tempParent);
-        varD8B3B9F37F2A78EA9F84CD2AE0544A52_1305558277.addTaint(taint);
-        return varD8B3B9F37F2A78EA9F84CD2AE0544A52_1305558277;
-        // ---------- Original Method ----------
-        //String tempParent = getParent();
-        //if (tempParent == null) {
-            //return null;
-        //}
-        //return new File(tempParent);
+        if (tempParent == null) {
+            return null;
+        }
+        return new File(tempParent);
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.826 -0400", hash_original_method = "F862A3BA81BCB206C83E79C3BEB01336", hash_generated_method = "A008C8D3B69CBA7179C73B7323AD198B")
+    /**
+     * Returns the path of this file.
+     *
+     * @return this file's path.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.719 -0500", hash_original_method = "F862A3BA81BCB206C83E79C3BEB01336", hash_generated_method = "685DA06B3205BF0988B63E7E0C7CEB6C")
     public String getPath() {
-String var535F4D9720F3B0C96D8143873CE0638C_694766638 =         path;
-        var535F4D9720F3B0C96D8143873CE0638C_694766638.addTaint(taint);
-        return var535F4D9720F3B0C96D8143873CE0638C_694766638;
-        // ---------- Original Method ----------
-        //return path;
+        return path;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.826 -0400", hash_original_method = "9D3CBE29781C2664F4636CCC28F83B76", hash_generated_method = "08217A8D41C05B61FD13CD8A5977065B")
+    /**
+     * Returns an integer hash code for the receiver. Any two objects for which
+     * {@code equals} returns {@code true} must return the same hash code.
+     *
+     * @return this files's hash value.
+     * @see #equals
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.720 -0500", hash_original_method = "9D3CBE29781C2664F4636CCC28F83B76", hash_generated_method = "A10691391C760522DECD477F5CBA372A")
     @Override
-    public int hashCode() {
-        int var69A94F24A603FF8EC28F2CB95FF1273E_566198785 = (getPath().hashCode() ^ 1234321);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1705923426 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1705923426;
-        // ---------- Original Method ----------
-        //return getPath().hashCode() ^ 1234321;
+public int hashCode() {
+        return getPath().hashCode() ^ 1234321;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.826 -0400", hash_original_method = "9F2931F68825A4578F9E89212BCAE059", hash_generated_method = "CE3D9E77162603CF34658C00D7D1B4B1")
+    /**
+     * Indicates if this file's pathname is absolute. Whether a pathname is
+     * absolute is platform specific. On Android, absolute paths start with
+     * the character '/'.
+     *
+     * @return {@code true} if this file's pathname is absolute, {@code false}
+     *         otherwise.
+     * @see #getPath
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.721 -0500", hash_original_method = "9F2931F68825A4578F9E89212BCAE059", hash_generated_method = "2E75DF42A48FEC873AC09333063133CF")
     public boolean isAbsolute() {
-        boolean var7FA6955EF77820B7CB434F8F4B9C1BA0_1662966708 = (path.length() > 0 && path.charAt(0) == separatorChar);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1200754862 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1200754862;
-        // ---------- Original Method ----------
-        //return path.length() > 0 && path.charAt(0) == separatorChar;
+        return path.length() > 0 && path.charAt(0) == separatorChar;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.826 -0400", hash_original_method = "5A1A5CA8E31989238D097F162F5C184C", hash_generated_method = "096D316934B9E3069C6E5D59C2B49B87")
+    /**
+     * Indicates if this file represents a <em>directory</em> on the
+     * underlying file system.
+     *
+     * @return {@code true} if this file is a directory, {@code false}
+     *         otherwise.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.722 -0500", hash_original_method = "5A1A5CA8E31989238D097F162F5C184C", hash_generated_method = "D36D7BBF127F2983896837F632E4EBE0")
     public boolean isDirectory() {
-        try 
-        {
-            boolean var4B8DF19CF597FF030ECB92DCEF92F772_93727944 = (S_ISDIR(Libcore.os.stat(path).st_mode));
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_511686722 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_511686722;
-        } //End block
-        catch (ErrnoException errnoException)
-        {
-            boolean var68934A3E9455FA72420237EB05902327_1959397934 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1450634087 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1450634087;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return S_ISDIR(Libcore.os.stat(path).st_mode);
-        //} catch (ErrnoException errnoException) {
-            //return false;
-        //}
+        try {
+            return S_ISDIR(Libcore.os.stat(path).st_mode);
+        } catch (ErrnoException errnoException) {
+            // The RI returns false on error. (Even for errors like EACCES or ELOOP.)
+            return false;
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.827 -0400", hash_original_method = "B5DE2229663641D636EF433E62C83E7A", hash_generated_method = "22C8D7C2618E17F2A751D2247ECD40BA")
+    /**
+     * Indicates if this file represents a <em>file</em> on the underlying
+     * file system.
+     *
+     * @return {@code true} if this file is a file, {@code false} otherwise.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.723 -0500", hash_original_method = "B5DE2229663641D636EF433E62C83E7A", hash_generated_method = "D28055B98E7DD2D66204F5D003B9EB24")
     public boolean isFile() {
-        try 
-        {
-            boolean var23B0CD3ED8850077D03D70146096FAD6_487938379 = (S_ISREG(Libcore.os.stat(path).st_mode));
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_794910519 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_794910519;
-        } //End block
-        catch (ErrnoException errnoException)
-        {
-            boolean var68934A3E9455FA72420237EB05902327_326360423 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1377240740 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1377240740;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return S_ISREG(Libcore.os.stat(path).st_mode);
-        //} catch (ErrnoException errnoException) {
-            //return false;
-        //}
+        try {
+            return S_ISREG(Libcore.os.stat(path).st_mode);
+        } catch (ErrnoException errnoException) {
+            // The RI returns false on error. (Even for errors like EACCES or ELOOP.)
+            return false;
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.827 -0400", hash_original_method = "8D5680EC06296245D4F0DE9A90486B91", hash_generated_method = "101066F72192F27DB69DF4B83A7207D8")
+    /**
+     * Returns whether or not this file is a hidden file as defined by the
+     * operating system. The notion of "hidden" is system-dependent. For Unix
+     * systems a file is considered hidden if its name starts with a ".". For
+     * Windows systems there is an explicit flag in the file system for this
+     * purpose.
+     *
+     * @return {@code true} if the file is hidden, {@code false} otherwise.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.724 -0500", hash_original_method = "8D5680EC06296245D4F0DE9A90486B91", hash_generated_method = "38682CD78A90AEDA2EE3A2281092DE61")
     public boolean isHidden() {
-        if(path.isEmpty())        
-        {
-            boolean var68934A3E9455FA72420237EB05902327_198835530 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1345349153 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1345349153;
-        } //End block
-        boolean var6FA1B6AE89C70C02B418B153337A505B_1854729463 = (getName().startsWith("."));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1537040123 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1537040123;
-        // ---------- Original Method ----------
-        //if (path.isEmpty()) {
-            //return false;
-        //}
-        //return getName().startsWith(".");
+        if (path.isEmpty()) {
+            return false;
+        }
+        return getName().startsWith(".");
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.827 -0400", hash_original_method = "0921E33485CFCA34C1412D0CC74585F6", hash_generated_method = "C0C5C43D8882F30FC861CF9B295C3968")
+    /**
+     * Returns the time when this file was last modified, measured in
+     * milliseconds since January 1st, 1970, midnight.
+     * Returns 0 if the file does not exist.
+     *
+     * @return the time when this file was last modified.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.725 -0500", hash_original_method = "0921E33485CFCA34C1412D0CC74585F6", hash_generated_method = "D860E5F1DFBA213A0282A688E6D70B62")
     public long lastModified() {
-        try 
-        {
-            long var0663E05393D05DACB96D74C2258268AA_860964772 = (Libcore.os.stat(path).st_mtime * 1000L);
-                        long var0F5264038205EDFB1AC05FBB0E8C5E94_20851209 = getTaintLong();
-            return var0F5264038205EDFB1AC05FBB0E8C5E94_20851209;
-        } //End block
-        catch (ErrnoException errnoException)
-        {
-            long varCFCD208495D565EF66E7DFF9F98764DA_2125019307 = (0);
-                        long var0F5264038205EDFB1AC05FBB0E8C5E94_1167493920 = getTaintLong();
-            return var0F5264038205EDFB1AC05FBB0E8C5E94_1167493920;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return Libcore.os.stat(path).st_mtime * 1000L;
-        //} catch (ErrnoException errnoException) {
-            //return 0;
-        //}
+        try {
+            return Libcore.os.stat(path).st_mtime * 1000L;
+        } catch (ErrnoException errnoException) {
+            // The RI returns 0 on error. (Even for errors like EACCES or ELOOP.)
+            return 0;
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.828 -0400", hash_original_method = "9B75702C13A04EF9D2AD1E246C28DD45", hash_generated_method = "5C63C7CAD7A8011E56A7510B9B1F342F")
+    /**
+     * Sets the time this file was last modified, measured in milliseconds since
+     * January 1st, 1970, midnight.
+     *
+     * <p>Note that this method does <i>not</i> throw {@code IOException} on failure.
+     * Callers must check the return value.
+     *
+     * @param time
+     *            the last modification time for this file.
+     * @return {@code true} if the operation is successful, {@code false}
+     *         otherwise.
+     * @throws IllegalArgumentException
+     *             if {@code time < 0}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.725 -0500", hash_original_method = "9B75702C13A04EF9D2AD1E246C28DD45", hash_generated_method = "E25510CB69644BCC9EDEFC03E361A7CC")
     public boolean setLastModified(long time) {
-        addTaint(time);
-        if(time < 0)        
-        {
-            IllegalArgumentException varB8559A4A56D1E9E972ED6F7DB9D29FE8_1627393265 = new IllegalArgumentException("time < 0");
-            varB8559A4A56D1E9E972ED6F7DB9D29FE8_1627393265.addTaint(taint);
-            throw varB8559A4A56D1E9E972ED6F7DB9D29FE8_1627393265;
-        } //End block
-        boolean varD17DF9F97B466F892C09B9434A3E81EA_1535518208 = (setLastModifiedImpl(path, time));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1808468541 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1808468541;
-        // ---------- Original Method ----------
-        //if (time < 0) {
-            //throw new IllegalArgumentException("time < 0");
-        //}
-        //return setLastModifiedImpl(path, time);
+        if (time < 0) {
+            throw new IllegalArgumentException("time < 0");
+        }
+        return setLastModifiedImpl(path, time);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    private static boolean setLastModifiedImpl(String path, long time) {
-		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_916883677 = DSUtils.UNKNOWN_BOOLEAN;
-		return var84E2C64F38F78BA3EA5C905AB5A2DA27_916883677;
-	}
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.829 -0400", hash_original_method = "A10D7182120D225C8A5565403EC4EFFE", hash_generated_method = "F3A963AA8516C60484A31F0AE51A81E1")
+    /**
+     * Equivalent to setWritable(false, false).
+     *
+     * @see #setWritable(boolean, boolean)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.728 -0500", hash_original_method = "A10D7182120D225C8A5565403EC4EFFE", hash_generated_method = "8A2B9B863D8D29185E8095812275FAE6")
     public boolean setReadOnly() {
-        boolean varA56C101F7C066CC2FB2A405D5121B78E_112178093 = (setWritable(false, false));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1767989141 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1767989141;
-        // ---------- Original Method ----------
-        //return setWritable(false, false);
+        return setWritable(false, false);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.829 -0400", hash_original_method = "6BD52A034BD79C942DD6922B1E4C88BF", hash_generated_method = "31C86FC721DEA35F47ABCE24D0A7F186")
+    /**
+     * Manipulates the execute permissions for the abstract path designated by
+     * this file.
+     *
+     * <p>Note that this method does <i>not</i> throw {@code IOException} on failure.
+     * Callers must check the return value.
+     *
+     * @param executable
+     *            To allow execute permission if true, otherwise disallow
+     * @param ownerOnly
+     *            To manipulate execute permission only for owner if true,
+     *            otherwise for everyone. The manipulation will apply to
+     *            everyone regardless of this value if the underlying system
+     *            does not distinguish owner and other users.
+     * @return true if and only if the operation succeeded. If the user does not
+     *         have permission to change the access permissions of this abstract
+     *         pathname the operation will fail. If the underlying file system
+     *         does not support execute permission and the value of executable
+     *         is false, this operation will fail.
+     * @since 1.6
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.729 -0500", hash_original_method = "6BD52A034BD79C942DD6922B1E4C88BF", hash_generated_method = "846DAA1FE59B7D0BD8818911AEF86CE4")
     public boolean setExecutable(boolean executable, boolean ownerOnly) {
-        addTaint(ownerOnly);
-        addTaint(executable);
-        boolean varE7642FF076B81623232A54476AE77555_1552916135 = (doChmod(ownerOnly ? S_IXUSR : (S_IXUSR | S_IXGRP | S_IXOTH), executable));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_286721584 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_286721584;
-        // ---------- Original Method ----------
-        //return doChmod(ownerOnly ? S_IXUSR : (S_IXUSR | S_IXGRP | S_IXOTH), executable);
+        return doChmod(ownerOnly ? S_IXUSR : (S_IXUSR | S_IXGRP | S_IXOTH), executable);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.829 -0400", hash_original_method = "C14362B21605A10B0FC1769762B4B7C4", hash_generated_method = "20459B99CC70F39EF24FC07CAD56CE8D")
+    /**
+     * Equivalent to setExecutable(executable, true).
+     * @see #setExecutable(boolean, boolean)
+     * @since 1.6
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.730 -0500", hash_original_method = "C14362B21605A10B0FC1769762B4B7C4", hash_generated_method = "76EA56D136285A936DF78C3CC7F031FE")
     public boolean setExecutable(boolean executable) {
-        addTaint(executable);
-        boolean var72FFE20D190F553CE0FBD56EAC8180B9_549189911 = (setExecutable(executable, true));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1661636475 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1661636475;
-        // ---------- Original Method ----------
-        //return setExecutable(executable, true);
+        return setExecutable(executable, true);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.830 -0400", hash_original_method = "4618439ECB899A21431C9885F3874F0C", hash_generated_method = "79CE09BB86E1B1909B9CCE38678198E1")
+    /**
+     * Manipulates the read permissions for the abstract path designated by this
+     * file.
+     *
+     * @param readable
+     *            To allow read permission if true, otherwise disallow
+     * @param ownerOnly
+     *            To manipulate read permission only for owner if true,
+     *            otherwise for everyone. The manipulation will apply to
+     *            everyone regardless of this value if the underlying system
+     *            does not distinguish owner and other users.
+     * @return true if and only if the operation succeeded. If the user does not
+     *         have permission to change the access permissions of this abstract
+     *         pathname the operation will fail. If the underlying file system
+     *         does not support read permission and the value of readable is
+     *         false, this operation will fail.
+     * @since 1.6
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.731 -0500", hash_original_method = "4618439ECB899A21431C9885F3874F0C", hash_generated_method = "F6CA3ED75EE2D9A55AE6FE511CEE0C49")
     public boolean setReadable(boolean readable, boolean ownerOnly) {
-        addTaint(ownerOnly);
-        addTaint(readable);
-        boolean varA1C07C3B4F0CB28891C75DFC32EABAD1_633985821 = (doChmod(ownerOnly ? S_IRUSR : (S_IRUSR | S_IRGRP | S_IROTH), readable));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_746878454 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_746878454;
-        // ---------- Original Method ----------
-        //return doChmod(ownerOnly ? S_IRUSR : (S_IRUSR | S_IRGRP | S_IROTH), readable);
+        return doChmod(ownerOnly ? S_IRUSR : (S_IRUSR | S_IRGRP | S_IROTH), readable);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.830 -0400", hash_original_method = "25CECE784879D9A6F63C12E2E495084D", hash_generated_method = "2BDB29718C4BBAD0CAD6159405029376")
+    /**
+     * Equivalent to setReadable(readable, true).
+     * @see #setReadable(boolean, boolean)
+     * @since 1.6
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.732 -0500", hash_original_method = "25CECE784879D9A6F63C12E2E495084D", hash_generated_method = "CB831F961B92F1F53F258BE584B5B45A")
     public boolean setReadable(boolean readable) {
-        addTaint(readable);
-        boolean var4D3FAF2A9781DA582CF879708D932A86_1520436684 = (setReadable(readable, true));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_181471962 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_181471962;
-        // ---------- Original Method ----------
-        //return setReadable(readable, true);
+        return setReadable(readable, true);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.830 -0400", hash_original_method = "C7C84CA2ADD923BB8D9E9EBE2B4AA50C", hash_generated_method = "B8B461869391E871C9E66F2C47F96B35")
+    /**
+     * Manipulates the write permissions for the abstract path designated by this
+     * file.
+     *
+     * @param writable
+     *            To allow write permission if true, otherwise disallow
+     * @param ownerOnly
+     *            To manipulate write permission only for owner if true,
+     *            otherwise for everyone. The manipulation will apply to
+     *            everyone regardless of this value if the underlying system
+     *            does not distinguish owner and other users.
+     * @return true if and only if the operation succeeded. If the user does not
+     *         have permission to change the access permissions of this abstract
+     *         pathname the operation will fail.
+     * @since 1.6
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.733 -0500", hash_original_method = "C7C84CA2ADD923BB8D9E9EBE2B4AA50C", hash_generated_method = "34D07E994BAF6ACE4C2A8B4FD73AA63E")
     public boolean setWritable(boolean writable, boolean ownerOnly) {
-        addTaint(ownerOnly);
-        addTaint(writable);
-        boolean var7E7D573895F2F1DAEBC92E098C540DEE_430617748 = (doChmod(ownerOnly ? S_IWUSR : (S_IWUSR | S_IWGRP | S_IWOTH), writable));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1013596425 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1013596425;
-        // ---------- Original Method ----------
-        //return doChmod(ownerOnly ? S_IWUSR : (S_IWUSR | S_IWGRP | S_IWOTH), writable);
+        return doChmod(ownerOnly ? S_IWUSR : (S_IWUSR | S_IWGRP | S_IWOTH), writable);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.830 -0400", hash_original_method = "0112F87387A0225E67147890BEDE5131", hash_generated_method = "4A0976E7061D4C9E9D239FD3CCA4A3C3")
+    /**
+     * Equivalent to setWritable(writable, true).
+     * @see #setWritable(boolean, boolean)
+     * @since 1.6
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.734 -0500", hash_original_method = "0112F87387A0225E67147890BEDE5131", hash_generated_method = "2CE16D26B0CD2AB7F814C2524F473F43")
     public boolean setWritable(boolean writable) {
-        addTaint(writable);
-        boolean varD9C9754172505A976ED3D05649F90027_828656778 = (setWritable(writable, true));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_485748819 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_485748819;
-        // ---------- Original Method ----------
-        //return setWritable(writable, true);
+        return setWritable(writable, true);
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.831 -0400", hash_original_method = "1AE2CD7860321C46BB79C9D3B3E6342E", hash_generated_method = "CCBC0E0AD218637FD8B7E581464D48BB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.735 -0500", hash_original_method = "1AE2CD7860321C46BB79C9D3B3E6342E", hash_generated_method = "5912B43ADAE800E83E77A983007838D8")
     private boolean doChmod(int mask, boolean set) {
-        addTaint(set);
-        addTaint(mask);
-        try 
-        {
+        try {
             StructStat sb = Libcore.os.stat(path);
             int newMode = set ? (sb.st_mode | mask) : (sb.st_mode & ~mask);
             Libcore.os.chmod(path, newMode);
-            boolean varB326B5062B2F0E69046810717534CB09_2065166716 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_982283248 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_982283248;
-        } //End block
-        catch (ErrnoException errnoException)
-        {
-            boolean var68934A3E9455FA72420237EB05902327_313948008 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2044141377 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_2044141377;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //StructStat sb = Libcore.os.stat(path);
-            //int newMode = set ? (sb.st_mode | mask) : (sb.st_mode & ~mask);
-            //Libcore.os.chmod(path, newMode);
-            //return true;
-        //} catch (ErrnoException errnoException) {
-            //return false;
-        //}
+            return true;
+        } catch (ErrnoException errnoException) {
+            return false;
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.831 -0400", hash_original_method = "6E1602EC51AE975F6EDA687DC2872422", hash_generated_method = "1C22129B8BC332243B00551D74991963")
+    /**
+     * Returns the length of this file in bytes.
+     * Returns 0 if the file does not exist.
+     * The result for a directory is not defined.
+     *
+     * @return the number of bytes in this file.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.736 -0500", hash_original_method = "6E1602EC51AE975F6EDA687DC2872422", hash_generated_method = "0CD97CA24911DBF6FF7EFE61EEFD12E2")
     public long length() {
-        try 
-        {
-            long var4EF3814C0FB7DB72C328FDC964345424_1747145905 = (Libcore.os.stat(path).st_size);
-                        long var0F5264038205EDFB1AC05FBB0E8C5E94_874516332 = getTaintLong();
-            return var0F5264038205EDFB1AC05FBB0E8C5E94_874516332;
-        } //End block
-        catch (ErrnoException errnoException)
-        {
-            long varCFCD208495D565EF66E7DFF9F98764DA_1871438543 = (0);
-                        long var0F5264038205EDFB1AC05FBB0E8C5E94_1480750407 = getTaintLong();
-            return var0F5264038205EDFB1AC05FBB0E8C5E94_1480750407;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return Libcore.os.stat(path).st_size;
-        //} catch (ErrnoException errnoException) {
-            //return 0;
-        //}
+        try {
+            return Libcore.os.stat(path).st_size;
+        } catch (ErrnoException errnoException) {
+            // The RI returns 0 on error. (Even for errors like EACCES or ELOOP.)
+            return 0;
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.831 -0400", hash_original_method = "DC3A6B837A6CEBDAA6FC05976EEFEE9C", hash_generated_method = "7484DCC314016383ACAB77C7B1420B73")
+    /**
+     * Returns an array of strings with the file names in the directory
+     * represented by this file. The result is {@code null} if this file is not
+     * a directory.
+     * <p>
+     * The entries {@code .} and {@code ..} representing the current and parent
+     * directory are not returned as part of the list.
+     *
+     * @return an array of strings with file names or {@code null}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.737 -0500", hash_original_method = "DC3A6B837A6CEBDAA6FC05976EEFEE9C", hash_generated_method = "C3F461AD4C3340BD933823AE6BD632D0")
     public String[] list() {
-String[] var4F4C7F90EA62B6A2861763194713B35C_815412095 =         listImpl(path);
-        var4F4C7F90EA62B6A2861763194713B35C_815412095.addTaint(taint);
-        return var4F4C7F90EA62B6A2861763194713B35C_815412095;
-        // ---------- Original Method ----------
-        //return listImpl(path);
+        return listImpl(path);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    private static String[] listImpl(String path) {
-		return new String[]{"*.*" + path};
-	}
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.832 -0400", hash_original_method = "9DF6733463E25DE92688E347FBBAD22E", hash_generated_method = "29CF3B6C15F77B477933B63CC31D14A6")
+    /**
+     * Gets a list of the files in the directory represented by this file. This
+     * list is then filtered through a FilenameFilter and the names of files
+     * with matching names are returned as an array of strings. Returns
+     * {@code null} if this file is not a directory. If {@code filter} is
+     * {@code null} then all filenames match.
+     * <p>
+     * The entries {@code .} and {@code ..} representing the current and parent
+     * directories are not returned as part of the list.
+     *
+     * @param filter
+     *            the filter to match names against, may be {@code null}.
+     * @return an array of files or {@code null}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.739 -0500", hash_original_method = "9DF6733463E25DE92688E347FBBAD22E", hash_generated_method = "3C3A3CFC49EB3C95FA39F5723040A33C")
     public String[] list(FilenameFilter filter) {
-        addTaint(filter.getTaint());
         String[] filenames = list();
-        if(filter == null || filenames == null)        
-        {
-String[] var6D54B04A16B4CABC2F5099A0A3EDD446_1035677050 =             filenames;
-            var6D54B04A16B4CABC2F5099A0A3EDD446_1035677050.addTaint(taint);
-            return var6D54B04A16B4CABC2F5099A0A3EDD446_1035677050;
-        } //End block
+        if (filter == null || filenames == null) {
+            return filenames;
+        }
         List<String> result = new ArrayList<String>(filenames.length);
-for(String filename : filenames)
-        {
-            if(filter.accept(this, filename))            
-            {
+        for (String filename : filenames) {
+            if (filter.accept(this, filename)) {
                 result.add(filename);
-            } //End block
-        } //End block
-String[] var51A2A63AEB43607DDC4545933C4B2C78_987460155 =         result.toArray(new String[result.size()]);
-        var51A2A63AEB43607DDC4545933C4B2C78_987460155.addTaint(taint);
-        return var51A2A63AEB43607DDC4545933C4B2C78_987460155;
-        // ---------- Original Method ----------
-        //String[] filenames = list();
-        //if (filter == null || filenames == null) {
-            //return filenames;
-        //}
-        //List<String> result = new ArrayList<String>(filenames.length);
-        //for (String filename : filenames) {
-            //if (filter.accept(this, filename)) {
-                //result.add(filename);
-            //}
-        //}
-        //return result.toArray(new String[result.size()]);
+            }
+        }
+        return result.toArray(new String[result.size()]);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.832 -0400", hash_original_method = "9B953D65872590D8ABB7497D4B159A57", hash_generated_method = "AC5DDFBB176084A6E3902D43B7BCB5AF")
+    /**
+     * Returns an array of files contained in the directory represented by this
+     * file. The result is {@code null} if this file is not a directory. The
+     * paths of the files in the array are absolute if the path of this file is
+     * absolute, they are relative otherwise.
+     *
+     * @return an array of files or {@code null}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.740 -0500", hash_original_method = "9B953D65872590D8ABB7497D4B159A57", hash_generated_method = "02AE2C1C40DB6FEABA09D2EED581A218")
     public File[] listFiles() {
-File[] var1B7983DA994F07FB8F700D410235399C_1818608247 =         filenamesToFiles(list());
-        var1B7983DA994F07FB8F700D410235399C_1818608247.addTaint(taint);
-        return var1B7983DA994F07FB8F700D410235399C_1818608247;
-        // ---------- Original Method ----------
-        //return filenamesToFiles(list());
+        return filenamesToFiles(list());
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.833 -0400", hash_original_method = "94A37D22B56FB881F333055CF5969013", hash_generated_method = "9B8EA342E363C18C05A1904594297F8D")
+    /**
+     * Gets a list of the files in the directory represented by this file. This
+     * list is then filtered through a FilenameFilter and files with matching
+     * names are returned as an array of files. Returns {@code null} if this
+     * file is not a directory. If {@code filter} is {@code null} then all
+     * filenames match.
+     * <p>
+     * The entries {@code .} and {@code ..} representing the current and parent
+     * directories are not returned as part of the list.
+     *
+     * @param filter
+     *            the filter to match names against, may be {@code null}.
+     * @return an array of files or {@code null}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.740 -0500", hash_original_method = "94A37D22B56FB881F333055CF5969013", hash_generated_method = "915FAD761344385A2BCFAA4982F4BEE2")
     public File[] listFiles(FilenameFilter filter) {
-        addTaint(filter.getTaint());
-File[] var5324373AF7B0AF1EB8D446F24EE9274B_1501053947 =         filenamesToFiles(list(filter));
-        var5324373AF7B0AF1EB8D446F24EE9274B_1501053947.addTaint(taint);
-        return var5324373AF7B0AF1EB8D446F24EE9274B_1501053947;
-        // ---------- Original Method ----------
-        //return filenamesToFiles(list(filter));
+        return filenamesToFiles(list(filter));
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.833 -0400", hash_original_method = "1FB8ED2C60AA91150D4C3211C8CB2AD8", hash_generated_method = "3DE09770B2E6F03F59F695EE205D82D7")
+    /**
+     * Gets a list of the files in the directory represented by this file. This
+     * list is then filtered through a FileFilter and matching files are
+     * returned as an array of files. Returns {@code null} if this file is not a
+     * directory. If {@code filter} is {@code null} then all files match.
+     * <p>
+     * The entries {@code .} and {@code ..} representing the current and parent
+     * directories are not returned as part of the list.
+     *
+     * @param filter
+     *            the filter to match names against, may be {@code null}.
+     * @return an array of files or {@code null}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.741 -0500", hash_original_method = "1FB8ED2C60AA91150D4C3211C8CB2AD8", hash_generated_method = "1F599671FB5A99CF35C65B016AE3135C")
     public File[] listFiles(FileFilter filter) {
-        addTaint(filter.getTaint());
         File[] files = listFiles();
-        if(filter == null || files == null)        
-        {
-File[] var41733365F073B7D9D72A60B6E8BB11F4_2062507864 =             files;
-            var41733365F073B7D9D72A60B6E8BB11F4_2062507864.addTaint(taint);
-            return var41733365F073B7D9D72A60B6E8BB11F4_2062507864;
-        } //End block
+        if (filter == null || files == null) {
+            return files;
+        }
         List<File> result = new ArrayList<File>(files.length);
-for(File file : files)
-        {
-            if(filter.accept(file))            
-            {
+        for (File file : files) {
+            if (filter.accept(file)) {
                 result.add(file);
-            } //End block
-        } //End block
-File[] var36CD04F8590545BE163F612A0C547736_510542342 =         result.toArray(new File[result.size()]);
-        var36CD04F8590545BE163F612A0C547736_510542342.addTaint(taint);
-        return var36CD04F8590545BE163F612A0C547736_510542342;
-        // ---------- Original Method ----------
-        //File[] files = listFiles();
-        //if (filter == null || files == null) {
-            //return files;
-        //}
-        //List<File> result = new ArrayList<File>(files.length);
-        //for (File file : files) {
-            //if (filter.accept(file)) {
-                //result.add(file);
-            //}
-        //}
-        //return result.toArray(new File[result.size()]);
+            }
+        }
+        return result.toArray(new File[result.size()]);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.833 -0400", hash_original_method = "7CC449D7C06EBE9C929936D878A8919D", hash_generated_method = "CC3ED78B83BA36B3882FDB2D5B3AC32F")
+    /**
+     * Converts a String[] containing filenames to a File[].
+     * Note that the filenames must not contain slashes.
+     * This method is to remove duplication in the implementation
+     * of File.list's overloads.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.742 -0500", hash_original_method = "7CC449D7C06EBE9C929936D878A8919D", hash_generated_method = "CD6036511F0CD6F301B7588427C26A96")
     private File[] filenamesToFiles(String[] filenames) {
-        addTaint(filenames[0].getTaint());
-        if(filenames == null)        
-        {
-File[] var540C13E9E156B687226421B24F2DF178_1406049929 =             null;
-            var540C13E9E156B687226421B24F2DF178_1406049929.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_1406049929;
-        } //End block
+        if (filenames == null) {
+            return null;
+        }
         int count = filenames.length;
         File[] result = new File[count];
-for(int i = 0;i < count;++i)
-        {
+        for (int i = 0; i < count; ++i) {
             result[i] = new File(this, filenames[i]);
-        } //End block
-File[] varDC838461EE2FA0CA4C9BBB70A15456B0_1223998741 =         result;
-        varDC838461EE2FA0CA4C9BBB70A15456B0_1223998741.addTaint(taint);
-        return varDC838461EE2FA0CA4C9BBB70A15456B0_1223998741;
-        // ---------- Original Method ----------
-        //if (filenames == null) {
-            //return null;
-        //}
-        //int count = filenames.length;
-        //File[] result = new File[count];
-        //for (int i = 0; i < count; ++i) {
-            //result[i] = new File(this, filenames[i]);
-        //}
-        //return result;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.834 -0400", hash_original_method = "9AA9A2328E77BE45E90F159A380326D5", hash_generated_method = "82D46EC287CE95186779BCC73A76A390")
-    public boolean mkdir() {
-        try 
-        {
-            Libcore.os.mkdir(path, S_IRWXU);
-            boolean varB326B5062B2F0E69046810717534CB09_1293210993 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_107891293 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_107891293;
-        } //End block
-        catch (ErrnoException errnoException)
-        {
-            boolean var68934A3E9455FA72420237EB05902327_344684989 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1588394190 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1588394190;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //Libcore.os.mkdir(path, S_IRWXU);
-            //return true;
-        //} catch (ErrnoException errnoException) {
-            //return false;
-        //}
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.834 -0400", hash_original_method = "0ED75208E22CDF6376FEADF6E55B44EF", hash_generated_method = "7019C26F4D561A7F6A0CD3F0EC757694")
-    public boolean mkdirs() {
-        if(exists())        
-        {
-            boolean var68934A3E9455FA72420237EB05902327_322358092 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1828349303 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1828349303;
-        } //End block
-        if(mkdir())        
-        {
-            boolean varB326B5062B2F0E69046810717534CB09_1181079861 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_575527530 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_575527530;
-        } //End block
-        String parentDir = getParent();
-        if(parentDir == null)        
-        {
-            boolean var68934A3E9455FA72420237EB05902327_1560158630 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1497540254 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1497540254;
-        } //End block
-        boolean var32C4D9D2D48215B684F04282CDBA9D48_1730382914 = ((new File(parentDir).mkdirs() && mkdir()));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1897065511 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1897065511;
-        // ---------- Original Method ----------
-        //if (exists()) {
-            //return false;
-        //}
-        //if (mkdir()) {
-            //return true;
-        //}
-        //String parentDir = getParent();
-        //if (parentDir == null) {
-            //return false;
-        //}
-        //return (new File(parentDir).mkdirs() && mkdir());
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.855 -0400", hash_original_method = "B6F8DC1B8131115DA0E4E46657B89E08", hash_generated_method = "769978219FB45E4ACC9BDEE7C1C1FCE1")
-    public boolean createNewFile() throws IOException {
-        FileDescriptor fd = null;
-        try 
-        {
-            fd = Libcore.os.open(path, O_RDWR | O_CREAT | O_EXCL, 0600);
-            boolean varB326B5062B2F0E69046810717534CB09_1226453672 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_745897568 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_745897568;
-        } //End block
-        catch (ErrnoException errnoException)
-        {
-            if(errnoException.errno == EEXIST)            
-            {
-                boolean var68934A3E9455FA72420237EB05902327_1706201908 = (false);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1422719375 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1422719375;
-            } //End block
-            java.io.IOException var533DBF3F7D78874DC97ED285C3BC3B22_1441150300 = errnoException.rethrowAsIOException();
-            var533DBF3F7D78874DC97ED285C3BC3B22_1441150300.addTaint(taint);
-            throw var533DBF3F7D78874DC97ED285C3BC3B22_1441150300;
-        } //End block
-        finally 
-        {
-            IoUtils.close(fd);
-        } //End block
-        // ---------- Original Method ----------
-        //FileDescriptor fd = null;
-        //try {
-            //fd = Libcore.os.open(path, O_RDWR | O_CREAT | O_EXCL, 0600);
-            //return true;
-        //} catch (ErrnoException errnoException) {
-            //if (errnoException.errno == EEXIST) {
-                //return false;
-            //}
-            //throw errnoException.rethrowAsIOException();
-        //} finally {
-            //IoUtils.close(fd); 
-        //}
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    public static File createTempFile(String prefix, String suffix) throws IOException {
-        return createTempFile(prefix, suffix, null);
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    public static File createTempFile(String prefix, String suffix, File directory) throws IOException {
-        if (prefix.length() < 3) {
-            throw new IllegalArgumentException("prefix must be at least 3 characters");
         }
-        if (suffix == null) {
-            suffix = ".tmp";
-        }
-        File tmpDirFile = directory;
-        if (tmpDirFile == null) {
-            String tmpDir = System.getProperty("java.io.tmpdir", ".");
-            tmpDirFile = new File(tmpDir);
-        }
-        File result;
-        do {
-            result = new File(tmpDirFile, prefix + tempFileRandom.nextInt() + suffix);
-        } while (!result.createNewFile());
         return result;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.856 -0400", hash_original_method = "FDC5D6D625B3CE9B182F17F4E03581A9", hash_generated_method = "954172FEAF73143795C6A3F56A16F60B")
-    public boolean renameTo(File newPath) {
-        addTaint(newPath.getTaint());
-        try 
-        {
-            Libcore.os.rename(path, newPath.path);
-            boolean varB326B5062B2F0E69046810717534CB09_315476802 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1023136929 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1023136929;
-        } //End block
-        catch (ErrnoException errnoException)
-        {
-            boolean var68934A3E9455FA72420237EB05902327_407331843 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1606622115 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1606622115;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //Libcore.os.rename(path, newPath.path);
-            //return true;
-        //} catch (ErrnoException errnoException) {
-            //return false;
-        //}
+    /**
+     * Creates the directory named by the trailing filename of this file. Does
+     * not create the complete path required to create this directory.
+     *
+     * <p>Note that this method does <i>not</i> throw {@code IOException} on failure.
+     * Callers must check the return value.
+     *
+     * @return {@code true} if the directory has been created, {@code false}
+     *         otherwise.
+     * @see #mkdirs
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.743 -0500", hash_original_method = "9AA9A2328E77BE45E90F159A380326D5", hash_generated_method = "0A065ADE1D040E425EF9A892E1097ECB")
+    public boolean mkdir() {
+        try {
+            // On Android, we don't want default permissions to allow global access.
+            Libcore.os.mkdir(path, S_IRWXU);
+            return true;
+        } catch (ErrnoException errnoException) {
+            return false;
+        }
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.857 -0400", hash_original_method = "2B0DBB93241DF37011E39BE4D10F6879", hash_generated_method = "6AC581FBFF8DEDC16672BABE4BD75275")
+    /**
+     * Creates the directory named by the trailing filename of this file,
+     * including the complete directory path required to create this directory.
+     *
+     * <p>Note that this method does <i>not</i> throw {@code IOException} on failure.
+     * Callers must check the return value.
+     *
+     * @return {@code true} if the necessary directories have been created,
+     *         {@code false} if the target directory already exists or one of
+     *         the directories can not be created.
+     * @see #mkdir
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.744 -0500", hash_original_method = "0ED75208E22CDF6376FEADF6E55B44EF", hash_generated_method = "7BFF1F27222801DE4A24EF4A5B51C4ED")
+    public boolean mkdirs() {
+        /* If the terminal directory already exists, answer false */
+        if (exists()) {
+            return false;
+        }
+
+        /* If the receiver can be created, answer true */
+        if (mkdir()) {
+            return true;
+        }
+
+        String parentDir = getParent();
+        /* If there is no parent and we were not created, answer false */
+        if (parentDir == null) {
+            return false;
+        }
+
+        /* Otherwise, try to create a parent directory and then this directory */
+        return (new File(parentDir).mkdirs() && mkdir());
+    }
+
+    /**
+     * Creates a new, empty file on the file system according to the path
+     * information stored in this file. This method returns true if it creates
+     * a file, false if the file already existed. Note that it returns false
+     * even if the file is not a file (because it's a directory, say).
+     *
+     * <p>This method is not generally useful. For creating temporary files,
+     * use {@link #createTempFile} instead. For reading/writing files, use {@link FileInputStream},
+     * {@link FileOutputStream}, or {@link RandomAccessFile}, all of which can create files.
+     *
+     * <p>Note that this method does <i>not</i> throw {@code IOException} if the file
+     * already exists, even if it's not a regular file. Callers should always check the
+     * return value, and may additionally want to call {@link #isFile}.
+     *
+     * @return true if the file has been created, false if it
+     *         already exists.
+     * @throws IOException if it's not possible to create the file.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.745 -0500", hash_original_method = "B6F8DC1B8131115DA0E4E46657B89E08", hash_generated_method = "AD75715A5AEB9B279CC677EEA8B71771")
+    public boolean createNewFile() throws IOException {
+        FileDescriptor fd = null;
+        try {
+            // On Android, we don't want default permissions to allow global access.
+            fd = Libcore.os.open(path, O_RDWR | O_CREAT | O_EXCL, 0600);
+            return true;
+        } catch (ErrnoException errnoException) {
+            if (errnoException.errno == EEXIST) {
+                // The file already exists.
+                return false;
+            }
+            throw errnoException.rethrowAsIOException();
+        } finally {
+            IoUtils.close(fd); // TODO: should we suppress IOExceptions thrown here?
+        }
+    }
+
+    /**
+     * Renames this file to {@code newPath}. This operation is supported for both
+     * files and directories.
+     *
+     * <p>Many failures are possible. Some of the more likely failures include:
+     * <ul>
+     * <li>Write permission is required on the directories containing both the source and
+     * destination paths.
+     * <li>Search permission is required for all parents of both paths.
+     * <li>Both paths be on the same mount point. On Android, applications are most likely to hit
+     * this restriction when attempting to copy between internal storage and an SD card.
+     * </ul>
+     *
+     * <p>Note that this method does <i>not</i> throw {@code IOException} on failure.
+     * Callers must check the return value.
+     *
+     * @param newPath the new path.
+     * @return true on success.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.748 -0500", hash_original_method = "FDC5D6D625B3CE9B182F17F4E03581A9", hash_generated_method = "7C1AE3A6CB934088A19AA981E3FB6DB0")
+    public boolean renameTo(File newPath) {
+        try {
+            Libcore.os.rename(path, newPath.path);
+            return true;
+        } catch (ErrnoException errnoException) {
+            return false;
+        }
+    }
+
+    /**
+     * Returns a string containing a concise, human-readable description of this
+     * file.
+     *
+     * @return a printable representation of this file.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.749 -0500", hash_original_method = "2B0DBB93241DF37011E39BE4D10F6879", hash_generated_method = "26C57ED0CDB609D607D36CA3242D043F")
     @Override
-    public String toString() {
-String var535F4D9720F3B0C96D8143873CE0638C_1204713460 =         path;
-        var535F4D9720F3B0C96D8143873CE0638C_1204713460.addTaint(taint);
-        return var535F4D9720F3B0C96D8143873CE0638C_1204713460;
-        // ---------- Original Method ----------
-        //return path;
+public String toString() {
+        return path;
     }
 
     
@@ -1163,158 +1154,91 @@ URL var9F0992E1CDD9692D51AE22365958494F_479158924 =         new URL("file", "", 
         //return new URL("file", "", -1, name, null);
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.858 -0400", hash_original_method = "6DC10F50F559258D97A948A93E776D0B", hash_generated_method = "191A2DA5FC2E815BDB8D60F7ECD793CA")
+    // TODO: is this really necessary, or can it be replaced with getAbsolutePath?
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.752 -0500", hash_original_method = "6DC10F50F559258D97A948A93E776D0B", hash_generated_method = "43BB7D5D5C9A267DFD30E45C439351E4")
     private String getAbsoluteName() {
         File f = getAbsoluteFile();
         String name = f.getPath();
-        if(f.isDirectory() && name.charAt(name.length() - 1) != separatorChar)        
-        {
+        if (f.isDirectory() && name.charAt(name.length() - 1) != separatorChar) {
+            // Directories must end with a slash
             name = name + "/";
-        } //End block
-        if(separatorChar != '/')        
-        {
+        }
+        if (separatorChar != '/') { // Must convert slashes.
             name = name.replace(separatorChar, '/');
-        } //End block
-String varB017984728AC60AD1F0BF8734F33F15C_248740100 =         name;
-        varB017984728AC60AD1F0BF8734F33F15C_248740100.addTaint(taint);
-        return varB017984728AC60AD1F0BF8734F33F15C_248740100;
-        // ---------- Original Method ----------
-        //File f = getAbsoluteFile();
-        //String name = f.getPath();
-        //if (f.isDirectory() && name.charAt(name.length() - 1) != separatorChar) {
-            //name = name + "/";
-        //}
-        //if (separatorChar != '/') { 
-            //name = name.replace(separatorChar, '/');
-        //}
-        //return name;
+        }
+        return name;
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.858 -0400", hash_original_method = "84E8B11DBED8384FBE25A5788F12F18C", hash_generated_method = "6A6D83BE60C0FC48DB1E5EA5B5695225")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.753 -0500", hash_original_method = "84E8B11DBED8384FBE25A5788F12F18C", hash_generated_method = "B1032A28D4FC10DA64CFD152C1DA706D")
     private void writeObject(ObjectOutputStream stream) throws IOException {
-        addTaint(stream.getTaint());
         stream.defaultWriteObject();
         stream.writeChar(separatorChar);
-        // ---------- Original Method ----------
-        //stream.defaultWriteObject();
-        //stream.writeChar(separatorChar);
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.858 -0400", hash_original_method = "FED9F4FA8E5031FA72F265B39D2840EA", hash_generated_method = "C987743FCB1A70962960ACC00987A73B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.754 -0500", hash_original_method = "FED9F4FA8E5031FA72F265B39D2840EA", hash_generated_method = "A8A7F8C580E8B6DA1583F7A37E65CB80")
     private void readObject(ObjectInputStream stream) throws IOException, ClassNotFoundException {
-        addTaint(stream.getTaint());
         stream.defaultReadObject();
         char inSeparator = stream.readChar();
         this.path = fixSlashes(path.replace(inSeparator, separatorChar));
-        // ---------- Original Method ----------
-        //stream.defaultReadObject();
-        //char inSeparator = stream.readChar();
-        //this.path = fixSlashes(path.replace(inSeparator, separatorChar));
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.858 -0400", hash_original_method = "585308EC98C018F35D8810C372CB8328", hash_generated_method = "C1E2AE925C07B7F3C31099A888CBEF5C")
+    /**
+     * Returns the total size in bytes of the partition containing this path.
+     * Returns 0 if this path does not exist.
+     *
+     * @since 1.6
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.755 -0500", hash_original_method = "585308EC98C018F35D8810C372CB8328", hash_generated_method = "885E67B6330987DB56125FD6BBFE1E2D")
     public long getTotalSpace() {
-        try 
-        {
+        try {
             StructStatFs sb = Libcore.os.statfs(path);
-            long var5772D9E8E485ABB02EDC3C147B3EE2C4_627918761 = (sb.f_blocks * sb.f_bsize);
-                        long var0F5264038205EDFB1AC05FBB0E8C5E94_1926337336 = getTaintLong();
-            return var0F5264038205EDFB1AC05FBB0E8C5E94_1926337336;
-        } //End block
-        catch (ErrnoException errnoException)
-        {
-            long varCFCD208495D565EF66E7DFF9F98764DA_52653401 = (0);
-                        long var0F5264038205EDFB1AC05FBB0E8C5E94_680745368 = getTaintLong();
-            return var0F5264038205EDFB1AC05FBB0E8C5E94_680745368;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //StructStatFs sb = Libcore.os.statfs(path);
-            //return sb.f_blocks * sb.f_bsize; 
-        //} catch (ErrnoException errnoException) {
-            //return 0;
-        //}
+            return sb.f_blocks * sb.f_bsize; // total block count * block size in bytes.
+        } catch (ErrnoException errnoException) {
+            return 0;
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.858 -0400", hash_original_method = "14D64E7B25BCE5C0F5FB20D43EB644E7", hash_generated_method = "BE1F4A9E1EA8161B98813A555AEA1914")
+    /**
+     * Returns the number of usable free bytes on the partition containing this path.
+     * Returns 0 if this path does not exist.
+     *
+     * <p>Note that this is likely to be an optimistic over-estimate and should not
+     * be taken as a guarantee your application can actually write this many bytes.
+     * On Android (and other Unix-based systems), this method returns the number of free bytes
+     * available to non-root users, regardless of whether you're actually running as root,
+     * and regardless of any quota or other restrictions that might apply to the user.
+     * (The {@code getFreeSpace} method returns the number of bytes potentially available to root.)
+     *
+     * @since 1.6
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.756 -0500", hash_original_method = "14D64E7B25BCE5C0F5FB20D43EB644E7", hash_generated_method = "6CD8F121B9E4CDF5CEAEFF89549D249C")
     public long getUsableSpace() {
-        try 
-        {
+        try {
             StructStatFs sb = Libcore.os.statfs(path);
-            long var08F24160F7D4587C47CECCB9E8E4C31D_1575548046 = (sb.f_bavail * sb.f_bsize);
-                        long var0F5264038205EDFB1AC05FBB0E8C5E94_1600012519 = getTaintLong();
-            return var0F5264038205EDFB1AC05FBB0E8C5E94_1600012519;
-        } //End block
-        catch (ErrnoException errnoException)
-        {
-            long varCFCD208495D565EF66E7DFF9F98764DA_246999795 = (0);
-                        long var0F5264038205EDFB1AC05FBB0E8C5E94_1727396527 = getTaintLong();
-            return var0F5264038205EDFB1AC05FBB0E8C5E94_1727396527;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //StructStatFs sb = Libcore.os.statfs(path);
-            //return sb.f_bavail * sb.f_bsize; 
-        //} catch (ErrnoException errnoException) {
-            //return 0;
-        //}
+            return sb.f_bavail * sb.f_bsize; // non-root free block count * block size in bytes.
+        } catch (ErrnoException errnoException) {
+            return 0;
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.859 -0400", hash_original_method = "23B4E27185BC412B65C1DC7422116A5E", hash_generated_method = "83DA5210CFBABD4E93F75FD3C51A9C8C")
+    /**
+     * Returns the number of free bytes on the partition containing this path.
+     * Returns 0 if this path does not exist.
+     *
+     * <p>Note that this is likely to be an optimistic over-estimate and should not
+     * be taken as a guarantee your application can actually write this many bytes.
+     *
+     * @since 1.6
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.756 -0500", hash_original_method = "23B4E27185BC412B65C1DC7422116A5E", hash_generated_method = "F52E291AFDE778BA59DB069A0EF655E5")
     public long getFreeSpace() {
-        try 
-        {
+        try {
             StructStatFs sb = Libcore.os.statfs(path);
-            long var6A72B5421CCB9D514F2491AE02FA6A83_552000505 = (sb.f_bfree * sb.f_bsize);
-                        long var0F5264038205EDFB1AC05FBB0E8C5E94_562514382 = getTaintLong();
-            return var0F5264038205EDFB1AC05FBB0E8C5E94_562514382;
-        } //End block
-        catch (ErrnoException errnoException)
-        {
-            long varCFCD208495D565EF66E7DFF9F98764DA_970581128 = (0);
-                        long var0F5264038205EDFB1AC05FBB0E8C5E94_1309802478 = getTaintLong();
-            return var0F5264038205EDFB1AC05FBB0E8C5E94_1309802478;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //StructStatFs sb = Libcore.os.statfs(path);
-            //return sb.f_bfree * sb.f_bsize; 
-        //} catch (ErrnoException errnoException) {
-            //return 0;
-        //}
+            return sb.f_bfree * sb.f_bsize; // free block count * block size in bytes.
+        } catch (ErrnoException errnoException) {
+            return 0;
+        }
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.859 -0400", hash_original_field = "1E2D55A8188F4AAB89A2617091CD8DD3", hash_generated_field = "573261A4844452FF520B7BA941A9349A")
-
-    private static final long serialVersionUID = 301077366599181567L;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.859 -0400", hash_original_field = "87AF8356E9494D3959A18CDFF00E37ED", hash_generated_field = "E9BF35C3AF9EB264C60B98A12F779A5F")
-
-    private static final Random tempFileRandom = new Random();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.859 -0400", hash_original_field = "70AC49BC330EA299ED55B5111D605814", hash_generated_field = "0CB7CCD71BDA0E3767C3A1B66A5E66EA")
-
-    public static final char separatorChar;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.859 -0400", hash_original_field = "A0F0BC95016C862498BBAD29D1F4D9D4", hash_generated_field = "27036D15C987D02F54CC6DCFF754396D")
-
-    public static final String separator;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.859 -0400", hash_original_field = "D043CF7D7D8EF3A009AAF357162D0088", hash_generated_field = "915D1D5E91DE4C4CF3D6A430E7A8D5AC")
-
-    public static final char pathSeparatorChar;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.859 -0400", hash_original_field = "CB7E5EBB429F7E76E32EC729035E5287", hash_generated_field = "E086687B15C5540EFB395F08D9FB6B55")
-
-    public static final String pathSeparator;
     static {
         separatorChar = System.getProperty("file.separator", "/").charAt(0);
         pathSeparatorChar = System.getProperty("path.separator", ":").charAt(0);

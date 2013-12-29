@@ -1,6 +1,8 @@
 package android.graphics;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.File;
 
@@ -12,109 +14,84 @@ import android.content.res.AssetManager;
 import droidsafe.helpers.DSUtils;
 
 public class Typeface {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.201 -0400", hash_original_field = "7E2E7BFEC42581BDE25254C4BB512478", hash_generated_field = "1353DF0D3FEF59358BA81F3F4AC59875")
 
-    int native_instance;
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.202 -0400", hash_original_method = "A1E0C89A80599EF6E13C90B8B8945AA4", hash_generated_method = "A11C4C141B825233B826624D242E9E37")
-    private  Typeface(int ni) {
-        if(0 == ni)        
-        {
-            RuntimeException var6E6EF9A75208BA676FC2CA96D7988D82_1650114445 = new RuntimeException("native typeface cannot be made");
-            var6E6EF9A75208BA676FC2CA96D7988D82_1650114445.addTaint(taint);
-            throw var6E6EF9A75208BA676FC2CA96D7988D82_1650114445;
-        } //End block
-        native_instance = ni;
-        // ---------- Original Method ----------
-        //if (0 == ni) {
-            //throw new RuntimeException("native typeface cannot be made");
-        //}
-        //native_instance = ni;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.202 -0400", hash_original_method = "49E10597FC0BC827A75ECB0B721408FD", hash_generated_method = "C6515AE723B1CF5C057F7ECAA48C2F00")
-    public int getStyle() {
-        int varB7050576F2925C21EF90B7165C471A32_1418690738 = (nativeGetStyle(native_instance));
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1339950234 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1339950234;
-        // ---------- Original Method ----------
-        //return nativeGetStyle(native_instance);
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.203 -0400", hash_original_method = "F9C5D984693E715CACA8B421F6CE6BD8", hash_generated_method = "C493E411038B6E89FA4E25244D78EF82")
-    public final boolean isBold() {
-        boolean var22FB91444A43EC94B14A455A2BAAC963_1441694835 = ((getStyle() & BOLD) != 0);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_561825386 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_561825386;
-        // ---------- Original Method ----------
-        //return (getStyle() & BOLD) != 0;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.203 -0400", hash_original_method = "55AE9D2665222680CD04F733708ADD28", hash_generated_method = "88148EA2AC94580890039C1F2E5EAC27")
-    public final boolean isItalic() {
-        boolean var31DE17569930B7690D33C8D6EEF228C7_855282288 = ((getStyle() & ITALIC) != 0);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_501364687 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_501364687;
-        // ---------- Original Method ----------
-        //return (getStyle() & ITALIC) != 0;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Create a typeface object given a family name, and option style information.
+     * If null is passed for the name, then the "default" font will be chosen.
+     * The resulting typeface object can be queried (getStyle()) to discover what
+     * its "real" style characteristics are.
+     *
+     * @param familyName May be null. The name of the font family.
+     * @param style  The style (normal, bold, italic) of the typeface.
+     *               e.g. NORMAL, BOLD, ITALIC, BOLD_ITALIC
+     * @return The best matching typeface.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:49.355 -0500", hash_original_method = "17B527703375EC0E18C6C2B14F73239B", hash_generated_method = "978A8D227C75F06C0F72123179F370E8")
     public static Typeface create(String familyName, int style) {
         return new Typeface(nativeCreate(familyName, style));
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Create a typeface object that best matches the specified existing
+     * typeface and the specified Style. Use this call if you want to pick a new
+     * style from the same family of an existing typeface object. If family is
+     * null, this selects from the default font's family.
+     *
+     * @param family May be null. The name of the existing type face.
+     * @param style  The style (normal, bold, italic) of the typeface.
+     *               e.g. NORMAL, BOLD, ITALIC, BOLD_ITALIC
+     * @return The best matching typeface.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:49.356 -0500", hash_original_method = "440330E00D63CA8C46C2D2C8DF2C6AC6", hash_generated_method = "6ADE5CB6ADC5D7A39E399D5D4E6783C5")
     public static Typeface create(Typeface family, int style) {
-        int ni = 0;
+        int ni = 0;        
         if (family != null) {
             ni = family.native_instance;
         }
         return new Typeface(nativeCreateFromTypeface(ni, style));
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Returns one of the default typeface objects, based on the specified style
+     *
+     * @return the default typeface that corresponds to the style
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:49.357 -0500", hash_original_method = "B06912E79E41E10797503036CC965799", hash_generated_method = "9D914BF564A8989D727B0640BD894E02")
     public static Typeface defaultFromStyle(int style) {
         return sDefaults[style];
     }
-
     
-    @DSModeled(DSC.SAFE)
+    /**
+     * Create a new typeface from the specified font data.
+     * @param mgr The application's asset manager
+     * @param path  The file name of the font data in the assets directory
+     * @return The new typeface.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:49.358 -0500", hash_original_method = "B7B625088F029DD3EB2D5292E983F6DF", hash_generated_method = "0A54A29A95BB9391FFC250FC66E26A42")
     public static Typeface createFromAsset(AssetManager mgr, String path) {
         return new Typeface(nativeCreateFromAsset(mgr, path));
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Create a new typeface from the specified font file.
+     *
+     * @param path The path to the font data. 
+     * @return The new typeface.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:49.359 -0500", hash_original_method = "75B14133CB489027D77A424630AF754B", hash_generated_method = "35F35D443F4F1C8CEBFB68A43EE62BD6")
     public static Typeface createFromFile(File path) {
         return new Typeface(nativeCreateFromFile(path.getAbsolutePath()));
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Create a new typeface from the specified font file.
+     *
+     * @param path The full path to the font data. 
+     * @return The new typeface.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:49.359 -0500", hash_original_method = "41766EA6657E21C45E368553CD429F56", hash_generated_method = "F2ECF31D59A09C57439120926468258C")
     public static Typeface createFromFile(String path) {
         return new Typeface(nativeCreateFromFile(path));
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.208 -0400", hash_original_method = "365BC48BBC32364F202A52D242C543E7", hash_generated_method = "542BA0200575B34094B0AA4D80DE2CA4")
-    protected void finalize() throws Throwable {
-        super.finalize();
-        nativeUnref(native_instance);
-        // ---------- Original Method ----------
-        //super.finalize();
-        //nativeUnref(native_instance);
     }
 
     
@@ -156,38 +133,70 @@ public class Typeface {
     @DSModeled(DSC.SAFE)
     public static void setGammaForText(float blackGamma, float whiteGamma) {
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:49.344 -0500", hash_original_field = "8DF784A9F5E85BEBD0698D4CB91805F5", hash_generated_field = "0B2DA0B843E1AF20E33C18AF2C026319")
 
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.210 -0400", hash_original_field = "5B39C8B553C821E7CDDC6DA64B5BD2EE", hash_generated_field = "EAAEB39A9889FCB1FDC0EC40769D0C01")
+    public static  Typeface DEFAULT;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:49.344 -0500", hash_original_field = "CD38327509F2A84FC37FD1D34FC3C350", hash_generated_field = "39E278D928292BB72F2BB1941D84F1F2")
 
-    public static final Typeface DEFAULT;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.210 -0400", hash_original_field = "353741717F00CF3908EEA6D517B508C3", hash_generated_field = "0864579E3FFFBA69C4776858C5FC13D8")
+    public static  Typeface DEFAULT_BOLD;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:49.346 -0500", hash_original_field = "B1057AF3B6212441638B93C003ACD481", hash_generated_field = "DA2C3CBE6435D5462F6DAA252A072D88")
 
-    public static final Typeface DEFAULT_BOLD;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.211 -0400", hash_original_field = "9195E6994AE866B9B4CD76760190FFB5", hash_generated_field = "8B9E2FBB8CEFBEF22A32A866C41C7EE6")
+    public static  Typeface SANS_SERIF;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:49.347 -0500", hash_original_field = "3F07749F8E5A1FAFC3A54CA6E2F64AFC", hash_generated_field = "1F15F7D1B81488B4264416B4539F7B6A")
 
-    public static final Typeface SANS_SERIF;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.211 -0400", hash_original_field = "4F5DE0AC9E414DB58C967BDE1B1360CF", hash_generated_field = "DC98C4A2132833D255BFE9E517AB21A8")
+    public static  Typeface SERIF;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:49.347 -0500", hash_original_field = "4ECA9AD8841F280C7513D7DB66AF8217", hash_generated_field = "3895E8E9929B42525674D4A2E0502153")
 
-    public static final Typeface SERIF;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.211 -0400", hash_original_field = "15915AE6BBCD77C253328799A737A63E", hash_generated_field = "788C2738B628C73ED6B9231C7000049C")
-
-    public static final Typeface MONOSPACE;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.211 -0400", hash_original_field = "0DF2279D3839D1426C10DA6A22B83F46", hash_generated_field = "6FEC825196C265DC8D36C397F8A05A7D")
-
-    static Typeface[] sDefaults;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.211 -0400", hash_original_field = "6EEF77DD7E71AFC1618553884BAAF8AD", hash_generated_field = "A4C87F852072D72C29870CFCB6AD7CC6")
+    public static  Typeface MONOSPACE;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:49.348 -0500", hash_original_field = "D0061E515C6F421BACE32ED15D27CA69", hash_generated_field = "6FEC825196C265DC8D36C397F8A05A7D")
+ static Typeface[] sDefaults;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:49.349 -0500", hash_original_field = "F4DDFE7A9BA099A1A6770B758F14F43C", hash_generated_field = "A4C87F852072D72C29870CFCB6AD7CC6")
 
     public static final int NORMAL = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.211 -0400", hash_original_field = "D815EF1E93D29786DE81A2E248F768CB", hash_generated_field = "89D7140D7EB752A6C7528F551B43007D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:49.351 -0500", hash_original_field = "262D1E2BFD27CFAD4D39771739839EFB", hash_generated_field = "89D7140D7EB752A6C7528F551B43007D")
 
     public static final int BOLD = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.211 -0400", hash_original_field = "42DCBB7CA4A479BEBC3CA5636616A04E", hash_generated_field = "AAC914EC5529D3EFA7515451CA579C98")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:49.351 -0500", hash_original_field = "232AF836147F62CB90CA0A9FF0DEF71D", hash_generated_field = "AAC914EC5529D3EFA7515451CA579C98")
 
     public static final int ITALIC = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.212 -0400", hash_original_field = "43AC3FE4CAE8220AB00CAEFE286EDDAB", hash_generated_field = "ACD97265A92F699022D5C7173259C9A9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:49.352 -0500", hash_original_field = "6787308A71C9A109A79BC41318B14AF1", hash_generated_field = "ACD97265A92F699022D5C7173259C9A9")
 
     public static final int BOLD_ITALIC = 3;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:49.349 -0500", hash_original_field = "1353DF0D3FEF59358BA81F3F4AC59875", hash_generated_field = "1353DF0D3FEF59358BA81F3F4AC59875")
+ int native_instance;
+
+    // don't allow clients to call this directly
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:49.361 -0500", hash_original_method = "A1E0C89A80599EF6E13C90B8B8945AA4", hash_generated_method = "0B0E47126C56BF6E71E6DE4A77BB0B48")
+    private Typeface(int ni) {
+        if (0 == ni) {
+            throw new RuntimeException("native typeface cannot be made");
+        }
+        native_instance = ni;
+    }
+
+    /** Returns the typeface's intrinsic style attributes */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:49.353 -0500", hash_original_method = "49E10597FC0BC827A75ECB0B721408FD", hash_generated_method = "B1A319B88CE99D3D37B0A0D49A11FA23")
+    public int getStyle() {
+        return nativeGetStyle(native_instance);
+    }
+
+    /** Returns true if getStyle() has the BOLD bit set. */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:49.354 -0500", hash_original_method = "F9C5D984693E715CACA8B421F6CE6BD8", hash_generated_method = "1E88F458374AD4516F7A9850FC969AC0")
+    public final boolean isBold() {
+        return (getStyle() & BOLD) != 0;
+    }
+
+    /** Returns true if getStyle() has the ITALIC bit set. */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:49.354 -0500", hash_original_method = "55AE9D2665222680CD04F733708ADD28", hash_generated_method = "9FD604C75922F775EE3B6BFFCC00423B")
+    public final boolean isItalic() {
+        return (getStyle() & ITALIC) != 0;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:49.362 -0500", hash_original_method = "365BC48BBC32364F202A52D242C543E7", hash_generated_method = "8A0D631D5B8462432D6D6194C67FFABD")
+    protected void finalize() throws Throwable {
+        super.finalize();
+        nativeUnref(native_instance);
+    }
     static {
         DEFAULT         = create((String)null, 0);
         DEFAULT_BOLD    = create((String)null, Typeface.BOLD);

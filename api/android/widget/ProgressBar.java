@@ -1,6 +1,8 @@
 package android.widget;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -44,288 +46,282 @@ import com.android.internal.R;
 
 
 public class ProgressBar extends View {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.067 -0400", hash_original_field = "2FB832D2671571BF4EC0C84F8DA6AA79", hash_generated_field = "B5D566AA92521F570066E8773A24B0C0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.674 -0500", hash_original_field = "1496E1C556157C5FD3FDE79598CDF532", hash_generated_field = "CC7511334507B624E41735D194F6E4E0")
+
+    private static final int MAX_LEVEL = 10000;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.675 -0500", hash_original_field = "DE20DBD72E84B094A00D03E5F4058886", hash_generated_field = "39EF70D35A29D206C019E7A12A698D6D")
+
+    private static final int ANIMATION_RESOLUTION = 200;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.675 -0500", hash_original_field = "0A2BB441F836A0A495E0A325BD9EEF0B", hash_generated_field = "81CDC7C9CA9F2EE4E05B25C5A8DB35B0")
+
+    private static final int TIMEOUT_SEND_ACCESSIBILITY_EVENT = 200;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.676 -0500", hash_original_field = "B5D566AA92521F570066E8773A24B0C0", hash_generated_field = "B5D566AA92521F570066E8773A24B0C0")
+
 
     int mMinWidth;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.067 -0400", hash_original_field = "C4C548A58212673838506E3498DE25A0", hash_generated_field = "DE6F7D0025A7518849324A9E1601224A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.677 -0500", hash_original_field = "DE6F7D0025A7518849324A9E1601224A", hash_generated_field = "DE6F7D0025A7518849324A9E1601224A")
 
     int mMaxWidth;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.068 -0400", hash_original_field = "7B1C5936E045E46CDC7DE29B76B9E7F4", hash_generated_field = "0DD4F81D09F8349C333039CCE34B2CF7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.677 -0500", hash_original_field = "0DD4F81D09F8349C333039CCE34B2CF7", hash_generated_field = "0DD4F81D09F8349C333039CCE34B2CF7")
 
     int mMinHeight;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.068 -0400", hash_original_field = "C16CF8950AAD7E5F5E8D168AA605278E", hash_generated_field = "2B42F0B48BA5A796B2697835D2F18090")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.678 -0500", hash_original_field = "2B42F0B48BA5A796B2697835D2F18090", hash_generated_field = "2B42F0B48BA5A796B2697835D2F18090")
 
     int mMaxHeight;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.068 -0400", hash_original_field = "8E57A1AD458E8C11842F6CF5D7E06883", hash_generated_field = "1CA7BE0C4831604F244183A43ACB7282")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.679 -0500", hash_original_field = "7CDF5A45863735DC45D655DB7E365343", hash_generated_field = "1CA7BE0C4831604F244183A43ACB7282")
+
 
     private int mProgress;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.068 -0400", hash_original_field = "DCB5EA0939620CFCFDDC71F603D69A41", hash_generated_field = "015CFC0D453C8DA6A402F32079F8A6A4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.680 -0500", hash_original_field = "58F48CA09A1DEC274EE2E349256BF813", hash_generated_field = "015CFC0D453C8DA6A402F32079F8A6A4")
 
     private int mSecondaryProgress;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.068 -0400", hash_original_field = "C886C6FF92A43B3F6833B7BAFD354FBA", hash_generated_field = "A1BFCC57A6BC96010A1D330EF07F3F34")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.680 -0500", hash_original_field = "643806E929E292CCE314B6AD18027C00", hash_generated_field = "A1BFCC57A6BC96010A1D330EF07F3F34")
 
     private int mMax;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.068 -0400", hash_original_field = "BB93BD926EB6205F05262D1B23379817", hash_generated_field = "7AB98B3DA8DC606CB1698898E1D5910B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.681 -0500", hash_original_field = "C0FAA889F27EDA16D523267D3E01AF97", hash_generated_field = "7AB98B3DA8DC606CB1698898E1D5910B")
+
 
     private int mBehavior;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.068 -0400", hash_original_field = "25395741BFE51A7D136A5C7109AAD2D8", hash_generated_field = "A658ABE5235D82E385D992CF2A9ACD3B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.682 -0500", hash_original_field = "BC345057CF9CBE8611DA24E477E3EC27", hash_generated_field = "A658ABE5235D82E385D992CF2A9ACD3B")
 
     private int mDuration;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.068 -0400", hash_original_field = "066BD2341E290903C1ACFDCFA38A9B44", hash_generated_field = "92F2421E00AF2915B64A009A8AEF51CA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.682 -0500", hash_original_field = "0D148F2C69F7B5D4956EFF238B82CCCF", hash_generated_field = "92F2421E00AF2915B64A009A8AEF51CA")
 
     private boolean mIndeterminate;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.068 -0400", hash_original_field = "58B7B5409BF4F16770CC1AE1C446A910", hash_generated_field = "C1DA2FED56001BDE5D0AD3FEFBE7FD96")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.683 -0500", hash_original_field = "8D6F8F24BD3E8D16C7D8EDD479BE4D36", hash_generated_field = "C1DA2FED56001BDE5D0AD3FEFBE7FD96")
 
     private boolean mOnlyIndeterminate;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.068 -0400", hash_original_field = "BBDAB2FB373D7DA19760B893D5429B4A", hash_generated_field = "2643C4FF32FBB404667FBA24AD639E50")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.684 -0500", hash_original_field = "D7452398083A8158EC2258CE710AF169", hash_generated_field = "2643C4FF32FBB404667FBA24AD639E50")
 
     private Transformation mTransformation;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.068 -0400", hash_original_field = "9A46FC3BA66487AE56C5DCE37D0AA79A", hash_generated_field = "57388EC69EE573DE5E4AF3A536B016D4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.685 -0500", hash_original_field = "7849FCBAD521645A9FD25D981C5FB3CD", hash_generated_field = "57388EC69EE573DE5E4AF3A536B016D4")
 
     private AlphaAnimation mAnimation;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.068 -0400", hash_original_field = "081CE0D8134A29404CF8CC8A86F7E0F6", hash_generated_field = "C689AC3D1D2B848F3E53B0D791A6559F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.686 -0500", hash_original_field = "ACF08658A02B579A46D5805654850485", hash_generated_field = "C689AC3D1D2B848F3E53B0D791A6559F")
 
     private Drawable mIndeterminateDrawable;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.068 -0400", hash_original_field = "35ACEA7B06E4E9292BB05774C2312E1C", hash_generated_field = "C7829E00A6912D78CF4DAAA1F03878F2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.687 -0500", hash_original_field = "5D7F822ED6B0FEE4C7B4B596E0F35534", hash_generated_field = "C7829E00A6912D78CF4DAAA1F03878F2")
 
     private Drawable mProgressDrawable;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.068 -0400", hash_original_field = "0E46DF6A99A9DBE87718B5F45A249DE6", hash_generated_field = "90CE76B172D180EF24FA84EA783D3205")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.688 -0500", hash_original_field = "F46103DB1FD9DFCD58939843BB73C39E", hash_generated_field = "90CE76B172D180EF24FA84EA783D3205")
 
     private Drawable mCurrentDrawable;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.068 -0400", hash_original_field = "2E25EACC73788D7925D059F96D8B9B72", hash_generated_field = "A2E623BE945F90A1659BB6259980C46A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.688 -0500", hash_original_field = "A2E623BE945F90A1659BB6259980C46A", hash_generated_field = "A2E623BE945F90A1659BB6259980C46A")
 
     Bitmap mSampleTile;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.068 -0400", hash_original_field = "3E924E5B9A794C4409F638A71AD282E8", hash_generated_field = "CA606DE6031B2AD65CB031A15282E5C0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.689 -0500", hash_original_field = "EB51415A899B076FAA29104E03FDC65B", hash_generated_field = "CA606DE6031B2AD65CB031A15282E5C0")
 
     private boolean mNoInvalidate;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.069 -0400", hash_original_field = "DA3E6FC5A778B3C344EE09B26563FD22", hash_generated_field = "67BF1E9EFEC019D28BF77934CF035B72")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.690 -0500", hash_original_field = "A1326AE9004157E0812422F0F20CD6F9", hash_generated_field = "67BF1E9EFEC019D28BF77934CF035B72")
 
     private Interpolator mInterpolator;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.069 -0400", hash_original_field = "2FAEA616A753C70642294CC7860EC666", hash_generated_field = "8ACA154D8775441FD3732F1D17C67323")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.691 -0500", hash_original_field = "BA73900692161E788233BDEAE97C3D49", hash_generated_field = "8ACA154D8775441FD3732F1D17C67323")
 
     private RefreshProgressRunnable mRefreshProgressRunnable;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.069 -0400", hash_original_field = "D043A3546110D688BA4F6DE20B99A0A1", hash_generated_field = "CD5745C207A6BF8B60FA99DC96FB59AD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.691 -0500", hash_original_field = "B1BC3A9B57A62980AAB3CDF8C8A1BB60", hash_generated_field = "CD5745C207A6BF8B60FA99DC96FB59AD")
 
     private long mUiThreadId;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.069 -0400", hash_original_field = "98A2EDCF2A73027C9055FD1BBD0348FA", hash_generated_field = "359DB1662474C9DDA50E3F28F77D23F6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.692 -0500", hash_original_field = "CCBAD50B4E2548F835C8997A08B254D3", hash_generated_field = "359DB1662474C9DDA50E3F28F77D23F6")
 
     private boolean mShouldStartAnimationDrawable;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.069 -0400", hash_original_field = "D73042AA4B83CBB5EDFF85839968BC9A", hash_generated_field = "40DA5017CC9E425245C6E3C14B2FC5CA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.693 -0500", hash_original_field = "1BD45591A95C9F5C2B8DC0805F99A777", hash_generated_field = "40DA5017CC9E425245C6E3C14B2FC5CA")
 
     private long mLastDrawTime;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.069 -0400", hash_original_field = "C435AC5CE20BC8410E8D96F6C5A01644", hash_generated_field = "9E34047AEA414B2399121C937D10E14B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.694 -0500", hash_original_field = "46DA55E63CE38C818116D2946753B27E", hash_generated_field = "9E34047AEA414B2399121C937D10E14B")
+
 
     private boolean mInDrawing;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.069 -0400", hash_original_field = "90A80CF25193B8AF1E55FB872DDAB330", hash_generated_field = "8CB5D4845E1FC7F9C65B298EDDE9F5B1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.694 -0500", hash_original_field = "40BD7E4A5CEBC9065C6EF2B4B6EBD7EB", hash_generated_field = "8CB5D4845E1FC7F9C65B298EDDE9F5B1")
+
 
     private int mAnimationResolution;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.069 -0400", hash_original_field = "51B0402D7E1CC15169466C294C4EA35D", hash_generated_field = "F465CD63B02941FD3A08D3CC1E47AC81")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.695 -0500", hash_original_field = "180082D26693BAEDD31E26CC6F43AC12", hash_generated_field = "F465CD63B02941FD3A08D3CC1E47AC81")
+
 
     private AccessibilityEventSender mAccessibilityEventSender;
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.069 -0400", hash_original_method = "F5911F61390A242F23F5676C44FA4C61", hash_generated_method = "661AE0288A8718D3E63F42C49E8AB855")
-    public  ProgressBar(Context context) {
+
+    /**
+     * Create a new progress bar with range 0...100 and initial progress of 0.
+     * @param context the application environment
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.696 -0500", hash_original_method = "F5911F61390A242F23F5676C44FA4C61", hash_generated_method = "05E6D4AB511F57E4A865290B84F04FA0")
+    public ProgressBar(Context context) {
         this(context, null);
-        addTaint(context.getTaint());
-        // ---------- Original Method ----------
     }
-
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.070 -0400", hash_original_method = "D031AA7B7D98D3870546853F1BC5BC9E", hash_generated_method = "86CFE48EF6108DA67F7A6A0E78EC758A")
-    public  ProgressBar(Context context, AttributeSet attrs) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.697 -0500", hash_original_method = "D031AA7B7D98D3870546853F1BC5BC9E", hash_generated_method = "47D897E39CB9DA3B5AFB7902ECC9EC16")
+    public ProgressBar(Context context, AttributeSet attrs) {
         this(context, attrs, com.android.internal.R.attr.progressBarStyle);
-        addTaint(attrs.getTaint());
-        addTaint(context.getTaint());
-        // ---------- Original Method ----------
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.070 -0400", hash_original_method = "E1F87E741C36AFFDC636A9ACF6EDF064", hash_generated_method = "F651297E783E5138BD05F8FA2423EDF9")
-    public  ProgressBar(Context context, AttributeSet attrs, int defStyle) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.698 -0500", hash_original_method = "E1F87E741C36AFFDC636A9ACF6EDF064", hash_generated_method = "DF0BE037724D12B3A67CC8FCB3B2ED9F")
+    public ProgressBar(Context context, AttributeSet attrs, int defStyle) {
         this(context, attrs, defStyle, 0);
-        addTaint(defStyle);
-        addTaint(attrs.getTaint());
-        addTaint(context.getTaint());
-        // ---------- Original Method ----------
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.074 -0400", hash_original_method = "DAE8B382D7288D55BBDECA5C905F6E78", hash_generated_method = "ECBB23DC7D3A80E2D75EF00254655675")
-    public  ProgressBar(Context context, AttributeSet attrs, int defStyle, int styleRes) {
+    /**
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.699 -0500", hash_original_method = "DAE8B382D7288D55BBDECA5C905F6E78", hash_generated_method = "C71F6C764FA9D0B7547017DA6EB5808A")
+    public ProgressBar(Context context, AttributeSet attrs, int defStyle, int styleRes) {
         super(context, attrs, defStyle);
-        addTaint(styleRes);
-        addTaint(defStyle);
-        addTaint(attrs.getTaint());
-        addTaint(context.getTaint());
         mUiThreadId = Thread.currentThread().getId();
         initProgressBar();
-        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.ProgressBar, defStyle, styleRes);
+
+        TypedArray a =
+            context.obtainStyledAttributes(attrs, R.styleable.ProgressBar, defStyle, styleRes);
+        
         mNoInvalidate = true;
+        
         Drawable drawable = a.getDrawable(R.styleable.ProgressBar_progressDrawable);
-        if(drawable != null)        
-        {
+        if (drawable != null) {
             drawable = tileify(drawable, false);
+            // Calling this method can set mMaxHeight, make sure the corresponding
+            // XML attribute for mMaxHeight is read after calling this method
             setProgressDrawable(drawable);
-        } //End block
+        }
+
+
         mDuration = a.getInt(R.styleable.ProgressBar_indeterminateDuration, mDuration);
+
         mMinWidth = a.getDimensionPixelSize(R.styleable.ProgressBar_minWidth, mMinWidth);
         mMaxWidth = a.getDimensionPixelSize(R.styleable.ProgressBar_maxWidth, mMaxWidth);
         mMinHeight = a.getDimensionPixelSize(R.styleable.ProgressBar_minHeight, mMinHeight);
         mMaxHeight = a.getDimensionPixelSize(R.styleable.ProgressBar_maxHeight, mMaxHeight);
+
         mBehavior = a.getInt(R.styleable.ProgressBar_indeterminateBehavior, mBehavior);
+
         final int resID = a.getResourceId(
                 com.android.internal.R.styleable.ProgressBar_interpolator, 
-                android.R.anim.linear_interpolator);
-        if(resID > 0)        
-        {
+                android.R.anim.linear_interpolator); // default to linear interpolator
+        if (resID > 0) {
             setInterpolator(context, resID);
-        } //End block
+        } 
+
         setMax(a.getInt(R.styleable.ProgressBar_max, mMax));
+
         setProgress(a.getInt(R.styleable.ProgressBar_progress, mProgress));
+
         setSecondaryProgress(
                 a.getInt(R.styleable.ProgressBar_secondaryProgress, mSecondaryProgress));
+
         drawable = a.getDrawable(R.styleable.ProgressBar_indeterminateDrawable);
-        if(drawable != null)        
-        {
+        if (drawable != null) {
             drawable = tileifyIndeterminate(drawable);
             setIndeterminateDrawable(drawable);
-        } //End block
+        }
+
         mOnlyIndeterminate = a.getBoolean(
                 R.styleable.ProgressBar_indeterminateOnly, mOnlyIndeterminate);
+
         mNoInvalidate = false;
+
         setIndeterminate(mOnlyIndeterminate || a.getBoolean(
                 R.styleable.ProgressBar_indeterminate, mIndeterminate));
+
         mAnimationResolution = a.getInteger(R.styleable.ProgressBar_animationResolution,
                 ANIMATION_RESOLUTION);
+
         a.recycle();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.076 -0400", hash_original_method = "224A1F0FE2A7F3DC81BFFEE36861F394", hash_generated_method = "70855A04D6562824065D564D4B93E8F8")
+    /**
+     * Converts a drawable to a tiled version of itself. It will recursively
+     * traverse layer and state list drawables.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.701 -0500", hash_original_method = "224A1F0FE2A7F3DC81BFFEE36861F394", hash_generated_method = "9798DB3B91AFBFE542192DDF8FB12827")
     private Drawable tileify(Drawable drawable, boolean clip) {
-        addTaint(clip);
-        addTaint(drawable.getTaint());
-        if(drawable instanceof LayerDrawable)        
-        {
+        
+        if (drawable instanceof LayerDrawable) {
             LayerDrawable background = (LayerDrawable) drawable;
             final int N = background.getNumberOfLayers();
             Drawable[] outDrawables = new Drawable[N];
-for(int i = 0;i < N;i++)
-            {
+            
+            for (int i = 0; i < N; i++) {
                 int id = background.getId(i);
                 outDrawables[i] = tileify(background.getDrawable(i),
                         (id == R.id.progress || id == R.id.secondaryProgress));
-            } //End block
+            }
+
             LayerDrawable newBg = new LayerDrawable(outDrawables);
-for(int i = 0;i < N;i++)
-            {
+            
+            for (int i = 0; i < N; i++) {
                 newBg.setId(i, background.getId(i));
-            } //End block
-Drawable var2649DE119BD6106393C67CBB797B1AB8_231026407 =             newBg;
-            var2649DE119BD6106393C67CBB797B1AB8_231026407.addTaint(taint);
-            return var2649DE119BD6106393C67CBB797B1AB8_231026407;
-        } //End block
-        else
-        if(drawable instanceof StateListDrawable)        
-        {
+            }
+            
+            return newBg;
+            
+        } else if (drawable instanceof StateListDrawable) {
             StateListDrawable in = (StateListDrawable) drawable;
             StateListDrawable out = new StateListDrawable();
             int numStates = in.getStateCount();
-for(int i = 0;i < numStates;i++)
-            {
+            for (int i = 0; i < numStates; i++) {
                 out.addState(in.getStateSet(i), tileify(in.getStateDrawable(i), clip));
-            } //End block
-Drawable varFE81D892BE5757A0E16305825903D324_493065016 =             out;
-            varFE81D892BE5757A0E16305825903D324_493065016.addTaint(taint);
-            return varFE81D892BE5757A0E16305825903D324_493065016;
-        } //End block
-        else
-        if(drawable instanceof BitmapDrawable)        
-        {
+            }
+            return out;
+            
+        } else if (drawable instanceof BitmapDrawable) {
             final Bitmap tileBitmap = ((BitmapDrawable) drawable).getBitmap();
-            if(mSampleTile == null)            
-            {
+            if (mSampleTile == null) {
                 mSampleTile = tileBitmap;
-            } //End block
+            }
+            
             final ShapeDrawable shapeDrawable = new ShapeDrawable(getDrawableShape());
+
             final BitmapShader bitmapShader = new BitmapShader(tileBitmap,
                     Shader.TileMode.REPEAT, Shader.TileMode.CLAMP);
             shapeDrawable.getPaint().setShader(bitmapShader);
-Drawable var8C1667BE174DF8110DB6DD29959FE973_405821758 =             (clip) ? new ClipDrawable(shapeDrawable, Gravity.LEFT,
+
+            return (clip) ? new ClipDrawable(shapeDrawable, Gravity.LEFT,
                     ClipDrawable.HORIZONTAL) : shapeDrawable;
-            var8C1667BE174DF8110DB6DD29959FE973_405821758.addTaint(taint);
-            return var8C1667BE174DF8110DB6DD29959FE973_405821758;
-        } //End block
-Drawable varA22A26D75522826F9AEFA195DDDFD365_1721221798 =         drawable;
-        varA22A26D75522826F9AEFA195DDDFD365_1721221798.addTaint(taint);
-        return varA22A26D75522826F9AEFA195DDDFD365_1721221798;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        }
+        
+        return drawable;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.077 -0400", hash_original_method = "066FEFD8810FD39B2288696E8912725B", hash_generated_method = "2DBA756DA7BE0344BB0ADCEC5C86405F")
-     Shape getDrawableShape() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.702 -0500", hash_original_method = "066FEFD8810FD39B2288696E8912725B", hash_generated_method = "066FEFD8810FD39B2288696E8912725B")
+    Shape getDrawableShape() {
         final float[] roundedCorners = new float[] { 5, 5, 5, 5, 5, 5, 5, 5 };
-Shape varE5AD6A465EDE45C705AEBAD629956806_621586862 =         new RoundRectShape(roundedCorners, null, null);
-        varE5AD6A465EDE45C705AEBAD629956806_621586862.addTaint(taint);
-        return varE5AD6A465EDE45C705AEBAD629956806_621586862;
-        // ---------- Original Method ----------
-        //final float[] roundedCorners = new float[] { 5, 5, 5, 5, 5, 5, 5, 5 };
-        //return new RoundRectShape(roundedCorners, null, null);
+        return new RoundRectShape(roundedCorners, null, null);
     }
-
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.077 -0400", hash_original_method = "9EE7DD01E1AB6B0D269DB58A7544C17D", hash_generated_method = "A37EB23EBBDAD68C503FC33BC9FC4DFE")
+    /**
+     * Convert a AnimationDrawable for use as a barberpole animation.
+     * Each frame of the animation is wrapped in a ClipDrawable and
+     * given a tiling BitmapShader.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.702 -0500", hash_original_method = "9EE7DD01E1AB6B0D269DB58A7544C17D", hash_generated_method = "BFBDCEA5D01AFD36373F651333FF5A41")
     private Drawable tileifyIndeterminate(Drawable drawable) {
-        addTaint(drawable.getTaint());
-        if(drawable instanceof AnimationDrawable)        
-        {
+        if (drawable instanceof AnimationDrawable) {
             AnimationDrawable background = (AnimationDrawable) drawable;
             final int N = background.getNumberOfFrames();
             AnimationDrawable newBg = new AnimationDrawable();
             newBg.setOneShot(background.isOneShot());
-for(int i = 0;i < N;i++)
-            {
+            
+            for (int i = 0; i < N; i++) {
                 Drawable frame = tileify(background.getFrame(i), true);
                 frame.setLevel(10000);
                 newBg.addFrame(frame, background.getDuration(i));
-            } //End block
+            }
             newBg.setLevel(10000);
             drawable = newBg;
-        } //End block
-Drawable varA22A26D75522826F9AEFA195DDDFD365_507455730 =         drawable;
-        varA22A26D75522826F9AEFA195DDDFD365_507455730.addTaint(taint);
-        return varA22A26D75522826F9AEFA195DDDFD365_507455730;
-        // ---------- Original Method ----------
-        //if (drawable instanceof AnimationDrawable) {
-            //AnimationDrawable background = (AnimationDrawable) drawable;
-            //final int N = background.getNumberOfFrames();
-            //AnimationDrawable newBg = new AnimationDrawable();
-            //newBg.setOneShot(background.isOneShot());
-            //for (int i = 0; i < N; i++) {
-                //Drawable frame = tileify(background.getFrame(i), true);
-                //frame.setLevel(10000);
-                //newBg.addFrame(frame, background.getDuration(i));
-            //}
-            //newBg.setLevel(10000);
-            //drawable = newBg;
-        //}
-        //return drawable;
+        }
+        return drawable;
     }
-
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.079 -0400", hash_original_method = "E5E4BC7A2B363BE6E2FBD0B5C26F4050", hash_generated_method = "8DA820DB7B007C068BE9D230A5110A34")
+    /**
+     * <p>
+     * Initialize the progress bar's default values:
+     * </p>
+     * <ul>
+     * <li>progress = 0</li>
+     * <li>max = 100</li>
+     * <li>animation duration = 4000 ms</li>
+     * <li>indeterminate = false</li>
+     * <li>behavior = repeat</li>
+     * </ul>
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.703 -0500", hash_original_method = "E5E4BC7A2B363BE6E2FBD0B5C26F4050", hash_generated_method = "78375C615A16504B3FCA36BE4D985473")
     private void initProgressBar() {
         mMax = 100;
         mProgress = 0;
@@ -338,511 +334,408 @@ Drawable varA22A26D75522826F9AEFA195DDDFD365_507455730 =         drawable;
         mMaxWidth = 48;
         mMinHeight = 24;
         mMaxHeight = 48;
-        // ---------- Original Method ----------
-        //mMax = 100;
-        //mProgress = 0;
-        //mSecondaryProgress = 0;
-        //mIndeterminate = false;
-        //mOnlyIndeterminate = false;
-        //mDuration = 4000;
-        //mBehavior = AlphaAnimation.RESTART;
-        //mMinWidth = 24;
-        //mMaxWidth = 48;
-        //mMinHeight = 24;
-        //mMaxHeight = 48;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.079 -0400", hash_original_method = "3387FD7633AB5B9FD9EC30B2946E89DA", hash_generated_method = "20571BF2C86C470B1738579A4D252226")
+    /**
+     * <p>Indicate whether this progress bar is in indeterminate mode.</p>
+     *
+     * @return true if the progress bar is in indeterminate mode
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.704 -0500", hash_original_method = "3387FD7633AB5B9FD9EC30B2946E89DA", hash_generated_method = "CC7C9D7D034AACDA4ADC00E28D75104D")
     @ViewDebug.ExportedProperty(category = "progress")
-    public synchronized boolean isIndeterminate() {
-        boolean var066BD2341E290903C1ACFDCFA38A9B44_813394763 = (mIndeterminate);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_256810155 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_256810155;
-        // ---------- Original Method ----------
-        //return mIndeterminate;
+public synchronized boolean isIndeterminate() {
+        return mIndeterminate;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.080 -0400", hash_original_method = "9BFD2BF2FBC3833B7107C0E363644A89", hash_generated_method = "FF98C2DDC8A1A3069077A1CE018ADDD8")
+    /**
+     * <p>Change the indeterminate mode for this progress bar. In indeterminate
+     * mode, the progress is ignored and the progress bar shows an infinite
+     * animation instead.</p>
+     * 
+     * If this progress bar's style only supports indeterminate mode (such as the circular
+     * progress bars), then this will be ignored.
+     *
+     * @param indeterminate true to enable the indeterminate mode
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.705 -0500", hash_original_method = "9BFD2BF2FBC3833B7107C0E363644A89", hash_generated_method = "6C104FE3027AADFF3B4C5EAC70F94A44")
     @android.view.RemotableViewMethod
-    public synchronized void setIndeterminate(boolean indeterminate) {
-        if((!mOnlyIndeterminate || !mIndeterminate) && indeterminate != mIndeterminate)        
-        {
+public synchronized void setIndeterminate(boolean indeterminate) {
+        if ((!mOnlyIndeterminate || !mIndeterminate) && indeterminate != mIndeterminate) {
             mIndeterminate = indeterminate;
-            if(indeterminate)            
-            {
+
+            if (indeterminate) {
+                // swap between indeterminate and regular backgrounds
                 mCurrentDrawable = mIndeterminateDrawable;
                 startAnimation();
-            } //End block
-            else
-            {
+            } else {
                 mCurrentDrawable = mProgressDrawable;
                 stopAnimation();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if ((!mOnlyIndeterminate || !mIndeterminate) && indeterminate != mIndeterminate) {
-            //mIndeterminate = indeterminate;
-            //if (indeterminate) {
-                //mCurrentDrawable = mIndeterminateDrawable;
-                //startAnimation();
-            //} else {
-                //mCurrentDrawable = mProgressDrawable;
-                //stopAnimation();
-            //}
-        //}
+            }
+        }
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.080 -0400", hash_original_method = "460B65565106BA0615FD22E30B040519", hash_generated_method = "A74A8CF4ABA0B00AAE3815DB91CDC69F")
+    /**
+     * <p>Get the drawable used to draw the progress bar in
+     * indeterminate mode.</p>
+     *
+     * @return a {@link android.graphics.drawable.Drawable} instance
+     *
+     * @see #setIndeterminateDrawable(android.graphics.drawable.Drawable)
+     * @see #setIndeterminate(boolean)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.706 -0500", hash_original_method = "460B65565106BA0615FD22E30B040519", hash_generated_method = "1D0B7B0BC2B00D07FF81B79AC8D11B88")
     public Drawable getIndeterminateDrawable() {
-Drawable varF00153B56D2CB49C3A37B1DEFFA7532F_736143345 =         mIndeterminateDrawable;
-        varF00153B56D2CB49C3A37B1DEFFA7532F_736143345.addTaint(taint);
-        return varF00153B56D2CB49C3A37B1DEFFA7532F_736143345;
-        // ---------- Original Method ----------
-        //return mIndeterminateDrawable;
+        return mIndeterminateDrawable;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.081 -0400", hash_original_method = "4CAABA82B88C397ED0E927A2E15C90A0", hash_generated_method = "3C9D22CBBB3AA56E70C40AE86580D6C1")
+    /**
+     * <p>Define the drawable used to draw the progress bar in
+     * indeterminate mode.</p>
+     *
+     * @param d the new drawable
+     *
+     * @see #getIndeterminateDrawable()
+     * @see #setIndeterminate(boolean)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.707 -0500", hash_original_method = "4CAABA82B88C397ED0E927A2E15C90A0", hash_generated_method = "C9C5FF69EB2FE939BF7A67171571DBF0")
     public void setIndeterminateDrawable(Drawable d) {
-        if(d != null)        
-        {
+        if (d != null) {
             d.setCallback(this);
-        } //End block
+        }
         mIndeterminateDrawable = d;
-        if(mIndeterminate)        
-        {
+        if (mIndeterminate) {
             mCurrentDrawable = d;
             postInvalidate();
-        } //End block
-        // ---------- Original Method ----------
-        //if (d != null) {
-            //d.setCallback(this);
-        //}
-        //mIndeterminateDrawable = d;
-        //if (mIndeterminate) {
-            //mCurrentDrawable = d;
-            //postInvalidate();
-        //}
+        }
     }
-
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.081 -0400", hash_original_method = "6C8C8D805DC88A29293BE605923D5590", hash_generated_method = "591E84B360BF362C3A6F6A908441D3EC")
+    /**
+     * <p>Get the drawable used to draw the progress bar in
+     * progress mode.</p>
+     *
+     * @return a {@link android.graphics.drawable.Drawable} instance
+     *
+     * @see #setProgressDrawable(android.graphics.drawable.Drawable)
+     * @see #setIndeterminate(boolean)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.707 -0500", hash_original_method = "6C8C8D805DC88A29293BE605923D5590", hash_generated_method = "4BA7DC49F21214973C9ECF5C6BFE263B")
     public Drawable getProgressDrawable() {
-Drawable varE3CF59E02A1DFBC354305A0CD25ECEA2_1044407042 =         mProgressDrawable;
-        varE3CF59E02A1DFBC354305A0CD25ECEA2_1044407042.addTaint(taint);
-        return varE3CF59E02A1DFBC354305A0CD25ECEA2_1044407042;
-        // ---------- Original Method ----------
-        //return mProgressDrawable;
+        return mProgressDrawable;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.082 -0400", hash_original_method = "3733E64362DE34A69671D2EF5503886A", hash_generated_method = "FD666366B0F9C3306D2A7F7F9A253A96")
+    /**
+     * <p>Define the drawable used to draw the progress bar in
+     * progress mode.</p>
+     *
+     * @param d the new drawable
+     *
+     * @see #getProgressDrawable()
+     * @see #setIndeterminate(boolean)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.708 -0500", hash_original_method = "3733E64362DE34A69671D2EF5503886A", hash_generated_method = "9BE10D26D1E010DAFB36345990CB8E1A")
     public void setProgressDrawable(Drawable d) {
         boolean needUpdate;
-        if(mProgressDrawable != null && d != mProgressDrawable)        
-        {
+        if (mProgressDrawable != null && d != mProgressDrawable) {
             mProgressDrawable.setCallback(null);
             needUpdate = true;
-        } //End block
-        else
-        {
+        } else {
             needUpdate = false;
-        } //End block
-        if(d != null)        
-        {
+        }
+
+        if (d != null) {
             d.setCallback(this);
+
+            // Make sure the ProgressBar is always tall enough
             int drawableHeight = d.getMinimumHeight();
-            if(mMaxHeight < drawableHeight)            
-            {
+            if (mMaxHeight < drawableHeight) {
                 mMaxHeight = drawableHeight;
                 requestLayout();
-            } //End block
-        } //End block
+            }
+        }
         mProgressDrawable = d;
-        if(!mIndeterminate)        
-        {
+        if (!mIndeterminate) {
             mCurrentDrawable = d;
             postInvalidate();
-        } //End block
-        if(needUpdate)        
-        {
+        }
+
+        if (needUpdate) {
             updateDrawableBounds(getWidth(), getHeight());
             updateDrawableState();
             doRefreshProgress(R.id.progress, mProgress, false, false);
             doRefreshProgress(R.id.secondaryProgress, mSecondaryProgress, false, false);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        }
+    }
+    
+    /**
+     * @return The drawable currently used to draw the progress bar
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.709 -0500", hash_original_method = "BC108B758414D6B13292C41A47E0F703", hash_generated_method = "BC108B758414D6B13292C41A47E0F703")
+    Drawable getCurrentDrawable() {
+        return mCurrentDrawable;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.082 -0400", hash_original_method = "BC108B758414D6B13292C41A47E0F703", hash_generated_method = "11BC58483DC0FBDCA966A85DBEA46864")
-     Drawable getCurrentDrawable() {
-Drawable varCF8D9BC802F0D54A46071309A1C41866_7228635 =         mCurrentDrawable;
-        varCF8D9BC802F0D54A46071309A1C41866_7228635.addTaint(taint);
-        return varCF8D9BC802F0D54A46071309A1C41866_7228635;
-        // ---------- Original Method ----------
-        //return mCurrentDrawable;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.082 -0400", hash_original_method = "56BA1F17FA722E2B64538801F5E2971D", hash_generated_method = "1234398C85FC631A9252393F10375851")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.710 -0500", hash_original_method = "56BA1F17FA722E2B64538801F5E2971D", hash_generated_method = "0B02F1DFB62424893F2A6429D2429244")
     @Override
-    protected boolean verifyDrawable(Drawable who) {
-        addTaint(who.getTaint());
-        boolean var074CAF490D1845521AC52D4E6F4B58C1_1588623794 = (who == mProgressDrawable || who == mIndeterminateDrawable
-                || super.verifyDrawable(who));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1460037647 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1460037647;
-        // ---------- Original Method ----------
-        //return who == mProgressDrawable || who == mIndeterminateDrawable
-                //|| super.verifyDrawable(who);
+protected boolean verifyDrawable(Drawable who) {
+        return who == mProgressDrawable || who == mIndeterminateDrawable
+                || super.verifyDrawable(who);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.083 -0400", hash_original_method = "7333172C31835F46D838DB3DB892DD55", hash_generated_method = "70DDDB300C930FE9E1A5A6AD371BC4D1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.710 -0500", hash_original_method = "7333172C31835F46D838DB3DB892DD55", hash_generated_method = "7B470CE0005216ACBBF68112C34F848E")
     @Override
-    public void jumpDrawablesToCurrentState() {
+public void jumpDrawablesToCurrentState() {
         super.jumpDrawablesToCurrentState();
-        if(mProgressDrawable != null)        
-        mProgressDrawable.jumpToCurrentState();
-        if(mIndeterminateDrawable != null)        
-        mIndeterminateDrawable.jumpToCurrentState();
-        // ---------- Original Method ----------
-        //super.jumpDrawablesToCurrentState();
-        //if (mProgressDrawable != null) mProgressDrawable.jumpToCurrentState();
-        //if (mIndeterminateDrawable != null) mIndeterminateDrawable.jumpToCurrentState();
+        if (mProgressDrawable != null) mProgressDrawable.jumpToCurrentState();
+        if (mIndeterminateDrawable != null) mIndeterminateDrawable.jumpToCurrentState();
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.083 -0400", hash_original_method = "9D88EC1BAB8B30E9973F963BD590322C", hash_generated_method = "86259BDEA8CC00FE1AD959A79FA98761")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.711 -0500", hash_original_method = "9D88EC1BAB8B30E9973F963BD590322C", hash_generated_method = "E638853BDC411A9115DF2C7DD6FAA67E")
     @Override
-    public void postInvalidate() {
-        if(!mNoInvalidate)        
-        {
+public void postInvalidate() {
+        if (!mNoInvalidate) {
             super.postInvalidate();
-        } //End block
-        // ---------- Original Method ----------
-        //if (!mNoInvalidate) {
-            //super.postInvalidate();
-        //}
+        }
     }
-
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.084 -0400", hash_original_method = "10671D93E2F61D98C60CD8288CC260A2", hash_generated_method = "C320777395D89C9FF1521C14A3EE007F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.719 -0500", hash_original_method = "10671D93E2F61D98C60CD8288CC260A2", hash_generated_method = "40EC5B38E670A660E34BCF4B038ADA0B")
     private synchronized void doRefreshProgress(int id, int progress, boolean fromUser,
             boolean callBackToApp) {
-        addTaint(callBackToApp);
-        addTaint(fromUser);
-        addTaint(progress);
-        addTaint(id);
         float scale = mMax > 0 ? (float) progress / (float) mMax : 0;
         final Drawable d = mCurrentDrawable;
-        if(d != null)        
-        {
+        if (d != null) {
             Drawable progressDrawable = null;
-            if(d instanceof LayerDrawable)            
-            {
+
+            if (d instanceof LayerDrawable) {
                 progressDrawable = ((LayerDrawable) d).findDrawableByLayerId(id);
-            } //End block
+            }
+
             final int level = (int) (scale * MAX_LEVEL);
             (progressDrawable != null ? progressDrawable : d).setLevel(level);
-        } //End block
-        else
-        {
+        } else {
             invalidate();
-        } //End block
-        if(callBackToApp && id == R.id.progress)        
-        {
+        }
+        
+        if (callBackToApp && id == R.id.progress) {
             onProgressRefresh(scale, fromUser);
-        } //End block
-        // ---------- Original Method ----------
-        //float scale = mMax > 0 ? (float) progress / (float) mMax : 0;
-        //final Drawable d = mCurrentDrawable;
-        //if (d != null) {
-            //Drawable progressDrawable = null;
-            //if (d instanceof LayerDrawable) {
-                //progressDrawable = ((LayerDrawable) d).findDrawableByLayerId(id);
-            //}
-            //final int level = (int) (scale * MAX_LEVEL);
-            //(progressDrawable != null ? progressDrawable : d).setLevel(level);
-        //} else {
-            //invalidate();
-        //}
-        //if (callBackToApp && id == R.id.progress) {
-            //onProgressRefresh(scale, fromUser);
-        //}
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.084 -0400", hash_original_method = "1EE4C81513694B44BBA27F5A11B0191B", hash_generated_method = "7A76CCB4B14B7266EE64CCE8EB036548")
-     void onProgressRefresh(float scale, boolean fromUser) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(fromUser);
-        addTaint(scale);
-        if(AccessibilityManager.getInstance(mContext).isEnabled())        
-        {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.720 -0500", hash_original_method = "1EE4C81513694B44BBA27F5A11B0191B", hash_generated_method = "1EE4C81513694B44BBA27F5A11B0191B")
+    void onProgressRefresh(float scale, boolean fromUser) {
+        if (AccessibilityManager.getInstance(mContext).isEnabled()) {
             scheduleAccessibilityEventSender();
-        } //End block
-        // ---------- Original Method ----------
-        //if (AccessibilityManager.getInstance(mContext).isEnabled()) {
-            //scheduleAccessibilityEventSender();
-        //}
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.085 -0400", hash_original_method = "6344B397C965EAD8A2329C40E25F1FFC", hash_generated_method = "ACFE39C730480A10D40425C8BDE03D7B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.721 -0500", hash_original_method = "6344B397C965EAD8A2329C40E25F1FFC", hash_generated_method = "F10BD9D23747680E1837588EDF8BD40B")
     private synchronized void refreshProgress(int id, int progress, boolean fromUser) {
-        addTaint(fromUser);
-        addTaint(progress);
-        addTaint(id);
-        if(mUiThreadId == Thread.currentThread().getId())        
-        {
+        if (mUiThreadId == Thread.currentThread().getId()) {
             doRefreshProgress(id, progress, fromUser, true);
-        } //End block
-        else
-        {
+        } else {
             RefreshProgressRunnable r;
-            if(mRefreshProgressRunnable != null)            
-            {
+            if (mRefreshProgressRunnable != null) {
+                // Use cached RefreshProgressRunnable if available
                 r = mRefreshProgressRunnable;
+                // Uncache it
                 mRefreshProgressRunnable = null;
                 r.setup(id, progress, fromUser);
-            } //End block
-            else
-            {
+            } else {
+                // Make a new one
                 r = new RefreshProgressRunnable(id, progress, fromUser);
-            } //End block
+            }
             post(r);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mUiThreadId == Thread.currentThread().getId()) {
-            //doRefreshProgress(id, progress, fromUser, true);
-        //} else {
-            //RefreshProgressRunnable r;
-            //if (mRefreshProgressRunnable != null) {
-                //r = mRefreshProgressRunnable;
-                //mRefreshProgressRunnable = null;
-                //r.setup(id, progress, fromUser);
-            //} else {
-                //r = new RefreshProgressRunnable(id, progress, fromUser);
-            //}
-            //post(r);
-        //}
+        }
     }
-
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.086 -0400", hash_original_method = "E60A634EF77869D698E2255CD3404933", hash_generated_method = "8F6DEA5F19AAD77B783CF0F907E6383A")
+    /**
+     * <p>Set the current progress to the specified value. Does not do anything
+     * if the progress bar is in indeterminate mode.</p>
+     *
+     * @param progress the new progress, between 0 and {@link #getMax()}
+     *
+     * @see #setIndeterminate(boolean)
+     * @see #isIndeterminate()
+     * @see #getProgress()
+     * @see #incrementProgressBy(int) 
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.722 -0500", hash_original_method = "E60A634EF77869D698E2255CD3404933", hash_generated_method = "B35794BD35CFE2DAE884F434C5E52CD1")
     @android.view.RemotableViewMethod
-    public synchronized void setProgress(int progress) {
-        addTaint(progress);
+public synchronized void setProgress(int progress) {
         setProgress(progress, false);
-        // ---------- Original Method ----------
-        //setProgress(progress, false);
     }
-
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.086 -0400", hash_original_method = "65EDABD4A3EBF7E0899598C1A747DEC8", hash_generated_method = "DBE4EAE5409845C63F798D9423A78E9E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.723 -0500", hash_original_method = "65EDABD4A3EBF7E0899598C1A747DEC8", hash_generated_method = "A3704F7A1508E702EEC8F03B978F393E")
     @android.view.RemotableViewMethod
-    synchronized void setProgress(int progress, boolean fromUser) {
-        addTaint(fromUser);
-        if(mIndeterminate)        
-        {
+synchronized void setProgress(int progress, boolean fromUser) {
+        if (mIndeterminate) {
             return;
-        } //End block
-        if(progress < 0)        
-        {
+        }
+
+        if (progress < 0) {
             progress = 0;
-        } //End block
-        if(progress > mMax)        
-        {
+        }
+
+        if (progress > mMax) {
             progress = mMax;
-        } //End block
-        if(progress != mProgress)        
-        {
+        }
+
+        if (progress != mProgress) {
             mProgress = progress;
             refreshProgress(R.id.progress, mProgress, fromUser);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mIndeterminate) {
-            //return;
-        //}
-        //if (progress < 0) {
-            //progress = 0;
-        //}
-        //if (progress > mMax) {
-            //progress = mMax;
-        //}
-        //if (progress != mProgress) {
-            //mProgress = progress;
-            //refreshProgress(R.id.progress, mProgress, fromUser);
-        //}
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.087 -0400", hash_original_method = "9F9AE189F8359350B1506E3BE664E8EE", hash_generated_method = "8A8CE032C94CE4F79A9A60FD36CECE67")
+    /**
+     * <p>
+     * Set the current secondary progress to the specified value. Does not do
+     * anything if the progress bar is in indeterminate mode.
+     * </p>
+     * 
+     * @param secondaryProgress the new secondary progress, between 0 and {@link #getMax()}
+     * @see #setIndeterminate(boolean)
+     * @see #isIndeterminate()
+     * @see #getSecondaryProgress()
+     * @see #incrementSecondaryProgressBy(int)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.724 -0500", hash_original_method = "9F9AE189F8359350B1506E3BE664E8EE", hash_generated_method = "7BC950379A7AD819B2451C593B6C4182")
     @android.view.RemotableViewMethod
-    public synchronized void setSecondaryProgress(int secondaryProgress) {
-        if(mIndeterminate)        
-        {
+public synchronized void setSecondaryProgress(int secondaryProgress) {
+        if (mIndeterminate) {
             return;
-        } //End block
-        if(secondaryProgress < 0)        
-        {
+        }
+
+        if (secondaryProgress < 0) {
             secondaryProgress = 0;
-        } //End block
-        if(secondaryProgress > mMax)        
-        {
+        }
+
+        if (secondaryProgress > mMax) {
             secondaryProgress = mMax;
-        } //End block
-        if(secondaryProgress != mSecondaryProgress)        
-        {
+        }
+
+        if (secondaryProgress != mSecondaryProgress) {
             mSecondaryProgress = secondaryProgress;
             refreshProgress(R.id.secondaryProgress, mSecondaryProgress, false);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mIndeterminate) {
-            //return;
-        //}
-        //if (secondaryProgress < 0) {
-            //secondaryProgress = 0;
-        //}
-        //if (secondaryProgress > mMax) {
-            //secondaryProgress = mMax;
-        //}
-        //if (secondaryProgress != mSecondaryProgress) {
-            //mSecondaryProgress = secondaryProgress;
-            //refreshProgress(R.id.secondaryProgress, mSecondaryProgress, false);
-        //}
+        }
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.087 -0400", hash_original_method = "BF818051FE207A57D09CC2C24E2066F6", hash_generated_method = "6949554CEFB68BC786EE45CF0E9697FC")
+    /**
+     * <p>Get the progress bar's current level of progress. Return 0 when the
+     * progress bar is in indeterminate mode.</p>
+     *
+     * @return the current progress, between 0 and {@link #getMax()}
+     *
+     * @see #setIndeterminate(boolean)
+     * @see #isIndeterminate()
+     * @see #setProgress(int)
+     * @see #setMax(int)
+     * @see #getMax()
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.724 -0500", hash_original_method = "BF818051FE207A57D09CC2C24E2066F6", hash_generated_method = "7CF8711369421702779707E12BB7463A")
     @ViewDebug.ExportedProperty(category = "progress")
-    public synchronized int getProgress() {
-        int var896E81319782829B034F26E4F256A5AD_1180210368 = (mIndeterminate ? 0 : mProgress);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1706315100 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1706315100;
-        // ---------- Original Method ----------
-        //return mIndeterminate ? 0 : mProgress;
+public synchronized int getProgress() {
+        return mIndeterminate ? 0 : mProgress;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.087 -0400", hash_original_method = "0E2189FB3CB300C00977FC2C3BDB4D4B", hash_generated_method = "BE1CBE0E4A489F687F860D753AD514F2")
+    /**
+     * <p>Get the progress bar's current level of secondary progress. Return 0 when the
+     * progress bar is in indeterminate mode.</p>
+     *
+     * @return the current secondary progress, between 0 and {@link #getMax()}
+     *
+     * @see #setIndeterminate(boolean)
+     * @see #isIndeterminate()
+     * @see #setSecondaryProgress(int)
+     * @see #setMax(int)
+     * @see #getMax()
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.725 -0500", hash_original_method = "0E2189FB3CB300C00977FC2C3BDB4D4B", hash_generated_method = "58E4C1CCFC1DD27C3F9337CD2BA5B461")
     @ViewDebug.ExportedProperty(category = "progress")
-    public synchronized int getSecondaryProgress() {
-        int varCC09693E30955777A6A27C5CBFFFF66A_830256812 = (mIndeterminate ? 0 : mSecondaryProgress);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1105981368 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1105981368;
-        // ---------- Original Method ----------
-        //return mIndeterminate ? 0 : mSecondaryProgress;
+public synchronized int getSecondaryProgress() {
+        return mIndeterminate ? 0 : mSecondaryProgress;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.088 -0400", hash_original_method = "6E6A982D82D781B4C4E0B14E6160A2E7", hash_generated_method = "7B6D7F22016B1466617FA4A59CFDBD5F")
+    /**
+     * <p>Return the upper limit of this progress bar's range.</p>
+     *
+     * @return a positive integer
+     *
+     * @see #setMax(int)
+     * @see #getProgress()
+     * @see #getSecondaryProgress()
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.726 -0500", hash_original_method = "6E6A982D82D781B4C4E0B14E6160A2E7", hash_generated_method = "34A3B480BE2CC3F8D98489B2C60467E0")
     @ViewDebug.ExportedProperty(category = "progress")
-    public synchronized int getMax() {
-        int varC886C6FF92A43B3F6833B7BAFD354FBA_899834944 = (mMax);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_707987912 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_707987912;
-        // ---------- Original Method ----------
-        //return mMax;
+public synchronized int getMax() {
+        return mMax;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.088 -0400", hash_original_method = "DB535D9F1C65E31A54636A6B02096562", hash_generated_method = "4D3A731803FF6C114AF48ED8EC08AC12")
+    /**
+     * <p>Set the range of the progress bar to 0...<tt>max</tt>.</p>
+     *
+     * @param max the upper range of this progress bar
+     *
+     * @see #getMax()
+     * @see #setProgress(int) 
+     * @see #setSecondaryProgress(int) 
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.727 -0500", hash_original_method = "DB535D9F1C65E31A54636A6B02096562", hash_generated_method = "5F485EFADD9A8E4B9E6B85A84DA8F58E")
     @android.view.RemotableViewMethod
-    public synchronized void setMax(int max) {
-        if(max < 0)        
-        {
+public synchronized void setMax(int max) {
+        if (max < 0) {
             max = 0;
-        } //End block
-        if(max != mMax)        
-        {
+        }
+        if (max != mMax) {
             mMax = max;
             postInvalidate();
-            if(mProgress > max)            
-            {
+
+            if (mProgress > max) {
                 mProgress = max;
-            } //End block
+            }
             refreshProgress(R.id.progress, mProgress, false);
-        } //End block
-        // ---------- Original Method ----------
-        //if (max < 0) {
-            //max = 0;
-        //}
-        //if (max != mMax) {
-            //mMax = max;
-            //postInvalidate();
-            //if (mProgress > max) {
-                //mProgress = max;
-            //}
-            //refreshProgress(R.id.progress, mProgress, false);
-        //}
+        }
     }
-
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.089 -0400", hash_original_method = "1E5C167C76FF3FF0E5E9EED4F2394FD5", hash_generated_method = "D3D9333876A75F30FD4A3EB5943F27E5")
+    /**
+     * <p>Increase the progress bar's progress by the specified amount.</p>
+     *
+     * @param diff the amount by which the progress must be increased
+     *
+     * @see #setProgress(int) 
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.728 -0500", hash_original_method = "1E5C167C76FF3FF0E5E9EED4F2394FD5", hash_generated_method = "ECB6544B74373497ABBCEAA760E25BB2")
     public synchronized final void incrementProgressBy(int diff) {
-        addTaint(diff);
         setProgress(mProgress + diff);
-        // ---------- Original Method ----------
-        //setProgress(mProgress + diff);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.089 -0400", hash_original_method = "33F180031B438855CD8341D942A736A2", hash_generated_method = "875592F97DA8F8337A21309A8EC7B82B")
+    /**
+     * <p>Increase the progress bar's secondary progress by the specified amount.</p>
+     *
+     * @param diff the amount by which the secondary progress must be increased
+     *
+     * @see #setSecondaryProgress(int) 
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.729 -0500", hash_original_method = "33F180031B438855CD8341D942A736A2", hash_generated_method = "1822A5BEC7AF261DE838CCCCFB295CA9")
     public synchronized final void incrementSecondaryProgressBy(int diff) {
-        addTaint(diff);
         setSecondaryProgress(mSecondaryProgress + diff);
-        // ---------- Original Method ----------
-        //setSecondaryProgress(mSecondaryProgress + diff);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.090 -0400", hash_original_method = "F5167F20A872A63C36DAF85A2B000FB5", hash_generated_method = "6FA45E3DFA2AFC6767AA6A4B3A568391")
-     void startAnimation() {
-        if(getVisibility() != VISIBLE)        
-        {
+    /**
+     * <p>Start the indeterminate progress animation.</p>
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.730 -0500", hash_original_method = "F5167F20A872A63C36DAF85A2B000FB5", hash_generated_method = "F5167F20A872A63C36DAF85A2B000FB5")
+    void startAnimation() {
+        if (getVisibility() != VISIBLE) {
             return;
-        } //End block
-        if(mIndeterminateDrawable instanceof Animatable)        
-        {
+        }
+
+        if (mIndeterminateDrawable instanceof Animatable) {
             mShouldStartAnimationDrawable = true;
             mAnimation = null;
-        } //End block
-        else
-        {
-            if(mInterpolator == null)            
-            {
+        } else {
+            if (mInterpolator == null) {
                 mInterpolator = new LinearInterpolator();
-            } //End block
+            }
+    
             mTransformation = new Transformation();
             mAnimation = new AlphaAnimation(0.0f, 1.0f);
             mAnimation.setRepeatMode(mBehavior);
@@ -850,547 +743,300 @@ Drawable varCF8D9BC802F0D54A46071309A1C41866_7228635 =         mCurrentDrawable;
             mAnimation.setDuration(mDuration);
             mAnimation.setInterpolator(mInterpolator);
             mAnimation.setStartTime(Animation.START_ON_FIRST_FRAME);
-        } //End block
+        }
         postInvalidate();
-        // ---------- Original Method ----------
-        //if (getVisibility() != VISIBLE) {
-            //return;
-        //}
-        //if (mIndeterminateDrawable instanceof Animatable) {
-            //mShouldStartAnimationDrawable = true;
-            //mAnimation = null;
-        //} else {
-            //if (mInterpolator == null) {
-                //mInterpolator = new LinearInterpolator();
-            //}
-            //mTransformation = new Transformation();
-            //mAnimation = new AlphaAnimation(0.0f, 1.0f);
-            //mAnimation.setRepeatMode(mBehavior);
-            //mAnimation.setRepeatCount(Animation.INFINITE);
-            //mAnimation.setDuration(mDuration);
-            //mAnimation.setInterpolator(mInterpolator);
-            //mAnimation.setStartTime(Animation.START_ON_FIRST_FRAME);
-        //}
-        //postInvalidate();
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.090 -0400", hash_original_method = "3AFE1BBA347326120AD78BEE94F7B2A6", hash_generated_method = "E890542093B7CD8F089C73B6D19B98EE")
-     void stopAnimation() {
+    /**
+     * <p>Stop the indeterminate progress animation.</p>
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.730 -0500", hash_original_method = "3AFE1BBA347326120AD78BEE94F7B2A6", hash_generated_method = "3AFE1BBA347326120AD78BEE94F7B2A6")
+    void stopAnimation() {
         mAnimation = null;
         mTransformation = null;
-        if(mIndeterminateDrawable instanceof Animatable)        
-        {
+        if (mIndeterminateDrawable instanceof Animatable) {
             ((Animatable) mIndeterminateDrawable).stop();
             mShouldStartAnimationDrawable = false;
-        } //End block
+        }
         postInvalidate();
-        // ---------- Original Method ----------
-        //mAnimation = null;
-        //mTransformation = null;
-        //if (mIndeterminateDrawable instanceof Animatable) {
-            //((Animatable) mIndeterminateDrawable).stop();
-            //mShouldStartAnimationDrawable = false;
-        //}
-        //postInvalidate();
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.090 -0400", hash_original_method = "2C6481DDCCEAC913795356C9BF1AF628", hash_generated_method = "FBCFFDB8934B412FCF947D3B533DE793")
+    /**
+     * Sets the acceleration curve for the indeterminate animation.
+     * The interpolator is loaded as a resource from the specified context.
+     *
+     * @param context The application environment
+     * @param resID The resource identifier of the interpolator to load
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.731 -0500", hash_original_method = "2C6481DDCCEAC913795356C9BF1AF628", hash_generated_method = "BE3242216311F89FBBEC5A97D66A30C9")
     public void setInterpolator(Context context, int resID) {
-        addTaint(resID);
-        addTaint(context.getTaint());
         setInterpolator(AnimationUtils.loadInterpolator(context, resID));
-        // ---------- Original Method ----------
-        //setInterpolator(AnimationUtils.loadInterpolator(context, resID));
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.091 -0400", hash_original_method = "7D5A9A852D608ADF508B994526BF9EAC", hash_generated_method = "305B3174980281AD6A6C4213980CE615")
+    /**
+     * Sets the acceleration curve for the indeterminate animation.
+     * Defaults to a linear interpolation.
+     *
+     * @param interpolator The interpolator which defines the acceleration curve
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.732 -0500", hash_original_method = "7D5A9A852D608ADF508B994526BF9EAC", hash_generated_method = "DF8FD2546DF08BADAB224E60C1A6C2B9")
     public void setInterpolator(Interpolator interpolator) {
         mInterpolator = interpolator;
-        // ---------- Original Method ----------
-        //mInterpolator = interpolator;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.091 -0400", hash_original_method = "8AA04851FFB5BE49EA5890940035B142", hash_generated_method = "270D0392F1C466ACA1C1729C4BD677BF")
+    /**
+     * Gets the acceleration curve type for the indeterminate animation.
+     *
+     * @return the {@link Interpolator} associated to this animation
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.733 -0500", hash_original_method = "8AA04851FFB5BE49EA5890940035B142", hash_generated_method = "680BC21A34AFF00E6707D9E25D0C0570")
     public Interpolator getInterpolator() {
-Interpolator var9FA301F6AF154FEBBB2C7439D021F894_821922003 =         mInterpolator;
-        var9FA301F6AF154FEBBB2C7439D021F894_821922003.addTaint(taint);
-        return var9FA301F6AF154FEBBB2C7439D021F894_821922003;
-        // ---------- Original Method ----------
-        //return mInterpolator;
+        return mInterpolator;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.091 -0400", hash_original_method = "EC8B18EE88EE8E09369A36DBF52DF684", hash_generated_method = "3FD65D1E4B02BA1914A841F69EC44FC0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.734 -0500", hash_original_method = "EC8B18EE88EE8E09369A36DBF52DF684", hash_generated_method = "39E0006847B6ED0F90C17C5E24442D20")
     @Override
-    @RemotableViewMethod
-    public void setVisibility(int v) {
-        addTaint(v);
-        if(getVisibility() != v)        
-        {
+@RemotableViewMethod
+public void setVisibility(int v) {
+        if (getVisibility() != v) {
             super.setVisibility(v);
-            if(mIndeterminate)            
-            {
-                if(v == GONE || v == INVISIBLE)                
-                {
+
+            if (mIndeterminate) {
+                // let's be nice with the UI thread
+                if (v == GONE || v == INVISIBLE) {
                     stopAnimation();
-                } //End block
-                else
-                {
+                } else {
                     startAnimation();
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (getVisibility() != v) {
-            //super.setVisibility(v);
-            //if (mIndeterminate) {
-                //if (v == GONE || v == INVISIBLE) {
-                    //stopAnimation();
-                //} else {
-                    //startAnimation();
-                //}
-            //}
-        //}
+                }
+            }
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.092 -0400", hash_original_method = "E937F441086D9A40C4DA651781180A92", hash_generated_method = "F814E6E5CD4BFC60A367A89CAAE37887")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.735 -0500", hash_original_method = "E937F441086D9A40C4DA651781180A92", hash_generated_method = "1ED71813CAE5A0C16DA256492B8D334A")
     @Override
-    protected void onVisibilityChanged(View changedView, int visibility) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(visibility);
-        addTaint(changedView.getTaint());
+protected void onVisibilityChanged(View changedView, int visibility) {
         super.onVisibilityChanged(changedView, visibility);
-        if(mIndeterminate)        
-        {
-            if(visibility == GONE || visibility == INVISIBLE)            
-            {
+
+        if (mIndeterminate) {
+            // let's be nice with the UI thread
+            if (visibility == GONE || visibility == INVISIBLE) {
                 stopAnimation();
-            } //End block
-            else
-            {
+            } else {
                 startAnimation();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //super.onVisibilityChanged(changedView, visibility);
-        //if (mIndeterminate) {
-            //if (visibility == GONE || visibility == INVISIBLE) {
-                //stopAnimation();
-            //} else {
-                //startAnimation();
-            //}
-        //}
+            }
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.092 -0400", hash_original_method = "51F010448C03C2EA1E2B7053B0DCB7DE", hash_generated_method = "00C41718C6D468FC0EF4D8B6461D620B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.735 -0500", hash_original_method = "51F010448C03C2EA1E2B7053B0DCB7DE", hash_generated_method = "A8F117221FFD11320EFD837F3BB6AAAA")
     @Override
-    public void invalidateDrawable(Drawable dr) {
-        addTaint(dr.getTaint());
-        if(!mInDrawing)        
-        {
-            if(verifyDrawable(dr))            
-            {
+public void invalidateDrawable(Drawable dr) {
+        if (!mInDrawing) {
+            if (verifyDrawable(dr)) {
                 final Rect dirty = dr.getBounds();
                 final int scrollX = mScrollX + mPaddingLeft;
                 final int scrollY = mScrollY + mPaddingTop;
+
                 invalidate(dirty.left + scrollX, dirty.top + scrollY,
                         dirty.right + scrollX, dirty.bottom + scrollY);
-            } //End block
-            else
-            {
+            } else {
                 super.invalidateDrawable(dr);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (!mInDrawing) {
-            //if (verifyDrawable(dr)) {
-                //final Rect dirty = dr.getBounds();
-                //final int scrollX = mScrollX + mPaddingLeft;
-                //final int scrollY = mScrollY + mPaddingTop;
-                //invalidate(dirty.left + scrollX, dirty.top + scrollY,
-                        //dirty.right + scrollX, dirty.bottom + scrollY);
-            //} else {
-                //super.invalidateDrawable(dr);
-            //}
-        //}
+            }
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.092 -0400", hash_original_method = "74277B895F883AA5B2EB254A27C149C7", hash_generated_method = "883A1F09580CEB6D2BC45799B6D0CBB7")
+    /**
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.736 -0500", hash_original_method = "74277B895F883AA5B2EB254A27C149C7", hash_generated_method = "3284679464233C18FD5B82A395A1FF64")
     @Override
-    public int getResolvedLayoutDirection(Drawable who) {
-        addTaint(who.getTaint());
-        int varD683986362A705258C4E69209FB34C5F_421753696 = ((who == mProgressDrawable || who == mIndeterminateDrawable) ?
-            getResolvedLayoutDirection() : super.getResolvedLayoutDirection(who));
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_150205753 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_150205753;
-        // ---------- Original Method ----------
-        //return (who == mProgressDrawable || who == mIndeterminateDrawable) ?
-            //getResolvedLayoutDirection() : super.getResolvedLayoutDirection(who);
+public int getResolvedLayoutDirection(Drawable who) {
+        return (who == mProgressDrawable || who == mIndeterminateDrawable) ?
+            getResolvedLayoutDirection() : super.getResolvedLayoutDirection(who);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.092 -0400", hash_original_method = "69EE8DE1AB95A9498391F63C2C373DBD", hash_generated_method = "8E3F25468214CB99C9456EF69A803E35")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.737 -0500", hash_original_method = "69EE8DE1AB95A9498391F63C2C373DBD", hash_generated_method = "5CA0B0F09A03F7EA0410163A47798DB8")
     @Override
-    protected void onSizeChanged(int w, int h, int oldw, int oldh) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(oldh);
-        addTaint(oldw);
-        addTaint(h);
-        addTaint(w);
+protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         updateDrawableBounds(w, h);
-        // ---------- Original Method ----------
-        //updateDrawableBounds(w, h);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.093 -0400", hash_original_method = "EA480A5BB3C1237E93332F6C8EE84591", hash_generated_method = "E890F37E2A821761E9E87DB75CB5037C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.738 -0500", hash_original_method = "EA480A5BB3C1237E93332F6C8EE84591", hash_generated_method = "23BFC8FF9086DAA4E8425857EEAE0014")
     private void updateDrawableBounds(int w, int h) {
-        addTaint(h);
-        addTaint(w);
+        // onDraw will translate the canvas so we draw starting at 0,0
         int right = w - mPaddingRight - mPaddingLeft;
         int bottom = h - mPaddingBottom - mPaddingTop;
         int top = 0;
         int left = 0;
-        if(mIndeterminateDrawable != null)        
-        {
-            if(mOnlyIndeterminate && !(mIndeterminateDrawable instanceof AnimationDrawable))            
-            {
+
+        if (mIndeterminateDrawable != null) {
+            // Aspect ratio logic does not apply to AnimationDrawables
+            if (mOnlyIndeterminate && !(mIndeterminateDrawable instanceof AnimationDrawable)) {
+                // Maintain aspect ratio. Certain kinds of animated drawables
+                // get very confused otherwise.
                 final int intrinsicWidth = mIndeterminateDrawable.getIntrinsicWidth();
                 final int intrinsicHeight = mIndeterminateDrawable.getIntrinsicHeight();
                 final float intrinsicAspect = (float) intrinsicWidth / intrinsicHeight;
                 final float boundAspect = (float) w / h;
-                if(intrinsicAspect != boundAspect)                
-                {
-                    if(boundAspect > intrinsicAspect)                    
-                    {
+                if (intrinsicAspect != boundAspect) {
+                    if (boundAspect > intrinsicAspect) {
+                        // New width is larger. Make it smaller to match height.
                         final int width = (int) (h * intrinsicAspect);
                         left = (w - width) / 2;
                         right = left + width;
-                    } //End block
-                    else
-                    {
+                    } else {
+                        // New height is larger. Make it smaller to match width.
                         final int height = (int) (w * (1 / intrinsicAspect));
                         top = (h - height) / 2;
                         bottom = top + height;
-                    } //End block
-                } //End block
-            } //End block
+                    }
+                }
+            }
             mIndeterminateDrawable.setBounds(left, top, right, bottom);
-        } //End block
-        if(mProgressDrawable != null)        
-        {
+        }
+        
+        if (mProgressDrawable != null) {
             mProgressDrawable.setBounds(0, 0, right, bottom);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.093 -0400", hash_original_method = "16CD7BB578E96B322FC9201A377B65CC", hash_generated_method = "229270E8BFECAF2393326E1A1065DCD7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.739 -0500", hash_original_method = "16CD7BB578E96B322FC9201A377B65CC", hash_generated_method = "5590632EA0B2148C381E50563857A5F0")
     @Override
-    protected synchronized void onDraw(Canvas canvas) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(canvas.getTaint());
+protected synchronized void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+
         Drawable d = mCurrentDrawable;
-        if(d != null)        
-        {
+        if (d != null) {
+            // Translate canvas so a indeterminate circular progress bar with padding
+            // rotates properly in its animation
             canvas.save();
             canvas.translate(mPaddingLeft, mPaddingTop);
             long time = getDrawingTime();
-            if(mAnimation != null)            
-            {
+            if (mAnimation != null) {
                 mAnimation.getTransformation(time, mTransformation);
                 float scale = mTransformation.getAlpha();
-                try 
-                {
+                try {
                     mInDrawing = true;
                     d.setLevel((int) (scale * MAX_LEVEL));
-                } //End block
-                finally 
-                {
+                } finally {
                     mInDrawing = false;
-                } //End block
-                if(SystemClock.uptimeMillis() - mLastDrawTime >= mAnimationResolution)                
-                {
+                }
+                if (SystemClock.uptimeMillis() - mLastDrawTime >= mAnimationResolution) {
                     mLastDrawTime = SystemClock.uptimeMillis();
                     postInvalidateDelayed(mAnimationResolution);
-                } //End block
-            } //End block
+                }
+            }
             d.draw(canvas);
             canvas.restore();
-            if(mShouldStartAnimationDrawable && d instanceof Animatable)            
-            {
+            if (mShouldStartAnimationDrawable && d instanceof Animatable) {
                 ((Animatable) d).start();
                 mShouldStartAnimationDrawable = false;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            }
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.094 -0400", hash_original_method = "6FFAE46060D92EDBE1BD141B1F5C353A", hash_generated_method = "5CE2802FDFABB61BD444615EF31B6D82")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.740 -0500", hash_original_method = "6FFAE46060D92EDBE1BD141B1F5C353A", hash_generated_method = "E909015B17FDF605B5E62DA973B3CD74")
     @Override
-    protected synchronized void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(heightMeasureSpec);
-        addTaint(widthMeasureSpec);
+protected synchronized void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         Drawable d = mCurrentDrawable;
+
         int dw = 0;
         int dh = 0;
-        if(d != null)        
-        {
+        if (d != null) {
             dw = Math.max(mMinWidth, Math.min(mMaxWidth, d.getIntrinsicWidth()));
             dh = Math.max(mMinHeight, Math.min(mMaxHeight, d.getIntrinsicHeight()));
-        } //End block
+        }
         updateDrawableState();
         dw += mPaddingLeft + mPaddingRight;
         dh += mPaddingTop + mPaddingBottom;
+
         setMeasuredDimension(resolveSizeAndState(dw, widthMeasureSpec, 0),
                 resolveSizeAndState(dh, heightMeasureSpec, 0));
-        // ---------- Original Method ----------
-        //Drawable d = mCurrentDrawable;
-        //int dw = 0;
-        //int dh = 0;
-        //if (d != null) {
-            //dw = Math.max(mMinWidth, Math.min(mMaxWidth, d.getIntrinsicWidth()));
-            //dh = Math.max(mMinHeight, Math.min(mMaxHeight, d.getIntrinsicHeight()));
-        //}
-        //updateDrawableState();
-        //dw += mPaddingLeft + mPaddingRight;
-        //dh += mPaddingTop + mPaddingBottom;
-        //setMeasuredDimension(resolveSizeAndState(dw, widthMeasureSpec, 0),
-                //resolveSizeAndState(dh, heightMeasureSpec, 0));
     }
-
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.094 -0400", hash_original_method = "568F14E497668D52F70AE96AA5EB6F88", hash_generated_method = "2B34FA3925633B97C3B9967238FEABD8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.741 -0500", hash_original_method = "568F14E497668D52F70AE96AA5EB6F88", hash_generated_method = "4EB57F8B143863A87C550D037C073C6C")
     @Override
-    protected void drawableStateChanged() {
+protected void drawableStateChanged() {
         super.drawableStateChanged();
         updateDrawableState();
-        // ---------- Original Method ----------
-        //super.drawableStateChanged();
-        //updateDrawableState();
     }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.094 -0400", hash_original_method = "952B851172F804A1D432AC87BADE94E9", hash_generated_method = "035F9AA26E84ABF84843C88F22BD02C4")
+        
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.742 -0500", hash_original_method = "952B851172F804A1D432AC87BADE94E9", hash_generated_method = "539E58DB3A2F5D873F38DF27B1746999")
     private void updateDrawableState() {
         int[] state = getDrawableState();
-        if(mProgressDrawable != null && mProgressDrawable.isStateful())        
-        {
+        
+        if (mProgressDrawable != null && mProgressDrawable.isStateful()) {
             mProgressDrawable.setState(state);
-        } //End block
-        if(mIndeterminateDrawable != null && mIndeterminateDrawable.isStateful())        
-        {
+        }
+        
+        if (mIndeterminateDrawable != null && mIndeterminateDrawable.isStateful()) {
             mIndeterminateDrawable.setState(state);
-        } //End block
-        // ---------- Original Method ----------
-        //int[] state = getDrawableState();
-        //if (mProgressDrawable != null && mProgressDrawable.isStateful()) {
-            //mProgressDrawable.setState(state);
-        //}
-        //if (mIndeterminateDrawable != null && mIndeterminateDrawable.isStateful()) {
-            //mIndeterminateDrawable.setState(state);
-        //}
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.094 -0400", hash_original_method = "875308A47ADC87038CC9E153A4D8FE71", hash_generated_method = "BA6E59010649E0AB5341D02027C12FCC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.751 -0500", hash_original_method = "875308A47ADC87038CC9E153A4D8FE71", hash_generated_method = "C5A52986289D68811DA77A5BE28BE018")
     @Override
-    public Parcelable onSaveInstanceState() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+public Parcelable onSaveInstanceState() {
+        // Force our ancestor class to save its state
         Parcelable superState = super.onSaveInstanceState();
         SavedState ss = new SavedState(superState);
+        
         ss.progress = mProgress;
         ss.secondaryProgress = mSecondaryProgress;
-Parcelable var182E37827114C3F455816E0E29D81D76_1040674042 =         ss;
-        var182E37827114C3F455816E0E29D81D76_1040674042.addTaint(taint);
-        return var182E37827114C3F455816E0E29D81D76_1040674042;
-        // ---------- Original Method ----------
-        //Parcelable superState = super.onSaveInstanceState();
-        //SavedState ss = new SavedState(superState);
-        //ss.progress = mProgress;
-        //ss.secondaryProgress = mSecondaryProgress;
-        //return ss;
+        
+        return ss;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.094 -0400", hash_original_method = "A42CFAF758710477BAC4A7B2A0C98761", hash_generated_method = "03DA06A994E94488FD6261FD993B394B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.752 -0500", hash_original_method = "A42CFAF758710477BAC4A7B2A0C98761", hash_generated_method = "36920F3704EEF8E261868AE4CB4E618B")
     @Override
-    public void onRestoreInstanceState(Parcelable state) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(state.getTaint());
+public void onRestoreInstanceState(Parcelable state) {
         SavedState ss = (SavedState) state;
         super.onRestoreInstanceState(ss.getSuperState());
+        
         setProgress(ss.progress);
         setSecondaryProgress(ss.secondaryProgress);
-        // ---------- Original Method ----------
-        //SavedState ss = (SavedState) state;
-        //super.onRestoreInstanceState(ss.getSuperState());
-        //setProgress(ss.progress);
-        //setSecondaryProgress(ss.secondaryProgress);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.095 -0400", hash_original_method = "608AE3D8DA74959AA8F2204845C7317D", hash_generated_method = "BD28E03E51CC17CCA52C53EA3B241745")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.753 -0500", hash_original_method = "608AE3D8DA74959AA8F2204845C7317D", hash_generated_method = "7F5751066C42C755413048DCB414803C")
     @Override
-    protected void onAttachedToWindow() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+protected void onAttachedToWindow() {
         super.onAttachedToWindow();
-        if(mIndeterminate)        
-        {
+        if (mIndeterminate) {
             startAnimation();
-        } //End block
-        // ---------- Original Method ----------
-        //super.onAttachedToWindow();
-        //if (mIndeterminate) {
-            //startAnimation();
-        //}
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.095 -0400", hash_original_method = "3E30480EE15E7D073BA14A1FE62DC464", hash_generated_method = "4E75B1242BABD343DD6395D004C5A81F")
-    @Override
-    protected void onDetachedFromWindow() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        if(mIndeterminate)        
-        {
-            stopAnimation();
-        } //End block
-        if(mRefreshProgressRunnable != null)        
-        {
-            removeCallbacks(mRefreshProgressRunnable);
-        } //End block
-        if(mAccessibilityEventSender != null)        
-        {
-            removeCallbacks(mAccessibilityEventSender);
-        } //End block
-        super.onDetachedFromWindow();
-        // ---------- Original Method ----------
-        //if (mIndeterminate) {
-            //stopAnimation();
-        //}
-        //if(mRefreshProgressRunnable != null) {
-            //removeCallbacks(mRefreshProgressRunnable);
-        //}
-        //if (mAccessibilityEventSender != null) {
-            //removeCallbacks(mAccessibilityEventSender);
-        //}
-        //super.onDetachedFromWindow();
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.095 -0400", hash_original_method = "D1990D7DB1A5D8E4C14ADC3323533C4A", hash_generated_method = "C887023349DFAB3818350D8E5A890EB8")
-    @Override
-    public void onInitializeAccessibilityEvent(AccessibilityEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(event.getTaint());
-        super.onInitializeAccessibilityEvent(event);
-        event.setItemCount(mMax);
-        event.setCurrentItemIndex(mProgress);
-        // ---------- Original Method ----------
-        //super.onInitializeAccessibilityEvent(event);
-        //event.setItemCount(mMax);
-        //event.setCurrentItemIndex(mProgress);
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.095 -0400", hash_original_method = "20F0DBCD6142D6C8A8DBD6A9085999AF", hash_generated_method = "8B96CF4A8042ACE3CB9E7F89C59F7EC8")
-    private void scheduleAccessibilityEventSender() {
-        if(mAccessibilityEventSender == null)        
-        {
-            mAccessibilityEventSender = new AccessibilityEventSender();
-        } //End block
-        else
-        {
-            removeCallbacks(mAccessibilityEventSender);
-        } //End block
-        postDelayed(mAccessibilityEventSender, TIMEOUT_SEND_ACCESSIBILITY_EVENT);
-        // ---------- Original Method ----------
-        //if (mAccessibilityEventSender == null) {
-            //mAccessibilityEventSender = new AccessibilityEventSender();
-        //} else {
-            //removeCallbacks(mAccessibilityEventSender);
-        //}
-        //postDelayed(mAccessibilityEventSender, TIMEOUT_SEND_ACCESSIBILITY_EVENT);
+        }
     }
 
     
     private class RefreshProgressRunnable implements Runnable {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.095 -0400", hash_original_field = "6AC7F06B6413A1BE9C136DC7DF0D2B60", hash_generated_field = "9AA2EA3A2433F5D6F841BEFD54A673B4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.712 -0500", hash_original_field = "9F66E723E60E4F10157FDA7C23C67293", hash_generated_field = "9AA2EA3A2433F5D6F841BEFD54A673B4")
+
 
         private int mId;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.095 -0400", hash_original_field = "8E57A1AD458E8C11842F6CF5D7E06883", hash_generated_field = "1CA7BE0C4831604F244183A43ACB7282")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.713 -0500", hash_original_field = "7CDF5A45863735DC45D655DB7E365343", hash_generated_field = "1CA7BE0C4831604F244183A43ACB7282")
 
         private int mProgress;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.095 -0400", hash_original_field = "C415F34964DBD13CCA489700EA3A16EC", hash_generated_field = "E56F4B776FFB7A387D61A7DB69ED27F1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.714 -0500", hash_original_field = "77B4B6EFDD4C9DA9B5E0BF53A9ADE143", hash_generated_field = "E56F4B776FFB7A387D61A7DB69ED27F1")
 
         private boolean mFromUser;
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.095 -0400", hash_original_method = "84E6436ACAD7BA9E1C46F86F0883DFAC", hash_generated_method = "5727DBFD18D074B41C6BDF42FF9875C9")
-          RefreshProgressRunnable(int id, int progress, boolean fromUser) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.716 -0500", hash_original_method = "84E6436ACAD7BA9E1C46F86F0883DFAC", hash_generated_method = "84E6436ACAD7BA9E1C46F86F0883DFAC")
+        RefreshProgressRunnable(int id, int progress, boolean fromUser) {
             mId = id;
             mProgress = progress;
             mFromUser = fromUser;
-            // ---------- Original Method ----------
-            //mId = id;
-            //mProgress = progress;
-            //mFromUser = fromUser;
         }
-
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.095 -0400", hash_original_method = "336F21C38B52B9E04C9FE91372F32949", hash_generated_method = "51D6F418402664ECDD0B0622CCD44263")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.717 -0500", hash_original_method = "336F21C38B52B9E04C9FE91372F32949", hash_generated_method = "83B3C867EB5837D082466162CAA6717E")
         public void run() {
             doRefreshProgress(mId, mProgress, mFromUser, true);
+            // Put ourselves back in the cache when we are done
             mRefreshProgressRunnable = this;
-            // ---------- Original Method ----------
-            //doRefreshProgress(mId, mProgress, mFromUser, true);
-            //mRefreshProgressRunnable = this;
         }
-
         
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.096 -0400", hash_original_method = "992C4D927E51E72BEA0F4017381D8EC2", hash_generated_method = "A238CC5542317B5EC7A431478DA6D0E3")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.717 -0500", hash_original_method = "992C4D927E51E72BEA0F4017381D8EC2", hash_generated_method = "A64417E0DF270DD8F2AAD21272258DF8")
         public void setup(int id, int progress, boolean fromUser) {
             mId = id;
             mProgress = progress;
             mFromUser = fromUser;
-            // ---------- Original Method ----------
-            //mId = id;
-            //mProgress = progress;
-            //mFromUser = fromUser;
         }
 
         
@@ -1399,64 +1045,54 @@ Parcelable var182E37827114C3F455816E0E29D81D76_1040674042 =         ss;
 
     
     static class SavedState extends BaseSavedState {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.096 -0400", hash_original_field = "3C709B10A5D47BA33D85337DD9110917", hash_generated_field = "0E86867788D9F180E816D58F2E5188C6")
-
-        int progress;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.096 -0400", hash_original_field = "FB93C6DAB209AD5362C10535696AC83A", hash_generated_field = "1F6D1EA8F68E49AFD9E30D4EFB3F6276")
-
-        int secondaryProgress;
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.096 -0400", hash_original_method = "89EB4EC154F05BF905ECA8E02BBD14BC", hash_generated_method = "3F4F70129FCB46E4AE0D334AE4D70CF6")
-          SavedState(Parcelable superState) {
-            super(superState);
-            addTaint(superState.getTaint());
-            // ---------- Original Method ----------
-        }
-
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.096 -0400", hash_original_method = "9D61E8AE00F16C0432FB33E15078B080", hash_generated_method = "9ED54A037992D9B4CCD324548CA845EB")
-        private  SavedState(Parcel in) {
-            super(in);
-            progress = in.readInt();
-            secondaryProgress = in.readInt();
-            // ---------- Original Method ----------
-            //progress = in.readInt();
-            //secondaryProgress = in.readInt();
-        }
-
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.096 -0400", hash_original_method = "47949C0C27B3FB6F61C4F76D6E851E0A", hash_generated_method = "D43E3100F12AD41EF68715035B31EAFA")
-        @Override
-        public void writeToParcel(Parcel out, int flags) {
-            addTaint(flags);
-            addTaint(out.getTaint());
-            super.writeToParcel(out, flags);
-            out.writeInt(progress);
-            out.writeInt(secondaryProgress);
-            // ---------- Original Method ----------
-            //super.writeToParcel(out, flags);
-            //out.writeInt(progress);
-            //out.writeInt(secondaryProgress);
-        }
 
         
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.097 -0400", hash_original_field = "7DF6FB2587CB67E9544A859A8F6E8FF3", hash_generated_field = "263FCDD65C2156B1D1E1B4D9AE8D7FFA")
 
         public static final Parcelable.Creator<SavedState> CREATOR
                 = new Parcelable.Creator<SavedState>() {
-            @DSModeled(DSC.SAFE)
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.748 -0500", hash_original_method = "E26812089C072DDE1A14AECAA6CD6686", hash_generated_method = "C97AA17CB243756458D0FB7A2D786EA0")
             public SavedState createFromParcel(Parcel in) {
                 return new SavedState(in);
             }
 
-            @DSModeled(DSC.SAFE)
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.749 -0500", hash_original_method = "2D31E9CBAAAE05B696D738324F87FF78", hash_generated_method = "020465B62F970B98C266AF229149E391")
             public SavedState[] newArray(int size) {
                 return new SavedState[size];
             }
         };
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.743 -0500", hash_original_field = "0E86867788D9F180E816D58F2E5188C6", hash_generated_field = "0E86867788D9F180E816D58F2E5188C6")
+
+        int progress;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.744 -0500", hash_original_field = "1F6D1EA8F68E49AFD9E30D4EFB3F6276", hash_generated_field = "1F6D1EA8F68E49AFD9E30D4EFB3F6276")
+
+        int secondaryProgress;
+        
+        /**
+         * Constructor called from {@link ProgressBar#onSaveInstanceState()}
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.745 -0500", hash_original_method = "89EB4EC154F05BF905ECA8E02BBD14BC", hash_generated_method = "89EB4EC154F05BF905ECA8E02BBD14BC")
+        SavedState(Parcelable superState) {
+            super(superState);
+        }
+        
+        /**
+         * Constructor called from {@link #CREATOR}
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.746 -0500", hash_original_method = "9D61E8AE00F16C0432FB33E15078B080", hash_generated_method = "3ADD61C80BF0DBEDD59C385D5BA2738C")
+        private SavedState(Parcel in) {
+            super(in);
+            progress = in.readInt();
+            secondaryProgress = in.readInt();
+        }
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.747 -0500", hash_original_method = "47949C0C27B3FB6F61C4F76D6E851E0A", hash_generated_method = "9A232E27C99C90AF353AD363FA55D1D0")
+        @Override
+public void writeToParcel(Parcel out, int flags) {
+            super.writeToParcel(out, flags);
+            out.writeInt(progress);
+            out.writeInt(secondaryProgress);
+        }
         // orphaned legacy method
         public SavedState createFromParcel(Parcel in) {
                 return new SavedState(in);
@@ -1478,29 +1114,54 @@ Parcelable var182E37827114C3F455816E0E29D81D76_1040674042 =         ss;
         {
             //Synthesized constructor
         }
-
-
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.097 -0400", hash_original_method = "D171B097136E37DF343D32BCCA8935F6", hash_generated_method = "2295CF57C52786E3AEEE5BA06534C7E1")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.756 -0500", hash_original_method = "D171B097136E37DF343D32BCCA8935F6", hash_generated_method = "130DDEE72B6AB9E862C8FF6D8AE65536")
         public void run() {
             sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_SELECTED);
-            // ---------- Original Method ----------
-            //sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_SELECTED);
         }
 
         
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.754 -0500", hash_original_method = "3E30480EE15E7D073BA14A1FE62DC464", hash_generated_method = "6A2E3120A45F5AF406553365915C1EE8")
+    @Override
+protected void onDetachedFromWindow() {
+        if (mIndeterminate) {
+            stopAnimation();
+        }
+        if(mRefreshProgressRunnable != null) {
+            removeCallbacks(mRefreshProgressRunnable);
+        }
+        if (mAccessibilityEventSender != null) {
+            removeCallbacks(mAccessibilityEventSender);
+        }
+        // This should come after stopAnimation(), otherwise an invalidate message remains in the
+        // queue, which can prevent the entire view hierarchy from being GC'ed during a rotation
+        super.onDetachedFromWindow();
+    }
 
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.097 -0400", hash_original_field = "D2DD2BB7F0B3E156DA500A133BC0E11B", hash_generated_field = "CC7511334507B624E41735D194F6E4E0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.754 -0500", hash_original_method = "D1990D7DB1A5D8E4C14ADC3323533C4A", hash_generated_method = "B202A0D1F99F962057E80705738AC863")
+    @Override
+public void onInitializeAccessibilityEvent(AccessibilityEvent event) {
+        super.onInitializeAccessibilityEvent(event);
+        event.setItemCount(mMax);
+        event.setCurrentItemIndex(mProgress);
+    }
 
-    private static final int MAX_LEVEL = 10000;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.097 -0400", hash_original_field = "CB4F103AB492FC713BF751CD8A51F9C3", hash_generated_field = "39EF70D35A29D206C019E7A12A698D6D")
-
-    private static final int ANIMATION_RESOLUTION = 200;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.097 -0400", hash_original_field = "05B419CB9CCCDBAE7ED4E8EC7599640B", hash_generated_field = "81CDC7C9CA9F2EE4E05B25C5A8DB35B0")
-
-    private static final int TIMEOUT_SEND_ACCESSIBILITY_EVENT = 200;
+    /**
+     * Schedule a command for sending an accessibility event.
+     * </br>
+     * Note: A command is used to ensure that accessibility events
+     *       are sent at most one in a given time frame to save
+     *       system resources while the progress changes quickly.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.755 -0500", hash_original_method = "20F0DBCD6142D6C8A8DBD6A9085999AF", hash_generated_method = "0E30A3D2BAE76CBBDF9F9F5237802C23")
+    private void scheduleAccessibilityEventSender() {
+        if (mAccessibilityEventSender == null) {
+            mAccessibilityEventSender = new AccessibilityEventSender();
+        } else {
+            removeCallbacks(mAccessibilityEventSender);
+        }
+        postDelayed(mAccessibilityEventSender, TIMEOUT_SEND_ACCESSIBILITY_EVENT);
+    }
 }
 

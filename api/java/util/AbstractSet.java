@@ -1,17 +1,20 @@
 package java.util;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
 
 
 public abstract class AbstractSet<E> extends AbstractCollection<E> implements Set<E> {
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.656 -0400", hash_original_method = "422EAA7182FF45B88C4EE6C211DE4EBB", hash_generated_method = "370CF36F1557D7355E48B1CB7D8F5E8D")
-    protected  AbstractSet() {
-        // ---------- Original Method ----------
+
+    /**
+     * Constructs a new instance of this AbstractSet.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.663 -0500", hash_original_method = "422EAA7182FF45B88C4EE6C211DE4EBB", hash_generated_method = "2FD83EFED6025F858EC91E81C4EFE5FC")
+    protected AbstractSet() {
     }
 
     
@@ -22,30 +25,24 @@ public abstract class AbstractSet<E> extends AbstractCollection<E> implements Se
         return super.isEqualTo(object);
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.658 -0400", hash_original_method = "CFEA0B963C36C0E6CA161741555B0EDA", hash_generated_method = "4329886434D842FF3EFF045E72E15555")
+    /**
+     * Returns the hash code for this set. Two set which are equal must return
+     * the same value. This implementation calculates the hash code by adding
+     * each element's hash code.
+     *
+     * @return the hash code of this set.
+     * @see #equals
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.666 -0500", hash_original_method = "CFEA0B963C36C0E6CA161741555B0EDA", hash_generated_method = "EC4E6B86A0B1F508A6076903FE132A4B")
     @Override
-    public int hashCode() {
+public int hashCode() {
         int result = 0;
         Iterator<?> it = iterator();
-        while
-(it.hasNext())        
-        {
+        while (it.hasNext()) {
             Object next = it.next();
             result += next == null ? 0 : next.hashCode();
-        } //End block
-        int varB4A88417B3D0170D754C647C30B7216A_554553828 = (result);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1019373771 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1019373771;
-        // ---------- Original Method ----------
-        //int result = 0;
-        //Iterator<?> it = iterator();
-        //while (it.hasNext()) {
-            //Object next = it.next();
-            //result += next == null ? 0 : next.hashCode();
-        //}
-        //return result;
+        }
+        return result;
     }
 
     

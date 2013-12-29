@@ -1,6 +1,8 @@
 package org.bouncycastle.asn1.x500;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import org.bouncycastle.asn1.ASN1Encodable;
 import org.bouncycastle.asn1.ASN1EncodableVector;
@@ -15,39 +17,10 @@ import org.bouncycastle.asn1.DERSequence;
 
 
 public class AttributeTypeAndValue extends ASN1Encodable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.287 -0400", hash_original_field = "599DCCE2998A6B40B1E38E8C6006CB0A", hash_generated_field = "E22429FEAB7082A9C22F35F915934F74")
 
-    private ASN1ObjectIdentifier type;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.287 -0400", hash_original_field = "2063C1608D6E0BAF80249C42E2BE5804", hash_generated_field = "65616B4EF69DB0ADA11533A065E6A511")
-
-    private ASN1Encodable value;
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.288 -0400", hash_original_method = "15E850D5749E9732B50BB178D64D47F4", hash_generated_method = "BE576E64C27CB2D4D46CA97900EFABC5")
-    private  AttributeTypeAndValue(ASN1Sequence seq) {
-        type = (ASN1ObjectIdentifier)seq.getObjectAt(0);
-        value = (ASN1Encodable)seq.getObjectAt(1);
-        // ---------- Original Method ----------
-        //type = (ASN1ObjectIdentifier)seq.getObjectAt(0);
-        //value = (ASN1Encodable)seq.getObjectAt(1);
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.289 -0400", hash_original_method = "455B7405955E1E537DECB7E0764A59EF", hash_generated_method = "E84A2F5BBB1F65ED45E2832DE9ADFE01")
-    public  AttributeTypeAndValue(
-        ASN1ObjectIdentifier type,
-        ASN1Encodable value) {
-        this.type = type;
-        this.value = value;
-        // ---------- Original Method ----------
-        //this.type = type;
-        //this.value = value;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    public static AttributeTypeAndValue getInstance(Object o) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:54.003 -0500", hash_original_method = "04CC9AF5779AF8FA3BF3914EFE87D41E", hash_generated_method = "A5BBB0999D58A21C7EEB0C2D3A128202")
+    public static AttributeTypeAndValue getInstance(Object o)
+    {
         if (o instanceof AttributeTypeAndValue)
         {
             return (AttributeTypeAndValue)o;
@@ -56,46 +29,61 @@ public class AttributeTypeAndValue extends ASN1Encodable {
         {
             return new AttributeTypeAndValue(ASN1Sequence.getInstance(o));
         }
+
         throw new IllegalArgumentException("null value in getInstance()");
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:54.000 -0500", hash_original_field = "9DF19847900DF870B7403A593B4DD57A", hash_generated_field = "E22429FEAB7082A9C22F35F915934F74")
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.291 -0400", hash_original_method = "55F928B5E605E2163AD3D5D479C3E067", hash_generated_method = "94216C3B09872CA935B3857A700EFEBD")
-    public ASN1ObjectIdentifier getType() {
-ASN1ObjectIdentifier varC5B9F25B4EEAD3E8E2C33F9429204397_697468781 =         type;
-        varC5B9F25B4EEAD3E8E2C33F9429204397_697468781.addTaint(taint);
-        return varC5B9F25B4EEAD3E8E2C33F9429204397_697468781;
-        // ---------- Original Method ----------
-        //return type;
+    private ASN1ObjectIdentifier type;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:54.001 -0500", hash_original_field = "E7E9D5AACDA7B74D4DC8FE1188D3BCCE", hash_generated_field = "65616B4EF69DB0ADA11533A065E6A511")
+
+    private ASN1Encodable       value;
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:54.002 -0500", hash_original_method = "15E850D5749E9732B50BB178D64D47F4", hash_generated_method = "9CB7F2B44F1AFAC6F0F8D1058779E2A2")
+    private AttributeTypeAndValue(ASN1Sequence seq)
+    {
+        type = (ASN1ObjectIdentifier)seq.getObjectAt(0);
+        value = (ASN1Encodable)seq.getObjectAt(1);
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.291 -0400", hash_original_method = "C951B7A7C5D7EABF1F828E9D0FE876A9", hash_generated_method = "ED4308DC8DBC1B1A75FD0E6D3558F08F")
-    public ASN1Encodable getValue() {
-ASN1Encodable varAF280DA2BC37D8BE783D8499160168DE_1445026763 =         value;
-        varAF280DA2BC37D8BE783D8499160168DE_1445026763.addTaint(taint);
-        return varAF280DA2BC37D8BE783D8499160168DE_1445026763;
-        // ---------- Original Method ----------
-        //return value;
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:54.004 -0500", hash_original_method = "455B7405955E1E537DECB7E0764A59EF", hash_generated_method = "EACD825B5E9E2AF2FC8458BC09C22744")
+    public AttributeTypeAndValue(
+        ASN1ObjectIdentifier type,
+        ASN1Encodable value)
+    {
+        this.type = type;
+        this.value = value;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.292 -0400", hash_original_method = "5081032FA8CA5E98B22B4FF57246FC38", hash_generated_method = "7F9411B575A07BA830E42C65253D1A04")
-    public DERObject toASN1Object() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:54.004 -0500", hash_original_method = "55F928B5E605E2163AD3D5D479C3E067", hash_generated_method = "2B8E364443EA5B5737B2EAE6F188D4EB")
+    public ASN1ObjectIdentifier getType()
+    {
+        return type;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:54.005 -0500", hash_original_method = "C951B7A7C5D7EABF1F828E9D0FE876A9", hash_generated_method = "72F9E6E1327BC9585F507E0F48FABC28")
+    public ASN1Encodable getValue()
+    {
+        return value;
+    }
+
+    /**
+     * <pre>
+     * AttributeTypeAndValue ::= SEQUENCE {
+     *           type         OBJECT IDENTIFIER,
+     *           value        ANY DEFINED BY type }
+     * </pre>
+     * @return a basic ASN.1 object representation.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:54.006 -0500", hash_original_method = "5081032FA8CA5E98B22B4FF57246FC38", hash_generated_method = "3489D220516747251940791B6C462AEA")
+    public DERObject toASN1Object()
+    {
         ASN1EncodableVector v = new ASN1EncodableVector();
+
         v.add(type);
         v.add(value);
-DERObject var0B338F106E3279986C87B595B0F4A439_538132413 =         new DERSequence(v);
-        var0B338F106E3279986C87B595B0F4A439_538132413.addTaint(taint);
-        return var0B338F106E3279986C87B595B0F4A439_538132413;
-        // ---------- Original Method ----------
-        //ASN1EncodableVector v = new ASN1EncodableVector();
-        //v.add(type);
-        //v.add(value);
-        //return new DERSequence(v);
+
+        return new DERSequence(v);
     }
 
     

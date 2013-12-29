@@ -1,6 +1,8 @@
 package android.widget;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.content.Context;
 import android.util.AttributeSet;
@@ -12,73 +14,45 @@ import com.android.internal.R;
 
 public class RadioButton extends CompoundButton {
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.176 -0400", hash_original_method = "8EA0788A6467FFBB5D903E4298CD9D3F", hash_generated_method = "6A37801247D6AF2DB217E7C76AC6D9FB")
-    public  RadioButton(Context context) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:13.451 -0500", hash_original_method = "8EA0788A6467FFBB5D903E4298CD9D3F", hash_generated_method = "1CC640C88E022C090251D7E89C600A3A")
+    public RadioButton(Context context) {
         this(context, null);
-        addTaint(context.getTaint());
-        // ---------- Original Method ----------
     }
-
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.176 -0400", hash_original_method = "FCCFFF736372EBE3F690E025A55A3D26", hash_generated_method = "597BFE97A7D17CBE84EB382C477E5D0D")
-    public  RadioButton(Context context, AttributeSet attrs) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:13.452 -0500", hash_original_method = "FCCFFF736372EBE3F690E025A55A3D26", hash_generated_method = "1CE647101DE770DCB868C130223B07E9")
+    public RadioButton(Context context, AttributeSet attrs) {
         this(context, attrs, com.android.internal.R.attr.radioButtonStyle);
-        addTaint(attrs.getTaint());
-        addTaint(context.getTaint());
-        // ---------- Original Method ----------
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.177 -0400", hash_original_method = "8A4946DCA2378530E5A11522D0746FD0", hash_generated_method = "834FFCB4B9B2B1A9C4432220F2EA1B81")
-    public  RadioButton(Context context, AttributeSet attrs, int defStyle) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:13.453 -0500", hash_original_method = "8A4946DCA2378530E5A11522D0746FD0", hash_generated_method = "EB63F6BC032F703A24610404E43AE019")
+    public RadioButton(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-        addTaint(defStyle);
-        addTaint(attrs.getTaint());
-        addTaint(context.getTaint());
-        // ---------- Original Method ----------
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.177 -0400", hash_original_method = "4F290A4820515377F1C311D5735DB548", hash_generated_method = "CC54BB03A26206AF20F673EEDA1DAB5D")
+    /**
+     * {@inheritDoc}
+     * <p>
+     * If the radio button is already checked, this method will not toggle the radio button.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:13.453 -0500", hash_original_method = "4F290A4820515377F1C311D5735DB548", hash_generated_method = "ACBF296FB7E42777A2E5A8A4B90FF666")
     @Override
-    public void toggle() {
-        if(!isChecked())        
-        {
+public void toggle() {
+        // we override to prevent toggle when the radio is already
+        // checked (as opposed to check boxes widgets)
+        if (!isChecked()) {
             super.toggle();
-        } //End block
-        // ---------- Original Method ----------
-        //if (!isChecked()) {
-            //super.toggle();
-        //}
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.178 -0400", hash_original_method = "800F92BFA9EDE937B28EAF651D664B90", hash_generated_method = "1777866A2F27E2BFC3BE9BB817580974")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:13.454 -0500", hash_original_method = "800F92BFA9EDE937B28EAF651D664B90", hash_generated_method = "4788EAEF4BDBCFDCBBBE5CEFA99C5E9D")
     @Override
-    public void onPopulateAccessibilityEvent(AccessibilityEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(event.getTaint());
+public void onPopulateAccessibilityEvent(AccessibilityEvent event) {
         super.onPopulateAccessibilityEvent(event);
-        if(isChecked())        
-        {
+        if (isChecked()) {
             event.getText().add(mContext.getString(R.string.radiobutton_selected));
-        } //End block
-        else
-        {
+        } else {
             event.getText().add(mContext.getString(R.string.radiobutton_not_selected));
-        } //End block
-        // ---------- Original Method ----------
-        //super.onPopulateAccessibilityEvent(event);
-        //if (isChecked()) {
-            //event.getText().add(mContext.getString(R.string.radiobutton_selected));
-        //} else {
-            //event.getText().add(mContext.getString(R.string.radiobutton_not_selected));
-        //}
+        }
     }
 
     

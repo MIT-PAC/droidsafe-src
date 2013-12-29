@@ -1,6 +1,8 @@
 package org.apache.harmony.security.asn1;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 import java.nio.charset.Charsets;
@@ -13,98 +15,78 @@ import java.util.TimeZone;
 
 
 public final class ASN1GeneralizedTime extends ASN1Time {
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.294 -0400", hash_original_method = "BB0F4D8A317B403CA2CD2FD0C74F8C92", hash_generated_method = "AB7ED863FCD9D63D36CDA59E2988CC10")
-    public  ASN1GeneralizedTime() {
-        super(TAG_GENERALIZEDTIME);
-        // ---------- Original Method ----------
-    }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Returns ASN.1 GeneralizedTime type default implementation
+     *
+     * The default implementation works with encoding
+     * that is represented as Date object.
+     *
+     * @return ASN.1 GeneralizedTime type default implementation
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.061 -0500", hash_original_method = "8C714A8F61C5AA4D080377A3ECF44F36", hash_generated_method = "23CB860EA884CD854F12985D41D3CDB1")
     public static ASN1GeneralizedTime getInstance() {
         return ASN1;
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.059 -0500", hash_original_field = "C37D96DDD2E632639E9745E4517FB7FE", hash_generated_field = "239E9CA407C152785E67097B54E8268F")
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.294 -0400", hash_original_method = "9601D88CE03A72C3505152153428ACD0", hash_generated_method = "90A7D02FE87F5826D469CEDCAC7BDC87")
+    private static final ASN1GeneralizedTime ASN1 = new ASN1GeneralizedTime();
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.063 -0500", hash_original_field = "144ED8D455E2A7FA64D051C0A7B8F483", hash_generated_field = "91A8801F993CA23EA31856C634AC2077")
+
+    //
+    // According to X.680:
+    // four digit year, seconds always presented
+    // and fractional-seconds elements without
+    // trailing 0's (must be cut later from content)
+    private static final String GEN_PATTERN = "yyyyMMddHHmmss.SSS";
+
+    /**
+     * Constructs ASN.1 GeneralizedTime type
+     *
+     * The constructor is provided for inheritance purposes
+     * when there is a need to create a custom ASN.1 GeneralizedTime type.
+     * To get a default implementation it is recommended to use
+     * getInstance() method.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.060 -0500", hash_original_method = "BB0F4D8A317B403CA2CD2FD0C74F8C92", hash_generated_method = "867C6ED7D91667F6ECC9996437FF15A5")
+    public ASN1GeneralizedTime() {
+        super(TAG_GENERALIZEDTIME);
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.062 -0500", hash_original_method = "9601D88CE03A72C3505152153428ACD0", hash_generated_method = "0016126B69B7A43E346A7E14AC6C4091")
     public Object decode(BerInputStream in) throws IOException {
-        addTaint(in.getTaint());
         in.readGeneralizedTime();
-        if(in.isVerify)        
-        {
-Object var540C13E9E156B687226421B24F2DF178_1274506491 =             null;
-            var540C13E9E156B687226421B24F2DF178_1274506491.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_1274506491;
-        } //End block
-Object var6AD043AF0280111F31D0D60A6CD70863_12980836 =         getDecodedObject(in);
-        var6AD043AF0280111F31D0D60A6CD70863_12980836.addTaint(taint);
-        return var6AD043AF0280111F31D0D60A6CD70863_12980836;
-        // ---------- Original Method ----------
-        //in.readGeneralizedTime();
-        //if (in.isVerify) {
-            //return null;
-        //}
-        //return getDecodedObject(in);
+
+        if (in.isVerify) {
+            return null;
+        }
+        return getDecodedObject(in);
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.295 -0400", hash_original_method = "815E5B13588CE775C73F05D1D7B36D43", hash_generated_method = "E719230D9A4ACB5C6353F15249002784")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.063 -0500", hash_original_method = "815E5B13588CE775C73F05D1D7B36D43", hash_generated_method = "823C90829B0E887FFAB1B233DE0EF4A6")
     public void encodeContent(BerOutputStream out) {
-        addTaint(out.getTaint());
         out.encodeGeneralizedTime();
-        // ---------- Original Method ----------
-        //out.encodeGeneralizedTime();
     }
 
-    
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.296 -0400", hash_original_method = "D33B8806BE3331999BE0A247A6FB02E4", hash_generated_method = "2EBC5FAE5BFC613F29174250BED949C1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.064 -0500", hash_original_method = "D33B8806BE3331999BE0A247A6FB02E4", hash_generated_method = "339EC8F2E12EB153158245B8A7C0B1E2")
     public void setEncodingContent(BerOutputStream out) {
-        addTaint(out.getTaint());
         SimpleDateFormat sdf = new SimpleDateFormat(GEN_PATTERN);
         sdf.setTimeZone(TimeZone.getTimeZone("UTC"));
         String temp = sdf.format(out.content);
+        // cut off trailing 0s
         int nullId;
         int currLength;
-        while
-(((nullId = temp.lastIndexOf('0', currLength = temp.length() - 1)) != -1)
-                & (nullId == currLength))        
-        {
+        while (((nullId = temp.lastIndexOf('0', currLength = temp.length() - 1)) != -1)
+                & (nullId == currLength)) {
             temp = temp.substring(0, nullId);
-        } //End block
-        if(temp.charAt(currLength) == '.')        
-        {
+        }
+        // deal with point (cut off if it is last char)
+        if (temp.charAt(currLength) == '.') {
             temp = temp.substring(0, currLength);
-        } //End block
+        }
+
         out.content = (temp + "Z").getBytes(Charsets.UTF_8);
         out.length = ((byte[]) out.content).length;
-        // ---------- Original Method ----------
-        //SimpleDateFormat sdf = new SimpleDateFormat(GEN_PATTERN);
-        //sdf.setTimeZone(TimeZone.getTimeZone("UTC"));
-        //String temp = sdf.format(out.content);
-        //int nullId;
-        //int currLength;
-        //while (((nullId = temp.lastIndexOf('0', currLength = temp.length() - 1)) != -1)
-                //& (nullId == currLength)) {
-            //temp = temp.substring(0, nullId);
-        //}
-        //if (temp.charAt(currLength) == '.') {
-            //temp = temp.substring(0, currLength);
-        //}
-        //out.content = (temp + "Z").getBytes(Charsets.UTF_8);
-        //out.length = ((byte[]) out.content).length;
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.296 -0400", hash_original_field = "0F3C7EF5E3C60EA92CED4C3504F2779F", hash_generated_field = "239E9CA407C152785E67097B54E8268F")
-
-    private static final ASN1GeneralizedTime ASN1 = new ASN1GeneralizedTime();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.296 -0400", hash_original_field = "A2534DA841AAEDBC550D45A7FE68CB06", hash_generated_field = "23A74B159873D60AD28A6667478A53DA")
-
-    private static final String GEN_PATTERN = "yyyyMMddHHmmss.SSS";
 }
 

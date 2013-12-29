@@ -1,6 +1,8 @@
 package android.text.style;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.content.Context;
 import android.content.Intent;
@@ -16,89 +18,49 @@ import android.view.View;
 
 
 public class URLSpan extends ClickableSpan implements ParcelableSpan {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.352 -0400", hash_original_field = "8A98B268A3185DCF10FD476BB56AA991", hash_generated_field = "92D0AFAEA52DADCF8157B0CE1915F0CF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:52.388 -0500", hash_original_field = "08871E39128BE26E8E2A4AE5070B5D92", hash_generated_field = "92D0AFAEA52DADCF8157B0CE1915F0CF")
 
-    private String mURL;
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.353 -0400", hash_original_method = "5AD1FAF34DE3FA8A09E91DA82ECEC3B3", hash_generated_method = "B54D202A14D180513BBE84D40D7107CE")
-    public  URLSpan(String url) {
+
+    private  String mURL;
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:52.388 -0500", hash_original_method = "5AD1FAF34DE3FA8A09E91DA82ECEC3B3", hash_generated_method = "A95CF5F09DE19CE03A897F3B464BD9A0")
+    public URLSpan(String url) {
         mURL = url;
-        // ---------- Original Method ----------
-        //mURL = url;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.353 -0400", hash_original_method = "DE27BD82F1FA5C839057FA46D57E26CE", hash_generated_method = "2AD0059B727D0874C6EE4948E755257A")
-    public  URLSpan(Parcel src) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:52.389 -0500", hash_original_method = "DE27BD82F1FA5C839057FA46D57E26CE", hash_generated_method = "0A9D557D147F620CBCF83B3A482F85AF")
+    public URLSpan(Parcel src) {
         mURL = src.readString();
-        // ---------- Original Method ----------
-        //mURL = src.readString();
     }
-
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.353 -0400", hash_original_method = "922B12E08E67C6B8053CA65C059545DA", hash_generated_method = "077F222E23D0BE6E034E2654C3795725")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:52.390 -0500", hash_original_method = "922B12E08E67C6B8053CA65C059545DA", hash_generated_method = "495FBB71C1F9157E146EAB6C60C7B5FF")
     public int getSpanTypeId() {
-        int var65668C9F02B7364BCF30E3F3AA6CFF0C_268507625 = (TextUtils.URL_SPAN);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1331988039 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1331988039;
-        // ---------- Original Method ----------
-        //return TextUtils.URL_SPAN;
+        return TextUtils.URL_SPAN;
     }
-
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.353 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "508770191EE191B0AEE57BE94FD19F4E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:52.391 -0500", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "D90463461B2A94FF94D13FDF69BB80C9")
     public int describeContents() {
-        int varCFCD208495D565EF66E7DFF9F98764DA_101080985 = (0);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1832849487 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1832849487;
-        // ---------- Original Method ----------
-        //return 0;
+        return 0;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.354 -0400", hash_original_method = "C4C1C8BAFA904799F51D3BBA35A0D0C5", hash_generated_method = "164A2B7E6CB571F4987742457FEDC27F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:52.392 -0500", hash_original_method = "C4C1C8BAFA904799F51D3BBA35A0D0C5", hash_generated_method = "B684501AFBFCF2CC27265A515649F824")
     public void writeToParcel(Parcel dest, int flags) {
-        addTaint(flags);
-        addTaint(dest.getTaint());
         dest.writeString(mURL);
-        // ---------- Original Method ----------
-        //dest.writeString(mURL);
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.354 -0400", hash_original_method = "C929B5C6A842A00D31BD07E0935FD2ED", hash_generated_method = "DA61A23B6A8CE7354BC929B28F6EE503")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:52.393 -0500", hash_original_method = "C929B5C6A842A00D31BD07E0935FD2ED", hash_generated_method = "2A024A82A1FC88FE53C083EBAF13F92A")
     public String getURL() {
-String var550501E49D065ECDEDD352E121BD3166_1878518595 =         mURL;
-        var550501E49D065ECDEDD352E121BD3166_1878518595.addTaint(taint);
-        return var550501E49D065ECDEDD352E121BD3166_1878518595;
-        // ---------- Original Method ----------
-        //return mURL;
+        return mURL;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.354 -0400", hash_original_method = "04E55325C1106D52B4E11E13B7EEFAD9", hash_generated_method = "DAB6AA801DD7FA674B91531DADEB1659")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:52.393 -0500", hash_original_method = "04E55325C1106D52B4E11E13B7EEFAD9", hash_generated_method = "F6AAE900FBE3FE8ECAA6E9BE2C1CF933")
     @Override
-    public void onClick(View widget) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(widget.getTaint());
+public void onClick(View widget) {
         Uri uri = Uri.parse(getURL());
         Context context = widget.getContext();
         Intent intent = new Intent(Intent.ACTION_VIEW, uri);
         intent.putExtra(Browser.EXTRA_APPLICATION_ID, context.getPackageName());
         context.startActivity(intent);
-        // ---------- Original Method ----------
-        //Uri uri = Uri.parse(getURL());
-        //Context context = widget.getContext();
-        //Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-        //intent.putExtra(Browser.EXTRA_APPLICATION_ID, context.getPackageName());
-        //context.startActivity(intent);
     }
 
     

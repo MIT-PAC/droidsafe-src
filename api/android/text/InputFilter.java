@@ -1,6 +1,8 @@
 package android.text;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 public interface InputFilter
@@ -11,6 +13,7 @@ public interface InputFilter
 
     
     public static class AllCaps implements InputFilter {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.620 -0500", hash_original_method = "392236ADF541238A40DFC3B3753C1658", hash_generated_method = "7E863F0DA57571D45D4D2F551974AA1A")
         public CharSequence filter(CharSequence source, int start, int end,
                                    Spanned dest, int dstart, int dend) {
             for (int i = start; i < end; i++) {
@@ -30,18 +33,22 @@ public interface InputFilter
                 }
             }
 
-            return null; 
+            return null; // keep original
         }
     }
 
     
     public static class LengthFilter implements InputFilter {
-        @DSModeled(DSC.SAFE)
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.624 -0500", hash_original_field = "643806E929E292CCE314B6AD18027C00", hash_generated_field = "A1BFCC57A6BC96010A1D330EF07F3F34")
+
+
+        private int mMax;
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.622 -0500", hash_original_method = "4BD8849ECCC45157F027B9AF525845B3", hash_generated_method = "9FC707840500FFDDE513A05D62105AF1")
         public LengthFilter(int max) {
             mMax = max;
         }
 
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.623 -0500", hash_original_method = "2770965FD66252C6276892DF71DEBA78", hash_generated_method = "6C028445C288B55693557E488059FF77")
         public CharSequence filter(CharSequence source, int start, int end,
                                    Spanned dest, int dstart, int dend) {
             int keep = mMax - (dest.length() - (dend - dstart));
@@ -49,7 +56,7 @@ public interface InputFilter
             if (keep <= 0) {
                 return "";
             } else if (keep >= end - start) {
-                return null; 
+                return null; // keep original
             } else {
                 keep += start;
                 if (Character.isHighSurrogate(source.charAt(keep - 1))) {
@@ -61,7 +68,5 @@ public interface InputFilter
                 return source.subSequence(start, keep);
             }
         }
-
-        private int mMax;
     }
 }

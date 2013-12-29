@@ -1,6 +1,8 @@
 package java.nio.charset;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
@@ -8,33 +10,32 @@ import droidsafe.annotations.*;
 
 
 public class IllegalCharsetNameException extends IllegalArgumentException {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.655 -0400", hash_original_field = "2016A4FE38556B6598C5FEB99F123C01", hash_generated_field = "294F0480F54B014FA8831418027DC6AA")
-
-    private String charsetName;
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.655 -0400", hash_original_method = "363E701FA2AE5454AC2A0E287832EEC6", hash_generated_method = "BE871CB47977F4E2161BE7EB36CE861E")
-    public  IllegalCharsetNameException(String charsetName) {
-        super((charsetName != null) ? charsetName : "null");
-        this.charsetName = charsetName;
-        // ---------- Original Method ----------
-        //this.charsetName = charsetName;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.656 -0400", hash_original_method = "62D3F36CA78A6EC4185A2D1A05C169E6", hash_generated_method = "B39D181DA4354F103E04C0FC0DD7B941")
-    public String getCharsetName() {
-String var51D38528197C73FD97B2AD0E5CC1E13F_259724574 =         charsetName;
-        var51D38528197C73FD97B2AD0E5CC1E13F_259724574.addTaint(taint);
-        return var51D38528197C73FD97B2AD0E5CC1E13F_259724574;
-        // ---------- Original Method ----------
-        //return charsetName;
-    }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.656 -0400", hash_original_field = "A0EFB0ED18D9D9E1373041665F58419A", hash_generated_field = "410F92043C1AB694FD9D990E16248912")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:37.777 -0500", hash_original_field = "1E943896942E48097DCE197F7EF3347A", hash_generated_field = "410F92043C1AB694FD9D990E16248912")
 
     private static final long serialVersionUID = 1457525358470002989L;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:37.778 -0500", hash_original_field = "5E24356DE8A42080D6D8EE74FC7DBA00", hash_generated_field = "294F0480F54B014FA8831418027DC6AA")
+
+    private String charsetName;
+
+    /**
+     * Constructs a new {@code IllegalCharsetNameException} with the supplied
+     * charset name.
+     *
+     * @param charsetName
+     *            the encountered illegal charset name.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:37.779 -0500", hash_original_method = "363E701FA2AE5454AC2A0E287832EEC6", hash_generated_method = "BC521BB8EAFCC2337F4E300A0D10A5BF")
+    public IllegalCharsetNameException(String charsetName) {
+        super((charsetName != null) ? charsetName : "null");
+        this.charsetName = charsetName;
+    }
+
+    /**
+     * Returns the encountered illegal charset name.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:37.780 -0500", hash_original_method = "62D3F36CA78A6EC4185A2D1A05C169E6", hash_generated_method = "C3E3B8FCC038ED1DFB7C6F3AF5424FEA")
+    public String getCharsetName() {
+        return charsetName;
+    }
 }
 

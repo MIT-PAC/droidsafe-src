@@ -1,6 +1,8 @@
 package java.lang;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
@@ -8,59 +10,31 @@ import droidsafe.annotations.*;
 
 
 public final class Byte extends Number implements Comparable<Byte> {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.213 -0400", hash_original_field = "2063C1608D6E0BAF80249C42E2BE5804", hash_generated_field = "8CCAF7A9B8382D1617ADC5CB954C674D")
 
-    private byte value;
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.214 -0400", hash_original_method = "7E64D11F2C96BA434CA992EF3846EE45", hash_generated_method = "EF48A56C44D8A8A39C1273A89D41BB2B")
-    public  Byte(byte value) {
-        this.value = value;
-        // ---------- Original Method ----------
-        //this.value = value;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.214 -0400", hash_original_method = "6A41489347990CAADB010180F3DA4F08", hash_generated_method = "F7CBDE0FC3DB6982482E3182E5E24FEB")
-    public  Byte(String string) throws NumberFormatException {
-        this(parseByte(string));
-        addTaint(string.getTaint());
-        // ---------- Original Method ----------
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.214 -0400", hash_original_method = "A44A96B9BD8D4010644191EEAB137884", hash_generated_method = "B8C63A03263072FDBD8D44601ADD3C65")
-    @Override
-    public byte byteValue() {
-        byte var2063C1608D6E0BAF80249C42E2BE5804_1404189183 = (value);
-                byte var40EA57D3EE3C07BF1C102B466E1C3091_2090406860 = getTaintByte();
-        return var40EA57D3EE3C07BF1C102B466E1C3091_2090406860;
-        // ---------- Original Method ----------
-        //return value;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.214 -0400", hash_original_method = "BB597B75ED281325D8B4388243F4CDF9", hash_generated_method = "6A4747584239086E85E78CDC3707C3C0")
-    public int compareTo(Byte object) {
-        addTaint(object.getTaint());
-        int var054767143750F894747E80D9A9324D76_1870036194 = (compare(value, object.value));
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_943753842 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_943753842;
-        // ---------- Original Method ----------
-        //return compare(value, object.value);
-    }
-
-    
-    @DSModeled(DSC.BAN)
+    /**
+     * Compares two {@code byte} values.
+     * @return 0 if lhs = rhs, less than 0 if lhs &lt; rhs, and greater than 0 if lhs &gt; rhs.
+     * @since 1.7
+     * @hide 1.7
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.303 -0500", hash_original_method = "526CB67D9082E1052DF512ACF5AFED97", hash_generated_method = "AF1DFE575C4097C8712CFD7C9136BD0A")
     public static int compare(byte lhs, byte rhs) {
         return lhs > rhs ? 1 : (lhs < rhs ? -1 : 0);
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Parses the specified string and returns a {@code Byte} instance if the
+     * string can be decoded into a single byte value. The string may be an
+     * optional minus sign "-" followed by a hexadecimal ("0x..." or "#..."),
+     * octal ("0..."), or decimal ("...") representation of a byte.
+     *
+     * @param string
+     *            a string representation of a single byte value.
+     * @return a {@code Byte} containing the value represented by {@code string}.
+     * @throws NumberFormatException
+     *             if {@code string} cannot be parsed as a byte value.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.305 -0500", hash_original_method = "FFA7DA06804046B92F2D54F8D6E8206F", hash_generated_method = "2EB97CCF14C50762CE7A9B6EFF037343")
     public static Byte decode(String string) throws NumberFormatException {
         int intValue = Integer.decode(string);
         byte result = (byte) intValue;
@@ -70,87 +44,37 @@ public final class Byte extends Number implements Comparable<Byte> {
         throw new NumberFormatException("Value out of range for byte: \"" + string + "\"");
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.214 -0400", hash_original_method = "3D3B0AF18CC8081B7BB4A7DC662E1F07", hash_generated_method = "5D05C87F1B31B8259540687AD95E1DDE")
-    @Override
-    public double doubleValue() {
-        double var2063C1608D6E0BAF80249C42E2BE5804_10850795 = (value);
-                double varE8CD7DA078A86726031AD64F35F5A6C0_1308680373 = getTaintDouble();
-        return varE8CD7DA078A86726031AD64F35F5A6C0_1308680373;
-        // ---------- Original Method ----------
-        //return value;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.215 -0400", hash_original_method = "C5FA8B05FD4F870ED8BC1DBD5FAAA797", hash_generated_method = "20C97F07782A3CE1E3BC15F7C13BD046")
-    @Override
-    public boolean equals(Object object) {
-        addTaint(object.getTaint());
-        boolean varE8A08F741909F31FB8F0528D5AB0BE41_2038769825 = ((object == this) || ((object instanceof Byte) && (((Byte) object).value == value)));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_572431312 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_572431312;
-        // ---------- Original Method ----------
-        //return (object == this) || ((object instanceof Byte) && (((Byte) object).value == value));
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.215 -0400", hash_original_method = "9E2C0918A44EC11D2232D0B603F66A6B", hash_generated_method = "7588CEC26F9905DF84C0C8FF847AE911")
-    @Override
-    public float floatValue() {
-        float var2063C1608D6E0BAF80249C42E2BE5804_695814456 = (value);
-                float var546ADE640B6EDFBC8A086EF31347E768_816222612 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_816222612;
-        // ---------- Original Method ----------
-        //return value;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.215 -0400", hash_original_method = "961F210287166DF05D8915D632129E75", hash_generated_method = "98D29538F3760D0D02D9BC98B55253E5")
-    @Override
-    public int hashCode() {
-        int var2063C1608D6E0BAF80249C42E2BE5804_1148610577 = (value);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_549568767 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_549568767;
-        // ---------- Original Method ----------
-        //return value;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.215 -0400", hash_original_method = "4668226786F0223B69B1E8157F3C469B", hash_generated_method = "BBD190B246A702C561FE8212BD0AFA8E")
-    @Override
-    public int intValue() {
-        int var2063C1608D6E0BAF80249C42E2BE5804_878009235 = (value);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1747533879 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1747533879;
-        // ---------- Original Method ----------
-        //return value;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.215 -0400", hash_original_method = "ABF4FE035C950AC910A646D4B85E3F35", hash_generated_method = "6EF7658D2A54819B0B2F159B3A71031E")
-    @Override
-    public long longValue() {
-        long var2063C1608D6E0BAF80249C42E2BE5804_694585099 = (value);
-                long var0F5264038205EDFB1AC05FBB0E8C5E94_467031495 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_467031495;
-        // ---------- Original Method ----------
-        //return value;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Parses the specified string as a signed decimal byte value. The ASCII
+     * character \u002d ('-') is recognized as the minus sign.
+     *
+     * @param string
+     *            the string representation of a single byte value.
+     * @return the primitive byte value represented by {@code string}.
+     * @throws NumberFormatException
+     *             if {@code string} can not be parsed as a byte value.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.311 -0500", hash_original_method = "3E3DB9EACBAEC53C68BCBB24FE69AB14", hash_generated_method = "30051DC3AE22E7DDA2FF507800CF7FBE")
     public static byte parseByte(String string) throws NumberFormatException {
         return parseByte(string, 10);
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Parses the specified string as a signed byte value using the specified
+     * radix. The ASCII character \u002d ('-') is recognized as the minus sign.
+     *
+     * @param string
+     *            the string representation of a single byte value.
+     * @param radix
+     *            the radix to use when parsing.
+     * @return the primitive byte value represented by {@code string} using
+     *         {@code radix}.
+     * @throws NumberFormatException
+     *             if {@code string} can not be parsed as a byte value, or
+     *             {@code radix < Character.MIN_RADIX ||
+     *             radix > Character.MAX_RADIX}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.312 -0500", hash_original_method = "BF3D50DD939D834A7DF75489B00C6690", hash_generated_method = "DCFACEE3BA254C7BC8C98F4F5AB6DDB7")
     public static byte parseByte(String string, int radix) throws NumberFormatException {
         int intValue = Integer.parseInt(string, radix);
         byte result = (byte) intValue;
@@ -160,81 +84,220 @@ public final class Byte extends Number implements Comparable<Byte> {
         throw new NumberFormatException("Value out of range for byte: \"" + string + "\"");
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.215 -0400", hash_original_method = "C4526A740A626A32E8FE5B0C1E7B83A6", hash_generated_method = "3CB3AEE9FE14FD83296496909F57BD35")
-    @Override
-    public short shortValue() {
-        short var2063C1608D6E0BAF80249C42E2BE5804_2076043022 = (value);
-                short var4F09DAA9D95BCB166A302407A0E0BABE_620355250 = getTaintShort();
-        return var4F09DAA9D95BCB166A302407A0E0BABE_620355250;
-        // ---------- Original Method ----------
-        //return value;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.216 -0400", hash_original_method = "6B315C20A4D45816791A47779D79F014", hash_generated_method = "4F4AA6AA45A4E1DADC8EC53CA215361E")
-    @Override
-    public String toString() {
-String var695C2C3E368F8F994F8F1E388D82E0AE_1608544967 =         Integer.toString(value);
-        var695C2C3E368F8F994F8F1E388D82E0AE_1608544967.addTaint(taint);
-        return var695C2C3E368F8F994F8F1E388D82E0AE_1608544967;
-        // ---------- Original Method ----------
-        //return Integer.toString(value);
-    }
-
-    
-    @DSModeled(DSC.BAN)
+    /**
+     * Returns a two-digit hex string. That is, -1 becomes "ff" or "FF" and 2 becomes "02".
+     * @hide internal use only
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.316 -0500", hash_original_method = "178909B2C58CF7188A6A8BC8023FFA15", hash_generated_method = "BA098F90A3D5AA4F49CACD160D9F0877")
     public static String toHexString(byte b, boolean upperCase) {
         return IntegralToString.byteToHexString(b, upperCase);
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Returns a string containing a concise, human-readable description of the
+     * specified byte value.
+     *
+     * @param value
+     *            the byte to convert to a string.
+     * @return a printable representation of {@code value}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.317 -0500", hash_original_method = "A5C9B1F940A6E4E0B7C56A8CD89F3E5B", hash_generated_method = "CF35E1D7B63D21B25C3AC38B2AA64EC0")
     public static String toString(byte value) {
         return Integer.toString(value);
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Parses the specified string as a signed decimal byte value.
+     *
+     * @param string
+     *            the string representation of a single byte value.
+     * @return a {@code Byte} instance containing the byte value represented by
+     *         {@code string}.
+     * @throws NumberFormatException
+     *             if {@code string} can not be parsed as a byte value.
+     * @see #parseByte(String)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.317 -0500", hash_original_method = "C35C42F07E6BEE21A855B7E6408FB8DD", hash_generated_method = "E186142D5A2A10E55B23D27838DD1C2D")
     public static Byte valueOf(String string) throws NumberFormatException {
         return valueOf(parseByte(string));
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Parses the specified string as a signed byte value using the specified
+     * radix.
+     *
+     * @param string
+     *            the string representation of a single byte value.
+     * @param radix
+     *            the radix to use when parsing.
+     * @return a {@code Byte} instance containing the byte value represented by
+     *         {@code string} using {@code radix}.
+     * @throws NumberFormatException
+     *             if {@code string} can not be parsed as a byte value, or
+     *             {@code radix < Character.MIN_RADIX ||
+     *             radix > Character.MAX_RADIX}.
+     * @see #parseByte(String, int)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.318 -0500", hash_original_method = "46925E95C7BFFD2FC27FB6165D068F93", hash_generated_method = "89D01FA737447FDF0216F6FA90FA37F9")
     public static Byte valueOf(String string, int radix) throws NumberFormatException {
         return valueOf(parseByte(string, radix));
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Returns a {@code Byte} instance for the specified byte value.
+     * <p>
+     * If it is not necessary to get a new {@code Byte} instance, it is
+     * recommended to use this method instead of the constructor, since it
+     * maintains a cache of instances which may result in better performance.
+     *
+     * @param b
+     *            the byte value to store in the instance.
+     * @return a {@code Byte} instance containing {@code b}.
+     * @since 1.5
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.319 -0500", hash_original_method = "ED2DBBC22F9957F86BC9FC2AC655A3C8", hash_generated_method = "BF35DA0FF2C2C3C53A13663AA1B29BBE")
     public static Byte valueOf(byte b) {
         return VALUES[b + 128];
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.295 -0500", hash_original_field = "A5E8E87A2BAF29AAB1D89B635C5626F8", hash_generated_field = "0B9495765198BD47B32DBC3AF8355DF1")
 
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.216 -0400", hash_original_field = "DBC4A581536433FD03C96B6E5D72EB5A", hash_generated_field = "0B9495765198BD47B32DBC3AF8355DF1")
 
     private static final long serialVersionUID = -7183698231559129828L;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.216 -0400", hash_original_field = "2434B3C976A9FAD8E750F72B62E4B63A", hash_generated_field = "0BA33D8AB14923CFCC8563593CF17893")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.296 -0500", hash_original_field = "D286ABE0B8AC1631D46190A8813DFB99", hash_generated_field = "0BA33D8AB14923CFCC8563593CF17893")
 
     public static final byte MAX_VALUE = (byte) 0x7F;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.216 -0400", hash_original_field = "D76F19F370FA721763252EBCE89D5A8C", hash_generated_field = "7250F7F8A72BCB9BD36FFE6F7115CD32")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.297 -0500", hash_original_field = "FED1B991305E4E5DEC00E688AB2901EE", hash_generated_field = "7250F7F8A72BCB9BD36FFE6F7115CD32")
 
     public static final byte MIN_VALUE = (byte) 0x80;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.216 -0400", hash_original_field = "719899EE218A4CD7454FD813A94C2A64", hash_generated_field = "F24EEB984834E57CF9AD1E8B082B7AF3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.298 -0500", hash_original_field = "5EB7E85E806CA2FC72DC067C1DCD743D", hash_generated_field = "F24EEB984834E57CF9AD1E8B082B7AF3")
 
     public static final int SIZE = 8;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.216 -0400", hash_original_field = "68A1EFD0C85CB605BE6402FB6D4976EE", hash_generated_field = "339B0BC27B447AC9E571FEBE3354B6B1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.299 -0500", hash_original_field = "59DA986EB17B56DA9098C325F89BBB2C", hash_generated_field = "339B0BC27B447AC9E571FEBE3354B6B1")
 
     @SuppressWarnings("unchecked")
     public static final Class<Byte> TYPE
             = (Class<Byte>) byte[].class.getComponentType();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.216 -0400", hash_original_field = "F8FA46C3B8178EEEB22C6EE267E2C46C", hash_generated_field = "B024BB67DE07AF1FC60D295A0CC58A8E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.320 -0500", hash_original_field = "2BD35CD0F898BC5B653F09F65927E632", hash_generated_field = "B024BB67DE07AF1FC60D295A0CC58A8E")
 
     private static final Byte[] VALUES = new Byte[256];
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.296 -0500", hash_original_field = "6072D19D08473B81BB367C06EAF7BB24", hash_generated_field = "8CCAF7A9B8382D1617ADC5CB954C674D")
+
+    private  byte value;
+    // Note: Byte.TYPE can't be set to "byte.class", since *that* is
+    // defined to be "java.lang.Byte.TYPE";
+
+    /**
+     * Constructs a new {@code Byte} with the specified primitive byte value.
+     *
+     * @param value
+     *            the primitive byte value to store in the new instance.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.300 -0500", hash_original_method = "7E64D11F2C96BA434CA992EF3846EE45", hash_generated_method = "9B3A88DBDDE6C9EDA37DA0945AF75BBA")
+    public Byte(byte value) {
+        this.value = value;
+    }
+
+    /**
+     * Constructs a new {@code Byte} from the specified string.
+     *
+     * @param string
+     *            the string representation of a single byte value.
+     * @throws NumberFormatException
+     *             if {@code string} cannot be parsed as a byte value.
+     * @see #parseByte(String)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.301 -0500", hash_original_method = "6A41489347990CAADB010180F3DA4F08", hash_generated_method = "66A20A3FACCD57C473E8A1F62EA3004B")
+    public Byte(String string) throws NumberFormatException {
+        this(parseByte(string));
+    }
+
+    /**
+     * Gets the primitive value of this byte.
+     *
+     * @return this object's primitive value.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.302 -0500", hash_original_method = "A44A96B9BD8D4010644191EEAB137884", hash_generated_method = "3A43018D3145FE8B120819AE494DA742")
+    @Override
+public byte byteValue() {
+        return value;
+    }
+
+    /**
+     * Compares this object to the specified byte object to determine their
+     * relative order.
+     *
+     * @param object
+     *            the byte object to compare this object to.
+     * @return a negative value if the value of this byte is less than the value
+     *         of {@code object}; 0 if the value of this byte and the value of
+     *         {@code object} are equal; a positive value if the value of this
+     *         byte is greater than the value of {@code object}.
+     * @see java.lang.Comparable
+     * @since 1.2
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.303 -0500", hash_original_method = "BB597B75ED281325D8B4388243F4CDF9", hash_generated_method = "65023D74BB9B48940908617630FCB864")
+    public int compareTo(Byte object) {
+        return compare(value, object.value);
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.306 -0500", hash_original_method = "3D3B0AF18CC8081B7BB4A7DC662E1F07", hash_generated_method = "BF89BE4469CF5E691A2C43432BBB5D3E")
+    @Override
+public double doubleValue() {
+        return value;
+    }
+
+    /**
+     * Compares this object with the specified object and indicates if they are
+     * equal. In order to be equal, {@code object} must be an instance of
+     * {@code Byte} and have the same byte value as this object.
+     *
+     * @param object
+     *            the object to compare this byte with.
+     * @return {@code true} if the specified object is equal to this
+     *         {@code Byte}; {@code false} otherwise.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.307 -0500", hash_original_method = "C5FA8B05FD4F870ED8BC1DBD5FAAA797", hash_generated_method = "BB9A7FF0B2609D96A2662AA6493D655D")
+    @Override
+@FindBugsSuppressWarnings("RC_REF_COMPARISON")
+public boolean equals(Object object) {
+        return (object == this) || ((object instanceof Byte) && (((Byte) object).value == value));
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.308 -0500", hash_original_method = "9E2C0918A44EC11D2232D0B603F66A6B", hash_generated_method = "0138C4AD160C9AAF1F0B41D5F85236C8")
+    @Override
+public float floatValue() {
+        return value;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.309 -0500", hash_original_method = "961F210287166DF05D8915D632129E75", hash_generated_method = "C30218EC7C084095E716A93197D10945")
+    @Override
+public int hashCode() {
+        return value;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.310 -0500", hash_original_method = "4668226786F0223B69B1E8157F3C469B", hash_generated_method = "CED71A70CDF5F216D39A3AE3E558B24B")
+    @Override
+public int intValue() {
+        return value;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.310 -0500", hash_original_method = "ABF4FE035C950AC910A646D4B85E3F35", hash_generated_method = "1422248BBCC1B2BAF9351E8A3DC0A5BE")
+    @Override
+public long longValue() {
+        return value;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.313 -0500", hash_original_method = "C4526A740A626A32E8FE5B0C1E7B83A6", hash_generated_method = "A82042D96E725949B732B712BE4A645E")
+    @Override
+public short shortValue() {
+        return value;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.314 -0500", hash_original_method = "6B315C20A4D45816791A47779D79F014", hash_generated_method = "523848B88799F041621FC5C99AD5BFED")
+    @Override
+public String toString() {
+        return Integer.toString(value);
+    }
     static {
         for (int i = -128; i < 128; i++) {
             VALUES[i + 128] = new Byte((byte) i);

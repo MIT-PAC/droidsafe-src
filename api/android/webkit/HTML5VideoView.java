@@ -1,6 +1,8 @@
 package android.webkit;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 import java.util.HashMap;
@@ -17,263 +19,8 @@ import android.net.Uri;
 
 
 public class HTML5VideoView implements MediaPlayer.OnPreparedListener {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.963 -0400", hash_original_field = "6C7797A425EBA1D07F236FF9B39AA429", hash_generated_field = "D427CDF1FC427D67E4945D1E0E231D42")
 
-    protected int mCurrentState;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.963 -0400", hash_original_field = "7D88DE9DD0EF018B770128257B4D159F", hash_generated_field = "A9417E42DC0EBFA2CF2015D2CB329A68")
-
-    protected HTML5VideoViewProxy mProxy;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.963 -0400", hash_original_field = "D04CD0659FBA036CA8826150F1F1E62A", hash_generated_field = "B8C51FE12DAEADA10B46180012D4E013")
-
-    protected int mSaveSeekTime;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.963 -0400", hash_original_field = "984724E54A3D174511409B8A76927E34", hash_generated_field = "0752FEDDB1622AE4DFBC1A284DB7079B")
-
-    protected int mVideoLayerId;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.963 -0400", hash_original_field = "01AE51C88036C324EFB5646FEE9EB109", hash_generated_field = "C795F3B69D878B3EB8FFD62D53BE5467")
-
-    protected MediaPlayer mPlayer;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.963 -0400", hash_original_field = "31825AE6E4F03F79884718C65CDD49D5", hash_generated_field = "82B2974D11DC8EF00D6DE680FC278C81")
-
-    protected boolean mAutostart;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.963 -0400", hash_original_field = "5FBE3730DCFF234F97B15868D5CE649D", hash_generated_field = "4309285A2AF5294EC8D8A6725673F542")
-
-    protected Uri mUri;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.963 -0400", hash_original_field = "9DA6583E4F64A78649E80D72BFE1DBCC", hash_generated_field = "DE0CB0B3CC8CF9FE0713E37CB69C3430")
-
-    protected Map<String, String> mHeaders;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.963 -0400", hash_original_field = "F31379AC693AFD32806C2F8AFF4FB2B1", hash_generated_field = "4B797C0AD5CBAEABB54B83FEF8D06E8A")
-
-    protected boolean mPauseDuringPreparing;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.963 -0400", hash_original_field = "D8A44452255315582684719CBEAE3A2C", hash_generated_field = "3C382F7E45E0380C589CD364462525D1")
-
-    public boolean mPlayerBuffering = false;
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.963 -0400", hash_original_method = "28D653DD01D92986A2B4676333E22F44", hash_generated_method = "E877102CF44EDBE37327EE0B3614BDF9")
-    protected  HTML5VideoView() {
-        // ---------- Original Method ----------
-    }
-
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.963 -0400", hash_original_method = "3012844A52D4FF8D08A8750FA45AE671", hash_generated_method = "D7C8A7B98F068ECA8592BF1958291198")
-    public void start() {
-        if(mCurrentState == STATE_PREPARED)        
-        {
-            if(mTimer == null)            
-            {
-                mTimer = new Timer();
-                mTimer.schedule(new TimeupdateTask(mProxy), TIMEUPDATE_PERIOD,
-                        TIMEUPDATE_PERIOD);
-            } //End block
-            mPlayer.start();
-            setPlayerBuffering(false);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mCurrentState == STATE_PREPARED) {
-            //if (mTimer == null)
-            //{
-                //mTimer = new Timer();
-                //mTimer.schedule(new TimeupdateTask(mProxy), TIMEUPDATE_PERIOD,
-                        //TIMEUPDATE_PERIOD);
-            //}
-            //mPlayer.start();
-            //setPlayerBuffering(false);
-        //}
-    }
-
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.963 -0400", hash_original_method = "53F6A4797DD5828003875392A3AF17CE", hash_generated_method = "239EDB5FE582BE1EF9B63082D70E7BA2")
-    public void pause() {
-        if(isPlaying())        
-        {
-            mPlayer.pause();
-        } //End block
-        else
-        if(mCurrentState == STATE_NOTPREPARED)        
-        {
-            mPauseDuringPreparing = true;
-        } //End block
-        if(mTimer != null)        
-        {
-            mTimer.purge();
-            mTimer.cancel();
-            mTimer = null;
-        } //End block
-        // ---------- Original Method ----------
-        //if (isPlaying()) {
-            //mPlayer.pause();
-        //} else if (mCurrentState == STATE_NOTPREPARED) {
-            //mPauseDuringPreparing = true;
-        //}
-        //if (mTimer != null) {
-            //mTimer.purge();
-            //mTimer.cancel();
-            //mTimer = null;
-        //}
-    }
-
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.964 -0400", hash_original_method = "439630F284E895C4A0EC26592582E769", hash_generated_method = "224B30D78957F136809A8B6100A4C1F9")
-    public int getDuration() {
-        if(mCurrentState == STATE_PREPARED)        
-        {
-            int varE6A4D58BC36106FFC7E11B87F36D48AB_1348173943 = (mPlayer.getDuration());
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_162049214 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_162049214;
-        } //End block
-        else
-        {
-            int var6BB61E3B7BCE0931DA574D19D1D82C88_1598654699 = (-1);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_238242661 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_238242661;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mCurrentState == STATE_PREPARED) {
-            //return mPlayer.getDuration();
-        //} else {
-            //return -1;
-        //}
-    }
-
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.964 -0400", hash_original_method = "5E9270330E1DC98C2EF1834461EFA6AE", hash_generated_method = "0D056DA3764A4CEE566133912418EE02")
-    public int getCurrentPosition() {
-        if(mCurrentState == STATE_PREPARED)        
-        {
-            int varCEA3D69E014FF77B91BE1913FC89492B_1854910211 = (mPlayer.getCurrentPosition());
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1607425617 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1607425617;
-        } //End block
-        int varCFCD208495D565EF66E7DFF9F98764DA_456487482 = (0);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1242668533 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1242668533;
-        // ---------- Original Method ----------
-        //if (mCurrentState == STATE_PREPARED) {
-            //return mPlayer.getCurrentPosition();
-        //}
-        //return 0;
-    }
-
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.964 -0400", hash_original_method = "29179F4E6F5DEF8BE6DF61D7C781E0A2", hash_generated_method = "E32EAC0E3969A7C5407467F62677A933")
-    public void seekTo(int pos) {
-        if(mCurrentState == STATE_PREPARED)        
-        mPlayer.seekTo(pos);
-        else
-        mSaveSeekTime = pos;
-        // ---------- Original Method ----------
-        //if (mCurrentState == STATE_PREPARED)
-            //mPlayer.seekTo(pos);
-        //else
-            //mSaveSeekTime = pos;
-    }
-
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.964 -0400", hash_original_method = "FFF63CE630758A2DC8461EEC2B2493E2", hash_generated_method = "A2821916163D44A3A659DBF86E6C8720")
-    public boolean isPlaying() {
-        if(mCurrentState == STATE_PREPARED)        
-        {
-            boolean var774CF28519C3CEE2356ACF4DB6B41A98_1486016791 = (mPlayer.isPlaying());
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1304748208 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1304748208;
-        } //End block
-        else
-        {
-            boolean var68934A3E9455FA72420237EB05902327_1396894232 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1757261346 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1757261346;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mCurrentState == STATE_PREPARED) {
-            //return mPlayer.isPlaying();
-        //} else {
-            //return false;
-        //}
-    }
-
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.964 -0400", hash_original_method = "0FBE82A8FF8F42AB54B25C4455F7DE4C", hash_generated_method = "EC615B19064898D7226096A372E245A3")
-    public void release() {
-        if(mCurrentState != STATE_RELEASED)        
-        {
-            mPlayer.release();
-        } //End block
-        mCurrentState = STATE_RELEASED;
-        // ---------- Original Method ----------
-        //if (mCurrentState != STATE_RELEASED) {
-            //mPlayer.release();
-        //}
-        //mCurrentState = STATE_RELEASED;
-    }
-
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.964 -0400", hash_original_method = "59D4F83219BBDE4F48B39B417FC8C6D3", hash_generated_method = "399EF696E9097B91AE462CC144E22C35")
-    public void stopPlayback() {
-        if(mCurrentState == STATE_PREPARED)        
-        {
-            mPlayer.stop();
-        } //End block
-        // ---------- Original Method ----------
-        //if (mCurrentState == STATE_PREPARED) {
-            //mPlayer.stop();
-        //}
-    }
-
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.964 -0400", hash_original_method = "FE87C901FEC48725BE9A00E5A7A6B389", hash_generated_method = "FF62A5CA922A8A18BF0F4910A76830E6")
-    public boolean getAutostart() {
-        boolean var31825AE6E4F03F79884718C65CDD49D5_1905587491 = (mAutostart);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_892872380 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_892872380;
-        // ---------- Original Method ----------
-        //return mAutostart;
-    }
-
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.965 -0400", hash_original_method = "83FF2150FEBE6917B81E8E4D5EFDEDB8", hash_generated_method = "1AB5ECA1601662A5BA3D8CACB9DF1AA8")
-    public boolean getPauseDuringPreparing() {
-        boolean varF31379AC693AFD32806C2F8AFF4FB2B1_2141396867 = (mPauseDuringPreparing);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_806964079 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_806964079;
-        // ---------- Original Method ----------
-        //return mPauseDuringPreparing;
-    }
-
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.965 -0400", hash_original_method = "25A3A58F4D699286035B0F84C85D6FDC", hash_generated_method = "8D5F2A249F2CD08E0E39617378FD04E1")
-    public void init(int videoLayerId, int position, boolean autoStart) {
-        mPlayer = new MediaPlayer();
-        mCurrentState = STATE_INITIALIZED;
-        mProxy = null;
-        mVideoLayerId = videoLayerId;
-        mSaveSeekTime = position;
-        mAutostart = autoStart;
-        mTimer = null;
-        mPauseDuringPreparing = false;
-        // ---------- Original Method ----------
-        //mPlayer = new MediaPlayer();
-        //mCurrentState = STATE_INITIALIZED;
-        //mProxy = null;
-        //mVideoLayerId = videoLayerId;
-        //mSaveSeekTime = position;
-        //mAutostart = autoStart;
-        //mTimer = null;
-        //mPauseDuringPreparing = false;
-    }
-
-    
-    @DSModeled(DSC.BAN)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:28.319 -0500", hash_original_method = "E7A7C1FACF5557FF1118289C74D9F6F1", hash_generated_method = "983388AEFCE2277E2911A4A303FA7073")
     protected static Map<String, String> generateHeaders(String url,
             HTML5VideoViewProxy proxy) {
         boolean isPrivate = proxy.getWebView().isPrivateBrowsingEnabled();
@@ -285,370 +32,371 @@ public class HTML5VideoView implements MediaPlayer.OnPreparedListener {
         if (isPrivate) {
             headers.put(HIDE_URL_LOGS, "true");
         }
+
         return headers;
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:28.293 -0500", hash_original_field = "27C2FDB1BB9B57104A1BF97BF4760D17", hash_generated_field = "F28BD250BE49F871DBD48569862C0B31")
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.965 -0400", hash_original_method = "4A72F313DB07B237CDCFE2148C78F1A8", hash_generated_method = "EAB59583A6ABB2F017872447AEE18A8E")
+
+    protected static final String LOGTAG = "HTML5VideoView";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:28.294 -0500", hash_original_field = "7AB772E4CFA16A63CA44E093873284F9", hash_generated_field = "DA39A01DF5AB155F9CB6B9FF9001FE68")
+
+
+    protected static final String COOKIE = "Cookie";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:28.295 -0500", hash_original_field = "29F8BB5FC2696F760DC8DD912D0A0CD5", hash_generated_field = "9881974001B645494AB5FC175DFA6D3E")
+
+    protected static final String HIDE_URL_LOGS = "x-hide-urls-from-log";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:35:05.733 -0500", hash_original_field = "316F2FF1C388ECA3484F1694B55EB5CA", hash_generated_field = "6A94B6B90000A3673F8193803A29BDA9")
+
+    // the video is prepared. Therefore, we differentiate the state between
+    // prepared and not prepared.
+    // When the video is not prepared, we will have to save the seekTo time,
+    // and use it when prepared to play.
+    // NOTE: these values are in sync with VideoLayerAndroid.h in webkit side.
+    // Please keep them in sync when changed.
+    static final int STATE_INITIALIZED        = 0;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:28.297 -0500", hash_original_field = "E1D8AA4DC305286CE74FD143DFCAA451", hash_generated_field = "5FB03EFA27A8E29EFAB8448370D21C6E")
+
+    static final int STATE_NOTPREPARED        = 1;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:28.297 -0500", hash_original_field = "B0A3E1DC3514CB87DD4786EA7A2009BC", hash_generated_field = "ED6A5A72E4407D351D0E711B5368AB37")
+
+    static final int STATE_PREPARED           = 2;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:28.298 -0500", hash_original_field = "22F45C47A0AA05081B66E40F5D8E467E", hash_generated_field = "980EFA6A2B53D27841C185532A5FD596")
+
+    static final int STATE_PLAYING            = 3;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:28.299 -0500", hash_original_field = "651D59D4C7CFDCCE607A7D4ACC67ECCA", hash_generated_field = "7597F5A47281EA761032DDC95EFD8646")
+
+    static final int STATE_RELEASED           = 4;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:35:05.743 -0500", hash_original_field = "0530D7DA7365EAABF4E2D913BD8C5F2C", hash_generated_field = "0F5229158B2BFD876508157983810133")
+
+    // See http://www.whatwg.org/specs/web-apps/current-work/#event-media-timeupdate
+    protected static Timer mTimer;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:28.307 -0500", hash_original_field = "64751FF4608AD695F6C4CA6F60073AE7", hash_generated_field = "803E0BB34E42CE66FDB6CAF172B04845")
+
+    private static final int TIMEUPDATE_PERIOD = 250;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:28.300 -0500", hash_original_field = "C3CD87657B7D1FF6B167B2FB7EA1B5DB", hash_generated_field = "D427CDF1FC427D67E4945D1E0E231D42")
+
+    protected int mCurrentState;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:28.301 -0500", hash_original_field = "7F2DF55E3D818C21E39C6278632E199C", hash_generated_field = "A9417E42DC0EBFA2CF2015D2CB329A68")
+
+
+    protected HTML5VideoViewProxy mProxy;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:35:05.739 -0500", hash_original_field = "DDE2675BE8BA6AA015C4C481A797132E", hash_generated_field = "8EC60FEEC043F814DAF6E2A263524B4F")
+
+    // video besides initial load.
+    protected int mSaveSeekTime;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:28.303 -0500", hash_original_field = "876F57FE990F16C9C6415908262B0A25", hash_generated_field = "0752FEDDB1622AE4DFBC1A284DB7079B")
+
+    protected int mVideoLayerId;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:35:05.740 -0500", hash_original_field = "5F7707D5EA4011B85B33B90A42726925", hash_generated_field = "B50DF2C6EAD5AE8A22AD091140C5594D")
+
+    // SurfaceTexture, there is only one MediaPlayer in action. Every time we
+    // switch videos, a new instance of MediaPlayer will be created in reset().
+    // Switching between inline and full screen will also create a new instance.
+    protected MediaPlayer mPlayer;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:35:05.741 -0500", hash_original_field = "3F6467504377843F029B4C4CEF836351", hash_generated_field = "75AF30403FAFFFE766C98BD1A1A8A385")
+
+    // Set to true only when switching into full screen while playing
+    protected boolean mAutostart;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:28.305 -0500", hash_original_field = "49226456B4CE4E55A779249DE3DC63D4", hash_generated_field = "4309285A2AF5294EC8D8A6725673F542")
+
+    protected Uri mUri;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:28.305 -0500", hash_original_field = "A7D525FA609C0F6270055E985F097B79", hash_generated_field = "DE0CB0B3CC8CF9FE0713E37CB69C3430")
+
+    protected Map<String, String> mHeaders;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:28.308 -0500", hash_original_field = "4DAFF75E9D6BA4CBDD1B91A72F208961", hash_generated_field = "4B797C0AD5CBAEABB54B83FEF8D06E8A")
+
+
+    protected boolean mPauseDuringPreparing;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:28.337 -0500", hash_original_field = "A1A1FD872AB58074E8C4CC540F226B71", hash_generated_field = "3C382F7E45E0380C589CD364462525D1")
+
+    public boolean mPlayerBuffering = false;
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:28.318 -0500", hash_original_method = "28D653DD01D92986A2B4676333E22F44", hash_generated_method = "0DDAE4F950D92719B95655EE43F24E23")
+    protected HTML5VideoView() {
+    }
+    // common Video control FUNCTIONS:
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:28.309 -0500", hash_original_method = "3012844A52D4FF8D08A8750FA45AE671", hash_generated_method = "40B8A76D7595BA3EDF281F5550EBC279")
+    public void start() {
+        if (mCurrentState == STATE_PREPARED) {
+            // When replaying the same video, there is no onPrepared call.
+            // Therefore, the timer should be set up here.
+            if (mTimer == null)
+            {
+                mTimer = new Timer();
+                mTimer.schedule(new TimeupdateTask(mProxy), TIMEUPDATE_PERIOD,
+                        TIMEUPDATE_PERIOD);
+            }
+            mPlayer.start();
+            setPlayerBuffering(false);
+        }
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:28.309 -0500", hash_original_method = "53F6A4797DD5828003875392A3AF17CE", hash_generated_method = "E08265121D73EF3E31C272FD6AB8DAD1")
+    public void pause() {
+        if (isPlaying()) {
+            mPlayer.pause();
+        } else if (mCurrentState == STATE_NOTPREPARED) {
+            mPauseDuringPreparing = true;
+        }
+        // Delete the Timer to stop it since there is no stop call.
+        if (mTimer != null) {
+            mTimer.purge();
+            mTimer.cancel();
+            mTimer = null;
+        }
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:28.310 -0500", hash_original_method = "439630F284E895C4A0EC26592582E769", hash_generated_method = "31B194CEA9661BDF123265EB135F9BBC")
+    public int getDuration() {
+        if (mCurrentState == STATE_PREPARED) {
+            return mPlayer.getDuration();
+        } else {
+            return -1;
+        }
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:28.311 -0500", hash_original_method = "5E9270330E1DC98C2EF1834461EFA6AE", hash_generated_method = "69019C8C603E48EF4B4E30A539264224")
+    public int getCurrentPosition() {
+        if (mCurrentState == STATE_PREPARED) {
+            return mPlayer.getCurrentPosition();
+        }
+        return 0;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:28.312 -0500", hash_original_method = "29179F4E6F5DEF8BE6DF61D7C781E0A2", hash_generated_method = "8A27CA426294C0CE66B219881880B786")
+    public void seekTo(int pos) {
+        if (mCurrentState == STATE_PREPARED)
+            mPlayer.seekTo(pos);
+        else
+            mSaveSeekTime = pos;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:28.312 -0500", hash_original_method = "FFF63CE630758A2DC8461EEC2B2493E2", hash_generated_method = "26072BF1DD954DF349A09D1636AC44C2")
+    public boolean isPlaying() {
+        if (mCurrentState == STATE_PREPARED) {
+            return mPlayer.isPlaying();
+        } else {
+            return false;
+        }
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:28.313 -0500", hash_original_method = "0FBE82A8FF8F42AB54B25C4455F7DE4C", hash_generated_method = "7AAE5EF7983579A91F5FA1CABE932ABC")
+    public void release() {
+        if (mCurrentState != STATE_RELEASED) {
+            mPlayer.release();
+        }
+        mCurrentState = STATE_RELEASED;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:28.314 -0500", hash_original_method = "59D4F83219BBDE4F48B39B417FC8C6D3", hash_generated_method = "C605A9F2B8BE487C8766FD9A5807346F")
+    public void stopPlayback() {
+        if (mCurrentState == STATE_PREPARED) {
+            mPlayer.stop();
+        }
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:28.315 -0500", hash_original_method = "FE87C901FEC48725BE9A00E5A7A6B389", hash_generated_method = "9BBFC126B369B55B424DCEC44F5CC75F")
+    public boolean getAutostart() {
+        return mAutostart;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:28.316 -0500", hash_original_method = "83FF2150FEBE6917B81E8E4D5EFDEDB8", hash_generated_method = "DD0F1269AEF34CBF589CA6EF265D115D")
+    public boolean getPauseDuringPreparing() {
+        return mPauseDuringPreparing;
+    }
+
+    // Every time we start a new Video, we create a VideoView and a MediaPlayer
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:28.317 -0500", hash_original_method = "25A3A58F4D699286035B0F84C85D6FDC", hash_generated_method = "1BCFD5FAC722720DEBAF2A69EB6E3BD8")
+    public void init(int videoLayerId, int position, boolean autoStart) {
+        mPlayer = new MediaPlayer();
+        mCurrentState = STATE_INITIALIZED;
+        mProxy = null;
+        mVideoLayerId = videoLayerId;
+        mSaveSeekTime = position;
+        mAutostart = autoStart;
+        mTimer = null;
+        mPauseDuringPreparing = false;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:28.320 -0500", hash_original_method = "4A72F313DB07B237CDCFE2148C78F1A8", hash_generated_method = "460AF598562878476A547654494F7EA8")
     public void setVideoURI(String uri, HTML5VideoViewProxy proxy) {
+        // When switching players, surface texture will be reused.
         mUri = Uri.parse(uri);
         mHeaders = generateHeaders(uri, proxy);
-        // ---------- Original Method ----------
-        //mUri = Uri.parse(uri);
-        //mHeaders = generateHeaders(uri, proxy);
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.965 -0400", hash_original_method = "7F2C5845AC97F9E01BF6739081098AFA", hash_generated_method = "9C97881D86FD74143394FC7DFA1C2BF4")
+    // Listeners setup FUNCTIONS:
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:28.321 -0500", hash_original_method = "7F2C5845AC97F9E01BF6739081098AFA", hash_generated_method = "727BB9D2244E8FE31568C787C1FA3C7C")
     public void setOnCompletionListener(HTML5VideoViewProxy proxy) {
-        addTaint(proxy.getTaint());
         mPlayer.setOnCompletionListener(proxy);
-        // ---------- Original Method ----------
-        //mPlayer.setOnCompletionListener(proxy);
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.965 -0400", hash_original_method = "B3DA09063B346725FC2FACD292CDBF3D", hash_generated_method = "4B544866EE92AA9C84184724C5701A23")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:28.322 -0500", hash_original_method = "B3DA09063B346725FC2FACD292CDBF3D", hash_generated_method = "5EA88AF68AB4E57576C6BCBFF8CB952D")
     public void setOnErrorListener(HTML5VideoViewProxy proxy) {
-        addTaint(proxy.getTaint());
         mPlayer.setOnErrorListener(proxy);
-        // ---------- Original Method ----------
-        //mPlayer.setOnErrorListener(proxy);
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.965 -0400", hash_original_method = "88BA8808B84DAD90592F4339F231D5ED", hash_generated_method = "4D6AF3753C8541AA77B64DFD77C61EFB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:28.322 -0500", hash_original_method = "88BA8808B84DAD90592F4339F231D5ED", hash_generated_method = "16CE62822581C1DEF024AD07E690C920")
     public void setOnPreparedListener(HTML5VideoViewProxy proxy) {
         mProxy = proxy;
         mPlayer.setOnPreparedListener(this);
-        // ---------- Original Method ----------
-        //mProxy = proxy;
-        //mPlayer.setOnPreparedListener(this);
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.966 -0400", hash_original_method = "9B3DE5A2AE36BDD54043208A8ECFD89C", hash_generated_method = "5C574C787098B3BC3B5139FF18561C47")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:28.323 -0500", hash_original_method = "9B3DE5A2AE36BDD54043208A8ECFD89C", hash_generated_method = "D2E9652D6F72F48637DE178162DC35F0")
     public void setOnInfoListener(HTML5VideoViewProxy proxy) {
-        addTaint(proxy.getTaint());
         mPlayer.setOnInfoListener(proxy);
-        // ---------- Original Method ----------
-        //mPlayer.setOnInfoListener(proxy);
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.966 -0400", hash_original_method = "F9607B1B919A7A6BBECF31855FC93C59", hash_generated_method = "8A33A6DF4C5291E75BF0E813CDED435F")
+    // Normally called immediately after setVideoURI. But for full screen,
+    // this should be after surface holder created
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:28.324 -0500", hash_original_method = "F9607B1B919A7A6BBECF31855FC93C59", hash_generated_method = "7CAB3DDD05A239CDF6E2734DA05A1D03")
     public void prepareDataAndDisplayMode(HTML5VideoViewProxy proxy) {
-        addTaint(proxy.getTaint());
+        // SurfaceTexture will be created lazily here for inline mode
         decideDisplayMode();
+
         setOnCompletionListener(proxy);
         setOnPreparedListener(proxy);
         setOnErrorListener(proxy);
         setOnInfoListener(proxy);
-        try 
-        {
+        // When there is exception, we could just bail out silently.
+        // No Video will be played though. Write the stack for debug
+        try {
             mPlayer.setDataSource(mProxy.getContext(), mUri, mHeaders);
             mPlayer.prepareAsync();
-        } //End block
-        catch (IllegalArgumentException e)
-        {
+        } catch (IllegalArgumentException e) {
             e.printStackTrace();
-        } //End block
-        catch (IllegalStateException e)
-        {
+        } catch (IllegalStateException e) {
             e.printStackTrace();
-        } //End block
-        catch (IOException e)
-        {
+        } catch (IOException e) {
             e.printStackTrace();
-        } //End block
+        }
         mCurrentState = STATE_NOTPREPARED;
-        // ---------- Original Method ----------
-        //decideDisplayMode();
-        //setOnCompletionListener(proxy);
-        //setOnPreparedListener(proxy);
-        //setOnErrorListener(proxy);
-        //setOnInfoListener(proxy);
-        //try {
-            //mPlayer.setDataSource(mProxy.getContext(), mUri, mHeaders);
-            //mPlayer.prepareAsync();
-        //} catch (IllegalArgumentException e) {
-            //e.printStackTrace();
-        //} catch (IllegalStateException e) {
-            //e.printStackTrace();
-        //} catch (IOException e) {
-            //e.printStackTrace();
-        //}
-        //mCurrentState = STATE_NOTPREPARED;
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.966 -0400", hash_original_method = "4F2E24A50F82208E59877C3E2625C348", hash_generated_method = "8CE7F142AA54D5BAC14A455A01C66A36")
+
+    // Common code
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:28.325 -0500", hash_original_method = "4F2E24A50F82208E59877C3E2625C348", hash_generated_method = "59CEAAB3DF0B6642DCB3E5A015706848")
     public int getVideoLayerId() {
-        int var984724E54A3D174511409B8A76927E34_1484007936 = (mVideoLayerId);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1179397796 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1179397796;
-        // ---------- Original Method ----------
-        //return mVideoLayerId;
+        return mVideoLayerId;
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.966 -0400", hash_original_method = "90E098B5ED1DEFDE8C60551334D6CBD4", hash_generated_method = "9AF64898EB7AB4C1827CF38B782C72EA")
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:28.326 -0500", hash_original_method = "90E098B5ED1DEFDE8C60551334D6CBD4", hash_generated_method = "E94138417590464CF75C0CE756A08C7B")
     public int getCurrentState() {
-        if(isPlaying())        
-        {
-            int var46106D784544B47292475B21943AB7AD_267955073 = (STATE_PLAYING);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_151253282 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_151253282;
-        } //End block
-        else
-        {
-            int var6C7797A425EBA1D07F236FF9B39AA429_2097811787 = (mCurrentState);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1913266045 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1913266045;
-        } //End block
-        // ---------- Original Method ----------
-        //if (isPlaying()) {
-            //return STATE_PLAYING;
-        //} else {
-            //return mCurrentState;
-        //}
+        if (isPlaying()) {
+            return STATE_PLAYING;
+        } else {
+            return mCurrentState;
+        }
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.966 -0400", hash_original_method = "023FEEEA138ACC710F3FC682E3FCF8D2", hash_generated_method = "0330F2FAB61F0883B5F6BF95A39075D4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:28.330 -0500", hash_original_method = "023FEEEA138ACC710F3FC682E3FCF8D2", hash_generated_method = "D77ABFD0BA7F324B8E3AEA49F66E50A4")
     @Override
-    public void onPrepared(MediaPlayer mp) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(mp.getTaint());
+public void onPrepared(MediaPlayer mp) {
         mCurrentState = STATE_PREPARED;
         seekTo(mSaveSeekTime);
-        if(mProxy != null)        
-        {
+        if (mProxy != null) {
             mProxy.onPrepared(mp);
-        } //End block
-        if(mPauseDuringPreparing)        
-        {
+        }
+        if (mPauseDuringPreparing) {
             pauseAndDispatch(mProxy);
             mPauseDuringPreparing = false;
-        } //End block
-        // ---------- Original Method ----------
-        //mCurrentState = STATE_PREPARED;
-        //seekTo(mSaveSeekTime);
-        //if (mProxy != null) {
-            //mProxy.onPrepared(mp);
-        //}
-        //if (mPauseDuringPreparing) {
-            //pauseAndDispatch(mProxy);
-            //mPauseDuringPreparing = false;
-        //}
+        }
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.966 -0400", hash_original_method = "61063445AE0708B1C305C74A0C0CFD4D", hash_generated_method = "CD6EE95AC0F91FE126976F3154F9EDEE")
+    // Pause the play and update the play/pause button
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:28.331 -0500", hash_original_method = "61063445AE0708B1C305C74A0C0CFD4D", hash_generated_method = "2BC0D4915283DA053AFAA6F77CCD93DD")
     public void pauseAndDispatch(HTML5VideoViewProxy proxy) {
-        addTaint(proxy.getTaint());
         pause();
-        if(proxy != null)        
-        {
+        if (proxy != null) {
             proxy.dispatchOnPaused();
-        } //End block
-        // ---------- Original Method ----------
-        //pause();
-        //if (proxy != null) {
-            //proxy.dispatchOnPaused();
-        //}
+        }
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.967 -0400", hash_original_method = "9BC7893A1A30D65DD41983AD520ABA24", hash_generated_method = "1815228FE6AF9C66AC74D74832BB079D")
+    // Below are functions that are different implementation on inline and full-
+    // screen mode. Some are specific to one type, but currently are called
+    // directly from the proxy.
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:28.332 -0500", hash_original_method = "9BC7893A1A30D65DD41983AD520ABA24", hash_generated_method = "4E64D53899FEDB854F6812CB4FCEC3CC")
     public void enterFullScreenVideoState(int layerId,
             HTML5VideoViewProxy proxy, WebView webView) {
-        addTaint(webView.getTaint());
-        addTaint(proxy.getTaint());
-        addTaint(layerId);
-        // ---------- Original Method ----------
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.967 -0400", hash_original_method = "040F96FADC077BA4992C03214586310A", hash_generated_method = "B4B9E71B88D83C7FBC65D1EF2D4354A6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:28.332 -0500", hash_original_method = "040F96FADC077BA4992C03214586310A", hash_generated_method = "0E9D4C4DE6859B7768B1E4F1BB97D44F")
     public boolean isFullScreenMode() {
-        boolean var68934A3E9455FA72420237EB05902327_1022334896 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_5753085 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_5753085;
-        // ---------- Original Method ----------
-        //return false;
-    }
-
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.967 -0400", hash_original_method = "576D7BAAE83D7D96FC7F76762AF5D519", hash_generated_method = "72B0C98E60E0E0F576CB0E078AC7C55A")
-    public void decideDisplayMode() {
-        // ---------- Original Method ----------
-    }
-
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.967 -0400", hash_original_method = "C9A7CF84D371C51EADC63585245E2DF8", hash_generated_method = "CC33432DFA9C4257BB0E6B4EF94EE82E")
-    public boolean getReadyToUseSurfTex() {
-        boolean var68934A3E9455FA72420237EB05902327_968535273 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_765487582 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_765487582;
-        // ---------- Original Method ----------
-        //return false;
-    }
-
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.967 -0400", hash_original_method = "EB4C543379CBB61A7D197317729D4B81", hash_generated_method = "5AD538643A96DED7835B0B5F5669FC29")
-    public SurfaceTexture getSurfaceTexture(int videoLayerId) {
-        addTaint(videoLayerId);
-SurfaceTexture var540C13E9E156B687226421B24F2DF178_2074463060 =         null;
-        var540C13E9E156B687226421B24F2DF178_2074463060.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_2074463060;
-        // ---------- Original Method ----------
-        //return null;
-    }
-
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.967 -0400", hash_original_method = "F878AB9D8B307F7725C7D90E69C96D89", hash_generated_method = "07BFA0BF77B7C18AD06224A1226A429A")
-    public void deleteSurfaceTexture() {
-        // ---------- Original Method ----------
-    }
-
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.967 -0400", hash_original_method = "4BDE667A00FC91D9C95E5191E09A54C3", hash_generated_method = "7C6F7CEC376742BE77984CDDE92417C4")
-    public int getTextureName() {
-        int varCFCD208495D565EF66E7DFF9F98764DA_1986352920 = (0);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2025798841 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2025798841;
-        // ---------- Original Method ----------
-        //return 0;
-    }
-
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.967 -0400", hash_original_method = "BA6BA92F877820EFB4A7324F8FF815C7", hash_generated_method = "ADD4DD1B4C4294E80B30A8E0EF42D04F")
-    public boolean getPlayerBuffering() {
-        boolean var21A94B24414CC83F408019CEEE7256DB_1784112081 = (mPlayerBuffering);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_232141009 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_232141009;
-        // ---------- Original Method ----------
-        //return mPlayerBuffering;
-    }
-
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.967 -0400", hash_original_method = "90D4C50A046C8B21871A46FE1FDA531C", hash_generated_method = "453F7193DA9035441C449E361090501E")
-    public void setPlayerBuffering(boolean playerBuffering) {
-        mPlayerBuffering = playerBuffering;
-        switchProgressView(playerBuffering);
-        // ---------- Original Method ----------
-        //mPlayerBuffering = playerBuffering;
-        //switchProgressView(playerBuffering);
-    }
-
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.968 -0400", hash_original_method = "D1649F9781058EFE73B80767CB5DBB7F", hash_generated_method = "78654B15F1DDD1BB483C8E3622ECF5B9")
-    protected void switchProgressView(boolean playerBuffering) {
-        addTaint(playerBuffering);
-        // ---------- Original Method ----------
-    }
-
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.968 -0400", hash_original_method = "620458B5B8BB9506BFC901A9D3B27999", hash_generated_method = "3FE3E80ACD88E429783472FFF515D8ED")
-    public boolean surfaceTextureDeleted() {
-        boolean var68934A3E9455FA72420237EB05902327_1724691648 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2003408345 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2003408345;
-        // ---------- Original Method ----------
-        //return false;
-    }
-
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.968 -0400", hash_original_method = "8A279E58756D4B031794A7C12A636619", hash_generated_method = "E7CA2ECC24FCAB83C0E5AD7ADDCA3E5F")
-    public boolean fullScreenExited() {
-        boolean var68934A3E9455FA72420237EB05902327_1063918214 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_192965422 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_192965422;
-        // ---------- Original Method ----------
-        //return false;
+        return false;
     }
 
     
     private static final class TimeupdateTask extends TimerTask {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.968 -0400", hash_original_field = "7D88DE9DD0EF018B770128257B4D159F", hash_generated_field = "701E8A5CEFF22C717E0E1190038ED0C2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:28.327 -0500", hash_original_field = "7F2DF55E3D818C21E39C6278632E199C", hash_generated_field = "701E8A5CEFF22C717E0E1190038ED0C2")
 
         private HTML5VideoViewProxy mProxy;
-        
-        @DSModeled(DSC.BAN)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.968 -0400", hash_original_method = "3C26C895A00D8A9565624E1D679282AA", hash_generated_method = "0F41425E63DDD706022823AA445EA086")
-        public  TimeupdateTask(HTML5VideoViewProxy proxy) {
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:28.328 -0500", hash_original_method = "3C26C895A00D8A9565624E1D679282AA", hash_generated_method = "28450E7EFE5E6C31592BCF9B4CFC93A9")
+        public TimeupdateTask(HTML5VideoViewProxy proxy) {
             mProxy = proxy;
-            // ---------- Original Method ----------
-            //mProxy = proxy;
         }
 
-        
-                @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.968 -0400", hash_original_method = "BCE01212467B54ADF40E3CF16EDCE71A", hash_generated_method = "720F4FE730506E910812AE5C0641C63B")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:28.329 -0500", hash_original_method = "BCE01212467B54ADF40E3CF16EDCE71A", hash_generated_method = "9BDB3CECC549A3D525B96DC09C640576")
         @Override
-        public void run() {
+public void run() {
             mProxy.onTimeupdate();
-            // ---------- Original Method ----------
-            //mProxy.onTimeupdate();
         }
 
         
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:28.333 -0500", hash_original_method = "576D7BAAE83D7D96FC7F76762AF5D519", hash_generated_method = "BC9CE176105443952F7393C58BBD2D38")
+    public void decideDisplayMode() {
+    }
 
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.969 -0400", hash_original_field = "23A1AFCA8BE06FFFB26446468AA15EE5", hash_generated_field = "F28BD250BE49F871DBD48569862C0B31")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:28.334 -0500", hash_original_method = "C9A7CF84D371C51EADC63585245E2DF8", hash_generated_method = "A85EED1F77D2020994DEDE6CC5F6187A")
+    public boolean getReadyToUseSurfTex() {
+        return false;
+    }
 
-    protected static final String LOGTAG = "HTML5VideoView";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.969 -0400", hash_original_field = "9A71485BAE34D870CB99A56794E33727", hash_generated_field = "DA39A01DF5AB155F9CB6B9FF9001FE68")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:28.335 -0500", hash_original_method = "EB4C543379CBB61A7D197317729D4B81", hash_generated_method = "7E7D293D3502124CFE202328B06F4519")
+    public SurfaceTexture getSurfaceTexture(int videoLayerId) {
+        return null;
+    }
 
-    protected static final String COOKIE = "Cookie";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.969 -0400", hash_original_field = "27A993EDFD63555E2CA2047D198F916F", hash_generated_field = "9881974001B645494AB5FC175DFA6D3E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:28.336 -0500", hash_original_method = "F878AB9D8B307F7725C7D90E69C96D89", hash_generated_method = "B53D80A30F388C560F1902A7279E8708")
+    public void deleteSurfaceTexture() {
+    }
 
-    protected static final String HIDE_URL_LOGS = "x-hide-urls-from-log";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.969 -0400", hash_original_field = "5D51BBD586E32FF369C39A1432B1D1FE", hash_generated_field = "F87702CD8372B94E855116553EA5A2CA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:28.336 -0500", hash_original_method = "4BDE667A00FC91D9C95E5191E09A54C3", hash_generated_method = "5FAB636108D0BD3392863D59FF29FEAB")
+    public int getTextureName() {
+        return 0;
+    }
 
-    static final int STATE_INITIALIZED = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.969 -0400", hash_original_field = "306E5AD3AF067CF0A2BD527C24682116", hash_generated_field = "5FB03EFA27A8E29EFAB8448370D21C6E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:28.338 -0500", hash_original_method = "BA6BA92F877820EFB4A7324F8FF815C7", hash_generated_method = "A091967EDDAB6E8CE97607BCF97D50CC")
+    public boolean getPlayerBuffering() {
+        return mPlayerBuffering;
+    }
 
-    static final int STATE_NOTPREPARED = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.969 -0400", hash_original_field = "95BFE9F657F45E05E13CA2B88A7E534C", hash_generated_field = "ED6A5A72E4407D351D0E711B5368AB37")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:28.339 -0500", hash_original_method = "90D4C50A046C8B21871A46FE1FDA531C", hash_generated_method = "12B889799F11D033820B8AB6DBA91DB8")
+    public void setPlayerBuffering(boolean playerBuffering) {
+        mPlayerBuffering = playerBuffering;
+        switchProgressView(playerBuffering);
+    }
 
-    static final int STATE_PREPARED = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.969 -0400", hash_original_field = "F8E97D8069CEFFD6F193B01736254DA5", hash_generated_field = "980EFA6A2B53D27841C185532A5FD596")
 
-    static final int STATE_PLAYING = 3;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.969 -0400", hash_original_field = "3EA9E6AECB20C4694288BB1A98264609", hash_generated_field = "7597F5A47281EA761032DDC95EFD8646")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:28.340 -0500", hash_original_method = "D1649F9781058EFE73B80767CB5DBB7F", hash_generated_method = "14E1292FE683BC52C08C4EDC53BBD809")
+    protected void switchProgressView(boolean playerBuffering) {
+        // Only used in HTML5VideoFullScreen
+    }
 
-    static final int STATE_RELEASED = 4;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.969 -0400", hash_original_field = "18CC450E4B3A37C32021860E8C8343C3", hash_generated_field = "D3C1D0BC931E22CE6A6DFBB2150EFF9F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:28.340 -0500", hash_original_method = "620458B5B8BB9506BFC901A9D3B27999", hash_generated_method = "3C5656C8CD1FFA783C42C6660F8B1AC2")
+    public boolean surfaceTextureDeleted() {
+        // Only meaningful for HTML5VideoInline
+        return false;
+    }
 
-    protected static Timer mTimer;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.969 -0400", hash_original_field = "D553B3E2F0768723E9DB1BA83F91694F", hash_generated_field = "803E0BB34E42CE66FDB6CAF172B04845")
-
-    private static final int TIMEUPDATE_PERIOD = 250;
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:28.341 -0500", hash_original_method = "8A279E58756D4B031794A7C12A636619", hash_generated_method = "C127A5B4891D5FF85A48FA7198E02BB3")
+    public boolean fullScreenExited() {
+        // Only meaningful for HTML5VideoFullScreen
+        return false;
+    }
 }
 

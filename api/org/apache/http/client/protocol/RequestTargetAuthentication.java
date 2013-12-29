@@ -1,6 +1,8 @@
 package org.apache.http.client.protocol;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 
@@ -22,71 +24,57 @@ import org.apache.http.protocol.HttpContext;
 
 
 public class RequestTargetAuthentication implements HttpRequestInterceptor {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.551 -0400", hash_original_field = "0B7469F2850D918A96D1C36E99B23F5C", hash_generated_field = "3FCE5BFF671FE7B3BB3E2D744C5E5D2C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.474 -0500", hash_original_field = "0DA7E40E862C937570CA6B0D96D2555A", hash_generated_field = "3FCE5BFF671FE7B3BB3E2D744C5E5D2C")
+
 
     private final Log log = LogFactory.getLog(getClass());
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.551 -0400", hash_original_method = "18D614B059705CD511AA931F33F39470", hash_generated_method = "54C850D3041D3B5C1C4E415558AD142B")
-    public  RequestTargetAuthentication() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.475 -0500", hash_original_method = "18D614B059705CD511AA931F33F39470", hash_generated_method = "33C74B2F0CAC4A51B51E1576F31D41A5")
+    public RequestTargetAuthentication() {
         super();
-        // ---------- Original Method ----------
     }
-
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.552 -0400", hash_original_method = "08A305A51186E2C844540B93FF6C198C", hash_generated_method = "CE5075B4304DD9B69E022F50D86A8973")
-    public void process(final HttpRequest request, final HttpContext context) throws HttpException, IOException {
-        addTaint(context.getTaint());
-        addTaint(request.getTaint());
-        if(request == null)        
-        {
-            IllegalArgumentException varF07DEF4BA25028D1DB51C0BA629AF0B4_2070281550 = new IllegalArgumentException("HTTP request may not be null");
-            varF07DEF4BA25028D1DB51C0BA629AF0B4_2070281550.addTaint(taint);
-            throw varF07DEF4BA25028D1DB51C0BA629AF0B4_2070281550;
-        } //End block
-        if(context == null)        
-        {
-            IllegalArgumentException var313A469DAA78732DF88285478241413C_1361204320 = new IllegalArgumentException("HTTP context may not be null");
-            var313A469DAA78732DF88285478241413C_1361204320.addTaint(taint);
-            throw var313A469DAA78732DF88285478241413C_1361204320;
-        } //End block
-        if(request.containsHeader(AUTH.WWW_AUTH_RESP))        
-        {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.476 -0500", hash_original_method = "08A305A51186E2C844540B93FF6C198C", hash_generated_method = "176162C55EA015B16F90979A5236A893")
+    public void process(final HttpRequest request, final HttpContext context) 
+            throws HttpException, IOException {
+        if (request == null) {
+            throw new IllegalArgumentException("HTTP request may not be null");
+        }
+        if (context == null) {
+            throw new IllegalArgumentException("HTTP context may not be null");
+        }
+
+        if (request.containsHeader(AUTH.WWW_AUTH_RESP)) {
             return;
-        } //End block
+        }
+        
+        // Obtain authentication state
         AuthState authState = (AuthState) context.getAttribute(
                 ClientContext.TARGET_AUTH_STATE);
-        if(authState == null)        
-        {
+        if (authState == null) {
             return;
-        } //End block
+        }
+
         AuthScheme authScheme = authState.getAuthScheme();
-        if(authScheme == null)        
-        {
+        if (authScheme == null) {
             return;
-        } //End block
+        }
+        
         Credentials creds = authState.getCredentials();
-        if(creds == null)        
-        {
+        if (creds == null) {
             this.log.debug("User credentials not available");
             return;
-        } //End block
-        if(authState.getAuthScope() != null || !authScheme.isConnectionBased())        
-        {
-            try 
-            {
+        }
+
+        if (authState.getAuthScope() != null || !authScheme.isConnectionBased()) {
+            try {
                 request.addHeader(authScheme.authenticate(creds, request));
-            } //End block
-            catch (AuthenticationException ex)
-            {
-                if(this.log.isErrorEnabled())                
-                {
+            } catch (AuthenticationException ex) {
+                if (this.log.isErrorEnabled()) {
                     this.log.error("Authentication error: " + ex.getMessage());
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                }
+            }
+        }
     }
 
     

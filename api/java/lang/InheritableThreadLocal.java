@@ -1,54 +1,46 @@
 package java.lang;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
 
 
 public class InheritableThreadLocal<T> extends ThreadLocal<T> {
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.070 -0400", hash_original_method = "013FA75455B3B99BD273198992B6DC3D", hash_generated_method = "E069ECF21285DFACCB09CA4095DD4CD7")
-    public  InheritableThreadLocal() {
-        // ---------- Original Method ----------
+
+    /**
+     * Creates a new inheritable thread-local variable.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.432 -0500", hash_original_method = "013FA75455B3B99BD273198992B6DC3D", hash_generated_method = "E13EE25F4E019254954C6350304C79AC")
+    public InheritableThreadLocal() {
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.070 -0400", hash_original_method = "21950621664F241C91FE4E959BCE80F5", hash_generated_method = "E13ECF9F873781364FCD1C86DB3F9C78")
+    /**
+     * Computes the initial value of this thread-local variable for the child
+     * thread given the parent thread's value. Called from the parent thread when
+     * creating a child thread. The default implementation returns the parent
+     * thread's value.
+     *
+     * @param parentValue the value of the variable in the parent thread.
+     * @return the initial value of the variable for the child thread.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.433 -0500", hash_original_method = "21950621664F241C91FE4E959BCE80F5", hash_generated_method = "8D17A7D6545AFF55B795464598770CC6")
     protected T childValue(T parentValue) {
-        addTaint(parentValue.getTaint());
-T var5B50CF7DCD7B0E8E9DCFB7F13A8B2F1B_412074257 =         parentValue;
-        var5B50CF7DCD7B0E8E9DCFB7F13A8B2F1B_412074257.addTaint(taint);
-        return var5B50CF7DCD7B0E8E9DCFB7F13A8B2F1B_412074257;
-        // ---------- Original Method ----------
-        //return parentValue;
+        return parentValue;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.071 -0400", hash_original_method = "5F640D0B7D2E60FEE01A049AD8233DEB", hash_generated_method = "894A935B6F17205B88331EDD46190960")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.434 -0500", hash_original_method = "5F640D0B7D2E60FEE01A049AD8233DEB", hash_generated_method = "663009C2DB6D2EF65EB42BB969A6976E")
     @Override
-     Values values(Thread current) {
-        addTaint(current.getTaint());
-Values varFD13BEAC833885316C9D98DFD25DC72D_2099164328 =         current.inheritableValues;
-        varFD13BEAC833885316C9D98DFD25DC72D_2099164328.addTaint(taint);
-        return varFD13BEAC833885316C9D98DFD25DC72D_2099164328;
-        // ---------- Original Method ----------
-        //return current.inheritableValues;
+Values values(Thread current) {
+        return current.inheritableValues;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.071 -0400", hash_original_method = "198C51D572472BCFE1CF3566F6918855", hash_generated_method = "8422C65D9EA725AD7ACC5B23EFC0711E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.435 -0500", hash_original_method = "198C51D572472BCFE1CF3566F6918855", hash_generated_method = "7476F3413E3E995DF44BCBC94333B86C")
     @Override
-     Values initializeValues(Thread current) {
-        addTaint(current.getTaint());
-Values varFA06F5287CC4CB6B390064F9EE6BF5A9_1168395137 =         current.inheritableValues = new Values();
-        varFA06F5287CC4CB6B390064F9EE6BF5A9_1168395137.addTaint(taint);
-        return varFA06F5287CC4CB6B390064F9EE6BF5A9_1168395137;
-        // ---------- Original Method ----------
-        //return current.inheritableValues = new Values();
+Values initializeValues(Thread current) {
+        return current.inheritableValues = new Values();
     }
 
     

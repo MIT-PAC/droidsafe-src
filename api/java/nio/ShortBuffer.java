@@ -1,6 +1,8 @@
 package java.nio;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Arrays;
 
@@ -9,17 +11,17 @@ import java.util.Arrays;
 
 
 public abstract class ShortBuffer extends Buffer implements Comparable<ShortBuffer> {
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.987 -0400", hash_original_method = "EAB92A092C9FEE1EEAB86C6A6FABA79C", hash_generated_method = "6318691CE755B9046B333B497AB15184")
-      ShortBuffer(int capacity) {
-        super(1, capacity, null);
-        addTaint(capacity);
-        // ---------- Original Method ----------
-    }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Creates a short buffer based on a newly allocated short array.
+     *
+     * @param capacity
+     *            the capacity of the new buffer.
+     * @return the created short buffer.
+     * @throws IllegalArgumentException
+     *             if {@code capacity} is less than zero.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.902 -0500", hash_original_method = "EBFF8E9D938EEAC173B69FFFF0E788F4", hash_generated_method = "6F0E3EBA0D404FB0AFCEEAE1582B0585")
     public static ShortBuffer allocate(int capacity) {
         if (capacity < 0) {
             throw new IllegalArgumentException();
@@ -27,14 +29,40 @@ public abstract class ShortBuffer extends Buffer implements Comparable<ShortBuff
         return new ReadWriteShortArrayBuffer(capacity);
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Creates a new short buffer by wrapping the given short array.
+     * <p>
+     * Calling this method has the same effect as
+     * {@code wrap(array, 0, array.length)}.
+     *
+     * @param array
+     *            the short array which the new buffer will be based on.
+     * @return the created short buffer.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.903 -0500", hash_original_method = "8B4AACC8CC10C13D135A06929763BDF6", hash_generated_method = "509E98722C673CDBAA01B76811FD1BC5")
     public static ShortBuffer wrap(short[] array) {
         return wrap(array, 0, array.length);
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Creates a new short buffer by wrapping the given short array.
+     * <p>
+     * The new buffer's position will be {@code start}, limit will be
+     * {@code start + shortCount}, capacity will be the length of the array.
+     *
+     * @param array
+     *            the short array which the new buffer will be based on.
+     * @param start
+     *            the start index, must not be negative and not greater than
+     *            {@code array.length}.
+     * @param shortCount
+     *            the length, must not be negative and not greater than
+     *            {@code array.length - start}.
+     * @return the created short buffer.
+     * @exception IndexOutOfBoundsException
+     *                if either {@code start} or {@code shortCount} is invalid.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.904 -0500", hash_original_method = "72F1175C01A5143461DE3CE030C68996", hash_generated_method = "40F2E483DA1BD0B0688E5E89D7125496")
     public static ShortBuffer wrap(short[] array, int start, int shortCount) {
         Arrays.checkOffsetAndCount(array.length, start, shortCount);
         ShortBuffer buf = new ReadWriteShortArrayBuffer(array);
@@ -43,332 +71,408 @@ public abstract class ShortBuffer extends Buffer implements Comparable<ShortBuff
         return buf;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.988 -0400", hash_original_method = "0A1B03C776C1004F61482923BC618EF6", hash_generated_method = "98DD42722F8507699F8E0254CA6D062B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.905 -0500", hash_original_method = "EAB92A092C9FEE1EEAB86C6A6FABA79C", hash_generated_method = "EAB92A092C9FEE1EEAB86C6A6FABA79C")
+    ShortBuffer(int capacity) {
+        super(1, capacity, null);
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.906 -0500", hash_original_method = "0A1B03C776C1004F61482923BC618EF6", hash_generated_method = "D88DAC21520F60D21DFDBF333F914C87")
     public final short[] array() {
-        short[] var68B89E48382A0AA51B25AC59599E2EB0_2005391723 = (protectedArray());
-                short[] var48EE7E2DDF8A83602BC526873BD0F875_1446023110 = {getTaintShort()};
-        return var48EE7E2DDF8A83602BC526873BD0F875_1446023110;
-        // ---------- Original Method ----------
-        //return protectedArray();
+        return protectedArray();
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.989 -0400", hash_original_method = "0D5EF56CBEA1DA16093A6276D10D9347", hash_generated_method = "C6E0DC87AAD0E6046496B3407BAFCAF1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.907 -0500", hash_original_method = "0D5EF56CBEA1DA16093A6276D10D9347", hash_generated_method = "28A2D71AE8939DE09018E333ADFF6CAE")
     public final int arrayOffset() {
-        int var0B794CE56A38A9F3BFDD2D53E83BB109_1680568485 = (protectedArrayOffset());
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2065457175 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2065457175;
-        // ---------- Original Method ----------
-        //return protectedArrayOffset();
+        return protectedArrayOffset();
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Returns a read-only buffer that shares its content with this buffer.
+     * <p>
+     * The returned buffer is guaranteed to be a new instance, even if this
+     * buffer is read-only itself. The new buffer's position, limit, capacity
+     * and mark are the same as this buffer's.
+     * <p>
+     * The new buffer shares its content with this buffer, which means this
+     * buffer's change of content will be visible to the new buffer. The two
+     * buffer's position, limit and mark are independent.
+     *
+     * @return a read-only version of this buffer.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.908 -0500", hash_original_method = "91FD5D5EA70084AF642BD55F71B535D6", hash_generated_method = "250F8AE91CFC572D260501D822AA8C48")
     public abstract ShortBuffer asReadOnlyBuffer();
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Compacts this short buffer.
+     * <p>
+     * The remaining shorts will be moved to the head of the buffer, starting
+     * from position zero. Then the position is set to {@code remaining()}; the
+     * limit is set to capacity; the mark is cleared.
+     *
+     * @return this buffer.
+     * @exception ReadOnlyBufferException
+     *                if no changes may be made to the contents of this buffer.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.909 -0500", hash_original_method = "32FE6B05956DB41925E4AA9608D70E12", hash_generated_method = "2450FBBD34D23EA3301EC8913E64A0F5")
     public abstract ShortBuffer compact();
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.990 -0400", hash_original_method = "F5228E310614FF7F70EC616A5A8F6CEB", hash_generated_method = "CC4B58E6DCD6EBDDB482D97586D71835")
+    /**
+     * Compare the remaining shorts of this buffer to another short buffer's
+     * remaining shorts.
+     *
+     * @param otherBuffer
+     *            another short buffer.
+     * @return a negative value if this is less than {@code otherBuffer}; 0 if
+     *         this equals to {@code otherBuffer}; a positive value if this is
+     *         greater than {@code otherBuffer}.
+     * @exception ClassCastException
+     *                if {@code otherBuffer} is not a short buffer.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.909 -0500", hash_original_method = "F5228E310614FF7F70EC616A5A8F6CEB", hash_generated_method = "59642D28CC7C07C7C3A2E8DC8FB6BD15")
     public int compareTo(ShortBuffer otherBuffer) {
-        addTaint(otherBuffer.getTaint());
         int compareRemaining = (remaining() < otherBuffer.remaining()) ? remaining()
                 : otherBuffer.remaining();
         int thisPos = position;
         int otherPos = otherBuffer.position;
-        short thisByte;
-        short otherByte;
-        while
-(compareRemaining > 0)        
-        {
+        short thisByte, otherByte;
+        while (compareRemaining > 0) {
             thisByte = get(thisPos);
             otherByte = otherBuffer.get(otherPos);
-            if(thisByte != otherByte)            
-            {
-                int var0D4D283E60262FF52C1A7D956005837E_2126187794 = (thisByte < otherByte ? -1 : 1);
-                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2046522335 = getTaintInt();
-                return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2046522335;
-            } //End block
+            if (thisByte != otherByte) {
+                return thisByte < otherByte ? -1 : 1;
+            }
             thisPos++;
             otherPos++;
             compareRemaining--;
-        } //End block
-        int var1DC167191FBC7DAD3BADAE830552C692_2111765937 = (remaining() - otherBuffer.remaining());
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1008624493 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1008624493;
-        // ---------- Original Method ----------
-        //int compareRemaining = (remaining() < otherBuffer.remaining()) ? remaining()
-                //: otherBuffer.remaining();
-        //int thisPos = position;
-        //int otherPos = otherBuffer.position;
-        //short thisByte, otherByte;
-        //while (compareRemaining > 0) {
-            //thisByte = get(thisPos);
-            //otherByte = otherBuffer.get(otherPos);
-            //if (thisByte != otherByte) {
-                //return thisByte < otherByte ? -1 : 1;
-            //}
-            //thisPos++;
-            //otherPos++;
-            //compareRemaining--;
-        //}
-        //return remaining() - otherBuffer.remaining();
+        }
+        return remaining() - otherBuffer.remaining();
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Returns a duplicated buffer that shares its content with this buffer.
+     * <p>
+     * The duplicated buffer's position, limit, capacity and mark are the same
+     * as this buffer. The duplicated buffer's read-only property and byte order
+     * are the same as this buffer's.
+     * <p>
+     * The new buffer shares its content with this buffer, which means either
+     * buffer's change of content will be visible to the other. The two buffer's
+     * position, limit and mark are independent.
+     *
+     * @return a duplicated buffer that shares its content with this buffer.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.910 -0500", hash_original_method = "84196D0A2943D1A18DE7380AB4F2D8B1", hash_generated_method = "841D10B5C11B7A44164DB41BCDF09368")
     public abstract ShortBuffer duplicate();
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.991 -0400", hash_original_method = "5B31F4285E964D7BDABED3BB847D41AA", hash_generated_method = "6F5CE1B4E79FD41A9E0535929CBE567C")
+    /**
+     * Checks whether this short buffer is equal to another object.
+     * <p>
+     * If {@code other} is not a short buffer then {@code false} is returned.
+     * Two short buffers are equal if and only if their remaining shorts are
+     * exactly the same. Position, limit, capacity and mark are not considered.
+     *
+     * @param other
+     *            the object to compare with this short buffer.
+     * @return {@code true} if this short buffer is equal to {@code other},
+     *         {@code false} otherwise.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.911 -0500", hash_original_method = "5B31F4285E964D7BDABED3BB847D41AA", hash_generated_method = "E6D080F92E3789439860734FC4273609")
     @Override
-    public boolean equals(Object other) {
-        addTaint(other.getTaint());
-        if(!(other instanceof ShortBuffer))        
-        {
-            boolean var68934A3E9455FA72420237EB05902327_2016831118 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1674941644 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1674941644;
-        } //End block
+public boolean equals(Object other) {
+        if (!(other instanceof ShortBuffer)) {
+            return false;
+        }
         ShortBuffer otherBuffer = (ShortBuffer) other;
-        if(remaining() != otherBuffer.remaining())        
-        {
-            boolean var68934A3E9455FA72420237EB05902327_89753107 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1117759356 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1117759356;
-        } //End block
+
+        if (remaining() != otherBuffer.remaining()) {
+            return false;
+        }
+
         int myPosition = position;
         int otherPosition = otherBuffer.position;
         boolean equalSoFar = true;
-        while
-(equalSoFar && (myPosition < limit))        
-        {
+        while (equalSoFar && (myPosition < limit)) {
             equalSoFar = get(myPosition++) == otherBuffer.get(otherPosition++);
-        } //End block
-        boolean var4A97EF18B93B276118DD50585250A586_703765397 = (equalSoFar);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1308513237 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1308513237;
-        // ---------- Original Method ----------
-        //if (!(other instanceof ShortBuffer)) {
-            //return false;
-        //}
-        //ShortBuffer otherBuffer = (ShortBuffer) other;
-        //if (remaining() != otherBuffer.remaining()) {
-            //return false;
-        //}
-        //int myPosition = position;
-        //int otherPosition = otherBuffer.position;
-        //boolean equalSoFar = true;
-        //while (equalSoFar && (myPosition < limit)) {
-            //equalSoFar = get(myPosition++) == otherBuffer.get(otherPosition++);
-        //}
-        //return equalSoFar;
+        }
+
+        return equalSoFar;
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Returns the short at the current position and increases the position by
+     * 1.
+     *
+     * @return the short at the current position.
+     * @exception BufferUnderflowException
+     *                if the position is equal or greater than limit.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.912 -0500", hash_original_method = "3AAC84AA37FB75635F4DB8D7D6A7F6FB", hash_generated_method = "CA7D87777C6F14C126444A36141F350D")
     public abstract short get();
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.992 -0400", hash_original_method = "68406DA953A1F3530F74FC6FE1C452A7", hash_generated_method = "E6A8B0A228F511C0B8F2AF60A3B3E08F")
+    /**
+     * Reads shorts from the current position into the specified short array and
+     * increases the position by the number of shorts read.
+     * <p>
+     * Calling this method has the same effect as
+     * {@code get(dst, 0, dst.length)}.
+     *
+     * @param dst
+     *            the destination short array.
+     * @return this buffer.
+     * @exception BufferUnderflowException
+     *                if {@code dst.length} is greater than {@code remaining()}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.913 -0500", hash_original_method = "68406DA953A1F3530F74FC6FE1C452A7", hash_generated_method = "2F943CD8BE97273C95D613084C8175C9")
     public ShortBuffer get(short[] dst) {
-        addTaint(dst[0]);
-ShortBuffer varAF8F268F60258FE30F192DE78F11CD4A_1160801342 =         get(dst, 0, dst.length);
-        varAF8F268F60258FE30F192DE78F11CD4A_1160801342.addTaint(taint);
-        return varAF8F268F60258FE30F192DE78F11CD4A_1160801342;
-        // ---------- Original Method ----------
-        //return get(dst, 0, dst.length);
+        return get(dst, 0, dst.length);
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.992 -0400", hash_original_method = "DE4C5284FF189AE8B07194EE8C193F03", hash_generated_method = "F06FC16CFB0E8F7BA70A1B4238A4A0D0")
+    /**
+     * Reads shorts from the current position into the specified short array,
+     * starting from the specified offset, and increases the position by the
+     * number of shorts read.
+     *
+     * @param dst
+     *            the target short array.
+     * @param dstOffset
+     *            the offset of the short array, must not be negative and not
+     *            greater than {@code dst.length}.
+     * @param shortCount
+     *            the number of shorts to read, must be no less than zero and
+     *            not greater than {@code dst.length - dstOffset}.
+     * @return this buffer.
+     * @exception IndexOutOfBoundsException
+     *                if either {@code dstOffset} or {@code shortCount} is invalid.
+     * @exception BufferUnderflowException
+     *                if {@code shortCount} is greater than {@code remaining()}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.914 -0500", hash_original_method = "DE4C5284FF189AE8B07194EE8C193F03", hash_generated_method = "FE9700AF6413630B2C83C799F4D60421")
     public ShortBuffer get(short[] dst, int dstOffset, int shortCount) {
-        addTaint(shortCount);
-        addTaint(dstOffset);
-        addTaint(dst[0]);
         Arrays.checkOffsetAndCount(dst.length, dstOffset, shortCount);
-        if(shortCount > remaining())        
-        {
-            BufferUnderflowException var77B0EAE3DCF68E57AAEF834AFBC7D762_1130688308 = new BufferUnderflowException();
-            var77B0EAE3DCF68E57AAEF834AFBC7D762_1130688308.addTaint(taint);
-            throw var77B0EAE3DCF68E57AAEF834AFBC7D762_1130688308;
-        } //End block
-for(int i = dstOffset;i < dstOffset + shortCount;++i)
-        {
+        if (shortCount > remaining()) {
+            throw new BufferUnderflowException();
+        }
+        for (int i = dstOffset; i < dstOffset + shortCount; ++i) {
             dst[i] = get();
-        } //End block
-ShortBuffer var72A74007B2BE62B849F475C7BDA4658B_1023722495 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_1023722495.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_1023722495;
-        // ---------- Original Method ----------
-        //Arrays.checkOffsetAndCount(dst.length, dstOffset, shortCount);
-        //if (shortCount > remaining()) {
-            //throw new BufferUnderflowException();
-        //}
-        //for (int i = dstOffset; i < dstOffset + shortCount; ++i) {
-            //dst[i] = get();
-        //}
-        //return this;
+        }
+        return this;
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Returns the short at the specified index; the position is not changed.
+     *
+     * @param index
+     *            the index, must not be negative and less than limit.
+     * @return a short at the specified index.
+     * @exception IndexOutOfBoundsException
+     *                if index is invalid.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.915 -0500", hash_original_method = "05444F99607C6D96174593B423EC0AF5", hash_generated_method = "D73DECCF622EA13439CE33FADFFBBC9A")
     public abstract short get(int index);
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.993 -0400", hash_original_method = "89C81F0EAF8FCCBFE368437CC8972DD7", hash_generated_method = "C14D6DF407414F1C0FD6991B0AA8A4DC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.916 -0500", hash_original_method = "89C81F0EAF8FCCBFE368437CC8972DD7", hash_generated_method = "9ABCCA1D4392A43B7EAC3713FD39CEA8")
     public final boolean hasArray() {
-        boolean var55B7C03E3C1EBABD22606AD17EE923C3_1355576793 = (protectedHasArray());
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_748895945 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_748895945;
-        // ---------- Original Method ----------
-        //return protectedHasArray();
+        return protectedHasArray();
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.993 -0400", hash_original_method = "371FAD0CF0C9AC8E78075F4EA52336BD", hash_generated_method = "CF4340CC0B3087A85DCEE20C818FD489")
+    /**
+     * Calculates this buffer's hash code from the remaining chars. The
+     * position, limit, capacity and mark don't affect the hash code.
+     *
+     * @return the hash code calculated from the remaining shorts.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.917 -0500", hash_original_method = "371FAD0CF0C9AC8E78075F4EA52336BD", hash_generated_method = "1E25806FB1ABDE5EAE09DE7EAB683BE8")
     @Override
-    public int hashCode() {
+public int hashCode() {
         int myPosition = position;
         int hash = 0;
-        while
-(myPosition < limit)        
-        {
+        while (myPosition < limit) {
             hash = hash + get(myPosition++);
-        } //End block
-        int var0800FC577294C34E0B28AD2839435945_1462197693 = (hash);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_487978537 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_487978537;
-        // ---------- Original Method ----------
-        //int myPosition = position;
-        //int hash = 0;
-        //while (myPosition < limit) {
-            //hash = hash + get(myPosition++);
-        //}
-        //return hash;
+        }
+        return hash;
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Indicates whether this buffer is direct. A direct buffer will try its
+     * best to take advantage of native memory APIs and it may not stay in the
+     * Java heap, so it is not affected by garbage collection.
+     * <p>
+     * A short buffer is direct if it is based on a byte buffer and the byte
+     * buffer is direct.
+     *
+     * @return {@code true} if this buffer is direct, {@code false} otherwise.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.918 -0500", hash_original_method = "2B5243B32EFBD4C87A9512D0DB4C2075", hash_generated_method = "FFC399E278E774AC5C957525392E5B9B")
     public abstract boolean isDirect();
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Returns the byte order used by this buffer when converting shorts from/to
+     * bytes.
+     * <p>
+     * If this buffer is not based on a byte buffer, then always return the
+     * platform's native byte order.
+     *
+     * @return the byte order used by this buffer when converting shorts from/to
+     *         bytes.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.919 -0500", hash_original_method = "2DA427F16EF708C854E7D0C984AF174B", hash_generated_method = "2BEDE1A9F84B5799B19A96DDBD47ABB8")
     public abstract ByteOrder order();
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Child class implements this method to realize {@code array()}.
+     *
+     * @return see {@code array()}
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.919 -0500", hash_original_method = "3F562962CA5DDB163573A642AC6C6B63", hash_generated_method = "BC17CA1F3E3A40289AD39B5388DC5B95")
     abstract short[] protectedArray();
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Child class implements this method to realize {@code arrayOffset()}.
+     *
+     * @return see {@code arrayOffset()}
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.920 -0500", hash_original_method = "9E60C7ACB7338AE2B38C3B6B2C95F717", hash_generated_method = "CF9DD77B0F7512BEF2952176796D1F74")
     abstract int protectedArrayOffset();
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Child class implements this method to realize {@code hasArray()}.
+     *
+     * @return see {@code hasArray()}
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.921 -0500", hash_original_method = "A4BB1744D6CB0B58561CD2147D66FE72", hash_generated_method = "6F3071F3A04983A3B50C9AF29E029577")
     abstract boolean protectedHasArray();
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Writes the given short to the current position and increases the position
+     * by 1.
+     *
+     * @param s
+     *            the short to write.
+     * @return this buffer.
+     * @exception BufferOverflowException
+     *                if position is equal or greater than limit.
+     * @exception ReadOnlyBufferException
+     *                if no changes may be made to the contents of this buffer.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.922 -0500", hash_original_method = "6570691A1175A820D63EC8E97F1555FC", hash_generated_method = "8E5DFF499737070AF5C1DC6B1E9F7C8A")
     public abstract ShortBuffer put(short s);
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.995 -0400", hash_original_method = "47A309F7D8F6DC58E14B9D901E5CA4EB", hash_generated_method = "0409FA7E1D5480CAEEBE89E8192671A5")
+    /**
+     * Writes shorts from the given short array to the current position and
+     * increases the position by the number of shorts written.
+     * <p>
+     * Calling this method has the same effect as
+     * {@code put(src, 0, src.length)}.
+     *
+     * @param src
+     *            the source short array.
+     * @return this buffer.
+     * @exception BufferOverflowException
+     *                if {@code remaining()} is less than {@code src.length}.
+     * @exception ReadOnlyBufferException
+     *                if no changes may be made to the contents of this buffer.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.922 -0500", hash_original_method = "47A309F7D8F6DC58E14B9D901E5CA4EB", hash_generated_method = "255F124D368E299A92A4C751EACEB9A6")
     public final ShortBuffer put(short[] src) {
-        addTaint(src[0]);
-ShortBuffer var7D505613BED257805463C43ADCB4DBAD_36542312 =         put(src, 0, src.length);
-        var7D505613BED257805463C43ADCB4DBAD_36542312.addTaint(taint);
-        return var7D505613BED257805463C43ADCB4DBAD_36542312;
-        // ---------- Original Method ----------
-        //return put(src, 0, src.length);
+        return put(src, 0, src.length);
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.995 -0400", hash_original_method = "F4EA1FDC39DA95E004DECB204CC15A47", hash_generated_method = "54E797116F980CEA83F4EF535F282641")
+    /**
+     * Writes shorts from the given short array, starting from the specified
+     * offset, to the current position and increases the position by the number
+     * of shorts written.
+     *
+     * @param src
+     *            the source short array.
+     * @param srcOffset
+     *            the offset of short array, must not be negative and not
+     *            greater than {@code src.length}.
+     * @param shortCount
+     *            the number of shorts to write, must be no less than zero and
+     *            not greater than {@code src.length - srcOffset}.
+     * @return this buffer.
+     * @exception BufferOverflowException
+     *                if {@code remaining()} is less than {@code shortCount}.
+     * @exception IndexOutOfBoundsException
+     *                if either {@code srcOffset} or {@code shortCount} is invalid.
+     * @exception ReadOnlyBufferException
+     *                if no changes may be made to the contents of this buffer.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.923 -0500", hash_original_method = "F4EA1FDC39DA95E004DECB204CC15A47", hash_generated_method = "AF72556D5279A124D49614DCE6B0133C")
     public ShortBuffer put(short[] src, int srcOffset, int shortCount) {
-        addTaint(shortCount);
-        addTaint(srcOffset);
-        addTaint(src[0]);
         Arrays.checkOffsetAndCount(src.length, srcOffset, shortCount);
-        if(shortCount > remaining())        
-        {
-            BufferOverflowException var773478A23217201B18B531915D367F31_1871680638 = new BufferOverflowException();
-            var773478A23217201B18B531915D367F31_1871680638.addTaint(taint);
-            throw var773478A23217201B18B531915D367F31_1871680638;
-        } //End block
-for(int i = srcOffset;i < srcOffset + shortCount;++i)
-        {
+        if (shortCount > remaining()) {
+            throw new BufferOverflowException();
+        }
+        for (int i = srcOffset; i < srcOffset + shortCount; ++i) {
             put(src[i]);
-        } //End block
-ShortBuffer var72A74007B2BE62B849F475C7BDA4658B_1524953398 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_1524953398.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_1524953398;
-        // ---------- Original Method ----------
-        //Arrays.checkOffsetAndCount(src.length, srcOffset, shortCount);
-        //if (shortCount > remaining()) {
-            //throw new BufferOverflowException();
-        //}
-        //for (int i = srcOffset; i < srcOffset + shortCount; ++i) {
-            //put(src[i]);
-        //}
-        //return this;
+        }
+        return this;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.996 -0400", hash_original_method = "1D8FC7647B57D46D94B3AA0BA31269DF", hash_generated_method = "4D66E4039BDF4A805C4C77C62C1260CA")
+    /**
+     * Writes all the remaining shorts of the {@code src} short buffer to this
+     * buffer's current position, and increases both buffers' position by the
+     * number of shorts copied.
+     *
+     * @param src
+     *            the source short buffer.
+     * @return this buffer.
+     * @exception BufferOverflowException
+     *                if {@code src.remaining()} is greater than this buffer's
+     *                {@code remaining()}.
+     * @exception IllegalArgumentException
+     *                if {@code src} is this buffer.
+     * @exception ReadOnlyBufferException
+     *                if no changes may be made to the contents of this buffer.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.924 -0500", hash_original_method = "1D8FC7647B57D46D94B3AA0BA31269DF", hash_generated_method = "35991EB3AB7828C2B83FF11FFF427C24")
     public ShortBuffer put(ShortBuffer src) {
-        addTaint(src.getTaint());
-        if(src == this)        
-        {
-            IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_1713868047 = new IllegalArgumentException();
-            var5783EF97022AA508B74A1E3EA38534AF_1713868047.addTaint(taint);
-            throw var5783EF97022AA508B74A1E3EA38534AF_1713868047;
-        } //End block
-        if(src.remaining() > remaining())        
-        {
-            BufferOverflowException var773478A23217201B18B531915D367F31_1523585618 = new BufferOverflowException();
-            var773478A23217201B18B531915D367F31_1523585618.addTaint(taint);
-            throw var773478A23217201B18B531915D367F31_1523585618;
-        } //End block
+        if (src == this) {
+            throw new IllegalArgumentException();
+        }
+        if (src.remaining() > remaining()) {
+            throw new BufferOverflowException();
+        }
         short[] contents = new short[src.remaining()];
         src.get(contents);
         put(contents);
-ShortBuffer var72A74007B2BE62B849F475C7BDA4658B_1156442666 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_1156442666.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_1156442666;
-        // ---------- Original Method ----------
-        //if (src == this) {
-            //throw new IllegalArgumentException();
-        //}
-        //if (src.remaining() > remaining()) {
-            //throw new BufferOverflowException();
-        //}
-        //short[] contents = new short[src.remaining()];
-        //src.get(contents);
-        //put(contents);
-        //return this;
+        return this;
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Writes a short to the specified index of this buffer; the position is not
+     * changed.
+     *
+     * @param index
+     *            the index, must not be negative and less than the limit.
+     * @param s
+     *            the short to write.
+     * @return this buffer.
+     * @exception IndexOutOfBoundsException
+     *                if index is invalid.
+     * @exception ReadOnlyBufferException
+     *                if no changes may be made to the contents of this buffer.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.925 -0500", hash_original_method = "97F479E63BAAF12D41496325BCF680F5", hash_generated_method = "5A18E9665F277D2C4C54F5FC31387C82")
     public abstract ShortBuffer put(int index, short s);
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Returns a sliced buffer that shares its content with this buffer.
+     * <p>
+     * The sliced buffer's capacity will be this buffer's {@code remaining()},
+     * and its zero position will correspond to this buffer's current position.
+     * The new buffer's position will be 0, limit will be its capacity, and its
+     * mark is cleared. The new buffer's read-only property and byte order are
+     * same as this buffer's.
+     * <p>
+     * The new buffer shares its content with this buffer, which means either
+     * buffer's change of content will be visible to the other. The two buffer's
+     * position, limit and mark are independent.
+     *
+     * @return a sliced buffer that shares its content with this buffer.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.926 -0500", hash_original_method = "5A4FD88E954DBDA74D41F1E3D86F73D1", hash_generated_method = "72EF6F8F265AB024F008383B6BE0397F")
     public abstract ShortBuffer slice();
 
     

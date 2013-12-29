@@ -1,6 +1,8 @@
 package com.android.i18n.phonenumbers.geocoding;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.ObjectInput;
@@ -14,93 +16,104 @@ import java.util.TreeSet;
 
 
 abstract class AreaCodeMapStorageStrategy {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.448 -0400", hash_original_field = "69F496FCE87C6BC7DC2D0257BB43A268", hash_generated_field = "A8A65EF4F8315577299BC66787FEAF93")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:47.910 -0500", hash_original_field = "00F1381F548F3A5295097F2401ADFC52", hash_generated_field = "A8A65EF4F8315577299BC66787FEAF93")
 
-    protected int numOfEntries = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.448 -0400", hash_original_field = "EB8252013E98AADDBA6044825CEFC6EF", hash_generated_field = "117D2F6B6B0CD3E3A98E981A0FE51C20")
+  protected int numOfEntries = 0;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:47.910 -0500", hash_original_field = "F27B9F27D291E9C70B7132D7F839782A", hash_generated_field = "117D2F6B6B0CD3E3A98E981A0FE51C20")
 
-    protected final TreeSet<Integer> possibleLengths = new TreeSet<Integer>();
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.449 -0400", hash_original_method = "552FE922C6186E104B342E1C364AC348", hash_generated_method = "78F311E4855CBA2D4A156E20751234C3")
-    public  AreaCodeMapStorageStrategy() {
-        // ---------- Original Method ----------
-    }
+  protected final TreeSet<Integer> possibleLengths = new TreeSet<Integer>();
 
-    
-    @DSModeled(DSC.SAFE)
+  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:47.911 -0500", hash_original_method = "552FE922C6186E104B342E1C364AC348", hash_generated_method = "23406EDC9C84BF42534B33340C50DEFB")
+    public AreaCodeMapStorageStrategy() {}
+
+  /**
+   * Returns whether the underlying implementation of this abstract class is flyweight.
+   * It is expected to be flyweight if it implements the {@code FlyweightMapStorage} class.
+   *
+   * @return  whether the underlying implementation of this abstract class is flyweight
+   */
+  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:47.912 -0500", hash_original_method = "8C3DF0E4670B1B720EA4BF046177B5B2", hash_generated_method = "CB033832448114A4BA252F7449E19AB9")
     public abstract boolean isFlyweight();
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.449 -0400", hash_original_method = "67028691C3A13A3B8C6995CB53BC17C2", hash_generated_method = "71FFF1C3B61284938355ABE6E576A614")
+  /**
+   * @return  the number of entries contained in the area code map
+   */
+  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:47.913 -0500", hash_original_method = "67028691C3A13A3B8C6995CB53BC17C2", hash_generated_method = "EFB1CF74F5BD00D02AAAED4029EEF8F9")
     public int getNumOfEntries() {
-        int var881EB9BA7A3B2170EFED470F473D8D5B_1933079006 = (numOfEntries);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_88253866 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_88253866;
-        // ---------- Original Method ----------
-        //return numOfEntries;
-    }
+    return numOfEntries;
+  }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.450 -0400", hash_original_method = "9B53A77A841456041603E3D119D30EB4", hash_generated_method = "7727A06155BF871AA5728A790B0D6566")
+  /**
+   * @return  the set containing the possible lengths of prefixes
+   */
+  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:47.913 -0500", hash_original_method = "9B53A77A841456041603E3D119D30EB4", hash_generated_method = "E9E126B336B9EFA67D1946B657F3667B")
     public TreeSet<Integer> getPossibleLengths() {
-TreeSet<Integer> var439F4A98FBDEDBC4D02BC8BC3F605BAF_598450754 =         possibleLengths;
-        var439F4A98FBDEDBC4D02BC8BC3F605BAF_598450754.addTaint(taint);
-        return var439F4A98FBDEDBC4D02BC8BC3F605BAF_598450754;
-        // ---------- Original Method ----------
-        //return possibleLengths;
-    }
+    return possibleLengths;
+  }
 
-    
-    @DSModeled(DSC.SAFE)
+  /**
+   * Gets the phone number prefix located at the provided {@code index}.
+   *
+   * @param index  the index of the prefix that needs to be returned
+   * @return  the phone number prefix at the provided index
+   */
+  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:47.914 -0500", hash_original_method = "CC816A42DE056FA45F4750DD0DF8C50A", hash_generated_method = "D5C1E20A41D3068C1E34614A380A7FF3")
     public abstract int getPrefix(int index);
 
-    
-    @DSModeled(DSC.SAFE)
+  /**
+   * Gets the description corresponding to the phone number prefix located at the provided {@code
+   * index}.
+   *
+   * @param index  the index of the phone number prefix that needs to be returned
+   * @return  the description corresponding to the phone number prefix at the provided index
+   */
+  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:47.915 -0500", hash_original_method = "41C6F1984B61B370D6BEF5F1720FA001", hash_generated_method = "166E43DDF270AD32066C2CB4EFA87421")
     public abstract String getDescription(int index);
 
-    
-    @DSModeled(DSC.SAFE)
+  /**
+   * Sets the internal state of the underlying storage implementation from the provided {@code
+   * sortedAreaCodeMap} that maps phone number prefixes to description strings.
+   *
+   * @param sortedAreaCodeMap  a sorted map that maps phone number prefixes including country
+   *    calling code to description strings
+   */
+  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:47.916 -0500", hash_original_method = "63AE65579CA13AF1E8A6BECB2C0ECB78", hash_generated_method = "5B489F00212DEF5896651E77C051F3BB")
     public abstract void readFromSortedMap(SortedMap<Integer, String> sortedAreaCodeMap);
 
-    
-    @DSModeled(DSC.SAFE)
+  /**
+   * Sets the internal state of the underlying storage implementation reading the provided {@code
+   * objectInput}.
+   *
+   * @param objectInput  the object input stream from which the area code map is read
+   * @throws IOException  if an error occurred reading the provided input stream
+   */
+  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:47.917 -0500", hash_original_method = "6FE639BDF297291E4A948A266A0FB6FB", hash_generated_method = "7C97ACD2BCD1119C2251275D5760D253")
     public abstract void readExternal(ObjectInput objectInput) throws IOException;
 
-    
-    @DSModeled(DSC.SAFE)
+  /**
+   * Writes the internal state of the underlying storage implementation to the provided {@code
+   * objectOutput}.
+   *
+   * @param objectOutput  the object output stream to which the area code map is written
+   * @throws IOException  if an error occurred writing to the provided output stream
+   */
+  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:47.917 -0500", hash_original_method = "78E7DE830841F23017EDA8BF3FC41760", hash_generated_method = "B4A3118C40AE051E6D6353D22AA49DED")
     public abstract void writeExternal(ObjectOutput objectOutput) throws IOException;
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.453 -0400", hash_original_method = "4D596518D97EDAAEB28E920BC89837B3", hash_generated_method = "92E410D9085EAE1E50FAC4EE2C40DB22")
+  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:47.918 -0500", hash_original_method = "4D596518D97EDAAEB28E920BC89837B3", hash_generated_method = "8A1AAC2535CE3F088536231CA78CCA30")
     @Override
-    public String toString() {
-        StringBuilder output = new StringBuilder();
-        int numOfEntries = getNumOfEntries();
-for(int i = 0;i < numOfEntries;i++)
-        {
-            output.append(getPrefix(i));
-            output.append("|");
-            output.append(getDescription(i));
-            output.append("\n");
-        } //End block
-String varEBF0387156E2D98F471F997058C674A5_1034171401 =         output.toString();
-        varEBF0387156E2D98F471F997058C674A5_1034171401.addTaint(taint);
-        return varEBF0387156E2D98F471F997058C674A5_1034171401;
-        // ---------- Original Method ----------
-        //StringBuilder output = new StringBuilder();
-        //int numOfEntries = getNumOfEntries();
-        //for (int i = 0; i < numOfEntries; i++) {
-      //output.append(getPrefix(i));
-      //output.append("|");
-      //output.append(getDescription(i));
-      //output.append("\n");
-    //}
-        //return output.toString();
+public String toString() {
+    StringBuilder output = new StringBuilder();
+    int numOfEntries = getNumOfEntries();
+
+    for (int i = 0; i < numOfEntries; i++) {
+      output.append(getPrefix(i));
+      output.append("|");
+      output.append(getDescription(i));
+      output.append("\n");
     }
+    return output.toString();
+  }
 
     
 }

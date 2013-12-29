@@ -1,6 +1,8 @@
 package org.apache.harmony.xnet.provider.jsse;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -12,39 +14,25 @@ import libcore.io.Streams;
 
 
 public class SSLSocketOutputStream extends OutputStream {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.582 -0400", hash_original_field = "72122CE96BFEC66E2396D2E25225D70A", hash_generated_field = "FC855125850BB72054AAC77176B58208")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:12.538 -0500", hash_original_field = "09345289E0F08ED39AA376881C5DC943", hash_generated_field = "FC855125850BB72054AAC77176B58208")
 
-    private SSLSocketImpl owner;
-    
-        @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.583 -0400", hash_original_method = "A41E4766E55868182E82056D4801E8D9", hash_generated_method = "CB52A3C219C1E690A6A134F779FCC9DD")
-    protected  SSLSocketOutputStream(SSLSocketImpl owner) {
+    private  SSLSocketImpl owner;
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:12.538 -0500", hash_original_method = "A41E4766E55868182E82056D4801E8D9", hash_generated_method = "04B6ABE5C4995B5869C51820FCCA2F91")
+    protected SSLSocketOutputStream(SSLSocketImpl owner) {
         this.owner = owner;
-        // ---------- Original Method ----------
-        //this.owner = owner;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.583 -0400", hash_original_method = "C558B2B88CBF261C0FBBE5741F96019C", hash_generated_method = "A356673BF18A00CFAC4BA54C535E65CE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:12.539 -0500", hash_original_method = "C558B2B88CBF261C0FBBE5741F96019C", hash_generated_method = "23C1BFB0F79EE3063A60285E2CC71033")
     @Override
-    public void write(int b) throws IOException {
-        addTaint(b);
+public void write(int b) throws IOException {
         Streams.writeSingleByte(this, b);
-        // ---------- Original Method ----------
-        //Streams.writeSingleByte(this, b);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.583 -0400", hash_original_method = "A06DCDC39D6B1A9C644C2D57A083C16C", hash_generated_method = "F51E4AFD402F18AF1810FCDF22DCEC08")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:12.540 -0500", hash_original_method = "A06DCDC39D6B1A9C644C2D57A083C16C", hash_generated_method = "899EF57D5285130E25B1B9F4EB64F8B2")
     @Override
-    public void write(byte[] b, int off, int len) throws IOException {
-        addTaint(len);
-        addTaint(off);
-        addTaint(b[0]);
+public void write(byte[] b, int off, int len) throws IOException {
         owner.writeAppData(b, off, len);
-        // ---------- Original Method ----------
-        //owner.writeAppData(b, off, len);
     }
 
     

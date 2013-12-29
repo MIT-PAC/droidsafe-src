@@ -1,6 +1,8 @@
 package java.io;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Arrays;
 
@@ -9,69 +11,91 @@ import java.util.Arrays;
 
 
 public abstract class OutputStream implements Closeable, Flushable {
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.069 -0400", hash_original_method = "5995752F91892DAFA432449AA7A2BB76", hash_generated_method = "2C31F8243BA27BC77BDF1F7D706C34CB")
-    @DSModeled(DSC.SAFE)
-    public  OutputStream() {
-        // ---------- Original Method ----------
+
+    /**
+     * Default constructor.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.110 -0500", hash_original_method = "5995752F91892DAFA432449AA7A2BB76", hash_generated_method = "1D6DCD4069A5099E588E31C568880D1D")
+    public OutputStream() {
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.069 -0400", hash_original_method = "403A1214A00C2300123B494982A31042", hash_generated_method = "74372D27DE595543DBC3B69FBB71373E")
+    /**
+     * Closes this stream. Implementations of this method should free any
+     * resources used by the stream. This implementation does nothing.
+     *
+     * @throws IOException
+     *             if an error occurs while closing this stream.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.111 -0500", hash_original_method = "403A1214A00C2300123B494982A31042", hash_generated_method = "BDB80A0BA0CE964F390B74B4F78F39D0")
     public void close() throws IOException {
-        // ---------- Original Method ----------
+        /* empty */
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.069 -0400", hash_original_method = "1521992F8E9F05A9FDFB0E59716E3E93", hash_generated_method = "05987DDDCDD862E2FBC121135A80FA74")
+    /**
+     * Flushes this stream. Implementations of this method should ensure that
+     * any buffered data is written out. This implementation does nothing.
+     *
+     * @throws IOException
+     *             if an error occurs while flushing this stream.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.112 -0500", hash_original_method = "1521992F8E9F05A9FDFB0E59716E3E93", hash_generated_method = "243C0871CD5D1DDEC1C9766742E8A0B7")
     public void flush() throws IOException {
-        // ---------- Original Method ----------
+        /* empty */
     }
 
-    
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.070 -0400", hash_original_method = "773CDFC941DB5BD8F51FCC7460E1F3ED", hash_generated_method = "C874A8F3DD1DC4618E30BFCFA3F99F15")
+    /**
+     * Equivalent to {@code write(buffer, 0, buffer.length)}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.113 -0500", hash_original_method = "773CDFC941DB5BD8F51FCC7460E1F3ED", hash_generated_method = "227B669FDA8AD574341B08A5DD95557F")
     public void write(byte[] buffer) throws IOException {
-        addTaint(buffer[0]);
         write(buffer, 0, buffer.length);
-        // ---------- Original Method ----------
-        //write(buffer, 0, buffer.length);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.071 -0400", hash_original_method = "F6CDEA64748F80FE862CBAFFE4725DDE", hash_generated_method = "E5728D1F2D8DFD725F7F880C874F1A96")
+    /**
+     * Writes {@code count} bytes from the byte array {@code buffer} starting at
+     * position {@code offset} to this stream.
+     *
+     * @param buffer
+     *            the buffer to be written.
+     * @param offset
+     *            the start position in {@code buffer} from where to get bytes.
+     * @param count
+     *            the number of bytes from {@code buffer} to write to this
+     *            stream.
+     * @throws IOException
+     *             if an error occurs while writing to this stream.
+     * @throws IndexOutOfBoundsException
+     *             if {@code offset < 0} or {@code count < 0}, or if
+     *             {@code offset + count} is bigger than the length of
+     *             {@code buffer}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.114 -0500", hash_original_method = "F6CDEA64748F80FE862CBAFFE4725DDE", hash_generated_method = "CDD044E99B9A9B3DC054F6D500C9D2DA")
     public void write(byte[] buffer, int offset, int count) throws IOException {
-        addTaint(count);
-        addTaint(offset);
-        addTaint(buffer[0]);
         Arrays.checkOffsetAndCount(buffer.length, offset, count);
-for(int i = offset;i < offset + count;i++)
-        {
+        for (int i = offset; i < offset + count; i++) {
             write(buffer[i]);
-        } //End block
-        // ---------- Original Method ----------
-        //Arrays.checkOffsetAndCount(buffer.length, offset, count);
-        //for (int i = offset; i < offset + count; i++) {
-            //write(buffer[i]);
-        //}
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Writes a single byte to this stream. Only the least significant byte of
+     * the integer {@code oneByte} is written to the stream.
+     *
+     * @param oneByte
+     *            the byte to be written.
+     * @throws IOException
+     *             if an error occurs while writing to this stream.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.115 -0500", hash_original_method = "6F952A0997C9C7FC75CA00C51592E230", hash_generated_method = "EFF3C84F96B0F410A6246A434AA1C3DB")
     public abstract void write(int oneByte) throws IOException;
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.071 -0400", hash_original_method = "0FEA708DB7A5B3B6D16FEC9623D0EEF8", hash_generated_method = "B9162C3B7CDFDD8373475FD7D078C18F")
-     boolean checkError() {
-        boolean var68934A3E9455FA72420237EB05902327_1099637139 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_297607398 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_297607398;
-        // ---------- Original Method ----------
-        //return false;
+    /**
+     * Returns true if this writer has encountered and suppressed an error. Used
+     * by PrintStreams as an alternative to checked exceptions.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.116 -0500", hash_original_method = "0FEA708DB7A5B3B6D16FEC9623D0EEF8", hash_generated_method = "0FEA708DB7A5B3B6D16FEC9623D0EEF8")
+    boolean checkError() {
+        return false;
     }
 
     

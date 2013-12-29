@@ -1,6 +1,9 @@
 package android.view;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
+import android.util.Log;
 import droidsafe.annotations.*;
 import android.content.Context;
 import android.util.DisplayMetrics;
@@ -11,472 +14,11 @@ import android.util.FloatMath;
 
 
 public class ScaleGestureDetector {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.961 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
 
-    private Context mContext;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.961 -0400", hash_original_field = "9B3DD33B99719CE65C53FA6749E2AD69", hash_generated_field = "A08AF84037A8352C0A5AC97B5C4711DA")
-
-    private OnScaleGestureListener mListener;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.961 -0400", hash_original_field = "061B672487708A5F02C378E108FB2523", hash_generated_field = "503643741A4ED297FCB738F860325A5C")
-
-    private boolean mGestureInProgress;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.961 -0400", hash_original_field = "447D9F14ED3611B9294BA6E2AF3CD0C3", hash_generated_field = "3C7A422FE0E65BBDCD9090B91410FF41")
-
-    private MotionEvent mPrevEvent;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.961 -0400", hash_original_field = "382D89AF4BA3BBDD7BD85028FF0C04C2", hash_generated_field = "D61C81DE46CCD592C64D38B586C58E19")
-
-    private MotionEvent mCurrEvent;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.961 -0400", hash_original_field = "A0FE7B7E6572E9A5C03F808D583D21EF", hash_generated_field = "9E3ECCCE67853EF67D401BC85D54FCDD")
-
-    private float mFocusX;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.961 -0400", hash_original_field = "E371837A8119A3AB321FC558BC169293", hash_generated_field = "E01C42CAE2152A2827127C5E1618E0BF")
-
-    private float mFocusY;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.961 -0400", hash_original_field = "E0D70E96C315A6A926A5DF77407556F0", hash_generated_field = "9B5A74F081F5922B1785428D638AF7EB")
-
-    private float mPrevFingerDiffX;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.961 -0400", hash_original_field = "3BCD82D8995452F8C4D8BC4D6958AFA9", hash_generated_field = "A4ECFDC00DFED0488AC11C35F6454D1A")
-
-    private float mPrevFingerDiffY;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.961 -0400", hash_original_field = "D797CF4A75F206359DDA7851042405DE", hash_generated_field = "0084D8F5F5AEBC86A46E65C48DD6EDDA")
-
-    private float mCurrFingerDiffX;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.961 -0400", hash_original_field = "F613F042D8B78098BEAE14BEDF4D7F31", hash_generated_field = "F58F567C97D8A5647C27000A75D3AF16")
-
-    private float mCurrFingerDiffY;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.962 -0400", hash_original_field = "8E973CE13F974C6D66FFB6DCB3A83421", hash_generated_field = "933BC37DA68F2A67EB299CEE160CB2FB")
-
-    private float mCurrLen;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.962 -0400", hash_original_field = "CCB42BE0A7C21CD017DE96ACABD2762C", hash_generated_field = "1E334C6DA5FA5EB33F386FAD0E8F6E8B")
-
-    private float mPrevLen;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.962 -0400", hash_original_field = "43B25FDCBE078DC3DA65BC88CAA3AACD", hash_generated_field = "A57936439C19DE90F2AB86ED42237D31")
-
-    private float mScaleFactor;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.962 -0400", hash_original_field = "D54820A21CA16B0D6974C6228C51B34A", hash_generated_field = "4CF3DF6E70478D8056347848EFB18503")
-
-    private float mCurrPressure;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.962 -0400", hash_original_field = "95C49E098E3097DD95C24477EA21E4C5", hash_generated_field = "2E7516100A12B928A7F1D7C2C6815166")
-
-    private float mPrevPressure;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.962 -0400", hash_original_field = "D088DDA1C27B96429D7E4965433B26E2", hash_generated_field = "24C21D8C9544B70EF997F0DEE65D3C96")
-
-    private long mTimeDelta;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.962 -0400", hash_original_field = "7572292F9A0C0E3DA861F35B2F9EB690", hash_generated_field = "87E1CD70AA880AA0038E22EA3C795791")
-
-    private float mEdgeSlop;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.962 -0400", hash_original_field = "2FCB43D8487E22C85D26E570931ABDBA", hash_generated_field = "B70D199FA23802CA3820F738CE6BECA4")
-
-    private float mRightSlopEdge;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.962 -0400", hash_original_field = "9B40AAEFF1A30F2DB71620BF5079D6CB", hash_generated_field = "875320F67CC4A12055E0E780DF25AC3E")
-
-    private float mBottomSlopEdge;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.962 -0400", hash_original_field = "EE5535D441FD37F5C1D45D0EE2A9289A", hash_generated_field = "F35E4D613A73F5F87B9D2DA4EE86D79A")
-
-    private boolean mSloppyGesture;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.962 -0400", hash_original_field = "F0C1B8EC1E31EA252FC6496124D03A56", hash_generated_field = "D40C9FA5D0FB38FD10587BC7707BC6F3")
-
-    private boolean mInvalidGesture;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.962 -0400", hash_original_field = "716CFAB11C79FD5737D3D0DFD236254D", hash_generated_field = "5955F7D0EA4751A3620710E99C5064B8")
-
-    private int mActiveId0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.963 -0400", hash_original_field = "791345B6EFB2BD5450963ABCD5B9DACA", hash_generated_field = "6F4F186E958896A650E911389B88CCC0")
-
-    private int mActiveId1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.963 -0400", hash_original_field = "56B3830B6EF16818B0AACCAEE2BD5D01", hash_generated_field = "78AA2DF7FA2FB872FE42414156BB2883")
-
-    private boolean mActive0MostRecent;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.963 -0400", hash_original_field = "EFB0BA2843C7293EEB82F8592A2A0298", hash_generated_field = "69B49DB79681808A97D2CCE1BF25440C")
-
-    private final InputEventConsistencyVerifier mInputEventConsistencyVerifier = InputEventConsistencyVerifier.isInstrumentationEnabled() ?
-                    new InputEventConsistencyVerifier(this, 0) : null;
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.963 -0400", hash_original_method = "3F765CE5C3F1587A362200597A84993F", hash_generated_method = "A3091C337EBF2CBE7B369D82A6F832E3")
-    public  ScaleGestureDetector(Context context, OnScaleGestureListener listener) {
-        ViewConfiguration config = ViewConfiguration.get(context);
-        mContext = context;
-        mListener = listener;
-        mEdgeSlop = config.getScaledEdgeSlop();
-        // ---------- Original Method ----------
-        //ViewConfiguration config = ViewConfiguration.get(context);
-        //mContext = context;
-        //mListener = listener;
-        //mEdgeSlop = config.getScaledEdgeSlop();
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.980 -0400", hash_original_method = "3D0907AC17DE553CA8E37D6A8A0F580A", hash_generated_method = "9A02A0E103E06C443DB7067304ABEE43")
-    public boolean onTouchEvent(MotionEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        if(mInputEventConsistencyVerifier != null)        
-        {
-            mInputEventConsistencyVerifier.onTouchEvent(event, 0);
-        } //End block
-        final int action = event.getActionMasked();
-        if(action == MotionEvent.ACTION_DOWN)        
-        {
-            reset();
-        } //End block
-        boolean handled = true;
-        if(mInvalidGesture)        
-        {
-            handled = false;
-        } //End block
-        else
-        if(!mGestureInProgress)        
-        {
-switch(action){
-            case MotionEvent.ACTION_DOWN:
-            {
-                mActiveId0 = event.getPointerId(0);
-                mActive0MostRecent = true;
-            } //End block
-            break;
-            case MotionEvent.ACTION_UP:
-            reset();
-            break;
-            case MotionEvent.ACTION_POINTER_DOWN:
-            {
-                DisplayMetrics metrics = mContext.getResources().getDisplayMetrics();
-                mRightSlopEdge = metrics.widthPixels - mEdgeSlop;
-                mBottomSlopEdge = metrics.heightPixels - mEdgeSlop;
-                if(mPrevEvent != null)                
-                mPrevEvent.recycle();
-                mPrevEvent = MotionEvent.obtain(event);
-                mTimeDelta = 0;
-                int index1 = event.getActionIndex();
-                int index0 = event.findPointerIndex(mActiveId0);
-                mActiveId1 = event.getPointerId(index1);
-                if(index0 < 0 || index0 == index1)                
-                {
-                    index0 = findNewActiveIndex(event, index0 == index1 ? -1 : mActiveId1, index0);
-                    mActiveId0 = event.getPointerId(index0);
-                } //End block
-                mActive0MostRecent = false;
-                setContext(event);
-                final float edgeSlop = mEdgeSlop;
-                final float rightSlop = mRightSlopEdge;
-                final float bottomSlop = mBottomSlopEdge;
-                float x0 = getRawX(event, index0);
-                float y0 = getRawY(event, index0);
-                float x1 = getRawX(event, index1);
-                float y1 = getRawY(event, index1);
-                boolean p0sloppy = x0 < edgeSlop || y0 < edgeSlop
-                        || x0 > rightSlop || y0 > bottomSlop;
-                boolean p1sloppy = x1 < edgeSlop || y1 < edgeSlop
-                        || x1 > rightSlop || y1 > bottomSlop;
-                if(p0sloppy && p1sloppy)                
-                {
-                    mFocusX = -1;
-                    mFocusY = -1;
-                    mSloppyGesture = true;
-                } //End block
-                else
-                if(p0sloppy)                
-                {
-                    mFocusX = event.getX(index1);
-                    mFocusY = event.getY(index1);
-                    mSloppyGesture = true;
-                } //End block
-                else
-                if(p1sloppy)                
-                {
-                    mFocusX = event.getX(index0);
-                    mFocusY = event.getY(index0);
-                    mSloppyGesture = true;
-                } //End block
-                else
-                {
-                    mSloppyGesture = false;
-                    mGestureInProgress = mListener.onScaleBegin(this);
-                } //End block
-            } //End block
-            break;
-            case MotionEvent.ACTION_MOVE:
-            if(mSloppyGesture)            
-            {
-                final float edgeSlop = mEdgeSlop;
-                final float rightSlop = mRightSlopEdge;
-                final float bottomSlop = mBottomSlopEdge;
-                int index0 = event.findPointerIndex(mActiveId0);
-                int index1 = event.findPointerIndex(mActiveId1);
-                float x0 = getRawX(event, index0);
-                float y0 = getRawY(event, index0);
-                float x1 = getRawX(event, index1);
-                float y1 = getRawY(event, index1);
-                boolean p0sloppy = x0 < edgeSlop || y0 < edgeSlop
-                            || x0 > rightSlop || y0 > bottomSlop;
-                boolean p1sloppy = x1 < edgeSlop || y1 < edgeSlop
-                            || x1 > rightSlop || y1 > bottomSlop;
-                if(p0sloppy)                
-                {
-                    int index = findNewActiveIndex(event, mActiveId1, index0);
-                    if(index >= 0)                    
-                    {
-                        index0 = index;
-                        mActiveId0 = event.getPointerId(index);
-                        x0 = getRawX(event, index);
-                        y0 = getRawY(event, index);
-                        p0sloppy = false;
-                    } //End block
-                } //End block
-                if(p1sloppy)                
-                {
-                    int index = findNewActiveIndex(event, mActiveId0, index1);
-                    if(index >= 0)                    
-                    {
-                        index1 = index;
-                        mActiveId1 = event.getPointerId(index);
-                        x1 = getRawX(event, index);
-                        y1 = getRawY(event, index);
-                        p1sloppy = false;
-                    } //End block
-                } //End block
-                if(p0sloppy && p1sloppy)                
-                {
-                    mFocusX = -1;
-                    mFocusY = -1;
-                } //End block
-                else
-                if(p0sloppy)                
-                {
-                    mFocusX = event.getX(index1);
-                    mFocusY = event.getY(index1);
-                } //End block
-                else
-                if(p1sloppy)                
-                {
-                    mFocusX = event.getX(index0);
-                    mFocusY = event.getY(index0);
-                } //End block
-                else
-                {
-                    mSloppyGesture = false;
-                    mGestureInProgress = mListener.onScaleBegin(this);
-                } //End block
-            } //End block
-            break;
-            case MotionEvent.ACTION_POINTER_UP:
-            if(mSloppyGesture)            
-            {
-                final int pointerCount = event.getPointerCount();
-                final int actionIndex = event.getActionIndex();
-                final int actionId = event.getPointerId(actionIndex);
-                if(pointerCount > 2)                
-                {
-                    if(actionId == mActiveId0)                    
-                    {
-                        final int newIndex = findNewActiveIndex(event, mActiveId1, actionIndex);
-                        if(newIndex >= 0)                        
-                        mActiveId0 = event.getPointerId(newIndex);
-                    } //End block
-                    else
-                    if(actionId == mActiveId1)                    
-                    {
-                        final int newIndex = findNewActiveIndex(event, mActiveId0, actionIndex);
-                        if(newIndex >= 0)                        
-                        mActiveId1 = event.getPointerId(newIndex);
-                    } //End block
-                } //End block
-                else
-                {
-                    final int index = event.findPointerIndex(actionId == mActiveId0 ?
-                                mActiveId1 : mActiveId0);
-                    if(index < 0)                    
-                    {
-                        mInvalidGesture = true;
-                        if(mGestureInProgress)                        
-                        {
-                            mListener.onScaleEnd(this);
-                        } //End block
-                        boolean var68934A3E9455FA72420237EB05902327_383414207 = (false);
-                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_79409492 = getTaintBoolean();
-                        return var84E2C64F38F78BA3EA5C905AB5A2DA27_79409492;
-                    } //End block
-                    mActiveId0 = event.getPointerId(index);
-                    mActive0MostRecent = true;
-                    mActiveId1 = -1;
-                    mFocusX = event.getX(index);
-                    mFocusY = event.getY(index);
-                } //End block
-            } //End block
-            break;
-}
-        } //End block
-        else
-        {
-switch(action){
-            case MotionEvent.ACTION_POINTER_DOWN:
-            {
-                mListener.onScaleEnd(this);
-                final int oldActive0 = mActiveId0;
-                final int oldActive1 = mActiveId1;
-                reset();
-                mPrevEvent = MotionEvent.obtain(event);
-                mActiveId0 = mActive0MostRecent ? oldActive0 : oldActive1;
-                mActiveId1 = event.getPointerId(event.getActionIndex());
-                mActive0MostRecent = false;
-                int index0 = event.findPointerIndex(mActiveId0);
-                if(index0 < 0 || mActiveId0 == mActiveId1)                
-                {
-                    index0 = findNewActiveIndex(event,
-                                mActiveId0 == mActiveId1 ? -1 : mActiveId1, index0);
-                    mActiveId0 = event.getPointerId(index0);
-                } //End block
-                setContext(event);
-                mGestureInProgress = mListener.onScaleBegin(this);
-            } //End block
-            break;
-            case MotionEvent.ACTION_POINTER_UP:
-            {
-                final int pointerCount = event.getPointerCount();
-                final int actionIndex = event.getActionIndex();
-                final int actionId = event.getPointerId(actionIndex);
-                boolean gestureEnded = false;
-                if(pointerCount > 2)                
-                {
-                    if(actionId == mActiveId0)                    
-                    {
-                        final int newIndex = findNewActiveIndex(event, mActiveId1, actionIndex);
-                        if(newIndex >= 0)                        
-                        {
-                            mListener.onScaleEnd(this);
-                            mActiveId0 = event.getPointerId(newIndex);
-                            mActive0MostRecent = true;
-                            mPrevEvent = MotionEvent.obtain(event);
-                            setContext(event);
-                            mGestureInProgress = mListener.onScaleBegin(this);
-                        } //End block
-                        else
-                        {
-                            gestureEnded = true;
-                        } //End block
-                    } //End block
-                    else
-                    if(actionId == mActiveId1)                    
-                    {
-                        final int newIndex = findNewActiveIndex(event, mActiveId0, actionIndex);
-                        if(newIndex >= 0)                        
-                        {
-                            mListener.onScaleEnd(this);
-                            mActiveId1 = event.getPointerId(newIndex);
-                            mActive0MostRecent = false;
-                            mPrevEvent = MotionEvent.obtain(event);
-                            setContext(event);
-                            mGestureInProgress = mListener.onScaleBegin(this);
-                        } //End block
-                        else
-                        {
-                            gestureEnded = true;
-                        } //End block
-                    } //End block
-                    mPrevEvent.recycle();
-                    mPrevEvent = MotionEvent.obtain(event);
-                    setContext(event);
-                } //End block
-                else
-                {
-                    gestureEnded = true;
-                } //End block
-                if(gestureEnded)                
-                {
-                    setContext(event);
-                    final int activeId = actionId == mActiveId0 ? mActiveId1 : mActiveId0;
-                    final int index = event.findPointerIndex(activeId);
-                    mFocusX = event.getX(index);
-                    mFocusY = event.getY(index);
-                    mListener.onScaleEnd(this);
-                    reset();
-                    mActiveId0 = activeId;
-                    mActive0MostRecent = true;
-                } //End block
-            } //End block
-            break;
-            case MotionEvent.ACTION_CANCEL:
-            mListener.onScaleEnd(this);
-            reset();
-            break;
-            case MotionEvent.ACTION_UP:
-            reset();
-            break;
-            case MotionEvent.ACTION_MOVE:
-            {
-                setContext(event);
-                if(mCurrPressure / mPrevPressure > PRESSURE_THRESHOLD)                
-                {
-                    final boolean updatePrevious = mListener.onScale(this);
-                    if(updatePrevious)                    
-                    {
-                        mPrevEvent.recycle();
-                        mPrevEvent = MotionEvent.obtain(event);
-                    } //End block
-                } //End block
-            } //End block
-            break;
-}
-        } //End block
-        if(!handled && mInputEventConsistencyVerifier != null)        
-        {
-            mInputEventConsistencyVerifier.onUnhandledEvent(event, 0);
-        } //End block
-        boolean var98F0599AF776A1FE4101C199A40EEB8F_1407856559 = (handled);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1991433005 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1991433005;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.989 -0400", hash_original_method = "26EE043A8FDD34A9021E8F106FD508B5", hash_generated_method = "6572947CD97A8E41CCE66FB387BDB0A4")
-    private int findNewActiveIndex(MotionEvent ev, int otherActiveId, int oldIndex) {
-        addTaint(oldIndex);
-        addTaint(otherActiveId);
-        addTaint(ev.getTaint());
-        final int pointerCount = ev.getPointerCount();
-        final int otherActiveIndex = ev.findPointerIndex(otherActiveId);
-        int newActiveIndex = -1;
-for(int i = 0;i < pointerCount;i++)
-        {
-            if(i != oldIndex && i != otherActiveIndex)            
-            {
-                final float edgeSlop = mEdgeSlop;
-                final float rightSlop = mRightSlopEdge;
-                final float bottomSlop = mBottomSlopEdge;
-                float x = getRawX(ev, i);
-                float y = getRawY(ev, i);
-                if(x >= edgeSlop && y >= edgeSlop && x <= rightSlop && y <= bottomSlop)                
-                {
-                    newActiveIndex = i;
-                    break;
-                } //End block
-            } //End block
-        } //End block
-        int var211F54CDFC9A5C3404569D77056CA9F3_1791627993 = (newActiveIndex);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_770927809 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_770927809;
-        // ---------- Original Method ----------
-        //final int pointerCount = ev.getPointerCount();
-        //final int otherActiveIndex = ev.findPointerIndex(otherActiveId);
-        //int newActiveIndex = -1;
-        //for (int i = 0; i < pointerCount; i++) {
-            //if (i != oldIndex && i != otherActiveIndex) {
-                //final float edgeSlop = mEdgeSlop;
-                //final float rightSlop = mRightSlopEdge;
-                //final float bottomSlop = mBottomSlopEdge;
-                //float x = getRawX(ev, i);
-                //float y = getRawY(ev, i);
-                //if (x >= edgeSlop && y >= edgeSlop && x <= rightSlop && y <= bottomSlop) {
-                    //newActiveIndex = i;
-                    //break;
-                //}
-            //}
-        //}
-        //return newActiveIndex;
-    }
-
-    
-    @DSModeled(DSC.BAN)
+    /**
+     * MotionEvent has no getRawX(int) method; simulate it pending future API approval.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.169 -0500", hash_original_method = "1C74B9CEBA7069C1C46FE5AC2377DD74", hash_generated_method = "9F535709078E10633F597DAC5E474805")
     private static float getRawX(MotionEvent event, int pointerIndex) {
         if (pointerIndex < 0) return Float.MIN_VALUE;
         if (pointerIndex == 0) return event.getRawX();
@@ -484,41 +26,475 @@ for(int i = 0;i < pointerCount;i++)
         return event.getX(pointerIndex) + offset;
     }
 
-    
-    @DSModeled(DSC.BAN)
+    /**
+     * MotionEvent has no getRawY(int) method; simulate it pending future API approval.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.170 -0500", hash_original_method = "E9D933E20849778B1DB8C91D44A0DC56", hash_generated_method = "F03B96929C9C0CCA5FAA5D104052F336")
     private static float getRawY(MotionEvent event, int pointerIndex) {
         if (pointerIndex < 0) return Float.MIN_VALUE;
         if (pointerIndex == 0) return event.getRawY();
         float offset = event.getRawY() - event.getY();
         return event.getY(pointerIndex) + offset;
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.135 -0500", hash_original_field = "331FAAD620AC9265B21867D644F5430D", hash_generated_field = "4649FA3572602ADAEA386A657BBBCE55")
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.995 -0400", hash_original_method = "E851AC8F08388EEFFE10C17212886186", hash_generated_method = "CBDF072BFE5829B1D228F253F6D3C44C")
+    private static final String TAG = "ScaleGestureDetector";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.141 -0500", hash_original_field = "9C4324BCE05687C3ED02592173562D2E", hash_generated_field = "1E49C39436E310C8A58BEAD71FF9190C")
+
+    private static final float PRESSURE_THRESHOLD = 0.67f;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.142 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
+
+
+    private  Context mContext;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.143 -0500", hash_original_field = "3F9C288FC21567876B56BAC69B9C34B8", hash_generated_field = "A08AF84037A8352C0A5AC97B5C4711DA")
+
+    private  OnScaleGestureListener mListener;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.143 -0500", hash_original_field = "7B8F1FCB6755EB9F4128F6C80C41E76B", hash_generated_field = "503643741A4ED297FCB738F860325A5C")
+
+    private boolean mGestureInProgress;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.144 -0500", hash_original_field = "4B8A42063191A4133FB9114EC0E506C0", hash_generated_field = "3C7A422FE0E65BBDCD9090B91410FF41")
+
+
+    private MotionEvent mPrevEvent;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.145 -0500", hash_original_field = "8A847D642C38B926624E7F00D555AF79", hash_generated_field = "D61C81DE46CCD592C64D38B586C58E19")
+
+    private MotionEvent mCurrEvent;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.146 -0500", hash_original_field = "94A353B58E248D99854FB0B964DBEA35", hash_generated_field = "9E3ECCCE67853EF67D401BC85D54FCDD")
+
+
+    private float mFocusX;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.146 -0500", hash_original_field = "C5B54888D0BE6CAF4CFCD322A758FD24", hash_generated_field = "E01C42CAE2152A2827127C5E1618E0BF")
+
+    private float mFocusY;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.147 -0500", hash_original_field = "6A2E606F16606BEBBBD563985785B425", hash_generated_field = "9B5A74F081F5922B1785428D638AF7EB")
+
+    private float mPrevFingerDiffX;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.148 -0500", hash_original_field = "1CD2B9268AF4FD344C0A40D06A0B41F6", hash_generated_field = "A4ECFDC00DFED0488AC11C35F6454D1A")
+
+    private float mPrevFingerDiffY;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.149 -0500", hash_original_field = "720D2D06E2FA012FBA5AEE0A603ACCF2", hash_generated_field = "0084D8F5F5AEBC86A46E65C48DD6EDDA")
+
+    private float mCurrFingerDiffX;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.149 -0500", hash_original_field = "AA1A093EF49345E40EF3200E72F0BA11", hash_generated_field = "F58F567C97D8A5647C27000A75D3AF16")
+
+    private float mCurrFingerDiffY;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.150 -0500", hash_original_field = "F5488CDB40B0CEC78627A4C4216BC323", hash_generated_field = "933BC37DA68F2A67EB299CEE160CB2FB")
+
+    private float mCurrLen;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.151 -0500", hash_original_field = "656063DB55272F5CDDB664F6308EA24D", hash_generated_field = "1E334C6DA5FA5EB33F386FAD0E8F6E8B")
+
+    private float mPrevLen;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.152 -0500", hash_original_field = "8A96B400B2B68DBF7A24CC8C2559781A", hash_generated_field = "A57936439C19DE90F2AB86ED42237D31")
+
+    private float mScaleFactor;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.152 -0500", hash_original_field = "AF0D7C0AE11B112217FD68FBDF0169BB", hash_generated_field = "4CF3DF6E70478D8056347848EFB18503")
+
+    private float mCurrPressure;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.153 -0500", hash_original_field = "067AB454DC6546BF0AAE09FED310C1C4", hash_generated_field = "2E7516100A12B928A7F1D7C2C6815166")
+
+    private float mPrevPressure;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.154 -0500", hash_original_field = "491ED61B5F60945314E800AA8C3F920A", hash_generated_field = "24C21D8C9544B70EF997F0DEE65D3C96")
+
+    private long mTimeDelta;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.155 -0500", hash_original_field = "DE07563BC74B44DF2762265E237775A0", hash_generated_field = "87E1CD70AA880AA0038E22EA3C795791")
+
+
+    private  float mEdgeSlop;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.155 -0500", hash_original_field = "9E5157F61681DC41BED18235E2C2204F", hash_generated_field = "B70D199FA23802CA3820F738CE6BECA4")
+
+    private float mRightSlopEdge;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.156 -0500", hash_original_field = "F2C3FFABC6DD5CF680D9CFA9489D3CCA", hash_generated_field = "875320F67CC4A12055E0E780DF25AC3E")
+
+    private float mBottomSlopEdge;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.157 -0500", hash_original_field = "DD750ED63B618F89F0E77CC92C9092A1", hash_generated_field = "F35E4D613A73F5F87B9D2DA4EE86D79A")
+
+    private boolean mSloppyGesture;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.158 -0500", hash_original_field = "B6F9669B99FFE1AA1420470702A25CD8", hash_generated_field = "D40C9FA5D0FB38FD10587BC7707BC6F3")
+
+    private boolean mInvalidGesture;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.159 -0500", hash_original_field = "147B62ECF05DEB187E31C8B7B71FD38B", hash_generated_field = "5955F7D0EA4751A3620710E99C5064B8")
+
+    private int mActiveId0;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.162 -0500", hash_original_field = "3F16BBC27057A508129F78057C21D522", hash_generated_field = "6F4F186E958896A650E911389B88CCC0")
+
+    private int mActiveId1;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.162 -0500", hash_original_field = "4C5A26BE170ACACBA61C57BDCB2A51FD", hash_generated_field = "78AA2DF7FA2FB872FE42414156BB2883")
+
+    private boolean mActive0MostRecent;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.163 -0500", hash_original_field = "91D8782EBDEF9C65BF9D8D5A67EE9546", hash_generated_field = "69B49DB79681808A97D2CCE1BF25440C")
+
+    private final InputEventConsistencyVerifier mInputEventConsistencyVerifier =
+            InputEventConsistencyVerifier.isInstrumentationEnabled() ?
+                    new InputEventConsistencyVerifier(this, 0) : null;
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.164 -0500", hash_original_method = "3F765CE5C3F1587A362200597A84993F", hash_generated_method = "217CEF97C4071E1B88932ECA3337007E")
+    public ScaleGestureDetector(Context context, OnScaleGestureListener listener) {
+        ViewConfiguration config = ViewConfiguration.get(context);
+        mContext = context;
+        mListener = listener;
+        mEdgeSlop = config.getScaledEdgeSlop();
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.167 -0500", hash_original_method = "3D0907AC17DE553CA8E37D6A8A0F580A", hash_generated_method = "2899A9CAEC2BB20FA674AFA1FFAB3F59")
+    public boolean onTouchEvent(MotionEvent event) {
+        if (mInputEventConsistencyVerifier != null) {
+            mInputEventConsistencyVerifier.onTouchEvent(event, 0);
+        }
+
+        final int action = event.getActionMasked();
+
+        if (action == MotionEvent.ACTION_DOWN) {
+            reset(); // Start fresh
+        }
+
+        boolean handled = true;
+        if (mInvalidGesture) {
+            handled = false;
+        } else if (!mGestureInProgress) {
+            switch (action) {
+            case MotionEvent.ACTION_DOWN: {
+                mActiveId0 = event.getPointerId(0);
+                mActive0MostRecent = true;
+            }
+            break;
+
+            case MotionEvent.ACTION_UP:
+                reset();
+                break;
+
+            case MotionEvent.ACTION_POINTER_DOWN: {
+                // We have a new multi-finger gesture
+
+                // as orientation can change, query the metrics in touch down
+                DisplayMetrics metrics = mContext.getResources().getDisplayMetrics();
+                mRightSlopEdge = metrics.widthPixels - mEdgeSlop;
+                mBottomSlopEdge = metrics.heightPixels - mEdgeSlop;
+
+                if (mPrevEvent != null) mPrevEvent.recycle();
+                mPrevEvent = MotionEvent.obtain(event);
+                mTimeDelta = 0;
+
+                int index1 = event.getActionIndex();
+                int index0 = event.findPointerIndex(mActiveId0);
+                mActiveId1 = event.getPointerId(index1);
+                if (index0 < 0 || index0 == index1) {
+                    // Probably someone sending us a broken event stream.
+                    index0 = findNewActiveIndex(event, index0 == index1 ? -1 : mActiveId1, index0);
+                    mActiveId0 = event.getPointerId(index0);
+                }
+                mActive0MostRecent = false;
+
+                setContext(event);
+
+                // Check if we have a sloppy gesture. If so, delay
+                // the beginning of the gesture until we're sure that's
+                // what the user wanted. Sloppy gestures can happen if the
+                // edge of the user's hand is touching the screen, for example.
+                final float edgeSlop = mEdgeSlop;
+                final float rightSlop = mRightSlopEdge;
+                final float bottomSlop = mBottomSlopEdge;
+                float x0 = getRawX(event, index0);
+                float y0 = getRawY(event, index0);
+                float x1 = getRawX(event, index1);
+                float y1 = getRawY(event, index1);
+
+                boolean p0sloppy = x0 < edgeSlop || y0 < edgeSlop
+                        || x0 > rightSlop || y0 > bottomSlop;
+                boolean p1sloppy = x1 < edgeSlop || y1 < edgeSlop
+                        || x1 > rightSlop || y1 > bottomSlop;
+
+                if (p0sloppy && p1sloppy) {
+                    mFocusX = -1;
+                    mFocusY = -1;
+                    mSloppyGesture = true;
+                } else if (p0sloppy) {
+                    mFocusX = event.getX(index1);
+                    mFocusY = event.getY(index1);
+                    mSloppyGesture = true;
+                } else if (p1sloppy) {
+                    mFocusX = event.getX(index0);
+                    mFocusY = event.getY(index0);
+                    mSloppyGesture = true;
+                } else {
+                    mSloppyGesture = false;
+                    mGestureInProgress = mListener.onScaleBegin(this);
+                }
+            }
+            break;
+
+            case MotionEvent.ACTION_MOVE:
+                if (mSloppyGesture) {
+                    // Initiate sloppy gestures if we've moved outside of the slop area.
+                    final float edgeSlop = mEdgeSlop;
+                    final float rightSlop = mRightSlopEdge;
+                    final float bottomSlop = mBottomSlopEdge;
+                    int index0 = event.findPointerIndex(mActiveId0);
+                    int index1 = event.findPointerIndex(mActiveId1);
+
+                    float x0 = getRawX(event, index0);
+                    float y0 = getRawY(event, index0);
+                    float x1 = getRawX(event, index1);
+                    float y1 = getRawY(event, index1);
+
+                    boolean p0sloppy = x0 < edgeSlop || y0 < edgeSlop
+                            || x0 > rightSlop || y0 > bottomSlop;
+                    boolean p1sloppy = x1 < edgeSlop || y1 < edgeSlop
+                            || x1 > rightSlop || y1 > bottomSlop;
+
+                    if (p0sloppy) {
+                        // Do we have a different pointer that isn't sloppy?
+                        int index = findNewActiveIndex(event, mActiveId1, index0);
+                        if (index >= 0) {
+                            index0 = index;
+                            mActiveId0 = event.getPointerId(index);
+                            x0 = getRawX(event, index);
+                            y0 = getRawY(event, index);
+                            p0sloppy = false;
+                        }
+                    }
+
+                    if (p1sloppy) {
+                        // Do we have a different pointer that isn't sloppy?
+                        int index = findNewActiveIndex(event, mActiveId0, index1);
+                        if (index >= 0) {
+                            index1 = index;
+                            mActiveId1 = event.getPointerId(index);
+                            x1 = getRawX(event, index);
+                            y1 = getRawY(event, index);
+                            p1sloppy = false;
+                        }
+                    }
+
+                    if(p0sloppy && p1sloppy) {
+                        mFocusX = -1;
+                        mFocusY = -1;
+                    } else if (p0sloppy) {
+                        mFocusX = event.getX(index1);
+                        mFocusY = event.getY(index1);
+                    } else if (p1sloppy) {
+                        mFocusX = event.getX(index0);
+                        mFocusY = event.getY(index0);
+                    } else {
+                        mSloppyGesture = false;
+                        mGestureInProgress = mListener.onScaleBegin(this);
+                    }
+                }
+                break;
+
+            case MotionEvent.ACTION_POINTER_UP:
+                if (mSloppyGesture) {
+                    final int pointerCount = event.getPointerCount();
+                    final int actionIndex = event.getActionIndex();
+                    final int actionId = event.getPointerId(actionIndex);
+
+                    if (pointerCount > 2) {
+                        if (actionId == mActiveId0) {
+                            final int newIndex = findNewActiveIndex(event, mActiveId1, actionIndex);
+                            if (newIndex >= 0) mActiveId0 = event.getPointerId(newIndex);
+                        } else if (actionId == mActiveId1) {
+                            final int newIndex = findNewActiveIndex(event, mActiveId0, actionIndex);
+                            if (newIndex >= 0) mActiveId1 = event.getPointerId(newIndex);
+                        }
+                    } else {
+                        // Set focus point to the remaining finger
+                        final int index = event.findPointerIndex(actionId == mActiveId0 ?
+                                mActiveId1 : mActiveId0);
+                        if (index < 0) {
+                            mInvalidGesture = true;
+                            Log.e(TAG, "Invalid MotionEvent stream detected.", new Throwable());
+                            if (mGestureInProgress) {
+                                mListener.onScaleEnd(this);
+                            }
+                            return false;
+                        }
+
+                        mActiveId0 = event.getPointerId(index);
+
+                        mActive0MostRecent = true;
+                        mActiveId1 = -1;
+                        mFocusX = event.getX(index);
+                        mFocusY = event.getY(index);
+                    }
+                }
+                break;
+            }
+        } else {
+            // Transform gesture in progress - attempt to handle it
+            switch (action) {
+                case MotionEvent.ACTION_POINTER_DOWN: {
+                    // End the old gesture and begin a new one with the most recent two fingers.
+                    mListener.onScaleEnd(this);
+                    final int oldActive0 = mActiveId0;
+                    final int oldActive1 = mActiveId1;
+                    reset();
+
+                    mPrevEvent = MotionEvent.obtain(event);
+                    mActiveId0 = mActive0MostRecent ? oldActive0 : oldActive1;
+                    mActiveId1 = event.getPointerId(event.getActionIndex());
+                    mActive0MostRecent = false;
+
+                    int index0 = event.findPointerIndex(mActiveId0);
+                    if (index0 < 0 || mActiveId0 == mActiveId1) {
+                        // Probably someone sending us a broken event stream.
+                        Log.e(TAG, "Got " + MotionEvent.actionToString(action) +
+                                " with bad state while a gesture was in progress. " +
+                                "Did you forget to pass an event to " +
+                                "ScaleGestureDetector#onTouchEvent?");
+                        index0 = findNewActiveIndex(event,
+                                mActiveId0 == mActiveId1 ? -1 : mActiveId1, index0);
+                        mActiveId0 = event.getPointerId(index0);
+                    }
+
+                    setContext(event);
+
+                    mGestureInProgress = mListener.onScaleBegin(this);
+                }
+                break;
+
+                case MotionEvent.ACTION_POINTER_UP: {
+                    final int pointerCount = event.getPointerCount();
+                    final int actionIndex = event.getActionIndex();
+                    final int actionId = event.getPointerId(actionIndex);
+
+                    boolean gestureEnded = false;
+                    if (pointerCount > 2) {
+                        if (actionId == mActiveId0) {
+                            final int newIndex = findNewActiveIndex(event, mActiveId1, actionIndex);
+                            if (newIndex >= 0) {
+                                mListener.onScaleEnd(this);
+                                mActiveId0 = event.getPointerId(newIndex);
+                                mActive0MostRecent = true;
+                                mPrevEvent = MotionEvent.obtain(event);
+                                setContext(event);
+                                mGestureInProgress = mListener.onScaleBegin(this);
+                            } else {
+                                gestureEnded = true;
+                            }
+                        } else if (actionId == mActiveId1) {
+                            final int newIndex = findNewActiveIndex(event, mActiveId0, actionIndex);
+                            if (newIndex >= 0) {
+                                mListener.onScaleEnd(this);
+                                mActiveId1 = event.getPointerId(newIndex);
+                                mActive0MostRecent = false;
+                                mPrevEvent = MotionEvent.obtain(event);
+                                setContext(event);
+                                mGestureInProgress = mListener.onScaleBegin(this);
+                            } else {
+                                gestureEnded = true;
+                            }
+                        }
+                        mPrevEvent.recycle();
+                        mPrevEvent = MotionEvent.obtain(event);
+                        setContext(event);
+                    } else {
+                        gestureEnded = true;
+                    }
+
+                    if (gestureEnded) {
+                        // Gesture ended
+                        setContext(event);
+
+                        // Set focus point to the remaining finger
+                        final int activeId = actionId == mActiveId0 ? mActiveId1 : mActiveId0;
+                        final int index = event.findPointerIndex(activeId);
+                        mFocusX = event.getX(index);
+                        mFocusY = event.getY(index);
+
+                        mListener.onScaleEnd(this);
+                        reset();
+                        mActiveId0 = activeId;
+                        mActive0MostRecent = true;
+                    }
+                }
+                break;
+
+                case MotionEvent.ACTION_CANCEL:
+                    mListener.onScaleEnd(this);
+                    reset();
+                    break;
+
+                case MotionEvent.ACTION_UP:
+                    reset();
+                    break;
+
+                case MotionEvent.ACTION_MOVE: {
+                    setContext(event);
+
+                    // Only accept the event if our relative pressure is within
+                    // a certain limit - this can help filter shaky data as a
+                    // finger is lifted.
+                    if (mCurrPressure / mPrevPressure > PRESSURE_THRESHOLD) {
+                        final boolean updatePrevious = mListener.onScale(this);
+
+                        if (updatePrevious) {
+                            mPrevEvent.recycle();
+                            mPrevEvent = MotionEvent.obtain(event);
+                        }
+                    }
+                }
+                break;
+            }
+        }
+
+        if (!handled && mInputEventConsistencyVerifier != null) {
+            mInputEventConsistencyVerifier.onUnhandledEvent(event, 0);
+        }
+        return handled;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.168 -0500", hash_original_method = "26EE043A8FDD34A9021E8F106FD508B5", hash_generated_method = "EF1EA35B0066A0E9C3683A21C34593BE")
+    private int findNewActiveIndex(MotionEvent ev, int otherActiveId, int oldIndex) {
+        final int pointerCount = ev.getPointerCount();
+
+        // It's ok if this isn't found and returns -1, it simply won't match.
+        final int otherActiveIndex = ev.findPointerIndex(otherActiveId);
+        int newActiveIndex = -1;
+
+        // Pick a new id and update tracking state. Only pick pointers not on the slop edges.
+        for (int i = 0; i < pointerCount; i++) {
+            if (i != oldIndex && i != otherActiveIndex) {
+                final float edgeSlop = mEdgeSlop;
+                final float rightSlop = mRightSlopEdge;
+                final float bottomSlop = mBottomSlopEdge;
+                float x = getRawX(ev, i);
+                float y = getRawY(ev, i);
+                if (x >= edgeSlop && y >= edgeSlop && x <= rightSlop && y <= bottomSlop) {
+                    newActiveIndex = i;
+                    break;
+                }
+            }
+        }
+
+        return newActiveIndex;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.172 -0500", hash_original_method = "E851AC8F08388EEFFE10C17212886186", hash_generated_method = "7A8ABF540AAF47F5874C72CC582870AF")
     private void setContext(MotionEvent curr) {
-        if(mCurrEvent != null)        
-        {
+        if (mCurrEvent != null) {
             mCurrEvent.recycle();
-        } //End block
+        }
         mCurrEvent = MotionEvent.obtain(curr);
+
         mCurrLen = -1;
         mPrevLen = -1;
         mScaleFactor = -1;
+
         final MotionEvent prev = mPrevEvent;
+
         final int prevIndex0 = prev.findPointerIndex(mActiveId0);
         final int prevIndex1 = prev.findPointerIndex(mActiveId1);
         final int currIndex0 = curr.findPointerIndex(mActiveId0);
         final int currIndex1 = curr.findPointerIndex(mActiveId1);
-        if(prevIndex0 < 0 || prevIndex1 < 0 || currIndex0 < 0 || currIndex1 < 0)        
-        {
+
+        if (prevIndex0 < 0 || prevIndex1 < 0 || currIndex0 < 0 || currIndex1 < 0) {
             mInvalidGesture = true;
-            if(mGestureInProgress)            
-            {
+            Log.e(TAG, "Invalid MotionEvent stream detected.", new Throwable());
+            if (mGestureInProgress) {
                 mListener.onScaleEnd(this);
-            } //End block
+            }
             return;
-        } //End block
+        }
+
         final float px0 = prev.getX(prevIndex0);
         final float py0 = prev.getY(prevIndex0);
         final float px1 = prev.getX(prevIndex1);
@@ -527,6 +503,7 @@ for(int i = 0;i < pointerCount;i++)
         final float cy0 = curr.getY(currIndex0);
         final float cx1 = curr.getX(currIndex1);
         final float cy1 = curr.getY(currIndex1);
+
         final float pvx = px1 - px0;
         final float pvy = py1 - py0;
         final float cvx = cx1 - cx0;
@@ -535,205 +512,161 @@ for(int i = 0;i < pointerCount;i++)
         mPrevFingerDiffY = pvy;
         mCurrFingerDiffX = cvx;
         mCurrFingerDiffY = cvy;
+
         mFocusX = cx0 + cvx * 0.5f;
         mFocusY = cy0 + cvy * 0.5f;
         mTimeDelta = curr.getEventTime() - prev.getEventTime();
         mCurrPressure = curr.getPressure(currIndex0) + curr.getPressure(currIndex1);
         mPrevPressure = prev.getPressure(prevIndex0) + prev.getPressure(prevIndex1);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.996 -0400", hash_original_method = "F9E5E3809E5750745599790F573B8504", hash_generated_method = "30E2C34A724FADA3EB87CED62FD583BA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.172 -0500", hash_original_method = "F9E5E3809E5750745599790F573B8504", hash_generated_method = "C3F79E6854FF5192D6DB4BF6DB9FE0CB")
     private void reset() {
-        if(mPrevEvent != null)        
-        {
+        if (mPrevEvent != null) {
             mPrevEvent.recycle();
             mPrevEvent = null;
-        } //End block
-        if(mCurrEvent != null)        
-        {
+        }
+        if (mCurrEvent != null) {
             mCurrEvent.recycle();
             mCurrEvent = null;
-        } //End block
+        }
         mSloppyGesture = false;
         mGestureInProgress = false;
         mActiveId0 = -1;
         mActiveId1 = -1;
         mInvalidGesture = false;
-        // ---------- Original Method ----------
-        //if (mPrevEvent != null) {
-            //mPrevEvent.recycle();
-            //mPrevEvent = null;
-        //}
-        //if (mCurrEvent != null) {
-            //mCurrEvent.recycle();
-            //mCurrEvent = null;
-        //}
-        //mSloppyGesture = false;
-        //mGestureInProgress = false;
-        //mActiveId0 = -1;
-        //mActiveId1 = -1;
-        //mInvalidGesture = false;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.997 -0400", hash_original_method = "898B0555390D80294F48D1832D7CA7F1", hash_generated_method = "CB891AAB377E68BC129E76213E2D2A3D")
+    /**
+     * Returns {@code true} if a two-finger scale gesture is in progress.
+     * @return {@code true} if a scale gesture is in progress, {@code false} otherwise.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.173 -0500", hash_original_method = "898B0555390D80294F48D1832D7CA7F1", hash_generated_method = "BD723F8FD46CAFFB70BE1C28FB61A544")
     public boolean isInProgress() {
-        boolean var061B672487708A5F02C378E108FB2523_597886835 = (mGestureInProgress);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_486635111 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_486635111;
-        // ---------- Original Method ----------
-        //return mGestureInProgress;
+        return mGestureInProgress;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.998 -0400", hash_original_method = "5AA73E7030B433A4A506EA714645F254", hash_generated_method = "C7E27BFCCD73C62B5BF88BB25DDA5FCC")
+    /**
+     * Get the X coordinate of the current gesture's focal point.
+     * If a gesture is in progress, the focal point is directly between
+     * the two pointers forming the gesture.
+     * If a gesture is ending, the focal point is the location of the
+     * remaining pointer on the screen.
+     * If {@link #isInProgress()} would return false, the result of this
+     * function is undefined.
+     *
+     * @return X coordinate of the focal point in pixels.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.174 -0500", hash_original_method = "5AA73E7030B433A4A506EA714645F254", hash_generated_method = "874F5478AF4E1A1071A9C4A3A37AE4B7")
     public float getFocusX() {
-        float varA0FE7B7E6572E9A5C03F808D583D21EF_1355029930 = (mFocusX);
-                float var546ADE640B6EDFBC8A086EF31347E768_1341498628 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_1341498628;
-        // ---------- Original Method ----------
-        //return mFocusX;
+        return mFocusX;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.998 -0400", hash_original_method = "1634272865979B530C4105679871001B", hash_generated_method = "5B5078F2371D860B5867873191EC800D")
+    /**
+     * Get the Y coordinate of the current gesture's focal point.
+     * If a gesture is in progress, the focal point is directly between
+     * the two pointers forming the gesture.
+     * If a gesture is ending, the focal point is the location of the
+     * remaining pointer on the screen.
+     * If {@link #isInProgress()} would return false, the result of this
+     * function is undefined.
+     *
+     * @return Y coordinate of the focal point in pixels.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.175 -0500", hash_original_method = "1634272865979B530C4105679871001B", hash_generated_method = "52632C775F6D9632E170A544D6AF35B4")
     public float getFocusY() {
-        float varE371837A8119A3AB321FC558BC169293_965800892 = (mFocusY);
-                float var546ADE640B6EDFBC8A086EF31347E768_666526343 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_666526343;
-        // ---------- Original Method ----------
-        //return mFocusY;
+        return mFocusY;
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.999 -0400", hash_original_method = "AB0C6BF3BCA5EEB3D5CA8E031A94ABD9", hash_generated_method = "CAC98F5CC3A268318D31CF23A2583D3E")
+    /**
+     * Return the current distance between the two pointers forming the
+     * gesture in progress.
+     *
+     * @return Distance between pointers in pixels.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.175 -0500", hash_original_method = "AB0C6BF3BCA5EEB3D5CA8E031A94ABD9", hash_generated_method = "9A443A8813356E79567BCE141AAD82A1")
     public float getCurrentSpan() {
-        if(mCurrLen == -1)        
-        {
+        if (mCurrLen == -1) {
             final float cvx = mCurrFingerDiffX;
             final float cvy = mCurrFingerDiffY;
             mCurrLen = FloatMath.sqrt(cvx*cvx + cvy*cvy);
-        } //End block
-        float var8E973CE13F974C6D66FFB6DCB3A83421_343637749 = (mCurrLen);
-                float var546ADE640B6EDFBC8A086EF31347E768_1468736498 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_1468736498;
-        // ---------- Original Method ----------
-        //if (mCurrLen == -1) {
-            //final float cvx = mCurrFingerDiffX;
-            //final float cvy = mCurrFingerDiffY;
-            //mCurrLen = FloatMath.sqrt(cvx*cvx + cvy*cvy);
-        //}
-        //return mCurrLen;
+        }
+        return mCurrLen;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.999 -0400", hash_original_method = "96703DCF80F0F42B9182D748E24B5F12", hash_generated_method = "035DBA03ECE4B1114B14DD12B8A28BFC")
+    /**
+     * Return the current x distance between the two pointers forming the
+     * gesture in progress.
+     *
+     * @return Distance between pointers in pixels.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.176 -0500", hash_original_method = "96703DCF80F0F42B9182D748E24B5F12", hash_generated_method = "8B0183DC7299A6B053C8D69245CA25F4")
     public float getCurrentSpanX() {
-        float varD797CF4A75F206359DDA7851042405DE_79853466 = (mCurrFingerDiffX);
-                float var546ADE640B6EDFBC8A086EF31347E768_2037516318 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_2037516318;
-        // ---------- Original Method ----------
-        //return mCurrFingerDiffX;
+        return mCurrFingerDiffX;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.000 -0400", hash_original_method = "46ABD98E7ABFBBE92F1E1C8C1A82F921", hash_generated_method = "68C06AEC85BE56DB7914A0E78182CC30")
+    /**
+     * Return the current y distance between the two pointers forming the
+     * gesture in progress.
+     *
+     * @return Distance between pointers in pixels.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.177 -0500", hash_original_method = "46ABD98E7ABFBBE92F1E1C8C1A82F921", hash_generated_method = "6BF22D246C72964B6F75995BCD712B33")
     public float getCurrentSpanY() {
-        float varF613F042D8B78098BEAE14BEDF4D7F31_672657628 = (mCurrFingerDiffY);
-                float var546ADE640B6EDFBC8A086EF31347E768_287684637 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_287684637;
-        // ---------- Original Method ----------
-        //return mCurrFingerDiffY;
+        return mCurrFingerDiffY;
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.000 -0400", hash_original_method = "61588E4085777CBFF7E61092314CDCD6", hash_generated_method = "B90EBCF2623B207E35DB0C3F886E52E1")
+    /**
+     * Return the previous distance between the two pointers forming the
+     * gesture in progress.
+     *
+     * @return Previous distance between pointers in pixels.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.178 -0500", hash_original_method = "61588E4085777CBFF7E61092314CDCD6", hash_generated_method = "B5025A01863C639B80517B503F62FA5D")
     public float getPreviousSpan() {
-        if(mPrevLen == -1)        
-        {
+        if (mPrevLen == -1) {
             final float pvx = mPrevFingerDiffX;
             final float pvy = mPrevFingerDiffY;
             mPrevLen = FloatMath.sqrt(pvx*pvx + pvy*pvy);
-        } //End block
-        float varCCB42BE0A7C21CD017DE96ACABD2762C_82243884 = (mPrevLen);
-                float var546ADE640B6EDFBC8A086EF31347E768_1980260355 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_1980260355;
-        // ---------- Original Method ----------
-        //if (mPrevLen == -1) {
-            //final float pvx = mPrevFingerDiffX;
-            //final float pvy = mPrevFingerDiffY;
-            //mPrevLen = FloatMath.sqrt(pvx*pvx + pvy*pvy);
-        //}
-        //return mPrevLen;
+        }
+        return mPrevLen;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.000 -0400", hash_original_method = "0AFCA4EC344BB39A6FBEFCC5BD88D7B6", hash_generated_method = "91F94C8C6AE6D0A5A647CB7980787E8D")
+    /**
+     * Return the previous x distance between the two pointers forming the
+     * gesture in progress.
+     *
+     * @return Previous distance between pointers in pixels.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.178 -0500", hash_original_method = "0AFCA4EC344BB39A6FBEFCC5BD88D7B6", hash_generated_method = "F31C03262F40CF8FBF0A243142C92154")
     public float getPreviousSpanX() {
-        float varE0D70E96C315A6A926A5DF77407556F0_1758401920 = (mPrevFingerDiffX);
-                float var546ADE640B6EDFBC8A086EF31347E768_934419697 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_934419697;
-        // ---------- Original Method ----------
-        //return mPrevFingerDiffX;
+        return mPrevFingerDiffX;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.001 -0400", hash_original_method = "F0E427EE2F15CB9D89F340FD227EA8BF", hash_generated_method = "B83FAFBE2434931D56EAC97AAB977A40")
+    /**
+     * Return the previous y distance between the two pointers forming the
+     * gesture in progress.
+     *
+     * @return Previous distance between pointers in pixels.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.179 -0500", hash_original_method = "F0E427EE2F15CB9D89F340FD227EA8BF", hash_generated_method = "9AC564B3BEFF1C2B1952B36F03089934")
     public float getPreviousSpanY() {
-        float var3BCD82D8995452F8C4D8BC4D6958AFA9_910298916 = (mPrevFingerDiffY);
-                float var546ADE640B6EDFBC8A086EF31347E768_614161794 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_614161794;
-        // ---------- Original Method ----------
-        //return mPrevFingerDiffY;
+        return mPrevFingerDiffY;
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.001 -0400", hash_original_method = "EF10CCD331D0CD8126F652B47BBB1296", hash_generated_method = "4DDDDD7A30DF41394F02C504A4F4280C")
+    /**
+     * Return the scaling factor from the previous scale event to the current
+     * event. This value is defined as
+     * ({@link #getCurrentSpan()} / {@link #getPreviousSpan()}).
+     *
+     * @return The current scaling factor.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.180 -0500", hash_original_method = "EF10CCD331D0CD8126F652B47BBB1296", hash_generated_method = "B64B6879A3ADD500F55A9708EB600516")
     public float getScaleFactor() {
-        if(mScaleFactor == -1)        
-        {
+        if (mScaleFactor == -1) {
             mScaleFactor = getCurrentSpan() / getPreviousSpan();
-        } //End block
-        float var43B25FDCBE078DC3DA65BC88CAA3AACD_746647115 = (mScaleFactor);
-                float var546ADE640B6EDFBC8A086EF31347E768_260477004 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_260477004;
-        // ---------- Original Method ----------
-        //if (mScaleFactor == -1) {
-            //mScaleFactor = getCurrentSpan() / getPreviousSpan();
-        //}
-        //return mScaleFactor;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.001 -0400", hash_original_method = "478681CCF9BA4A844274161522001BDE", hash_generated_method = "5337DAF81481B4885076FD454DA0FC94")
-    public long getTimeDelta() {
-        long varD088DDA1C27B96429D7E4965433B26E2_73418589 = (mTimeDelta);
-                long var0F5264038205EDFB1AC05FBB0E8C5E94_227568006 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_227568006;
-        // ---------- Original Method ----------
-        //return mTimeDelta;
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.002 -0400", hash_original_method = "93D380EA2FE2DB10568746F6E0FB3B8E", hash_generated_method = "E7700E933C36C4712033247A7D033ED1")
-    public long getEventTime() {
-        long varF5CCD1CFF00A6AFC9E9CD33F09ACC5B7_11605623 = (mCurrEvent.getEventTime());
-                long var0F5264038205EDFB1AC05FBB0E8C5E94_321784072 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_321784072;
-        // ---------- Original Method ----------
-        //return mCurrEvent.getEventTime();
+        }
+        return mScaleFactor;
     }
 
     
@@ -745,39 +678,19 @@ for(int i = 0;i < pointerCount;i++)
             //Synthesized constructor
         }
 
-
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.002 -0400", hash_original_method = "F1A51F1E1A44A60BDE5250CC79B6BF22", hash_generated_method = "802E8EFB3D0939D19E3F7D53ECDDA9CA")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.137 -0500", hash_original_method = "F1A51F1E1A44A60BDE5250CC79B6BF22", hash_generated_method = "6E3C993127F3CBEB20A9A785F6ECE206")
         public boolean onScale(ScaleGestureDetector detector) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
-            addTaint(detector.getTaint());
-            boolean var68934A3E9455FA72420237EB05902327_246030973 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2107762063 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_2107762063;
-            // ---------- Original Method ----------
-            //return false;
+            return false;
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.003 -0400", hash_original_method = "2018A466C052949DAB40F7C8547E8FA5", hash_generated_method = "849ADF6E8A25D2A5AE1FF4401012E3E1")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.138 -0500", hash_original_method = "2018A466C052949DAB40F7C8547E8FA5", hash_generated_method = "705386BE02420A3F65E5E666CED6D424")
         public boolean onScaleBegin(ScaleGestureDetector detector) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
-            addTaint(detector.getTaint());
-            boolean varB326B5062B2F0E69046810717534CB09_727021885 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_466067710 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_466067710;
-            // ---------- Original Method ----------
-            //return true;
+            return true;
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.003 -0400", hash_original_method = "5B9499EAA38A4A49EE469DC4AE83A358", hash_generated_method = "60B04B78A4A04F6C7A1F2B5D39D8EB97")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.139 -0500", hash_original_method = "5B9499EAA38A4A49EE469DC4AE83A358", hash_generated_method = "A245D427617C164350D989283A413ED1")
         public void onScaleEnd(ScaleGestureDetector detector) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
-            addTaint(detector.getTaint());
-            // ---------- Original Method ----------
+            // Intentionally empty
         }
 
         
@@ -795,12 +708,26 @@ for(int i = 0;i < pointerCount;i++)
         
         public void onScaleEnd(ScaleGestureDetector detector);
     }
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.003 -0400", hash_original_field = "8B2EF3D1B7CA751F5122A037B33DDFA9", hash_generated_field = "4649FA3572602ADAEA386A657BBBCE55")
 
-    private static final String TAG = "ScaleGestureDetector";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.003 -0400", hash_original_field = "98A2E9AEA633EA3E41254A788CD371FE", hash_generated_field = "1E49C39436E310C8A58BEAD71FF9190C")
+    /**
+     * Return the time difference in milliseconds between the previous
+     * accepted scaling event and the current scaling event.
+     *
+     * @return Time difference since the last scaling event in milliseconds.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.180 -0500", hash_original_method = "478681CCF9BA4A844274161522001BDE", hash_generated_method = "D0C71CFDA1C49596A9CBB5571787A8EA")
+    public long getTimeDelta() {
+        return mTimeDelta;
+    }
 
-    private static final float PRESSURE_THRESHOLD = 0.67f;
+    /**
+     * Return the event time of the current event being processed.
+     *
+     * @return Current event time in milliseconds.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.181 -0500", hash_original_method = "93D380EA2FE2DB10568746F6E0FB3B8E", hash_generated_method = "BB0593FC7E733EF2FF53909574109C0D")
+    public long getEventTime() {
+        return mCurrEvent.getEventTime();
+    }
 }
 

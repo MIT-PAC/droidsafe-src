@@ -1,6 +1,8 @@
 package android.app;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.content.Intent;
 import android.os.Handler;
@@ -14,142 +16,132 @@ import android.os.Message;
 
 
 public abstract class IntentService extends Service {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.498 -0400", hash_original_field = "895D9C25B61501F06B395F423CBECB05", hash_generated_field = "33385112DDE0E3E321411FB3B24485E8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:13.662 -0500", hash_original_field = "EB66E49061F21B01C586336F5B80897E", hash_generated_field = "33385112DDE0E3E321411FB3B24485E8")
 
     private volatile Looper mServiceLooper;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.498 -0400", hash_original_field = "BE7B16D1144D405C7B5C57C44F878C4D", hash_generated_field = "10B7385FA09CCC5FFC133C854DC08841")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:13.663 -0500", hash_original_field = "B40565E22FBAA0B9F2DB0B431D978A45", hash_generated_field = "10B7385FA09CCC5FFC133C854DC08841")
 
     private volatile ServiceHandler mServiceHandler;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.498 -0400", hash_original_field = "311C2C8498DF6A626CBDB8AA4193499C", hash_generated_field = "886C24C67739C97CF77B8DD239E412F9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:13.663 -0500", hash_original_field = "ED29A5CAC2A4A14894CD28BA3B1CE29C", hash_generated_field = "886C24C67739C97CF77B8DD239E412F9")
 
     private String mName;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.498 -0400", hash_original_field = "511FD1780C9A0397B85010166099D673", hash_generated_field = "B638FC293FF73E5C6335F69D10080A12")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:13.664 -0500", hash_original_field = "188B2E6B4A16F5675B57F98CFBB1543F", hash_generated_field = "B638FC293FF73E5C6335F69D10080A12")
 
     private boolean mRedelivery;
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.498 -0400", hash_original_method = "65486D76CF06DAF1688CBC9F94DF0A6F", hash_generated_method = "E803BFED5D7E11609305F714CC10CB38")
-    public  IntentService(String name) {
+
+    /**
+     * Creates an IntentService.  Invoked by your subclass's constructor.
+     *
+     * @param name Used to name the worker thread, important only for debugging.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:13.668 -0500", hash_original_method = "65486D76CF06DAF1688CBC9F94DF0A6F", hash_generated_method = "1F8C236D9D024086E13FC09FFC3A3C72")
+    public IntentService(String name) {
         super();
         mName = name;
-        // ---------- Original Method ----------
-        //mName = name;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.499 -0400", hash_original_method = "5DC41098BF9C689ED5E1C1A6B5CD66D3", hash_generated_method = "BF0E6D5DC1A4107DCB204701CFD64C59")
+    /**
+     * Sets intent redelivery preferences.  Usually called from the constructor
+     * with your preferred semantics.
+     *
+     * <p>If enabled is true,
+     * {@link #onStartCommand(Intent, int, int)} will return
+     * {@link Service#START_REDELIVER_INTENT}, so if this process dies before
+     * {@link #onHandleIntent(Intent)} returns, the process will be restarted
+     * and the intent redelivered.  If multiple Intents have been sent, only
+     * the most recent one is guaranteed to be redelivered.
+     *
+     * <p>If enabled is false (the default),
+     * {@link #onStartCommand(Intent, int, int)} will return
+     * {@link Service#START_NOT_STICKY}, and if the process dies, the Intent
+     * dies along with it.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:13.668 -0500", hash_original_method = "5DC41098BF9C689ED5E1C1A6B5CD66D3", hash_generated_method = "9819940AC2D0C760DCD334594E90C004")
     public void setIntentRedelivery(boolean enabled) {
         mRedelivery = enabled;
-        // ---------- Original Method ----------
-        //mRedelivery = enabled;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.499 -0400", hash_original_method = "D44587B147DECF989C6FA60808062415", hash_generated_method = "134209EF8F043B64491C32D5B342ADC6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:13.669 -0500", hash_original_method = "D44587B147DECF989C6FA60808062415", hash_generated_method = "7C2E7A3D8CB60D4DD3F2650DD1DE5ABC")
     @Override
-    public void onCreate() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+public void onCreate() {
+        // TODO: It would be nice to have an option to hold a partial wakelock
+        // during processing, and to have a static startService(Context, Intent)
+        // method that would launch the service & hand off a wakelock.
+
         super.onCreate();
         HandlerThread thread = new HandlerThread("IntentService[" + mName + "]");
         thread.start();
+
         mServiceLooper = thread.getLooper();
         mServiceHandler = new ServiceHandler(mServiceLooper);
-        // ---------- Original Method ----------
-        //super.onCreate();
-        //HandlerThread thread = new HandlerThread("IntentService[" + mName + "]");
-        //thread.start();
-        //mServiceLooper = thread.getLooper();
-        //mServiceHandler = new ServiceHandler(mServiceLooper);
     }
 
-    
-        @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.499 -0400", hash_original_method = "1A8CCBE4C5A081BBDC2E857325C2F354", hash_generated_method = "887436FAF5CDDB5C3BD15FD14B9A3878")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:13.670 -0500", hash_original_method = "1A8CCBE4C5A081BBDC2E857325C2F354", hash_generated_method = "44FDF9E70DE06721462D5094339E1AE1")
     @Override
-    public void onStart(Intent intent, int startId) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(startId);
-        addTaint(intent.getTaint());
+public void onStart(Intent intent, int startId) {
         Message msg = mServiceHandler.obtainMessage();
         msg.arg1 = startId;
         msg.obj = intent;
         mServiceHandler.sendMessage(msg);
-        // ---------- Original Method ----------
-        //Message msg = mServiceHandler.obtainMessage();
-        //msg.arg1 = startId;
-        //msg.obj = intent;
-        //mServiceHandler.sendMessage(msg);
     }
 
-    
-        @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.499 -0400", hash_original_method = "38140402AEC024932D8DF709F80C2AA8", hash_generated_method = "6C6EE9C9971AE3A7F9CD82B757FDAB4E")
+    /**
+     * You should not override this method for your IntentService. Instead,
+     * override {@link #onHandleIntent}, which the system calls when the IntentService
+     * receives a start request.
+     * @see android.app.Service#onStartCommand
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:13.671 -0500", hash_original_method = "38140402AEC024932D8DF709F80C2AA8", hash_generated_method = "8A862437975BF5D7F532D7E88BD5534F")
     @Override
-    public int onStartCommand(Intent intent, int flags, int startId) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(startId);
-        addTaint(flags);
-        addTaint(intent.getTaint());
+public int onStartCommand(Intent intent, int flags, int startId) {
         onStart(intent, startId);
-        int var1A31932D1065789B8FC2E0A8CC013C8A_1543865076 = (mRedelivery ? START_REDELIVER_INTENT : START_NOT_STICKY);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_164548796 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_164548796;
-        // ---------- Original Method ----------
-        //onStart(intent, startId);
-        //return mRedelivery ? START_REDELIVER_INTENT : START_NOT_STICKY;
+        return mRedelivery ? START_REDELIVER_INTENT : START_NOT_STICKY;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.500 -0400", hash_original_method = "1A14C95333617FF45AA4B183BFCE9C2C", hash_generated_method = "57CFED3BCB345327405FC23DC37C7117")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:13.671 -0500", hash_original_method = "1A14C95333617FF45AA4B183BFCE9C2C", hash_generated_method = "E0C452F6F9ED4DD053BA58A501C61F28")
     @Override
-    public void onDestroy() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+public void onDestroy() {
         mServiceLooper.quit();
-        // ---------- Original Method ----------
-        //mServiceLooper.quit();
     }
 
-    
-        @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.500 -0400", hash_original_method = "B9DB5B746A4D0B6826A1AC056C39AB0D", hash_generated_method = "C38BAFBC67137FBACD06C8549E6B765A")
+    /**
+     * Unless you provide binding for your service, you don't need to implement this
+     * method, because the default implementation returns null. 
+     * @see android.app.Service#onBind
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:13.672 -0500", hash_original_method = "B9DB5B746A4D0B6826A1AC056C39AB0D", hash_generated_method = "44085DEE1AB74F2E611DE1D443ED2150")
     @Override
-    public IBinder onBind(Intent intent) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(intent.getTaint());
-IBinder var540C13E9E156B687226421B24F2DF178_1575286293 =         null;
-        var540C13E9E156B687226421B24F2DF178_1575286293.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_1575286293;
-        // ---------- Original Method ----------
-        //return null;
+public IBinder onBind(Intent intent) {
+        return null;
     }
 
-    
-    @DSModeled(DSC.SPEC)
+    /**
+     * This method is invoked on the worker thread with a request to process.
+     * Only one Intent is processed at a time, but the processing happens on a
+     * worker thread that runs independently from other application logic.
+     * So, if this code takes a long time, it will hold up other requests to
+     * the same IntentService, but it will not hold up anything else.
+     * When all requests have been handled, the IntentService stops itself,
+     * so you should not call {@link #stopSelf}.
+     *
+     * @param intent The value passed to {@link
+     *               android.content.Context#startService(Intent)}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:13.673 -0500", hash_original_method = "3873E8578EC35B4631BF55BE7B040145", hash_generated_method = "76B2D51F2AC1BE5101F9DFE35DD2D67A")
     protected abstract void onHandleIntent(Intent intent);
 
     
     private final class ServiceHandler extends Handler {
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.500 -0400", hash_original_method = "66EEB465EED068540EC8804EEAB41C77", hash_generated_method = "483F79A59D6FFABD3DB5D2AD7A4017D7")
-        public  ServiceHandler(Looper looper) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:13.665 -0500", hash_original_method = "66EEB465EED068540EC8804EEAB41C77", hash_generated_method = "3FC585DC347F6956BFDECFB1F53984B6")
+        public ServiceHandler(Looper looper) {
             super(looper);
-            addTaint(looper.getTaint());
-            // ---------- Original Method ----------
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.500 -0400", hash_original_method = "54FB6BD49FB0E5DF524AEC3E07C0037D", hash_generated_method = "EB11256F08F20A03F3A5317996878929")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:13.666 -0500", hash_original_method = "54FB6BD49FB0E5DF524AEC3E07C0037D", hash_generated_method = "72C7E7960D6CAE09BBA5E612FD9119CF")
         @Override
-        public void handleMessage(Message msg) {
-            addTaint(msg.getTaint());
+public void handleMessage(Message msg) {
             onHandleIntent((Intent)msg.obj);
             stopSelf(msg.arg1);
-            // ---------- Original Method ----------
-            //onHandleIntent((Intent)msg.obj);
-            //stopSelf(msg.arg1);
         }
 
         

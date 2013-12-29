@@ -1,6 +1,8 @@
 package android.widget;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -38,834 +40,776 @@ import android.widget.AdapterView.OnItemClickListener;
 
 
 public class RemoteViews implements Parcelable, Filter {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.760 -0400", hash_original_field = "089616237F5DED8B7A7F9A618C4FC032", hash_generated_field = "D6E102019562022F9DE7C9915C7FD917")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:03.998 -0500", hash_original_field = "6FFEE8307332734755C14FC024A174EA", hash_generated_field = "ACEFF52037C84D6363407415280404F5")
 
-    private String mPackage;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.760 -0400", hash_original_field = "143EA7733FD06F80DE8D3B366855A342", hash_generated_field = "62824B28582365160D4F4E663AF78109")
+    
+    private static final String LOG_TAG = "RemoteViews";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:03.999 -0500", hash_original_field = "EF36B82D9AB59A0445BDFC5E58DBC652", hash_generated_field = "826EFFDEC6B49221DB3B3AF9DDB20D89")
 
-    private int mLayoutId;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.760 -0400", hash_original_field = "C268D719F2F67098628D1A8EEBB72B48", hash_generated_field = "BDB8276C1ABE28FC56F7F2EFF4E83F5A")
+    static final String EXTRA_REMOTEADAPTER_APPWIDGET_ID = "remoteAdapterAppWidgetId";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.797 -0400", hash_original_field = "3C81D1A6471DBF098FBC5010948AFD3D", hash_generated_field = "BD08AD711A0271B27E85FFB2A2737195")
+
+    public static final Parcelable.Creator<RemoteViews> CREATOR = new Parcelable.Creator<RemoteViews>() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.152 -0500", hash_original_method = "FC3F962DDEC04FB3CB8064B237D4AD2E", hash_generated_method = "6E797158973DFFCE7F4F903A273D2687")
+        public RemoteViews createFromParcel(Parcel parcel) {
+            return new RemoteViews(parcel);
+        }
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.153 -0500", hash_original_method = "955BCE822B5031BBA9175A15F8CAAE63", hash_generated_method = "F03F8A1BD2C5B320722EDF0EED69E1DF")
+        public RemoteViews[] newArray(int size) {
+            return new RemoteViews[size];
+        }
+    };
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.000 -0500", hash_original_field = "024AAB9E2577CC3DE3304162F102B92C", hash_generated_field = "D6E102019562022F9DE7C9915C7FD917")
+
+    private  String mPackage;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.001 -0500", hash_original_field = "8620DD624D5ABA6759B557835C5EB379", hash_generated_field = "62824B28582365160D4F4E663AF78109")
+
+    private  int mLayoutId;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.002 -0500", hash_original_field = "27E08896D7C631DE7F16C341DD4B835A", hash_generated_field = "BDB8276C1ABE28FC56F7F2EFF4E83F5A")
 
     private ArrayList<Action> mActions;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.760 -0400", hash_original_field = "302EDB52DCA958E10D9F1FB586627A2C", hash_generated_field = "428BAA212C6DEB5FEF7CB6370C9BEBDF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.002 -0500", hash_original_field = "3160C7467AA060612EFEBDBF119579B8", hash_generated_field = "428BAA212C6DEB5FEF7CB6370C9BEBDF")
 
     private MemoryUsageCounter mMemoryUsageCounter;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.760 -0400", hash_original_field = "DF25E6BAFF11DD73CFFFA27BAA8B8CFC", hash_generated_field = "5F2713F2C4461A89B34556F5FA319D47")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.003 -0500", hash_original_field = "6E05C1C57ECF91F851A5EC7A7D4545B0", hash_generated_field = "5F2713F2C4461A89B34556F5FA319D47")
 
-    private boolean mIsWidgetCollectionChild = false;
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.761 -0400", hash_original_method = "7ADC44A8B9BDF8C00FB4776840C5552D", hash_generated_method = "154333C84C3CBD1C406C406999A1627C")
-    public  RemoteViews(String packageName, int layoutId) {
+     private boolean mIsWidgetCollectionChild = false;
+
+    /**
+     * Create a new RemoteViews object that will display the views contained
+     * in the specified layout file.
+     * 
+     * @param packageName Name of the package that contains the layout resource
+     * @param layoutId The id of the layout resource
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.108 -0500", hash_original_method = "7ADC44A8B9BDF8C00FB4776840C5552D", hash_generated_method = "CCC49EDBEBEE8FE5F22E011E1EB338ED")
+    public RemoteViews(String packageName, int layoutId) {
         mPackage = packageName;
         mLayoutId = layoutId;
+
+        // setup the memory usage statistics
         mMemoryUsageCounter = new MemoryUsageCounter();
         recalculateMemoryUsage();
-        // ---------- Original Method ----------
-        //mPackage = packageName;
-        //mLayoutId = layoutId;
-        //mMemoryUsageCounter = new MemoryUsageCounter();
-        //recalculateMemoryUsage();
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.762 -0400", hash_original_method = "B81662C8B479B3D3C957D533866FE808", hash_generated_method = "2071ED20ABA763F05D5EBE3B498C9396")
-    public  RemoteViews(Parcel parcel) {
+    /**
+     * Reads a RemoteViews object from a parcel.
+     * 
+     * @param parcel
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.110 -0500", hash_original_method = "B81662C8B479B3D3C957D533866FE808", hash_generated_method = "0F60A5162E795F91957BC687802EF6F8")
+    public RemoteViews(Parcel parcel) {
         mPackage = parcel.readString();
         mLayoutId = parcel.readInt();
         mIsWidgetCollectionChild = parcel.readInt() == 1 ? true : false;
+
         int count = parcel.readInt();
-        if(count > 0)        
-        {
+        if (count > 0) {
             mActions = new ArrayList<Action>(count);
-for(int i=0;i<count;i++)
-            {
+            for (int i=0; i<count; i++) {
                 int tag = parcel.readInt();
-switch(tag){
+                switch (tag) {
                 case SetOnClickPendingIntent.TAG:
-                mActions.add(new SetOnClickPendingIntent(parcel));
-                break;
+                    mActions.add(new SetOnClickPendingIntent(parcel));
+                    break;
                 case SetDrawableParameters.TAG:
-                mActions.add(new SetDrawableParameters(parcel));
-                break;
+                    mActions.add(new SetDrawableParameters(parcel));
+                    break;
                 case ReflectionAction.TAG:
-                mActions.add(new ReflectionAction(parcel));
-                break;
+                    mActions.add(new ReflectionAction(parcel));
+                    break;
                 case ViewGroupAction.TAG:
-                mActions.add(new ViewGroupAction(parcel));
-                break;
+                    mActions.add(new ViewGroupAction(parcel));
+                    break;
                 case ReflectionActionWithoutParams.TAG:
-                mActions.add(new ReflectionActionWithoutParams(parcel));
-                break;
+                    mActions.add(new ReflectionActionWithoutParams(parcel));
+                    break;
                 case SetEmptyView.TAG:
-                mActions.add(new SetEmptyView(parcel));
-                break;
+                    mActions.add(new SetEmptyView(parcel));
+                    break;
                 case SetPendingIntentTemplate.TAG:
-                mActions.add(new SetPendingIntentTemplate(parcel));
-                break;
+                    mActions.add(new SetPendingIntentTemplate(parcel));
+                    break;
                 case SetOnClickFillInIntent.TAG:
-                mActions.add(new SetOnClickFillInIntent(parcel));
-                break;
+                    mActions.add(new SetOnClickFillInIntent(parcel));
+                    break;
                 case SetRemoteViewsAdapterIntent.TAG:
-                mActions.add(new SetRemoteViewsAdapterIntent(parcel));
-                break;
+                    mActions.add(new SetRemoteViewsAdapterIntent(parcel));
+                    break;
                 default:
-                ActionException var18F3965C1BB9FAE60EB4AD1DBA08EF2F_1003083825 = new ActionException("Tag " + tag + " not found");
-                var18F3965C1BB9FAE60EB4AD1DBA08EF2F_1003083825.addTaint(taint);
-                throw var18F3965C1BB9FAE60EB4AD1DBA08EF2F_1003083825;
-}
-            } //End block
-        } //End block
+                    throw new ActionException("Tag " + tag + " not found");
+                }
+            }
+        }
+
+        // setup the memory usage statistics
         mMemoryUsageCounter = new MemoryUsageCounter();
         recalculateMemoryUsage();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.763 -0400", hash_original_method = "67D19BE5CA3BC69F21B2B2516A1FA2D6", hash_generated_method = "774216BDEAF9AAA255FB46FF8B50B3FE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.111 -0500", hash_original_method = "67D19BE5CA3BC69F21B2B2516A1FA2D6", hash_generated_method = "8D0A90225DBD95CD017FA44B645E3963")
     @Override
-    public RemoteViews clone() {
+public RemoteViews clone() {
         final RemoteViews that = new RemoteViews(mPackage, mLayoutId);
-        if(mActions != null)        
-        {
+        if (mActions != null) {
             that.mActions = (ArrayList<Action>)mActions.clone();
-        } //End block
+        }
+
+        // update the memory usage stats of the cloned RemoteViews
         that.recalculateMemoryUsage();
-RemoteViews varF9965B73D80F3C31BC4764828F08696D_503631786 =         that;
-        varF9965B73D80F3C31BC4764828F08696D_503631786.addTaint(taint);
-        return varF9965B73D80F3C31BC4764828F08696D_503631786;
-        // ---------- Original Method ----------
-        //final RemoteViews that = new RemoteViews(mPackage, mLayoutId);
-        //if (mActions != null) {
-            //that.mActions = (ArrayList<Action>)mActions.clone();
-        //}
-        //that.recalculateMemoryUsage();
-        //return that;
+        return that;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.763 -0400", hash_original_method = "D6B19F05A1BF219922EA06A43EF822A3", hash_generated_method = "7B9F273C6BAB4AFB96B7D52B44159001")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.111 -0500", hash_original_method = "D6B19F05A1BF219922EA06A43EF822A3", hash_generated_method = "E8E7BB1D5101EA7BCE0E9136023EF604")
     public String getPackage() {
-String varD0D543EB218BC9E16C17B23C08BC19C7_1241124719 =         mPackage;
-        varD0D543EB218BC9E16C17B23C08BC19C7_1241124719.addTaint(taint);
-        return varD0D543EB218BC9E16C17B23C08BC19C7_1241124719;
-        // ---------- Original Method ----------
-        //return mPackage;
+        return mPackage;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.763 -0400", hash_original_method = "613C00C60CA896BC5001BD5561015459", hash_generated_method = "CB242928AD0F50826184408E544C4CC5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.112 -0500", hash_original_method = "613C00C60CA896BC5001BD5561015459", hash_generated_method = "2A8D7E72D3595B0AF66976D61F3F9022")
     public int getLayoutId() {
-        int var143EA7733FD06F80DE8D3B366855A342_331247601 = (mLayoutId);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1336053377 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1336053377;
-        // ---------- Original Method ----------
-        //return mLayoutId;
+        return mLayoutId;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.764 -0400", hash_original_method = "B2E01CE5E210E0306AAEDD7A25572B15", hash_generated_method = "C504A5E5F8CCD8C6A31C201D44889892")
-     void setIsWidgetCollectionChild(boolean isWidgetCollectionChild) {
+    /*
+     * This flag indicates whether this RemoteViews object is being created from a
+     * RemoteViewsService for use as a child of a widget collection. This flag is used
+     * to determine whether or not certain features are available, in particular,
+     * setting on click extras and setting on click pending intents. The former is enabled,
+     * and the latter disabled when this flag is true.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.113 -0500", hash_original_method = "B2E01CE5E210E0306AAEDD7A25572B15", hash_generated_method = "B2E01CE5E210E0306AAEDD7A25572B15")
+    void setIsWidgetCollectionChild(boolean isWidgetCollectionChild) {
         mIsWidgetCollectionChild = isWidgetCollectionChild;
-        // ---------- Original Method ----------
-        //mIsWidgetCollectionChild = isWidgetCollectionChild;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.764 -0400", hash_original_method = "F73414915FBB974B28CE5BE7CD6B07B1", hash_generated_method = "94027C00C143FC7879CEA2922EE72FA6")
+    /**
+     * Updates the memory usage statistics.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.113 -0500", hash_original_method = "F73414915FBB974B28CE5BE7CD6B07B1", hash_generated_method = "2B95E3882DC6BD034FE284736EA883CE")
     private void recalculateMemoryUsage() {
         mMemoryUsageCounter.clear();
-        if(mActions != null)        
-        {
+
+        // Accumulate the memory usage for each action
+        if (mActions != null) {
             final int count = mActions.size();
-for(int i= 0;i < count;++i)
-            {
+            for (int i= 0; i < count; ++i) {
                 mActions.get(i).updateMemoryUsageEstimate(mMemoryUsageCounter);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //mMemoryUsageCounter.clear();
-        //if (mActions != null) {
-            //final int count = mActions.size();
-            //for (int i= 0; i < count; ++i) {
-                //mActions.get(i).updateMemoryUsageEstimate(mMemoryUsageCounter);
-            //}
-        //}
+            }
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.764 -0400", hash_original_method = "4E1C2F916A403E6D1D4B708360B7D61A", hash_generated_method = "10DE88A78D710652EF0C43E088B3E826")
-     int estimateBitmapMemoryUsage() {
-        int var5636738054CB1447726DCC68F6EB720D_405836184 = (mMemoryUsageCounter.getBitmapHeapMemoryUsage());
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2096444356 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2096444356;
-        // ---------- Original Method ----------
-        //return mMemoryUsageCounter.getBitmapHeapMemoryUsage();
+    /**
+     * Returns an estimate of the bitmap heap memory usage for this RemoteViews.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.114 -0500", hash_original_method = "4E1C2F916A403E6D1D4B708360B7D61A", hash_generated_method = "4E1C2F916A403E6D1D4B708360B7D61A")
+    int estimateBitmapMemoryUsage() {
+        return mMemoryUsageCounter.getBitmapHeapMemoryUsage();
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.765 -0400", hash_original_method = "17103049C6B2546A05BB76759DAB3B89", hash_generated_method = "41AB35E6CD13F07C492006A4E07CF7C3")
+    /**
+     * Add an action to be executed on the remote side when apply is called.
+     * 
+     * @param a The action to add
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.115 -0500", hash_original_method = "17103049C6B2546A05BB76759DAB3B89", hash_generated_method = "270A5CA4396D3DA65EF36BE4500A016F")
     private void addAction(Action a) {
-        addTaint(a.getTaint());
-        if(mActions == null)        
-        {
+        if (mActions == null) {
             mActions = new ArrayList<Action>();
-        } //End block
+        }
         mActions.add(a);
+
+        // update the memory usage stats
         a.updateMemoryUsageEstimate(mMemoryUsageCounter);
-        // ---------- Original Method ----------
-        //if (mActions == null) {
-            //mActions = new ArrayList<Action>();
-        //}
-        //mActions.add(a);
-        //a.updateMemoryUsageEstimate(mMemoryUsageCounter);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.765 -0400", hash_original_method = "4A1BA0269DB90E506DB0959643DF475B", hash_generated_method = "F7A43FA56B4FD021CADC01BA3EAA2102")
+    /**
+     * Equivalent to calling {@link ViewGroup#addView(View)} after inflating the
+     * given {@link RemoteViews}. This allows users to build "nested"
+     * {@link RemoteViews}. In cases where consumers of {@link RemoteViews} may
+     * recycle layouts, use {@link #removeAllViews(int)} to clear any existing
+     * children.
+     *
+     * @param viewId The id of the parent {@link ViewGroup} to add child into.
+     * @param nestedView {@link RemoteViews} that describes the child.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.116 -0500", hash_original_method = "4A1BA0269DB90E506DB0959643DF475B", hash_generated_method = "4886D770A7C3676B878E94B59BBB7E59")
     public void addView(int viewId, RemoteViews nestedView) {
-        addTaint(nestedView.getTaint());
-        addTaint(viewId);
         addAction(new ViewGroupAction(viewId, nestedView));
-        // ---------- Original Method ----------
-        //addAction(new ViewGroupAction(viewId, nestedView));
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.765 -0400", hash_original_method = "E70CF2F379D754A9B2BAC52704294677", hash_generated_method = "B897667E4F45C435418AB4213365FE91")
+    /**
+     * Equivalent to calling {@link ViewGroup#removeAllViews()}.
+     *
+     * @param viewId The id of the parent {@link ViewGroup} to remove all
+     *            children from.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.116 -0500", hash_original_method = "E70CF2F379D754A9B2BAC52704294677", hash_generated_method = "E327FE5A66D475AA2BFDABFFE1E15FE2")
     public void removeAllViews(int viewId) {
-        addTaint(viewId);
         addAction(new ViewGroupAction(viewId, null));
-        // ---------- Original Method ----------
-        //addAction(new ViewGroupAction(viewId, null));
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.766 -0400", hash_original_method = "715372503FFB1BBD9EE3BEF4F54CECDE", hash_generated_method = "4FBD4F8680049A52A9E5818E4FE3F5A8")
+    /**
+     * Equivalent to calling {@link AdapterViewAnimator#showNext()}
+     *
+     * @param viewId The id of the view on which to call {@link AdapterViewAnimator#showNext()}
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.117 -0500", hash_original_method = "715372503FFB1BBD9EE3BEF4F54CECDE", hash_generated_method = "66BA43190B0FD70FFBC0C77681AD53D1")
     public void showNext(int viewId) {
-        addTaint(viewId);
         addAction(new ReflectionActionWithoutParams(viewId, "showNext"));
-        // ---------- Original Method ----------
-        //addAction(new ReflectionActionWithoutParams(viewId, "showNext"));
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.766 -0400", hash_original_method = "92870339C0CC6AF77A420F74F896E688", hash_generated_method = "91E57EB500EDC89270447F09526DFBC2")
+    /**
+     * Equivalent to calling {@link AdapterViewAnimator#showPrevious()}
+     *
+     * @param viewId The id of the view on which to call {@link AdapterViewAnimator#showPrevious()}
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.118 -0500", hash_original_method = "92870339C0CC6AF77A420F74F896E688", hash_generated_method = "29B958FA8B9174A63CFFF2A84D49A809")
     public void showPrevious(int viewId) {
-        addTaint(viewId);
         addAction(new ReflectionActionWithoutParams(viewId, "showPrevious"));
-        // ---------- Original Method ----------
-        //addAction(new ReflectionActionWithoutParams(viewId, "showPrevious"));
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.766 -0400", hash_original_method = "D726270A4D4DC2D53B195715D168181D", hash_generated_method = "6971D42E37BDA8AC09932ED350CD8CE2")
+    /**
+     * Equivalent to calling {@link AdapterViewAnimator#setDisplayedChild(int)}
+     *
+     * @param viewId The id of the view on which to call
+     *               {@link AdapterViewAnimator#setDisplayedChild(int)}
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.119 -0500", hash_original_method = "D726270A4D4DC2D53B195715D168181D", hash_generated_method = "681FBA6691958B49B5276151E20D3578")
     public void setDisplayedChild(int viewId, int childIndex) {
-        addTaint(childIndex);
-        addTaint(viewId);
         setInt(viewId, "setDisplayedChild", childIndex);
-        // ---------- Original Method ----------
-        //setInt(viewId, "setDisplayedChild", childIndex);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.767 -0400", hash_original_method = "DEE52A50DF8AF905161D8440F9C7FD6B", hash_generated_method = "1318BD859544A9FCC79C172EBB7DE41F")
+    /**
+     * Equivalent to calling View.setVisibility
+     * 
+     * @param viewId The id of the view whose visibility should change
+     * @param visibility The new visibility for the view
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.120 -0500", hash_original_method = "DEE52A50DF8AF905161D8440F9C7FD6B", hash_generated_method = "D35680D2C11D87B825D492B72945A47A")
     public void setViewVisibility(int viewId, int visibility) {
-        addTaint(visibility);
-        addTaint(viewId);
         setInt(viewId, "setVisibility", visibility);
-        // ---------- Original Method ----------
-        //setInt(viewId, "setVisibility", visibility);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.767 -0400", hash_original_method = "5F8A789C1791A65B082D971694A97107", hash_generated_method = "A9E0DAEF74E814F2442CBF4375B5BDDD")
+    /**
+     * Equivalent to calling TextView.setText
+     * 
+     * @param viewId The id of the view whose text should change
+     * @param text The new text for the view
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.121 -0500", hash_original_method = "5F8A789C1791A65B082D971694A97107", hash_generated_method = "775D8E18D63705C8DCFC41111F9CBAE4")
     public void setTextViewText(int viewId, CharSequence text) {
-        addTaint(text.getTaint());
-        addTaint(viewId);
         setCharSequence(viewId, "setText", text);
-        // ---------- Original Method ----------
-        //setCharSequence(viewId, "setText", text);
     }
-
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.767 -0400", hash_original_method = "BA7406E13895A91025A0507F41BF6313", hash_generated_method = "90A83621EA6761D2247890C234BF57ED")
-    public void setImageViewResource(int viewId, int srcId) {
-        addTaint(srcId);
-        addTaint(viewId);
+    /**
+     * Equivalent to calling ImageView.setImageResource
+     * 
+     * @param viewId The id of the view whose drawable should change
+     * @param srcId The new resource id for the drawable
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.122 -0500", hash_original_method = "BA7406E13895A91025A0507F41BF6313", hash_generated_method = "DBB6736C78776F4BCF9F89E2FEF0F799")
+    public void setImageViewResource(int viewId, int srcId) {   
         setInt(viewId, "setImageResource", srcId);
-        // ---------- Original Method ----------
-        //setInt(viewId, "setImageResource", srcId);
     }
 
-    
-        @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.768 -0400", hash_original_method = "433DFD276FBB02E0D7A2B8DA3B0F08D8", hash_generated_method = "A214AC9C0996343A91C0F5E76CBAA841")
+    /**
+     * Equivalent to calling ImageView.setImageURI
+     * 
+     * @param viewId The id of the view whose drawable should change
+     * @param uri The Uri for the image
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.122 -0500", hash_original_method = "433DFD276FBB02E0D7A2B8DA3B0F08D8", hash_generated_method = "94D346594F571696B4CA207279C9B47E")
     public void setImageViewUri(int viewId, Uri uri) {
-        addTaint(uri.getTaint());
-        addTaint(viewId);
         setUri(viewId, "setImageURI", uri);
-        // ---------- Original Method ----------
-        //setUri(viewId, "setImageURI", uri);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.768 -0400", hash_original_method = "957E8B822330AC731DF30A1543908B02", hash_generated_method = "EE418AE44F15DD1ADBE2D590F910876E")
+    /**
+     * Equivalent to calling ImageView.setImageBitmap
+     * 
+     * @param viewId The id of the view whose drawable should change
+     * @param bitmap The new Bitmap for the drawable
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.123 -0500", hash_original_method = "957E8B822330AC731DF30A1543908B02", hash_generated_method = "2339F9736A2AA7B946C7F32C608E9209")
     public void setImageViewBitmap(int viewId, Bitmap bitmap) {
-        addTaint(bitmap.getTaint());
-        addTaint(viewId);
         setBitmap(viewId, "setImageBitmap", bitmap);
-        // ---------- Original Method ----------
-        //setBitmap(viewId, "setImageBitmap", bitmap);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.768 -0400", hash_original_method = "4F3E7FFD56A31D2F2A8813C161A91D32", hash_generated_method = "A91083CEAA9EA8D5E229884041C6C1D4")
+    /**
+     * Equivalent to calling AdapterView.setEmptyView
+     *
+     * @param viewId The id of the view on which to set the empty view
+     * @param emptyViewId The view id of the empty view
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.124 -0500", hash_original_method = "4F3E7FFD56A31D2F2A8813C161A91D32", hash_generated_method = "555A8322A72B254BF8C8DD9363F42F69")
     public void setEmptyView(int viewId, int emptyViewId) {
-        addTaint(emptyViewId);
-        addTaint(viewId);
         addAction(new SetEmptyView(viewId, emptyViewId));
-        // ---------- Original Method ----------
-        //addAction(new SetEmptyView(viewId, emptyViewId));
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.768 -0400", hash_original_method = "47E59AC623A4BD9BB48A3F2CB501DFB4", hash_generated_method = "8072C49A910830FEDDA172DCA07EE8C8")
+    /**
+     * Equivalent to calling {@link Chronometer#setBase Chronometer.setBase},
+     * {@link Chronometer#setFormat Chronometer.setFormat},
+     * and {@link Chronometer#start Chronometer.start()} or
+     * {@link Chronometer#stop Chronometer.stop()}.
+     * 
+     * @param viewId The id of the view whose text should change
+     * @param base The time at which the timer would have read 0:00.  This
+     *             time should be based off of
+     *             {@link android.os.SystemClock#elapsedRealtime SystemClock.elapsedRealtime()}.
+     * @param format The Chronometer format string, or null to
+     *               simply display the timer value.
+     * @param started True if you want the clock to be started, false if not.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.125 -0500", hash_original_method = "47E59AC623A4BD9BB48A3F2CB501DFB4", hash_generated_method = "038C89AFF2AE81D33E5C1C22F992CDE3")
     public void setChronometer(int viewId, long base, String format, boolean started) {
-        addTaint(started);
-        addTaint(format.getTaint());
-        addTaint(base);
-        addTaint(viewId);
         setLong(viewId, "setBase", base);
         setString(viewId, "setFormat", format);
         setBoolean(viewId, "setStarted", started);
-        // ---------- Original Method ----------
-        //setLong(viewId, "setBase", base);
-        //setString(viewId, "setFormat", format);
-        //setBoolean(viewId, "setStarted", started);
     }
-
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.768 -0400", hash_original_method = "A929EFC8DD62C6A3F9A2F8FB0663D928", hash_generated_method = "9A06ABE0C67EC98A498C4E1B99192EE5")
+    /**
+     * Equivalent to calling {@link ProgressBar#setMax ProgressBar.setMax},
+     * {@link ProgressBar#setProgress ProgressBar.setProgress}, and
+     * {@link ProgressBar#setIndeterminate ProgressBar.setIndeterminate}
+     *
+     * If indeterminate is true, then the values for max and progress are ignored.
+     * 
+     * @param viewId The id of the view whose text should change
+     * @param max The 100% value for the progress bar
+     * @param progress The current value of the progress bar.
+     * @param indeterminate True if the progress bar is indeterminate, 
+     *                false if not.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.126 -0500", hash_original_method = "A929EFC8DD62C6A3F9A2F8FB0663D928", hash_generated_method = "46BB40528ECA49B60180D5C9534CCFF3")
     public void setProgressBar(int viewId, int max, int progress, 
             boolean indeterminate) {
-        addTaint(indeterminate);
-        addTaint(progress);
-        addTaint(max);
-        addTaint(viewId);
         setBoolean(viewId, "setIndeterminate", indeterminate);
-        if(!indeterminate)        
-        {
+        if (!indeterminate) {
             setInt(viewId, "setMax", max);
             setInt(viewId, "setProgress", progress);
-        } //End block
-        // ---------- Original Method ----------
-        //setBoolean(viewId, "setIndeterminate", indeterminate);
-        //if (!indeterminate) {
-            //setInt(viewId, "setMax", max);
-            //setInt(viewId, "setProgress", progress);
-        //}
+        }
     }
-
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.768 -0400", hash_original_method = "84C6A4280B6852D03015FA2AE8D65E64", hash_generated_method = "1BDD58796026F83223770BCC795BFF17")
+    /**
+     * Equivalent to calling
+     * {@link android.view.View#setOnClickListener(android.view.View.OnClickListener)}
+     * to launch the provided {@link PendingIntent}.
+     * 
+     * When setting the on-click action of items within collections (eg. {@link ListView},
+     * {@link StackView} etc.), this method will not work. Instead, use {@link
+     * RemoteViews#setPendingIntentTemplate(int, PendingIntent) in conjunction with
+     * RemoteViews#setOnClickFillInIntent(int, Intent).
+     *
+     * @param viewId The id of the view that will trigger the {@link PendingIntent} when clicked
+     * @param pendingIntent The {@link PendingIntent} to send when user clicks
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.126 -0500", hash_original_method = "84C6A4280B6852D03015FA2AE8D65E64", hash_generated_method = "927278201C3266DF8CCC1D5611BF65BC")
     public void setOnClickPendingIntent(int viewId, PendingIntent pendingIntent) {
-        addTaint(pendingIntent.getTaint());
-        addTaint(viewId);
         addAction(new SetOnClickPendingIntent(viewId, pendingIntent));
-        // ---------- Original Method ----------
-        //addAction(new SetOnClickPendingIntent(viewId, pendingIntent));
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.768 -0400", hash_original_method = "A434A09AC636025A142B2CC781D07FF1", hash_generated_method = "740FEA23068D37561A480DCF39C1E3EF")
+    /**
+     * When using collections (eg. {@link ListView}, {@link StackView} etc.) in widgets, it is very
+     * costly to set PendingIntents on the individual items, and is hence not permitted. Instead
+     * this method should be used to set a single PendingIntent template on the collection, and
+     * individual items can differentiate their on-click behavior using
+     * {@link RemoteViews#setOnClickFillInIntent(int, Intent)}.
+     *
+     * @param viewId The id of the collection who's children will use this PendingIntent template
+     *          when clicked
+     * @param pendingIntentTemplate The {@link PendingIntent} to be combined with extras specified
+     *          by a child of viewId and executed when that child is clicked
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.127 -0500", hash_original_method = "A434A09AC636025A142B2CC781D07FF1", hash_generated_method = "62AEF8C61235BF66F98E3B9994F4C2BD")
     public void setPendingIntentTemplate(int viewId, PendingIntent pendingIntentTemplate) {
-        addTaint(pendingIntentTemplate.getTaint());
-        addTaint(viewId);
         addAction(new SetPendingIntentTemplate(viewId, pendingIntentTemplate));
-        // ---------- Original Method ----------
-        //addAction(new SetPendingIntentTemplate(viewId, pendingIntentTemplate));
     }
 
-    
-        @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.768 -0400", hash_original_method = "899E714C9944265097024FA544BB7AC2", hash_generated_method = "443FD951F7768975D580B14FB92E9F9D")
+    /**
+     * When using collections (eg. {@link ListView}, {@link StackView} etc.) in widgets, it is very
+     * costly to set PendingIntents on the individual items, and is hence not permitted. Instead
+     * a single PendingIntent template can be set on the collection, see {@link
+     * RemoteViews#setPendingIntentTemplate(int, PendingIntent)}, and the individual on-click
+     * action of a given item can be distinguished by setting a fillInIntent on that item. The
+     * fillInIntent is then combined with the PendingIntent template in order to determine the final
+     * intent which will be executed when the item is clicked. This works as follows: any fields
+     * which are left blank in the PendingIntent template, but are provided by the fillInIntent
+     * will be overwritten, and the resulting PendingIntent will be used.
+     *
+     *
+     * of the PendingIntent template will then be filled in with the associated fields that are
+     * set in fillInIntent. See {@link Intent#fillIn(Intent, int)} for more details.
+     *
+     * @param viewId The id of the view on which to set the fillInIntent
+     * @param fillInIntent The intent which will be combined with the parent's PendingIntent
+     *        in order to determine the on-click behavior of the view specified by viewId
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.128 -0500", hash_original_method = "899E714C9944265097024FA544BB7AC2", hash_generated_method = "9A048ADC9E7E85148529F6949A853C6E")
     public void setOnClickFillInIntent(int viewId, Intent fillInIntent) {
-        addTaint(fillInIntent.getTaint());
-        addTaint(viewId);
         addAction(new SetOnClickFillInIntent(viewId, fillInIntent));
-        // ---------- Original Method ----------
-        //addAction(new SetOnClickFillInIntent(viewId, fillInIntent));
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.769 -0400", hash_original_method = "09A5B1AD4F222B569CE2E6BD5BF01B12", hash_generated_method = "46E1E4FFB2B94304E2534FDDE0544498")
+    /**
+     * @hide
+     * Equivalent to calling a combination of {@link Drawable#setAlpha(int)},
+     * {@link Drawable#setColorFilter(int, android.graphics.PorterDuff.Mode)},
+     * and/or {@link Drawable#setLevel(int)} on the {@link Drawable} of a given
+     * view.
+     * <p>
+     * You can omit specific calls by marking their values with null or -1.
+     * 
+     * @param viewId The id of the view that contains the target
+     *            {@link Drawable}
+     * @param targetBackground If true, apply these parameters to the
+     *            {@link Drawable} returned by
+     *            {@link android.view.View#getBackground()}. Otherwise, assume
+     *            the target view is an {@link ImageView} and apply them to
+     *            {@link ImageView#getDrawable()}.
+     * @param alpha Specify an alpha value for the drawable, or -1 to leave
+     *            unchanged.
+     * @param colorFilter Specify a color for a
+     *            {@link android.graphics.ColorFilter} for this drawable, or -1
+     *            to leave unchanged.
+     * @param mode Specify a PorterDuff mode for this drawable, or null to leave
+     *            unchanged.
+     * @param level Specify the level for the drawable, or -1 to leave
+     *            unchanged.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.129 -0500", hash_original_method = "09A5B1AD4F222B569CE2E6BD5BF01B12", hash_generated_method = "225A8C3B42A47EBB5706A9AA316AC457")
     public void setDrawableParameters(int viewId, boolean targetBackground, int alpha,
             int colorFilter, PorterDuff.Mode mode, int level) {
-        addTaint(level);
-        addTaint(mode.getTaint());
-        addTaint(colorFilter);
-        addTaint(alpha);
-        addTaint(targetBackground);
-        addTaint(viewId);
         addAction(new SetDrawableParameters(viewId, targetBackground, alpha,
                 colorFilter, mode, level));
-        // ---------- Original Method ----------
-        //addAction(new SetDrawableParameters(viewId, targetBackground, alpha,
-                //colorFilter, mode, level));
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.769 -0400", hash_original_method = "F51B3B3FB58685A967056786739D5D5A", hash_generated_method = "A651DE72B3603D07F38918CA7357B7C9")
+    /**
+     * Equivalent to calling {@link android.widget.TextView#setTextColor(int)}.
+     * 
+     * @param viewId The id of the view whose text should change
+     * @param color Sets the text color for all the states (normal, selected,
+     *            focused) to be this color.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.130 -0500", hash_original_method = "F51B3B3FB58685A967056786739D5D5A", hash_generated_method = "58D578553E8BA2ACCE636D9C5DD9CE31")
     public void setTextColor(int viewId, int color) {
-        addTaint(color);
-        addTaint(viewId);
         setInt(viewId, "setTextColor", color);
-        // ---------- Original Method ----------
-        //setInt(viewId, "setTextColor", color);
     }
 
-    
-        @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.769 -0400", hash_original_method = "F3196C5DB537F18A0B70CAAF74A09A0A", hash_generated_method = "7BA5642C25529CE983AA71D42830C192")
+    /**
+     * Equivalent to calling {@link android.widget.AbsListView#setRemoteViewsAdapter(Intent)}.
+     *
+     * @param appWidgetId The id of the app widget which contains the specified view. (This
+     *      parameter is ignored in this deprecated method)
+     * @param viewId The id of the view whose text should change
+     * @param intent The intent of the service which will be
+     *            providing data to the RemoteViewsAdapter
+     * @deprecated This method has been deprecated. See
+     *      {@link android.widget.RemoteViews#setRemoteAdapter(int, Intent)}
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.130 -0500", hash_original_method = "F3196C5DB537F18A0B70CAAF74A09A0A", hash_generated_method = "089DAFB52C583E0734174327DA38E35B")
     @Deprecated
-    public void setRemoteAdapter(int appWidgetId, int viewId, Intent intent) {
-        addTaint(intent.getTaint());
-        addTaint(viewId);
-        addTaint(appWidgetId);
+public void setRemoteAdapter(int appWidgetId, int viewId, Intent intent) {
         setRemoteAdapter(viewId, intent);
-        // ---------- Original Method ----------
-        //setRemoteAdapter(viewId, intent);
     }
 
-    
-        @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.769 -0400", hash_original_method = "9F000F17F0336123DB5D1DD3E4F67BE6", hash_generated_method = "20BE7F1E719B3AD314419FA046E7DC4A")
+    /**
+     * Equivalent to calling {@link android.widget.AbsListView#setRemoteViewsAdapter(Intent)}.
+     * Can only be used for App Widgets.
+     *
+     * @param viewId The id of the view whose text should change
+     * @param intent The intent of the service which will be
+     *            providing data to the RemoteViewsAdapter
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.131 -0500", hash_original_method = "9F000F17F0336123DB5D1DD3E4F67BE6", hash_generated_method = "E059781CE94A62858243349EABE200B1")
     public void setRemoteAdapter(int viewId, Intent intent) {
-        addTaint(intent.getTaint());
-        addTaint(viewId);
         addAction(new SetRemoteViewsAdapterIntent(viewId, intent));
-        // ---------- Original Method ----------
-        //addAction(new SetRemoteViewsAdapterIntent(viewId, intent));
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.769 -0400", hash_original_method = "15753F5F29C6091CCB595496C38B1963", hash_generated_method = "9804635A7776A605A4194FC36DA603A1")
+    /**
+     * Equivalent to calling {@link android.widget.AbsListView#smoothScrollToPosition(int, int)}.
+     *
+     * @param viewId The id of the view whose text should change
+     * @param position Scroll to this adapter position
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.132 -0500", hash_original_method = "15753F5F29C6091CCB595496C38B1963", hash_generated_method = "D8A17A8E9EE28D2DE545E341066CC8A7")
     public void setScrollPosition(int viewId, int position) {
-        addTaint(position);
-        addTaint(viewId);
         setInt(viewId, "smoothScrollToPosition", position);
-        // ---------- Original Method ----------
-        //setInt(viewId, "smoothScrollToPosition", position);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.769 -0400", hash_original_method = "62C951046FF905CA4D61721F847C4DC5", hash_generated_method = "189CB013D9D4C67506872A34477E2B40")
+    /**
+     * Equivalent to calling {@link android.widget.AbsListView#smoothScrollToPosition(int, int)}.
+     *
+     * @param viewId The id of the view whose text should change
+     * @param offset Scroll by this adapter position offset
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.133 -0500", hash_original_method = "62C951046FF905CA4D61721F847C4DC5", hash_generated_method = "0D6A1882C006E5CF530376BB1A746B15")
     public void setRelativeScrollPosition(int viewId, int offset) {
-        addTaint(offset);
-        addTaint(viewId);
         setInt(viewId, "smoothScrollByOffset", offset);
-        // ---------- Original Method ----------
-        //setInt(viewId, "smoothScrollByOffset", offset);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.769 -0400", hash_original_method = "ACF50C9E2E7A3E77B399A3E9AD77138B", hash_generated_method = "0729759768EE2E8619D811BF3DD65869")
+    /**
+     * Call a method taking one boolean on a view in the layout for this RemoteViews.
+     *
+     * @param viewId The id of the view whose text should change
+     * @param methodName The name of the method to call.
+     * @param value The value to pass to the method.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.134 -0500", hash_original_method = "ACF50C9E2E7A3E77B399A3E9AD77138B", hash_generated_method = "C9D9B91F1903061D62B5A83C6F736DF6")
     public void setBoolean(int viewId, String methodName, boolean value) {
-        addTaint(value);
-        addTaint(methodName.getTaint());
-        addTaint(viewId);
         addAction(new ReflectionAction(viewId, methodName, ReflectionAction.BOOLEAN, value));
-        // ---------- Original Method ----------
-        //addAction(new ReflectionAction(viewId, methodName, ReflectionAction.BOOLEAN, value));
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.770 -0400", hash_original_method = "6577642D84CE42EC3FAE93CD4A676A48", hash_generated_method = "1279E6B29577C3483AAB29C8AF16D232")
+    /**
+     * Call a method taking one byte on a view in the layout for this RemoteViews.
+     *
+     * @param viewId The id of the view whose text should change
+     * @param methodName The name of the method to call.
+     * @param value The value to pass to the method.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.134 -0500", hash_original_method = "6577642D84CE42EC3FAE93CD4A676A48", hash_generated_method = "355AF5262A1C5FD33C4E538DBAF5C1B8")
     public void setByte(int viewId, String methodName, byte value) {
-        addTaint(value);
-        addTaint(methodName.getTaint());
-        addTaint(viewId);
         addAction(new ReflectionAction(viewId, methodName, ReflectionAction.BYTE, value));
-        // ---------- Original Method ----------
-        //addAction(new ReflectionAction(viewId, methodName, ReflectionAction.BYTE, value));
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.770 -0400", hash_original_method = "1EF837BE87322E5A782B07EBE8F017ED", hash_generated_method = "D056147F096F9327C17B735728911645")
+    /**
+     * Call a method taking one short on a view in the layout for this RemoteViews.
+     *
+     * @param viewId The id of the view whose text should change
+     * @param methodName The name of the method to call.
+     * @param value The value to pass to the method.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.135 -0500", hash_original_method = "1EF837BE87322E5A782B07EBE8F017ED", hash_generated_method = "FC2D62CF4DC4B97AE9D821CAA3BE3C62")
     public void setShort(int viewId, String methodName, short value) {
-        addTaint(value);
-        addTaint(methodName.getTaint());
-        addTaint(viewId);
         addAction(new ReflectionAction(viewId, methodName, ReflectionAction.SHORT, value));
-        // ---------- Original Method ----------
-        //addAction(new ReflectionAction(viewId, methodName, ReflectionAction.SHORT, value));
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.770 -0400", hash_original_method = "2BA2097F7597ED476DFE96444FF2B47B", hash_generated_method = "7425AD8F55555CB33DCF7007BED20049")
+    /**
+     * Call a method taking one int on a view in the layout for this RemoteViews.
+     *
+     * @param viewId The id of the view whose text should change
+     * @param methodName The name of the method to call.
+     * @param value The value to pass to the method.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.136 -0500", hash_original_method = "2BA2097F7597ED476DFE96444FF2B47B", hash_generated_method = "F9D14C9D9162D6EA5023E288E9A57F79")
     public void setInt(int viewId, String methodName, int value) {
-        addTaint(value);
-        addTaint(methodName.getTaint());
-        addTaint(viewId);
         addAction(new ReflectionAction(viewId, methodName, ReflectionAction.INT, value));
-        // ---------- Original Method ----------
-        //addAction(new ReflectionAction(viewId, methodName, ReflectionAction.INT, value));
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.770 -0400", hash_original_method = "7BBB498795ABAEC2FC5C9E80D1FF1F8F", hash_generated_method = "B0DD8A6DBF5BAE025384B554F8A6A3A0")
+    /**
+     * Call a method taking one long on a view in the layout for this RemoteViews.
+     *
+     * @param viewId The id of the view whose text should change
+     * @param methodName The name of the method to call.
+     * @param value The value to pass to the method.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.137 -0500", hash_original_method = "7BBB498795ABAEC2FC5C9E80D1FF1F8F", hash_generated_method = "5377C596437CB2A823F7DBF2916577D3")
     public void setLong(int viewId, String methodName, long value) {
-        addTaint(value);
-        addTaint(methodName.getTaint());
-        addTaint(viewId);
         addAction(new ReflectionAction(viewId, methodName, ReflectionAction.LONG, value));
-        // ---------- Original Method ----------
-        //addAction(new ReflectionAction(viewId, methodName, ReflectionAction.LONG, value));
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.770 -0400", hash_original_method = "877DFBEE5EFFB4333EA4E3E01D628209", hash_generated_method = "FA040A8921F05DAB93CF3EBA931523DA")
+    /**
+     * Call a method taking one float on a view in the layout for this RemoteViews.
+     *
+     * @param viewId The id of the view whose text should change
+     * @param methodName The name of the method to call.
+     * @param value The value to pass to the method.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.138 -0500", hash_original_method = "877DFBEE5EFFB4333EA4E3E01D628209", hash_generated_method = "2F879AF8958A0C5F804EA32CE29BAACD")
     public void setFloat(int viewId, String methodName, float value) {
-        addTaint(value);
-        addTaint(methodName.getTaint());
-        addTaint(viewId);
         addAction(new ReflectionAction(viewId, methodName, ReflectionAction.FLOAT, value));
-        // ---------- Original Method ----------
-        //addAction(new ReflectionAction(viewId, methodName, ReflectionAction.FLOAT, value));
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.770 -0400", hash_original_method = "36511416C0ED3D737A57750DB7E0C821", hash_generated_method = "38D66894CB60146F8D5F318CFC8EE661")
+    /**
+     * Call a method taking one double on a view in the layout for this RemoteViews.
+     *
+     * @param viewId The id of the view whose text should change
+     * @param methodName The name of the method to call.
+     * @param value The value to pass to the method.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.138 -0500", hash_original_method = "36511416C0ED3D737A57750DB7E0C821", hash_generated_method = "D25AD84884C60A69ECC45BFA6CB51927")
     public void setDouble(int viewId, String methodName, double value) {
-        addTaint(value);
-        addTaint(methodName.getTaint());
-        addTaint(viewId);
         addAction(new ReflectionAction(viewId, methodName, ReflectionAction.DOUBLE, value));
-        // ---------- Original Method ----------
-        //addAction(new ReflectionAction(viewId, methodName, ReflectionAction.DOUBLE, value));
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.770 -0400", hash_original_method = "E7DFE8EB27DC5DF6C76291F003DE876E", hash_generated_method = "EBBB1EDE5F5BA12A72FA6F69686C6198")
+    /**
+     * Call a method taking one char on a view in the layout for this RemoteViews.
+     *
+     * @param viewId The id of the view whose text should change
+     * @param methodName The name of the method to call.
+     * @param value The value to pass to the method.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.139 -0500", hash_original_method = "E7DFE8EB27DC5DF6C76291F003DE876E", hash_generated_method = "EF1F3FF6144F881FBED8F807E27A148B")
     public void setChar(int viewId, String methodName, char value) {
-        addTaint(value);
-        addTaint(methodName.getTaint());
-        addTaint(viewId);
         addAction(new ReflectionAction(viewId, methodName, ReflectionAction.CHAR, value));
-        // ---------- Original Method ----------
-        //addAction(new ReflectionAction(viewId, methodName, ReflectionAction.CHAR, value));
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.770 -0400", hash_original_method = "12B33E0B58F238F52279DFEB1871046D", hash_generated_method = "39E50059B4D9E5EFDA54E18DAB1A08B2")
+    /**
+     * Call a method taking one String on a view in the layout for this RemoteViews.
+     *
+     * @param viewId The id of the view whose text should change
+     * @param methodName The name of the method to call.
+     * @param value The value to pass to the method.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.140 -0500", hash_original_method = "12B33E0B58F238F52279DFEB1871046D", hash_generated_method = "B0939EAF9A451EA1148D9F675F7DF006")
     public void setString(int viewId, String methodName, String value) {
-        addTaint(value.getTaint());
-        addTaint(methodName.getTaint());
-        addTaint(viewId);
         addAction(new ReflectionAction(viewId, methodName, ReflectionAction.STRING, value));
-        // ---------- Original Method ----------
-        //addAction(new ReflectionAction(viewId, methodName, ReflectionAction.STRING, value));
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.771 -0400", hash_original_method = "93A93353A27881B93F029E1CB8E38561", hash_generated_method = "DF70442EE54FBEC687A8B7E350E84DF9")
+    /**
+     * Call a method taking one CharSequence on a view in the layout for this RemoteViews.
+     *
+     * @param viewId The id of the view whose text should change
+     * @param methodName The name of the method to call.
+     * @param value The value to pass to the method.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.141 -0500", hash_original_method = "93A93353A27881B93F029E1CB8E38561", hash_generated_method = "37941E36DE67B6565FB4643DD8504BFA")
     public void setCharSequence(int viewId, String methodName, CharSequence value) {
-        addTaint(value.getTaint());
-        addTaint(methodName.getTaint());
-        addTaint(viewId);
         addAction(new ReflectionAction(viewId, methodName, ReflectionAction.CHAR_SEQUENCE, value));
-        // ---------- Original Method ----------
-        //addAction(new ReflectionAction(viewId, methodName, ReflectionAction.CHAR_SEQUENCE, value));
     }
 
-    
-        @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.771 -0400", hash_original_method = "33EE202B45F16FA5012E7C802B1E1162", hash_generated_method = "A8B80A8412E3D4F82C72D8EC50F3976E")
+    /**
+     * Call a method taking one Uri on a view in the layout for this RemoteViews.
+     *
+     * @param viewId The id of the view whose text should change
+     * @param methodName The name of the method to call.
+     * @param value The value to pass to the method.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.142 -0500", hash_original_method = "33EE202B45F16FA5012E7C802B1E1162", hash_generated_method = "1C40B88D3F4C67D6EB0B3302C4593F86")
     public void setUri(int viewId, String methodName, Uri value) {
-        addTaint(value.getTaint());
-        addTaint(methodName.getTaint());
-        addTaint(viewId);
         addAction(new ReflectionAction(viewId, methodName, ReflectionAction.URI, value));
-        // ---------- Original Method ----------
-        //addAction(new ReflectionAction(viewId, methodName, ReflectionAction.URI, value));
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.771 -0400", hash_original_method = "BE18885A2548A0B5EB1C1E6420A7D63A", hash_generated_method = "559BB7945E4504A3E5CDA29CC02DE905")
+    /**
+     * Call a method taking one Bitmap on a view in the layout for this RemoteViews.
+     * @more
+     * <p class="note">The bitmap will be flattened into the parcel if this object is
+     * sent across processes, so it may end up using a lot of memory, and may be fairly slow.</p>
+     *
+     * @param viewId The id of the view whose text should change
+     * @param methodName The name of the method to call.
+     * @param value The value to pass to the method.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.142 -0500", hash_original_method = "BE18885A2548A0B5EB1C1E6420A7D63A", hash_generated_method = "39F07A653CD5ACEDB7C38B1F50F30C86")
     public void setBitmap(int viewId, String methodName, Bitmap value) {
-        addTaint(value.getTaint());
-        addTaint(methodName.getTaint());
-        addTaint(viewId);
         addAction(new ReflectionAction(viewId, methodName, ReflectionAction.BITMAP, value));
-        // ---------- Original Method ----------
-        //addAction(new ReflectionAction(viewId, methodName, ReflectionAction.BITMAP, value));
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.771 -0400", hash_original_method = "0BCEFBE1ECC6F937E30E64CCDC160671", hash_generated_method = "A5FF6C066C1F6DC00BAAFF501E61FC56")
+    /**
+     * Call a method taking one Bundle on a view in the layout for this RemoteViews.
+     *
+     * @param viewId The id of the view whose text should change
+     * @param methodName The name of the method to call.
+     * @param value The value to pass to the method.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.143 -0500", hash_original_method = "0BCEFBE1ECC6F937E30E64CCDC160671", hash_generated_method = "7C9DCB523FF6B3B2EDE8EA967EA188BD")
     public void setBundle(int viewId, String methodName, Bundle value) {
-        addTaint(value.getTaint());
-        addTaint(methodName.getTaint());
-        addTaint(viewId);
         addAction(new ReflectionAction(viewId, methodName, ReflectionAction.BUNDLE, value));
-        // ---------- Original Method ----------
-        //addAction(new ReflectionAction(viewId, methodName, ReflectionAction.BUNDLE, value));
     }
 
-    
-        @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.771 -0400", hash_original_method = "1536FDACAD3B90F5944D61240D2247D6", hash_generated_method = "E7890A3CCB40E6A03DC49D0997111D88")
+    /**
+     *
+     * @param viewId
+     * @param methodName
+     * @param value
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.144 -0500", hash_original_method = "1536FDACAD3B90F5944D61240D2247D6", hash_generated_method = "C8963E827DB2E3DE023A2918BE3A65B9")
     public void setIntent(int viewId, String methodName, Intent value) {
-        addTaint(value.getTaint());
-        addTaint(methodName.getTaint());
-        addTaint(viewId);
         addAction(new ReflectionAction(viewId, methodName, ReflectionAction.INTENT, value));
-        // ---------- Original Method ----------
-        //addAction(new ReflectionAction(viewId, methodName, ReflectionAction.INTENT, value));
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.771 -0400", hash_original_method = "DAF30AB9823DD59C17B2FD226E498806", hash_generated_method = "1FE2AC7A0E70234A140197AF9EECC2D7")
+    /**
+     * Equivalent to calling View.setContentDescription
+     *
+     * @param viewId The id of the view whose content description should change
+     * @param contentDescription The new content description for the view
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.145 -0500", hash_original_method = "DAF30AB9823DD59C17B2FD226E498806", hash_generated_method = "6AD680900996DB50FC4A18CB0E27A3D5")
     public void setContentDescription(int viewId, CharSequence contentDescription) {
-        addTaint(contentDescription.getTaint());
-        addTaint(viewId);
         setCharSequence(viewId, "setContentDescription", contentDescription);
-        // ---------- Original Method ----------
-        //setCharSequence(viewId, "setContentDescription", contentDescription);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.771 -0400", hash_original_method = "389CE470D5FBF8918932B7CDEB2F38A1", hash_generated_method = "D609DA9CB3BF7A7DE11004E68F182400")
+    /**
+     * Inflates the view hierarchy represented by this object and applies
+     * all of the actions.
+     * 
+     * <p><strong>Caller beware: this may throw</strong>
+     * 
+     * @param context Default context to use
+     * @param parent Parent that the resulting view hierarchy will be attached to. This method
+     * does <strong>not</strong> attach the hierarchy. The caller should do so when appropriate.
+     * @return The inflated view hierarchy
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.146 -0500", hash_original_method = "389CE470D5FBF8918932B7CDEB2F38A1", hash_generated_method = "477AE5EF426390CEA27F62AA3B979C27")
     public View apply(Context context, ViewGroup parent) {
-        addTaint(parent.getTaint());
-        addTaint(context.getTaint());
         View result;
+
         Context c = prepareContext(context);
+
         LayoutInflater inflater = (LayoutInflater)
                 c.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
         inflater = inflater.cloneInContext(c);
         inflater.setFilter(this);
-        result = inflater.inflate(mLayoutId, parent, false);
-        performApply(result, parent);
-View varDC838461EE2FA0CA4C9BBB70A15456B0_1588690019 =         result;
-        varDC838461EE2FA0CA4C9BBB70A15456B0_1588690019.addTaint(taint);
-        return varDC838461EE2FA0CA4C9BBB70A15456B0_1588690019;
-        // ---------- Original Method ----------
-        //View result;
-        //Context c = prepareContext(context);
-        //LayoutInflater inflater = (LayoutInflater)
-                //c.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        //inflater = inflater.cloneInContext(c);
-        //inflater.setFilter(this);
-        //result = inflater.inflate(mLayoutId, parent, false);
-        //performApply(result, parent);
-        //return result;
-    }
 
+        result = inflater.inflate(mLayoutId, parent, false);
+
+        performApply(result, parent);
+
+        return result;
+    }
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.772 -0400", hash_original_method = "721D0331C9411BF86340BE2E97293121", hash_generated_method = "69223AB8BA112CE672EE71C9094EAB66")
+    /**
+     * Applies all of the actions to the provided view.
+     *
+     * <p><strong>Caller beware: this may throw</strong>
+     * 
+     * @param v The view to apply the actions to.  This should be the result of
+     * the {@link #apply(Context,ViewGroup)} call.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.146 -0500", hash_original_method = "721D0331C9411BF86340BE2E97293121", hash_generated_method = "8434EB615B63C0CAE40E690111B9969C")
     public void reapply(Context context, View v) {
-        addTaint(v.getTaint());
-        addTaint(context.getTaint());
         prepareContext(context);
         performApply(v, (ViewGroup) v.getParent());
-        // ---------- Original Method ----------
-        //prepareContext(context);
-        //performApply(v, (ViewGroup) v.getParent());
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.772 -0400", hash_original_method = "8E5E3E88ABCC69E3321D1346316340C9", hash_generated_method = "98B120172AB8CDD4F398848FD6B7F5E5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.147 -0500", hash_original_method = "8E5E3E88ABCC69E3321D1346316340C9", hash_generated_method = "B7CD65CDD0FE3868DFAC519B78D7F9BC")
     private void performApply(View v, ViewGroup parent) {
-        addTaint(parent.getTaint());
-        addTaint(v.getTaint());
-        if(mActions != null)        
-        {
+        if (mActions != null) {
             final int count = mActions.size();
-for(int i = 0;i < count;i++)
-            {
+            for (int i = 0; i < count; i++) {
                 Action a = mActions.get(i);
                 a.apply(v, parent);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (mActions != null) {
-            //final int count = mActions.size();
-            //for (int i = 0; i < count; i++) {
-                //Action a = mActions.get(i);
-                //a.apply(v, parent);
-            //}
-        //}
+            }
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.779 -0400", hash_original_method = "22DA97EA1494F0F193EF18C8ED8C5634", hash_generated_method = "08C29A90C911E4D6BE4977DA08781EE3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.148 -0500", hash_original_method = "22DA97EA1494F0F193EF18C8ED8C5634", hash_generated_method = "B2D8E583C06BD07BDA77C7DDFC735575")
     private Context prepareContext(Context context) {
-        addTaint(context.getTaint());
         Context c;
         String packageName = mPackage;
-        if(packageName != null)        
-        {
-            try 
-            {
+
+        if (packageName != null) {
+            try {
                 c = context.createPackageContext(packageName, Context.CONTEXT_RESTRICTED);
-            } //End block
-            catch (NameNotFoundException e)
-            {
+            } catch (NameNotFoundException e) {
+                Log.e(LOG_TAG, "Package name " + packageName + " not found");
                 c = context;
-            } //End block
-        } //End block
-        else
-        {
+            }
+        } else {
             c = context;
-        } //End block
-Context var807FB10045EE51C06BDB74744A6714DF_936597227 =         c;
-        var807FB10045EE51C06BDB74744A6714DF_936597227.addTaint(taint);
-        return var807FB10045EE51C06BDB74744A6714DF_936597227;
-        // ---------- Original Method ----------
-        //Context c;
-        //String packageName = mPackage;
-        //if (packageName != null) {
-            //try {
-                //c = context.createPackageContext(packageName, Context.CONTEXT_RESTRICTED);
-            //} catch (NameNotFoundException e) {
-                //Log.e(LOG_TAG, "Package name " + packageName + " not found");
-                //c = context;
-            //}
-        //} else {
-            //c = context;
-        //}
-        //return c;
-    }
+        }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.779 -0400", hash_original_method = "02A046D25F4E9D374E474E21F6366163", hash_generated_method = "FE46244A17CA3356D3D66568446C5B5D")
-    public boolean onLoadClass(Class clazz) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(clazz.getTaint());
-        boolean var150E6783CEAB2778A42882A1500631E2_914194564 = (clazz.isAnnotationPresent(RemoteView.class));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_662867452 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_662867452;
-        // ---------- Original Method ----------
-        //return clazz.isAnnotationPresent(RemoteView.class);
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.780 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "2BB2F073C465F9094C2E45A4F3A8639E")
-    public int describeContents() {
-        int varCFCD208495D565EF66E7DFF9F98764DA_1595267995 = (0);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_637782967 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_637782967;
-        // ---------- Original Method ----------
-        //return 0;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.780 -0400", hash_original_method = "E42048CF3CAA5A680CE684B09E27CD46", hash_generated_method = "486236D4B56BE0495CC3002C9FADA0D6")
-    public void writeToParcel(Parcel dest, int flags) {
-        addTaint(flags);
-        addTaint(dest.getTaint());
-        dest.writeString(mPackage);
-        dest.writeInt(mLayoutId);
-        dest.writeInt(mIsWidgetCollectionChild ? 1 : 0);
-        int count;
-        if(mActions != null)        
-        {
-            count = mActions.size();
-        } //End block
-        else
-        {
-            count = 0;
-        } //End block
-        dest.writeInt(count);
-for(int i=0;i<count;i++)
-        {
-            Action a = mActions.get(i);
-            a.writeToParcel(dest, 0);
-        } //End block
-        // ---------- Original Method ----------
-        //dest.writeString(mPackage);
-        //dest.writeInt(mLayoutId);
-        //dest.writeInt(mIsWidgetCollectionChild ? 1 : 0);
-        //int count;
-        //if (mActions != null) {
-            //count = mActions.size();
-        //} else {
-            //count = 0;
-        //}
-        //dest.writeInt(count);
-        //for (int i=0; i<count; i++) {
-            //Action a = mActions.get(i);
-            //a.writeToParcel(dest, 0);
-        //}
+        return c;
     }
 
     
     public static class ActionException extends RuntimeException {
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.780 -0400", hash_original_method = "4338C0B6ED05990B68F77B56C502C8BC", hash_generated_method = "6A9B199E4B70296D28CD039E0E15FE3D")
-        public  ActionException(Exception ex) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.005 -0500", hash_original_method = "4338C0B6ED05990B68F77B56C502C8BC", hash_generated_method = "8A6434B176D353F1936A155E629A021C")
+        public ActionException(Exception ex) {
             super(ex);
-            addTaint(ex.getTaint());
-            // ---------- Original Method ----------
         }
-
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.780 -0400", hash_original_method = "E5DD8B85C6FF17BD695A219FDD405D42", hash_generated_method = "947B27CB5701852C6B41A566481318D7")
-        public  ActionException(String message) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.006 -0500", hash_original_method = "E5DD8B85C6FF17BD695A219FDD405D42", hash_generated_method = "28BBE77B86360930B9436F0DF86632C6")
+        public ActionException(String message) {
             super(message);
-            addTaint(message.getTaint());
-            // ---------- Original Method ----------
         }
 
         
@@ -881,80 +825,42 @@ for(int i=0;i<count;i++)
         {
             //Synthesized constructor
         }
-
-
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.008 -0500", hash_original_method = "67F4BF9F6DDAE6F8C43B87EDA5B1A8FB", hash_generated_method = "BE0DC090C1879247B33B0996B0C8BCFF")
         public abstract void apply(View root, ViewGroup rootParent) throws ActionException;
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.781 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "ECA62742CD1C361B6E70B7D26F9BB7CD")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.009 -0500", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "D90463461B2A94FF94D13FDF69BB80C9")
         public int describeContents() {
-            int varCFCD208495D565EF66E7DFF9F98764DA_354821064 = (0);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_420298747 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_420298747;
-            // ---------- Original Method ----------
-            //return 0;
+            return 0;
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.781 -0400", hash_original_method = "F71AEDBFF608C755FB28C9D45BA8F347", hash_generated_method = "9A7E1CFD3CC84E49A82E0C1CD56BAC36")
+        /**
+         * Overridden by each class to report on it's own memory usage
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.009 -0500", hash_original_method = "F71AEDBFF608C755FB28C9D45BA8F347", hash_generated_method = "E6F67FEF1D512F865EF80CA1E3C854B7")
         public void updateMemoryUsageEstimate(MemoryUsageCounter counter) {
-            addTaint(counter.getTaint());
+            // We currently only calculate Bitmap memory usage, so by default, don't do anything
+            // here
             return;
-            // ---------- Original Method ----------
-            //return;
         }
 
-        
-                @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.781 -0400", hash_original_method = "18203BE61B7EF9CD6501BEC6EAEF8812", hash_generated_method = "BB114C013A029B8384BEC13162A554DC")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.010 -0500", hash_original_method = "18203BE61B7EF9CD6501BEC6EAEF8812", hash_generated_method = "0A240D8F91D78FF4CF84AC92B7FCCB95")
         protected boolean startIntentSafely(Context context, PendingIntent pendingIntent,
                 Intent fillInIntent) {
-            addTaint(fillInIntent.getTaint());
-            addTaint(pendingIntent.getTaint());
-            addTaint(context.getTaint());
-            try 
-            {
+            try {
+                // TODO: Unregister this handler if PendingIntent.FLAG_ONE_SHOT?
                 context.startIntentSender(
                         pendingIntent.getIntentSender(), fillInIntent,
                         Intent.FLAG_ACTIVITY_NEW_TASK,
                         Intent.FLAG_ACTIVITY_NEW_TASK, 0);
-            } //End block
-            catch (IntentSender.SendIntentException e)
-            {
+            } catch (IntentSender.SendIntentException e) {
                 android.util.Log.e(LOG_TAG, "Cannot send pending intent: ", e);
-                boolean var68934A3E9455FA72420237EB05902327_1323955540 = (false);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_696699135 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_696699135;
-            } //End block
-            catch (Exception e)
-            {
+                return false;
+            } catch (Exception e) {
                 android.util.Log.e(LOG_TAG, "Cannot send pending intent due to " +
                         "unknown exception: ", e);
-                boolean var68934A3E9455FA72420237EB05902327_48612009 = (false);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1855348856 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1855348856;
-            } //End block
-            boolean varB326B5062B2F0E69046810717534CB09_621563084 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_441852641 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_441852641;
-            // ---------- Original Method ----------
-            //try {
-                //context.startIntentSender(
-                        //pendingIntent.getIntentSender(), fillInIntent,
-                        //Intent.FLAG_ACTIVITY_NEW_TASK,
-                        //Intent.FLAG_ACTIVITY_NEW_TASK, 0);
-            //} catch (IntentSender.SendIntentException e) {
-                //android.util.Log.e(LOG_TAG, "Cannot send pending intent: ", e);
-                //return false;
-            //} catch (Exception e) {
-                //android.util.Log.e(LOG_TAG, "Cannot send pending intent due to " +
-                        //"unknown exception: ", e);
-                //return false;
-            //}
-            //return true;
+                return false;
+            }
+            return true;
         }
 
         
@@ -963,186 +869,142 @@ for(int i=0;i<count;i++)
 
     
     private class SetEmptyView extends Action {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.781 -0400", hash_original_field = "4471D27E06AC724B5DD676BEE05854BE", hash_generated_field = "6D439F1D3806F3B8DDD66C155D4A0AD3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.014 -0500", hash_original_field = "D59D4247F9ED236621C450A673C8EE48", hash_generated_field = "832C8F64E214207268768E39D7FCB9F3")
+
+
+        public final static int TAG = 6;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.012 -0500", hash_original_field = "6D439F1D3806F3B8DDD66C155D4A0AD3", hash_generated_field = "6D439F1D3806F3B8DDD66C155D4A0AD3")
 
         int viewId;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.781 -0400", hash_original_field = "23D13A84EF4F7189027D73EC6744F6E8", hash_generated_field = "8D3D66B4863E42DCDD06D3EE8F80E8F7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.013 -0500", hash_original_field = "8D3D66B4863E42DCDD06D3EE8F80E8F7", hash_generated_field = "8D3D66B4863E42DCDD06D3EE8F80E8F7")
 
         int emptyViewId;
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.781 -0400", hash_original_method = "16159C50F4CD599B644ED014E4EA0822", hash_generated_method = "C1C4A274A58AFAF2063BE98C3846BAE4")
-          SetEmptyView(int viewId, int emptyViewId) {
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.015 -0500", hash_original_method = "16159C50F4CD599B644ED014E4EA0822", hash_generated_method = "16159C50F4CD599B644ED014E4EA0822")
+        SetEmptyView(int viewId, int emptyViewId) {
             this.viewId = viewId;
             this.emptyViewId = emptyViewId;
-            // ---------- Original Method ----------
-            //this.viewId = viewId;
-            //this.emptyViewId = emptyViewId;
         }
 
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.782 -0400", hash_original_method = "F10F16648F57CF9FE4F3D806E803B1DC", hash_generated_method = "0CB8CADFFD90BE29657F9D6DCA52C11C")
-          SetEmptyView(Parcel in) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.016 -0500", hash_original_method = "F10F16648F57CF9FE4F3D806E803B1DC", hash_generated_method = "F10F16648F57CF9FE4F3D806E803B1DC")
+        SetEmptyView(Parcel in) {
             this.viewId = in.readInt();
             this.emptyViewId = in.readInt();
-            // ---------- Original Method ----------
-            //this.viewId = in.readInt();
-            //this.emptyViewId = in.readInt();
         }
 
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.782 -0400", hash_original_method = "1EA9A4CD3E90F19D62658919976BDCDF", hash_generated_method = "BDCDEB835159FF3D8B6EC5654A2FCE19")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.017 -0500", hash_original_method = "1EA9A4CD3E90F19D62658919976BDCDF", hash_generated_method = "102CA6F7C365210ABD88939C30A9A93C")
         public void writeToParcel(Parcel out, int flags) {
-            addTaint(flags);
-            addTaint(out.getTaint());
             out.writeInt(TAG);
             out.writeInt(this.viewId);
             out.writeInt(this.emptyViewId);
-            // ---------- Original Method ----------
-            //out.writeInt(TAG);
-            //out.writeInt(this.viewId);
-            //out.writeInt(this.emptyViewId);
         }
 
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.782 -0400", hash_original_method = "BC00C709904F6A7A06083DBEA360E136", hash_generated_method = "57D305BFC46269920AF6142E85B3F68F")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.018 -0500", hash_original_method = "BC00C709904F6A7A06083DBEA360E136", hash_generated_method = "960074206CE8FDD1BBFB1FA45EEA249F")
         @Override
-        public void apply(View root, ViewGroup rootParent) {
-            addTaint(rootParent.getTaint());
-            addTaint(root.getTaint());
+public void apply(View root, ViewGroup rootParent) {
             final View view = root.findViewById(viewId);
-            if(!(view instanceof AdapterView<?>))            
-            return;
+            if (!(view instanceof AdapterView<?>)) return;
+
             AdapterView<?> adapterView = (AdapterView<?>) view;
+
             final View emptyView = root.findViewById(emptyViewId);
-            if(emptyView == null)            
-            return;
+            if (emptyView == null) return;
+
             adapterView.setEmptyView(emptyView);
-            // ---------- Original Method ----------
-            //final View view = root.findViewById(viewId);
-            //if (!(view instanceof AdapterView<?>)) return;
-            //AdapterView<?> adapterView = (AdapterView<?>) view;
-            //final View emptyView = root.findViewById(emptyViewId);
-            //if (emptyView == null) return;
-            //adapterView.setEmptyView(emptyView);
         }
-
-        
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.782 -0400", hash_original_field = "9C473E90A5431830598CA413D5D4F376", hash_generated_field = "832C8F64E214207268768E39D7FCB9F3")
-
-        public final static int TAG = 6;
     }
 
 
     
     private class SetOnClickFillInIntent extends Action {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.782 -0400", hash_original_field = "4471D27E06AC724B5DD676BEE05854BE", hash_generated_field = "6D439F1D3806F3B8DDD66C155D4A0AD3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.026 -0500", hash_original_field = "2CA6A73FAAA2D00670E3244D2C6BEA16", hash_generated_field = "257D5F310A82D1AE988E43617C7394F4")
+
+
+        public final static int TAG = 9;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.025 -0500", hash_original_field = "6D439F1D3806F3B8DDD66C155D4A0AD3", hash_generated_field = "6D439F1D3806F3B8DDD66C155D4A0AD3")
+
 
         int viewId;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.782 -0400", hash_original_field = "3BCE79238D517725ED23615F7B7237D8", hash_generated_field = "9D3AB3AC0219EE64EF3FF80AB068BB5E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.025 -0500", hash_original_field = "9D3AB3AC0219EE64EF3FF80AB068BB5E", hash_generated_field = "9D3AB3AC0219EE64EF3FF80AB068BB5E")
 
         Intent fillInIntent;
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.782 -0400", hash_original_method = "FE3667D87A305D86E9A8A6AD36F5EEAF", hash_generated_method = "18AF1F9FD9414C6BCF3DBFD2F1D4F53B")
-        public  SetOnClickFillInIntent(int id, Intent fillInIntent) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.019 -0500", hash_original_method = "FE3667D87A305D86E9A8A6AD36F5EEAF", hash_generated_method = "661AD41A4B9EC1106B3E87749FBE1A12")
+        public SetOnClickFillInIntent(int id, Intent fillInIntent) {
             this.viewId = id;
             this.fillInIntent = fillInIntent;
-            // ---------- Original Method ----------
-            //this.viewId = id;
-            //this.fillInIntent = fillInIntent;
         }
 
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.783 -0400", hash_original_method = "8F893000547B59EAD09450FBC024CAC1", hash_generated_method = "D68C613EB9756E36CE15A86322799F88")
-        public  SetOnClickFillInIntent(Parcel parcel) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.020 -0500", hash_original_method = "8F893000547B59EAD09450FBC024CAC1", hash_generated_method = "F2C3AB7C5E101A5DCE6A85AF80841AA0")
+        public SetOnClickFillInIntent(Parcel parcel) {
             viewId = parcel.readInt();
             fillInIntent = Intent.CREATOR.createFromParcel(parcel);
-            // ---------- Original Method ----------
-            //viewId = parcel.readInt();
-            //fillInIntent = Intent.CREATOR.createFromParcel(parcel);
         }
 
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.783 -0400", hash_original_method = "4A68D926F0B47E5C592025763C57CD49", hash_generated_method = "7DF2206EA6761B29E294427DDFA70EE9")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.021 -0500", hash_original_method = "4A68D926F0B47E5C592025763C57CD49", hash_generated_method = "ACC7BFF44F22149E7887ACA9580365E2")
         public void writeToParcel(Parcel dest, int flags) {
-            addTaint(flags);
-            addTaint(dest.getTaint());
             dest.writeInt(TAG);
             dest.writeInt(viewId);
-            fillInIntent.writeToParcel(dest, 0 );
-            // ---------- Original Method ----------
-            //dest.writeInt(TAG);
-            //dest.writeInt(viewId);
-            //fillInIntent.writeToParcel(dest, 0 );
+            fillInIntent.writeToParcel(dest, 0 /* no flags */);
         }
 
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.783 -0400", hash_original_method = "3474C680008284CA3FCD2C734DB61ED8", hash_generated_method = "AFFFC75621C5B797EAA769D2E4B76D93")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.024 -0500", hash_original_method = "3474C680008284CA3FCD2C734DB61ED8", hash_generated_method = "F462B6A153AA13F759A58322A11AD9A6")
         @Override
-        public void apply(View root, ViewGroup rootParent) {
-            addTaint(rootParent.getTaint());
-            addTaint(root.getTaint());
+public void apply(View root, ViewGroup rootParent) {
             final View target = root.findViewById(viewId);
-            if(target == null)            
-            return;
-            if(!mIsWidgetCollectionChild)            
-            {
+            if (target == null) return;
+
+            if (!mIsWidgetCollectionChild) {
+                Log.e("RemoteViews", "The method setOnClickFillInIntent is available " +
+                        "only from RemoteViewsFactory (ie. on collection items).");
                 return;
-            } //End block
-            if(target == root)            
-            {
+            }
+            if (target == root) {
                 target.setTagInternal(com.android.internal.R.id.fillInIntent, fillInIntent);
-            } //End block
-            else
-            if(target != null && fillInIntent != null)            
-            {
+            } else if (target != null && fillInIntent != null) {
                 OnClickListener listener = new OnClickListener() {
                     public void onClick(View v) {
+                        // Insure that this view is a child of an AdapterView
                         View parent = (View) v.getParent();
                         while (!(parent instanceof AdapterView<?>)
                                 && !(parent instanceof AppWidgetHostView)) {
                             parent = (View) parent.getParent();
                         }
+
                         if (parent instanceof AppWidgetHostView) {
+                            // Somehow they've managed to get this far without having
+                            // and AdapterView as a parent.
                             Log.e("RemoteViews", "Collection item doesn't have AdapterView parent");
                             return;
                         }
+
+                        // Insure that a template pending intent has been set on an ancestor
                         if (!(parent.getTag() instanceof PendingIntent)) {
                             Log.e("RemoteViews", "Attempting setOnClickFillInIntent without" +
                                     " calling setPendingIntentTemplate on parent.");
                             return;
                         }
+
                         PendingIntent pendingIntent = (PendingIntent) parent.getTag();
+
                         final float appScale = v.getContext().getResources()
                                 .getCompatibilityInfo().applicationScale;
                         final int[] pos = new int[2];
                         v.getLocationOnScreen(pos);
+
                         final Rect rect = new Rect();
                         rect.left = (int) (pos[0] * appScale + 0.5f);
                         rect.top = (int) (pos[1] * appScale + 0.5f);
                         rect.right = (int) ((pos[0] + v.getWidth()) * appScale + 0.5f);
                         rect.bottom = (int) ((pos[1] + v.getHeight()) * appScale + 0.5f);
+
                         fillInIntent.setSourceBounds(rect);
                         startIntentSafely(v.getContext(), pendingIntent, fillInIntent);
                     }
+
                 };
                 target.setOnClickListener(listener);
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            }
         }
-
-        
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.783 -0400", hash_original_field = "D91A2B10EDD4F80880F9239AF8DAACE6", hash_generated_field = "257D5F310A82D1AE988E43617C7394F4")
-
-        public final static int TAG = 9;
         // orphaned legacy method
         public void onClick(View v) {
                         View parent = (View) v.getParent();
@@ -1178,71 +1040,60 @@ for(int i=0;i<count;i++)
 
     
     private class SetPendingIntentTemplate extends Action {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.783 -0400", hash_original_field = "4471D27E06AC724B5DD676BEE05854BE", hash_generated_field = "6D439F1D3806F3B8DDD66C155D4A0AD3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.036 -0500", hash_original_field = "DA93FC8165D012ECFA574BB3EFD71D8E", hash_generated_field = "999B6A111CF47CD01BFB86C10E0DFDAF")
+
+
+        public final static int TAG = 8;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.034 -0500", hash_original_field = "6D439F1D3806F3B8DDD66C155D4A0AD3", hash_generated_field = "6D439F1D3806F3B8DDD66C155D4A0AD3")
+
 
         int viewId;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.783 -0400", hash_original_field = "176E2FA2A8B62FAC39A0DD8CC7A328C0", hash_generated_field = "D0EA5F86DAC5B859FF411BE20B81D705")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.035 -0500", hash_original_field = "D0EA5F86DAC5B859FF411BE20B81D705", hash_generated_field = "D0EA5F86DAC5B859FF411BE20B81D705")
 
         PendingIntent pendingIntentTemplate;
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.784 -0400", hash_original_method = "319DBBF9EE021BC2BD14552E08C5F806", hash_generated_method = "D7A3DCE3AD9BD409E6F2A6466125223B")
-        public  SetPendingIntentTemplate(int id, PendingIntent pendingIntentTemplate) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.028 -0500", hash_original_method = "319DBBF9EE021BC2BD14552E08C5F806", hash_generated_method = "2CF5D502ABA2EF6BD26CB66E15147110")
+        public SetPendingIntentTemplate(int id, PendingIntent pendingIntentTemplate) {
             this.viewId = id;
             this.pendingIntentTemplate = pendingIntentTemplate;
-            // ---------- Original Method ----------
-            //this.viewId = id;
-            //this.pendingIntentTemplate = pendingIntentTemplate;
         }
 
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.784 -0400", hash_original_method = "F35BA9665B1C6E88223062D1328FA579", hash_generated_method = "DD0B2CD3748A8B20A1DE310050B42710")
-        public  SetPendingIntentTemplate(Parcel parcel) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.029 -0500", hash_original_method = "F35BA9665B1C6E88223062D1328FA579", hash_generated_method = "00208728D17D55CA59088604709F7E3D")
+        public SetPendingIntentTemplate(Parcel parcel) {
             viewId = parcel.readInt();
             pendingIntentTemplate = PendingIntent.readPendingIntentOrNullFromParcel(parcel);
-            // ---------- Original Method ----------
-            //viewId = parcel.readInt();
-            //pendingIntentTemplate = PendingIntent.readPendingIntentOrNullFromParcel(parcel);
         }
 
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.784 -0400", hash_original_method = "2DE56D1052D41AEA85684029786EA581", hash_generated_method = "04D29CFB7CE01C81A1025050CF72DF16")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.031 -0500", hash_original_method = "2DE56D1052D41AEA85684029786EA581", hash_generated_method = "F0F77F5D14E4FBC0E30B4AA606DAA5AA")
         public void writeToParcel(Parcel dest, int flags) {
-            addTaint(flags);
-            addTaint(dest.getTaint());
             dest.writeInt(TAG);
             dest.writeInt(viewId);
-            pendingIntentTemplate.writeToParcel(dest, 0 );
-            // ---------- Original Method ----------
-            //dest.writeInt(TAG);
-            //dest.writeInt(viewId);
-            //pendingIntentTemplate.writeToParcel(dest, 0 );
+            pendingIntentTemplate.writeToParcel(dest, 0 /* no flags */);
         }
 
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.784 -0400", hash_original_method = "BC6383FD3782B4E4299FBBF52DF5CBB4", hash_generated_method = "372E487691811E9C244E2E4385245940")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.033 -0500", hash_original_method = "BC6383FD3782B4E4299FBBF52DF5CBB4", hash_generated_method = "A68ECDE7BFD20B8A18A21C230E389D93")
         @Override
-        public void apply(View root, ViewGroup rootParent) {
-            addTaint(rootParent.getTaint());
-            addTaint(root.getTaint());
+public void apply(View root, ViewGroup rootParent) {
             final View target = root.findViewById(viewId);
-            if(target == null)            
-            return;
-            if(target instanceof AdapterView<?>)            
-            {
+            if (target == null) return;
+
+            // If the view isn't an AdapterView, setting a PendingIntent template doesn't make sense
+            if (target instanceof AdapterView<?>) {
                 AdapterView<?> av = (AdapterView<?>) target;
+                // The PendingIntent template is stored in the view's tag.
                 OnItemClickListener listener = new OnItemClickListener() {
                     public void onItemClick(AdapterView<?> parent, View view,
                             int position, long id) {
+                        // The view should be a frame layout
                         if (view instanceof ViewGroup) {
                             ViewGroup vg = (ViewGroup) view;
+
+                            // AdapterViews contain their children in a frame
+                            // so we need to go one layer deeper here.
                             if (parent instanceof AdapterViewAnimator) {
                                 vg = (ViewGroup) vg.getChildAt(0);
                             }
                             if (vg == null) return;
+
                             Intent fillInIntent = null;
                             int childCount = vg.getChildCount();
                             for (int i = 0; i < childCount; i++) {
@@ -1253,15 +1104,18 @@ for(int i=0;i<count;i++)
                                 }
                             }
                             if (fillInIntent == null) return;
+
                             final float appScale = view.getContext().getResources()
                                     .getCompatibilityInfo().applicationScale;
                             final int[] pos = new int[2];
                             view.getLocationOnScreen(pos);
+
                             final Rect rect = new Rect();
                             rect.left = (int) (pos[0] * appScale + 0.5f);
                             rect.top = (int) (pos[1] * appScale + 0.5f);
                             rect.right = (int) ((pos[0] + view.getWidth()) * appScale + 0.5f);
                             rect.bottom = (int) ((pos[1] + view.getHeight()) * appScale + 0.5f);
+
                             final Intent intent = new Intent();
                             intent.setSourceBounds(rect);
                             startIntentSafely(view.getContext(), pendingIntentTemplate, fillInIntent);
@@ -1270,19 +1124,12 @@ for(int i=0;i<count;i++)
                 };
                 av.setOnItemClickListener(listener);
                 av.setTag(pendingIntentTemplate);
-            } //End block
-            else
-            {
+            } else {
+                Log.e("RemoteViews", "Cannot setPendingIntentTemplate on a view which is not" +
+                        "an AdapterView (id: " + viewId + ")");
                 return;
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            }
         }
-
-        
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.784 -0400", hash_original_field = "6065CCBD64FD6BA819686C609CBF3FA3", hash_generated_field = "999B6A111CF47CD01BFB86C10E0DFDAF")
-
-        public final static int TAG = 8;
         // orphaned legacy method
         public void onItemClick(AdapterView<?> parent, View view,
                             int position, long id) {
@@ -1322,177 +1169,140 @@ for(int i=0;i<count;i++)
 
     
     private class SetRemoteViewsAdapterIntent extends Action {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.784 -0400", hash_original_field = "4471D27E06AC724B5DD676BEE05854BE", hash_generated_field = "6D439F1D3806F3B8DDD66C155D4A0AD3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.043 -0500", hash_original_field = "9FA61F47E20184FF08B91738AD61CE72", hash_generated_field = "8FE5A8285A40B3CDB587BD72B1510F3F")
+
+
+        public final static int TAG = 10;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.042 -0500", hash_original_field = "6D439F1D3806F3B8DDD66C155D4A0AD3", hash_generated_field = "6D439F1D3806F3B8DDD66C155D4A0AD3")
+
 
         int viewId;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.784 -0400", hash_original_field = "FA48C7D544739BA0E46430E4BA366662", hash_generated_field = "170FCA7A98A65D8003A3D20D5B3C245D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.042 -0500", hash_original_field = "170FCA7A98A65D8003A3D20D5B3C245D", hash_generated_field = "170FCA7A98A65D8003A3D20D5B3C245D")
 
         Intent intent;
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.785 -0400", hash_original_method = "2562242EF5AD42CD0339F4CFA0A5651B", hash_generated_method = "4D41B794CEB49FBFDACF661D08DF1C0D")
-        public  SetRemoteViewsAdapterIntent(int id, Intent intent) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.038 -0500", hash_original_method = "2562242EF5AD42CD0339F4CFA0A5651B", hash_generated_method = "884FD0E7E26D655F8383375628BA01AF")
+        public SetRemoteViewsAdapterIntent(int id, Intent intent) {
             this.viewId = id;
             this.intent = intent;
-            // ---------- Original Method ----------
-            //this.viewId = id;
-            //this.intent = intent;
         }
 
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.785 -0400", hash_original_method = "3062D841F9A527FF82C19CE8ED4DF47C", hash_generated_method = "79C217E5E76E9F79C11955E3F453D87B")
-        public  SetRemoteViewsAdapterIntent(Parcel parcel) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.039 -0500", hash_original_method = "3062D841F9A527FF82C19CE8ED4DF47C", hash_generated_method = "11E6CAFE8DCFD1E1840673A94586250D")
+        public SetRemoteViewsAdapterIntent(Parcel parcel) {
             viewId = parcel.readInt();
             intent = Intent.CREATOR.createFromParcel(parcel);
-            // ---------- Original Method ----------
-            //viewId = parcel.readInt();
-            //intent = Intent.CREATOR.createFromParcel(parcel);
         }
 
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.785 -0400", hash_original_method = "F580FE61025C5DC81DFB7BB9EA905954", hash_generated_method = "016F1F527D26D95A60C8146E075DE2F2")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.040 -0500", hash_original_method = "F580FE61025C5DC81DFB7BB9EA905954", hash_generated_method = "AC4556E640C6EE512599A4790A90BDBC")
         public void writeToParcel(Parcel dest, int flags) {
-            addTaint(flags);
-            addTaint(dest.getTaint());
             dest.writeInt(TAG);
             dest.writeInt(viewId);
             intent.writeToParcel(dest, flags);
-            // ---------- Original Method ----------
-            //dest.writeInt(TAG);
-            //dest.writeInt(viewId);
-            //intent.writeToParcel(dest, flags);
         }
 
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.785 -0400", hash_original_method = "EDE9247E350EBAB87917A7616D3465DB", hash_generated_method = "8B5EE078B6EA174FC25483D5993A8317")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.041 -0500", hash_original_method = "EDE9247E350EBAB87917A7616D3465DB", hash_generated_method = "D5736400B130D067601E79366BF69615")
         @Override
-        public void apply(View root, ViewGroup rootParent) {
-            addTaint(rootParent.getTaint());
-            addTaint(root.getTaint());
+public void apply(View root, ViewGroup rootParent) {
             final View target = root.findViewById(viewId);
-            if(target == null)            
-            return;
-            if(!(rootParent instanceof AppWidgetHostView))            
-            {
+            if (target == null) return;
+
+            // Ensure that we are applying to an AppWidget root
+            if (!(rootParent instanceof AppWidgetHostView)) {
+                Log.e("RemoteViews", "SetRemoteViewsAdapterIntent action can only be used for " +
+                        "AppWidgets (root id: " + viewId + ")");
                 return;
-            } //End block
-            if(!(target instanceof AbsListView) && !(target instanceof AdapterViewAnimator))            
-            {
+            }
+            // Ensure that we are calling setRemoteAdapter on an AdapterView that supports it
+            if (!(target instanceof AbsListView) && !(target instanceof AdapterViewAnimator)) {
+                Log.e("RemoteViews", "Cannot setRemoteViewsAdapter on a view which is not " +
+                        "an AbsListView or AdapterViewAnimator (id: " + viewId + ")");
                 return;
-            } //End block
+            }
+
+            // Embed the AppWidget Id for use in RemoteViewsAdapter when connecting to the intent
+            // RemoteViewsService
             AppWidgetHostView host = (AppWidgetHostView) rootParent;
             intent.putExtra(EXTRA_REMOTEADAPTER_APPWIDGET_ID, host.getAppWidgetId());
-            if(target instanceof AbsListView)            
-            {
+            if (target instanceof AbsListView) {
                 AbsListView v = (AbsListView) target;
                 v.setRemoteViewsAdapter(intent);
-            } //End block
-            else
-            if(target instanceof AdapterViewAnimator)            
-            {
+            } else if (target instanceof AdapterViewAnimator) {
                 AdapterViewAnimator v = (AdapterViewAnimator) target;
                 v.setRemoteViewsAdapter(intent);
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            }
         }
-
-        
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.785 -0400", hash_original_field = "454319544DE430D1FE4AE42999579103", hash_generated_field = "8FE5A8285A40B3CDB587BD72B1510F3F")
-
-        public final static int TAG = 10;
     }
 
 
     
     private class SetOnClickPendingIntent extends Action {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.785 -0400", hash_original_field = "4471D27E06AC724B5DD676BEE05854BE", hash_generated_field = "6D439F1D3806F3B8DDD66C155D4A0AD3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.052 -0500", hash_original_field = "6FEE6E7354E1D66F860D47EA16E89F13", hash_generated_field = "993712AACA5BFFF68C7775B3C6B7EE8B")
 
+
+        public final static int TAG = 1;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.050 -0500", hash_original_field = "6D439F1D3806F3B8DDD66C155D4A0AD3", hash_generated_field = "6D439F1D3806F3B8DDD66C155D4A0AD3")
+
+        
         int viewId;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.785 -0400", hash_original_field = "2FACCE917278B302FB28C98EBAEC216A", hash_generated_field = "7026E183996B4AEE13A8653E0B37928C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.051 -0500", hash_original_field = "7026E183996B4AEE13A8653E0B37928C", hash_generated_field = "7026E183996B4AEE13A8653E0B37928C")
 
         PendingIntent pendingIntent;
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.785 -0400", hash_original_method = "66EA2688C4B0F29524FFED0B8D1C4557", hash_generated_method = "DE4E1C8802A6B5161427D208A788FF49")
-        public  SetOnClickPendingIntent(int id, PendingIntent pendingIntent) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.045 -0500", hash_original_method = "66EA2688C4B0F29524FFED0B8D1C4557", hash_generated_method = "42A906DE4CAD508CB2ADAD38D8156643")
+        public SetOnClickPendingIntent(int id, PendingIntent pendingIntent) {
             this.viewId = id;
             this.pendingIntent = pendingIntent;
-            // ---------- Original Method ----------
-            //this.viewId = id;
-            //this.pendingIntent = pendingIntent;
         }
 
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.786 -0400", hash_original_method = "2D335FA6E397EB90FCE69134FAC6C0E6", hash_generated_method = "7AF4DFE20455952984B5C6A7CBCA2E14")
-        public  SetOnClickPendingIntent(Parcel parcel) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.046 -0500", hash_original_method = "2D335FA6E397EB90FCE69134FAC6C0E6", hash_generated_method = "A2B9C426EC954D0B36778C4764124058")
+        public SetOnClickPendingIntent(Parcel parcel) {
             viewId = parcel.readInt();
             pendingIntent = PendingIntent.readPendingIntentOrNullFromParcel(parcel);
-            // ---------- Original Method ----------
-            //viewId = parcel.readInt();
-            //pendingIntent = PendingIntent.readPendingIntentOrNullFromParcel(parcel);
         }
 
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.786 -0400", hash_original_method = "7CEF806B95F0881A888E5DFCE712AF4A", hash_generated_method = "669E8E8A97200FDEA6D39BD77054A4D2")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.047 -0500", hash_original_method = "7CEF806B95F0881A888E5DFCE712AF4A", hash_generated_method = "BBFCADFE2B4C1116E5EDD48598D95180")
         public void writeToParcel(Parcel dest, int flags) {
-            addTaint(flags);
-            addTaint(dest.getTaint());
             dest.writeInt(TAG);
             dest.writeInt(viewId);
-            pendingIntent.writeToParcel(dest, 0 );
-            // ---------- Original Method ----------
-            //dest.writeInt(TAG);
-            //dest.writeInt(viewId);
-            //pendingIntent.writeToParcel(dest, 0 );
+            pendingIntent.writeToParcel(dest, 0 /* no flags */);
         }
 
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.786 -0400", hash_original_method = "7AB558D2EB1905941BBC96768E4F0260", hash_generated_method = "49B19E7FC5F758B6D26E03320AFB8136")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.050 -0500", hash_original_method = "7AB558D2EB1905941BBC96768E4F0260", hash_generated_method = "BEF5A3A41B8EA144192F6DFBF68437C8")
         @Override
-        public void apply(View root, ViewGroup rootParent) {
-            addTaint(rootParent.getTaint());
-            addTaint(root.getTaint());
+public void apply(View root, ViewGroup rootParent) {
             final View target = root.findViewById(viewId);
-            if(target == null)            
-            return;
-            if(mIsWidgetCollectionChild)            
-            {
-            } //End block
-            if(target != null && pendingIntent != null)            
-            {
+            if (target == null) return;
+
+            // If the view is an AdapterView, setting a PendingIntent on click doesn't make much
+            // sense, do they mean to set a PendingIntent template for the AdapterView's children?
+            if (mIsWidgetCollectionChild) {
+                Log.e("RemoteViews", "Cannot setOnClickPendingIntent for collection item " +
+				"(id: " + viewId + ")");
+                // TODO: return; We'll let this slide until apps are up to date.
+            }
+
+            if (target != null && pendingIntent != null) {
                 OnClickListener listener = new OnClickListener() {
                     public void onClick(View v) {
+                        // Find target view location in screen coordinates and
+                        // fill into PendingIntent before sending.
                         final float appScale = v.getContext().getResources()
                                 .getCompatibilityInfo().applicationScale;
                         final int[] pos = new int[2];
                         v.getLocationOnScreen(pos);
+
                         final Rect rect = new Rect();
                         rect.left = (int) (pos[0] * appScale + 0.5f);
                         rect.top = (int) (pos[1] * appScale + 0.5f);
                         rect.right = (int) ((pos[0] + v.getWidth()) * appScale + 0.5f);
                         rect.bottom = (int) ((pos[1] + v.getHeight()) * appScale + 0.5f);
+
                         final Intent intent = new Intent();
                         intent.setSourceBounds(rect);
                         startIntentSafely(v.getContext(), pendingIntent, intent);
                     }
                 };
                 target.setOnClickListener(listener);
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            }
         }
-
-        
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.786 -0400", hash_original_field = "300A66DF77BAB65489ADB988403DB41B", hash_generated_field = "993712AACA5BFFF68C7775B3C6B7EE8B")
-
-        public final static int TAG = 1;
         // orphaned legacy method
         public void onClick(View v) {
                         final float appScale = v.getContext().getResources()
@@ -1514,28 +1324,31 @@ for(int i=0;i<count;i++)
 
     
     private class SetDrawableParameters extends Action {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.786 -0400", hash_original_field = "4471D27E06AC724B5DD676BEE05854BE", hash_generated_field = "6D439F1D3806F3B8DDD66C155D4A0AD3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.063 -0500", hash_original_field = "23AFD149B2BA99EFAAC01896459B3DF9", hash_generated_field = "22845C1BD5EB1EFAC44EDEF6B7BDA751")
+
+
+        public final static int TAG = 3;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.058 -0500", hash_original_field = "6D439F1D3806F3B8DDD66C155D4A0AD3", hash_generated_field = "6D439F1D3806F3B8DDD66C155D4A0AD3")
+
 
         int viewId;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.786 -0400", hash_original_field = "A2AB643A05537436635D1E7D1C7AE662", hash_generated_field = "348353981961A3507DF6BC6E23EBAF56")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.059 -0500", hash_original_field = "348353981961A3507DF6BC6E23EBAF56", hash_generated_field = "348353981961A3507DF6BC6E23EBAF56")
 
         boolean targetBackground;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.786 -0400", hash_original_field = "2C1743A391305FBF367DF8E4F069F9F9", hash_generated_field = "1B559E55B8F17D21F08DC11CC377988E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.060 -0500", hash_original_field = "1B559E55B8F17D21F08DC11CC377988E", hash_generated_field = "1B559E55B8F17D21F08DC11CC377988E")
 
         int alpha;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.786 -0400", hash_original_field = "430580F08459C4E5E775DF0C2447C4DA", hash_generated_field = "1B107E6823167B68C4A8FA578E72F2B9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.061 -0500", hash_original_field = "1B107E6823167B68C4A8FA578E72F2B9", hash_generated_field = "1B107E6823167B68C4A8FA578E72F2B9")
 
         int colorFilter;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.786 -0400", hash_original_field = "93065ABDC7B96A0A146EC1937D38C277", hash_generated_field = "1E0353AC2D4FEC5D3F86FBF63BA71A1F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.061 -0500", hash_original_field = "1E0353AC2D4FEC5D3F86FBF63BA71A1F", hash_generated_field = "1E0353AC2D4FEC5D3F86FBF63BA71A1F")
 
         PorterDuff.Mode filterMode;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.786 -0400", hash_original_field = "C9E9A848920877E76685B2E4E76DE38D", hash_generated_field = "6C23DC7E65CEAB9FBA953CF49B6B6875")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.062 -0500", hash_original_field = "6C23DC7E65CEAB9FBA953CF49B6B6875", hash_generated_field = "6C23DC7E65CEAB9FBA953CF49B6B6875")
 
         int level;
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.787 -0400", hash_original_method = "18564016E13252E4F53F65794EE2D4BB", hash_generated_method = "5A814AA3D1EB7D235731941FAE0DA595")
-        public  SetDrawableParameters(int id, boolean targetBackground, int alpha,
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.054 -0500", hash_original_method = "18564016E13252E4F53F65794EE2D4BB", hash_generated_method = "2AA0AF4DAFEBA930C55717F288D57812")
+        public SetDrawableParameters(int id, boolean targetBackground, int alpha,
                 int colorFilter, PorterDuff.Mode mode, int level) {
             this.viewId = id;
             this.targetBackground = targetBackground;
@@ -1543,704 +1356,497 @@ for(int i=0;i<count;i++)
             this.colorFilter = colorFilter;
             this.filterMode = mode;
             this.level = level;
-            // ---------- Original Method ----------
-            //this.viewId = id;
-            //this.targetBackground = targetBackground;
-            //this.alpha = alpha;
-            //this.colorFilter = colorFilter;
-            //this.filterMode = mode;
-            //this.level = level;
         }
-
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.787 -0400", hash_original_method = "72E671F08A71584E9232C176B97BC1C8", hash_generated_method = "87A8F3CEF028F9E6345FF186CA6BC012")
-        public  SetDrawableParameters(Parcel parcel) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.055 -0500", hash_original_method = "72E671F08A71584E9232C176B97BC1C8", hash_generated_method = "4FFB6AF70BA77448C9B352C58AA49115")
+        public SetDrawableParameters(Parcel parcel) {
             viewId = parcel.readInt();
             targetBackground = parcel.readInt() != 0;
             alpha = parcel.readInt();
             colorFilter = parcel.readInt();
             boolean hasMode = parcel.readInt() != 0;
-            if(hasMode)            
-            {
+            if (hasMode) {
                 filterMode = PorterDuff.Mode.valueOf(parcel.readString());
-            } //End block
-            else
-            {
+            } else {
                 filterMode = null;
-            } //End block
+            }
             level = parcel.readInt();
-            // ---------- Original Method ----------
-            //viewId = parcel.readInt();
-            //targetBackground = parcel.readInt() != 0;
-            //alpha = parcel.readInt();
-            //colorFilter = parcel.readInt();
-            //boolean hasMode = parcel.readInt() != 0;
-            //if (hasMode) {
-                //filterMode = PorterDuff.Mode.valueOf(parcel.readString());
-            //} else {
-                //filterMode = null;
-            //}
-            //level = parcel.readInt();
         }
-
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.787 -0400", hash_original_method = "DC629CA06C171381152FF8641B977C9F", hash_generated_method = "97F80C563C92885818073A9A30F0E83D")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.056 -0500", hash_original_method = "DC629CA06C171381152FF8641B977C9F", hash_generated_method = "DFFEA65A4CCE4E8F53DC6DF858C3AA74")
         public void writeToParcel(Parcel dest, int flags) {
-            addTaint(flags);
-            addTaint(dest.getTaint());
             dest.writeInt(TAG);
             dest.writeInt(viewId);
             dest.writeInt(targetBackground ? 1 : 0);
             dest.writeInt(alpha);
             dest.writeInt(colorFilter);
-            if(filterMode != null)            
-            {
+            if (filterMode != null) {
                 dest.writeInt(1);
                 dest.writeString(filterMode.toString());
-            } //End block
-            else
-            {
+            } else {
                 dest.writeInt(0);
-            } //End block
+            }
             dest.writeInt(level);
-            // ---------- Original Method ----------
-            //dest.writeInt(TAG);
-            //dest.writeInt(viewId);
-            //dest.writeInt(targetBackground ? 1 : 0);
-            //dest.writeInt(alpha);
-            //dest.writeInt(colorFilter);
-            //if (filterMode != null) {
-                //dest.writeInt(1);
-                //dest.writeString(filterMode.toString());
-            //} else {
-                //dest.writeInt(0);
-            //}
-            //dest.writeInt(level);
         }
-
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.787 -0400", hash_original_method = "2B7DD23B0EB7FE8C6A2446FEC1367E7F", hash_generated_method = "A9181765027AEE33CBB43C7EE83F6582")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.057 -0500", hash_original_method = "2B7DD23B0EB7FE8C6A2446FEC1367E7F", hash_generated_method = "7E6A30F9CFF1237971F59555C7525B40")
         @Override
-        public void apply(View root, ViewGroup rootParent) {
-            addTaint(rootParent.getTaint());
-            addTaint(root.getTaint());
+public void apply(View root, ViewGroup rootParent) {
             final View target = root.findViewById(viewId);
-            if(target == null)            
-            return;
+            if (target == null) return;
+            
+            // Pick the correct drawable to modify for this view
             Drawable targetDrawable = null;
-            if(targetBackground)            
-            {
+            if (targetBackground) {
                 targetDrawable = target.getBackground();
-            } //End block
-            else
-            if(target instanceof ImageView)            
-            {
+            } else if (target instanceof ImageView) {
                 ImageView imageView = (ImageView) target;
                 targetDrawable = imageView.getDrawable();
-            } //End block
-            if(targetDrawable != null)            
-            {
-                if(alpha != -1)                
-                {
+            }
+            
+            if (targetDrawable != null) {
+                // Perform modifications only if values are set correctly
+                if (alpha != -1) {
                     targetDrawable.setAlpha(alpha);
-                } //End block
-                if(colorFilter != -1 && filterMode != null)                
-                {
+                }
+                if (colorFilter != -1 && filterMode != null) {
                     targetDrawable.setColorFilter(colorFilter, filterMode);
-                } //End block
-                if(level != -1)                
-                {
+                }
+                if (level != -1) {
                     targetDrawable.setLevel(level);
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+                }
+            }
         }
-
-        
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.787 -0400", hash_original_field = "6F4A6F730922DE22412A2E7EBF673639", hash_generated_field = "22845C1BD5EB1EFAC44EDEF6B7BDA751")
-
-        public final static int TAG = 3;
     }
 
 
     
     private class ReflectionActionWithoutParams extends Action {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.788 -0400", hash_original_field = "4471D27E06AC724B5DD676BEE05854BE", hash_generated_field = "6D439F1D3806F3B8DDD66C155D4A0AD3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.066 -0500", hash_original_field = "C5B69BCC9F5393E5C238B51A93CC6048", hash_generated_field = "03362AF19131C1207E62059104EDE4C5")
+
+
+        public final static int TAG = 5;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.065 -0500", hash_original_field = "6D439F1D3806F3B8DDD66C155D4A0AD3", hash_generated_field = "6D439F1D3806F3B8DDD66C155D4A0AD3")
 
         int viewId;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.788 -0400", hash_original_field = "DDAA6E8C8C412299272E183087B8F7B6", hash_generated_field = "1E5D18395D934B5D254686548A645BA9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.065 -0500", hash_original_field = "1E5D18395D934B5D254686548A645BA9", hash_generated_field = "1E5D18395D934B5D254686548A645BA9")
 
         String methodName;
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.788 -0400", hash_original_method = "9825933434EF5EC003AA8FF50203783A", hash_generated_method = "306E4CE94A121FCAD55ED69BD6877BBC")
-          ReflectionActionWithoutParams(int viewId, String methodName) {
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.067 -0500", hash_original_method = "9825933434EF5EC003AA8FF50203783A", hash_generated_method = "9825933434EF5EC003AA8FF50203783A")
+        ReflectionActionWithoutParams(int viewId, String methodName) {
             this.viewId = viewId;
             this.methodName = methodName;
-            // ---------- Original Method ----------
-            //this.viewId = viewId;
-            //this.methodName = methodName;
         }
 
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.788 -0400", hash_original_method = "07A57AEC1ECBD4F4EF962F6964A9C9CB", hash_generated_method = "F389E821077AA3BB95015DCE93F78B32")
-          ReflectionActionWithoutParams(Parcel in) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.068 -0500", hash_original_method = "07A57AEC1ECBD4F4EF962F6964A9C9CB", hash_generated_method = "07A57AEC1ECBD4F4EF962F6964A9C9CB")
+        ReflectionActionWithoutParams(Parcel in) {
             this.viewId = in.readInt();
             this.methodName = in.readString();
-            // ---------- Original Method ----------
-            //this.viewId = in.readInt();
-            //this.methodName = in.readString();
         }
 
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.788 -0400", hash_original_method = "E92934B0244E59AB6D933016F95632D8", hash_generated_method = "EF82BF2749830ED0C3E73118B0688DE4")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.069 -0500", hash_original_method = "E92934B0244E59AB6D933016F95632D8", hash_generated_method = "FE8082B9D7DA6D6F32DD575686DAA6DE")
         public void writeToParcel(Parcel out, int flags) {
-            addTaint(flags);
-            addTaint(out.getTaint());
             out.writeInt(TAG);
             out.writeInt(this.viewId);
             out.writeString(this.methodName);
-            // ---------- Original Method ----------
-            //out.writeInt(TAG);
-            //out.writeInt(this.viewId);
-            //out.writeString(this.methodName);
         }
 
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.788 -0400", hash_original_method = "B2755AE6CC74346ED57BF443914C2243", hash_generated_method = "6EF4836C104F785A2D5C8837A4199BD6")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.070 -0500", hash_original_method = "B2755AE6CC74346ED57BF443914C2243", hash_generated_method = "59D5689E5C35C42ADC4BA23A525767C6")
         @Override
-        public void apply(View root, ViewGroup rootParent) {
-            addTaint(rootParent.getTaint());
-            addTaint(root.getTaint());
+public void apply(View root, ViewGroup rootParent) {
             final View view = root.findViewById(viewId);
-            if(view == null)            
-            return;
+            if (view == null) return;
+
             Class klass = view.getClass();
             Method method;
-            try 
-            {
+            try {
                 method = klass.getMethod(this.methodName);
-            } //End block
-            catch (NoSuchMethodException ex)
-            {
-                ActionException var4B00E49A1579916E9F08BB92921F0D8C_1857167213 = new ActionException("view: " + klass.getName() + " doesn't have method: "
+            } catch (NoSuchMethodException ex) {
+                throw new ActionException("view: " + klass.getName() + " doesn't have method: "
                         + this.methodName + "()");
-                var4B00E49A1579916E9F08BB92921F0D8C_1857167213.addTaint(taint);
-                throw var4B00E49A1579916E9F08BB92921F0D8C_1857167213;
-            } //End block
-            if(!method.isAnnotationPresent(RemotableViewMethod.class))            
-            {
-                ActionException var3FAD6D28944E0ECE936A4662B03FAA31_1455164865 = new ActionException("view: " + klass.getName()
+            }
+
+            if (!method.isAnnotationPresent(RemotableViewMethod.class)) {
+                throw new ActionException("view: " + klass.getName()
                         + " can't use method with RemoteViews: "
                         + this.methodName + "()");
-                var3FAD6D28944E0ECE936A4662B03FAA31_1455164865.addTaint(taint);
-                throw var3FAD6D28944E0ECE936A4662B03FAA31_1455164865;
-            } //End block
-            try 
-            {
-                if(false)                
-                {
+            }
+
+            try {
+                //noinspection ConstantIfStatement
+                if (false) {
                     Log.d("RemoteViews", "view: " + klass.getName() + " calling method: "
                         + this.methodName + "()");
-                } //End block
+                }
                 method.invoke(view);
-            } //End block
-            catch (Exception ex)
-            {
-                ActionException varC7C4CAC5C184D6A69E916B4E5066D46F_2091980599 = new ActionException(ex);
-                varC7C4CAC5C184D6A69E916B4E5066D46F_2091980599.addTaint(taint);
-                throw varC7C4CAC5C184D6A69E916B4E5066D46F_2091980599;
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            } catch (Exception ex) {
+                throw new ActionException(ex);
+            }
         }
-
-        
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.788 -0400", hash_original_field = "DE143BAD1003A83F29229B3A04BAF7B0", hash_generated_field = "03362AF19131C1207E62059104EDE4C5")
-
-        public final static int TAG = 5;
     }
 
 
     
     private class ReflectionAction extends Action {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.789 -0400", hash_original_field = "4471D27E06AC724B5DD676BEE05854BE", hash_generated_field = "6D439F1D3806F3B8DDD66C155D4A0AD3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.071 -0500", hash_original_field = "CDAB39A11CA44163160BD0C9D448D341", hash_generated_field = "7DD4C1F30BE983580F1014A25C73E0E9")
+
+        static final int TAG = 2;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.072 -0500", hash_original_field = "7F7D44C438A386CA9622D4D3C9DB8C3F", hash_generated_field = "E11DCA29C7BD696B2526B497FF3EAAEC")
+
+
+        static final int BOOLEAN = 1;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.073 -0500", hash_original_field = "563BE0C5D63C5121947A501848334D40", hash_generated_field = "A08488B6E820CE04526667A0F65B2358")
+
+        static final int BYTE = 2;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.074 -0500", hash_original_field = "7BF049E805FA8C19C73CED1A14410777", hash_generated_field = "A14B4D783E4BD28B22DF5708F3C91517")
+
+        static final int SHORT = 3;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.076 -0500", hash_original_field = "DD56A391C01C424454DE55937B2F98B2", hash_generated_field = "0D069F30768AEFEA236A6C7BEA66E7F4")
+
+        static final int INT = 4;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.077 -0500", hash_original_field = "E3AC045FA98172D61AE646304C812F40", hash_generated_field = "B58C5793378449CBE5C2C8BE4F7C6D55")
+
+        static final int LONG = 5;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.078 -0500", hash_original_field = "15A6E58578DDF200DCED9F064C7ECA0A", hash_generated_field = "46B9B78E20B9DFB9C97B6EB5CDFC1710")
+
+        static final int FLOAT = 6;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.078 -0500", hash_original_field = "016105965006501DBF1F3133FBD26372", hash_generated_field = "A4501BC529B3B3B1F619CD5B69F60BEE")
+
+        static final int DOUBLE = 7;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.079 -0500", hash_original_field = "C01DEB4471C94A5B2BB7CB8C56ABFA24", hash_generated_field = "A4E7D9D246B6685E9E73E853EFB843FD")
+
+        static final int CHAR = 8;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.080 -0500", hash_original_field = "9CABBEDB7FB4C3BAA280969BE1865A4B", hash_generated_field = "E2738C0FD157A27F299AA096F2698ED6")
+
+        static final int STRING = 9;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.081 -0500", hash_original_field = "A8F8D3E92FC088EE743962F224273A2F", hash_generated_field = "8B88FAA46496AA9341BA2AC74905D8B7")
+
+        static final int CHAR_SEQUENCE = 10;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.082 -0500", hash_original_field = "5532C8B7C599324CCD0246930E59E027", hash_generated_field = "677DE19774DF27A76E4807597BCCE25E")
+
+        static final int URI = 11;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.083 -0500", hash_original_field = "76AC39584238FD38DC4107CD3CCFB618", hash_generated_field = "848B8557A665FAFDBC86FEF0A38BE2A4")
+
+        static final int BITMAP = 12;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.083 -0500", hash_original_field = "ABDBA945CCB964411495C6A2132C04F4", hash_generated_field = "C2775C8AD4009091E8937A7799C946C2")
+
+        static final int BUNDLE = 13;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.084 -0500", hash_original_field = "CD99E009A572C4F47B0A43DCAD72BAB4", hash_generated_field = "819B6EFDD2B1951BA1F12E14D3F5638F")
+
+        static final int INTENT = 14;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.085 -0500", hash_original_field = "6D439F1D3806F3B8DDD66C155D4A0AD3", hash_generated_field = "6D439F1D3806F3B8DDD66C155D4A0AD3")
+
 
         int viewId;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.789 -0400", hash_original_field = "DDAA6E8C8C412299272E183087B8F7B6", hash_generated_field = "1E5D18395D934B5D254686548A645BA9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.086 -0500", hash_original_field = "1E5D18395D934B5D254686548A645BA9", hash_generated_field = "1E5D18395D934B5D254686548A645BA9")
 
         String methodName;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.789 -0400", hash_original_field = "599DCCE2998A6B40B1E38E8C6006CB0A", hash_generated_field = "961B4204667A4AE2FF8DD374E6728ADE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.087 -0500", hash_original_field = "961B4204667A4AE2FF8DD374E6728ADE", hash_generated_field = "961B4204667A4AE2FF8DD374E6728ADE")
 
         int type;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.789 -0400", hash_original_field = "2063C1608D6E0BAF80249C42E2BE5804", hash_generated_field = "01495BEB834F5098BB0B06183674C819")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.087 -0500", hash_original_field = "01495BEB834F5098BB0B06183674C819", hash_generated_field = "01495BEB834F5098BB0B06183674C819")
 
         Object value;
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.789 -0400", hash_original_method = "C4E3EC196FB78FDD2AFD41CF23C84256", hash_generated_method = "66FBD19134023AF224E81CB8AE41B251")
-          ReflectionAction(int viewId, String methodName, int type, Object value) {
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.088 -0500", hash_original_method = "C4E3EC196FB78FDD2AFD41CF23C84256", hash_generated_method = "C4E3EC196FB78FDD2AFD41CF23C84256")
+        ReflectionAction(int viewId, String methodName, int type, Object value) {
             this.viewId = viewId;
             this.methodName = methodName;
             this.type = type;
             this.value = value;
-            // ---------- Original Method ----------
-            //this.viewId = viewId;
-            //this.methodName = methodName;
-            //this.type = type;
-            //this.value = value;
         }
 
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.790 -0400", hash_original_method = "A86C68C4FD8B9D479580CAEA2D14C9BF", hash_generated_method = "A907A784751DE7FA9B61F164632B1167")
-          ReflectionAction(Parcel in) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.090 -0500", hash_original_method = "A86C68C4FD8B9D479580CAEA2D14C9BF", hash_generated_method = "1945626D83D5FDCE6093A82A43C5CA09")
+        ReflectionAction(Parcel in) {
             this.viewId = in.readInt();
             this.methodName = in.readString();
             this.type = in.readInt();
-            if(false)            
-            {
+            //noinspection ConstantIfStatement
+            if (false) {
                 Log.d("RemoteViews", "read viewId=0x" + Integer.toHexString(this.viewId)
                         + " methodName=" + this.methodName + " type=" + this.type);
-            } //End block
-switch(this.type){
-            case BOOLEAN:
-            this.value = in.readInt() != 0;
-            break;
-            case BYTE:
-            this.value = in.readByte();
-            break;
-            case SHORT:
-            this.value = (short)in.readInt();
-            break;
-            case INT:
-            this.value = in.readInt();
-            break;
-            case LONG:
-            this.value = in.readLong();
-            break;
-            case FLOAT:
-            this.value = in.readFloat();
-            break;
-            case DOUBLE:
-            this.value = in.readDouble();
-            break;
-            case CHAR:
-            this.value = (char)in.readInt();
-            break;
-            case STRING:
-            this.value = in.readString();
-            break;
-            case CHAR_SEQUENCE:
-            this.value = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(in);
-            break;
-            case URI:
-            this.value = Uri.CREATOR.createFromParcel(in);
-            break;
-            case BITMAP:
-            this.value = Bitmap.CREATOR.createFromParcel(in);
-            break;
-            case BUNDLE:
-            this.value = in.readBundle();
-            break;
-            case INTENT:
-            this.value = Intent.CREATOR.createFromParcel(in);
-            break;
-            default:
-            break;
-}
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            }
+            switch (this.type) {
+                case BOOLEAN:
+                    this.value = in.readInt() != 0;
+                    break;
+                case BYTE:
+                    this.value = in.readByte();
+                    break;
+                case SHORT:
+                    this.value = (short)in.readInt();
+                    break;
+                case INT:
+                    this.value = in.readInt();
+                    break;
+                case LONG:
+                    this.value = in.readLong();
+                    break;
+                case FLOAT:
+                    this.value = in.readFloat();
+                    break;
+                case DOUBLE:
+                    this.value = in.readDouble();
+                    break;
+                case CHAR:
+                    this.value = (char)in.readInt();
+                    break;
+                case STRING:
+                    this.value = in.readString();
+                    break;
+                case CHAR_SEQUENCE:
+                    this.value = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(in);
+                    break;
+                case URI:
+                    this.value = Uri.CREATOR.createFromParcel(in);
+                    break;
+                case BITMAP:
+                    this.value = Bitmap.CREATOR.createFromParcel(in);
+                    break;
+                case BUNDLE:
+                    this.value = in.readBundle();
+                    break;
+                case INTENT:
+                    this.value = Intent.CREATOR.createFromParcel(in);
+                    break;
+                default:
+                    break;
+            }
         }
 
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.790 -0400", hash_original_method = "F759DD8CB1A89B34D073177D219BFFB9", hash_generated_method = "DD017EAFAB6A8D0A0EA9F33E4523F1BF")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.091 -0500", hash_original_method = "F759DD8CB1A89B34D073177D219BFFB9", hash_generated_method = "710C59AE631B393DF2B2E9EFA5906642")
         public void writeToParcel(Parcel out, int flags) {
-            addTaint(flags);
-            addTaint(out.getTaint());
             out.writeInt(TAG);
             out.writeInt(this.viewId);
             out.writeString(this.methodName);
             out.writeInt(this.type);
-            if(false)            
-            {
+            //noinspection ConstantIfStatement
+            if (false) {
                 Log.d("RemoteViews", "write viewId=0x" + Integer.toHexString(this.viewId)
                         + " methodName=" + this.methodName + " type=" + this.type);
-            } //End block
-switch(this.type){
-            case BOOLEAN:
-            out.writeInt((Boolean) this.value ? 1 : 0);
-            break;
-            case BYTE:
-            out.writeByte((Byte) this.value);
-            break;
-            case SHORT:
-            out.writeInt((Short) this.value);
-            break;
-            case INT:
-            out.writeInt((Integer) this.value);
-            break;
-            case LONG:
-            out.writeLong((Long) this.value);
-            break;
-            case FLOAT:
-            out.writeFloat((Float) this.value);
-            break;
-            case DOUBLE:
-            out.writeDouble((Double) this.value);
-            break;
-            case CHAR:
-            out.writeInt((int)((Character)this.value).charValue());
-            break;
-            case STRING:
-            out.writeString((String)this.value);
-            break;
-            case CHAR_SEQUENCE:
-            TextUtils.writeToParcel((CharSequence)this.value, out, flags);
-            break;
-            case URI:
-            ((Uri)this.value).writeToParcel(out, flags);
-            break;
-            case BITMAP:
-            ((Bitmap)this.value).writeToParcel(out, flags);
-            break;
-            case BUNDLE:
-            out.writeBundle((Bundle) this.value);
-            break;
-            case INTENT:
-            ((Intent)this.value).writeToParcel(out, flags);
-            break;
-            default:
-            break;
-}
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            }
+            switch (this.type) {
+                case BOOLEAN:
+                    out.writeInt((Boolean) this.value ? 1 : 0);
+                    break;
+                case BYTE:
+                    out.writeByte((Byte) this.value);
+                    break;
+                case SHORT:
+                    out.writeInt((Short) this.value);
+                    break;
+                case INT:
+                    out.writeInt((Integer) this.value);
+                    break;
+                case LONG:
+                    out.writeLong((Long) this.value);
+                    break;
+                case FLOAT:
+                    out.writeFloat((Float) this.value);
+                    break;
+                case DOUBLE:
+                    out.writeDouble((Double) this.value);
+                    break;
+                case CHAR:
+                    out.writeInt((int)((Character)this.value).charValue());
+                    break;
+                case STRING:
+                    out.writeString((String)this.value);
+                    break;
+                case CHAR_SEQUENCE:
+                    TextUtils.writeToParcel((CharSequence)this.value, out, flags);   
+                    break;
+                case URI:
+                    ((Uri)this.value).writeToParcel(out, flags);
+                    break;
+                case BITMAP:
+                    ((Bitmap)this.value).writeToParcel(out, flags);
+                    break;
+                case BUNDLE:
+                    out.writeBundle((Bundle) this.value);
+                    break;
+                case INTENT:
+                    ((Intent)this.value).writeToParcel(out, flags);
+                    break;
+                default:
+                    break;
+            }
         }
 
-        
-                @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.791 -0400", hash_original_method = "E66E0BF97844CCF37DCED039A425AFDA", hash_generated_method = "AFCBBF8215F29328E313DFA6FA79BBCD")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.092 -0500", hash_original_method = "E66E0BF97844CCF37DCED039A425AFDA", hash_generated_method = "D3ACCEA57A875FE5BF1B22C55ED1BC08")
         private Class getParameterType() {
-switch(this.type){
-            case BOOLEAN:
-Class var71787BF0A5FAFF61DD7FBBF958D99F8A_1319469351 =             boolean.class;
-            var71787BF0A5FAFF61DD7FBBF958D99F8A_1319469351.addTaint(taint);
-            return var71787BF0A5FAFF61DD7FBBF958D99F8A_1319469351;
-            case BYTE:
-Class var7C0ACE62D963137DF2E56A3AE1830737_1648008810 =             byte.class;
-            var7C0ACE62D963137DF2E56A3AE1830737_1648008810.addTaint(taint);
-            return var7C0ACE62D963137DF2E56A3AE1830737_1648008810;
-            case SHORT:
-Class var2978261C2ED1639B358207B56E910496_911207104 =             short.class;
-            var2978261C2ED1639B358207B56E910496_911207104.addTaint(taint);
-            return var2978261C2ED1639B358207B56E910496_911207104;
-            case INT:
-Class var985DB82401C248C5D9E18F7141DEF72B_1581015975 =             int.class;
-            var985DB82401C248C5D9E18F7141DEF72B_1581015975.addTaint(taint);
-            return var985DB82401C248C5D9E18F7141DEF72B_1581015975;
-            case LONG:
-Class var5B79E8CD9A56F609FB5546A9D74A8875_1359615184 =             long.class;
-            var5B79E8CD9A56F609FB5546A9D74A8875_1359615184.addTaint(taint);
-            return var5B79E8CD9A56F609FB5546A9D74A8875_1359615184;
-            case FLOAT:
-Class var62B620E9FEA9AE784921F21A57CA37EF_847222223 =             float.class;
-            var62B620E9FEA9AE784921F21A57CA37EF_847222223.addTaint(taint);
-            return var62B620E9FEA9AE784921F21A57CA37EF_847222223;
-            case DOUBLE:
-Class varB1058CC7814EF2B7D2C1906F75D80941_887506987 =             double.class;
-            varB1058CC7814EF2B7D2C1906F75D80941_887506987.addTaint(taint);
-            return varB1058CC7814EF2B7D2C1906F75D80941_887506987;
-            case CHAR:
-Class var021069F65BBE9A67357BF60BD5069AD9_2136662245 =             char.class;
-            var021069F65BBE9A67357BF60BD5069AD9_2136662245.addTaint(taint);
-            return var021069F65BBE9A67357BF60BD5069AD9_2136662245;
-            case STRING:
-Class var150C64354BF575772326FCF473C18575_132843783 =             String.class;
-            var150C64354BF575772326FCF473C18575_132843783.addTaint(taint);
-            return var150C64354BF575772326FCF473C18575_132843783;
-            case CHAR_SEQUENCE:
-Class var001C290C1B5DC579C5332BF8629169AD_1140857672 =             CharSequence.class;
-            var001C290C1B5DC579C5332BF8629169AD_1140857672.addTaint(taint);
-            return var001C290C1B5DC579C5332BF8629169AD_1140857672;
-            case URI:
-Class varB6D8DC7F84507EECF8A5507F7B373322_636598961 =             Uri.class;
-            varB6D8DC7F84507EECF8A5507F7B373322_636598961.addTaint(taint);
-            return varB6D8DC7F84507EECF8A5507F7B373322_636598961;
-            case BITMAP:
-Class varC233717DB020FDC94E8C1BC4B666E704_1533581258 =             Bitmap.class;
-            varC233717DB020FDC94E8C1BC4B666E704_1533581258.addTaint(taint);
-            return varC233717DB020FDC94E8C1BC4B666E704_1533581258;
-            case BUNDLE:
-Class var07880C42B3516287136EF6C08635840A_1854405467 =             Bundle.class;
-            var07880C42B3516287136EF6C08635840A_1854405467.addTaint(taint);
-            return var07880C42B3516287136EF6C08635840A_1854405467;
-            case INTENT:
-Class varA55A18EAA2E17A4BE1A5DCF60DB9EC1B_6047635 =             Intent.class;
-            varA55A18EAA2E17A4BE1A5DCF60DB9EC1B_6047635.addTaint(taint);
-            return varA55A18EAA2E17A4BE1A5DCF60DB9EC1B_6047635;
-            default:
-Class var540C13E9E156B687226421B24F2DF178_2098647395 =             null;
-            var540C13E9E156B687226421B24F2DF178_2098647395.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_2098647395;
-}
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            switch (this.type) {
+                case BOOLEAN:
+                    return boolean.class;
+                case BYTE:
+                    return byte.class;
+                case SHORT:
+                    return short.class;
+                case INT:
+                    return int.class;
+                case LONG:
+                    return long.class;
+                case FLOAT:
+                    return float.class;
+                case DOUBLE:
+                    return double.class;
+                case CHAR:
+                    return char.class;
+                case STRING:
+                    return String.class;
+                case CHAR_SEQUENCE:
+                    return CharSequence.class;
+                case URI:
+                    return Uri.class;
+                case BITMAP:
+                    return Bitmap.class;
+                case BUNDLE:
+                    return Bundle.class;
+                case INTENT:
+                    return Intent.class;
+                default:
+                    return null;
+            }
         }
 
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.791 -0400", hash_original_method = "008B98D7581EEC47326A699C8B3D8035", hash_generated_method = "B9A4F3EE1C3CAB8957429CAD4CD84C14")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.093 -0500", hash_original_method = "008B98D7581EEC47326A699C8B3D8035", hash_generated_method = "A63296F8A9BEBFD342DADFD3DD013AC8")
         @Override
-        public void apply(View root, ViewGroup rootParent) {
-            addTaint(rootParent.getTaint());
-            addTaint(root.getTaint());
+public void apply(View root, ViewGroup rootParent) {
             final View view = root.findViewById(viewId);
-            if(view == null)            
-            return;
+            if (view == null) return;
+
             Class param = getParameterType();
-            if(param == null)            
-            {
-                ActionException var24C6C16C84E933689E566B3D0088DB60_64517836 = new ActionException("bad type: " + this.type);
-                var24C6C16C84E933689E566B3D0088DB60_64517836.addTaint(taint);
-                throw var24C6C16C84E933689E566B3D0088DB60_64517836;
-            } //End block
+            if (param == null) {
+                throw new ActionException("bad type: " + this.type);
+            }
+
             Class klass = view.getClass();
             Method method;
-            try 
-            {
+            try {
                 method = klass.getMethod(this.methodName, getParameterType());
-            } //End block
-            catch (NoSuchMethodException ex)
-            {
-                ActionException var3C7F213007E369444B0A211FA382B9BB_379496968 = new ActionException("view: " + klass.getName() + " doesn't have method: "
+            }
+            catch (NoSuchMethodException ex) {
+                throw new ActionException("view: " + klass.getName() + " doesn't have method: "
                         + this.methodName + "(" + param.getName() + ")");
-                var3C7F213007E369444B0A211FA382B9BB_379496968.addTaint(taint);
-                throw var3C7F213007E369444B0A211FA382B9BB_379496968;
-            } //End block
-            if(!method.isAnnotationPresent(RemotableViewMethod.class))            
-            {
-                ActionException var8A089883897B44FBECF7ACEC7A046E2A_1071222150 = new ActionException("view: " + klass.getName()
+            }
+
+            if (!method.isAnnotationPresent(RemotableViewMethod.class)) {
+                throw new ActionException("view: " + klass.getName()
                         + " can't use method with RemoteViews: "
                         + this.methodName + "(" + param.getName() + ")");
-                var8A089883897B44FBECF7ACEC7A046E2A_1071222150.addTaint(taint);
-                throw var8A089883897B44FBECF7ACEC7A046E2A_1071222150;
-            } //End block
-            try 
-            {
-                if(false)                
-                {
+            }
+
+            try {
+                //noinspection ConstantIfStatement
+                if (false) {
                     Log.d("RemoteViews", "view: " + klass.getName() + " calling method: "
                         + this.methodName + "(" + param.getName() + ") with "
                         + (this.value == null ? "null" : this.value.getClass().getName()));
-                } //End block
+                }
                 method.invoke(view, this.value);
-            } //End block
-            catch (Exception ex)
-            {
-                ActionException varC7C4CAC5C184D6A69E916B4E5066D46F_987348785 = new ActionException(ex);
-                varC7C4CAC5C184D6A69E916B4E5066D46F_987348785.addTaint(taint);
-                throw varC7C4CAC5C184D6A69E916B4E5066D46F_987348785;
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            }
+            catch (Exception ex) {
+                throw new ActionException(ex);
+            }
         }
 
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.791 -0400", hash_original_method = "1F301B790026760CE401FF57484A4A78", hash_generated_method = "29838BD01F4A6405258A7FEA96B61663")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.094 -0500", hash_original_method = "1F301B790026760CE401FF57484A4A78", hash_generated_method = "5776FF16602E514B414C7AA66F2C1859")
         @Override
-        public void updateMemoryUsageEstimate(MemoryUsageCounter counter) {
-            addTaint(counter.getTaint());
-switch(this.type){
-            case BITMAP:
-            if(this.value != null)            
-            {
-                final Bitmap b = (Bitmap) this.value;
-                final Bitmap.Config c = b.getConfig();
-                int bpp = 4;
-                if(c != null)                
-                {
-switch(c){
-                    case ALPHA_8:
-                    bpp = 1;
+public void updateMemoryUsageEstimate(MemoryUsageCounter counter) {
+            // We currently only calculate Bitmap memory usage
+            switch (this.type) {
+                case BITMAP:
+                    if (this.value != null) {
+                        final Bitmap b = (Bitmap) this.value;
+                        final Bitmap.Config c = b.getConfig();
+                        // If we don't know, be pessimistic and assume 4
+                        int bpp = 4;
+                        if (c != null) {
+                            switch (c) {
+                            case ALPHA_8:
+                                bpp = 1;
+                                break;
+                            case RGB_565:
+                            case ARGB_4444:
+                                bpp = 2;
+                                break;
+                            case ARGB_8888:
+                                bpp = 4;
+                                break;
+                            }
+                        }
+                        counter.bitmapIncrement(b.getWidth() * b.getHeight() * bpp);
+                    }
                     break;
-                    case RGB_565:
-                    case ARGB_4444:
-                    bpp = 2;
+                default:
                     break;
-                    case ARGB_8888:
-                    bpp = 4;
-                    break;
-}
-                } //End block
-                counter.bitmapIncrement(b.getWidth() * b.getHeight() * bpp);
-            } //End block
-            break;
-            default:
-            break;
-}
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            }
         }
-
-        
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.791 -0400", hash_original_field = "7F69F6778CDCB6154D611A443CDC52B5", hash_generated_field = "7DD4C1F30BE983580F1014A25C73E0E9")
-
-        static final int TAG = 2;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.791 -0400", hash_original_field = "2F374CAF065C6170DB0655822E60E222", hash_generated_field = "E11DCA29C7BD696B2526B497FF3EAAEC")
-
-        static final int BOOLEAN = 1;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.791 -0400", hash_original_field = "B4F8B987EF9A0C82A8C8267A98C738F6", hash_generated_field = "A08488B6E820CE04526667A0F65B2358")
-
-        static final int BYTE = 2;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.791 -0400", hash_original_field = "175308D2FBF3B761DF0108367B225AD1", hash_generated_field = "A14B4D783E4BD28B22DF5708F3C91517")
-
-        static final int SHORT = 3;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.791 -0400", hash_original_field = "A0CB96DABFDCF4947E640C27B00A7309", hash_generated_field = "0D069F30768AEFEA236A6C7BEA66E7F4")
-
-        static final int INT = 4;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.791 -0400", hash_original_field = "8BDB65EA307B4E2D6C3AD9BE937C6B35", hash_generated_field = "B58C5793378449CBE5C2C8BE4F7C6D55")
-
-        static final int LONG = 5;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.792 -0400", hash_original_field = "200338FA85BEDB28DAC8352AA5AE44A4", hash_generated_field = "46B9B78E20B9DFB9C97B6EB5CDFC1710")
-
-        static final int FLOAT = 6;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.792 -0400", hash_original_field = "E4100D4E6A32B99A6ED6E650D26B96F2", hash_generated_field = "A4501BC529B3B3B1F619CD5B69F60BEE")
-
-        static final int DOUBLE = 7;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.792 -0400", hash_original_field = "96FA09B152FC2C89E35AFA1C6505581E", hash_generated_field = "A4E7D9D246B6685E9E73E853EFB843FD")
-
-        static final int CHAR = 8;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.792 -0400", hash_original_field = "DCF91BC1D8F95A60EADB6F7461F79F2F", hash_generated_field = "E2738C0FD157A27F299AA096F2698ED6")
-
-        static final int STRING = 9;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.792 -0400", hash_original_field = "05F84E42B3F9A0FC5577C866771D1B45", hash_generated_field = "8B88FAA46496AA9341BA2AC74905D8B7")
-
-        static final int CHAR_SEQUENCE = 10;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.792 -0400", hash_original_field = "5E83DCA62102A3D88F57C136FE6ACEB4", hash_generated_field = "677DE19774DF27A76E4807597BCCE25E")
-
-        static final int URI = 11;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.792 -0400", hash_original_field = "FC84E30432EF9DDE7E9FCCE78BB199A8", hash_generated_field = "848B8557A665FAFDBC86FEF0A38BE2A4")
-
-        static final int BITMAP = 12;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.792 -0400", hash_original_field = "F0E8DF40A7799BB61150AD69A1A9F5A0", hash_generated_field = "C2775C8AD4009091E8937A7799C946C2")
-
-        static final int BUNDLE = 13;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.792 -0400", hash_original_field = "16DB5856FD50B8563BDD95884F5D1670", hash_generated_field = "819B6EFDD2B1951BA1F12E14D3F5638F")
-
-        static final int INTENT = 14;
     }
 
 
     
     private class ViewGroupAction extends Action {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.792 -0400", hash_original_field = "4471D27E06AC724B5DD676BEE05854BE", hash_generated_field = "6D439F1D3806F3B8DDD66C155D4A0AD3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.103 -0500", hash_original_field = "880881F73157436E3CF8EDEBE8AFED23", hash_generated_field = "BFAD764BA58FF98FFB009C9036CFE299")
 
-        int viewId;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.792 -0400", hash_original_field = "27197E3E0B6B9B7BF6E9F835C5A0621D", hash_generated_field = "94DAE06500F0010791F8161444D05A58")
-
-        RemoteViews nestedViews;
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.792 -0400", hash_original_method = "ED007F9070164016B2129A58A247A132", hash_generated_method = "D73E8FB5CE189E15CC0ED4BFC4DE2A01")
-        public  ViewGroupAction(int viewId, RemoteViews nestedViews) {
-            this.viewId = viewId;
-            this.nestedViews = nestedViews;
-            // ---------- Original Method ----------
-            //this.viewId = viewId;
-            //this.nestedViews = nestedViews;
-        }
-
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.792 -0400", hash_original_method = "3800854E305111A2B59A893F31CDD286", hash_generated_method = "B30611565EF1A179397305FFFC39C3E2")
-        public  ViewGroupAction(Parcel parcel) {
-            viewId = parcel.readInt();
-            nestedViews = parcel.readParcelable(null);
-            // ---------- Original Method ----------
-            //viewId = parcel.readInt();
-            //nestedViews = parcel.readParcelable(null);
-        }
-
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.793 -0400", hash_original_method = "BEE1FD608BE154882376BC772CDB35A0", hash_generated_method = "1D5187CEDC5619960DE4415C3EDC234A")
-        public void writeToParcel(Parcel dest, int flags) {
-            addTaint(flags);
-            addTaint(dest.getTaint());
-            dest.writeInt(TAG);
-            dest.writeInt(viewId);
-            dest.writeParcelable(nestedViews, 0 );
-            // ---------- Original Method ----------
-            //dest.writeInt(TAG);
-            //dest.writeInt(viewId);
-            //dest.writeParcelable(nestedViews, 0 );
-        }
-
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.793 -0400", hash_original_method = "3F6E8B427E9FBCBDEBB4E654B5696B90", hash_generated_method = "3B00F4C10DDBDA05F68CB98A17B0F288")
-        @Override
-        public void apply(View root, ViewGroup rootParent) {
-            addTaint(rootParent.getTaint());
-            addTaint(root.getTaint());
-            final Context context = root.getContext();
-            final ViewGroup target = (ViewGroup) root.findViewById(viewId);
-            if(target == null)            
-            return;
-            if(nestedViews != null)            
-            {
-                target.addView(nestedViews.apply(context, target));
-            } //End block
-            else
-            {
-                target.removeAllViews();
-            } //End block
-            // ---------- Original Method ----------
-            //final Context context = root.getContext();
-            //final ViewGroup target = (ViewGroup) root.findViewById(viewId);
-            //if (target == null) return;
-            //if (nestedViews != null) {
-                //target.addView(nestedViews.apply(context, target));
-            //} else {
-                //target.removeAllViews();
-            //}
-        }
-
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.793 -0400", hash_original_method = "9A98BF9B0C4ADB9C4C041E3C0533F17D", hash_generated_method = "EFCA05839D9A491B83CCF1CB584A82B6")
-        @Override
-        public void updateMemoryUsageEstimate(MemoryUsageCounter counter) {
-            addTaint(counter.getTaint());
-            if(nestedViews != null)            
-            {
-                counter.bitmapIncrement(nestedViews.estimateBitmapMemoryUsage());
-            } //End block
-            // ---------- Original Method ----------
-            //if (nestedViews != null) {
-                //counter.bitmapIncrement(nestedViews.estimateBitmapMemoryUsage());
-            //}
-        }
-
-        
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.794 -0400", hash_original_field = "1C67B632B385F0EED4F9EDC3A5442AB0", hash_generated_field = "BFAD764BA58FF98FFB009C9036CFE299")
 
         public final static int TAG = 4;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.101 -0500", hash_original_field = "6D439F1D3806F3B8DDD66C155D4A0AD3", hash_generated_field = "6D439F1D3806F3B8DDD66C155D4A0AD3")
+
+
+        int viewId;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.102 -0500", hash_original_field = "94DAE06500F0010791F8161444D05A58", hash_generated_field = "94DAE06500F0010791F8161444D05A58")
+
+        RemoteViews nestedViews;
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.097 -0500", hash_original_method = "ED007F9070164016B2129A58A247A132", hash_generated_method = "20DDC57F73C354895BEDF745884E6C13")
+        public ViewGroupAction(int viewId, RemoteViews nestedViews) {
+            this.viewId = viewId;
+            this.nestedViews = nestedViews;
+        }
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.098 -0500", hash_original_method = "3800854E305111A2B59A893F31CDD286", hash_generated_method = "F8DAAB83DC60B47265485D7338232E3E")
+        public ViewGroupAction(Parcel parcel) {
+            viewId = parcel.readInt();
+            nestedViews = parcel.readParcelable(null);
+        }
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.098 -0500", hash_original_method = "BEE1FD608BE154882376BC772CDB35A0", hash_generated_method = "4624A0ADDC40194455DF34D80EB6D94C")
+        public void writeToParcel(Parcel dest, int flags) {
+            dest.writeInt(TAG);
+            dest.writeInt(viewId);
+            dest.writeParcelable(nestedViews, 0 /* no flags */);
+        }
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.099 -0500", hash_original_method = "3F6E8B427E9FBCBDEBB4E654B5696B90", hash_generated_method = "FEBCB02E5616085FF26E219193A4BEB1")
+        @Override
+public void apply(View root, ViewGroup rootParent) {
+            final Context context = root.getContext();
+            final ViewGroup target = (ViewGroup) root.findViewById(viewId);
+            if (target == null) return;
+            if (nestedViews != null) {
+                // Inflate nested views and add as children
+                target.addView(nestedViews.apply(context, target));
+            } else {
+                // Clear all children when nested views omitted
+                target.removeAllViews();
+            }
+        }
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.100 -0500", hash_original_method = "9A98BF9B0C4ADB9C4C041E3C0533F17D", hash_generated_method = "7609540EC1E9A155BFF79314CD4189C8")
+        @Override
+public void updateMemoryUsageEstimate(MemoryUsageCounter counter) {
+            if (nestedViews != null) {
+                counter.bitmapIncrement(nestedViews.estimateBitmapMemoryUsage());
+            }
+        }
     }
 
 
     
     private class MemoryUsageCounter {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.794 -0400", hash_original_field = "C36FDDE1E5252D085B64B1B7ADEDAD8C", hash_generated_field = "B0DA7A32C463859C81C00F4CE0F0F3CC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.107 -0500", hash_original_field = "B0DA7A32C463859C81C00F4CE0F0F3CC", hash_generated_field = "B0DA7A32C463859C81C00F4CE0F0F3CC")
+
 
         int mBitmapHeapMemoryUsage;
         
@@ -2249,34 +1855,19 @@ switch(c){
         {
             //Synthesized constructor
         }
-
-
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.794 -0400", hash_original_method = "F68FB7282799CC52F4314E5E47499FED", hash_generated_method = "980B3E80527B474B5039262E61BD9D48")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.104 -0500", hash_original_method = "F68FB7282799CC52F4314E5E47499FED", hash_generated_method = "9DB4FB2F37D3A8DB72A4B6C46D7E41D0")
         public void clear() {
             mBitmapHeapMemoryUsage = 0;
-            // ---------- Original Method ----------
-            //mBitmapHeapMemoryUsage = 0;
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.794 -0400", hash_original_method = "9C864F7ABFEE7832A18F21C728CCE23F", hash_generated_method = "583FD2D740DF0E423E81CC172F08A31C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.105 -0500", hash_original_method = "9C864F7ABFEE7832A18F21C728CCE23F", hash_generated_method = "0DC5C141295D92DA19CAA83B22CB3A55")
         public void bitmapIncrement(int numBytes) {
             mBitmapHeapMemoryUsage += numBytes;
-            // ---------- Original Method ----------
-            //mBitmapHeapMemoryUsage += numBytes;
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.794 -0400", hash_original_method = "F4B214FD82765971EA3822C02AABA16F", hash_generated_method = "86D3567E4E033931CF01166A19D85996")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.106 -0500", hash_original_method = "F4B214FD82765971EA3822C02AABA16F", hash_generated_method = "69B6971C4665A92AE7D753A584751A62")
         public int getBitmapHeapMemoryUsage() {
-            int varC36FDDE1E5252D085B64B1B7ADEDAD8C_760251099 = (mBitmapHeapMemoryUsage);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_266089149 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_266089149;
-            // ---------- Original Method ----------
-            //return mBitmapHeapMemoryUsage;
+            return mBitmapHeapMemoryUsage;
         }
 
         
@@ -2286,26 +1877,39 @@ switch(c){
     
     @Target({ ElementType.TYPE }) @Retention(RetentionPolicy.RUNTIME) public @interface RemoteView {
     }
+
+    /* (non-Javadoc)
+     * Used to restrict the views which can be inflated
+     * 
+     * @see android.view.LayoutInflater.Filter#onLoadClass(java.lang.Class)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.149 -0500", hash_original_method = "02A046D25F4E9D374E474E21F6366163", hash_generated_method = "DCB9B631C459B30D0BD2D197025EB71B")
+    public boolean onLoadClass(Class clazz) {
+        return clazz.isAnnotationPresent(RemoteView.class);
+    }
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.797 -0400", hash_original_field = "4C31F39A08DE2EFB8DEBBB394A3254D5", hash_generated_field = "ACEFF52037C84D6363407415280404F5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.150 -0500", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "D90463461B2A94FF94D13FDF69BB80C9")
+    public int describeContents() {
+        return 0;
+    }
 
-    private static final String LOG_TAG = "RemoteViews";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.797 -0400", hash_original_field = "800952FE10AA9D0D47085F390E4ECC86", hash_generated_field = "826EFFDEC6B49221DB3B3AF9DDB20D89")
-
-    static final String EXTRA_REMOTEADAPTER_APPWIDGET_ID = "remoteAdapterAppWidgetId";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.797 -0400", hash_original_field = "3C81D1A6471DBF098FBC5010948AFD3D", hash_generated_field = "BD08AD711A0271B27E85FFB2A2737195")
-
-    public static final Parcelable.Creator<RemoteViews> CREATOR = new Parcelable.Creator<RemoteViews>() {
-        @DSModeled(DSC.SAFE)
-        public RemoteViews createFromParcel(Parcel parcel) {
-            return new RemoteViews(parcel);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:04.151 -0500", hash_original_method = "E42048CF3CAA5A680CE684B09E27CD46", hash_generated_method = "87D3D1F357377E776CD4DC626F4BF5D0")
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(mPackage);
+        dest.writeInt(mLayoutId);
+        dest.writeInt(mIsWidgetCollectionChild ? 1 : 0);
+        int count;
+        if (mActions != null) {
+            count = mActions.size();
+        } else {
+            count = 0;
         }
-
-        @DSModeled(DSC.SAFE)
-        public RemoteViews[] newArray(int size) {
-            return new RemoteViews[size];
+        dest.writeInt(count);
+        for (int i=0; i<count; i++) {
+            Action a = mActions.get(i);
+            a.writeToParcel(dest, 0);
         }
-    };
+    }
     // orphaned legacy method
     public RemoteViews createFromParcel(Parcel parcel) {
             return new RemoteViews(parcel);

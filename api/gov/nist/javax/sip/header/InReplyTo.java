@@ -1,6 +1,8 @@
 package gov.nist.javax.sip.header;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.text.ParseException;
 
@@ -12,99 +14,75 @@ import javax.sip.header.InReplyToHeader;
 
 
 public class InReplyTo extends SIPHeader implements InReplyToHeader {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.527 -0400", hash_original_field = "0CD10A72F684313DCE7B6EF5F7F41411", hash_generated_field = "F2A7BDC27E688B3BD5C6A8CB27C2DD56")
-
-    protected CallIdentifier callId;
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.527 -0400", hash_original_method = "561B527F5C5623362D2C0AB5E9627468", hash_generated_method = "707E7DE6657A4D9EDF233D4BDC82F475")
-    public  InReplyTo() {
-        super(IN_REPLY_TO);
-        // ---------- Original Method ----------
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.528 -0400", hash_original_method = "92FFE21441DA37C601278DB74C30EBCA", hash_generated_method = "352E400B155B2FEC10BA1BDE1E4626BF")
-    public  InReplyTo(CallIdentifier cid) {
-        super(IN_REPLY_TO);
-        callId = cid;
-        // ---------- Original Method ----------
-        //callId = cid;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.528 -0400", hash_original_method = "AFE760D92C6B99B9817A49FA1C34A82C", hash_generated_method = "CB93A58B7721776895CD0E2197BCE6BA")
-    public void setCallId(String callId) throws ParseException {
-        try 
-        {
-            this.callId = new CallIdentifier(callId);
-        } //End block
-        catch (Exception e)
-        {
-            ParseException varAC1698F4D240F9E8C781C7FF37C9875F_722120631 = new ParseException(e.getMessage(), 0);
-            varAC1698F4D240F9E8C781C7FF37C9875F_722120631.addTaint(taint);
-            throw varAC1698F4D240F9E8C781C7FF37C9875F_722120631;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //this.callId = new CallIdentifier(callId);
-        //} catch (Exception e) {
-            //throw new ParseException(e.getMessage(), 0);
-        //}
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.528 -0400", hash_original_method = "EA32F9E304DDFDAAFD9F10122A085C03", hash_generated_method = "FA010C085D3CAE7FFA7AA8706777A32B")
-    public String getCallId() {
-        if(callId == null)        
-        {
-String var540C13E9E156B687226421B24F2DF178_1659469474 =         null;
-        var540C13E9E156B687226421B24F2DF178_1659469474.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_1659469474;
-        }
-String var458701EC323B8ACB74F03E71B901A251_189778959 =         callId.encode();
-        var458701EC323B8ACB74F03E71B901A251_189778959.addTaint(taint);
-        return var458701EC323B8ACB74F03E71B901A251_189778959;
-        // ---------- Original Method ----------
-        //if (callId == null)
-            //return null;
-        //return callId.encode();
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.529 -0400", hash_original_method = "64901279DBD4FD22B1D7FC340D43545B", hash_generated_method = "C2FABA0DC1D137866BB5D7E0C5B1432F")
-    public String encodeBody() {
-String var458701EC323B8ACB74F03E71B901A251_1257323051 =         callId.encode();
-        var458701EC323B8ACB74F03E71B901A251_1257323051.addTaint(taint);
-        return var458701EC323B8ACB74F03E71B901A251_1257323051;
-        // ---------- Original Method ----------
-        //return callId.encode();
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.529 -0400", hash_original_method = "AACC864B78324D30A82E58DDECBB4AB7", hash_generated_method = "8ABBE76AF7EAF45A26DD5DF12F76BFA3")
-    public Object clone() {
-        InReplyTo retval = (InReplyTo) super.clone();
-        if(this.callId != null)        
-        retval.callId = (CallIdentifier) this.callId.clone();
-Object varF9E19AD6135C970F387F77C6F3DE4477_537319978 =         retval;
-        varF9E19AD6135C970F387F77C6F3DE4477_537319978.addTaint(taint);
-        return varF9E19AD6135C970F387F77C6F3DE4477_537319978;
-        // ---------- Original Method ----------
-        //InReplyTo retval = (InReplyTo) super.clone();
-        //if (this.callId != null)
-            //retval.callId = (CallIdentifier) this.callId.clone();
-        //return retval;
-    }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.529 -0400", hash_original_field = "1A34C461295F41F2981CC491B776BBF3", hash_generated_field = "62113CBAA9CAEBCC0941329C8D032899")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:54.456 -0500", hash_original_field = "AFF195C241CC5D9225281404651EAF7E", hash_generated_field = "62113CBAA9CAEBCC0941329C8D032899")
 
     private static final long serialVersionUID = 1682602905733508890L;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:54.457 -0500", hash_original_field = "7C5A227E6B12204579E17E8F0B16DA14", hash_generated_field = "F2A7BDC27E688B3BD5C6A8CB27C2DD56")
+
+
+    protected CallIdentifier callId;
+
+    /** Default constructor
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:54.458 -0500", hash_original_method = "561B527F5C5623362D2C0AB5E9627468", hash_generated_method = "0D2F2FAA86EA541868D67EC13712D252")
+    public InReplyTo() {
+        super(IN_REPLY_TO);
+    }
+
+    /** constructor
+     * @param cid CallIdentifier to set
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:54.459 -0500", hash_original_method = "92FFE21441DA37C601278DB74C30EBCA", hash_generated_method = "D30072DEC5F5EE465A02624F296EC24E")
+    public InReplyTo(CallIdentifier cid) {
+        super(IN_REPLY_TO);
+        callId = cid;
+    }
+
+    /**
+     * Sets the Call-Id of the InReplyToHeader. The CallId parameter uniquely
+     * identifies a serious of messages within a dialogue.
+     *
+     * @param callId - the string value of the Call-Id of this InReplyToHeader.
+     * @throws ParseException which signals that an error has been reached
+     * unexpectedly while parsing the callId value.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:54.460 -0500", hash_original_method = "AFE760D92C6B99B9817A49FA1C34A82C", hash_generated_method = "9D8FE62A016C73753A52899DB31A0D65")
+    public void setCallId(String callId) throws ParseException {
+        try {
+            this.callId = new CallIdentifier(callId);
+        } catch (Exception e) {
+            throw new ParseException(e.getMessage(), 0);
+        }
+    }
+
+    /**
+     * Returns the Call-Id of InReplyToHeader. The CallId parameter uniquely
+     * identifies a series of messages within a dialogue.
+     *
+     * @return the String value of the Call-Id of this InReplyToHeader
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:54.461 -0500", hash_original_method = "EA32F9E304DDFDAAFD9F10122A085C03", hash_generated_method = "A952B60519D5B869F2A62588038F424D")
+    public String getCallId() {
+        if (callId == null)
+            return null;
+        return callId.encode();
+    }
+
+    /**
+         * Generate canonical form of the header.
+         * @return String
+         */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:54.463 -0500", hash_original_method = "64901279DBD4FD22B1D7FC340D43545B", hash_generated_method = "2E0993C1A54FED366A83F6457E46B83A")
+    public String encodeBody() {
+        return callId.encode();
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:54.464 -0500", hash_original_method = "AACC864B78324D30A82E58DDECBB4AB7", hash_generated_method = "0E509C6DC96842CC80268F9E3A3514AD")
+    public Object clone() {
+        InReplyTo retval = (InReplyTo) super.clone();
+        if (this.callId != null)
+            retval.callId = (CallIdentifier) this.callId.clone();
+        return retval;
+    }
 }
 

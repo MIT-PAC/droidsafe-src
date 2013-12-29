@@ -1,6 +1,8 @@
 package org.apache.harmony.xnet.provider.jsse;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -27,13 +29,23 @@ import org.apache.harmony.security.provider.cert.X509CertImpl;
 
 
 abstract class AbstractSessionContext implements SSLSessionContext {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.863 -0400", hash_original_field = "F7558008F30251ED687039538F2EE14F", hash_generated_field = "7A30EE95E508037D9FEE1354CEFAC193")
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.762 -0500", hash_original_method = "3A6F397C175F2D6C1475AA31D913F50C", hash_generated_method = "C4AF5DE8488C50BF001E56A5628D4AAD")
+    static void log(Throwable t) {
+        System.logW("Error converting session.", t);
+    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.745 -0500", hash_original_field = "C9F10DBB8FC258C75032872F0523BC2D", hash_generated_field = "53E86EE3900A5BFC3BD52A7722DFD982")
+
+    static final int OPEN_SSL = 1;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.743 -0500", hash_original_field = "3B2E03B648ADD645927E4F8A923F302D", hash_generated_field = "7A30EE95E508037D9FEE1354CEFAC193")
+
 
     volatile int maximumSize;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.863 -0400", hash_original_field = "90272DDA245AE1FB3CF197E91A8689DC", hash_generated_field = "66A9610107B22FE560E0442C7F3278C6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.743 -0500", hash_original_field = "884A23FAAA5E3251B7E5FE4A3FE97CA1", hash_generated_field = "66A9610107B22FE560E0442C7F3278C6")
 
     volatile int timeout;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.863 -0400", hash_original_field = "D010BAA5FA490CA90193AD7819E7A15C", hash_generated_field = "ECA4AAD8222BFFC05678F5BBEB12C033")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.744 -0500", hash_original_field = "252155234ECFEA9B5523A07896E7063B", hash_generated_field = "ECA4AAD8222BFFC05678F5BBEB12C033")
+
 
     final int sslCtxNativePointer = NativeCrypto.SSL_CTX_new();
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.584 -0400", hash_original_field = "BA23DE027615123BDB3690D617C0A3EB", hash_generated_field = "5BF57BED3AD0AD3FD0B289A8ACE951DB")
@@ -54,431 +66,252 @@ abstract class AbstractSessionContext implements SSLSessionContext {
 
         
 };
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.863 -0400", hash_original_method = "B86A9D4A1D1D4BFB528024933586DA07", hash_generated_method = "2BA638231C8AD53D155EB67E486801A1")
-      AbstractSessionContext(int maximumSize, int timeout) {
+
+    /**
+     * Constructs a new session context.
+     *
+     * @param maximumSize of cache
+     * @param timeout for cache entries
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.748 -0500", hash_original_method = "B86A9D4A1D1D4BFB528024933586DA07", hash_generated_method = "B86A9D4A1D1D4BFB528024933586DA07")
+    AbstractSessionContext(int maximumSize, int timeout) {
         this.maximumSize = maximumSize;
         this.timeout = timeout;
-        // ---------- Original Method ----------
-        //this.maximumSize = maximumSize;
-        //this.timeout = timeout;
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.864 -0400", hash_original_method = "A58241B75AD2B44C3E74E917DCCEF491", hash_generated_method = "FF1873F15E796F1752209DFF882F3FA7")
+    /**
+     * Returns the collection of sessions ordered from oldest to newest
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.749 -0500", hash_original_method = "A58241B75AD2B44C3E74E917DCCEF491", hash_generated_method = "215F523582B3EE7C120B8C74154E005E")
     private Iterator<SSLSession> sessionIterator() {
-        synchronized
-(sessions)        {
+        synchronized (sessions) {
             SSLSession[] array = sessions.values().toArray(
                     new SSLSession[sessions.size()]);
-Iterator<SSLSession> varE7DE1FD668E3CBBA265EA6B0639F2D9B_413036224 =             Arrays.asList(array).iterator();
-            varE7DE1FD668E3CBBA265EA6B0639F2D9B_413036224.addTaint(taint);
-            return varE7DE1FD668E3CBBA265EA6B0639F2D9B_413036224;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (sessions) {
-            //SSLSession[] array = sessions.values().toArray(
-                    //new SSLSession[sessions.size()]);
-            //return Arrays.asList(array).iterator();
-        //}
+            return Arrays.asList(array).iterator();
+        }
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.867 -0400", hash_original_method = "106825D731C9327C3D7A99A6486CA67E", hash_generated_method = "B96C8C2AC40960BB4C3ECC38AF01B30E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.752 -0500", hash_original_method = "106825D731C9327C3D7A99A6486CA67E", hash_generated_method = "CC9DF34A26927DEAD2570F68D3C37643")
     public final Enumeration getIds() {
         final Iterator<SSLSession> i = sessionIterator();
-Enumeration varF6BBB41F8B560415F4CBC1CD8616FD15_54913296 =         new Enumeration<byte[]>() {        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.865 -0400", hash_original_field = "D0CAB90D8D20D57E2F2B9BE52F7DD25D", hash_generated_field = "CDB303F1DF3E89A69F752AB14511AB93")
-        private SSLSession next;
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.866 -0400", hash_original_method = "ECED6E9B0C3B7E941FD6E8C079DAFC6A", hash_generated_method = "BC58D80EAC5CFA1CBD1C72F905F30403")
-        public boolean hasMoreElements() {
-            if(next != null)            
-            {
-                boolean varB326B5062B2F0E69046810717534CB09_1554723885 = (true);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_175280307 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_175280307;
-            } //End block
-            while
-(i.hasNext())            
-            {
-                SSLSession session = i.next();
-                if(session.isValid())                
-                {
-                    next = session;
-                    boolean varB326B5062B2F0E69046810717534CB09_983116522 = (true);
-                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_361987457 = getTaintBoolean();
-                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_361987457;
-                } //End block
-            } //End block
-            next = null;
-            boolean var68934A3E9455FA72420237EB05902327_1010110135 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1956648207 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1956648207;
-            // ---------- Original Method ----------
-            //if (next != null) {
-                    //return true;
-                //}
-            //while (i.hasNext()) {
-                    //SSLSession session = i.next();
-                    //if (session.isValid()) {
-                        //next = session;
-                        //return true;
-                    //}
-                //}
-            //next = null;
-            //return false;
-        }
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.866 -0400", hash_original_method = "7968D7DCCB027A5D41A2AFCAEBC6C83D", hash_generated_method = "7E54B5C5EDC9D98B6A52753D65E6CF97")
-        public byte[] nextElement() {
-            if(hasMoreElements())            
-            {
-                byte[] id = next.getId();
+        return new Enumeration<byte[]>() {
+            private SSLSession next;
+            public boolean hasMoreElements() {
+                if (next != null) {
+                    return true;
+                }
+                while (i.hasNext()) {
+                    SSLSession session = i.next();
+                    if (session.isValid()) {
+                        next = session;
+                        return true;
+                    }
+                }
                 next = null;
-                byte[] varB80BB7740288FDA1F201890375A60C8F_2066350781 = (id);
-                                byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_885371449 = {getTaintByte()};
-                return var2F9C81BC6E497382285CD6B7A7E33DE1_885371449;
-            } //End block
-            NoSuchElementException var28D00AB599969908D71F102AF992D49A_1141696600 = new NoSuchElementException();
-            var28D00AB599969908D71F102AF992D49A_1141696600.addTaint(taint);
-            throw var28D00AB599969908D71F102AF992D49A_1141696600;
-            // ---------- Original Method ----------
-            //if (hasMoreElements()) {
-                    //byte[] id = next.getId();
-                    //next = null;
-                    //return id;
-                //}
-            //throw new NoSuchElementException();
-        }
-};
-        varF6BBB41F8B560415F4CBC1CD8616FD15_54913296.addTaint(taint);
-        return varF6BBB41F8B560415F4CBC1CD8616FD15_54913296;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                return false;
+            }
+            public byte[] nextElement() {
+                if (hasMoreElements()) {
+                    byte[] id = next.getId();
+                    next = null;
+                    return id;
+                }
+                throw new NoSuchElementException();
+            }
+        };
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.867 -0400", hash_original_method = "D0015EDFECCAD43C3752A19176DA2F6D", hash_generated_method = "2CE21228527FC30659ABFE29C0FE9312")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.753 -0500", hash_original_method = "D0015EDFECCAD43C3752A19176DA2F6D", hash_generated_method = "F0EBFE5E7F902D90C766F622695BC03B")
     public final int getSessionCacheSize() {
-        int varF7558008F30251ED687039538F2EE14F_1080619653 = (maximumSize);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1464209143 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1464209143;
-        // ---------- Original Method ----------
-        //return maximumSize;
+        return maximumSize;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.868 -0400", hash_original_method = "4FB73E0AB538272543472A54EAEE75CD", hash_generated_method = "119D9FE432EDD91C0573B29749845996")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.754 -0500", hash_original_method = "4FB73E0AB538272543472A54EAEE75CD", hash_generated_method = "C50CE6E687111402FF4DE12D51A55364")
     public final int getSessionTimeout() {
-        int var90272DDA245AE1FB3CF197E91A8689DC_488385831 = (timeout);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2058426109 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2058426109;
-        // ---------- Original Method ----------
-        //return timeout;
+        return timeout;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.868 -0400", hash_original_method = "8615761B2210F074D79DA775AC19AA71", hash_generated_method = "B65EE0CB0AAF519D51F592B9833FAAA0")
+    /**
+     * Makes sure cache size is < maximumSize.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.755 -0500", hash_original_method = "8615761B2210F074D79DA775AC19AA71", hash_generated_method = "40A9876A6B3EAF3C82AAFB29DE7EA0E5")
     protected void trimToSize() {
-        synchronized
-(sessions)        {
+        synchronized (sessions) {
             int size = sessions.size();
-            if(size > maximumSize)            
-            {
+            if (size > maximumSize) {
                 int removals = size - maximumSize;
                 Iterator<SSLSession> i = sessions.values().iterator();
                 do {
-                    {
-                        SSLSession session = i.next();
-                        i.remove();
-                        sessionRemoved(session);
-                    } //End block
-} while (--removals > 0);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (sessions) {
-            //int size = sessions.size();
-            //if (size > maximumSize) {
-                //int removals = size - maximumSize;
-                //Iterator<SSLSession> i = sessions.values().iterator();
-                //do {
-                    //SSLSession session = i.next();
-                    //i.remove();
-                    //sessionRemoved(session);
-                //} while (--removals > 0);
-            //}
-        //}
-    }
-
-    
-        @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.869 -0400", hash_original_method = "39A7527C252FC67E9B785D11757CBC70", hash_generated_method = "017C63B855A79C87A9D2174419D03758")
-    public void setSessionTimeout(int seconds) throws IllegalArgumentException {
-        if(seconds < 0)        
-        {
-            IllegalArgumentException varDD2C31E3868F1B0ECB3F0404533DD6FF_974767402 = new IllegalArgumentException("seconds < 0");
-            varDD2C31E3868F1B0ECB3F0404533DD6FF_974767402.addTaint(taint);
-            throw varDD2C31E3868F1B0ECB3F0404533DD6FF_974767402;
-        } //End block
-        timeout = seconds;
-        synchronized
-(sessions)        {
-            Iterator<SSLSession> i = sessions.values().iterator();
-            while
-(i.hasNext())            
-            {
-                SSLSession session = i.next();
-                if(!session.isValid())                
-                {
+                    SSLSession session = i.next();
                     i.remove();
                     sessionRemoved(session);
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (seconds < 0) {
-            //throw new IllegalArgumentException("seconds < 0");
-        //}
-        //timeout = seconds;
-        //synchronized (sessions) {
-            //Iterator<SSLSession> i = sessions.values().iterator();
-            //while (i.hasNext()) {
-                //SSLSession session = i.next();
-                //if (!session.isValid()) {
-                    //i.remove();
-                    //sessionRemoved(session);
-                //}
-            //}
-        //}
+                } while (--removals > 0);
+            }
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.756 -0500", hash_original_method = "39A7527C252FC67E9B785D11757CBC70", hash_generated_method = "9D88FD2BEFA99FD748CE0F874EC83014")
+    public void setSessionTimeout(int seconds)
+            throws IllegalArgumentException {
+        if (seconds < 0) {
+            throw new IllegalArgumentException("seconds < 0");
+        }
+        timeout = seconds;
+
+        synchronized (sessions) {
+            Iterator<SSLSession> i = sessions.values().iterator();
+            while (i.hasNext()) {
+                SSLSession session = i.next();
+                // SSLSession's know their context and consult the
+                // timeout as part of their validity condition.
+                if (!session.isValid()) {
+                    i.remove();
+                    sessionRemoved(session);
+                }
+            }
+        }
+    }
+
+    /**
+     * Called when a session is removed. Used by ClientSessionContext
+     * to update its host-and-port based cache.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.757 -0500", hash_original_method = "8412ECD60BBEE2A0ADC657B1AA8071DE", hash_generated_method = "FE93B555E00C0291AAAED04329503CCC")
     protected abstract void sessionRemoved(SSLSession session);
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.870 -0400", hash_original_method = "ACCBBC1F3ACDB7C97A3E02614B766E1C", hash_generated_method = "E32BDC099E178DAC2DECF9DB58D45C36")
-    public final void setSessionCacheSize(int size) throws IllegalArgumentException {
-        if(size < 0)        
-        {
-            IllegalArgumentException var2382BBC2482763F398967EC587DEA9AE_774542038 = new IllegalArgumentException("size < 0");
-            var2382BBC2482763F398967EC587DEA9AE_774542038.addTaint(taint);
-            throw var2382BBC2482763F398967EC587DEA9AE_774542038;
-        } //End block
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.757 -0500", hash_original_method = "ACCBBC1F3ACDB7C97A3E02614B766E1C", hash_generated_method = "98CDFCE0326B4E35895BD084229DFB7C")
+    public final void setSessionCacheSize(int size)
+            throws IllegalArgumentException {
+        if (size < 0) {
+            throw new IllegalArgumentException("size < 0");
+        }
+
         int oldMaximum = maximumSize;
         maximumSize = size;
-        if(size < oldMaximum)        
-        {
+
+        // Trim cache to size if necessary.
+        if (size < oldMaximum) {
             trimToSize();
-        } //End block
-        // ---------- Original Method ----------
-        //if (size < 0) {
-            //throw new IllegalArgumentException("size < 0");
-        //}
-        //int oldMaximum = maximumSize;
-        //maximumSize = size;
-        //if (size < oldMaximum) {
-            //trimToSize();
-        //}
+        }
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.871 -0400", hash_original_method = "B42ED13DCD08C26044D05FD9CDF469CF", hash_generated_method = "C2C2AE06FE512DF2A97A977CE047B42B")
-     byte[] toBytes(SSLSession session) {
-        addTaint(session.getTaint());
-        if(!(session instanceof OpenSSLSessionImpl))        
-        {
-            byte[] var37A6259CC0C1DAE299A7866489DFF0BD_2133764456 = (null);
-                        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1308605735 = {getTaintByte()};
-            return var2F9C81BC6E497382285CD6B7A7E33DE1_1308605735;
-        } //End block
+    /**
+     * Converts the given session to bytes.
+     *
+     * @return session data as bytes or null if the session can't be converted
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.758 -0500", hash_original_method = "B42ED13DCD08C26044D05FD9CDF469CF", hash_generated_method = "352FEDC8FDC2993B8AFE5D3AE0423841")
+    byte[] toBytes(SSLSession session) {
+        // TODO: Support SSLSessionImpl, too.
+        if (!(session instanceof OpenSSLSessionImpl)) {
+            return null;
+        }
+
         OpenSSLSessionImpl sslSession = (OpenSSLSessionImpl) session;
-        try 
-        {
+        try {
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
             DataOutputStream daos = new DataOutputStream(baos);
-            daos.writeInt(OPEN_SSL);
+
+            daos.writeInt(OPEN_SSL); // session type ID
+
+            // Session data.
             byte[] data = sslSession.getEncoded();
             daos.writeInt(data.length);
             daos.write(data);
+
+            // Certificates.
             Certificate[] certs = session.getPeerCertificates();
             daos.writeInt(certs.length);
-for(Certificate cert : certs)
-            {
+
+            for (Certificate cert : certs) {
                 data = cert.getEncoded();
                 daos.writeInt(data.length);
                 daos.write(data);
-            } //End block
-            byte[] varC8074949A93D391136C4F0EAA54243E5_1725595814 = (baos.toByteArray());
-                        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_2127445990 = {getTaintByte()};
-            return var2F9C81BC6E497382285CD6B7A7E33DE1_2127445990;
-        } //End block
-        catch (IOException e)
-        {
+            }
+            // TODO: local certificates?
+
+            return baos.toByteArray();
+        } catch (IOException e) {
             log(e);
-            byte[] var37A6259CC0C1DAE299A7866489DFF0BD_504865977 = (null);
-                        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_15138120 = {getTaintByte()};
-            return var2F9C81BC6E497382285CD6B7A7E33DE1_15138120;
-        } //End block
-        catch (CertificateEncodingException e)
-        {
+            return null;
+        } catch (CertificateEncodingException e) {
             log(e);
-            byte[] var37A6259CC0C1DAE299A7866489DFF0BD_1960314772 = (null);
-                        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_415222857 = {getTaintByte()};
-            return var2F9C81BC6E497382285CD6B7A7E33DE1_415222857;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            return null;
+        }
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.873 -0400", hash_original_method = "1F6A50EAF05C581243DFC8EDF15FF940", hash_generated_method = "B550CA0925FE4C4192AD7AE619DE4FFB")
-     SSLSession toSession(byte[] data, String host, int port) {
-        addTaint(port);
-        addTaint(host.getTaint());
-        addTaint(data[0]);
+    /**
+     * Creates a session from the given bytes.
+     *
+     * @return a session or null if the session can't be converted
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.759 -0500", hash_original_method = "1F6A50EAF05C581243DFC8EDF15FF940", hash_generated_method = "1F6A50EAF05C581243DFC8EDF15FF940")
+    SSLSession toSession(byte[] data, String host, int port) {
         ByteArrayInputStream bais = new ByteArrayInputStream(data);
         DataInputStream dais = new DataInputStream(bais);
-        try 
-        {
+        try {
             int type = dais.readInt();
-            if(type != OPEN_SSL)            
-            {
+            if (type != OPEN_SSL) {
                 log(new AssertionError("Unexpected type ID: " + type));
-SSLSession var540C13E9E156B687226421B24F2DF178_630952063 =                 null;
-                var540C13E9E156B687226421B24F2DF178_630952063.addTaint(taint);
-                return var540C13E9E156B687226421B24F2DF178_630952063;
-            } //End block
+                return null;
+            }
+
             int length = dais.readInt();
             byte[] sessionData = new byte[length];
             dais.readFully(sessionData);
+
             int count = dais.readInt();
             X509CertImpl[] certs = new X509CertImpl[count];
-for(int i = 0;i < count;i++)
-            {
+            for (int i = 0; i < count; i++) {
                 length = dais.readInt();
                 byte[] certData = new byte[length];
                 dais.readFully(certData);
                 certs[i] = new X509CertImpl(certData);
-            } //End block
-SSLSession var84AB2E1B3000FC8F6DE25653ECE56C54_1518644862 =             new OpenSSLSessionImpl(sessionData, host, port, certs, this);
-            var84AB2E1B3000FC8F6DE25653ECE56C54_1518644862.addTaint(taint);
-            return var84AB2E1B3000FC8F6DE25653ECE56C54_1518644862;
-        } //End block
-        catch (IOException e)
-        {
+            }
+
+            return new OpenSSLSessionImpl(sessionData, host, port, certs, this);
+        } catch (IOException e) {
             log(e);
-SSLSession var540C13E9E156B687226421B24F2DF178_736592433 =             null;
-            var540C13E9E156B687226421B24F2DF178_736592433.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_736592433;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            return null;
+        }
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.876 -0400", hash_original_method = "C269704A4F254C894FBE48E4ADC3F7DA", hash_generated_method = "E2162FC62B3D01A26585EE79E85AD654")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.760 -0500", hash_original_method = "C269704A4F254C894FBE48E4ADC3F7DA", hash_generated_method = "D03819EE9B926AF234C3C351F04BB654")
     public SSLSession getSession(byte[] sessionId) {
-        addTaint(sessionId[0]);
-        if(sessionId == null)        
-        {
-            NullPointerException var6FE05A4D95E15DCE22A2066FE5B04F68_1168187567 = new NullPointerException("sessionId == null");
-            var6FE05A4D95E15DCE22A2066FE5B04F68_1168187567.addTaint(taint);
-            throw var6FE05A4D95E15DCE22A2066FE5B04F68_1168187567;
-        } //End block
+        if (sessionId == null) {
+            throw new NullPointerException("sessionId == null");
+        }
         ByteArray key = new ByteArray(sessionId);
         SSLSession session;
-        synchronized
-(sessions)        {
+        synchronized (sessions) {
             session = sessions.get(key);
-        } //End block
-        if(session != null && session.isValid())        
-        {
-SSLSession varD555E544A66E0F97DA6BCDE940E3E79C_1103520051 =             session;
-            varD555E544A66E0F97DA6BCDE940E3E79C_1103520051.addTaint(taint);
-            return varD555E544A66E0F97DA6BCDE940E3E79C_1103520051;
-        } //End block
-SSLSession var540C13E9E156B687226421B24F2DF178_2008277455 =         null;
-        var540C13E9E156B687226421B24F2DF178_2008277455.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_2008277455;
-        // ---------- Original Method ----------
-        //if (sessionId == null) {
-            //throw new NullPointerException("sessionId == null");
-        //}
-        //ByteArray key = new ByteArray(sessionId);
-        //SSLSession session;
-        //synchronized (sessions) {
-            //session = sessions.get(key);
-        //}
-        //if (session != null && session.isValid()) {
-            //return session;
-        //}
-        //return null;
+        }
+        if (session != null && session.isValid()) {
+            return session;
+        }
+        return null;
     }
 
-    
-        @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.877 -0400", hash_original_method = "01E7B06223DFEA7D5DECA9A679FEAED7", hash_generated_method = "56E46675B2DACAAFBD15DCD7A9590ED2")
-     void putSession(SSLSession session) {
-        addTaint(session.getTaint());
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.761 -0500", hash_original_method = "01E7B06223DFEA7D5DECA9A679FEAED7", hash_generated_method = "01E7B06223DFEA7D5DECA9A679FEAED7")
+    void putSession(SSLSession session) {
         byte[] id = session.getId();
-        if(id.length == 0)        
-        {
+        if (id.length == 0) {
             return;
-        } //End block
+        }
         ByteArray key = new ByteArray(id);
-        synchronized
-(sessions)        {
+        synchronized (sessions) {
             sessions.put(key, session);
-        } //End block
-        // ---------- Original Method ----------
-        //byte[] id = session.getId();
-        //if (id.length == 0) {
-            //return;
-        //}
-        //ByteArray key = new ByteArray(id);
-        //synchronized (sessions) {
-            //sessions.put(key, session);
-        //}
+        }
     }
 
-    
-    @DSModeled(DSC.SPEC)
-    static void log(Throwable t) {
-        System.logW("Error converting session.", t);
-    }
-
-    
-        @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.878 -0400", hash_original_method = "F38656E203DF2568CDB8FB5A6C876744", hash_generated_method = "415C95D5B1D7C63D7DD32000B7CCE6AC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.763 -0500", hash_original_method = "F38656E203DF2568CDB8FB5A6C876744", hash_generated_method = "B21566E80A2D5EBF94270E3732AA186A")
     @Override
-    protected void finalize() throws Throwable {
-        try 
-        {
+protected void finalize() throws Throwable {
+        try {
             NativeCrypto.SSL_CTX_free(sslCtxNativePointer);
-        } //End block
-        finally 
-        {
+        } finally {
             super.finalize();
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //NativeCrypto.SSL_CTX_free(sslCtxNativePointer);
-        //} finally {
-            //super.finalize();
-        //}
+        }
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.878 -0400", hash_original_field = "926D9B14F0F0E3D940ACF8FD74B8BEC9", hash_generated_field = "53E86EE3900A5BFC3BD52A7722DFD982")
-
-    static final int OPEN_SSL = 1;
 }
 

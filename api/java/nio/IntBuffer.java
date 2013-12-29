@@ -1,6 +1,8 @@
 package java.nio;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Arrays;
 
@@ -9,17 +11,17 @@ import java.util.Arrays;
 
 
 public abstract class IntBuffer extends Buffer implements Comparable<IntBuffer> {
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.143 -0400", hash_original_method = "BC7C458D54C7EF00271779F9364447AB", hash_generated_method = "170567E1C278C9849B896D5CC60CA702")
-      IntBuffer(int capacity) {
-        super(2, capacity, null);
-        addTaint(capacity);
-        // ---------- Original Method ----------
-    }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Creates an int buffer based on a newly allocated int array.
+     *
+     * @param capacity
+     *            the capacity of the new buffer.
+     * @return the created int buffer.
+     * @throws IllegalArgumentException
+     *             if {@code capacity} is less than zero.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:39.592 -0500", hash_original_method = "C3C2422C66654D6E12C59493728B39AD", hash_generated_method = "0D16E8947227D39761B191AF74C187E8")
     public static IntBuffer allocate(int capacity) {
         if (capacity < 0) {
             throw new IllegalArgumentException();
@@ -27,14 +29,40 @@ public abstract class IntBuffer extends Buffer implements Comparable<IntBuffer> 
         return new ReadWriteIntArrayBuffer(capacity);
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Creates a new int buffer by wrapping the given int array.
+     * <p>
+     * Calling this method has the same effect as
+     * {@code wrap(array, 0, array.length)}.
+     *
+     * @param array
+     *            the int array which the new buffer will be based on.
+     * @return the created int buffer.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:39.593 -0500", hash_original_method = "69AB4E308DD923986E8AB96AF4F625AA", hash_generated_method = "6C1B3D0124340296BE544158357DB7B0")
     public static IntBuffer wrap(int[] array) {
         return wrap(array, 0, array.length);
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Creates a new int buffer by wrapping the given int array.
+     * <p>
+     * The new buffer's position will be {@code start}, limit will be
+     * {@code start + intCount}, capacity will be the length of the array.
+     *
+     * @param array
+     *            the int array which the new buffer will be based on.
+     * @param start
+     *            the start index, must not be negative and not greater than
+     *            {@code array.length}
+     * @param intCount
+     *            the length, must not be negative and not greater than
+     *            {@code array.length - start}.
+     * @return the created int buffer.
+     * @exception IndexOutOfBoundsException
+     *                if either {@code start} or {@code intCount} is invalid.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:39.595 -0500", hash_original_method = "47E92E6AEEAACC35C5502B8D98F03798", hash_generated_method = "4ECA240E787448B61CD60196456D2818")
     public static IntBuffer wrap(int[] array, int start, int intCount) {
         Arrays.checkOffsetAndCount(array.length, start, intCount);
         IntBuffer buf = new ReadWriteIntArrayBuffer(array);
@@ -43,332 +71,407 @@ public abstract class IntBuffer extends Buffer implements Comparable<IntBuffer> 
         return buf;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.145 -0400", hash_original_method = "D78164E532496862518F1BC4BDE62DEB", hash_generated_method = "98418B2A36CE3D3A044C12FD219EE92B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:39.596 -0500", hash_original_method = "BC7C458D54C7EF00271779F9364447AB", hash_generated_method = "BC7C458D54C7EF00271779F9364447AB")
+    IntBuffer(int capacity) {
+        super(2, capacity, null);
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:39.597 -0500", hash_original_method = "D78164E532496862518F1BC4BDE62DEB", hash_generated_method = "CB5E64554344EFAB91A39013834819D7")
     public final int[] array() {
-        int[] var68B89E48382A0AA51B25AC59599E2EB0_212699667 = (protectedArray());
-                int[] varB4CCCA26F9DB9189C32F33E82D425CFB_1539914670 = {getTaintInt()};
-        return varB4CCCA26F9DB9189C32F33E82D425CFB_1539914670;
-        // ---------- Original Method ----------
-        //return protectedArray();
+        return protectedArray();
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.146 -0400", hash_original_method = "0D5EF56CBEA1DA16093A6276D10D9347", hash_generated_method = "8566E1FCAE73BE912DF46A3F5C78E21A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:39.598 -0500", hash_original_method = "0D5EF56CBEA1DA16093A6276D10D9347", hash_generated_method = "28A2D71AE8939DE09018E333ADFF6CAE")
     public final int arrayOffset() {
-        int var0B794CE56A38A9F3BFDD2D53E83BB109_960044091 = (protectedArrayOffset());
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_904901306 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_904901306;
-        // ---------- Original Method ----------
-        //return protectedArrayOffset();
+        return protectedArrayOffset();
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Returns a read-only buffer that shares its content with this buffer.
+     * <p>
+     * The returned buffer is guaranteed to be a new instance, even this buffer
+     * is read-only itself. The new buffer's position, limit, capacity and mark
+     * are the same as this buffer's.
+     * <p>
+     * The new buffer shares its content with this buffer, which means this
+     * buffer's change of content will be visible to the new buffer. The two
+     * buffer's position, limit and mark are independent.
+     *
+     * @return a read-only version of this buffer.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:39.599 -0500", hash_original_method = "4E5C9DEC8494400600F057FE77AF41B7", hash_generated_method = "A87D6616A98CD0E633A87C121BC06FA8")
     public abstract IntBuffer asReadOnlyBuffer();
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Compacts this int buffer.
+     * <p>
+     * The remaining ints will be moved to the head of the buffer, starting from
+     * position zero. Then the position is set to {@code remaining()}; the
+     * limit is set to capacity; the mark is cleared.
+     *
+     * @return this buffer.
+     * @exception ReadOnlyBufferException
+     *                if no changes may be made to the contents of this buffer.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:39.600 -0500", hash_original_method = "ADBAAAA244C99486C1E2FADBAB49EEE2", hash_generated_method = "497335B55AC037794B7F61A23232A35C")
     public abstract IntBuffer compact();
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.147 -0400", hash_original_method = "E9F1AE5FDD3CB99604FBE90C4DDAAAAA", hash_generated_method = "6ADF39A0B3CF1A8B2E0EB42036456CC4")
+    /**
+     * Compares the remaining ints of this buffer to another int buffer's
+     * remaining ints.
+     *
+     * @param otherBuffer
+     *            another int buffer.
+     * @return a negative value if this is less than {@code other}; 0 if this
+     *         equals to {@code other}; a positive value if this is greater
+     *         than {@code other}.
+     * @exception ClassCastException
+     *                if {@code other} is not an int buffer.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:39.601 -0500", hash_original_method = "E9F1AE5FDD3CB99604FBE90C4DDAAAAA", hash_generated_method = "FB7CC9CE9AA426F3D8AF8E054906B8DA")
     public int compareTo(IntBuffer otherBuffer) {
-        addTaint(otherBuffer.getTaint());
         int compareRemaining = (remaining() < otherBuffer.remaining()) ? remaining()
                 : otherBuffer.remaining();
         int thisPos = position;
         int otherPos = otherBuffer.position;
-        int thisInt;
-        int otherInt;
-        while
-(compareRemaining > 0)        
-        {
+        int thisInt, otherInt;
+        while (compareRemaining > 0) {
             thisInt = get(thisPos);
             otherInt = otherBuffer.get(otherPos);
-            if(thisInt != otherInt)            
-            {
-                int varB0A2C415E738F4ACAE648837EC3182E5_721454202 = (thisInt < otherInt ? -1 : 1);
-                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2044676797 = getTaintInt();
-                return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2044676797;
-            } //End block
+            if (thisInt != otherInt) {
+                return thisInt < otherInt ? -1 : 1;
+            }
             thisPos++;
             otherPos++;
             compareRemaining--;
-        } //End block
-        int var1DC167191FBC7DAD3BADAE830552C692_1271094092 = (remaining() - otherBuffer.remaining());
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1859282409 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1859282409;
-        // ---------- Original Method ----------
-        //int compareRemaining = (remaining() < otherBuffer.remaining()) ? remaining()
-                //: otherBuffer.remaining();
-        //int thisPos = position;
-        //int otherPos = otherBuffer.position;
-        //int thisInt, otherInt;
-        //while (compareRemaining > 0) {
-            //thisInt = get(thisPos);
-            //otherInt = otherBuffer.get(otherPos);
-            //if (thisInt != otherInt) {
-                //return thisInt < otherInt ? -1 : 1;
-            //}
-            //thisPos++;
-            //otherPos++;
-            //compareRemaining--;
-        //}
-        //return remaining() - otherBuffer.remaining();
+        }
+        return remaining() - otherBuffer.remaining();
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Returns a duplicated buffer that shares its content with this buffer.
+     * <p>
+     * The duplicated buffer's position, limit, capacity and mark are the same
+     * as this buffer. The duplicated buffer's read-only property and byte order
+     * are the same as this buffer's.
+     * <p>
+     * The new buffer shares its content with this buffer, which means either
+     * buffer's change of content will be visible to the other. The two buffer's
+     * position, limit and mark are independent.
+     *
+     * @return a duplicated buffer that shares its content with this buffer.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:39.601 -0500", hash_original_method = "0C804092755E4B9B6E5C0297DAA0E741", hash_generated_method = "5A5B68DA5A5D5C973D12C09D54E816A6")
     public abstract IntBuffer duplicate();
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.149 -0400", hash_original_method = "43D7EA8D2B4C608B648102E9AA040456", hash_generated_method = "1C3FBA22B661D10CA8CDF85CA573CC4F")
+    /**
+     * Checks whether this int buffer is equal to another object.
+     * <p>
+     * If {@code other} is not a int buffer then {@code false} is returned. Two
+     * int buffers are equal if and only if their remaining ints are exactly the
+     * same. Position, limit, capacity and mark are not considered.
+     *
+     * @param other
+     *            the object to compare with this int buffer.
+     * @return {@code true} if this int buffer is equal to {@code other},
+     *         {@code false} otherwise.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:39.603 -0500", hash_original_method = "43D7EA8D2B4C608B648102E9AA040456", hash_generated_method = "40D9F64D79A67D8167034E36F27AB9A8")
     @Override
-    public boolean equals(Object other) {
-        addTaint(other.getTaint());
-        if(!(other instanceof IntBuffer))        
-        {
-            boolean var68934A3E9455FA72420237EB05902327_881015657 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_623433782 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_623433782;
-        } //End block
+public boolean equals(Object other) {
+        if (!(other instanceof IntBuffer)) {
+            return false;
+        }
         IntBuffer otherBuffer = (IntBuffer) other;
-        if(remaining() != otherBuffer.remaining())        
-        {
-            boolean var68934A3E9455FA72420237EB05902327_1023689635 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1454943211 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1454943211;
-        } //End block
+
+        if (remaining() != otherBuffer.remaining()) {
+            return false;
+        }
+
         int myPosition = position;
         int otherPosition = otherBuffer.position;
         boolean equalSoFar = true;
-        while
-(equalSoFar && (myPosition < limit))        
-        {
+        while (equalSoFar && (myPosition < limit)) {
             equalSoFar = get(myPosition++) == otherBuffer.get(otherPosition++);
-        } //End block
-        boolean var4A97EF18B93B276118DD50585250A586_295957416 = (equalSoFar);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_625630297 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_625630297;
-        // ---------- Original Method ----------
-        //if (!(other instanceof IntBuffer)) {
-            //return false;
-        //}
-        //IntBuffer otherBuffer = (IntBuffer) other;
-        //if (remaining() != otherBuffer.remaining()) {
-            //return false;
-        //}
-        //int myPosition = position;
-        //int otherPosition = otherBuffer.position;
-        //boolean equalSoFar = true;
-        //while (equalSoFar && (myPosition < limit)) {
-            //equalSoFar = get(myPosition++) == otherBuffer.get(otherPosition++);
-        //}
-        //return equalSoFar;
+        }
+
+        return equalSoFar;
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Returns the int at the current position and increases the position by 1.
+     *
+     * @return the int at the current position.
+     * @exception BufferUnderflowException
+     *                if the position is equal or greater than limit.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:39.603 -0500", hash_original_method = "0A798F66266369F5E0B8382312B2A42C", hash_generated_method = "3728D34F4B8457DB5591DFE714380404")
     public abstract int get();
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.150 -0400", hash_original_method = "257B404B7D2C714566C75E4EA0767CA2", hash_generated_method = "1D9F221CC3BD00BB4F01F805B176AB22")
+    /**
+     * Reads ints from the current position into the specified int array and
+     * increases the position by the number of ints read.
+     * <p>
+     * Calling this method has the same effect as
+     * {@code get(dst, 0, dst.length)}.
+     *
+     * @param dst
+     *            the destination int array.
+     * @return this buffer.
+     * @exception BufferUnderflowException
+     *                if {@code dst.length} is greater than {@code remaining()}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:39.604 -0500", hash_original_method = "257B404B7D2C714566C75E4EA0767CA2", hash_generated_method = "788107F6E76274CC5C6266D6CB7F4F9A")
     public IntBuffer get(int[] dst) {
-        addTaint(dst[0]);
-IntBuffer varAF8F268F60258FE30F192DE78F11CD4A_252783977 =         get(dst, 0, dst.length);
-        varAF8F268F60258FE30F192DE78F11CD4A_252783977.addTaint(taint);
-        return varAF8F268F60258FE30F192DE78F11CD4A_252783977;
-        // ---------- Original Method ----------
-        //return get(dst, 0, dst.length);
+        return get(dst, 0, dst.length);
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.151 -0400", hash_original_method = "72F522BE346D267FC1DB76B8F081AACA", hash_generated_method = "30DC994D4955EAFBCA27D32ED10DBC10")
+    /**
+     * Reads ints from the current position into the specified int array,
+     * starting from the specified offset, and increases the position by the
+     * number of ints read.
+     *
+     * @param dst
+     *            the target int array.
+     * @param dstOffset
+     *            the offset of the int array, must not be negative and not
+     *            greater than {@code dst.length}.
+     * @param intCount
+     *            the number of ints to read, must be no less than zero and not
+     *            greater than {@code dst.length - dstOffset}.
+     * @return this buffer.
+     * @exception IndexOutOfBoundsException
+     *                if either {@code dstOffset} or {@code intCount} is invalid.
+     * @exception BufferUnderflowException
+     *                if {@code intCount} is greater than {@code remaining()}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:39.605 -0500", hash_original_method = "72F522BE346D267FC1DB76B8F081AACA", hash_generated_method = "F757E7BF7AB4D20D9AF94C8418AF12DA")
     public IntBuffer get(int[] dst, int dstOffset, int intCount) {
-        addTaint(intCount);
-        addTaint(dstOffset);
-        addTaint(dst[0]);
         Arrays.checkOffsetAndCount(dst.length, dstOffset, intCount);
-        if(intCount > remaining())        
-        {
-            BufferUnderflowException var77B0EAE3DCF68E57AAEF834AFBC7D762_823981746 = new BufferUnderflowException();
-            var77B0EAE3DCF68E57AAEF834AFBC7D762_823981746.addTaint(taint);
-            throw var77B0EAE3DCF68E57AAEF834AFBC7D762_823981746;
-        } //End block
-for(int i = dstOffset;i < dstOffset + intCount;++i)
-        {
+        if (intCount > remaining()) {
+            throw new BufferUnderflowException();
+        }
+        for (int i = dstOffset; i < dstOffset + intCount; ++i) {
             dst[i] = get();
-        } //End block
-IntBuffer var72A74007B2BE62B849F475C7BDA4658B_704659596 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_704659596.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_704659596;
-        // ---------- Original Method ----------
-        //Arrays.checkOffsetAndCount(dst.length, dstOffset, intCount);
-        //if (intCount > remaining()) {
-            //throw new BufferUnderflowException();
-        //}
-        //for (int i = dstOffset; i < dstOffset + intCount; ++i) {
-            //dst[i] = get();
-        //}
-        //return this;
+        }
+        return this;
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Returns an int at the specified index; the position is not changed.
+     *
+     * @param index
+     *            the index, must not be negative and less than limit.
+     * @return an int at the specified index.
+     * @exception IndexOutOfBoundsException
+     *                if index is invalid.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:39.606 -0500", hash_original_method = "C5D471E4849A6B00EECD9AFDBF0AFE23", hash_generated_method = "3A3B1B5CB5F362BC2AAE9BEF986FF130")
     public abstract int get(int index);
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.152 -0400", hash_original_method = "89C81F0EAF8FCCBFE368437CC8972DD7", hash_generated_method = "420BB3C8D449383876B8B7B86842522F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:39.607 -0500", hash_original_method = "89C81F0EAF8FCCBFE368437CC8972DD7", hash_generated_method = "9ABCCA1D4392A43B7EAC3713FD39CEA8")
     public final boolean hasArray() {
-        boolean var55B7C03E3C1EBABD22606AD17EE923C3_2058430727 = (protectedHasArray());
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_494171593 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_494171593;
-        // ---------- Original Method ----------
-        //return protectedHasArray();
+        return protectedHasArray();
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.153 -0400", hash_original_method = "371FAD0CF0C9AC8E78075F4EA52336BD", hash_generated_method = "4A8B81A764F067A8BD8E6D7AD261EEC2")
+    /**
+     * Calculates this buffer's hash code from the remaining chars. The
+     * position, limit, capacity and mark don't affect the hash code.
+     *
+     * @return the hash code calculated from the remaining ints.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:39.608 -0500", hash_original_method = "371FAD0CF0C9AC8E78075F4EA52336BD", hash_generated_method = "1E25806FB1ABDE5EAE09DE7EAB683BE8")
     @Override
-    public int hashCode() {
+public int hashCode() {
         int myPosition = position;
         int hash = 0;
-        while
-(myPosition < limit)        
-        {
+        while (myPosition < limit) {
             hash = hash + get(myPosition++);
-        } //End block
-        int var0800FC577294C34E0B28AD2839435945_640556919 = (hash);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2050047302 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2050047302;
-        // ---------- Original Method ----------
-        //int myPosition = position;
-        //int hash = 0;
-        //while (myPosition < limit) {
-            //hash = hash + get(myPosition++);
-        //}
-        //return hash;
+        }
+        return hash;
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Indicates whether this buffer is direct. A direct buffer will try its
+     * best to take advantage of native memory APIs and it may not stay in the
+     * Java heap, so it is not affected by garbage collection.
+     * <p>
+     * An int buffer is direct if it is based on a byte buffer and the byte
+     * buffer is direct.
+     *
+     * @return {@code true} if this buffer is direct, {@code false} otherwise.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:39.609 -0500", hash_original_method = "2B5243B32EFBD4C87A9512D0DB4C2075", hash_generated_method = "FFC399E278E774AC5C957525392E5B9B")
     public abstract boolean isDirect();
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Returns the byte order used by this buffer when converting ints from/to
+     * bytes.
+     * <p>
+     * If this buffer is not based on a byte buffer, then always return the
+     * platform's native byte order.
+     *
+     * @return the byte order used by this buffer when converting ints from/to
+     *         bytes.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:39.609 -0500", hash_original_method = "2DA427F16EF708C854E7D0C984AF174B", hash_generated_method = "2BEDE1A9F84B5799B19A96DDBD47ABB8")
     public abstract ByteOrder order();
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Child class implements this method to realize {@code array()}.
+     *
+     * @return see {@code array()}
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:39.610 -0500", hash_original_method = "0C22D1CF923E9DF3483B308CB9EA9081", hash_generated_method = "3141C402420A674783C4D953BBCA5765")
     abstract int[] protectedArray();
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Child class implements this method to realize {@code arrayOffset()}.
+     *
+     * @return see {@code arrayOffset()}
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:39.611 -0500", hash_original_method = "9E60C7ACB7338AE2B38C3B6B2C95F717", hash_generated_method = "CF9DD77B0F7512BEF2952176796D1F74")
     abstract int protectedArrayOffset();
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Child class implements this method to realize {@code hasArray()}.
+     *
+     * @return see {@code hasArray()}
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:39.612 -0500", hash_original_method = "A4BB1744D6CB0B58561CD2147D66FE72", hash_generated_method = "6F3071F3A04983A3B50C9AF29E029577")
     abstract boolean protectedHasArray();
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Writes the given int to the current position and increases the position
+     * by 1.
+     *
+     * @param i
+     *            the int to write.
+     * @return this buffer.
+     * @exception BufferOverflowException
+     *                if position is equal or greater than limit.
+     * @exception ReadOnlyBufferException
+     *                if no changes may be made to the contents of this buffer.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:39.613 -0500", hash_original_method = "82862E853D49F26D6E084DD906147BE0", hash_generated_method = "6CC47AC36AEAFCB275507B3483ECA23A")
     public abstract IntBuffer put(int i);
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.154 -0400", hash_original_method = "C57984865448BE8CC42F7EA5DB727833", hash_generated_method = "E5811B8E21B67B15B362A16101A6B7B0")
+    /**
+     * Writes ints from the given int array to the current position and
+     * increases the position by the number of ints written.
+     * <p>
+     * Calling this method has the same effect as
+     * {@code put(src, 0, src.length)}.
+     *
+     * @param src
+     *            the source int array.
+     * @return this buffer.
+     * @exception BufferOverflowException
+     *                if {@code remaining()} is less than {@code src.length}.
+     * @exception ReadOnlyBufferException
+     *                if no changes may be made to the contents of this buffer.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:39.614 -0500", hash_original_method = "C57984865448BE8CC42F7EA5DB727833", hash_generated_method = "27343A32060FA378BCF5F2BB10CCC48A")
     public final IntBuffer put(int[] src) {
-        addTaint(src[0]);
-IntBuffer var7D505613BED257805463C43ADCB4DBAD_541381468 =         put(src, 0, src.length);
-        var7D505613BED257805463C43ADCB4DBAD_541381468.addTaint(taint);
-        return var7D505613BED257805463C43ADCB4DBAD_541381468;
-        // ---------- Original Method ----------
-        //return put(src, 0, src.length);
+        return put(src, 0, src.length);
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.155 -0400", hash_original_method = "E12C5DD5606B4F94202BB1F980DCA32C", hash_generated_method = "0FD869C7E3C9E8221BD0E2E211F43139")
+    /**
+     * Writes ints from the given int array, starting from the specified offset,
+     * to the current position and increases the position by the number of ints
+     * written.
+     *
+     * @param src
+     *            the source int array.
+     * @param srcOffset
+     *            the offset of int array, must not be negative and not greater
+     *            than {@code src.length}.
+     * @param intCount
+     *            the number of ints to write, must be no less than zero and not
+     *            greater than {@code src.length - srcOffset}.
+     * @return this buffer.
+     * @exception BufferOverflowException
+     *                if {@code remaining()} is less than {@code intCount}.
+     * @exception IndexOutOfBoundsException
+     *                if either {@code srcOffset} or {@code intCount} is invalid.
+     * @exception ReadOnlyBufferException
+     *                if no changes may be made to the contents of this buffer.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:39.615 -0500", hash_original_method = "E12C5DD5606B4F94202BB1F980DCA32C", hash_generated_method = "D8E8482E479EA8A948E3AD114397F08C")
     public IntBuffer put(int[] src, int srcOffset, int intCount) {
-        addTaint(intCount);
-        addTaint(srcOffset);
-        addTaint(src[0]);
         Arrays.checkOffsetAndCount(src.length, srcOffset, intCount);
-        if(intCount > remaining())        
-        {
-            BufferOverflowException var773478A23217201B18B531915D367F31_191229191 = new BufferOverflowException();
-            var773478A23217201B18B531915D367F31_191229191.addTaint(taint);
-            throw var773478A23217201B18B531915D367F31_191229191;
-        } //End block
-for(int i = srcOffset;i < srcOffset + intCount;++i)
-        {
+        if (intCount > remaining()) {
+            throw new BufferOverflowException();
+        }
+        for (int i = srcOffset; i < srcOffset + intCount; ++i) {
             put(src[i]);
-        } //End block
-IntBuffer var72A74007B2BE62B849F475C7BDA4658B_1119276965 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_1119276965.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_1119276965;
-        // ---------- Original Method ----------
-        //Arrays.checkOffsetAndCount(src.length, srcOffset, intCount);
-        //if (intCount > remaining()) {
-            //throw new BufferOverflowException();
-        //}
-        //for (int i = srcOffset; i < srcOffset + intCount; ++i) {
-            //put(src[i]);
-        //}
-        //return this;
+        }
+        return this;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.155 -0400", hash_original_method = "874C21D5B52E872502D97AA1BF44CEA1", hash_generated_method = "930DFD70996894DCD9824C8DBB22A711")
+    /**
+     * Writes all the remaining ints of the {@code src} int buffer to this
+     * buffer's current position, and increases both buffers' position by the
+     * number of ints copied.
+     *
+     * @param src
+     *            the source int buffer.
+     * @return this buffer.
+     * @exception BufferOverflowException
+     *                if {@code src.remaining()} is greater than this buffer's
+     *                {@code remaining()}.
+     * @exception IllegalArgumentException
+     *                if {@code src} is this buffer.
+     * @exception ReadOnlyBufferException
+     *                if no changes may be made to the contents of this buffer.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:39.616 -0500", hash_original_method = "874C21D5B52E872502D97AA1BF44CEA1", hash_generated_method = "44208B665AD9607EFA385FF0564D336C")
     public IntBuffer put(IntBuffer src) {
-        addTaint(src.getTaint());
-        if(src == this)        
-        {
-            IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_676411680 = new IllegalArgumentException();
-            var5783EF97022AA508B74A1E3EA38534AF_676411680.addTaint(taint);
-            throw var5783EF97022AA508B74A1E3EA38534AF_676411680;
-        } //End block
-        if(src.remaining() > remaining())        
-        {
-            BufferOverflowException var773478A23217201B18B531915D367F31_1820585545 = new BufferOverflowException();
-            var773478A23217201B18B531915D367F31_1820585545.addTaint(taint);
-            throw var773478A23217201B18B531915D367F31_1820585545;
-        } //End block
+        if (src == this) {
+            throw new IllegalArgumentException();
+        }
+        if (src.remaining() > remaining()) {
+            throw new BufferOverflowException();
+        }
         int[] contents = new int[src.remaining()];
         src.get(contents);
         put(contents);
-IntBuffer var72A74007B2BE62B849F475C7BDA4658B_1962116745 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_1962116745.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_1962116745;
-        // ---------- Original Method ----------
-        //if (src == this) {
-            //throw new IllegalArgumentException();
-        //}
-        //if (src.remaining() > remaining()) {
-            //throw new BufferOverflowException();
-        //}
-        //int[] contents = new int[src.remaining()];
-        //src.get(contents);
-        //put(contents);
-        //return this;
+        return this;
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Write a int to the specified index of this buffer; the position is not
+     * changed.
+     *
+     * @param index
+     *            the index, must not be negative and less than the limit.
+     * @param i
+     *            the int to write.
+     * @return this buffer.
+     * @exception IndexOutOfBoundsException
+     *                if index is invalid.
+     * @exception ReadOnlyBufferException
+     *                if no changes may be made to the contents of this buffer.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:39.616 -0500", hash_original_method = "C04490F77D9F5C2317E167F33A34C0AF", hash_generated_method = "794E9CBD8FE98A8EBCFB2C6DAE020A9E")
     public abstract IntBuffer put(int index, int i);
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Returns a sliced buffer that shares its content with this buffer.
+     * <p>
+     * The sliced buffer's capacity will be this buffer's {@code remaining()},
+     * and its zero position will correspond to this buffer's current position.
+     * The new buffer's position will be 0, limit will be its capacity, and its
+     * mark is cleared. The new buffer's read-only property and byte order are
+     * same as this buffer's.
+     * <p>
+     * The new buffer shares its content with this buffer, which means either
+     * buffer's change of content will be visible to the other. The two buffer's
+     * position, limit and mark are independent.
+     *
+     * @return a sliced buffer that shares its content with this buffer.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:39.617 -0500", hash_original_method = "B9F3B2A9702898038CC25336B74676C0", hash_generated_method = "3B6DA994D8723384D96B2E09D6E6434C")
     public abstract IntBuffer slice();
 
     

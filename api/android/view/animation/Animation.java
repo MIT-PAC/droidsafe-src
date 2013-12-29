@@ -1,6 +1,8 @@
 package android.view.animation;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -15,146 +17,187 @@ import dalvik.system.CloseGuard;
 
 
 public abstract class Animation implements Cloneable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.731 -0400", hash_original_field = "385457F169B7B8F3F055692484147005", hash_generated_field = "2B949884EB9BE3C788B16B27F6DA2E53")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.750 -0500", hash_original_field = "417F8E2CBC513720508F8C102EA05FF0", hash_generated_field = "285D35A4B336A34C53955AE44424AC64")
+
+    public static final int INFINITE = -1;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.751 -0500", hash_original_field = "7DE78E0FB953C6A3E6F6F966B35CD4A9", hash_generated_field = "9FE7B7E5ED52768DD1C53DC895EC1A0D")
+
+    public static final int RESTART = 1;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.752 -0500", hash_original_field = "8AF1934B0634DCB90851FF627910B42C", hash_generated_field = "6790E6439C0E7615743240DF9A7C010E")
+
+    public static final int REVERSE = 2;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.753 -0500", hash_original_field = "D4E42EB1E71DD5D85256B3A55C100190", hash_generated_field = "235BF0C9710820F28A2E28648164C2B7")
+
+    public static final int START_ON_FIRST_FRAME = -1;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.754 -0500", hash_original_field = "5C89E962BC02DAE82FF281F302E83FEB", hash_generated_field = "4BC65DE722DF4CE40D49EFB427E9C12C")
+
+    public static final int ABSOLUTE = 0;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.755 -0500", hash_original_field = "FD0817C6A905848E79C7A243F19C9612", hash_generated_field = "2A99BA87ACDDCA9C9FB386FFFB6151EA")
+
+    public static final int RELATIVE_TO_SELF = 1;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.755 -0500", hash_original_field = "6B92A2C5E0FCAB33CDA782C9D1A7A524", hash_generated_field = "39CEF3E15FF6FF8064031A5B0E218AC6")
+
+    public static final int RELATIVE_TO_PARENT = 2;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.756 -0500", hash_original_field = "C78A962F9C98B7CF3B564488DDD54EC7", hash_generated_field = "350B866462D7A5796C6E66AE9D7BB305")
+
+    public static final int ZORDER_NORMAL = 0;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.757 -0500", hash_original_field = "AB6ABAB5829BE2C33188B2A597989F50", hash_generated_field = "63A9791B289181049B87F13C581D3AF7")
+
+    public static final int ZORDER_TOP = 1;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.758 -0500", hash_original_field = "45C8E386A62BFF6413DE02DAB63F04BA", hash_generated_field = "6655EB233E0907175F6FC1DFBCF648DD")
+
+    public static final int ZORDER_BOTTOM = -1;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.759 -0500", hash_original_field = "FC18F37F6CE202E9BF34901468BC437A", hash_generated_field = "5160DD832DA627994F79F0E39BF3B141")
+
+
+    private static final boolean USE_CLOSEGUARD
+            = SystemProperties.getBoolean("log.closeguard.Animation", false);
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.760 -0500", hash_original_field = "2B949884EB9BE3C788B16B27F6DA2E53", hash_generated_field = "2B949884EB9BE3C788B16B27F6DA2E53")
 
     boolean mEnded = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.731 -0400", hash_original_field = "465FED330AF0BFBBF47872297AAF1201", hash_generated_field = "5D947BF952E8653BAADEA609028A78F9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.761 -0500", hash_original_field = "5D947BF952E8653BAADEA609028A78F9", hash_generated_field = "5D947BF952E8653BAADEA609028A78F9")
 
     boolean mStarted = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.731 -0400", hash_original_field = "575296D4A6E3181FC1FFE583DB23FE3E", hash_generated_field = "F5A90569EED95B6137362B9C24B64AD6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.762 -0500", hash_original_field = "F5A90569EED95B6137362B9C24B64AD6", hash_generated_field = "F5A90569EED95B6137362B9C24B64AD6")
 
     boolean mCycleFlip = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.731 -0400", hash_original_field = "82073B9F728953BFC0E99AB45C8BBB4A", hash_generated_field = "D7228C282593CDC77734D668B23541D3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.762 -0500", hash_original_field = "D7228C282593CDC77734D668B23541D3", hash_generated_field = "D7228C282593CDC77734D668B23541D3")
 
     boolean mInitialized = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.731 -0400", hash_original_field = "3B491B352FA7FEC4F42E4EA841B4CBA0", hash_generated_field = "138DAF4C12E534C03F3D363580B12729")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.764 -0500", hash_original_field = "138DAF4C12E534C03F3D363580B12729", hash_generated_field = "138DAF4C12E534C03F3D363580B12729")
 
     boolean mFillBefore = true;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.731 -0400", hash_original_field = "92913E273E0279A4A85EB0A92416C3BF", hash_generated_field = "0713D9CEE65AF19CBD303F718622380C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.764 -0500", hash_original_field = "0713D9CEE65AF19CBD303F718622380C", hash_generated_field = "0713D9CEE65AF19CBD303F718622380C")
 
     boolean mFillAfter = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.731 -0400", hash_original_field = "7CB365868E8AE80F9F2E13E360299B47", hash_generated_field = "CD0E2560F62E160B1797BA608E99A525")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.765 -0500", hash_original_field = "CD0E2560F62E160B1797BA608E99A525", hash_generated_field = "CD0E2560F62E160B1797BA608E99A525")
 
     boolean mFillEnabled = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.731 -0400", hash_original_field = "1336377597E871AC0DE1145EFBE093CD", hash_generated_field = "81105A88481A5B0AE717E10F26F868BC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.766 -0500", hash_original_field = "81105A88481A5B0AE717E10F26F868BC", hash_generated_field = "81105A88481A5B0AE717E10F26F868BC")
 
     long mStartTime = -1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.731 -0400", hash_original_field = "3DABB18D4F451E36446933F4C828ACE8", hash_generated_field = "EA2AC6F7F17E9F5AC720129EC7B5A165")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.766 -0500", hash_original_field = "EA2AC6F7F17E9F5AC720129EC7B5A165", hash_generated_field = "EA2AC6F7F17E9F5AC720129EC7B5A165")
 
     long mStartOffset;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.731 -0400", hash_original_field = "25395741BFE51A7D136A5C7109AAD2D8", hash_generated_field = "CFDA69B4AD03D72FC4B0627E39231164")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.767 -0500", hash_original_field = "CFDA69B4AD03D72FC4B0627E39231164", hash_generated_field = "CFDA69B4AD03D72FC4B0627E39231164")
 
     long mDuration;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.731 -0400", hash_original_field = "7400544E99BDB4AB399DABF03F346DE6", hash_generated_field = "8CAB60CAF9F0EC867720B208BC5D4CD6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.768 -0500", hash_original_field = "8CAB60CAF9F0EC867720B208BC5D4CD6", hash_generated_field = "8CAB60CAF9F0EC867720B208BC5D4CD6")
 
     int mRepeatCount = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.731 -0400", hash_original_field = "791E2D6BDEEED2FC776C97D105DDD2D3", hash_generated_field = "0909517ECD26F075EDEABEF3C36497E6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.768 -0500", hash_original_field = "0909517ECD26F075EDEABEF3C36497E6", hash_generated_field = "0909517ECD26F075EDEABEF3C36497E6")
 
     int mRepeated = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.731 -0400", hash_original_field = "31336EA85735F5B517DD430F87691118", hash_generated_field = "496B647F2BFAD8D2A4745DD01043EBB9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.769 -0500", hash_original_field = "496B647F2BFAD8D2A4745DD01043EBB9", hash_generated_field = "496B647F2BFAD8D2A4745DD01043EBB9")
 
     int mRepeatMode = RESTART;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.731 -0400", hash_original_field = "DA3E6FC5A778B3C344EE09B26563FD22", hash_generated_field = "A1326AE9004157E0812422F0F20CD6F9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.769 -0500", hash_original_field = "A1326AE9004157E0812422F0F20CD6F9", hash_generated_field = "A1326AE9004157E0812422F0F20CD6F9")
 
     Interpolator mInterpolator;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.731 -0400", hash_original_field = "9B3DD33B99719CE65C53FA6749E2AD69", hash_generated_field = "A82325198CD06548448A0D3238E6DB44")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.770 -0500", hash_original_field = "A82325198CD06548448A0D3238E6DB44", hash_generated_field = "A82325198CD06548448A0D3238E6DB44")
 
     AnimationListener mListener;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.731 -0400", hash_original_field = "E675CAC16E3A7934B1BE5FDBE7138A04", hash_generated_field = "388F873F7FDD1B97364C31A2829DAA2F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.771 -0500", hash_original_field = "8944269C7EC97204FE665AC335B6CA78", hash_generated_field = "388F873F7FDD1B97364C31A2829DAA2F")
 
     private int mZAdjustment;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.731 -0400", hash_original_field = "F28F2DF30FA0A384EA442393DFFC03BB", hash_generated_field = "CC64588E1E08B8E0993874A8A69D251D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.772 -0500", hash_original_field = "9413B7CAD54A5CFB690F08E0547B483E", hash_generated_field = "CC64588E1E08B8E0993874A8A69D251D")
 
     private int mBackgroundColor;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.731 -0400", hash_original_field = "925897ADD5A4443B43C8F6FBC4424E0E", hash_generated_field = "55C0C2A62CD0016DB863EA4C86F92AB3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.772 -0500", hash_original_field = "E60B535E3DF3732134D1B8BC55E0DD6D", hash_generated_field = "55C0C2A62CD0016DB863EA4C86F92AB3")
 
     private float mScaleFactor = 1f;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.732 -0400", hash_original_field = "1B09FDB0A2E6AC18E9F1DBBB8735A0FE", hash_generated_field = "78F07B4146BD29D0652AD1623F0B1A21")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.773 -0500", hash_original_field = "5B333B6860C25C8D8C5825D6F41A2C7D", hash_generated_field = "78F07B4146BD29D0652AD1623F0B1A21")
 
     private boolean mDetachWallpaper = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.732 -0400", hash_original_field = "9200F97640525BADE0F5210B0BECB3CA", hash_generated_field = "EB7123F1E56B8FC7DB4670361B61F3BB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.774 -0500", hash_original_field = "34F0803CBA0D1BF93F53C9B7DF44DAB6", hash_generated_field = "EB7123F1E56B8FC7DB4670361B61F3BB")
+
 
     private boolean mMore = true;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.732 -0400", hash_original_field = "68FEBF6A9F472E86EE32DBD86FFC61CF", hash_generated_field = "1A1B781F58C47FD588A3C25DEC073F2E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.774 -0500", hash_original_field = "784A4D6001260A3DDDB7D9385099EDBA", hash_generated_field = "1A1B781F58C47FD588A3C25DEC073F2E")
 
     private boolean mOneMoreTime = true;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.732 -0400", hash_original_field = "FD5E22922C653BFDA6DEA53809D83FA6", hash_generated_field = "1281DD848D4CAC286B7C56B469674D23")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.776 -0500", hash_original_field = "1281DD848D4CAC286B7C56B469674D23", hash_generated_field = "1281DD848D4CAC286B7C56B469674D23")
+
 
     RectF mPreviousRegion = new RectF();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.732 -0400", hash_original_field = "5C3A8A09251061EEBB701527D514B5F2", hash_generated_field = "B8EF1E9F1F3FA3BF5EA38E9CC57EEE1D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.776 -0500", hash_original_field = "B8EF1E9F1F3FA3BF5EA38E9CC57EEE1D", hash_generated_field = "B8EF1E9F1F3FA3BF5EA38E9CC57EEE1D")
 
     RectF mRegion = new RectF();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.732 -0400", hash_original_field = "04EC513F4EC68C8BA1280847D108F54D", hash_generated_field = "96FFB41D18FE51CA2378656E6B610C99")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.777 -0500", hash_original_field = "96FFB41D18FE51CA2378656E6B610C99", hash_generated_field = "96FFB41D18FE51CA2378656E6B610C99")
 
     Transformation mTransformation = new Transformation();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.732 -0400", hash_original_field = "706404C2835CDB3C1939F923BB10605F", hash_generated_field = "82E7EE1C48131039EC27409DAF0D59C0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.778 -0500", hash_original_field = "82E7EE1C48131039EC27409DAF0D59C0", hash_generated_field = "82E7EE1C48131039EC27409DAF0D59C0")
 
     Transformation mPreviousTransformation = new Transformation();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.732 -0400", hash_original_field = "73ABE739BEC4C3DB38D39FA43D36469F", hash_generated_field = "E7FAF2CA4E8E292A9B5FAAE3D4817EEC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.779 -0500", hash_original_field = "759D7885648499D4F341C13F7C4AA861", hash_generated_field = "E7FAF2CA4E8E292A9B5FAAE3D4817EEC")
+
 
     private final CloseGuard guard = CloseGuard.get();
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.732 -0400", hash_original_method = "F5207BDCC3F51BB57C76C57DBA5A0AD4", hash_generated_method = "F05BFA516EF987BB837572F17670E4BF")
-    public  Animation() {
+
+    /**
+     * Creates a new animation with a duration of 0ms, the default interpolator, with
+     * fillBefore set to true and fillAfter set to false
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.780 -0500", hash_original_method = "F5207BDCC3F51BB57C76C57DBA5A0AD4", hash_generated_method = "A0EB6EA81A29ED824D2AB6EBD330F031")
+    public Animation() {
         ensureInterpolator();
-        // ---------- Original Method ----------
-        //ensureInterpolator();
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.733 -0400", hash_original_method = "325850FA9042895E97F9004576A85DF0", hash_generated_method = "BC526CA0AEAC0C5F917F7EADA7EA0398")
-    public  Animation(Context context, AttributeSet attrs) {
-        addTaint(attrs.getTaint());
-        addTaint(context.getTaint());
+    /**
+     * Creates a new animation whose parameters come from the specified context and
+     * attributes set.
+     *
+     * @param context the application environment
+     * @param attrs the set of attributes holding the animation parameters
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.781 -0500", hash_original_method = "325850FA9042895E97F9004576A85DF0", hash_generated_method = "41843917E3308BC46B7F7EF1C7981CFB")
+    public Animation(Context context, AttributeSet attrs) {
         TypedArray a = context.obtainStyledAttributes(attrs, com.android.internal.R.styleable.Animation);
+
         setDuration((long) a.getInt(com.android.internal.R.styleable.Animation_duration, 0));
         setStartOffset((long) a.getInt(com.android.internal.R.styleable.Animation_startOffset, 0));
+        
         setFillEnabled(a.getBoolean(com.android.internal.R.styleable.Animation_fillEnabled, mFillEnabled));
         setFillBefore(a.getBoolean(com.android.internal.R.styleable.Animation_fillBefore, mFillBefore));
         setFillAfter(a.getBoolean(com.android.internal.R.styleable.Animation_fillAfter, mFillAfter));
+
         setRepeatCount(a.getInt(com.android.internal.R.styleable.Animation_repeatCount, mRepeatCount));
         setRepeatMode(a.getInt(com.android.internal.R.styleable.Animation_repeatMode, RESTART));
+
         setZAdjustment(a.getInt(com.android.internal.R.styleable.Animation_zAdjustment, ZORDER_NORMAL));
+        
         setBackgroundColor(a.getInt(com.android.internal.R.styleable.Animation_background, 0));
+
         setDetachWallpaper(a.getBoolean(com.android.internal.R.styleable.Animation_detachWallpaper, false));
+
         final int resID = a.getResourceId(com.android.internal.R.styleable.Animation_interpolator, 0);
+
         a.recycle();
-        if(resID > 0)        
-        {
+
+        if (resID > 0) {
             setInterpolator(context, resID);
-        } //End block
+        }
+
         ensureInterpolator();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.734 -0400", hash_original_method = "7BC58C079EA752AD7803A7DE0B66531B", hash_generated_method = "C11344045FD8F884990DD69E068B34D2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.782 -0500", hash_original_method = "7BC58C079EA752AD7803A7DE0B66531B", hash_generated_method = "A46C39E528811DD8F50726DDD0E7B5CA")
     @Override
-    protected Animation clone() throws CloneNotSupportedException {
+protected Animation clone() throws CloneNotSupportedException {
         final Animation animation = (Animation) super.clone();
         animation.mPreviousRegion = new RectF();
         animation.mRegion = new RectF();
         animation.mTransformation = new Transformation();
         animation.mPreviousTransformation = new Transformation();
-Animation var1D3E9F798E82851E6201AD690FEA4543_406279162 =         animation;
-        var1D3E9F798E82851E6201AD690FEA4543_406279162.addTaint(taint);
-        return var1D3E9F798E82851E6201AD690FEA4543_406279162;
-        // ---------- Original Method ----------
-        //final Animation animation = (Animation) super.clone();
-        //animation.mPreviousRegion = new RectF();
-        //animation.mRegion = new RectF();
-        //animation.mTransformation = new Transformation();
-        //animation.mPreviousTransformation = new Transformation();
-        //return animation;
+        return animation;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.734 -0400", hash_original_method = "3AB995FAF173BC91AA72FEE328D0BE86", hash_generated_method = "8D4043FB51D478DAAF7B549EEBB6A8F3")
+    /**
+     * Reset the initialization state of this animation.
+     *
+     * @see #initialize(int, int, int, int)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.783 -0500", hash_original_method = "3AB995FAF173BC91AA72FEE328D0BE86", hash_generated_method = "56AD414A6C21BD31F46118253782A6AA")
     public void reset() {
         mPreviousRegion.setEmpty();
         mPreviousTransformation.clear();
@@ -163,812 +206,556 @@ Animation var1D3E9F798E82851E6201AD690FEA4543_406279162 =         animation;
         mRepeated = 0;
         mMore = true;
         mOneMoreTime = true;
-        // ---------- Original Method ----------
-        //mPreviousRegion.setEmpty();
-        //mPreviousTransformation.clear();
-        //mInitialized = false;
-        //mCycleFlip = false;
-        //mRepeated = 0;
-        //mMore = true;
-        //mOneMoreTime = true;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.735 -0400", hash_original_method = "E313CF9FDC4A243810ECD11633502833", hash_generated_method = "7DCA98592D10FEF02347863ABB62475E")
+    /**
+     * Cancel the animation. Cancelling an animation invokes the animation
+     * listener, if set, to notify the end of the animation.
+     * 
+     * If you cancel an animation manually, you must call {@link #reset()}
+     * before starting the animation again.
+     * 
+     * @see #reset() 
+     * @see #start() 
+     * @see #startNow() 
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.783 -0500", hash_original_method = "E313CF9FDC4A243810ECD11633502833", hash_generated_method = "38E190E5AAE374C352F6D43E31DB3DFC")
     public void cancel() {
-        if(mStarted && !mEnded)        
-        {
-            if(mListener != null)            
-            mListener.onAnimationEnd(this);
+        if (mStarted && !mEnded) {
+            if (mListener != null) mListener.onAnimationEnd(this);
             mEnded = true;
             guard.close();
-        } //End block
+        }
+        // Make sure we move the animation to the end
         mStartTime = Long.MIN_VALUE;
         mMore = mOneMoreTime = false;
-        // ---------- Original Method ----------
-        //if (mStarted && !mEnded) {
-            //if (mListener != null) mListener.onAnimationEnd(this);
-            //mEnded = true;
-            //guard.close();
-        //}
-        //mStartTime = Long.MIN_VALUE;
-        //mMore = mOneMoreTime = false;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.735 -0400", hash_original_method = "BA118FB94C8A2A7F04D6CE25751A9CE0", hash_generated_method = "EABFF5C032B25525517DC724151C7582")
+    /**
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.784 -0500", hash_original_method = "BA118FB94C8A2A7F04D6CE25751A9CE0", hash_generated_method = "73A65B340A24CE177EABA6CA85CC9EC0")
     public void detach() {
-        if(mStarted && !mEnded)        
-        {
+        if (mStarted && !mEnded) {
             mEnded = true;
             guard.close();
-            if(mListener != null)            
-            mListener.onAnimationEnd(this);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mStarted && !mEnded) {
-            //mEnded = true;
-            //guard.close();
-            //if (mListener != null) mListener.onAnimationEnd(this);
-        //}
+            if (mListener != null) mListener.onAnimationEnd(this);
+        }
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.736 -0400", hash_original_method = "130A49FBCE1398CCC055AA736C1B7B6D", hash_generated_method = "87341AD835D96D09BA41D7519F4D5620")
+    /**
+     * Whether or not the animation has been initialized.
+     *
+     * @return Has this animation been initialized.
+     * @see #initialize(int, int, int, int)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.785 -0500", hash_original_method = "130A49FBCE1398CCC055AA736C1B7B6D", hash_generated_method = "7D04AE94F2897F57A0C38D3D022CBE7F")
     public boolean isInitialized() {
-        boolean var57006E58594DC862E67D1855FDF16FEE_1252202045 = (mInitialized);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1436536977 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1436536977;
-        // ---------- Original Method ----------
-        //return mInitialized;
+        return mInitialized;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.736 -0400", hash_original_method = "9B9AA705D4796FA141302715AF35F1C7", hash_generated_method = "1466AD62711EB1308AA4122A1AE85EA2")
+    /**
+     * Initialize this animation with the dimensions of the object being
+     * animated as well as the objects parents. (This is to support animation
+     * sizes being specifed relative to these dimensions.)
+     *
+     * <p>Objects that interpret Animations should call this method when
+     * the sizes of the object being animated and its parent are known, and
+     * before calling {@link #getTransformation}.
+     *
+     *
+     * @param width Width of the object being animated
+     * @param height Height of the object being animated
+     * @param parentWidth Width of the animated object's parent
+     * @param parentHeight Height of the animated object's parent
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.786 -0500", hash_original_method = "9B9AA705D4796FA141302715AF35F1C7", hash_generated_method = "C0BA59E45CAA6D168AE4D85D952D4755")
     public void initialize(int width, int height, int parentWidth, int parentHeight) {
-        addTaint(parentHeight);
-        addTaint(parentWidth);
-        addTaint(height);
-        addTaint(width);
         reset();
         mInitialized = true;
-        // ---------- Original Method ----------
-        //reset();
-        //mInitialized = true;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.737 -0400", hash_original_method = "2C6481DDCCEAC913795356C9BF1AF628", hash_generated_method = "FBCFFDB8934B412FCF947D3B533DE793")
+    /**
+     * Sets the acceleration curve for this animation. The interpolator is loaded as
+     * a resource from the specified context.
+     *
+     * @param context The application environment
+     * @param resID The resource identifier of the interpolator to load
+     * @attr ref android.R.styleable#Animation_interpolator
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.787 -0500", hash_original_method = "2C6481DDCCEAC913795356C9BF1AF628", hash_generated_method = "BE3242216311F89FBBEC5A97D66A30C9")
     public void setInterpolator(Context context, int resID) {
-        addTaint(resID);
-        addTaint(context.getTaint());
         setInterpolator(AnimationUtils.loadInterpolator(context, resID));
-        // ---------- Original Method ----------
-        //setInterpolator(AnimationUtils.loadInterpolator(context, resID));
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.737 -0400", hash_original_method = "4EEF3DF2F4BA4D9B865A07AD850625E7", hash_generated_method = "AA450A6BACD2D2A4B441CFF1CF324E18")
+    /**
+     * Sets the acceleration curve for this animation. Defaults to a linear
+     * interpolation.
+     *
+     * @param i The interpolator which defines the acceleration curve
+     * @attr ref android.R.styleable#Animation_interpolator
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.787 -0500", hash_original_method = "4EEF3DF2F4BA4D9B865A07AD850625E7", hash_generated_method = "9B5D95C6D52CF58DE3C89639A08894AB")
     public void setInterpolator(Interpolator i) {
         mInterpolator = i;
-        // ---------- Original Method ----------
-        //mInterpolator = i;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.737 -0400", hash_original_method = "BF0ACB3E237AAE7044714380D4DED735", hash_generated_method = "424940C4F5E7DA004B724B16B7141A9B")
+    /**
+     * When this animation should start relative to the start time. This is most
+     * useful when composing complex animations using an {@link AnimationSet }
+     * where some of the animations components start at different times.
+     *
+     * @param startOffset When this Animation should start, in milliseconds from
+     *                    the start time of the root AnimationSet.
+     * @attr ref android.R.styleable#Animation_startOffset
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.788 -0500", hash_original_method = "BF0ACB3E237AAE7044714380D4DED735", hash_generated_method = "5F56E7CC5787995BF0DE06CEBCE5293E")
     public void setStartOffset(long startOffset) {
         mStartOffset = startOffset;
-        // ---------- Original Method ----------
-        //mStartOffset = startOffset;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.738 -0400", hash_original_method = "C4FADDE7E113E13802025E54418B7E99", hash_generated_method = "B2CA60ED2DDD4AF4061254957D948A1D")
+    /**
+     * How long this animation should last. The duration cannot be negative.
+     * 
+     * @param durationMillis Duration in milliseconds
+     *
+     * @throws java.lang.IllegalArgumentException if the duration is < 0
+     *
+     * @attr ref android.R.styleable#Animation_duration
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.789 -0500", hash_original_method = "C4FADDE7E113E13802025E54418B7E99", hash_generated_method = "0DE5BF6C734EE0CBAE9EDCCF7A31B7BC")
     public void setDuration(long durationMillis) {
-        if(durationMillis < 0)        
-        {
-            IllegalArgumentException var51691CB242FE64069838AA5B45CC3CE2_915995273 = new IllegalArgumentException("Animation duration cannot be negative");
-            var51691CB242FE64069838AA5B45CC3CE2_915995273.addTaint(taint);
-            throw var51691CB242FE64069838AA5B45CC3CE2_915995273;
-        } //End block
+        if (durationMillis < 0) {
+            throw new IllegalArgumentException("Animation duration cannot be negative");
+        }
         mDuration = durationMillis;
-        // ---------- Original Method ----------
-        //if (durationMillis < 0) {
-            //throw new IllegalArgumentException("Animation duration cannot be negative");
-        //}
-        //mDuration = durationMillis;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.739 -0400", hash_original_method = "448C869CF9265A7FCC7AB9AE39BBC12A", hash_generated_method = "611813BC3A9C9482D1D1856050DC63EA")
+    /**
+     * Ensure that the duration that this animation will run is not longer
+     * than <var>durationMillis</var>.  In addition to adjusting the duration
+     * itself, this ensures that the repeat count also will not make it run
+     * longer than the given time.
+     * 
+     * @param durationMillis The maximum duration the animation is allowed
+     * to run.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.790 -0500", hash_original_method = "448C869CF9265A7FCC7AB9AE39BBC12A", hash_generated_method = "1B6855CE74FDD9E751A8670D358BDE7D")
     public void restrictDuration(long durationMillis) {
-        if(mStartOffset > durationMillis)        
-        {
+        // If we start after the duration, then we just won't run.
+        if (mStartOffset > durationMillis) {
             mStartOffset = durationMillis;
             mDuration = 0;
             mRepeatCount = 0;
             return;
-        } //End block
+        }
+        
         long dur = mDuration + mStartOffset;
-        if(dur > durationMillis)        
-        {
+        if (dur > durationMillis) {
             mDuration = durationMillis-mStartOffset;
             dur = durationMillis;
-        } //End block
-        if(mDuration <= 0)        
-        {
+        }
+        // If the duration is 0 or less, then we won't run.
+        if (mDuration <= 0) {
             mDuration = 0;
             mRepeatCount = 0;
             return;
-        } //End block
-        if(mRepeatCount < 0 || mRepeatCount > durationMillis
-                || (dur*mRepeatCount) > durationMillis)        
-        {
+        }
+        // Reduce the number of repeats to keep below the maximum duration.
+        // The comparison between mRepeatCount and duration is to catch
+        // overflows after multiplying them.
+        if (mRepeatCount < 0 || mRepeatCount > durationMillis
+                || (dur*mRepeatCount) > durationMillis) {
+            // Figure out how many times to do the animation.  Subtract 1 since
+            // repeat count is the number of times to repeat so 0 runs once.
             mRepeatCount = (int)(durationMillis/dur) - 1;
-            if(mRepeatCount < 0)            
-            {
+            if (mRepeatCount < 0) {
                 mRepeatCount = 0;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (mStartOffset > durationMillis) {
-            //mStartOffset = durationMillis;
-            //mDuration = 0;
-            //mRepeatCount = 0;
-            //return;
-        //}
-        //long dur = mDuration + mStartOffset;
-        //if (dur > durationMillis) {
-            //mDuration = durationMillis-mStartOffset;
-            //dur = durationMillis;
-        //}
-        //if (mDuration <= 0) {
-            //mDuration = 0;
-            //mRepeatCount = 0;
-            //return;
-        //}
-        //if (mRepeatCount < 0 || mRepeatCount > durationMillis
-                //|| (dur*mRepeatCount) > durationMillis) {
-            //mRepeatCount = (int)(durationMillis/dur) - 1;
-            //if (mRepeatCount < 0) {
-                //mRepeatCount = 0;
-            //}
-        //}
+            }
+        }
     }
-
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.739 -0400", hash_original_method = "7B723F7D723B2ADF0E8C91EC6AA68330", hash_generated_method = "C4880321253D48FFDAEDC63441B30760")
+    /**
+     * How much to scale the duration by.
+     *
+     * @param scale The amount to scale the duration.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.791 -0500", hash_original_method = "7B723F7D723B2ADF0E8C91EC6AA68330", hash_generated_method = "724587B7562FC6115F9D75611A033E7B")
     public void scaleCurrentDuration(float scale) {
         mDuration = (long) (mDuration * scale);
         mStartOffset = (long) (mStartOffset * scale);
-        // ---------- Original Method ----------
-        //mDuration = (long) (mDuration * scale);
-        //mStartOffset = (long) (mStartOffset * scale);
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.739 -0400", hash_original_method = "C5F2E1E5B86432971DA671FBAF722042", hash_generated_method = "F61EFA6E5B483C91A8AD0B877BECA980")
+    /**
+     * When this animation should start. When the start time is set to
+     * {@link #START_ON_FIRST_FRAME}, the animation will start the first time
+     * {@link #getTransformation(long, Transformation)} is invoked. The time passed
+     * to this method should be obtained by calling
+     * {@link AnimationUtils#currentAnimationTimeMillis()} instead of
+     * {@link System#currentTimeMillis()}.
+     *
+     * @param startTimeMillis the start time in milliseconds
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.791 -0500", hash_original_method = "C5F2E1E5B86432971DA671FBAF722042", hash_generated_method = "1367442DC0E8BEF435895BF3EBFA875E")
     public void setStartTime(long startTimeMillis) {
         mStartTime = startTimeMillis;
         mStarted = mEnded = false;
         mCycleFlip = false;
         mRepeated = 0;
         mMore = true;
-        // ---------- Original Method ----------
-        //mStartTime = startTimeMillis;
-        //mStarted = mEnded = false;
-        //mCycleFlip = false;
-        //mRepeated = 0;
-        //mMore = true;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.739 -0400", hash_original_method = "95CC5B32D25F554AB1041684F2D9EFB3", hash_generated_method = "C2C0CAF344BAFEE463FD4717BEBB205F")
+    /**
+     * Convenience method to start the animation the first time
+     * {@link #getTransformation(long, Transformation)} is invoked.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.792 -0500", hash_original_method = "95CC5B32D25F554AB1041684F2D9EFB3", hash_generated_method = "EF4028773B7A6B0A0D4DF28465844EB2")
     public void start() {
         setStartTime(-1);
-        // ---------- Original Method ----------
-        //setStartTime(-1);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.739 -0400", hash_original_method = "66165BC7696DE4F74728FD45F7498148", hash_generated_method = "A6131EE72377D167A51760B30339E8DF")
+    /**
+     * Convenience method to start the animation at the current time in
+     * milliseconds.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.793 -0500", hash_original_method = "66165BC7696DE4F74728FD45F7498148", hash_generated_method = "48CAFEEECB8702DC8B84D7A50668DFAF")
     public void startNow() {
         setStartTime(AnimationUtils.currentAnimationTimeMillis());
-        // ---------- Original Method ----------
-        //setStartTime(AnimationUtils.currentAnimationTimeMillis());
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.739 -0400", hash_original_method = "DDD317A37915E8A65D2BE1E304EF578A", hash_generated_method = "17D1360A733DBD458CAB0359A395CE7B")
+    /**
+     * Defines what this animation should do when it reaches the end. This
+     * setting is applied only when the repeat count is either greater than
+     * 0 or {@link #INFINITE}. Defaults to {@link #RESTART}. 
+     *
+     * @param repeatMode {@link #RESTART} or {@link #REVERSE}
+     * @attr ref android.R.styleable#Animation_repeatMode
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.794 -0500", hash_original_method = "DDD317A37915E8A65D2BE1E304EF578A", hash_generated_method = "CCA7F75AF93485A9A05519CC0E21F5DD")
     public void setRepeatMode(int repeatMode) {
         mRepeatMode = repeatMode;
-        // ---------- Original Method ----------
-        //mRepeatMode = repeatMode;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.739 -0400", hash_original_method = "A134D6BEB9FF1047810E15F38A519E7E", hash_generated_method = "D6D45FE79F87C73238980F7EB2231048")
+    /**
+     * Sets how many times the animation should be repeated. If the repeat
+     * count is 0, the animation is never repeated. If the repeat count is
+     * greater than 0 or {@link #INFINITE}, the repeat mode will be taken
+     * into account. The repeat count is 0 by default.
+     *
+     * @param repeatCount the number of times the animation should be repeated
+     * @attr ref android.R.styleable#Animation_repeatCount
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.795 -0500", hash_original_method = "A134D6BEB9FF1047810E15F38A519E7E", hash_generated_method = "34C8A0FFE6904A906F56F967950A9EC1")
     public void setRepeatCount(int repeatCount) {
-        if(repeatCount < 0)        
-        {
+        if (repeatCount < 0) {
             repeatCount = INFINITE;
-        } //End block
+        }
         mRepeatCount = repeatCount;
-        // ---------- Original Method ----------
-        //if (repeatCount < 0) {
-            //repeatCount = INFINITE;
-        //}
-        //mRepeatCount = repeatCount;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.740 -0400", hash_original_method = "99447AF68D215B648170642F948B1397", hash_generated_method = "87E9A154E555900A6F116A4CAB92F916")
+    /**
+     * If fillEnabled is true, this animation will apply the value of fillBefore.
+     *
+     * @return true if the animation will take fillBefore into account
+     * @attr ref android.R.styleable#Animation_fillEnabled
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.795 -0500", hash_original_method = "99447AF68D215B648170642F948B1397", hash_generated_method = "6C319B38E137910103E25539ACF67B4A")
     public boolean isFillEnabled() {
-        boolean varE5FF4E923688C3F9E16F2FEB30EFF09C_1756071994 = (mFillEnabled);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_966064474 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_966064474;
-        // ---------- Original Method ----------
-        //return mFillEnabled;
+        return mFillEnabled;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.740 -0400", hash_original_method = "FD550D09AAFA6DFC07B09135F2C7B62C", hash_generated_method = "039C156EB130A31B2B3D2DDB452A9F4E")
+    /**
+     * If fillEnabled is true, the animation will apply the value of fillBefore.
+     * Otherwise, fillBefore is ignored and the animation
+     * transformation is always applied until the animation ends.
+     *
+     * @param fillEnabled true if the animation should take the value of fillBefore into account
+     * @attr ref android.R.styleable#Animation_fillEnabled
+     *
+     * @see #setFillBefore(boolean)
+     * @see #setFillAfter(boolean)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.796 -0500", hash_original_method = "FD550D09AAFA6DFC07B09135F2C7B62C", hash_generated_method = "9A45188B06A349CD847C3ECEB7C28382")
     public void setFillEnabled(boolean fillEnabled) {
         mFillEnabled = fillEnabled;
-        // ---------- Original Method ----------
-        //mFillEnabled = fillEnabled;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.740 -0400", hash_original_method = "4449C3292A8570D114A58B4E08D55011", hash_generated_method = "E22ACD6422C750DD61089037D6A5467E")
+    /**
+     * If fillBefore is true, this animation will apply its transformation
+     * before the start time of the animation. Defaults to true if
+     * {@link #setFillEnabled(boolean)} is not set to true.
+     * Note that this applies when using an {@link
+     * android.view.animation.AnimationSet AnimationSet} to chain
+     * animations. The transformation is not applied before the AnimationSet
+     * itself starts.
+     *
+     * @param fillBefore true if the animation should apply its transformation before it starts
+     * @attr ref android.R.styleable#Animation_fillBefore
+     *
+     * @see #setFillEnabled(boolean)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.797 -0500", hash_original_method = "4449C3292A8570D114A58B4E08D55011", hash_generated_method = "54FCC9206042009479E0B001A4D0EF7D")
     public void setFillBefore(boolean fillBefore) {
         mFillBefore = fillBefore;
-        // ---------- Original Method ----------
-        //mFillBefore = fillBefore;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.740 -0400", hash_original_method = "4CCE59DDFB007D2C725E384A84210333", hash_generated_method = "49F55925CC5A820D4B8135937231E53B")
+    /**
+     * If fillAfter is true, the transformation that this animation performed
+     * will persist when it is finished. Defaults to false if not set.
+     * Note that this applies to individual animations and when using an {@link
+     * android.view.animation.AnimationSet AnimationSet} to chain
+     * animations.
+     *
+     * @param fillAfter true if the animation should apply its transformation after it ends
+     * @attr ref android.R.styleable#Animation_fillAfter
+     *
+     * @see #setFillEnabled(boolean) 
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.798 -0500", hash_original_method = "4CCE59DDFB007D2C725E384A84210333", hash_generated_method = "D067159FD9979BCD4C8DCA55B54D9A6D")
     public void setFillAfter(boolean fillAfter) {
         mFillAfter = fillAfter;
-        // ---------- Original Method ----------
-        //mFillAfter = fillAfter;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.740 -0400", hash_original_method = "B53AFA13C43018FC57757729E8C6F5B9", hash_generated_method = "468123765E68AF71806CFB4882A6CCA9")
+    /**
+     * Set the Z ordering mode to use while running the animation.
+     * 
+     * @param zAdjustment The desired mode, one of {@link #ZORDER_NORMAL},
+     * {@link #ZORDER_TOP}, or {@link #ZORDER_BOTTOM}.
+     * @attr ref android.R.styleable#Animation_zAdjustment
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.798 -0500", hash_original_method = "B53AFA13C43018FC57757729E8C6F5B9", hash_generated_method = "AB3C12FF0F17BADE8D5F9913A888DFAA")
     public void setZAdjustment(int zAdjustment) {
         mZAdjustment = zAdjustment;
-        // ---------- Original Method ----------
-        //mZAdjustment = zAdjustment;
     }
-
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.740 -0400", hash_original_method = "5CC3CCDE182714D1D24D814D03E78D72", hash_generated_method = "1D031963F8D9249329C42FBB1A944D82")
+    /**
+     * Set background behind animation.
+     *
+     * @param bg The background color.  If 0, no background.  Currently must
+     * be black, with any desired alpha level.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.799 -0500", hash_original_method = "5CC3CCDE182714D1D24D814D03E78D72", hash_generated_method = "856F98F135EAD8DE400CB78E3A432635")
     public void setBackgroundColor(int bg) {
         mBackgroundColor = bg;
-        // ---------- Original Method ----------
-        //mBackgroundColor = bg;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.740 -0400", hash_original_method = "209B3580CB795CD8B9886E8B498D1959", hash_generated_method = "21D140B22E97B3D8CD7E647514DDF145")
+    /**
+     * The scale factor is set by the call to <code>getTransformation</code>. Overrides of 
+     * {@link #getTransformation(long, Transformation, float)} will get this value
+     * directly. Overrides of {@link #applyTransformation(float, Transformation)} can
+     * call this method to get the value.
+     * 
+     * @return float The scale factor that should be applied to pre-scaled values in
+     * an Animation such as the pivot points in {@link ScaleAnimation} and {@link RotateAnimation}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.800 -0500", hash_original_method = "209B3580CB795CD8B9886E8B498D1959", hash_generated_method = "FD28421A9844C6509E5A8CA8EAC32ED5")
     protected float getScaleFactor() {
-        float var43B25FDCBE078DC3DA65BC88CAA3AACD_903194579 = (mScaleFactor);
-                float var546ADE640B6EDFBC8A086EF31347E768_688824868 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_688824868;
-        // ---------- Original Method ----------
-        //return mScaleFactor;
+        return mScaleFactor;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.740 -0400", hash_original_method = "DC51879EADA1EC63F555D590C58841F2", hash_generated_method = "FA1E152176E4962E1A592137B68096BA")
+    /**
+     * If detachWallpaper is true, and this is a window animation of a window
+     * that has a wallpaper background, then the window will be detached from
+     * the wallpaper while it runs.  That is, the animation will only be applied
+     * to the window, and the wallpaper behind it will remain static.
+     *
+     * @param detachWallpaper true if the wallpaper should be detached from the animation
+     * @attr ref android.R.styleable#Animation_detachWallpaper
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.801 -0500", hash_original_method = "DC51879EADA1EC63F555D590C58841F2", hash_generated_method = "9FEAB3304A65C19B123BA07C272EC884")
     public void setDetachWallpaper(boolean detachWallpaper) {
         mDetachWallpaper = detachWallpaper;
-        // ---------- Original Method ----------
-        //mDetachWallpaper = detachWallpaper;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.740 -0400", hash_original_method = "8AA04851FFB5BE49EA5890940035B142", hash_generated_method = "2908FE2D4CF362DBBCE58A2BBC26372A")
+    /**
+     * Gets the acceleration curve type for this animation.
+     *
+     * @return the {@link Interpolator} associated to this animation
+     * @attr ref android.R.styleable#Animation_interpolator
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.802 -0500", hash_original_method = "8AA04851FFB5BE49EA5890940035B142", hash_generated_method = "680BC21A34AFF00E6707D9E25D0C0570")
     public Interpolator getInterpolator() {
-Interpolator var9FA301F6AF154FEBBB2C7439D021F894_901665076 =         mInterpolator;
-        var9FA301F6AF154FEBBB2C7439D021F894_901665076.addTaint(taint);
-        return var9FA301F6AF154FEBBB2C7439D021F894_901665076;
-        // ---------- Original Method ----------
-        //return mInterpolator;
+        return mInterpolator;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.741 -0400", hash_original_method = "62DE33F2E1C7C51F234B4CE29FC5DCED", hash_generated_method = "6F2A9669EA276CE734DFB65E92080E64")
+    /**
+     * When this animation should start. If the animation has not startet yet,
+     * this method might return {@link #START_ON_FIRST_FRAME}.
+     *
+     * @return the time in milliseconds when the animation should start or
+     *         {@link #START_ON_FIRST_FRAME}
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.802 -0500", hash_original_method = "62DE33F2E1C7C51F234B4CE29FC5DCED", hash_generated_method = "3A12FD646648836565EFD0DB4DBB60DF")
     public long getStartTime() {
-        long var4FBE52F16DA5DC1AFB86B1520E59C2C0_768512632 = (mStartTime);
-                long var0F5264038205EDFB1AC05FBB0E8C5E94_425997861 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_425997861;
-        // ---------- Original Method ----------
-        //return mStartTime;
+        return mStartTime;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.741 -0400", hash_original_method = "5E13B5E872677B59408FA3E6BB94A9F6", hash_generated_method = "2FAE5B3B1107625A1846052CD3790023")
+    /**
+     * How long this animation should last
+     *
+     * @return the duration in milliseconds of the animation
+     * @attr ref android.R.styleable#Animation_duration
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.803 -0500", hash_original_method = "5E13B5E872677B59408FA3E6BB94A9F6", hash_generated_method = "5F80C859A9364DABCB96E2B8240D7C36")
     public long getDuration() {
-        long var25395741BFE51A7D136A5C7109AAD2D8_1476180962 = (mDuration);
-                long var0F5264038205EDFB1AC05FBB0E8C5E94_938584284 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_938584284;
-        // ---------- Original Method ----------
-        //return mDuration;
+        return mDuration;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.741 -0400", hash_original_method = "F15F7E68559FE94D65E8E77E2E4D8AE9", hash_generated_method = "C87C78930767B8236A23A660DD388AB5")
+    /**
+     * When this animation should start, relative to StartTime
+     *
+     * @return the start offset in milliseconds
+     * @attr ref android.R.styleable#Animation_startOffset
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.804 -0500", hash_original_method = "F15F7E68559FE94D65E8E77E2E4D8AE9", hash_generated_method = "8D97620EF9AD25B7CC0B648BD738E0E0")
     public long getStartOffset() {
-        long var3DABB18D4F451E36446933F4C828ACE8_1721882752 = (mStartOffset);
-                long var0F5264038205EDFB1AC05FBB0E8C5E94_291402505 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_291402505;
-        // ---------- Original Method ----------
-        //return mStartOffset;
+        return mStartOffset;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.741 -0400", hash_original_method = "081205714C0DCBE8DC8471C6BC7C6458", hash_generated_method = "A2C7796D271C3C3A85997BD614DA5AD2")
+    /**
+     * Defines what this animation should do when it reaches the end.
+     *
+     * @return either one of {@link #REVERSE} or {@link #RESTART}
+     * @attr ref android.R.styleable#Animation_repeatMode
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.805 -0500", hash_original_method = "081205714C0DCBE8DC8471C6BC7C6458", hash_generated_method = "B3061FB54C6BA1A7788D9CDF2AC798B1")
     public int getRepeatMode() {
-        int var0F7262183FEB856E4BA3C1C837CA6BEF_249947691 = (mRepeatMode);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_78486118 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_78486118;
-        // ---------- Original Method ----------
-        //return mRepeatMode;
+        return mRepeatMode;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.741 -0400", hash_original_method = "4FE747AC8B0667617AE307ECFC6ED74A", hash_generated_method = "32862486C379ECE28536B31CF93E662B")
+    /**
+     * Defines how many times the animation should repeat. The default value
+     * is 0.
+     *
+     * @return the number of times the animation should repeat, or {@link #INFINITE}
+     * @attr ref android.R.styleable#Animation_repeatCount
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.806 -0500", hash_original_method = "4FE747AC8B0667617AE307ECFC6ED74A", hash_generated_method = "33DEC8850621553CE5D2A9983998E6CF")
     public int getRepeatCount() {
-        int varF545692334BC1E20E53D9FB0B2CFFF33_476111711 = (mRepeatCount);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2107550830 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2107550830;
-        // ---------- Original Method ----------
-        //return mRepeatCount;
+        return mRepeatCount;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.741 -0400", hash_original_method = "EC25BC6D19EE141C12788801543B6178", hash_generated_method = "2C2AA223C11F2B42F17858B151B4C3FF")
+    /**
+     * If fillBefore is true, this animation will apply its transformation
+     * before the start time of the animation. If fillBefore is false and
+     * {@link #isFillEnabled() fillEnabled} is true, the transformation will not be applied until
+     * the start time of the animation.
+     *
+     * @return true if the animation applies its transformation before it starts
+     * @attr ref android.R.styleable#Animation_fillBefore
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.807 -0500", hash_original_method = "EC25BC6D19EE141C12788801543B6178", hash_generated_method = "AA4F011708BF42AAAC91ECB3A2807F6A")
     public boolean getFillBefore() {
-        boolean varA57F0DAA555C436F2FAABBF143AC9430_1592745415 = (mFillBefore);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_108083704 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_108083704;
-        // ---------- Original Method ----------
-        //return mFillBefore;
+        return mFillBefore;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.741 -0400", hash_original_method = "6D667DA3C62337EC4E4606350728AE89", hash_generated_method = "302F1B39915E96F25ED1F054503CC2E9")
+    /**
+     * If fillAfter is true, this animation will apply its transformation
+     * after the end time of the animation.
+     *
+     * @return true if the animation applies its transformation after it ends
+     * @attr ref android.R.styleable#Animation_fillAfter
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.808 -0500", hash_original_method = "6D667DA3C62337EC4E4606350728AE89", hash_generated_method = "09BE84B4A2936B8492F14C8FC369C28A")
     public boolean getFillAfter() {
-        boolean var01298A1E71844424D6B5C82979029B11_285597819 = (mFillAfter);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1966715224 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1966715224;
-        // ---------- Original Method ----------
-        //return mFillAfter;
+        return mFillAfter;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.741 -0400", hash_original_method = "409F6F7832CADDC17E7E5231CAA22AC6", hash_generated_method = "3217CE9961B06EF4B74A1B6EDDF71215")
+    /**
+     * Returns the Z ordering mode to use while running the animation as
+     * previously set by {@link #setZAdjustment}.
+     * 
+     * @return Returns one of {@link #ZORDER_NORMAL},
+     * {@link #ZORDER_TOP}, or {@link #ZORDER_BOTTOM}.
+     * @attr ref android.R.styleable#Animation_zAdjustment
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.808 -0500", hash_original_method = "409F6F7832CADDC17E7E5231CAA22AC6", hash_generated_method = "484852A752A0545CAD7E76341CAA55FA")
     public int getZAdjustment() {
-        int varE675CAC16E3A7934B1BE5FDBE7138A04_2103397490 = (mZAdjustment);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1472879181 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1472879181;
-        // ---------- Original Method ----------
-        //return mZAdjustment;
+        return mZAdjustment;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.741 -0400", hash_original_method = "FAF00526A7BA7C979C907792653A05BB", hash_generated_method = "4F3655E1DB0EF74DA45E15E9131CD5E3")
+    /**
+     * Returns the background color behind the animation.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.809 -0500", hash_original_method = "FAF00526A7BA7C979C907792653A05BB", hash_generated_method = "93FF3504BCECBF572F60FE0FB71AC3CF")
     public int getBackgroundColor() {
-        int varF28F2DF30FA0A384EA442393DFFC03BB_1576090172 = (mBackgroundColor);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1709275175 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1709275175;
-        // ---------- Original Method ----------
-        //return mBackgroundColor;
+        return mBackgroundColor;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.741 -0400", hash_original_method = "E6A00B836A83DBDC739846B44941121A", hash_generated_method = "FC352F72449459B84F2EDA747FE40C0F")
+    /**
+     * Return value of {@link #setDetachWallpaper(boolean)}.
+     * @attr ref android.R.styleable#Animation_detachWallpaper
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.810 -0500", hash_original_method = "E6A00B836A83DBDC739846B44941121A", hash_generated_method = "000C6EE266D749B0DBB8211EE32D19DF")
     public boolean getDetachWallpaper() {
-        boolean varE33318853D6859ECBDE23F3B978DD05B_2028493987 = (mDetachWallpaper);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2007353272 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2007353272;
-        // ---------- Original Method ----------
-        //return mDetachWallpaper;
+        return mDetachWallpaper;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.741 -0400", hash_original_method = "06611FABC5DAE0D86003F0AC94713BBE", hash_generated_method = "3706EABCE355A576F02E4EAFAA02E159")
+    /**
+     * <p>Indicates whether or not this animation will affect the transformation
+     * matrix. For instance, a fade animation will not affect the matrix whereas
+     * a scale animation will.</p>
+     *
+     * @return true if this animation will change the transformation matrix
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.810 -0500", hash_original_method = "06611FABC5DAE0D86003F0AC94713BBE", hash_generated_method = "8197F30D7537116607A9F65D58AA143E")
     public boolean willChangeTransformationMatrix() {
-        boolean varB326B5062B2F0E69046810717534CB09_518512739 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_238314164 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_238314164;
-        // ---------- Original Method ----------
-        //return true;
+        // assume we will change the matrix
+        return true;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.741 -0400", hash_original_method = "75ECA58382FCAFBFF99662736FC361D6", hash_generated_method = "B6F55EBEEBBC4B1F9BAB2F3B623BA623")
+    /**
+     * <p>Indicates whether or not this animation will affect the bounds of the
+     * animated view. For instance, a fade animation will not affect the bounds
+     * whereas a 200% scale animation will.</p>
+     *
+     * @return true if this animation will change the view's bounds
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.811 -0500", hash_original_method = "75ECA58382FCAFBFF99662736FC361D6", hash_generated_method = "37DB5CBF05A8BDDC1899CC88AF883E83")
     public boolean willChangeBounds() {
-        boolean varB326B5062B2F0E69046810717534CB09_1911939317 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1117063939 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1117063939;
-        // ---------- Original Method ----------
-        //return true;
+        // assume we will change the bounds
+        return true;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.742 -0400", hash_original_method = "93175FBEC8620A1D25367C53936C85B5", hash_generated_method = "B6B2E431FB5A3DE909C2B13E925B35BF")
+    /**
+     * <p>Binds an animation listener to this animation. The animation listener
+     * is notified of animation events such as the end of the animation or the
+     * repetition of the animation.</p>
+     *
+     * @param listener the animation listener to be notified
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.812 -0500", hash_original_method = "93175FBEC8620A1D25367C53936C85B5", hash_generated_method = "31A6529B587BD93A6B444DCD66C155FD")
     public void setAnimationListener(AnimationListener listener) {
         mListener = listener;
-        // ---------- Original Method ----------
-        //mListener = listener;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.742 -0400", hash_original_method = "B0865E74040125EA32BE48261064C937", hash_generated_method = "793ED1247E55BB87475DDB7CEC9F20FF")
+    /**
+     * Gurantees that this animation has an interpolator. Will use
+     * a AccelerateDecelerateInterpolator is nothing else was specified.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.813 -0500", hash_original_method = "B0865E74040125EA32BE48261064C937", hash_generated_method = "EEB67997D6D12CE98BE399A4863E3DE2")
     protected void ensureInterpolator() {
-        if(mInterpolator == null)        
-        {
+        if (mInterpolator == null) {
             mInterpolator = new AccelerateDecelerateInterpolator();
-        } //End block
-        // ---------- Original Method ----------
-        //if (mInterpolator == null) {
-            //mInterpolator = new AccelerateDecelerateInterpolator();
-        //}
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.742 -0400", hash_original_method = "B3F1AB6DDEFF92B122293B4363A1C456", hash_generated_method = "AE1FFFFD4E33F07FD038C2E62D920165")
-    public long computeDurationHint() {
-        long var0B2285DA4F2EC970D16574DF97CEF337_47990813 = ((getStartOffset() + getDuration()) * (getRepeatCount() + 1));
-                long var0F5264038205EDFB1AC05FBB0E8C5E94_562256049 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_562256049;
-        // ---------- Original Method ----------
-        //return (getStartOffset() + getDuration()) * (getRepeatCount() + 1);
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.743 -0400", hash_original_method = "1D66EEFFAD10DF7675973FFD0CA72C11", hash_generated_method = "5981C80A70A70D356F814FC6823DCC3E")
-    public boolean getTransformation(long currentTime, Transformation outTransformation) {
-        addTaint(outTransformation.getTaint());
-        if(mStartTime == -1)        
-        {
-            mStartTime = currentTime;
-        } //End block
-        final long startOffset = getStartOffset();
-        final long duration = mDuration;
-        float normalizedTime;
-        if(duration != 0)        
-        {
-            normalizedTime = ((float) (currentTime - (mStartTime + startOffset))) /
-                    (float) duration;
-        } //End block
-        else
-        {
-            normalizedTime = currentTime < mStartTime ? 0.0f : 1.0f;
-        } //End block
-        final boolean expired = normalizedTime >= 1.0f;
-        mMore = !expired;
-        if(!mFillEnabled)        
-        normalizedTime = Math.max(Math.min(normalizedTime, 1.0f), 0.0f);
-        if((normalizedTime >= 0.0f || mFillBefore) && (normalizedTime <= 1.0f || mFillAfter))        
-        {
-            if(!mStarted)            
-            {
-                if(mListener != null)                
-                {
-                    mListener.onAnimationStart(this);
-                } //End block
-                mStarted = true;
-                if(USE_CLOSEGUARD)                
-                {
-                    guard.open("cancel or detach or getTransformation");
-                } //End block
-            } //End block
-            if(mFillEnabled)            
-            normalizedTime = Math.max(Math.min(normalizedTime, 1.0f), 0.0f);
-            if(mCycleFlip)            
-            {
-                normalizedTime = 1.0f - normalizedTime;
-            } //End block
-            final float interpolatedTime = mInterpolator.getInterpolation(normalizedTime);
-            applyTransformation(interpolatedTime, outTransformation);
-        } //End block
-        if(expired)        
-        {
-            if(mRepeatCount == mRepeated)            
-            {
-                if(!mEnded)                
-                {
-                    mEnded = true;
-                    guard.close();
-                    if(mListener != null)                    
-                    {
-                        mListener.onAnimationEnd(this);
-                    } //End block
-                } //End block
-            } //End block
-            else
-            {
-                if(mRepeatCount > 0)                
-                {
-                    mRepeated++;
-                } //End block
-                if(mRepeatMode == REVERSE)                
-                {
-                    mCycleFlip = !mCycleFlip;
-                } //End block
-                mStartTime = -1;
-                mMore = true;
-                if(mListener != null)                
-                {
-                    mListener.onAnimationRepeat(this);
-                } //End block
-            } //End block
-        } //End block
-        if(!mMore && mOneMoreTime)        
-        {
-            mOneMoreTime = false;
-            boolean varB326B5062B2F0E69046810717534CB09_892405509 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_752949979 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_752949979;
-        } //End block
-        boolean var2BB16EA2A1F64B8DD4082465F69C1230_1116316108 = (mMore);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_121845422 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_121845422;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.743 -0400", hash_original_method = "2D55A6E78A3D329DDFA1835011833D50", hash_generated_method = "15F95B27B0988A35D61AB1BA756C60DB")
-    public boolean getTransformation(long currentTime, Transformation outTransformation,
-            float scale) {
-        addTaint(outTransformation.getTaint());
-        addTaint(currentTime);
-        mScaleFactor = scale;
-        boolean var4E7B36E16262D8BA477F30DBF30A8521_990676232 = (getTransformation(currentTime, outTransformation));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1321381535 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1321381535;
-        // ---------- Original Method ----------
-        //mScaleFactor = scale;
-        //return getTransformation(currentTime, outTransformation);
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.743 -0400", hash_original_method = "777CAD815D79C7ADA7276922FB123EB2", hash_generated_method = "A1D24EC4B019511F7395AD7793FC8225")
-    public boolean hasStarted() {
-        boolean var7103AE9E2C0D3B676C4EDC763D39DFCF_1396105329 = (mStarted);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1409755269 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1409755269;
-        // ---------- Original Method ----------
-        //return mStarted;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.743 -0400", hash_original_method = "D01D8338B537AF4FCC0E5AB769C5FB0B", hash_generated_method = "481A30084FA3A2581854599FB33745A3")
-    public boolean hasEnded() {
-        boolean var9645CB566FAC236D8286C163216D1BCB_1935727134 = (mEnded);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1151085928 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1151085928;
-        // ---------- Original Method ----------
-        //return mEnded;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.743 -0400", hash_original_method = "073EBA254DBED3B6D4C21030E1884802", hash_generated_method = "EA7FCB6EB179329E3F6B8D6B79676AEC")
-    protected void applyTransformation(float interpolatedTime, Transformation t) {
-        addTaint(t.getTaint());
-        addTaint(interpolatedTime);
-        // ---------- Original Method ----------
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.744 -0400", hash_original_method = "51B92BC0266A1C2F3581A8B430ACF6F7", hash_generated_method = "21AD93B7BDBB28DE357E5CB86CF64F54")
-    protected float resolveSize(int type, float value, int size, int parentSize) {
-        addTaint(parentSize);
-        addTaint(size);
-        addTaint(value);
-        addTaint(type);
-switch(type){
-        case ABSOLUTE:
-        float var2063C1608D6E0BAF80249C42E2BE5804_1366923415 = (value);
-                float var546ADE640B6EDFBC8A086EF31347E768_999763788 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_999763788;
-        case RELATIVE_TO_SELF:
-        float var8B76DEA5B6F7FD8A6E0EBCEF3434C65B_907261292 = (size * value);
-                float var546ADE640B6EDFBC8A086EF31347E768_2093676215 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_2093676215;
-        case RELATIVE_TO_PARENT:
-        float varE0DDEAB69353EEB211A9AF46D666697C_898274601 = (parentSize * value);
-                float var546ADE640B6EDFBC8A086EF31347E768_417795425 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_417795425;
-        default:
-        float var2063C1608D6E0BAF80249C42E2BE5804_38651778 = (value);
-                float var546ADE640B6EDFBC8A086EF31347E768_1111034583 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_1111034583;
-}
-        // ---------- Original Method ----------
-        //switch (type) {
-            //case ABSOLUTE:
-                //return value;
-            //case RELATIVE_TO_SELF:
-                //return size * value;
-            //case RELATIVE_TO_PARENT:
-                //return parentSize * value;
-            //default:
-                //return value;
-        //}
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.744 -0400", hash_original_method = "CF5E77120A30A36E6B295FA946811571", hash_generated_method = "7298B4134AF9D7C22EC5B952093B299A")
-    public void getInvalidateRegion(int left, int top, int right, int bottom,
-            RectF invalidate, Transformation transformation) {
-        addTaint(transformation.getTaint());
-        addTaint(invalidate.getTaint());
-        addTaint(bottom);
-        addTaint(right);
-        addTaint(top);
-        addTaint(left);
-        final RectF tempRegion = mRegion;
-        final RectF previousRegion = mPreviousRegion;
-        invalidate.set(left, top, right, bottom);
-        transformation.getMatrix().mapRect(invalidate);
-        invalidate.inset(-1.0f, -1.0f);
-        tempRegion.set(invalidate);
-        invalidate.union(previousRegion);
-        previousRegion.set(tempRegion);
-        final Transformation tempTransformation = mTransformation;
-        final Transformation previousTransformation = mPreviousTransformation;
-        tempTransformation.set(transformation);
-        transformation.set(previousTransformation);
-        previousTransformation.set(tempTransformation);
-        // ---------- Original Method ----------
-        //final RectF tempRegion = mRegion;
-        //final RectF previousRegion = mPreviousRegion;
-        //invalidate.set(left, top, right, bottom);
-        //transformation.getMatrix().mapRect(invalidate);
-        //invalidate.inset(-1.0f, -1.0f);
-        //tempRegion.set(invalidate);
-        //invalidate.union(previousRegion);
-        //previousRegion.set(tempRegion);
-        //final Transformation tempTransformation = mTransformation;
-        //final Transformation previousTransformation = mPreviousTransformation;
-        //tempTransformation.set(transformation);
-        //transformation.set(previousTransformation);
-        //previousTransformation.set(tempTransformation);
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.744 -0400", hash_original_method = "CE5BD1162FB4278724A9276A03F0A96A", hash_generated_method = "ED2C6D2087CE238AB85C759D8587D6EB")
-    public void initializeInvalidateRegion(int left, int top, int right, int bottom) {
-        addTaint(bottom);
-        addTaint(right);
-        addTaint(top);
-        addTaint(left);
-        final RectF region = mPreviousRegion;
-        region.set(left, top, right, bottom);
-        region.inset(-1.0f, -1.0f);
-        if(mFillBefore)        
-        {
-            final Transformation previousTransformation = mPreviousTransformation;
-            applyTransformation(mInterpolator.getInterpolation(0.0f), previousTransformation);
-        } //End block
-        // ---------- Original Method ----------
-        //final RectF region = mPreviousRegion;
-        //region.set(left, top, right, bottom);
-        //region.inset(-1.0f, -1.0f);
-        //if (mFillBefore) {
-            //final Transformation previousTransformation = mPreviousTransformation;
-            //applyTransformation(mInterpolator.getInterpolation(0.0f), previousTransformation);
-        //}
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.744 -0400", hash_original_method = "F91EB5DE0AE774B21AEF523039CEDA53", hash_generated_method = "4FC404922D16035511CDB345D355CC3C")
-    protected void finalize() throws Throwable {
-        try 
-        {
-            if(guard != null)            
-            {
-                guard.warnIfOpen();
-            } //End block
-        } //End block
-        finally 
-        {
-            super.finalize();
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //if (guard != null) {
-                //guard.warnIfOpen();
-            //}
-        //} finally {
-            //super.finalize();
-        //}
-    }
-
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.744 -0400", hash_original_method = "00F0E38B38876C14DBBEFF57F3DE3ED9", hash_generated_method = "ADB1F47306D64E755E8DC3D08F2E7F00")
-    public boolean hasAlpha() {
-        boolean var68934A3E9455FA72420237EB05902327_121671538 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_106497168 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_106497168;
-        // ---------- Original Method ----------
-        //return false;
+        }
     }
 
     
     protected static class Description {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.744 -0400", hash_original_field = "599DCCE2998A6B40B1E38E8C6006CB0A", hash_generated_field = "6AC5CE4BE311ED1283E9BD812937901E")
 
-        public int type;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.744 -0400", hash_original_field = "2063C1608D6E0BAF80249C42E2BE5804", hash_generated_field = "D18E7B5EA79EF395F5CA2EA5D5CA9DE3")
-
-        public float value;
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.744 -0400", hash_original_method = "670F11C8AD1CA46EBC3158EE54497D14", hash_generated_method = "670F11C8AD1CA46EBC3158EE54497D14")
-        public Description ()
-        {
-            //Synthesized constructor
-        }
-
-
-        @DSModeled(DSC.SAFE)
+        /**
+         * Size descriptions can appear inthree forms:
+         * <ol>
+         * <li>An absolute size. This is represented by a number.</li>
+         * <li>A size relative to the size of the object being animated. This
+         * is represented by a number followed by "%".</li> *
+         * <li>A size relative to the size of the parent of object being
+         * animated. This is represented by a number followed by "%p".</li>
+         * </ol>
+         * @param value The typed value to parse
+         * @return The parsed version of the description
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.825 -0500", hash_original_method = "DD44A677B5B9DC6554F1ADD22A249AFD", hash_generated_method = "638A82D9F1A7C39A53D7C396790CF0CD")
         static Description parseValue(TypedValue value) {
             Description d = new Description();
             if (value == null) {
@@ -992,9 +779,23 @@ switch(type){
                     return d;
                 }
             }
+
             d.type = ABSOLUTE;
             d.value = 0.0f;
+
             return d;
+        }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.824 -0500", hash_original_field = "961B4204667A4AE2FF8DD374E6728ADE", hash_generated_field = "6AC5CE4BE311ED1283E9BD812937901E")
+
+        public int type;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.824 -0500", hash_original_field = "AFED88F9B46D00F83012B0491FE8482F", hash_generated_field = "D18E7B5EA79EF395F5CA2EA5D5CA9DE3")
+
+        public float value;
+        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.744 -0400", hash_original_method = "670F11C8AD1CA46EBC3158EE54497D14", hash_generated_method = "670F11C8AD1CA46EBC3158EE54497D14")
+        public Description ()
+        {
+            //Synthesized constructor
         }
 
         
@@ -1012,39 +813,259 @@ switch(type){
         
         void onAnimationRepeat(Animation animation);
     }
+
+    /**
+     * Compute a hint at how long the entire animation may last, in milliseconds.
+     * Animations can be written to cause themselves to run for a different
+     * duration than what is computed here, but generally this should be
+     * accurate.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.813 -0500", hash_original_method = "B3F1AB6DDEFF92B122293B4363A1C456", hash_generated_method = "218F4F0D841E83DDCED3770CA4EF235B")
+    public long computeDurationHint() {
+        return (getStartOffset() + getDuration()) * (getRepeatCount() + 1);
+    }
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.745 -0400", hash_original_field = "5E2F9BDAA8CE14DD954BF40FD55E2AF3", hash_generated_field = "285D35A4B336A34C53955AE44424AC64")
+    /**
+     * Gets the transformation to apply at a specified point in time. Implementations of this
+     * method should always replace the specified Transformation or document they are doing
+     * otherwise.
+     *
+     * @param currentTime Where we are in the animation. This is wall clock time.
+     * @param outTransformation A transformation object that is provided by the
+     *        caller and will be filled in by the animation.
+     * @return True if the animation is still running
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.815 -0500", hash_original_method = "1D66EEFFAD10DF7675973FFD0CA72C11", hash_generated_method = "AF8652057DAD4A8F9C8E0866DE608D21")
+    public boolean getTransformation(long currentTime, Transformation outTransformation) {
 
-    public static final int INFINITE = -1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.745 -0400", hash_original_field = "5F06E0F5187ED0CBFC4EF9E7B4D64EDE", hash_generated_field = "9FE7B7E5ED52768DD1C53DC895EC1A0D")
+        if (mStartTime == -1) {
+            mStartTime = currentTime;
+        }
 
-    public static final int RESTART = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.745 -0400", hash_original_field = "6BAA62FAC35E1F188A65C74FED662C34", hash_generated_field = "6790E6439C0E7615743240DF9A7C010E")
+        final long startOffset = getStartOffset();
+        final long duration = mDuration;
+        float normalizedTime;
+        if (duration != 0) {
+            normalizedTime = ((float) (currentTime - (mStartTime + startOffset))) /
+                    (float) duration;
+        } else {
+            // time is a step-change with a zero duration
+            normalizedTime = currentTime < mStartTime ? 0.0f : 1.0f;
+        }
 
-    public static final int REVERSE = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.745 -0400", hash_original_field = "B7885BEA16E2C3D5A16948F21ED88A9B", hash_generated_field = "235BF0C9710820F28A2E28648164C2B7")
+        final boolean expired = normalizedTime >= 1.0f;
+        mMore = !expired;
 
-    public static final int START_ON_FIRST_FRAME = -1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.745 -0400", hash_original_field = "44E04D91FE2BFE1F31811DB66E9C836C", hash_generated_field = "4BC65DE722DF4CE40D49EFB427E9C12C")
+        if (!mFillEnabled) normalizedTime = Math.max(Math.min(normalizedTime, 1.0f), 0.0f);
 
-    public static final int ABSOLUTE = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.745 -0400", hash_original_field = "219D336140A6E021A396EE6EE22DE977", hash_generated_field = "2A99BA87ACDDCA9C9FB386FFFB6151EA")
+        if ((normalizedTime >= 0.0f || mFillBefore) && (normalizedTime <= 1.0f || mFillAfter)) {
+            if (!mStarted) {
+                if (mListener != null) {
+                    mListener.onAnimationStart(this);
+                }
+                mStarted = true;
+                if (USE_CLOSEGUARD) {
+                    guard.open("cancel or detach or getTransformation");
+                }
+            }
 
-    public static final int RELATIVE_TO_SELF = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.745 -0400", hash_original_field = "B2090255989CB8D4FD1631A94AC1C505", hash_generated_field = "39CEF3E15FF6FF8064031A5B0E218AC6")
+            if (mFillEnabled) normalizedTime = Math.max(Math.min(normalizedTime, 1.0f), 0.0f);
 
-    public static final int RELATIVE_TO_PARENT = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.745 -0400", hash_original_field = "7FA539E5204221B4DD49472A7D30AF76", hash_generated_field = "350B866462D7A5796C6E66AE9D7BB305")
+            if (mCycleFlip) {
+                normalizedTime = 1.0f - normalizedTime;
+            }
 
-    public static final int ZORDER_NORMAL = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.745 -0400", hash_original_field = "FD7E0AA2F7D8EA9A2563E4EA47FB2ED2", hash_generated_field = "63A9791B289181049B87F13C581D3AF7")
+            final float interpolatedTime = mInterpolator.getInterpolation(normalizedTime);
+            applyTransformation(interpolatedTime, outTransformation);
+        }
 
-    public static final int ZORDER_TOP = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.745 -0400", hash_original_field = "AE8A81D06EA1A8383F625ACE662B6050", hash_generated_field = "6655EB233E0907175F6FC1DFBCF648DD")
+        if (expired) {
+            if (mRepeatCount == mRepeated) {
+                if (!mEnded) {
+                    mEnded = true;
+                    guard.close();
+                    if (mListener != null) {
+                        mListener.onAnimationEnd(this);
+                    }
+                }
+            } else {
+                if (mRepeatCount > 0) {
+                    mRepeated++;
+                }
 
-    public static final int ZORDER_BOTTOM = -1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.745 -0400", hash_original_field = "7A767933C81D15E050EC63E36B098FFF", hash_generated_field = "5160DD832DA627994F79F0E39BF3B141")
+                if (mRepeatMode == REVERSE) {
+                    mCycleFlip = !mCycleFlip;
+                }
 
-    private static final boolean USE_CLOSEGUARD = SystemProperties.getBoolean("log.closeguard.Animation", false);
+                mStartTime = -1;
+                mMore = true;
+
+                if (mListener != null) {
+                    mListener.onAnimationRepeat(this);
+                }
+            }
+        }
+
+        if (!mMore && mOneMoreTime) {
+            mOneMoreTime = false;
+            return true;
+        }
+
+        return mMore;
+    }
+    
+    /**
+     * Gets the transformation to apply at a specified point in time. Implementations of this
+     * method should always replace the specified Transformation or document they are doing
+     * otherwise.
+     *
+     * @param currentTime Where we are in the animation. This is wall clock time.
+     * @param outTransformation A tranformation object that is provided by the
+     *        caller and will be filled in by the animation.
+     * @param scale Scaling factor to apply to any inputs to the transform operation, such
+     *        pivot points being rotated or scaled around.
+     * @return True if the animation is still running
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.815 -0500", hash_original_method = "2D55A6E78A3D329DDFA1835011833D50", hash_generated_method = "BEF4999254C104668FDB8CAEBDD04900")
+    public boolean getTransformation(long currentTime, Transformation outTransformation,
+            float scale) {
+        mScaleFactor = scale;
+        return getTransformation(currentTime, outTransformation);
+    }
+
+    /**
+     * <p>Indicates whether this animation has started or not.</p>
+     *
+     * @return true if the animation has started, false otherwise
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.816 -0500", hash_original_method = "777CAD815D79C7ADA7276922FB123EB2", hash_generated_method = "29680F04B6CA177231C15349D1DAC7C6")
+    public boolean hasStarted() {
+        return mStarted;
+    }
+
+    /**
+     * <p>Indicates whether this animation has ended or not.</p>
+     *
+     * @return true if the animation has ended, false otherwise
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.817 -0500", hash_original_method = "D01D8338B537AF4FCC0E5AB769C5FB0B", hash_generated_method = "773D01EF8E711AEBA48EABF5103125E0")
+    public boolean hasEnded() {
+        return mEnded;
+    }
+
+    /**
+     * Helper for getTransformation. Subclasses should implement this to apply
+     * their transforms given an interpolation value.  Implementations of this
+     * method should always replace the specified Transformation or document
+     * they are doing otherwise.
+     * 
+     * @param interpolatedTime The value of the normalized time (0.0 to 1.0)
+     *        after it has been run through the interpolation function.
+     * @param t The Transofrmation object to fill in with the current
+     *        transforms.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.818 -0500", hash_original_method = "073EBA254DBED3B6D4C21030E1884802", hash_generated_method = "D6FE7A45FD5E4B9F277EDEFC410B9A03")
+    protected void applyTransformation(float interpolatedTime, Transformation t) {
+    }
+
+    /**
+     * Convert the information in the description of a size to an actual
+     * dimension
+     *
+     * @param type One of Animation.ABSOLUTE, Animation.RELATIVE_TO_SELF, or
+     *             Animation.RELATIVE_TO_PARENT.
+     * @param value The dimension associated with the type parameter
+     * @param size The size of the object being animated
+     * @param parentSize The size of the parent of the object being animated
+     * @return The dimension to use for the animation
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.818 -0500", hash_original_method = "51B92BC0266A1C2F3581A8B430ACF6F7", hash_generated_method = "84FF2D70821B019127875CE5A1E6B242")
+    protected float resolveSize(int type, float value, int size, int parentSize) {
+        switch (type) {
+            case ABSOLUTE:
+                return value;
+            case RELATIVE_TO_SELF:
+                return size * value;
+            case RELATIVE_TO_PARENT:
+                return parentSize * value;
+            default:
+                return value;
+        }
+    }
+
+    /**
+     * @param left
+     * @param top
+     * @param right
+     * @param bottom
+     * @param invalidate
+     * @param transformation
+     * 
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.820 -0500", hash_original_method = "CF5E77120A30A36E6B295FA946811571", hash_generated_method = "233BA7BD76EDC6766C0EF1C270B9C185")
+    public void getInvalidateRegion(int left, int top, int right, int bottom,
+            RectF invalidate, Transformation transformation) {
+
+        final RectF tempRegion = mRegion;
+        final RectF previousRegion = mPreviousRegion;
+
+        invalidate.set(left, top, right, bottom);
+        transformation.getMatrix().mapRect(invalidate);
+        // Enlarge the invalidate region to account for rounding errors
+        invalidate.inset(-1.0f, -1.0f);
+        tempRegion.set(invalidate);
+        invalidate.union(previousRegion);
+
+        previousRegion.set(tempRegion);
+
+        final Transformation tempTransformation = mTransformation;
+        final Transformation previousTransformation = mPreviousTransformation;
+
+        tempTransformation.set(transformation);
+        transformation.set(previousTransformation);
+        previousTransformation.set(tempTransformation);
+    }
+
+    /**
+     * @param left
+     * @param top
+     * @param right
+     * @param bottom
+     *
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.821 -0500", hash_original_method = "CE5BD1162FB4278724A9276A03F0A96A", hash_generated_method = "87E5AE505747DD51A8C50204F665DD6C")
+    public void initializeInvalidateRegion(int left, int top, int right, int bottom) {
+        final RectF region = mPreviousRegion;
+        region.set(left, top, right, bottom);
+        // Enlarge the invalidate region to account for rounding errors
+        region.inset(-1.0f, -1.0f);
+        if (mFillBefore) {
+            final Transformation previousTransformation = mPreviousTransformation;
+            applyTransformation(mInterpolator.getInterpolation(0.0f), previousTransformation);
+        }
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.822 -0500", hash_original_method = "F91EB5DE0AE774B21AEF523039CEDA53", hash_generated_method = "1BDDD198ABF893F767F90C68C32D3AB3")
+    protected void finalize() throws Throwable {
+        try {
+            if (guard != null) {
+                guard.warnIfOpen();
+            }
+        } finally {
+            super.finalize();
+        }
+    }
+
+    /**
+     * Return true if this animation changes the view's alpha property.
+     * 
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.822 -0500", hash_original_method = "00F0E38B38876C14DBBEFF57F3DE3ED9", hash_generated_method = "A7E953EAB38F31E94469E70A0CA9229A")
+    public boolean hasAlpha() {
+        return false;
+    }
 }
 

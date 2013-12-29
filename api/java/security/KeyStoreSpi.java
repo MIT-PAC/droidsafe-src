@@ -1,6 +1,8 @@
 package java.security;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.InputStream;
@@ -19,366 +21,30 @@ import javax.security.auth.callback.PasswordCallback;
 
 
 public abstract class KeyStoreSpi {
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.039 -0400", hash_original_method = "0F44DABB4B3060793D573A941E7E27B4", hash_generated_method = "0F44DABB4B3060793D573A941E7E27B4")
-    public KeyStoreSpi ()
-    {
-        //Synthesized constructor
-    }
 
+    /*
+     * This method returns password which is encapsulated in
+     * CallbackHandlerProtection object If there is no implementation of
+     * CallbackHandler then this method returns null
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:15.904 -0500", hash_original_method = "9280B34CDA1A5A9448497987FEA339C2", hash_generated_method = "42CA4D99D6E4E75B9E069AA97023098F")
+    static char[] getPasswordFromCallBack(KeyStore.ProtectionParameter protParam)
+            throws UnrecoverableEntryException {
 
-    @DSModeled(DSC.SAFE)
-    public abstract Key engineGetKey(String alias, char[] password)
-            throws NoSuchAlgorithmException, UnrecoverableKeyException;
-
-    
-    @DSModeled(DSC.SAFE)
-    public abstract Certificate[] engineGetCertificateChain(String alias);
-
-    
-    @DSModeled(DSC.SAFE)
-    public abstract Certificate engineGetCertificate(String alias);
-
-    
-    @DSModeled(DSC.SAFE)
-    public abstract Date engineGetCreationDate(String alias);
-
-    
-    @DSModeled(DSC.SAFE)
-    public abstract void engineSetKeyEntry(String alias, Key key,
-            char[] password, Certificate[] chain) throws KeyStoreException;
-
-    
-    @DSModeled(DSC.SAFE)
-    public abstract void engineSetKeyEntry(String alias, byte[] key,
-            Certificate[] chain) throws KeyStoreException;
-
-    
-    @DSModeled(DSC.SAFE)
-    public abstract void engineSetCertificateEntry(String alias,
-            Certificate cert) throws KeyStoreException;
-
-    
-    @DSModeled(DSC.SAFE)
-    public abstract void engineDeleteEntry(String alias)
-            throws KeyStoreException;
-
-    
-    @DSModeled(DSC.SAFE)
-    public abstract Enumeration<String> engineAliases();
-
-    
-    @DSModeled(DSC.SAFE)
-    public abstract boolean engineContainsAlias(String alias);
-
-    
-    @DSModeled(DSC.SAFE)
-    public abstract int engineSize();
-
-    
-    @DSModeled(DSC.SAFE)
-    public abstract boolean engineIsKeyEntry(String alias);
-
-    
-    @DSModeled(DSC.SAFE)
-    public abstract boolean engineIsCertificateEntry(String alias);
-
-    
-    @DSModeled(DSC.SAFE)
-    public abstract String engineGetCertificateAlias(Certificate cert);
-
-    
-    @DSModeled(DSC.SAFE)
-    public abstract void engineStore(OutputStream stream, char[] password)
-            throws IOException, NoSuchAlgorithmException, CertificateException;
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.043 -0400", hash_original_method = "2DD87D7240BCBB9F96BACA77A06CD528", hash_generated_method = "4C56B3F97861EC65BFE63E0D46A6D870")
-    public void engineStore(KeyStore.LoadStoreParameter param) throws IOException, NoSuchAlgorithmException, CertificateException {
-        addTaint(param.getTaint());
-        UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1443864684 = new UnsupportedOperationException();
-        var81FA7E299EEE7F062EBFBEEF08B0464D_1443864684.addTaint(taint);
-        throw var81FA7E299EEE7F062EBFBEEF08B0464D_1443864684;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    public abstract void engineLoad(InputStream stream, char[] password)
-            throws IOException, NoSuchAlgorithmException, CertificateException;
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.044 -0400", hash_original_method = "C2F8D415FB9276C7A503B37F207C6477", hash_generated_method = "B63DBEC1874B136FA66C8E8BDD65E7B1")
-    public void engineLoad(KeyStore.LoadStoreParameter param) throws IOException, NoSuchAlgorithmException, CertificateException {
-        addTaint(param.getTaint());
-        if(param == null)        
-        {
-            engineLoad(null, null);
-            return;
-        } //End block
-        char[] pwd;
-        KeyStore.ProtectionParameter pp = param.getProtectionParameter();
-        if(pp instanceof KeyStore.PasswordProtection)        
-        {
-            try 
-            {
-                pwd = ((KeyStore.PasswordProtection) pp).getPassword();
-                engineLoad(null, pwd);
-                return;
-            } //End block
-            catch (IllegalStateException e)
-            {
-                IllegalArgumentException varB5003C51895A632D49EB91E1ECEE1438_199766510 = new IllegalArgumentException(e);
-                varB5003C51895A632D49EB91E1ECEE1438_199766510.addTaint(taint);
-                throw varB5003C51895A632D49EB91E1ECEE1438_199766510;
-            } //End block
-        } //End block
-        if(pp instanceof KeyStore.CallbackHandlerProtection)        
-        {
-            try 
-            {
-                pwd = getPasswordFromCallBack(pp);
-                engineLoad(null, pwd);
-                return;
-            } //End block
-            catch (UnrecoverableEntryException e)
-            {
-                IllegalArgumentException varB5003C51895A632D49EB91E1ECEE1438_2116742 = new IllegalArgumentException(e);
-                varB5003C51895A632D49EB91E1ECEE1438_2116742.addTaint(taint);
-                throw varB5003C51895A632D49EB91E1ECEE1438_2116742;
-            } //End block
-        } //End block
-        UnsupportedOperationException var512AC5F29E79BF38AAF79998E614D9BB_1190909615 = new UnsupportedOperationException("protectionParameter is neither PasswordProtection "
-                                                + "nor CallbackHandlerProtection instance");
-        var512AC5F29E79BF38AAF79998E614D9BB_1190909615.addTaint(taint);
-        throw var512AC5F29E79BF38AAF79998E614D9BB_1190909615;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.046 -0400", hash_original_method = "B68FB53D4042F1FDA8275FB481793ECB", hash_generated_method = "CA60EFFCCA993F7244FF292C057101B9")
-    public KeyStore.Entry engineGetEntry(String alias,
-            KeyStore.ProtectionParameter protParam) throws KeyStoreException,
-            NoSuchAlgorithmException, UnrecoverableEntryException {
-        addTaint(protParam.getTaint());
-        addTaint(alias.getTaint());
-        if(!engineContainsAlias(alias))        
-        {
-KeyStore.Entry var540C13E9E156B687226421B24F2DF178_222167658 =             null;
-            var540C13E9E156B687226421B24F2DF178_222167658.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_222167658;
-        } //End block
-        if(engineIsCertificateEntry(alias))        
-        {
-KeyStore.Entry varFA8BB8BF63DFDCDE2AC1F37FA493C5A6_1255634172 =             new KeyStore.TrustedCertificateEntry(
-                    engineGetCertificate(alias));
-            varFA8BB8BF63DFDCDE2AC1F37FA493C5A6_1255634172.addTaint(taint);
-            return varFA8BB8BF63DFDCDE2AC1F37FA493C5A6_1255634172;
-        } //End block
-        char[] passW = null;
-        if(protParam != null)        
-        {
-            if(protParam instanceof KeyStore.PasswordProtection)            
-            {
-                try 
-                {
-                    passW = ((KeyStore.PasswordProtection) protParam)
-                            .getPassword();
-                } //End block
-                catch (IllegalStateException ee)
-                {
-                    KeyStoreException var173E0EA18B216CA1F3470CACBC03B9C2_548938445 = new KeyStoreException("Password was destroyed", ee);
-                    var173E0EA18B216CA1F3470CACBC03B9C2_548938445.addTaint(taint);
-                    throw var173E0EA18B216CA1F3470CACBC03B9C2_548938445;
-                } //End block
-            } //End block
-            else
-            if(protParam instanceof KeyStore.CallbackHandlerProtection)            
-            {
-                passW = getPasswordFromCallBack(protParam);
-            } //End block
-            else
-            {
-                UnrecoverableEntryException varBDCA280E2ADDBE63E73F1C1F739B22A2_1496781214 = new UnrecoverableEntryException("ProtectionParameter object is not "
-                                                      + "PasswordProtection: " + protParam);
-                varBDCA280E2ADDBE63E73F1C1F739B22A2_1496781214.addTaint(taint);
-                throw varBDCA280E2ADDBE63E73F1C1F739B22A2_1496781214;
-            } //End block
-        } //End block
-        if(engineIsKeyEntry(alias))        
-        {
-            Key key = engineGetKey(alias, passW);
-            if(key instanceof PrivateKey)            
-            {
-KeyStore.Entry varA29A3E037505354C38B79FE2CCF25E01_1570640072 =                 new KeyStore.PrivateKeyEntry((PrivateKey) key,
-                                                    engineGetCertificateChain(alias));
-                varA29A3E037505354C38B79FE2CCF25E01_1570640072.addTaint(taint);
-                return varA29A3E037505354C38B79FE2CCF25E01_1570640072;
-            } //End block
-            if(key instanceof SecretKey)            
-            {
-KeyStore.Entry varF6CA60BE43493BB9E1AF2A8B4D10A17E_600898535 =                 new KeyStore.SecretKeyEntry((SecretKey) key);
-                varF6CA60BE43493BB9E1AF2A8B4D10A17E_600898535.addTaint(taint);
-                return varF6CA60BE43493BB9E1AF2A8B4D10A17E_600898535;
-            } //End block
-        } //End block
-        NoSuchAlgorithmException varF484C7331F04107001121C1ED67E4532_702355499 = new NoSuchAlgorithmException("Unknown KeyStore.Entry object");
-        varF484C7331F04107001121C1ED67E4532_702355499.addTaint(taint);
-        throw varF484C7331F04107001121C1ED67E4532_702355499;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.047 -0400", hash_original_method = "3D4613712C6A1FF15305C05DDF5D1E0F", hash_generated_method = "6B89AE5F38D76F0B17FB409A95B415F9")
-    public void engineSetEntry(String alias, KeyStore.Entry entry,
-            KeyStore.ProtectionParameter protParam) throws KeyStoreException {
-        addTaint(protParam.getTaint());
-        addTaint(entry.getTaint());
-        addTaint(alias.getTaint());
-        if(entry == null)        
-        {
-            KeyStoreException varE92AAD21409D60072D72DD35DFD12641_1604381729 = new KeyStoreException("entry == null");
-            varE92AAD21409D60072D72DD35DFD12641_1604381729.addTaint(taint);
-            throw varE92AAD21409D60072D72DD35DFD12641_1604381729;
-        } //End block
-        if(engineContainsAlias(alias))        
-        {
-            engineDeleteEntry(alias);
-        } //End block
-        if(entry instanceof KeyStore.TrustedCertificateEntry)        
-        {
-            KeyStore.TrustedCertificateEntry trE = (KeyStore.TrustedCertificateEntry) entry;
-            engineSetCertificateEntry(alias, trE.getTrustedCertificate());
-            return;
-        } //End block
-        char[] passW = null;
-        if(protParam instanceof KeyStore.PasswordProtection)        
-        {
-            try 
-            {
-                passW = ((KeyStore.PasswordProtection) protParam).getPassword();
-            } //End block
-            catch (IllegalStateException ee)
-            {
-                KeyStoreException var173E0EA18B216CA1F3470CACBC03B9C2_1167746043 = new KeyStoreException("Password was destroyed", ee);
-                var173E0EA18B216CA1F3470CACBC03B9C2_1167746043.addTaint(taint);
-                throw var173E0EA18B216CA1F3470CACBC03B9C2_1167746043;
-            } //End block
-        } //End block
-        else
-        {
-            if(protParam instanceof KeyStore.CallbackHandlerProtection)            
-            {
-                try 
-                {
-                    passW = getPasswordFromCallBack(protParam);
-                } //End block
-                catch (Exception e)
-                {
-                    KeyStoreException varC175B833FB13811057889966C2C78A66_1747687655 = new KeyStoreException(e);
-                    varC175B833FB13811057889966C2C78A66_1747687655.addTaint(taint);
-                    throw varC175B833FB13811057889966C2C78A66_1747687655;
-                } //End block
-            } //End block
-            else
-            {
-                KeyStoreException var304020BB170CEDA770D5AB0AB4202E66_1726952378 = new KeyStoreException("protParam should be PasswordProtection or "
-                                            + "CallbackHandlerProtection");
-                var304020BB170CEDA770D5AB0AB4202E66_1726952378.addTaint(taint);
-                throw var304020BB170CEDA770D5AB0AB4202E66_1726952378;
-            } //End block
-        } //End block
-        if(entry instanceof KeyStore.PrivateKeyEntry)        
-        {
-            KeyStore.PrivateKeyEntry prE = (KeyStore.PrivateKeyEntry) entry;
-            engineSetKeyEntry(alias, prE.getPrivateKey(), passW, prE
-                    .getCertificateChain());
-            return;
-        } //End block
-        if(entry instanceof KeyStore.SecretKeyEntry)        
-        {
-            KeyStore.SecretKeyEntry skE = (KeyStore.SecretKeyEntry) entry;
-            engineSetKeyEntry(alias, skE.getSecretKey(), passW, null);
-            return;
-        } //End block
-        KeyStoreException var21E6B874E04A2F6D10C5FD3CACF0E075_1006833976 = new KeyStoreException("Entry object is neither PrivateKeyObject nor SecretKeyEntry "
-                                    + "nor TrustedCertificateEntry: " + entry);
-        var21E6B874E04A2F6D10C5FD3CACF0E075_1006833976.addTaint(taint);
-        throw var21E6B874E04A2F6D10C5FD3CACF0E075_1006833976;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.048 -0400", hash_original_method = "E646126BAF6D7B233BE960C73341BBD0", hash_generated_method = "72543B1C26477AF4FDAE093D024333BE")
-    public boolean engineEntryInstanceOf(String alias,
-            Class<? extends KeyStore.Entry> entryClass) {
-        addTaint(entryClass.getTaint());
-        addTaint(alias.getTaint());
-        if(!engineContainsAlias(alias))        
-        {
-            boolean var68934A3E9455FA72420237EB05902327_877369049 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_628772272 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_628772272;
-        } //End block
-        try 
-        {
-            if(engineIsCertificateEntry(alias))            
-            {
-                boolean varA13E19827071CE87C14AD06E7F905001_1245460225 = (entryClass
-                        .isAssignableFrom(Class
-                                .forName("java.security.KeyStore$TrustedCertificateEntry")));
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_683189755 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_683189755;
-            } //End block
-            if(engineIsKeyEntry(alias))            
-            {
-                if(entryClass.isAssignableFrom(Class
-                        .forName("java.security.KeyStore$PrivateKeyEntry")))                
-                {
-                    boolean varFD7A0BF7E224744E06A6F39A8EFAB35E_113136126 = (engineGetCertificate(alias) != null);
-                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_631213698 = getTaintBoolean();
-                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_631213698;
-                } //End block
-                if(entryClass.isAssignableFrom(Class
-                        .forName("java.security.KeyStore$SecretKeyEntry")))                
-                {
-                    boolean var00949CCCA50644B14627A52DB7FA0B55_2028243655 = (engineGetCertificate(alias) == null);
-                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2082323372 = getTaintBoolean();
-                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_2082323372;
-                } //End block
-            } //End block
-        } //End block
-        catch (ClassNotFoundException ignore)
-        {
-        } //End block
-        boolean var68934A3E9455FA72420237EB05902327_48725913 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1341773329 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1341773329;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    static char[] getPasswordFromCallBack(KeyStore.ProtectionParameter protParam) throws UnrecoverableEntryException {
         if (protParam == null) {
             return null;
         }
+
         if (!(protParam instanceof KeyStore.CallbackHandlerProtection)) {
             throw new UnrecoverableEntryException("Incorrect ProtectionParameter");
         }
+
         String clName = Security.getProperty("auth.login.defaultCallbackHandler");
         if (clName == null) {
             throw new UnrecoverableEntryException("Default CallbackHandler was not defined");
+
         }
+
         try {
             Class<?> cl = Class.forName(clName);
             CallbackHandler cbHand = (CallbackHandler) cl.newInstance();
@@ -388,6 +54,488 @@ KeyStore.Entry varF6CA60BE43493BB9E1AF2A8B4D10A17E_600898535 =                 n
         } catch (Exception e) {
             throw new UnrecoverableEntryException(e.toString());
         }
+    }
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.039 -0400", hash_original_method = "0F44DABB4B3060793D573A941E7E27B4", hash_generated_method = "0F44DABB4B3060793D573A941E7E27B4")
+    public KeyStoreSpi ()
+    {
+        //Synthesized constructor
+    }
+
+    /**
+     * Returns the key with the given alias, using the password to recover the
+     * key from the store.
+     *
+     * @param alias
+     *            the alias for the entry.
+     * @param password
+     *            the password used to recover the key.
+     * @return the key with the specified alias, or {@code null} if the
+     *         specified alias is not bound to an entry.
+     * @throws NoSuchAlgorithmException
+     *             if the algorithm for recovering the key is not available.
+     * @throws UnrecoverableKeyException
+     *             if the key can not be recovered.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:15.884 -0500", hash_original_method = "262C45119F8A2E446CA7A6F639C0529E", hash_generated_method = "7C41AEC5800B546B1ED3DC912C133FCA")
+    public abstract Key engineGetKey(String alias, char[] password)
+            throws NoSuchAlgorithmException, UnrecoverableKeyException;
+
+    /**
+     * Returns the certificate chain for the entry with the given alias.
+     *
+     * @param alias
+     *            the alias for the entry
+     * @return the certificate chain for the entry with the given alias, or
+     *         {@code null} if the specified alias is not bound to an entry.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:15.885 -0500", hash_original_method = "767AA73CFF647726061680736B200CC3", hash_generated_method = "1597C6175CBAF4DA6968D8FD71AF507A")
+    public abstract Certificate[] engineGetCertificateChain(String alias);
+
+    /**
+     * Returns the trusted certificate for the entry with the given alias.
+     *
+     * @param alias
+     *            the alias for the entry.
+     * @return the trusted certificate for the entry with the given alias, or
+     *         {@code null} if the specified alias is not bound to an entry.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:15.886 -0500", hash_original_method = "CBF968F9BC3E3120432BA9EC88472B26", hash_generated_method = "711ACB7274379F9A47964550FB689ED0")
+    public abstract Certificate engineGetCertificate(String alias);
+
+    /**
+     * Returns the creation date of the entry with the given alias.
+     *
+     * @param alias
+     *            the alias for the entry.
+     * @return the creation date, or {@code null} if the specified alias is not
+     *         bound to an entry.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:15.887 -0500", hash_original_method = "1FF1D16CCFB598DBA5D5922E27AD1C78", hash_generated_method = "06FA8CB1BA04BD1353EE50E6F27A674D")
+    public abstract Date engineGetCreationDate(String alias);
+
+    /**
+     * Associates the given alias with the key, password and certificate chain.
+     * <p>
+     * If the specified alias already exists, it will be reassigned.
+     *
+     * @param alias
+     *            the alias for the key.
+     * @param key
+     *            the key.
+     * @param password
+     *            the password.
+     * @param chain
+     *            the certificate chain.
+     * @throws KeyStoreException
+     *             if the specified key can not be protected, or if this
+     *             operation fails for another reason.
+     * @throws IllegalArgumentException
+     *             if {@code key} is a {@code PrivateKey} and {@code chain} does
+     *             not contain any certificates.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:15.888 -0500", hash_original_method = "7B9992925D33D09A69431FACE43D3F70", hash_generated_method = "E4EC2ECDAA3E49D08A2EE6F1E5D5DED2")
+    public abstract void engineSetKeyEntry(String alias, Key key,
+            char[] password, Certificate[] chain) throws KeyStoreException;
+
+    /**
+     * Associates the given alias with a key and a certificate chain.
+     * <p>
+     * If the specified alias already exists, it will be reassigned.
+     *
+     * @param alias
+     *            the alias for the key.
+     * @param key
+     *            the key in an encoded format.
+     * @param chain
+     *            the certificate chain.
+     * @throws KeyStoreException
+     *             if this operation fails.
+     * @throws IllegalArgumentException
+     *             if {@code key} is a {@code PrivateKey} and {@code chain}
+     *             does.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:15.888 -0500", hash_original_method = "1FB1A60189EEE0CCB39F83936C39CD91", hash_generated_method = "5E5F66B91A3636FD7255D4D5CD412B62")
+    public abstract void engineSetKeyEntry(String alias, byte[] key,
+            Certificate[] chain) throws KeyStoreException;
+
+    /**
+     * Associates the given alias with a certificate.
+     * <p>
+     * If the specified alias already exists, it will be reassigned.
+     *
+     * @param alias
+     *            the alias for the certificate.
+     * @param cert
+     *            the certificate.
+     * @throws KeyStoreException
+     *             if an existing alias is not associated to an entry containing
+     *             a trusted certificate, or this method fails for any other
+     *             reason.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:15.889 -0500", hash_original_method = "BC85260036254C3D1D46D5A4CD54C631", hash_generated_method = "4C0F01CD8302A545971F539DF0B9C54C")
+    public abstract void engineSetCertificateEntry(String alias,
+            Certificate cert) throws KeyStoreException;
+
+    /**
+     * Deletes the entry identified with the given alias from this {@code
+     * KeyStoreSpi}.
+     *
+     * @param alias
+     *            the alias for the entry.
+     * @throws KeyStoreException
+     *             if the entry can not be deleted.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:15.890 -0500", hash_original_method = "C5912624DCC25C81C7DE5ED28688DDD7", hash_generated_method = "9D1EAB4D7E6162F9727775F5D68BD345")
+    public abstract void engineDeleteEntry(String alias)
+            throws KeyStoreException;
+
+    /**
+     * Returns an {@code Enumeration} over all alias names stored in this
+     * {@code KeyStoreSpi}.
+     *
+     * @return an {@code Enumeration} over all alias names stored in this
+     *         {@code KeyStoreSpi}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:15.891 -0500", hash_original_method = "82588BB61594FA8A73A0F3F355DEE11B", hash_generated_method = "8530AC63B6A06CF06635BB177F956E18")
+    public abstract Enumeration<String> engineAliases();
+
+    /**
+     * Indicates whether the given alias is present in this {@code KeyStoreSpi}.
+     *
+     * @param alias
+     *            the alias of an entry.
+     * @return {@code true} if the alias exists, {@code false} otherwise.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:15.892 -0500", hash_original_method = "6DA9587D712F71675D6F7DC0C5D937C9", hash_generated_method = "D7EB33403E187670A7D78C574FE82CA4")
+    public abstract boolean engineContainsAlias(String alias);
+
+    /**
+     * Returns the number of entries stored in this {@code KeyStoreSpi}.
+     *
+     * @return the number of entries stored in this {@code KeyStoreSpi}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:15.893 -0500", hash_original_method = "D8BF35C2ACCF94F2EC69DC5A85C9A8F9", hash_generated_method = "AAB35F0278EF378424EF1D9A79DC8958")
+    public abstract int engineSize();
+
+    /**
+     * Indicates whether the specified alias is associated with either a
+     * {@link KeyStore.PrivateKeyEntry} or a {@link KeyStore.SecretKeyEntry}.
+     *
+     * @param alias
+     *            the alias of an entry.
+     * @return {@code true} if the given alias is associated with a key entry.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:15.893 -0500", hash_original_method = "71F16054A5D04622A625AC31B4079294", hash_generated_method = "25F8AA154C072AC08B5A33430488A928")
+    public abstract boolean engineIsKeyEntry(String alias);
+
+    /**
+     * Indicates whether the specified alias is associated with a
+     * {@link KeyStore.TrustedCertificateEntry}.
+     *
+     * @param alias
+     *            the alias of an entry.
+     * @return {@code true} if the given alias is associated with a certificate
+     *         entry.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:15.894 -0500", hash_original_method = "30990670F3D1088F0ED6A72446296413", hash_generated_method = "12A128D8AD937B8CD994B42A277D697A")
+    public abstract boolean engineIsCertificateEntry(String alias);
+
+    /**
+     * Returns the alias associated with the first entry whose certificate
+     * matches the specified certificate.
+     *
+     * @param cert
+     *            the certificate to find the associated entry's alias for.
+     * @return the alias or {@code null} if no entry with the specified
+     *         certificate can be found.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:15.896 -0500", hash_original_method = "5AE9B6FD007D8046B16D2117DA368E0A", hash_generated_method = "CBF05E94E3E7E99E079268AAC92D0B57")
+    public abstract String engineGetCertificateAlias(Certificate cert);
+
+    /**
+     * Writes this {@code KeyStoreSpi} to the specified {@code OutputStream}.
+     * The data written to the {@code OutputStream} is protected by the
+     * specified password.
+     *
+     * @param stream
+     *            the {@code OutputStream} to write the store's data to.
+     * @param password
+     *            the password to protect the data.
+     * @throws IOException
+     *             if a problem occurred while writing to the stream.
+     * @throws NoSuchAlgorithmException
+     *             if the required algorithm is not available.
+     * @throws CertificateException
+     *             if the an exception occurred while storing the certificates
+     *             of this code {@code KeyStoreSpi}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:15.897 -0500", hash_original_method = "116C689EA990E9A410716324F8AFB01B", hash_generated_method = "B2F76E8D126862F6C7E56AA7935D6C60")
+    public abstract void engineStore(OutputStream stream, char[] password)
+            throws IOException, NoSuchAlgorithmException, CertificateException;
+
+    /**
+     * Stores this {@code KeyStoreSpi} using the specified {@code
+     * LoadStoreParameter}.
+     *
+     * @param param
+     *            the {@code LoadStoreParameter} that specifies how to store
+     *            this {@code KeyStoreSpi}, maybe {@code null}.
+     * @throws IOException
+     *             if a problem occurred while writing to the stream.
+     * @throws NoSuchAlgorithmException
+     *             if the required algorithm is not available.
+     * @throws CertificateException
+     *             if the an exception occurred while storing the certificates
+     *             of this code {@code KeyStoreSpi}.
+     * @throws IllegalArgumentException
+     *             if the given {@link KeyStore.LoadStoreParameter} is not
+     *             recognized.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:15.898 -0500", hash_original_method = "2DD87D7240BCBB9F96BACA77A06CD528", hash_generated_method = "725AE982153DF31074411DE3E1C9B096")
+    public void engineStore(KeyStore.LoadStoreParameter param)
+            throws IOException, NoSuchAlgorithmException, CertificateException {
+        throw new UnsupportedOperationException();
+    }
+
+    /**
+     * Loads this {@code KeyStoreSpi} from the given {@code InputStream}.
+     * Utilizes the given password to verify the stored data.
+     *
+     * @param stream
+     *            the {@code InputStream} to load this {@code KeyStoreSpi}'s
+     *            data from.
+     * @param password
+     *            the password to verify the stored data, maybe {@code null}.
+     * @throws IOException
+     *             if a problem occurred while reading from the stream.
+     * @throws NoSuchAlgorithmException
+     *             if the required algorithm is not available.
+     * @throws CertificateException
+     *             if the an exception occurred while loading the certificates
+     *             of this code {@code KeyStoreSpi}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:15.899 -0500", hash_original_method = "F9333B030A9B14BD70E7C9DB7BF90F67", hash_generated_method = "5622AE494536C4D0FE444C23B330469F")
+    public abstract void engineLoad(InputStream stream, char[] password)
+            throws IOException, NoSuchAlgorithmException, CertificateException;
+
+    /**
+     * Loads this {@code KeyStoreSpi} using the specified {@code
+     * LoadStoreParameter}.
+     *
+     * @param param
+     *            the {@code LoadStoreParameter} that specifies how to load this
+     *            {@code KeyStoreSpi}, maybe {@code null}.
+     * @throws IOException
+     *             if a problem occurred while reading from the stream.
+     * @throws NoSuchAlgorithmException
+     *             if the required algorithm is not available.
+     * @throws CertificateException
+     *             if the an exception occurred while loading the certificates
+     *             of this code {@code KeyStoreSpi}.
+     * @throws IllegalArgumentException
+     *             if the given {@link KeyStore.LoadStoreParameter} is not
+     *             recognized.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:15.900 -0500", hash_original_method = "C2F8D415FB9276C7A503B37F207C6477", hash_generated_method = "317F64B260C6E114C4A5ABA44FB44456")
+    public void engineLoad(KeyStore.LoadStoreParameter param)
+            throws IOException, NoSuchAlgorithmException, CertificateException {
+        if (param == null) {
+            engineLoad(null, null);
+            return;
+        }
+        char[] pwd;
+        KeyStore.ProtectionParameter pp = param.getProtectionParameter();
+        if (pp instanceof KeyStore.PasswordProtection) {
+            try {
+                pwd = ((KeyStore.PasswordProtection) pp).getPassword();
+                engineLoad(null, pwd);
+                return;
+            } catch (IllegalStateException e) {
+                throw new IllegalArgumentException(e);
+            }
+        }
+        if (pp instanceof KeyStore.CallbackHandlerProtection) {
+            try {
+                pwd = getPasswordFromCallBack(pp);
+                engineLoad(null, pwd);
+                return;
+            } catch (UnrecoverableEntryException e) {
+                throw new IllegalArgumentException(e);
+            }
+        }
+        throw new UnsupportedOperationException("protectionParameter is neither PasswordProtection "
+                                                + "nor CallbackHandlerProtection instance");
+    }
+
+    /**
+     * Returns the {@code Entry} with the given alias, using the specified
+     * {@code ProtectionParameter}.
+     *
+     * @param alias
+     *            the alias of the requested entry.
+     * @param protParam
+     *            the {@code ProtectionParameter}, used to protect the requested
+     *            entry, maybe {@code null}.
+     * @return he {@code Entry} with the given alias, using the specified
+     *         {@code ProtectionParameter}.
+     * @throws NoSuchAlgorithmException
+     *             if the required algorithm is not available.
+     * @throws UnrecoverableEntryException
+     *             if the entry can not be recovered.
+     * @throws KeyStoreException
+     *             if this operation fails
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:15.901 -0500", hash_original_method = "B68FB53D4042F1FDA8275FB481793ECB", hash_generated_method = "D89E94EAE7AD7281734E2328D3004E85")
+    public KeyStore.Entry engineGetEntry(String alias,
+            KeyStore.ProtectionParameter protParam) throws KeyStoreException,
+            NoSuchAlgorithmException, UnrecoverableEntryException {
+        if (!engineContainsAlias(alias)) {
+            return null;
+        }
+        if (engineIsCertificateEntry(alias)) {
+            return new KeyStore.TrustedCertificateEntry(
+                    engineGetCertificate(alias));
+        }
+        char[] passW = null;
+        if (protParam != null) {
+            if (protParam instanceof KeyStore.PasswordProtection) {
+                try {
+                    passW = ((KeyStore.PasswordProtection) protParam)
+                            .getPassword();
+                } catch (IllegalStateException ee) {
+                    throw new KeyStoreException("Password was destroyed", ee);
+                }
+            } else if (protParam instanceof KeyStore.CallbackHandlerProtection) {
+                passW = getPasswordFromCallBack(protParam);
+            } else {
+                throw new UnrecoverableEntryException("ProtectionParameter object is not "
+                                                      + "PasswordProtection: " + protParam);
+            }
+        }
+        if (engineIsKeyEntry(alias)) {
+            Key key = engineGetKey(alias, passW);
+            if (key instanceof PrivateKey) {
+                return new KeyStore.PrivateKeyEntry((PrivateKey) key,
+                                                    engineGetCertificateChain(alias));
+            }
+            if (key instanceof SecretKey) {
+                return new KeyStore.SecretKeyEntry((SecretKey) key);
+            }
+        }
+        throw new NoSuchAlgorithmException("Unknown KeyStore.Entry object");
+    }
+
+    /**
+     * Stores the given {@code Entry} in this {@code KeyStoreSpi} and associates
+     * the entry with the given {@code alias}. The entry is protected by the
+     * specified {@code ProtectionParameter}.
+     * <p>
+     * If the specified alias already exists, it will be reassigned.
+     *
+     * @param alias
+     *            the alias for the entry.
+     * @param entry
+     *            the entry to store.
+     * @param protParam
+     *            the {@code ProtectionParameter} to protect the entry.
+     * @throws KeyStoreException
+     *             if this operation fails.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:15.902 -0500", hash_original_method = "3D4613712C6A1FF15305C05DDF5D1E0F", hash_generated_method = "B0209E5EEE37F52F3850ED8A8EC4F707")
+    public void engineSetEntry(String alias, KeyStore.Entry entry,
+            KeyStore.ProtectionParameter protParam) throws KeyStoreException {
+        if (entry == null) {
+            throw new KeyStoreException("entry == null");
+        }
+
+        if (engineContainsAlias(alias)) {
+            engineDeleteEntry(alias);
+        }
+
+        if (entry instanceof KeyStore.TrustedCertificateEntry) {
+            KeyStore.TrustedCertificateEntry trE = (KeyStore.TrustedCertificateEntry) entry;
+            engineSetCertificateEntry(alias, trE.getTrustedCertificate());
+            return;
+        }
+
+        char[] passW = null;
+        if (protParam instanceof KeyStore.PasswordProtection) {
+            try {
+                passW = ((KeyStore.PasswordProtection) protParam).getPassword();
+            } catch (IllegalStateException ee) {
+                throw new KeyStoreException("Password was destroyed", ee);
+            }
+        } else {
+            if (protParam instanceof KeyStore.CallbackHandlerProtection) {
+                try {
+                    passW = getPasswordFromCallBack(protParam);
+                } catch (Exception e) {
+                    throw new KeyStoreException(e);
+                }
+            } else {
+                throw new KeyStoreException("protParam should be PasswordProtection or "
+                                            + "CallbackHandlerProtection");
+            }
+        }
+
+        if (entry instanceof KeyStore.PrivateKeyEntry) {
+            KeyStore.PrivateKeyEntry prE = (KeyStore.PrivateKeyEntry) entry;
+            engineSetKeyEntry(alias, prE.getPrivateKey(), passW, prE
+                    .getCertificateChain());
+            return;
+        }
+
+        if (entry instanceof KeyStore.SecretKeyEntry) {
+            KeyStore.SecretKeyEntry skE = (KeyStore.SecretKeyEntry) entry;
+            engineSetKeyEntry(alias, skE.getSecretKey(), passW, null);
+            //            engineSetKeyEntry(alias, skE.getSecretKey().getEncoded(), null);
+            return;
+        }
+
+        throw new KeyStoreException("Entry object is neither PrivateKeyObject nor SecretKeyEntry "
+                                    + "nor TrustedCertificateEntry: " + entry);
+    }
+
+    /**
+     * Indicates whether the entry for the given alias is assignable to the
+     * provided {@code Class}.
+     *
+     * @param alias
+     *            the alias for the entry.
+     * @param entryClass
+     *            the type of the entry.
+     * @return {@code true} if the {@code Entry} for the alias is assignable to
+     *         the specified {@code entryClass}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:15.903 -0500", hash_original_method = "E646126BAF6D7B233BE960C73341BBD0", hash_generated_method = "74B6C04DDFF2D06ADB16447EAA4C3E2F")
+    public boolean engineEntryInstanceOf(String alias,
+            Class<? extends KeyStore.Entry> entryClass) {
+        if (!engineContainsAlias(alias)) {
+            return false;
+        }
+
+        try {
+            if (engineIsCertificateEntry(alias)) {
+                return entryClass
+                        .isAssignableFrom(Class
+                                .forName("java.security.KeyStore$TrustedCertificateEntry"));
+            }
+
+            if (engineIsKeyEntry(alias)) {
+                if (entryClass.isAssignableFrom(Class
+                        .forName("java.security.KeyStore$PrivateKeyEntry"))) {
+                    return engineGetCertificate(alias) != null;
+                }
+
+                if (entryClass.isAssignableFrom(Class
+                        .forName("java.security.KeyStore$SecretKeyEntry"))) {
+                    return engineGetCertificate(alias) == null;
+                }
+            }
+        } catch (ClassNotFoundException ignore) {}
+
+        return false;
     }
 
     

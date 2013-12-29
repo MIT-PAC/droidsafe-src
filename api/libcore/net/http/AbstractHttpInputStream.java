@@ -1,6 +1,8 @@
 package libcore.net.http;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.InputStream;
@@ -12,122 +14,93 @@ import libcore.io.Streams;
 
 
 abstract class AbstractHttpInputStream extends InputStream {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.885 -0400", hash_original_field = "13B5BFE96F3E2FE411C9F66F4A582ADF", hash_generated_field = "1EF0A70CD08BE8D63EB2015C913859E5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:42.035 -0500", hash_original_field = "0A829BC26C36EAF422E245C1EC11D5B0", hash_generated_field = "1EF0A70CD08BE8D63EB2015C913859E5")
 
-    protected InputStream in;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.885 -0400", hash_original_field = "12BD04D71374CA2E73A86679C18FC108", hash_generated_field = "A09A97FB50D803FD23447464F21563B5")
+    protected  InputStream in;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:42.036 -0500", hash_original_field = "04E98FAE9CC901E38788E48C2AC65903", hash_generated_field = "A09A97FB50D803FD23447464F21563B5")
 
-    protected HttpEngine httpEngine;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.885 -0400", hash_original_field = "58E157FA6A49A1EC60FEBC3530BD26A5", hash_generated_field = "B13716E9F9AD1E06D30597F387AAA548")
+    protected  HttpEngine httpEngine;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:42.037 -0500", hash_original_field = "97A12F2DE32E30A9797715E5B9BFAAFA", hash_generated_field = "B13716E9F9AD1E06D30597F387AAA548")
 
-    private CacheRequest cacheRequest;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.885 -0400", hash_original_field = "E8055301501797F6D5DA45CBF5760200", hash_generated_field = "D0AC45CDB02C56E3854DB3EAB2AF3DBC")
+    private  CacheRequest cacheRequest;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:42.037 -0500", hash_original_field = "FE0B384B65370AA3619AB548E52F3127", hash_generated_field = "D0AC45CDB02C56E3854DB3EAB2AF3DBC")
 
-    private OutputStream cacheBody;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.885 -0400", hash_original_field = "349E686330723975502E9EF4F939A5AC", hash_generated_field = "BA207E645FA463C53A82992C378F82FC")
+    private  OutputStream cacheBody;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:42.038 -0500", hash_original_field = "0B6D06FC66AB1A3316E7702989E3F923", hash_generated_field = "BA207E645FA463C53A82992C378F82FC")
 
     protected boolean closed;
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.886 -0400", hash_original_method = "6245049C2A6A145F2B06E5BE82F53149", hash_generated_method = "747761486CF9B3437F7E77A9EE692C7D")
-      AbstractHttpInputStream(InputStream in, HttpEngine httpEngine,
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:42.039 -0500", hash_original_method = "6245049C2A6A145F2B06E5BE82F53149", hash_generated_method = "2F21611D4703D793C4636C78A0474625")
+    AbstractHttpInputStream(InputStream in, HttpEngine httpEngine,
             CacheRequest cacheRequest) throws IOException {
         this.in = in;
         this.httpEngine = httpEngine;
+
         OutputStream cacheBody = cacheRequest != null ? cacheRequest.getBody() : null;
-        if(cacheBody == null)        
-        {
+
+        // some apps return a null body; for compatibility we treat that like a null cache request
+        if (cacheBody == null) {
             cacheRequest = null;
-        } //End block
+        }
+
         this.cacheBody = cacheBody;
         this.cacheRequest = cacheRequest;
-        // ---------- Original Method ----------
-        //this.in = in;
-        //this.httpEngine = httpEngine;
-        //OutputStream cacheBody = cacheRequest != null ? cacheRequest.getBody() : null;
-        //if (cacheBody == null) {
-            //cacheRequest = null;
-        //}
-        //this.cacheBody = cacheBody;
-        //this.cacheRequest = cacheRequest;
     }
 
-    
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.887 -0400", hash_original_method = "DEBABCFB0D5C81DCE0E37961227F43C9", hash_generated_method = "DD1473F470370183131115D3C58226CE")
+    /**
+     * read() is implemented using read(byte[], int, int) so subclasses only
+     * need to override the latter.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:42.040 -0500", hash_original_method = "DEBABCFB0D5C81DCE0E37961227F43C9", hash_generated_method = "00E9997F4FCA840224038EEE0C17C5AD")
     @Override
-    public final int read() throws IOException {
-        int varC29A5AE95A30EE64395CAB97F32FA4B0_1161882087 = (Streams.readSingleByte(this));
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_302404461 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_302404461;
-        // ---------- Original Method ----------
-        //return Streams.readSingleByte(this);
+public final int read() throws IOException {
+        return Streams.readSingleByte(this);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.888 -0400", hash_original_method = "9C8C395306DF0EF2B124A9030249421B", hash_generated_method = "DD2996C5166F22E91F5A8CD850580BE4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:42.041 -0500", hash_original_method = "9C8C395306DF0EF2B124A9030249421B", hash_generated_method = "BA3B426D1C469E8B524063D3FE13D093")
     protected final void checkNotClosed() throws IOException {
-        if(closed)        
-        {
-            IOException var8D1E5C4B5F667C4541A761B82D8E7D19_399767167 = new IOException("stream closed");
-            var8D1E5C4B5F667C4541A761B82D8E7D19_399767167.addTaint(taint);
-            throw var8D1E5C4B5F667C4541A761B82D8E7D19_399767167;
-        } //End block
-        // ---------- Original Method ----------
-        //if (closed) {
-            //throw new IOException("stream closed");
-        //}
+        if (closed) {
+            throw new IOException("stream closed");
+        }
     }
 
-    
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.888 -0400", hash_original_method = "F99DAA756C38E790D14E093C328A014A", hash_generated_method = "F6AD2B4F17B22D6EA07A6BE0F8D9E8C8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:42.042 -0500", hash_original_method = "F99DAA756C38E790D14E093C328A014A", hash_generated_method = "53EA44A32FCE521D72E22E3C804E8F8C")
     protected final void cacheWrite(byte[] buffer, int offset, int count) throws IOException {
-        addTaint(count);
-        addTaint(offset);
-        addTaint(buffer[0]);
-        if(cacheBody != null)        
-        {
+        if (cacheBody != null) {
             cacheBody.write(buffer, offset, count);
-        } //End block
-        // ---------- Original Method ----------
-        //if (cacheBody != null) {
-            //cacheBody.write(buffer, offset, count);
-        //}
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.889 -0400", hash_original_method = "B3EBF796D65123BF085C9E1DA5AFCD9A", hash_generated_method = "3225D0A341AB3AFFC8E947A7C2344A66")
+    /**
+     * Closes the cache entry and makes the socket available for reuse. This
+     * should be invoked when the end of the body has been reached.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:42.043 -0500", hash_original_method = "B3EBF796D65123BF085C9E1DA5AFCD9A", hash_generated_method = "0948CF3D7320BE3292D71597EC8123A6")
     protected final void endOfInput(boolean reuseSocket) throws IOException {
-        addTaint(reuseSocket);
-        if(cacheRequest != null)        
-        {
+        if (cacheRequest != null) {
             cacheBody.close();
-        } //End block
+        }
         httpEngine.release(reuseSocket);
-        // ---------- Original Method ----------
-        //if (cacheRequest != null) {
-            //cacheBody.close();
-        //}
-        //httpEngine.release(reuseSocket);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.889 -0400", hash_original_method = "2A1CD1BA2665856DC3A1B988519977B9", hash_generated_method = "509B0E99DC89A699733427A298F88B04")
+    /**
+     * Calls abort on the cache entry and disconnects the socket. This
+     * should be invoked when the connection is closed unexpectedly to
+     * invalidate the cache entry and to prevent the HTTP connection from
+     * being reused. HTTP messages are sent in serial so whenever a message
+     * cannot be read to completion, subsequent messages cannot be read
+     * either and the connection must be discarded.
+     *
+     * <p>An earlier implementation skipped the remaining bytes, but this
+     * requires that the entire transfer be completed. If the intention was
+     * to cancel the transfer, closing the connection is the only solution.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:42.044 -0500", hash_original_method = "2A1CD1BA2665856DC3A1B988519977B9", hash_generated_method = "CE8BA60E1C5692E70D3A2BAB3B7030F7")
     protected final void unexpectedEndOfInput() {
-        if(cacheRequest != null)        
-        {
+        if (cacheRequest != null) {
             cacheRequest.abort();
-        } //End block
+        }
         httpEngine.release(false);
-        // ---------- Original Method ----------
-        //if (cacheRequest != null) {
-            //cacheRequest.abort();
-        //}
-        //httpEngine.release(false);
     }
 
     

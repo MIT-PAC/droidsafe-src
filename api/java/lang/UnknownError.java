@@ -1,6 +1,8 @@
 package java.lang;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
@@ -8,25 +10,29 @@ import droidsafe.annotations.*;
 
 
 public class UnknownError extends VirtualMachineError {
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.650 -0400", hash_original_method = "DEBB86C8E485BA79C07551D87066B1FF", hash_generated_method = "8B2FBCDE5A416A32BD94734123C8D214")
-    public  UnknownError() {
-        // ---------- Original Method ----------
-    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:27.459 -0500", hash_original_field = "2F272C34205B7B1B25D9AC7D49350D81", hash_generated_field = "3A804F8B2369E6030B7BA56EE93212B0")
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.651 -0400", hash_original_method = "9EE2469E06677E3029FF643B11D994DB", hash_generated_method = "7D5350E4022121FF812DF6D1B2B31AC0")
-    public  UnknownError(String detailMessage) {
-        super(detailMessage);
-        addTaint(detailMessage.getTaint());
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.651 -0400", hash_original_field = "5A150D1A2AD6013CCB992555A7148C3F", hash_generated_field = "3A804F8B2369E6030B7BA56EE93212B0")
 
     private static final long serialVersionUID = 2524784860676771849L;
+
+    /**
+     * Constructs a new {@code UnknownError} that includes the current stack
+     * trace.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:27.460 -0500", hash_original_method = "DEBB86C8E485BA79C07551D87066B1FF", hash_generated_method = "6C3E5315C342509DE4814B5A0C5AAF56")
+    public UnknownError() {
+    }
+
+    /**
+     * Constructs a new {@code UnknownError} with the current stack trace and
+     * the specified detail message.
+     *
+     * @param detailMessage
+     *            the detail message for this exception.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:27.461 -0500", hash_original_method = "9EE2469E06677E3029FF643B11D994DB", hash_generated_method = "82347FB2E6016701B7D01B73FA65ACFA")
+    public UnknownError(String detailMessage) {
+        super(detailMessage);
+    }
 }
 

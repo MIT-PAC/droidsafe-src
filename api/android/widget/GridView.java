@@ -1,6 +1,8 @@
 package android.widget;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.content.Context;
 import android.content.Intent;
@@ -20,488 +22,425 @@ import android.view.animation.GridLayoutAnimationController;
 
 
 public class GridView extends AbsListView {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.621 -0400", hash_original_field = "47E234C72F8463B7C6770D658A5E41C2", hash_generated_field = "CAA46A02DF073835D5C8346AD9A9CB63")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.436 -0500", hash_original_field = "AA9505FB63AC8A6E04FA498825632C58", hash_generated_field = "9591D43DFDB00D3CA815C6412336BEEB")
+
+    public static final int NO_STRETCH = 0;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.436 -0500", hash_original_field = "2B8F6C80CB7656380C71A26D86BF35B8", hash_generated_field = "9E8C93D13663D982A634A608E98FDD9B")
+
+    public static final int STRETCH_SPACING = 1;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.437 -0500", hash_original_field = "FADB7B990BED7CB16448F2B495075292", hash_generated_field = "289B7802E2F88C85889BF1B0A565B14F")
+
+    public static final int STRETCH_COLUMN_WIDTH = 2;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.438 -0500", hash_original_field = "2C3B314821C01D79900ED76E9568C123", hash_generated_field = "6D329753C82DAECBEDD98AD073821537")
+
+    public static final int STRETCH_SPACING_UNIFORM = 3;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.439 -0500", hash_original_field = "7AE414B6E3FDF5794DA2E7F5F95AD4E7", hash_generated_field = "4306712C3BDDA946F401316F516F19DA")
+
+    public static final int AUTO_FIT = -1;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.440 -0500", hash_original_field = "FF954460C058F9850B071838DB89D777", hash_generated_field = "CAA46A02DF073835D5C8346AD9A9CB63")
+
 
     private int mNumColumns = AUTO_FIT;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.622 -0400", hash_original_field = "984A75716F93CAE1C49F1090E6A0CB2C", hash_generated_field = "E9FAC14F36FB56A0DCAB954B62C2DF2B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.441 -0500", hash_original_field = "36532247BB66EBCEC9C2909C8C214F9A", hash_generated_field = "E9FAC14F36FB56A0DCAB954B62C2DF2B")
+
 
     private int mHorizontalSpacing = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.622 -0400", hash_original_field = "FE80057B725E738FDE5E09E6B3B7F8F2", hash_generated_field = "A39AD23AD5FCB84AB23C237FC706C8F3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.441 -0500", hash_original_field = "CC8BFE99FA435C599B5CE534CA3668C2", hash_generated_field = "A39AD23AD5FCB84AB23C237FC706C8F3")
 
     private int mRequestedHorizontalSpacing;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.622 -0400", hash_original_field = "04A0AE56E019E90823DFCF538F9EB200", hash_generated_field = "84EB60F5A5BD3F778480F01C86BB8AA9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.442 -0500", hash_original_field = "5024B7F3F3982CE57078015544AC97DA", hash_generated_field = "84EB60F5A5BD3F778480F01C86BB8AA9")
 
     private int mVerticalSpacing = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.622 -0400", hash_original_field = "D2D9B35C5FA16AAC3C153C6F6D51079F", hash_generated_field = "AEA63239A963A24EEC1FCFD67B3B96A7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.443 -0500", hash_original_field = "CD4B3749DEA299C5D382D9566F41C60C", hash_generated_field = "AEA63239A963A24EEC1FCFD67B3B96A7")
 
     private int mStretchMode = STRETCH_COLUMN_WIDTH;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.622 -0400", hash_original_field = "E1663A40DA302B5F0D865267D61B180B", hash_generated_field = "20F46DBB58574C7E2F33333D8FE15571")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.444 -0500", hash_original_field = "FA95CF42D267D5EDBA7356F252235DAA", hash_generated_field = "20F46DBB58574C7E2F33333D8FE15571")
 
     private int mColumnWidth;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.622 -0400", hash_original_field = "145243760978B68BCAB5FA8129C172AE", hash_generated_field = "7063064B546DF13BA7FDA901DDEC5780")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.444 -0500", hash_original_field = "08E369086E00B2136AA41BC71D6E0434", hash_generated_field = "7063064B546DF13BA7FDA901DDEC5780")
 
     private int mRequestedColumnWidth;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.622 -0400", hash_original_field = "53E8A93614B65E7EB80706CE2B65D07B", hash_generated_field = "583D48FC72E3B18BBAD06B1F4E148F28")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.446 -0500", hash_original_field = "222C7835339618E2856578BAC1EE214A", hash_generated_field = "583D48FC72E3B18BBAD06B1F4E148F28")
 
     private int mRequestedNumColumns;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.622 -0400", hash_original_field = "94710AAABC607EA664B744BE97844000", hash_generated_field = "7823B4B6322E0EBEB34297B0E440B23B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.446 -0500", hash_original_field = "6F0C9DF59CFE2519A9B8815AD263A61C", hash_generated_field = "7823B4B6322E0EBEB34297B0E440B23B")
+
 
     private View mReferenceView = null;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.622 -0400", hash_original_field = "5238F9CB997751442CCEC167A710A933", hash_generated_field = "E909A7C80DCAC01F178BEF4C30386FF5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.447 -0500", hash_original_field = "1B403D9B6056B08D3947AD2750BD356A", hash_generated_field = "E909A7C80DCAC01F178BEF4C30386FF5")
 
     private View mReferenceViewInSelectedRow = null;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.622 -0400", hash_original_field = "32B080F2E8D2B31FD5606656CD48D0F9", hash_generated_field = "B1F879D1C3141C34182BB7A64318C608")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.448 -0500", hash_original_field = "355EDF65F5C1DDC97F67C7157FA2BE28", hash_generated_field = "B1F879D1C3141C34182BB7A64318C608")
+
 
     private int mGravity = Gravity.LEFT;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.622 -0400", hash_original_field = "DF43B278CEE8933271AB3D9F9E312F86", hash_generated_field = "A498F2A4744F31D22F9C4ABEBB254F2F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.448 -0500", hash_original_field = "1732EB32F2D77CCA26590AEEA670A175", hash_generated_field = "A498F2A4744F31D22F9C4ABEBB254F2F")
+
 
     private final Rect mTempRect = new Rect();
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.622 -0400", hash_original_method = "6B9AD93D67DF35D03ADA1536C0A58FBF", hash_generated_method = "983C8391566F7BB71FF28D509435B241")
-    public  GridView(Context context) {
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.449 -0500", hash_original_method = "6B9AD93D67DF35D03ADA1536C0A58FBF", hash_generated_method = "ABE07628F01D694A867DBF39CAE0DF48")
+    public GridView(Context context) {
         super(context);
-        addTaint(context.getTaint());
-        // ---------- Original Method ----------
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.623 -0400", hash_original_method = "2A531A248703ACB5E0E1C6A31088A2B2", hash_generated_method = "EEB07A616C5F4990326869DA8C2CA4AF")
-    public  GridView(Context context, AttributeSet attrs) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.450 -0500", hash_original_method = "2A531A248703ACB5E0E1C6A31088A2B2", hash_generated_method = "C8E003F513916A22C8931158363EF113")
+    public GridView(Context context, AttributeSet attrs) {
         this(context, attrs, com.android.internal.R.attr.gridViewStyle);
-        addTaint(attrs.getTaint());
-        addTaint(context.getTaint());
-        // ---------- Original Method ----------
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.660 -0400", hash_original_method = "49F6501DFACF5B2EADDBFC02F7376929", hash_generated_method = "7C7CDE27B7256C7A12014A5C8ADE373F")
-    public  GridView(Context context, AttributeSet attrs, int defStyle) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.451 -0500", hash_original_method = "49F6501DFACF5B2EADDBFC02F7376929", hash_generated_method = "DCB10ACAC309C5FAFBFCB89156380193")
+    public GridView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-        addTaint(defStyle);
-        addTaint(attrs.getTaint());
-        addTaint(context.getTaint());
+
         TypedArray a = context.obtainStyledAttributes(attrs,
                 com.android.internal.R.styleable.GridView, defStyle, 0);
+
         int hSpacing = a.getDimensionPixelOffset(
                 com.android.internal.R.styleable.GridView_horizontalSpacing, 0);
         setHorizontalSpacing(hSpacing);
+
         int vSpacing = a.getDimensionPixelOffset(
                 com.android.internal.R.styleable.GridView_verticalSpacing, 0);
         setVerticalSpacing(vSpacing);
+
         int index = a.getInt(com.android.internal.R.styleable.GridView_stretchMode, STRETCH_COLUMN_WIDTH);
-        if(index >= 0)        
-        {
+        if (index >= 0) {
             setStretchMode(index);
-        } //End block
+        }
+
         int columnWidth = a.getDimensionPixelOffset(com.android.internal.R.styleable.GridView_columnWidth, -1);
-        if(columnWidth > 0)        
-        {
+        if (columnWidth > 0) {
             setColumnWidth(columnWidth);
-        } //End block
+        }
+
         int numColumns = a.getInt(com.android.internal.R.styleable.GridView_numColumns, 1);
         setNumColumns(numColumns);
+
         index = a.getInt(com.android.internal.R.styleable.GridView_gravity, -1);
-        if(index >= 0)        
-        {
+        if (index >= 0) {
             setGravity(index);
-        } //End block
+        }
+        
         a.recycle();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.660 -0400", hash_original_method = "0E1A05724C497F45D7FB6AC34C501814", hash_generated_method = "5D943CC5D986BCC71512128291B275EB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.452 -0500", hash_original_method = "0E1A05724C497F45D7FB6AC34C501814", hash_generated_method = "5911CDE294032BE1D85FC272F0A8BA9B")
     @Override
-    public ListAdapter getAdapter() {
-ListAdapter varD72668EDE5E63ADF9340F3D8A19FD205_936201250 =         mAdapter;
-        varD72668EDE5E63ADF9340F3D8A19FD205_936201250.addTaint(taint);
-        return varD72668EDE5E63ADF9340F3D8A19FD205_936201250;
-        // ---------- Original Method ----------
-        //return mAdapter;
+public ListAdapter getAdapter() {
+        return mAdapter;
     }
 
-    
-        @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.660 -0400", hash_original_method = "8AB2C6958FD7CEC3A8A71FE59763D6A4", hash_generated_method = "F411B04A9F1D200E30F181818B8C9DCB")
+    /**
+     * Sets up this AbsListView to use a remote views adapter which connects to a RemoteViewsService
+     * through the specified intent.
+     * @param intent the intent used to identify the RemoteViewsService for the adapter to connect to.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.453 -0500", hash_original_method = "8AB2C6958FD7CEC3A8A71FE59763D6A4", hash_generated_method = "06FC87714B69CEC8209EE3A8D52302FA")
     @android.view.RemotableViewMethod
-    public void setRemoteViewsAdapter(Intent intent) {
-        addTaint(intent.getTaint());
+public void setRemoteViewsAdapter(Intent intent) {
         super.setRemoteViewsAdapter(intent);
-        // ---------- Original Method ----------
-        //super.setRemoteViewsAdapter(intent);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.662 -0400", hash_original_method = "3B0F7EFF2AD6466D19A6F404E2E1BAAD", hash_generated_method = "659411209A2A02CFCA1A09BF8E3B8DF8")
+    /**
+     * Sets the data behind this GridView.
+     *
+     * @param adapter the adapter providing the grid's data
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.454 -0500", hash_original_method = "3B0F7EFF2AD6466D19A6F404E2E1BAAD", hash_generated_method = "95DC0512BE57B2D786ABF045066D9B37")
     @Override
-    public void setAdapter(ListAdapter adapter) {
-        addTaint(adapter.getTaint());
-        if(mAdapter != null && mDataSetObserver != null)        
-        {
+public void setAdapter(ListAdapter adapter) {
+        if (mAdapter != null && mDataSetObserver != null) {
             mAdapter.unregisterDataSetObserver(mDataSetObserver);
-        } //End block
+        }
+
         resetList();
-        mRecycler.clear();
+        mRecycler.clear();        
         mAdapter = adapter;
+
         mOldSelectedPosition = INVALID_POSITION;
         mOldSelectedRowId = INVALID_ROW_ID;
+
+        // AbsListView#setAdapter will update choice mode states.
         super.setAdapter(adapter);
-        if(mAdapter != null)        
-        {
+
+        if (mAdapter != null) {
             mOldItemCount = mItemCount;
             mItemCount = mAdapter.getCount();
             mDataChanged = true;
             checkFocus();
+
             mDataSetObserver = new AdapterDataSetObserver();
             mAdapter.registerDataSetObserver(mDataSetObserver);
+
             mRecycler.setViewTypeCount(mAdapter.getViewTypeCount());
+
             int position;
-            if(mStackFromBottom)            
-            {
+            if (mStackFromBottom) {
                 position = lookForSelectablePosition(mItemCount - 1, false);
-            } //End block
-            else
-            {
+            } else {
                 position = lookForSelectablePosition(0, true);
-            } //End block
+            }
             setSelectedPositionInt(position);
             setNextSelectedPositionInt(position);
             checkSelectionChanged();
-        } //End block
-        else
-        {
-            checkFocus();
+        } else {
+            checkFocus();            
+            // Nothing selected
             checkSelectionChanged();
-        } //End block
+        }
+
         requestLayout();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.662 -0400", hash_original_method = "D52FAC74E641441314EFBB7F4E58B879", hash_generated_method = "2C29D1FDB914FE8F1C6FFA7E51C6ADA1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.455 -0500", hash_original_method = "D52FAC74E641441314EFBB7F4E58B879", hash_generated_method = "5BE650E550795B7D2F93D3D9635973EB")
     @Override
-     int lookForSelectablePosition(int position, boolean lookDown) {
-        addTaint(lookDown);
-        addTaint(position);
+int lookForSelectablePosition(int position, boolean lookDown) {
         final ListAdapter adapter = mAdapter;
-        if(adapter == null || isInTouchMode())        
-        {
-            int var296D6C732A05FBA51C5854FA7933FE23_393839058 = (INVALID_POSITION);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2102508329 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2102508329;
-        } //End block
-        if(position < 0 || position >= mItemCount)        
-        {
-            int var296D6C732A05FBA51C5854FA7933FE23_653700508 = (INVALID_POSITION);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1964835682 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1964835682;
-        } //End block
-        int var4757FE07FD492A8BE0EA6A760D683D6E_77330949 = (position);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_110135401 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_110135401;
-        // ---------- Original Method ----------
-        //final ListAdapter adapter = mAdapter;
-        //if (adapter == null || isInTouchMode()) {
-            //return INVALID_POSITION;
-        //}
-        //if (position < 0 || position >= mItemCount) {
-            //return INVALID_POSITION;
-        //}
-        //return position;
+        if (adapter == null || isInTouchMode()) {
+            return INVALID_POSITION;
+        }
+
+        if (position < 0 || position >= mItemCount) {
+            return INVALID_POSITION;
+        }
+        return position;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.663 -0400", hash_original_method = "A62E9A831AF61A8CD347891B2F9D44DF", hash_generated_method = "1C16C5B9777022FCAA13A2F48DA29487")
+    /**
+     * {@inheritDoc}
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.456 -0500", hash_original_method = "A62E9A831AF61A8CD347891B2F9D44DF", hash_generated_method = "6BE84A6B8663E3303FA976ACD011B45D")
     @Override
-     void fillGap(boolean down) {
-        addTaint(down);
+void fillGap(boolean down) {
         final int numColumns = mNumColumns;
         final int verticalSpacing = mVerticalSpacing;
+
         final int count = getChildCount();
-        if(down)        
-        {
+
+        if (down) {
             int paddingTop = 0;
-            if((mGroupFlags & CLIP_TO_PADDING_MASK) == CLIP_TO_PADDING_MASK)            
-            {
+            if ((mGroupFlags & CLIP_TO_PADDING_MASK) == CLIP_TO_PADDING_MASK) {
                 paddingTop = getListPaddingTop();
-            } //End block
+            }
             final int startOffset = count > 0 ?
                     getChildAt(count - 1).getBottom() + verticalSpacing : paddingTop;
             int position = mFirstPosition + count;
-            if(mStackFromBottom)            
-            {
+            if (mStackFromBottom) {
                 position += numColumns - 1;
-            } //End block
+            }
             fillDown(position, startOffset);
             correctTooHigh(numColumns, verticalSpacing, getChildCount());
-        } //End block
-        else
-        {
+        } else {
             int paddingBottom = 0;
-            if((mGroupFlags & CLIP_TO_PADDING_MASK) == CLIP_TO_PADDING_MASK)            
-            {
+            if ((mGroupFlags & CLIP_TO_PADDING_MASK) == CLIP_TO_PADDING_MASK) {
                 paddingBottom = getListPaddingBottom();
-            } //End block
+            }
             final int startOffset = count > 0 ?
                     getChildAt(0).getTop() - verticalSpacing : getHeight() - paddingBottom;
             int position = mFirstPosition;
-            if(!mStackFromBottom)            
-            {
+            if (!mStackFromBottom) {
                 position -= numColumns;
-            } //End block
-            else
-            {
+            } else {
                 position--;
-            } //End block
+            }
             fillUp(position, startOffset);
             correctTooLow(numColumns, verticalSpacing, getChildCount());
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.664 -0400", hash_original_method = "6F9360E73E1EB4E0BD6CC48A029E26CB", hash_generated_method = "AEC2E9E3222D0C760CC8AEDB779EABC6")
+    /**
+     * Fills the list from pos down to the end of the list view.
+     *
+     * @param pos The first position to put in the list
+     *
+     * @param nextTop The location where the top of the item associated with pos
+     *        should be drawn
+     *
+     * @return The view that is currently selected, if it happens to be in the
+     *         range that we draw.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.457 -0500", hash_original_method = "6F9360E73E1EB4E0BD6CC48A029E26CB", hash_generated_method = "9B7A92D2BF07B2DF3B6AEF824EA1D2A5")
     private View fillDown(int pos, int nextTop) {
-        addTaint(nextTop);
-        addTaint(pos);
         View selectedView = null;
+
         int end = (mBottom - mTop);
-        if((mGroupFlags & CLIP_TO_PADDING_MASK) == CLIP_TO_PADDING_MASK)        
-        {
+        if ((mGroupFlags & CLIP_TO_PADDING_MASK) == CLIP_TO_PADDING_MASK) {
             end -= mListPadding.bottom;
-        } //End block
-        while
-(nextTop < end && pos < mItemCount)        
-        {
+        }
+
+        while (nextTop < end && pos < mItemCount) {
             View temp = makeRow(pos, nextTop, true);
-            if(temp != null)            
-            {
+            if (temp != null) {
                 selectedView = temp;
-            } //End block
+            }
+
+            // mReferenceView will change with each call to makeRow()
+            // do not cache in a local variable outside of this loop
             nextTop = mReferenceView.getBottom() + mVerticalSpacing;
+
             pos += mNumColumns;
-        } //End block
-View var11299FD0AF79690829705998589379E5_1717180454 =         selectedView;
-        var11299FD0AF79690829705998589379E5_1717180454.addTaint(taint);
-        return var11299FD0AF79690829705998589379E5_1717180454;
-        // ---------- Original Method ----------
-        //View selectedView = null;
-        //int end = (mBottom - mTop);
-        //if ((mGroupFlags & CLIP_TO_PADDING_MASK) == CLIP_TO_PADDING_MASK) {
-            //end -= mListPadding.bottom;
-        //}
-        //while (nextTop < end && pos < mItemCount) {
-            //View temp = makeRow(pos, nextTop, true);
-            //if (temp != null) {
-                //selectedView = temp;
-            //}
-            //nextTop = mReferenceView.getBottom() + mVerticalSpacing;
-            //pos += mNumColumns;
-        //}
-        //return selectedView;
+        }
+
+        return selectedView;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.666 -0400", hash_original_method = "DFB797BE7486A81865BE6BA7ABEE8F5A", hash_generated_method = "F058D207C103B522483D38D8F9DED2BA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.458 -0500", hash_original_method = "DFB797BE7486A81865BE6BA7ABEE8F5A", hash_generated_method = "24F3B769B15A0DA67FF034B71647A995")
     private View makeRow(int startPos, int y, boolean flow) {
-        addTaint(flow);
-        addTaint(y);
-        addTaint(startPos);
         final int columnWidth = mColumnWidth;
         final int horizontalSpacing = mHorizontalSpacing;
+
         int last;
         int nextLeft = mListPadding.left +
                 ((mStretchMode == STRETCH_SPACING_UNIFORM) ? horizontalSpacing : 0);
-        if(!mStackFromBottom)        
-        {
+
+        if (!mStackFromBottom) {
             last = Math.min(startPos + mNumColumns, mItemCount);
-        } //End block
-        else
-        {
+        } else {
             last = startPos + 1;
             startPos = Math.max(0, startPos - mNumColumns + 1);
-            if(last - startPos < mNumColumns)            
-            {
+
+            if (last - startPos < mNumColumns) {
                 nextLeft += (mNumColumns - (last - startPos)) * (columnWidth + horizontalSpacing);
-            } //End block
-        } //End block
+            }
+        }
+
         View selectedView = null;
+
         final boolean hasFocus = shouldShowSelector();
         final boolean inClick = touchModeDrawsInPressedState();
         final int selectedPosition = mSelectedPosition;
+
         View child = null;
-for(int pos = startPos;pos < last;pos++)
-        {
+        for (int pos = startPos; pos < last; pos++) {
+            // is this the selected item?
             boolean selected = pos == selectedPosition;
+            // does the list view have focus or contain focus
+
             final int where = flow ? -1 : pos - startPos;
             child = makeAndAddView(pos, y, flow, nextLeft, selected, where);
+
             nextLeft += columnWidth;
-            if(pos < last - 1)            
-            {
+            if (pos < last - 1) {
                 nextLeft += horizontalSpacing;
-            } //End block
-            if(selected && (hasFocus || inClick))            
-            {
+            }
+
+            if (selected && (hasFocus || inClick)) {
                 selectedView = child;
-            } //End block
-        } //End block
+            }
+        }
+
         mReferenceView = child;
-        if(selectedView != null)        
-        {
+        
+        if (selectedView != null) {
             mReferenceViewInSelectedRow = mReferenceView;
-        } //End block
-View var11299FD0AF79690829705998589379E5_1370012853 =         selectedView;
-        var11299FD0AF79690829705998589379E5_1370012853.addTaint(taint);
-        return var11299FD0AF79690829705998589379E5_1370012853;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        }
+
+        return selectedView;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.667 -0400", hash_original_method = "0AADB00D4F358179B46AC864F825D76F", hash_generated_method = "2DD7A765ABB0DDDE44225F41215DBE4D")
+    /**
+     * Fills the list from pos up to the top of the list view.
+     *
+     * @param pos The first position to put in the list
+     *
+     * @param nextBottom The location where the bottom of the item associated
+     *        with pos should be drawn
+     *
+     * @return The view that is currently selected
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.459 -0500", hash_original_method = "0AADB00D4F358179B46AC864F825D76F", hash_generated_method = "4719EEDEE4C902BF241C158D768547A3")
     private View fillUp(int pos, int nextBottom) {
-        addTaint(nextBottom);
-        addTaint(pos);
         View selectedView = null;
+
         int end = 0;
-        if((mGroupFlags & CLIP_TO_PADDING_MASK) == CLIP_TO_PADDING_MASK)        
-        {
+        if ((mGroupFlags & CLIP_TO_PADDING_MASK) == CLIP_TO_PADDING_MASK) {
             end = mListPadding.top;
-        } //End block
-        while
-(nextBottom > end && pos >= 0)        
-        {
+        }
+
+        while (nextBottom > end && pos >= 0) {
+
             View temp = makeRow(pos, nextBottom, false);
-            if(temp != null)            
-            {
+            if (temp != null) {
                 selectedView = temp;
-            } //End block
+            }
+
             nextBottom = mReferenceView.getTop() - mVerticalSpacing;
+
             mFirstPosition = pos;
+
             pos -= mNumColumns;
-        } //End block
-        if(mStackFromBottom)        
-        {
+        }
+
+        if (mStackFromBottom) {
             mFirstPosition = Math.max(0, pos + 1);
-        } //End block
-View var11299FD0AF79690829705998589379E5_240796271 =         selectedView;
-        var11299FD0AF79690829705998589379E5_240796271.addTaint(taint);
-        return var11299FD0AF79690829705998589379E5_240796271;
-        // ---------- Original Method ----------
-        //View selectedView = null;
-        //int end = 0;
-        //if ((mGroupFlags & CLIP_TO_PADDING_MASK) == CLIP_TO_PADDING_MASK) {
-            //end = mListPadding.top;
-        //}
-        //while (nextBottom > end && pos >= 0) {
-            //View temp = makeRow(pos, nextBottom, false);
-            //if (temp != null) {
-                //selectedView = temp;
-            //}
-            //nextBottom = mReferenceView.getTop() - mVerticalSpacing;
-            //mFirstPosition = pos;
-            //pos -= mNumColumns;
-        //}
-        //if (mStackFromBottom) {
-            //mFirstPosition = Math.max(0, pos + 1);
-        //}
-        //return selectedView;
+        }
+
+        return selectedView;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.667 -0400", hash_original_method = "ECD7EEB642891ACE11FADF160200B8D1", hash_generated_method = "C32227FE76D05473BF1068F8043E5D0E")
+    /**
+     * Fills the list from top to bottom, starting with mFirstPosition
+     *
+     * @param nextTop The location where the top of the first item should be
+     *        drawn
+     *
+     * @return The view that is currently selected
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.460 -0500", hash_original_method = "ECD7EEB642891ACE11FADF160200B8D1", hash_generated_method = "33C179F165B0173000D1AC24FD82604B")
     private View fillFromTop(int nextTop) {
-        addTaint(nextTop);
         mFirstPosition = Math.min(mFirstPosition, mSelectedPosition);
         mFirstPosition = Math.min(mFirstPosition, mItemCount - 1);
-        if(mFirstPosition < 0)        
-        {
+        if (mFirstPosition < 0) {
             mFirstPosition = 0;
-        } //End block
+        }
         mFirstPosition -= mFirstPosition % mNumColumns;
-View var49BCC10837EDABC5CED602D8E493B0B0_957550161 =         fillDown(mFirstPosition, nextTop);
-        var49BCC10837EDABC5CED602D8E493B0B0_957550161.addTaint(taint);
-        return var49BCC10837EDABC5CED602D8E493B0B0_957550161;
-        // ---------- Original Method ----------
-        //mFirstPosition = Math.min(mFirstPosition, mSelectedPosition);
-        //mFirstPosition = Math.min(mFirstPosition, mItemCount - 1);
-        //if (mFirstPosition < 0) {
-            //mFirstPosition = 0;
-        //}
-        //mFirstPosition -= mFirstPosition % mNumColumns;
-        //return fillDown(mFirstPosition, nextTop);
+        return fillDown(mFirstPosition, nextTop);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.668 -0400", hash_original_method = "0818B9EEFC7CF79A0018AB61F39070C0", hash_generated_method = "61316447221188BBA7871AE83229DCF9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.461 -0500", hash_original_method = "0818B9EEFC7CF79A0018AB61F39070C0", hash_generated_method = "99596D7CD85B855E8DABA66A5052D9A7")
     private View fillFromBottom(int lastPosition, int nextBottom) {
-        addTaint(nextBottom);
-        addTaint(lastPosition);
         lastPosition = Math.max(lastPosition, mSelectedPosition);
         lastPosition = Math.min(lastPosition, mItemCount - 1);
+
         final int invertedPosition = mItemCount - 1 - lastPosition;
         lastPosition = mItemCount - 1 - (invertedPosition - (invertedPosition % mNumColumns));
-View var7A713FC2785F6AF8547BE1D5F9426B88_1260687443 =         fillUp(lastPosition, nextBottom);
-        var7A713FC2785F6AF8547BE1D5F9426B88_1260687443.addTaint(taint);
-        return var7A713FC2785F6AF8547BE1D5F9426B88_1260687443;
-        // ---------- Original Method ----------
-        //lastPosition = Math.max(lastPosition, mSelectedPosition);
-        //lastPosition = Math.min(lastPosition, mItemCount - 1);
-        //final int invertedPosition = mItemCount - 1 - lastPosition;
-        //lastPosition = mItemCount - 1 - (invertedPosition - (invertedPosition % mNumColumns));
-        //return fillUp(lastPosition, nextBottom);
+
+        return fillUp(lastPosition, nextBottom);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.669 -0400", hash_original_method = "B869E7B5DD0E41AF8A9344426795B32C", hash_generated_method = "2AA8BEA0D076027472CE39EBDB16ED41")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.462 -0500", hash_original_method = "B869E7B5DD0E41AF8A9344426795B32C", hash_generated_method = "F8B85C969CFEEC3D8547C620DF054DBA")
     private View fillSelection(int childrenTop, int childrenBottom) {
-        addTaint(childrenBottom);
-        addTaint(childrenTop);
         final int selectedPosition = reconcileSelectedPosition();
         final int numColumns = mNumColumns;
         final int verticalSpacing = mVerticalSpacing;
+
         int rowStart;
         int rowEnd = -1;
-        if(!mStackFromBottom)        
-        {
+
+        if (!mStackFromBottom) {
             rowStart = selectedPosition - (selectedPosition % numColumns);
-        } //End block
-        else
-        {
+        } else {
             final int invertedSelection = mItemCount - 1 - selectedPosition;
+
             rowEnd = mItemCount - 1 - (invertedSelection - (invertedSelection % numColumns));
             rowStart = Math.max(0, rowEnd - numColumns + 1);
-        } //End block
+        }
+
         final int fadingEdgeLength = getVerticalFadingEdgeLength();
         final int topSelectionPixel = getTopSelectionPixel(childrenTop, fadingEdgeLength, rowStart);
+
         final View sel = makeRow(mStackFromBottom ? rowEnd : rowStart, topSelectionPixel, true);
         mFirstPosition = rowStart;
+
         final View referenceView = mReferenceView;
-        if(!mStackFromBottom)        
-        {
+
+        if (!mStackFromBottom) {
             fillDown(rowStart + numColumns, referenceView.getBottom() + verticalSpacing);
             pinToBottom(childrenBottom);
             fillUp(rowStart - numColumns, referenceView.getTop() - verticalSpacing);
             adjustViewsUpOrDown();
-        } //End block
-        else
-        {
+        } else {
             final int bottomSelectionPixel = getBottomSelectionPixel(childrenBottom,
                     fadingEdgeLength, numColumns, rowStart);
             final int offset = bottomSelectionPixel - referenceView.getBottom();
@@ -510,1962 +449,1713 @@ View var7A713FC2785F6AF8547BE1D5F9426B88_1260687443 =         fillUp(lastPositio
             pinToTop(childrenTop);
             fillDown(rowEnd + numColumns, referenceView.getBottom() + verticalSpacing);
             adjustViewsUpOrDown();
-        } //End block
-View var7B839F21D0245BE275F8017F44DD4441_1334015250 =         sel;
-        var7B839F21D0245BE275F8017F44DD4441_1334015250.addTaint(taint);
-        return var7B839F21D0245BE275F8017F44DD4441_1334015250;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        }
+
+        return sel;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.670 -0400", hash_original_method = "535BA4E594C209A488B214DB13AE774F", hash_generated_method = "BDB1F94EE6F59E21910186FB9574C923")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.463 -0500", hash_original_method = "535BA4E594C209A488B214DB13AE774F", hash_generated_method = "EB24F9663D958D121E266B1DF47E08C5")
     private void pinToTop(int childrenTop) {
-        addTaint(childrenTop);
-        if(mFirstPosition == 0)        
-        {
+        if (mFirstPosition == 0) {
             final int top = getChildAt(0).getTop();
             final int offset = childrenTop - top;
-            if(offset < 0)            
-            {
+            if (offset < 0) {
                 offsetChildrenTopAndBottom(offset);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (mFirstPosition == 0) {
-            //final int top = getChildAt(0).getTop();
-            //final int offset = childrenTop - top;
-            //if (offset < 0) {
-                //offsetChildrenTopAndBottom(offset);
-            //}
-        //}
+            }
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.670 -0400", hash_original_method = "554B5C3A9DEE69BDD0B0F70052D29046", hash_generated_method = "5DE8813A6CFB2660C7D790230AC35F53")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.464 -0500", hash_original_method = "554B5C3A9DEE69BDD0B0F70052D29046", hash_generated_method = "B5244A1E92CCBB44E425821B936F64D4")
     private void pinToBottom(int childrenBottom) {
-        addTaint(childrenBottom);
         final int count = getChildCount();
-        if(mFirstPosition + count == mItemCount)        
-        {
+        if (mFirstPosition + count == mItemCount) {
             final int bottom = getChildAt(count - 1).getBottom();
             final int offset = childrenBottom - bottom;
-            if(offset > 0)            
-            {
+            if (offset > 0) {
                 offsetChildrenTopAndBottom(offset);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //final int count = getChildCount();
-        //if (mFirstPosition + count == mItemCount) {
-            //final int bottom = getChildAt(count - 1).getBottom();
-            //final int offset = childrenBottom - bottom;
-            //if (offset > 0) {
-                //offsetChildrenTopAndBottom(offset);
-            //}
-        //}
-    }
+            }
+        }
+    }    
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.671 -0400", hash_original_method = "584D06EE6653E11D28AE97D7ADF4C3E4", hash_generated_method = "A35B897E51D9810A91EF80B571445B89")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.465 -0500", hash_original_method = "584D06EE6653E11D28AE97D7ADF4C3E4", hash_generated_method = "8861CD9CEAD89E19D16DF2CF0D1962F3")
     @Override
-     int findMotionRow(int y) {
-        addTaint(y);
+int findMotionRow(int y) {
         final int childCount = getChildCount();
-        if(childCount > 0)        
-        {
+        if (childCount > 0) {
+
             final int numColumns = mNumColumns;
-            if(!mStackFromBottom)            
-            {
-for(int i = 0;i < childCount;i += numColumns)
-                {
-                    if(y <= getChildAt(i).getBottom())                    
-                    {
-                        int varB4D2F09D0AD5244C9E57B5AF8AB759AE_2074194732 = (mFirstPosition + i);
-                                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_937714823 = getTaintInt();
-                        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_937714823;
-                    } //End block
-                } //End block
-            } //End block
-            else
-            {
-for(int i = childCount - 1;i >= 0;i -= numColumns)
-                {
-                    if(y >= getChildAt(i).getTop())                    
-                    {
-                        int varB4D2F09D0AD5244C9E57B5AF8AB759AE_1528884612 = (mFirstPosition + i);
-                                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1794204017 = getTaintInt();
-                        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1794204017;
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
-        int var296D6C732A05FBA51C5854FA7933FE23_169774180 = (INVALID_POSITION);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1502916954 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1502916954;
-        // ---------- Original Method ----------
-        //final int childCount = getChildCount();
-        //if (childCount > 0) {
-            //final int numColumns = mNumColumns;
-            //if (!mStackFromBottom) {
-                //for (int i = 0; i < childCount; i += numColumns) {
-                    //if (y <= getChildAt(i).getBottom()) {
-                        //return mFirstPosition + i;
-                    //}
-                //}
-            //} else {
-                //for (int i = childCount - 1; i >= 0; i -= numColumns) {
-                    //if (y >= getChildAt(i).getTop()) {
-                        //return mFirstPosition + i;
-                    //}
-                //}
-            //}
-        //}
-        //return INVALID_POSITION;
+            if (!mStackFromBottom) {
+                for (int i = 0; i < childCount; i += numColumns) {
+                    if (y <= getChildAt(i).getBottom()) {
+                        return mFirstPosition + i;
+                    }
+                }
+            } else {
+                for (int i = childCount - 1; i >= 0; i -= numColumns) {
+                    if (y >= getChildAt(i).getTop()) {
+                        return mFirstPosition + i;
+                    }
+                }
+            }
+        }
+        return INVALID_POSITION;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.673 -0400", hash_original_method = "2BE5C63CD6BB6072D8C1046433555060", hash_generated_method = "1ACA2C36188F415C9867F75691B40849")
+    /**
+     * Layout during a scroll that results from tracking motion events. Places
+     * the mMotionPosition view at the offset specified by mMotionViewTop, and
+     * then build surrounding views from there.
+     *
+     * @param position the position at which to start filling
+     * @param top the top of the view at that position
+     * @return The selected view, or null if the selected view is outside the
+     *         visible area.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.466 -0500", hash_original_method = "2BE5C63CD6BB6072D8C1046433555060", hash_generated_method = "5AD83F81760763EF512D2ACACD902724")
     private View fillSpecific(int position, int top) {
-        addTaint(top);
-        addTaint(position);
         final int numColumns = mNumColumns;
+
         int motionRowStart;
         int motionRowEnd = -1;
-        if(!mStackFromBottom)        
-        {
+
+        if (!mStackFromBottom) {
             motionRowStart = position - (position % numColumns);
-        } //End block
-        else
-        {
+        } else {
             final int invertedSelection = mItemCount - 1 - position;
+
             motionRowEnd = mItemCount - 1 - (invertedSelection - (invertedSelection % numColumns));
             motionRowStart = Math.max(0, motionRowEnd - numColumns + 1);
-        } //End block
+        }
+
         final View temp = makeRow(mStackFromBottom ? motionRowEnd : motionRowStart, top, true);
+
+        // Possibly changed again in fillUp if we add rows above this one.
         mFirstPosition = motionRowStart;
+
         final View referenceView = mReferenceView;
-        if(referenceView == null)        
-        {
-View var540C13E9E156B687226421B24F2DF178_1549572140 =             null;
-            var540C13E9E156B687226421B24F2DF178_1549572140.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_1549572140;
-        } //End block
+        // We didn't have anything to layout, bail out
+        if (referenceView == null) {
+            return null;
+        }
+
         final int verticalSpacing = mVerticalSpacing;
+
         View above;
         View below;
-        if(!mStackFromBottom)        
-        {
+
+        if (!mStackFromBottom) {
             above = fillUp(motionRowStart - numColumns, referenceView.getTop() - verticalSpacing);
             adjustViewsUpOrDown();
             below = fillDown(motionRowStart + numColumns, referenceView.getBottom() + verticalSpacing);
+            // Check if we have dragged the bottom of the grid too high
             final int childCount = getChildCount();
-            if(childCount > 0)            
-            {
+            if (childCount > 0) {
                 correctTooHigh(numColumns, verticalSpacing, childCount);
-            } //End block
-        } //End block
-        else
-        {
+            }
+        } else {
             below = fillDown(motionRowEnd + numColumns, referenceView.getBottom() + verticalSpacing);
             adjustViewsUpOrDown();
             above = fillUp(motionRowStart - 1, referenceView.getTop() - verticalSpacing);
+            // Check if we have dragged the bottom of the grid too high
             final int childCount = getChildCount();
-            if(childCount > 0)            
-            {
+            if (childCount > 0) {
                 correctTooLow(numColumns, verticalSpacing, childCount);
-            } //End block
-        } //End block
-        if(temp != null)        
-        {
-View var85AF0530723FAED0F9065F029B9D6041_365323855 =             temp;
-            var85AF0530723FAED0F9065F029B9D6041_365323855.addTaint(taint);
-            return var85AF0530723FAED0F9065F029B9D6041_365323855;
-        } //End block
-        else
-        if(above != null)        
-        {
-View varCD3155DFCED4EB61161BED1FF630FDBA_1481623930 =             above;
-            varCD3155DFCED4EB61161BED1FF630FDBA_1481623930.addTaint(taint);
-            return varCD3155DFCED4EB61161BED1FF630FDBA_1481623930;
-        } //End block
-        else
-        {
-View var2F0E8DD6CEEAC90C0D2F6260FE322E29_1339804155 =             below;
-            var2F0E8DD6CEEAC90C0D2F6260FE322E29_1339804155.addTaint(taint);
-            return var2F0E8DD6CEEAC90C0D2F6260FE322E29_1339804155;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            }
+        }
+
+        if (temp != null) {
+            return temp;
+        } else if (above != null) {
+            return above;
+        } else {
+            return below;
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.674 -0400", hash_original_method = "61C0C7B3D4F01380F7804BB62430F50F", hash_generated_method = "9D4F8BE31322A3C9A5D969A9C7DE2E41")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.467 -0500", hash_original_method = "61C0C7B3D4F01380F7804BB62430F50F", hash_generated_method = "8888D64E11489B800674836006836C16")
     private void correctTooHigh(int numColumns, int verticalSpacing, int childCount) {
-        addTaint(childCount);
-        addTaint(verticalSpacing);
-        addTaint(numColumns);
+        // First see if the last item is visible
         final int lastPosition = mFirstPosition + childCount - 1;
-        if(lastPosition == mItemCount - 1 && childCount > 0)        
-        {
+        if (lastPosition == mItemCount - 1 && childCount > 0) {
+            // Get the last child ...
             final View lastChild = getChildAt(childCount - 1);
+
+            // ... and its bottom edge
             final int lastBottom = lastChild.getBottom();
+            // This is bottom of our drawable area
             final int end = (mBottom - mTop) - mListPadding.bottom;
-            int bottomOffset = end - lastBottom;
+
+            // This is how far the bottom edge of the last view is from the bottom of the
+            // drawable area
+            int bottomOffset = end - lastBottom;        
+
             final View firstChild = getChildAt(0);
             final int firstTop = firstChild.getTop();
-            if(bottomOffset > 0 && (mFirstPosition > 0 || firstTop < mListPadding.top))            
-            {
-                if(mFirstPosition == 0)                
-                {
+
+            // Make sure we are 1) Too high, and 2) Either there are more rows above the
+            // first row or the first row is scrolled off the top of the drawable area
+            if (bottomOffset > 0 && (mFirstPosition > 0 || firstTop < mListPadding.top))  {
+                if (mFirstPosition == 0) {
+                    // Don't pull the top too far down
                     bottomOffset = Math.min(bottomOffset, mListPadding.top - firstTop);
-                } //End block
+                }
+                
+                // Move everything down
                 offsetChildrenTopAndBottom(bottomOffset);
-                if(mFirstPosition > 0)                
-                {
+                if (mFirstPosition > 0) {
+                    // Fill the gap that was opened above mFirstPosition with more rows, if
+                    // possible
                     fillUp(mFirstPosition - (mStackFromBottom ? 1 : numColumns),
                             firstChild.getTop() - verticalSpacing);
+                    // Close up the remaining gap
                     adjustViewsUpOrDown();
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                }
+            }
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.675 -0400", hash_original_method = "C582B4D472853F3118C6A87E3BA2D3CE", hash_generated_method = "6E238BF7C99DFF1F30656005ACA29E77")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.468 -0500", hash_original_method = "C582B4D472853F3118C6A87E3BA2D3CE", hash_generated_method = "D524678A7249BA14D4C9884359609912")
     private void correctTooLow(int numColumns, int verticalSpacing, int childCount) {
-        addTaint(childCount);
-        addTaint(verticalSpacing);
-        addTaint(numColumns);
-        if(mFirstPosition == 0 && childCount > 0)        
-        {
+        if (mFirstPosition == 0 && childCount > 0) {
+            // Get the first child ...
             final View firstChild = getChildAt(0);
+
+            // ... and its top edge
             final int firstTop = firstChild.getTop();
+
+            // This is top of our drawable area
             final int start = mListPadding.top;
+
+            // This is bottom of our drawable area
             final int end = (mBottom - mTop) - mListPadding.bottom;
+
+            // This is how far the top edge of the first view is from the top of the
+            // drawable area
             int topOffset = firstTop - start;
             final View lastChild = getChildAt(childCount - 1);
             final int lastBottom = lastChild.getBottom();
             final int lastPosition = mFirstPosition + childCount - 1;
-            if(topOffset > 0 && (lastPosition < mItemCount - 1 || lastBottom > end))            
-            {
-                if(lastPosition == mItemCount - 1)                
-                {
+
+            // Make sure we are 1) Too low, and 2) Either there are more rows below the
+            // last row or the last row is scrolled off the bottom of the drawable area
+            if (topOffset > 0 && (lastPosition < mItemCount - 1 || lastBottom > end))  {
+                if (lastPosition == mItemCount - 1 ) {
+                    // Don't pull the bottom too far up
                     topOffset = Math.min(topOffset, lastBottom - end);
-                } //End block
+                }
+                
+                // Move everything up
                 offsetChildrenTopAndBottom(-topOffset);
-                if(lastPosition < mItemCount - 1)                
-                {
+                if (lastPosition < mItemCount - 1) {
+                    // Fill the gap that was opened below the last position with more rows, if
+                    // possible
                     fillDown(lastPosition + (!mStackFromBottom ? 1 : numColumns),
                             lastChild.getBottom() + verticalSpacing);
+                    // Close up the remaining gap
                     adjustViewsUpOrDown();
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                }
+            }
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.677 -0400", hash_original_method = "AC707126EF44BD77373D761D306CE415", hash_generated_method = "321A167F93E6A2CD99C6419833F5D30E")
+    /**
+     * Fills the grid based on positioning the new selection at a specific
+     * location. The selection may be moved so that it does not intersect the
+     * faded edges. The grid is then filled upwards and downwards from there.
+     *
+     * @param selectedTop Where the selected item should be
+     * @param childrenTop Where to start drawing children
+     * @param childrenBottom Last pixel where children can be drawn
+     * @return The view that currently has selection
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.469 -0500", hash_original_method = "AC707126EF44BD77373D761D306CE415", hash_generated_method = "D0E41D6528D270D96ED7F0179237EF44")
     private View fillFromSelection(int selectedTop, int childrenTop, int childrenBottom) {
-        addTaint(childrenBottom);
-        addTaint(childrenTop);
-        addTaint(selectedTop);
         final int fadingEdgeLength = getVerticalFadingEdgeLength();
         final int selectedPosition = mSelectedPosition;
         final int numColumns = mNumColumns;
         final int verticalSpacing = mVerticalSpacing;
+
         int rowStart;
         int rowEnd = -1;
-        if(!mStackFromBottom)        
-        {
+
+        if (!mStackFromBottom) {
             rowStart = selectedPosition - (selectedPosition % numColumns);
-        } //End block
-        else
-        {
+        } else {
             int invertedSelection = mItemCount - 1 - selectedPosition;
+
             rowEnd = mItemCount - 1 - (invertedSelection - (invertedSelection % numColumns));
             rowStart = Math.max(0, rowEnd - numColumns + 1);
-        } //End block
+        }
+
         View sel;
         View referenceView;
+
         int topSelectionPixel = getTopSelectionPixel(childrenTop, fadingEdgeLength, rowStart);
         int bottomSelectionPixel = getBottomSelectionPixel(childrenBottom, fadingEdgeLength,
                 numColumns, rowStart);
+
         sel = makeRow(mStackFromBottom ? rowEnd : rowStart, selectedTop, true);
+        // Possibly changed again in fillUp if we add rows above this one.
         mFirstPosition = rowStart;
+
         referenceView = mReferenceView;
         adjustForTopFadingEdge(referenceView, topSelectionPixel, bottomSelectionPixel);
         adjustForBottomFadingEdge(referenceView, topSelectionPixel, bottomSelectionPixel);
-        if(!mStackFromBottom)        
-        {
+
+        if (!mStackFromBottom) {
             fillUp(rowStart - numColumns, referenceView.getTop() - verticalSpacing);
             adjustViewsUpOrDown();
             fillDown(rowStart + numColumns, referenceView.getBottom() + verticalSpacing);
-        } //End block
-        else
-        {
+        } else {
             fillDown(rowEnd + numColumns, referenceView.getBottom() + verticalSpacing);
             adjustViewsUpOrDown();
             fillUp(rowStart - 1, referenceView.getTop() - verticalSpacing);
-        } //End block
-View var7B839F21D0245BE275F8017F44DD4441_1526161123 =         sel;
-        var7B839F21D0245BE275F8017F44DD4441_1526161123.addTaint(taint);
-        return var7B839F21D0245BE275F8017F44DD4441_1526161123;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        }
+
+
+        return sel;
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.677 -0400", hash_original_method = "3B93521E4F8B514C6E0E966E64E45808", hash_generated_method = "7F853AA078B5C44E0CD80325EEAEC3C7")
+    /**
+     * Calculate the bottom-most pixel we can draw the selection into
+     *
+     * @param childrenBottom Bottom pixel were children can be drawn
+     * @param fadingEdgeLength Length of the fading edge in pixels, if present
+     * @param numColumns Number of columns in the grid
+     * @param rowStart The start of the row that will contain the selection
+     * @return The bottom-most pixel we can draw the selection into
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.470 -0500", hash_original_method = "3B93521E4F8B514C6E0E966E64E45808", hash_generated_method = "06BF56C805E06046C6C4BDA431C1DB2F")
     private int getBottomSelectionPixel(int childrenBottom, int fadingEdgeLength,
             int numColumns, int rowStart) {
-        addTaint(rowStart);
-        addTaint(numColumns);
-        addTaint(fadingEdgeLength);
-        addTaint(childrenBottom);
+        // Last pixel we can draw the selection into
         int bottomSelectionPixel = childrenBottom;
-        if(rowStart + numColumns - 1 < mItemCount - 1)        
-        {
+        if (rowStart + numColumns - 1 < mItemCount - 1) {
             bottomSelectionPixel -= fadingEdgeLength;
-        } //End block
-        int var8C1BAEE08BF7BBE553C84235F7A5E3D8_1154217846 = (bottomSelectionPixel);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_508184040 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_508184040;
-        // ---------- Original Method ----------
-        //int bottomSelectionPixel = childrenBottom;
-        //if (rowStart + numColumns - 1 < mItemCount - 1) {
-            //bottomSelectionPixel -= fadingEdgeLength;
-        //}
-        //return bottomSelectionPixel;
+        }
+        return bottomSelectionPixel;
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.678 -0400", hash_original_method = "D0A32123B024D3BD3B829FD608C467F8", hash_generated_method = "300918EAB6EB77B7255F8D6995D50A4C")
+    /**
+     * Calculate the top-most pixel we can draw the selection into
+     *
+     * @param childrenTop Top pixel were children can be drawn
+     * @param fadingEdgeLength Length of the fading edge in pixels, if present
+     * @param rowStart The start of the row that will contain the selection
+     * @return The top-most pixel we can draw the selection into
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.471 -0500", hash_original_method = "D0A32123B024D3BD3B829FD608C467F8", hash_generated_method = "39666F385A9AB5B1D8AF12E0E0620C2A")
     private int getTopSelectionPixel(int childrenTop, int fadingEdgeLength, int rowStart) {
-        addTaint(rowStart);
-        addTaint(fadingEdgeLength);
-        addTaint(childrenTop);
+        // first pixel we can draw the selection into
         int topSelectionPixel = childrenTop;
-        if(rowStart > 0)        
-        {
+        if (rowStart > 0) {
             topSelectionPixel += fadingEdgeLength;
-        } //End block
-        int var9B1B38FE46FCA5DD3FBB400FF9DA31B9_1586770741 = (topSelectionPixel);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1413683865 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1413683865;
-        // ---------- Original Method ----------
-        //int topSelectionPixel = childrenTop;
-        //if (rowStart > 0) {
-            //topSelectionPixel += fadingEdgeLength;
-        //}
-        //return topSelectionPixel;
+        }
+        return topSelectionPixel;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.679 -0400", hash_original_method = "683433A1D2226A93C6C052E4367B337E", hash_generated_method = "27F6419AA3C2D4101663C980DA14D6CA")
+    /**
+     * Move all views upwards so the selected row does not interesect the bottom
+     * fading edge (if necessary).
+     *
+     * @param childInSelectedRow A child in the row that contains the selection
+     * @param topSelectionPixel The topmost pixel we can draw the selection into
+     * @param bottomSelectionPixel The bottommost pixel we can draw the
+     *        selection into
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.472 -0500", hash_original_method = "683433A1D2226A93C6C052E4367B337E", hash_generated_method = "E878B686A2591643DAA083868B7AD669")
     private void adjustForBottomFadingEdge(View childInSelectedRow,
             int topSelectionPixel, int bottomSelectionPixel) {
-        addTaint(bottomSelectionPixel);
-        addTaint(topSelectionPixel);
-        addTaint(childInSelectedRow.getTaint());
-        if(childInSelectedRow.getBottom() > bottomSelectionPixel)        
-        {
+        // Some of the newly selected item extends below the bottom of the
+        // list
+        if (childInSelectedRow.getBottom() > bottomSelectionPixel) {
+
+            // Find space available above the selection into which we can
+            // scroll upwards
             int spaceAbove = childInSelectedRow.getTop() - topSelectionPixel;
+
+            // Find space required to bring the bottom of the selected item
+            // fully into view
             int spaceBelow = childInSelectedRow.getBottom() - bottomSelectionPixel;
             int offset = Math.min(spaceAbove, spaceBelow);
+
+            // Now offset the selected item to get it into view
             offsetChildrenTopAndBottom(-offset);
-        } //End block
-        // ---------- Original Method ----------
-        //if (childInSelectedRow.getBottom() > bottomSelectionPixel) {
-            //int spaceAbove = childInSelectedRow.getTop() - topSelectionPixel;
-            //int spaceBelow = childInSelectedRow.getBottom() - bottomSelectionPixel;
-            //int offset = Math.min(spaceAbove, spaceBelow);
-            //offsetChildrenTopAndBottom(-offset);
-        //}
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.679 -0400", hash_original_method = "E9E54F71CD8326C8AF2C780315CD689D", hash_generated_method = "9D027445A4AA270459F47B17617A7921")
+    /**
+     * Move all views upwards so the selected row does not interesect the top
+     * fading edge (if necessary).
+     *
+     * @param childInSelectedRow A child in the row that contains the selection
+     * @param topSelectionPixel The topmost pixel we can draw the selection into
+     * @param bottomSelectionPixel The bottommost pixel we can draw the
+     *        selection into
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.473 -0500", hash_original_method = "E9E54F71CD8326C8AF2C780315CD689D", hash_generated_method = "E55330C8EE6F8D117A9BF2110C3DAF64")
     private void adjustForTopFadingEdge(View childInSelectedRow,
             int topSelectionPixel, int bottomSelectionPixel) {
-        addTaint(bottomSelectionPixel);
-        addTaint(topSelectionPixel);
-        addTaint(childInSelectedRow.getTaint());
-        if(childInSelectedRow.getTop() < topSelectionPixel)        
-        {
+        // Some of the newly selected item extends above the top of the list
+        if (childInSelectedRow.getTop() < topSelectionPixel) {
+            // Find space required to bring the top of the selected item
+            // fully into view
             int spaceAbove = topSelectionPixel - childInSelectedRow.getTop();
+
+            // Find space available below the selection into which we can
+            // scroll downwards
             int spaceBelow = bottomSelectionPixel - childInSelectedRow.getBottom();
             int offset = Math.min(spaceAbove, spaceBelow);
+
+            // Now offset the selected item to get it into view
             offsetChildrenTopAndBottom(offset);
-        } //End block
-        // ---------- Original Method ----------
-        //if (childInSelectedRow.getTop() < topSelectionPixel) {
-            //int spaceAbove = topSelectionPixel - childInSelectedRow.getTop();
-            //int spaceBelow = bottomSelectionPixel - childInSelectedRow.getBottom();
-            //int offset = Math.min(spaceAbove, spaceBelow);
-            //offsetChildrenTopAndBottom(offset);
-        //}
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.680 -0400", hash_original_method = "19B54E9E42F50C19B80602093C26BC32", hash_generated_method = "13D89CD9CDD5D76B097C78A9C6F471D8")
+    /**
+     * Smoothly scroll to the specified adapter position. The view will
+     * scroll such that the indicated position is displayed.
+     * @param position Scroll to this adapter position.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.474 -0500", hash_original_method = "19B54E9E42F50C19B80602093C26BC32", hash_generated_method = "A8A3C236FF85813945F7C1B0B7869E60")
     @android.view.RemotableViewMethod
-    public void smoothScrollToPosition(int position) {
-        addTaint(position);
+public void smoothScrollToPosition(int position) {
         super.smoothScrollToPosition(position);
-        // ---------- Original Method ----------
-        //super.smoothScrollToPosition(position);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.680 -0400", hash_original_method = "9A2E566018459C8A4F9FE2F49DBB98B8", hash_generated_method = "3F9C88E5F8435EC02B22E53B890AC667")
+    /**
+     * Smoothly scroll to the specified adapter position offset. The view will
+     * scroll such that the indicated position is displayed.
+     * @param offset The amount to offset from the adapter position to scroll to.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.474 -0500", hash_original_method = "9A2E566018459C8A4F9FE2F49DBB98B8", hash_generated_method = "8E840BFE7E6405298EC13CA3DE52B347")
     @android.view.RemotableViewMethod
-    public void smoothScrollByOffset(int offset) {
-        addTaint(offset);
+public void smoothScrollByOffset(int offset) {
         super.smoothScrollByOffset(offset);
-        // ---------- Original Method ----------
-        //super.smoothScrollByOffset(offset);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.682 -0400", hash_original_method = "55F676D436FF1EC67ECC1C028E81ED27", hash_generated_method = "77E614A013E8281D4D06315381859594")
+    /**
+     * Fills the grid based on positioning the new selection relative to the old
+     * selection. The new selection will be placed at, above, or below the
+     * location of the new selection depending on how the selection is moving.
+     * The selection will then be pinned to the visible part of the screen,
+     * excluding the edges that are faded. The grid is then filled upwards and
+     * downwards from there.
+     *
+     * @param delta Which way we are moving
+     * @param childrenTop Where to start drawing children
+     * @param childrenBottom Last pixel where children can be drawn
+     * @return The view that currently has selection
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.476 -0500", hash_original_method = "55F676D436FF1EC67ECC1C028E81ED27", hash_generated_method = "AC9FD73229CF68305BF944740C6C29B7")
     private View moveSelection(int delta, int childrenTop, int childrenBottom) {
-        addTaint(childrenBottom);
-        addTaint(childrenTop);
-        addTaint(delta);
         final int fadingEdgeLength = getVerticalFadingEdgeLength();
         final int selectedPosition = mSelectedPosition;
         final int numColumns = mNumColumns;
         final int verticalSpacing = mVerticalSpacing;
+
         int oldRowStart;
         int rowStart;
         int rowEnd = -1;
-        if(!mStackFromBottom)        
-        {
+
+        if (!mStackFromBottom) {
             oldRowStart = (selectedPosition - delta) - ((selectedPosition - delta) % numColumns);
+
             rowStart = selectedPosition - (selectedPosition % numColumns);
-        } //End block
-        else
-        {
+        } else {
             int invertedSelection = mItemCount - 1 - selectedPosition;
+
             rowEnd = mItemCount - 1 - (invertedSelection - (invertedSelection % numColumns));
             rowStart = Math.max(0, rowEnd - numColumns + 1);
+
             invertedSelection = mItemCount - 1 - (selectedPosition - delta);
             oldRowStart = mItemCount - 1 - (invertedSelection - (invertedSelection % numColumns));
             oldRowStart = Math.max(0, oldRowStart - numColumns + 1);
-        } //End block
+        }
+
         final int rowDelta = rowStart - oldRowStart;
+
         final int topSelectionPixel = getTopSelectionPixel(childrenTop, fadingEdgeLength, rowStart);
         final int bottomSelectionPixel = getBottomSelectionPixel(childrenBottom, fadingEdgeLength,
                 numColumns, rowStart);
+
+        // Possibly changed again in fillUp if we add rows above this one.
         mFirstPosition = rowStart;
+
         View sel;
         View referenceView;
-        if(rowDelta > 0)        
-        {
+
+        if (rowDelta > 0) {
+            /*
+             * Case 1: Scrolling down.
+             */
+
             final int oldBottom = mReferenceViewInSelectedRow == null ? 0 :
                     mReferenceViewInSelectedRow.getBottom();
+
             sel = makeRow(mStackFromBottom ? rowEnd : rowStart, oldBottom + verticalSpacing, true);
             referenceView = mReferenceView;
+
             adjustForBottomFadingEdge(referenceView, topSelectionPixel, bottomSelectionPixel);
-        } //End block
-        else
-        if(rowDelta < 0)        
-        {
+        } else if (rowDelta < 0) {
+            /*
+             * Case 2: Scrolling up.
+             */
             final int oldTop = mReferenceViewInSelectedRow == null ?
                     0 : mReferenceViewInSelectedRow .getTop();
+
             sel = makeRow(mStackFromBottom ? rowEnd : rowStart, oldTop - verticalSpacing, false);
             referenceView = mReferenceView;
+
             adjustForTopFadingEdge(referenceView, topSelectionPixel, bottomSelectionPixel);
-        } //End block
-        else
-        {
+        } else {
+            /*
+             * Keep selection where it was
+             */
             final int oldTop = mReferenceViewInSelectedRow == null ?
                     0 : mReferenceViewInSelectedRow .getTop();
+
             sel = makeRow(mStackFromBottom ? rowEnd : rowStart, oldTop, true);
             referenceView = mReferenceView;
-        } //End block
-        if(!mStackFromBottom)        
-        {
+        }
+
+        if (!mStackFromBottom) {
             fillUp(rowStart - numColumns, referenceView.getTop() - verticalSpacing);
             adjustViewsUpOrDown();
             fillDown(rowStart + numColumns, referenceView.getBottom() + verticalSpacing);
-        } //End block
-        else
-        {
+        } else {
             fillDown(rowEnd + numColumns, referenceView.getBottom() + verticalSpacing);
             adjustViewsUpOrDown();
             fillUp(rowStart - 1, referenceView.getTop() - verticalSpacing);
-        } //End block
-View var7B839F21D0245BE275F8017F44DD4441_1780068322 =         sel;
-        var7B839F21D0245BE275F8017F44DD4441_1780068322.addTaint(taint);
-        return var7B839F21D0245BE275F8017F44DD4441_1780068322;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        }
+
+        return sel;
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.684 -0400", hash_original_method = "971C7C8872B1F8EEBA5FB107FC6F8364", hash_generated_method = "8CF38DEC4D6A4B3D273EE461D011C65A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.477 -0500", hash_original_method = "971C7C8872B1F8EEBA5FB107FC6F8364", hash_generated_method = "8132EE35DB741A8DBF4373270403A74E")
     private boolean determineColumns(int availableSpace) {
         final int requestedHorizontalSpacing = mRequestedHorizontalSpacing;
         final int stretchMode = mStretchMode;
         final int requestedColumnWidth = mRequestedColumnWidth;
         boolean didNotInitiallyFit = false;
-        if(mRequestedNumColumns == AUTO_FIT)        
-        {
-            if(requestedColumnWidth > 0)            
-            {
+        
+        if (mRequestedNumColumns == AUTO_FIT) {
+            if (requestedColumnWidth > 0) {
+                // Client told us to pick the number of columns
                 mNumColumns = (availableSpace + requestedHorizontalSpacing) /
                         (requestedColumnWidth + requestedHorizontalSpacing);
-            } //End block
-            else
-            {
+            } else {
+                // Just make up a number if we don't have enough info
                 mNumColumns = 2;
-            } //End block
-        } //End block
-        else
-        {
+            }
+        } else {
+            // We picked the columns
             mNumColumns = mRequestedNumColumns;
-        } //End block
-        if(mNumColumns <= 0)        
-        {
+        }
+        
+        if (mNumColumns <= 0) {
             mNumColumns = 1;
-        } //End block
-switch(stretchMode){
+        }
+
+        switch (stretchMode) {
         case NO_STRETCH:
-        mColumnWidth = requestedColumnWidth;
-        mHorizontalSpacing = requestedHorizontalSpacing;
-        break;
+            // Nobody stretches
+            mColumnWidth = requestedColumnWidth;
+            mHorizontalSpacing = requestedHorizontalSpacing;
+            break;
+
         default:
-        int spaceLeftOver = availableSpace - (mNumColumns * requestedColumnWidth) -
+            int spaceLeftOver = availableSpace - (mNumColumns * requestedColumnWidth) -
                     ((mNumColumns - 1) * requestedHorizontalSpacing);
-        if(spaceLeftOver < 0)        
-        {
-            didNotInitiallyFit = true;
-        } //End block
-switch(stretchMode){
-        case STRETCH_COLUMN_WIDTH:
-        mColumnWidth = requestedColumnWidth + spaceLeftOver / mNumColumns;
-        mHorizontalSpacing = requestedHorizontalSpacing;
-        break;
-        case STRETCH_SPACING:
-        mColumnWidth = requestedColumnWidth;
-        if(mNumColumns > 1)        
-        {
-            mHorizontalSpacing = requestedHorizontalSpacing + 
+
+            if (spaceLeftOver < 0) {
+                didNotInitiallyFit = true;
+            }
+
+            switch (stretchMode) {
+            case STRETCH_COLUMN_WIDTH:
+                // Stretch the columns
+                mColumnWidth = requestedColumnWidth + spaceLeftOver / mNumColumns;
+                mHorizontalSpacing = requestedHorizontalSpacing;
+                break;
+
+            case STRETCH_SPACING:
+                // Stretch the spacing between columns
+                mColumnWidth = requestedColumnWidth;
+                if (mNumColumns > 1) {
+                    mHorizontalSpacing = requestedHorizontalSpacing + 
                         spaceLeftOver / (mNumColumns - 1);
-        } //End block
-        else
-        {
-            mHorizontalSpacing = requestedHorizontalSpacing + spaceLeftOver;
-        } //End block
-        break;
-        case STRETCH_SPACING_UNIFORM:
-        mColumnWidth = requestedColumnWidth;
-        if(mNumColumns > 1)        
-        {
-            mHorizontalSpacing = requestedHorizontalSpacing + 
+                } else {
+                    mHorizontalSpacing = requestedHorizontalSpacing + spaceLeftOver;
+                }
+                break;
+
+            case STRETCH_SPACING_UNIFORM:
+                // Stretch the spacing between columns
+                mColumnWidth = requestedColumnWidth;
+                if (mNumColumns > 1) {
+                    mHorizontalSpacing = requestedHorizontalSpacing + 
                         spaceLeftOver / (mNumColumns + 1);
-        } //End block
-        else
-        {
-            mHorizontalSpacing = requestedHorizontalSpacing + spaceLeftOver;
-        } //End block
-        break;
-}        break;
-}        boolean var2BD242B1C363F4BFB823FD7C70B8F10A_13762658 = (didNotInitiallyFit);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_903412384 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_903412384;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                } else {
+                    mHorizontalSpacing = requestedHorizontalSpacing + spaceLeftOver;
+                }
+                break;
+            }
+
+            break;
+        }
+        return didNotInitiallyFit;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.687 -0400", hash_original_method = "DE2B2122B3B8477B4CE53B0961FAB462", hash_generated_method = "AE0E1CEA61A98D89298EB2A83C8813BE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.479 -0500", hash_original_method = "DE2B2122B3B8477B4CE53B0961FAB462", hash_generated_method = "050517F766584F8B04D6031409D0D1C2")
     @Override
-    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(heightMeasureSpec);
-        addTaint(widthMeasureSpec);
+protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        // Sets up mListPadding
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+
         int widthMode = MeasureSpec.getMode(widthMeasureSpec);
         int heightMode = MeasureSpec.getMode(heightMeasureSpec);
         int widthSize = MeasureSpec.getSize(widthMeasureSpec);
         int heightSize = MeasureSpec.getSize(heightMeasureSpec);
-        if(widthMode == MeasureSpec.UNSPECIFIED)        
-        {
-            if(mColumnWidth > 0)            
-            {
+
+        if (widthMode == MeasureSpec.UNSPECIFIED) {
+            if (mColumnWidth > 0) {
                 widthSize = mColumnWidth + mListPadding.left + mListPadding.right;
-            } //End block
-            else
-            {
+            } else {
                 widthSize = mListPadding.left + mListPadding.right;
-            } //End block
+            }
             widthSize += getVerticalScrollbarWidth();
-        } //End block
+        }
+        
         int childWidth = widthSize - mListPadding.left - mListPadding.right;
         boolean didNotInitiallyFit = determineColumns(childWidth);
+
         int childHeight = 0;
         int childState = 0;
+
         mItemCount = mAdapter == null ? 0 : mAdapter.getCount();
         final int count = mItemCount;
-        if(count > 0)        
-        {
+        if (count > 0) {
             final View child = obtainView(0, mIsScrap);
+
             AbsListView.LayoutParams p = (AbsListView.LayoutParams)child.getLayoutParams();
-            if(p == null)            
-            {
+            if (p == null) {
                 p = new AbsListView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
                         ViewGroup.LayoutParams.WRAP_CONTENT, 0);
                 child.setLayoutParams(p);
-            } //End block
+            }
             p.viewType = mAdapter.getItemViewType(0);
             p.forceAdd = true;
+
             int childHeightSpec = getChildMeasureSpec(
                     MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED), 0, p.height);
             int childWidthSpec = getChildMeasureSpec(
                     MeasureSpec.makeMeasureSpec(mColumnWidth, MeasureSpec.EXACTLY), 0, p.width);
             child.measure(childWidthSpec, childHeightSpec);
+
             childHeight = child.getMeasuredHeight();
             childState = combineMeasuredStates(childState, child.getMeasuredState());
-            if(mRecycler.shouldRecycleViewType(p.viewType))            
-            {
+
+            if (mRecycler.shouldRecycleViewType(p.viewType)) {
                 mRecycler.addScrapView(child, -1);
-            } //End block
-        } //End block
-        if(heightMode == MeasureSpec.UNSPECIFIED)        
-        {
+            }
+        }
+        
+        if (heightMode == MeasureSpec.UNSPECIFIED) {
             heightSize = mListPadding.top + mListPadding.bottom + childHeight +
                     getVerticalFadingEdgeLength() * 2;
-        } //End block
-        if(heightMode == MeasureSpec.AT_MOST)        
-        {
-            int ourSize = mListPadding.top + mListPadding.bottom;
+        }
+
+        if (heightMode == MeasureSpec.AT_MOST) {
+            int ourSize =  mListPadding.top + mListPadding.bottom;
+           
             final int numColumns = mNumColumns;
-for(int i = 0;i < count;i += numColumns)
-            {
+            for (int i = 0; i < count; i += numColumns) {
                 ourSize += childHeight;
-                if(i + numColumns < count)                
-                {
+                if (i + numColumns < count) {
                     ourSize += mVerticalSpacing;
-                } //End block
-                if(ourSize >= heightSize)                
-                {
+                }
+                if (ourSize >= heightSize) {
                     ourSize = heightSize;
                     break;
-                } //End block
-            } //End block
+                }
+            }
             heightSize = ourSize;
-        } //End block
-        if(widthMode == MeasureSpec.AT_MOST && mRequestedNumColumns != AUTO_FIT)        
-        {
+        }
+
+        if (widthMode == MeasureSpec.AT_MOST && mRequestedNumColumns != AUTO_FIT) {
             int ourSize = (mRequestedNumColumns*mColumnWidth)
                     + ((mRequestedNumColumns-1)*mHorizontalSpacing)
                     + mListPadding.left + mListPadding.right;
-            if(ourSize > widthSize || didNotInitiallyFit)            
-            {
+            if (ourSize > widthSize || didNotInitiallyFit) {
                 widthSize |= MEASURED_STATE_TOO_SMALL;
-            } //End block
-        } //End block
+            }
+        }
+
         setMeasuredDimension(widthSize, heightSize);
         mWidthMeasureSpec = widthMeasureSpec;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.689 -0400", hash_original_method = "B083102DF451B0F743637B4C2ECFBD00", hash_generated_method = "5E27CFE091CC3840FC4DB29E4CFBCDB8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.480 -0500", hash_original_method = "B083102DF451B0F743637B4C2ECFBD00", hash_generated_method = "58B4C1518563241B9EF56650B99C05B9")
     @Override
-    protected void attachLayoutAnimationParameters(View child,
+protected void attachLayoutAnimationParameters(View child,
             ViewGroup.LayoutParams params, int index, int count) {
-        addTaint(count);
-        addTaint(index);
-        addTaint(params.getTaint());
-        addTaint(child.getTaint());
-        GridLayoutAnimationController.AnimationParameters animationParams = (GridLayoutAnimationController.AnimationParameters) params.layoutAnimationParameters;
-        if(animationParams == null)        
-        {
+
+        GridLayoutAnimationController.AnimationParameters animationParams =
+                (GridLayoutAnimationController.AnimationParameters) params.layoutAnimationParameters;
+
+        if (animationParams == null) {
             animationParams = new GridLayoutAnimationController.AnimationParameters();
             params.layoutAnimationParameters = animationParams;
-        } //End block
+        }
+
         animationParams.count = count;
         animationParams.index = index;
         animationParams.columnsCount = mNumColumns;
         animationParams.rowsCount = count / mNumColumns;
-        if(!mStackFromBottom)        
-        {
+
+        if (!mStackFromBottom) {
             animationParams.column = index % mNumColumns;
             animationParams.row = index / mNumColumns;
-        } //End block
-        else
-        {
+        } else {
             final int invertedIndex = count - 1 - index;
+
             animationParams.column = mNumColumns - 1 - (invertedIndex % mNumColumns);
             animationParams.row = animationParams.rowsCount - 1 - invertedIndex / mNumColumns;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        }
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.692 -0400", hash_original_method = "22970971C8FD1FE9524617A911939C41", hash_generated_method = "ED0AD9F99E2F1D92620941BDA3C89DC2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.482 -0500", hash_original_method = "22970971C8FD1FE9524617A911939C41", hash_generated_method = "89243079EC32817BDC4B1BB2B0E0A65D")
     @Override
-    protected void layoutChildren() {
+protected void layoutChildren() {
         final boolean blockLayoutRequests = mBlockLayoutRequests;
-        if(!blockLayoutRequests)        
-        {
+        if (!blockLayoutRequests) {
             mBlockLayoutRequests = true;
-        } //End block
-        try 
-        {
+        }
+
+        try {
             super.layoutChildren();
+
             invalidate();
-            if(mAdapter == null)            
-            {
+
+            if (mAdapter == null) {
                 resetList();
                 invokeOnItemScrollListener();
                 return;
-            } //End block
+            }
+
             final int childrenTop = mListPadding.top;
             final int childrenBottom = mBottom - mTop - mListPadding.bottom;
+
             int childCount = getChildCount();
             int index;
             int delta = 0;
+
             View sel;
             View oldSel = null;
             View oldFirst = null;
             View newSel = null;
-switch(mLayoutMode){
+
+            // Remember stuff we will need down below
+            switch (mLayoutMode) {
             case LAYOUT_SET_SELECTION:
-            index = mNextSelectedPosition - mFirstPosition;
-            if(index >= 0 && index < childCount)            
-            {
-                newSel = getChildAt(index);
-            } //End block
-            break;
+                index = mNextSelectedPosition - mFirstPosition;
+                if (index >= 0 && index < childCount) {
+                    newSel = getChildAt(index);
+                }
+                break;
             case LAYOUT_FORCE_TOP:
             case LAYOUT_FORCE_BOTTOM:
             case LAYOUT_SPECIFIC:
             case LAYOUT_SYNC:
-            break;
+                break;
             case LAYOUT_MOVE_SELECTION:
-            if(mNextSelectedPosition >= 0)            
-            {
-                delta = mNextSelectedPosition - mSelectedPosition;
-            } //End block
-            break;
+                if (mNextSelectedPosition >= 0) {
+                    delta = mNextSelectedPosition - mSelectedPosition;
+                }
+                break;
             default:
-            index = mSelectedPosition - mFirstPosition;
-            if(index >= 0 && index < childCount)            
-            {
-                oldSel = getChildAt(index);
-            } //End block
-            oldFirst = getChildAt(0);
-}            boolean dataChanged = mDataChanged;
-            if(dataChanged)            
-            {
+                // Remember the previously selected view
+                index = mSelectedPosition - mFirstPosition;
+                if (index >= 0 && index < childCount) {
+                    oldSel = getChildAt(index);
+                }
+
+                // Remember the previous first child
+                oldFirst = getChildAt(0);
+            }
+
+            boolean dataChanged = mDataChanged;
+            if (dataChanged) {
                 handleDataChanged();
-            } //End block
-            if(mItemCount == 0)            
-            {
+            }
+
+            // Handle the empty set by removing all views that are visible
+            // and calling it a day
+            if (mItemCount == 0) {
                 resetList();
                 invokeOnItemScrollListener();
                 return;
-            } //End block
+            }
+
             setSelectedPositionInt(mNextSelectedPosition);
+
+            // Pull all children into the RecycleBin.
+            // These views will be reused if possible
             final int firstPosition = mFirstPosition;
             final RecycleBin recycleBin = mRecycler;
-            if(dataChanged)            
-            {
-for(int i = 0;i < childCount;i++)
-                {
+
+            if (dataChanged) {
+                for (int i = 0; i < childCount; i++) {
                     recycleBin.addScrapView(getChildAt(i), firstPosition+i);
-                } //End block
-            } //End block
-            else
-            {
+                }
+            } else {
                 recycleBin.fillActiveViews(childCount, firstPosition);
-            } //End block
+            }
+
+            // Clear out old views
+            //removeAllViewsInLayout();
             detachAllViewsFromParent();
-switch(mLayoutMode){
+
+            switch (mLayoutMode) {
             case LAYOUT_SET_SELECTION:
-            if(newSel != null)            
-            {
-                sel = fillFromSelection(newSel.getTop(), childrenTop, childrenBottom);
-            } //End block
-            else
-            {
-                sel = fillSelection(childrenTop, childrenBottom);
-            } //End block
-            break;
+                if (newSel != null) {
+                    sel = fillFromSelection(newSel.getTop(), childrenTop, childrenBottom);
+                } else {
+                    sel = fillSelection(childrenTop, childrenBottom);
+                }
+                break;
             case LAYOUT_FORCE_TOP:
-            mFirstPosition = 0;
-            sel = fillFromTop(childrenTop);
-            adjustViewsUpOrDown();
-            break;
+                mFirstPosition = 0;
+                sel = fillFromTop(childrenTop);
+                adjustViewsUpOrDown();
+                break;
             case LAYOUT_FORCE_BOTTOM:
-            sel = fillUp(mItemCount - 1, childrenBottom);
-            adjustViewsUpOrDown();
-            break;
+                sel = fillUp(mItemCount - 1, childrenBottom);
+                adjustViewsUpOrDown();
+                break;
             case LAYOUT_SPECIFIC:
-            sel = fillSpecific(mSelectedPosition, mSpecificTop);
-            break;
+                sel = fillSpecific(mSelectedPosition, mSpecificTop);
+                break;
             case LAYOUT_SYNC:
-            sel = fillSpecific(mSyncPosition, mSpecificTop);
-            break;
+                sel = fillSpecific(mSyncPosition, mSpecificTop);
+                break;
             case LAYOUT_MOVE_SELECTION:
-            sel = moveSelection(delta, childrenTop, childrenBottom);
-            break;
+                // Move the selection relative to its old position
+                sel = moveSelection(delta, childrenTop, childrenBottom);
+                break;
             default:
-            if(childCount == 0)            
-            {
-                if(!mStackFromBottom)                
-                {
-                    setSelectedPositionInt(mAdapter == null || isInTouchMode() ?
+                if (childCount == 0) {
+                    if (!mStackFromBottom) {
+                        setSelectedPositionInt(mAdapter == null || isInTouchMode() ?
                                 INVALID_POSITION : 0);
-                    sel = fillFromTop(childrenTop);
-                } //End block
-                else
-                {
-                    final int last = mItemCount - 1;
-                    setSelectedPositionInt(mAdapter == null || isInTouchMode() ?
+                        sel = fillFromTop(childrenTop);
+                    } else {
+                        final int last = mItemCount - 1;
+                        setSelectedPositionInt(mAdapter == null || isInTouchMode() ?
                                 INVALID_POSITION : last);
-                    sel = fillFromBottom(last, childrenBottom);
-                } //End block
-            } //End block
-            else
-            {
-                if(mSelectedPosition >= 0 && mSelectedPosition < mItemCount)                
-                {
-                    sel = fillSpecific(mSelectedPosition, oldSel == null ?
+                        sel = fillFromBottom(last, childrenBottom);
+                    }
+                } else {
+                    if (mSelectedPosition >= 0 && mSelectedPosition < mItemCount) {
+                        sel = fillSpecific(mSelectedPosition, oldSel == null ?
                                 childrenTop : oldSel.getTop());
-                } //End block
-                else
-                if(mFirstPosition < mItemCount)                
-                {
-                    sel = fillSpecific(mFirstPosition, oldFirst == null ?
+                    } else if (mFirstPosition < mItemCount)  {
+                        sel = fillSpecific(mFirstPosition, oldFirst == null ?
                                 childrenTop : oldFirst.getTop());
-                } //End block
-                else
-                {
-                    sel = fillSpecific(0, childrenTop);
-                } //End block
-            } //End block
-            break;
-}            recycleBin.scrapActiveViews();
-            if(sel != null)            
-            {
-                positionSelector(INVALID_POSITION, sel);
-                mSelectedTop = sel.getTop();
-            } //End block
-            else
-            if(mTouchMode > TOUCH_MODE_DOWN && mTouchMode < TOUCH_MODE_SCROLL)            
-            {
+                    } else {
+                        sel = fillSpecific(0, childrenTop);
+                    }
+                }
+                break;
+            }
+
+            // Flush any cached views that did not get reused above
+            recycleBin.scrapActiveViews();
+
+            if (sel != null) {
+               positionSelector(INVALID_POSITION, sel);
+               mSelectedTop = sel.getTop();
+            } else if (mTouchMode > TOUCH_MODE_DOWN && mTouchMode < TOUCH_MODE_SCROLL) {
                 View child = getChildAt(mMotionPosition - mFirstPosition);
-                if(child != null)                
-                positionSelector(mMotionPosition, child);
-            } //End block
-            else
-            {
+                if (child != null) positionSelector(mMotionPosition, child);
+            } else {
                 mSelectedTop = 0;
                 mSelectorRect.setEmpty();
-            } //End block
+            }
+
             mLayoutMode = LAYOUT_NORMAL;
             mDataChanged = false;
             mNeedSync = false;
             setNextSelectedPositionInt(mSelectedPosition);
+
             updateScrollIndicators();
-            if(mItemCount > 0)            
-            {
+
+            if (mItemCount > 0) {
                 checkSelectionChanged();
-            } //End block
+            }
+
             invokeOnItemScrollListener();
-        } //End block
-        finally 
-        {
-            if(!blockLayoutRequests)            
-            {
+        } finally {
+            if (!blockLayoutRequests) {
                 mBlockLayoutRequests = false;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            }
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.693 -0400", hash_original_method = "D1571833DCBC36BAA4E4DA8F2A5DB363", hash_generated_method = "94FD31FCB115ABD9A4374DCA96905D09")
+
+    /**
+     * Obtain the view and add it to our list of children. The view can be made
+     * fresh, converted from an unused view, or used as is if it was in the
+     * recycle bin.
+     *
+     * @param position Logical position in the list
+     * @param y Top or bottom edge of the view to add
+     * @param flow if true, align top edge to y. If false, align bottom edge to
+     *        y.
+     * @param childrenLeft Left edge where children should be positioned
+     * @param selected Is this position selected?
+     * @param where to add new item in the list
+     * @return View that was added
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.483 -0500", hash_original_method = "D1571833DCBC36BAA4E4DA8F2A5DB363", hash_generated_method = "1936EA1E115B9D19E1420BAFC14E457A")
     private View makeAndAddView(int position, int y, boolean flow, int childrenLeft,
             boolean selected, int where) {
-        addTaint(where);
-        addTaint(selected);
-        addTaint(childrenLeft);
-        addTaint(flow);
-        addTaint(y);
-        addTaint(position);
         View child;
-        if(!mDataChanged)        
-        {
+
+        if (!mDataChanged) {
+            // Try to use an existing view for this position
             child = mRecycler.getActiveView(position);
-            if(child != null)            
-            {
+            if (child != null) {
+                // Found it -- we're using an existing child
+                // This just needs to be positioned
                 setupChild(child, position, y, flow, childrenLeft, selected, true, where);
-View var73902FD3E151130B4329B76EF04D2A54_2025495616 =                 child;
-                var73902FD3E151130B4329B76EF04D2A54_2025495616.addTaint(taint);
-                return var73902FD3E151130B4329B76EF04D2A54_2025495616;
-            } //End block
-        } //End block
+                return child;
+            }
+        }
+
+        // Make a new view for this position, or convert an unused view if
+        // possible
         child = obtainView(position, mIsScrap);
+
+        // This needs to be positioned and measured
         setupChild(child, position, y, flow, childrenLeft, selected, mIsScrap[0], where);
-View var73902FD3E151130B4329B76EF04D2A54_27903299 =         child;
-        var73902FD3E151130B4329B76EF04D2A54_27903299.addTaint(taint);
-        return var73902FD3E151130B4329B76EF04D2A54_27903299;
-        // ---------- Original Method ----------
-        //View child;
-        //if (!mDataChanged) {
-            //child = mRecycler.getActiveView(position);
-            //if (child != null) {
-                //setupChild(child, position, y, flow, childrenLeft, selected, true, where);
-                //return child;
-            //}
-        //}
-        //child = obtainView(position, mIsScrap);
-        //setupChild(child, position, y, flow, childrenLeft, selected, mIsScrap[0], where);
-        //return child;
+
+        return child;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.697 -0400", hash_original_method = "F1D84EEF4E6902A923E61B402C707D18", hash_generated_method = "D153C9658BDAA0A897BF386B18FE08C9")
+    /**
+     * Add a view as a child and make sure it is measured (if necessary) and
+     * positioned properly.
+     *
+     * @param child The view to add
+     * @param position The position of the view
+     * @param y The y position relative to which this view will be positioned
+     * @param flow if true, align top edge to y. If false, align bottom edge
+     *        to y.
+     * @param childrenLeft Left edge where children should be positioned
+     * @param selected Is this position selected?
+     * @param recycled Has this view been pulled from the recycle bin? If so it
+     *        does not need to be remeasured.
+     * @param where Where to add the item in the list
+     *
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.485 -0500", hash_original_method = "F1D84EEF4E6902A923E61B402C707D18", hash_generated_method = "B11BF244AF65541B26D893EA71037CB4")
     private void setupChild(View child, int position, int y, boolean flow, int childrenLeft,
             boolean selected, boolean recycled, int where) {
-        addTaint(where);
-        addTaint(recycled);
-        addTaint(selected);
-        addTaint(childrenLeft);
-        addTaint(flow);
-        addTaint(y);
-        addTaint(position);
-        addTaint(child.getTaint());
         boolean isSelected = selected && shouldShowSelector();
         final boolean updateChildSelected = isSelected != child.isSelected();
         final int mode = mTouchMode;
         final boolean isPressed = mode > TOUCH_MODE_DOWN && mode < TOUCH_MODE_SCROLL &&
                 mMotionPosition == position;
         final boolean updateChildPressed = isPressed != child.isPressed();
+        
         boolean needToMeasure = !recycled || updateChildSelected || child.isLayoutRequested();
+
+        // Respect layout params that are already in the view. Otherwise make
+        // some up...
         AbsListView.LayoutParams p = (AbsListView.LayoutParams)child.getLayoutParams();
-        if(p == null)        
-        {
+        if (p == null) {
             p = new AbsListView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
                     ViewGroup.LayoutParams.WRAP_CONTENT, 0);
-        } //End block
+        }
         p.viewType = mAdapter.getItemViewType(position);
-        if(recycled && !p.forceAdd)        
-        {
+
+        if (recycled && !p.forceAdd) {
             attachViewToParent(child, where, p);
-        } //End block
-        else
-        {
+        } else {
             p.forceAdd = false;
             addViewInLayout(child, where, p, true);
-        } //End block
-        if(updateChildSelected)        
-        {
+        }
+
+        if (updateChildSelected) {
             child.setSelected(isSelected);
-            if(isSelected)            
-            {
+            if (isSelected) {
                 requestFocus();
-            } //End block
-        } //End block
-        if(updateChildPressed)        
-        {
+            }
+        }
+
+        if (updateChildPressed) {
             child.setPressed(isPressed);
-        } //End block
-        if(mChoiceMode != CHOICE_MODE_NONE && mCheckStates != null)        
-        {
-            if(child instanceof Checkable)            
-            {
+        }
+
+        if (mChoiceMode != CHOICE_MODE_NONE && mCheckStates != null) {
+            if (child instanceof Checkable) {
                 ((Checkable) child).setChecked(mCheckStates.get(position));
-            } //End block
-            else
-            if(getContext().getApplicationInfo().targetSdkVersion
-                    >= android.os.Build.VERSION_CODES.HONEYCOMB)            
-            {
+            } else if (getContext().getApplicationInfo().targetSdkVersion
+                    >= android.os.Build.VERSION_CODES.HONEYCOMB) {
                 child.setActivated(mCheckStates.get(position));
-            } //End block
-        } //End block
-        if(needToMeasure)        
-        {
+            }
+        }
+
+        if (needToMeasure) {
             int childHeightSpec = ViewGroup.getChildMeasureSpec(
                     MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED), 0, p.height);
+
             int childWidthSpec = ViewGroup.getChildMeasureSpec(
                     MeasureSpec.makeMeasureSpec(mColumnWidth, MeasureSpec.EXACTLY), 0, p.width);
             child.measure(childWidthSpec, childHeightSpec);
-        } //End block
-        else
-        {
+        } else {
             cleanupLayoutState(child);
-        } //End block
+        }
+
         final int w = child.getMeasuredWidth();
         final int h = child.getMeasuredHeight();
+
         int childLeft;
         final int childTop = flow ? y : y - h;
+
         final int layoutDirection = getResolvedLayoutDirection();
         final int absoluteGravity = Gravity.getAbsoluteGravity(mGravity, layoutDirection);
-switch(absoluteGravity & Gravity.HORIZONTAL_GRAVITY_MASK){
-        case Gravity.LEFT:
-        childLeft = childrenLeft;
-        break;
-        case Gravity.CENTER_HORIZONTAL:
-        childLeft = childrenLeft + ((mColumnWidth - w) / 2);
-        break;
-        case Gravity.RIGHT:
-        childLeft = childrenLeft + mColumnWidth - w;
-        break;
-        default:
-        childLeft = childrenLeft;
-        break;
-}        if(needToMeasure)        
-        {
+        switch (absoluteGravity & Gravity.HORIZONTAL_GRAVITY_MASK) {
+            case Gravity.LEFT:
+                childLeft = childrenLeft;
+                break;
+            case Gravity.CENTER_HORIZONTAL:
+                childLeft = childrenLeft + ((mColumnWidth - w) / 2);
+                break;
+            case Gravity.RIGHT:
+                childLeft = childrenLeft + mColumnWidth - w;
+                break;
+            default:
+                childLeft = childrenLeft;
+                break;
+        }
+
+        if (needToMeasure) {
             final int childRight = childLeft + w;
             final int childBottom = childTop + h;
             child.layout(childLeft, childTop, childRight, childBottom);
-        } //End block
-        else
-        {
+        } else {
             child.offsetLeftAndRight(childLeft - child.getLeft());
             child.offsetTopAndBottom(childTop - child.getTop());
-        } //End block
-        if(mCachingStarted)        
-        {
+        }
+
+        if (mCachingStarted) {
             child.setDrawingCacheEnabled(true);
-        } //End block
-        if(recycled && (((AbsListView.LayoutParams)child.getLayoutParams()).scrappedFromPosition)
-                != position)        
-        {
+        }
+
+        if (recycled && (((AbsListView.LayoutParams)child.getLayoutParams()).scrappedFromPosition)
+                != position) {
             child.jumpDrawablesToCurrentState();
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.699 -0400", hash_original_method = "F036989DC17B53D064E56E9048AF8088", hash_generated_method = "F1141BD156BB8EAE32B892D196866A9E")
+    /**
+     * Sets the currently selected item
+     * 
+     * @param position Index (starting at 0) of the data item to be selected.
+     * 
+     * If in touch mode, the item will not be selected but it will still be positioned
+     * appropriately.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.486 -0500", hash_original_method = "F036989DC17B53D064E56E9048AF8088", hash_generated_method = "746F894122617A5FC5CDD581A3E19301")
     @Override
-    public void setSelection(int position) {
-        addTaint(position);
-        if(!isInTouchMode())        
-        {
+public void setSelection(int position) {
+        if (!isInTouchMode()) {
             setNextSelectedPositionInt(position);
-        } //End block
-        else
-        {
+        } else {
             mResurrectToPosition = position;
-        } //End block
+        }
         mLayoutMode = LAYOUT_SET_SELECTION;
         requestLayout();
-        // ---------- Original Method ----------
-        //if (!isInTouchMode()) {
-            //setNextSelectedPositionInt(position);
-        //} else {
-            //mResurrectToPosition = position;
-        //}
-        //mLayoutMode = LAYOUT_SET_SELECTION;
-        //requestLayout();
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.699 -0400", hash_original_method = "BFD03D39F54176AB600127B7C1132704", hash_generated_method = "D85582E0D16BCA9BD3A267DCA5A605CB")
+    /**
+     * Makes the item at the supplied position selected.
+     *
+     * @param position the position of the new selection
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.486 -0500", hash_original_method = "BFD03D39F54176AB600127B7C1132704", hash_generated_method = "1AE311F3CCE236E32F6E093104CBDC91")
     @Override
-     void setSelectionInt(int position) {
-        addTaint(position);
+void setSelectionInt(int position) {
         int previousSelectedPosition = mNextSelectedPosition;
+
         setNextSelectedPositionInt(position);
         layoutChildren();
+        
         final int next = mStackFromBottom ? mItemCount - 1  - mNextSelectedPosition : 
             mNextSelectedPosition;
         final int previous = mStackFromBottom ? mItemCount - 1
                 - previousSelectedPosition : previousSelectedPosition;
+
         final int nextRow = next / mNumColumns;
         final int previousRow = previous / mNumColumns;
-        if(nextRow != previousRow)        
-        {
+
+        if (nextRow != previousRow) {
             awakenScrollBars();
-        } //End block
-        // ---------- Original Method ----------
-        //int previousSelectedPosition = mNextSelectedPosition;
-        //setNextSelectedPositionInt(position);
-        //layoutChildren();
-        //final int next = mStackFromBottom ? mItemCount - 1  - mNextSelectedPosition : 
-            //mNextSelectedPosition;
-        //final int previous = mStackFromBottom ? mItemCount - 1
-                //- previousSelectedPosition : previousSelectedPosition;
-        //final int nextRow = next / mNumColumns;
-        //final int previousRow = previous / mNumColumns;
-        //if (nextRow != previousRow) {
-            //awakenScrollBars();
-        //}
+        }
+
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.699 -0400", hash_original_method = "82498D99AFEB0700B1F959E9E9927B59", hash_generated_method = "B273D3875F42F57BC7DCE8D671491774")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.487 -0500", hash_original_method = "82498D99AFEB0700B1F959E9E9927B59", hash_generated_method = "6AF9706850820C4FEB302E37B50B2BED")
     @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(event.getTaint());
-        addTaint(keyCode);
-        boolean var7EF652CB3ACE03C95ABA8817CA740A6C_1008856124 = (commonKey(keyCode, 1, event));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_453635991 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_453635991;
-        // ---------- Original Method ----------
-        //return commonKey(keyCode, 1, event);
+public boolean onKeyDown(int keyCode, KeyEvent event) {
+        return commonKey(keyCode, 1, event);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.700 -0400", hash_original_method = "C105EC1B6481173F2A66D1C47882507B", hash_generated_method = "2E550753437BAE78901B0F5929984476")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.488 -0500", hash_original_method = "C105EC1B6481173F2A66D1C47882507B", hash_generated_method = "263108ED482A3329DC5C40738EBD240E")
     @Override
-    public boolean onKeyMultiple(int keyCode, int repeatCount, KeyEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(event.getTaint());
-        addTaint(repeatCount);
-        addTaint(keyCode);
-        boolean var7E22E05ED0529C3D32A81C1D21110D89_2000840843 = (commonKey(keyCode, repeatCount, event));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_286699906 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_286699906;
-        // ---------- Original Method ----------
-        //return commonKey(keyCode, repeatCount, event);
+public boolean onKeyMultiple(int keyCode, int repeatCount, KeyEvent event) {
+        return commonKey(keyCode, repeatCount, event);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.700 -0400", hash_original_method = "FFB4A1626C41573790F9B17FF23F8A09", hash_generated_method = "977E5AB5E6B87012D3D24BEC3751F59A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.489 -0500", hash_original_method = "FFB4A1626C41573790F9B17FF23F8A09", hash_generated_method = "A27D10E92D871F3F89D05FD06501971F")
     @Override
-    public boolean onKeyUp(int keyCode, KeyEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(event.getTaint());
-        addTaint(keyCode);
-        boolean var7EF652CB3ACE03C95ABA8817CA740A6C_1693125368 = (commonKey(keyCode, 1, event));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_85876210 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_85876210;
-        // ---------- Original Method ----------
-        //return commonKey(keyCode, 1, event);
+public boolean onKeyUp(int keyCode, KeyEvent event) {
+        return commonKey(keyCode, 1, event);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.702 -0400", hash_original_method = "91535B300D60431313446AA401FFCFE7", hash_generated_method = "E6652EAC3F88D14889AABF61212D612F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.491 -0500", hash_original_method = "91535B300D60431313446AA401FFCFE7", hash_generated_method = "7E6FA88E9A17CFD253CC010555D73ED3")
     private boolean commonKey(int keyCode, int count, KeyEvent event) {
-        addTaint(event.getTaint());
-        addTaint(count);
-        addTaint(keyCode);
-        if(mAdapter == null)        
-        {
-            boolean var68934A3E9455FA72420237EB05902327_1810263513 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1948184260 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1948184260;
-        } //End block
-        if(mDataChanged)        
-        {
+        if (mAdapter == null) {
+            return false;
+        }
+
+        if (mDataChanged) {
             layoutChildren();
-        } //End block
+        }
+
         boolean handled = false;
         int action = event.getAction();
-        if(action != KeyEvent.ACTION_UP)        
-        {
-switch(keyCode){
-            case KeyEvent.KEYCODE_DPAD_LEFT:
-            if(event.hasNoModifiers())            
-            {
-                handled = resurrectSelectionIfNeeded() || arrowScroll(FOCUS_LEFT);
-            } //End block
-            break;
-            case KeyEvent.KEYCODE_DPAD_RIGHT:
-            if(event.hasNoModifiers())            
-            {
-                handled = resurrectSelectionIfNeeded() || arrowScroll(FOCUS_RIGHT);
-            } //End block
-            break;
-            case KeyEvent.KEYCODE_DPAD_UP:
-            if(event.hasNoModifiers())            
-            {
-                handled = resurrectSelectionIfNeeded() || arrowScroll(FOCUS_UP);
-            } //End block
-            else
-            if(event.hasModifiers(KeyEvent.META_ALT_ON))            
-            {
-                handled = resurrectSelectionIfNeeded() || fullScroll(FOCUS_UP);
-            } //End block
-            break;
-            case KeyEvent.KEYCODE_DPAD_DOWN:
-            if(event.hasNoModifiers())            
-            {
-                handled = resurrectSelectionIfNeeded() || arrowScroll(FOCUS_DOWN);
-            } //End block
-            else
-            if(event.hasModifiers(KeyEvent.META_ALT_ON))            
-            {
-                handled = resurrectSelectionIfNeeded() || fullScroll(FOCUS_DOWN);
-            } //End block
-            break;
-            case KeyEvent.KEYCODE_DPAD_CENTER:
-            case KeyEvent.KEYCODE_ENTER:
-            if(event.hasNoModifiers())            
-            {
-                handled = resurrectSelectionIfNeeded();
-                if(!handled
-                                && event.getRepeatCount() == 0 && getChildCount() > 0)                
-                {
-                    keyPressed();
-                    handled = true;
-                } //End block
-            } //End block
-            break;
-            case KeyEvent.KEYCODE_SPACE:
-            if(mPopup == null || !mPopup.isShowing())            
-            {
-                if(event.hasNoModifiers())                
-                {
-                    handled = resurrectSelectionIfNeeded() || pageScroll(FOCUS_DOWN);
-                } //End block
-                else
-                if(event.hasModifiers(KeyEvent.META_SHIFT_ON))                
-                {
-                    handled = resurrectSelectionIfNeeded() || pageScroll(FOCUS_UP);
-                } //End block
-            } //End block
-            break;
-            case KeyEvent.KEYCODE_PAGE_UP:
-            if(event.hasNoModifiers())            
-            {
-                handled = resurrectSelectionIfNeeded() || pageScroll(FOCUS_UP);
-            } //End block
-            else
-            if(event.hasModifiers(KeyEvent.META_ALT_ON))            
-            {
-                handled = resurrectSelectionIfNeeded() || fullScroll(FOCUS_UP);
-            } //End block
-            break;
-            case KeyEvent.KEYCODE_PAGE_DOWN:
-            if(event.hasNoModifiers())            
-            {
-                handled = resurrectSelectionIfNeeded() || pageScroll(FOCUS_DOWN);
-            } //End block
-            else
-            if(event.hasModifiers(KeyEvent.META_ALT_ON))            
-            {
-                handled = resurrectSelectionIfNeeded() || fullScroll(FOCUS_DOWN);
-            } //End block
-            break;
-            case KeyEvent.KEYCODE_MOVE_HOME:
-            if(event.hasNoModifiers())            
-            {
-                handled = resurrectSelectionIfNeeded() || fullScroll(FOCUS_UP);
-            } //End block
-            break;
-            case KeyEvent.KEYCODE_MOVE_END:
-            if(event.hasNoModifiers())            
-            {
-                handled = resurrectSelectionIfNeeded() || fullScroll(FOCUS_DOWN);
-            } //End block
-            break;
-            case KeyEvent.KEYCODE_TAB:
-            if(false)            
-            {
-                if(event.hasNoModifiers())                
-                {
-                    handled = resurrectSelectionIfNeeded()
+
+        if (action != KeyEvent.ACTION_UP) {
+            switch (keyCode) {
+                case KeyEvent.KEYCODE_DPAD_LEFT:
+                    if (event.hasNoModifiers()) {
+                        handled = resurrectSelectionIfNeeded() || arrowScroll(FOCUS_LEFT);
+                    }
+                    break;
+
+                case KeyEvent.KEYCODE_DPAD_RIGHT:
+                    if (event.hasNoModifiers()) {
+                        handled = resurrectSelectionIfNeeded() || arrowScroll(FOCUS_RIGHT);
+                    }
+                    break;
+
+                case KeyEvent.KEYCODE_DPAD_UP:
+                    if (event.hasNoModifiers()) {
+                        handled = resurrectSelectionIfNeeded() || arrowScroll(FOCUS_UP);
+                    } else if (event.hasModifiers(KeyEvent.META_ALT_ON)) {
+                        handled = resurrectSelectionIfNeeded() || fullScroll(FOCUS_UP);
+                    }
+                    break;
+
+                case KeyEvent.KEYCODE_DPAD_DOWN:
+                    if (event.hasNoModifiers()) {
+                        handled = resurrectSelectionIfNeeded() || arrowScroll(FOCUS_DOWN);
+                    } else if (event.hasModifiers(KeyEvent.META_ALT_ON)) {
+                        handled = resurrectSelectionIfNeeded() || fullScroll(FOCUS_DOWN);
+                    }
+                    break;
+
+                case KeyEvent.KEYCODE_DPAD_CENTER:
+                case KeyEvent.KEYCODE_ENTER:
+                    if (event.hasNoModifiers()) {
+                        handled = resurrectSelectionIfNeeded();
+                        if (!handled
+                                && event.getRepeatCount() == 0 && getChildCount() > 0) {
+                            keyPressed();
+                            handled = true;
+                        }
+                    }
+                    break;
+
+                case KeyEvent.KEYCODE_SPACE:
+                    if (mPopup == null || !mPopup.isShowing()) {
+                        if (event.hasNoModifiers()) {
+                            handled = resurrectSelectionIfNeeded() || pageScroll(FOCUS_DOWN);
+                        } else if (event.hasModifiers(KeyEvent.META_SHIFT_ON)) {
+                            handled = resurrectSelectionIfNeeded() || pageScroll(FOCUS_UP);
+                        }
+                    }
+                    break;
+
+                case KeyEvent.KEYCODE_PAGE_UP:
+                    if (event.hasNoModifiers()) {
+                        handled = resurrectSelectionIfNeeded() || pageScroll(FOCUS_UP);
+                    } else if (event.hasModifiers(KeyEvent.META_ALT_ON)) {
+                        handled = resurrectSelectionIfNeeded() || fullScroll(FOCUS_UP);
+                    }
+                    break;
+
+                case KeyEvent.KEYCODE_PAGE_DOWN:
+                    if (event.hasNoModifiers()) {
+                        handled = resurrectSelectionIfNeeded() || pageScroll(FOCUS_DOWN);
+                    } else if (event.hasModifiers(KeyEvent.META_ALT_ON)) {
+                        handled = resurrectSelectionIfNeeded() || fullScroll(FOCUS_DOWN);
+                    }
+                    break;
+
+                case KeyEvent.KEYCODE_MOVE_HOME:
+                    if (event.hasNoModifiers()) {
+                        handled = resurrectSelectionIfNeeded() || fullScroll(FOCUS_UP);
+                    }
+                    break;
+
+                case KeyEvent.KEYCODE_MOVE_END:
+                    if (event.hasNoModifiers()) {
+                        handled = resurrectSelectionIfNeeded() || fullScroll(FOCUS_DOWN);
+                    }
+                    break;
+
+                case KeyEvent.KEYCODE_TAB:
+                    // XXX Sometimes it is useful to be able to TAB through the items in
+                    //     a GridView sequentially.  Unfortunately this can create an
+                    //     asymmetry in TAB navigation order unless the list selection
+                    //     always reverts to the top or bottom when receiving TAB focus from
+                    //     another widget.  Leaving this behavior disabled for now but
+                    //     perhaps it should be configurable (and more comprehensive).
+                    if (false) {
+                        if (event.hasNoModifiers()) {
+                            handled = resurrectSelectionIfNeeded()
                                     || sequenceScroll(FOCUS_FORWARD);
-                } //End block
-                else
-                if(event.hasModifiers(KeyEvent.META_SHIFT_ON))                
-                {
-                    handled = resurrectSelectionIfNeeded()
+                        } else if (event.hasModifiers(KeyEvent.META_SHIFT_ON)) {
+                            handled = resurrectSelectionIfNeeded()
                                     || sequenceScroll(FOCUS_BACKWARD);
-                } //End block
-            } //End block
-            break;
-}
-        } //End block
-        if(handled)        
-        {
-            boolean varB326B5062B2F0E69046810717534CB09_177661821 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_645730149 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_645730149;
-        } //End block
-        if(sendToTextFilter(keyCode, count, event))        
-        {
-            boolean varB326B5062B2F0E69046810717534CB09_1306692282 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_466186542 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_466186542;
-        } //End block
-switch(action){
-        case KeyEvent.ACTION_DOWN:
-        boolean var947F0C250323B9F4475E02588E9A9740_402670928 = (super.onKeyDown(keyCode, event));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_220493493 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_220493493;
-        case KeyEvent.ACTION_UP:
-        boolean varAD33E8F21A74B923C1A24761EAF2F4A9_489785167 = (super.onKeyUp(keyCode, event));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_777616777 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_777616777;
-        case KeyEvent.ACTION_MULTIPLE:
-        boolean varAE6EFDECB7172A439AD0AFF79E9160E9_579639365 = (super.onKeyMultiple(keyCode, count, event));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_794984414 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_794984414;
-        default:
-        boolean var68934A3E9455FA72420237EB05902327_1504239813 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_906698319 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_906698319;
-}
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                        }
+                    }
+                    break;
+            }
+        }
+
+        if (handled) {
+            return true;
+        }
+
+        if (sendToTextFilter(keyCode, count, event)) {
+            return true;
+        }
+
+        switch (action) {
+            case KeyEvent.ACTION_DOWN:
+                return super.onKeyDown(keyCode, event);
+            case KeyEvent.ACTION_UP:
+                return super.onKeyUp(keyCode, event);
+            case KeyEvent.ACTION_MULTIPLE:
+                return super.onKeyMultiple(keyCode, count, event);
+            default:
+                return false;
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.703 -0400", hash_original_method = "7F69D44B4A5B870A2ADF67B34BC1B3FD", hash_generated_method = "25926713B8CC28CFBD427B50005BCFD0")
-     boolean pageScroll(int direction) {
-        addTaint(direction);
+    /**
+     * Scrolls up or down by the number of items currently present on screen.
+     *
+     * @param direction either {@link View#FOCUS_UP} or {@link View#FOCUS_DOWN}
+     * @return whether selection was moved
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.492 -0500", hash_original_method = "7F69D44B4A5B870A2ADF67B34BC1B3FD", hash_generated_method = "7F69D44B4A5B870A2ADF67B34BC1B3FD")
+    boolean pageScroll(int direction) {
         int nextPage = -1;
-        if(direction == FOCUS_UP)        
-        {
+
+        if (direction == FOCUS_UP) {
             nextPage = Math.max(0, mSelectedPosition - getChildCount());
-        } //End block
-        else
-        if(direction == FOCUS_DOWN)        
-        {
+        } else if (direction == FOCUS_DOWN) {
             nextPage = Math.min(mItemCount - 1, mSelectedPosition + getChildCount());
-        } //End block
-        if(nextPage >= 0)        
-        {
+        }
+
+        if (nextPage >= 0) {
             setSelectionInt(nextPage);
             invokeOnItemScrollListener();
             awakenScrollBars();
-            boolean varB326B5062B2F0E69046810717534CB09_1588135098 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1470580516 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1470580516;
-        } //End block
-        boolean var68934A3E9455FA72420237EB05902327_336302864 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1341893940 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1341893940;
-        // ---------- Original Method ----------
-        //int nextPage = -1;
-        //if (direction == FOCUS_UP) {
-            //nextPage = Math.max(0, mSelectedPosition - getChildCount());
-        //} else if (direction == FOCUS_DOWN) {
-            //nextPage = Math.min(mItemCount - 1, mSelectedPosition + getChildCount());
-        //}
-        //if (nextPage >= 0) {
-            //setSelectionInt(nextPage);
-            //invokeOnItemScrollListener();
-            //awakenScrollBars();
-            //return true;
-        //}
-        //return false;
+            return true;
+        }
+
+        return false;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.705 -0400", hash_original_method = "8921946161DEF2C387CE09B16F70206C", hash_generated_method = "6838BEDAF16F85AC2714E1A2FCDD40C0")
-     boolean fullScroll(int direction) {
-        addTaint(direction);
+    /**
+     * Go to the last or first item if possible.
+     *
+     * @param direction either {@link View#FOCUS_UP} or {@link View#FOCUS_DOWN}.
+     *
+     * @return Whether selection was moved.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.493 -0500", hash_original_method = "8921946161DEF2C387CE09B16F70206C", hash_generated_method = "8921946161DEF2C387CE09B16F70206C")
+    boolean fullScroll(int direction) {
         boolean moved = false;
-        if(direction == FOCUS_UP)        
-        {
+        if (direction == FOCUS_UP) {
             mLayoutMode = LAYOUT_SET_SELECTION;
             setSelectionInt(0);
             invokeOnItemScrollListener();
             moved = true;
-        } //End block
-        else
-        if(direction == FOCUS_DOWN)        
-        {
+        } else if (direction == FOCUS_DOWN) {
             mLayoutMode = LAYOUT_SET_SELECTION;
             setSelectionInt(mItemCount - 1);
             invokeOnItemScrollListener();
             moved = true;
-        } //End block
-        if(moved)        
-        {
+        }
+        
+        if (moved) {
             awakenScrollBars();
-        } //End block
-        boolean var11DFD868D93BC2B0E4CE0BEE5756F8B1_2110199280 = (moved);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2133563037 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2133563037;
-        // ---------- Original Method ----------
-        //boolean moved = false;
-        //if (direction == FOCUS_UP) {
-            //mLayoutMode = LAYOUT_SET_SELECTION;
-            //setSelectionInt(0);
-            //invokeOnItemScrollListener();
-            //moved = true;
-        //} else if (direction == FOCUS_DOWN) {
-            //mLayoutMode = LAYOUT_SET_SELECTION;
-            //setSelectionInt(mItemCount - 1);
-            //invokeOnItemScrollListener();
-            //moved = true;
-        //}
-        //if (moved) {
-            //awakenScrollBars();
-        //}
-        //return moved;
+        }
+
+        return moved;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.738 -0400", hash_original_method = "8CD79681F48962D4344E68AA337F0770", hash_generated_method = "D6CC8BC21F3A725B217F4CC60940D4E7")
-     boolean arrowScroll(int direction) {
-        addTaint(direction);
+    /**
+     * Scrolls to the next or previous item, horizontally or vertically.
+     *
+     * @param direction either {@link View#FOCUS_LEFT}, {@link View#FOCUS_RIGHT},
+     *        {@link View#FOCUS_UP} or {@link View#FOCUS_DOWN}
+     *
+     * @return whether selection was moved
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.494 -0500", hash_original_method = "8CD79681F48962D4344E68AA337F0770", hash_generated_method = "8CD79681F48962D4344E68AA337F0770")
+    boolean arrowScroll(int direction) {
         final int selectedPosition = mSelectedPosition;
         final int numColumns = mNumColumns;
+
         int startOfRowPos;
         int endOfRowPos;
+
         boolean moved = false;
-        if(!mStackFromBottom)        
-        {
+
+        if (!mStackFromBottom) {
             startOfRowPos = (selectedPosition / numColumns) * numColumns;
             endOfRowPos = Math.min(startOfRowPos + numColumns - 1, mItemCount - 1);
-        } //End block
-        else
-        {
+        } else {
             final int invertedSelection = mItemCount - 1 - selectedPosition;
             endOfRowPos = mItemCount - 1 - (invertedSelection / numColumns) * numColumns;
             startOfRowPos = Math.max(0, endOfRowPos - numColumns + 1);
-        } //End block
-switch(direction){
-        case FOCUS_UP:
-        if(startOfRowPos > 0)        
-        {
-            mLayoutMode = LAYOUT_MOVE_SELECTION;
-            setSelectionInt(Math.max(0, selectedPosition - numColumns));
-            moved = true;
-        } //End block
-        break;
-        case FOCUS_DOWN:
-        if(endOfRowPos < mItemCount - 1)        
-        {
-            mLayoutMode = LAYOUT_MOVE_SELECTION;
-            setSelectionInt(Math.min(selectedPosition + numColumns, mItemCount - 1));
-            moved = true;
-        } //End block
-        break;
-        case FOCUS_LEFT:
-        if(selectedPosition > startOfRowPos)        
-        {
-            mLayoutMode = LAYOUT_MOVE_SELECTION;
-            setSelectionInt(Math.max(0, selectedPosition - 1));
-            moved = true;
-        } //End block
-        break;
-        case FOCUS_RIGHT:
-        if(selectedPosition < endOfRowPos)        
-        {
-            mLayoutMode = LAYOUT_MOVE_SELECTION;
-            setSelectionInt(Math.min(selectedPosition + 1, mItemCount - 1));
-            moved = true;
-        } //End block
-        break;
-}        if(moved)        
-        {
+        }
+
+        switch (direction) {
+            case FOCUS_UP:
+                if (startOfRowPos > 0) {
+                    mLayoutMode = LAYOUT_MOVE_SELECTION;
+                    setSelectionInt(Math.max(0, selectedPosition - numColumns));
+                    moved = true;
+                }
+                break;
+            case FOCUS_DOWN:
+                if (endOfRowPos < mItemCount - 1) {
+                    mLayoutMode = LAYOUT_MOVE_SELECTION;
+                    setSelectionInt(Math.min(selectedPosition + numColumns, mItemCount - 1));
+                    moved = true;
+                }
+                break;
+            case FOCUS_LEFT:
+                if (selectedPosition > startOfRowPos) {
+                    mLayoutMode = LAYOUT_MOVE_SELECTION;
+                    setSelectionInt(Math.max(0, selectedPosition - 1));
+                    moved = true;
+                }
+                break;
+            case FOCUS_RIGHT:
+                if (selectedPosition < endOfRowPos) {
+                    mLayoutMode = LAYOUT_MOVE_SELECTION;
+                    setSelectionInt(Math.min(selectedPosition + 1, mItemCount - 1));
+                    moved = true;
+                }
+                break;
+        }
+
+        if (moved) {
             playSoundEffect(SoundEffectConstants.getContantForFocusDirection(direction));
             invokeOnItemScrollListener();
-        } //End block
-        if(moved)        
-        {
+        }
+
+        if (moved) {
             awakenScrollBars();
-        } //End block
-        boolean var11DFD868D93BC2B0E4CE0BEE5756F8B1_476333480 = (moved);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_188360441 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_188360441;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        }
+        
+        return moved;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.739 -0400", hash_original_method = "3D7E63CDF154AB38FFF5F8515CF699BF", hash_generated_method = "52FCAC5CABA9C13F37C4555C1E3C5EED")
-     boolean sequenceScroll(int direction) {
-        addTaint(direction);
+    /**
+     * Goes to the next or previous item according to the order set by the
+     * adapter.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.495 -0500", hash_original_method = "3D7E63CDF154AB38FFF5F8515CF699BF", hash_generated_method = "6922CC887F15BE18EBAC154EF990D97C")
+    boolean sequenceScroll(int direction) {
         int selectedPosition = mSelectedPosition;
         int numColumns = mNumColumns;
         int count = mItemCount;
+
         int startOfRow;
         int endOfRow;
-        if(!mStackFromBottom)        
-        {
+        if (!mStackFromBottom) {
             startOfRow = (selectedPosition / numColumns) * numColumns;
             endOfRow = Math.min(startOfRow + numColumns - 1, count - 1);
-        } //End block
-        else
-        {
+        } else {
             int invertedSelection = count - 1 - selectedPosition;
             endOfRow = count - 1 - (invertedSelection / numColumns) * numColumns;
             startOfRow = Math.max(0, endOfRow - numColumns + 1);
-        } //End block
+        }
+
         boolean moved = false;
         boolean showScroll = false;
-switch(direction){
-        case FOCUS_FORWARD:
-        if(selectedPosition < count - 1)        
-        {
-            mLayoutMode = LAYOUT_MOVE_SELECTION;
-            setSelectionInt(selectedPosition + 1);
-            moved = true;
-            showScroll = selectedPosition == endOfRow;
-        } //End block
-        break;
-        case FOCUS_BACKWARD:
-        if(selectedPosition > 0)        
-        {
-            mLayoutMode = LAYOUT_MOVE_SELECTION;
-            setSelectionInt(selectedPosition - 1);
-            moved = true;
-            showScroll = selectedPosition == startOfRow;
-        } //End block
-        break;
-}        if(moved)        
-        {
+        switch (direction) {
+            case FOCUS_FORWARD:
+                if (selectedPosition < count - 1) {
+                    // Move to the next item.
+                    mLayoutMode = LAYOUT_MOVE_SELECTION;
+                    setSelectionInt(selectedPosition + 1);
+                    moved = true;
+                    // Show the scrollbar only if changing rows.
+                    showScroll = selectedPosition == endOfRow;
+                }
+                break;
+
+            case FOCUS_BACKWARD:
+                if (selectedPosition > 0) {
+                    // Move to the previous item.
+                    mLayoutMode = LAYOUT_MOVE_SELECTION;
+                    setSelectionInt(selectedPosition - 1);
+                    moved = true;
+                    // Show the scrollbar only if changing rows.
+                    showScroll = selectedPosition == startOfRow;
+                }
+                break;
+        }
+
+        if (moved) {
             playSoundEffect(SoundEffectConstants.getContantForFocusDirection(direction));
             invokeOnItemScrollListener();
-        } //End block
-        if(showScroll)        
-        {
+        }
+
+        if (showScroll) {
             awakenScrollBars();
-        } //End block
-        boolean var11DFD868D93BC2B0E4CE0BEE5756F8B1_676091945 = (moved);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1207123865 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1207123865;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        }
+
+        return moved;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.740 -0400", hash_original_method = "0FD361D132773200063DCB66E88E964C", hash_generated_method = "5CD468BB4DBE44131B84C97FC2635B2C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.496 -0500", hash_original_method = "0FD361D132773200063DCB66E88E964C", hash_generated_method = "000338988C6A6B83070CEDE35DA49C05")
     @Override
-    protected void onFocusChanged(boolean gainFocus, int direction, Rect previouslyFocusedRect) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(previouslyFocusedRect.getTaint());
-        addTaint(direction);
-        addTaint(gainFocus);
+protected void onFocusChanged(boolean gainFocus, int direction, Rect previouslyFocusedRect) {
         super.onFocusChanged(gainFocus, direction, previouslyFocusedRect);
+
         int closestChildIndex = -1;
-        if(gainFocus && previouslyFocusedRect != null)        
-        {
+        if (gainFocus && previouslyFocusedRect != null) {
             previouslyFocusedRect.offset(mScrollX, mScrollY);
+
+            // figure out which item should be selected based on previously
+            // focused rect
             Rect otherRect = mTempRect;
             int minDistance = Integer.MAX_VALUE;
             final int childCount = getChildCount();
-for(int i = 0;i < childCount;i++)
-            {
-                if(!isCandidateSelection(i, direction))                
-                {
+            for (int i = 0; i < childCount; i++) {
+                // only consider view's on appropriate edge of grid
+                if (!isCandidateSelection(i, direction)) {
                     continue;
-                } //End block
+                }
+
                 final View other = getChildAt(i);
                 other.getDrawingRect(otherRect);
                 offsetDescendantRectToMyCoords(other, otherRect);
                 int distance = getDistance(previouslyFocusedRect, otherRect, direction);
-                if(distance < minDistance)                
-                {
+
+                if (distance < minDistance) {
                     minDistance = distance;
                     closestChildIndex = i;
-                } //End block
-            } //End block
-        } //End block
-        if(closestChildIndex >= 0)        
-        {
+                }
+            }
+        }
+
+        if (closestChildIndex >= 0) {
             setSelection(closestChildIndex + mFirstPosition);
-        } //End block
-        else
-        {
+        } else {
             requestLayout();
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.740 -0400", hash_original_method = "84D213429BEB1496C8F56DF85FD23E87", hash_generated_method = "471DC7346643B2222340BB33D277241D")
+    /**
+     * Is childIndex a candidate for next focus given the direction the focus
+     * change is coming from?
+     * @param childIndex The index to check.
+     * @param direction The direction, one of
+     *        {FOCUS_UP, FOCUS_DOWN, FOCUS_LEFT, FOCUS_RIGHT, FOCUS_FORWARD, FOCUS_BACKWARD}
+     * @return Whether childIndex is a candidate.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.497 -0500", hash_original_method = "84D213429BEB1496C8F56DF85FD23E87", hash_generated_method = "4A51426B49B23A339C74B0353EE11C7F")
     private boolean isCandidateSelection(int childIndex, int direction) {
-        addTaint(direction);
-        addTaint(childIndex);
         final int count = getChildCount();
         final int invertedIndex = count - 1 - childIndex;
+
         int rowStart;
         int rowEnd;
-        if(!mStackFromBottom)        
-        {
+
+        if (!mStackFromBottom) {
             rowStart = childIndex - (childIndex % mNumColumns);
             rowEnd = Math.max(rowStart + mNumColumns - 1, count);
-        } //End block
-        else
-        {
+        } else {
             rowEnd = count - 1 - (invertedIndex - (invertedIndex % mNumColumns));
             rowStart = Math.max(0, rowEnd - mNumColumns + 1);
-        } //End block
-switch(direction){
-        case View.FOCUS_RIGHT:
-        boolean varE3C592428323E223764E217BCA45C6F2_462366976 = (childIndex == rowStart);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1650057288 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1650057288;
-        case View.FOCUS_DOWN:
-        boolean var375663F1B9E9BDE44C192AB430C1C055_1107448146 = (rowStart == 0);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_491879425 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_491879425;
-        case View.FOCUS_LEFT:
-        boolean varA0487644439B48A879135B570581133E_1072941981 = (childIndex == rowEnd);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1552255060 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1552255060;
-        case View.FOCUS_UP:
-        boolean var47A27714995EE4AAEBD0BC74AA849F96_1232025878 = (rowEnd == count - 1);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_327840634 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_327840634;
-        case View.FOCUS_FORWARD:
-        boolean var45EB01626CE96943B8627E084C4864CE_202289361 = (childIndex == rowStart && rowStart == 0);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1704512391 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1704512391;
-        case View.FOCUS_BACKWARD:
-        boolean varDD97749B3A47C4DB260673B17C13355B_846653472 = (childIndex == rowEnd && rowEnd == count - 1);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1013754490 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1013754490;
-        default:
-        IllegalArgumentException var312E8BFCD4DB95BFC9041723CFDD2D20_594766140 = new IllegalArgumentException("direction must be one of "
+        }
+
+        switch (direction) {
+            case View.FOCUS_RIGHT:
+                // coming from left, selection is only valid if it is on left
+                // edge
+                return childIndex == rowStart;
+            case View.FOCUS_DOWN:
+                // coming from top; only valid if in top row
+                return rowStart == 0;
+            case View.FOCUS_LEFT:
+                // coming from right, must be on right edge
+                return childIndex == rowEnd;
+            case View.FOCUS_UP:
+                // coming from bottom, need to be in last row
+                return rowEnd == count - 1;
+            case View.FOCUS_FORWARD:
+                // coming from top-left, need to be first in top row
+                return childIndex == rowStart && rowStart == 0;
+            case View.FOCUS_BACKWARD:
+                // coming from bottom-right, need to be last in bottom row
+                return childIndex == rowEnd && rowEnd == count - 1;
+            default:
+                throw new IllegalArgumentException("direction must be one of "
                         + "{FOCUS_UP, FOCUS_DOWN, FOCUS_LEFT, FOCUS_RIGHT, "
                         + "FOCUS_FORWARD, FOCUS_BACKWARD}.");
-        var312E8BFCD4DB95BFC9041723CFDD2D20_594766140.addTaint(taint);
-        throw var312E8BFCD4DB95BFC9041723CFDD2D20_594766140;
-}
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.741 -0400", hash_original_method = "FC2053B842AF8EFA285EBFCDE9A6D098", hash_generated_method = "7651FAE378FCD1C5C8D832C78E53463C")
+    /**
+     * Describes how the child views are horizontally aligned. Defaults to Gravity.LEFT
+     *
+     * @param gravity the gravity to apply to this grid's children
+     *
+     * @attr ref android.R.styleable#GridView_gravity
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.498 -0500", hash_original_method = "FC2053B842AF8EFA285EBFCDE9A6D098", hash_generated_method = "257402A56C3595C77B8909D79F2C3593")
     public void setGravity(int gravity) {
-        if(mGravity != gravity)        
-        {
+        if (mGravity != gravity) {
             mGravity = gravity;
             requestLayoutIfNecessary();
-        } //End block
-        // ---------- Original Method ----------
-        //if (mGravity != gravity) {
-            //mGravity = gravity;
-            //requestLayoutIfNecessary();
-        //}
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.741 -0400", hash_original_method = "F4AD294FF1286508B5C248EDCA212E5B", hash_generated_method = "6AE42A70275DEC4A85D458C27872A426")
+    /**
+     * Set the amount of horizontal (x) spacing to place between each item
+     * in the grid.
+     *
+     * @param horizontalSpacing The amount of horizontal space between items,
+     * in pixels.
+     *
+     * @attr ref android.R.styleable#GridView_horizontalSpacing
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.499 -0500", hash_original_method = "F4AD294FF1286508B5C248EDCA212E5B", hash_generated_method = "5DEE44ABB512D0CC9A048216808F8B17")
     public void setHorizontalSpacing(int horizontalSpacing) {
-        if(horizontalSpacing != mRequestedHorizontalSpacing)        
-        {
+        if (horizontalSpacing != mRequestedHorizontalSpacing) {
             mRequestedHorizontalSpacing = horizontalSpacing;
             requestLayoutIfNecessary();
-        } //End block
-        // ---------- Original Method ----------
-        //if (horizontalSpacing != mRequestedHorizontalSpacing) {
-            //mRequestedHorizontalSpacing = horizontalSpacing;
-            //requestLayoutIfNecessary();
-        //}
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.741 -0400", hash_original_method = "18D0FB9D8A0D215DBABAAD70588CEE39", hash_generated_method = "61E99EF7ED5F6001F1AE0694ED7CC815")
+
+    /**
+     * Set the amount of vertical (y) spacing to place between each item
+     * in the grid.
+     *
+     * @param verticalSpacing The amount of vertical space between items,
+     * in pixels.
+     *
+     * @attr ref android.R.styleable#GridView_verticalSpacing
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.500 -0500", hash_original_method = "18D0FB9D8A0D215DBABAAD70588CEE39", hash_generated_method = "543EC8DA62BBEF590A2B2362755B8950")
     public void setVerticalSpacing(int verticalSpacing) {
-        if(verticalSpacing != mVerticalSpacing)        
-        {
+        if (verticalSpacing != mVerticalSpacing) {
             mVerticalSpacing = verticalSpacing;
             requestLayoutIfNecessary();
-        } //End block
-        // ---------- Original Method ----------
-        //if (verticalSpacing != mVerticalSpacing) {
-            //mVerticalSpacing = verticalSpacing;
-            //requestLayoutIfNecessary();
-        //}
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.741 -0400", hash_original_method = "C49A7586B9CFE9BA77F47A780C0C8544", hash_generated_method = "96A230D9BC780121F83A97140C351EE1")
+    /**
+     * Control how items are stretched to fill their space.
+     *
+     * @param stretchMode Either {@link #NO_STRETCH},
+     * {@link #STRETCH_SPACING}, {@link #STRETCH_SPACING_UNIFORM}, or {@link #STRETCH_COLUMN_WIDTH}.
+     *
+     * @attr ref android.R.styleable#GridView_stretchMode
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.501 -0500", hash_original_method = "C49A7586B9CFE9BA77F47A780C0C8544", hash_generated_method = "3CACC7AB0EB24497AB99DF73637693E8")
     public void setStretchMode(int stretchMode) {
-        if(stretchMode != mStretchMode)        
-        {
+        if (stretchMode != mStretchMode) {
             mStretchMode = stretchMode;
             requestLayoutIfNecessary();
-        } //End block
-        // ---------- Original Method ----------
-        //if (stretchMode != mStretchMode) {
-            //mStretchMode = stretchMode;
-            //requestLayoutIfNecessary();
-        //}
+        }
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.742 -0400", hash_original_method = "B323AFE5AE5939BBDA58166A4DF4B096", hash_generated_method = "E7D308CC13F34120CF1C25E10F82E0F1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.501 -0500", hash_original_method = "B323AFE5AE5939BBDA58166A4DF4B096", hash_generated_method = "8B261CCDF0ABD78D7C27D70E5708281B")
     public int getStretchMode() {
-        int var6A66D00918859F42D851F505ADE6AA46_388267174 = (mStretchMode);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_631734232 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_631734232;
-        // ---------- Original Method ----------
-        //return mStretchMode;
+        return mStretchMode;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.742 -0400", hash_original_method = "2D3707A47407D7324964709BC50279C2", hash_generated_method = "84786CA15DE1CC9B737C4658EAE1650D")
+    /**
+     * Set the width of columns in the grid.
+     *
+     * @param columnWidth The column width, in pixels.
+     *
+     * @attr ref android.R.styleable#GridView_columnWidth
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.502 -0500", hash_original_method = "2D3707A47407D7324964709BC50279C2", hash_generated_method = "8D3B64827C11D10879C4EF5C7CB79CD5")
     public void setColumnWidth(int columnWidth) {
-        if(columnWidth != mRequestedColumnWidth)        
-        {
+        if (columnWidth != mRequestedColumnWidth) {
             mRequestedColumnWidth = columnWidth;
             requestLayoutIfNecessary();
-        } //End block
-        // ---------- Original Method ----------
-        //if (columnWidth != mRequestedColumnWidth) {
-            //mRequestedColumnWidth = columnWidth;
-            //requestLayoutIfNecessary();
-        //}
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.742 -0400", hash_original_method = "EB843153C85390AE48F1C91EE0B42CDB", hash_generated_method = "DF909A972746555C83BF1873A671E9EC")
+    /**
+     * Set the number of columns in the grid
+     *
+     * @param numColumns The desired number of columns.
+     *
+     * @attr ref android.R.styleable#GridView_numColumns
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.503 -0500", hash_original_method = "EB843153C85390AE48F1C91EE0B42CDB", hash_generated_method = "32237D441F88BBE7A70E783E7A6D387A")
     public void setNumColumns(int numColumns) {
-        if(numColumns != mRequestedNumColumns)        
-        {
+        if (numColumns != mRequestedNumColumns) {
             mRequestedNumColumns = numColumns;
             requestLayoutIfNecessary();
-        } //End block
-        // ---------- Original Method ----------
-        //if (numColumns != mRequestedNumColumns) {
-            //mRequestedNumColumns = numColumns;
-            //requestLayoutIfNecessary();
-        //}
+        }
     }
-
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.742 -0400", hash_original_method = "B011FDCEBE38F0939F62249D6B5BC711", hash_generated_method = "1EC0AE9AD1CD94F1A71D8A99433EEF1C")
+    /**
+     * Get the number of columns in the grid. 
+     * Returns {@link #AUTO_FIT} if the Grid has never been laid out.
+     *
+     * @attr ref android.R.styleable#GridView_numColumns
+     * 
+     * @see #setNumColumns(int)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.504 -0500", hash_original_method = "B011FDCEBE38F0939F62249D6B5BC711", hash_generated_method = "D8CF91B9DE565DB32EB07EB1ECA367C7")
     @ViewDebug.ExportedProperty
-    public int getNumColumns() {
-        int var3C11F31A23C7905177BA6A1A74A63160_200611550 = (mNumColumns);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1102655381 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1102655381;
-        // ---------- Original Method ----------
-        //return mNumColumns;
+public int getNumColumns() {  
+        return mNumColumns;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.743 -0400", hash_original_method = "614329ACA245384517EF28FF3609B04B", hash_generated_method = "C987A8817E39D35B11DFA58E52F09D50")
+    /**
+     * Make sure views are touching the top or bottom edge, as appropriate for
+     * our gravity
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.505 -0500", hash_original_method = "614329ACA245384517EF28FF3609B04B", hash_generated_method = "9BACAE2057F7A0E8F3874F7616D578C1")
     private void adjustViewsUpOrDown() {
         final int childCount = getChildCount();
-        if(childCount > 0)        
-        {
+
+        if (childCount > 0) {
             int delta;
             View child;
-            if(!mStackFromBottom)            
-            {
+
+            if (!mStackFromBottom) {
+                // Uh-oh -- we came up short. Slide all views up to make them
+                // align with the top
                 child = getChildAt(0);
                 delta = child.getTop() - mListPadding.top;
-                if(mFirstPosition != 0)                
-                {
+                if (mFirstPosition != 0) {
+                    // It's OK to have some space above the first item if it is
+                    // part of the vertical spacing
                     delta -= mVerticalSpacing;
-                } //End block
-                if(delta < 0)                
-                {
+                }
+                if (delta < 0) {
+                    // We only are looking to see if we are too low, not too high
                     delta = 0;
-                } //End block
-            } //End block
-            else
-            {
+                }
+            } else {
+                // we are too high, slide all views down to align with bottom
                 child = getChildAt(childCount - 1);
                 delta = child.getBottom() - (getHeight() - mListPadding.bottom);
-                if(mFirstPosition + childCount < mItemCount)                
-                {
+                
+                if (mFirstPosition + childCount < mItemCount) {
+                    // It's OK to have some space below the last item if it is
+                    // part of the vertical spacing
                     delta += mVerticalSpacing;
-                } //End block
-                if(delta > 0)                
-                {
+                }
+                
+                if (delta > 0) {
+                    // We only are looking to see if we are too high, not too low
                     delta = 0;
-                } //End block
-            } //End block
-            if(delta != 0)            
-            {
-                offsetChildrenTopAndBottom(-delta);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
+                }
+            }
 
+            if (delta != 0) {
+                offsetChildrenTopAndBottom(-delta);
+            }
+        }
+    }
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.746 -0400", hash_original_method = "0FB16985DD2A598E66D7882D349B86AF", hash_generated_method = "72C3A69C2E8BF2C0870E11E50F2313F7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.506 -0500", hash_original_method = "0FB16985DD2A598E66D7882D349B86AF", hash_generated_method = "819AF93A5870428BF9285B3DC7EF3A40")
     @Override
-    protected int computeVerticalScrollExtent() {
+protected int computeVerticalScrollExtent() {
         final int count = getChildCount();
-        if(count > 0)        
-        {
+        if (count > 0) {
             final int numColumns = mNumColumns;
             final int rowCount = (count + numColumns - 1) / numColumns;
+            
             int extent = rowCount * 100;
+
             View view = getChildAt(0);
             final int top = view.getTop();
             int height = view.getHeight();
-            if(height > 0)            
-            {
+            if (height > 0) {
                 extent += (top * 100) / height;
-            } //End block
+            }
+
             view = getChildAt(count - 1);
             final int bottom = view.getBottom();
             height = view.getHeight();
-            if(height > 0)            
-            {
+            if (height > 0) {
                 extent -= ((bottom - getHeight()) * 100) / height;
-            } //End block
-            int var0793046CD12DB418149C2B688AF9B27F_164202630 = (extent);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1313648243 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1313648243;
-        } //End block
-        int varCFCD208495D565EF66E7DFF9F98764DA_1526570255 = (0);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2081295786 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2081295786;
-        // ---------- Original Method ----------
-        //final int count = getChildCount();
-        //if (count > 0) {
-            //final int numColumns = mNumColumns;
-            //final int rowCount = (count + numColumns - 1) / numColumns;
-            //int extent = rowCount * 100;
-            //View view = getChildAt(0);
-            //final int top = view.getTop();
-            //int height = view.getHeight();
-            //if (height > 0) {
-                //extent += (top * 100) / height;
-            //}
-            //view = getChildAt(count - 1);
-            //final int bottom = view.getBottom();
-            //height = view.getHeight();
-            //if (height > 0) {
-                //extent -= ((bottom - getHeight()) * 100) / height;
-            //}
-            //return extent;
-        //}
-        //return 0;
+            }
+
+            return extent;
+        }
+        return 0;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.746 -0400", hash_original_method = "77C851014C1118924C7173C75459421E", hash_generated_method = "0D9452A9C81F453F1C848DBEB7D0D07C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.507 -0500", hash_original_method = "77C851014C1118924C7173C75459421E", hash_generated_method = "EA31FD8F6DDC482EB26984D2E841D9C8")
     @Override
-    protected int computeVerticalScrollOffset() {
-        if(mFirstPosition >= 0 && getChildCount() > 0)        
-        {
+protected int computeVerticalScrollOffset() {
+        if (mFirstPosition >= 0 && getChildCount() > 0) {
             final View view = getChildAt(0);
             final int top = view.getTop();
             int height = view.getHeight();
-            if(height > 0)            
-            {
+            if (height > 0) {
                 final int numColumns = mNumColumns;
                 final int whichRow = mFirstPosition / numColumns;
                 final int rowCount = (mItemCount + numColumns - 1) / numColumns;
-                int varBDB02E367A751F85AB56A797E679B26F_1683284853 = (Math.max(whichRow * 100 - (top * 100) / height +
-                        (int) ((float) mScrollY / getHeight() * rowCount * 100), 0));
-                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_817628568 = getTaintInt();
-                return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_817628568;
-            } //End block
-        } //End block
-        int varCFCD208495D565EF66E7DFF9F98764DA_2058119172 = (0);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1869139365 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1869139365;
-        // ---------- Original Method ----------
-        //if (mFirstPosition >= 0 && getChildCount() > 0) {
-            //final View view = getChildAt(0);
-            //final int top = view.getTop();
-            //int height = view.getHeight();
-            //if (height > 0) {
-                //final int numColumns = mNumColumns;
-                //final int whichRow = mFirstPosition / numColumns;
-                //final int rowCount = (mItemCount + numColumns - 1) / numColumns;
-                //return Math.max(whichRow * 100 - (top * 100) / height +
-                        //(int) ((float) mScrollY / getHeight() * rowCount * 100), 0);
-            //}
-        //}
-        //return 0;
+                return Math.max(whichRow * 100 - (top * 100) / height +
+                        (int) ((float) mScrollY / getHeight() * rowCount * 100), 0);
+            }
+        }
+        return 0;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.747 -0400", hash_original_method = "2E67C9F09804D125789DA130D24F2E03", hash_generated_method = "CFCDEBB2CAEFD729DA3B9B4C129C05C3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.508 -0500", hash_original_method = "2E67C9F09804D125789DA130D24F2E03", hash_generated_method = "79D520D501B7164C9A87D44DCA0E9555")
     @Override
-    protected int computeVerticalScrollRange() {
+protected int computeVerticalScrollRange() {
+        // TODO: Account for vertical spacing too
         final int numColumns = mNumColumns;
         final int rowCount = (mItemCount + numColumns - 1) / numColumns;
         int result = Math.max(rowCount * 100, 0);
-        if(mScrollY != 0)        
-        {
+        if (mScrollY != 0) {
+            // Compensate for overscroll
             result += Math.abs((int) ((float) mScrollY / getHeight() * rowCount * 100));
-        } //End block
-        int varB4A88417B3D0170D754C647C30B7216A_258689676 = (result);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_641886394 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_641886394;
-        // ---------- Original Method ----------
-        //final int numColumns = mNumColumns;
-        //final int rowCount = (mItemCount + numColumns - 1) / numColumns;
-        //int result = Math.max(rowCount * 100, 0);
-        //if (mScrollY != 0) {
-            //result += Math.abs((int) ((float) mScrollY / getHeight() * rowCount * 100));
-        //}
-        //return result;
+        }
+        return result;
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.747 -0400", hash_original_field = "3C6C842350FA9DF4AF7C1577C5481D7F", hash_generated_field = "9591D43DFDB00D3CA815C6412336BEEB")
-
-    public static final int NO_STRETCH = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.747 -0400", hash_original_field = "C781279666F1CFCA96E5F3E8F379648C", hash_generated_field = "9E8C93D13663D982A634A608E98FDD9B")
-
-    public static final int STRETCH_SPACING = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.747 -0400", hash_original_field = "93F50EC30CD0856C8A19939E9B64DED3", hash_generated_field = "289B7802E2F88C85889BF1B0A565B14F")
-
-    public static final int STRETCH_COLUMN_WIDTH = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.747 -0400", hash_original_field = "321EC49DA83893E4048EDCC856EFEFB3", hash_generated_field = "6D329753C82DAECBEDD98AD073821537")
-
-    public static final int STRETCH_SPACING_UNIFORM = 3;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.747 -0400", hash_original_field = "57174C1594A18EA6304DDA366FEF8B68", hash_generated_field = "4306712C3BDDA946F401316F516F19DA")
-
-    public static final int AUTO_FIT = -1;
 }
 

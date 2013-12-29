@@ -6,49 +6,9 @@ import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 import android.util.Log;
 public class ProgramRaster extends BaseObj {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:03:31.468 -0400", hash_original_field = "321685E8635454054D49E5C34C7B3BD2", hash_generated_field = "F5AC5A34ED9B3F99113F766A014FABE4")
 
-    boolean mPointSprite;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:03:31.471 -0400", hash_original_field = "FC0F060774ED3ABA52CE08DBF84480D8", hash_generated_field = "9FA33B9FFF9AB6B073377EBA3FA57AC7")
-
-    CullMode mCullMode;
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:03:31.480 -0400", hash_original_method = "894C81580448C83340BD6FC91F1FBF06", hash_generated_method = "CA1857F815CC313325ACBD6B00E13579")
-      ProgramRaster(int id, RenderScript rs) {
-        super(id, rs);
-        addTaint(rs.getTaint());
-        addTaint(id);
-        mPointSprite = false;
-        mCullMode = CullMode.BACK;
-        // ---------- Original Method ----------
-        //mPointSprite = false;
-        //mCullMode = CullMode.BACK;
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:03:31.494 -0400", hash_original_method = "F919B6D858DA98A8D6F899FC9949AF17", hash_generated_method = "69AA81AB0EF1B9D5C3F9795015745EE3")
-    public boolean getPointSpriteEnabled() {
-        boolean var321685E8635454054D49E5C34C7B3BD2_1477994857 = (mPointSprite);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_207905395 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_207905395;
-        // ---------- Original Method ----------
-        //return mPointSprite;
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:03:31.505 -0400", hash_original_method = "9D9A5D91910AD22DEA2607A5096E0D2B", hash_generated_method = "A7A6D867287F7EEB69B5B097EA7815DF")
-    public CullMode getCullMode() {
-CullMode var152C0F26D3190115F1B1B5CD185268F6_1389726823 =         mCullMode;
-        var152C0F26D3190115F1B1B5CD185268F6_1389726823.addTaint(taint);
-        return var152C0F26D3190115F1B1B5CD185268F6_1389726823;
-        // ---------- Original Method ----------
-        //return mCullMode;
-    }
-
-    
-        public static ProgramRaster CULL_BACK(RenderScript rs) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.991 -0500", hash_original_method = "B45B30DADB58E52197690550898E7B6B", hash_generated_method = "DC6D9F4B1E12E7124E2C7AB9E9C400CF")
+    public static ProgramRaster CULL_BACK(RenderScript rs) {
         if(rs.mProgramRaster_CULL_BACK == null) {
             ProgramRaster.Builder builder = new ProgramRaster.Builder(rs);
             builder.setCullMode(CullMode.BACK);
@@ -57,8 +17,8 @@ CullMode var152C0F26D3190115F1B1B5CD185268F6_1389726823 =         mCullMode;
         return rs.mProgramRaster_CULL_BACK;
     }
 
-    
-        public static ProgramRaster CULL_FRONT(RenderScript rs) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.992 -0500", hash_original_method = "C338563961D95E9CBF2C761B4110D328", hash_generated_method = "D14C4BE73A42E74941D93ADE67D21280")
+    public static ProgramRaster CULL_FRONT(RenderScript rs) {
         if(rs.mProgramRaster_CULL_FRONT == null) {
             ProgramRaster.Builder builder = new ProgramRaster.Builder(rs);
             builder.setCullMode(CullMode.FRONT);
@@ -67,8 +27,8 @@ CullMode var152C0F26D3190115F1B1B5CD185268F6_1389726823 =         mCullMode;
         return rs.mProgramRaster_CULL_FRONT;
     }
 
-    
-        public static ProgramRaster CULL_NONE(RenderScript rs) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.993 -0500", hash_original_method = "81F52F7F6091CFF0B01CA74F1515C776", hash_generated_method = "AC4A7B829F3EA27D56FC95CE181C2EAD")
+    public static ProgramRaster CULL_NONE(RenderScript rs) {
         if(rs.mProgramRaster_CULL_NONE == null) {
             ProgramRaster.Builder builder = new ProgramRaster.Builder(rs);
             builder.setCullMode(CullMode.NONE);
@@ -76,86 +36,94 @@ CullMode var152C0F26D3190115F1B1B5CD185268F6_1389726823 =         mCullMode;
         }
         return rs.mProgramRaster_CULL_NONE;
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.988 -0500", hash_original_field = "F5AC5A34ED9B3F99113F766A014FABE4", hash_generated_field = "F5AC5A34ED9B3F99113F766A014FABE4")
+
+
+    boolean mPointSprite;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.988 -0500", hash_original_field = "9FA33B9FFF9AB6B073377EBA3FA57AC7", hash_generated_field = "9FA33B9FFF9AB6B073377EBA3FA57AC7")
+
+    CullMode mCullMode;
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.989 -0500", hash_original_method = "894C81580448C83340BD6FC91F1FBF06", hash_generated_method = "894C81580448C83340BD6FC91F1FBF06")
+    ProgramRaster(int id, RenderScript rs) {
+        super(id, rs);
+
+        mPointSprite = false;
+        mCullMode = CullMode.BACK;
+    }
+
+    /**
+     * @hide
+     * @return whether point sprites are enabled
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.990 -0500", hash_original_method = "F919B6D858DA98A8D6F899FC9949AF17", hash_generated_method = "BA55640A14340CF0312D25367BBBB758")
+    public boolean getPointSpriteEnabled() {
+        return mPointSprite;
+    }
+
+    /**
+     * @hide
+     * @return cull mode
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.990 -0500", hash_original_method = "9D9A5D91910AD22DEA2607A5096E0D2B", hash_generated_method = "FCB98D5A29CA48864B507BAEA061680A")
+    public CullMode getCullMode() {
+        return mCullMode;
+    }
 
     
     public enum CullMode {
         BACK (0),
         FRONT (1),
         NONE (2);
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.985 -0500", hash_original_field = "0B53E374282B34FB268F3024A1E73BA5", hash_generated_field = "0B53E374282B34FB268F3024A1E73BA5")
+
+
         int mID;
-        @DSModeled(DSC.BAN)
-        CullMode(int id) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.986 -0500", hash_original_method = "B61747BBEA86E5C9AEAB3224C03DAB64", hash_generated_method = "B61747BBEA86E5C9AEAB3224C03DAB64")
+            CullMode(int id) {
             mID = id;
         }
     }
 
     
     public static class Builder {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:03:31.518 -0400", hash_original_field = "15EADDEB24354180E81F0ADC804C4CED", hash_generated_field = "AD6E2452AD39DF3B497ED4B7E83C4E0C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.994 -0500", hash_original_field = "AD6E2452AD39DF3B497ED4B7E83C4E0C", hash_generated_field = "AD6E2452AD39DF3B497ED4B7E83C4E0C")
 
         RenderScript mRS;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:03:31.520 -0400", hash_original_field = "321685E8635454054D49E5C34C7B3BD2", hash_generated_field = "F5AC5A34ED9B3F99113F766A014FABE4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.996 -0500", hash_original_field = "F5AC5A34ED9B3F99113F766A014FABE4", hash_generated_field = "F5AC5A34ED9B3F99113F766A014FABE4")
 
         boolean mPointSprite;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:03:31.521 -0400", hash_original_field = "FC0F060774ED3ABA52CE08DBF84480D8", hash_generated_field = "9FA33B9FFF9AB6B073377EBA3FA57AC7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.997 -0500", hash_original_field = "9FA33B9FFF9AB6B073377EBA3FA57AC7", hash_generated_field = "9FA33B9FFF9AB6B073377EBA3FA57AC7")
 
         CullMode mCullMode;
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:03:31.536 -0400", hash_original_method = "1E8388B7448CFC4A6F961C903791989B", hash_generated_method = "973C1416ACC76B05766F7D935E8046AB")
-        public  Builder(RenderScript rs) {
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.998 -0500", hash_original_method = "1E8388B7448CFC4A6F961C903791989B", hash_generated_method = "DD27137D7A1D3F7207EFD5ACD8A67760")
+        public Builder(RenderScript rs) {
             mRS = rs;
             mPointSprite = false;
             mCullMode = CullMode.BACK;
-            // ---------- Original Method ----------
-            //mRS = rs;
-            //mPointSprite = false;
-            //mCullMode = CullMode.BACK;
         }
 
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:03:31.545 -0400", hash_original_method = "8E3B02261392357829242E8A2823D9BA", hash_generated_method = "C53C06F0555C6774F447CA44C75247C0")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.999 -0500", hash_original_method = "8E3B02261392357829242E8A2823D9BA", hash_generated_method = "CAAD4EBFD49646413001F1EC18460DEA")
         public Builder setPointSpriteEnabled(boolean enable) {
             mPointSprite = enable;
-Builder var72A74007B2BE62B849F475C7BDA4658B_394590042 =             this;
-            var72A74007B2BE62B849F475C7BDA4658B_394590042.addTaint(taint);
-            return var72A74007B2BE62B849F475C7BDA4658B_394590042;
-            // ---------- Original Method ----------
-            //mPointSprite = enable;
-            //return this;
+            return this;
         }
 
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:03:31.551 -0400", hash_original_method = "5BEDACC205FE11487443D5D48E3468FF", hash_generated_method = "4C945800D30C9C4340E7124ACC3591FD")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:50.999 -0500", hash_original_method = "5BEDACC205FE11487443D5D48E3468FF", hash_generated_method = "E09EC2E93665B072D79A5132D45ABA21")
         public Builder setCullMode(CullMode m) {
             mCullMode = m;
-Builder var72A74007B2BE62B849F475C7BDA4658B_379297981 =             this;
-            var72A74007B2BE62B849F475C7BDA4658B_379297981.addTaint(taint);
-            return var72A74007B2BE62B849F475C7BDA4658B_379297981;
-            // ---------- Original Method ----------
-            //mCullMode = m;
-            //return this;
+            return this;
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:03:31.560 -0400", hash_original_method = "1201121589D1F1D557C1BF9F7B00A57A", hash_generated_method = "D4D1F608CBC16FD84D42DB5532E219EC")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:51.000 -0500", hash_original_method = "1201121589D1F1D557C1BF9F7B00A57A", hash_generated_method = "5799D3C0A8BB20E97D37C79B8F8D3758")
         public ProgramRaster create() {
             mRS.validate();
             int id = mRS.nProgramRasterCreate(mPointSprite, mCullMode.mID);
             ProgramRaster programRaster = new ProgramRaster(id, mRS);
             programRaster.mPointSprite = mPointSprite;
             programRaster.mCullMode = mCullMode;
-ProgramRaster var759CF772BE8BA815CF66A98368843F2A_1760996734 =             programRaster;
-            var759CF772BE8BA815CF66A98368843F2A_1760996734.addTaint(taint);
-            return var759CF772BE8BA815CF66A98368843F2A_1760996734;
-            // ---------- Original Method ----------
-            //mRS.validate();
-            //int id = mRS.nProgramRasterCreate(mPointSprite, mCullMode.mID);
-            //ProgramRaster programRaster = new ProgramRaster(id, mRS);
-            //programRaster.mPointSprite = mPointSprite;
-            //programRaster.mCullMode = mCullMode;
-            //return programRaster;
+            return programRaster;
         }
 
         

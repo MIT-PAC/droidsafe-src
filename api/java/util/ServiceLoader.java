@@ -1,6 +1,8 @@
 package java.util;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -14,58 +16,6 @@ import libcore.io.IoUtils;
 
 
 public final class ServiceLoader<S> implements Iterable<S> {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.994 -0400", hash_original_field = "AAABF0D39951F3E6C3E8A7911DF524C2", hash_generated_field = "9105291DDC6ADFA906195342E88B2E45")
-
-    private Class<S> service;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.994 -0400", hash_original_field = "23508C9A13E40798812B11A9CFC1E55C", hash_generated_field = "F6BCA95A9F68D069180083A80576157E")
-
-    private ClassLoader classLoader;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.994 -0400", hash_original_field = "10CD395CF71C18328C863C08E78F3FD0", hash_generated_field = "47668CA061897E9E78C4EAFC64299178")
-
-    private Set<URL> services;
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.995 -0400", hash_original_method = "94B9216B7758F0B227BA0C421F85C6AF", hash_generated_method = "4E3505383B02394C9EC91A87639DCCCE")
-    private  ServiceLoader(Class<S> service, ClassLoader classLoader) {
-        if(service == null)        
-        {
-            NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_1430916915 = new NullPointerException();
-            var7338BC9F48D81FE0BBD6183F4014DCC4_1430916915.addTaint(taint);
-            throw var7338BC9F48D81FE0BBD6183F4014DCC4_1430916915;
-        } //End block
-        this.service = service;
-        this.classLoader = classLoader;
-        this.services = new HashSet<URL>();
-        reload();
-        // ---------- Original Method ----------
-        //if (service == null) {
-            //throw new NullPointerException();
-        //}
-        //this.service = service;
-        //this.classLoader = classLoader;
-        //this.services = new HashSet<URL>();
-        //reload();
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.995 -0400", hash_original_method = "5DE3F3B80408315525994C211C4640EC", hash_generated_method = "B60E62D5BFE2284818EAB4DA920ACD3A")
-    public void reload() {
-        internalLoad();
-        // ---------- Original Method ----------
-        //internalLoad();
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.995 -0400", hash_original_method = "347C14FB6BD1E7714C96867577CC330D", hash_generated_method = "3A442FF703C49A0F3410D5E9C42DBEB4")
-    public Iterator<S> iterator() {
-Iterator<S> var5595D01585350877366F9800888A00F9_81321559 =         new ServiceIterator(this);
-        var5595D01585350877366F9800888A00F9_81321559.addTaint(taint);
-        return var5595D01585350877366F9800888A00F9_81321559;
-        // ---------- Original Method ----------
-        //return new ServiceIterator(this);
-    }
 
     
     @DSModeled(DSC.BAN)
@@ -74,30 +24,6 @@ Iterator<S> var5595D01585350877366F9800888A00F9_81321559 =         new ServiceIt
             classLoader = ClassLoader.getSystemClassLoader();
         }
         return new ServiceLoader<S>(service, classLoader);
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.996 -0400", hash_original_method = "7DCE51783862B815D2BC789E6049F748", hash_generated_method = "EB3EC4B2E81FA32FF6F4AFAD426C9AC4")
-    private void internalLoad() {
-        services.clear();
-        try 
-        {
-            String name = "META-INF/services/" + service.getName();
-            services.addAll(Collections.list(classLoader.getResources(name)));
-        } //End block
-        catch (IOException e)
-        {
-            return;
-        } //End block
-        // ---------- Original Method ----------
-        //services.clear();
-        //try {
-            //String name = "META-INF/services/" + service.getName();
-            //services.addAll(Collections.list(classLoader.getResources(name)));
-        //} catch (IOException e) {
-            //return;
-        //}
     }
 
     
@@ -132,184 +58,164 @@ Iterator<S> var5595D01585350877366F9800888A00F9_81321559 =         new ServiceIt
             throw new Error(e);
         }
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.220 -0500", hash_original_field = "2D6ED9787641E6B28949C0A39DA102CA", hash_generated_field = "9105291DDC6ADFA906195342E88B2E45")
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.997 -0400", hash_original_method = "F8BFF902940FB319A126BEB71F562AF6", hash_generated_method = "8252DF6496BC1300A3426500F35F72CA")
+    private  Class<S> service;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.221 -0500", hash_original_field = "DB93E4DB6045160743AC769A344DA267", hash_generated_field = "F6BCA95A9F68D069180083A80576157E")
+
+    private  ClassLoader classLoader;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.221 -0500", hash_original_field = "20AC8E97E9ADE044C70698A1025D7BD6", hash_generated_field = "47668CA061897E9E78C4EAFC64299178")
+
+    private  Set<URL> services;
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.222 -0500", hash_original_method = "94B9216B7758F0B227BA0C421F85C6AF", hash_generated_method = "EC21449AED08B55C5A66D03C5CACDA3D")
+    private ServiceLoader(Class<S> service, ClassLoader classLoader) {
+        // It makes no sense for service to be null.
+        // classLoader is null if you want the system class loader.
+        if (service == null) {
+            throw new NullPointerException();
+        }
+        this.service = service;
+        this.classLoader = classLoader;
+        this.services = new HashSet<URL>();
+        reload();
+    }
+
+    /**
+     * Invalidates the cache of known service provider class names.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.223 -0500", hash_original_method = "5DE3F3B80408315525994C211C4640EC", hash_generated_method = "633279BE735F9BF6F8A7B3923C9B6C0F")
+    public void reload() {
+        internalLoad();
+    }
+
+    /**
+     * Returns an iterator over all the service providers offered by this service loader.
+     * Note that {@code hasNext} and {@code next} may throw if the configuration is invalid.
+     *
+     * <p>Each iterator will return new instances of the classes it iterates over, so callers
+     * may want to cache the results of a single call to this method rather than call it
+     * repeatedly.
+     *
+     * <p>The returned iterator does not support {@code remove}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.224 -0500", hash_original_method = "347C14FB6BD1E7714C96867577CC330D", hash_generated_method = "903E79232BB492D8486688E535217E3B")
+    public Iterator<S> iterator() {
+        return new ServiceIterator(this);
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.226 -0500", hash_original_method = "7DCE51783862B815D2BC789E6049F748", hash_generated_method = "636795A3BEE52517DBA37BF07028F4A4")
+    private void internalLoad() {
+        services.clear();
+        try {
+            String name = "META-INF/services/" + service.getName();
+            services.addAll(Collections.list(classLoader.getResources(name)));
+        } catch (IOException e) {
+            return;
+        }
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.229 -0500", hash_original_method = "F8BFF902940FB319A126BEB71F562AF6", hash_generated_method = "E74C9B6A194B8542188350F2CA47D3FB")
     @Override
-    public String toString() {
-String varD6505E9E90B35E4D23556B6DAC1CF0D7_1838796484 =         "ServiceLoader for " + service.getName();
-        varD6505E9E90B35E4D23556B6DAC1CF0D7_1838796484.addTaint(taint);
-        return varD6505E9E90B35E4D23556B6DAC1CF0D7_1838796484;
-        // ---------- Original Method ----------
-        //return "ServiceLoader for " + service.getName();
+public String toString() {
+        return "ServiceLoader for " + service.getName();
     }
 
     
     private class ServiceIterator implements Iterator<S> {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.998 -0400", hash_original_field = "23508C9A13E40798812B11A9CFC1E55C", hash_generated_field = "F6BCA95A9F68D069180083A80576157E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.230 -0500", hash_original_field = "DB93E4DB6045160743AC769A344DA267", hash_generated_field = "F6BCA95A9F68D069180083A80576157E")
 
-        private ClassLoader classLoader;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.998 -0400", hash_original_field = "AAABF0D39951F3E6C3E8A7911DF524C2", hash_generated_field = "9105291DDC6ADFA906195342E88B2E45")
+        private  ClassLoader classLoader;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.231 -0500", hash_original_field = "2D6ED9787641E6B28949C0A39DA102CA", hash_generated_field = "9105291DDC6ADFA906195342E88B2E45")
 
-        private Class<S> service;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.998 -0400", hash_original_field = "10CD395CF71C18328C863C08E78F3FD0", hash_generated_field = "47668CA061897E9E78C4EAFC64299178")
+        private  Class<S> service;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.232 -0500", hash_original_field = "20AC8E97E9ADE044C70698A1025D7BD6", hash_generated_field = "47668CA061897E9E78C4EAFC64299178")
 
-        private Set<URL> services;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.998 -0400", hash_original_field = "2540E8397DE61AD999D75D9B9A4BB7A9", hash_generated_field = "AF3FD4FB03AF670FF56C37A3383F4F8C")
+        private  Set<URL> services;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.232 -0500", hash_original_field = "50C457FF74D9C40288B48AEB440D50AE", hash_generated_field = "AF3FD4FB03AF670FF56C37A3383F4F8C")
+
 
         private boolean isRead = false;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.998 -0400", hash_original_field = "A733E7069BD0A1288B92AFF72B6AC418", hash_generated_field = "379E2423239498A389B9B242C49020D7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.233 -0500", hash_original_field = "DEC57B84A4CD748354D1673FC02EFE30", hash_generated_field = "379E2423239498A389B9B242C49020D7")
+
 
         private LinkedList<String> queue = new LinkedList<String>();
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.999 -0400", hash_original_method = "9B12B690CA5F78312F729D80BAC6EFA1", hash_generated_method = "0399B2EAAD832CBB301D916334B7DFAA")
-        public  ServiceIterator(ServiceLoader<S> sl) {
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.234 -0500", hash_original_method = "9B12B690CA5F78312F729D80BAC6EFA1", hash_generated_method = "F64E3416AD50B6604085E6C8DB2B40D6")
+        public ServiceIterator(ServiceLoader<S> sl) {
             this.classLoader = sl.classLoader;
             this.service = sl.service;
             this.services = sl.services;
-            // ---------- Original Method ----------
-            //this.classLoader = sl.classLoader;
-            //this.service = sl.service;
-            //this.services = sl.services;
         }
 
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.999 -0400", hash_original_method = "DC8C57213B773C0EB2B0D98440591DD2", hash_generated_method = "4209D36AAFE14FB5AC4F6A63ECDCFC8C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.235 -0500", hash_original_method = "DC8C57213B773C0EB2B0D98440591DD2", hash_generated_method = "93761BE42B0E7B4396883B779BF64698")
         public boolean hasNext() {
-            if(!isRead)            
-            {
+            if (!isRead) {
                 readClass();
-            } //End block
-            boolean var4134D5BD73BFA615ADC48C269CC99415_2044766279 = ((queue != null && !queue.isEmpty()));
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1234245976 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1234245976;
-            // ---------- Original Method ----------
-            //if (!isRead) {
-                //readClass();
-            //}
-            //return (queue != null && !queue.isEmpty());
+            }
+            return (queue != null && !queue.isEmpty());
         }
 
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.000 -0400", hash_original_method = "B99394086046EF47562A5B63911931C2", hash_generated_method = "90D00DDCAD05A63889FDACD58D4BCBFC")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.236 -0500", hash_original_method = "B99394086046EF47562A5B63911931C2", hash_generated_method = "03938AB1B532DD7680A49FA14D21523A")
         @SuppressWarnings("unchecked")
-        public S next() {
-            if(!hasNext())            
-            {
-                NoSuchElementException var28D00AB599969908D71F102AF992D49A_1967620810 = new NoSuchElementException();
-                var28D00AB599969908D71F102AF992D49A_1967620810.addTaint(taint);
-                throw var28D00AB599969908D71F102AF992D49A_1967620810;
-            } //End block
+public S next() {
+            if (!hasNext()) {
+                throw new NoSuchElementException();
+            }
             String className = queue.remove();
-            try 
-            {
-S var4CE3DC2994840DD0E53401858CD7B335_766351919 =                 service.cast(classLoader.loadClass(className).newInstance());
-                var4CE3DC2994840DD0E53401858CD7B335_766351919.addTaint(taint);
-                return var4CE3DC2994840DD0E53401858CD7B335_766351919;
-            } //End block
-            catch (Exception e)
-            {
-                ServiceConfigurationError var4884B463F3943E5BC6F034CB08178A11_705592891 = new ServiceConfigurationError("Couldn't instantiate class " + className, e);
-                var4884B463F3943E5BC6F034CB08178A11_705592891.addTaint(taint);
-                throw var4884B463F3943E5BC6F034CB08178A11_705592891;
-            } //End block
-            // ---------- Original Method ----------
-            //if (!hasNext()) {
-                //throw new NoSuchElementException();
-            //}
-            //String className = queue.remove();
-            //try {
-                //return service.cast(classLoader.loadClass(className).newInstance());
-            //} catch (Exception e) {
-                //throw new ServiceConfigurationError("Couldn't instantiate class " + className, e);
-            //}
+            try {
+                return service.cast(classLoader.loadClass(className).newInstance());
+            } catch (Exception e) {
+                throw new ServiceConfigurationError("Couldn't instantiate class " + className, e);
+            }
         }
 
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.002 -0400", hash_original_method = "D6C7FE21AC961E0461EEEE7A6B5E3796", hash_generated_method = "1F21B7CAF5D2FAD0088BB912B59F21D4")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.237 -0500", hash_original_method = "D6C7FE21AC961E0461EEEE7A6B5E3796", hash_generated_method = "51319C8714A29158C166730309F225DA")
         private void readClass() {
-for(URL url : services)
-            {
+            for (URL url : services) {
                 BufferedReader reader = null;
-                try 
-                {
+                try {
                     reader = new BufferedReader(new InputStreamReader(url.openStream(), "UTF-8"));
                     String line;
-                    while
-((line = reader.readLine()) != null)                    
-                    {
+                    while ((line = reader.readLine()) != null) {
+                        // Strip comments and whitespace...
                         int commentStart = line.indexOf('#');
-                        if(commentStart != -1)                        
-                        {
+                        if (commentStart != -1) {
                             line = line.substring(0, commentStart);
-                        } //End block
+                        }
                         line = line.trim();
-                        if(line.isEmpty())                        
-                        {
+                        // Ignore empty lines.
+                        if (line.isEmpty()) {
                             continue;
-                        } //End block
+                        }
                         String className = line;
                         checkValidJavaClassName(className);
-                        if(!queue.contains(className))                        
-                        {
+                        if (!queue.contains(className)) {
                             queue.add(className);
-                        } //End block
-                    } //End block
+                        }
+                    }
                     isRead = true;
-                } //End block
-                catch (Exception e)
-                {
-                    ServiceConfigurationError var1F7EA0C9D1D6DB8F57385C8CA6A576DA_413662716 = new ServiceConfigurationError("Couldn't read " + url, e);
-                    var1F7EA0C9D1D6DB8F57385C8CA6A576DA_413662716.addTaint(taint);
-                    throw var1F7EA0C9D1D6DB8F57385C8CA6A576DA_413662716;
-                } //End block
-                finally 
-                {
+                } catch (Exception e) {
+                    throw new ServiceConfigurationError("Couldn't read " + url, e);
+                } finally {
                     IoUtils.closeQuietly(reader);
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+                }
+            }
         }
 
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.003 -0400", hash_original_method = "89C642158183FED064530A14F092CD81", hash_generated_method = "5878F3962AAB3469B29036E613CA5B43")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.238 -0500", hash_original_method = "89C642158183FED064530A14F092CD81", hash_generated_method = "5B2A4852FF2684177E07742561C615C2")
         public void remove() {
-            UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_358589017 = new UnsupportedOperationException();
-            var81FA7E299EEE7F062EBFBEEF08B0464D_358589017.addTaint(taint);
-            throw var81FA7E299EEE7F062EBFBEEF08B0464D_358589017;
-            // ---------- Original Method ----------
-            //throw new UnsupportedOperationException();
+            throw new UnsupportedOperationException();
         }
 
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.003 -0400", hash_original_method = "0BD3CD94707D253C58DB4E9194FF8BE6", hash_generated_method = "9FA31A87DBE96AFC93BE662AF0C7BE7A")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:47.239 -0500", hash_original_method = "0BD3CD94707D253C58DB4E9194FF8BE6", hash_generated_method = "5884C35807929EC9767E1C51DDEC5DA4")
         private void checkValidJavaClassName(String className) {
-            addTaint(className.getTaint());
-for(int i = 0;i < className.length();++i)
-            {
+            for (int i = 0; i < className.length(); ++i) {
                 char ch = className.charAt(i);
-                if(!Character.isJavaIdentifierPart(ch) && ch != '.')                
-                {
-                    ServiceConfigurationError varF7F08B66C360D56E37E7510D7FABB6E3_40071941 = new ServiceConfigurationError("Bad character '" + ch + "' in class name");
-                    varF7F08B66C360D56E37E7510D7FABB6E3_40071941.addTaint(taint);
-                    throw varF7F08B66C360D56E37E7510D7FABB6E3_40071941;
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            //for (int i = 0; i < className.length(); ++i) {
-                //char ch = className.charAt(i);
-                //if (!Character.isJavaIdentifierPart(ch) && ch != '.') {
-                    //throw new ServiceConfigurationError("Bad character '" + ch + "' in class name");
-                //}
-            //}
+                if (!Character.isJavaIdentifierPart(ch) && ch != '.') {
+                    throw new ServiceConfigurationError("Bad character '" + ch + "' in class name");
+                }
+            }
         }
 
         

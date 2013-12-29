@@ -1,6 +1,8 @@
 package android.webkit;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.regex.Pattern;
 
@@ -12,28 +14,33 @@ import android.text.TextUtils;
 
 
 public class MimeTypeMap {
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.559 -0400", hash_original_method = "D2809047C19DC484190C3B6A1503A531", hash_generated_method = "3813AC6B5CB9CE0F32CF63BF21EAB5DA")
-    private  MimeTypeMap() {
-        // ---------- Original Method ----------
-    }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Returns the file extension or an empty string iff there is no
+     * extension. This method is a convenience method for obtaining the
+     * extension of a url and has undefined results for other Strings.
+     * @param url
+     * @return The file extension of the given url.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:32.254 -0500", hash_original_method = "5C8472A4BF23E5ABD60543D4D726ECB1", hash_generated_method = "53F198E505517BB1B332F50D0B132F1F")
     public static String getFileExtensionFromUrl(String url) {
         if (!TextUtils.isEmpty(url)) {
             int fragment = url.lastIndexOf('#');
             if (fragment > 0) {
                 url = url.substring(0, fragment);
             }
+
             int query = url.lastIndexOf('?');
             if (query > 0) {
                 url = url.substring(0, query);
             }
+
             int filenamePos = url.lastIndexOf('/');
             String filename =
                 0 <= filenamePos ? url.substring(filenamePos + 1) : url;
+
+            // if the filename contains special characters, we don't
+            // consider it valid for our matching purposes:
             if (!filename.isEmpty() &&
                 Pattern.matches("[a-zA-Z_0-9\\.\\-\\(\\)\\%]+", filename)) {
                 int dotPos = filename.lastIndexOf('.');
@@ -42,117 +49,117 @@ public class MimeTypeMap {
                 }
             }
         }
+
         return "";
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.559 -0400", hash_original_method = "D279ABCEA3115671095B1C76CF272D07", hash_generated_method = "F02ECF6ED67D1AEA9EDF7CAC78E8BB11")
-    public boolean hasMimeType(String mimeType) {
-        addTaint(mimeType.getTaint());
-        boolean var1882FF8BA738477F3D843ED303B8BB1D_1980417762 = (MimeUtils.hasMimeType(mimeType));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1447246458 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1447246458;
-        // ---------- Original Method ----------
-        //return MimeUtils.hasMimeType(mimeType);
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.559 -0400", hash_original_method = "9405A52065BBD485ABF37D1CA921E56B", hash_generated_method = "FBED9D640FBCA5125BA19E57D681C8BC")
-    public String getMimeTypeFromExtension(String extension) {
-        addTaint(extension.getTaint());
-String var4DAE02CC55ADD03932C065B04B888027_1664912111 =         MimeUtils.guessMimeTypeFromExtension(extension);
-        var4DAE02CC55ADD03932C065B04B888027_1664912111.addTaint(taint);
-        return var4DAE02CC55ADD03932C065B04B888027_1664912111;
-        // ---------- Original Method ----------
-        //return MimeUtils.guessMimeTypeFromExtension(extension);
-    }
-
-    
-    @DSModeled(DSC.BAN)
+    // Static method called by jni.
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:32.257 -0500", hash_original_method = "A042DF11FC396083771CF7C6C82EEB8E", hash_generated_method = "54652D16722A89B788B9DC2B62E986B5")
     private static String mimeTypeFromExtension(String extension) {
         return MimeUtils.guessMimeTypeFromExtension(extension);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.560 -0400", hash_original_method = "0FDF6D870E8A1081CB846B08F1E5769A", hash_generated_method = "F1E1FFC39ECB9E1103A6AE93FC27832F")
-    public boolean hasExtension(String extension) {
-        addTaint(extension.getTaint());
-        boolean var3EDB18A82F44C3851921E4DF87DD5C3E_1765401680 = (MimeUtils.hasExtension(extension));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_853913060 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_853913060;
-        // ---------- Original Method ----------
-        //return MimeUtils.hasExtension(extension);
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.560 -0400", hash_original_method = "CB74F3FB06BF8C09198BE8DA9DF60967", hash_generated_method = "79024C3BB0B95F1C04A796FBF1DDA31C")
-    public String getExtensionFromMimeType(String mimeType) {
-        addTaint(mimeType.getTaint());
-String varB4A30242D1D4E5BAA090B65DC871EF20_1024049582 =         MimeUtils.guessExtensionFromMimeType(mimeType);
-        varB4A30242D1D4E5BAA090B65DC871EF20_1024049582.addTaint(taint);
-        return varB4A30242D1D4E5BAA090B65DC871EF20_1024049582;
-        // ---------- Original Method ----------
-        //return MimeUtils.guessExtensionFromMimeType(mimeType);
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.560 -0400", hash_original_method = "8195A5AC7EDE6C7AAA15CD33C312F38D", hash_generated_method = "5F01B9D1CD8173CA3255EBC5FBD24D9B")
-     String remapGenericMimeType(String mimeType, String url,
-            String contentDisposition) {
-        addTaint(contentDisposition.getTaint());
-        addTaint(url.getTaint());
-        addTaint(mimeType.getTaint());
-        if("text/plain".equals(mimeType) ||
-                "application/octet-stream".equals(mimeType))        
-        {
-            String filename = null;
-            if(contentDisposition != null)            
-            {
-                filename = URLUtil.parseContentDisposition(contentDisposition);
-            } //End block
-            if(filename != null)            
-            {
-                url = filename;
-            } //End block
-            String extension = getFileExtensionFromUrl(url);
-            String newMimeType = getMimeTypeFromExtension(extension);
-            if(newMimeType != null)            
-            {
-                mimeType = newMimeType;
-            } //End block
-        } //End block
-        else
-        if("text/vnd.wap.wml".equals(mimeType))        
-        {
-            mimeType = "text/plain";
-        } //End block
-        else
-        {
-            if("application/vnd.wap.xhtml+xml".equals(mimeType))            
-            {
-                mimeType = "application/xhtml+xml";
-            } //End block
-        } //End block
-String var31E26FAFE73C53DECDB0A7F1CF57D932_1825921397 =         mimeType;
-        var31E26FAFE73C53DECDB0A7F1CF57D932_1825921397.addTaint(taint);
-        return var31E26FAFE73C53DECDB0A7F1CF57D932_1825921397;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
-
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Get the singleton instance of MimeTypeMap.
+     * @return The singleton instance of the MIME-type map.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:32.260 -0500", hash_original_method = "73A67A406B5A25034635E2FEA1819640", hash_generated_method = "169C199BAED4B582FF1B5FA6B4FA7742")
     public static MimeTypeMap getSingleton() {
         return sMimeTypeMap;
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.560 -0400", hash_original_field = "16E55BAE015A69FFABBB45A7410C4B7E", hash_generated_field = "3D500F8A607DFB7B10663A6EAAD8C4BD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:32.252 -0500", hash_original_field = "FF1D1DDAF6AD6B57B8EF654C6DB448E5", hash_generated_field = "3D500F8A607DFB7B10663A6EAAD8C4BD")
 
     private static final MimeTypeMap sMimeTypeMap = new MimeTypeMap();
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:32.253 -0500", hash_original_method = "D2809047C19DC484190C3B6A1503A531", hash_generated_method = "6C67DEF4D1B8466A735788048BB3AF9F")
+    private MimeTypeMap() {
+    }
+
+    /**
+     * Return true if the given MIME type has an entry in the map.
+     * @param mimeType A MIME type (i.e. text/plain)
+     * @return True iff there is a mimeType entry in the map.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:32.255 -0500", hash_original_method = "D279ABCEA3115671095B1C76CF272D07", hash_generated_method = "E3C18E6A880457434E2503225DBCC1E0")
+    public boolean hasMimeType(String mimeType) {
+        return MimeUtils.hasMimeType(mimeType);
+    }
+
+    /**
+     * Return the MIME type for the given extension.
+     * @param extension A file extension without the leading '.'
+     * @return The MIME type for the given extension or null iff there is none.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:32.256 -0500", hash_original_method = "9405A52065BBD485ABF37D1CA921E56B", hash_generated_method = "EDD49E0F199A255FBC119868328FE566")
+    public String getMimeTypeFromExtension(String extension) {
+        return MimeUtils.guessMimeTypeFromExtension(extension);
+    }
+
+    /**
+     * Return true if the given extension has a registered MIME type.
+     * @param extension A file extension without the leading '.'
+     * @return True iff there is an extension entry in the map.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:32.257 -0500", hash_original_method = "0FDF6D870E8A1081CB846B08F1E5769A", hash_generated_method = "02AD04A7CAB9640454FD6A3E63A18689")
+    public boolean hasExtension(String extension) {
+        return MimeUtils.hasExtension(extension);
+    }
+
+    /**
+     * Return the registered extension for the given MIME type. Note that some
+     * MIME types map to multiple extensions. This call will return the most
+     * common extension for the given MIME type.
+     * @param mimeType A MIME type (i.e. text/plain)
+     * @return The extension for the given MIME type or null iff there is none.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:32.258 -0500", hash_original_method = "CB74F3FB06BF8C09198BE8DA9DF60967", hash_generated_method = "BEF4A01833E02F78B113AF11C6F31C57")
+    public String getExtensionFromMimeType(String mimeType) {
+        return MimeUtils.guessExtensionFromMimeType(mimeType);
+    }
+
+    /**
+     * If the given MIME type is null, or one of the "generic" types (text/plain
+     * or application/octet-stream) map it to a type that Android can deal with.
+     * If the given type is not generic, return it unchanged.
+     *
+     * @param mimeType MIME type provided by the server.
+     * @param url URL of the data being loaded.
+     * @param contentDisposition Content-disposition header given by the server.
+     * @return The MIME type that should be used for this data.
+     */
+    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:32.259 -0500", hash_original_method = "8195A5AC7EDE6C7AAA15CD33C312F38D", hash_generated_method = "AD9F182D1FD77219DDE792983B414E62")
+    String remapGenericMimeType(String mimeType, String url,
+            String contentDisposition) {
+        // If we have one of "generic" MIME types, try to deduce
+        // the right MIME type from the file extension (if any):
+        if ("text/plain".equals(mimeType) ||
+                "application/octet-stream".equals(mimeType)) {
+
+            // for attachment, use the filename in the Content-Disposition
+            // to guess the mimetype
+            String filename = null;
+            if (contentDisposition != null) {
+                filename = URLUtil.parseContentDisposition(contentDisposition);
+            }
+            if (filename != null) {
+                url = filename;
+            }
+            String extension = getFileExtensionFromUrl(url);
+            String newMimeType = getMimeTypeFromExtension(extension);
+            if (newMimeType != null) {
+                mimeType = newMimeType;
+            }
+        } else if ("text/vnd.wap.wml".equals(mimeType)) {
+            // As we don't support wml, render it as plain text
+            mimeType = "text/plain";
+        } else {
+            // It seems that xhtml+xml and vnd.wap.xhtml+xml mime
+            // subtypes are used interchangeably. So treat them the same.
+            if ("application/vnd.wap.xhtml+xml".equals(mimeType)) {
+                mimeType = "application/xhtml+xml";
+            }
+        }
+        return mimeType;
+    }
 }
 

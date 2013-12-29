@@ -1,6 +1,8 @@
 package libcore.io;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.nio.ByteOrder;
 
@@ -10,12 +12,6 @@ import java.nio.ByteOrder;
 import droidsafe.helpers.DSUtils;
 
 public final class Memory {
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.625 -0400", hash_original_method = "8E748606B262B165332F0089DEAB291F", hash_generated_method = "65AB48DAC941764A247934D1396F6184")
-    private  Memory() {
-        // ---------- Original Method ----------
-    }
 
     
     @DSModeled(DSC.SAFE)
@@ -29,8 +25,7 @@ public final class Memory {
             Object src, int srcOffset, int sizeofElements, boolean swap) {
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:37.841 -0500", hash_original_method = "8D305254CD39829F31410B39DF7BBEBE", hash_generated_method = "C0A96DEE00CA2BE8EF1300EFA2162F67")
     public static int peekInt(byte[] src, int offset, ByteOrder order) {
         if (order == ByteOrder.BIG_ENDIAN) {
             return (((src[offset++] & 0xff) << 24) |
@@ -45,8 +40,7 @@ public final class Memory {
         }
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:37.842 -0500", hash_original_method = "B98F7C4B79C3BE5084DDBB18889854BB", hash_generated_method = "24280502FAE5E6F244E66533738743BD")
     public static long peekLong(byte[] src, int offset, ByteOrder order) {
         if (order == ByteOrder.BIG_ENDIAN) {
             int h = ((src[offset++] & 0xff) << 24) |
@@ -71,8 +65,7 @@ public final class Memory {
         }
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:37.843 -0500", hash_original_method = "AA975D78647A63D19011E50852F27F77", hash_generated_method = "A2FE1438CB8FEBAE16E8C1B640DD0C94")
     public static short peekShort(byte[] src, int offset, ByteOrder order) {
         if (order == ByteOrder.BIG_ENDIAN) {
             return (short) ((src[offset] << 8) | (src[offset + 1] & 0xff));
@@ -81,8 +74,7 @@ public final class Memory {
         }
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:37.844 -0500", hash_original_method = "44BE7D40F5A344CCFA84ECB14F292BE4", hash_generated_method = "A8DDB705EB46AF8364B74A8E9874F939")
     public static void pokeInt(byte[] dst, int offset, int value, ByteOrder order) {
         if (order == ByteOrder.BIG_ENDIAN) {
             dst[offset++] = (byte) ((value >> 24) & 0xff);
@@ -97,8 +89,7 @@ public final class Memory {
         }
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:37.845 -0500", hash_original_method = "D98917DE7F47EEA6D6D33C72096FA56C", hash_generated_method = "CAE5456AB250883137844560F51B60A7")
     public static void pokeLong(byte[] dst, int offset, long value, ByteOrder order) {
         if (order == ByteOrder.BIG_ENDIAN) {
             int i = (int) (value >> 32);
@@ -125,8 +116,7 @@ public final class Memory {
         }
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:37.846 -0500", hash_original_method = "126E144BF1B52FAB4A446BDFDDF25035", hash_generated_method = "ECB2141A3DBF6EE4061FC9D3169A2629")
     public static void pokeShort(byte[] dst, int offset, short value, ByteOrder order) {
         if (order == ByteOrder.BIG_ENDIAN) {
             dst[offset++] = (byte) ((value >> 8) & 0xff);
@@ -255,6 +245,8 @@ public final class Memory {
     @DSModeled(DSC.SAFE)
     public static void pokeShortArray(int address, short[] src, int offset, int count, boolean swap) {
     }
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:37.837 -0500", hash_original_method = "8E748606B262B165332F0089DEAB291F", hash_generated_method = "B7B6F537B3C912F02D456567DA9C0DA2")
+    private Memory() { }
 
     
 }

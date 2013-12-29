@@ -1,6 +1,8 @@
 package java.lang;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.InputStream;
@@ -20,490 +22,667 @@ import dalvik.system.PathClassLoader;
 
 
 public abstract class ClassLoader {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.696 -0400", hash_original_field = "D0E45878043844FFC41AAC437E86B602", hash_generated_field = "F21C7A33E41D98EA12963007269D2C47")
 
-    private ClassLoader parent;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.696 -0400", hash_original_field = "2BB685EC85A743CD8A1D9EC57E6CA93C", hash_generated_field = "D93E16E52D6392375771C09EA3DB6BEE")
-
-    private Map<String, Package> packages = new HashMap<String, Package>();
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.696 -0400", hash_original_method = "8E76514466172FE6741D8A4C6661DD70", hash_generated_method = "67B78B96E18A8A3E4D98CDB649E9B64A")
-    protected  ClassLoader() {
-        this(getSystemClassLoader(), false);
-        // ---------- Original Method ----------
-    }
-
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.696 -0400", hash_original_method = "DB0BF52E0FA8D43D630F9D86095EF243", hash_generated_method = "68E30502081669C8BA075C762E52DBD8")
-    protected  ClassLoader(ClassLoader parentLoader) {
-        this(parentLoader, false);
-        addTaint(parentLoader.getTaint());
-        // ---------- Original Method ----------
-    }
-
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.696 -0400", hash_original_method = "B3E4E8C3A704386E61A8D58325A9E2B7", hash_generated_method = "CFDBC740C110265A458F7306FA8132C6")
-      ClassLoader(ClassLoader parentLoader, boolean nullAllowed) {
-        addTaint(nullAllowed);
-        if(parentLoader == null && !nullAllowed)        
-        {
-            NullPointerException varA8F208BE8D874C4854367E2A744501F0_2043547317 = new NullPointerException("Parent ClassLoader may not be null");
-            varA8F208BE8D874C4854367E2A744501F0_2043547317.addTaint(taint);
-            throw varA8F208BE8D874C4854367E2A744501F0_2043547317;
-        } //End block
-        parent = parentLoader;
-        // ---------- Original Method ----------
-        //if (parentLoader == null && !nullAllowed) {
-            //throw new NullPointerException("Parent ClassLoader may not be null");
-        //}
-        //parent = parentLoader;
-    }
-
-    
-    @DSModeled(DSC.BAN)
+    /**
+     * Create the system class loader. Note this is NOT the bootstrap class
+     * loader (which is managed by the VM). We use a null value for the parent
+     * to indicate that the bootstrap loader is our parent.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.043 -0500", hash_original_method = "68A1F8E40482E8D5899E0A36610D7F57", hash_generated_method = "8DF30F2216A35375468497DB19BD60B0")
     private static ClassLoader createSystemClassLoader() {
         String classPath = System.getProperty("java.class.path", ".");
+
+        // String[] paths = classPath.split(":");
+        // URL[] urls = new URL[paths.length];
+        // for (int i = 0; i < paths.length; i++) {
+        // try {
+        // urls[i] = new URL("file://" + paths[i]);
+        // }
+        // catch (Exception ex) {
+        // ex.printStackTrace();
+        // }
+        // }
+        //
+        // return new java.net.URLClassLoader(urls, null);
+
+        // TODO Make this a java.net.URLClassLoader once we have those?
         return new PathClassLoader(classPath, BootClassLoader.getInstance());
     }
 
-    
-    @DSModeled(DSC.BAN)
+    /**
+     * Returns the system class loader. This is the parent for new
+     * {@code ClassLoader} instances and is typically the class loader used to
+     * start the application.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.043 -0500", hash_original_method = "FA9BEFC0F6AFD8951E8DF1C896E1649A", hash_generated_method = "8DD818B5EED80F9656CDF38361BE49F8")
     public static ClassLoader getSystemClassLoader() {
         return SystemClassLoader.loader;
     }
 
-    
-    @DSModeled(DSC.SPEC)
+    /**
+     * Finds the URL of the resource with the specified name. The system class
+     * loader's resource lookup algorithm is used to find the resource.
+     *
+     * @return the {@code URL} object for the requested resource or {@code null}
+     *         if the resource can not be found.
+     * @param resName
+     *            the name of the resource to find.
+     * @see Class#getResource
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.044 -0500", hash_original_method = "5B4CC456A75A36B7FCF3EBF4EA91DA87", hash_generated_method = "B027BF8F1E2E34707D9F81B747EB6F5D")
     public static URL getSystemResource(String resName) {
         return SystemClassLoader.loader.getResource(resName);
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Returns an enumeration of URLs for the resource with the specified name.
+     * The system class loader's resource lookup algorithm is used to find the
+     * resource.
+     *
+     * @return an enumeration of {@code URL} objects containing the requested
+     *         resources.
+     * @param resName
+     *            the name of the resource to find.
+     * @throws IOException
+     *             if an I/O error occurs.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.045 -0500", hash_original_method = "E1E9E39B1CF0FA83BA6E8BECA300CA49", hash_generated_method = "577320E4BD146E09A173164C148C8FEB")
     public static Enumeration<URL> getSystemResources(String resName) throws IOException {
         return SystemClassLoader.loader.getResources(resName);
     }
 
-    
-    @DSModeled(DSC.BAN)
+    /**
+     * Returns a stream for the resource with the specified name. The system
+     * class loader's resource lookup algorithm is used to find the resource.
+     * Basically, the contents of the java.class.path are searched in order,
+     * looking for a path which matches the specified resource.
+     *
+     * @return a stream for the resource or {@code null}.
+     * @param resName
+     *            the name of the resource to find.
+     * @see Class#getResourceAsStream
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.046 -0500", hash_original_method = "05C330432267C3CB2D525AEB5E4DBFBC", hash_generated_method = "A33A37C69D674218736BA9B9695F3584")
     public static InputStream getSystemResourceAsStream(String resName) {
         return SystemClassLoader.loader.getResourceAsStream(resName);
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.041 -0500", hash_original_field = "C6C9C9B9683A3ABEAA9A2585B1BD6899", hash_generated_field = "F21C7A33E41D98EA12963007269D2C47")
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.697 -0400", hash_original_method = "EDBCEB3B7F6159932B32B9FEC39C429A", hash_generated_method = "6BF686D20BB4BD01A5A168E554290B2F")
+    private ClassLoader parent;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.041 -0500", hash_original_field = "E616742DDF39B8B80DE9338957960860", hash_generated_field = "D93E16E52D6392375771C09EA3DB6BEE")
+
+    private Map<String, Package> packages = new HashMap<String, Package>();
+
+    /**
+     * Constructs a new instance of this class with the system class loader as
+     * its parent.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.047 -0500", hash_original_method = "8E76514466172FE6741D8A4C6661DD70", hash_generated_method = "35CA469B9DE7E16FED58BBDA37322DDE")
+    protected ClassLoader() {
+        this(getSystemClassLoader(), false);
+    }
+
+    /**
+     * Constructs a new instance of this class with the specified class loader
+     * as its parent.
+     *
+     * @param parentLoader
+     *            The {@code ClassLoader} to use as the new class loader's
+     *            parent.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.048 -0500", hash_original_method = "DB0BF52E0FA8D43D630F9D86095EF243", hash_generated_method = "5F18944EBAE7154972B6B00CE8D5680D")
+    protected ClassLoader(ClassLoader parentLoader) {
+        this(parentLoader, false);
+    }
+
+    /*
+     * constructor for the BootClassLoader which needs parent to be null.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.049 -0500", hash_original_method = "B3E4E8C3A704386E61A8D58325A9E2B7", hash_generated_method = "B3E4E8C3A704386E61A8D58325A9E2B7")
+    ClassLoader(ClassLoader parentLoader, boolean nullAllowed) {
+        if (parentLoader == null && !nullAllowed) {
+            throw new NullPointerException("Parent ClassLoader may not be null");
+        }
+        parent = parentLoader;
+    }
+
+    /**
+     * Constructs a new class from an array of bytes containing a class
+     * definition in class file format.
+     *
+     * @param classRep
+     *            the memory image of a class file.
+     * @param offset
+     *            the offset into {@code classRep}.
+     * @param length
+     *            the length of the class file.
+     * @return the {@code Class} object created from the specified subset of
+     *         data in {@code classRep}.
+     * @throws ClassFormatError
+     *             if {@code classRep} does not contain a valid class.
+     * @throws IndexOutOfBoundsException
+     *             if {@code offset < 0}, {@code length < 0} or if
+     *             {@code offset + length} is greater than the length of
+     *             {@code classRep}.
+     * @deprecated Use {@link #defineClass(String, byte[], int, int)}
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.050 -0500", hash_original_method = "EDBCEB3B7F6159932B32B9FEC39C429A", hash_generated_method = "F83615DC3001F584D48CE6D91F8FD1C5")
     @Deprecated
-    protected final Class<?> defineClass(byte[] classRep, int offset, int length) throws ClassFormatError {
-        addTaint(length);
-        addTaint(offset);
-        addTaint(classRep[0]);
-Class<?> varB33E976EBACF0537AC1530CEFCC02978_129210622 =         VMClassLoader.defineClass(this, classRep, offset, length);
-        varB33E976EBACF0537AC1530CEFCC02978_129210622.addTaint(taint);
-        return varB33E976EBACF0537AC1530CEFCC02978_129210622;
-        // ---------- Original Method ----------
-        //return VMClassLoader.defineClass(this, classRep, offset, length);
+protected final Class<?> defineClass(byte[] classRep, int offset, int length)
+            throws ClassFormatError {
+
+        return VMClassLoader.defineClass(this, classRep, offset, length);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.697 -0400", hash_original_method = "0F0A39CE7574A7CD22D1B4668E39A889", hash_generated_method = "4B6FD8848D416D9873317462172D7D67")
-    protected final Class<?> defineClass(String className, byte[] classRep, int offset, int length) throws ClassFormatError {
-        addTaint(length);
-        addTaint(offset);
-        addTaint(classRep[0]);
-        addTaint(className.getTaint());
-Class<?> varC66541EE24E1609F3FC3648586C5ABBF_963111780 =         defineClass(className, classRep, offset, length, null);
-        varC66541EE24E1609F3FC3648586C5ABBF_963111780.addTaint(taint);
-        return varC66541EE24E1609F3FC3648586C5ABBF_963111780;
-        // ---------- Original Method ----------
-        //return defineClass(className, classRep, offset, length, null);
+    /**
+     * Constructs a new class from an array of bytes containing a class
+     * definition in class file format.
+     *
+     * @param className
+     *            the expected name of the new class, may be {@code null} if not
+     *            known.
+     * @param classRep
+     *            the memory image of a class file.
+     * @param offset
+     *            the offset into {@code classRep}.
+     * @param length
+     *            the length of the class file.
+     * @return the {@code Class} object created from the specified subset of
+     *         data in {@code classRep}.
+     * @throws ClassFormatError
+     *             if {@code classRep} does not contain a valid class.
+     * @throws IndexOutOfBoundsException
+     *             if {@code offset < 0}, {@code length < 0} or if
+     *             {@code offset + length} is greater than the length of
+     *             {@code classRep}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.051 -0500", hash_original_method = "0F0A39CE7574A7CD22D1B4668E39A889", hash_generated_method = "4546FFCB3C8AE2EF28CE2409D3B3D54C")
+    protected final Class<?> defineClass(String className, byte[] classRep, int offset, int length)
+            throws ClassFormatError {
+
+        // TODO Define a default ProtectionDomain on first use
+        return defineClass(className, classRep, offset, length, null);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.697 -0400", hash_original_method = "EBF70D1CA87DA01178FDB05EE0827744", hash_generated_method = "B709FD8BB1351468E8913F701A50BDFD")
+    /**
+     * Constructs a new class from an array of bytes containing a class
+     * definition in class file format and assigns the specified protection
+     * domain to the new class. If the provided protection domain is
+     * {@code null} then a default protection domain is assigned to the class.
+     *
+     * @param className
+     *            the expected name of the new class, may be {@code null} if not
+     *            known.
+     * @param classRep
+     *            the memory image of a class file.
+     * @param offset
+     *            the offset into {@code classRep}.
+     * @param length
+     *            the length of the class file.
+     * @param protectionDomain
+     *            the protection domain to assign to the loaded class, may be
+     *            {@code null}.
+     * @return the {@code Class} object created from the specified subset of
+     *         data in {@code classRep}.
+     * @throws ClassFormatError
+     *             if {@code classRep} does not contain a valid class.
+     * @throws IndexOutOfBoundsException
+     *             if {@code offset < 0}, {@code length < 0} or if
+     *             {@code offset + length} is greater than the length of
+     *             {@code classRep}.
+     * @throws NoClassDefFoundError
+     *             if {@code className} is not equal to the name of the class
+     *             contained in {@code classRep}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.052 -0500", hash_original_method = "EBF70D1CA87DA01178FDB05EE0827744", hash_generated_method = "D023E5F162F392947CF3954F6D9621BC")
     protected final Class<?> defineClass(String className, byte[] classRep, int offset, int length,
             ProtectionDomain protectionDomain) throws java.lang.ClassFormatError {
-        addTaint(protectionDomain.getTaint());
-        addTaint(length);
-        addTaint(offset);
-        addTaint(classRep[0]);
-        addTaint(className.getTaint());
-Class<?> varD58860CD1B743EF3A60CDDB2136F0016_914888909 =         VMClassLoader.defineClass(this, className, classRep, offset, length);
-        varD58860CD1B743EF3A60CDDB2136F0016_914888909.addTaint(taint);
-        return varD58860CD1B743EF3A60CDDB2136F0016_914888909;
-        // ---------- Original Method ----------
-        //return VMClassLoader.defineClass(this, className, classRep, offset, length);
+
+        return VMClassLoader.defineClass(this, className, classRep, offset, length);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.697 -0400", hash_original_method = "05D340D0AFD0A4A41A098B1B021596A9", hash_generated_method = "98F87B8708DC06B4CC5B35EDD2268326")
+    /**
+     * Defines a new class with the specified name, byte code from the byte
+     * buffer and the optional protection domain. If the provided protection
+     * domain is {@code null} then a default protection domain is assigned to
+     * the class.
+     *
+     * @param name
+     *            the expected name of the new class, may be {@code null} if not
+     *            known.
+     * @param b
+     *            the byte buffer containing the byte code of the new class.
+     * @param protectionDomain
+     *            the protection domain to assign to the loaded class, may be
+     *            {@code null}.
+     * @return the {@code Class} object created from the data in {@code b}.
+     * @throws ClassFormatError
+     *             if {@code b} does not contain a valid class.
+     * @throws NoClassDefFoundError
+     *             if {@code className} is not equal to the name of the class
+     *             contained in {@code b}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.053 -0500", hash_original_method = "05D340D0AFD0A4A41A098B1B021596A9", hash_generated_method = "16D970D66C9DD032C2EEFED4A3EFCBDB")
     protected final Class<?> defineClass(String name, ByteBuffer b,
             ProtectionDomain protectionDomain) throws ClassFormatError {
-        addTaint(protectionDomain.getTaint());
-        addTaint(b.getTaint());
-        addTaint(name.getTaint());
+
         byte[] temp = new byte[b.remaining()];
         b.get(temp);
-Class<?> varF16E0AF58C9D8813D6BD96651FAEEFAF_1080563917 =         defineClass(name, temp, 0, temp.length, protectionDomain);
-        varF16E0AF58C9D8813D6BD96651FAEEFAF_1080563917.addTaint(taint);
-        return varF16E0AF58C9D8813D6BD96651FAEEFAF_1080563917;
-        // ---------- Original Method ----------
-        //byte[] temp = new byte[b.remaining()];
-        //b.get(temp);
-        //return defineClass(name, temp, 0, temp.length, protectionDomain);
+        return defineClass(name, temp, 0, temp.length, protectionDomain);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.697 -0400", hash_original_method = "FDF53ED54BA8389D30C48D1E15C39772", hash_generated_method = "CDD797C3C61A19B7624708E9E06C2ED0")
+    /**
+     * Overridden by subclasses, throws a {@code ClassNotFoundException} by
+     * default. This method is called by {@code loadClass} after the parent
+     * {@code ClassLoader} has failed to find a loaded class of the same name.
+     *
+     * @param className
+     *            the name of the class to look for.
+     * @return the {@code Class} object that is found.
+     * @throws ClassNotFoundException
+     *             if the class cannot be found.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.054 -0500", hash_original_method = "FDF53ED54BA8389D30C48D1E15C39772", hash_generated_method = "FB82C2D99F4742B00541560CA9A07E36")
     protected Class<?> findClass(String className) throws ClassNotFoundException {
-        addTaint(className.getTaint());
-        ClassNotFoundException var861A229D206F1BEB1A241D25B0C809D0_1829990749 = new ClassNotFoundException(className);
-        var861A229D206F1BEB1A241D25B0C809D0_1829990749.addTaint(taint);
-        throw var861A229D206F1BEB1A241D25B0C809D0_1829990749;
-        // ---------- Original Method ----------
-        //throw new ClassNotFoundException(className);
+        throw new ClassNotFoundException(className);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.698 -0400", hash_original_method = "1BCB441A83D111A7AA8FEC24C2456543", hash_generated_method = "42E8C5B5B0BADFE99B77204DE172C4A9")
+    /**
+     * Returns the class with the specified name if it has already been loaded
+     * by the VM or {@code null} if it has not yet been loaded.
+     *
+     * @param className
+     *            the name of the class to look for.
+     * @return the {@code Class} object or {@code null} if the requested class
+     *         has not been loaded.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.055 -0500", hash_original_method = "1BCB441A83D111A7AA8FEC24C2456543", hash_generated_method = "06FE2523C098362515141DF792BFCDF0")
     protected final Class<?> findLoadedClass(String className) {
-        addTaint(className.getTaint());
         ClassLoader loader;
-        if(this == BootClassLoader.getInstance())        
-        loader = null;
+        if (this == BootClassLoader.getInstance())
+            loader = null;
         else
-        loader = this;
-Class<?> var08F628993F2409C453589DD76ED38AF1_427277883 =         VMClassLoader.findLoadedClass(loader, className);
-        var08F628993F2409C453589DD76ED38AF1_427277883.addTaint(taint);
-        return var08F628993F2409C453589DD76ED38AF1_427277883;
-        // ---------- Original Method ----------
-        //ClassLoader loader;
-        //if (this == BootClassLoader.getInstance())
-            //loader = null;
-        //else
-            //loader = this;
-        //return VMClassLoader.findLoadedClass(loader, className);
+            loader = this;
+        return VMClassLoader.findLoadedClass(loader, className);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.698 -0400", hash_original_method = "8781F33C8E67EE4404420C5C91B2F2B8", hash_generated_method = "0523865727A0509C62757174155521D7")
+    /**
+     * Finds the class with the specified name, loading it using the system
+     * class loader if necessary.
+     *
+     * @param className
+     *            the name of the class to look for.
+     * @return the {@code Class} object with the requested {@code className}.
+     * @throws ClassNotFoundException
+     *             if the class can not be found.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.056 -0500", hash_original_method = "8781F33C8E67EE4404420C5C91B2F2B8", hash_generated_method = "87140C85C67216BE036BC30AAD49D863")
     protected final Class<?> findSystemClass(String className) throws ClassNotFoundException {
-        addTaint(className.getTaint());
-Class<?> varE1EC1A949B64F2720C6EA4CFB815BC24_607354667 =         Class.forName(className, false, getSystemClassLoader());
-        varE1EC1A949B64F2720C6EA4CFB815BC24_607354667.addTaint(taint);
-        return varE1EC1A949B64F2720C6EA4CFB815BC24_607354667;
-        // ---------- Original Method ----------
-        //return Class.forName(className, false, getSystemClassLoader());
+        return Class.forName(className, false, getSystemClassLoader());
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.698 -0400", hash_original_method = "C41AD9124585D3AEE85EC6C2F13127B8", hash_generated_method = "F0E33F4D97CAA74AFF99E3B11E5A4657")
+    /**
+     * Returns this class loader's parent.
+     *
+     * @return this class loader's parent or {@code null}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.057 -0500", hash_original_method = "C41AD9124585D3AEE85EC6C2F13127B8", hash_generated_method = "ED57FFEBF397EEE0D2DCFDFD8C2655BA")
     public final ClassLoader getParent() {
-ClassLoader var0F49909EA73F8892C338E4DCA6EB9906_2026649457 =         parent;
-        var0F49909EA73F8892C338E4DCA6EB9906_2026649457.addTaint(taint);
-        return var0F49909EA73F8892C338E4DCA6EB9906_2026649457;
-        // ---------- Original Method ----------
-        //return parent;
+        return parent;
     }
 
-    
-        @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.698 -0400", hash_original_method = "51B198FC24245E471F59AEE285D4917F", hash_generated_method = "ED392ED110D1555D49432B202CFD3DDA")
+    /**
+     * Returns the URL of the resource with the specified name. This
+     * implementation first tries to use the parent class loader to find the
+     * resource; if this fails then {@link #findResource(String)} is called to
+     * find the requested resource.
+     *
+     * @param resName
+     *            the name of the resource to find.
+     * @return the {@code URL} object for the requested resource or {@code null}
+     *         if the resource can not be found
+     * @see Class#getResource
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.058 -0500", hash_original_method = "51B198FC24245E471F59AEE285D4917F", hash_generated_method = "ED3E9B74C8F3F28021F3B2BF37C09FDD")
     public URL getResource(String resName) {
-        addTaint(resName.getTaint());
         URL resource = parent.getResource(resName);
-        if(resource == null)        
-        {
+        if (resource == null) {
             resource = findResource(resName);
-        } //End block
-URL var43E8B6A4B99FCF378B49FF1E374C713F_1255918878 =         resource;
-        var43E8B6A4B99FCF378B49FF1E374C713F_1255918878.addTaint(taint);
-        return var43E8B6A4B99FCF378B49FF1E374C713F_1255918878;
-        // ---------- Original Method ----------
-        //URL resource = parent.getResource(resName);
-        //if (resource == null) {
-            //resource = findResource(resName);
-        //}
-        //return resource;
+        }
+        return resource;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.698 -0400", hash_original_method = "A1AC2BF370A36ABB9B1EEF5C25CA87C9", hash_generated_method = "F0D0407482C0AD8D3AC0D70DE6D76D4A")
+    /**
+     * Returns an enumeration of URLs for the resource with the specified name.
+     * This implementation first uses this class loader's parent to find the
+     * resource, then it calls {@link #findResources(String)} to get additional
+     * URLs. The returned enumeration contains the {@code URL} objects of both
+     * find operations.
+     *
+     * @return an enumeration of {@code URL} objects for the requested resource.
+     * @param resName
+     *            the name of the resource to find.
+     * @throws IOException
+     *             if an I/O error occurs.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.059 -0500", hash_original_method = "A1AC2BF370A36ABB9B1EEF5C25CA87C9", hash_generated_method = "7CDD0CBB2F959FF3262CA4A39BA2D2D4")
     @SuppressWarnings("unchecked")
-    public Enumeration<URL> getResources(String resName) throws IOException {
-        addTaint(resName.getTaint());
+public Enumeration<URL> getResources(String resName) throws IOException {
+
         Enumeration first = parent.getResources(resName);
         Enumeration second = findResources(resName);
-Enumeration<URL> var29FC63E53C593F544CA2665302A605B4_1253472890 =         new TwoEnumerationsInOne(first, second);
-        var29FC63E53C593F544CA2665302A605B4_1253472890.addTaint(taint);
-        return var29FC63E53C593F544CA2665302A605B4_1253472890;
-        // ---------- Original Method ----------
-        //Enumeration first = parent.getResources(resName);
-        //Enumeration second = findResources(resName);
-        //return new TwoEnumerationsInOne(first, second);
+
+        return new TwoEnumerationsInOne(first, second);
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.698 -0400", hash_original_method = "D8955CCF86190424763C439F9FDF42B6", hash_generated_method = "1709682A6BDCC90C15680CEC6CBA02F7")
+    /**
+     * Returns a stream for the resource with the specified name. See
+     * {@link #getResource(String)} for a description of the lookup algorithm
+     * used to find the resource.
+     *
+     * @return a stream for the resource or {@code null} if the resource can not be found
+     * @param resName
+     *            the name of the resource to find.
+     * @see Class#getResourceAsStream
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.060 -0500", hash_original_method = "D8955CCF86190424763C439F9FDF42B6", hash_generated_method = "23CB9B395B84F49B6BEEC8C70F6D582B")
     public InputStream getResourceAsStream(String resName) {
-        addTaint(resName.getTaint());
-        try 
-        {
+        try {
             URL url = getResource(resName);
-            if(url != null)            
-            {
-InputStream var98AE6A59F8B94FA975B52B24770F9849_1581749074 =                 url.openStream();
-                var98AE6A59F8B94FA975B52B24770F9849_1581749074.addTaint(taint);
-                return var98AE6A59F8B94FA975B52B24770F9849_1581749074;
-            } //End block
-        } //End block
-        catch (IOException ex)
-        {
-        } //End block
-InputStream var540C13E9E156B687226421B24F2DF178_1103630469 =         null;
-        var540C13E9E156B687226421B24F2DF178_1103630469.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_1103630469;
-        // ---------- Original Method ----------
-        //try {
-            //URL url = getResource(resName);
-            //if (url != null) {
-                //return url.openStream();
-            //}
-        //} catch (IOException ex) {
-        //}
-        //return null;
+            if (url != null) {
+                return url.openStream();
+            }
+        } catch (IOException ex) {
+            // Don't want to see the exception.
+        }
+
+        return null;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.698 -0400", hash_original_method = "B81E0F32DC432F0B3276D4B4E41F12D0", hash_generated_method = "189415F4E46C66B846623C61F62D65D1")
+    /**
+     * Loads the class with the specified name. Invoking this method is
+     * equivalent to calling {@code loadClass(className, false)}.
+     * <p>
+     * <strong>Note:</strong> In the Android reference implementation, the
+     * second parameter of {@link #loadClass(String, boolean)} is ignored
+     * anyway.
+     * </p>
+     *
+     * @return the {@code Class} object.
+     * @param className
+     *            the name of the class to look for.
+     * @throws ClassNotFoundException
+     *             if the class can not be found.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.061 -0500", hash_original_method = "B81E0F32DC432F0B3276D4B4E41F12D0", hash_generated_method = "2C14505DFAF9AA253FE895FDE3C6A4AA")
     public Class<?> loadClass(String className) throws ClassNotFoundException {
-        addTaint(className.getTaint());
-Class<?> varDABA5CC5243A82A517BB6B8B0E854144_992398354 =         loadClass(className, false);
-        varDABA5CC5243A82A517BB6B8B0E854144_992398354.addTaint(taint);
-        return varDABA5CC5243A82A517BB6B8B0E854144_992398354;
-        // ---------- Original Method ----------
-        //return loadClass(className, false);
+        return loadClass(className, false);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.699 -0400", hash_original_method = "733CC3AC678FE7D7ABDA5F1E7A258EB2", hash_generated_method = "385A52E6B9D022D93C6D62A18789D0F6")
+    /**
+     * Loads the class with the specified name, optionally linking it after
+     * loading. The following steps are performed:
+     * <ol>
+     * <li> Call {@link #findLoadedClass(String)} to determine if the requested
+     * class has already been loaded.</li>
+     * <li>If the class has not yet been loaded: Invoke this method on the
+     * parent class loader.</li>
+     * <li>If the class has still not been loaded: Call
+     * {@link #findClass(String)} to find the class.</li>
+     * </ol>
+     * <p>
+     * <strong>Note:</strong> In the Android reference implementation, the
+     * {@code resolve} parameter is ignored; classes are never linked.
+     * </p>
+     *
+     * @return the {@code Class} object.
+     * @param className
+     *            the name of the class to look for.
+     * @param resolve
+     *            Indicates if the class should be resolved after loading. This
+     *            parameter is ignored on the Android reference implementation;
+     *            classes are not resolved.
+     * @throws ClassNotFoundException
+     *             if the class can not be found.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.061 -0500", hash_original_method = "733CC3AC678FE7D7ABDA5F1E7A258EB2", hash_generated_method = "7E554DAE64821C187FBA4D370660E9DF")
     protected Class<?> loadClass(String className, boolean resolve) throws ClassNotFoundException {
-        addTaint(resolve);
-        addTaint(className.getTaint());
         Class<?> clazz = findLoadedClass(className);
-        if(clazz == null)        
-        {
-            try 
-            {
+
+        if (clazz == null) {
+            try {
                 clazz = parent.loadClass(className, false);
-            } //End block
-            catch (ClassNotFoundException e)
-            {
-            } //End block
-            if(clazz == null)            
-            {
+            } catch (ClassNotFoundException e) {
+                // Don't want to see this.
+            }
+
+            if (clazz == null) {
                 clazz = findClass(className);
-            } //End block
-        } //End block
-Class<?> var3E303968598B6EE307EE3739CE40F332_1363033747 =         clazz;
-        var3E303968598B6EE307EE3739CE40F332_1363033747.addTaint(taint);
-        return var3E303968598B6EE307EE3739CE40F332_1363033747;
-        // ---------- Original Method ----------
-        //Class<?> clazz = findLoadedClass(className);
-        //if (clazz == null) {
-            //try {
-                //clazz = parent.loadClass(className, false);
-            //} catch (ClassNotFoundException e) {
-            //}
-            //if (clazz == null) {
-                //clazz = findClass(className);
-            //}
-        //}
-        //return clazz;
+            }
+        }
+
+        return clazz;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.699 -0400", hash_original_method = "87395C94E1724A33A91DB9FA52BA76C0", hash_generated_method = "AECD55F08AE837F29C8894737A42DAA1")
+    /**
+     * Forces a class to be linked (initialized). If the class has already been
+     * linked this operation has no effect.
+     * <p>
+     * <strong>Note:</strong> In the Android reference implementation, this
+     * method has no effect.
+     * </p>
+     *
+     * @param clazz
+     *            the class to link.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.062 -0500", hash_original_method = "87395C94E1724A33A91DB9FA52BA76C0", hash_generated_method = "60E3F41C72F85167B31502908A898E91")
     protected final void resolveClass(Class<?> clazz) {
-        addTaint(clazz.getTaint());
-        // ---------- Original Method ----------
+        // no-op, doesn't make sense on android.
     }
 
-    
-        @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.699 -0400", hash_original_method = "A0771382989D9347D13AB7091421D08A", hash_generated_method = "D795075DAF96F116249A603332DB7BD5")
+    /**
+     * Finds the URL of the resource with the specified name. This
+     * implementation just returns {@code null}; it should be overridden in
+     * subclasses.
+     *
+     * @param resName
+     *            the name of the resource to find.
+     * @return the {@code URL} object for the requested resource.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.063 -0500", hash_original_method = "A0771382989D9347D13AB7091421D08A", hash_generated_method = "9482DAB9A6C5BF756E036D4F94DCBFCD")
     protected URL findResource(String resName) {
-        addTaint(resName.getTaint());
-URL var540C13E9E156B687226421B24F2DF178_632098363 =         null;
-        var540C13E9E156B687226421B24F2DF178_632098363.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_632098363;
-        // ---------- Original Method ----------
-        //return null;
+        return null;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.699 -0400", hash_original_method = "4B31BA177B6DE85B868949BABF9D20CF", hash_generated_method = "D3F77A2E74B69604652B65510E809041")
+    /**
+     * Finds an enumeration of URLs for the resource with the specified name.
+     * This implementation just returns an empty {@code Enumeration}; it should
+     * be overridden in subclasses.
+     *
+     * @param resName
+     *            the name of the resource to find.
+     * @return an enumeration of {@code URL} objects for the requested resource.
+     * @throws IOException
+     *             if an I/O error occurs.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.064 -0500", hash_original_method = "4B31BA177B6DE85B868949BABF9D20CF", hash_generated_method = "A4A0F26BC3DD0D1F886299CE7A6B5EF3")
     @SuppressWarnings( {
             "unchecked", "unused"
     })
-    protected Enumeration<URL> findResources(String resName) throws IOException {
-        addTaint(resName.getTaint());
-Enumeration<URL> var89A53E363F514214E6187D5546BEF542_571951672 =         Collections.emptyEnumeration();
-        var89A53E363F514214E6187D5546BEF542_571951672.addTaint(taint);
-        return var89A53E363F514214E6187D5546BEF542_571951672;
-        // ---------- Original Method ----------
-        //return Collections.emptyEnumeration();
+protected Enumeration<URL> findResources(String resName) throws IOException {
+        return Collections.emptyEnumeration();
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.699 -0400", hash_original_method = "77218157254CA1D97E6FAA91981AFD35", hash_generated_method = "4BBDF1533DF49CA530ABF1C36CDB76DA")
+    /**
+     * Returns the absolute path of the native library with the specified name,
+     * or {@code null}. If this method returns {@code null} then the virtual
+     * machine searches the directories specified by the system property
+     * "java.library.path".
+     * <p>
+     * This implementation always returns {@code null}.
+     * </p>
+     *
+     * @param libName
+     *            the name of the library to find.
+     * @return the absolute path of the library.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.065 -0500", hash_original_method = "77218157254CA1D97E6FAA91981AFD35", hash_generated_method = "CEE2AE9944CCEBF3D1F37FA8E1F90E58")
     protected String findLibrary(String libName) {
-        addTaint(libName.getTaint());
-String var540C13E9E156B687226421B24F2DF178_1405155780 =         null;
-        var540C13E9E156B687226421B24F2DF178_1405155780.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_1405155780;
-        // ---------- Original Method ----------
-        //return null;
+        return null;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.699 -0400", hash_original_method = "32CF87857A859A288886DD8F10CED2F8", hash_generated_method = "91B360C468599E8DAF732B9BB98750AD")
+    /**
+     * Returns the package with the specified name. Package information is
+     * searched in this class loader.
+     *
+     * @param name
+     *            the name of the package to find.
+     * @return the package with the requested name; {@code null} if the package
+     *         can not be found.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.066 -0500", hash_original_method = "32CF87857A859A288886DD8F10CED2F8", hash_generated_method = "12ACE23971D0ED38D299760EA056F6C4")
     protected Package getPackage(String name) {
-        addTaint(name.getTaint());
-        synchronized
-(packages)        {
-Package var879C3D82B4E204184FBD062358C07A11_303946731 =             packages.get(name);
-            var879C3D82B4E204184FBD062358C07A11_303946731.addTaint(taint);
-            return var879C3D82B4E204184FBD062358C07A11_303946731;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (packages) {
-            //return packages.get(name);
-        //}
+        synchronized (packages) {
+            return packages.get(name);
+        }
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.699 -0400", hash_original_method = "9287CE4A0AED64937C82364D387BD57D", hash_generated_method = "935CD077345402A422D70860D7A80ADF")
+    /**
+     * Returns all the packages known to this class loader.
+     *
+     * @return an array with all packages known to this class loader.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.067 -0500", hash_original_method = "9287CE4A0AED64937C82364D387BD57D", hash_generated_method = "26D15C80536358D215DBA86AFDB0E25E")
     protected Package[] getPackages() {
-        synchronized
-(packages)        {
+        synchronized (packages) {
             Collection<Package> col = packages.values();
             Package[] result = new Package[col.size()];
             col.toArray(result);
-Package[] varDC838461EE2FA0CA4C9BBB70A15456B0_1156005339 =             result;
-            varDC838461EE2FA0CA4C9BBB70A15456B0_1156005339.addTaint(taint);
-            return varDC838461EE2FA0CA4C9BBB70A15456B0_1156005339;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (packages) {
-            //Collection<Package> col = packages.values();
-            //Package[] result = new Package[col.size()];
-            //col.toArray(result);
-            //return result;
-        //}
+            return result;
+        }
     }
 
-    
-        @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.699 -0400", hash_original_method = "A43EE12FE4CCED7FFCD5E4E6E6B7450E", hash_generated_method = "8FD13513AEA9064A522DA1E0A6A93FDF")
+    /**
+     * Defines and returns a new {@code Package} using the specified
+     * information. If {@code sealBase} is {@code null}, the package is left
+     * unsealed. Otherwise, the package is sealed using this URL.
+     *
+     * @param name
+     *            the name of the package.
+     * @param specTitle
+     *            the title of the specification.
+     * @param specVersion
+     *            the version of the specification.
+     * @param specVendor
+     *            the vendor of the specification.
+     * @param implTitle
+     *            the implementation title.
+     * @param implVersion
+     *            the implementation version.
+     * @param implVendor
+     *            the specification vendor.
+     * @param sealBase
+     *            the URL used to seal this package or {@code null} to leave the
+     *            package unsealed.
+     * @return the {@code Package} object that has been created.
+     * @throws IllegalArgumentException
+     *             if a package with the specified name already exists.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.068 -0500", hash_original_method = "A43EE12FE4CCED7FFCD5E4E6E6B7450E", hash_generated_method = "EC0E3C57D46AF44E45ECEB327432AEDD")
     protected Package definePackage(String name, String specTitle, String specVersion,
-            String specVendor, String implTitle, String implVersion, String implVendor, URL sealBase) throws IllegalArgumentException {
-        addTaint(sealBase.getTaint());
-        addTaint(implVendor.getTaint());
-        addTaint(implVersion.getTaint());
-        addTaint(implTitle.getTaint());
-        addTaint(specVendor.getTaint());
-        addTaint(specVersion.getTaint());
-        addTaint(specTitle.getTaint());
-        addTaint(name.getTaint());
-        synchronized
-(packages)        {
-            if(packages.containsKey(name))            
-            {
-                IllegalArgumentException varCA42C2364F842AAB3D2FD395654AD60B_518451348 = new IllegalArgumentException("Package " + name + " already defined");
-                varCA42C2364F842AAB3D2FD395654AD60B_518451348.addTaint(taint);
-                throw varCA42C2364F842AAB3D2FD395654AD60B_518451348;
-            } //End block
+            String specVendor, String implTitle, String implVersion, String implVendor, URL sealBase)
+            throws IllegalArgumentException {
+
+        synchronized (packages) {
+            if (packages.containsKey(name)) {
+                throw new IllegalArgumentException("Package " + name + " already defined");
+            }
+
             Package newPackage = new Package(name, specTitle, specVersion, specVendor, implTitle,
                     implVersion, implVendor, sealBase);
+
             packages.put(name, newPackage);
-Package var92B96FE3853575A1658E3A697814623E_650125723 =             newPackage;
-            var92B96FE3853575A1658E3A697814623E_650125723.addTaint(taint);
-            return var92B96FE3853575A1658E3A697814623E_650125723;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (packages) {
-            //if (packages.containsKey(name)) {
-                //throw new IllegalArgumentException("Package " + name + " already defined");
-            //}
-            //Package newPackage = new Package(name, specTitle, specVersion, specVendor, implTitle,
-                    //implVersion, implVendor, sealBase);
-            //packages.put(name, newPackage);
-            //return newPackage;
-        //}
+
+            return newPackage;
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.700 -0400", hash_original_method = "BAF7E3EE5C9000806386C90B3768A9FC", hash_generated_method = "0CBC7270F4BB3468DA4BA45693E13FFD")
+    /**
+     * Sets the signers of the specified class. This implementation does
+     * nothing.
+     *
+     * @param c
+     *            the {@code Class} object for which to set the signers.
+     * @param signers
+     *            the signers for {@code c}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.069 -0500", hash_original_method = "BAF7E3EE5C9000806386C90B3768A9FC", hash_generated_method = "03093ABC63DCEF836A2A1922E1B9F2F2")
     protected final void setSigners(Class<?> c, Object[] signers) {
-        addTaint(signers[0].getTaint());
-        addTaint(c.getTaint());
-        // ---------- Original Method ----------
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.700 -0400", hash_original_method = "0651223F404879984496AF2BE37D7C48", hash_generated_method = "EA5217413AE835D5CED61CD6DE9A91CD")
+    /**
+     * Sets the assertion status of the class with the specified name.
+     * <p>
+     * <strong>Note: </strong>This method does nothing in the Android reference
+     * implementation.
+     * </p>
+     *
+     * @param cname
+     *            the name of the class for which to set the assertion status.
+     * @param enable
+     *            the new assertion status.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.070 -0500", hash_original_method = "0651223F404879984496AF2BE37D7C48", hash_generated_method = "74A7819064E88BE4C1934049AC33D3A4")
     public void setClassAssertionStatus(String cname, boolean enable) {
-        addTaint(enable);
-        addTaint(cname.getTaint());
-        // ---------- Original Method ----------
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.700 -0400", hash_original_method = "2F6CF0A6D7DAAB50984CC8577E0B6ED7", hash_generated_method = "3DE3E7E60AEB1F9BEF6D653D204DF308")
+    /**
+     * Sets the assertion status of the package with the specified name.
+     * <p>
+     * <strong>Note: </strong>This method does nothing in the Android reference
+     * implementation.
+     * </p>
+     *
+     * @param pname
+     *            the name of the package for which to set the assertion status.
+     * @param enable
+     *            the new assertion status.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.070 -0500", hash_original_method = "2F6CF0A6D7DAAB50984CC8577E0B6ED7", hash_generated_method = "2BC9E3872D1A31CB96DD87C27C6F9962")
     public void setPackageAssertionStatus(String pname, boolean enable) {
-        addTaint(enable);
-        addTaint(pname.getTaint());
-        // ---------- Original Method ----------
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.700 -0400", hash_original_method = "F3C67BF009E262C5EF85B89EAEA54A8D", hash_generated_method = "9CCCF9B831F31B11857410609390EEBD")
+    /**
+     * Sets the default assertion status for this class loader.
+     * <p>
+     * <strong>Note: </strong>This method does nothing in the Android reference
+     * implementation.
+     * </p>
+     *
+     * @param enable
+     *            the new assertion status.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.071 -0500", hash_original_method = "F3C67BF009E262C5EF85B89EAEA54A8D", hash_generated_method = "30476EC8592EB59AE1131664F53EC04D")
     public void setDefaultAssertionStatus(boolean enable) {
-        addTaint(enable);
-        // ---------- Original Method ----------
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.700 -0400", hash_original_method = "0F2B38C73B2795A58A5B8AC7764225D2", hash_generated_method = "E762A3660EF9111F915B372BD46E7E77")
+    /**
+     * Sets the default assertion status for this class loader to {@code false}
+     * and removes any package default and class assertion status settings.
+     * <p>
+     * <strong>Note:</strong> This method does nothing in the Android reference
+     * implementation.
+     * </p>
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.072 -0500", hash_original_method = "0F2B38C73B2795A58A5B8AC7764225D2", hash_generated_method = "15316E1A0C0AEDC2B81F05060E6DB509")
     public void clearAssertionStatus() {
-        // ---------- Original Method ----------
     }
 
     
     static private class SystemClassLoader {
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.039 -0500", hash_original_field = "4CBD9E687D788156518F29C886369AF0", hash_generated_field = "9F05049E5285C9256C3F77BCE2FFFB9C")
+
+        public static ClassLoader loader = ClassLoader.createSystemClassLoader();
         
         @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.700 -0400", hash_original_method = "5CAD2AFC0F0FA3887E4002E77FFD0C7D", hash_generated_method = "5CAD2AFC0F0FA3887E4002E77FFD0C7D")
@@ -511,11 +690,6 @@ Package var92B96FE3853575A1658E3A697814623E_650125723 =             newPackage;
         {
             //Synthesized constructor
         }
-
-
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.700 -0400", hash_original_field = "9E858FEF25484C5FE1CB8BD38218B4F2", hash_generated_field = "9F05049E5285C9256C3F77BCE2FFFB9C")
-
-        public static ClassLoader loader = ClassLoader.createSystemClassLoader();
     }
 
 
@@ -523,208 +697,137 @@ Package var92B96FE3853575A1658E3A697814623E_650125723 =             newPackage;
 }
 
 class TwoEnumerationsInOne implements Enumeration<URL> {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.700 -0400", hash_original_field = "8B04D5E3775D298E78455EFC5CA404D5", hash_generated_field = "8251EE6159DCC0C25ACB4653E04140B7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.073 -0500", hash_original_field = "FA07505D9B1F2FD435160CC237092029", hash_generated_field = "8251EE6159DCC0C25ACB4653E04140B7")
+
 
     private Enumeration<URL> first;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.700 -0400", hash_original_field = "A9F0E61A137D86AA9DB53465E0801612", hash_generated_field = "48331890F3BE0E00347927CE21AF464F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.074 -0500", hash_original_field = "562B9360D046C04E9AFC73B4DDFCBBB4", hash_generated_field = "48331890F3BE0E00347927CE21AF464F")
+
 
     private Enumeration<URL> second;
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.700 -0400", hash_original_method = "D3D417A978FD13F0C9B8800DA2920B14", hash_generated_method = "DC7052B6806C57873B5AB28FCC7C1781")
-    public  TwoEnumerationsInOne(Enumeration<URL> first, Enumeration<URL> second) {
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.075 -0500", hash_original_method = "D3D417A978FD13F0C9B8800DA2920B14", hash_generated_method = "BAFFE98862853651774FEA0F39D8CD8A")
+    public TwoEnumerationsInOne(Enumeration<URL> first, Enumeration<URL> second) {
         this.first = first;
         this.second = second;
-        // ---------- Original Method ----------
-        //this.first = first;
-        //this.second = second;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.700 -0400", hash_original_method = "B34DCB72B1A55025C195F65FCCD0FE9D", hash_generated_method = "86D8C6108AD85E4344FBE732C19BAF6C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.076 -0500", hash_original_method = "B34DCB72B1A55025C195F65FCCD0FE9D", hash_generated_method = "A94E2380B6A7F52B0BE684F6107F3B0C")
     public boolean hasMoreElements() {
-        boolean varFA7BD4A162C8C063F79F4353F346F180_2070585027 = (first.hasMoreElements() || second.hasMoreElements());
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2081279871 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2081279871;
-        // ---------- Original Method ----------
-        //return first.hasMoreElements() || second.hasMoreElements();
+        return first.hasMoreElements() || second.hasMoreElements();
     }
 
-    
-        @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.700 -0400", hash_original_method = "CE040DB5C31CF9231E1B46430147AEAF", hash_generated_method = "1A22B4FA57DDE0601BCA90DA2D52740B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.077 -0500", hash_original_method = "CE040DB5C31CF9231E1B46430147AEAF", hash_generated_method = "F9B4890ADFD1503BAD6CB70E3C91AEFC")
     public URL nextElement() {
-        if(first.hasMoreElements())        
-        {
-URL varCE149CD2B39378A9F0645DD813764AEF_125154219 =             first.nextElement();
-            varCE149CD2B39378A9F0645DD813764AEF_125154219.addTaint(taint);
-            return varCE149CD2B39378A9F0645DD813764AEF_125154219;
-        } //End block
-        else
-        {
-URL varF709D8EE1609F973FA2C794DF46727C9_662051504 =             second.nextElement();
-            varF709D8EE1609F973FA2C794DF46727C9_662051504.addTaint(taint);
-            return varF709D8EE1609F973FA2C794DF46727C9_662051504;
-        } //End block
-        // ---------- Original Method ----------
-        //if (first.hasMoreElements()) {
-            //return first.nextElement();
-        //} else {
-            //return second.nextElement();
-        //}
+        if (first.hasMoreElements()) {
+            return first.nextElement();
+        } else {
+            return second.nextElement();
+        }
     }
 
     
 }
 
 class BootClassLoader extends ClassLoader {
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.701 -0400", hash_original_method = "D3F85B3CE9250DAE48A2E24200FC3763", hash_generated_method = "9B3A59F55A35519AA35E648BA04DC88C")
-    @DSModeled(DSC.SAFE)
-    public  BootClassLoader() {
-        super(null, true);
-        // ---------- Original Method ----------
-    }
 
-    
-    @DSModeled(DSC.BAN)
-    public static synchronized BootClassLoader getInstance() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.079 -0500", hash_original_method = "354050299413BC9510E0B883D1D25E7C", hash_generated_method = "C95A8B853C4808F36BF748064C237B87")
+    @FindBugsSuppressWarnings("DP_CREATE_CLASSLOADER_INSIDE_DO_PRIVILEGED")
+public static synchronized BootClassLoader getInstance() {
         if (instance == null) {
             instance = new BootClassLoader();
         }
+
         return instance;
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.078 -0500", hash_original_field = "26F6885D53C00824E398268396DBAB03", hash_generated_field = "1B790D50CC69E7023CCCAB838EB40A4E")
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.701 -0400", hash_original_method = "0FBC8B1C710D0CE61299895128455485", hash_generated_method = "6CE0A2DF6021DB4AB914574D7ACAAC74")
-    @Override
-    protected Class<?> findClass(String name) throws ClassNotFoundException {
-        addTaint(name.getTaint());
-Class<?> var3395E90E7215A3CC7F30E04EE174D39F_298454833 =         VMClassLoader.loadClass(name, false);
-        var3395E90E7215A3CC7F30E04EE174D39F_298454833.addTaint(taint);
-        return var3395E90E7215A3CC7F30E04EE174D39F_298454833;
-        // ---------- Original Method ----------
-        //return VMClassLoader.loadClass(name, false);
-    }
-
-    
-        @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.701 -0400", hash_original_method = "917FC7483F620F58EBF15901F64E5CCB", hash_generated_method = "4E1D4AC820F473A58529AC1E7C815175")
-    @Override
-    protected URL findResource(String name) {
-        addTaint(name.getTaint());
-URL var7466CD68AA25041A670649C7835F7FDA_590254161 =         VMClassLoader.getResource(name);
-        var7466CD68AA25041A670649C7835F7FDA_590254161.addTaint(taint);
-        return var7466CD68AA25041A670649C7835F7FDA_590254161;
-        // ---------- Original Method ----------
-        //return VMClassLoader.getResource(name);
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.701 -0400", hash_original_method = "16CE054D9A07227EFDD5E4525389B0A1", hash_generated_method = "7C0130BB41200D65DE97F2A95A0426F3")
-    @SuppressWarnings("unused")
-    @Override
-    protected Enumeration<URL> findResources(String resName) throws IOException {
-        addTaint(resName.getTaint());
-Enumeration<URL> varD9496F4FD0571E4317562BDABA22F744_826452720 =         Collections.enumeration(VMClassLoader.getResources(resName));
-        varD9496F4FD0571E4317562BDABA22F744_826452720.addTaint(taint);
-        return varD9496F4FD0571E4317562BDABA22F744_826452720;
-        // ---------- Original Method ----------
-        //return Collections.enumeration(VMClassLoader.getResources(resName));
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.701 -0400", hash_original_method = "F97E0A3F9917A73A09E7D2F766F9C1D2", hash_generated_method = "8EFFC648557952357BEE799C371639E9")
-    @Override
-    protected Package getPackage(String name) {
-        addTaint(name.getTaint());
-        if(name != null && !name.isEmpty())        
-        {
-            synchronized
-(this)            {
-                Package pack = super.getPackage(name);
-                if(pack == null)                
-                {
-                    pack = definePackage(name, "Unknown", "0.0", "Unknown", "Unknown", "0.0",
-                            "Unknown", null);
-                } //End block
-Package var92767E2A4BD8914A1F39CCFB211BAF92_972622480 =                 pack;
-                var92767E2A4BD8914A1F39CCFB211BAF92_972622480.addTaint(taint);
-                return var92767E2A4BD8914A1F39CCFB211BAF92_972622480;
-            } //End block
-        } //End block
-Package var540C13E9E156B687226421B24F2DF178_1522569117 =         null;
-        var540C13E9E156B687226421B24F2DF178_1522569117.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_1522569117;
-        // ---------- Original Method ----------
-        //if (name != null && !name.isEmpty()) {
-            //synchronized (this) {
-                //Package pack = super.getPackage(name);
-                //if (pack == null) {
-                    //pack = definePackage(name, "Unknown", "0.0", "Unknown", "Unknown", "0.0",
-                            //"Unknown", null);
-                //}
-                //return pack;
-            //}
-        //}
-        //return null;
-    }
-
-    
-        @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.701 -0400", hash_original_method = "7C22470B48203835E4FECF5A2AF64904", hash_generated_method = "F4D3FDCCDB32B26E5A92FC4B6A0640AF")
-    @Override
-    public URL getResource(String resName) {
-        addTaint(resName.getTaint());
-URL var5AA152384FEC6ED20C323D9BD1349753_1871325198 =         findResource(resName);
-        var5AA152384FEC6ED20C323D9BD1349753_1871325198.addTaint(taint);
-        return var5AA152384FEC6ED20C323D9BD1349753_1871325198;
-        // ---------- Original Method ----------
-        //return findResource(resName);
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.701 -0400", hash_original_method = "0851F7C9918489BAFB5B84B48223EC31", hash_generated_method = "22D84E54FB87D6295FB88CD1B589541C")
-    @Override
-    protected Class<?> loadClass(String className, boolean resolve) throws ClassNotFoundException {
-        addTaint(resolve);
-        addTaint(className.getTaint());
-        Class<?> clazz = findLoadedClass(className);
-        if(clazz == null)        
-        {
-            clazz = findClass(className);
-        } //End block
-Class<?> var3E303968598B6EE307EE3739CE40F332_457242761 =         clazz;
-        var3E303968598B6EE307EE3739CE40F332_457242761.addTaint(taint);
-        return var3E303968598B6EE307EE3739CE40F332_457242761;
-        // ---------- Original Method ----------
-        //Class<?> clazz = findLoadedClass(className);
-        //if (clazz == null) {
-            //clazz = findClass(className);
-        //}
-        //return clazz;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.701 -0400", hash_original_method = "606DC58E52051EDCF71806278059C734", hash_generated_method = "682994CA1C7552D1A55DA6D12F58423A")
-    @Override
-    public Enumeration<URL> getResources(String resName) throws IOException {
-        addTaint(resName.getTaint());
-Enumeration<URL> var8CFFF96B92B65C73171B114D63463E37_1511974646 =         findResources(resName);
-        var8CFFF96B92B65C73171B114D63463E37_1511974646.addTaint(taint);
-        return var8CFFF96B92B65C73171B114D63463E37_1511974646;
-        // ---------- Original Method ----------
-        //return findResources(resName);
-    }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.702 -0400", hash_original_field = "7123A699D77DB6479A1D8ECE2C4F1C16", hash_generated_field = "1B790D50CC69E7023CCCAB838EB40A4E")
 
     private static BootClassLoader instance;
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.080 -0500", hash_original_method = "D3F85B3CE9250DAE48A2E24200FC3763", hash_generated_method = "863B004167717B564E5F1983A33B20B2")
+    public BootClassLoader() {
+        super(null, true);
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.081 -0500", hash_original_method = "0FBC8B1C710D0CE61299895128455485", hash_generated_method = "32D6ECFE7C4B8FD34375E6F47B87EC79")
+    @Override
+protected Class<?> findClass(String name) throws ClassNotFoundException {
+        return VMClassLoader.loadClass(name, false);
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.082 -0500", hash_original_method = "917FC7483F620F58EBF15901F64E5CCB", hash_generated_method = "E48B2E1ABBBFDB14A2E817AD71F11F66")
+    @Override
+protected URL findResource(String name) {
+        return VMClassLoader.getResource(name);
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.083 -0500", hash_original_method = "16CE054D9A07227EFDD5E4525389B0A1", hash_generated_method = "60637F18C842F9A0DE1718495955912E")
+    @SuppressWarnings("unused")
+@Override
+protected Enumeration<URL> findResources(String resName) throws IOException {
+        return Collections.enumeration(VMClassLoader.getResources(resName));
+    }
+
+    /**
+     * Returns package information for the given package. Unfortunately, the
+     * Android BootClassLoader doesn't really have this information, and as a
+     * non-secure ClassLoader, it isn't even required to, according to the spec.
+     * Yet, we want to provide it, in order to make all those hopeful callers of
+     * {@code myClass.getPackage().getName()} happy. Thus we construct a Package
+     * object the first time it is being requested and fill most of the fields
+     * with dummy values. The Package object is then put into the ClassLoader's
+     * Package cache, so we see the same one next time. We don't create Package
+     * objects for null arguments or for the default package.
+     * <p>
+     * There a limited chance that we end up with multiple Package objects
+     * representing the same package: It can happen when when a package is
+     * scattered across different JAR files being loaded by different
+     * ClassLoaders. Rather unlikely, and given that this whole thing is more or
+     * less a workaround, probably not worth the effort.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.084 -0500", hash_original_method = "F97E0A3F9917A73A09E7D2F766F9C1D2", hash_generated_method = "851BDA5342BA91242176CAD96E2969A6")
+    @Override
+protected Package getPackage(String name) {
+        if (name != null && !name.isEmpty()) {
+            synchronized (this) {
+                Package pack = super.getPackage(name);
+
+                if (pack == null) {
+                    pack = definePackage(name, "Unknown", "0.0", "Unknown", "Unknown", "0.0",
+                            "Unknown", null);
+                }
+
+                return pack;
+            }
+        }
+
+        return null;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.085 -0500", hash_original_method = "7C22470B48203835E4FECF5A2AF64904", hash_generated_method = "8B65E3A883CFA30DBA872517FDB220B1")
+    @Override
+public URL getResource(String resName) {
+        return findResource(resName);
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.086 -0500", hash_original_method = "0851F7C9918489BAFB5B84B48223EC31", hash_generated_method = "7614BBA93651B81119F6F095CE02426E")
+    @Override
+protected Class<?> loadClass(String className, boolean resolve)
+           throws ClassNotFoundException {
+        Class<?> clazz = findLoadedClass(className);
+
+        if (clazz == null) {
+            clazz = findClass(className);
+        }
+
+        return clazz;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.087 -0500", hash_original_method = "606DC58E52051EDCF71806278059C734", hash_generated_method = "0400D68394620DA0F28F845E08333898")
+    @Override
+public Enumeration<URL> getResources(String resName) throws IOException {
+        return findResources(resName);
+    }
 }
 

@@ -1,6 +1,8 @@
 package java.io;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import static libcore.io.OsConstants.O_CREAT;
 import static libcore.io.OsConstants.O_RDONLY;
@@ -28,810 +30,894 @@ import dalvik.system.CloseGuard;
 
 
 public class RandomAccessFile implements DataInput, DataOutput, Closeable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.469 -0400", hash_original_field = "36EBA1E1E343279857EA7F69A597324E", hash_generated_field = "B11DAE17AB1D35227E8CB61CED7BC01D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.963 -0500", hash_original_field = "DC35B29CA7114A0CAB311A30B93CBE5F", hash_generated_field = "B11DAE17AB1D35227E8CB61CED7BC01D")
 
     private FileDescriptor fd;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.469 -0400", hash_original_field = "85486C53545A8169C1E28251CF0C4807", hash_generated_field = "3B32EAA0CEEDC75E8106E9EDC5E4B7B8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.964 -0500", hash_original_field = "920CF7C13BFADA1EF4D89DFD1D609670", hash_generated_field = "3B32EAA0CEEDC75E8106E9EDC5E4B7B8")
+
 
     private boolean syncMetadata = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.469 -0400", hash_original_field = "C485D2ED5CC4CE64FCCCCA710C7A0BB7", hash_generated_field = "D2F54CF06A6D02676AAD3B9CA4DD4532")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.965 -0500", hash_original_field = "606E91E177C017AB22115E5BAB9B1D1A", hash_generated_field = "A73C1BBF84E836D55D5484C6C8858F5D")
 
+    // initialized).
     private FileChannel channel;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.469 -0400", hash_original_field = "15D61712450A686A7F365ADF4FEF581F", hash_generated_field = "D6093ADED541044A414FEED81979F5E2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.966 -0500", hash_original_field = "462D02655D7DD7DF6E5BA12D65851DD2", hash_generated_field = "D6093ADED541044A414FEED81979F5E2")
+
 
     private int mode;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.469 -0400", hash_original_field = "73ABE739BEC4C3DB38D39FA43D36469F", hash_generated_field = "E7FAF2CA4E8E292A9B5FAAE3D4817EEC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.967 -0500", hash_original_field = "759D7885648499D4F341C13F7C4AA861", hash_generated_field = "E7FAF2CA4E8E292A9B5FAAE3D4817EEC")
+
 
     private final CloseGuard guard = CloseGuard.get();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.469 -0400", hash_original_field = "239E1A8E5C884A724F64EE44024C15F5", hash_generated_field = "0DF1829DEBB6EA0D971CFA5BDB181CF9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.968 -0500", hash_original_field = "BB6EE13587F628B91D273A1D077E6D31", hash_generated_field = "0DF1829DEBB6EA0D971CFA5BDB181CF9")
+
 
     private final byte[] scratch = new byte[8];
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.471 -0400", hash_original_method = "C0E3F3B9285851822189430A61815E02", hash_generated_method = "465E9A8CDD50C3016093326C69210E37")
-    public  RandomAccessFile(File file, String mode) throws FileNotFoundException {
+
+    /**
+     * Constructs a new {@code RandomAccessFile} based on {@code file} and opens
+     * it according to the access string in {@code mode}.
+     * <p><a id="accessmode"/>
+     * {@code mode} may have one of following values:
+     * <table border="0">
+     * <tr>
+     * <td>{@code "r"}</td>
+     * <td>The file is opened in read-only mode. An {@code IOException} is
+     * thrown if any of the {@code write} methods is called.</td>
+     * </tr>
+     * <tr>
+     * <td>{@code "rw"}</td>
+     * <td>The file is opened for reading and writing. If the file does not
+     * exist, it will be created.</td>
+     * </tr>
+     * <tr>
+     * <td>{@code "rws"}</td>
+     * <td>The file is opened for reading and writing. Every change of the
+     * file's content or metadata must be written synchronously to the target
+     * device.</td>
+     * </tr>
+     * <tr>
+     * <td>{@code "rwd"}</td>
+     * <td>The file is opened for reading and writing. Every change of the
+     * file's content must be written synchronously to the target device.</td>
+     * </tr>
+     * </table>
+     *
+     * @param file
+     *            the file to open.
+     * @param mode
+     *            the file access <a href="#accessmode">mode</a>, either {@code
+     *            "r"}, {@code "rw"}, {@code "rws"} or {@code "rwd"}.
+     * @throws FileNotFoundException
+     *             if the file cannot be opened or created according to {@code
+     *             mode}.
+     * @throws IllegalArgumentException
+     *             if {@code mode} is not {@code "r"}, {@code "rw"}, {@code
+     *             "rws"} or {@code "rwd"}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.969 -0500", hash_original_method = "C0E3F3B9285851822189430A61815E02", hash_generated_method = "9CA1ACF5C8FE6BED9CE22A688A14F80F")
+    public RandomAccessFile(File file, String mode) throws FileNotFoundException {
         int flags;
-        if(mode.equals("r"))        
-        {
+        if (mode.equals("r")) {
             flags = O_RDONLY;
-        } //End block
-        else
-        if(mode.equals("rw") || mode.equals("rws") || mode.equals("rwd"))        
-        {
+        } else if (mode.equals("rw") || mode.equals("rws") || mode.equals("rwd")) {
             flags = O_RDWR | O_CREAT;
-            if(mode.equals("rws"))            
-            {
+            if (mode.equals("rws")) {
+                // Sync file and metadata with every write
                 syncMetadata = true;
-            } //End block
-            else
-            if(mode.equals("rwd"))            
-            {
+            } else if (mode.equals("rwd")) {
+                // Sync file, but not necessarily metadata
                 flags |= O_SYNC;
-            } //End block
-        } //End block
-        else
-        {
-            IllegalArgumentException varAC008075F2AF1E344EBFEE8ADEC436B5_763274417 = new IllegalArgumentException("Invalid mode: " + mode);
-            varAC008075F2AF1E344EBFEE8ADEC436B5_763274417.addTaint(taint);
-            throw varAC008075F2AF1E344EBFEE8ADEC436B5_763274417;
-        } //End block
+            }
+        } else {
+            throw new IllegalArgumentException("Invalid mode: " + mode);
+        }
         this.mode = flags;
         this.fd = IoBridge.open(file.getAbsolutePath(), flags);
-        if(syncMetadata)        
-        {
-            try 
-            {
+
+        // if we are in "rws" mode, attempt to sync file+metadata
+        if (syncMetadata) {
+            try {
                 fd.sync();
-            } //End block
-            catch (IOException e)
-            {
-            } //End block
-        } //End block
+            } catch (IOException e) {
+                // Ignored
+            }
+        }
         guard.open("close");
-        // ---------- Original Method ----------
-        //int flags;
-        //if (mode.equals("r")) {
-            //flags = O_RDONLY;
-        //} else if (mode.equals("rw") || mode.equals("rws") || mode.equals("rwd")) {
-            //flags = O_RDWR | O_CREAT;
-            //if (mode.equals("rws")) {
-                //syncMetadata = true;
-            //} else if (mode.equals("rwd")) {
-                //flags |= O_SYNC;
-            //}
-        //} else {
-            //throw new IllegalArgumentException("Invalid mode: " + mode);
-        //}
-        //this.mode = flags;
-        //this.fd = IoBridge.open(file.getAbsolutePath(), flags);
-        //if (syncMetadata) {
-            //try {
-                //fd.sync();
-            //} catch (IOException e) {
-            //}
-        //}
-        //guard.open("close");
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.472 -0400", hash_original_method = "1B258B17ED328999F6B21E961C189B35", hash_generated_method = "096D189D3D240EF0694FBE4643512F81")
-    public  RandomAccessFile(String fileName, String mode) throws FileNotFoundException {
+    /**
+     * Constructs a new {@code RandomAccessFile} based on the file named {@code
+     * fileName} and opens it according to the access string in {@code mode}.
+     * The file path may be specified absolutely or relative to the system
+     * property {@code "user.dir"}.
+     *
+     * @param fileName
+     *            the name of the file to open.
+     * @param mode
+     *            the file access <a href="#accessmode">mode</a>, either {@code
+     *            "r"}, {@code "rw"}, {@code "rws"} or {@code "rwd"}.
+     * @throws FileNotFoundException
+     *             if the file cannot be opened or created according to {@code
+     *             mode}.
+     * @throws IllegalArgumentException
+     *             if {@code mode} is not {@code "r"}, {@code "rw"}, {@code
+     *             "rws"} or {@code "rwd"}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.970 -0500", hash_original_method = "1B258B17ED328999F6B21E961C189B35", hash_generated_method = "EB168E11185786D18D391DC8D7754EFC")
+    public RandomAccessFile(String fileName, String mode) throws FileNotFoundException {
         this(new File(fileName), mode);
-        addTaint(mode.getTaint());
-        addTaint(fileName.getTaint());
-        // ---------- Original Method ----------
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.473 -0400", hash_original_method = "884D49058FBF3FAB457C152EAAE74126", hash_generated_method = "C4477A007885E636F86C086FE42B2A22")
+    /**
+     * Closes this file.
+     *
+     * @throws IOException
+     *             if an error occurs while closing this file.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.971 -0500", hash_original_method = "884D49058FBF3FAB457C152EAAE74126", hash_generated_method = "0096CF7A8E8C11058C92174E45F5E004")
     public void close() throws IOException {
         guard.close();
-        synchronized
-(this)        {
-            if(channel != null && channel.isOpen())            
-            {
+        synchronized (this) {
+            if (channel != null && channel.isOpen()) {
                 channel.close();
                 channel = null;
-            } //End block
+            }
             IoUtils.close(fd);
-        } //End block
-        // ---------- Original Method ----------
-        //guard.close();
-        //synchronized (this) {
-            //if (channel != null && channel.isOpen()) {
-                //channel.close();
-                //channel = null;
-            //}
-            //IoUtils.close(fd);
-        //}
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.473 -0400", hash_original_method = "7D87091EC31B409C33B787AE3F2DC647", hash_generated_method = "271B01A0C286411ADC3A779686EF67E4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.972 -0500", hash_original_method = "7D87091EC31B409C33B787AE3F2DC647", hash_generated_method = "F0F8D8EC0C5D8FA9E7582C7E60A1D793")
     @Override
-    protected void finalize() throws Throwable {
-        try 
-        {
-            if(guard != null)            
-            {
+protected void finalize() throws Throwable {
+        try {
+            if (guard != null) {
                 guard.warnIfOpen();
-            } //End block
+            }
             close();
-        } //End block
-        finally 
-        {
+        } finally {
             super.finalize();
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //if (guard != null) {
-                //guard.warnIfOpen();
-            //}
-            //close();
-        //} finally {
-            //super.finalize();
-        //}
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.474 -0400", hash_original_method = "C91B0C3B79D457313F842097EE5F90EE", hash_generated_method = "F0CDB859DEA9F49269FEB4C4C14AA422")
+    /**
+     * Gets this file's {@link FileChannel} object.
+     * <p>
+     * The file channel's {@link FileChannel#position() position} is the same
+     * as this file's file pointer offset (see {@link #getFilePointer()}). Any
+     * changes made to this file's file pointer offset are also visible in the
+     * file channel's position and vice versa.
+     *
+     * @return this file's file channel instance.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.973 -0500", hash_original_method = "C91B0C3B79D457313F842097EE5F90EE", hash_generated_method = "71023C0B035767FEDEF5C724C59A4BDF")
     public final synchronized FileChannel getChannel() {
-        if(channel == null)        
-        {
+        if(channel == null) {
             channel = NioUtils.newFileChannel(this, fd, mode);
-        } //End block
-FileChannel var99BA3483FD74E36EACD435CEE6BD5D6F_946307640 =         channel;
-        var99BA3483FD74E36EACD435CEE6BD5D6F_946307640.addTaint(taint);
-        return var99BA3483FD74E36EACD435CEE6BD5D6F_946307640;
-        // ---------- Original Method ----------
-        //if(channel == null) {
-            //channel = NioUtils.newFileChannel(this, fd, mode);
-        //}
-        //return channel;
+        }
+        return channel;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.474 -0400", hash_original_method = "7178DA6FA6DD367775EBAB657FD1BDA0", hash_generated_method = "CF291064A1C8A11D457B382859D1F94B")
+    /**
+     * Gets this file's {@link FileDescriptor}. This represents the operating
+     * system resource for this random access file.
+     *
+     * @return this file's file descriptor object.
+     * @throws IOException
+     *             if an error occurs while getting the file descriptor of this
+     *             file.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.974 -0500", hash_original_method = "7178DA6FA6DD367775EBAB657FD1BDA0", hash_generated_method = "BF99A80A25EF13693DBEFA2A53118A0A")
     public final FileDescriptor getFD() throws IOException {
-FileDescriptor var020F72FC5D1BB0511CAD11CC0AA674A0_234051605 =         fd;
-        var020F72FC5D1BB0511CAD11CC0AA674A0_234051605.addTaint(taint);
-        return var020F72FC5D1BB0511CAD11CC0AA674A0_234051605;
-        // ---------- Original Method ----------
-        //return fd;
+        return fd;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.483 -0400", hash_original_method = "BF89D60C39AB56A10CD4BF202DEE6E59", hash_generated_method = "D48D8E8B61431FA351150FD7B9FB5690")
+    /**
+     * Gets the current position within this file. All reads and
+     * writes take place at the current file pointer position.
+     *
+     * @return the current offset in bytes from the beginning of the file.
+     *
+     * @throws IOException
+     *             if an error occurs while getting the file pointer of this
+     *             file.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.974 -0500", hash_original_method = "BF89D60C39AB56A10CD4BF202DEE6E59", hash_generated_method = "78E5DC27F44F7D2899D06F9452A20977")
     public long getFilePointer() throws IOException {
-        try 
-        {
-            long var7BC510F6F7CB14449C552BCB6CAF281B_174001317 = (Libcore.os.lseek(fd, 0L, SEEK_CUR));
-                        long var0F5264038205EDFB1AC05FBB0E8C5E94_250941164 = getTaintLong();
-            return var0F5264038205EDFB1AC05FBB0E8C5E94_250941164;
-        } //End block
-        catch (ErrnoException errnoException)
-        {
-            java.io.IOException var533DBF3F7D78874DC97ED285C3BC3B22_2019343311 = errnoException.rethrowAsIOException();
-            var533DBF3F7D78874DC97ED285C3BC3B22_2019343311.addTaint(taint);
-            throw var533DBF3F7D78874DC97ED285C3BC3B22_2019343311;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return Libcore.os.lseek(fd, 0L, SEEK_CUR);
-        //} catch (ErrnoException errnoException) {
-            //throw errnoException.rethrowAsIOException();
-        //}
+        try {
+            return Libcore.os.lseek(fd, 0L, SEEK_CUR);
+        } catch (ErrnoException errnoException) {
+            throw errnoException.rethrowAsIOException();
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.489 -0400", hash_original_method = "E8687801225ADA3B0E63B61937B0020C", hash_generated_method = "2CEF761C457B6E3083191EE27F5B6D33")
+    /**
+     * Returns the length of this file in bytes.
+     *
+     * @return the file's length in bytes.
+     * @throws IOException
+     *             if this file is closed or some other I/O error occurs.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.975 -0500", hash_original_method = "E8687801225ADA3B0E63B61937B0020C", hash_generated_method = "CB2CD97BAA9992C591917F959A4543EB")
     public long length() throws IOException {
-        try 
-        {
-            long varE497182731DBBCFBFD01D5C3B5A54B92_1168579252 = (Libcore.os.fstat(fd).st_size);
-                        long var0F5264038205EDFB1AC05FBB0E8C5E94_839867995 = getTaintLong();
-            return var0F5264038205EDFB1AC05FBB0E8C5E94_839867995;
-        } //End block
-        catch (ErrnoException errnoException)
-        {
-            java.io.IOException var533DBF3F7D78874DC97ED285C3BC3B22_1460520403 = errnoException.rethrowAsIOException();
-            var533DBF3F7D78874DC97ED285C3BC3B22_1460520403.addTaint(taint);
-            throw var533DBF3F7D78874DC97ED285C3BC3B22_1460520403;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return Libcore.os.fstat(fd).st_size;
-        //} catch (ErrnoException errnoException) {
-            //throw errnoException.rethrowAsIOException();
-        //}
+        try {
+            return Libcore.os.fstat(fd).st_size;
+        } catch (ErrnoException errnoException) {
+            throw errnoException.rethrowAsIOException();
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.490 -0400", hash_original_method = "9CBC8BBFD7044A0BC3A194777FBBD2CA", hash_generated_method = "203D89E0F1C924997F800B8F0E91183E")
+    /**
+     * Reads a single byte from the current position in this file and returns it
+     * as an integer in the range from 0 to 255. Returns -1 if the end of the
+     * file has been reached. Blocks until one byte has been read, the end of
+     * the file is detected, or an exception is thrown.
+     *
+     * @return the byte read or -1 if the end of the file has been reached.
+     * @throws IOException
+     *             if this file is closed or another I/O error occurs.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.976 -0500", hash_original_method = "9CBC8BBFD7044A0BC3A194777FBBD2CA", hash_generated_method = "C43FAE37877C94D1A4278A353B3DC98F")
     public int read() throws IOException {
-        int varB322769BC0F2A0323E6473E85B782F19_1738404873 = ((read(scratch, 0, 1) != -1) ? scratch[0] & 0xff : -1);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_427459701 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_427459701;
-        // ---------- Original Method ----------
-        //return (read(scratch, 0, 1) != -1) ? scratch[0] & 0xff : -1;
+        return (read(scratch, 0, 1) != -1) ? scratch[0] & 0xff : -1;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.490 -0400", hash_original_method = "73C43862A3B640F09D97EB0273F5287B", hash_generated_method = "558363FB0EA6949E423A6166292C2397")
+    /**
+     * Reads bytes from the current position in this file and stores them in the
+     * byte array {@code buffer}. The maximum number of bytes read corresponds
+     * to the size of {@code buffer}. Blocks until at least one byte has been
+     * read, the end of the file is detected, or an exception is thrown.
+     *
+     * @param buffer
+     *            the byte array in which to store the bytes read.
+     * @return the number of bytes actually read or -1 if the end of the file
+     *         has been reached.
+     * @throws IOException
+     *             if this file is closed or another I/O error occurs.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.977 -0500", hash_original_method = "73C43862A3B640F09D97EB0273F5287B", hash_generated_method = "6E5D00FFA2D494E6084FF31B9747697A")
     public int read(byte[] buffer) throws IOException {
-        addTaint(buffer[0]);
-        int varB17F7FC0C34BA0A2828AFE480EE84868_1237510704 = (read(buffer, 0, buffer.length));
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_82711187 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_82711187;
-        // ---------- Original Method ----------
-        //return read(buffer, 0, buffer.length);
+        return read(buffer, 0, buffer.length);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.491 -0400", hash_original_method = "C5A4FB68C0A55B7975F40A4160EB1CAC", hash_generated_method = "5B2A004C641F54DBC34878FE4AF3966F")
+    /**
+     * Reads at most {@code byteCount} bytes from the current position in this file
+     * and stores them in the byte array {@code buffer} starting at {@code
+     * byteOffset}. Blocks until at least one byte has been
+     * read, the end of the file is detected, or an exception is thrown.
+     *
+     * @return the number of bytes actually read or -1 if the end of the stream
+     *         has been reached.
+     * @throws IndexOutOfBoundsException
+     *             if {@code byteOffset < 0} or {@code byteCount < 0}, or if {@code
+     *             byteOffset + byteCount} is greater than the size of {@code buffer}.
+     * @throws IOException
+     *             if this file is closed or another I/O error occurs.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.978 -0500", hash_original_method = "C5A4FB68C0A55B7975F40A4160EB1CAC", hash_generated_method = "DC7919B1248E944CD403B40630CBB67F")
     public int read(byte[] buffer, int byteOffset, int byteCount) throws IOException {
-        addTaint(byteCount);
-        addTaint(byteOffset);
-        addTaint(buffer[0]);
-        int var515005EC72FBFD1EBFD0E3FF9751DEEE_1712426997 = (IoBridge.read(fd, buffer, byteOffset, byteCount));
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1157506301 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1157506301;
-        // ---------- Original Method ----------
-        //return IoBridge.read(fd, buffer, byteOffset, byteCount);
+        return IoBridge.read(fd, buffer, byteOffset, byteCount);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.491 -0400", hash_original_method = "50A11AE3C5EDA3B4603E1C2204F22ED8", hash_generated_method = "2CA7418DED58B3E92B0150CC4DDB97B6")
+    /**
+     * Reads a boolean from the current position in this file. Blocks until one
+     * byte has been read, the end of the file is reached or an exception is
+     * thrown.
+     *
+     * @return the next boolean value from this file.
+     * @throws EOFException
+     *             if the end of this file is detected.
+     * @throws IOException
+     *             if this file is closed or another I/O error occurs.
+     * @see #writeBoolean(boolean)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.979 -0500", hash_original_method = "50A11AE3C5EDA3B4603E1C2204F22ED8", hash_generated_method = "F9A31F84ADBCA19B6043EA35A5DF9513")
     public final boolean readBoolean() throws IOException {
         int temp = this.read();
-        if(temp < 0)        
-        {
-            EOFException var0239D63DB748BB20D119EB36D6D1C384_140421599 = new EOFException();
-            var0239D63DB748BB20D119EB36D6D1C384_140421599.addTaint(taint);
-            throw var0239D63DB748BB20D119EB36D6D1C384_140421599;
-        } //End block
-        boolean var581071D2E1ACA721FA204A220D24D3E5_1048759095 = (temp != 0);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_461953359 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_461953359;
-        // ---------- Original Method ----------
-        //int temp = this.read();
-        //if (temp < 0) {
-            //throw new EOFException();
-        //}
-        //return temp != 0;
+        if (temp < 0) {
+            throw new EOFException();
+        }
+        return temp != 0;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.492 -0400", hash_original_method = "2659119ED4E9182341F4E2CF2510ACC4", hash_generated_method = "7D5B1D552A41ACE901FC1CA2B347A6D2")
+    /**
+     * Reads an 8-bit byte from the current position in this file. Blocks until
+     * one byte has been read, the end of the file is reached or an exception is
+     * thrown.
+     *
+     * @return the next signed 8-bit byte value from this file.
+     * @throws EOFException
+     *             if the end of this file is detected.
+     * @throws IOException
+     *             if this file is closed or another I/O error occurs.
+     * @see #writeBoolean(boolean)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.980 -0500", hash_original_method = "2659119ED4E9182341F4E2CF2510ACC4", hash_generated_method = "60488882DC013DC02E5B18F972072683")
     public final byte readByte() throws IOException {
         int temp = this.read();
-        if(temp < 0)        
-        {
-            EOFException var0239D63DB748BB20D119EB36D6D1C384_1691779371 = new EOFException();
-            var0239D63DB748BB20D119EB36D6D1C384_1691779371.addTaint(taint);
-            throw var0239D63DB748BB20D119EB36D6D1C384_1691779371;
-        } //End block
-        byte varEB0C37FB3D2A4D56EFEF536C0C588373_2053779258 = ((byte) temp);
-                byte var40EA57D3EE3C07BF1C102B466E1C3091_1595845682 = getTaintByte();
-        return var40EA57D3EE3C07BF1C102B466E1C3091_1595845682;
-        // ---------- Original Method ----------
-        //int temp = this.read();
-        //if (temp < 0) {
-            //throw new EOFException();
-        //}
-        //return (byte) temp;
+        if (temp < 0) {
+            throw new EOFException();
+        }
+        return (byte) temp;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.492 -0400", hash_original_method = "A44D11CC3BE0C88F3640C82011E315A3", hash_generated_method = "3D48D6AA2288581F298EBE607DCF2488")
+    /**
+     * Reads a big-endian 16-bit character from the current position in this file. Blocks until
+     * two bytes have been read, the end of the file is reached or an exception is
+     * thrown.
+     *
+     * @return the next char value from this file.
+     * @throws EOFException
+     *             if the end of this file is detected.
+     * @throws IOException
+     *             if this file is closed or another I/O error occurs.
+     * @see #writeChar(int)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.981 -0500", hash_original_method = "A44D11CC3BE0C88F3640C82011E315A3", hash_generated_method = "B0732E37E958B55BB10FAA52B3D5674C")
     public final char readChar() throws IOException {
-        char varD2B9D0AC7E6CAD4B64D448E3DC4EE790_249109450 = ((char) readShort());
-                char varA87DEB01C5F539E6BDA34829C8EF2368_1669229802 = getTaintChar();
-        return varA87DEB01C5F539E6BDA34829C8EF2368_1669229802;
-        // ---------- Original Method ----------
-        //return (char) readShort();
+        return (char) readShort();
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.493 -0400", hash_original_method = "D7A510C090532D6542CA33ECD805653E", hash_generated_method = "7AA255D739A489C7087751AC0C7671FF")
+    /**
+     * Reads a big-endian 64-bit double from the current position in this file. Blocks
+     * until eight bytes have been read, the end of the file is reached or an
+     * exception is thrown.
+     *
+     * @return the next double value from this file.
+     * @throws EOFException
+     *             if the end of this file is detected.
+     * @throws IOException
+     *             if this file is closed or another I/O error occurs.
+     * @see #writeDouble(double)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.982 -0500", hash_original_method = "D7A510C090532D6542CA33ECD805653E", hash_generated_method = "D338B640779B17CB7260528C9150884A")
     public final double readDouble() throws IOException {
-        double varB44FB75D2A60D6225B161B58EE8BE0EE_521208649 = (Double.longBitsToDouble(readLong()));
-                double varE8CD7DA078A86726031AD64F35F5A6C0_2055388223 = getTaintDouble();
-        return varE8CD7DA078A86726031AD64F35F5A6C0_2055388223;
-        // ---------- Original Method ----------
-        //return Double.longBitsToDouble(readLong());
+        return Double.longBitsToDouble(readLong());
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.493 -0400", hash_original_method = "C7FD0C2698771DF8CC60A785DCC40BB4", hash_generated_method = "A74AABD0475ABD60B5C0CFDD1BDA8884")
+    /**
+     * Reads a big-endian 32-bit float from the current position in this file. Blocks
+     * until four bytes have been read, the end of the file is reached or an
+     * exception is thrown.
+     *
+     * @return the next float value from this file.
+     * @throws EOFException
+     *             if the end of this file is detected.
+     * @throws IOException
+     *             if this file is closed or another I/O error occurs.
+     * @see #writeFloat(float)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.983 -0500", hash_original_method = "C7FD0C2698771DF8CC60A785DCC40BB4", hash_generated_method = "80593170191F13BFD0E1C07AC7E4AFC0")
     public final float readFloat() throws IOException {
-        float var61F55322990BB97833DB081A7753B25B_679451286 = (Float.intBitsToFloat(readInt()));
-                float var546ADE640B6EDFBC8A086EF31347E768_105041351 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_105041351;
-        // ---------- Original Method ----------
-        //return Float.intBitsToFloat(readInt());
+        return Float.intBitsToFloat(readInt());
     }
 
-    
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.493 -0400", hash_original_method = "FD74F944C9A8F422C55042589648B5E4", hash_generated_method = "2444EFC16C3B6FEB5364E7D874F2DA2F")
+    /**
+     * Equivalent to {@code readFully(dst, 0, dst.length);}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.984 -0500", hash_original_method = "FD74F944C9A8F422C55042589648B5E4", hash_generated_method = "A7F355DBB7B4EAE4A328A9A9E3910E20")
     public final void readFully(byte[] dst) throws IOException {
-        addTaint(dst[0]);
         readFully(dst, 0, dst.length);
-        // ---------- Original Method ----------
-        //readFully(dst, 0, dst.length);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.494 -0400", hash_original_method = "35386938706C6610A66A6C02D11FE342", hash_generated_method = "C776764C30EF9B0BF7646E5F7010372C")
+    /**
+     * Reads {@code byteCount} bytes from this stream and stores them in the byte
+     * array {@code dst} starting at {@code offset}. If {@code byteCount} is zero, then this
+     * method returns without reading any bytes. Otherwise, this method blocks until
+     * {@code byteCount} bytes have been read. If insufficient bytes are available,
+     * {@code EOFException} is thrown. If an I/O error occurs, {@code IOException} is
+     * thrown. When an exception is thrown, some bytes may have been consumed from the stream
+     * and written into the array.
+     *
+     * @param dst
+     *            the byte array into which the data is read.
+     * @param offset
+     *            the offset in {@code dst} at which to store the bytes.
+     * @param byteCount
+     *            the number of bytes to read.
+     * @throws EOFException
+     *             if the end of the source stream is reached before enough
+     *             bytes have been read.
+     * @throws IndexOutOfBoundsException
+     *             if {@code offset < 0} or {@code byteCount < 0}, or
+     *             {@code offset + byteCount > dst.length}.
+     * @throws IOException
+     *             if a problem occurs while reading from this stream.
+     * @throws NullPointerException
+     *             if {@code dst} is null.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.985 -0500", hash_original_method = "35386938706C6610A66A6C02D11FE342", hash_generated_method = "D5B8143676F49C157F3B2AD3E184A597")
     public final void readFully(byte[] dst, int offset, int byteCount) throws IOException {
-        addTaint(byteCount);
-        addTaint(offset);
-        addTaint(dst[0]);
         Arrays.checkOffsetAndCount(dst.length, offset, byteCount);
-        while
-(byteCount > 0)        
-        {
+        while (byteCount > 0) {
             int result = read(dst, offset, byteCount);
-            if(result < 0)            
-            {
-                EOFException var0239D63DB748BB20D119EB36D6D1C384_345301460 = new EOFException();
-                var0239D63DB748BB20D119EB36D6D1C384_345301460.addTaint(taint);
-                throw var0239D63DB748BB20D119EB36D6D1C384_345301460;
-            } //End block
+            if (result < 0) {
+                throw new EOFException();
+            }
             offset += result;
             byteCount -= result;
-        } //End block
-        // ---------- Original Method ----------
-        //Arrays.checkOffsetAndCount(dst.length, offset, byteCount);
-        //while (byteCount > 0) {
-            //int result = read(dst, offset, byteCount);
-            //if (result < 0) {
-                //throw new EOFException();
-            //}
-            //offset += result;
-            //byteCount -= result;
-        //}
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.494 -0400", hash_original_method = "623A6326FEE6BEAC4C71D9EAB23D5BE9", hash_generated_method = "2C5038C59CE130787C0FA6B5BFD4E89A")
+    /**
+     * Reads a big-endian 32-bit integer from the current position in this file. Blocks
+     * until four bytes have been read, the end of the file is reached or an
+     * exception is thrown.
+     *
+     * @return the next int value from this file.
+     * @throws EOFException
+     *             if the end of this file is detected.
+     * @throws IOException
+     *             if this file is closed or another I/O error occurs.
+     * @see #writeInt(int)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.986 -0500", hash_original_method = "623A6326FEE6BEAC4C71D9EAB23D5BE9", hash_generated_method = "5D6C62E5010CBE21FE3E33B342C82583")
     public final int readInt() throws IOException {
         readFully(scratch, 0, SizeOf.INT);
-        int var7C922A9B161AE4D77245C27862C5A0B3_128982881 = (Memory.peekInt(scratch, 0, ByteOrder.BIG_ENDIAN));
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1451738052 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1451738052;
-        // ---------- Original Method ----------
-        //readFully(scratch, 0, SizeOf.INT);
-        //return Memory.peekInt(scratch, 0, ByteOrder.BIG_ENDIAN);
+        return Memory.peekInt(scratch, 0, ByteOrder.BIG_ENDIAN);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.495 -0400", hash_original_method = "A3561FB7999FC54AB0AB272B825D1BA9", hash_generated_method = "4D19A44D79E24A764E462C54A80954B7")
+    /**
+     * Reads a line of text form the current position in this file. A line is
+     * represented by zero or more characters followed by {@code '\n'}, {@code
+     * '\r'}, {@code "\r\n"} or the end of file marker. The string does not
+     * include the line terminating sequence.
+     * <p>
+     * Blocks until a line terminating sequence has been read, the end of the
+     * file is reached or an exception is thrown.
+     *
+     * @return the contents of the line or {@code null} if no characters have
+     *         been read before the end of the file has been reached.
+     * @throws IOException
+     *             if this file is closed or another I/O error occurs.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.987 -0500", hash_original_method = "A3561FB7999FC54AB0AB272B825D1BA9", hash_generated_method = "BEAFAA89A57C515E05B4E556EACE92EE")
     public final String readLine() throws IOException {
-        StringBuilder line = new StringBuilder(80);
+        StringBuilder line = new StringBuilder(80); // Typical line length
         boolean foundTerminator = false;
         long unreadPosition = 0;
-        while
-(true)        
-        {
+        while (true) {
             int nextByte = read();
-switch(nextByte){
-            case -1:
-String var8CDD6AC64A89AABB1EE2F22C095CB3B3_1081990981 =             line.length() != 0 ? line.toString() : null;
-            var8CDD6AC64A89AABB1EE2F22C095CB3B3_1081990981.addTaint(taint);
-            return var8CDD6AC64A89AABB1EE2F22C095CB3B3_1081990981;
-            case (byte) '\r':
-            if(foundTerminator)            
-            {
-                seek(unreadPosition);
-String var212D8FC412CCB2BE0F33E17280622756_203061324 =                 line.toString();
-                var212D8FC412CCB2BE0F33E17280622756_203061324.addTaint(taint);
-                return var212D8FC412CCB2BE0F33E17280622756_203061324;
-            } //End block
-            foundTerminator = true;
-            unreadPosition = getFilePointer();
-            break;
-            case (byte) '\n':
-String var212D8FC412CCB2BE0F33E17280622756_1282119484 =             line.toString();
-            var212D8FC412CCB2BE0F33E17280622756_1282119484.addTaint(taint);
-            return var212D8FC412CCB2BE0F33E17280622756_1282119484;
-            default:
-            if(foundTerminator)            
-            {
-                seek(unreadPosition);
-String var212D8FC412CCB2BE0F33E17280622756_1475211587 =                 line.toString();
-                var212D8FC412CCB2BE0F33E17280622756_1475211587.addTaint(taint);
-                return var212D8FC412CCB2BE0F33E17280622756_1475211587;
-            } //End block
-            line.append((char) nextByte);
-}
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            switch (nextByte) {
+                case -1:
+                    return line.length() != 0 ? line.toString() : null;
+                case (byte) '\r':
+                    if (foundTerminator) {
+                        seek(unreadPosition);
+                        return line.toString();
+                    }
+                    foundTerminator = true;
+                    /* Have to be able to peek ahead one byte */
+                    unreadPosition = getFilePointer();
+                    break;
+                case (byte) '\n':
+                    return line.toString();
+                default:
+                    if (foundTerminator) {
+                        seek(unreadPosition);
+                        return line.toString();
+                    }
+                    line.append((char) nextByte);
+            }
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.496 -0400", hash_original_method = "469514DB0DA90571D02A531A0FA63D6F", hash_generated_method = "33478FC0F7957E9D4C4BA0564C3FAB4E")
+    /**
+     * Reads a big-endian 64-bit long from the current position in this file. Blocks until
+     * eight bytes have been read, the end of the file is reached or an
+     * exception is thrown.
+     *
+     * @return the next long value from this file.
+     * @throws EOFException
+     *             if the end of this file is detected.
+     * @throws IOException
+     *             if this file is closed or another I/O error occurs.
+     * @see #writeLong(long)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.988 -0500", hash_original_method = "469514DB0DA90571D02A531A0FA63D6F", hash_generated_method = "A9605FE51958909BD225DA582AF5352D")
     public final long readLong() throws IOException {
         readFully(scratch, 0, SizeOf.LONG);
-        long var2D893E0C4B322812F3FC68288B698EF2_985020183 = (Memory.peekLong(scratch, 0, ByteOrder.BIG_ENDIAN));
-                long var0F5264038205EDFB1AC05FBB0E8C5E94_1878049407 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_1878049407;
-        // ---------- Original Method ----------
-        //readFully(scratch, 0, SizeOf.LONG);
-        //return Memory.peekLong(scratch, 0, ByteOrder.BIG_ENDIAN);
+        return Memory.peekLong(scratch, 0, ByteOrder.BIG_ENDIAN);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.496 -0400", hash_original_method = "C93410329A523BCD2A1636A4AEB3409A", hash_generated_method = "2B791DFBFAD6B6BE434472501078B16F")
+    /**
+     * Reads a big-endian 16-bit short from the current position in this file. Blocks until
+     * two bytes have been read, the end of the file is reached or an exception
+     * is thrown.
+     *
+     * @return the next short value from this file.
+     * @throws EOFException
+     *             if the end of this file is detected.
+     * @throws IOException
+     *             if this file is closed or another I/O error occurs.
+     * @see #writeShort(int)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.989 -0500", hash_original_method = "C93410329A523BCD2A1636A4AEB3409A", hash_generated_method = "8C1BC44A51E102FD4811ACD830EA9366")
     public final short readShort() throws IOException {
         readFully(scratch, 0, SizeOf.SHORT);
-        short var5EF02BCDD6FDC20E2BA6E56CB7B1512F_1358147345 = (Memory.peekShort(scratch, 0, ByteOrder.BIG_ENDIAN));
-                short var4F09DAA9D95BCB166A302407A0E0BABE_2036639323 = getTaintShort();
-        return var4F09DAA9D95BCB166A302407A0E0BABE_2036639323;
-        // ---------- Original Method ----------
-        //readFully(scratch, 0, SizeOf.SHORT);
-        //return Memory.peekShort(scratch, 0, ByteOrder.BIG_ENDIAN);
+        return Memory.peekShort(scratch, 0, ByteOrder.BIG_ENDIAN);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.496 -0400", hash_original_method = "AF5E7921B4B2187E0041EFA801E04DA5", hash_generated_method = "F040E4C9F0C287F437544A41371C203C")
+    /**
+     * Reads an unsigned 8-bit byte from the current position in this file and
+     * returns it as an integer. Blocks until one byte has been read, the end of
+     * the file is reached or an exception is thrown.
+     *
+     * @return the next unsigned byte value from this file as an int.
+     * @throws EOFException
+     *             if the end of this file is detected.
+     * @throws IOException
+     *             if this file is closed or another I/O error occurs.
+     * @see #writeByte(int)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.990 -0500", hash_original_method = "AF5E7921B4B2187E0041EFA801E04DA5", hash_generated_method = "E10289AF1D5496D17669A60BBBE2F9E9")
     public final int readUnsignedByte() throws IOException {
         int temp = this.read();
-        if(temp < 0)        
-        {
-            EOFException var0239D63DB748BB20D119EB36D6D1C384_1606020777 = new EOFException();
-            var0239D63DB748BB20D119EB36D6D1C384_1606020777.addTaint(taint);
-            throw var0239D63DB748BB20D119EB36D6D1C384_1606020777;
-        } //End block
-        int var3D801AA532C1CEC3EE82D87A99FDF63F_1049583705 = (temp);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_569728312 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_569728312;
-        // ---------- Original Method ----------
-        //int temp = this.read();
-        //if (temp < 0) {
-            //throw new EOFException();
-        //}
-        //return temp;
+        if (temp < 0) {
+            throw new EOFException();
+        }
+        return temp;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.497 -0400", hash_original_method = "856B18E0C9E8549741083F490D54C8D8", hash_generated_method = "F9E37FB63AFEA6666A0A5B8B3FFAAE37")
+    /**
+     * Reads an unsigned big-endian 16-bit short from the current position in this file and
+     * returns it as an integer. Blocks until two bytes have been read, the end of
+     * the file is reached or an exception is thrown.
+     *
+     * @return the next unsigned short value from this file as an int.
+     * @throws EOFException
+     *             if the end of this file is detected.
+     * @throws IOException
+     *             if this file is closed or another I/O error occurs.
+     * @see #writeShort(int)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.991 -0500", hash_original_method = "856B18E0C9E8549741083F490D54C8D8", hash_generated_method = "D61B634BAB1210C26ADCEAB5B21DE464")
     public final int readUnsignedShort() throws IOException {
-        int var4535605AA0CDF96DAC5C016A8613FBB9_304665845 = (((int) readShort()) & 0xffff);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_998749 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_998749;
-        // ---------- Original Method ----------
-        //return ((int) readShort()) & 0xffff;
+        return ((int) readShort()) & 0xffff;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.497 -0400", hash_original_method = "1E6F905958EDDE8569C0995497961028", hash_generated_method = "F1AEC0629471396EB842BB6B6EBE0899")
+    /**
+     * Reads a string that is encoded in {@link DataInput modified UTF-8} from
+     * this file. The number of bytes that must be read for the complete string
+     * is determined by the first two bytes read from the file. Blocks until all
+     * required bytes have been read, the end of the file is reached or an
+     * exception is thrown.
+     *
+     * @return the next string encoded in {@link DataInput modified UTF-8} from
+     *         this file.
+     * @throws EOFException
+     *             if the end of this file is detected.
+     * @throws IOException
+     *             if this file is closed or another I/O error occurs.
+     * @throws UTFDataFormatException
+     *             if the bytes read cannot be decoded into a character string.
+     * @see #writeUTF(String)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.992 -0500", hash_original_method = "1E6F905958EDDE8569C0995497961028", hash_generated_method = "9185F536AED2E9334E1588BCE6D15B49")
     public final String readUTF() throws IOException {
         int utfSize = readUnsignedShort();
-        if(utfSize == 0)        
-        {
-String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_816803260 =             "";
-            var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_816803260.addTaint(taint);
-            return var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_816803260;
-        } //End block
+        if (utfSize == 0) {
+            return "";
+        }
         byte[] buf = new byte[utfSize];
-        if(read(buf, 0, buf.length) != buf.length)        
-        {
-            EOFException var0239D63DB748BB20D119EB36D6D1C384_2076411484 = new EOFException();
-            var0239D63DB748BB20D119EB36D6D1C384_2076411484.addTaint(taint);
-            throw var0239D63DB748BB20D119EB36D6D1C384_2076411484;
-        } //End block
-String var53043956345A52F3FC57178FAAB3FC3C_1476127053 =         ModifiedUtf8.decode(buf, new char[utfSize], 0, utfSize);
-        var53043956345A52F3FC57178FAAB3FC3C_1476127053.addTaint(taint);
-        return var53043956345A52F3FC57178FAAB3FC3C_1476127053;
-        // ---------- Original Method ----------
-        //int utfSize = readUnsignedShort();
-        //if (utfSize == 0) {
-            //return "";
-        //}
-        //byte[] buf = new byte[utfSize];
-        //if (read(buf, 0, buf.length) != buf.length) {
-            //throw new EOFException();
-        //}
-        //return ModifiedUtf8.decode(buf, new char[utfSize], 0, utfSize);
+        if (read(buf, 0, buf.length) != buf.length) {
+            throw new EOFException();
+        }
+        return ModifiedUtf8.decode(buf, new char[utfSize], 0, utfSize);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.513 -0400", hash_original_method = "92812216A189B62C22C36FA4ABFCEF90", hash_generated_method = "E426E9F52179D8F0A8BF4C5CB70DDCCA")
+    /**
+     * Moves this file's file pointer to a new position, from where following
+     * {@code read}, {@code write} or {@code skip} operations are done. The
+     * position may be greater than the current length of the file, but the
+     * file's length will only change if the moving of the pointer is followed
+     * by a {@code write} operation.
+     *
+     * @param offset
+     *            the new file pointer position.
+     * @throws IOException
+     *             if this file is closed, {@code pos < 0} or another I/O error
+     *             occurs.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.992 -0500", hash_original_method = "92812216A189B62C22C36FA4ABFCEF90", hash_generated_method = "73DC14107C93695D525162506C13794D")
     public void seek(long offset) throws IOException {
-        addTaint(offset);
-        if(offset < 0)        
-        {
-            IOException var407EF712642876D92F7D5DA11E26AD4E_862083562 = new IOException("offset < 0: " + offset);
-            var407EF712642876D92F7D5DA11E26AD4E_862083562.addTaint(taint);
-            throw var407EF712642876D92F7D5DA11E26AD4E_862083562;
-        } //End block
-        try 
-        {
+        if (offset < 0) {
+            throw new IOException("offset < 0: " + offset);
+        }
+        try {
             Libcore.os.lseek(fd, offset, SEEK_SET);
-        } //End block
-        catch (ErrnoException errnoException)
-        {
-            java.io.IOException var533DBF3F7D78874DC97ED285C3BC3B22_484827602 = errnoException.rethrowAsIOException();
-            var533DBF3F7D78874DC97ED285C3BC3B22_484827602.addTaint(taint);
-            throw var533DBF3F7D78874DC97ED285C3BC3B22_484827602;
-        } //End block
-        // ---------- Original Method ----------
-        //if (offset < 0) {
-            //throw new IOException("offset < 0: " + offset);
-        //}
-        //try {
-            //Libcore.os.lseek(fd, offset, SEEK_SET);
-        //} catch (ErrnoException errnoException) {
-            //throw errnoException.rethrowAsIOException();
-        //}
+        } catch (ErrnoException errnoException) {
+            throw errnoException.rethrowAsIOException();
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.528 -0400", hash_original_method = "385EF87B8915AB37CD3540061C92256B", hash_generated_method = "B4FA8E56C3C0C9F13B0D325141003EA5")
+    /**
+     * Sets the length of this file to {@code newLength}. If the current file is
+     * smaller, it is expanded but the contents from the previous end of the
+     * file to the new end are undefined. The file is truncated if its current
+     * size is bigger than {@code newLength}. If the current file pointer
+     * position is in the truncated part, it is set to the end of the file.
+     *
+     * @param newLength
+     *            the new file length in bytes.
+     * @throws IllegalArgumentException
+     *             if {@code newLength < 0}.
+     * @throws IOException
+     *             if this file is closed or another I/O error occurs.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.993 -0500", hash_original_method = "385EF87B8915AB37CD3540061C92256B", hash_generated_method = "AB5A5369B402ECB690F6A9D77ABACB90")
     public void setLength(long newLength) throws IOException {
-        addTaint(newLength);
-        if(newLength < 0)        
-        {
-            IllegalArgumentException var3467204E3D409283EC814D3A00236787_2731359 = new IllegalArgumentException("newLength < 0");
-            var3467204E3D409283EC814D3A00236787_2731359.addTaint(taint);
-            throw var3467204E3D409283EC814D3A00236787_2731359;
-        } //End block
-        try 
-        {
+        if (newLength < 0) {
+            throw new IllegalArgumentException("newLength < 0");
+        }
+        try {
             Libcore.os.ftruncate(fd, newLength);
-        } //End block
-        catch (ErrnoException errnoException)
-        {
-            java.io.IOException var533DBF3F7D78874DC97ED285C3BC3B22_172053256 = errnoException.rethrowAsIOException();
-            var533DBF3F7D78874DC97ED285C3BC3B22_172053256.addTaint(taint);
-            throw var533DBF3F7D78874DC97ED285C3BC3B22_172053256;
-        } //End block
+        } catch (ErrnoException errnoException) {
+            throw errnoException.rethrowAsIOException();
+        }
+
         long filePointer = getFilePointer();
-        if(filePointer > newLength)        
-        {
+        if (filePointer > newLength) {
             seek(newLength);
-        } //End block
-        if(syncMetadata)        
-        {
+        }
+
+        // if we are in "rws" mode, attempt to sync file+metadata
+        if (syncMetadata) {
             fd.sync();
-        } //End block
-        // ---------- Original Method ----------
-        //if (newLength < 0) {
-            //throw new IllegalArgumentException("newLength < 0");
-        //}
-        //try {
-            //Libcore.os.ftruncate(fd, newLength);
-        //} catch (ErrnoException errnoException) {
-            //throw errnoException.rethrowAsIOException();
-        //}
-        //long filePointer = getFilePointer();
-        //if (filePointer > newLength) {
-            //seek(newLength);
-        //}
-        //if (syncMetadata) {
-            //fd.sync();
-        //}
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.530 -0400", hash_original_method = "FB9C2E97D200EE03574ADD76D56D23DD", hash_generated_method = "3EE13A7B1E167069DD5CA857580463CA")
+    /**
+     * Skips over {@code count} bytes in this file. Less than {@code count}
+     * bytes are skipped if the end of the file is reached or an exception is
+     * thrown during the operation. Nothing is done if {@code count} is
+     * negative.
+     *
+     * @param count
+     *            the number of bytes to skip.
+     * @return the number of bytes actually skipped.
+     * @throws IOException
+     *             if this file is closed or another I/O error occurs.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.994 -0500", hash_original_method = "FB9C2E97D200EE03574ADD76D56D23DD", hash_generated_method = "F28BDDC6AFDD6D20810D78F064E232CF")
     public int skipBytes(int count) throws IOException {
-        addTaint(count);
-        if(count > 0)        
-        {
-            long currentPos = getFilePointer();
-            long eof = length();
+        if (count > 0) {
+            long currentPos = getFilePointer(), eof = length();
             int newCount = (int) ((currentPos + count > eof) ? eof - currentPos : count);
             seek(currentPos + newCount);
-            int varD6F9071E53BC7EFF4BFE39EBFCDDF1B1_520849967 = (newCount);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_304080784 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_304080784;
-        } //End block
-        int varCFCD208495D565EF66E7DFF9F98764DA_76086744 = (0);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_551248156 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_551248156;
-        // ---------- Original Method ----------
-        //if (count > 0) {
-            //long currentPos = getFilePointer(), eof = length();
-            //int newCount = (int) ((currentPos + count > eof) ? eof - currentPos : count);
-            //seek(currentPos + newCount);
-            //return newCount;
-        //}
-        //return 0;
+            return newCount;
+        }
+        return 0;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.530 -0400", hash_original_method = "773CDFC941DB5BD8F51FCC7460E1F3ED", hash_generated_method = "C874A8F3DD1DC4618E30BFCFA3F99F15")
+    /**
+     * Writes the entire contents of the byte array {@code buffer} to this file,
+     * starting at the current file pointer.
+     *
+     * @param buffer
+     *            the buffer to write.
+     * @throws IOException
+     *             if an I/O error occurs while writing to this file.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.995 -0500", hash_original_method = "773CDFC941DB5BD8F51FCC7460E1F3ED", hash_generated_method = "227B669FDA8AD574341B08A5DD95557F")
     public void write(byte[] buffer) throws IOException {
-        addTaint(buffer[0]);
         write(buffer, 0, buffer.length);
-        // ---------- Original Method ----------
-        //write(buffer, 0, buffer.length);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.531 -0400", hash_original_method = "35FA4EEB101513E91F640D0BB99E182F", hash_generated_method = "AE78FA9D0171A0DFF9BB6B0BD4B93EAF")
+    /**
+     * Writes {@code byteCount} bytes from the byte array {@code buffer} to this
+     * file, starting at the current file pointer and using {@code byteOffset} as
+     * the first position within {@code buffer} to get bytes.
+     *
+     * @throws IndexOutOfBoundsException
+     *             if {@code byteCount < 0}, {@code byteOffset < 0} or {@code byteCount +
+     *             byteOffset} is greater than the size of {@code buffer}.
+     * @throws IOException
+     *             if an I/O error occurs while writing to this file.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.996 -0500", hash_original_method = "35FA4EEB101513E91F640D0BB99E182F", hash_generated_method = "408D805D9F4B74A29DDEBF53541D0A55")
     public void write(byte[] buffer, int byteOffset, int byteCount) throws IOException {
-        addTaint(byteCount);
-        addTaint(byteOffset);
-        addTaint(buffer[0]);
         IoBridge.write(fd, buffer, byteOffset, byteCount);
-        if(syncMetadata)        
-        {
+        // if we are in "rws" mode, attempt to sync file+metadata
+        if (syncMetadata) {
             fd.sync();
-        } //End block
-        // ---------- Original Method ----------
-        //IoBridge.write(fd, buffer, byteOffset, byteCount);
-        //if (syncMetadata) {
-            //fd.sync();
-        //}
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.532 -0400", hash_original_method = "9AECC3BD7576DA9A6BE139AE80679C12", hash_generated_method = "9FAA380C1F42D314AD87185ABF65B775")
+    /**
+     * Writes a byte to this file, starting at the current file pointer. Only
+     * the least significant byte of the integer {@code oneByte} is written.
+     *
+     * @param oneByte
+     *            the byte to write to this file.
+     * @throws IOException
+     *             if this file is closed or another I/O error occurs.
+     * @see #read()
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.997 -0500", hash_original_method = "9AECC3BD7576DA9A6BE139AE80679C12", hash_generated_method = "5ED746FBDAF085038B13817E660DB906")
     public void write(int oneByte) throws IOException {
         scratch[0] = (byte) (oneByte & 0xff);
         write(scratch, 0, 1);
-        // ---------- Original Method ----------
-        //scratch[0] = (byte) (oneByte & 0xff);
-        //write(scratch, 0, 1);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.532 -0400", hash_original_method = "9F118A4D5206A4234B8C15F22340D26C", hash_generated_method = "F713F47288329EB16C788561DCB2ED01")
+    /**
+     * Writes a boolean to this file as a single byte (1 for true, 0 for false), starting at the
+     * current file pointer.
+     *
+     * @param val
+     *            the boolean to write to this file.
+     * @throws IOException
+     *             if this file is closed or another I/O error occurs.
+     * @see #readBoolean()
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.997 -0500", hash_original_method = "9F118A4D5206A4234B8C15F22340D26C", hash_generated_method = "BC3F06DA4ACE3228AF29A037952DAF6A")
     public final void writeBoolean(boolean val) throws IOException {
-        addTaint(val);
         write(val ? 1 : 0);
-        // ---------- Original Method ----------
-        //write(val ? 1 : 0);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.532 -0400", hash_original_method = "B252FC199353C3326913DC87EC8ACD0F", hash_generated_method = "6E4AD66DD62E241338EB34F0C56F2D10")
+    /**
+     * Writes an 8-bit byte to this file, starting at the current file pointer.
+     * Only the least significant byte of the integer {@code val} is written.
+     *
+     * @param val
+     *            the byte to write to this file.
+     * @throws IOException
+     *             if this file is closed or another I/O error occurs.
+     * @see #readByte()
+     * @see #readUnsignedByte()
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.998 -0500", hash_original_method = "B252FC199353C3326913DC87EC8ACD0F", hash_generated_method = "B8250C3250A38DA6C7D198731C269ADA")
     public final void writeByte(int val) throws IOException {
-        addTaint(val);
         write(val & 0xFF);
-        // ---------- Original Method ----------
-        //write(val & 0xFF);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.533 -0400", hash_original_method = "EECBC8862767167AF0CABDC3594E6347", hash_generated_method = "BB8DC60E64954AED2A53DF895EA04FFA")
+    /**
+     * Writes the low order 8-bit bytes from a string to this file, starting at
+     * the current file pointer.
+     *
+     * @param str
+     *            the string containing the bytes to write to this file
+     * @throws IOException
+     *             if an I/O error occurs while writing to this file.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:31.999 -0500", hash_original_method = "EECBC8862767167AF0CABDC3594E6347", hash_generated_method = "39275A257DB50D61A6E49D9313454A28")
     public final void writeBytes(String str) throws IOException {
-        addTaint(str.getTaint());
         byte[] bytes = new byte[str.length()];
-for(int index = 0;index < str.length();index++)
-        {
+        for (int index = 0; index < str.length(); index++) {
             bytes[index] = (byte) (str.charAt(index) & 0xFF);
-        } //End block
+        }
         write(bytes);
-        // ---------- Original Method ----------
-        //byte[] bytes = new byte[str.length()];
-        //for (int index = 0; index < str.length(); index++) {
-            //bytes[index] = (byte) (str.charAt(index) & 0xFF);
-        //}
-        //write(bytes);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.533 -0400", hash_original_method = "ECFC19989A55A064EF569F6E00E03595", hash_generated_method = "1E31D82E4CCC1BDCFE3108E1328D9F76")
+    /**
+     * Writes a big-endian 16-bit character to this file, starting at the current file
+     * pointer. Only the two least significant bytes of the integer {@code val}
+     * are written, with the high byte first.
+     *
+     * @param val
+     *            the char to write to this file.
+     * @throws IOException
+     *             if an I/O error occurs while writing to this file.
+     * @see #readChar()
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.000 -0500", hash_original_method = "ECFC19989A55A064EF569F6E00E03595", hash_generated_method = "932B9992937F002B26811C18101888C1")
     public final void writeChar(int val) throws IOException {
-        addTaint(val);
         writeShort(val);
-        // ---------- Original Method ----------
-        //writeShort(val);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.534 -0400", hash_original_method = "C993D359026F2BBBDD097DA5FA69EA70", hash_generated_method = "274A2C12E321B1FB370B9AD0B1AD8A5A")
+    /**
+     * Writes big-endian 16-bit characters from {@code str} to this file, starting at the
+     * current file pointer.
+     *
+     * @param str
+     *            the string to write to this file.
+     * @throws IOException
+     *             if an I/O error occurs while writing to this file.
+     * @see #readChar()
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.001 -0500", hash_original_method = "C993D359026F2BBBDD097DA5FA69EA70", hash_generated_method = "9C778C35E08DCB80938DC8E57B2C1AA4")
     public final void writeChars(String str) throws IOException {
-        addTaint(str.getTaint());
         write(str.getBytes("UTF-16BE"));
-        // ---------- Original Method ----------
-        //write(str.getBytes("UTF-16BE"));
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.534 -0400", hash_original_method = "F72176A2741A4B219C2AAE16A0D68BA2", hash_generated_method = "015AAB732EE3FB11ACE6574EE6EF9751")
+    /**
+     * Writes a big-endian 64-bit double to this file, starting at the current file
+     * pointer. The bytes are those returned by
+     * {@link Double#doubleToLongBits(double)}, meaning a canonical NaN is used.
+     *
+     * @param val
+     *            the double to write to this file.
+     * @throws IOException
+     *             if an I/O error occurs while writing to this file.
+     * @see #readDouble()
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.002 -0500", hash_original_method = "F72176A2741A4B219C2AAE16A0D68BA2", hash_generated_method = "F3BF6663D138ED0E1DFEA62B1C80FA3F")
     public final void writeDouble(double val) throws IOException {
-        addTaint(val);
         writeLong(Double.doubleToLongBits(val));
-        // ---------- Original Method ----------
-        //writeLong(Double.doubleToLongBits(val));
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.534 -0400", hash_original_method = "D8994DA56D4741462EE1F41757FFAE01", hash_generated_method = "D86DCBAF1163AA0C9FB91F716904211F")
+    /**
+     * Writes a big-endian 32-bit float to this file, starting at the current file pointer.
+     * The bytes are those returned by {@link Float#floatToIntBits(float)}, meaning a canonical NaN
+     * is used.
+     *
+     * @param val
+     *            the float to write to this file.
+     * @throws IOException
+     *             if an I/O error occurs while writing to this file.
+     * @see #readFloat()
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.003 -0500", hash_original_method = "D8994DA56D4741462EE1F41757FFAE01", hash_generated_method = "1792C72D5DB8A7188EE6A15A300D3124")
     public final void writeFloat(float val) throws IOException {
-        addTaint(val);
         writeInt(Float.floatToIntBits(val));
-        // ---------- Original Method ----------
-        //writeInt(Float.floatToIntBits(val));
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.535 -0400", hash_original_method = "37CBB7B1E5121DA5847923CB75DB4FD7", hash_generated_method = "24DB24A6E79CF9D78FF30AF32FA9AD2E")
+    /**
+     * Writes a big-endian 32-bit integer to this file, starting at the current file
+     * pointer.
+     *
+     * @param val
+     *            the int to write to this file.
+     * @throws IOException
+     *             if an I/O error occurs while writing to this file.
+     * @see #readInt()
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.003 -0500", hash_original_method = "37CBB7B1E5121DA5847923CB75DB4FD7", hash_generated_method = "614D95C47B63C83EC304F76F5EA63F78")
     public final void writeInt(int val) throws IOException {
-        addTaint(val);
         Memory.pokeInt(scratch, 0, val, ByteOrder.BIG_ENDIAN);
         write(scratch, 0, SizeOf.INT);
-        // ---------- Original Method ----------
-        //Memory.pokeInt(scratch, 0, val, ByteOrder.BIG_ENDIAN);
-        //write(scratch, 0, SizeOf.INT);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.535 -0400", hash_original_method = "7B3E247666A6F3E05280E703124B5A4E", hash_generated_method = "D764EBAB4B72E3E18C93C32E36DA29B6")
+    /**
+     * Writes a big-endian 64-bit long to this file, starting at the current file
+     * pointer.
+     *
+     * @param val
+     *            the long to write to this file.
+     * @throws IOException
+     *             if an I/O error occurs while writing to this file.
+     * @see #readLong()
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.005 -0500", hash_original_method = "7B3E247666A6F3E05280E703124B5A4E", hash_generated_method = "EC58106DBA84FF2516FCC382DA22D5AA")
     public final void writeLong(long val) throws IOException {
-        addTaint(val);
         Memory.pokeLong(scratch, 0, val, ByteOrder.BIG_ENDIAN);
         write(scratch, 0, SizeOf.LONG);
-        // ---------- Original Method ----------
-        //Memory.pokeLong(scratch, 0, val, ByteOrder.BIG_ENDIAN);
-        //write(scratch, 0, SizeOf.LONG);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.535 -0400", hash_original_method = "64B98C2F1C9F8A49F0516D9D78465522", hash_generated_method = "FFCD855202B608BD07893E99F2A62094")
+    /**
+     * Writes a big-endian 16-bit short to this file, starting at the current file
+     * pointer. Only the two least significant bytes of the integer {@code val}
+     * are written.
+     *
+     * @param val
+     *            the short to write to this file.
+     * @throws IOException
+     *             if an I/O error occurs while writing to this file.
+     * @see #readShort()
+     * @see DataInput#readUnsignedShort()
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.006 -0500", hash_original_method = "64B98C2F1C9F8A49F0516D9D78465522", hash_generated_method = "BD718C7C8DCE79BD36DF8E1657B26DBA")
     public final void writeShort(int val) throws IOException {
-        addTaint(val);
         Memory.pokeShort(scratch, 0, (short) val, ByteOrder.BIG_ENDIAN);
         write(scratch, 0, SizeOf.SHORT);
-        // ---------- Original Method ----------
-        //Memory.pokeShort(scratch, 0, (short) val, ByteOrder.BIG_ENDIAN);
-        //write(scratch, 0, SizeOf.SHORT);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.535 -0400", hash_original_method = "9D44E024EEA016D3EAD697517CA83CDC", hash_generated_method = "F3F91246F6CBB42958111ACA3F00042D")
+    /**
+     * Writes a string encoded with {@link DataInput modified UTF-8} to this
+     * file, starting at the current file pointer.
+     *
+     * @param str
+     *            the string to write in {@link DataInput modified UTF-8}
+     *            format.
+     * @throws IOException
+     *             if an I/O error occurs while writing to this file.
+     * @throws UTFDataFormatException
+     *             if the encoded string is longer than 65535 bytes.
+     * @see #readUTF()
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.007 -0500", hash_original_method = "9D44E024EEA016D3EAD697517CA83CDC", hash_generated_method = "58B20B8780C4182A44E8248160366D2A")
     public final void writeUTF(String str) throws IOException {
-        addTaint(str.getTaint());
         write(ModifiedUtf8.encode(str));
-        // ---------- Original Method ----------
-        //write(ModifiedUtf8.encode(str));
     }
 
     

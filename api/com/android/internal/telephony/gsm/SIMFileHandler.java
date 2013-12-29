@@ -1,6 +1,8 @@
 package com.android.internal.telephony.gsm;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.os.Message;
 import android.util.Log;
@@ -15,58 +17,49 @@ import com.android.internal.telephony.Phone;
 
 
 public final class SIMFileHandler extends IccFileHandler implements IccConstants {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.430 -0400", hash_original_field = "44BC87C3198CFC247427A5305FDEA9BE", hash_generated_field = "59DB8B09027983825DB66C99CC153469")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:13.019 -0500", hash_original_field = "28DECCA9F494133CD6F61BCA99A50ECA", hash_generated_field = "B8386CD6D900777C9D6A0A5CA1D0B217")
+
+    static final String LOG_TAG = "GSM";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:13.020 -0500", hash_original_field = "3E4A9DF67E5660E9A95DECEFCF15D77A", hash_generated_field = "59DB8B09027983825DB66C99CC153469")
 
     private Phone mPhone;
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.430 -0400", hash_original_method = "28787217280B11FEE5B9021DD1097C9A", hash_generated_method = "E0F6B16E89762658DF17EF8C6EF8CDD8")
-      SIMFileHandler(GSMPhone phone) {
+
+    //***** Instance Variables
+
+    //***** Constructor
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:13.021 -0500", hash_original_method = "28787217280B11FEE5B9021DD1097C9A", hash_generated_method = "28787217280B11FEE5B9021DD1097C9A")
+    SIMFileHandler(GSMPhone phone) {
         super(phone);
         mPhone = phone;
-        // ---------- Original Method ----------
-        //mPhone = phone;
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.430 -0400", hash_original_method = "9B378D368B78D2E2F938DA57C729E6B5", hash_generated_method = "9A4F77B4E25F9CFE2D71D8AC605A621B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:13.022 -0500", hash_original_method = "9B378D368B78D2E2F938DA57C729E6B5", hash_generated_method = "CEA4BD04B364A2D6A5DC0E0491C26D12")
     public void dispose() {
         super.dispose();
-        // ---------- Original Method ----------
-        //super.dispose();
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.431 -0400", hash_original_method = "48D1C945A3808FD7B021E909C155155D", hash_generated_method = "390AF6D8D57B2EBD6C228B7EC0FD43E8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:13.022 -0500", hash_original_method = "48D1C945A3808FD7B021E909C155155D", hash_generated_method = "D3C172659735198B045DA968A70F9E45")
     protected void finalize() {
         Log.d(LOG_TAG, "SIMFileHandler finalized");
-        // ---------- Original Method ----------
-        //Log.d(LOG_TAG, "SIMFileHandler finalized");
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.431 -0400", hash_original_method = "D06C959A971F705A496791A8170E55B9", hash_generated_method = "77C805872CA69F6467EFC5D284BEB40A")
+    //***** Overridden from IccFileHandler
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:13.023 -0500", hash_original_method = "D06C959A971F705A496791A8170E55B9", hash_generated_method = "DCAA486667275FD4C905CA1844E72CB8")
     @Override
-    public void handleMessage(Message msg) {
-        addTaint(msg.getTaint());
+public void handleMessage(Message msg) {
         super.handleMessage(msg);
-        // ---------- Original Method ----------
-        //super.handleMessage(msg);
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.432 -0400", hash_original_method = "10EDEC4C0ACD70E5A3D3B2572E081074", hash_generated_method = "31A2078CA71277330EBA37875FD80A2F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:13.024 -0500", hash_original_method = "10EDEC4C0ACD70E5A3D3B2572E081074", hash_generated_method = "A975ADA1F6A29A037B0FBD288EE9391A")
     protected String getEFPath(int efid) {
-        addTaint(efid);
-switch(efid){
+        // TODO(): DF_GSM can be 7F20 or 7F21 to handle backward compatibility.
+        // Implement this after discussion with OEMs.
+        switch(efid) {
         case EF_SMS:
-String varC105CB41AAF16150249B5DA550B272CE_1284069469 =         MF_SIM + DF_TELECOM;
-        varC105CB41AAF16150249B5DA550B272CE_1284069469.addTaint(taint);
-        return varC105CB41AAF16150249B5DA550B272CE_1284069469;
+            return MF_SIM + DF_TELECOM;
+
         case EF_EXT6:
         case EF_MWIS:
         case EF_MBI:
@@ -77,9 +70,8 @@ String varC105CB41AAF16150249B5DA550B272CE_1284069469 =         MF_SIM + DF_TELE
         case EF_SPDI:
         case EF_SST:
         case EF_CFIS:
-String varFA2EA53600AD8E391FF729ACE748F1EA_1719015168 =         MF_SIM + DF_GSM;
-        varFA2EA53600AD8E391FF729ACE748F1EA_1719015168.addTaint(taint);
-        return varFA2EA53600AD8E391FF729ACE748F1EA_1719015168;
+            return MF_SIM + DF_GSM;
+
         case EF_MAILBOX_CPHS:
         case EF_VOICE_MAIL_INDICATOR_CPHS:
         case EF_CFF_CPHS:
@@ -87,53 +79,34 @@ String varFA2EA53600AD8E391FF729ACE748F1EA_1719015168 =         MF_SIM + DF_GSM;
         case EF_SPN_SHORT_CPHS:
         case EF_INFO_CPHS:
         case EF_CSP_CPHS:
-String varFA2EA53600AD8E391FF729ACE748F1EA_1109720609 =         MF_SIM + DF_GSM;
-        varFA2EA53600AD8E391FF729ACE748F1EA_1109720609.addTaint(taint);
-        return varFA2EA53600AD8E391FF729ACE748F1EA_1109720609;
+            return MF_SIM + DF_GSM;
+
         case EF_PBR:
-String var1AB63F8FFC09FEACEF5A3C0A37E2D340_684740340 =         MF_SIM + DF_TELECOM + DF_PHONEBOOK;
-        var1AB63F8FFC09FEACEF5A3C0A37E2D340_684740340.addTaint(taint);
-        return var1AB63F8FFC09FEACEF5A3C0A37E2D340_684740340;
-}        String path = getCommonIccEFPath(efid);
-        if(path == null)        
-        {
+            // we only support global phonebook.
+            return MF_SIM + DF_TELECOM + DF_PHONEBOOK;
+        }
+        String path = getCommonIccEFPath(efid);
+        if (path == null) {
+            // The EFids in USIM phone book entries are decided by the card manufacturer.
+            // So if we don't match any of the cases above and if its a USIM return
+            // the phone book path.
             IccCard card = phone.getIccCard();
-            if(card != null && card.isApplicationOnIcc(IccCardApplication.AppType.APPTYPE_USIM))            
-            {
-String var1AB63F8FFC09FEACEF5A3C0A37E2D340_104273111 =                 MF_SIM + DF_TELECOM + DF_PHONEBOOK;
-                var1AB63F8FFC09FEACEF5A3C0A37E2D340_104273111.addTaint(taint);
-                return var1AB63F8FFC09FEACEF5A3C0A37E2D340_104273111;
-            } //End block
-        } //End block
-String var535F4D9720F3B0C96D8143873CE0638C_1849585912 =         path;
-        var535F4D9720F3B0C96D8143873CE0638C_1849585912.addTaint(taint);
-        return var535F4D9720F3B0C96D8143873CE0638C_1849585912;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            if (card != null && card.isApplicationOnIcc(IccCardApplication.AppType.APPTYPE_USIM)) {
+                return MF_SIM + DF_TELECOM + DF_PHONEBOOK;
+            }
+            Log.e(LOG_TAG, "Error: EF Path being returned in null");
+        }
+        return path;
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.432 -0400", hash_original_method = "45FB79CED1F6261AE88F32026733A48A", hash_generated_method = "F86FF548D74882274FC42BBA5BDAA6ED")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:13.025 -0500", hash_original_method = "45FB79CED1F6261AE88F32026733A48A", hash_generated_method = "821336B7AA4CA4DD238646288F5D76C2")
     protected void logd(String msg) {
-        addTaint(msg.getTaint());
         Log.d(LOG_TAG, "[SIMFileHandler] " + msg);
-        // ---------- Original Method ----------
-        //Log.d(LOG_TAG, "[SIMFileHandler] " + msg);
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.433 -0400", hash_original_method = "186F2705ACAE4FAB6B3F0960135671C1", hash_generated_method = "7C7025F790B2B79900FDADAD81ED13E2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:13.026 -0500", hash_original_method = "186F2705ACAE4FAB6B3F0960135671C1", hash_generated_method = "E74A473F03217D8105C116BC7519BFC0")
     protected void loge(String msg) {
-        addTaint(msg.getTaint());
-        // ---------- Original Method ----------
-        //Log.e(LOG_TAG, "[SIMFileHandler] " + msg);
+        Log.e(LOG_TAG, "[SIMFileHandler] " + msg);
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.433 -0400", hash_original_field = "41EBE7F32B96C1E2E9C209710486A443", hash_generated_field = "B8386CD6D900777C9D6A0A5CA1D0B217")
-
-    static final String LOG_TAG = "GSM";
 }
 

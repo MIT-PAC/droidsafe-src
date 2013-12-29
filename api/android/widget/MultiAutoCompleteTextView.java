@@ -1,6 +1,8 @@
 package android.widget;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.content.Context;
 import android.text.Editable;
@@ -15,217 +17,156 @@ import android.util.AttributeSet;
 
 
 public class MultiAutoCompleteTextView extends AutoCompleteTextView {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.362 -0400", hash_original_field = "F17D9A2BC894EC426CD0CB6E97DFAED1", hash_generated_field = "DC05FA21DC7A9D97C12BF9C7B68E4314")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:06.748 -0500", hash_original_field = "782DFD3BFEBE1EC21FE0DFA4A07ABD54", hash_generated_field = "DC05FA21DC7A9D97C12BF9C7B68E4314")
 
     private Tokenizer mTokenizer;
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.363 -0400", hash_original_method = "94554F2B341FB5EE45055739E2680C3D", hash_generated_method = "0A88EE5AB96F3B62E46AEB165D2D7CCB")
-    public  MultiAutoCompleteTextView(Context context) {
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:06.749 -0500", hash_original_method = "94554F2B341FB5EE45055739E2680C3D", hash_generated_method = "C2F49C3CAFFC526DD205A72441BE92F0")
+    public MultiAutoCompleteTextView(Context context) {
         this(context, null);
-        addTaint(context.getTaint());
-        // ---------- Original Method ----------
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.363 -0400", hash_original_method = "42976CB810392B93881A9DEB6E0BA159", hash_generated_method = "32E4736B2995391A52228B1CF7ED9347")
-    public  MultiAutoCompleteTextView(Context context, AttributeSet attrs) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:06.750 -0500", hash_original_method = "42976CB810392B93881A9DEB6E0BA159", hash_generated_method = "A6B2BA027B1DC0B0A5DF3B4D6B203004")
+    public MultiAutoCompleteTextView(Context context, AttributeSet attrs) {
         this(context, attrs, com.android.internal.R.attr.autoCompleteTextViewStyle);
-        addTaint(attrs.getTaint());
-        addTaint(context.getTaint());
-        // ---------- Original Method ----------
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.363 -0400", hash_original_method = "C6A2FA85257B49A1F6B493810F60209F", hash_generated_method = "372B75242DB968717AD3CD35B8F39199")
-    public  MultiAutoCompleteTextView(Context context, AttributeSet attrs, int defStyle) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:06.751 -0500", hash_original_method = "C6A2FA85257B49A1F6B493810F60209F", hash_generated_method = "4BACF8B5978871C953956D2130A61715")
+    public MultiAutoCompleteTextView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-        addTaint(defStyle);
-        addTaint(attrs.getTaint());
-        addTaint(context.getTaint());
-        // ---------- Original Method ----------
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.363 -0400", hash_original_method = "BCA16A32890B669BA239C7F8E91B803C", hash_generated_method = "54CDFBC681C1E3EEE4A842CD88F26A03")
-     void finishInit() {
-        // ---------- Original Method ----------
-    }
+    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:06.751 -0500", hash_original_method = "BCA16A32890B669BA239C7F8E91B803C", hash_generated_method = "BCA16A32890B669BA239C7F8E91B803C")
+    void finishInit() { }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.364 -0400", hash_original_method = "0C1CB9531D2E188C8CD299E678A81235", hash_generated_method = "3641C7F0ADB77417CC960DAB0B499BB5")
+    /**
+     * Sets the Tokenizer that will be used to determine the relevant
+     * range of the text where the user is typing.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:06.752 -0500", hash_original_method = "0C1CB9531D2E188C8CD299E678A81235", hash_generated_method = "CFEFBD07EFD51DC38E45D8740B5CD2ED")
     public void setTokenizer(Tokenizer t) {
         mTokenizer = t;
-        // ---------- Original Method ----------
-        //mTokenizer = t;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.365 -0400", hash_original_method = "D73EB2C94DEE4722FCE1B5247E851200", hash_generated_method = "4FD1C0F389BF670675477F792AD56309")
+    /**
+     * Instead of filtering on the entire contents of the edit box,
+     * this subclass method filters on the range from
+     * {@link Tokenizer#findTokenStart} to {@link #getSelectionEnd}
+     * if the length of that range meets or exceeds {@link #getThreshold}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:06.754 -0500", hash_original_method = "D73EB2C94DEE4722FCE1B5247E851200", hash_generated_method = "0D5146E8312D9D5881F63C790ACC0C09")
     @Override
-    protected void performFiltering(CharSequence text, int keyCode) {
-        addTaint(keyCode);
-        addTaint(text.getTaint());
-        if(enoughToFilter())        
-        {
+protected void performFiltering(CharSequence text, int keyCode) {
+        if (enoughToFilter()) {
             int end = getSelectionEnd();
             int start = mTokenizer.findTokenStart(text, end);
+
             performFiltering(text, start, end, keyCode);
-        } //End block
-        else
-        {
+        } else {
             dismissDropDown();
+
             Filter f = getFilter();
-            if(f != null)            
-            {
+            if (f != null) {
                 f.filter(null);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (enoughToFilter()) {
-            //int end = getSelectionEnd();
-            //int start = mTokenizer.findTokenStart(text, end);
-            //performFiltering(text, start, end, keyCode);
-        //} else {
-            //dismissDropDown();
-            //Filter f = getFilter();
-            //if (f != null) {
-                //f.filter(null);
-            //}
-        //}
+            }
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.365 -0400", hash_original_method = "4B7E111CDE46EB7665419BBE701F6868", hash_generated_method = "D5CEB5521BDBEFF42BD9153E05550746")
+    /**
+     * Instead of filtering whenever the total length of the text
+     * exceeds the threshhold, this subclass filters only when the
+     * length of the range from
+     * {@link Tokenizer#findTokenStart} to {@link #getSelectionEnd}
+     * meets or exceeds {@link #getThreshold}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:06.755 -0500", hash_original_method = "4B7E111CDE46EB7665419BBE701F6868", hash_generated_method = "5AF05FDD7F3944E020E9499E3021F972")
     @Override
-    public boolean enoughToFilter() {
+public boolean enoughToFilter() {
         Editable text = getText();
+
         int end = getSelectionEnd();
-        if(end < 0 || mTokenizer == null)        
-        {
-            boolean var68934A3E9455FA72420237EB05902327_1316413916 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1951863226 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1951863226;
-        } //End block
+        if (end < 0 || mTokenizer == null) {
+            return false;
+        }
+
         int start = mTokenizer.findTokenStart(text, end);
-        if(end - start >= getThreshold())        
-        {
-            boolean varB326B5062B2F0E69046810717534CB09_1844607313 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1423489070 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1423489070;
-        } //End block
-        else
-        {
-            boolean var68934A3E9455FA72420237EB05902327_491865517 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1348529471 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1348529471;
-        } //End block
-        // ---------- Original Method ----------
-        //Editable text = getText();
-        //int end = getSelectionEnd();
-        //if (end < 0 || mTokenizer == null) {
-            //return false;
-        //}
-        //int start = mTokenizer.findTokenStart(text, end);
-        //if (end - start >= getThreshold()) {
-            //return true;
-        //} else {
-            //return false;
-        //}
+
+        if (end - start >= getThreshold()) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.366 -0400", hash_original_method = "5C2EFC56A6F7A7D1FB121838E719CAA2", hash_generated_method = "2DAEADCFF1231BA145B288355F2F9DFF")
+    /**
+     * Instead of validating the entire text, this subclass method validates
+     * each token of the text individually.  Empty tokens are removed.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:06.756 -0500", hash_original_method = "5C2EFC56A6F7A7D1FB121838E719CAA2", hash_generated_method = "8C2DBEF647C385CA159DBDC7745537E1")
     @Override
-    public void performValidation() {
+public void performValidation() {
         Validator v = getValidator();
-        if(v == null || mTokenizer == null)        
-        {
+
+        if (v == null || mTokenizer == null) {
             return;
-        } //End block
+        }
+
         Editable e = getText();
         int i = getText().length();
-        while
-(i > 0)        
-        {
+        while (i > 0) {
             int start = mTokenizer.findTokenStart(e, i);
             int end = mTokenizer.findTokenEnd(e, start);
+
             CharSequence sub = e.subSequence(start, end);
-            if(TextUtils.isEmpty(sub))            
-            {
+            if (TextUtils.isEmpty(sub)) {
                 e.replace(start, i, "");
-            } //End block
-            else
-            if(!v.isValid(sub))            
-            {
+            } else if (!v.isValid(sub)) {
                 e.replace(start, i,
                           mTokenizer.terminateToken(v.fixText(sub)));
-            } //End block
+            }
+
             i = start;
-        } //End block
-        // ---------- Original Method ----------
-        //Validator v = getValidator();
-        //if (v == null || mTokenizer == null) {
-            //return;
-        //}
-        //Editable e = getText();
-        //int i = getText().length();
-        //while (i > 0) {
-            //int start = mTokenizer.findTokenStart(e, i);
-            //int end = mTokenizer.findTokenEnd(e, start);
-            //CharSequence sub = e.subSequence(start, end);
-            //if (TextUtils.isEmpty(sub)) {
-                //e.replace(start, i, "");
-            //} else if (!v.isValid(sub)) {
-                //e.replace(start, i,
-                          //mTokenizer.terminateToken(v.fixText(sub)));
-            //}
-            //i = start;
-        //}
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.367 -0400", hash_original_method = "448D969C1E669B05B875BF81D75455EA", hash_generated_method = "58DD7517C0DBC5F8EE335C8FA607ACD6")
+    /**
+     * <p>Starts filtering the content of the drop down list. The filtering
+     * pattern is the specified range of text from the edit box. Subclasses may
+     * override this method to filter with a different pattern, for
+     * instance a smaller substring of <code>text</code>.</p>
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:06.757 -0500", hash_original_method = "448D969C1E669B05B875BF81D75455EA", hash_generated_method = "FF28BAFFF03983213F7C0B3A60D18F28")
     protected void performFiltering(CharSequence text, int start, int end,
                                     int keyCode) {
-        addTaint(keyCode);
-        addTaint(end);
-        addTaint(start);
-        addTaint(text.getTaint());
         getFilter().filter(text.subSequence(start, end), this);
-        // ---------- Original Method ----------
-        //getFilter().filter(text.subSequence(start, end), this);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.368 -0400", hash_original_method = "0BC14D3B618E827E554DDB675E2805A0", hash_generated_method = "615135CFC8F7142BF4FDE3744700327C")
+    /**
+     * <p>Performs the text completion by replacing the range from
+     * {@link Tokenizer#findTokenStart} to {@link #getSelectionEnd} by the
+     * the result of passing <code>text</code> through
+     * {@link Tokenizer#terminateToken}.
+     * In addition, the replaced region will be marked as an AutoText
+     * substition so that if the user immediately presses DEL, the
+     * completion will be undone.
+     * Subclasses may override this method to do some different
+     * insertion of the content into the edit box.</p>
+     *
+     * @param text the selected suggestion in the drop down list
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:06.758 -0500", hash_original_method = "0BC14D3B618E827E554DDB675E2805A0", hash_generated_method = "FD34D90B04008B9817C9A793A477AB63")
     @Override
-    protected void replaceText(CharSequence text) {
-        addTaint(text.getTaint());
+protected void replaceText(CharSequence text) {
         clearComposingText();
+
         int end = getSelectionEnd();
         int start = mTokenizer.findTokenStart(getText(), end);
+
         Editable editable = getText();
         String original = TextUtils.substring(editable, start, end);
+
         QwertyKeyListener.markAsReplaced(editable, start, end, original);
         editable.replace(start, end, mTokenizer.terminateToken(text));
-        // ---------- Original Method ----------
-        //clearComposingText();
-        //int end = getSelectionEnd();
-        //int start = mTokenizer.findTokenStart(getText(), end);
-        //Editable editable = getText();
-        //String original = TextUtils.substring(editable, start, end);
-        //QwertyKeyListener.markAsReplaced(editable, start, end, original);
-        //editable.replace(start, end, mTokenizer.terminateToken(text));
     }
 
     
@@ -236,125 +177,56 @@ public class MultiAutoCompleteTextView extends AutoCompleteTextView {
         {
             //Synthesized constructor
         }
-
-
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.368 -0400", hash_original_method = "280529F27A16CE7436996477971C2C62", hash_generated_method = "181AD7875ABC89454D6526D7085E2E0C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:06.760 -0500", hash_original_method = "280529F27A16CE7436996477971C2C62", hash_generated_method = "DC26E71C45109D6661B28E19F2FCD5A8")
         public int findTokenStart(CharSequence text, int cursor) {
-            addTaint(cursor);
-            addTaint(text.getTaint());
             int i = cursor;
-            while
-(i > 0 && text.charAt(i - 1) != ',')            
-            {
+
+            while (i > 0 && text.charAt(i - 1) != ',') {
                 i--;
-            } //End block
-            while
-(i < cursor && text.charAt(i) == ' ')            
-            {
+            }
+            while (i < cursor && text.charAt(i) == ' ') {
                 i++;
-            } //End block
-            int var865C0C0B4AB0E063E5CAA3387C1A8741_8138070 = (i);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_328869648 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_328869648;
-            // ---------- Original Method ----------
-            //int i = cursor;
-            //while (i > 0 && text.charAt(i - 1) != ',') {
-                //i--;
-            //}
-            //while (i < cursor && text.charAt(i) == ' ') {
-                //i++;
-            //}
-            //return i;
+            }
+
+            return i;
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.369 -0400", hash_original_method = "4F25D72B16DCF82C04DD0624B35F7FC4", hash_generated_method = "7E78A5E7CE9B3D7983401C143E1A904F")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:06.761 -0500", hash_original_method = "4F25D72B16DCF82C04DD0624B35F7FC4", hash_generated_method = "E17625C514273A4C77DDDE81FF22D766")
         public int findTokenEnd(CharSequence text, int cursor) {
-            addTaint(cursor);
-            addTaint(text.getTaint());
             int i = cursor;
             int len = text.length();
-            while
-(i < len)            
-            {
-                if(text.charAt(i) == ',')                
-                {
-                    int var865C0C0B4AB0E063E5CAA3387C1A8741_1374846983 = (i);
-                                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_806321729 = getTaintInt();
-                    return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_806321729;
-                } //End block
-                else
-                {
+
+            while (i < len) {
+                if (text.charAt(i) == ',') {
+                    return i;
+                } else {
                     i++;
-                } //End block
-            } //End block
-            int varF5A8E923F8CD24B56B3BAB32358CC58A_1376175127 = (len);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_376337232 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_376337232;
-            // ---------- Original Method ----------
-            //int i = cursor;
-            //int len = text.length();
-            //while (i < len) {
-                //if (text.charAt(i) == ',') {
-                    //return i;
-                //} else {
-                    //i++;
-                //}
-            //}
-            //return len;
+                }
+            }
+
+            return len;
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.370 -0400", hash_original_method = "C1C1FDB4C90D17F74901681402AEE8BB", hash_generated_method = "702F4ECB1C0D9C36E02E3459FEBA5727")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:06.762 -0500", hash_original_method = "C1C1FDB4C90D17F74901681402AEE8BB", hash_generated_method = "289CCB6DEEDB18FBE88F6E92D253EABB")
         public CharSequence terminateToken(CharSequence text) {
-            addTaint(text.getTaint());
             int i = text.length();
-            while
-(i > 0 && text.charAt(i - 1) == ' ')            
-            {
+
+            while (i > 0 && text.charAt(i - 1) == ' ') {
                 i--;
-            } //End block
-            if(i > 0 && text.charAt(i - 1) == ',')            
-            {
-CharSequence var79CC641C1148018540A26F7ADC424893_972744283 =                 text;
-                var79CC641C1148018540A26F7ADC424893_972744283.addTaint(taint);
-                return var79CC641C1148018540A26F7ADC424893_972744283;
-            } //End block
-            else
-            {
-                if(text instanceof Spanned)                
-                {
+            }
+
+            if (i > 0 && text.charAt(i - 1) == ',') {
+                return text;
+            } else {
+                if (text instanceof Spanned) {
                     SpannableString sp = new SpannableString(text + ", ");
                     TextUtils.copySpansFrom((Spanned) text, 0, text.length(),
                                             Object.class, sp, 0);
-CharSequence varA4DCFF844B7753D115259E5560FDE637_1606630808 =                     sp;
-                    varA4DCFF844B7753D115259E5560FDE637_1606630808.addTaint(taint);
-                    return varA4DCFF844B7753D115259E5560FDE637_1606630808;
-                } //End block
-                else
-                {
-CharSequence var5D7AD4DC0F1248601127BB40BD3AC89B_359535042 =                     text + ", ";
-                    var5D7AD4DC0F1248601127BB40BD3AC89B_359535042.addTaint(taint);
-                    return var5D7AD4DC0F1248601127BB40BD3AC89B_359535042;
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            //int i = text.length();
-            //while (i > 0 && text.charAt(i - 1) == ' ') {
-                //i--;
-            //}
-            //if (i > 0 && text.charAt(i - 1) == ',') {
-                //return text;
-            //} else {
-                //if (text instanceof Spanned) {
-                    //SpannableString sp = new SpannableString(text + ", ");
-                    //TextUtils.copySpansFrom((Spanned) text, 0, text.length(),
-                                            //Object.class, sp, 0);
-                    //return sp;
-                //} else {
-                    //return text + ", ";
-                //}
-            //}
+                    return sp;
+                } else {
+                    return text + ", ";
+                }
+            }
         }
 
         

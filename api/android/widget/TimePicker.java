@@ -1,6 +1,8 @@
 package android.widget;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.text.DateFormatSymbols;
 import java.util.Calendar;
@@ -28,818 +30,12 @@ import com.android.internal.R;
 
 
 public class TimePicker extends FrameLayout {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.890 -0400", hash_original_field = "AB9371C54D62E21B7C9B3A0218F3CF8E", hash_generated_field = "35FD601AE81D55F188A5E5435A238E5F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.445 -0500", hash_original_field = "898BA2CFB8E606FE0E662F55EA307C06", hash_generated_field = "C8A8F0463DBF19CC5664F198B037CB59")
 
-    private boolean mIs24HourView;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.890 -0400", hash_original_field = "08C1C0D1B318F7D691C9A50DB6073615", hash_generated_field = "277A014682EEB4651FD9CCF1C4C7A9DA")
-
-    private boolean mIsAm;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.890 -0400", hash_original_field = "112FAE7786E1837400A25EDC32E6BAA9", hash_generated_field = "F42DCA1FAFC6800847A12B5E4A4BC187")
-
-    private NumberPicker mHourSpinner;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.890 -0400", hash_original_field = "09B03D4C69B668EC5EAC6459524CA437", hash_generated_field = "66959F7A51392B97FA2D1A99294B74C4")
-
-    private NumberPicker mMinuteSpinner;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.890 -0400", hash_original_field = "F3D3F46E713A8370B627E5F348E8F6D2", hash_generated_field = "4D70AE5EB70BA99339D4FD1599F1FEA3")
-
-    private NumberPicker mAmPmSpinner;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.891 -0400", hash_original_field = "E744F3850553FCA943282B8444936010", hash_generated_field = "57B061730C612FA07DDC7E51258E7DA2")
-
-    private EditText mHourSpinnerInput;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.891 -0400", hash_original_field = "5D9DA6546E42E5F3F97B7B4910CBBFB3", hash_generated_field = "B7278DCBB472B1B2F3539E5E1708DD32")
-
-    private EditText mMinuteSpinnerInput;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.891 -0400", hash_original_field = "E343F2337C5FF365E0FA6FF11E40A0D2", hash_generated_field = "FECBCFA86C0EF4E63B91247A25A449D7")
-
-    private EditText mAmPmSpinnerInput;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.891 -0400", hash_original_field = "F2EB92D46BFACFA75ABCA33DC6179915", hash_generated_field = "F12C6C5933E99F70D882693BF3937072")
-
-    private TextView mDivider;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.891 -0400", hash_original_field = "F9FD6AF8CBD99CF98AFC0E531ED08A41", hash_generated_field = "EF3E200E173FD044F8E6084FD0E1491E")
-
-    private Button mAmPmButton;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.891 -0400", hash_original_field = "AF87A0964167C5B6A1C3DBC28724FB1E", hash_generated_field = "B1B72D4D154F4798F88DEE511FC04CC0")
-
-    private String[] mAmPmStrings;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.891 -0400", hash_original_field = "9F4735C7D2833FBB144CCBE86DA0A2AE", hash_generated_field = "0D83C9894006124680A4C4A755D8D1E4")
-
-    private boolean mIsEnabled = DEFAULT_ENABLED_STATE;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.891 -0400", hash_original_field = "90586EBFA5B21544462ED06A9AD45FEB", hash_generated_field = "24067A0BB0CBA588BA40566793730956")
-
-    private OnTimeChangedListener mOnTimeChangedListener;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.891 -0400", hash_original_field = "E1D842D489EEA7BD2AB1A49AC19E3D59", hash_generated_field = "BF728D47404D52B2BA92F11A215AFB65")
-
-    private Calendar mTempCalendar;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.891 -0400", hash_original_field = "A21C83444D8B0E7E33D76B52140C960A", hash_generated_field = "88175FFB524B6CC60F82A34D8C4EC643")
-
-    private Locale mCurrentLocale;
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.891 -0400", hash_original_method = "DB39C8F7A833003C7D32A896903A886B", hash_generated_method = "E09AB0341F9AAF764C085418E7D375E4")
-    public  TimePicker(Context context) {
-        this(context, null);
-        addTaint(context.getTaint());
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.892 -0400", hash_original_method = "13212DBF3C0B0551DB88CC2A61A0591D", hash_generated_method = "4277BFEE01C4C3AF91348BCDB2C35AD8")
-    public  TimePicker(Context context, AttributeSet attrs) {
-        this(context, attrs, R.attr.timePickerStyle);
-        addTaint(attrs.getTaint());
-        addTaint(context.getTaint());
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.898 -0400", hash_original_method = "01E52F88810C7560B77A694B8CE593AF", hash_generated_method = "10FB6C2A3F13CA07AFC48E645E49187C")
-    public  TimePicker(Context context, AttributeSet attrs, int defStyle) {
-        super(context, attrs, defStyle);
-        addTaint(defStyle);
-        addTaint(attrs.getTaint());
-        addTaint(context.getTaint());
-        setCurrentLocale(Locale.getDefault());
-        TypedArray attributesArray = context.obtainStyledAttributes(
-                attrs, R.styleable.TimePicker, defStyle, 0);
-        int layoutResourceId = attributesArray.getResourceId(
-                R.styleable.TimePicker_layout, R.layout.time_picker);
-        attributesArray.recycle();
-        LayoutInflater inflater = (LayoutInflater) context.getSystemService(
-                Context.LAYOUT_INFLATER_SERVICE);
-        inflater.inflate(layoutResourceId, this, true);
-        mHourSpinner = (NumberPicker) findViewById(R.id.hour);
-        mHourSpinner.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.893 -0400", hash_original_method = "61CC50AE993360994364CE07AEAADDC8", hash_generated_method = "E4F23F2B5F60659C1A82C6BEA8536179")
-        public void onValueChange(NumberPicker spinner, int oldVal, int newVal) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
-            addTaint(newVal);
-            addTaint(oldVal);
-            addTaint(spinner.getTaint());
-            updateInputState();
-            if(!is24HourView())            
-            {
-                if((oldVal == HOURS_IN_HALF_DAY - 1 && newVal == HOURS_IN_HALF_DAY)
-                            || (oldVal == HOURS_IN_HALF_DAY && newVal == HOURS_IN_HALF_DAY - 1))                
-                {
-                    mIsAm = !mIsAm;
-                    updateAmPmControl();
-                } //End block
-            } //End block
-            onTimeChanged();
-            // ---------- Original Method ----------
-            //updateInputState();
-            //if (!is24HourView()) {
-                    //if ((oldVal == HOURS_IN_HALF_DAY - 1 && newVal == HOURS_IN_HALF_DAY)
-                            //|| (oldVal == HOURS_IN_HALF_DAY && newVal == HOURS_IN_HALF_DAY - 1)) {
-                        //mIsAm = !mIsAm;
-                        //updateAmPmControl();
-                    //}
-                //}
-            //onTimeChanged();
-        }
-});
-        mHourSpinnerInput = (EditText) mHourSpinner.findViewById(R.id.numberpicker_input);
-        mHourSpinnerInput.setImeOptions(EditorInfo.IME_ACTION_NEXT);
-        mDivider = (TextView) findViewById(R.id.divider);
-        if(mDivider != null)        
-        {
-            mDivider.setText(R.string.time_picker_separator);
-        } //End block
-        mMinuteSpinner = (NumberPicker) findViewById(R.id.minute);
-        mMinuteSpinner.setMinValue(0);
-        mMinuteSpinner.setMaxValue(59);
-        mMinuteSpinner.setOnLongPressUpdateInterval(100);
-        mMinuteSpinner.setFormatter(NumberPicker.TWO_DIGIT_FORMATTER);
-        mMinuteSpinner.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.895 -0400", hash_original_method = "E7D4D1EDA413A979BF45D3C545C3EF66", hash_generated_method = "5B8E87772CD9EF40F0971D590917FA49")
-        public void onValueChange(NumberPicker spinner, int oldVal, int newVal) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
-            addTaint(newVal);
-            addTaint(oldVal);
-            addTaint(spinner.getTaint());
-            updateInputState();
-            int minValue = mMinuteSpinner.getMinValue();
-            int maxValue = mMinuteSpinner.getMaxValue();
-            if(oldVal == maxValue && newVal == minValue)            
-            {
-                int newHour = mHourSpinner.getValue() + 1;
-                if(!is24HourView() && newHour == HOURS_IN_HALF_DAY)                
-                {
-                    mIsAm = !mIsAm;
-                    updateAmPmControl();
-                } //End block
-                mHourSpinner.setValue(newHour);
-            } //End block
-            else
-            if(oldVal == minValue && newVal == maxValue)            
-            {
-                int newHour = mHourSpinner.getValue() - 1;
-                if(!is24HourView() && newHour == HOURS_IN_HALF_DAY - 1)                
-                {
-                    mIsAm = !mIsAm;
-                    updateAmPmControl();
-                } //End block
-                mHourSpinner.setValue(newHour);
-            } //End block
-            onTimeChanged();
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
-        }
-});
-        mMinuteSpinnerInput = (EditText) mMinuteSpinner.findViewById(R.id.numberpicker_input);
-        mMinuteSpinnerInput.setImeOptions(EditorInfo.IME_ACTION_NEXT);
-        mAmPmStrings = new DateFormatSymbols().getAmPmStrings();
-        View amPmView = findViewById(R.id.amPm);
-        if(amPmView instanceof Button)        
-        {
-            mAmPmSpinner = null;
-            mAmPmSpinnerInput = null;
-            mAmPmButton = (Button) amPmView;
-            mAmPmButton.setOnClickListener(new OnClickListener() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.897 -0400", hash_original_method = "4F5D6F91E7DB94922D5610C609DBC6AC", hash_generated_method = "AB37F5CCBE7DBC5CABDD7A9EB6EEFC93")
-        public void onClick(View button) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
-            addTaint(button.getTaint());
-            button.requestFocus();
-            mIsAm = !mIsAm;
-            updateAmPmControl();
-            // ---------- Original Method ----------
-            //button.requestFocus();
-            //mIsAm = !mIsAm;
-            //updateAmPmControl();
-        }
-});
-        } //End block
-        else
-        {
-            mAmPmButton = null;
-            mAmPmSpinner = (NumberPicker) amPmView;
-            mAmPmSpinner.setMinValue(0);
-            mAmPmSpinner.setMaxValue(1);
-            mAmPmSpinner.setDisplayedValues(mAmPmStrings);
-            mAmPmSpinner.setOnValueChangedListener(new OnValueChangeListener() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.898 -0400", hash_original_method = "C8C0A93031AC50530CF196FDB67DBB38", hash_generated_method = "63E26DCBC2C8462A2D5042683F8D6DEF")
-        public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
-            addTaint(newVal);
-            addTaint(oldVal);
-            addTaint(picker.getTaint());
-            updateInputState();
-            picker.requestFocus();
-            mIsAm = !mIsAm;
-            updateAmPmControl();
-            // ---------- Original Method ----------
-            //updateInputState();
-            //picker.requestFocus();
-            //mIsAm = !mIsAm;
-            //updateAmPmControl();
-        }
-});
-            mAmPmSpinnerInput = (EditText) mAmPmSpinner.findViewById(R.id.numberpicker_input);
-            mAmPmSpinnerInput.setImeOptions(EditorInfo.IME_ACTION_DONE);
-        } //End block
-        updateHourControl();
-        updateAmPmControl();
-        setOnTimeChangedListener(NO_OP_CHANGE_LISTENER);
-        setCurrentHour(mTempCalendar.get(Calendar.HOUR_OF_DAY));
-        setCurrentMinute(mTempCalendar.get(Calendar.MINUTE));
-        if(!isEnabled())        
-        {
-            setEnabled(false);
-        } //End block
-        setContentDescriptions();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.900 -0400", hash_original_method = "8DB20A38842785B537F33F867250F197", hash_generated_method = "56FB56D13A2E6716ABD2C6BBF97EDFCB")
-    @Override
-    public void setEnabled(boolean enabled) {
-        if(mIsEnabled == enabled)        
-        {
-            return;
-        } //End block
-        super.setEnabled(enabled);
-        mMinuteSpinner.setEnabled(enabled);
-        if(mDivider != null)        
-        {
-            mDivider.setEnabled(enabled);
-        } //End block
-        mHourSpinner.setEnabled(enabled);
-        if(mAmPmSpinner != null)        
-        {
-            mAmPmSpinner.setEnabled(enabled);
-        } //End block
-        else
-        {
-            mAmPmButton.setEnabled(enabled);
-        } //End block
-        mIsEnabled = enabled;
-        // ---------- Original Method ----------
-        //if (mIsEnabled == enabled) {
-            //return;
-        //}
-        //super.setEnabled(enabled);
-        //mMinuteSpinner.setEnabled(enabled);
-        //if (mDivider != null) {
-            //mDivider.setEnabled(enabled);
-        //}
-        //mHourSpinner.setEnabled(enabled);
-        //if (mAmPmSpinner != null) {
-            //mAmPmSpinner.setEnabled(enabled);
-        //} else {
-            //mAmPmButton.setEnabled(enabled);
-        //}
-        //mIsEnabled = enabled;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.902 -0400", hash_original_method = "FE60B57F2ECB259E877433DACC7AAC95", hash_generated_method = "DF5FBBB7DBD3C6523D832C395B5F7C0C")
-    @Override
-    public boolean isEnabled() {
-        boolean var1D09076915F0C1B535F8F7A6899A12CD_1121638976 = (mIsEnabled);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_963484616 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_963484616;
-        // ---------- Original Method ----------
-        //return mIsEnabled;
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.903 -0400", hash_original_method = "C452430AEDBDDD78DF8F4D12B9175E89", hash_generated_method = "127AACDA90D8DF77911A68D85F6663CF")
-    @Override
-    protected void onConfigurationChanged(Configuration newConfig) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(newConfig.getTaint());
-        super.onConfigurationChanged(newConfig);
-        setCurrentLocale(newConfig.locale);
-        // ---------- Original Method ----------
-        //super.onConfigurationChanged(newConfig);
-        //setCurrentLocale(newConfig.locale);
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.904 -0400", hash_original_method = "980D3FE8BB317B8359A795201150D40B", hash_generated_method = "F1D9F8801B54CF397ED9522D73C73ED7")
-    private void setCurrentLocale(Locale locale) {
-        if(locale.equals(mCurrentLocale))        
-        {
-            return;
-        } //End block
-        mCurrentLocale = locale;
-        mTempCalendar = Calendar.getInstance(locale);
-        // ---------- Original Method ----------
-        //if (locale.equals(mCurrentLocale)) {
-            //return;
-        //}
-        //mCurrentLocale = locale;
-        //mTempCalendar = Calendar.getInstance(locale);
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.904 -0400", hash_original_method = "72123348A3F05C8EE46260DED41E8111", hash_generated_method = "5982EB60B9602EB44F8C45AB568D799F")
-    @Override
-    protected Parcelable onSaveInstanceState() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        Parcelable superState = super.onSaveInstanceState();
-Parcelable var767A4A9C9E0294E50933F15CC8E01356_229148436 =         new SavedState(superState, getCurrentHour(), getCurrentMinute());
-        var767A4A9C9E0294E50933F15CC8E01356_229148436.addTaint(taint);
-        return var767A4A9C9E0294E50933F15CC8E01356_229148436;
-        // ---------- Original Method ----------
-        //Parcelable superState = super.onSaveInstanceState();
-        //return new SavedState(superState, getCurrentHour(), getCurrentMinute());
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.905 -0400", hash_original_method = "B2A487C66396B9A569DF07FC1780728C", hash_generated_method = "AF6E274B09128926B218F1642E138CD3")
-    @Override
-    protected void onRestoreInstanceState(Parcelable state) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(state.getTaint());
-        SavedState ss = (SavedState) state;
-        super.onRestoreInstanceState(ss.getSuperState());
-        setCurrentHour(ss.getHour());
-        setCurrentMinute(ss.getMinute());
-        // ---------- Original Method ----------
-        //SavedState ss = (SavedState) state;
-        //super.onRestoreInstanceState(ss.getSuperState());
-        //setCurrentHour(ss.getHour());
-        //setCurrentMinute(ss.getMinute());
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.905 -0400", hash_original_method = "6B3D4A5E94F1256617D4C5854135F89F", hash_generated_method = "06C44235EEE3C2E117DCBAA9E871B4B2")
-    public void setOnTimeChangedListener(OnTimeChangedListener onTimeChangedListener) {
-        mOnTimeChangedListener = onTimeChangedListener;
-        // ---------- Original Method ----------
-        //mOnTimeChangedListener = onTimeChangedListener;
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.906 -0400", hash_original_method = "AE73BE8706F17DAEE1FF393F333C1E75", hash_generated_method = "6DCEA689FD7A27AD1407BC657800674E")
-    public Integer getCurrentHour() {
-        int currentHour = mHourSpinner.getValue();
-        if(is24HourView())        
-        {
-Integer varB3BA8478472191AAD02A5F162D7D507B_2043896200 =             currentHour;
-            varB3BA8478472191AAD02A5F162D7D507B_2043896200.addTaint(taint);
-            return varB3BA8478472191AAD02A5F162D7D507B_2043896200;
-        } //End block
-        else
-        if(mIsAm)        
-        {
-Integer var6B8A843D225ADA71199350E846127043_1946057577 =             currentHour % HOURS_IN_HALF_DAY;
-            var6B8A843D225ADA71199350E846127043_1946057577.addTaint(taint);
-            return var6B8A843D225ADA71199350E846127043_1946057577;
-        } //End block
-        else
-        {
-Integer var06A635A0AB15E903331F9B812F778501_585790521 =             (currentHour % HOURS_IN_HALF_DAY) + HOURS_IN_HALF_DAY;
-            var06A635A0AB15E903331F9B812F778501_585790521.addTaint(taint);
-            return var06A635A0AB15E903331F9B812F778501_585790521;
-        } //End block
-        // ---------- Original Method ----------
-        //int currentHour = mHourSpinner.getValue();
-        //if (is24HourView()) {
-            //return currentHour;
-        //} else if (mIsAm) {
-            //return currentHour % HOURS_IN_HALF_DAY;
-        //} else {
-            //return (currentHour % HOURS_IN_HALF_DAY) + HOURS_IN_HALF_DAY;
-        //}
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.907 -0400", hash_original_method = "51BF76EB890889B8164A1C36DDF3660C", hash_generated_method = "7E11EEFD0E83ABD14E0E499494C62934")
-    public void setCurrentHour(Integer currentHour) {
-        addTaint(currentHour.getTaint());
-        if(currentHour == null || currentHour == getCurrentHour())        
-        {
-            return;
-        } //End block
-        if(!is24HourView())        
-        {
-            if(currentHour >= HOURS_IN_HALF_DAY)            
-            {
-                mIsAm = false;
-                if(currentHour > HOURS_IN_HALF_DAY)                
-                {
-                    currentHour = currentHour - HOURS_IN_HALF_DAY;
-                } //End block
-            } //End block
-            else
-            {
-                mIsAm = true;
-                if(currentHour == 0)                
-                {
-                    currentHour = HOURS_IN_HALF_DAY;
-                } //End block
-            } //End block
-            updateAmPmControl();
-        } //End block
-        mHourSpinner.setValue(currentHour);
-        onTimeChanged();
-        // ---------- Original Method ----------
-        //if (currentHour == null || currentHour == getCurrentHour()) {
-            //return;
-        //}
-        //if (!is24HourView()) {
-            //if (currentHour >= HOURS_IN_HALF_DAY) {
-                //mIsAm = false;
-                //if (currentHour > HOURS_IN_HALF_DAY) {
-                    //currentHour = currentHour - HOURS_IN_HALF_DAY;
-                //}
-            //} else {
-                //mIsAm = true;
-                //if (currentHour == 0) {
-                    //currentHour = HOURS_IN_HALF_DAY;
-                //}
-            //}
-            //updateAmPmControl();
-        //}
-        //mHourSpinner.setValue(currentHour);
-        //onTimeChanged();
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.908 -0400", hash_original_method = "241FCC8F6454A30E36E3EC76C851E3F2", hash_generated_method = "1823C04E6E3AD09C4461FBDDDFAC77EA")
-    public void setIs24HourView(Boolean is24HourView) {
-        if(mIs24HourView == is24HourView)        
-        {
-            return;
-        } //End block
-        mIs24HourView = is24HourView;
-        int currentHour = getCurrentHour();
-        updateHourControl();
-        setCurrentHour(currentHour);
-        updateAmPmControl();
-        // ---------- Original Method ----------
-        //if (mIs24HourView == is24HourView) {
-            //return;
-        //}
-        //mIs24HourView = is24HourView;
-        //int currentHour = getCurrentHour();
-        //updateHourControl();
-        //setCurrentHour(currentHour);
-        //updateAmPmControl();
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.908 -0400", hash_original_method = "4F4BA9CD8FF557544935EB979BB43706", hash_generated_method = "8478C4AFC1706E2FE489C1C308F7976B")
-    public boolean is24HourView() {
-        boolean varAB9371C54D62E21B7C9B3A0218F3CF8E_1750945167 = (mIs24HourView);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_113428708 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_113428708;
-        // ---------- Original Method ----------
-        //return mIs24HourView;
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.908 -0400", hash_original_method = "A85A8F7AA6E48BE779272D70D71211B4", hash_generated_method = "BD76EBBEE4BCA787B47264BC492AB23A")
-    public Integer getCurrentMinute() {
-Integer varD6B53F95DB47F8A2CC8B4CFD55982D2A_1307523606 =         mMinuteSpinner.getValue();
-        varD6B53F95DB47F8A2CC8B4CFD55982D2A_1307523606.addTaint(taint);
-        return varD6B53F95DB47F8A2CC8B4CFD55982D2A_1307523606;
-        // ---------- Original Method ----------
-        //return mMinuteSpinner.getValue();
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.909 -0400", hash_original_method = "E5914CBE4C3F7152CD4D96804AFB4FF4", hash_generated_method = "991977E29AEB6FF1BF45E39D1C807AFD")
-    public void setCurrentMinute(Integer currentMinute) {
-        addTaint(currentMinute.getTaint());
-        if(currentMinute == getCurrentMinute())        
-        {
-            return;
-        } //End block
-        mMinuteSpinner.setValue(currentMinute);
-        onTimeChanged();
-        // ---------- Original Method ----------
-        //if (currentMinute == getCurrentMinute()) {
-            //return;
-        //}
-        //mMinuteSpinner.setValue(currentMinute);
-        //onTimeChanged();
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.909 -0400", hash_original_method = "6E8B0AA5C49A67CA109B25D465668749", hash_generated_method = "FBBA9CFE6F048DDF2613D75C4076ACB5")
-    @Override
-    public int getBaseline() {
-        int varDDE8F22489C60771D7CFE5BAFFE30D1D_611917725 = (mHourSpinner.getBaseline());
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_715725547 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_715725547;
-        // ---------- Original Method ----------
-        //return mHourSpinner.getBaseline();
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.909 -0400", hash_original_method = "CFB95F18A35F8E50D440D10682646E0E", hash_generated_method = "F83CE440B46FDCD86890C9C355A29E8B")
-    @Override
-    public boolean dispatchPopulateAccessibilityEvent(AccessibilityEvent event) {
-        addTaint(event.getTaint());
-        onPopulateAccessibilityEvent(event);
-        boolean varB326B5062B2F0E69046810717534CB09_1180454753 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_251185194 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_251185194;
-        // ---------- Original Method ----------
-        //onPopulateAccessibilityEvent(event);
-        //return true;
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.910 -0400", hash_original_method = "F102F8EE122BA2E1A10F758465ADC0EB", hash_generated_method = "9505325E9F63A680F8D4092BE9CFF2A2")
-    @Override
-    public void onPopulateAccessibilityEvent(AccessibilityEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(event.getTaint());
-        super.onPopulateAccessibilityEvent(event);
-        int flags = DateUtils.FORMAT_SHOW_TIME;
-        if(mIs24HourView)        
-        {
-            flags |= DateUtils.FORMAT_24HOUR;
-        } //End block
-        else
-        {
-            flags |= DateUtils.FORMAT_12HOUR;
-        } //End block
-        mTempCalendar.set(Calendar.HOUR_OF_DAY, getCurrentHour());
-        mTempCalendar.set(Calendar.MINUTE, getCurrentMinute());
-        String selectedDateUtterance = DateUtils.formatDateTime(mContext,
-                mTempCalendar.getTimeInMillis(), flags);
-        event.getText().add(selectedDateUtterance);
-        // ---------- Original Method ----------
-        //super.onPopulateAccessibilityEvent(event);
-        //int flags = DateUtils.FORMAT_SHOW_TIME;
-        //if (mIs24HourView) {
-            //flags |= DateUtils.FORMAT_24HOUR;
-        //} else {
-            //flags |= DateUtils.FORMAT_12HOUR;
-        //}
-        //mTempCalendar.set(Calendar.HOUR_OF_DAY, getCurrentHour());
-        //mTempCalendar.set(Calendar.MINUTE, getCurrentMinute());
-        //String selectedDateUtterance = DateUtils.formatDateTime(mContext,
-                //mTempCalendar.getTimeInMillis(), flags);
-        //event.getText().add(selectedDateUtterance);
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.910 -0400", hash_original_method = "D50D8E33466194F955FDB4E6708A42AD", hash_generated_method = "13196BACB44422C23C50D8C48E0ADF42")
-    private void updateHourControl() {
-        if(is24HourView())        
-        {
-            mHourSpinner.setMinValue(0);
-            mHourSpinner.setMaxValue(23);
-            mHourSpinner.setFormatter(NumberPicker.TWO_DIGIT_FORMATTER);
-        } //End block
-        else
-        {
-            mHourSpinner.setMinValue(1);
-            mHourSpinner.setMaxValue(12);
-            mHourSpinner.setFormatter(null);
-        } //End block
-        // ---------- Original Method ----------
-        //if (is24HourView()) {
-            //mHourSpinner.setMinValue(0);
-            //mHourSpinner.setMaxValue(23);
-            //mHourSpinner.setFormatter(NumberPicker.TWO_DIGIT_FORMATTER);
-        //} else {
-            //mHourSpinner.setMinValue(1);
-            //mHourSpinner.setMaxValue(12);
-            //mHourSpinner.setFormatter(null);
-        //}
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.911 -0400", hash_original_method = "C352743C674140A19902F99B280928CF", hash_generated_method = "AAD61B065493103C368265D0998F72A7")
-    private void updateAmPmControl() {
-        if(is24HourView())        
-        {
-            if(mAmPmSpinner != null)            
-            {
-                mAmPmSpinner.setVisibility(View.GONE);
-            } //End block
-            else
-            {
-                mAmPmButton.setVisibility(View.GONE);
-            } //End block
-        } //End block
-        else
-        {
-            int index = mIsAm ? Calendar.AM : Calendar.PM;
-            if(mAmPmSpinner != null)            
-            {
-                mAmPmSpinner.setValue(index);
-                mAmPmSpinner.setVisibility(View.VISIBLE);
-            } //End block
-            else
-            {
-                mAmPmButton.setText(mAmPmStrings[index]);
-                mAmPmButton.setVisibility(View.VISIBLE);
-            } //End block
-        } //End block
-        sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_SELECTED);
-        // ---------- Original Method ----------
-        //if (is24HourView()) {
-            //if (mAmPmSpinner != null) {
-                //mAmPmSpinner.setVisibility(View.GONE);
-            //} else {
-                //mAmPmButton.setVisibility(View.GONE);
-            //}
-        //} else {
-            //int index = mIsAm ? Calendar.AM : Calendar.PM;
-            //if (mAmPmSpinner != null) {
-                //mAmPmSpinner.setValue(index);
-                //mAmPmSpinner.setVisibility(View.VISIBLE);
-            //} else {
-                //mAmPmButton.setText(mAmPmStrings[index]);
-                //mAmPmButton.setVisibility(View.VISIBLE);
-            //}
-        //}
-        //sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_SELECTED);
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.911 -0400", hash_original_method = "8A252D715D292AC897EF9505006002CC", hash_generated_method = "97E3ACCB50D717165DBE447150590099")
-    private void onTimeChanged() {
-        sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_SELECTED);
-        if(mOnTimeChangedListener != null)        
-        {
-            mOnTimeChangedListener.onTimeChanged(this, getCurrentHour(), getCurrentMinute());
-        } //End block
-        // ---------- Original Method ----------
-        //sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_SELECTED);
-        //if (mOnTimeChangedListener != null) {
-            //mOnTimeChangedListener.onTimeChanged(this, getCurrentHour(), getCurrentMinute());
-        //}
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.912 -0400", hash_original_method = "4C27F718F6DC2C1B1670607286108308", hash_generated_method = "BAFB29E04A992B4A355A2267C2780E13")
-    private void setContentDescriptions() {
-        String text = mContext.getString(R.string.time_picker_increment_minute_button);
-        mMinuteSpinner.findViewById(R.id.increment).setContentDescription(text);
-        text = mContext.getString(R.string.time_picker_decrement_minute_button);
-        mMinuteSpinner.findViewById(R.id.decrement).setContentDescription(text);
-        text = mContext.getString(R.string.time_picker_increment_hour_button);
-        mHourSpinner.findViewById(R.id.increment).setContentDescription(text);
-        text = mContext.getString(R.string.time_picker_decrement_hour_button);
-        mHourSpinner.findViewById(R.id.decrement).setContentDescription(text);
-        if(mAmPmSpinner != null)        
-        {
-            text = mContext.getString(R.string.time_picker_increment_set_pm_button);
-            mAmPmSpinner.findViewById(R.id.increment).setContentDescription(text);
-            text = mContext.getString(R.string.time_picker_decrement_set_am_button);
-            mAmPmSpinner.findViewById(R.id.decrement).setContentDescription(text);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.913 -0400", hash_original_method = "EA3F98147485CBE1A2219199F92431C8", hash_generated_method = "F45E3DBD9372DA394CDC8A2F5ADB9F15")
-    private void updateInputState() {
-        InputMethodManager inputMethodManager = InputMethodManager.peekInstance();
-        if(inputMethodManager != null)        
-        {
-            if(inputMethodManager.isActive(mHourSpinnerInput))            
-            {
-                mHourSpinnerInput.clearFocus();
-                inputMethodManager.hideSoftInputFromWindow(getWindowToken(), 0);
-            } //End block
-            else
-            if(inputMethodManager.isActive(mMinuteSpinnerInput))            
-            {
-                mMinuteSpinnerInput.clearFocus();
-                inputMethodManager.hideSoftInputFromWindow(getWindowToken(), 0);
-            } //End block
-            else
-            if(inputMethodManager.isActive(mAmPmSpinnerInput))            
-            {
-                mAmPmSpinnerInput.clearFocus();
-                inputMethodManager.hideSoftInputFromWindow(getWindowToken(), 0);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //InputMethodManager inputMethodManager = InputMethodManager.peekInstance();
-        //if (inputMethodManager != null) {
-            //if (inputMethodManager.isActive(mHourSpinnerInput)) {
-                //mHourSpinnerInput.clearFocus();
-                //inputMethodManager.hideSoftInputFromWindow(getWindowToken(), 0);
-            //} else if (inputMethodManager.isActive(mMinuteSpinnerInput)) {
-                //mMinuteSpinnerInput.clearFocus();
-                //inputMethodManager.hideSoftInputFromWindow(getWindowToken(), 0);
-            //} else if (inputMethodManager.isActive(mAmPmSpinnerInput)) {
-                //mAmPmSpinnerInput.clearFocus();
-                //inputMethodManager.hideSoftInputFromWindow(getWindowToken(), 0);
-            //}
-        //}
-    }
-
-    
-    private static class SavedState extends BaseSavedState {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.913 -0400", hash_original_field = "48AB0AEFD71C009ADE848499A027A428", hash_generated_field = "24E9A2D605497A939CE1099C8C82784A")
-
-        private int mHour;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.913 -0400", hash_original_field = "1D72A8B90C8FB2B549FC5D5E49C93263", hash_generated_field = "30D2971B3212A2F1CF29388B2CF79F78")
-
-        private int mMinute;
-        
-        @DSModeled(DSC.BAN)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.913 -0400", hash_original_method = "F395FF1FB7466B722BA2E9FD639B6FEC", hash_generated_method = "F8A955477404115369E61A054894052B")
-        private  SavedState(Parcelable superState, int hour, int minute) {
-            super(superState);
-            addTaint(superState.getTaint());
-            mHour = hour;
-            mMinute = minute;
-            // ---------- Original Method ----------
-            //mHour = hour;
-            //mMinute = minute;
-        }
-
-        
-        @DSModeled(DSC.BAN)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.914 -0400", hash_original_method = "E55ECE0F217E584D660F2F1E2BD9AF6D", hash_generated_method = "5CC81B14D3F46C2076B5C2B2E083007B")
-        private  SavedState(Parcel in) {
-            super(in);
-            mHour = in.readInt();
-            mMinute = in.readInt();
-            // ---------- Original Method ----------
-            //mHour = in.readInt();
-            //mMinute = in.readInt();
-        }
-
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.914 -0400", hash_original_method = "E8F47E3750239DF4EC2B02FDC3043C0E", hash_generated_method = "B33014483B52C2796E20F848928895F1")
-        public int getHour() {
-            int var48AB0AEFD71C009ADE848499A027A428_141453368 = (mHour);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1771727450 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1771727450;
-            // ---------- Original Method ----------
-            //return mHour;
-        }
-
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.914 -0400", hash_original_method = "3E9A445CD5F3D9118D6AF471987F3B8F", hash_generated_method = "7C09419847C6D4BAF471DC3F84CEB4C7")
-        public int getMinute() {
-            int var1D72A8B90C8FB2B549FC5D5E49C93263_951015439 = (mMinute);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_153844992 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_153844992;
-            // ---------- Original Method ----------
-            //return mMinute;
-        }
-
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.915 -0400", hash_original_method = "3D8FA0B7CDDD47E4194304B24B1FFDDB", hash_generated_method = "E4B5479990B8D5EF47EF57790377D5AA")
-        @Override
-        public void writeToParcel(Parcel dest, int flags) {
-            addTaint(flags);
-            addTaint(dest.getTaint());
-            super.writeToParcel(dest, flags);
-            dest.writeInt(mHour);
-            dest.writeInt(mMinute);
-            // ---------- Original Method ----------
-            //super.writeToParcel(dest, flags);
-            //dest.writeInt(mHour);
-            //dest.writeInt(mMinute);
-        }
-
-        
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.915 -0400", hash_original_field = "D1498A1D28CCBBEB217C9EC7E28F9C3B", hash_generated_field = "D3B74B573149A6A2FC399064332A0A51")
-
-        @SuppressWarnings({"unused", "hiding"})
-        public static final Parcelable.Creator<SavedState> CREATOR = new Creator<SavedState>() {
-            public SavedState createFromParcel(Parcel in) {
-                return new SavedState(in);
-            }
-
-            public SavedState[] newArray(int size) {
-                return new SavedState[size];
-            }
-        };
-    }
-
-
-    
-    public interface OnTimeChangedListener {
-
-        
-        void onTimeChanged(TimePicker view, int hourOfDay, int minute);
-    }
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.915 -0400", hash_original_field = "341D07F1E4A62FB066D5A2BBC1DD2D1E", hash_generated_field = "C8A8F0463DBF19CC5664F198B037CB59")
 
     private static final boolean DEFAULT_ENABLED_STATE = true;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.915 -0400", hash_original_field = "1E26C97037BCBE16DC67E6DFD376FAD7", hash_generated_field = "65EDE4F9048CF09D46EC35F5340020DF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.446 -0500", hash_original_field = "A102152C3DBBB0ED26E24AC8687BFA18", hash_generated_field = "65EDE4F9048CF09D46EC35F5340020DF")
+
 
     private static final int HOURS_IN_HALF_DAY = 12;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.166 -0400", hash_original_field = "1CD9D27FDE7FAAADFEB2B802DEB63CB0", hash_generated_field = "B0CF16601ED0546FD3ADD3537BFCA4D8")
@@ -857,5 +53,544 @@ Integer varD6B53F95DB47F8A2CC8B4CFD55982D2A_1307523606 =         mMinuteSpinner.
 
         
 };
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.448 -0500", hash_original_field = "1BD5FED04D35AC29B74011298319A7F8", hash_generated_field = "35FD601AE81D55F188A5E5435A238E5F")
+
+    private boolean mIs24HourView;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.449 -0500", hash_original_field = "1B79D3BE8F5D99F13BC97499CA7CE611", hash_generated_field = "277A014682EEB4651FD9CCF1C4C7A9DA")
+
+
+    private boolean mIsAm;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.450 -0500", hash_original_field = "39F9B6C45E1E2C810E76551E44B44C25", hash_generated_field = "F42DCA1FAFC6800847A12B5E4A4BC187")
+
+    private  NumberPicker mHourSpinner;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.451 -0500", hash_original_field = "926A3D4497DB08D89A3E5E1D83657D23", hash_generated_field = "66959F7A51392B97FA2D1A99294B74C4")
+
+
+    private  NumberPicker mMinuteSpinner;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.451 -0500", hash_original_field = "C1A7489F4948BACEA60D3800EB230D04", hash_generated_field = "4D70AE5EB70BA99339D4FD1599F1FEA3")
+
+
+    private  NumberPicker mAmPmSpinner;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.452 -0500", hash_original_field = "AE0A5E28ECBADE4B2E62EAEA9CEE9A3C", hash_generated_field = "57B061730C612FA07DDC7E51258E7DA2")
+
+
+    private  EditText mHourSpinnerInput;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.453 -0500", hash_original_field = "0FD19F4AA32A8FAC3C5FDDC7B3BB7F0A", hash_generated_field = "B7278DCBB472B1B2F3539E5E1708DD32")
+
+
+    private  EditText mMinuteSpinnerInput;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.454 -0500", hash_original_field = "5DBD6868AFE924E33678CEBAB6611928", hash_generated_field = "FECBCFA86C0EF4E63B91247A25A449D7")
+
+
+    private  EditText mAmPmSpinnerInput;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.454 -0500", hash_original_field = "EE9EE4D1F4838E781C34CBBD005DDFFA", hash_generated_field = "F12C6C5933E99F70D882693BF3937072")
+
+
+    private  TextView mDivider;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:34:33.013 -0500", hash_original_field = "2A4FEAD27CDA4EB68BE6F0CF829EEEB8", hash_generated_field = "97AF47CC74DFA7A454BABC1F1A356BFB")
+
+    // using a button for toggling between AM/PM while the new
+    // version uses a NumberPicker spinner. Therefore the code
+    // accommodates these two cases to be backwards compatible.
+    private  Button mAmPmButton;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.456 -0500", hash_original_field = "F04BBB05AA6B86332BF9BCA0567979EC", hash_generated_field = "B1B72D4D154F4798F88DEE511FC04CC0")
+
+
+    private  String[] mAmPmStrings;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.457 -0500", hash_original_field = "D4A6DCF8382D9EC800648673F5DFADA3", hash_generated_field = "0D83C9894006124680A4C4A755D8D1E4")
+
+
+    private boolean mIsEnabled = DEFAULT_ENABLED_STATE;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.457 -0500", hash_original_field = "ED6CDDD1774814F81E4D2D10B62FDB09", hash_generated_field = "24067A0BB0CBA588BA40566793730956")
+
+    private OnTimeChangedListener mOnTimeChangedListener;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.458 -0500", hash_original_field = "44FA62115EFD78AD1A83722B5DBE2057", hash_generated_field = "BF728D47404D52B2BA92F11A215AFB65")
+
+
+    private Calendar mTempCalendar;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.459 -0500", hash_original_field = "0400C5C553DC4CBF37271C21855854A7", hash_generated_field = "88175FFB524B6CC60F82A34D8C4EC643")
+
+
+    private Locale mCurrentLocale;
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.461 -0500", hash_original_method = "DB39C8F7A833003C7D32A896903A886B", hash_generated_method = "D68D0ED22B31427BC1C546F2BA4B2ACD")
+    public TimePicker(Context context) {
+        this(context, null);
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.462 -0500", hash_original_method = "13212DBF3C0B0551DB88CC2A61A0591D", hash_generated_method = "12CEED4892E7AE7C9EE5E80462EBC2AD")
+    public TimePicker(Context context, AttributeSet attrs) {
+        this(context, attrs, R.attr.timePickerStyle);
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.468 -0500", hash_original_method = "01E52F88810C7560B77A694B8CE593AF", hash_generated_method = "A88833ABD457298F1DD4A4B4997EC1C6")
+    public TimePicker(Context context, AttributeSet attrs, int defStyle) {
+        super(context, attrs, defStyle);
+
+        // initialization based on locale
+        setCurrentLocale(Locale.getDefault());
+
+        // process style attributes
+        TypedArray attributesArray = context.obtainStyledAttributes(
+                attrs, R.styleable.TimePicker, defStyle, 0);
+        int layoutResourceId = attributesArray.getResourceId(
+                R.styleable.TimePicker_layout, R.layout.time_picker);
+        attributesArray.recycle();
+
+        LayoutInflater inflater = (LayoutInflater) context.getSystemService(
+                Context.LAYOUT_INFLATER_SERVICE);
+        inflater.inflate(layoutResourceId, this, true);
+
+        // hour
+        mHourSpinner = (NumberPicker) findViewById(R.id.hour);
+        mHourSpinner.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
+            public void onValueChange(NumberPicker spinner, int oldVal, int newVal) {
+                updateInputState();
+                if (!is24HourView()) {
+                    if ((oldVal == HOURS_IN_HALF_DAY - 1 && newVal == HOURS_IN_HALF_DAY)
+                            || (oldVal == HOURS_IN_HALF_DAY && newVal == HOURS_IN_HALF_DAY - 1)) {
+                        mIsAm = !mIsAm;
+                        updateAmPmControl();
+                    }
+                }
+                onTimeChanged();
+            }
+        });
+        mHourSpinnerInput = (EditText) mHourSpinner.findViewById(R.id.numberpicker_input);
+        mHourSpinnerInput.setImeOptions(EditorInfo.IME_ACTION_NEXT);
+
+        // divider (only for the new widget style)
+        mDivider = (TextView) findViewById(R.id.divider);
+        if (mDivider != null) {
+            mDivider.setText(R.string.time_picker_separator);
+        }
+
+        // minute
+        mMinuteSpinner = (NumberPicker) findViewById(R.id.minute);
+        mMinuteSpinner.setMinValue(0);
+        mMinuteSpinner.setMaxValue(59);
+        mMinuteSpinner.setOnLongPressUpdateInterval(100);
+        mMinuteSpinner.setFormatter(NumberPicker.TWO_DIGIT_FORMATTER);
+        mMinuteSpinner.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
+            public void onValueChange(NumberPicker spinner, int oldVal, int newVal) {
+                updateInputState();
+                int minValue = mMinuteSpinner.getMinValue();
+                int maxValue = mMinuteSpinner.getMaxValue();
+                if (oldVal == maxValue && newVal == minValue) {
+                    int newHour = mHourSpinner.getValue() + 1;
+                    if (!is24HourView() && newHour == HOURS_IN_HALF_DAY) {
+                        mIsAm = !mIsAm;
+                        updateAmPmControl();
+                    }
+                    mHourSpinner.setValue(newHour);
+                } else if (oldVal == minValue && newVal == maxValue) {
+                    int newHour = mHourSpinner.getValue() - 1;
+                    if (!is24HourView() && newHour == HOURS_IN_HALF_DAY - 1) {
+                        mIsAm = !mIsAm;
+                        updateAmPmControl();
+                    }
+                    mHourSpinner.setValue(newHour);
+                }
+                onTimeChanged();
+            }
+        });
+        mMinuteSpinnerInput = (EditText) mMinuteSpinner.findViewById(R.id.numberpicker_input);
+        mMinuteSpinnerInput.setImeOptions(EditorInfo.IME_ACTION_NEXT);
+
+        /* Get the localized am/pm strings and use them in the spinner */
+        mAmPmStrings = new DateFormatSymbols().getAmPmStrings();
+
+        // am/pm
+        View amPmView = findViewById(R.id.amPm);
+        if (amPmView instanceof Button) {
+            mAmPmSpinner = null;
+            mAmPmSpinnerInput = null;
+            mAmPmButton = (Button) amPmView;
+            mAmPmButton.setOnClickListener(new OnClickListener() {
+                public void onClick(View button) {
+                    button.requestFocus();
+                    mIsAm = !mIsAm;
+                    updateAmPmControl();
+                }
+            });
+        } else {
+            mAmPmButton = null;
+            mAmPmSpinner = (NumberPicker) amPmView;
+            mAmPmSpinner.setMinValue(0);
+            mAmPmSpinner.setMaxValue(1);
+            mAmPmSpinner.setDisplayedValues(mAmPmStrings);
+            mAmPmSpinner.setOnValueChangedListener(new OnValueChangeListener() {
+                public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
+                    updateInputState();
+                    picker.requestFocus();
+                    mIsAm = !mIsAm;
+                    updateAmPmControl();
+                }
+            });
+            mAmPmSpinnerInput = (EditText) mAmPmSpinner.findViewById(R.id.numberpicker_input);
+            mAmPmSpinnerInput.setImeOptions(EditorInfo.IME_ACTION_DONE);
+        }
+
+        // update controls to initial state
+        updateHourControl();
+        updateAmPmControl();
+
+        setOnTimeChangedListener(NO_OP_CHANGE_LISTENER);
+
+        // set to current time
+        setCurrentHour(mTempCalendar.get(Calendar.HOUR_OF_DAY));
+        setCurrentMinute(mTempCalendar.get(Calendar.MINUTE));
+
+        if (!isEnabled()) {
+            setEnabled(false);
+        }
+
+        // set the content descriptions
+        setContentDescriptions();
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.469 -0500", hash_original_method = "8DB20A38842785B537F33F867250F197", hash_generated_method = "6BEF8DF95D76AC7917B83C3A1BB0FB68")
+    @Override
+public void setEnabled(boolean enabled) {
+        if (mIsEnabled == enabled) {
+            return;
+        }
+        super.setEnabled(enabled);
+        mMinuteSpinner.setEnabled(enabled);
+        if (mDivider != null) {
+            mDivider.setEnabled(enabled);
+        }
+        mHourSpinner.setEnabled(enabled);
+        if (mAmPmSpinner != null) {
+            mAmPmSpinner.setEnabled(enabled);
+        } else {
+            mAmPmButton.setEnabled(enabled);
+        }
+        mIsEnabled = enabled;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.470 -0500", hash_original_method = "FE60B57F2ECB259E877433DACC7AAC95", hash_generated_method = "E052E34E14B49938085DD6DF12A76E29")
+    @Override
+public boolean isEnabled() {
+        return mIsEnabled;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.471 -0500", hash_original_method = "C452430AEDBDDD78DF8F4D12B9175E89", hash_generated_method = "6328851CBC85DA1645204E969B0A309A")
+    @Override
+protected void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        setCurrentLocale(newConfig.locale);
+    }
+
+    /**
+     * Sets the current locale.
+     *
+     * @param locale The current locale.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.472 -0500", hash_original_method = "980D3FE8BB317B8359A795201150D40B", hash_generated_method = "5D5069291485E60BE304298AD119403E")
+    private void setCurrentLocale(Locale locale) {
+        if (locale.equals(mCurrentLocale)) {
+            return;
+        }
+        mCurrentLocale = locale;
+        mTempCalendar = Calendar.getInstance(locale);
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.483 -0500", hash_original_method = "72123348A3F05C8EE46260DED41E8111", hash_generated_method = "A4A6445FED32D2BB5D65957330EAE4E5")
+    @Override
+protected Parcelable onSaveInstanceState() {
+        Parcelable superState = super.onSaveInstanceState();
+        return new SavedState(superState, getCurrentHour(), getCurrentMinute());
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.484 -0500", hash_original_method = "B2A487C66396B9A569DF07FC1780728C", hash_generated_method = "BEDE5230168F82A049FAE7CCB16735DB")
+    @Override
+protected void onRestoreInstanceState(Parcelable state) {
+        SavedState ss = (SavedState) state;
+        super.onRestoreInstanceState(ss.getSuperState());
+        setCurrentHour(ss.getHour());
+        setCurrentMinute(ss.getMinute());
+    }
+
+    /**
+     * Set the callback that indicates the time has been adjusted by the user.
+     *
+     * @param onTimeChangedListener the callback, should not be null.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.484 -0500", hash_original_method = "6B3D4A5E94F1256617D4C5854135F89F", hash_generated_method = "6D13FFE088285C8C5D84E67519FC065F")
+    public void setOnTimeChangedListener(OnTimeChangedListener onTimeChangedListener) {
+        mOnTimeChangedListener = onTimeChangedListener;
+    }
+
+    /**
+     * @return The current hour in the range (0-23).
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.485 -0500", hash_original_method = "AE73BE8706F17DAEE1FF393F333C1E75", hash_generated_method = "F008939409E801B970BC0D0D87C95588")
+    public Integer getCurrentHour() {
+        int currentHour = mHourSpinner.getValue();
+        if (is24HourView()) {
+            return currentHour;
+        } else if (mIsAm) {
+            return currentHour % HOURS_IN_HALF_DAY;
+        } else {
+            return (currentHour % HOURS_IN_HALF_DAY) + HOURS_IN_HALF_DAY;
+        }
+    }
+
+    /**
+     * Set the current hour.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.486 -0500", hash_original_method = "51BF76EB890889B8164A1C36DDF3660C", hash_generated_method = "5FFDEA0FFFFD2EE3195E1B4F83E97B5C")
+    public void setCurrentHour(Integer currentHour) {
+        // why was Integer used in the first place?
+        if (currentHour == null || currentHour == getCurrentHour()) {
+            return;
+        }
+        if (!is24HourView()) {
+            // convert [0,23] ordinal to wall clock display
+            if (currentHour >= HOURS_IN_HALF_DAY) {
+                mIsAm = false;
+                if (currentHour > HOURS_IN_HALF_DAY) {
+                    currentHour = currentHour - HOURS_IN_HALF_DAY;
+                }
+            } else {
+                mIsAm = true;
+                if (currentHour == 0) {
+                    currentHour = HOURS_IN_HALF_DAY;
+                }
+            }
+            updateAmPmControl();
+        }
+        mHourSpinner.setValue(currentHour);
+        onTimeChanged();
+    }
+
+    /**
+     * Set whether in 24 hour or AM/PM mode.
+     *
+     * @param is24HourView True = 24 hour mode. False = AM/PM.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.488 -0500", hash_original_method = "241FCC8F6454A30E36E3EC76C851E3F2", hash_generated_method = "D9D0439E1B3E4FCC3AD3D9DB109E9B54")
+    public void setIs24HourView(Boolean is24HourView) {
+        if (mIs24HourView == is24HourView) {
+            return;
+        }
+        mIs24HourView = is24HourView;
+        // cache the current hour since spinner range changes
+        int currentHour = getCurrentHour();
+        updateHourControl();
+        // set value after spinner range is updated
+        setCurrentHour(currentHour);
+        updateAmPmControl();
+    }
+
+    /**
+     * @return true if this is in 24 hour view else false.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.489 -0500", hash_original_method = "4F4BA9CD8FF557544935EB979BB43706", hash_generated_method = "6B9E658426DA583E4399B78B63C41B46")
+    public boolean is24HourView() {
+        return mIs24HourView;
+    }
+
+    /**
+     * @return The current minute.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.489 -0500", hash_original_method = "A85A8F7AA6E48BE779272D70D71211B4", hash_generated_method = "F0211D9F8029EFFFC8877A7E3437CBF0")
+    public Integer getCurrentMinute() {
+        return mMinuteSpinner.getValue();
+    }
+
+    /**
+     * Set the current minute (0-59).
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.490 -0500", hash_original_method = "E5914CBE4C3F7152CD4D96804AFB4FF4", hash_generated_method = "379BEE9B0E1DBD75619021B07302B3DA")
+    public void setCurrentMinute(Integer currentMinute) {
+        if (currentMinute == getCurrentMinute()) {
+            return;
+        }
+        mMinuteSpinner.setValue(currentMinute);
+        onTimeChanged();
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.491 -0500", hash_original_method = "6E8B0AA5C49A67CA109B25D465668749", hash_generated_method = "00EAD357991374866B7CA67A42364C44")
+    @Override
+public int getBaseline() {
+        return mHourSpinner.getBaseline();
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.492 -0500", hash_original_method = "CFB95F18A35F8E50D440D10682646E0E", hash_generated_method = "B2DB9880D1A02B35D29BED9E1EE131DA")
+    @Override
+public boolean dispatchPopulateAccessibilityEvent(AccessibilityEvent event) {
+        onPopulateAccessibilityEvent(event);
+        return true;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.493 -0500", hash_original_method = "F102F8EE122BA2E1A10F758465ADC0EB", hash_generated_method = "A629257543AF43015858438429DD52BD")
+    @Override
+public void onPopulateAccessibilityEvent(AccessibilityEvent event) {
+        super.onPopulateAccessibilityEvent(event);
+
+        int flags = DateUtils.FORMAT_SHOW_TIME;
+        if (mIs24HourView) {
+            flags |= DateUtils.FORMAT_24HOUR;
+        } else {
+            flags |= DateUtils.FORMAT_12HOUR;
+        }
+        mTempCalendar.set(Calendar.HOUR_OF_DAY, getCurrentHour());
+        mTempCalendar.set(Calendar.MINUTE, getCurrentMinute());
+        String selectedDateUtterance = DateUtils.formatDateTime(mContext,
+                mTempCalendar.getTimeInMillis(), flags);
+        event.getText().add(selectedDateUtterance);
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.494 -0500", hash_original_method = "D50D8E33466194F955FDB4E6708A42AD", hash_generated_method = "26658E222AA0825A7BE05F15AA023F52")
+    private void updateHourControl() {
+        if (is24HourView()) {
+            mHourSpinner.setMinValue(0);
+            mHourSpinner.setMaxValue(23);
+            mHourSpinner.setFormatter(NumberPicker.TWO_DIGIT_FORMATTER);
+        } else {
+            mHourSpinner.setMinValue(1);
+            mHourSpinner.setMaxValue(12);
+            mHourSpinner.setFormatter(null);
+        }
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.494 -0500", hash_original_method = "C352743C674140A19902F99B280928CF", hash_generated_method = "6686FD7D41DAE1EA3B9C0805F97EE002")
+    private void updateAmPmControl() {
+        if (is24HourView()) {
+            if (mAmPmSpinner != null) {
+                mAmPmSpinner.setVisibility(View.GONE);
+            } else {
+                mAmPmButton.setVisibility(View.GONE);
+            }
+        } else {
+            int index = mIsAm ? Calendar.AM : Calendar.PM;
+            if (mAmPmSpinner != null) {
+                mAmPmSpinner.setValue(index);
+                mAmPmSpinner.setVisibility(View.VISIBLE);
+            } else {
+                mAmPmButton.setText(mAmPmStrings[index]);
+                mAmPmButton.setVisibility(View.VISIBLE);
+            }
+        }
+        sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_SELECTED);
+    }
+
+    
+    private static class SavedState extends BaseSavedState {
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.481 -0500", hash_original_field = "D724CFA73A53A978E951AE6569BF2FF0", hash_generated_field = "D3B74B573149A6A2FC399064332A0A51")
+
+
+        @SuppressWarnings({"unused", "hiding"})
+        public static final Parcelable.Creator<SavedState> CREATOR = new Creator<SavedState>() {
+            public SavedState createFromParcel(Parcel in) {
+                return new SavedState(in);
+            }
+
+            public SavedState[] newArray(int size) {
+                return new SavedState[size];
+            }
+        };
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.473 -0500", hash_original_field = "B2C1F15E3866C39B2AD64516DDC3A92C", hash_generated_field = "24E9A2D605497A939CE1099C8C82784A")
+
+
+        private  int mHour;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.474 -0500", hash_original_field = "93289DEB1B98B1E0E5D8F8C24F2AC3F1", hash_generated_field = "30D2971B3212A2F1CF29388B2CF79F78")
+
+
+        private  int mMinute;
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.475 -0500", hash_original_method = "F395FF1FB7466B722BA2E9FD639B6FEC", hash_generated_method = "FD35EC9140699FD0CF83E49224C7091E")
+        private SavedState(Parcelable superState, int hour, int minute) {
+            super(superState);
+            mHour = hour;
+            mMinute = minute;
+        }
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.476 -0500", hash_original_method = "E55ECE0F217E584D660F2F1E2BD9AF6D", hash_generated_method = "4886905855BC68C8B409DFE28B1C77A5")
+        private SavedState(Parcel in) {
+            super(in);
+            mHour = in.readInt();
+            mMinute = in.readInt();
+        }
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.477 -0500", hash_original_method = "E8F47E3750239DF4EC2B02FDC3043C0E", hash_generated_method = "8C0112869DB37B91D479B99A1CB77744")
+        public int getHour() {
+            return mHour;
+        }
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.477 -0500", hash_original_method = "3E9A445CD5F3D9118D6AF471987F3B8F", hash_generated_method = "E33585B4E5B55B12E02D8CE1BC4EDD12")
+        public int getMinute() {
+            return mMinute;
+        }
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.478 -0500", hash_original_method = "3D8FA0B7CDDD47E4194304B24B1FFDDB", hash_generated_method = "8C1022A79C10BEED0E8CD0093ACAE570")
+        @Override
+public void writeToParcel(Parcel dest, int flags) {
+            super.writeToParcel(dest, flags);
+            dest.writeInt(mHour);
+            dest.writeInt(mMinute);
+        }
+    }
+
+
+    
+    public interface OnTimeChangedListener {
+
+        
+        void onTimeChanged(TimePicker view, int hourOfDay, int minute);
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.495 -0500", hash_original_method = "8A252D715D292AC897EF9505006002CC", hash_generated_method = "74FECF8DCE77638E066573B9D52FC7C6")
+    private void onTimeChanged() {
+        sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_SELECTED);
+        if (mOnTimeChangedListener != null) {
+            mOnTimeChangedListener.onTimeChanged(this, getCurrentHour(), getCurrentMinute());
+        }
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.496 -0500", hash_original_method = "4C27F718F6DC2C1B1670607286108308", hash_generated_method = "74BE37ADA7BEBCF9A6485907A1FE231E")
+    private void setContentDescriptions() {
+        // Minute
+        String text = mContext.getString(R.string.time_picker_increment_minute_button);
+        mMinuteSpinner.findViewById(R.id.increment).setContentDescription(text);
+        text = mContext.getString(R.string.time_picker_decrement_minute_button);
+        mMinuteSpinner.findViewById(R.id.decrement).setContentDescription(text);
+        // Hour
+        text = mContext.getString(R.string.time_picker_increment_hour_button);
+        mHourSpinner.findViewById(R.id.increment).setContentDescription(text);
+        text = mContext.getString(R.string.time_picker_decrement_hour_button);
+        mHourSpinner.findViewById(R.id.decrement).setContentDescription(text);
+        // AM/PM
+        if (mAmPmSpinner != null) {
+            text = mContext.getString(R.string.time_picker_increment_set_pm_button);
+            mAmPmSpinner.findViewById(R.id.increment).setContentDescription(text);
+            text = mContext.getString(R.string.time_picker_decrement_set_am_button);
+            mAmPmSpinner.findViewById(R.id.decrement).setContentDescription(text);
+        }
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.497 -0500", hash_original_method = "EA3F98147485CBE1A2219199F92431C8", hash_generated_method = "09E6F398A78323F256D8702185427578")
+    private void updateInputState() {
+        // Make sure that if the user changes the value and the IME is active
+        // for one of the inputs if this widget, the IME is closed. If the user
+        // changed the value via the IME and there is a next input the IME will
+        // be shown, otherwise the user chose another means of changing the
+        // value and having the IME up makes no sense.
+        InputMethodManager inputMethodManager = InputMethodManager.peekInstance();
+        if (inputMethodManager != null) {
+            if (inputMethodManager.isActive(mHourSpinnerInput)) {
+                mHourSpinnerInput.clearFocus();
+                inputMethodManager.hideSoftInputFromWindow(getWindowToken(), 0);
+            } else if (inputMethodManager.isActive(mMinuteSpinnerInput)) {
+                mMinuteSpinnerInput.clearFocus();
+                inputMethodManager.hideSoftInputFromWindow(getWindowToken(), 0);
+            } else if (inputMethodManager.isActive(mAmPmSpinnerInput)) {
+                mAmPmSpinnerInput.clearFocus();
+                inputMethodManager.hideSoftInputFromWindow(getWindowToken(), 0);
+            }
+        }
+    }
 }
 

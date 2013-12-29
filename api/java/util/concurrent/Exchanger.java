@@ -9,150 +9,37 @@ import java.util.concurrent.atomic.*;
 import java.util.concurrent.locks.LockSupport;
 
 public class Exchanger<V> {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.441 -0400", hash_original_field = "5CEDCA3B8D1D4D654361BD61AE3A4F29", hash_generated_field = "A4DE78C80A44A9FFB485B1FA97067F63")
 
-    private volatile Slot[] arena = new Slot[CAPACITY];
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.442 -0400", hash_original_field = "08FD2B5E7CA277399B1D1E2C946F2D97", hash_generated_field = "C753B28A7DF93AEB959426A931313902")
-
-    private final AtomicInteger max = new AtomicInteger();
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.443 -0400", hash_original_method = "7EAF111F5AA6799458B5BA4ED6EF193C", hash_generated_method = "40D20C3FD1381E65CE0DB9BE25AFCC05")
-    public  Exchanger() {
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.448 -0400", hash_original_method = "85CC613BF9709593CA039307E2227217", hash_generated_method = "F3AB0A199168C8CD96B8E268A4CAD324")
-    private Object doExchange(Object item, boolean timed, long nanos) {
-        addTaint(nanos);
-        addTaint(timed);
-        addTaint(item.getTaint());
-        Node me = new Node(item);
-        int index = hashIndex();
-        int fails = 0;
-for(;;)
-        {
-            Object y;
-            Slot slot = arena[index];
-            if(slot == null)            
-            createSlot(index);
-            else
-            if((y = slot.get()) != null &&  
-                     slot.compareAndSet(y, null))            
-            {
-                Node you = (Node)y;
-                if(you.compareAndSet(null, item))                
-                {
-                    LockSupport.unpark(you.waiter);
-Object var15CD5627EC77B4C70E46681E42DEA286_467919635 =                     you.item;
-                    var15CD5627EC77B4C70E46681E42DEA286_467919635.addTaint(taint);
-                    return var15CD5627EC77B4C70E46681E42DEA286_467919635;
-                } //End block
-            } //End block
-            else
-            if(y == null &&                 
-                     slot.compareAndSet(null, me))            
-            {
-                if(index == 0)                
-                {
-Object var17DEFD59045ACC93949156CC96014216_1825051922 =                 timed ?
-                        awaitNanos(me, slot, nanos) :
-                        await(me, slot);
-                var17DEFD59045ACC93949156CC96014216_1825051922.addTaint(taint);
-                return var17DEFD59045ACC93949156CC96014216_1825051922;
-                }
-                Object v = spinWait(me, slot);
-                if(v != CANCEL)                
-                {
-Object var6DC76BC51820DD65E8396280E884AA78_747046844 =                 v;
-                var6DC76BC51820DD65E8396280E884AA78_747046844.addTaint(taint);
-                return var6DC76BC51820DD65E8396280E884AA78_747046844;
-                }
-                me = new Node(item);
-                int m = max.get();
-                if(m > (index >>>= 1))                
-                max.compareAndSet(m, m - 1);
-            } //End block
-            else
-            if(++fails > 1)            
-            {
-                int m = max.get();
-                if(fails > 3 && m < FULL && max.compareAndSet(m, m + 1))                
-                index = m + 1;
-                else
-                if(--index < 0)                
-                index = m;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.453 -0400", hash_original_method = "81A7A8FE33AEB39DC2465115E332A8B2", hash_generated_method = "3F0AE4AEB028A9539B0CA2887F306CA8")
-    private final int hashIndex() {
-        long id = Thread.currentThread().getId();
-        int hash = (((int)(id ^ (id >>> 32))) ^ 0x811c9dc5) * 0x01000193;
-        int m = max.get();
-        int nbits = (((0xfffffc00  >> m) & 4) | 
-                     ((0x000001f8 >>> m) & 2) | 
-                     ((0xffff00f2 >>> m) & 1));
-        int index;
-        while
-((index = hash & ((1 << nbits) - 1)) > m)        
-        hash = (hash >>> nbits) | (hash << (33 - nbits));
-        int var6A992D5529F459A44FEE58C733255E86_1339659893 = (index);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_791319996 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_791319996;
-        // ---------- Original Method ----------
-        //long id = Thread.currentThread().getId();
-        //int hash = (((int)(id ^ (id >>> 32))) ^ 0x811c9dc5) * 0x01000193;
-        //int m = max.get();
-        //int nbits = (((0xfffffc00  >> m) & 4) | 
-                     //((0x000001f8 >>> m) & 2) | 
-                     //((0xffff00f2 >>> m) & 1));
-        //int index;
-        //while ((index = hash & ((1 << nbits) - 1)) > m)       
-            //hash = (hash >>> nbits) | (hash << (33 - nbits));
-        //return index;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.458 -0400", hash_original_method = "710CA77564EC78E634B8090E5C600333", hash_generated_method = "03DCC27059DA711C525C070285FB60CE")
-    private void createSlot(int index) {
-        addTaint(index);
-        Slot newSlot = new Slot();
-        Slot[] a = arena;
-        synchronized
-(a)        {
-            if(a[index] == null)            
-            a[index] = newSlot;
-        } //End block
-        // ---------- Original Method ----------
-        //Slot newSlot = new Slot();
-        //Slot[] a = arena;
-        //synchronized (a) {
-            //if (a[index] == null)
-                //a[index] = newSlot;
-        //}
-    }
-
-    
-        @DSModeled(DSC.SAFE)
+    /**
+     * Tries to cancel a wait for the given node waiting in the given
+     * slot, if so, helping clear the node from its slot to avoid
+     * garbage retention.
+     *
+     * @param node the waiting node
+     * @param slot the slot it is waiting in
+     * @return true if successfully cancelled
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:41.094 -0500", hash_original_method = "B32071C09A97DFFF75EFFCE89615F3EB", hash_generated_method = "61FD94E30A48F185E47B147315A3A09A")
     private static boolean tryCancel(Node node, Slot slot) {
         if (!node.compareAndSet(null, CANCEL))
             return false;
-        if (slot.get() == node) 
+        if (slot.get() == node) // pre-check to minimize contention
             slot.compareAndSet(node, null);
         return true;
     }
 
-    
-        @DSModeled(DSC.SAFE)
+    // Three forms of waiting. Each just different enough not to merge
+    // code with others.
+
+    /**
+     * Spin-waits for hole for a non-0 slot.  Fails if spin elapses
+     * before hole filled.  Does not check interrupt, relying on check
+     * in public exchange method to abort if interrupted on entry.
+     *
+     * @param node the waiting node
+     * @return on success, the hole; on failure, CANCEL
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:41.095 -0500", hash_original_method = "CB278E99E24B4E735DC62BFED6C8971E", hash_generated_method = "7C09908AD80CEF2B2706D012825CE5C7")
     private static Object spinWait(Node node, Slot slot) {
         int spins = SPINS;
         for (;;) {
@@ -166,8 +53,24 @@ Object var6DC76BC51820DD65E8396280E884AA78_747046844 =                 v;
         }
     }
 
-    
-        @DSModeled(DSC.SAFE)
+    /**
+     * Waits for (by spinning and/or blocking) and gets the hole
+     * filled in by another thread.  Fails if interrupted before
+     * hole filled.
+     *
+     * When a node/thread is about to block, it sets its waiter field
+     * and then rechecks state at least one more time before actually
+     * parking, thus covering race vs fulfiller noticing that waiter
+     * is non-null so should be woken.
+     *
+     * Thread interruption status is checked only surrounding calls to
+     * park.  The caller is assumed to have checked interrupt status
+     * on entry.
+     *
+     * @param node the waiting node
+     * @return on success, the hole; on failure, CANCEL
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:41.096 -0500", hash_original_method = "4A9417958994593B8563D558E999EFC3", hash_generated_method = "452593542D6F488C7C8A4B5BED4615B3")
     private static Object await(Node node, Slot slot) {
         Thread w = Thread.currentThread();
         int spins = SPINS;
@@ -175,216 +78,70 @@ Object var6DC76BC51820DD65E8396280E884AA78_747046844 =                 v;
             Object v = node.get();
             if (v != null)
                 return v;
-            else if (spins > 0)                 
+            else if (spins > 0)                 // Spin-wait phase
                 --spins;
-            else if (node.waiter == null)       
+            else if (node.waiter == null)       // Set up to block next
                 node.waiter = w;
-            else if (w.isInterrupted())         
+            else if (w.isInterrupted())         // Abort on interrupt
                 tryCancel(node, slot);
-            else                                
+            else                                // Block
                 LockSupport.park(node);
         }
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:41.074 -0500", hash_original_field = "75EA46F781370128B90C88B0C6C4F82B", hash_generated_field = "1914937029C009DA607D29A4480902A4")
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.473 -0400", hash_original_method = "B05B09390509B455A836B09E2A65E5D4", hash_generated_method = "EE0B136210EEECC2D90CB088E18C1C61")
-    private Object awaitNanos(Node node, Slot slot, long nanos) {
-        addTaint(nanos);
-        addTaint(slot.getTaint());
-        addTaint(node.getTaint());
-        int spins = TIMED_SPINS;
-        long lastTime = 0;
-        Thread w = null;
-for(;;)
-        {
-            Object v = node.get();
-            if(v != null)            
-            {
-Object var6DC76BC51820DD65E8396280E884AA78_323073449 =             v;
-            var6DC76BC51820DD65E8396280E884AA78_323073449.addTaint(taint);
-            return var6DC76BC51820DD65E8396280E884AA78_323073449;
-            }
-            long now = System.nanoTime();
-            if(w == null)            
-            w = Thread.currentThread();
-            else
-            nanos -= now - lastTime;
-            lastTime = now;
-            if(nanos > 0)            
-            {
-                if(spins > 0)                
-                --spins;
-                else
-                if(node.waiter == null)                
-                node.waiter = w;
-                else
-                if(w.isInterrupted())                
-                tryCancel(node, slot);
-                else
-                LockSupport.parkNanos(node, nanos);
-            } //End block
-            else
-            if(tryCancel(node, slot) && !w.isInterrupted())            
-            {
-Object var9284ED8317C59E844C0B5D919DAE1270_2099374579 =             scanOnTimeout(node);
-            var9284ED8317C59E844C0B5D919DAE1270_2099374579.addTaint(taint);
-            return var9284ED8317C59E844C0B5D919DAE1270_2099374579;
-            }
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.478 -0400", hash_original_method = "968A2928C62BC7FCD22DA53EF68519F2", hash_generated_method = "490B77187B229AC26FC24E93CA533DD1")
-    private Object scanOnTimeout(Node node) {
-        addTaint(node.getTaint());
-        Object y;
-for(int j = arena.length - 1;j >= 0;--j)
-        {
-            Slot slot = arena[j];
-            if(slot != null)            
-            {
-                while
-((y = slot.get()) != null)                
-                {
-                    if(slot.compareAndSet(y, null))                    
-                    {
-                        Node you = (Node)y;
-                        if(you.compareAndSet(null, node.item))                        
-                        {
-                            LockSupport.unpark(you.waiter);
-Object var15CD5627EC77B4C70E46681E42DEA286_1879260653 =                             you.item;
-                            var15CD5627EC77B4C70E46681E42DEA286_1879260653.addTaint(taint);
-                            return var15CD5627EC77B4C70E46681E42DEA286_1879260653;
-                        } //End block
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
-Object varAC1E13DC90B5F88D0548A9E4E47E3438_637930286 =         CANCEL;
-        varAC1E13DC90B5F88D0548A9E4E47E3438_637930286.addTaint(taint);
-        return varAC1E13DC90B5F88D0548A9E4E47E3438_637930286;
-        // ---------- Original Method ----------
-        //Object y;
-        //for (int j = arena.length - 1; j >= 0; --j) {
-            //Slot slot = arena[j];
-            //if (slot != null) {
-                //while ((y = slot.get()) != null) {
-                    //if (slot.compareAndSet(y, null)) {
-                        //Node you = (Node)y;
-                        //if (you.compareAndSet(null, node.item)) {
-                            //LockSupport.unpark(you.waiter);
-                            //return you.item;
-                        //}
-                    //}
-                //}
-            //}
-        //}
-        //return CANCEL;
-    }
+    /** The number of CPUs, for sizing and spin control */
+    private static final int NCPU = Runtime.getRuntime().availableProcessors();
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:41.076 -0500", hash_original_field = "658001A3F32BFA905BFADA170C70835F", hash_generated_field = "E87A8F05D56205E03FD465D71DDC4E64")
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.482 -0400", hash_original_method = "01BD898C994460F5196927F0C5114F9E", hash_generated_method = "A3C54706DC83B765E9EF864C9457F4E0")
-    public V exchange(V x) throws InterruptedException {
-        addTaint(x.getTaint());
-        if(!Thread.interrupted())        
-        {
-            Object v = doExchange((x == null) ? NULL_ITEM : x, false, 0);
-            if(v == NULL_ITEM)            
-            {
-V var540C13E9E156B687226421B24F2DF178_1356029493 =             null;
-            var540C13E9E156B687226421B24F2DF178_1356029493.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_1356029493;
-            }
-            if(v != CANCEL)            
-            {
-V varB8DCCF40993CFCDCE8F471B3D2A68034_1856875648 =             (V)v;
-            varB8DCCF40993CFCDCE8F471B3D2A68034_1856875648.addTaint(taint);
-            return varB8DCCF40993CFCDCE8F471B3D2A68034_1856875648;
-            }
-            Thread.interrupted();
-        } //End block
-        InterruptedException var1358A8E226367F12BB278428C2BEEE00_889625839 = new InterruptedException();
-        var1358A8E226367F12BB278428C2BEEE00_889625839.addTaint(taint);
-        throw var1358A8E226367F12BB278428C2BEEE00_889625839;
-        // ---------- Original Method ----------
-        //if (!Thread.interrupted()) {
-            //Object v = doExchange((x == null) ? NULL_ITEM : x, false, 0);
-            //if (v == NULL_ITEM)
-                //return null;
-            //if (v != CANCEL)
-                //return (V)v;
-            //Thread.interrupted(); 
-        //}
-        //throw new InterruptedException();
-    }
+    private static final int CAPACITY = 32;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:41.076 -0500", hash_original_field = "490AEE0E797EC12921D65510D2246EF8", hash_generated_field = "19CBB79F5BAC3C02E55420AC3E96D83F")
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.490 -0400", hash_original_method = "32FED615BD7111CFC755561A988F29C6", hash_generated_method = "F73990943787727081A070CD2A6353C6")
-    public V exchange(V x, long timeout, TimeUnit unit) throws InterruptedException, TimeoutException {
-        addTaint(unit.getTaint());
-        addTaint(timeout);
-        addTaint(x.getTaint());
-        if(!Thread.interrupted())        
-        {
-            Object v = doExchange((x == null) ? NULL_ITEM : x,
-                                  true, unit.toNanos(timeout));
-            if(v == NULL_ITEM)            
-            {
-V var540C13E9E156B687226421B24F2DF178_462983100 =             null;
-            var540C13E9E156B687226421B24F2DF178_462983100.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_462983100;
-            }
-            if(v != CANCEL)            
-            {
-V varB8DCCF40993CFCDCE8F471B3D2A68034_665862429 =             (V)v;
-            varB8DCCF40993CFCDCE8F471B3D2A68034_665862429.addTaint(taint);
-            return varB8DCCF40993CFCDCE8F471B3D2A68034_665862429;
-            }
-            if(!Thread.interrupted())            
-            {
-            TimeoutException var3B6A086CA796B867C2DC52AFEEF9D0CF_879135734 = new TimeoutException();
-            var3B6A086CA796B867C2DC52AFEEF9D0CF_879135734.addTaint(taint);
-            throw var3B6A086CA796B867C2DC52AFEEF9D0CF_879135734;
-            }
-        } //End block
-        InterruptedException var1358A8E226367F12BB278428C2BEEE00_1647458895 = new InterruptedException();
-        var1358A8E226367F12BB278428C2BEEE00_1647458895.addTaint(taint);
-        throw var1358A8E226367F12BB278428C2BEEE00_1647458895;
-        // ---------- Original Method ----------
-        //if (!Thread.interrupted()) {
-            //Object v = doExchange((x == null) ? NULL_ITEM : x,
-                                  //true, unit.toNanos(timeout));
-            //if (v == NULL_ITEM)
-                //return null;
-            //if (v != CANCEL)
-                //return (V)v;
-            //if (!Thread.interrupted())
-                //throw new TimeoutException();
-        //}
-        //throw new InterruptedException();
+    private static final int FULL =
+        Math.max(0, Math.min(CAPACITY, NCPU / 2) - 1);
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:41.077 -0500", hash_original_field = "A79899B0496423503C40E0DB439585BC", hash_generated_field = "DD5CFF62634AED5D259CB7E2ADD5133B")
+
+    private static final int SPINS = (NCPU == 1) ? 0 : 2000;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:41.078 -0500", hash_original_field = "A1D76156212CB35F4354BE922ECF1337", hash_generated_field = "76DBAB4631B1B171678A47C88BDDACA5")
+
+    private static final int TIMED_SPINS = SPINS / 20;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:41.079 -0500", hash_original_field = "33C4533570ECDEC04E31CD62F398FAA0", hash_generated_field = "3B0C3CB8323B5C5F4FF4411ED327CEBB")
+
+    private static final Object CANCEL = new Object();
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:41.080 -0500", hash_original_field = "48EA6DDAF5010A87C48D3E20E00C1EFD", hash_generated_field = "C3444CF75E87B7410DAF194724DC011B")
+
+    private static final Object NULL_ITEM = new Object();
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:41.089 -0500", hash_original_field = "7BF435916F51C391155FF09EF03DE51E", hash_generated_field = "A4DE78C80A44A9FFB485B1FA97067F63")
+
+    private volatile Slot[] arena = new Slot[CAPACITY];
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:41.090 -0500", hash_original_field = "9FCE23DBEF09FBDEB8B4170F4CDBBBED", hash_generated_field = "C753B28A7DF93AEB959426A931313902")
+
+    private final AtomicInteger max = new AtomicInteger();
+
+    /**
+     * Creates a new Exchanger.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:41.099 -0500", hash_original_method = "7EAF111F5AA6799458B5BA4ED6EF193C", hash_generated_method = "F3DE1CB784C5627EDBD69D821D89A075")
+    public Exchanger() {
     }
 
     
     private static final class Node extends AtomicReference<Object> {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.492 -0400", hash_original_field = "447B7147E84BE512208DCC0995D67EBC", hash_generated_field = "534A9EAE4E6170E4619513891411852D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:41.082 -0500", hash_original_field = "CF812EE2AD9BC4EAA8B11FCCEDAE3ADB", hash_generated_field = "534A9EAE4E6170E4619513891411852D")
 
-        public Object item;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.493 -0400", hash_original_field = "F64CFF138020A2060A9817272F563B3C", hash_generated_field = "CD33F33C6B06BD5F7A2A693861D1129D")
+        public  Object item;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:41.083 -0500", hash_original_field = "4DB9CE87B9CCE3428476BDB51EBE9EF1", hash_generated_field = "CD33F33C6B06BD5F7A2A693861D1129D")
 
         public volatile Thread waiter;
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.496 -0400", hash_original_method = "8076C86F5BED3901532DF78458E5A05E", hash_generated_method = "91161F3B4D96F232328ED124C5209D70")
-        public  Node(Object item) {
+
+        /**
+         * Creates node with given item and empty hole.
+         * @param item the item
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:41.084 -0500", hash_original_method = "8076C86F5BED3901532DF78458E5A05E", hash_generated_method = "8E524DAF36E4E0F50709434963804CC6")
+        public Node(Object item) {
             this.item = item;
-            // ---------- Original Method ----------
-            //this.item = item;
         }
 
         
@@ -449,28 +206,291 @@ V varB8DCCF40993CFCDCE8F471B3D2A68034_665862429 =             (V)v;
 
     }
 
+    /**
+     * Main exchange function, handling the different policy variants.
+     * Uses Object, not "V" as argument and return value to simplify
+     * handling of sentinel values.  Callers from public methods decode
+     * and cast accordingly.
+     *
+     * @param item the (non-null) item to exchange
+     * @param timed true if the wait is timed
+     * @param nanos if timed, the maximum wait time
+     * @return the other thread's item, or CANCEL if interrupted or timed out
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:41.091 -0500", hash_original_method = "85CC613BF9709593CA039307E2227217", hash_generated_method = "F999AB1DA8ED0568D23A16ABFD90AFE4")
+    private Object doExchange(Object item, boolean timed, long nanos) {
+        Node me = new Node(item);                 // Create in case occupying
+        int index = hashIndex();                  // Index of current slot
+        int fails = 0;                            // Number of CAS failures
 
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.519 -0400", hash_original_field = "08206593AD53118A4399D95F1F5F27A3", hash_generated_field = "8FD1D00BA6B52C5E0CB71DFCD385247C")
+        for (;;) {
+            Object y;                             // Contents of current slot
+            Slot slot = arena[index];
+            if (slot == null)                     // Lazily initialize slots
+                createSlot(index);                // Continue loop to reread
+            else if ((y = slot.get()) != null &&  // Try to fulfill
+                     slot.compareAndSet(y, null)) {
+                Node you = (Node)y;               // Transfer item
+                if (you.compareAndSet(null, item)) {
+                    LockSupport.unpark(you.waiter);
+                    return you.item;
+                }                                 // Else cancelled; continue
+            }
+            else if (y == null &&                 // Try to occupy
+                     slot.compareAndSet(null, me)) {
+                if (index == 0)                   // Blocking wait for slot 0
+                    return timed ?
+                        awaitNanos(me, slot, nanos) :
+                        await(me, slot);
+                Object v = spinWait(me, slot);    // Spin wait for non-0
+                if (v != CANCEL)
+                    return v;
+                me = new Node(item);              // Throw away cancelled node
+                int m = max.get();
+                if (m > (index >>>= 1))           // Decrease index
+                    max.compareAndSet(m, m - 1);  // Maybe shrink table
+            }
+            else if (++fails > 1) {               // Allow 2 fails on 1st slot
+                int m = max.get();
+                if (fails > 3 && m < FULL && max.compareAndSet(m, m + 1))
+                    index = m + 1;                // Grow on 3rd failed slot
+                else if (--index < 0)
+                    index = m;                    // Circularly traverse
+            }
+        }
+    }
 
-    private static final int NCPU = Runtime.getRuntime().availableProcessors();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.521 -0400", hash_original_field = "C921C4C9D464325B11257C5AEBD1AAA3", hash_generated_field = "E87A8F05D56205E03FD465D71DDC4E64")
+    /**
+     * Returns a hash index for the current thread.  Uses a one-step
+     * FNV-1a hash code (http://www.isthe.com/chongo/tech/comp/fnv/)
+     * based on the current thread's Thread.getId().  These hash codes
+     * have more uniform distribution properties with respect to small
+     * moduli (here 1-31) than do other simple hashing functions.
+     *
+     * <p>To return an index between 0 and max, we use a cheap
+     * approximation to a mod operation, that also corrects for bias
+     * due to non-power-of-2 remaindering (see {@link
+     * java.util.Random#nextInt}).  Bits of the hashcode are masked
+     * with "nbits", the ceiling power of two of table size (looked up
+     * in a table packed into three ints).  If too large, this is
+     * retried after rotating the hash by nbits bits, while forcing new
+     * top bit to 0, which guarantees eventual termination (although
+     * with a non-random-bias).  This requires an average of less than
+     * 2 tries for all table sizes, and has a maximum 2% difference
+     * from perfectly uniform slot probabilities when applied to all
+     * possible hash codes for sizes less than 32.
+     *
+     * @return a per-thread-random index, 0 <= index < max
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:41.092 -0500", hash_original_method = "81A7A8FE33AEB39DC2465115E332A8B2", hash_generated_method = "E307B358374E191481F8EF8CDC8D99E6")
+    private final int hashIndex() {
+        long id = Thread.currentThread().getId();
+        int hash = (((int)(id ^ (id >>> 32))) ^ 0x811c9dc5) * 0x01000193;
 
-    private static final int CAPACITY = 32;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.522 -0400", hash_original_field = "BDDDCA2C7CA0962F138AEC5FC6D88260", hash_generated_field = "19CBB79F5BAC3C02E55420AC3E96D83F")
+        int m = max.get();
+        int nbits = (((0xfffffc00  >> m) & 4) | // Compute ceil(log2(m+1))
+                     ((0x000001f8 >>> m) & 2) | // The constants hold
+                     ((0xffff00f2 >>> m) & 1)); // a lookup table
+        int index;
+        while ((index = hash & ((1 << nbits) - 1)) > m)       // May retry on
+            hash = (hash >>> nbits) | (hash << (33 - nbits)); // non-power-2 m
+        return index;
+    }
 
-    private static final int FULL = Math.max(0, Math.min(CAPACITY, NCPU / 2) - 1);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.523 -0400", hash_original_field = "6B1F0AEC6B8E3406CF74EC7739A70A1F", hash_generated_field = "DD5CFF62634AED5D259CB7E2ADD5133B")
+    /**
+     * Creates a new slot at given index.  Called only when the slot
+     * appears to be null.  Relies on double-check using builtin
+     * locks, since they rarely contend.  This in turn relies on the
+     * arena array being declared volatile.
+     *
+     * @param index the index to add slot at
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:41.093 -0500", hash_original_method = "710CA77564EC78E634B8090E5C600333", hash_generated_method = "F86F43D6D2A26E9F7B2A2BE42B2598B8")
+    private void createSlot(int index) {
+        // Create slot outside of lock to narrow sync region
+        Slot newSlot = new Slot();
+        Slot[] a = arena;
+        synchronized (a) {
+            if (a[index] == null)
+                a[index] = newSlot;
+        }
+    }
 
-    private static final int SPINS = (NCPU == 1) ? 0 : 2000;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.524 -0400", hash_original_field = "1E9DADE18B04D44B76130EF230C9444A", hash_generated_field = "76DBAB4631B1B171678A47C88BDDACA5")
+    /**
+     * Waits for (at index 0) and gets the hole filled in by another
+     * thread.  Fails if timed out or interrupted before hole filled.
+     * Same basic logic as untimed version, but a bit messier.
+     *
+     * @param node the waiting node
+     * @param nanos the wait time
+     * @return on success, the hole; on failure, CANCEL
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:41.097 -0500", hash_original_method = "B05B09390509B455A836B09E2A65E5D4", hash_generated_method = "B303ADC082E4C769878DBBA7904F78F9")
+    private Object awaitNanos(Node node, Slot slot, long nanos) {
+        int spins = TIMED_SPINS;
+        long lastTime = 0;
+        Thread w = null;
+        for (;;) {
+            Object v = node.get();
+            if (v != null)
+                return v;
+            long now = System.nanoTime();
+            if (w == null)
+                w = Thread.currentThread();
+            else
+                nanos -= now - lastTime;
+            lastTime = now;
+            if (nanos > 0) {
+                if (spins > 0)
+                    --spins;
+                else if (node.waiter == null)
+                    node.waiter = w;
+                else if (w.isInterrupted())
+                    tryCancel(node, slot);
+                else
+                    LockSupport.parkNanos(node, nanos);
+            }
+            else if (tryCancel(node, slot) && !w.isInterrupted())
+                return scanOnTimeout(node);
+        }
+    }
 
-    private static final int TIMED_SPINS = SPINS / 20;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.525 -0400", hash_original_field = "4EE4680976B68C20E5AEA92BA17B7949", hash_generated_field = "3B0C3CB8323B5C5F4FF4411ED327CEBB")
+    /**
+     * Sweeps through arena checking for any waiting threads.  Called
+     * only upon return from timeout while waiting in slot 0.  When a
+     * thread gives up on a timed wait, it is possible that a
+     * previously-entered thread is still waiting in some other
+     * slot.  So we scan to check for any.  This is almost always
+     * overkill, but decreases the likelihood of timeouts when there
+     * are other threads present to far less than that in lock-based
+     * exchangers in which earlier-arriving threads may still be
+     * waiting on entry locks.
+     *
+     * @param node the waiting node
+     * @return another thread's item, or CANCEL
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:41.098 -0500", hash_original_method = "968A2928C62BC7FCD22DA53EF68519F2", hash_generated_method = "A1337444E5DDD8166BCC5747E4B6D72D")
+    private Object scanOnTimeout(Node node) {
+        Object y;
+        for (int j = arena.length - 1; j >= 0; --j) {
+            Slot slot = arena[j];
+            if (slot != null) {
+                while ((y = slot.get()) != null) {
+                    if (slot.compareAndSet(y, null)) {
+                        Node you = (Node)y;
+                        if (you.compareAndSet(null, node.item)) {
+                            LockSupport.unpark(you.waiter);
+                            return you.item;
+                        }
+                    }
+                }
+            }
+        }
+        return CANCEL;
+    }
 
-    private static final Object CANCEL = new Object();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.526 -0400", hash_original_field = "1753013D4B829E720100840E87754B47", hash_generated_field = "C3444CF75E87B7410DAF194724DC011B")
+    /**
+     * Waits for another thread to arrive at this exchange point (unless
+     * the current thread is {@linkplain Thread#interrupt interrupted}),
+     * and then transfers the given object to it, receiving its object
+     * in return.
+     *
+     * <p>If another thread is already waiting at the exchange point then
+     * it is resumed for thread scheduling purposes and receives the object
+     * passed in by the current thread.  The current thread returns immediately,
+     * receiving the object passed to the exchange by that other thread.
+     *
+     * <p>If no other thread is already waiting at the exchange then the
+     * current thread is disabled for thread scheduling purposes and lies
+     * dormant until one of two things happens:
+     * <ul>
+     * <li>Some other thread enters the exchange; or
+     * <li>Some other thread {@linkplain Thread#interrupt interrupts}
+     * the current thread.
+     * </ul>
+     * <p>If the current thread:
+     * <ul>
+     * <li>has its interrupted status set on entry to this method; or
+     * <li>is {@linkplain Thread#interrupt interrupted} while waiting
+     * for the exchange,
+     * </ul>
+     * then {@link InterruptedException} is thrown and the current thread's
+     * interrupted status is cleared.
+     *
+     * @param x the object to exchange
+     * @return the object provided by the other thread
+     * @throws InterruptedException if the current thread was
+     *         interrupted while waiting
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:41.100 -0500", hash_original_method = "01BD898C994460F5196927F0C5114F9E", hash_generated_method = "43B9B19E5F9A3C4248EA65E9663E2CE1")
+    public V exchange(V x) throws InterruptedException {
+        if (!Thread.interrupted()) {
+            Object v = doExchange((x == null) ? NULL_ITEM : x, false, 0);
+            if (v == NULL_ITEM)
+                return null;
+            if (v != CANCEL)
+                return (V)v;
+            Thread.interrupted(); // Clear interrupt status on IE throw
+        }
+        throw new InterruptedException();
+    }
 
-    private static final Object NULL_ITEM = new Object();
+    /**
+     * Waits for another thread to arrive at this exchange point (unless
+     * the current thread is {@linkplain Thread#interrupt interrupted} or
+     * the specified waiting time elapses), and then transfers the given
+     * object to it, receiving its object in return.
+     *
+     * <p>If another thread is already waiting at the exchange point then
+     * it is resumed for thread scheduling purposes and receives the object
+     * passed in by the current thread.  The current thread returns immediately,
+     * receiving the object passed to the exchange by that other thread.
+     *
+     * <p>If no other thread is already waiting at the exchange then the
+     * current thread is disabled for thread scheduling purposes and lies
+     * dormant until one of three things happens:
+     * <ul>
+     * <li>Some other thread enters the exchange; or
+     * <li>Some other thread {@linkplain Thread#interrupt interrupts}
+     * the current thread; or
+     * <li>The specified waiting time elapses.
+     * </ul>
+     * <p>If the current thread:
+     * <ul>
+     * <li>has its interrupted status set on entry to this method; or
+     * <li>is {@linkplain Thread#interrupt interrupted} while waiting
+     * for the exchange,
+     * </ul>
+     * then {@link InterruptedException} is thrown and the current thread's
+     * interrupted status is cleared.
+     *
+     * <p>If the specified waiting time elapses then {@link
+     * TimeoutException} is thrown.  If the time is less than or equal
+     * to zero, the method will not wait at all.
+     *
+     * @param x the object to exchange
+     * @param timeout the maximum time to wait
+     * @param unit the time unit of the <tt>timeout</tt> argument
+     * @return the object provided by the other thread
+     * @throws InterruptedException if the current thread was
+     *         interrupted while waiting
+     * @throws TimeoutException if the specified waiting time elapses
+     *         before another thread enters the exchange
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:41.101 -0500", hash_original_method = "32FED615BD7111CFC755561A988F29C6", hash_generated_method = "353387BCE1C0F5CE7848F502F5F2B44A")
+    public V exchange(V x, long timeout, TimeUnit unit)
+        throws InterruptedException, TimeoutException {
+        if (!Thread.interrupted()) {
+            Object v = doExchange((x == null) ? NULL_ITEM : x,
+                                  true, unit.toNanos(timeout));
+            if (v == NULL_ITEM)
+                return null;
+            if (v != CANCEL)
+                return (V)v;
+            if (!Thread.interrupted())
+                throw new TimeoutException();
+        }
+        throw new InterruptedException();
+    }
 }
 

@@ -1,6 +1,8 @@
 package java.io;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.nio.CharBuffer;
 
@@ -10,218 +12,240 @@ import java.nio.CharBuffer;
 
 
 public abstract class Reader implements Readable, Closeable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.559 -0400", hash_original_field = "DCE7C4174CE9323904A934A486C41288", hash_generated_field = "AB852390F41C8C6739EA01C427D6BB51")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.363 -0500", hash_original_field = "5E7C45D6B25B1E31F92C48548080E9E3", hash_generated_field = "AB852390F41C8C6739EA01C427D6BB51")
 
     protected Object lock;
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.559 -0400", hash_original_method = "23BD0F45FCD5744DE183656F7640DB10", hash_generated_method = "34ED878B44B0872C50C8F22A6EAAAA08")
-    protected  Reader() {
+
+    /**
+     * Constructs a new {@code Reader} with {@code this} as the object used to
+     * synchronize critical sections.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.364 -0500", hash_original_method = "23BD0F45FCD5744DE183656F7640DB10", hash_generated_method = "71C8FCF9A91B7A5A1526A6B249D29EC8")
+    protected Reader() {
         lock = this;
-        // ---------- Original Method ----------
-        //lock = this;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.560 -0400", hash_original_method = "841CA56D08654DE62644A6941CD75AE9", hash_generated_method = "6ACC0117984130FEF270F8A8B65EEA39")
-    protected  Reader(Object lock) {
-        if(lock == null)        
-        {
-            NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_1130269748 = new NullPointerException();
-            var7338BC9F48D81FE0BBD6183F4014DCC4_1130269748.addTaint(taint);
-            throw var7338BC9F48D81FE0BBD6183F4014DCC4_1130269748;
-        } //End block
+    /**
+     * Constructs a new {@code Reader} with {@code lock} used to synchronize
+     * critical sections.
+     *
+     * @param lock
+     *            the {@code Object} used to synchronize critical sections.
+     * @throws NullPointerException
+     *             if {@code lock} is {@code null}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.365 -0500", hash_original_method = "841CA56D08654DE62644A6941CD75AE9", hash_generated_method = "6F72851AB99894DB9A81607419A3DB91")
+    protected Reader(Object lock) {
+        if (lock == null) {
+            throw new NullPointerException();
+        }
         this.lock = lock;
-        // ---------- Original Method ----------
-        //if (lock == null) {
-            //throw new NullPointerException();
-        //}
-        //this.lock = lock;
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Closes this reader. Implementations of this method should free any
+     * resources associated with the reader.
+     *
+     * @throws IOException
+     *             if an error occurs while closing this reader.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.365 -0500", hash_original_method = "4E507319564A7E0BFD2A58D57A800811", hash_generated_method = "2228FF14FE1AFC53EB7399AA035D1509")
     public abstract void close() throws IOException;
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.560 -0400", hash_original_method = "2066C142E0E9A9BCC65518E0FCDDA1D6", hash_generated_method = "2FA2C63572C6BB3E092699AC1428BB82")
+    /**
+     * Sets a mark position in this reader. The parameter {@code readLimit}
+     * indicates how many characters can be read before the mark is invalidated.
+     * Calling {@code reset()} will reposition the reader back to the marked
+     * position if {@code readLimit} has not been surpassed.
+     * <p>
+     * This default implementation simply throws an {@code IOException};
+     * subclasses must provide their own implementation.
+     *
+     * @param readLimit
+     *            the number of characters that can be read before the mark is
+     *            invalidated.
+     * @throws IllegalArgumentException
+     *             if {@code readLimit < 0}.
+     * @throws IOException
+     *             if an error occurs while setting a mark in this reader.
+     * @see #markSupported()
+     * @see #reset()
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.366 -0500", hash_original_method = "2066C142E0E9A9BCC65518E0FCDDA1D6", hash_generated_method = "EBA12DF8A153DF5B9F7C994055D37955")
     public void mark(int readLimit) throws IOException {
-        addTaint(readLimit);
-        IOException var1508E3FDF27FD56D4E1051DB16DE1816_198267087 = new IOException();
-        var1508E3FDF27FD56D4E1051DB16DE1816_198267087.addTaint(taint);
-        throw var1508E3FDF27FD56D4E1051DB16DE1816_198267087;
-        // ---------- Original Method ----------
-        //throw new IOException();
+        throw new IOException();
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.561 -0400", hash_original_method = "12DAC0CE56878A53F37AFF65E12010EB", hash_generated_method = "119DC9F213F1DAF82196F6D9D3F1392E")
+    /**
+     * Indicates whether this reader supports the {@code mark()} and
+     * {@code reset()} methods. This default implementation returns
+     * {@code false}.
+     *
+     * @return always {@code false}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.367 -0500", hash_original_method = "12DAC0CE56878A53F37AFF65E12010EB", hash_generated_method = "68CB0655189E46325916378CAE21EACC")
     public boolean markSupported() {
-        boolean var68934A3E9455FA72420237EB05902327_212776920 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1121786310 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1121786310;
-        // ---------- Original Method ----------
-        //return false;
+        return false;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.561 -0400", hash_original_method = "4B904F9F4843983C12271BC14A375F35", hash_generated_method = "53FD29739C2536D59A3E4D34635FC8EF")
+    /**
+     * Reads a single character from this reader and returns it as an integer
+     * with the two higher-order bytes set to 0. Returns -1 if the end of the
+     * reader has been reached.
+     *
+     * @return the character read or -1 if the end of the reader has been
+     *         reached.
+     * @throws IOException
+     *             if this reader is closed or some other I/O error occurs.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.369 -0500", hash_original_method = "4B904F9F4843983C12271BC14A375F35", hash_generated_method = "3181BD79906C23198BB1DA8AE2668AD1")
     public int read() throws IOException {
-        synchronized
-(lock)        {
+        synchronized (lock) {
             char[] charArray = new char[1];
-            if(read(charArray, 0, 1) != -1)            
-            {
-                int var5B6AEFF299C84706C52041B8081F3370_467175230 = (charArray[0]);
-                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_603867010 = getTaintInt();
-                return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_603867010;
-            } //End block
-            int var6BB61E3B7BCE0931DA574D19D1D82C88_1596382483 = (-1);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_151368181 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_151368181;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (lock) {
-            //char[] charArray = new char[1];
-            //if (read(charArray, 0, 1) != -1) {
-                //return charArray[0];
-            //}
-            //return -1;
-        //}
+            if (read(charArray, 0, 1) != -1) {
+                return charArray[0];
+            }
+            return -1;
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.562 -0400", hash_original_method = "E743E3D19B5FD453D0CBC2E5CA424673", hash_generated_method = "C34F63961F0884DC63CA06ADEC1498AE")
+    /**
+     * Reads characters from this reader and stores them in the character array
+     * {@code buf} starting at offset 0. Returns the number of characters
+     * actually read or -1 if the end of the reader has been reached.
+     *
+     * @param buf
+     *            character array to store the characters read.
+     * @return the number of characters read or -1 if the end of the reader has
+     *         been reached.
+     * @throws IOException
+     *             if this reader is closed or some other I/O error occurs.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.370 -0500", hash_original_method = "E743E3D19B5FD453D0CBC2E5CA424673", hash_generated_method = "F1D6C9070AD8A49F0385879A6200617D")
     public int read(char[] buf) throws IOException {
-        addTaint(buf[0]);
-        int var4828354AC0CD4A28CE476D719F00E912_624196172 = (read(buf, 0, buf.length));
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1672564327 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1672564327;
-        // ---------- Original Method ----------
-        //return read(buf, 0, buf.length);
+        return read(buf, 0, buf.length);
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Reads at most {@code count} characters from this reader and stores them
+     * at {@code offset} in the character array {@code buf}. Returns the number
+     * of characters actually read or -1 if the end of the reader has been
+     * reached.
+     *
+     * @param buf
+     *            the character array to store the characters read.
+     * @param offset
+     *            the initial position in {@code buffer} to store the characters
+     *            read from this reader.
+     * @param count
+     *            the maximum number of characters to read.
+     * @return the number of characters read or -1 if the end of the reader has
+     *         been reached.
+     * @throws IOException
+     *             if this reader is closed or some other I/O error occurs.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.371 -0500", hash_original_method = "BAAE620DD47C67A7C9FA2D182BB45EC6", hash_generated_method = "9A8DFEF4E7A8AC2186089662A0C89E20")
     public abstract int read(char[] buf, int offset, int count) throws IOException;
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.562 -0400", hash_original_method = "D41EE0434E50B3C6E1AA0E42EDD44E0B", hash_generated_method = "87D0550D57E2E56A71E37C9419F96770")
+    /**
+     * Indicates whether this reader is ready to be read without blocking.
+     * Returns {@code true} if this reader will not block when {@code read} is
+     * called, {@code false} if unknown or blocking will occur. This default
+     * implementation always returns {@code false}.
+     *
+     * @return always {@code false}.
+     * @throws IOException
+     *             if this reader is closed or some other I/O error occurs.
+     * @see #read()
+     * @see #read(char[])
+     * @see #read(char[], int, int)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.372 -0500", hash_original_method = "D41EE0434E50B3C6E1AA0E42EDD44E0B", hash_generated_method = "94CE574D8F9043761F4405DCC097C872")
     public boolean ready() throws IOException {
-        boolean var68934A3E9455FA72420237EB05902327_1851989275 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1961464190 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1961464190;
-        // ---------- Original Method ----------
-        //return false;
+        return false;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.563 -0400", hash_original_method = "B2B0ACE34E24898AD20F33154DDE5ADD", hash_generated_method = "A59EB893AD90CAFAE7C8C9BB0ECEF97C")
+    /**
+     * Resets this reader's position to the last {@code mark()} location.
+     * Invocations of {@code read()} and {@code skip()} will occur from this new
+     * location. If this reader has not been marked, the behavior of
+     * {@code reset()} is implementation specific. This default
+     * implementation throws an {@code IOException}.
+     *
+     * @throws IOException
+     *             always thrown in this default implementation.
+     * @see #mark(int)
+     * @see #markSupported()
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.372 -0500", hash_original_method = "B2B0ACE34E24898AD20F33154DDE5ADD", hash_generated_method = "905AD4216897ED858D0A370D64D237D3")
     public void reset() throws IOException {
-        IOException var1508E3FDF27FD56D4E1051DB16DE1816_2032160395 = new IOException();
-        var1508E3FDF27FD56D4E1051DB16DE1816_2032160395.addTaint(taint);
-        throw var1508E3FDF27FD56D4E1051DB16DE1816_2032160395;
-        // ---------- Original Method ----------
-        //throw new IOException();
+        throw new IOException();
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.563 -0400", hash_original_method = "7E8A2F73FB8EAE936D216E90BE91676B", hash_generated_method = "DF34705AF9DA8AD14EA1CCC68B333D82")
+    /**
+     * Skips {@code charCount} characters in this reader. Subsequent calls of
+     * {@code read} methods will not return these characters unless {@code
+     * reset} is used. This method may perform multiple reads to read {@code
+     * charCount} characters.
+     *
+     * @return the number of characters actually skipped.
+     * @throws IllegalArgumentException
+     *             if {@code charCount < 0}.
+     * @throws IOException
+     *             if this reader is closed or some other I/O error occurs.
+     * @see #mark(int)
+     * @see #markSupported()
+     * @see #reset()
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.373 -0500", hash_original_method = "7E8A2F73FB8EAE936D216E90BE91676B", hash_generated_method = "7AD957B0F0168F7BE1674D0299966610")
     public long skip(long charCount) throws IOException {
-        addTaint(charCount);
-        if(charCount < 0)        
-        {
-            IllegalArgumentException var1938519F99623D8B8D1D15216863BFAB_844314565 = new IllegalArgumentException("charCount < 0: " + charCount);
-            var1938519F99623D8B8D1D15216863BFAB_844314565.addTaint(taint);
-            throw var1938519F99623D8B8D1D15216863BFAB_844314565;
-        } //End block
-        synchronized
-(lock)        {
+        if (charCount < 0) {
+            throw new IllegalArgumentException("charCount < 0: " + charCount);
+        }
+        synchronized (lock) {
             long skipped = 0;
             int toRead = charCount < 512 ? (int) charCount : 512;
             char[] charsSkipped = new char[toRead];
-            while
-(skipped < charCount)            
-            {
+            while (skipped < charCount) {
                 int read = read(charsSkipped, 0, toRead);
-                if(read == -1)                
-                {
-                    long varE52E279299E912838F689D4380C81F4A_2052213478 = (skipped);
-                                        long var0F5264038205EDFB1AC05FBB0E8C5E94_370181174 = getTaintLong();
-                    return var0F5264038205EDFB1AC05FBB0E8C5E94_370181174;
-                } //End block
+                if (read == -1) {
+                    return skipped;
+                }
                 skipped += read;
-                if(read < toRead)                
-                {
-                    long varE52E279299E912838F689D4380C81F4A_1375794625 = (skipped);
-                                        long var0F5264038205EDFB1AC05FBB0E8C5E94_1664152784 = getTaintLong();
-                    return var0F5264038205EDFB1AC05FBB0E8C5E94_1664152784;
-                } //End block
-                if(charCount - skipped < toRead)                
-                {
+                if (read < toRead) {
+                    return skipped;
+                }
+                if (charCount - skipped < toRead) {
                     toRead = (int) (charCount - skipped);
-                } //End block
-            } //End block
-            long varE52E279299E912838F689D4380C81F4A_1365417727 = (skipped);
-                        long var0F5264038205EDFB1AC05FBB0E8C5E94_265083516 = getTaintLong();
-            return var0F5264038205EDFB1AC05FBB0E8C5E94_265083516;
-        } //End block
-        // ---------- Original Method ----------
-        //if (charCount < 0) {
-            //throw new IllegalArgumentException("charCount < 0: " + charCount);
-        //}
-        //synchronized (lock) {
-            //long skipped = 0;
-            //int toRead = charCount < 512 ? (int) charCount : 512;
-            //char[] charsSkipped = new char[toRead];
-            //while (skipped < charCount) {
-                //int read = read(charsSkipped, 0, toRead);
-                //if (read == -1) {
-                    //return skipped;
-                //}
-                //skipped += read;
-                //if (read < toRead) {
-                    //return skipped;
-                //}
-                //if (charCount - skipped < toRead) {
-                    //toRead = (int) (charCount - skipped);
-                //}
-            //}
-            //return skipped;
-        //}
+                }
+            }
+            return skipped;
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.564 -0400", hash_original_method = "3EEA08DE1417537F34B729CF4FE40629", hash_generated_method = "AF72018FA5B2DB253969FA2595202A0F")
+    /**
+     * Reads characters and puts them into the {@code target} character buffer.
+     *
+     * @param target
+     *            the destination character buffer.
+     * @return the number of characters put into {@code target} or -1 if the end
+     *         of this reader has been reached before a character has been read.
+     * @throws IOException
+     *             if any I/O error occurs while reading from this reader.
+     * @throws NullPointerException
+     *             if {@code target} is {@code null}.
+     * @throws ReadOnlyBufferException
+     *             if {@code target} is read-only.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.374 -0500", hash_original_method = "3EEA08DE1417537F34B729CF4FE40629", hash_generated_method = "C5940F6106B7BDD695AB535DD92FD3DC")
     public int read(CharBuffer target) throws IOException {
-        addTaint(target.getTaint());
         int length = target.length();
         char[] buf = new char[length];
         length = Math.min(length, read(buf));
-        if(length > 0)        
-        {
+        if (length > 0) {
             target.put(buf, 0, length);
-        } //End block
-        int var2FA47F7C65FEC19CC163B195725E3844_1972091792 = (length);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_635520017 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_635520017;
-        // ---------- Original Method ----------
-        //int length = target.length();
-        //char[] buf = new char[length];
-        //length = Math.min(length, read(buf));
-        //if (length > 0) {
-            //target.put(buf, 0, length);
-        //}
-        //return length;
+        }
+        return length;
     }
 
     

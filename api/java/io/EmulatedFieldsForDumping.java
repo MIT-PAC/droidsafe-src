@@ -1,6 +1,8 @@
 package java.io;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
@@ -8,196 +10,213 @@ import droidsafe.annotations.*;
 
 
 class EmulatedFieldsForDumping extends ObjectOutputStream.PutField {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.695 -0400", hash_original_field = "2F09CF6A0C7823B6AADE31761B07AB12", hash_generated_field = "5423796031E51D6FB469318D4F31ADED")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.777 -0500", hash_original_field = "4A739C08808C5C928B9834A591DB34F0", hash_generated_field = "5423796031E51D6FB469318D4F31ADED")
 
-    private ObjectOutputStream oos;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.695 -0400", hash_original_field = "F6140DD74E8B37A12ABECC3B9897BAA5", hash_generated_field = "B94E58D5D6568A9EC985C6A7207CC5BA")
+    private  ObjectOutputStream oos;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.778 -0500", hash_original_field = "A4096C8B32AAA5FC3ADEB5792BF75E27", hash_generated_field = "B94E58D5D6568A9EC985C6A7207CC5BA")
 
     private EmulatedFields emulatedFields;
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.696 -0400", hash_original_method = "D64C2A148CFECC0338F81243CC161580", hash_generated_method = "A6106B8CAABE6244A96E60C957ED60C5")
-      EmulatedFieldsForDumping(ObjectOutputStream oos, ObjectStreamClass streamClass) {
+
+    /**
+     * Constructs a new instance of EmulatedFieldsForDumping.
+     *
+     * @param streamClass
+     *            a ObjectStreamClass, which describe the fields to be emulated
+     *            (names, types, etc).
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.779 -0500", hash_original_method = "D64C2A148CFECC0338F81243CC161580", hash_generated_method = "D64C2A148CFECC0338F81243CC161580")
+    EmulatedFieldsForDumping(ObjectOutputStream oos, ObjectStreamClass streamClass) {
         this.oos = oos;
         this.emulatedFields = new EmulatedFields(streamClass.fields(), (ObjectStreamField[]) null);
-        // ---------- Original Method ----------
-        //this.oos = oos;
-        //this.emulatedFields = new EmulatedFields(streamClass.fields(), (ObjectStreamField[]) null);
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.697 -0400", hash_original_method = "F09D38B717E770EDAB76B08B81548137", hash_generated_method = "638B78CA19FA451F3F2600B64E82A664")
-     EmulatedFields emulatedFields() {
-EmulatedFields var18247BC109AF7C66D9FA0EEEECBE3638_1496459106 =         emulatedFields;
-        var18247BC109AF7C66D9FA0EEEECBE3638_1496459106.addTaint(taint);
-        return var18247BC109AF7C66D9FA0EEEECBE3638_1496459106;
-        // ---------- Original Method ----------
-        //return emulatedFields;
+    /**
+     * Return the actual EmulatedFields instance used by the receiver. We have
+     * the actual work in a separate class so that the code can be shared. The
+     * receiver has to be of a subclass of PutField.
+     *
+     * @return array of ObjectSlot the receiver represents.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.780 -0500", hash_original_method = "F09D38B717E770EDAB76B08B81548137", hash_generated_method = "F09D38B717E770EDAB76B08B81548137")
+    EmulatedFields emulatedFields() {
+        return emulatedFields;
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.697 -0400", hash_original_method = "BEEEBC5D4806AB4D59848CAB89CBF72F", hash_generated_method = "F1DE64433D8D9A5A7E81CCEB3E4B37A8")
+    /**
+     * Find and set the byte value of a given field named <code>name</code> in
+     * the receiver.
+     *
+     * @param name
+     *            A String, the name of the field to set
+     * @param value
+     *            New value for the field.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.781 -0500", hash_original_method = "BEEEBC5D4806AB4D59848CAB89CBF72F", hash_generated_method = "198A31971150A22083A9CA76595D1221")
     @Override
-    public void put(String name, byte value) {
-        addTaint(value);
-        addTaint(name.getTaint());
+public void put(String name, byte value) {
         emulatedFields.put(name, value);
-        // ---------- Original Method ----------
-        //emulatedFields.put(name, value);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.697 -0400", hash_original_method = "19C83E4EF6515D56E4873B39EA152436", hash_generated_method = "CF8E610656E622D166A8CC82F7B30165")
+    /**
+     * Find and set the char value of a given field named <code>name</code> in
+     * the receiver.
+     *
+     * @param name
+     *            A String, the name of the field to set
+     * @param value
+     *            New value for the field.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.782 -0500", hash_original_method = "19C83E4EF6515D56E4873B39EA152436", hash_generated_method = "D5D9B81CB4D09B5832746306331C8117")
     @Override
-    public void put(String name, char value) {
-        addTaint(value);
-        addTaint(name.getTaint());
+public void put(String name, char value) {
         emulatedFields.put(name, value);
-        // ---------- Original Method ----------
-        //emulatedFields.put(name, value);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.698 -0400", hash_original_method = "AC456BDE0EE43978AFAB7EF96C2FFCE8", hash_generated_method = "951ADE479111318DD0E02678F6E4C95B")
+    /**
+     * Find and set the double value of a given field named <code>name</code>
+     * in the receiver.
+     *
+     * @param name
+     *            A String, the name of the field to set
+     * @param value
+     *            New value for the field.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.783 -0500", hash_original_method = "AC456BDE0EE43978AFAB7EF96C2FFCE8", hash_generated_method = "71C955E2605880817A43E46E9C624B08")
     @Override
-    public void put(String name, double value) {
-        addTaint(value);
-        addTaint(name.getTaint());
+public void put(String name, double value) {
         emulatedFields.put(name, value);
-        // ---------- Original Method ----------
-        //emulatedFields.put(name, value);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.698 -0400", hash_original_method = "821340AFE72172F29B54D2C504849DA8", hash_generated_method = "19680EA42636E3D46362AFC801727BFA")
+    /**
+     * Find and set the float value of a given field named <code>name</code>
+     * in the receiver.
+     *
+     * @param name
+     *            A String, the name of the field to set
+     * @param value
+     *            New value for the field.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.784 -0500", hash_original_method = "821340AFE72172F29B54D2C504849DA8", hash_generated_method = "10E01ABCDA8BF240954901B8EE6E120F")
     @Override
-    public void put(String name, float value) {
-        addTaint(value);
-        addTaint(name.getTaint());
+public void put(String name, float value) {
         emulatedFields.put(name, value);
-        // ---------- Original Method ----------
-        //emulatedFields.put(name, value);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.699 -0400", hash_original_method = "63AD54FC39DDE8BE3BBE5131906AC91A", hash_generated_method = "12C86744459D68CD5AB591052AF540A2")
+    /**
+     * Find and set the int value of a given field named <code>name</code> in
+     * the receiver.
+     *
+     * @param name
+     *            A String, the name of the field to set
+     * @param value
+     *            New value for the field.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.785 -0500", hash_original_method = "63AD54FC39DDE8BE3BBE5131906AC91A", hash_generated_method = "8FEBD7F0FD6B5B81CFD174CB6858AB6D")
     @Override
-    public void put(String name, int value) {
-        addTaint(value);
-        addTaint(name.getTaint());
+public void put(String name, int value) {
         emulatedFields.put(name, value);
-        // ---------- Original Method ----------
-        //emulatedFields.put(name, value);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.699 -0400", hash_original_method = "7C91E467656A70134D915DC378A85E85", hash_generated_method = "EAD52746A21E7CA1B444C098DC2BAA16")
+    /**
+     * Find and set the long value of a given field named <code>name</code> in
+     * the receiver.
+     *
+     * @param name
+     *            A String, the name of the field to set
+     * @param value
+     *            New value for the field.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.786 -0500", hash_original_method = "7C91E467656A70134D915DC378A85E85", hash_generated_method = "97A13C6E13CC458A400E21741040D166")
     @Override
-    public void put(String name, long value) {
-        addTaint(value);
-        addTaint(name.getTaint());
+public void put(String name, long value) {
         emulatedFields.put(name, value);
-        // ---------- Original Method ----------
-        //emulatedFields.put(name, value);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.700 -0400", hash_original_method = "B27C87FCD55A2BEDEC6F0B351B72701B", hash_generated_method = "6E35C9EEF6F856A14AA699F561321723")
+    /**
+     * Find and set the Object value of a given field named <code>name</code>
+     * in the receiver.
+     *
+     * @param name
+     *            A String, the name of the field to set
+     * @param value
+     *            New value for the field.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.787 -0500", hash_original_method = "B27C87FCD55A2BEDEC6F0B351B72701B", hash_generated_method = "694EDD3C37321D8FD47F2FE108FF2D7A")
     @Override
-    public void put(String name, Object value) {
-        addTaint(value.getTaint());
-        addTaint(name.getTaint());
+public void put(String name, Object value) {
         emulatedFields.put(name, value);
-        // ---------- Original Method ----------
-        //emulatedFields.put(name, value);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.700 -0400", hash_original_method = "8872C66D19E491C8A24E1F3793E76CF5", hash_generated_method = "D2F16595EF3EDE5779A9F1794CA525C6")
+    /**
+     * Find and set the short value of a given field named <code>name</code>
+     * in the receiver.
+     *
+     * @param name
+     *            A String, the name of the field to set
+     * @param value
+     *            New value for the field.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.788 -0500", hash_original_method = "8872C66D19E491C8A24E1F3793E76CF5", hash_generated_method = "CD09FE4DC07B71735E833151673F9B1F")
     @Override
-    public void put(String name, short value) {
-        addTaint(value);
-        addTaint(name.getTaint());
+public void put(String name, short value) {
         emulatedFields.put(name, value);
-        // ---------- Original Method ----------
-        //emulatedFields.put(name, value);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.700 -0400", hash_original_method = "7776E04A4027209B01392EB6C3502FA8", hash_generated_method = "7734BF38B428D9DD24ECC34394932F72")
+    /**
+     * Find and set the boolean value of a given field named <code>name</code>
+     * in the receiver.
+     *
+     * @param name
+     *            A String, the name of the field to set
+     * @param value
+     *            New value for the field.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.789 -0500", hash_original_method = "7776E04A4027209B01392EB6C3502FA8", hash_generated_method = "E6D266A43FA0FAD230541ED94B8906A6")
     @Override
-    public void put(String name, boolean value) {
-        addTaint(value);
-        addTaint(name.getTaint());
+public void put(String name, boolean value) {
         emulatedFields.put(name, value);
-        // ---------- Original Method ----------
-        //emulatedFields.put(name, value);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.701 -0400", hash_original_method = "AB29CC034AE7D29F14B7C45BD47F3CB4", hash_generated_method = "E38BF5CF5574DEBDC7E1AE46D7B14EC4")
+    /**
+     * Write the field values to the specified ObjectOutput.
+     *
+     * @param output
+     *            the ObjectOutput
+     *
+     * @throws IOException
+     *             If an IO exception happened when writing the field values.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.790 -0500", hash_original_method = "AB29CC034AE7D29F14B7C45BD47F3CB4", hash_generated_method = "B59D1AD960FA4F98A51110DB906B3FDC")
     @Override
-    @Deprecated
-    public void write(ObjectOutput output) throws IOException {
-        addTaint(output.getTaint());
-        if(!output.equals(oos))        
-        {
-            IllegalArgumentException var64365E5CD43AE4284E59B03CF8788F85_1198577033 = new IllegalArgumentException("Attempting to write to a different stream than the one that created this PutField");
-            var64365E5CD43AE4284E59B03CF8788F85_1198577033.addTaint(taint);
-            throw var64365E5CD43AE4284E59B03CF8788F85_1198577033;
-        } //End block
-for(EmulatedFields.ObjectSlot slot : emulatedFields.slots())
-        {
+@Deprecated
+public void write(ObjectOutput output) throws IOException {
+        if (!output.equals(oos)) {
+            throw new IllegalArgumentException("Attempting to write to a different stream than the one that created this PutField");
+        }
+        for (EmulatedFields.ObjectSlot slot : emulatedFields.slots()) {
             Object fieldValue = slot.getFieldValue();
             Class<?> type = slot.getField().getType();
-            if(type == int.class)            
-            {
+            if (type == int.class) {
                 output.writeInt(fieldValue != null ? ((Integer) fieldValue).intValue() : 0);
-            } //End block
-            else
-            if(type == byte.class)            
-            {
+            } else if (type == byte.class) {
                 output.writeByte(fieldValue != null ? ((Byte) fieldValue).byteValue() : 0);
-            } //End block
-            else
-            if(type == char.class)            
-            {
+            } else if (type == char.class) {
                 output.writeChar(fieldValue != null ? ((Character) fieldValue).charValue() : 0);
-            } //End block
-            else
-            if(type == short.class)            
-            {
+            } else if (type == short.class) {
                 output.writeShort(fieldValue != null ? ((Short) fieldValue).shortValue() : 0);
-            } //End block
-            else
-            if(type == boolean.class)            
-            {
+            } else if (type == boolean.class) {
                 output.writeBoolean(fieldValue != null ? ((Boolean) fieldValue).booleanValue() : false);
-            } //End block
-            else
-            if(type == long.class)            
-            {
+            } else if (type == long.class) {
                 output.writeLong(fieldValue != null ? ((Long) fieldValue).longValue() : 0);
-            } //End block
-            else
-            if(type == float.class)            
-            {
+            } else if (type == float.class) {
                 output.writeFloat(fieldValue != null ? ((Float) fieldValue).floatValue() : 0);
-            } //End block
-            else
-            if(type == double.class)            
-            {
+            } else if (type == double.class) {
                 output.writeDouble(fieldValue != null ? ((Double) fieldValue).doubleValue() : 0);
-            } //End block
-            else
-            {
+            } else {
+                // Either array or Object
                 output.writeObject(fieldValue);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            }
+        }
     }
 
     

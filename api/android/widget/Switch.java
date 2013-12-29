@@ -27,116 +27,159 @@ import android.view.accessibility.AccessibilityEvent;
 import com.android.internal.R;
 
 public class Switch extends CompoundButton {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:54.949 -0400", hash_original_field = "E4F0AC5F69FC7254EF772878E84BE9AD", hash_generated_field = "723113CD58F6B081A7D304DE131200C0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.074 -0500", hash_original_field = "9979BC6E43385C8BFBFD00D12C1E2275", hash_generated_field = "6191CA7799994B85F015ACBC4A72ECF0")
+
+    private static final int TOUCH_MODE_IDLE = 0;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.075 -0500", hash_original_field = "CAE1E485CDFD3843F9F7D068150E8486", hash_generated_field = "C79D4D88CCB9B6DDFEBEEEBDDCAC18DF")
+
+    private static final int TOUCH_MODE_DOWN = 1;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.076 -0500", hash_original_field = "C5A0BD3FD42F1B08693B326BA30DF53B", hash_generated_field = "1C693615B4C4F2116D3600AD3C1B110A")
+
+    private static final int TOUCH_MODE_DRAGGING = 2;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.077 -0500", hash_original_field = "6E1FD7DF3E1622E164C31BB68A6FD043", hash_generated_field = "308BD7C2CCB94571F8E68E822492425A")
+
+    private static final int SANS = 1;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.078 -0500", hash_original_field = "75A0F9D31714322C507EC33A93FB0403", hash_generated_field = "AD8E248EA94D9FBB450731AC61EA4CF6")
+
+    private static final int SERIF = 2;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.079 -0500", hash_original_field = "C79FD66B7824EA0B8578C6118F1487E8", hash_generated_field = "1E362376CB7EB57CA2898CE49E4D3589")
+
+    private static final int MONOSPACE = 3;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.099 -0500", hash_original_field = "73791D998AED7A27216E6912B00269F9", hash_generated_field = "648B080756031EA789B9ECD9F36CC170")
+
+
+    private static final int[] CHECKED_STATE_SET = {
+        R.attr.state_checked
+    };
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.079 -0500", hash_original_field = "CC35B65C4DF6EB37FFE598AD0E85776D", hash_generated_field = "723113CD58F6B081A7D304DE131200C0")
+
 
     private Drawable mThumbDrawable;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:54.951 -0400", hash_original_field = "25A0A5DB31F18B827384634F1DF122D7", hash_generated_field = "95BC711301E78A9ECDB61E242B32BBFC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.080 -0500", hash_original_field = "A90D7BED756182929175B8B430BA5712", hash_generated_field = "95BC711301E78A9ECDB61E242B32BBFC")
 
     private Drawable mTrackDrawable;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:54.952 -0400", hash_original_field = "91295B4A817A1771EF09922E50C3AB68", hash_generated_field = "4B80EA12A43F45BEE4B8687EA4F9C608")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.081 -0500", hash_original_field = "26BAB6D7AA62A2DDC98C39FE36E7C453", hash_generated_field = "4B80EA12A43F45BEE4B8687EA4F9C608")
 
     private int mThumbTextPadding;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:54.953 -0400", hash_original_field = "CFECB00315B6D7645632F403D165CBE7", hash_generated_field = "FE47678E8002C05470AB092D10E768CB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.082 -0500", hash_original_field = "393DFB71294DF2FDFDF450C9F942BBBF", hash_generated_field = "FE47678E8002C05470AB092D10E768CB")
 
     private int mSwitchMinWidth;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:54.954 -0400", hash_original_field = "345EF348BB266FB89933C566AC1B956E", hash_generated_field = "1354B22A77511E7AAF53A6D1AC0EC646")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.083 -0500", hash_original_field = "185901082370909EBA41413FE037BCA3", hash_generated_field = "1354B22A77511E7AAF53A6D1AC0EC646")
 
     private int mSwitchPadding;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:54.957 -0400", hash_original_field = "B8D771293243D6B66B9BDFE3767FA658", hash_generated_field = "88910E09C0D7EF0865C6C6AF2A30F920")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.083 -0500", hash_original_field = "769F2C0D0F3768558E3E71BB28929F11", hash_generated_field = "88910E09C0D7EF0865C6C6AF2A30F920")
 
     private CharSequence mTextOn;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:54.958 -0400", hash_original_field = "F9730C00EAB435441597544B6A3333AB", hash_generated_field = "46E8A8BDEBA8D39F1C8B9DD255F9FFFF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.084 -0500", hash_original_field = "A802E7DF1BA0E3577A5B291A79D76CF7", hash_generated_field = "46E8A8BDEBA8D39F1C8B9DD255F9FFFF")
 
     private CharSequence mTextOff;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:54.958 -0400", hash_original_field = "3EE6E9DD4A34C3EFEC82F0840734559C", hash_generated_field = "05391D3E5A92F1F9C57B26577E93BB8A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.085 -0500", hash_original_field = "0166621EFA26326BDA100AD828233350", hash_generated_field = "05391D3E5A92F1F9C57B26577E93BB8A")
+
 
     private int mTouchMode;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:54.959 -0400", hash_original_field = "3DFFFAD10926598D18EEC50D61DE79CA", hash_generated_field = "3B323323DD6A6BF972666D993592C670")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.085 -0500", hash_original_field = "D11C33EFD56B37B918E01A200C446C59", hash_generated_field = "3B323323DD6A6BF972666D993592C670")
 
     private int mTouchSlop;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:54.960 -0400", hash_original_field = "1FC9B54FE13BA42BE9A522640C5C578A", hash_generated_field = "1F740CEDE27892C1CBBFA617E652A24D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.086 -0500", hash_original_field = "46A957BD7BF7976FC061904F86C4B7C3", hash_generated_field = "1F740CEDE27892C1CBBFA617E652A24D")
 
     private float mTouchX;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:54.960 -0400", hash_original_field = "A721014F64789DED6C16D445847F275C", hash_generated_field = "1AB3677D77377F6AD3BD836FBA85AC6A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.087 -0500", hash_original_field = "84E38DC58BB1878CECC280DD27F28A07", hash_generated_field = "1AB3677D77377F6AD3BD836FBA85AC6A")
 
     private float mTouchY;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:54.961 -0400", hash_original_field = "BCB120539C976E78B4F73FCF43A17970", hash_generated_field = "C838551A2063BBB11D3BCBAACD84F0C0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.088 -0500", hash_original_field = "6EF117646CB24AA11D98A55DD8C4939C", hash_generated_field = "C838551A2063BBB11D3BCBAACD84F0C0")
 
     private VelocityTracker mVelocityTracker = VelocityTracker.obtain();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:54.962 -0400", hash_original_field = "63BC75FF9D4C28774664B2BC28696494", hash_generated_field = "FF438FC8C4FA40788FE8D6220E7ED672")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.089 -0500", hash_original_field = "46F119E0C9C890082D25CDB1CBAA6A3C", hash_generated_field = "FF438FC8C4FA40788FE8D6220E7ED672")
 
     private int mMinFlingVelocity;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:54.962 -0400", hash_original_field = "A7354FE918DDCC244E18EBC77D2C6A00", hash_generated_field = "F988D54F9B1F33137D2E224F4C0D3687")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.089 -0500", hash_original_field = "C04626F5E88EAACF501FEF71DF86A502", hash_generated_field = "F988D54F9B1F33137D2E224F4C0D3687")
+
 
     private float mThumbPosition;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:54.963 -0400", hash_original_field = "D56199DB7070ACB740D49D9F49A30002", hash_generated_field = "E445BAA52D3DABA04B0C4E748520EC39")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.090 -0500", hash_original_field = "ADC31869EAFD9B237AE6DC2EB7E363E5", hash_generated_field = "E445BAA52D3DABA04B0C4E748520EC39")
 
     private int mSwitchWidth;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:54.964 -0400", hash_original_field = "70477094890ADB318F4521E237E82720", hash_generated_field = "616327EE38810A9DEF7A790FD1EC56B1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.091 -0500", hash_original_field = "41813E52E3EC85B3D53562B71DCFC876", hash_generated_field = "616327EE38810A9DEF7A790FD1EC56B1")
 
     private int mSwitchHeight;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:54.966 -0400", hash_original_field = "58CE2FBF0B2F97C67636FC1770749FEE", hash_generated_field = "C44690E186E83CD4E656AD8BCE481FD0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.091 -0500", hash_original_field = "701EB62324FA53C4D993BB518A36511B", hash_generated_field = "C44690E186E83CD4E656AD8BCE481FD0")
 
     private int mThumbWidth;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:54.967 -0400", hash_original_field = "AA89EC22221FA320B7BC48EFFE62FA70", hash_generated_field = "27A13FA81AC36C1C7B7A455273DF1B68")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.092 -0500", hash_original_field = "0CE159F0F431A6020F50CDE4F638B5A4", hash_generated_field = "27A13FA81AC36C1C7B7A455273DF1B68")
+
 
     private int mSwitchLeft;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:54.968 -0400", hash_original_field = "5B9EAF8DCE0E5BD9511802F62BA97361", hash_generated_field = "ECDF185842EB33043CD213F2E4D31DD2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.093 -0500", hash_original_field = "B8B2530C649DAD44D23C1920D9585B5F", hash_generated_field = "ECDF185842EB33043CD213F2E4D31DD2")
 
     private int mSwitchTop;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:54.969 -0400", hash_original_field = "E035EADCCFB85BC5E670D00CA8A5876A", hash_generated_field = "85F67C619595B345CB20C710FBCA2797")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.094 -0500", hash_original_field = "E2173665EA68A17A642C076A5FC954D0", hash_generated_field = "85F67C619595B345CB20C710FBCA2797")
 
     private int mSwitchRight;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:54.970 -0400", hash_original_field = "BCBFF68A061E95BA86FF4819D5D96263", hash_generated_field = "A803681FEBCE7BFB2E3081B27996D80A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.094 -0500", hash_original_field = "930BA55275CCB79E58E576673AFF81B9", hash_generated_field = "A803681FEBCE7BFB2E3081B27996D80A")
 
     private int mSwitchBottom;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:54.971 -0400", hash_original_field = "A623C6B7D6CD75F8A26EF2CAD7479AA5", hash_generated_field = "6AD5EFC1421B741B1A8F78A5B815BBFE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.095 -0500", hash_original_field = "0A19A1954ABA26FA39E555FE892A4ABD", hash_generated_field = "6AD5EFC1421B741B1A8F78A5B815BBFE")
+
 
     private TextPaint mTextPaint;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:54.972 -0400", hash_original_field = "9FDEA418DA756F2F03FAA0822A11BF8D", hash_generated_field = "06CA2F66604DADF822AA39C486035A89")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.096 -0500", hash_original_field = "436AA1E4B034214040D84D3E7144D335", hash_generated_field = "06CA2F66604DADF822AA39C486035A89")
 
     private ColorStateList mTextColors;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:54.973 -0400", hash_original_field = "2FBA6417BFDCC07E23F3D5085C2DE2EC", hash_generated_field = "F06715C8A97FAF124BA6D651D138C505")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.097 -0500", hash_original_field = "D838467D26B99EA6C8EB951B288D1F04", hash_generated_field = "F06715C8A97FAF124BA6D651D138C505")
 
     private Layout mOnLayout;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:54.974 -0400", hash_original_field = "84421618B0DA3758EAFEC426C34BEF92", hash_generated_field = "E0FE10CB210A6BEA4B76EAAF1CE29703")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.097 -0500", hash_original_field = "1E93F6EF98FCA151988DE07E57AF6C8F", hash_generated_field = "E0FE10CB210A6BEA4B76EAAF1CE29703")
 
     private Layout mOffLayout;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:54.975 -0400", hash_original_field = "DF43B278CEE8933271AB3D9F9E312F86", hash_generated_field = "AEB9EF736E47F0CD4747F7C2B6703936")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.098 -0500", hash_original_field = "1732EB32F2D77CCA26590AEEA670A175", hash_generated_field = "AEB9EF736E47F0CD4747F7C2B6703936")
 
-    @SuppressWarnings("hiding") private final Rect mTempRect = new Rect();
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:54.977 -0400", hash_original_method = "A519C4334A107DCE43F6A6D72AE8F654", hash_generated_method = "5C7F1BD13C94F692EF65C9AB4BE954F3")
-    public  Switch(Context context) {
+
+    @SuppressWarnings("hiding")
+    private final Rect mTempRect = new Rect();
+
+    /**
+     * Construct a new Switch with default styling.
+     *
+     * @param context The Context that will determine this widget's theming.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.100 -0500", hash_original_method = "A519C4334A107DCE43F6A6D72AE8F654", hash_generated_method = "C17E9A35FEB240A0BF8BBDE9F07315B8")
+    public Switch(Context context) {
         this(context, null);
-        addTaint(context.getTaint());
-        // ---------- Original Method ----------
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:54.981 -0400", hash_original_method = "0FB069D8C375377E937B40F8D8C213ED", hash_generated_method = "F49ABE52E58F4D1E621DE50EAAB7078B")
-    public  Switch(Context context, AttributeSet attrs) {
+    /**
+     * Construct a new Switch with default styling, overriding specific style
+     * attributes as requested.
+     *
+     * @param context The Context that will determine this widget's theming.
+     * @param attrs Specification of attributes that should deviate from default styling.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.101 -0500", hash_original_method = "0FB069D8C375377E937B40F8D8C213ED", hash_generated_method = "BAC494EA4140FA064A4C6448498E2454")
+    public Switch(Context context, AttributeSet attrs) {
         this(context, attrs, com.android.internal.R.attr.switchStyle);
-        addTaint(attrs.getTaint());
-        addTaint(context.getTaint());
-        // ---------- Original Method ----------
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.001 -0400", hash_original_method = "7052304410F6ACDD18F00D1DE979132C", hash_generated_method = "881A214A64681322518769C468F5AC13")
-    public  Switch(Context context, AttributeSet attrs, int defStyle) {
+    /**
+     * Construct a new Switch with a default style determined by the given theme attribute,
+     * overriding specific style attributes as requested.
+     *
+     * @param context The Context that will determine this widget's theming.
+     * @param attrs Specification of attributes that should deviate from the default styling.
+     * @param defStyle An attribute ID within the active theme containing a reference to the
+     *                 default style for this widget. e.g. android.R.attr.switchStyle.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.103 -0500", hash_original_method = "7052304410F6ACDD18F00D1DE979132C", hash_generated_method = "BB80C96EAFAACFABC6CADBC976E9EB8F")
+    public Switch(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-        addTaint(defStyle);
-        addTaint(attrs.getTaint());
-        addTaint(context.getTaint());
+
         mTextPaint = new TextPaint(Paint.ANTI_ALIAS_FLAG);
         Resources res = getResources();
         mTextPaint.density = res.getDisplayMetrics().density;
         mTextPaint.setCompatibilityScaling(res.getCompatibilityInfo().applicationScale);
+
         TypedArray a = context.obtainStyledAttributes(attrs,
                 com.android.internal.R.styleable.Switch, defStyle, 0);
+
         mThumbDrawable = a.getDrawable(com.android.internal.R.styleable.Switch_thumb);
         mTrackDrawable = a.getDrawable(com.android.internal.R.styleable.Switch_track);
         mTextOn = a.getText(com.android.internal.R.styleable.Switch_textOn);
@@ -147,745 +190,534 @@ public class Switch extends CompoundButton {
                 com.android.internal.R.styleable.Switch_switchMinWidth, 0);
         mSwitchPadding = a.getDimensionPixelSize(
                 com.android.internal.R.styleable.Switch_switchPadding, 0);
+
         int appearance = a.getResourceId(
                 com.android.internal.R.styleable.Switch_switchTextAppearance, 0);
-        if(appearance != 0)        
-        {
+        if (appearance != 0) {
             setSwitchTextAppearance(context, appearance);
-        } //End block
+        }
         a.recycle();
+
         ViewConfiguration config = ViewConfiguration.get(context);
         mTouchSlop = config.getScaledTouchSlop();
         mMinFlingVelocity = config.getScaledMinimumFlingVelocity();
+
+        // Refresh display with current params
         refreshDrawableState();
         setChecked(isChecked());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.017 -0400", hash_original_method = "D688751389B30165717277DD9DF1E478", hash_generated_method = "DFB35D25EB7B121FADC488F32CDE61EE")
+    /**
+     * Sets the switch text color, size, style, hint color, and highlight color
+     * from the specified TextAppearance resource.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.104 -0500", hash_original_method = "D688751389B30165717277DD9DF1E478", hash_generated_method = "73E1EB1B05696ABE6E61B4459E7367C0")
     public void setSwitchTextAppearance(Context context, int resid) {
-        addTaint(resid);
-        addTaint(context.getTaint());
-        TypedArray appearance = context.obtainStyledAttributes(resid,
+        TypedArray appearance =
+                context.obtainStyledAttributes(resid,
                         com.android.internal.R.styleable.TextAppearance);
+
         ColorStateList colors;
         int ts;
+
         colors = appearance.getColorStateList(com.android.internal.R.styleable.
                 TextAppearance_textColor);
-        if(colors != null)        
-        {
+        if (colors != null) {
             mTextColors = colors;
-        } //End block
-        else
-        {
+        } else {
+            // If no color set in TextAppearance, default to the view's textColor
             mTextColors = getTextColors();
-        } //End block
+        }
+
         ts = appearance.getDimensionPixelSize(com.android.internal.R.styleable.
                 TextAppearance_textSize, 0);
-        if(ts != 0)        
-        {
-            if(ts != mTextPaint.getTextSize())            
-            {
+        if (ts != 0) {
+            if (ts != mTextPaint.getTextSize()) {
                 mTextPaint.setTextSize(ts);
                 requestLayout();
-            } //End block
-        } //End block
-        int typefaceIndex;
-        int styleIndex;
+            }
+        }
+
+        int typefaceIndex, styleIndex;
+
         typefaceIndex = appearance.getInt(com.android.internal.R.styleable.
                 TextAppearance_typeface, -1);
         styleIndex = appearance.getInt(com.android.internal.R.styleable.
                 TextAppearance_textStyle, -1);
+
         setSwitchTypefaceByIndex(typefaceIndex, styleIndex);
+
         appearance.recycle();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.025 -0400", hash_original_method = "667B994D675EC27CF64612287AF7A922", hash_generated_method = "1D8E63C4B68720CCFB3037715CE9C326")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.104 -0500", hash_original_method = "667B994D675EC27CF64612287AF7A922", hash_generated_method = "9F214B4B0CA568C5CDAFDE925F51AD5A")
     private void setSwitchTypefaceByIndex(int typefaceIndex, int styleIndex) {
-        addTaint(styleIndex);
-        addTaint(typefaceIndex);
         Typeface tf = null;
-switch(typefaceIndex){
-        case SANS:
-        tf = Typeface.SANS_SERIF;
-        break;
-        case SERIF:
-        tf = Typeface.SERIF;
-        break;
-        case MONOSPACE:
-        tf = Typeface.MONOSPACE;
-        break;
-}        setSwitchTypeface(tf, styleIndex);
-        // ---------- Original Method ----------
-        //Typeface tf = null;
-        //switch (typefaceIndex) {
-            //case SANS:
-                //tf = Typeface.SANS_SERIF;
-                //break;
-            //case SERIF:
-                //tf = Typeface.SERIF;
-                //break;
-            //case MONOSPACE:
-                //tf = Typeface.MONOSPACE;
-                //break;
-        //}
-        //setSwitchTypeface(tf, styleIndex);
+        switch (typefaceIndex) {
+            case SANS:
+                tf = Typeface.SANS_SERIF;
+                break;
+
+            case SERIF:
+                tf = Typeface.SERIF;
+                break;
+
+            case MONOSPACE:
+                tf = Typeface.MONOSPACE;
+                break;
+        }
+
+        setSwitchTypeface(tf, styleIndex);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.032 -0400", hash_original_method = "C023070590A87D2CA3EA267526ED6F0D", hash_generated_method = "E6DA1F171F64558C344DDAFB9DB7EE06")
+    /**
+     * Sets the typeface and style in which the text should be displayed on the
+     * switch, and turns on the fake bold and italic bits in the Paint if the
+     * Typeface that you provided does not have all the bits in the
+     * style that you specified.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.105 -0500", hash_original_method = "C023070590A87D2CA3EA267526ED6F0D", hash_generated_method = "F82FC8B41E25F3BB3EF7EE112D71DCB5")
     public void setSwitchTypeface(Typeface tf, int style) {
-        addTaint(style);
-        addTaint(tf.getTaint());
-        if(style > 0)        
-        {
-            if(tf == null)            
-            {
+        if (style > 0) {
+            if (tf == null) {
                 tf = Typeface.defaultFromStyle(style);
-            } //End block
-            else
-            {
+            } else {
                 tf = Typeface.create(tf, style);
-            } //End block
+            }
+
             setSwitchTypeface(tf);
+            // now compute what (if any) algorithmic styling is needed
             int typefaceStyle = tf != null ? tf.getStyle() : 0;
             int need = style & ~typefaceStyle;
             mTextPaint.setFakeBoldText((need & Typeface.BOLD) != 0);
             mTextPaint.setTextSkewX((need & Typeface.ITALIC) != 0 ? -0.25f : 0);
-        } //End block
-        else
-        {
+        } else {
             mTextPaint.setFakeBoldText(false);
             mTextPaint.setTextSkewX(0);
             setSwitchTypeface(tf);
-        } //End block
-        // ---------- Original Method ----------
-        //if (style > 0) {
-            //if (tf == null) {
-                //tf = Typeface.defaultFromStyle(style);
-            //} else {
-                //tf = Typeface.create(tf, style);
-            //}
-            //setSwitchTypeface(tf);
-            //int typefaceStyle = tf != null ? tf.getStyle() : 0;
-            //int need = style & ~typefaceStyle;
-            //mTextPaint.setFakeBoldText((need & Typeface.BOLD) != 0);
-            //mTextPaint.setTextSkewX((need & Typeface.ITALIC) != 0 ? -0.25f : 0);
-        //} else {
-            //mTextPaint.setFakeBoldText(false);
-            //mTextPaint.setTextSkewX(0);
-            //setSwitchTypeface(tf);
-        //}
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.039 -0400", hash_original_method = "543DA1ECFCDDAA3B3698B41BEC9D49BA", hash_generated_method = "13D266621D0F0AC3E13B5F11A90F1CE5")
+    /**
+     * Sets the typeface in which the text should be displayed on the switch.
+     * Note that not all Typeface families actually have bold and italic
+     * variants, so you may need to use
+     * {@link #setSwitchTypeface(Typeface, int)} to get the appearance
+     * that you actually want.
+     *
+     * @attr ref android.R.styleable#TextView_typeface
+     * @attr ref android.R.styleable#TextView_textStyle
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.106 -0500", hash_original_method = "543DA1ECFCDDAA3B3698B41BEC9D49BA", hash_generated_method = "0BCBDD8F56261AD4228B03AE6ADEBAA3")
     public void setSwitchTypeface(Typeface tf) {
-        addTaint(tf.getTaint());
-        if(mTextPaint.getTypeface() != tf)        
-        {
+        if (mTextPaint.getTypeface() != tf) {
             mTextPaint.setTypeface(tf);
+
             requestLayout();
             invalidate();
-        } //End block
-        // ---------- Original Method ----------
-        //if (mTextPaint.getTypeface() != tf) {
-            //mTextPaint.setTypeface(tf);
-            //requestLayout();
-            //invalidate();
-        //}
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.043 -0400", hash_original_method = "5C0E5388314CF71485B1BF56327EECD2", hash_generated_method = "AB3D12136ED64ED9544FAA90CCE4DAED")
+    /**
+     * Returns the text displayed when the button is in the checked state.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.107 -0500", hash_original_method = "5C0E5388314CF71485B1BF56327EECD2", hash_generated_method = "88C8DD18DC57878BA442223FAB42DEBF")
     public CharSequence getTextOn() {
-CharSequence varB717BC0D87EF7CA63EF5B2DADD0E238D_1391447410 =         mTextOn;
-        varB717BC0D87EF7CA63EF5B2DADD0E238D_1391447410.addTaint(taint);
-        return varB717BC0D87EF7CA63EF5B2DADD0E238D_1391447410;
-        // ---------- Original Method ----------
-        //return mTextOn;
+        return mTextOn;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.047 -0400", hash_original_method = "6FFD0F84C29886200B9EFC80768CA614", hash_generated_method = "724A867E451862DC0A3CA1C1D8C6919B")
+    /**
+     * Sets the text displayed when the button is in the checked state.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.107 -0500", hash_original_method = "6FFD0F84C29886200B9EFC80768CA614", hash_generated_method = "0E59F8A48AC69773E5613365EA431CC7")
     public void setTextOn(CharSequence textOn) {
         mTextOn = textOn;
         requestLayout();
-        // ---------- Original Method ----------
-        //mTextOn = textOn;
-        //requestLayout();
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.049 -0400", hash_original_method = "EAEA80D56F502C97F845DE2B9DA853EF", hash_generated_method = "5F922F1D34ECA5A2EA0D6268196B6D5D")
+    /**
+     * Returns the text displayed when the button is not in the checked state.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.108 -0500", hash_original_method = "EAEA80D56F502C97F845DE2B9DA853EF", hash_generated_method = "849DDC2D49CECB6A57382D582199C99E")
     public CharSequence getTextOff() {
-CharSequence varAB991E92B38590F8C1DAE21519779556_265359710 =         mTextOff;
-        varAB991E92B38590F8C1DAE21519779556_265359710.addTaint(taint);
-        return varAB991E92B38590F8C1DAE21519779556_265359710;
-        // ---------- Original Method ----------
-        //return mTextOff;
+        return mTextOff;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.053 -0400", hash_original_method = "D6EC5A221EB0AF6C7F25B9FE392EF4CC", hash_generated_method = "F5AAA7F178CC8D6FF87FECD348C53768")
+    /**
+     * Sets the text displayed when the button is not in the checked state.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.109 -0500", hash_original_method = "D6EC5A221EB0AF6C7F25B9FE392EF4CC", hash_generated_method = "EC8B2C2D1C97FDE143246B6B3B9CBFCE")
     public void setTextOff(CharSequence textOff) {
         mTextOff = textOff;
         requestLayout();
-        // ---------- Original Method ----------
-        //mTextOff = textOff;
-        //requestLayout();
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.067 -0400", hash_original_method = "13BAC45BF6F94061A5C888CE492B7F47", hash_generated_method = "AF4B286D739706D551E591E4CD660C42")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.110 -0500", hash_original_method = "13BAC45BF6F94061A5C888CE492B7F47", hash_generated_method = "55F7AE5B882AE333AA81371DAE3A442B")
     @Override
-    public void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(heightMeasureSpec);
-        addTaint(widthMeasureSpec);
+public void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         final int widthMode = MeasureSpec.getMode(widthMeasureSpec);
         final int heightMode = MeasureSpec.getMode(heightMeasureSpec);
         int widthSize = MeasureSpec.getSize(widthMeasureSpec);
         int heightSize = MeasureSpec.getSize(heightMeasureSpec);
-        if(mOnLayout == null)        
-        {
+
+
+        if (mOnLayout == null) {
             mOnLayout = makeLayout(mTextOn);
-        } //End block
-        if(mOffLayout == null)        
-        {
+        }
+        if (mOffLayout == null) {
             mOffLayout = makeLayout(mTextOff);
-        } //End block
+        }
+
         mTrackDrawable.getPadding(mTempRect);
         final int maxTextWidth = Math.max(mOnLayout.getWidth(), mOffLayout.getWidth());
         final int switchWidth = Math.max(mSwitchMinWidth,
                 maxTextWidth * 2 + mThumbTextPadding * 4 + mTempRect.left + mTempRect.right);
         final int switchHeight = mTrackDrawable.getIntrinsicHeight();
+
         mThumbWidth = maxTextWidth + mThumbTextPadding * 2;
-switch(widthMode){
-        case MeasureSpec.AT_MOST:
-        widthSize = Math.min(widthSize, switchWidth);
-        break;
-        case MeasureSpec.UNSPECIFIED:
-        widthSize = switchWidth;
-        break;
-        case MeasureSpec.EXACTLY:
-        break;
-}switch(heightMode){
-        case MeasureSpec.AT_MOST:
-        heightSize = Math.min(heightSize, switchHeight);
-        break;
-        case MeasureSpec.UNSPECIFIED:
-        heightSize = switchHeight;
-        break;
-        case MeasureSpec.EXACTLY:
-        break;
-}        mSwitchWidth = switchWidth;
+
+        switch (widthMode) {
+            case MeasureSpec.AT_MOST:
+                widthSize = Math.min(widthSize, switchWidth);
+                break;
+
+            case MeasureSpec.UNSPECIFIED:
+                widthSize = switchWidth;
+                break;
+
+            case MeasureSpec.EXACTLY:
+                // Just use what we were given
+                break;
+        }
+
+        switch (heightMode) {
+            case MeasureSpec.AT_MOST:
+                heightSize = Math.min(heightSize, switchHeight);
+                break;
+
+            case MeasureSpec.UNSPECIFIED:
+                heightSize = switchHeight;
+                break;
+
+            case MeasureSpec.EXACTLY:
+                // Just use what we were given
+                break;
+        }
+
+        mSwitchWidth = switchWidth;
         mSwitchHeight = switchHeight;
+
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         final int measuredHeight = getMeasuredHeight();
-        if(measuredHeight < switchHeight)        
-        {
+        if (measuredHeight < switchHeight) {
             setMeasuredDimension(getMeasuredWidthAndState(), switchHeight);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.074 -0400", hash_original_method = "48254B36708A3254CD52161026ABD6F4", hash_generated_method = "CF993C9605D0B73F7C11BE7AA3A5D8F7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.111 -0500", hash_original_method = "48254B36708A3254CD52161026ABD6F4", hash_generated_method = "68F9235CF4829EF977755A61FC2CDF9F")
     @Override
-    public void onPopulateAccessibilityEvent(AccessibilityEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(event.getTaint());
+public void onPopulateAccessibilityEvent(AccessibilityEvent event) {
         super.onPopulateAccessibilityEvent(event);
-        if(isChecked())        
-        {
+        if (isChecked()) {
             CharSequence text = mOnLayout.getText();
-            if(TextUtils.isEmpty(text))            
-            {
+            if (TextUtils.isEmpty(text)) {
                 text = mContext.getString(R.string.switch_on);
-            } //End block
+            }
             event.getText().add(text);
-        } //End block
-        else
-        {
+        } else {
             CharSequence text = mOffLayout.getText();
-            if(TextUtils.isEmpty(text))            
-            {
+            if (TextUtils.isEmpty(text)) {
                 text = mContext.getString(R.string.switch_off);
-            } //End block
+            }
             event.getText().add(text);
-        } //End block
-        // ---------- Original Method ----------
-        //super.onPopulateAccessibilityEvent(event);
-        //if (isChecked()) {
-            //CharSequence text = mOnLayout.getText();
-            //if (TextUtils.isEmpty(text)) {
-                //text = mContext.getString(R.string.switch_on);
-            //}
-            //event.getText().add(text);
-        //} else {
-            //CharSequence text = mOffLayout.getText();
-            //if (TextUtils.isEmpty(text)) {
-                //text = mContext.getString(R.string.switch_off);
-            //}
-            //event.getText().add(text);
-        //}
+        }
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.081 -0400", hash_original_method = "D1466C388B2346E8DF10ED51CFBEA0FC", hash_generated_method = "8BDBCB278E968AD92C94012D307DBD5C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.112 -0500", hash_original_method = "D1466C388B2346E8DF10ED51CFBEA0FC", hash_generated_method = "D8C92525C7A7973F0C0D40F73B8E8C07")
     private Layout makeLayout(CharSequence text) {
-        addTaint(text.getTaint());
-Layout varCE2BB04DC870A298373702A783739055_1467233509 =         new StaticLayout(text, mTextPaint,
+        return new StaticLayout(text, mTextPaint,
                 (int) Math.ceil(Layout.getDesiredWidth(text, mTextPaint)),
                 Layout.Alignment.ALIGN_NORMAL, 1.f, 0, true);
-        varCE2BB04DC870A298373702A783739055_1467233509.addTaint(taint);
-        return varCE2BB04DC870A298373702A783739055_1467233509;
-        // ---------- Original Method ----------
-        //return new StaticLayout(text, mTextPaint,
-                //(int) Math.ceil(Layout.getDesiredWidth(text, mTextPaint)),
-                //Layout.Alignment.ALIGN_NORMAL, 1.f, 0, true);
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.087 -0400", hash_original_method = "EC82A35D1017AC4F050030BE5A651660", hash_generated_method = "62058B30834EDA7458AB741634836C71")
+    /**
+     * @return true if (x, y) is within the target area of the switch thumb
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.113 -0500", hash_original_method = "EC82A35D1017AC4F050030BE5A651660", hash_generated_method = "4C603F1D40FEECCAC0350BF15A939038")
     private boolean hitThumb(float x, float y) {
-        addTaint(y);
-        addTaint(x);
         mThumbDrawable.getPadding(mTempRect);
         final int thumbTop = mSwitchTop - mTouchSlop;
         final int thumbLeft = mSwitchLeft + (int) (mThumbPosition + 0.5f) - mTouchSlop;
         final int thumbRight = thumbLeft + mThumbWidth +
                 mTempRect.left + mTempRect.right + mTouchSlop;
         final int thumbBottom = mSwitchBottom + mTouchSlop;
-        boolean var0A5C96D66420474133AD5290BB8D03D1_1966050557 = (x > thumbLeft && x < thumbRight && y > thumbTop && y < thumbBottom);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1725811797 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1725811797;
-        // ---------- Original Method ----------
-        //mThumbDrawable.getPadding(mTempRect);
-        //final int thumbTop = mSwitchTop - mTouchSlop;
-        //final int thumbLeft = mSwitchLeft + (int) (mThumbPosition + 0.5f) - mTouchSlop;
-        //final int thumbRight = thumbLeft + mThumbWidth +
-                //mTempRect.left + mTempRect.right + mTouchSlop;
-        //final int thumbBottom = mSwitchBottom + mTouchSlop;
-        //return x > thumbLeft && x < thumbRight && y > thumbTop && y < thumbBottom;
+        return x > thumbLeft && x < thumbRight && y > thumbTop && y < thumbBottom;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.111 -0400", hash_original_method = "BEA9271A473068780C9D1CF1D0CB8717", hash_generated_method = "F3FAAD9610488232DEAF30E3B93499B2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.114 -0500", hash_original_method = "BEA9271A473068780C9D1CF1D0CB8717", hash_generated_method = "3803E2F449F9B58446BF4B2A0AAA0821")
     @Override
-    public boolean onTouchEvent(MotionEvent ev) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(ev.getTaint());
+public boolean onTouchEvent(MotionEvent ev) {
         mVelocityTracker.addMovement(ev);
         final int action = ev.getActionMasked();
-switch(action){
-        case MotionEvent.ACTION_DOWN:
-        {
-            final float x = ev.getX();
-            final float y = ev.getY();
-            if(isEnabled() && hitThumb(x, y))            
-            {
-                mTouchMode = TOUCH_MODE_DOWN;
-                mTouchX = x;
-                mTouchY = y;
-            } //End block
-            break;
-        } //End block
-        case MotionEvent.ACTION_MOVE:
-        {
-switch(mTouchMode){
-            case TOUCH_MODE_IDLE:
-            break;
-            case TOUCH_MODE_DOWN:
-            {
+        switch (action) {
+            case MotionEvent.ACTION_DOWN: {
                 final float x = ev.getX();
                 final float y = ev.getY();
-                if(Math.abs(x - mTouchX) > mTouchSlop ||
-                                Math.abs(y - mTouchY) > mTouchSlop)                
-                {
-                    mTouchMode = TOUCH_MODE_DRAGGING;
-                    getParent().requestDisallowInterceptTouchEvent(true);
+                if (isEnabled() && hitThumb(x, y)) {
+                    mTouchMode = TOUCH_MODE_DOWN;
                     mTouchX = x;
                     mTouchY = y;
-                    boolean varB326B5062B2F0E69046810717534CB09_1636248826 = (true);
-                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2139358551 = getTaintBoolean();
-                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_2139358551;
-                } //End block
+                }
                 break;
-            } //End block
-            case TOUCH_MODE_DRAGGING:
-            {
-                final float x = ev.getX();
-                final float dx = x - mTouchX;
-                float newPos = Math.max(0,
+            }
+
+            case MotionEvent.ACTION_MOVE: {
+                switch (mTouchMode) {
+                    case TOUCH_MODE_IDLE:
+                        // Didn't target the thumb, treat normally.
+                        break;
+
+                    case TOUCH_MODE_DOWN: {
+                        final float x = ev.getX();
+                        final float y = ev.getY();
+                        if (Math.abs(x - mTouchX) > mTouchSlop ||
+                                Math.abs(y - mTouchY) > mTouchSlop) {
+                            mTouchMode = TOUCH_MODE_DRAGGING;
+                            getParent().requestDisallowInterceptTouchEvent(true);
+                            mTouchX = x;
+                            mTouchY = y;
+                            return true;
+                        }
+                        break;
+                    }
+
+                    case TOUCH_MODE_DRAGGING: {
+                        final float x = ev.getX();
+                        final float dx = x - mTouchX;
+                        float newPos = Math.max(0,
                                 Math.min(mThumbPosition + dx, getThumbScrollRange()));
-                if(newPos != mThumbPosition)                
-                {
-                    mThumbPosition = newPos;
-                    mTouchX = x;
-                    invalidate();
-                } //End block
-                boolean varB326B5062B2F0E69046810717534CB09_339922961 = (true);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_598077044 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_598077044;
-            } //End block
-}            break;
-        } //End block
-        case MotionEvent.ACTION_UP:
-        case MotionEvent.ACTION_CANCEL:
-        {
-            if(mTouchMode == TOUCH_MODE_DRAGGING)            
-            {
-                stopDrag(ev);
-                boolean varB326B5062B2F0E69046810717534CB09_313564702 = (true);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_692909028 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_692909028;
-            } //End block
-            mTouchMode = TOUCH_MODE_IDLE;
-            mVelocityTracker.clear();
-            break;
-        } //End block
-}        boolean varAD999E87828E920C1F4F0D963C1B2C2B_2138165829 = (super.onTouchEvent(ev));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_235812553 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_235812553;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                        if (newPos != mThumbPosition) {
+                            mThumbPosition = newPos;
+                            mTouchX = x;
+                            invalidate();
+                        }
+                        return true;
+                    }
+                }
+                break;
+            }
+
+            case MotionEvent.ACTION_UP:
+            case MotionEvent.ACTION_CANCEL: {
+                if (mTouchMode == TOUCH_MODE_DRAGGING) {
+                    stopDrag(ev);
+                    return true;
+                }
+                mTouchMode = TOUCH_MODE_IDLE;
+                mVelocityTracker.clear();
+                break;
+            }
+        }
+
+        return super.onTouchEvent(ev);
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.119 -0400", hash_original_method = "C7212DC872D0065CD5A602E451EED0FD", hash_generated_method = "DD077BD3408653B31F15AB21E046C86E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.116 -0500", hash_original_method = "C7212DC872D0065CD5A602E451EED0FD", hash_generated_method = "02B79B21F5F37A4E69C03FB3C48585BB")
     private void cancelSuperTouch(MotionEvent ev) {
-        addTaint(ev.getTaint());
         MotionEvent cancel = MotionEvent.obtain(ev);
         cancel.setAction(MotionEvent.ACTION_CANCEL);
         super.onTouchEvent(cancel);
         cancel.recycle();
-        // ---------- Original Method ----------
-        //MotionEvent cancel = MotionEvent.obtain(ev);
-        //cancel.setAction(MotionEvent.ACTION_CANCEL);
-        //super.onTouchEvent(cancel);
-        //cancel.recycle();
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.125 -0400", hash_original_method = "6053E208B701C67F21F78DB5D1D6AC6A", hash_generated_method = "6B1FAB84EED998D56FABF620F9EAC7A6")
+    /**
+     * Called from onTouchEvent to end a drag operation.
+     *
+     * @param ev Event that triggered the end of drag mode - ACTION_UP or ACTION_CANCEL
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.116 -0500", hash_original_method = "6053E208B701C67F21F78DB5D1D6AC6A", hash_generated_method = "491F5DDF5DBDD960B484D5DC883459C0")
     private void stopDrag(MotionEvent ev) {
-        addTaint(ev.getTaint());
         mTouchMode = TOUCH_MODE_IDLE;
+        // Up and not canceled, also checks the switch has not been disabled during the drag
         boolean commitChange = ev.getAction() == MotionEvent.ACTION_UP && isEnabled();
+
         cancelSuperTouch(ev);
-        if(commitChange)        
-        {
+
+        if (commitChange) {
             boolean newState;
             mVelocityTracker.computeCurrentVelocity(1000);
             float xvel = mVelocityTracker.getXVelocity();
-            if(Math.abs(xvel) > mMinFlingVelocity)            
-            {
+            if (Math.abs(xvel) > mMinFlingVelocity) {
                 newState = xvel > 0;
-            } //End block
-            else
-            {
+            } else {
                 newState = getTargetCheckedState();
-            } //End block
+            }
             animateThumbToCheckedState(newState);
-        } //End block
-        else
-        {
+        } else {
             animateThumbToCheckedState(isChecked());
-        } //End block
-        // ---------- Original Method ----------
-        //mTouchMode = TOUCH_MODE_IDLE;
-        //boolean commitChange = ev.getAction() == MotionEvent.ACTION_UP && isEnabled();
-        //cancelSuperTouch(ev);
-        //if (commitChange) {
-            //boolean newState;
-            //mVelocityTracker.computeCurrentVelocity(1000);
-            //float xvel = mVelocityTracker.getXVelocity();
-            //if (Math.abs(xvel) > mMinFlingVelocity) {
-                //newState = xvel > 0;
-            //} else {
-                //newState = getTargetCheckedState();
-            //}
-            //animateThumbToCheckedState(newState);
-        //} else {
-            //animateThumbToCheckedState(isChecked());
-        //}
+        }
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.129 -0400", hash_original_method = "7C8C019C9C57DB27BCCABCAFF8863202", hash_generated_method = "E38135EBCD5AF7DA5497464F4436EA86")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.117 -0500", hash_original_method = "7C8C019C9C57DB27BCCABCAFF8863202", hash_generated_method = "41F5DD15070328B26087D46F930E061F")
     private void animateThumbToCheckedState(boolean newCheckedState) {
-        addTaint(newCheckedState);
+        // TODO animate!
+        //float targetPos = newCheckedState ? 0 : getThumbScrollRange();
+        //mThumbPosition = targetPos;
         setChecked(newCheckedState);
-        // ---------- Original Method ----------
-        //setChecked(newCheckedState);
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.132 -0400", hash_original_method = "49A1E38FB4C1D1775597A6823232C034", hash_generated_method = "29786727837E90BF4DA845D45990E7C1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.118 -0500", hash_original_method = "49A1E38FB4C1D1775597A6823232C034", hash_generated_method = "73086EA9F7B46B40F8A783B0BCA4CE2C")
     private boolean getTargetCheckedState() {
-        boolean var5AA6B655859B5EFB82782A0372A6FE1D_272103324 = (mThumbPosition >= getThumbScrollRange() / 2);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_894777624 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_894777624;
-        // ---------- Original Method ----------
-        //return mThumbPosition >= getThumbScrollRange() / 2;
+        return mThumbPosition >= getThumbScrollRange() / 2;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.142 -0400", hash_original_method = "523B4C6A0F0C2AD264BC263A9EEF64F2", hash_generated_method = "57E9296DAAE1C6587AFD72472D55FCDC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.119 -0500", hash_original_method = "523B4C6A0F0C2AD264BC263A9EEF64F2", hash_generated_method = "FDD4E576576EBC4CBE518A8A70E671CF")
     @Override
-    public void setChecked(boolean checked) {
+public void setChecked(boolean checked) {
         super.setChecked(checked);
         mThumbPosition = checked ? getThumbScrollRange() : 0;
         invalidate();
-        // ---------- Original Method ----------
-        //super.setChecked(checked);
-        //mThumbPosition = checked ? getThumbScrollRange() : 0;
-        //invalidate();
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.157 -0400", hash_original_method = "12EE2ABDB63D99AE62C7AA4AFB810394", hash_generated_method = "EE163C12D80A7BF8752798E65D5032DF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.120 -0500", hash_original_method = "12EE2ABDB63D99AE62C7AA4AFB810394", hash_generated_method = "350F8AF9AC647B5688F91A168CFB8CC4")
     @Override
-    protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(bottom);
-        addTaint(right);
-        addTaint(top);
-        addTaint(left);
-        addTaint(changed);
+protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
         super.onLayout(changed, left, top, right, bottom);
+
         mThumbPosition = isChecked() ? getThumbScrollRange() : 0;
+
         int switchRight = getWidth() - getPaddingRight();
         int switchLeft = switchRight - mSwitchWidth;
         int switchTop = 0;
         int switchBottom = 0;
-switch(getGravity() & Gravity.VERTICAL_GRAVITY_MASK){
-        default:
-        case Gravity.TOP:
-        switchTop = getPaddingTop();
-        switchBottom = switchTop + mSwitchHeight;
-        break;
-        case Gravity.CENTER_VERTICAL:
-        switchTop = (getPaddingTop() + getHeight() - getPaddingBottom()) / 2 -
+        switch (getGravity() & Gravity.VERTICAL_GRAVITY_MASK) {
+            default:
+            case Gravity.TOP:
+                switchTop = getPaddingTop();
+                switchBottom = switchTop + mSwitchHeight;
+                break;
+
+            case Gravity.CENTER_VERTICAL:
+                switchTop = (getPaddingTop() + getHeight() - getPaddingBottom()) / 2 -
                         mSwitchHeight / 2;
-        switchBottom = switchTop + mSwitchHeight;
-        break;
-        case Gravity.BOTTOM:
-        switchBottom = getHeight() - getPaddingBottom();
-        switchTop = switchBottom - mSwitchHeight;
-        break;
-}        mSwitchLeft = switchLeft;
+                switchBottom = switchTop + mSwitchHeight;
+                break;
+
+            case Gravity.BOTTOM:
+                switchBottom = getHeight() - getPaddingBottom();
+                switchTop = switchBottom - mSwitchHeight;
+                break;
+        }
+
+        mSwitchLeft = switchLeft;
         mSwitchTop = switchTop;
         mSwitchBottom = switchBottom;
         mSwitchRight = switchRight;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.165 -0400", hash_original_method = "8EF5F4DDEE2B0F2714B687B8F02D0637", hash_generated_method = "E9093B006E6229B8E68F8B11F2A5D7A5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.121 -0500", hash_original_method = "8EF5F4DDEE2B0F2714B687B8F02D0637", hash_generated_method = "D18DB1F7E35D8E5BEC5243BB7662DDA0")
     @Override
-    protected void onDraw(Canvas canvas) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(canvas.getTaint());
+protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+
+        // Draw the switch
         int switchLeft = mSwitchLeft;
         int switchTop = mSwitchTop;
         int switchRight = mSwitchRight;
         int switchBottom = mSwitchBottom;
+
         mTrackDrawable.setBounds(switchLeft, switchTop, switchRight, switchBottom);
         mTrackDrawable.draw(canvas);
+
         canvas.save();
+
         mTrackDrawable.getPadding(mTempRect);
         int switchInnerLeft = switchLeft + mTempRect.left;
         int switchInnerTop = switchTop + mTempRect.top;
         int switchInnerRight = switchRight - mTempRect.right;
         int switchInnerBottom = switchBottom - mTempRect.bottom;
         canvas.clipRect(switchInnerLeft, switchTop, switchInnerRight, switchBottom);
+
         mThumbDrawable.getPadding(mTempRect);
         final int thumbPos = (int) (mThumbPosition + 0.5f);
         int thumbLeft = switchInnerLeft - mTempRect.left + thumbPos;
         int thumbRight = switchInnerLeft + thumbPos + mThumbWidth + mTempRect.right;
+
         mThumbDrawable.setBounds(thumbLeft, switchTop, thumbRight, switchBottom);
         mThumbDrawable.draw(canvas);
-        if(mTextColors != null)        
-        {
+
+        // mTextColors should not be null, but just in case
+        if (mTextColors != null) {
             mTextPaint.setColor(mTextColors.getColorForState(getDrawableState(),
                     mTextColors.getDefaultColor()));
-        } //End block
+        }
         mTextPaint.drawableState = getDrawableState();
+
         Layout switchText = getTargetCheckedState() ? mOnLayout : mOffLayout;
+
         canvas.translate((thumbLeft + thumbRight) / 2 - switchText.getWidth() / 2,
                 (switchInnerTop + switchInnerBottom) / 2 - switchText.getHeight() / 2);
         switchText.draw(canvas);
+
         canvas.restore();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.172 -0400", hash_original_method = "C22AF595E85F3FD93263583BC3DF92ED", hash_generated_method = "9B35A8F62B4BF887F79A5FBD3DC1C121")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.122 -0500", hash_original_method = "C22AF595E85F3FD93263583BC3DF92ED", hash_generated_method = "23C197D675F68CF79053E814C001C6B3")
     @Override
-    public int getCompoundPaddingRight() {
+public int getCompoundPaddingRight() {
         int padding = super.getCompoundPaddingRight() + mSwitchWidth;
-        if(!TextUtils.isEmpty(getText()))        
-        {
+        if (!TextUtils.isEmpty(getText())) {
             padding += mSwitchPadding;
-        } //End block
-        int varB70CDB878A204FECF91C7DD1AF312421_1075436254 = (padding);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_355914277 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_355914277;
-        // ---------- Original Method ----------
-        //int padding = super.getCompoundPaddingRight() + mSwitchWidth;
-        //if (!TextUtils.isEmpty(getText())) {
-            //padding += mSwitchPadding;
-        //}
-        //return padding;
+        }
+        return padding;
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.177 -0400", hash_original_method = "B890BAF452343CC74FA34D76EC58FC5C", hash_generated_method = "999D70262D556685031015D9F84516BA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.123 -0500", hash_original_method = "B890BAF452343CC74FA34D76EC58FC5C", hash_generated_method = "F35C8F9DD5E41788228A9AEFDAFFA43D")
     private int getThumbScrollRange() {
-        if(mTrackDrawable == null)        
-        {
-            int varCFCD208495D565EF66E7DFF9F98764DA_1431510830 = (0);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_137572738 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_137572738;
-        } //End block
+        if (mTrackDrawable == null) {
+            return 0;
+        }
         mTrackDrawable.getPadding(mTempRect);
-        int varA034FCED26D2E9E7B027363481516DC5_508523576 = (mSwitchWidth - mThumbWidth - mTempRect.left - mTempRect.right);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_576687425 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_576687425;
-        // ---------- Original Method ----------
-        //if (mTrackDrawable == null) {
-            //return 0;
-        //}
-        //mTrackDrawable.getPadding(mTempRect);
-        //return mSwitchWidth - mThumbWidth - mTempRect.left - mTempRect.right;
+        return mSwitchWidth - mThumbWidth - mTempRect.left - mTempRect.right;
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.184 -0400", hash_original_method = "E661308564BAD0BE96E34DA026589671", hash_generated_method = "C45628C3176AEA91527AF4DB2ED7CE35")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.124 -0500", hash_original_method = "E661308564BAD0BE96E34DA026589671", hash_generated_method = "5E8E36BFCD9C1913662CF74C63EBB21F")
     @Override
-    protected int[] onCreateDrawableState(int extraSpace) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(extraSpace);
+protected int[] onCreateDrawableState(int extraSpace) {
         final int[] drawableState = super.onCreateDrawableState(extraSpace + 1);
-        if(isChecked())        
-        {
+        if (isChecked()) {
             mergeDrawableStates(drawableState, CHECKED_STATE_SET);
-        } //End block
-        int[] var7A12E87773589D809FD51F1A26B9BDA9_1069441199 = (drawableState);
-                int[] varB4CCCA26F9DB9189C32F33E82D425CFB_2077324838 = {getTaintInt()};
-        return varB4CCCA26F9DB9189C32F33E82D425CFB_2077324838;
-        // ---------- Original Method ----------
-        //final int[] drawableState = super.onCreateDrawableState(extraSpace + 1);
-        //if (isChecked()) {
-            //mergeDrawableStates(drawableState, CHECKED_STATE_SET);
-        //}
-        //return drawableState;
+        }
+        return drawableState;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.191 -0400", hash_original_method = "DBFC9AA6074AC9C1F36B3AF225F67863", hash_generated_method = "B01A6B758EC1317E328A67B2FF2DE8A3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.125 -0500", hash_original_method = "DBFC9AA6074AC9C1F36B3AF225F67863", hash_generated_method = "35B8184BAFAF236CA852885CAF972486")
     @Override
-    protected void drawableStateChanged() {
+protected void drawableStateChanged() {
         super.drawableStateChanged();
+
         int[] myDrawableState = getDrawableState();
-        if(mThumbDrawable != null)        
-        mThumbDrawable.setState(myDrawableState);
-        if(mTrackDrawable != null)        
-        mTrackDrawable.setState(myDrawableState);
+
+        // Set the state of the Drawable
+        // Drawable may be null when checked state is set from XML, from super constructor
+        if (mThumbDrawable != null) mThumbDrawable.setState(myDrawableState);
+        if (mTrackDrawable != null) mTrackDrawable.setState(myDrawableState);
+
         invalidate();
-        // ---------- Original Method ----------
-        //super.drawableStateChanged();
-        //int[] myDrawableState = getDrawableState();
-        //if (mThumbDrawable != null) mThumbDrawable.setState(myDrawableState);
-        //if (mTrackDrawable != null) mTrackDrawable.setState(myDrawableState);
-        //invalidate();
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.197 -0400", hash_original_method = "1DDC7918114D3BA198855AEA4718194D", hash_generated_method = "294B25882317C2DB325A2A0E00B3FF2A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.125 -0500", hash_original_method = "1DDC7918114D3BA198855AEA4718194D", hash_generated_method = "6435E9B4FE47DB85E6037CF0706B949A")
     @Override
-    protected boolean verifyDrawable(Drawable who) {
-        addTaint(who.getTaint());
-        boolean var3E15040A665A4A53DE459BF33F862300_1432975806 = (super.verifyDrawable(who) || who == mThumbDrawable || who == mTrackDrawable);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1942797054 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1942797054;
-        // ---------- Original Method ----------
-        //return super.verifyDrawable(who) || who == mThumbDrawable || who == mTrackDrawable;
+protected boolean verifyDrawable(Drawable who) {
+        return super.verifyDrawable(who) || who == mThumbDrawable || who == mTrackDrawable;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.203 -0400", hash_original_method = "B8A29477D7D79C90248691E663D147EB", hash_generated_method = "ADDA229C5AD62D1E4F9B04ED39B0DD3F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:00.126 -0500", hash_original_method = "B8A29477D7D79C90248691E663D147EB", hash_generated_method = "9F70E442D1413F4621A334D880730DCC")
     @Override
-    public void jumpDrawablesToCurrentState() {
+public void jumpDrawablesToCurrentState() {
         super.jumpDrawablesToCurrentState();
         mThumbDrawable.jumpToCurrentState();
         mTrackDrawable.jumpToCurrentState();
-        // ---------- Original Method ----------
-        //super.jumpDrawablesToCurrentState();
-        //mThumbDrawable.jumpToCurrentState();
-        //mTrackDrawable.jumpToCurrentState();
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.206 -0400", hash_original_field = "88C24C24A695FA7E184C364FC6761240", hash_generated_field = "6191CA7799994B85F015ACBC4A72ECF0")
-
-    private static final int TOUCH_MODE_IDLE = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.207 -0400", hash_original_field = "41B5A739DC10C60ED32F302A1C3B1A00", hash_generated_field = "C79D4D88CCB9B6DDFEBEEEBDDCAC18DF")
-
-    private static final int TOUCH_MODE_DOWN = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.209 -0400", hash_original_field = "9A3D33AC58FDE0809DDD0AD42ACA4F7B", hash_generated_field = "1C693615B4C4F2116D3600AD3C1B110A")
-
-    private static final int TOUCH_MODE_DRAGGING = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.211 -0400", hash_original_field = "07F356F3070D07B6930DE3A9967108FE", hash_generated_field = "308BD7C2CCB94571F8E68E822492425A")
-
-    private static final int SANS = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.214 -0400", hash_original_field = "5B5E6C83C125CC348E4EE28ACCFE5BFF", hash_generated_field = "AD8E248EA94D9FBB450731AC61EA4CF6")
-
-    private static final int SERIF = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.216 -0400", hash_original_field = "399280F48C3EEEEAEAD47346CF3011F2", hash_generated_field = "1E362376CB7EB57CA2898CE49E4D3589")
-
-    private static final int MONOSPACE = 3;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.218 -0400", hash_original_field = "312B7CC8C1FC8133C5B1FE8103106614", hash_generated_field = "648B080756031EA789B9ECD9F36CC170")
-
-    private static final int[] CHECKED_STATE_SET = {
-        R.attr.state_checked
-    };
 }
 

@@ -1,6 +1,8 @@
 package android.content;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 
@@ -17,56 +19,13 @@ import android.util.AttributeSet;
 
 
 class SyncAdaptersCache extends RegisteredServicesCache<SyncAdapterType> {
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.931 -0400", hash_original_method = "8CDDE404CCAAE32CB4E80B968E9086E6", hash_generated_method = "98D8627A1AB8DE395266F7B5DF74FF5B")
-      SyncAdaptersCache(Context context) {
-        super(context, SERVICE_INTERFACE, SERVICE_META_DATA, ATTRIBUTES_NAME, sSerializer);
-        addTaint(context.getTaint());
-        // ---------- Original Method ----------
-    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.905 -0500", hash_original_field = "6DC951A766331AA637AABD8353624C22", hash_generated_field = "DFD9C75B63090EAAE5A4E1D087E8824B")
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.933 -0400", hash_original_method = "F9B230DBB35FEE10F3AAB555789F4A09", hash_generated_method = "7EB378D726FE23A27493A75BBC9FFF86")
-    public SyncAdapterType parseServiceAttributes(Resources res,
-            String packageName, AttributeSet attrs) {
-        addTaint(attrs.getTaint());
-        addTaint(packageName.getTaint());
-        addTaint(res.getTaint());
-        TypedArray sa = res.obtainAttributes(attrs,
-                com.android.internal.R.styleable.SyncAdapter);
-        try 
-        {
-            final String authority = sa.getString(com.android.internal.R.styleable.SyncAdapter_contentAuthority);
-            final String accountType = sa.getString(com.android.internal.R.styleable.SyncAdapter_accountType);
-            if(authority == null || accountType == null)            
-            {
-SyncAdapterType var540C13E9E156B687226421B24F2DF178_1562703742 =                 null;
-                var540C13E9E156B687226421B24F2DF178_1562703742.addTaint(taint);
-                return var540C13E9E156B687226421B24F2DF178_1562703742;
-            } //End block
-            final boolean userVisible = sa.getBoolean(com.android.internal.R.styleable.SyncAdapter_userVisible, true);
-            final boolean supportsUploading = sa.getBoolean(com.android.internal.R.styleable.SyncAdapter_supportsUploading,
-                            true);
-            final boolean isAlwaysSyncable = sa.getBoolean(com.android.internal.R.styleable.SyncAdapter_isAlwaysSyncable,
-                            false);
-            final boolean allowParallelSyncs = sa.getBoolean(com.android.internal.R.styleable.SyncAdapter_allowParallelSyncs,
-                            false);
-            final String settingsActivity = sa.getString(com.android.internal.R.styleable
-                            .SyncAdapter_settingsActivity);
-SyncAdapterType var83A47835765964A5D6630B135A8ED556_863138875 =             new SyncAdapterType(authority, accountType, userVisible, supportsUploading,
-                    isAlwaysSyncable, allowParallelSyncs, settingsActivity);
-            var83A47835765964A5D6630B135A8ED556_863138875.addTaint(taint);
-            return var83A47835765964A5D6630B135A8ED556_863138875;
-        } //End block
-        finally 
-        {
-            sa.recycle();
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
+    private static final String TAG = "Account";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.906 -0500", hash_original_field = "98A15733B14CA4344A0B58C3DD90FE0F", hash_generated_field = "59887A17F3D56328CE5921EE7BAC7208")
+
+
+    private static final String SERVICE_INTERFACE = "android.content.SyncAdapter";
 
     
     static class MySerializer implements XmlSerializerAndParser<SyncAdapterType> {
@@ -77,55 +36,69 @@ SyncAdapterType var83A47835765964A5D6630B135A8ED556_863138875 =             new 
         {
             //Synthesized constructor
         }
-
-
-        @DSModeled(DSC.BAN)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.934 -0400", hash_original_method = "15333EFEF823B7914676A1825E4A4C8F", hash_generated_method = "CABC9AD7D46C52B2295FAC982AD56AED")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.911 -0500", hash_original_method = "15333EFEF823B7914676A1825E4A4C8F", hash_generated_method = "3CAD0B24077BA16687A3977C52D1F52D")
         public void writeAsXml(SyncAdapterType item, XmlSerializer out) throws IOException {
-            addTaint(out.getTaint());
-            addTaint(item.getTaint());
             out.attribute(null, "authority", item.authority);
             out.attribute(null, "accountType", item.accountType);
-            // ---------- Original Method ----------
-            //out.attribute(null, "authority", item.authority);
-            //out.attribute(null, "accountType", item.accountType);
         }
 
-        
-        @DSModeled(DSC.BAN)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.934 -0400", hash_original_method = "E847E68056A13960846185658512993F", hash_generated_method = "39DF9587B4583BB26F045993CF3897DD")
-        public SyncAdapterType createFromXml(XmlPullParser parser) throws IOException, XmlPullParserException {
-            addTaint(parser.getTaint());
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.912 -0500", hash_original_method = "E847E68056A13960846185658512993F", hash_generated_method = "C182B87930032C86B30537E6EFC7EE4E")
+        public SyncAdapterType createFromXml(XmlPullParser parser)
+                throws IOException, XmlPullParserException {
             final String authority = parser.getAttributeValue(null, "authority");
             final String accountType = parser.getAttributeValue(null, "accountType");
-SyncAdapterType var7379561ADA3221C7A5D93CDE0C5DF244_433257815 =             SyncAdapterType.newKey(authority, accountType);
-            var7379561ADA3221C7A5D93CDE0C5DF244_433257815.addTaint(taint);
-            return var7379561ADA3221C7A5D93CDE0C5DF244_433257815;
-            // ---------- Original Method ----------
-            //final String authority = parser.getAttributeValue(null, "authority");
-            //final String accountType = parser.getAttributeValue(null, "accountType");
-            //return SyncAdapterType.newKey(authority, accountType);
+            return SyncAdapterType.newKey(authority, accountType);
         }
 
         
     }
-
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.934 -0400", hash_original_field = "88BC6D4B336F5098A115617D579E8465", hash_generated_field = "DFD9C75B63090EAAE5A4E1D087E8824B")
-
-    private static final String TAG = "Account";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.935 -0400", hash_original_field = "2C55F8265FB4EBCBD45785B9E37A1405", hash_generated_field = "59887A17F3D56328CE5921EE7BAC7208")
-
-    private static final String SERVICE_INTERFACE = "android.content.SyncAdapter";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.935 -0400", hash_original_field = "AB6AA9D6A8F65682722C6A03BB2F3962", hash_generated_field = "B965CC9F2D58B5F29B59B422674E8A41")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.907 -0500", hash_original_field = "C650BBA7E35ACCA34B98B85CDBC673BB", hash_generated_field = "B965CC9F2D58B5F29B59B422674E8A41")
 
     private static final String SERVICE_META_DATA = "android.content.SyncAdapter";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.935 -0400", hash_original_field = "702A6D643C9163DBFED2BA8FEB9F09EB", hash_generated_field = "03DD69102D8F6B2F9E999B376ADF469A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.907 -0500", hash_original_field = "BF6E179F5F25D4F8831903528C911B70", hash_generated_field = "03DD69102D8F6B2F9E999B376ADF469A")
 
     private static final String ATTRIBUTES_NAME = "sync-adapter";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.935 -0400", hash_original_field = "5C108A317495C31F94D830D3B97E6771", hash_generated_field = "C1817FDD6C03FBAC02E4E4176D06D756")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.908 -0500", hash_original_field = "8DD095F5D65041BB269FBCA26198E23C", hash_generated_field = "C1817FDD6C03FBAC02E4E4176D06D756")
 
     private static final MySerializer sSerializer = new MySerializer();
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.909 -0500", hash_original_method = "8CDDE404CCAAE32CB4E80B968E9086E6", hash_generated_method = "8CDDE404CCAAE32CB4E80B968E9086E6")
+    SyncAdaptersCache(Context context) {
+        super(context, SERVICE_INTERFACE, SERVICE_META_DATA, ATTRIBUTES_NAME, sSerializer);
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:58.910 -0500", hash_original_method = "F9B230DBB35FEE10F3AAB555789F4A09", hash_generated_method = "980F9E927BDF828D50BCD0FBA9EBB8EA")
+    public SyncAdapterType parseServiceAttributes(Resources res,
+            String packageName, AttributeSet attrs) {
+        TypedArray sa = res.obtainAttributes(attrs,
+                com.android.internal.R.styleable.SyncAdapter);
+        try {
+            final String authority =
+                    sa.getString(com.android.internal.R.styleable.SyncAdapter_contentAuthority);
+            final String accountType =
+                    sa.getString(com.android.internal.R.styleable.SyncAdapter_accountType);
+            if (authority == null || accountType == null) {
+                return null;
+            }
+            final boolean userVisible =
+                    sa.getBoolean(com.android.internal.R.styleable.SyncAdapter_userVisible, true);
+            final boolean supportsUploading =
+                    sa.getBoolean(com.android.internal.R.styleable.SyncAdapter_supportsUploading,
+                            true);
+            final boolean isAlwaysSyncable =
+                    sa.getBoolean(com.android.internal.R.styleable.SyncAdapter_isAlwaysSyncable,
+                            false);
+            final boolean allowParallelSyncs =
+                    sa.getBoolean(com.android.internal.R.styleable.SyncAdapter_allowParallelSyncs,
+                            false);
+            final String settingsActivity =
+                    sa.getString(com.android.internal.R.styleable
+                            .SyncAdapter_settingsActivity);
+            return new SyncAdapterType(authority, accountType, userVisible, supportsUploading,
+                    isAlwaysSyncable, allowParallelSyncs, settingsActivity);
+        } finally {
+            sa.recycle();
+        }
+    }
 }
 

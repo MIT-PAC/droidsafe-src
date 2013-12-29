@@ -1,6 +1,8 @@
 package android.os;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.ArrayList;
 
@@ -10,181 +12,125 @@ import java.util.ArrayList;
 
 
 public class RegistrantList {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.438 -0400", hash_original_field = "964B49AD414D4F0E0A989A0E998E41A3", hash_generated_field = "7F96807E8A5E86FE107A4EDE006647AC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:38.225 -0500", hash_original_field = "7F96807E8A5E86FE107A4EDE006647AC", hash_generated_field = "7F96807E8A5E86FE107A4EDE006647AC")
 
-    ArrayList registrants = new ArrayList();
+    ArrayList   registrants = new ArrayList();
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.438 -0400", hash_original_method = "60B287B1A6E3CD9A784E3DBEF9EF68BF", hash_generated_method = "60B287B1A6E3CD9A784E3DBEF9EF68BF")
     public RegistrantList ()
     {
         //Synthesized constructor
-    }
+    }      // of Registrant
 
-
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.439 -0400", hash_original_method = "D619B6B6CF1BABB74D64C92E930385FE", hash_generated_method = "1C3B7F591F17EAF250C184147BD312F9")
-    public synchronized void add(Handler h, int what, Object obj) {
-        addTaint(obj.getTaint());
-        addTaint(what);
-        addTaint(h.getTaint());
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:38.226 -0500", hash_original_method = "D619B6B6CF1BABB74D64C92E930385FE", hash_generated_method = "C078BA369D6F529BB4F45333008F0AE2")
+    public synchronized void
+    add(Handler h, int what, Object obj)
+    {
         add(new Registrant(h, what, obj));
-        // ---------- Original Method ----------
-        //add(new Registrant(h, what, obj));
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.440 -0400", hash_original_method = "8738C2928375831BBA08E54EFA7A0387", hash_generated_method = "599815918E584BB248E86CA3FA837C29")
-    public synchronized void addUnique(Handler h, int what, Object obj) {
-        addTaint(obj.getTaint());
-        addTaint(what);
-        addTaint(h.getTaint());
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:38.226 -0500", hash_original_method = "8738C2928375831BBA08E54EFA7A0387", hash_generated_method = "00F180E7EF169475860257C26BE5DE8C")
+    public synchronized void
+    addUnique(Handler h, int what, Object obj)
+    {
+        // if the handler is already in the registrant list, remove it
         remove(h);
-        add(new Registrant(h, what, obj));
-        // ---------- Original Method ----------
-        //remove(h);
-        //add(new Registrant(h, what, obj));
+        add(new Registrant(h, what, obj));        
     }
-
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.440 -0400", hash_original_method = "6ACFEC9684204FF0A155D83C1349ED2C", hash_generated_method = "612ED9BBB21214697F3E3076D20DF123")
-    public synchronized void add(Registrant r) {
-        addTaint(r.getTaint());
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:38.227 -0500", hash_original_method = "6ACFEC9684204FF0A155D83C1349ED2C", hash_generated_method = "9B100D21F350582A851B881A1EBCD5E4")
+    public synchronized void
+    add(Registrant r)
+    {
         removeCleared();
         registrants.add(r);
-        // ---------- Original Method ----------
-        //removeCleared();
-        //registrants.add(r);
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.441 -0400", hash_original_method = "8966BBD177872515B913197EAE844100", hash_generated_method = "0C1A0F3DF93FFF27DC6A448E2B4C9204")
-    public synchronized void removeCleared() {
-for(int i = registrants.size() - 1;i >= 0;i--)
-        {
-            Registrant r = (Registrant) registrants.get(i);
-            if(r.refH == null)            
-            {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:38.228 -0500", hash_original_method = "8966BBD177872515B913197EAE844100", hash_generated_method = "E3863668766BA886499A7C30ACA7C7D4")
+    public synchronized void
+    removeCleared()
+    {
+        for (int i = registrants.size() - 1; i >= 0 ; i--) {
+            Registrant  r = (Registrant) registrants.get(i);
+            
+            if (r.refH == null) {
                 registrants.remove(i);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //for (int i = registrants.size() - 1; i >= 0 ; i--) {
-            //Registrant  r = (Registrant) registrants.get(i);
-            //if (r.refH == null) {
-                //registrants.remove(i);
-            //}
-        //}
+            }
+        }
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.442 -0400", hash_original_method = "F0EB9E400375C0AD2DEFF1B982C74365", hash_generated_method = "9B1D3F1E3F99465DC9FC308B31C6CDC6")
-    public synchronized int size() {
-        int varABF8F47332369721D26CF0669CAFC883_1323321089 = (registrants.size());
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1106447788 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1106447788;
-        // ---------- Original Method ----------
-        //return registrants.size();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:38.229 -0500", hash_original_method = "F0EB9E400375C0AD2DEFF1B982C74365", hash_generated_method = "29A1A4E433FBCFC5695AA0249C970026")
+    public synchronized int
+    size()
+    {
+        return registrants.size();
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.442 -0400", hash_original_method = "8E803949D880002FCD2B174D60AAE952", hash_generated_method = "D7421D8C682F307369E0D533200E2DB7")
-    public synchronized Object get(int index) {
-        addTaint(index);
-Object var0B7A0D5127D9EF03BDFA2AE644A59E47_1317548528 =         registrants.get(index);
-        var0B7A0D5127D9EF03BDFA2AE644A59E47_1317548528.addTaint(taint);
-        return var0B7A0D5127D9EF03BDFA2AE644A59E47_1317548528;
-        // ---------- Original Method ----------
-        //return registrants.get(index);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:38.230 -0500", hash_original_method = "8E803949D880002FCD2B174D60AAE952", hash_generated_method = "201473706323896C6EAFA6D338812DA9")
+    public synchronized Object
+    get(int index)
+    {
+        return registrants.get(index);
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.443 -0400", hash_original_method = "923D2EAB51C3C809A7DC018C31FECFAC", hash_generated_method = "117A0DD98F2360F200B753E5410A18A4")
-    private synchronized void internalNotifyRegistrants(Object result, Throwable exception) {
-        addTaint(exception.getTaint());
-        addTaint(result.getTaint());
-for(int i = 0, s = registrants.size();i < s;i++)
-        {
-            Registrant r = (Registrant) registrants.get(i);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:38.231 -0500", hash_original_method = "923D2EAB51C3C809A7DC018C31FECFAC", hash_generated_method = "8DAFE555768F325F8FF542C6BF8C8427")
+    private synchronized void
+    internalNotifyRegistrants (Object result, Throwable exception)
+    {
+       for (int i = 0, s = registrants.size(); i < s ; i++) {
+            Registrant  r = (Registrant) registrants.get(i);
             r.internalNotifyRegistrant(result, exception);
-        } //End block
-        // ---------- Original Method ----------
-        //for (int i = 0, s = registrants.size(); i < s ; i++) {
-            //Registrant  r = (Registrant) registrants.get(i);
-            //r.internalNotifyRegistrant(result, exception);
-       //}
+       }
     }
-
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.444 -0400", hash_original_method = "A0C1E30CB6CF686D3BFBF211B23BCEDA", hash_generated_method = "58F948B26A2328859A484DC379C9FB82")
-    public void notifyRegistrants() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:35:16.785 -0500", hash_original_method = "A0C1E30CB6CF686D3BFBF211B23BCEDA", hash_generated_method = "29C93A120359B8DB3BAD48956558C589")
+    public void
+    notifyRegistrants()
+    {
         internalNotifyRegistrants(null, null);
-        // ---------- Original Method ----------
-        //internalNotifyRegistrants(null, null);
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.444 -0400", hash_original_method = "E10B485B8A4459DFBA6D5822C64B9581", hash_generated_method = "75AE876AFDEEC5DFD57A963AEDB7DCE4")
-    public void notifyException(Throwable exception) {
-        addTaint(exception.getTaint());
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:35:16.786 -0500", hash_original_method = "E10B485B8A4459DFBA6D5822C64B9581", hash_generated_method = "8331705687F4623D77424E3082BC1906")
+    public void
+    notifyException(Throwable exception)
+    {
         internalNotifyRegistrants (null, exception);
-        // ---------- Original Method ----------
-        //internalNotifyRegistrants (null, exception);
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.444 -0400", hash_original_method = "42A5B1B813660DAC9459B35E8E550912", hash_generated_method = "B66A395A5A83C78FA03464E94D617BF8")
-    public void notifyResult(Object result) {
-        addTaint(result.getTaint());
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:35:16.787 -0500", hash_original_method = "42A5B1B813660DAC9459B35E8E550912", hash_generated_method = "B2AD814C21E22A6C0235EE6EA59EABFD")
+    public void
+    notifyResult(Object result)
+    {
         internalNotifyRegistrants (result, null);
-        // ---------- Original Method ----------
-        //internalNotifyRegistrants (result, null);
     }
 
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.445 -0400", hash_original_method = "3908519F6CDCE90B78E1C606E34FED53", hash_generated_method = "2D76B9F34F6F9C8370418D26E6A6217A")
-    public void notifyRegistrants(AsyncResult ar) {
-        addTaint(ar.getTaint());
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:35:16.787 -0500", hash_original_method = "3908519F6CDCE90B78E1C606E34FED53", hash_generated_method = "9BD6B76420A710DC1D39A85652D2D37A")
+    public void
+    notifyRegistrants(AsyncResult ar)
+    {
         internalNotifyRegistrants(ar.result, ar.exception);
-        // ---------- Original Method ----------
-        //internalNotifyRegistrants(ar.result, ar.exception);
     }
-
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.446 -0400", hash_original_method = "7E8729949AA2AB03621660BB8AC59F70", hash_generated_method = "E911261135EAFECF4FB302A79CB0D532")
-    public synchronized void remove(Handler h) {
-        addTaint(h.getTaint());
-for(int i = 0, s = registrants.size();i < s;i++)
-        {
-            Registrant r = (Registrant) registrants.get(i);
-            Handler rh;
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:38.235 -0500", hash_original_method = "7E8729949AA2AB03621660BB8AC59F70", hash_generated_method = "4B77784B7C188414E1D468C0AAECAAAC")
+    public synchronized void
+    remove(Handler h)
+    {
+        for (int i = 0, s = registrants.size() ; i < s ; i++) {
+            Registrant  r = (Registrant) registrants.get(i);
+            Handler     rh;
+
             rh = r.getHandler();
-            if(rh == null || rh == h)            
-            {
+
+            /* Clean up both the requested registrant and
+             * any now-collected registrants
+             */
+            if (rh == null || rh == h) {
                 r.clear();
-            } //End block
-        } //End block
+            }
+        }
+
         removeCleared();
-        // ---------- Original Method ----------
-        //for (int i = 0, s = registrants.size() ; i < s ; i++) {
-            //Registrant  r = (Registrant) registrants.get(i);
-            //Handler     rh;
-            //rh = r.getHandler();
-            //if (rh == null || rh == h) {
-                //r.clear();
-            //}
-        //}
-        //removeCleared();
     }
 
     

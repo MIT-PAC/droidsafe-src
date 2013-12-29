@@ -1,6 +1,8 @@
 package org.apache.http.impl.io;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -24,72 +26,39 @@ import org.apache.http.util.CharArrayBuffer;
 
 
 public abstract class AbstractMessageParser implements HttpMessageParser {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.372 -0400", hash_original_field = "C5C1A1B9CB00AE65F16C20243BC76E0D", hash_generated_field = "A33B1C99D4B1A85FF593937CE103B3DB")
 
-    private SessionInputBuffer sessionBuffer;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.372 -0400", hash_original_field = "9E79D1C5118BFD93F2EA3354BE3B7BB3", hash_generated_field = "51B3B1D6F029892B5D1B485F1E8449D4")
-
-    private int maxHeaderCount;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.372 -0400", hash_original_field = "3609DB2A96EDAA41922B8FF957E1AC22", hash_generated_field = "8BE013DE7B241F7CDF197195794AF2BA")
-
-    private int maxLineLen;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.372 -0400", hash_original_field = "3BFFA82D6F37731C10E9CEDA46F669D0", hash_generated_field = "FA36EAE3CC325D535A91E6794A3FA61E")
-
-    protected LineParser lineParser;
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.373 -0400", hash_original_method = "CD9F7BFE0207530C59E31A12BA61FD32", hash_generated_method = "F4B1AC6889A3B2D6999787D723602472")
-    public  AbstractMessageParser(
-            final SessionInputBuffer buffer,
-            final LineParser parser,
-            final HttpParams params) {
-        super();
-        if(buffer == null)        
-        {
-            IllegalArgumentException varB3677395451B18A3F9262E9D7FE254B3_1319111677 = new IllegalArgumentException("Session input buffer may not be null");
-            varB3677395451B18A3F9262E9D7FE254B3_1319111677.addTaint(taint);
-            throw varB3677395451B18A3F9262E9D7FE254B3_1319111677;
-        } //End block
-        if(params == null)        
-        {
-            IllegalArgumentException var497CCC27A43EDD6EE25BEEC5507E2BE2_537857060 = new IllegalArgumentException("HTTP parameters may not be null");
-            var497CCC27A43EDD6EE25BEEC5507E2BE2_537857060.addTaint(taint);
-            throw var497CCC27A43EDD6EE25BEEC5507E2BE2_537857060;
-        } //End block
-        this.sessionBuffer = buffer;
-        this.maxHeaderCount = params.getIntParameter(
-                CoreConnectionPNames.MAX_HEADER_COUNT, -1);
-        this.maxLineLen = params.getIntParameter(
-                CoreConnectionPNames.MAX_LINE_LENGTH, -1);
-        this.lineParser = (parser != null) ? parser : BasicLineParser.DEFAULT;
-        // ---------- Original Method ----------
-        //if (buffer == null) {
-            //throw new IllegalArgumentException("Session input buffer may not be null");
-        //}
-        //if (params == null) {
-            //throw new IllegalArgumentException("HTTP parameters may not be null");
-        //}
-        //this.sessionBuffer = buffer;
-        //this.maxHeaderCount = params.getIntParameter(
-                //CoreConnectionPNames.MAX_HEADER_COUNT, -1);
-        //this.maxLineLen = params.getIntParameter(
-                //CoreConnectionPNames.MAX_LINE_LENGTH, -1);
-        //this.lineParser = (parser != null) ? parser : BasicLineParser.DEFAULT;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Parses HTTP headers from the data receiver stream according to the generic 
+     * format as given in Section 3.1 of RFC 822, RFC-2616 Section 4 and 19.3.
+     *  
+     * @param inbuffer Session input buffer
+     * @param maxHeaderCount maximum number of headers allowed. If the number
+     *  of headers received from the data stream exceeds maxCount value, an
+     *  IOException will be thrown. Setting this parameter to a negative value
+     *  or zero  will disable the check.
+     * @param maxLineLen maximum number of characters for a header line,
+     *                   including the continuation lines
+     * @return array of HTTP headers
+     * 
+     * @throws HttpException
+     * @throws IOException
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:22.666 -0500", hash_original_method = "2B984335CEDFCBC69AB5F6A3D7DB39C1", hash_generated_method = "0BA1FC05FC31962F32B373ABA2C04A84")
     public static Header[] parseHeaders(
             final SessionInputBuffer inbuffer,
             int maxHeaderCount,
             int maxLineLen,
-            LineParser parser) throws HttpException, IOException {
+            LineParser parser)
+        throws HttpException, IOException {
+
         if (inbuffer == null) {
             throw new IllegalArgumentException("Session input buffer may not be null");
         }
         if (parser == null)
             parser = BasicLineParser.DEFAULT;
+
         ArrayList headerLines = new ArrayList();
+
         CharArrayBuffer current = null;
         CharArrayBuffer previous = null;
         for (;;) {
@@ -102,7 +71,13 @@ public abstract class AbstractMessageParser implements HttpMessageParser {
             if (l == -1 || current.length() < 1) {
                 break;
             }
+            // Parse the header name and value
+            // Check for folded headers first
+            // Detect LWS-char see HTTP/1.0 or HTTP/1.1 Section 2.2
+            // discussion on folded headers
             if ((current.charAt(0) == ' ' || current.charAt(0) == '\t') && previous != null) {
+                // we have continuation folded header
+                // so append value
                 int i = 0;
                 while (i < current.length()) {
                     char ch = current.charAt(i);
@@ -137,50 +112,60 @@ public abstract class AbstractMessageParser implements HttpMessageParser {
         }
         return headers;
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:22.661 -0500", hash_original_field = "13B47FDB2E79FE6CD90882D9DA95C973", hash_generated_field = "A33B1C99D4B1A85FF593937CE103B3DB")
 
-    
-    @DSModeled(DSC.SAFE)
+
+    private  SessionInputBuffer sessionBuffer;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:22.662 -0500", hash_original_field = "F0C13102950DF6DEECC29E1050A6EEE7", hash_generated_field = "51B3B1D6F029892B5D1B485F1E8449D4")
+
+    private  int maxHeaderCount;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:22.663 -0500", hash_original_field = "392877A4EDCAD2EFA855A1EA0D8967B1", hash_generated_field = "8BE013DE7B241F7CDF197195794AF2BA")
+
+    private  int maxLineLen;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:22.664 -0500", hash_original_field = "723ECC87F42B3213E8B9AE9AA3CD7937", hash_generated_field = "FA36EAE3CC325D535A91E6794A3FA61E")
+
+    protected  LineParser lineParser;
+
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:22.665 -0500", hash_original_method = "CD9F7BFE0207530C59E31A12BA61FD32", hash_generated_method = "C56EDB0284C9BDBC66929A015DE95D08")
+    public AbstractMessageParser(
+            final SessionInputBuffer buffer,
+            final LineParser parser,
+            final HttpParams params) {
+        super();
+        if (buffer == null) {
+            throw new IllegalArgumentException("Session input buffer may not be null");
+        }
+        if (params == null) {
+            throw new IllegalArgumentException("HTTP parameters may not be null");
+        }
+        this.sessionBuffer = buffer;
+        this.maxHeaderCount = params.getIntParameter(
+                CoreConnectionPNames.MAX_HEADER_COUNT, -1);
+        this.maxLineLen = params.getIntParameter(
+                CoreConnectionPNames.MAX_LINE_LENGTH, -1);
+        this.lineParser = (parser != null) ? parser : BasicLineParser.DEFAULT;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:22.667 -0500", hash_original_method = "6A5FF6AE0D3937AC48619DDFC949CE62", hash_generated_method = "D56D0B4E2D705C17713E8B3E7801723D")
     protected abstract HttpMessage parseHead(SessionInputBuffer sessionBuffer) 
         throws IOException, HttpException, ParseException;
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.375 -0400", hash_original_method = "56FD9FE99CC7B8784E50CC19E304C067", hash_generated_method = "F6A48326581DC84545938E2FCE7CDF7C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:22.668 -0500", hash_original_method = "56FD9FE99CC7B8784E50CC19E304C067", hash_generated_method = "41264974E91E9340349EE60460B9AC40")
     public HttpMessage parse() throws IOException, HttpException {
         HttpMessage message = null;
-        try 
-        {
+        try {
             message = parseHead(this.sessionBuffer);
-        } //End block
-        catch (ParseException px)
-        {
-            ProtocolException varD95A16F7A42FB78AC45970093BB1D826_1139365940 = new ProtocolException(px.getMessage(), px);
-            varD95A16F7A42FB78AC45970093BB1D826_1139365940.addTaint(taint);
-            throw varD95A16F7A42FB78AC45970093BB1D826_1139365940;
-        } //End block
+        } catch (ParseException px) {
+            throw new ProtocolException(px.getMessage(), px);
+        }
         Header[] headers = AbstractMessageParser.parseHeaders(
                 this.sessionBuffer, 
                 this.maxHeaderCount,
                 this.maxLineLen,
                 this.lineParser);
         message.setHeaders(headers);
-HttpMessage varFD182D7074F3848E773A38B067BBB880_218578912 =         message;
-        varFD182D7074F3848E773A38B067BBB880_218578912.addTaint(taint);
-        return varFD182D7074F3848E773A38B067BBB880_218578912;
-        // ---------- Original Method ----------
-        //HttpMessage message = null;
-        //try {
-            //message = parseHead(this.sessionBuffer);
-        //} catch (ParseException px) {
-            //throw new ProtocolException(px.getMessage(), px);
-        //}
-        //Header[] headers = AbstractMessageParser.parseHeaders(
-                //this.sessionBuffer, 
-                //this.maxHeaderCount,
-                //this.maxLineLen,
-                //this.lineParser);
-        //message.setHeaders(headers);
-        //return message;
+        return message;
     }
 
     

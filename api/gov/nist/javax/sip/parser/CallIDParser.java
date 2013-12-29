@@ -1,6 +1,8 @@
 package gov.nist.javax.sip.parser;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import gov.nist.javax.sip.header.CallID;
 import gov.nist.javax.sip.header.SIPHeader;
@@ -12,66 +14,50 @@ import java.text.ParseException;
 
 
 public class CallIDParser extends HeaderParser {
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:36.952 -0400", hash_original_method = "F1036F08BD30FBFF0AA178D5C9E11EFA", hash_generated_method = "9EC9E27A01CA541D68B2882987190249")
-    public  CallIDParser(String callID) {
+
+    /**
+     * Creates new CallIDParser
+     * @param callID message to parse
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:10.182 -0500", hash_original_method = "F1036F08BD30FBFF0AA178D5C9E11EFA", hash_generated_method = "E874AAF50216E03F55E0EAFE623DD815")
+    public CallIDParser(String callID) {
         super(callID);
-        addTaint(callID.getTaint());
-        // ---------- Original Method ----------
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:36.953 -0400", hash_original_method = "02CCA397F58454A50D3B0688C937A37B", hash_generated_method = "AF7C53B2BE10E4C6A0A946D5BDF02341")
-    protected  CallIDParser(Lexer lexer) {
+    /**
+     * Constructor
+     * @param lexer Lexer to set
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:10.183 -0500", hash_original_method = "02CCA397F58454A50D3B0688C937A37B", hash_generated_method = "508256DDC8A7C0AD9C7E80A9715C3993")
+    protected CallIDParser(Lexer lexer) {
         super(lexer);
-        addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:36.954 -0400", hash_original_method = "1EBE66F04307D347AFA5B564B58F8AB6", hash_generated_method = "D7B8EAD17AF91F0D1D56FF638E094755")
+    /**
+     * parse the String message
+     * @return SIPHeader (CallID object)
+     * @throws ParseException if the message does not respect the spec.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:10.184 -0500", hash_original_method = "1EBE66F04307D347AFA5B564B58F8AB6", hash_generated_method = "75BECFF3C44A6D33DCB9B0932C91E676")
     public SIPHeader parse() throws ParseException {
-        if(debug)        
-        dbg_enter("parse");
-        try 
-        {
+        if (debug)
+            dbg_enter("parse");
+        try {
             this.lexer.match(TokenTypes.CALL_ID);
             this.lexer.SPorHT();
             this.lexer.match(':');
             this.lexer.SPorHT();
+
             CallID callID = new CallID();
+
             this.lexer.SPorHT();
             String rest = lexer.getRest();
             callID.setCallId(rest.trim());
-SIPHeader var78FF8E1F035AA2C6723D427F9EA7BFA5_750907778 =             callID;
-            var78FF8E1F035AA2C6723D427F9EA7BFA5_750907778.addTaint(taint);
-            return var78FF8E1F035AA2C6723D427F9EA7BFA5_750907778;
-        } //End block
-        finally 
-        {
-            if(debug)            
-            dbg_leave("parse");
-        } //End block
-        // ---------- Original Method ----------
-        //if (debug)
-            //dbg_enter("parse");
-        //try {
-            //this.lexer.match(TokenTypes.CALL_ID);
-            //this.lexer.SPorHT();
-            //this.lexer.match(':');
-            //this.lexer.SPorHT();
-            //CallID callID = new CallID();
-            //this.lexer.SPorHT();
-            //String rest = lexer.getRest();
-            //callID.setCallId(rest.trim());
-            //return callID;
-        //} finally {
-            //if (debug)
-                //dbg_leave("parse");
-        //}
+            return callID;
+        } finally {
+            if (debug)
+                dbg_leave("parse");
+        }
     }
 
     

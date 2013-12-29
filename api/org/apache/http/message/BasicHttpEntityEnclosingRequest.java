@@ -1,6 +1,8 @@
 package org.apache.http.message;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import org.apache.http.Header;
 import org.apache.http.HttpEntity;
@@ -15,71 +17,41 @@ import org.apache.http.protocol.HTTP;
 
 
 public class BasicHttpEntityEnclosingRequest extends BasicHttpRequest implements HttpEntityEnclosingRequest {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.853 -0400", hash_original_field = "F5E638CC78DD325906C1298A0C21FB6B", hash_generated_field = "1845537B516494D16BEEE561F2E771CF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.155 -0500", hash_original_field = "84BEE3610D6DA557FD534AD24775E93F", hash_generated_field = "1845537B516494D16BEEE561F2E771CF")
 
+    
     private HttpEntity entity;
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.854 -0400", hash_original_method = "3B9AEA8ADDBEE1D3D457706DB0027555", hash_generated_method = "5A221AB4F918295D6C96B40163436F64")
-    public  BasicHttpEntityEnclosingRequest(final String method, final String uri) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.156 -0500", hash_original_method = "3B9AEA8ADDBEE1D3D457706DB0027555", hash_generated_method = "869E502C9963B3F827FA872F7F3C4CD8")
+    public BasicHttpEntityEnclosingRequest(final String method, final String uri) {
         super(method, uri);
-        addTaint(uri.getTaint());
-        addTaint(method.getTaint());
-        // ---------- Original Method ----------
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.855 -0400", hash_original_method = "81663ABF166B6EF77CF828F0FBB9FCD0", hash_generated_method = "889882ADBA9A82FD7E7E8E88B2936F00")
-    public  BasicHttpEntityEnclosingRequest(final String method, final String uri, 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.157 -0500", hash_original_method = "81663ABF166B6EF77CF828F0FBB9FCD0", hash_generated_method = "D3C930EB45D595B30DC5B64D88C841FF")
+    public BasicHttpEntityEnclosingRequest(final String method, final String uri, 
             final ProtocolVersion ver) {
         this(new BasicRequestLine(method, uri, ver));
-        addTaint(ver.getTaint());
-        addTaint(uri.getTaint());
-        addTaint(method.getTaint());
-        // ---------- Original Method ----------
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.855 -0400", hash_original_method = "411AD89842852D4D934BE04E93AC495C", hash_generated_method = "859E7C832CEFE5C5AB9DA47E5E03C9FF")
-    public  BasicHttpEntityEnclosingRequest(final RequestLine requestline) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.158 -0500", hash_original_method = "411AD89842852D4D934BE04E93AC495C", hash_generated_method = "20C3F1A1E8B84983C1941564A9A0CF43")
+    public BasicHttpEntityEnclosingRequest(final RequestLine requestline) {
         super(requestline);
-        addTaint(requestline.getTaint());
-        // ---------- Original Method ----------
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.855 -0400", hash_original_method = "FCFC1A07171F7DE920C85D2DD77008FA", hash_generated_method = "54E4457E9BB661807B9DCBC575ABF0BA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.158 -0500", hash_original_method = "FCFC1A07171F7DE920C85D2DD77008FA", hash_generated_method = "F26E442D152B9CF496C6F072484628AD")
     public HttpEntity getEntity() {
-HttpEntity varB0390008473457B24431D383C02B7BE2_493720796 =         this.entity;
-        varB0390008473457B24431D383C02B7BE2_493720796.addTaint(taint);
-        return varB0390008473457B24431D383C02B7BE2_493720796;
-        // ---------- Original Method ----------
-        //return this.entity;
+        return this.entity;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.856 -0400", hash_original_method = "ACC3C31B4104E926438E24B159B6E3A2", hash_generated_method = "FB3E9570D6065D0B91C8CE936F48D4CA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.159 -0500", hash_original_method = "ACC3C31B4104E926438E24B159B6E3A2", hash_generated_method = "79AAFF6E92B5322E414271D0A9826A70")
     public void setEntity(final HttpEntity entity) {
         this.entity = entity;
-        // ---------- Original Method ----------
-        //this.entity = entity;
     }
-
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.856 -0400", hash_original_method = "A0F17E45777A46D709253948E7008FD4", hash_generated_method = "0F2C60598AE8CC7CA15344A3F2217539")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.160 -0500", hash_original_method = "A0F17E45777A46D709253948E7008FD4", hash_generated_method = "EC2F72FE5FD316F8F025D2DEB714BBEF")
     public boolean expectContinue() {
         Header expect = getFirstHeader(HTTP.EXPECT_DIRECTIVE);
-        boolean varBD99B96B93C1B43067A5D22A1607F29C_1631768656 = (expect != null && HTTP.EXPECT_CONTINUE.equalsIgnoreCase(expect.getValue()));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_955911250 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_955911250;
-        // ---------- Original Method ----------
-        //Header expect = getFirstHeader(HTTP.EXPECT_DIRECTIVE);
-        //return expect != null && HTTP.EXPECT_CONTINUE.equalsIgnoreCase(expect.getValue());
+        return expect != null && HTTP.EXPECT_CONTINUE.equalsIgnoreCase(expect.getValue());
     }
 
     

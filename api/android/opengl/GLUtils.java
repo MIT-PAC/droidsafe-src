@@ -1,6 +1,8 @@
 package android.opengl;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import javax.microedition.khronos.egl.EGL10;
 import javax.microedition.khronos.egl.EGL11;
@@ -12,15 +14,13 @@ import android.graphics.Bitmap;
 import droidsafe.helpers.DSUtils;
 
 public final class GLUtils {
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.380 -0400", hash_original_method = "A98AAD2DCE964D3E8867B0B125C8757B", hash_generated_method = "602B8AFAFBDBCCEF4BCB5E24B6A14FC8")
-    private  GLUtils() {
-        // ---------- Original Method ----------
-    }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * return the internal format as defined by OpenGL ES of the supplied bitmap.
+     * @param bitmap
+     * @return the internal format of the bitmap.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:31.195 -0500", hash_original_method = "B6B481F20C06158B7B2683399A01F45A", hash_generated_method = "B083C1A85AF000F8EF87832B426CA4F2")
     public static int getInternalFormat(Bitmap bitmap) {
         if (bitmap == null) {
             throw new NullPointerException("getInternalFormat can't be used with a null Bitmap");
@@ -35,8 +35,15 @@ public final class GLUtils {
         return result;
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Return the type as defined by OpenGL ES of the supplied bitmap, if there
+     * is one. If the bitmap is stored in a compressed format, it may not have
+     * a valid OpenGL ES type.
+     * @throws IllegalArgumentException if the bitmap does not have a type.
+     * @param bitmap
+     * @return the OpenGL ES type of the bitmap.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:31.196 -0500", hash_original_method = "7F321909DE884C965D7AD4908EC024EC", hash_generated_method = "7DDAAEF9A95CA0DF572BAAB7A4A70EC5")
     public static int getType(Bitmap bitmap) {
         if (bitmap == null) {
             throw new NullPointerException("getType can't be used with a null Bitmap");
@@ -51,7 +58,29 @@ public final class GLUtils {
         return result;
     }
 
-    
+    /**
+     * Calls glTexImage2D() on the current OpenGL context. If no context is
+     * current the behavior is the same as calling glTexImage2D() with  no
+     * current context, that is, eglGetError() will return the appropriate
+     * error.
+     * Unlike glTexImage2D() bitmap cannot be null and will raise an exception
+     * in that case.
+     * All other parameters are identical to those used for glTexImage2D().
+     *
+     * NOTE: this method doesn't change GL_UNPACK_ALIGNMENT, you must make
+     * sure to set it properly according to the supplied bitmap.
+     *
+     * Whether or not bitmap can have non power of two dimensions depends on
+     * the current OpenGL context. Always check glGetError() some time
+     * after calling this method, just like when using OpenGL directly.
+     *
+     * @param target
+     * @param level
+     * @param internalformat
+     * @param bitmap
+     * @param border
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:31.197 -0500", hash_original_method = "38C936AC38AFD26040EB8F9B2F19DF90", hash_generated_method = "CD433681E925C9A62AE6DFE6F257F83F")
     public static void texImage2D(int target, int level, int internalformat,
             Bitmap bitmap, int border) {
         if (bitmap == null) {
@@ -65,8 +94,20 @@ public final class GLUtils {
         }
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * A version of texImage2D() that takes an explicit type parameter
+     * as defined by the OpenGL ES specification. The actual type and
+     * internalformat of the bitmap must be compatible with the specified
+     * type and internalformat parameters.
+     *
+     * @param target
+     * @param level
+     * @param internalformat
+     * @param bitmap
+     * @param type
+     * @param border
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:31.198 -0500", hash_original_method = "78B79386B22FD4127FF455D43CC33AA2", hash_generated_method = "D32DEA26871E894FDE1AF0D71CB19DF8")
     public static void texImage2D(int target, int level, int internalformat,
             Bitmap bitmap, int type, int border) {
         if (bitmap == null) {
@@ -80,8 +121,16 @@ public final class GLUtils {
         }
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * A version of texImage2D that determines the internalFormat and type
+     * automatically.
+     *
+     * @param target
+     * @param level
+     * @param bitmap
+     * @param border
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:31.199 -0500", hash_original_method = "54245E5C92D815A48A8550C075E1277A", hash_generated_method = "05D189ABED035A5E95EAE8A96DBA368D")
     public static void texImage2D(int target, int level, Bitmap bitmap,
             int border) {
         if (bitmap == null) {
@@ -95,8 +144,29 @@ public final class GLUtils {
         }
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Calls glTexSubImage2D() on the current OpenGL context. If no context is
+     * current the behavior is the same as calling glTexSubImage2D() with  no
+     * current context, that is, eglGetError() will return the appropriate
+     * error.
+     * Unlike glTexSubImage2D() bitmap cannot be null and will raise an exception
+     * in that case.
+     * All other parameters are identical to those used for glTexSubImage2D().
+     *
+     * NOTE: this method doesn't change GL_UNPACK_ALIGNMENT, you must make
+     * sure to set it properly according to the supplied bitmap.
+     *
+     * Whether or not bitmap can have non power of two dimensions depends on
+     * the current OpenGL context. Always check glGetError() some time
+     * after calling this method, just like when using OpenGL directly.
+     *
+     * @param target
+     * @param level
+     * @param xoffset
+     * @param yoffset
+     * @param bitmap
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:31.200 -0500", hash_original_method = "8C0A16DEFCA17DC4A60E066564CB56D3", hash_generated_method = "024FF416E0F94E29C981CA21E5CEAFB9")
     public static void texSubImage2D(int target, int level, int xoffset, int yoffset,
             Bitmap bitmap) {
         if (bitmap == null) {
@@ -111,8 +181,18 @@ public final class GLUtils {
         }
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * A version of texSubImage2D() that takes an explicit type parameter
+     * as defined by the OpenGL ES specification.
+     *
+     * @param target
+     * @param level
+     * @param xoffset
+     * @param yoffset
+     * @param bitmap
+     * @param type
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:31.201 -0500", hash_original_method = "F6FE0C69971F26CF832691677B050FE2", hash_generated_method = "2161DDDE7E6B631F673E5960EC2F3860")
     public static void texSubImage2D(int target, int level, int xoffset, int yoffset,
             Bitmap bitmap, int format, int type) {
         if (bitmap == null) {
@@ -126,8 +206,15 @@ public final class GLUtils {
         }
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Return a string for the EGL error code, or the hex representation
+     * if the error is unknown.
+     * 
+     * @param error The EGL error to convert into a String.
+     * 
+     * @return An error string corresponding to the EGL error code.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:31.202 -0500", hash_original_method = "4A75296C27DF89363E5071AFCCE0DA22", hash_generated_method = "94E82E0D7C757E1E539FE45B49C33D8E")
     public static String getEGLErrorString(int error) {
         switch (error) {
             case EGL10.EGL_SUCCESS:
@@ -194,6 +281,10 @@ public final class GLUtils {
     private static int native_texSubImage2D(int target, int level, int xoffset, int yoffset,
             Bitmap bitmap, int format, int type) {
         return DSUtils.UNKNOWN_INT;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:31.194 -0500", hash_original_method = "A98AAD2DCE964D3E8867B0B125C8757B", hash_generated_method = "CEB5D41780BD88C7CD574549EFDBB1F5")
+    private GLUtils() {
     }
 
     

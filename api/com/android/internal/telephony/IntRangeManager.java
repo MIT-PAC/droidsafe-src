@@ -1,6 +1,8 @@
 package com.android.internal.telephony;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -11,595 +13,507 @@ import java.util.Iterator;
 
 
 public abstract class IntRangeManager {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.466 -0400", hash_original_field = "2B355984BC5EB38E49D845FCB0D77019", hash_generated_field = "E43FB0C78759432184E49407A51B5267")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.483 -0500", hash_original_field = "424DA09941B427078B77E1C5B651D6D1", hash_generated_field = "755EBFB204022DB38615C127DE53EE61")
+
+    private static final int INITIAL_CLIENTS_ARRAY_SIZE = 4;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.497 -0500", hash_original_field = "DA7F6BB46067E5940DD062695FF3745C", hash_generated_field = "E43FB0C78759432184E49407A51B5267")
 
     private ArrayList<IntRange> mRanges = new ArrayList<IntRange>();
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.466 -0400", hash_original_method = "362FA502CCB486C4D0A9F66987CBC492", hash_generated_method = "22D07BAE17359B60391CE9F4DA674915")
-    protected  IntRangeManager() {
-        // ---------- Original Method ----------
-    }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.470 -0400", hash_original_method = "6ED59671D51F9C9BA7262BED5BB50C74", hash_generated_method = "F64EC28FF5201D94D5E25E08911CDDFE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.498 -0500", hash_original_method = "362FA502CCB486C4D0A9F66987CBC492", hash_generated_method = "B41342CA1903927E4B1C4E6DFD5B5AB9")
+    protected IntRangeManager() {}
+
+    /**
+     * Enable a range for the specified client and update ranges
+     * if necessary. If {@link #finishUpdate} returns failure,
+     * false is returned and the range is not added.
+     *
+     * @param startId the first id included in the range
+     * @param endId the last id included in the range
+     * @param client the client requesting the enabled range
+     * @return true if successful, false otherwise
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.500 -0500", hash_original_method = "6ED59671D51F9C9BA7262BED5BB50C74", hash_generated_method = "D914C78F1D3000FFA3A5A9EC9CB7022D")
     public synchronized boolean enableRange(int startId, int endId, String client) {
-        addTaint(client.getTaint());
-        addTaint(endId);
-        addTaint(startId);
         int len = mRanges.size();
-        if(len == 0)        
-        {
-            if(tryAddSingleRange(startId, endId, true))            
-            {
+
+        // empty range list: add the initial IntRange
+        if (len == 0) {
+            if (tryAddSingleRange(startId, endId, true)) {
                 mRanges.add(new IntRange(startId, endId, client));
-                boolean varB326B5062B2F0E69046810717534CB09_185292284 = (true);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2063431088 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_2063431088;
-            } //End block
-            else
-            {
-                boolean var68934A3E9455FA72420237EB05902327_1590031140 = (false);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1593856435 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1593856435;
-            } //End block
-        } //End block
-for(int startIndex = 0;startIndex < len;startIndex++)
-        {
+                return true;
+            } else {
+                return false;   // failed to update radio
+            }
+        }
+
+        for (int startIndex = 0; startIndex < len; startIndex++) {
             IntRange range = mRanges.get(startIndex);
-            if(startId < range.startId)            
-            {
-                if((endId + 1) < range.startId)                
-                {
-                    if(tryAddSingleRange(startId, endId, true))                    
-                    {
+            if (startId < range.startId) {
+                // test if new range completely precedes this range
+                // note that [1, 4] and [5, 6] coalesce to [1, 6]
+                if ((endId + 1) < range.startId) {
+                    // insert new int range before previous first range
+                    if (tryAddSingleRange(startId, endId, true)) {
                         mRanges.add(startIndex, new IntRange(startId, endId, client));
-                        boolean varB326B5062B2F0E69046810717534CB09_687668985 = (true);
-                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_543685802 = getTaintBoolean();
-                        return var84E2C64F38F78BA3EA5C905AB5A2DA27_543685802;
-                    } //End block
-                    else
-                    {
-                        boolean var68934A3E9455FA72420237EB05902327_693908639 = (false);
-                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1944244457 = getTaintBoolean();
-                        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1944244457;
-                    } //End block
-                } //End block
-                else
-                if(endId <= range.endId)                
-                {
-                    if(tryAddSingleRange(startId, range.startId - 1, true))                    
-                    {
+                        return true;
+                    } else {
+                        return false;   // failed to update radio
+                    }
+                } else if (endId <= range.endId) {
+                    // extend the start of this range
+                    if (tryAddSingleRange(startId, range.startId - 1, true)) {
                         range.startId = startId;
                         range.clients.add(0, new ClientRange(startId, endId, client));
-                        boolean varB326B5062B2F0E69046810717534CB09_1987752964 = (true);
-                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1856678942 = getTaintBoolean();
-                        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1856678942;
-                    } //End block
-                    else
-                    {
-                        boolean var68934A3E9455FA72420237EB05902327_1302057666 = (false);
-                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_826695178 = getTaintBoolean();
-                        return var84E2C64F38F78BA3EA5C905AB5A2DA27_826695178;
-                    } //End block
-                } //End block
-                else
-                {
-for(int endIndex = startIndex+1;endIndex < len;endIndex++)
-                    {
+                        return true;
+                    } else {
+                        return false;   // failed to update radio
+                    }
+                } else {
+                    // find last range that can coalesce into the new combined range
+                    for (int endIndex = startIndex+1; endIndex < len; endIndex++) {
                         IntRange endRange = mRanges.get(endIndex);
-                        if((endId + 1) < endRange.startId)                        
-                        {
-                            if(tryAddSingleRange(startId, endId, true))                            
-                            {
+                        if ((endId + 1) < endRange.startId) {
+                            // try to add entire new range
+                            if (tryAddSingleRange(startId, endId, true)) {
                                 range.startId = startId;
                                 range.endId = endId;
+                                // insert new ClientRange before existing ranges
                                 range.clients.add(0, new ClientRange(startId, endId, client));
+                                // coalesce range with following ranges up to endIndex-1
+                                // remove each range after adding its elements, so the index
+                                // of the next range to join is always startIndex+1.
+                                // i is the index if no elements were removed: we only care
+                                // about the number of loop iterations, not the value of i.
                                 int joinIndex = startIndex + 1;
-for(int i = joinIndex;i < endIndex;i++)
-                                {
+                                for (int i = joinIndex; i < endIndex; i++) {
                                     IntRange joinRange = mRanges.get(joinIndex);
                                     range.clients.addAll(joinRange.clients);
                                     mRanges.remove(joinRange);
-                                } //End block
-                                boolean varB326B5062B2F0E69046810717534CB09_162956706 = (true);
-                                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1967708512 = getTaintBoolean();
-                                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1967708512;
-                            } //End block
-                            else
-                            {
-                                boolean var68934A3E9455FA72420237EB05902327_1641957013 = (false);
-                                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1909268811 = getTaintBoolean();
-                                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1909268811;
-                            } //End block
-                        } //End block
-                        else
-                        if(endId <= endRange.endId)                        
-                        {
-                            if(tryAddSingleRange(startId, endRange.startId - 1, true))                            
-                            {
+                                }
+                                return true;
+                            } else {
+                                return false;   // failed to update radio
+                            }
+                        } else if (endId <= endRange.endId) {
+                            // add range from start id to start of last overlapping range,
+                            // values from endRange.startId to endId are already enabled
+                            if (tryAddSingleRange(startId, endRange.startId - 1, true)) {
                                 range.startId = startId;
                                 range.endId = endRange.endId;
+                                // insert new ClientRange before existing ranges
                                 range.clients.add(0, new ClientRange(startId, endId, client));
+                                // coalesce range with following ranges up to endIndex
+                                // remove each range after adding its elements, so the index
+                                // of the next range to join is always startIndex+1.
+                                // i is the index if no elements were removed: we only care
+                                // about the number of loop iterations, not the value of i.
                                 int joinIndex = startIndex + 1;
-for(int i = joinIndex;i <= endIndex;i++)
-                                {
+                                for (int i = joinIndex; i <= endIndex; i++) {
                                     IntRange joinRange = mRanges.get(joinIndex);
                                     range.clients.addAll(joinRange.clients);
                                     mRanges.remove(joinRange);
-                                } //End block
-                                boolean varB326B5062B2F0E69046810717534CB09_796638251 = (true);
-                                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_31021066 = getTaintBoolean();
-                                return var84E2C64F38F78BA3EA5C905AB5A2DA27_31021066;
-                            } //End block
-                            else
-                            {
-                                boolean var68934A3E9455FA72420237EB05902327_733385272 = (false);
-                                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_742205771 = getTaintBoolean();
-                                return var84E2C64F38F78BA3EA5C905AB5A2DA27_742205771;
-                            } //End block
-                        } //End block
-                    } //End block
-                    if(tryAddSingleRange(startId, endId, true))                    
-                    {
+                                }
+                                return true;
+                            } else {
+                                return false;   // failed to update radio
+                            }
+                        }
+                    }
+
+                    // endId extends past all existing IntRanges: combine them all together
+                    if (tryAddSingleRange(startId, endId, true)) {
                         range.startId = startId;
                         range.endId = endId;
+                        // insert new ClientRange before existing ranges
                         range.clients.add(0, new ClientRange(startId, endId, client));
+                        // coalesce range with following ranges up to len-1
+                        // remove each range after adding its elements, so the index
+                        // of the next range to join is always startIndex+1.
+                        // i is the index if no elements were removed: we only care
+                        // about the number of loop iterations, not the value of i.
                         int joinIndex = startIndex + 1;
-for(int i = joinIndex;i < len;i++)
-                        {
+                        for (int i = joinIndex; i < len; i++) {
                             IntRange joinRange = mRanges.get(joinIndex);
                             range.clients.addAll(joinRange.clients);
                             mRanges.remove(joinRange);
-                        } //End block
-                        boolean varB326B5062B2F0E69046810717534CB09_1014359717 = (true);
-                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_243570592 = getTaintBoolean();
-                        return var84E2C64F38F78BA3EA5C905AB5A2DA27_243570592;
-                    } //End block
-                    else
-                    {
-                        boolean var68934A3E9455FA72420237EB05902327_92196551 = (false);
-                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_283261222 = getTaintBoolean();
-                        return var84E2C64F38F78BA3EA5C905AB5A2DA27_283261222;
-                    } //End block
-                } //End block
-            } //End block
-            else
-            if((startId + 1) <= range.endId)            
-            {
-                if(endId <= range.endId)                
-                {
+                        }
+                        return true;
+                    } else {
+                        return false;   // failed to update radio
+                    }
+                }
+            } else if ((startId + 1) <= range.endId) {
+                if (endId <= range.endId) {
+                    // completely contained in existing range; no radio changes
                     range.insert(new ClientRange(startId, endId, client));
-                    boolean varB326B5062B2F0E69046810717534CB09_273040430 = (true);
-                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1679327333 = getTaintBoolean();
-                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_1679327333;
-                } //End block
-                else
-                {
+                    return true;
+                } else {
+                    // find last range that can coalesce into the new combined range
                     int endIndex = startIndex;
-for(int testIndex = startIndex+1;testIndex < len;testIndex++)
-                    {
+                    for (int testIndex = startIndex+1; testIndex < len; testIndex++) {
                         IntRange testRange = mRanges.get(testIndex);
-                        if((endId + 1) < testRange.startId)                        
-                        {
+                        if ((endId + 1) < testRange.startId) {
                             break;
-                        } //End block
-                        else
-                        {
+                        } else {
                             endIndex = testIndex;
-                        } //End block
-                    } //End block
-                    if(endIndex == startIndex)                    
-                    {
-                        if(tryAddSingleRange(range.endId + 1, endId, true))                        
-                        {
+                        }
+                    }
+                    // no adjacent IntRanges to combine
+                    if (endIndex == startIndex) {
+                        // add range from range.endId+1 to endId,
+                        // values from startId to range.endId are already enabled
+                        if (tryAddSingleRange(range.endId + 1, endId, true)) {
                             range.endId = endId;
                             range.insert(new ClientRange(startId, endId, client));
-                            boolean varB326B5062B2F0E69046810717534CB09_1871854117 = (true);
-                                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1421350246 = getTaintBoolean();
-                            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1421350246;
-                        } //End block
-                        else
-                        {
-                            boolean var68934A3E9455FA72420237EB05902327_1080652058 = (false);
-                                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_484328455 = getTaintBoolean();
-                            return var84E2C64F38F78BA3EA5C905AB5A2DA27_484328455;
-                        } //End block
-                    } //End block
+                            return true;
+                        } else {
+                            return false;   // failed to update radio
+                        }
+                    }
+                    // get last range to coalesce into start range
                     IntRange endRange = mRanges.get(endIndex);
+                    // Values from startId to range.endId have already been enabled.
+                    // if endId > endRange.endId, then enable range from range.endId+1 to endId,
+                    // else enable range from range.endId+1 to endRange.startId-1, because
+                    // values from endRange.startId to endId have already been added.
                     int newRangeEndId = (endId <= endRange.endId) ? endRange.startId - 1 : endId;
-                    if(tryAddSingleRange(range.endId + 1, newRangeEndId, true))                    
-                    {
+                    if (tryAddSingleRange(range.endId + 1, newRangeEndId, true)) {
                         range.endId = endId;
+                        // insert new ClientRange in place
                         range.insert(new ClientRange(startId, endId, client));
+                        // coalesce range with following ranges up to endIndex-1
+                        // remove each range after adding its elements, so the index
+                        // of the next range to join is always startIndex+1 (joinIndex).
+                        // i is the index if no elements had been removed: we only care
+                        // about the number of loop iterations, not the value of i.
                         int joinIndex = startIndex + 1;
-for(int i = joinIndex;i < endIndex;i++)
-                        {
+                        for (int i = joinIndex; i < endIndex; i++) {
                             IntRange joinRange = mRanges.get(joinIndex);
                             range.clients.addAll(joinRange.clients);
                             mRanges.remove(joinRange);
-                        } //End block
-                        boolean varB326B5062B2F0E69046810717534CB09_2032895329 = (true);
-                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_790362797 = getTaintBoolean();
-                        return var84E2C64F38F78BA3EA5C905AB5A2DA27_790362797;
-                    } //End block
-                    else
-                    {
-                        boolean var68934A3E9455FA72420237EB05902327_210755394 = (false);
-                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1997380039 = getTaintBoolean();
-                        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1997380039;
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
-        if(tryAddSingleRange(startId, endId, true))        
-        {
+                        }
+                        return true;
+                    } else {
+                        return false;   // failed to update radio
+                    }
+                }
+            }
+        }
+
+        // append new range after existing IntRanges
+        if (tryAddSingleRange(startId, endId, true)) {
             mRanges.add(new IntRange(startId, endId, client));
-            boolean varB326B5062B2F0E69046810717534CB09_1917981382 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1231436139 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1231436139;
-        } //End block
-        else
-        {
-            boolean var68934A3E9455FA72420237EB05902327_1861548518 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_757488469 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_757488469;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            return true;
+        } else {
+            return false;   // failed to update radio
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.475 -0400", hash_original_method = "3E9B5A2BDD46323741EF7C361F65FFEC", hash_generated_method = "B7785574D488F25318E6F263EFE2ED47")
+    /**
+     * Disable a range for the specified client and update ranges
+     * if necessary. If {@link #finishUpdate} returns failure,
+     * false is returned and the range is not removed.
+     *
+     * @param startId the first id included in the range
+     * @param endId the last id included in the range
+     * @param client the client requesting to disable the range
+     * @return true if successful, false otherwise
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.503 -0500", hash_original_method = "3E9B5A2BDD46323741EF7C361F65FFEC", hash_generated_method = "1F60D8A5ED2F45A9A9BCDB5D9DDF2ECB")
     public synchronized boolean disableRange(int startId, int endId, String client) {
-        addTaint(client.getTaint());
-        addTaint(endId);
-        addTaint(startId);
         int len = mRanges.size();
-for(int i=0;i < len;i++)
-        {
+
+        for (int i=0; i < len; i++) {
             IntRange range = mRanges.get(i);
-            if(startId < range.startId)            
-            {
-                boolean var68934A3E9455FA72420237EB05902327_806746937 = (false);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_877332213 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_877332213;
-            } //End block
-            else
-            if(endId <= range.endId)            
-            {
+            if (startId < range.startId) {
+                return false;   // not found
+            } else if (endId <= range.endId) {
+                // found the IntRange that encloses the client range, if any
+                // search for it in the clients list
                 ArrayList<ClientRange> clients = range.clients;
+
+                // handle common case of IntRange containing one ClientRange
                 int crLength = clients.size();
-                if(crLength == 1)                
-                {
+                if (crLength == 1) {
                     ClientRange cr = clients.get(0);
-                    if(cr.startId == startId && cr.endId == endId && cr.client.equals(client))                    
-                    {
-                        if(tryAddSingleRange(startId, endId, false))                        
-                        {
+                    if (cr.startId == startId && cr.endId == endId && cr.client.equals(client)) {
+                        // disable range in radio then remove the entire IntRange
+                        if (tryAddSingleRange(startId, endId, false)) {
                             mRanges.remove(i);
-                            boolean varB326B5062B2F0E69046810717534CB09_2041933825 = (true);
-                                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2054630447 = getTaintBoolean();
-                            return var84E2C64F38F78BA3EA5C905AB5A2DA27_2054630447;
-                        } //End block
-                        else
-                        {
-                            boolean var68934A3E9455FA72420237EB05902327_687499588 = (false);
-                                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_413106904 = getTaintBoolean();
-                            return var84E2C64F38F78BA3EA5C905AB5A2DA27_413106904;
-                        } //End block
-                    } //End block
-                    else
-                    {
-                        boolean var68934A3E9455FA72420237EB05902327_1963439812 = (false);
-                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_359817144 = getTaintBoolean();
-                        return var84E2C64F38F78BA3EA5C905AB5A2DA27_359817144;
-                    } //End block
-                } //End block
-                int largestEndId = Integer.MIN_VALUE;
+                            return true;
+                        } else {
+                            return false;   // failed to update radio
+                        }
+                    } else {
+                        return false;   // not found
+                    }
+                }
+
+                // several ClientRanges: remove one, potentially splitting into many IntRanges.
+                // Save the original start and end id for the original IntRange
+                // in case the radio update fails and we have to revert it. If the
+                // update succeeds, we remove the client range and insert the new IntRanges.
+                int largestEndId = Integer.MIN_VALUE;  // largest end identifier found
                 boolean updateStarted = false;
-for(int crIndex=0;crIndex < crLength;crIndex++)
-                {
+
+                for (int crIndex=0; crIndex < crLength; crIndex++) {
                     ClientRange cr = clients.get(crIndex);
-                    if(cr.startId == startId && cr.endId == endId && cr.client.equals(client))                    
-                    {
-                        if(crIndex == crLength - 1)                        
-                        {
-                            if(range.endId == largestEndId)                            
-                            {
+                    if (cr.startId == startId && cr.endId == endId && cr.client.equals(client)) {
+                        // found the ClientRange to remove, check if it's the last in the list
+                        if (crIndex == crLength - 1) {
+                            if (range.endId == largestEndId) {
+                                // no channels to remove from radio; return success
                                 clients.remove(crIndex);
-                                boolean varB326B5062B2F0E69046810717534CB09_1449031487 = (true);
-                                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2084866455 = getTaintBoolean();
-                                return var84E2C64F38F78BA3EA5C905AB5A2DA27_2084866455;
-                            } //End block
-                            else
-                            {
-                                if(tryAddSingleRange(largestEndId + 1, range.endId, false))                                
-                                {
+                                return true;
+                            } else {
+                                // disable the channels at the end and lower the end id
+                                if (tryAddSingleRange(largestEndId + 1, range.endId, false)) {
                                     clients.remove(crIndex);
                                     range.endId = largestEndId;
-                                    boolean varB326B5062B2F0E69046810717534CB09_1351775241 = (true);
-                                                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_794497525 = getTaintBoolean();
-                                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_794497525;
-                                } //End block
-                                else
-                                {
-                                    boolean var68934A3E9455FA72420237EB05902327_1923279109 = (false);
-                                                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_949758328 = getTaintBoolean();
-                                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_949758328;
-                                } //End block
-                            } //End block
-                        } //End block
+                                    return true;
+                                } else {
+                                    return false;
+                                }
+                            }
+                        }
+
+                        // copy the IntRange so that we can remove elements and modify the
+                        // start and end id's in the copy, leaving the original unmodified
+                        // until after the radio update succeeds
                         IntRange rangeCopy = new IntRange(range, crIndex);
-                        if(crIndex == 0)                        
-                        {
+
+                        if (crIndex == 0) {
+                            // removing the first ClientRange, so we may need to increase
+                            // the start id of the IntRange.
+                            // We know there are at least two ClientRanges in the list,
+                            // so clients.get(1) should always succeed.
                             int nextStartId = clients.get(1).startId;
-                            if(nextStartId != range.startId)                            
-                            {
+                            if (nextStartId != range.startId) {
                                 startUpdate();
                                 updateStarted = true;
                                 addRange(range.startId, nextStartId - 1, false);
                                 rangeCopy.startId = nextStartId;
-                            } //End block
+                            }
+                            // init largestEndId
                             largestEndId = clients.get(1).endId;
-                        } //End block
+                        }
+
+                        // go through remaining ClientRanges, creating new IntRanges when
+                        // there is a gap in the sequence. After radio update succeeds,
+                        // remove the original IntRange and append newRanges to mRanges.
+                        // Otherwise, leave the original IntRange in mRanges and return false.
                         ArrayList<IntRange> newRanges = new ArrayList<IntRange>();
+
                         IntRange currentRange = rangeCopy;
-for(int nextIndex = crIndex + 1;nextIndex < crLength;nextIndex++)
-                        {
+                        for (int nextIndex = crIndex + 1; nextIndex < crLength; nextIndex++) {
                             ClientRange nextCr = clients.get(nextIndex);
-                            if(nextCr.startId > largestEndId + 1)                            
-                            {
-                                if(!updateStarted)                                
-                                {
+                            if (nextCr.startId > largestEndId + 1) {
+                                if (!updateStarted) {
                                     startUpdate();
                                     updateStarted = true;
-                                } //End block
+                                }
                                 addRange(largestEndId + 1, nextCr.startId - 1, false);
                                 currentRange.endId = largestEndId;
                                 newRanges.add(currentRange);
                                 currentRange = new IntRange(nextCr);
-                            } //End block
-                            else
-                            {
+                            } else {
                                 currentRange.clients.add(nextCr);
-                            } //End block
-                            if(nextCr.endId > largestEndId)                            
-                            {
+                            }
+                            if (nextCr.endId > largestEndId) {
                                 largestEndId = nextCr.endId;
-                            } //End block
-                        } //End block
-                        if(largestEndId < endId)                        
-                        {
-                            if(!updateStarted)                            
-                            {
+                            }
+                        }
+
+                        // remove any channels between largestEndId and endId
+                        if (largestEndId < endId) {
+                            if (!updateStarted) {
                                 startUpdate();
                                 updateStarted = true;
-                            } //End block
+                            }
                             addRange(largestEndId + 1, endId, false);
                             currentRange.endId = largestEndId;
-                        } //End block
+                        }
                         newRanges.add(currentRange);
-                        if(updateStarted && !finishUpdate())                        
-                        {
-                            boolean var68934A3E9455FA72420237EB05902327_1248180248 = (false);
-                                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1929236806 = getTaintBoolean();
-                            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1929236806;
-                        } //End block
+
+                        if (updateStarted && !finishUpdate()) {
+                            return false;   // failed to update radio
+                        }
+
+                        // replace the original IntRange with newRanges
                         mRanges.remove(i);
                         mRanges.addAll(i, newRanges);
-                        boolean varB326B5062B2F0E69046810717534CB09_1198114893 = (true);
-                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_676466259 = getTaintBoolean();
-                        return var84E2C64F38F78BA3EA5C905AB5A2DA27_676466259;
-                    } //End block
-                    else
-                    {
-                        if(cr.endId > largestEndId)                        
-                        {
+                        return true;
+                    } else {
+                        // not the ClientRange to remove; save highest end ID seen so far
+                        if (cr.endId > largestEndId) {
                             largestEndId = cr.endId;
-                        } //End block
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
-        boolean var68934A3E9455FA72420237EB05902327_452812138 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1578416084 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1578416084;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                        }
+                    }
+                }
+            }
+        }
+
+        return false;   // not found
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.477 -0400", hash_original_method = "6D2ABBA8943E817B6A7F4354584C0478", hash_generated_method = "BB2AFD05EF20B51EE006D7C0CDDE52BF")
+    /**
+     * Perform a complete update operation (enable all ranges). Useful
+     * after a radio reset. Calls {@link #startUpdate}, followed by zero or
+     * more calls to {@link #addRange}, followed by {@link #finishUpdate}.
+     * @return true if successful, false otherwise
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.504 -0500", hash_original_method = "6D2ABBA8943E817B6A7F4354584C0478", hash_generated_method = "25B01AFFB5A09D9A62F42C50C23FB56F")
     public boolean updateRanges() {
         startUpdate();
         Iterator<IntRange> iterator = mRanges.iterator();
-        if(iterator.hasNext())        
-        {
+        if (iterator.hasNext()) {
             IntRange range = iterator.next();
             int start = range.startId;
             int end = range.endId;
-            while
-(iterator.hasNext())            
-            {
+            // accumulate ranges of [startId, endId]
+            while (iterator.hasNext()) {
                 IntRange nextNode = iterator.next();
-                if(nextNode.startId <= (end + 1))                
-                {
-                    if(nextNode.endId > end)                    
-                    {
+                // [startIdA, endIdA], [endIdA + 1, endIdB] -> [startIdA, endIdB]
+                if (nextNode.startId <= (end + 1)) {
+                    if (nextNode.endId > end) {
                         end = nextNode.endId;
-                    } //End block
-                } //End block
-                else
-                {
+                    }
+                } else {
                     addRange(start, end, true);
                     start = nextNode.startId;
                     end = nextNode.endId;
-                } //End block
-            } //End block
+                }
+            }
+            // add final range
             addRange(start, end, true);
-        } //End block
-        boolean var4C3605E2FED9FB10BADCCCDB35A8BC62_538989566 = (finishUpdate());
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1276732279 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1276732279;
-        // ---------- Original Method ----------
-        //startUpdate();
-        //Iterator<IntRange> iterator = mRanges.iterator();
-        //if (iterator.hasNext()) {
-            //IntRange range = iterator.next();
-            //int start = range.startId;
-            //int end = range.endId;
-            //while (iterator.hasNext()) {
-                //IntRange nextNode = iterator.next();
-                //if (nextNode.startId <= (end + 1)) {
-                    //if (nextNode.endId > end) {
-                        //end = nextNode.endId;
-                    //}
-                //} else {
-                    //addRange(start, end, true);
-                    //start = nextNode.startId;
-                    //end = nextNode.endId;
-                //}
-            //}
-            //addRange(start, end, true);
-        //}
-        //return finishUpdate();
+        }
+        return finishUpdate();
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.478 -0400", hash_original_method = "66D9B78BD0A6572F2D23304F41F243DE", hash_generated_method = "8577E280E3F439E9EE1DFE04987B3778")
+    /**
+     * Enable or disable a single range of message identifiers.
+     * @param startId the first id included in the range
+     * @param endId the last id included in the range
+     * @param selected true to enable range, false to disable range
+     * @return true if successful, false otherwise
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.505 -0500", hash_original_method = "66D9B78BD0A6572F2D23304F41F243DE", hash_generated_method = "F458D0A984C1D2137808AB1EA3DDEA68")
     private boolean tryAddSingleRange(int startId, int endId, boolean selected) {
-        addTaint(selected);
-        addTaint(endId);
-        addTaint(startId);
         startUpdate();
         addRange(startId, endId, selected);
-        boolean var4C3605E2FED9FB10BADCCCDB35A8BC62_503382589 = (finishUpdate());
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1070868092 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1070868092;
-        // ---------- Original Method ----------
-        //startUpdate();
-        //addRange(startId, endId, selected);
-        //return finishUpdate();
+        return finishUpdate();
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.478 -0400", hash_original_method = "3535E42AC2A5B7497897BAD158CB88AF", hash_generated_method = "AB450A5AE37EB5595FC3FD76B5423B4F")
+    /**
+     * Returns whether the list of ranges is completely empty.
+     * @return true if there are no enabled ranges
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.506 -0500", hash_original_method = "3535E42AC2A5B7497897BAD158CB88AF", hash_generated_method = "B948E6FAB4BE4D2FE2FB2AB8D0C9B61A")
     public boolean isEmpty() {
-        boolean var4A182B3170A47CB458F8C45AB3739898_2117226749 = (mRanges.isEmpty());
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_573242658 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_573242658;
-        // ---------- Original Method ----------
-        //return mRanges.isEmpty();
+        return mRanges.isEmpty();
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Called when the list of enabled ranges has changed. This will be
+     * followed by zero or more calls to {@link #addRange} followed by
+     * a call to {@link #finishUpdate}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.507 -0500", hash_original_method = "FCF51CD311107A31FE3B2EFC0793E843", hash_generated_method = "0C123BC9261889849152F9859E89C9E9")
     protected abstract void startUpdate();
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Called after {@link #startUpdate} to indicate a range of enabled
+     * or disabled values.
+     *
+     * @param startId the first id included in the range
+     * @param endId the last id included in the range
+     * @param selected true to enable range, false to disable range
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.508 -0500", hash_original_method = "F3A93B80CF184574F1C80995545F3790", hash_generated_method = "0ED64598EA827C0BEDDFD4FA8733DA59")
     protected abstract void addRange(int startId, int endId, boolean selected);
 
     
-    @DSModeled(DSC.SAFE)
-    protected abstract boolean finishUpdate();
-
-    
     private class IntRange {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.479 -0400", hash_original_field = "1479C40F2636F6E3EEED28E17C8A08D9", hash_generated_field = "B575BF041CFA248D715BE93778A966DC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.484 -0500", hash_original_field = "B575BF041CFA248D715BE93778A966DC", hash_generated_field = "B575BF041CFA248D715BE93778A966DC")
 
         int startId;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.479 -0400", hash_original_field = "30E5A8439BA3B2DD50160927AB87D03D", hash_generated_field = "D469E1326C7C274FD4D56F815E4A1D73")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.485 -0500", hash_original_field = "D469E1326C7C274FD4D56F815E4A1D73", hash_generated_field = "D469E1326C7C274FD4D56F815E4A1D73")
 
         int endId;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.479 -0400", hash_original_field = "FAC04CA68A48AF91F0290001604A2463", hash_generated_field = "DD30F90F1DFDA1050591F66AD1E9CE7F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.485 -0500", hash_original_field = "DD30F90F1DFDA1050591F66AD1E9CE7F", hash_generated_field = "DD30F90F1DFDA1050591F66AD1E9CE7F")
 
-        ArrayList<ClientRange> clients;
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.479 -0400", hash_original_method = "F07B82A28B52231FBB76629ABCB97069", hash_generated_method = "FD85D7559ED4C2DA87E049FBBEC805FE")
-          IntRange(int startId, int endId, String client) {
-            addTaint(client.getTaint());
+         ArrayList<ClientRange> clients;
+
+        /**
+         * Create a new IntRange with a single client.
+         * @param startId the first id included in the range
+         * @param endId the last id included in the range
+         * @param client the client requesting the enabled range
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.486 -0500", hash_original_method = "F07B82A28B52231FBB76629ABCB97069", hash_generated_method = "F07B82A28B52231FBB76629ABCB97069")
+        IntRange(int startId, int endId, String client) {
             this.startId = startId;
             this.endId = endId;
             clients = new ArrayList<ClientRange>(INITIAL_CLIENTS_ARRAY_SIZE);
             clients.add(new ClientRange(startId, endId, client));
-            // ---------- Original Method ----------
-            //this.startId = startId;
-            //this.endId = endId;
-            //clients = new ArrayList<ClientRange>(INITIAL_CLIENTS_ARRAY_SIZE);
-            //clients.add(new ClientRange(startId, endId, client));
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.480 -0400", hash_original_method = "BA7832996744AA8092A9A5E21086E160", hash_generated_method = "7BA355DFC1B6681CD4E3AA92366DAC86")
-          IntRange(ClientRange clientRange) {
+        /**
+         * Create a new IntRange for an existing ClientRange.
+         * @param clientRange the initial ClientRange to add
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.487 -0500", hash_original_method = "BA7832996744AA8092A9A5E21086E160", hash_generated_method = "BA7832996744AA8092A9A5E21086E160")
+        IntRange(ClientRange clientRange) {
             startId = clientRange.startId;
             endId = clientRange.endId;
             clients = new ArrayList<ClientRange>(INITIAL_CLIENTS_ARRAY_SIZE);
             clients.add(clientRange);
-            // ---------- Original Method ----------
-            //startId = clientRange.startId;
-            //endId = clientRange.endId;
-            //clients = new ArrayList<ClientRange>(INITIAL_CLIENTS_ARRAY_SIZE);
-            //clients.add(clientRange);
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.480 -0400", hash_original_method = "A2EC39EA4DD73652B403D173FB1236C3", hash_generated_method = "44C32759AE6D6E3731B44420940816D3")
-          IntRange(IntRange intRange, int numElements) {
-            addTaint(numElements);
+        /**
+         * Create a new IntRange from an existing IntRange. This is used for
+         * removing a ClientRange, because new IntRanges may need to be created
+         * for any gaps that open up after the ClientRange is removed. A copy
+         * is made of the elements of the original IntRange preceding the element
+         * that is being removed. The following elements will be added to this
+         * IntRange or to a new IntRange when a gap is found.
+         * @param intRange the original IntRange to copy elements from
+         * @param numElements the number of elements to copy from the original
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.488 -0500", hash_original_method = "A2EC39EA4DD73652B403D173FB1236C3", hash_generated_method = "A2EC39EA4DD73652B403D173FB1236C3")
+        IntRange(IntRange intRange, int numElements) {
             this.startId = intRange.startId;
             this.endId = intRange.endId;
             this.clients = new ArrayList<ClientRange>(intRange.clients.size());
-for(int i=0;i < numElements;i++)
-            {
+            for (int i=0; i < numElements; i++) {
                 this.clients.add(intRange.clients.get(i));
-            } //End block
-            // ---------- Original Method ----------
-            //this.startId = intRange.startId;
-            //this.endId = intRange.endId;
-            //this.clients = new ArrayList<ClientRange>(intRange.clients.size());
-            //for (int i=0; i < numElements; i++) {
-                //this.clients.add(intRange.clients.get(i));
-            //}
+            }
         }
 
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.481 -0400", hash_original_method = "5E2FBB55D30010C4D5AE540EBBAC773C", hash_generated_method = "FCC2076617B797DAE19D182A91CC8E0E")
-         void insert(ClientRange range) {
-            addTaint(range.getTaint());
+        /**
+         * Insert new ClientRange in order by start id.
+         * <p>If the new ClientRange is known to be sorted before or after the
+         * existing ClientRanges, or at a particular index, it can be added
+         * to the clients array list directly, instead of via this method.
+         * <p>Note that this can be changed from linear to binary search if the
+         * number of clients grows large enough that it would make a difference.
+         * @param range the new ClientRange to insert
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.490 -0500", hash_original_method = "5E2FBB55D30010C4D5AE540EBBAC773C", hash_generated_method = "05663A8D6F45CCD39EBF87C099356AE4")
+        void insert(ClientRange range) {
             int len = clients.size();
-for(int i=0;i < len;i++)
-            {
+            for (int i=0; i < len; i++) {
                 ClientRange nextRange = clients.get(i);
-                if(range.startId <= nextRange.startId)                
-                {
-                    if(!range.equals(nextRange))                    
-                    {
+                if (range.startId <= nextRange.startId) {
+                    // ignore duplicate ranges from the same client
+                    if (!range.equals(nextRange)) {
                         clients.add(i, range);
-                    } //End block
+                    }
                     return;
-                } //End block
-            } //End block
-            clients.add(range);
-            // ---------- Original Method ----------
-            //int len = clients.size();
-            //for (int i=0; i < len; i++) {
-                //ClientRange nextRange = clients.get(i);
-                //if (range.startId <= nextRange.startId) {
-                    //if (!range.equals(nextRange)) {
-                        //clients.add(i, range);
-                    //}
-                    //return;
-                //}
-            //}
-            //clients.add(range);
+                }
+            }
+            clients.add(range);    // append to end of list
         }
 
         
@@ -608,78 +522,51 @@ for(int i=0;i < len;i++)
 
     
     private class ClientRange {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.481 -0400", hash_original_field = "1479C40F2636F6E3EEED28E17C8A08D9", hash_generated_field = "B575BF041CFA248D715BE93778A966DC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.492 -0500", hash_original_field = "B575BF041CFA248D715BE93778A966DC", hash_generated_field = "B575BF041CFA248D715BE93778A966DC")
 
-        int startId;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.481 -0400", hash_original_field = "30E5A8439BA3B2DD50160927AB87D03D", hash_generated_field = "D469E1326C7C274FD4D56F815E4A1D73")
+         int startId;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.492 -0500", hash_original_field = "D469E1326C7C274FD4D56F815E4A1D73", hash_generated_field = "D469E1326C7C274FD4D56F815E4A1D73")
 
-        int endId;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.481 -0400", hash_original_field = "62608E08ADC29A8D6DBC9754E659F125", hash_generated_field = "B53CFB15BD6573E83D2588E535C40087")
+         int endId;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.493 -0500", hash_original_field = "B53CFB15BD6573E83D2588E535C40087", hash_generated_field = "B53CFB15BD6573E83D2588E535C40087")
 
-        String client;
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.481 -0400", hash_original_method = "0233CEEC110E7548B64806A81A8747BD", hash_generated_method = "8A9C28D210140B4512C21C49AFDD4E38")
-          ClientRange(int startId, int endId, String client) {
+         String client;
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.494 -0500", hash_original_method = "0233CEEC110E7548B64806A81A8747BD", hash_generated_method = "0233CEEC110E7548B64806A81A8747BD")
+        ClientRange(int startId, int endId, String client) {
             this.startId = startId;
             this.endId = endId;
             this.client = client;
-            // ---------- Original Method ----------
-            //this.startId = startId;
-            //this.endId = endId;
-            //this.client = client;
         }
 
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.481 -0400", hash_original_method = "1032526D9DAEE515FA8C17531DBF15E9", hash_generated_method = "D28323F08164C1046E14F8271E492993")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.495 -0500", hash_original_method = "1032526D9DAEE515FA8C17531DBF15E9", hash_generated_method = "16202EE818EC4DDF9F149B854F56C5E2")
         @Override
-        public boolean equals(Object o) {
-            addTaint(o.getTaint());
-            if(o != null && o instanceof ClientRange)            
-            {
+public boolean equals(Object o) {
+            if (o != null && o instanceof ClientRange) {
                 ClientRange other = (ClientRange) o;
-                boolean varAD32CB64BCB0205319B7E8E441350216_982686301 = (startId == other.startId &&
+                return startId == other.startId &&
                         endId == other.endId &&
-                        client.equals(other.client));
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1254641423 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1254641423;
-            } //End block
-            else
-            {
-                boolean var68934A3E9455FA72420237EB05902327_936158282 = (false);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_787880347 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_787880347;
-            } //End block
-            // ---------- Original Method ----------
-            //if (o != null && o instanceof ClientRange) {
-                //ClientRange other = (ClientRange) o;
-                //return startId == other.startId &&
-                        //endId == other.endId &&
-                        //client.equals(other.client);
-            //} else {
-                //return false;
-            //}
+                        client.equals(other.client);
+            } else {
+                return false;
+            }
         }
 
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.482 -0400", hash_original_method = "0C827ECC35335C49789EB5A12C0D3470", hash_generated_method = "6623FA6D786FE85C76A7E9EF1204D982")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.496 -0500", hash_original_method = "0C827ECC35335C49789EB5A12C0D3470", hash_generated_method = "06036D7E4EDE321F05B46CD2CA11EBC2")
         @Override
-        public int hashCode() {
-            int var4844D2584D9A8987A29943F2F0DD954C_2144218452 = ((startId * 31 + endId) * 31 + client.hashCode());
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_609825716 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_609825716;
-            // ---------- Original Method ----------
-            //return (startId * 31 + endId) * 31 + client.hashCode();
+public int hashCode() {
+            return (startId * 31 + endId) * 31 + client.hashCode();
         }
 
         
     }
 
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.482 -0400", hash_original_field = "34FA81EDAFCA80AF9B9CF345E4A5F242", hash_generated_field = "755EBFB204022DB38615C127DE53EE61")
-
-    private static final int INITIAL_CLIENTS_ARRAY_SIZE = 4;
+    /**
+     * Called to indicate the end of a range update started by the
+     * previous call to {@link #startUpdate}.
+     * @return true if successful, false otherwise
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:18.508 -0500", hash_original_method = "6F392A19DED1FB567010348872D79562", hash_generated_method = "8FEEA1381A8EBB4860023AB8FE45AAC7")
+    protected abstract boolean finishUpdate();
 }
 

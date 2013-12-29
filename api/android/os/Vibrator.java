@@ -1,6 +1,9 @@
 package android.os;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
+import android.util.Log;
 import droidsafe.annotations.*;
 
 
@@ -9,10 +12,14 @@ import droidsafe.annotations.*;
 import droidsafe.helpers.DSUtils;
 
 public class Vibrator {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.819 -0400", hash_original_field = "D96EB21FC1A83B484FAE33A12B05D9CB", hash_generated_field = "6D5176DB6DC642185DCF8E32C5EC1BC9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:42.018 -0500", hash_original_field = "978871C473963B7B85160A7F3D0A428F", hash_generated_field = "58FE1B639F58F6B845A5213089DAFE03")
+
+    private static final String TAG = "Vibrator";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:42.019 -0500", hash_original_field = "6D5176DB6DC642185DCF8E32C5EC1BC9", hash_generated_field = "6D5176DB6DC642185DCF8E32C5EC1BC9")
+
 
     IVibratorService mService;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.819 -0400", hash_original_field = "0483E306D297FF9F10FBB2053BA4F86A", hash_generated_field = "338AF9C7C3937329885532B2150C11ED")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:42.020 -0500", hash_original_field = "B6655DE5A418A8AD5DE782E8D5BD3E0A", hash_generated_field = "338AF9C7C3937329885532B2150C11ED")
 
     private final Binder mToken = new Binder();
     
@@ -75,35 +82,20 @@ public class Vibrator {
         //}
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.820 -0400", hash_original_method = "9CFB04510A80ABA723862EE634095A2D", hash_generated_method = "8D41DB29BDA8014ECBFFAFF7A98E566E")
-    public void cancel() {
-        if(mService == null)        
-        {
+    /**
+     * Turn the vibrator off.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:42.024 -0500", hash_original_method = "9CFB04510A80ABA723862EE634095A2D", hash_generated_method = "9713832FE84F3FCBD8DE0E9E6E792254")
+    public void cancel()
+    {
+        if (mService == null) {
             return;
-        } //End block
-        try 
-        {
+        }
+        try {
             mService.cancelVibrate(mToken);
-        } //End block
-        catch (RemoteException e)
-        {
-        } //End block
-        // ---------- Original Method ----------
-        //if (mService == null) {
-            //return;
-        //}
-        //try {
-            //mService.cancelVibrate(mToken);
-        //} catch (RemoteException e) {
-            //Log.w(TAG, "Failed to cancel vibration.", e);
-        //}
+        } catch (RemoteException e) {
+            Log.w(TAG, "Failed to cancel vibration.", e);
+        }
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.820 -0400", hash_original_field = "0F10BB7F8A96946641A73EC224944DC4", hash_generated_field = "58FE1B639F58F6B845A5213089DAFE03")
-
-    private static final String TAG = "Vibrator";
 }
 

@@ -1,6 +1,8 @@
 package android.widget;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.content.Context;
 import android.text.Editable;
@@ -14,144 +16,85 @@ import android.util.AttributeSet;
 
 
 public class EditText extends TextView {
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.265 -0400", hash_original_method = "3D8BBCF9E8BFADB5EA8354D28833D1D0", hash_generated_method = "004227708DFAC48EEFF94D6D5031CBB9")
-    public  EditText(Context context) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.435 -0500", hash_original_method = "3D8BBCF9E8BFADB5EA8354D28833D1D0", hash_generated_method = "C75AE58EE7E177481EFAC327F009D2AF")
+    public EditText(Context context) {
         this(context, null);
-        addTaint(context.getTaint());
-        // ---------- Original Method ----------
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.265 -0400", hash_original_method = "13651F89327987238C61359B94395EF4", hash_generated_method = "3FF0FF407F2CA1CB4EA5D0515F8EEC5E")
-    public  EditText(Context context, AttributeSet attrs) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.436 -0500", hash_original_method = "13651F89327987238C61359B94395EF4", hash_generated_method = "839BB48F992F6EDC4F6529EB4CFBC279")
+    public EditText(Context context, AttributeSet attrs) {
         this(context, attrs, com.android.internal.R.attr.editTextStyle);
-        addTaint(attrs.getTaint());
-        addTaint(context.getTaint());
-        // ---------- Original Method ----------
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.265 -0400", hash_original_method = "B310470CAC184D932B7E9107B288DF59", hash_generated_method = "E87959948F5E5A6B16FF5C15C3C9990B")
-    public  EditText(Context context, AttributeSet attrs, int defStyle) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.437 -0500", hash_original_method = "B310470CAC184D932B7E9107B288DF59", hash_generated_method = "96F551ACA7625DCE5E3C0BAEC552DCDA")
+    public EditText(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-        addTaint(defStyle);
-        addTaint(attrs.getTaint());
-        addTaint(context.getTaint());
-        // ---------- Original Method ----------
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.266 -0400", hash_original_method = "78689D8CF0BA47FA74C236553C6AEDBF", hash_generated_method = "19424D4825BE15E952E381C52C635919")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.438 -0500", hash_original_method = "78689D8CF0BA47FA74C236553C6AEDBF", hash_generated_method = "25597A8E2CEB5B7E359C206F209D1756")
     @Override
-    protected boolean getDefaultEditable() {
-        boolean varB326B5062B2F0E69046810717534CB09_1956431618 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_306787722 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_306787722;
-        // ---------- Original Method ----------
-        //return true;
+protected boolean getDefaultEditable() {
+        return true;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.266 -0400", hash_original_method = "B69FA8267E3DCA70E8EEE3A6942BD033", hash_generated_method = "82F5EE081992772AC6DC5C494EE2D79A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.439 -0500", hash_original_method = "B69FA8267E3DCA70E8EEE3A6942BD033", hash_generated_method = "827C518ACE25A445E808B13E1896D522")
     @Override
-    protected MovementMethod getDefaultMovementMethod() {
-MovementMethod varB9DD7E3298263497125F004EAD4CC7BD_486795289 =         ArrowKeyMovementMethod.getInstance();
-        varB9DD7E3298263497125F004EAD4CC7BD_486795289.addTaint(taint);
-        return varB9DD7E3298263497125F004EAD4CC7BD_486795289;
-        // ---------- Original Method ----------
-        //return ArrowKeyMovementMethod.getInstance();
+protected MovementMethod getDefaultMovementMethod() {
+        return ArrowKeyMovementMethod.getInstance();
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.266 -0400", hash_original_method = "7E84A3A8580CD7F3BD2A1E596441D1C1", hash_generated_method = "00CE190400DE0EF145F2962E28595133")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.440 -0500", hash_original_method = "7E84A3A8580CD7F3BD2A1E596441D1C1", hash_generated_method = "8266E1AA5ACD94F6F88AA30EBD01D147")
     @Override
-    public Editable getText() {
-Editable varCE395BFEABB3FF1A9551A05D26DCF380_1401163382 =         (Editable) super.getText();
-        varCE395BFEABB3FF1A9551A05D26DCF380_1401163382.addTaint(taint);
-        return varCE395BFEABB3FF1A9551A05D26DCF380_1401163382;
-        // ---------- Original Method ----------
-        //return (Editable) super.getText();
+public Editable getText() {
+        return (Editable) super.getText();
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.266 -0400", hash_original_method = "91EEE8E208E2C0AA25FB9684496DF44B", hash_generated_method = "2D42A95E529D983F0740C56AD7A748FD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.440 -0500", hash_original_method = "91EEE8E208E2C0AA25FB9684496DF44B", hash_generated_method = "F4CE5E692ED684A96EEE23BA8F4FEFCF")
     @Override
-    public void setText(CharSequence text, BufferType type) {
-        addTaint(type.getTaint());
-        addTaint(text.getTaint());
+public void setText(CharSequence text, BufferType type) {
         super.setText(text, BufferType.EDITABLE);
-        // ---------- Original Method ----------
-        //super.setText(text, BufferType.EDITABLE);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.267 -0400", hash_original_method = "F43056F38C29E5CA5FEFE1CD9DA04514", hash_generated_method = "477930099A210C7BD7E75CB7763A1DE0")
+    /**
+     * Convenience for {@link Selection#setSelection(Spannable, int, int)}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.441 -0500", hash_original_method = "F43056F38C29E5CA5FEFE1CD9DA04514", hash_generated_method = "9C182A29414CB267A68687703D8459E4")
     public void setSelection(int start, int stop) {
-        addTaint(stop);
-        addTaint(start);
         Selection.setSelection(getText(), start, stop);
-        // ---------- Original Method ----------
-        //Selection.setSelection(getText(), start, stop);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.267 -0400", hash_original_method = "A198D78C33BD7BD56EF74E8B7D53E824", hash_generated_method = "7849FE2D5E16C406C540974B4FB09316")
+    /**
+     * Convenience for {@link Selection#setSelection(Spannable, int)}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.442 -0500", hash_original_method = "A198D78C33BD7BD56EF74E8B7D53E824", hash_generated_method = "3A18037E551DA3E220EF61A1C619D38D")
     public void setSelection(int index) {
-        addTaint(index);
         Selection.setSelection(getText(), index);
-        // ---------- Original Method ----------
-        //Selection.setSelection(getText(), index);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.267 -0400", hash_original_method = "49D3F8B7E29E8DF6F83DD071F1ED7D81", hash_generated_method = "9187CC6366D6115D68A15990FFCCDB01")
+    /**
+     * Convenience for {@link Selection#selectAll}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.443 -0500", hash_original_method = "49D3F8B7E29E8DF6F83DD071F1ED7D81", hash_generated_method = "2A8DBF255241177793079CC07A11E6A1")
     public void selectAll() {
         Selection.selectAll(getText());
-        // ---------- Original Method ----------
-        //Selection.selectAll(getText());
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.267 -0400", hash_original_method = "673DC4021002F481902DEBB3491C7A8B", hash_generated_method = "113BB940A600B9B7FB8B4F6D99635543")
+    /**
+     * Convenience for {@link Selection#extendSelection}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.444 -0500", hash_original_method = "673DC4021002F481902DEBB3491C7A8B", hash_generated_method = "129866D157F67B037238DC97D96D904C")
     public void extendSelection(int index) {
-        addTaint(index);
         Selection.extendSelection(getText(), index);
-        // ---------- Original Method ----------
-        //Selection.extendSelection(getText(), index);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.268 -0400", hash_original_method = "6149CD37480D13E19ED1369D0EB1259F", hash_generated_method = "2AA0E509111DBFCC40C32708B576B12E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.444 -0500", hash_original_method = "6149CD37480D13E19ED1369D0EB1259F", hash_generated_method = "B85F62DC494030C28FDECABCDE97C862")
     @Override
-    public void setEllipsize(TextUtils.TruncateAt ellipsis) {
-        addTaint(ellipsis.getTaint());
-        if(ellipsis == TextUtils.TruncateAt.MARQUEE)        
-        {
-            IllegalArgumentException varC2DC157A2F69A245A537D9DBE7256FCB_1923649439 = new IllegalArgumentException("EditText cannot use the ellipsize mode "
+public void setEllipsize(TextUtils.TruncateAt ellipsis) {
+        if (ellipsis == TextUtils.TruncateAt.MARQUEE) {
+            throw new IllegalArgumentException("EditText cannot use the ellipsize mode "
                     + "TextUtils.TruncateAt.MARQUEE");
-            varC2DC157A2F69A245A537D9DBE7256FCB_1923649439.addTaint(taint);
-            throw varC2DC157A2F69A245A537D9DBE7256FCB_1923649439;
-        } //End block
+        }
         super.setEllipsize(ellipsis);
-        // ---------- Original Method ----------
-        //if (ellipsis == TextUtils.TruncateAt.MARQUEE) {
-            //throw new IllegalArgumentException("EditText cannot use the ellipsize mode "
-                    //+ "TextUtils.TruncateAt.MARQUEE");
-        //}
-        //super.setEllipsize(ellipsis);
     }
 
     

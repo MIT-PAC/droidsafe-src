@@ -1,47 +1,60 @@
 package java.security;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
 
 public class ProviderException extends RuntimeException {
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.337 -0400", hash_original_method = "4F6DF0DF8572865516F19A786749BA2D", hash_generated_method = "2AC577969C19328440ED86758D795C53")
-    public  ProviderException(String msg) {
-        super(msg);
-        addTaint(msg.getTaint());
-        // ---------- Original Method ----------
-    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:16.071 -0500", hash_original_field = "6E25386BD252D6C891D04F11C860A646", hash_generated_field = "824A5F3D6F682455BB2A1994F230FF51")
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.337 -0400", hash_original_method = "C6FD128032A25223FCE8DF59B6440EFD", hash_generated_method = "AE2C6FE8FA1DD7754D6AAA9F0ABC68D7")
-    public  ProviderException() {
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.337 -0400", hash_original_method = "9D8D611DA847D087295A6CFF5F4EEF0C", hash_generated_method = "2F7AAA1198C7CF8F51B433C2718FECF9")
-    public  ProviderException(String message, Throwable cause) {
-        super(message, cause);
-        addTaint(cause.getTaint());
-        addTaint(message.getTaint());
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.337 -0400", hash_original_method = "39103B62643A614FF10A8AB7735F1560", hash_generated_method = "6E8F6DB5AA52A79F263745D983B01B81")
-    public  ProviderException(Throwable cause) {
-        super(cause);
-        addTaint(cause.getTaint());
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.337 -0400", hash_original_field = "A48AFDB3DA30B5433BC74D5AEA0E833C", hash_generated_field = "824A5F3D6F682455BB2A1994F230FF51")
 
     private static final long serialVersionUID = 5256023526693665674L;
+
+    /**
+     * Constructs a new instance of {@code ProviderException} with the given
+     * message.
+     *
+     * @param msg
+     *            the detail message for this exception.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:16.072 -0500", hash_original_method = "4F6DF0DF8572865516F19A786749BA2D", hash_generated_method = "8D2DBFEE39A91F52752FE961F075ED33")
+    public ProviderException(String msg) {
+        super(msg);
+    }
+
+    /**
+     * Constructs a new instance of {@code ProviderException}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:16.073 -0500", hash_original_method = "C6FD128032A25223FCE8DF59B6440EFD", hash_generated_method = "A7CAD064E0C0DFEA01146D642750AE5E")
+    public ProviderException() {
+    }
+
+    /**
+     * Constructs a new instance of {@code ProviderException} with the given
+     * message and the cause.
+     *
+     * @param message
+     *            the detail message for this exception.
+     * @param cause
+     *            the exception which is the cause for this exception.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:16.075 -0500", hash_original_method = "9D8D611DA847D087295A6CFF5F4EEF0C", hash_generated_method = "F40891BAAD3E5966A39EF052DD6559BF")
+    public ProviderException(String message, Throwable cause) {
+        super(message, cause);
+    }
+
+    /**
+     * Constructs a new instance of {@code ProviderException} with the cause.
+     *
+     * @param cause
+     *            the exception which is the cause for this exception.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:16.076 -0500", hash_original_method = "39103B62643A614FF10A8AB7735F1560", hash_generated_method = "CB6BEB26BB8D901CB7FD49F11A2E9FB4")
+    public ProviderException(Throwable cause) {
+        super(cause);
+    }
 }
 

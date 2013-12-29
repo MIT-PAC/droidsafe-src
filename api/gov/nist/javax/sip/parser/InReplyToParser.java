@@ -1,6 +1,8 @@
 package gov.nist.javax.sip.parser;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import gov.nist.core.Token;
 import gov.nist.javax.sip.header.InReplyTo;
@@ -15,65 +17,69 @@ import java.text.ParseException;
 
 
 public class InReplyToParser extends HeaderParser {
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:37.719 -0400", hash_original_method = "7EE0A4AE96DC703284542932FE729FBB", hash_generated_method = "C9411351C1E5B676DB6F3A4FEAFDBC61")
-    public  InReplyToParser(String inReplyTo) {
+
+    /**
+     * Creates a new instance of InReplyToParser
+     * @param inReplyTo the header to parse
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:11.249 -0500", hash_original_method = "7EE0A4AE96DC703284542932FE729FBB", hash_generated_method = "D9BAA364E4896897364EC470C55B144D")
+    public InReplyToParser(String inReplyTo) {
         super(inReplyTo);
-        addTaint(inReplyTo.getTaint());
-        // ---------- Original Method ----------
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:37.720 -0400", hash_original_method = "513EEBB38452DE199EDFA3069C858F5F", hash_generated_method = "CAE03DC805C508DE845B029D8069273B")
-    protected  InReplyToParser(Lexer lexer) {
+    /**
+     * Constructor
+     * @param lexer the lexer to use to parse the header
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:11.251 -0500", hash_original_method = "513EEBB38452DE199EDFA3069C858F5F", hash_generated_method = "0D8B268B46F9A92E6178751B56CF0C2D")
+    protected InReplyToParser(Lexer lexer) {
         super(lexer);
-        addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:37.722 -0400", hash_original_method = "A68E0921F08E40A4FFD6BCC285B4B760", hash_generated_method = "5873F96E143AC6E1E8509C89005D368A")
+    /**
+     * parse the String message
+     * @return SIPHeader (InReplyToList object)
+     * @throws SIPParseException if the message does not respect the spec.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:11.252 -0500", hash_original_method = "A68E0921F08E40A4FFD6BCC285B4B760", hash_generated_method = "8F8FF4F55B417D9FC34E9B3BBDC89DB8")
     public SIPHeader parse() throws ParseException {
-        if(debug)        
-        dbg_enter("InReplyToParser.parse");
+
+        if (debug)
+            dbg_enter("InReplyToParser.parse");
         InReplyToList list = new InReplyToList();
-        try 
-        {
+
+        try {
             headerName(TokenTypes.IN_REPLY_TO);
-            while
-(lexer.lookAhead(0) != '\n')            
-            {
+
+            while (lexer.lookAhead(0) != '\n') {
                 InReplyTo inReplyTo = new InReplyTo();
                 inReplyTo.setHeaderName(SIPHeaderNames.IN_REPLY_TO);
+
                 this.lexer.match(TokenTypes.ID);
                 Token token = lexer.getNextToken();
-                if(lexer.lookAhead(0) == '@')                
-                {
+                if (lexer.lookAhead(0) == '@') {
                     this.lexer.match('@');
                     this.lexer.match(TokenTypes.ID);
                     Token secToken = lexer.getNextToken();
                     inReplyTo.setCallId(
                         token.getTokenValue() + "@" + secToken.getTokenValue());
-                } //End block
-                else
-                {
+                } else {
                     inReplyTo.setCallId(token.getTokenValue());
-                } //End block
+                }
+
                 this.lexer.SPorHT();
+
                 list.add(inReplyTo);
-                while
-(lexer.lookAhead(0) == ',')                
-                {
+
+                while (lexer.lookAhead(0) == ',') {
                     this.lexer.match(',');
                     this.lexer.SPorHT();
+
                     inReplyTo = new InReplyTo();
+
                     this.lexer.match(TokenTypes.ID);
                     token = lexer.getNextToken();
-                    if(lexer.lookAhead(0) == '@')                    
-                    {
+                    if (lexer.lookAhead(0) == '@') {
                         this.lexer.match('@');
                         this.lexer.match(TokenTypes.ID);
                         Token secToken = lexer.getNextToken();
@@ -81,25 +87,19 @@ public class InReplyToParser extends HeaderParser {
                             token.getTokenValue()
                                 + "@"
                                 + secToken.getTokenValue());
-                    } //End block
-                    else
-                    {
+                    } else {
                         inReplyTo.setCallId(token.getTokenValue());
-                    } //End block
+                    }
+
                     list.add(inReplyTo);
-                } //End block
-            } //End block
-SIPHeader varED12C351C2E8CA4F85F097DDC7E77B4D_1443709294 =             list;
-            varED12C351C2E8CA4F85F097DDC7E77B4D_1443709294.addTaint(taint);
-            return varED12C351C2E8CA4F85F097DDC7E77B4D_1443709294;
-        } //End block
-        finally 
-        {
-            if(debug)            
-            dbg_leave("InReplyToParser.parse");
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                }
+            }
+
+            return list;
+        } finally {
+            if (debug)
+                dbg_leave("InReplyToParser.parse");
+        }
     }
 
     

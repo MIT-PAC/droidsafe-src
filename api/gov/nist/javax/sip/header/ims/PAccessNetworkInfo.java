@@ -1,6 +1,8 @@
 package gov.nist.javax.sip.header.ims;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import gov.nist.javax.sip.header.ParametersHeader;
 
@@ -14,334 +16,263 @@ import javax.sip.header.ExtensionHeader;
 
 
 public class PAccessNetworkInfo extends ParametersHeader implements PAccessNetworkInfoHeader, ExtensionHeader {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.994 -0400", hash_original_field = "C094CFF5A400E24D3E32C2F411A1B793", hash_generated_field = "4265F4D4355352003752ED1DA82667CD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:51.733 -0500", hash_original_field = "A696923051D2A58D159F9B39FEED0908", hash_generated_field = "4265F4D4355352003752ED1DA82667CD")
+
 
     private String accessType;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.994 -0400", hash_original_field = "849A050A2DDE1357870F15A44C8398CE", hash_generated_field = "0CDE7F70FD33947CCE71E89D96DB001C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:51.735 -0500", hash_original_field = "4C41B3A690BCB5C2F6D884B522B300D9", hash_generated_field = "0CDE7F70FD33947CCE71E89D96DB001C")
+
 
     private Object extendAccessInfo;
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.994 -0400", hash_original_method = "DEE74A53744AC3C87B8E5D43A4E5AAF1", hash_generated_method = "65F3138D03DFD60A3C1CA7CFEA9ABE25")
-    public  PAccessNetworkInfo() {
+
+    /**
+     * Public constructor.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:51.736 -0500", hash_original_method = "DEE74A53744AC3C87B8E5D43A4E5AAF1", hash_generated_method = "91E7EF6609D8DAD04F568A7121A83655")
+    public PAccessNetworkInfo() {
         super(PAccessNetworkInfoHeader.NAME);
         parameters.setSeparator(SEMICOLON);
-        // ---------- Original Method ----------
-        //parameters.setSeparator(SEMICOLON);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.995 -0400", hash_original_method = "6534876DB72B3A707C2CB418BA871B14", hash_generated_method = "994A5E9F7763AD51E3ED2D1F94600F2B")
-    public  PAccessNetworkInfo(String accessTypeVal) {
+    /**
+     * Constructor.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:51.737 -0500", hash_original_method = "6534876DB72B3A707C2CB418BA871B14", hash_generated_method = "AC34A8190EF9D0A6BD3879F9EA4C45CB")
+    public PAccessNetworkInfo(String accessTypeVal) {
         this();
-        addTaint(accessTypeVal.getTaint());
         setAccessType(accessTypeVal);
-        // ---------- Original Method ----------
-        //setAccessType(accessTypeVal);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.995 -0400", hash_original_method = "D6FCF3C8B020A71473FC0BA5D5C4EFFC", hash_generated_method = "5D5FC3AFEEEF41A8566F92DB448E73E8")
+    /**
+     * Set the accessTpe
+     *
+     * @param accessTypeVal - access type
+     * @throws NullPointerException
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:51.738 -0500", hash_original_method = "D6FCF3C8B020A71473FC0BA5D5C4EFFC", hash_generated_method = "20F47E7829202E1172CC4E5EB80902E4")
     public void setAccessType(String accessTypeVal) {
-        if(accessTypeVal == null)        
-        {
-        NullPointerException varC04CF5D9AD3BD8261BA02B62BA142947_2028574156 = new NullPointerException(
+        if (accessTypeVal == null)
+            throw new NullPointerException(
                     "JAIN-SIP Exception, "
                             + "P-Access-Network-Info, setAccessType(), the accessType parameter is null.");
-        varC04CF5D9AD3BD8261BA02B62BA142947_2028574156.addTaint(taint);
-        throw varC04CF5D9AD3BD8261BA02B62BA142947_2028574156;
-        }
+
         this.accessType = accessTypeVal;
-        // ---------- Original Method ----------
-        //if (accessTypeVal == null)
-            //throw new NullPointerException(
-                    //"JAIN-SIP Exception, "
-                            //+ "P-Access-Network-Info, setAccessType(), the accessType parameter is null.");
-        //this.accessType = accessTypeVal;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.995 -0400", hash_original_method = "7B5E071ADED3A6B6E006FB21C0442CF7", hash_generated_method = "471019DB517CEE09E00696CC4AD315E5")
+    /**
+     * @return String access type
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:51.739 -0500", hash_original_method = "7B5E071ADED3A6B6E006FB21C0442CF7", hash_generated_method = "E2F83D396E3BFE6CFC04987A88BFC11D")
     public String getAccessType() {
-String var13839985BF7A2123F9C538846603D7DA_1567410722 =         accessType;
-        var13839985BF7A2123F9C538846603D7DA_1567410722.addTaint(taint);
-        return var13839985BF7A2123F9C538846603D7DA_1567410722;
-        // ---------- Original Method ----------
-        //return accessType;
+        return accessType;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.996 -0400", hash_original_method = "E9F3B4E9864C75E8FFBFA10460D6CC15", hash_generated_method = "9A86F70C5029A8A6ABCE8D99D73C0976")
+    /**
+     *
+     * @param cgi -- String CGI value
+     * @throws NullPointerException -- if null argument passed in
+     * @throws ParseException -- if bad argument passed in.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:51.740 -0500", hash_original_method = "E9F3B4E9864C75E8FFBFA10460D6CC15", hash_generated_method = "DBA07E921634B6E5EF99F72BAFEB3F17")
     public void setCGI3GPP(String cgi) throws ParseException {
-        addTaint(cgi.getTaint());
-        if(cgi == null)        
-        {
-        NullPointerException varFF8AA56D7D55F1B17FB0AD2ABCAABD51_2009119786 = new NullPointerException(
+
+        if (cgi == null)
+            throw new NullPointerException(
                     "JAIN-SIP Exception, "
                             + "P-Access-Network-Info, setCGI3GPP(), the cgi parameter is null.");
-        varFF8AA56D7D55F1B17FB0AD2ABCAABD51_2009119786.addTaint(taint);
-        throw varFF8AA56D7D55F1B17FB0AD2ABCAABD51_2009119786;
-        }
+
         setParameter(ParameterNamesIms.CGI_3GPP, cgi);
-        // ---------- Original Method ----------
-        //if (cgi == null)
-            //throw new NullPointerException(
-                    //"JAIN-SIP Exception, "
-                            //+ "P-Access-Network-Info, setCGI3GPP(), the cgi parameter is null.");
-        //setParameter(ParameterNamesIms.CGI_3GPP, cgi);
+
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.996 -0400", hash_original_method = "DB7CBC31CF308121D9BAFEDB35CD4092", hash_generated_method = "DE7FC740AE4FEBEA0F84233A8FF1F868")
+    /**
+     *
+     * @return String CGI value
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:51.741 -0500", hash_original_method = "DB7CBC31CF308121D9BAFEDB35CD4092", hash_generated_method = "A45E79A5DE4A5A8ADB82FF6DC04F08AD")
     public String getCGI3GPP() {
-String var3812EB68A035524A86CF47B940DCA391_1222658306 =         getParameter(ParameterNamesIms.CGI_3GPP);
-        var3812EB68A035524A86CF47B940DCA391_1222658306.addTaint(taint);
-        return var3812EB68A035524A86CF47B940DCA391_1222658306;
-        // ---------- Original Method ----------
-        //return getParameter(ParameterNamesIms.CGI_3GPP);
+        return getParameter(ParameterNamesIms.CGI_3GPP);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.996 -0400", hash_original_method = "3441B9130B7E2309E30E20A20941366E", hash_generated_method = "ABF435C3AE4DAB96D42493BFB0F41173")
+    /**
+     * Set the UtranCellID field.
+     *
+     * @param  utranCellID -- String UTRAN Cell ID value
+     * @throws NullPointerException
+     * @throws ParseException
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:51.743 -0500", hash_original_method = "3441B9130B7E2309E30E20A20941366E", hash_generated_method = "AC3F246D3C80B124CB121536F0AFE125")
     public void setUtranCellID3GPP(String utranCellID) throws ParseException {
-        addTaint(utranCellID.getTaint());
-        if(utranCellID == null)        
-        {
-        NullPointerException varCEFC84FAAD9C65938851144DF0556B69_479485822 = new NullPointerException(
+
+        if (utranCellID == null)
+            throw new NullPointerException(
                     "JAIN-SIP Exception, "
                             + "P-Access-Network-Info, setUtranCellID3GPP(), the utranCellID parameter is null.");
-        varCEFC84FAAD9C65938851144DF0556B69_479485822.addTaint(taint);
-        throw varCEFC84FAAD9C65938851144DF0556B69_479485822;
-        }
+
         setParameter(ParameterNamesIms.UTRAN_CELL_ID_3GPP, utranCellID);
-        // ---------- Original Method ----------
-        //if (utranCellID == null)
-            //throw new NullPointerException(
-                    //"JAIN-SIP Exception, "
-                            //+ "P-Access-Network-Info, setUtranCellID3GPP(), the utranCellID parameter is null.");
-        //setParameter(ParameterNamesIms.UTRAN_CELL_ID_3GPP, utranCellID);
+
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.997 -0400", hash_original_method = "0ADE7B7C3AF1E996E987AFD2A2268F3F", hash_generated_method = "5515B88E89A9930AC70D8B05A398828C")
+    /**
+     *
+     * @return String UTRAN Cell ID value
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:51.744 -0500", hash_original_method = "0ADE7B7C3AF1E996E987AFD2A2268F3F", hash_generated_method = "560268C317D31311D398DE827FA21A6B")
     public String getUtranCellID3GPP() {
-String varB7D6779487FCB9E7AA24DA0384F3987E_2018048575 =         getParameter(ParameterNamesIms.UTRAN_CELL_ID_3GPP);
-        varB7D6779487FCB9E7AA24DA0384F3987E_2018048575.addTaint(taint);
-        return varB7D6779487FCB9E7AA24DA0384F3987E_2018048575;
-        // ---------- Original Method ----------
-        //return getParameter(ParameterNamesIms.UTRAN_CELL_ID_3GPP);
+        return getParameter(ParameterNamesIms.UTRAN_CELL_ID_3GPP);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.997 -0400", hash_original_method = "36CD4D2ED6BE8C30DC84C656A727D43F", hash_generated_method = "BAA1F24B401F4051A3757ADC524C0E99")
+    /**
+     *
+     * @param dslLocation - String with the DSL location value
+     * @throws NullPointerException
+     * @throws ParseException
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:51.746 -0500", hash_original_method = "36CD4D2ED6BE8C30DC84C656A727D43F", hash_generated_method = "FECD0A87B992F78D5B01A99C33F2F827")
     public void setDSLLocation(String dslLocation) throws ParseException {
-        addTaint(dslLocation.getTaint());
-        if(dslLocation == null)        
-        {
-        NullPointerException var49921CC09DD0ECDA1653AA98E0FD4ACE_1811408470 = new NullPointerException(
+
+        if (dslLocation == null)
+            throw new NullPointerException(
                     "JAIN-SIP Exception, "
                             + "P-Access-Network-Info, setDSLLocation(), the dslLocation parameter is null.");
-        var49921CC09DD0ECDA1653AA98E0FD4ACE_1811408470.addTaint(taint);
-        throw var49921CC09DD0ECDA1653AA98E0FD4ACE_1811408470;
-        }
+
         setParameter(ParameterNamesIms.DSL_LOCATION, dslLocation);
-        // ---------- Original Method ----------
-        //if (dslLocation == null)
-            //throw new NullPointerException(
-                    //"JAIN-SIP Exception, "
-                            //+ "P-Access-Network-Info, setDSLLocation(), the dslLocation parameter is null.");
-        //setParameter(ParameterNamesIms.DSL_LOCATION, dslLocation);
+
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.997 -0400", hash_original_method = "4D20CBE53C80D56010466434BFFF6884", hash_generated_method = "E10718C1062BE76946860F518C4C7DBF")
+    /**
+     *
+     * @return String DSL location value
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:51.747 -0500", hash_original_method = "4D20CBE53C80D56010466434BFFF6884", hash_generated_method = "8AFE48D88FA34430BDED0B8C0DAB3FF5")
     public String getDSLLocation() {
-String var56319797F5EE3CFB62504C9DF7482837_1386888619 =         getParameter(ParameterNamesIms.DSL_LOCATION);
-        var56319797F5EE3CFB62504C9DF7482837_1386888619.addTaint(taint);
-        return var56319797F5EE3CFB62504C9DF7482837_1386888619;
-        // ---------- Original Method ----------
-        //return getParameter(ParameterNamesIms.DSL_LOCATION);
+        return getParameter(ParameterNamesIms.DSL_LOCATION);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.998 -0400", hash_original_method = "8FAF3F13595D3CEC54730D14353CA65A", hash_generated_method = "8019DF5A344EC163F744A4F46DAD36BF")
+    /**
+     *
+     * @param ci3Gpp2 -- String CI 3GPP2 value
+     * @throws NullPointerException -- if arg is null
+     * @throws ParseException -- if arg is bad.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:51.748 -0500", hash_original_method = "8FAF3F13595D3CEC54730D14353CA65A", hash_generated_method = "7367414E6177A4D7A1FB06400BC54EE2")
     public void setCI3GPP2(String ci3Gpp2) throws ParseException {
-        addTaint(ci3Gpp2.getTaint());
-        if(ci3Gpp2 == null)        
-        {
-        NullPointerException varF8B399B00306EE66DFB63411E177853E_815591492 = new NullPointerException(
+        if (ci3Gpp2 == null)
+            throw new NullPointerException(
                     "JAIN-SIP Exception, "
                             + "P-Access-Network-Info, setCI3GPP2(), the ci3Gpp2 parameter is null.");
-        varF8B399B00306EE66DFB63411E177853E_815591492.addTaint(taint);
-        throw varF8B399B00306EE66DFB63411E177853E_815591492;
-        }
+
         setParameter(ParameterNamesIms.CI_3GPP2, ci3Gpp2);
-        // ---------- Original Method ----------
-        //if (ci3Gpp2 == null)
-            //throw new NullPointerException(
-                    //"JAIN-SIP Exception, "
-                            //+ "P-Access-Network-Info, setCI3GPP2(), the ci3Gpp2 parameter is null.");
-        //setParameter(ParameterNamesIms.CI_3GPP2, ci3Gpp2);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.998 -0400", hash_original_method = "18AE63A32B787BFBE4E7AAC618BF3721", hash_generated_method = "D7BACD60CB98CE6986E2F7A8D7828A96")
+    /**
+     *
+     * @return String CI 3GPP2 value
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:51.749 -0500", hash_original_method = "18AE63A32B787BFBE4E7AAC618BF3721", hash_generated_method = "3A19AE7BF16B224E9EBE1D5E5B558A55")
     public String getCI3GPP2() {
-String varCE2F991713F6651BF4DC93FE5785DC00_191281456 =         getParameter(ParameterNamesIms.CI_3GPP2);
-        varCE2F991713F6651BF4DC93FE5785DC00_191281456.addTaint(taint);
-        return varCE2F991713F6651BF4DC93FE5785DC00_191281456;
-        // ---------- Original Method ----------
-        //return getParameter(ParameterNamesIms.CI_3GPP2);
+        return getParameter(ParameterNamesIms.CI_3GPP2);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.998 -0400", hash_original_method = "EBE4690A0158C298C62212A7BC5E46A3", hash_generated_method = "F275D628C02B330A902E879BE60B1F3A")
+    /**
+     *
+     * @param name --
+     *            parameter name
+     * @param value --
+     *            value of parameter
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:51.750 -0500", hash_original_method = "EBE4690A0158C298C62212A7BC5E46A3", hash_generated_method = "F4734D6D56C72B0F7F9D658A9C8DAAD5")
     public void setParameter(String name, Object value) {
-        addTaint(value.getTaint());
-        addTaint(name.getTaint());
-        if(name.equalsIgnoreCase(ParameterNamesIms.CGI_3GPP)
+        /**
+         * @todo ParametersHeader needs to be fix!? missing "throws
+         *       ParseException" in setParameter(String, Object)
+         */
+
+        if (name.equalsIgnoreCase(ParameterNamesIms.CGI_3GPP)
                 || name.equalsIgnoreCase(ParameterNamesIms.UTRAN_CELL_ID_3GPP)
                 || name.equalsIgnoreCase(ParameterNamesIms.DSL_LOCATION)
-                || name.equalsIgnoreCase(ParameterNamesIms.CI_3GPP2))        
-        {
-            try 
-            {
+                || name.equalsIgnoreCase(ParameterNamesIms.CI_3GPP2)) {
+            try {
                 super.setQuotedParameter(name, value.toString());
-            } //End block
-            catch (ParseException e)
-            {
-            } //End block
-        } //End block
-        else
-        {
+            } catch (ParseException e) {
+
+            }
+
+        } else {
+            // value can be token either than a quoted-string
             super.setParameter(name, value);
-        } //End block
-        // ---------- Original Method ----------
-        //if (name.equalsIgnoreCase(ParameterNamesIms.CGI_3GPP)
-                //|| name.equalsIgnoreCase(ParameterNamesIms.UTRAN_CELL_ID_3GPP)
-                //|| name.equalsIgnoreCase(ParameterNamesIms.DSL_LOCATION)
-                //|| name.equalsIgnoreCase(ParameterNamesIms.CI_3GPP2)) {
-            //try {
-                //super.setQuotedParameter(name, value.toString());
-            //} catch (ParseException e) {
-            //}
-        //} else {
-            //super.setParameter(name, value);
-        //}
+
+        }
+
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.999 -0400", hash_original_method = "14EC79395C271902F7A8954DCD0CA9FB", hash_generated_method = "D8CC1D243860E6AD0E3C4AA093FA2A43")
-    public void setExtensionAccessInfo(Object extendAccessInfo) throws ParseException {
-        if(extendAccessInfo == null)        
-        {
-        NullPointerException varF558C1AA21B67DD3E64E317BB4572F9C_81070486 = new NullPointerException(
+    /**
+     * extension-access-info = gen-value gen-value = token / host /
+     * quoted-string
+     *
+     * @param extendAccessInfo - extended Access Information
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:51.752 -0500", hash_original_method = "14EC79395C271902F7A8954DCD0CA9FB", hash_generated_method = "9D8DC21B2E661CFB236A3E23E197F7D8")
+    public void setExtensionAccessInfo(Object extendAccessInfo)
+            throws ParseException {
+
+        if (extendAccessInfo == null)
+            throw new NullPointerException(
                     "JAIN-SIP Exception, "
                             + "P-Access-Network-Info, setExtendAccessInfo(), the extendAccessInfo parameter is null.");
-        varF558C1AA21B67DD3E64E317BB4572F9C_81070486.addTaint(taint);
-        throw varF558C1AA21B67DD3E64E317BB4572F9C_81070486;
-        }
+
+        // or -> setParameter("", extendAccessInfo);
+
         this.extendAccessInfo = extendAccessInfo;
-        // ---------- Original Method ----------
-        //if (extendAccessInfo == null)
-            //throw new NullPointerException(
-                    //"JAIN-SIP Exception, "
-                            //+ "P-Access-Network-Info, setExtendAccessInfo(), the extendAccessInfo parameter is null.");
-        //this.extendAccessInfo = extendAccessInfo;
+
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.000 -0400", hash_original_method = "1DDCE9F900020BBCC56ECC227A2A793D", hash_generated_method = "66B1D648E4B848C97110D1E81C8FA2AA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:51.753 -0500", hash_original_method = "1DDCE9F900020BBCC56ECC227A2A793D", hash_generated_method = "83AEFCD17FF33A85ECF496C6E47988A6")
     public Object getExtensionAccessInfo() {
-Object var92A160837D8EF0168F11ECE20849458E_358224723 =         this.extendAccessInfo;
-        var92A160837D8EF0168F11ECE20849458E_358224723.addTaint(taint);
-        return var92A160837D8EF0168F11ECE20849458E_358224723;
-        // ---------- Original Method ----------
-        //return this.extendAccessInfo;
+        return this.extendAccessInfo;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.000 -0400", hash_original_method = "1EAFA3D993C26925ABBC9977DB42C837", hash_generated_method = "7F539465189CF5E80AFDD2ABC5CF1759")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:51.754 -0500", hash_original_method = "1EAFA3D993C26925ABBC9977DB42C837", hash_generated_method = "D9E442B522372DFDBEB103F441F0565E")
     protected String encodeBody() {
+
         StringBuffer encoding = new StringBuffer();
-        if(getAccessType() != null)        
-        encoding.append(getAccessType());
-        if(!parameters.isEmpty())        
-        {
+
+        if (getAccessType() != null)
+            encoding.append(getAccessType());
+
+        if (!parameters.isEmpty()) {
             encoding.append(SEMICOLON + SP + this.parameters.encode());
-        } //End block
-        if(getExtensionAccessInfo() != null)        
-        {
+        }
+        // else if (getExtendAccessInfo() != null) // stack deve limitar, de
+        // acordo com a especificação ?
+        if (getExtensionAccessInfo() != null) {
             encoding.append(SEMICOLON + SP
                     + getExtensionAccessInfo().toString());
-        } //End block
-String varD48A745DC29A29C7851286E6A426D0D0_1991775628 =         encoding.toString();
-        varD48A745DC29A29C7851286E6A426D0D0_1991775628.addTaint(taint);
-        return varD48A745DC29A29C7851286E6A426D0D0_1991775628;
-        // ---------- Original Method ----------
-        //StringBuffer encoding = new StringBuffer();
-        //if (getAccessType() != null)
-            //encoding.append(getAccessType());
-        //if (!parameters.isEmpty()) {
-            //encoding.append(SEMICOLON + SP + this.parameters.encode());
-        //}
-        //if (getExtensionAccessInfo() != null) {
-            //encoding.append(SEMICOLON + SP
-                    //+ getExtensionAccessInfo().toString());
-        //}
-        //return encoding.toString();
+        }
+
+        return encoding.toString();
+
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.000 -0400", hash_original_method = "4B92A49D74A1215E0C3EC12D290AF61B", hash_generated_method = "6C11BAD9357D4988BD67358362718391")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:51.755 -0500", hash_original_method = "4B92A49D74A1215E0C3EC12D290AF61B", hash_generated_method = "014FE50D8A9A4F50DCF1C9E31F934432")
     public void setValue(String value) throws ParseException {
-        addTaint(value.getTaint());
-        ParseException varADC68F4409F245E41BA5DDA0F06CA1BA_1697374572 = new ParseException(value, 0);
-        varADC68F4409F245E41BA5DDA0F06CA1BA_1697374572.addTaint(taint);
-        throw varADC68F4409F245E41BA5DDA0F06CA1BA_1697374572;
-        // ---------- Original Method ----------
-        //throw new ParseException(value, 0);
+        throw new ParseException(value, 0);
+
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.001 -0400", hash_original_method = "3C3E67AEA43A987A78987E8A7C9369D7", hash_generated_method = "2570FD9AF376DE8916963F4AC44A728D")
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:51.756 -0500", hash_original_method = "3C3E67AEA43A987A78987E8A7C9369D7", hash_generated_method = "A711518DD1BAB8F3F40B030EBFCB607A")
     public boolean equals(Object other) {
-        addTaint(other.getTaint());
-        boolean varA5C91BB804C246CD67D472AD4B719C56_1080927761 = ((other instanceof PAccessNetworkInfoHeader) && super.equals(other));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_912252424 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_912252424;
-        // ---------- Original Method ----------
-        //return (other instanceof PAccessNetworkInfoHeader) && super.equals(other);
+        return (other instanceof PAccessNetworkInfoHeader) && super.equals(other);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.001 -0400", hash_original_method = "80A80943646C1EE5D35A726D4DDD4538", hash_generated_method = "044159E09396A7960253B6C0B8A1D0DF")
+    /*
+     * Makes a deep clone. (ParametersHeader)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:51.758 -0500", hash_original_method = "80A80943646C1EE5D35A726D4DDD4538", hash_generated_method = "DD76636312376A9FF23DDB3EF1FAD52D")
     public Object clone() {
         PAccessNetworkInfo retval = (PAccessNetworkInfo) super.clone();
-Object varF9E19AD6135C970F387F77C6F3DE4477_23269394 =         retval;
-        varF9E19AD6135C970F387F77C6F3DE4477_23269394.addTaint(taint);
-        return varF9E19AD6135C970F387F77C6F3DE4477_23269394;
-        // ---------- Original Method ----------
-        //PAccessNetworkInfo retval = (PAccessNetworkInfo) super.clone();
-        //return retval;
+        return retval;
     }
 
     

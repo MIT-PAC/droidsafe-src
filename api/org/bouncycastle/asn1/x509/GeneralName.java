@@ -1,6 +1,8 @@
 package org.bouncycastle.asn1.x509;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 import java.util.StringTokenizer;
@@ -26,119 +28,21 @@ import org.bouncycastle.util.IPAddress;
 
 
 public class GeneralName extends ASN1Encodable implements ASN1Choice {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.693 -0400", hash_original_field = "BE8F80182E0C983916DA7338C2C1C040", hash_generated_field = "C14035F3386E46275A7D663AC38D8A14")
-
-    DEREncodable obj;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.693 -0400", hash_original_field = "E4D23E841D8E8804190027BCE3180FA5", hash_generated_field = "0870A130AAC33D99955FFBF59B769627")
-
-    int tag;
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.694 -0400", hash_original_method = "ADE0DAE6BE5F1175688F81D676806619", hash_generated_method = "E0B97A054FF02C188587E94A8DFD80D7")
-    public  GeneralName(
-        X509Name  dirName) {
-        this.obj = dirName;
-        this.tag = 4;
-        // ---------- Original Method ----------
-        //this.obj = dirName;
-        //this.tag = 4;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.694 -0400", hash_original_method = "C9285F8047F7E752E9E16F56DB946619", hash_generated_method = "5849A1FB12E98D0EE9ECAC7307462461")
-    public  GeneralName(
-        X500Name dirName) {
-        this.obj = dirName;
-        this.tag = 4;
-        // ---------- Original Method ----------
-        //this.obj = dirName;
-        //this.tag = 4;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.695 -0400", hash_original_method = "D162BA12EC49621407922055320A05EF", hash_generated_method = "DD9CC29BA2DB0B242690EBD36A22DA6F")
-    public  GeneralName(
-        DERObject name, int tag) {
-        this.obj = name;
-        this.tag = tag;
-        // ---------- Original Method ----------
-        //this.obj = name;
-        //this.tag = tag;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.695 -0400", hash_original_method = "665CD76EA1DF7ECA95D5C037ABED8C02", hash_generated_method = "DA021E28FCFC1CD04E4328E4BEAD69B3")
-    public  GeneralName(
-        int           tag,
-        ASN1Encodable name) {
-        this.obj = name;
-        this.tag = tag;
-        // ---------- Original Method ----------
-        //this.obj = name;
-        //this.tag = tag;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.696 -0400", hash_original_method = "4C7C4EFE2EC806CECAFA053C455D2BA2", hash_generated_method = "951D3C9E74FDA3DC2422664B845CA28A")
-    public  GeneralName(
-        int       tag,
-        String    name) {
-        this.tag = tag;
-        if(tag == rfc822Name || tag == dNSName || tag == uniformResourceIdentifier)        
-        {
-            this.obj = new DERIA5String(name);
-        } //End block
-        else
-        if(tag == registeredID)        
-        {
-            this.obj = new DERObjectIdentifier(name);
-        } //End block
-        else
-        if(tag == directoryName)        
-        {
-            this.obj = new X509Name(name);
-        } //End block
-        else
-        if(tag == iPAddress)        
-        {
-            byte[] enc = toGeneralNameEncoding(name);
-            if(enc != null)            
-            {
-                this.obj = new DEROctetString(enc);
-            } //End block
-            else
-            {
-                IllegalArgumentException varA45D23F663C3D7D4B9E0CE18FD179036_2145024128 = new IllegalArgumentException("IP Address is invalid");
-                varA45D23F663C3D7D4B9E0CE18FD179036_2145024128.addTaint(taint);
-                throw varA45D23F663C3D7D4B9E0CE18FD179036_2145024128;
-            } //End block
-        } //End block
-        else
-        {
-            IllegalArgumentException var334DA4DD96B542180B6378A70311997E_841755793 = new IllegalArgumentException("can't process String for tag: " + tag);
-            var334DA4DD96B542180B6378A70311997E_841755793.addTaint(taint);
-            throw var334DA4DD96B542180B6378A70311997E_841755793;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
-
-    
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:53.395 -0500", hash_original_method = "54EB3F8F10D837749BD54B5257E33309", hash_generated_method = "734DA2A9C8A7CF13749D016C17E76B23")
     public static GeneralName getInstance(
-        Object obj) {
+        Object obj)
+    {
         if (obj == null || obj instanceof GeneralName)
         {
             return (GeneralName)obj;
         }
+
         if (obj instanceof ASN1TaggedObject)
         {
             ASN1TaggedObject    tagObj = (ASN1TaggedObject)obj;
             int                 tag = tagObj.getTagNo();
+
             switch (tag)
             {
             case otherName:
@@ -161,6 +65,7 @@ public class GeneralName extends ASN1Encodable implements ASN1Choice {
                 return new GeneralName(tag, DERObjectIdentifier.getInstance(tagObj, false));
             }
         }
+
         if (obj instanceof byte[])
         {
             try
@@ -172,350 +77,391 @@ public class GeneralName extends ASN1Encodable implements ASN1Choice {
                 throw new IllegalArgumentException("unable to parse encoded general name");
             }
         }
+
         throw new IllegalArgumentException("unknown object in getInstance: " + obj.getClass().getName());
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:53.396 -0500", hash_original_method = "44CA722101605B85C9B6A11FF132BB34", hash_generated_method = "C7028C9595845F3AB819F9BDE3FE6839")
     public static GeneralName getInstance(
         ASN1TaggedObject tagObj,
-        boolean          explicit) {
+        boolean          explicit)
+    {
         return GeneralName.getInstance(ASN1TaggedObject.getInstance(tagObj, true));
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:53.381 -0500", hash_original_field = "44F7072630815187DEE3A6D8F6646429", hash_generated_field = "2C60CF820709947727993EEE876A89E1")
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.698 -0400", hash_original_method = "50B74CB2E4EBFF1B331EE5025ECA03E2", hash_generated_method = "AD8A66EB266585BE643A554596E7349C")
-    public int getTagNo() {
-        int varE4D23E841D8E8804190027BCE3180FA5_1578918202 = (tag);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1221261539 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1221261539;
-        // ---------- Original Method ----------
-        //return tag;
+    public static final int otherName                     = 0;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:53.381 -0500", hash_original_field = "5FC52BB5B3DD35BB32C10F76A1885344", hash_generated_field = "D9BB2562526C1C2803346041FE9A9479")
+
+    public static final int rfc822Name                    = 1;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:53.382 -0500", hash_original_field = "AFAC4931C208E7208C121DC65392DC5A", hash_generated_field = "23A7DFE231C60FEBF0B4AFFCA7C9D797")
+
+    public static final int dNSName                       = 2;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:53.383 -0500", hash_original_field = "324901C31CAE28AFFDB5191B29F8EA46", hash_generated_field = "22B173553BEDFE31A7EA23714B44E922")
+
+    public static final int x400Address                   = 3;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:53.384 -0500", hash_original_field = "D03A84CE85AE42C54BE8344D6945838E", hash_generated_field = "6771712D3DAA106B0694ED750691B023")
+
+    public static final int directoryName                 = 4;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:53.385 -0500", hash_original_field = "D42B43BE5F77F22363905E7924DC6DC8", hash_generated_field = "74CB4F34E97D116A425947C2F109D7AD")
+
+    public static final int ediPartyName                  = 5;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:53.386 -0500", hash_original_field = "28BD8805180FE97A8C1F0205A7F16178", hash_generated_field = "8995C085497DE0EAEF0DC2A248EAD3AD")
+
+    public static final int uniformResourceIdentifier     = 6;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:53.387 -0500", hash_original_field = "DD05770B79F3521FF99C78F36882D8C2", hash_generated_field = "14B98AF4049CB1ED7AAA7C8B6A2D7956")
+
+    public static final int iPAddress                     = 7;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:53.388 -0500", hash_original_field = "EB5ED18743AB9D3423FA82CFC2A9F58E", hash_generated_field = "751FE59FD146DD9B6987948A4960C030")
+
+    public static final int registeredID                  = 8;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:53.388 -0500", hash_original_field = "C14035F3386E46275A7D663AC38D8A14", hash_generated_field = "C14035F3386E46275A7D663AC38D8A14")
+
+
+    DEREncodable      obj;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:53.389 -0500", hash_original_field = "0870A130AAC33D99955FFBF59B769627", hash_generated_field = "0870A130AAC33D99955FFBF59B769627")
+
+    int               tag;
+   
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:53.390 -0500", hash_original_method = "ADE0DAE6BE5F1175688F81D676806619", hash_generated_method = "9EA2D774F38468220044F60DCC33B8F8")
+    public GeneralName(
+        X509Name  dirName)
+    {
+        this.obj = dirName;
+        this.tag = 4;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.698 -0400", hash_original_method = "2A79ACAAF65B843006F5215944D07A13", hash_generated_method = "1CAC1269F1DBE5878661572B303835FF")
-    public DEREncodable getName() {
-DEREncodable var2FDE1120F80AA4E8798ECDBDB1C0E85C_407195119 =         obj;
-        var2FDE1120F80AA4E8798ECDBDB1C0E85C_407195119.addTaint(taint);
-        return var2FDE1120F80AA4E8798ECDBDB1C0E85C_407195119;
-        // ---------- Original Method ----------
-        //return obj;
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:53.391 -0500", hash_original_method = "C9285F8047F7E752E9E16F56DB946619", hash_generated_method = "811B62136DBE9E6032CF923D8E7BD002")
+    public GeneralName(
+        X500Name dirName)
+    {
+        this.obj = dirName;
+        this.tag = 4;
     }
 
+    /**
+     * @deprecated this constructor seems the wrong way round! Use GeneralName(tag, name).
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:53.392 -0500", hash_original_method = "D162BA12EC49621407922055320A05EF", hash_generated_method = "48254A9057AD3239613E6903E1359E24")
+    public GeneralName(
+        DERObject name, int tag)
+    {
+        this.obj = name;
+        this.tag = tag;
+    }
+
+    /**
+     * When the subjectAltName extension contains an Internet mail address,
+     * the address MUST be included as an rfc822Name. The format of an
+     * rfc822Name is an "addr-spec" as defined in RFC 822 [RFC 822].
+     *
+     * When the subjectAltName extension contains a domain name service
+     * label, the domain name MUST be stored in the dNSName (an IA5String).
+     * The name MUST be in the "preferred name syntax," as specified by RFC
+     * 1034 [RFC 1034].
+     *
+     * When the subjectAltName extension contains a URI, the name MUST be
+     * stored in the uniformResourceIdentifier (an IA5String). The name MUST
+     * be a non-relative URL, and MUST follow the URL syntax and encoding
+     * rules specified in [RFC 1738].  The name must include both a scheme
+     * (e.g., "http" or "ftp") and a scheme-specific-part.  The scheme-
+     * specific-part must include a fully qualified domain name or IP
+     * address as the host.
+     *
+     * When the subjectAltName extension contains a iPAddress, the address
+     * MUST be stored in the octet string in "network byte order," as
+     * specified in RFC 791 [RFC 791]. The least significant bit (LSB) of
+     * each octet is the LSB of the corresponding byte in the network
+     * address. For IP Version 4, as specified in RFC 791, the octet string
+     * MUST contain exactly four octets.  For IP Version 6, as specified in
+     * RFC 1883, the octet string MUST contain exactly sixteen octets [RFC
+     * 1883].
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:53.393 -0500", hash_original_method = "665CD76EA1DF7ECA95D5C037ABED8C02", hash_generated_method = "9684B6B8C49EDC9870A0E10E55BB4075")
+    public GeneralName(
+        int           tag,
+        ASN1Encodable name)
+    {
+        this.obj = name;
+        this.tag = tag;
+    }
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.699 -0400", hash_original_method = "6AFE1DDEFB420AC1C3733113CDF77755", hash_generated_method = "F170A325189A54396C0C61DAA970075E")
-    public String toString() {
+    /**
+     * Create a GeneralName for the given tag from the passed in String.
+     * <p>
+     * This constructor can handle:
+     * <ul>
+     * <li>rfc822Name
+     * <li>iPAddress
+     * <li>directoryName
+     * <li>dNSName
+     * <li>uniformResourceIdentifier
+     * <li>registeredID
+     * </ul>
+     * For x400Address, otherName and ediPartyName there is no common string
+     * format defined.
+     * <p>
+     * Note: A directory name can be encoded in different ways into a byte
+     * representation. Be aware of this if the byte representation is used for
+     * comparing results.
+     *
+     * @param tag tag number
+     * @param name string representation of name
+     * @throws IllegalArgumentException if the string encoding is not correct or     *             not supported.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:53.394 -0500", hash_original_method = "4C7C4EFE2EC806CECAFA053C455D2BA2", hash_generated_method = "BDC409D73F93AD00C545DA0FDF8765A4")
+    public GeneralName(
+        int       tag,
+        String    name)
+    {
+        this.tag = tag;
+
+        if (tag == rfc822Name || tag == dNSName || tag == uniformResourceIdentifier)
+        {
+            this.obj = new DERIA5String(name);
+        }
+        else if (tag == registeredID)
+        {
+            this.obj = new DERObjectIdentifier(name);
+        }
+        else if (tag == directoryName)
+        {
+            this.obj = new X509Name(name);
+        }
+        else if (tag == iPAddress)
+        {
+            byte[] enc = toGeneralNameEncoding(name);
+            if (enc != null)
+            {
+                this.obj = new DEROctetString(enc);
+            }
+            else
+            {
+                throw new IllegalArgumentException("IP Address is invalid");
+            }
+        }
+        else
+        {
+            throw new IllegalArgumentException("can't process String for tag: " + tag);
+        }
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:53.397 -0500", hash_original_method = "50B74CB2E4EBFF1B331EE5025ECA03E2", hash_generated_method = "23B1C06DAFA4E9350DF8CB21C0BC784D")
+    public int getTagNo()
+    {
+        return tag;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:53.398 -0500", hash_original_method = "2A79ACAAF65B843006F5215944D07A13", hash_generated_method = "33D45F11368A03539F6780F8A31378FD")
+    public DEREncodable getName()
+    {
+        return obj;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:53.399 -0500", hash_original_method = "6AFE1DDEFB420AC1C3733113CDF77755", hash_generated_method = "DFD4363F51561851C2E908EC45C14087")
+    public String toString()
+    {
         StringBuffer buf = new StringBuffer();
+
         buf.append(tag);
         buf.append(": ");
-switch(tag){
+        switch (tag)
+        {
         case rfc822Name:
         case dNSName:
         case uniformResourceIdentifier:
-        buf.append(DERIA5String.getInstance(obj).getString());
-        break;
+            buf.append(DERIA5String.getInstance(obj).getString());
+            break;
         case directoryName:
-        buf.append(X509Name.getInstance(obj).toString());
-        break;
+            buf.append(X509Name.getInstance(obj).toString());
+            break;
         default:
-        buf.append(obj.toString());
-}String var4FC680801218E6372BC708D6FA44AE60_2082989642 =         buf.toString();
-        var4FC680801218E6372BC708D6FA44AE60_2082989642.addTaint(taint);
-        return var4FC680801218E6372BC708D6FA44AE60_2082989642;
-        // ---------- Original Method ----------
-        //StringBuffer buf = new StringBuffer();
-        //buf.append(tag);
-        //buf.append(": ");
-        //switch (tag)
-        //{
-        //case rfc822Name:
-        //case dNSName:
-        //case uniformResourceIdentifier:
-            //buf.append(DERIA5String.getInstance(obj).getString());
-            //break;
-        //case directoryName:
-            //buf.append(X509Name.getInstance(obj).toString());
-            //break;
-        //default:
-            //buf.append(obj.toString());
-        //}
-        //return buf.toString();
+            buf.append(obj.toString());
+        }
+        return buf.toString();
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.700 -0400", hash_original_method = "F02018A790F280370B2CB39B10862FEC", hash_generated_method = "DDB0D059B2067E140D94E3642AF5A8FF")
-    private byte[] toGeneralNameEncoding(String ip) {
-        addTaint(ip.getTaint());
-        if(IPAddress.isValidIPv6WithNetmask(ip) || IPAddress.isValidIPv6(ip))        
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:53.400 -0500", hash_original_method = "F02018A790F280370B2CB39B10862FEC", hash_generated_method = "B4114A90346BAC2CA37E578F2040413C")
+    private byte[] toGeneralNameEncoding(String ip)
+    {
+        if (IPAddress.isValidIPv6WithNetmask(ip) || IPAddress.isValidIPv6(ip))
         {
-            int slashIndex = ip.indexOf('/');
-            if(slashIndex < 0)            
+            int    slashIndex = ip.indexOf('/');
+
+            if (slashIndex < 0)
             {
                 byte[] addr = new byte[16];
-                int[] parsedIp = parseIPv6(ip);
+                int[]  parsedIp = parseIPv6(ip);
                 copyInts(parsedIp, addr, 0);
-                byte[] var3EF9A0D7FAB5D2BCABF0978C0A35244E_1913228825 = (addr);
-                                byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1644774477 = {getTaintByte()};
-                return var2F9C81BC6E497382285CD6B7A7E33DE1_1644774477;
-            } //End block
+
+                return addr;
+            }
             else
             {
                 byte[] addr = new byte[32];
-                int[] parsedIp = parseIPv6(ip.substring(0, slashIndex));
+                int[]  parsedIp = parseIPv6(ip.substring(0, slashIndex));
                 copyInts(parsedIp, addr, 0);
                 String mask = ip.substring(slashIndex + 1);
-                if(mask.indexOf(':') > 0)                
+                if (mask.indexOf(':') > 0)
                 {
                     parsedIp = parseIPv6(mask);
-                } //End block
+                }
                 else
                 {
                     parsedIp = parseMask(mask);
-                } //End block
+                }
                 copyInts(parsedIp, addr, 16);
-                byte[] var3EF9A0D7FAB5D2BCABF0978C0A35244E_1723097362 = (addr);
-                                byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_566011639 = {getTaintByte()};
-                return var2F9C81BC6E497382285CD6B7A7E33DE1_566011639;
-            } //End block
-        } //End block
-        else
-        if(IPAddress.isValidIPv4WithNetmask(ip) || IPAddress.isValidIPv4(ip))        
+
+                return addr;
+            }
+        }
+        else if (IPAddress.isValidIPv4WithNetmask(ip) || IPAddress.isValidIPv4(ip))
         {
-            int slashIndex = ip.indexOf('/');
-            if(slashIndex < 0)            
+            int    slashIndex = ip.indexOf('/');
+
+            if (slashIndex < 0)
             {
                 byte[] addr = new byte[4];
+
                 parseIPv4(ip, addr, 0);
-                byte[] var3EF9A0D7FAB5D2BCABF0978C0A35244E_1929802531 = (addr);
-                                byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_152566365 = {getTaintByte()};
-                return var2F9C81BC6E497382285CD6B7A7E33DE1_152566365;
-            } //End block
+
+                return addr;
+            }
             else
             {
                 byte[] addr = new byte[8];
+
                 parseIPv4(ip.substring(0, slashIndex), addr, 0);
+
                 String mask = ip.substring(slashIndex + 1);
-                if(mask.indexOf('.') > 0)                
+                if (mask.indexOf('.') > 0)
                 {
                     parseIPv4(mask, addr, 4);
-                } //End block
+                }
                 else
                 {
                     parseIPv4Mask(mask, addr, 4);
-                } //End block
-                byte[] var3EF9A0D7FAB5D2BCABF0978C0A35244E_2053714764 = (addr);
-                                byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_330647115 = {getTaintByte()};
-                return var2F9C81BC6E497382285CD6B7A7E33DE1_330647115;
-            } //End block
-        } //End block
-        byte[] var37A6259CC0C1DAE299A7866489DFF0BD_1906926863 = (null);
-                byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1803539014 = {getTaintByte()};
-        return var2F9C81BC6E497382285CD6B7A7E33DE1_1803539014;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                }
+
+                return addr;
+            }
+        }
+
+        return null;
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.701 -0400", hash_original_method = "B54AB1000C04EF98C8414C613F178EE6", hash_generated_method = "258BA28276EF9E214656AFB3B86C624E")
-    private void parseIPv4Mask(String mask, byte[] addr, int offset) {
-        addTaint(offset);
-        addTaint(addr[0]);
-        addTaint(mask.getTaint());
-        int maskVal = Integer.parseInt(mask);
-for(int i = 0;i != maskVal;i++)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:53.401 -0500", hash_original_method = "B54AB1000C04EF98C8414C613F178EE6", hash_generated_method = "26D3FB892318A3AD15278E196768ABF7")
+    private void parseIPv4Mask(String mask, byte[] addr, int offset)
+    {
+        int   maskVal = Integer.parseInt(mask);
+
+        for (int i = 0; i != maskVal; i++)
         {
             addr[(i / 8) + offset] |= 1 << (i % 8);
-        } //End block
-        // ---------- Original Method ----------
-        //int   maskVal = Integer.parseInt(mask);
-        //for (int i = 0; i != maskVal; i++)
-        //{
-            //addr[(i / 8) + offset] |= 1 << (i % 8);
-        //}
+        }
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.701 -0400", hash_original_method = "D3256FE340A5AB891180F872DE9312FE", hash_generated_method = "68A2479A5E81FFF17B9F79253FBFBA95")
-    private void parseIPv4(String ip, byte[] addr, int offset) {
-        addTaint(offset);
-        addTaint(addr[0]);
-        addTaint(ip.getTaint());
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:53.401 -0500", hash_original_method = "D3256FE340A5AB891180F872DE9312FE", hash_generated_method = "01C7845478B8D1321EA2883987ADA9ED")
+    private void parseIPv4(String ip, byte[] addr, int offset)
+    {
         StringTokenizer sTok = new StringTokenizer(ip, "./");
-        int index = 0;
-        while
-(sTok.hasMoreTokens())        
+        int    index = 0;
+
+        while (sTok.hasMoreTokens())
         {
             addr[offset + index++] = (byte)Integer.parseInt(sTok.nextToken());
-        } //End block
-        // ---------- Original Method ----------
-        //StringTokenizer sTok = new StringTokenizer(ip, "./");
-        //int    index = 0;
-        //while (sTok.hasMoreTokens())
-        //{
-            //addr[offset + index++] = (byte)Integer.parseInt(sTok.nextToken());
-        //}
+        }
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.702 -0400", hash_original_method = "AAEA46BCEA791BA55D0418C441E919BF", hash_generated_method = "0F6A2469E9723EB3FAAD0B6F596419E7")
-    private int[] parseMask(String mask) {
-        addTaint(mask.getTaint());
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:53.402 -0500", hash_original_method = "AAEA46BCEA791BA55D0418C441E919BF", hash_generated_method = "F4E9F7CAD7EE1AF06DCCBCEC5D429EDA")
+    private int[] parseMask(String mask)
+    {
         int[] res = new int[8];
-        int maskVal = Integer.parseInt(mask);
-for(int i = 0;i != maskVal;i++)
+        int   maskVal = Integer.parseInt(mask);
+
+        for (int i = 0; i != maskVal; i++)
         {
             res[i / 16] |= 1 << (i % 16);
-        } //End block
-        int[] var9B207167E5381C47682C6B4F58A623FB_1180224778 = (res);
-                int[] varB4CCCA26F9DB9189C32F33E82D425CFB_24417402 = {getTaintInt()};
-        return varB4CCCA26F9DB9189C32F33E82D425CFB_24417402;
-        // ---------- Original Method ----------
-        //int[] res = new int[8];
-        //int   maskVal = Integer.parseInt(mask);
-        //for (int i = 0; i != maskVal; i++)
-        //{
-            //res[i / 16] |= 1 << (i % 16);
-        //}
-        //return res;
+        }
+        return res;
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.703 -0400", hash_original_method = "C5093ABFF769462F7C38A897D6D20C09", hash_generated_method = "1B8046E623BFD2322A87EA4A941EA3A9")
-    private void copyInts(int[] parsedIp, byte[] addr, int offSet) {
-        addTaint(offSet);
-        addTaint(addr[0]);
-        addTaint(parsedIp[0]);
-for(int i = 0;i != parsedIp.length;i++)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:53.403 -0500", hash_original_method = "C5093ABFF769462F7C38A897D6D20C09", hash_generated_method = "E1E3F895F3628CA1484F8C1FB38DDD84")
+    private void copyInts(int[] parsedIp, byte[] addr, int offSet)
+    {
+        for (int i = 0; i != parsedIp.length; i++)
         {
             addr[(i * 2) + offSet] = (byte)(parsedIp[i] >> 8);
             addr[(i * 2 + 1) + offSet] = (byte)parsedIp[i];
-        } //End block
-        // ---------- Original Method ----------
-        //for (int i = 0; i != parsedIp.length; i++)
-        //{
-            //addr[(i * 2) + offSet] = (byte)(parsedIp[i] >> 8);
-            //addr[(i * 2 + 1) + offSet] = (byte)parsedIp[i];
-        //}
+        }
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.703 -0400", hash_original_method = "9628A2DF5EA66A9EC56C6B58E58FBD48", hash_generated_method = "BBB15ABE6E3E996BCCDEA7E1184EFDE5")
-    private int[] parseIPv6(String ip) {
-        addTaint(ip.getTaint());
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:53.404 -0500", hash_original_method = "9628A2DF5EA66A9EC56C6B58E58FBD48", hash_generated_method = "7BE89C247823BE0E04BBB5E195A9B3F6")
+    private int[] parseIPv6(String ip)
+    {
         StringTokenizer sTok = new StringTokenizer(ip, ":", true);
         int index = 0;
         int[] val = new int[8];
-        if(ip.charAt(0) == ':' && ip.charAt(1) == ':')        
+
+        if (ip.charAt(0) == ':' && ip.charAt(1) == ':')
         {
-            sTok.nextToken();
-        } //End block
+           sTok.nextToken(); // skip the first one
+        }
+
         int doubleColon = -1;
-        while
-(sTok.hasMoreTokens())        
+
+        while (sTok.hasMoreTokens())
         {
             String e = sTok.nextToken();
-            if(e.equals(":"))            
+
+            if (e.equals(":"))
             {
                 doubleColon = index;
                 val[index++] = 0;
-            } //End block
+            }
             else
             {
-                if(e.indexOf('.') < 0)                
+                if (e.indexOf('.') < 0)
                 {
                     val[index++] = Integer.parseInt(e, 16);
-                    if(sTok.hasMoreTokens())                    
+                    if (sTok.hasMoreTokens())
                     {
                         sTok.nextToken();
-                    } //End block
-                } //End block
+                    }
+                }
                 else
                 {
                     StringTokenizer eTok = new StringTokenizer(e, ".");
+
                     val[index++] = (Integer.parseInt(eTok.nextToken()) << 8) | Integer.parseInt(eTok.nextToken());
                     val[index++] = (Integer.parseInt(eTok.nextToken()) << 8) | Integer.parseInt(eTok.nextToken());
-                } //End block
-            } //End block
-        } //End block
-        if(index != val.length)        
+                }
+            }
+        }
+
+        if (index != val.length)
         {
             System.arraycopy(val, doubleColon, val, val.length - (index - doubleColon), index - doubleColon);
-for(int i = doubleColon;i != val.length - (index - doubleColon);i++)
+            for (int i = doubleColon; i != val.length - (index - doubleColon); i++)
             {
                 val[i] = 0;
-            } //End block
-        } //End block
-        int[] var3A6D0284E743DC4A9B86F97D6DD1A3BF_563815008 = (val);
-                int[] varB4CCCA26F9DB9189C32F33E82D425CFB_2054204182 = {getTaintInt()};
-        return varB4CCCA26F9DB9189C32F33E82D425CFB_2054204182;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            }
+        }
+
+        return val;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.703 -0400", hash_original_method = "D622C616E457C40B929532BF47722854", hash_generated_method = "4371BD4B535C3E2C8EF402B8226B74CC")
-    public DERObject toASN1Object() {
-        if(tag == directoryName)        
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:53.405 -0500", hash_original_method = "D622C616E457C40B929532BF47722854", hash_generated_method = "775FAEAD46F706C44089DD228C701A33")
+    public DERObject toASN1Object()
+    {
+        if (tag == directoryName)       // directoryName is explicitly tagged as it is a CHOICE
         {
-DERObject varC7D22BA08906A6FB4FA5FD3A5B70696A_1547912227 =             new DERTaggedObject(true, tag, obj);
-            varC7D22BA08906A6FB4FA5FD3A5B70696A_1547912227.addTaint(taint);
-            return varC7D22BA08906A6FB4FA5FD3A5B70696A_1547912227;
-        } //End block
+            return new DERTaggedObject(true, tag, obj);
+        }
         else
         {
-DERObject var4177AE842156D9924A23BE6FE4BD83AD_2067328720 =             new DERTaggedObject(false, tag, obj);
-            var4177AE842156D9924A23BE6FE4BD83AD_2067328720.addTaint(taint);
-            return var4177AE842156D9924A23BE6FE4BD83AD_2067328720;
-        } //End block
-        // ---------- Original Method ----------
-        //if (tag == directoryName)       
-        //{
-            //return new DERTaggedObject(true, tag, obj);
-        //}
-        //else
-        //{
-            //return new DERTaggedObject(false, tag, obj);
-        //}
+            return new DERTaggedObject(false, tag, obj);
+        }
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.703 -0400", hash_original_field = "C4EEAEC33BD21A3FD38F227A03AE4C87", hash_generated_field = "2C60CF820709947727993EEE876A89E1")
-
-    public static final int otherName                     = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.703 -0400", hash_original_field = "D9708D90C36E0FE617FB8C727BC83660", hash_generated_field = "D9BB2562526C1C2803346041FE9A9479")
-
-    public static final int rfc822Name                    = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.703 -0400", hash_original_field = "25CBC7428D533DBED7E4B1CE12E2B7CC", hash_generated_field = "23A7DFE231C60FEBF0B4AFFCA7C9D797")
-
-    public static final int dNSName                       = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.703 -0400", hash_original_field = "FD1B5E14181A43B524B1C9EBC492E2B5", hash_generated_field = "22B173553BEDFE31A7EA23714B44E922")
-
-    public static final int x400Address                   = 3;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.704 -0400", hash_original_field = "3455C762936B742EBCA759D015969534", hash_generated_field = "6771712D3DAA106B0694ED750691B023")
-
-    public static final int directoryName                 = 4;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.704 -0400", hash_original_field = "FCA9CDFACE1EE026FD0F5B834981B021", hash_generated_field = "74CB4F34E97D116A425947C2F109D7AD")
-
-    public static final int ediPartyName                  = 5;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.704 -0400", hash_original_field = "CA924DBDC28208088DBEA851EF9125D5", hash_generated_field = "8995C085497DE0EAEF0DC2A248EAD3AD")
-
-    public static final int uniformResourceIdentifier     = 6;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.704 -0400", hash_original_field = "C8848C5506E3277C4C949CB15EBDCBAD", hash_generated_field = "14B98AF4049CB1ED7AAA7C8B6A2D7956")
-
-    public static final int iPAddress                     = 7;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.704 -0400", hash_original_field = "F9011CB3234F21E8F20DB8B97C0C13EC", hash_generated_field = "751FE59FD146DD9B6987948A4960C030")
-
-    public static final int registeredID                  = 8;
 }
 

@@ -5,20 +5,23 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 public class BlurMaskFilter extends MaskFilter {
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-08 22:38:39.066 -0400", hash_original_method = "E906BEDBA8C667F2A993849051C66540", hash_generated_method = "DB37756D1E7646F47B7AB1203C89751F")
-    public  BlurMaskFilter(float radius, Blur style) {
-        addTaint(style.getTaint());
-        addTaint(radius);
-        native_instance = nativeConstructor(radius, style.native_int);
-        // ---------- Original Method ----------
-        //native_instance = nativeConstructor(radius, style.native_int);
-    }
 
     
         private static int nativeConstructor(float radius, int style) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_990673403 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_990673403;
+    }
+    
+    /**
+     * Create a blur maskfilter.
+     *
+     * @param radius The radius to extend the blur from the original mask. Must be > 0.
+     * @param style  The Blur to use
+     * @return       The new blur maskfilter
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:49.450 -0500", hash_original_method = "E906BEDBA8C667F2A993849051C66540", hash_generated_method = "92A9E7A1C9812AD7226E5F9C6F28DDAE")
+    public BlurMaskFilter(float radius, Blur style) {
+        native_instance = nativeConstructor(radius, style.native_int);
     }
 
     
@@ -26,12 +29,15 @@ public class BlurMaskFilter extends MaskFilter {
         NORMAL(0),  
         SOLID(1),   
         OUTER(2),   
-        INNER(3);
-        @DSModeled(DSC.SAFE)
-        Blur(int value) {
+        INNER(3);   //!< just blur inside the original border
+        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:49.447 -0500", hash_original_method = "48C9082C1B59E336FB6C242DE3A9C7D0", hash_generated_method = "48C9082C1B59E336FB6C242DE3A9C7D0")
+            Blur(int value) {
             native_int = value;
         }
-        final int native_int;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:49.448 -0500", hash_original_field = "BADCEEE95FC21A56DEC673ECC42E1251", hash_generated_field = "BADCEEE95FC21A56DEC673ECC42E1251")
+
+         int native_int;
     }
 
     

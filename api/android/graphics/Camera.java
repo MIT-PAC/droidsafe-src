@@ -1,6 +1,8 @@
 package android.graphics;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
@@ -8,137 +10,148 @@ import droidsafe.annotations.*;
 
 
 public class Camera {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.779 -0400", hash_original_field = "7E2E7BFEC42581BDE25254C4BB512478", hash_generated_field = "1353DF0D3FEF59358BA81F3F4AC59875")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:56.462 -0500", hash_original_field = "1353DF0D3FEF59358BA81F3F4AC59875", hash_generated_field = "1353DF0D3FEF59358BA81F3F4AC59875")
 
+    
     int native_instance;
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.781 -0400", hash_original_method = "6DBF72AF7766D4EB810EDB03D8391F19", hash_generated_method = "9D80413F5EE3D7B08611B8D24691ACD0")
-    public  Camera() {
+    /**
+     * Creates a new camera, with empty transformations.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:56.442 -0500", hash_original_method = "6DBF72AF7766D4EB810EDB03D8391F19", hash_generated_method = "685553C2A5173BA484ADB3CA6336847B")
+    public Camera() {
         nativeConstructor();
-        // ---------- Original Method ----------
-        //nativeConstructor();
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.781 -0400", hash_original_method = "5DCA6946AC737E3FB2C77FDB7C22A4F6", hash_generated_method = "9783A2EFF47138D92A5A156983FE2BD4")
-    public void save() {
-    }
+    /**
+     * Saves the camera state. Each save should be balanced
+     * with a call to {@link #restore()}.
+     * 
+     * @see #save() 
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:35:39.272 -0500", hash_original_method = "5DCA6946AC737E3FB2C77FDB7C22A4F6", hash_generated_method = "A28BB64ABF7361887AC1B01EFBA07371")
+    public native void save();
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.782 -0400", hash_original_method = "54E49D501AAC4DB03DE41A5BADEC9468", hash_generated_method = "17FCF523146E8D711A132189A0FA7A41")
-    public void restore() {
-    }
+    /**
+     * Restores the saved state, if any.
+     * 
+     * @see #restore() 
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:35:39.273 -0500", hash_original_method = "54E49D501AAC4DB03DE41A5BADEC9468", hash_generated_method = "3E4EB86BA18ABDA53E16A5B357F4B743")
+    public native void restore();
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.782 -0400", hash_original_method = "C7A05AF6A5D2D21D6919D5ED21917266", hash_generated_method = "F6F4E68E666C8C573CD760178F00DB31")
-    public void translate(float x, float y, float z) {
-    }
+    /**
+     * Applies a translation transform on all three axis.
+     * 
+     * @param x The distance to translate by on the X axis
+     * @param y The distance to translate by on the Y axis
+     * @param z The distance to translate by on the Z axis
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:35:39.274 -0500", hash_original_method = "C7A05AF6A5D2D21D6919D5ED21917266", hash_generated_method = "547CB286ADA112686071CC71595FDC63")
+    public native void translate(float x, float y, float z);
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.782 -0400", hash_original_method = "70760D1E35F31209F549560E00AD3199", hash_generated_method = "CE11D133F74034DDB5652BF60662FD5B")
-    public void rotateX(float deg) {
-    }
+    /**
+     * Applies a rotation transform around the X axis.
+     * 
+     * @param deg The angle of rotation around the X axis, in degrees
+     * 
+     * @see #rotateY(float)
+     * @see #rotateZ(float)
+     * @see #rotate(float, float, float)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:35:39.276 -0500", hash_original_method = "70760D1E35F31209F549560E00AD3199", hash_generated_method = "E3D2C99D518F19A180633059B3BB5FD0")
+    public native void rotateX(float deg);
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.783 -0400", hash_original_method = "05F48791182D352B4D8C184739DC2F5C", hash_generated_method = "AC20BC088B5F143023114EB9AA6DE10B")
-    public void rotateY(float deg) {
-    }
+    /**
+     * Applies a rotation transform around the Y axis.
+     * 
+     * @param deg The angle of rotation around the Y axis, in degrees
+     * 
+     * @see #rotateX(float)
+     * @see #rotateZ(float)
+     * @see #rotate(float, float, float) 
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:35:39.277 -0500", hash_original_method = "05F48791182D352B4D8C184739DC2F5C", hash_generated_method = "21998CBB0B6AA96FDA348ABF97908948")
+    public native void rotateY(float deg);
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.783 -0400", hash_original_method = "3974450583A9023F24B778633D301E40", hash_generated_method = "58BFC2D658DDF70D1A1555F2CFB3CA7E")
-    public void rotateZ(float deg) {
-    }
+    /**
+     * Applies a rotation transform around the Z axis.
+     * 
+     * @param deg The angle of rotation around the Z axis, in degrees
+     * 
+     * @see #rotateX(float)
+     * @see #rotateY(float)
+     * @see #rotate(float, float, float)
+     */    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:35:39.278 -0500", hash_original_method = "3974450583A9023F24B778633D301E40", hash_generated_method = "7AFD4FCB838EC4FF242FA38F36F5CAD1")
+    public native void rotateZ(float deg);
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.784 -0400", hash_original_method = "A07D6B0AFBCC00CEA34DA7A028A542EA", hash_generated_method = "DDF8F0B5E2F92451D7A8DB790B3860B5")
-    public void rotate(float x, float y, float z) {
-    }
+    /**
+     * Applies a rotation transform around all three axis.
+     * 
+     * @param x The angle of rotation around the X axis, in degrees
+     * @param y The angle of rotation around the Y axis, in degrees
+     * @param z The angle of rotation around the Z axis, in degrees
+     * 
+     * @see #rotateX(float)
+     * @see #rotateY(float)
+     * @see #rotateZ(float)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:35:39.279 -0500", hash_original_method = "A07D6B0AFBCC00CEA34DA7A028A542EA", hash_generated_method = "F7AAA2725238842B4BAAE8F843C26F96")
+    public native void rotate(float x, float y, float z);
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.784 -0400", hash_original_method = "46E0BCB01C5C707B28964C24224D27BF", hash_generated_method = "F5B80A09FCF2C29EB9F03A129D5CD074")
-    public void setLocation(float x, float y, float z) {
-    }
+    /**
+     * Sets the location of the camera. The default location is set at
+     * 0, 0, -8.
+     * 
+     * @param x The x location of the camera
+     * @param y The y location of the camera
+     * @param z The z location of the camera
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:35:39.281 -0500", hash_original_method = "46E0BCB01C5C707B28964C24224D27BF", hash_generated_method = "6082F441CD8E4205792F7699FC8475C6")
+    public native void setLocation(float x, float y, float z);
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.784 -0400", hash_original_method = "EEC65A3D99E4715BBC5254EBE009F300", hash_generated_method = "193F51559B6F0F84541452FB57314A1E")
+    /**
+     * Computes the matrix corresponding to the current transformation
+     * and copies it to the supplied matrix object.
+     * 
+     * @param matrix The matrix to copy the current transforms into
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:56.452 -0500", hash_original_method = "EEC65A3D99E4715BBC5254EBE009F300", hash_generated_method = "90A3153B8C1F07C2E6E7AC8153A377AF")
     public void getMatrix(Matrix matrix) {
-        addTaint(matrix.getTaint());
         nativeGetMatrix(matrix.native_instance);
-        // ---------- Original Method ----------
-        //nativeGetMatrix(matrix.native_instance);
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.785 -0400", hash_original_method = "E58BA8CAEF8D98DCBC5CC423229EB1CE", hash_generated_method = "1A7F09AF3563F6E1FDF684A9CD251FE7")
+    /**
+     * Computes the matrix corresponding to the current transformation
+     * and applies it to the specified Canvas.
+     * 
+     * @param canvas The Canvas to set the transform matrix onto
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:56.453 -0500", hash_original_method = "E58BA8CAEF8D98DCBC5CC423229EB1CE", hash_generated_method = "C4DEA4890144CDDF0582D0EE99D802DA")
     public void applyToCanvas(Canvas canvas) {
-        addTaint(canvas.getTaint());
         nativeApplyToCanvas(canvas.mNativeCanvas);
-        // ---------- Original Method ----------
-        //nativeApplyToCanvas(canvas.mNativeCanvas);
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:35:39.284 -0500", hash_original_method = "99C03287B9838C14044E9B6E324762A8", hash_generated_method = "87B7083208890A401B0EFF05CB87EA8B")
+    public native float dotWithNormal(float dx, float dy, float dz);
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.785 -0400", hash_original_method = "99C03287B9838C14044E9B6E324762A8", hash_generated_method = "E020398A6CDD1DACE0C8282DA479297D")
-    public float dotWithNormal(float dx, float dy, float dz) {
-        float var546ADE640B6EDFBC8A086EF31347E768_1586882264 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_1586882264;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.786 -0400", hash_original_method = "C90BA6E6D8C2FEFD061454BA6E7AF7E1", hash_generated_method = "15552963748D752DA9A1B1A94AAA61C5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:56.456 -0500", hash_original_method = "C90BA6E6D8C2FEFD061454BA6E7AF7E1", hash_generated_method = "8A85EA8E6B128F46007DF31045FAB50E")
     protected void finalize() throws Throwable {
-        try 
-        {
+        try {
             nativeDestructor();
-        } //End block
-        finally 
-        {
+        } finally {
             super.finalize();
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //nativeDestructor();
-        //} finally {
-            //super.finalize();
-        //}
+        }
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.786 -0400", hash_original_method = "CB9D9CAF93B6F7C6AC078700B30D5B3A", hash_generated_method = "B34C03FE423B4EE0844813601A2B0A67")
-    private void nativeConstructor() {
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.786 -0400", hash_original_method = "28277D643642440FCD7626A94746E337", hash_generated_method = "40B8A1DEDDB2AF371D7C81B74B0D4C7C")
-    private void nativeDestructor() {
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.787 -0400", hash_original_method = "8D274BB0506DF92F70FF4552532F47BF", hash_generated_method = "1C2D3E392ABEB0A6679A282333D3FF5D")
-    private void nativeGetMatrix(int native_matrix) {
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.787 -0400", hash_original_method = "969BE384F55540A8E1C5E65A0255064C", hash_generated_method = "7CA8A28702D03152D0FDA788B442394C")
-    private void nativeApplyToCanvas(int native_canvas) {
-    }
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:35:39.286 -0500", hash_original_method = "CB9D9CAF93B6F7C6AC078700B30D5B3A", hash_generated_method = "6EEF3712392D06942F0E7086316BBAB4")
+    private native void nativeConstructor();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:35:39.287 -0500", hash_original_method = "28277D643642440FCD7626A94746E337", hash_generated_method = "51EEE50DA274E26FEE517B8295242BAC")
+    private native void nativeDestructor();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:35:39.288 -0500", hash_original_method = "8D274BB0506DF92F70FF4552532F47BF", hash_generated_method = "AA83036AF7865EB6ED4CCFECFB9241B5")
+    private native void nativeGetMatrix(int native_matrix);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:35:39.289 -0500", hash_original_method = "969BE384F55540A8E1C5E65A0255064C", hash_generated_method = "A5CAD42A5D0B728F6A4749AB0F69A49E")
+    private native void nativeApplyToCanvas(int native_canvas);
 
     
 }

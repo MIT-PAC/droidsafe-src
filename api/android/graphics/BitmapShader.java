@@ -1,6 +1,8 @@
 package android.graphics;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
@@ -9,25 +11,6 @@ import droidsafe.annotations.*;
 import droidsafe.helpers.DSUtils;
 
 public class BitmapShader extends Shader {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.761 -0400", hash_original_field = "C4C105852193F50EEB9E84F09C746611", hash_generated_field = "ABC07C2755FD81F115C0C28144D66BB3")
-
-    @SuppressWarnings({"FieldCanBeLocal", "UnusedDeclaration"}) public Bitmap mBitmap;
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.762 -0400", hash_original_method = "4EB08FDCAC2586A4FA6B09EB3F8E173D", hash_generated_method = "76C78F9777E6673654CDB9F9C21F6196")
-    public  BitmapShader(Bitmap bitmap, TileMode tileX, TileMode tileY) {
-        addTaint(tileY.getTaint());
-        addTaint(tileX.getTaint());
-        mBitmap = bitmap;
-        final int b = bitmap.ni();
-        native_instance = nativeCreate(b, tileX.nativeInt, tileY.nativeInt);
-        native_shader = nativePostCreate(native_instance, b, tileX.nativeInt, tileY.nativeInt);
-        // ---------- Original Method ----------
-        //mBitmap = bitmap;
-        //final int b = bitmap.ni();
-        //native_instance = nativeCreate(b, tileX.nativeInt, tileY.nativeInt);
-        //native_shader = nativePostCreate(native_instance, b, tileX.nativeInt, tileY.nativeInt);
-    }
 
     
     @DSModeled(DSC.SAFE)
@@ -41,6 +24,25 @@ public class BitmapShader extends Shader {
     private static int nativePostCreate(int native_shader, int native_bitmap,
             int shaderTileModeX, int shaderTileModeY) {
         return DSUtils.UNKNOWN_INT;
+    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:50.456 -0500", hash_original_field = "46C0A7FFF0FFB93D952536F8E8BA5C29", hash_generated_field = "ABC07C2755FD81F115C0C28144D66BB3")
+
+    @SuppressWarnings({"FieldCanBeLocal", "UnusedDeclaration"})
+    public  Bitmap mBitmap;
+
+    /**
+     * Call this to create a new shader that will draw with a bitmap.
+     *
+     * @param bitmap            The bitmap to use inside the shader
+     * @param tileX             The tiling mode for x to draw the bitmap in.
+     * @param tileY             The tiling mode for y to draw the bitmap in.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:50.457 -0500", hash_original_method = "4EB08FDCAC2586A4FA6B09EB3F8E173D", hash_generated_method = "71297A08305F3A63904ABFBBCA6DDC5C")
+    public BitmapShader(Bitmap bitmap, TileMode tileX, TileMode tileY) {
+        mBitmap = bitmap;
+        final int b = bitmap.ni();
+        native_instance = nativeCreate(b, tileX.nativeInt, tileY.nativeInt);
+        native_shader = nativePostCreate(native_instance, b, tileX.nativeInt, tileY.nativeInt);
     }
 
     

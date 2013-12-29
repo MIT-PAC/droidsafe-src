@@ -1,6 +1,8 @@
 package org.apache.http.impl;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Locale;
 
@@ -13,70 +15,78 @@ import org.apache.http.ReasonPhraseCatalog;
 
 
 public class EnglishReasonPhraseCatalog implements ReasonPhraseCatalog {
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.339 -0400", hash_original_method = "7E219D4204F52B71BC25A968ECCA9516", hash_generated_method = "B7F389F477620D30D508A0713D2A466A")
-    protected  EnglishReasonPhraseCatalog() {
-        // ---------- Original Method ----------
-    }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.340 -0400", hash_original_method = "4DBCBC4442F2A5E0C839147542392D36", hash_generated_method = "A3BB6041BC303F400FC276B80D3BAFF3")
-    public String getReason(int status, Locale loc) {
-        addTaint(loc.getTaint());
-        addTaint(status);
-        if((status < 100) || (status >= 600))        
-        {
-            IllegalArgumentException var29C44D8F7746F3313015E7D6995B3353_1133272239 = new IllegalArgumentException
-                ("Unknown category for status code " + status + ".");
-            var29C44D8F7746F3313015E7D6995B3353_1133272239.addTaint(taint);
-            throw var29C44D8F7746F3313015E7D6995B3353_1133272239;
-        } //End block
-        final int category = status / 100;
-        final int subcode = status - 100*category;
-        String reason = null;
-        if(REASON_PHRASES[category].length > subcode)        
-        reason = REASON_PHRASES[category][subcode];
-String varD602C4C1684F7464133CA1A6851CC44A_797259413 =         reason;
-        varD602C4C1684F7464133CA1A6851CC44A_797259413.addTaint(taint);
-        return varD602C4C1684F7464133CA1A6851CC44A_797259413;
-        // ---------- Original Method ----------
-        //if ((status < 100) || (status >= 600)) {
-            //throw new IllegalArgumentException
-                //("Unknown category for status code " + status + ".");
-        //}
-        //final int category = status / 100;
-        //final int subcode  = status - 100*category;
-        //String reason = null;
-        //if (REASON_PHRASES[category].length > subcode)
-            //reason = REASON_PHRASES[category][subcode];
-        //return reason;
-    }
 
-    
-    @DSModeled(DSC.BAN)
+
+    /**
+     * Stores the given reason phrase, by status code.
+     * Helper method to initialize the static lookup table.
+     *
+     * @param status    the status code for which to define the phrase
+     * @param reason    the reason phrase for this status code
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:20.297 -0500", hash_original_method = "B27E2E37F6B3FC851CE3E6D12D897D85", hash_generated_method = "A2AC6B10722D96F29BEA07C5A03A7B42")
     private static void setReason(int status, String reason) {
         final int category = status / 100;
         final int subcode  = status - 100*category;
         REASON_PHRASES[category][subcode] = reason;
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:20.293 -0500", hash_original_field = "3F04E5126E1D1968D1E674ED94439EAD", hash_generated_field = "28FD85E5B9D69DCFAD3C72A1C0490DAE")
 
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.340 -0400", hash_original_field = "E2DE488DB38893EE28317061D8B6A367", hash_generated_field = "0300F07CA0C9570BD3547AEAE24AE263")
 
+    /**
+     * The default instance of this catalog.
+     * This catalog is thread safe, so there typically
+     * is no need to create other instances.
+     */
     public final static EnglishReasonPhraseCatalog INSTANCE =
         new EnglishReasonPhraseCatalog();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.340 -0400", hash_original_field = "57A5A1B8340254B4D85331038E93BEFD", hash_generated_field = "0AF8F9600212ED6C05BE344BC451D7F8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:20.296 -0500", hash_original_field = "F9E44CBC77D75AAB579C584FD87CD166", hash_generated_field = "422C0F7E284A61F03AE9A1E35BA8BAB2")
 
     private static final String[][] REASON_PHRASES = new String[][]{
         null,
-        new String[3],  
-        new String[8],  
-        new String[8],  
-        new String[25], 
-        new String[8]   
+        new String[3],  // 1xx
+        new String[8],  // 2xx
+        new String[8],  // 3xx
+        new String[25], // 4xx
+        new String[8]   // 5xx
     };
+
+
+    /**
+     * Restricted default constructor, for derived classes.
+     * If you need an instance of this class, use {@link #INSTANCE INSTANCE}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:20.294 -0500", hash_original_method = "7E219D4204F52B71BC25A968ECCA9516", hash_generated_method = "72ADC483D87ABD7A7321DAAD98293FF1")
+    protected EnglishReasonPhraseCatalog() {
+        // no body
+    }
+
+
+    /**
+     * Obtains the reason phrase for a status code.
+     *
+     * @param status    the status code, in the range 100-599
+     * @param loc       ignored
+     *
+     * @return  the reason phrase, or <code>null</code>
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:20.295 -0500", hash_original_method = "4DBCBC4442F2A5E0C839147542392D36", hash_generated_method = "D8BA9FE692BA584DC67C4A9211465EE3")
+    public String getReason(int status, Locale loc) {
+        if ((status < 100) || (status >= 600)) {
+            throw new IllegalArgumentException
+                ("Unknown category for status code " + status + ".");
+        }
+
+        final int category = status / 100;
+        final int subcode  = status - 100*category;
+
+        String reason = null;
+        if (REASON_PHRASES[category].length > subcode)
+            reason = REASON_PHRASES[category][subcode];
+
+        return reason;
+    }
     static {
         setReason(HttpStatus.SC_OK,
                   "OK");

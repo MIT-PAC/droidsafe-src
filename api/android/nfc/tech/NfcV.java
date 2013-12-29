@@ -1,6 +1,8 @@
 package android.nfc.tech;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 
@@ -13,29 +15,17 @@ import android.os.RemoteException;
 
 
 public final class NfcV extends BasicTagTechnology {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.793 -0400", hash_original_field = "3934254C6C714B19DE22D4F58C5042D2", hash_generated_field = "121CAF4F22F2DB7E3FE6590C2E29C484")
 
-    private byte mRespFlags;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.793 -0400", hash_original_field = "E9C54BDE6798E1875D8BC87A6FAA80B7", hash_generated_field = "22B4F1B6769CD74A976FDA7EB332E5E3")
-
-    private byte mDsfId;
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.794 -0400", hash_original_method = "F4045E9985ED2B22A83A671B7ECDE866", hash_generated_method = "0D5AC2FCB4F8F34EB138D8F897A679EC")
-    public  NfcV(Tag tag) throws RemoteException {
-        super(tag, TagTechnology.NFC_V);
-        addTaint(tag.getTaint());
-        Bundle extras = tag.getTechExtras(TagTechnology.NFC_V);
-        mRespFlags = extras.getByte(EXTRA_RESP_FLAGS);
-        mDsfId = extras.getByte(EXTRA_DSFID);
-        // ---------- Original Method ----------
-        //Bundle extras = tag.getTechExtras(TagTechnology.NFC_V);
-        //mRespFlags = extras.getByte(EXTRA_RESP_FLAGS);
-        //mDsfId = extras.getByte(EXTRA_DSFID);
-    }
-
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Get an instance of {@link NfcV} for the given tag.
+     * <p>Returns null if {@link NfcV} was not enumerated in {@link Tag#getTechList}.
+     * This indicates the tag does not support NFC-V.
+     * <p>Does not cause any RF activity and does not block.
+     *
+     * @param tag an NFC-V compatible tag
+     * @return NFC-V object
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.821 -0500", hash_original_method = "F21DE175E97C7CA6B5016046F850B598", hash_generated_method = "BA04E11D3E7F4732245DDA59CAEC2390")
     public static NfcV get(Tag tag) {
         if (!tag.hasTech(TagTechnology.NFC_V)) return null;
         try {
@@ -44,58 +34,87 @@ public final class NfcV extends BasicTagTechnology {
             return null;
         }
     }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.796 -0400", hash_original_method = "19D3A3646C1C2655B316DC5413F4466A", hash_generated_method = "1260B3DE6F69EBF40772AEAE064EBBC9")
-    public byte getResponseFlags() {
-        byte var3934254C6C714B19DE22D4F58C5042D2_1241053795 = (mRespFlags);
-                byte var40EA57D3EE3C07BF1C102B466E1C3091_1189546765 = getTaintByte();
-        return var40EA57D3EE3C07BF1C102B466E1C3091_1189546765;
-        // ---------- Original Method ----------
-        //return mRespFlags;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.797 -0400", hash_original_method = "9F53E6713A0959247C46979AAE2F100E", hash_generated_method = "FC59DBCD602B071042635677175700AA")
-    public byte getDsfId() {
-        byte varE9C54BDE6798E1875D8BC87A6FAA80B7_697000703 = (mDsfId);
-                byte var40EA57D3EE3C07BF1C102B466E1C3091_1958101231 = getTaintByte();
-        return var40EA57D3EE3C07BF1C102B466E1C3091_1958101231;
-        // ---------- Original Method ----------
-        //return mDsfId;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.798 -0400", hash_original_method = "E43990821CE38E04B46B3E901EFDFA24", hash_generated_method = "FF6B59519697DA2442E62A49C8E9A93B")
-    public byte[] transceive(byte[] data) throws IOException {
-        addTaint(data[0]);
-        byte[] varEE32C696607EBC614D9A30134ACB1AE3_197838 = (transceive(data, true));
-                byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1560501168 = {getTaintByte()};
-        return var2F9C81BC6E497382285CD6B7A7E33DE1_1560501168;
-        // ---------- Original Method ----------
-        //return transceive(data, true);
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.798 -0400", hash_original_method = "CF96EF3BF3FCE4DA3D9E7FBB541AEB70", hash_generated_method = "D47CFA073C6C2EEA90A733382FC18D1F")
-    public int getMaxTransceiveLength() {
-        int var534FE261D7083B235B3B010A14A83EE1_1895365264 = (getMaxTransceiveLengthInternal());
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1434045609 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1434045609;
-        // ---------- Original Method ----------
-        //return getMaxTransceiveLengthInternal();
-    }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.798 -0400", hash_original_field = "C99DD94648D9D9F6D7060CF3152F88F2", hash_generated_field = "95711EE7AD682B156CC0B59B8BB1D20B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.818 -0500", hash_original_field = "A99A2829D6F5F929C205B83A458B0A80", hash_generated_field = "95711EE7AD682B156CC0B59B8BB1D20B")
 
     public static final String EXTRA_RESP_FLAGS = "respflags";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.799 -0400", hash_original_field = "CCB6A7BF3A94EDCFFED77B4B1FE0A21F", hash_generated_field = "575D53CDD0D0DA8B99F62F7C149BA7A1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.819 -0500", hash_original_field = "6EFCA95892EE01E4DB47A22052971D83", hash_generated_field = "575D53CDD0D0DA8B99F62F7C149BA7A1")
 
     public static final String EXTRA_DSFID = "dsfid";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.820 -0500", hash_original_field = "2C0FB919660C0D7D01CA14F5FDEF08F9", hash_generated_field = "121CAF4F22F2DB7E3FE6590C2E29C484")
+
+
+    private byte mRespFlags;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.820 -0500", hash_original_field = "6A0E644AD48A7A11D3A50934FD1C3DD6", hash_generated_field = "22B4F1B6769CD74A976FDA7EB332E5E3")
+
+    private byte mDsfId;
+
+    /** @hide */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.822 -0500", hash_original_method = "F4045E9985ED2B22A83A671B7ECDE866", hash_generated_method = "BCA4ECC481DE66EB7639D24A2750A8BD")
+    public NfcV(Tag tag) throws RemoteException {
+        super(tag, TagTechnology.NFC_V);
+        Bundle extras = tag.getTechExtras(TagTechnology.NFC_V);
+        mRespFlags = extras.getByte(EXTRA_RESP_FLAGS);
+        mDsfId = extras.getByte(EXTRA_DSFID);
+    }
+
+    /**
+     * Return the Response Flag bytes from tag discovery.
+     *
+     * <p>Does not cause any RF activity and does not block.
+     *
+     * @return Response Flag bytes
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.824 -0500", hash_original_method = "19D3A3646C1C2655B316DC5413F4466A", hash_generated_method = "B7AEDAE18B3D311E741259AABC364993")
+    public byte getResponseFlags() {
+        return mRespFlags;
+    }
+
+    /**
+     * Return the DSF ID bytes from tag discovery.
+     *
+     * <p>Does not cause any RF activity and does not block.
+     *
+     * @return DSF ID bytes
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.825 -0500", hash_original_method = "9F53E6713A0959247C46979AAE2F100E", hash_generated_method = "CF1C00DE1C7700C1728A76B01F027DE7")
+    public byte getDsfId() {
+        return mDsfId;
+    }
+
+    /**
+     * Send raw NFC-V commands to the tag and receive the response.
+     *
+     * <p>Applications must not append the CRC to the payload,
+     * it will be automatically calculated. The application does
+     * provide FLAGS, CMD and PARAMETER bytes.
+     *
+     * <p>Use {@link #getMaxTransceiveLength} to retrieve the maximum amount of bytes
+     * that can be sent with {@link #transceive}.
+     *
+     * <p>This is an I/O operation and will block until complete. It must
+     * not be called from the main application thread. A blocked call will be canceled with
+     * {@link IOException} if {@link #close} is called from another thread.
+     *
+     * <p class="note">Requires the {@link android.Manifest.permission#NFC} permission.
+     *
+     * @param data bytes to send
+     * @return bytes received in response
+     * @throws TagLostException if the tag leaves the field
+     * @throws IOException if there is an I/O failure, or this operation is canceled
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.825 -0500", hash_original_method = "E43990821CE38E04B46B3E901EFDFA24", hash_generated_method = "CC13A29AED45E04C4807822531800242")
+    public byte[] transceive(byte[] data) throws IOException {
+        return transceive(data, true);
+    }
+
+
+    /**
+     * Return the maximum number of bytes that can be sent with {@link #transceive}.
+     * @return the maximum number of bytes that can be sent with {@link #transceive}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.826 -0500", hash_original_method = "CF96EF3BF3FCE4DA3D9E7FBB541AEB70", hash_generated_method = "ECC61C711C2C081CEFB91A790D67A4A8")
+    public int getMaxTransceiveLength() {
+        return getMaxTransceiveLengthInternal();
+    }
 }
 

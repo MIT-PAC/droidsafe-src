@@ -1,6 +1,8 @@
 package android.app.backup;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.FileDescriptor;
 import java.io.IOException;
@@ -16,165 +18,6 @@ import android.util.Log;
 import droidsafe.helpers.DSUtils;
 
 public class BackupHelperDispatcher {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.231 -0400", hash_original_field = "4D8BD795E1A7491500B2A5C4EA157702", hash_generated_field = "087B9083817AA3054FE76BD13CD55CBF")
-
-    TreeMap<String,BackupHelper> mHelpers = new TreeMap<String,BackupHelper>();
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.232 -0400", hash_original_method = "85B87DA3FD92CDAA8B7FFA5F20C0A756", hash_generated_method = "AF1A5159B4C616692A2600B7B383730D")
-    public  BackupHelperDispatcher() {
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.234 -0400", hash_original_method = "A8E840254EBF3392B798809BE9F9086F", hash_generated_method = "A047BBD64C879EFF2262D85E46B41350")
-    public void addHelper(String keyPrefix, BackupHelper helper) {
-        addTaint(helper.getTaint());
-        addTaint(keyPrefix.getTaint());
-        mHelpers.put(keyPrefix, helper);
-        // ---------- Original Method ----------
-        //mHelpers.put(keyPrefix, helper);
-    }
-
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.236 -0400", hash_original_method = "B596D5B1B749A849E47ABD34415972F7", hash_generated_method = "7CC637D21FA3374A3006B573399A2C18")
-    public void performBackup(ParcelFileDescriptor oldState, BackupDataOutput data,
-             ParcelFileDescriptor newState) throws IOException {
-        addTaint(newState.getTaint());
-        addTaint(data.getTaint());
-        addTaint(oldState.getTaint());
-        int err;
-        Header header = new Header();
-        TreeMap<String,BackupHelper> helpers = (TreeMap<String,BackupHelper>)mHelpers.clone();
-        FileDescriptor oldStateFD = null;
-        FileDescriptor newStateFD = newState.getFileDescriptor();
-        if(oldState != null)        
-        {
-            oldStateFD = oldState.getFileDescriptor();
-            while
-((err = readHeader_native(header, oldStateFD)) >= 0)            
-            {
-                if(err == 0)                
-                {
-                    BackupHelper helper = helpers.get(header.keyPrefix);
-                    Log.d(TAG, "handling existing helper '" + header.keyPrefix + "' " + helper);
-                    if(helper != null)                    
-                    {
-                        doOneBackup(oldState, data, newState, header, helper);
-                        helpers.remove(header.keyPrefix);
-                    } //End block
-                    else
-                    {
-                        skipChunk_native(oldStateFD, header.chunkSize);
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
-for(Map.Entry<String,BackupHelper> entry : helpers.entrySet())
-        {
-            header.keyPrefix = entry.getKey();
-            Log.d(TAG, "handling new helper '" + header.keyPrefix + "'");
-            BackupHelper helper = entry.getValue();
-            doOneBackup(oldState, data, newState, header, helper);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.238 -0400", hash_original_method = "B20B211F99695DC29EC53BF566272BED", hash_generated_method = "70F7D4C172672097E52F45A36A316EFA")
-    private void doOneBackup(ParcelFileDescriptor oldState, BackupDataOutput data,
-            ParcelFileDescriptor newState, Header header, BackupHelper helper) throws IOException {
-        addTaint(helper.getTaint());
-        addTaint(header.getTaint());
-        addTaint(newState.getTaint());
-        addTaint(data.getTaint());
-        addTaint(oldState.getTaint());
-        int err;
-        FileDescriptor newStateFD = newState.getFileDescriptor();
-        int pos = allocateHeader_native(header, newStateFD);
-        if(pos < 0)        
-        {
-            IOException var53BB185CEB30935184BC87E4B10CCF3D_245042559 = new IOException("allocateHeader_native failed (error " + pos + ")");
-            var53BB185CEB30935184BC87E4B10CCF3D_245042559.addTaint(taint);
-            throw var53BB185CEB30935184BC87E4B10CCF3D_245042559;
-        } //End block
-        data.setKeyPrefix(header.keyPrefix);
-        helper.performBackup(oldState, data, newState);
-        err = writeHeader_native(header, newStateFD, pos);
-        if(err != 0)        
-        {
-            IOException var38E2598B011FF54A88CF76CE0BDC81B6_1173597921 = new IOException("writeHeader_native failed (error " + err + ")");
-            var38E2598B011FF54A88CF76CE0BDC81B6_1173597921.addTaint(taint);
-            throw var38E2598B011FF54A88CF76CE0BDC81B6_1173597921;
-        } //End block
-        // ---------- Original Method ----------
-        //int err;
-        //FileDescriptor newStateFD = newState.getFileDescriptor();
-        //int pos = allocateHeader_native(header, newStateFD);
-        //if (pos < 0) {
-            //throw new IOException("allocateHeader_native failed (error " + pos + ")");
-        //}
-        //data.setKeyPrefix(header.keyPrefix);
-        //helper.performBackup(oldState, data, newState);
-        //err = writeHeader_native(header, newStateFD, pos);
-        //if (err != 0) {
-            //throw new IOException("writeHeader_native failed (error " + err + ")");
-        //}
-    }
-
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.240 -0400", hash_original_method = "5D2E23956580E2A3306D4050F8218E29", hash_generated_method = "1DFB267EC009BBE50DCA3E664A7D995F")
-    public void performRestore(BackupDataInput input, int appVersionCode,
-            ParcelFileDescriptor newState) throws IOException {
-        addTaint(newState.getTaint());
-        addTaint(appVersionCode);
-        addTaint(input.getTaint());
-        boolean alreadyComplained = false;
-        BackupDataInputStream stream = new BackupDataInputStream(input);
-        while
-(input.readNextHeader())        
-        {
-            String rawKey = input.getKey();
-            int pos = rawKey.indexOf(':');
-            if(pos > 0)            
-            {
-                String prefix = rawKey.substring(0, pos);
-                BackupHelper helper = mHelpers.get(prefix);
-                if(helper != null)                
-                {
-                    stream.dataSize = input.getDataSize();
-                    stream.key = rawKey.substring(pos+1);
-                    helper.restoreEntity(stream);
-                } //End block
-                else
-                {
-                    if(!alreadyComplained)                    
-                    {
-                        alreadyComplained = true;
-                    } //End block
-                } //End block
-            } //End block
-            else
-            {
-                if(!alreadyComplained)                
-                {
-                    alreadyComplained = true;
-                } //End block
-            } //End block
-            input.skipEntityData();
-        } //End block
-for(BackupHelper helper : mHelpers.values())
-        {
-            helper.writeNewStateDescription(newState);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
 
     
     @DSModeled(DSC.SAFE)
@@ -199,13 +42,91 @@ for(BackupHelper helper : mHelpers.values())
     private static int writeHeader_native(Header h, FileDescriptor fd, int pos) {
         return DSUtils.UNKNOWN_INT;
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:23.100 -0500", hash_original_field = "D272C13E9A9C0E3E4CA27E55BE191CFA", hash_generated_field = "AEF462BF91D0B416E4E3B66437F12C41")
+
+    private static final String TAG = "BackupHelperDispatcher";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:23.103 -0500", hash_original_field = "087B9083817AA3054FE76BD13CD55CBF", hash_generated_field = "087B9083817AA3054FE76BD13CD55CBF")
+
+
+    TreeMap<String,BackupHelper> mHelpers = new TreeMap<String,BackupHelper>();
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:23.104 -0500", hash_original_method = "85B87DA3FD92CDAA8B7FFA5F20C0A756", hash_generated_method = "02FD004804F6626B90557A7727E0C650")
+    public BackupHelperDispatcher() {
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:23.105 -0500", hash_original_method = "A8E840254EBF3392B798809BE9F9086F", hash_generated_method = "79730BB33F60087E0AEB7F734D673C2E")
+    public void addHelper(String keyPrefix, BackupHelper helper) {
+        mHelpers.put(keyPrefix, helper);
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:23.106 -0500", hash_original_method = "B596D5B1B749A849E47ABD34415972F7", hash_generated_method = "2DB6F46FC080896E1612FC549CC80A3D")
+    public void performBackup(ParcelFileDescriptor oldState, BackupDataOutput data,
+             ParcelFileDescriptor newState) throws IOException {
+        // First, do the helpers that we've already done, since they're already in the state
+        // file.
+        int err;
+        Header header = new Header();
+        TreeMap<String,BackupHelper> helpers = (TreeMap<String,BackupHelper>)mHelpers.clone();
+        FileDescriptor oldStateFD = null;
+        FileDescriptor newStateFD = newState.getFileDescriptor();
+
+        if (oldState != null) {
+            oldStateFD = oldState.getFileDescriptor();
+            while ((err = readHeader_native(header, oldStateFD)) >= 0) {
+                if (err == 0) {
+                    BackupHelper helper = helpers.get(header.keyPrefix);
+                    Log.d(TAG, "handling existing helper '" + header.keyPrefix + "' " + helper);
+                    if (helper != null) {
+                        doOneBackup(oldState, data, newState, header, helper);
+                        helpers.remove(header.keyPrefix);
+                    } else {
+                        skipChunk_native(oldStateFD, header.chunkSize);
+                    }
+                }
+            }
+        }
+
+        // Then go through and do the rest that we haven't done.
+        for (Map.Entry<String,BackupHelper> entry: helpers.entrySet()) {
+            header.keyPrefix = entry.getKey();
+            Log.d(TAG, "handling new helper '" + header.keyPrefix + "'");
+            BackupHelper helper = entry.getValue();
+            doOneBackup(oldState, data, newState, header, helper);
+        }
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:23.107 -0500", hash_original_method = "B20B211F99695DC29EC53BF566272BED", hash_generated_method = "4239511687B764C693CD981B780FDE23")
+    private void doOneBackup(ParcelFileDescriptor oldState, BackupDataOutput data,
+            ParcelFileDescriptor newState, Header header, BackupHelper helper) 
+            throws IOException {
+        int err;
+        FileDescriptor newStateFD = newState.getFileDescriptor();
+
+        // allocate space for the header in the file
+        int pos = allocateHeader_native(header, newStateFD);
+        if (pos < 0) {
+            throw new IOException("allocateHeader_native failed (error " + pos + ")");
+        }
+
+        data.setKeyPrefix(header.keyPrefix);
+
+        // do the backup
+        helper.performBackup(oldState, data, newState);
+
+        // fill in the header (seeking back to pos).  The file pointer will be returned to
+        // where it was at the end of performBackup.  Header.chunkSize will not be filled in.
+        err = writeHeader_native(header, newStateFD, pos);
+        if (err != 0) {
+            throw new IOException("writeHeader_native failed (error " + err + ")");
+        }
+    }
 
     
     private static class Header {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.244 -0400", hash_original_field = "00255DCB7E7FE62F3DD8ED38644CC3EE", hash_generated_field = "8D4654446C9DD3E766BE07B4267F3234")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:23.101 -0500", hash_original_field = "8D4654446C9DD3E766BE07B4267F3234", hash_generated_field = "8D4654446C9DD3E766BE07B4267F3234")
 
         int chunkSize;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.244 -0400", hash_original_field = "061552BCB5DC79075A2C9D6092A18D63", hash_generated_field = "A9486E3C3418813783566D03E4768EE1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:23.102 -0500", hash_original_field = "A9486E3C3418813783566D03E4768EE1", hash_generated_field = "A9486E3C3418813783566D03E4768EE1")
 
         String keyPrefix;
         
@@ -219,10 +140,43 @@ for(BackupHelper helper : mHelpers.values())
 
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:23.108 -0500", hash_original_method = "5D2E23956580E2A3306D4050F8218E29", hash_generated_method = "C8CBD5B804A52AAF69F30F351ED21240")
+    public void performRestore(BackupDataInput input, int appVersionCode,
+            ParcelFileDescriptor newState)
+            throws IOException {
+        boolean alreadyComplained = false;
 
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.244 -0400", hash_original_field = "D8CE60F5D7395BB05B4D07D8557ECD02", hash_generated_field = "AEF462BF91D0B416E4E3B66437F12C41")
+        BackupDataInputStream stream = new BackupDataInputStream(input);
+        while (input.readNextHeader()) {
 
-    private static final String TAG = "BackupHelperDispatcher";
+            String rawKey = input.getKey();
+            int pos = rawKey.indexOf(':');
+            if (pos > 0) {
+                String prefix = rawKey.substring(0, pos);
+                BackupHelper helper = mHelpers.get(prefix);
+                if (helper != null) {
+                    stream.dataSize = input.getDataSize();
+                    stream.key = rawKey.substring(pos+1);
+                    helper.restoreEntity(stream);
+                } else {
+                    if (!alreadyComplained) {
+                        Log.w(TAG, "Couldn't find helper for: '" + rawKey + "'");
+                        alreadyComplained = true;
+                    }
+                }
+            } else {
+                if (!alreadyComplained) {
+                    Log.w(TAG, "Entity with no prefix: '" + rawKey + "'");
+                    alreadyComplained = true;
+                }
+            }
+            input.skipEntityData(); // In case they didn't consume the data.
+        }
+
+        // Write out the state files -- mHelpers is a TreeMap, so the order is well defined.
+        for (BackupHelper helper: mHelpers.values()) {
+            helper.writeNewStateDescription(newState);
+        }
+    }
 }
 

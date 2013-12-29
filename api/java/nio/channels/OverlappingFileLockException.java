@@ -1,6 +1,8 @@
 package java.nio.channels;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
@@ -8,16 +10,16 @@ import droidsafe.annotations.*;
 
 
 public class OverlappingFileLockException extends IllegalStateException {
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.233 -0400", hash_original_method = "C4CF1877CAFCA7A9AA43354B0F13682E", hash_generated_method = "6659E568666AEC464ACA6649E40F0A54")
-    public  OverlappingFileLockException() {
-        // ---------- Original Method ----------
-    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.148 -0500", hash_original_field = "9AA97FE6965BF564DF87C39672C1BD59", hash_generated_field = "5B007B68E7B68EE9E86BBE99DF6B8213")
 
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.233 -0400", hash_original_field = "CF65AE1E7B9B4BCF10F77E8073F1A926", hash_generated_field = "5B007B68E7B68EE9E86BBE99DF6B8213")
 
     private static final long serialVersionUID = 2047812138163068433L;
+
+    /**
+     * Constructs a {@code OverlappingFileLockException}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.149 -0500", hash_original_method = "C4CF1877CAFCA7A9AA43354B0F13682E", hash_generated_method = "DDFC149E1F141589E40CB4C42CC8EC57")
+    public OverlappingFileLockException() {
+    }
 }
 

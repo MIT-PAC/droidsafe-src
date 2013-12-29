@@ -1,6 +1,8 @@
 package javax.xml.parsers;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.File;
 import java.io.IOException;
@@ -21,211 +23,283 @@ import org.xml.sax.SAXException;
 
 
 public abstract class DocumentBuilder {
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.668 -0400", hash_original_method = "A55CBA234E1648A7F9C09E5B63DC560C", hash_generated_method = "BA105E34266083D2C63C902BC6535525")
-    protected  DocumentBuilder() {
-        // ---------- Original Method ----------
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:28.367 -0500", hash_original_field = "81DD852ECBE07BA98A61C8F3D0C85F01", hash_generated_field = "58EDF43BA541A4D47EECFEC3901C7AED")
+
+
+    private static final boolean DEBUG = false;
+
+    /** Protected constructor */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:28.368 -0500", hash_original_method = "A55CBA234E1648A7F9C09E5B63DC560C", hash_generated_method = "985F276AAC414AEC932C0CE826CF4F41")
+    protected DocumentBuilder () {
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.668 -0400", hash_original_method = "B05B5D751774CA5E926948E22CD07EE8", hash_generated_method = "B93C4366999C08EC6C838DE2538B844B")
+    /**
+      * <p>Reset this <code>DocumentBuilder</code> to its original configuration.</p>
+      *
+      * <p><code>DocumentBuilder</code> is reset to the same state as when it was created with
+      * {@link DocumentBuilderFactory#newDocumentBuilder()}.
+      * <code>reset()</code> is designed to allow the reuse of existing <code>DocumentBuilder</code>s
+      * thus saving resources associated with the creation of new <code>DocumentBuilder</code>s.</p>
+      *
+      * <p>The reset <code>DocumentBuilder</code> is not guaranteed to have the same {@link EntityResolver} or {@link ErrorHandler}
+      * <code>Object</code>s, e.g. {@link Object#equals(Object obj)}.  It is guaranteed to have a functionally equal
+      * <code>EntityResolver</code> and <code>ErrorHandler</code>.</p>
+      *
+      * @since 1.5
+      */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:28.369 -0500", hash_original_method = "B05B5D751774CA5E926948E22CD07EE8", hash_generated_method = "8DC1CC2370E5AB02D0572E4E6E2168AF")
     public void reset() {
-        UnsupportedOperationException varD57A366DA765BBC5B5CB8D1F17AA41CA_1503439086 = new UnsupportedOperationException(
+
+        // implementors should override this method
+        throw new UnsupportedOperationException(
             "This DocumentBuilder, \"" + this.getClass().getName() + "\", does not support the reset functionality."
             + "  Specification \"" + this.getClass().getPackage().getSpecificationTitle() + "\""
             + " version \"" + this.getClass().getPackage().getSpecificationVersion() + "\""
             );
-        varD57A366DA765BBC5B5CB8D1F17AA41CA_1503439086.addTaint(taint);
-        throw varD57A366DA765BBC5B5CB8D1F17AA41CA_1503439086;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException(
-            //"This DocumentBuilder, \"" + this.getClass().getName() + "\", does not support the reset functionality."
-            //+ "  Specification \"" + this.getClass().getPackage().getSpecificationTitle() + "\""
-            //+ " version \"" + this.getClass().getPackage().getSpecificationVersion() + "\""
-            //);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.669 -0400", hash_original_method = "95E59CF6F0A1DFE242840282B735E195", hash_generated_method = "2EF99C1D795AAC3B61D79F7CC4612DFD")
-    public Document parse(InputStream is) throws SAXException, IOException {
-        addTaint(is.getTaint());
-        if(is == null)        
-        {
-            IllegalArgumentException varC815381FE103054CE280DFD5B97A6E37_424805687 = new IllegalArgumentException("InputStream cannot be null");
-            varC815381FE103054CE280DFD5B97A6E37_424805687.addTaint(taint);
-            throw varC815381FE103054CE280DFD5B97A6E37_424805687;
-        } //End block
+    /**
+     * Parse the content of the given <code>InputStream</code> as an XML
+     * document and return a new DOM {@link Document} object.
+     * An <code>IllegalArgumentException</code> is thrown if the
+     * <code>InputStream</code> is null.
+     *
+     * @param is InputStream containing the content to be parsed.
+     * @return <code>Document</code> result of parsing the
+     *  <code>InputStream</code>
+     * @exception IOException If any IO errors occur.
+     * @exception SAXException If any parse errors occur.
+     * @see org.xml.sax.DocumentHandler
+     */
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:28.369 -0500", hash_original_method = "95E59CF6F0A1DFE242840282B735E195", hash_generated_method = "D801F974BA0202307AC902C635182E61")
+    public Document parse(InputStream is)
+        throws SAXException, IOException {
+        if (is == null) {
+            throw new IllegalArgumentException("InputStream cannot be null");
+        }
+
         InputSource in = new InputSource(is);
-Document var8BBF39D47F9CE28DC6E7F629ED464CBB_1098687120 =         parse(in);
-        var8BBF39D47F9CE28DC6E7F629ED464CBB_1098687120.addTaint(taint);
-        return var8BBF39D47F9CE28DC6E7F629ED464CBB_1098687120;
-        // ---------- Original Method ----------
-        //if (is == null) {
-            //throw new IllegalArgumentException("InputStream cannot be null");
-        //}
-        //InputSource in = new InputSource(is);
-        //return parse(in);
+        return parse(in);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.669 -0400", hash_original_method = "EA811CE95A08B04D15381504F667910C", hash_generated_method = "0BA2CB7D38778C6C1CC5E0BDA5C3DFAE")
-    public Document parse(InputStream is, String systemId) throws SAXException, IOException {
-        addTaint(systemId.getTaint());
-        addTaint(is.getTaint());
-        if(is == null)        
-        {
-            IllegalArgumentException varC815381FE103054CE280DFD5B97A6E37_1836479405 = new IllegalArgumentException("InputStream cannot be null");
-            varC815381FE103054CE280DFD5B97A6E37_1836479405.addTaint(taint);
-            throw varC815381FE103054CE280DFD5B97A6E37_1836479405;
-        } //End block
+    /**
+     * Parse the content of the given <code>InputStream</code> as an
+     * XML document and return a new DOM {@link Document} object.
+     * An <code>IllegalArgumentException</code> is thrown if the
+     * <code>InputStream</code> is null.
+     *
+     * @param is InputStream containing the content to be parsed.
+     * @param systemId Provide a base for resolving relative URIs.
+     * @return A new DOM Document object.
+     * @exception IOException If any IO errors occur.
+     * @exception SAXException If any parse errors occur.
+     * @see org.xml.sax.DocumentHandler
+     */
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:28.370 -0500", hash_original_method = "EA811CE95A08B04D15381504F667910C", hash_generated_method = "70C97B542BC1EB5B9903552A3D2ED761")
+    public Document parse(InputStream is, String systemId)
+        throws SAXException, IOException {
+        if (is == null) {
+            throw new IllegalArgumentException("InputStream cannot be null");
+        }
+
         InputSource in = new InputSource(is);
         in.setSystemId(systemId);
-Document var8BBF39D47F9CE28DC6E7F629ED464CBB_1832750748 =         parse(in);
-        var8BBF39D47F9CE28DC6E7F629ED464CBB_1832750748.addTaint(taint);
-        return var8BBF39D47F9CE28DC6E7F629ED464CBB_1832750748;
-        // ---------- Original Method ----------
-        //if (is == null) {
-            //throw new IllegalArgumentException("InputStream cannot be null");
-        //}
-        //InputSource in = new InputSource(is);
-        //in.setSystemId(systemId);
-        //return parse(in);
+        return parse(in);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.669 -0400", hash_original_method = "595BF8AC63AB584AD723E5F0FBAE035E", hash_generated_method = "DC78036C2890191FF461EB4FF61AE232")
-    public Document parse(String uri) throws SAXException, IOException {
-        addTaint(uri.getTaint());
-        if(uri == null)        
-        {
-            IllegalArgumentException varF6E0E2AFA82B103FC9C391721448DB47_1508082224 = new IllegalArgumentException("URI cannot be null");
-            varF6E0E2AFA82B103FC9C391721448DB47_1508082224.addTaint(taint);
-            throw varF6E0E2AFA82B103FC9C391721448DB47_1508082224;
-        } //End block
+    /**
+     * Parse the content of the given URI as an XML document
+     * and return a new DOM {@link Document} object.
+     * An <code>IllegalArgumentException</code> is thrown if the
+     * URI is <code>null</code> null.
+     *
+     * @param uri The location of the content to be parsed.
+     * @return A new DOM Document object.
+     * @exception IOException If any IO errors occur.
+     * @exception SAXException If any parse errors occur.
+     * @see org.xml.sax.DocumentHandler
+     */
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:28.371 -0500", hash_original_method = "595BF8AC63AB584AD723E5F0FBAE035E", hash_generated_method = "70E399953BEC569388820A7375896695")
+    public Document parse(String uri)
+        throws SAXException, IOException {
+        if (uri == null) {
+            throw new IllegalArgumentException("URI cannot be null");
+        }
+
         InputSource in = new InputSource(uri);
-Document var8BBF39D47F9CE28DC6E7F629ED464CBB_428407042 =         parse(in);
-        var8BBF39D47F9CE28DC6E7F629ED464CBB_428407042.addTaint(taint);
-        return var8BBF39D47F9CE28DC6E7F629ED464CBB_428407042;
-        // ---------- Original Method ----------
-        //if (uri == null) {
-            //throw new IllegalArgumentException("URI cannot be null");
-        //}
-        //InputSource in = new InputSource(uri);
-        //return parse(in);
+        return parse(in);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.670 -0400", hash_original_method = "F95298F4448DE156B1C85F49780E514D", hash_generated_method = "21318756401FDAF740788D1C9C403ACD")
+    /**
+     * Parse the content of the given file as an XML document
+     * and return a new DOM {@link Document} object.
+     * An <code>IllegalArgumentException</code> is thrown if the
+     * <code>File</code> is <code>null</code> null.
+     *
+     * @param f The file containing the XML to parse.
+     * @exception IOException If any IO errors occur.
+     * @exception SAXException If any parse errors occur.
+     * @see org.xml.sax.DocumentHandler
+     * @return A new DOM Document object.
+     */
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:28.372 -0500", hash_original_method = "F95298F4448DE156B1C85F49780E514D", hash_generated_method = "BD38C4001589DF85E06DF2B6CFF70AAF")
     public Document parse(File f) throws SAXException, IOException {
-        addTaint(f.getTaint());
-        if(f == null)        
-        {
-            IllegalArgumentException varFEC080412D1250CB64DE25E01D0B1780_104459582 = new IllegalArgumentException("File cannot be null");
-            varFEC080412D1250CB64DE25E01D0B1780_104459582.addTaint(taint);
-            throw varFEC080412D1250CB64DE25E01D0B1780_104459582;
-        } //End block
+        if (f == null) {
+            throw new IllegalArgumentException("File cannot be null");
+        }
+
         String escapedURI = FilePathToURI.filepath2URI(f.getAbsolutePath());
-        if(DEBUG)        
-        {
+
+        if (DEBUG) {
             System.out.println("Escaped URI = " + escapedURI);
-        } //End block
+        }
+
         InputSource in = new InputSource(escapedURI);
-Document var8BBF39D47F9CE28DC6E7F629ED464CBB_1702325885 =         parse(in);
-        var8BBF39D47F9CE28DC6E7F629ED464CBB_1702325885.addTaint(taint);
-        return var8BBF39D47F9CE28DC6E7F629ED464CBB_1702325885;
-        // ---------- Original Method ----------
-        //if (f == null) {
-            //throw new IllegalArgumentException("File cannot be null");
-        //}
-        //String escapedURI = FilePathToURI.filepath2URI(f.getAbsolutePath());
-        //if (DEBUG) {
-            //System.out.println("Escaped URI = " + escapedURI);
-        //}
-        //InputSource in = new InputSource(escapedURI);
-        //return parse(in);
+        return parse(in);
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Parse the content of the given input source as an XML document
+     * and return a new DOM {@link Document} object.
+     * An <code>IllegalArgumentException</code> is thrown if the
+     * <code>InputSource</code> is <code>null</code> null.
+     *
+     * @param is InputSource containing the content to be parsed.
+     * @exception IOException If any IO errors occur.
+     * @exception SAXException If any parse errors occur.
+     * @see org.xml.sax.DocumentHandler
+     * @return A new DOM Document object.
+     */
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:28.373 -0500", hash_original_method = "34848998765D4A28285495E765F5578C", hash_generated_method = "3378BF159BC7F100B945A22A43DFCD5F")
     public abstract Document parse(InputSource is)
         throws  SAXException, IOException;
 
-    
-    @DSModeled(DSC.SAFE)
+
+    /**
+     * Indicates whether or not this parser is configured to
+     * understand namespaces.
+     *
+     * @return true if this parser is configured to understand
+     *         namespaces; false otherwise.
+     */
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:28.374 -0500", hash_original_method = "0C20300A9407A97F92B793E805D98086", hash_generated_method = "C069C8335C3E94893ADF95CE4452F34C")
     public abstract boolean isNamespaceAware();
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Indicates whether or not this parser is configured to
+     * validate XML documents.
+     *
+     * @return true if this parser is configured to validate
+     *         XML documents; false otherwise.
+     */
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:28.375 -0500", hash_original_method = "B128693C9551D41070A4A0D64F8C0627", hash_generated_method = "89D797F47244E86E3C28FB7197668A45")
     public abstract boolean isValidating();
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Specify the {@link EntityResolver} to be used to resolve
+     * entities present in the XML document to be parsed. Setting
+     * this to <code>null</code> will result in the underlying
+     * implementation using it's own default implementation and
+     * behavior.
+     *
+     * @param er The <code>EntityResolver</code> to be used to resolve entities
+     *           present in the XML document to be parsed.
+     */
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:28.376 -0500", hash_original_method = "1CC9636D2AC6AC959BBC778E61CA8DF6", hash_generated_method = "769949358DFB300D7ACAAF6C7224E44F")
     public abstract void setEntityResolver(EntityResolver er);
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Specify the {@link ErrorHandler} to be used by the parser.
+     * Setting this to <code>null</code> will result in the underlying
+     * implementation using it's own default implementation and
+     * behavior.
+     *
+     * @param eh The <code>ErrorHandler</code> to be used by the parser.
+     */
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:28.377 -0500", hash_original_method = "B60831D7C2F41C83EDF30B69ED2E25B6", hash_generated_method = "B179A571E00CDB3760A26762C521A028")
     public abstract void setErrorHandler(ErrorHandler eh);
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Obtain a new instance of a DOM {@link Document} object
+     * to build a DOM tree with.
+     *
+     * @return A new instance of a DOM Document object.
+     */
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:28.377 -0500", hash_original_method = "53C13FA54B20168A8C4E72F2E7F90DDD", hash_generated_method = "550BA59ED5400AA25A091E985E307EFF")
     public abstract Document newDocument();
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Obtain an instance of a {@link DOMImplementation} object.
+     *
+     * @return A new instance of a <code>DOMImplementation</code>.
+     */
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:28.378 -0500", hash_original_method = "02B1A67F0E725EA787B7E8D701D27373", hash_generated_method = "3CDB6E7F1CE404F67D3F85AF23794147")
     public abstract DOMImplementation getDOMImplementation();
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.672 -0400", hash_original_method = "0EC7A1CF3FE0EA75043A7D33C5A41123", hash_generated_method = "67782BB5ADC01CDBDE8FEE9AB5E2CEC2")
+    /** <p>Get a reference to the the {@link Schema} being used by
+     * the XML processor.</p>
+     *
+     * <p>If no schema is being used, <code>null</code> is returned.</p>
+     *
+     * @return {@link Schema} being used or <code>null</code>
+     *  if none in use
+     *
+     * @throws UnsupportedOperationException
+     *      For backward compatibility, when implementations for
+     *      earlier versions of JAXP is used, this exception will be
+     *      thrown.
+     *
+     * @since 1.5
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:28.379 -0500", hash_original_method = "0EC7A1CF3FE0EA75043A7D33C5A41123", hash_generated_method = "C60ED8DAAB20A1D1EE8BC81FA5C06DA4")
     public Schema getSchema() {
-        UnsupportedOperationException varE9742D55AB47AEF31209978AAE994BE9_1958264661 = new UnsupportedOperationException(
+        throw new UnsupportedOperationException(
             "This parser does not support specification \""
             + this.getClass().getPackage().getSpecificationTitle()
             + "\" version \""
             + this.getClass().getPackage().getSpecificationVersion()
             + "\""
             );
-        varE9742D55AB47AEF31209978AAE994BE9_1958264661.addTaint(taint);
-        throw varE9742D55AB47AEF31209978AAE994BE9_1958264661;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException(
-            //"This parser does not support specification \""
-            //+ this.getClass().getPackage().getSpecificationTitle()
-            //+ "\" version \""
-            //+ this.getClass().getPackage().getSpecificationVersion()
-            //+ "\""
-            //);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.672 -0400", hash_original_method = "2D701854F0A16C5A4E7C38BB02DF4544", hash_generated_method = "25F8C6E1FC17BC94AB2228F7A124C6A9")
+
+    /**
+     * <p>Get the XInclude processing mode for this parser.</p>
+     *
+     * @return
+     *      the return value of
+     *      the {@link DocumentBuilderFactory#isXIncludeAware()}
+     *      when this parser was created from factory.
+     *
+     * @throws UnsupportedOperationException
+     *      For backward compatibility, when implementations for
+     *      earlier versions of JAXP is used, this exception will be
+     *      thrown.
+     *
+     * @since 1.5
+     *
+     * @see DocumentBuilderFactory#setXIncludeAware(boolean)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:28.380 -0500", hash_original_method = "2D701854F0A16C5A4E7C38BB02DF4544", hash_generated_method = "30D8B6618B1E7FCEA2BE47013700840C")
     public boolean isXIncludeAware() {
-        UnsupportedOperationException varE9742D55AB47AEF31209978AAE994BE9_1952587041 = new UnsupportedOperationException(
+        throw new UnsupportedOperationException(
             "This parser does not support specification \""
             + this.getClass().getPackage().getSpecificationTitle()
             + "\" version \""
             + this.getClass().getPackage().getSpecificationVersion()
             + "\""
             );
-        varE9742D55AB47AEF31209978AAE994BE9_1952587041.addTaint(taint);
-        throw varE9742D55AB47AEF31209978AAE994BE9_1952587041;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException(
-            //"This parser does not support specification \""
-            //+ this.getClass().getPackage().getSpecificationTitle()
-            //+ "\" version \""
-            //+ this.getClass().getPackage().getSpecificationVersion()
-            //+ "\""
-            //);
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.672 -0400", hash_original_field = "021906CCEC815FC820B74F760E7368C7", hash_generated_field = "58EDF43BA541A4D47EECFEC3901C7AED")
-
-    private static final boolean DEBUG = false;
 }
 

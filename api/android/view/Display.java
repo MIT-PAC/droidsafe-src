@@ -1,6 +1,9 @@
 package android.view;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
+import android.util.Slog;
 import droidsafe.annotations.*;
 import android.content.res.CompatibilityInfo;
 import android.graphics.Point;
@@ -16,73 +19,6 @@ import android.util.DisplayMetrics;
 import droidsafe.helpers.DSUtils;
 
 public class Display {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.499 -0400", hash_original_field = "27C9B400936470E0D86B9AA2CDF3AED4", hash_generated_field = "01AEB6BE7A1CFB44C6B781D7301EC317")
-
-    private CompatibilityInfoHolder mCompatibilityInfo;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.499 -0400", hash_original_field = "D29BCBAAD55DD1B1C5A0A9EB22E25252", hash_generated_field = "C3D33931672C9997D02DE67B6B8FC170")
-
-    private int mDisplay;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.499 -0400", hash_original_field = "29727137934799BC1D0686EA1284D9AC", hash_generated_field = "A3BE31732297BF4F97F73715693F8671")
-
-    private int mPixelFormat;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.499 -0400", hash_original_field = "96892C3CA593DB3BD1DCFF4EAD9D60E2", hash_generated_field = "3B186DE7AE43652AB2C26B4DC04F9761")
-
-    private float mRefreshRate;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.499 -0400", hash_original_field = "174BB9FF4691CBE6254BA90AE9FA0B63", hash_generated_field = "B5DC68677E93FA7FF1DA60AF3938C510")
-
-    float mDensity;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.500 -0400", hash_original_field = "E9855EBD17BB366B564310EC3316E0E7", hash_generated_field = "B2E7A1F0CAE99DBD9D3D65E29165C84A")
-
-    float mDpiX;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.500 -0400", hash_original_field = "B9AD09C6396CDB2CD033954CBA73419A", hash_generated_field = "BC1908C6E1D0054138584C2D01126D3C")
-
-    float mDpiY;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.500 -0400", hash_original_field = "43EB55458C4394666C2FF9CB27BDC008", hash_generated_field = "538425559D2BF0F635F9288868FC8D78")
-
-    private final Point mTmpPoint = new Point();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.500 -0400", hash_original_field = "AE2D8764BEA6AAEE1A7358E2F8934DB6", hash_generated_field = "3C9E4AC56655D3050A4B4F36D2BBE1DC")
-
-    private final DisplayMetrics mTmpMetrics = new DisplayMetrics();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.500 -0400", hash_original_field = "D79306417350CE6A12944817CEE2E9C4", hash_generated_field = "362C6D41A17812DA983C811277AF00AE")
-
-    private float mLastGetTime;
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.500 -0400", hash_original_method = "C9519A69B693719AC1491BF9F92C5C8E", hash_generated_method = "119D58D4AE9C571078046828391ECB8B")
-      Display(int display, CompatibilityInfoHolder compatInfo) {
-        synchronized
-(sStaticInit)        {
-            if(!sInitialized)            
-            {
-                nativeClassInit();
-                sInitialized = true;
-            } //End block
-        } //End block
-        mCompatibilityInfo = compatInfo != null ? compatInfo : new CompatibilityInfoHolder();
-        mDisplay = display;
-        init(display);
-        // ---------- Original Method ----------
-        //synchronized (sStaticInit) {
-            //if (!sInitialized) {
-                //nativeClassInit();
-                //sInitialized = true;
-            //}
-        //}
-        //mCompatibilityInfo = compatInfo != null ? compatInfo : new CompatibilityInfoHolder();
-        //mDisplay = display;
-        //init(display);
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.501 -0400", hash_original_method = "107F25776C4AB2DB96852EDD25D31975", hash_generated_method = "11203FB29DE87E8B3755D6466B565F04")
-    public int getDisplayId() {
-        int varD29BCBAAD55DD1B1C5A0A9EB22E25252_1451844598 = (mDisplay);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2038883202 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2038883202;
-        // ---------- Original Method ----------
-        //return mDisplay;
-    }
 
     
     @DSModeled(DSC.SAFE)
@@ -91,382 +27,7 @@ public class Display {
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2086194105;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.519 -0400", hash_original_method = "17F24EABE37BDCE44DDE55CD705BD7B9", hash_generated_method = "D29C3D5CFCD464C96B15D3988C7C1F06")
-    public void getSize(Point outSize) {
-        addTaint(outSize.getTaint());
-        getSizeInternal(outSize, true);
-        // ---------- Original Method ----------
-        //getSizeInternal(outSize, true);
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.520 -0400", hash_original_method = "79B8C4439194701109AF7AA6129A555C", hash_generated_method = "CCC57910A60FFFE46777166360FEAAD3")
-    private void getSizeInternal(Point outSize, boolean doCompat) {
-        addTaint(doCompat);
-        try 
-        {
-            IWindowManager wm = getWindowManager();
-            if(wm != null)            
-            {
-                wm.getDisplaySize(outSize);
-                CompatibilityInfo ci;
-                if(doCompat && (ci=mCompatibilityInfo.getIfNeeded()) != null)                
-                {
-                    synchronized
-(mTmpMetrics)                    {
-                        mTmpMetrics.noncompatWidthPixels = outSize.x;
-                        mTmpMetrics.noncompatHeightPixels = outSize.y;
-                        mTmpMetrics.density = mDensity;
-                        ci.applyToDisplayMetrics(mTmpMetrics);
-                        outSize.x = mTmpMetrics.widthPixels;
-                        outSize.y = mTmpMetrics.heightPixels;
-                    } //End block
-                } //End block
-            } //End block
-            else
-            {
-                outSize.x = getRawWidth();
-                outSize.y = getRawHeight();
-            } //End block
-            if(false)            
-            {
-                RuntimeException here = new RuntimeException("here");
-                here.fillInStackTrace();
-            } //End block
-            if(DEBUG_DISPLAY_SIZE && doCompat){ }
-        } //End block
-        catch (RemoteException e)
-        {
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.520 -0400", hash_original_method = "92D5B5EBFB706321BDD6B906C6DF5945", hash_generated_method = "024FABBC46529FFFBC463503BF6BEC82")
-    public void getRectSize(Rect outSize) {
-        addTaint(outSize.getTaint());
-        synchronized
-(mTmpPoint)        {
-            getSizeInternal(mTmpPoint, true);
-            outSize.set(0, 0, mTmpPoint.x, mTmpPoint.y);
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mTmpPoint) {
-            //getSizeInternal(mTmpPoint, true);
-            //outSize.set(0, 0, mTmpPoint.x, mTmpPoint.y);
-        //}
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.520 -0400", hash_original_method = "404C4EF6FA3AD3B9975B754C597D6C0E", hash_generated_method = "9F72D0A1C69A802F93E9E2B86E2A3209")
-    public int getMaximumSizeDimension() {
-        try 
-        {
-            IWindowManager wm = getWindowManager();
-            int var556D7F09E308F26BC71442FFE07F231F_1946831539 = (wm.getMaximumSizeDimension());
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1108308310 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1108308310;
-        } //End block
-        catch (RemoteException e)
-        {
-            int varCFCD208495D565EF66E7DFF9F98764DA_914712619 = (0);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_271664261 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_271664261;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //IWindowManager wm = getWindowManager();
-            //return wm.getMaximumSizeDimension();
-        //} catch (RemoteException e) {
-            //Slog.w("Display", "Unable to get display maximum size dimension", e);
-            //return 0;
-        //}
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.520 -0400", hash_original_method = "2F7FD849240377F4AD58DDE704C1CFAA", hash_generated_method = "AD7CBFCA5B7D2C92E0C20B32CF8AB9C2")
-    @Deprecated
-    public int getWidth() {
-        synchronized
-(mTmpPoint)        {
-            long now = SystemClock.uptimeMillis();
-            if(now > (mLastGetTime+20))            
-            {
-                getSizeInternal(mTmpPoint, true);
-                mLastGetTime = now;
-            } //End block
-            int var50EA1288AB139B5B6750468A284F2C81_1194555465 = (mTmpPoint.x);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_807376366 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_807376366;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mTmpPoint) {
-            //long now = SystemClock.uptimeMillis();
-            //if (now > (mLastGetTime+20)) {
-                //getSizeInternal(mTmpPoint, true);
-                //mLastGetTime = now;
-            //}
-            //return mTmpPoint.x;
-        //}
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.521 -0400", hash_original_method = "60FBCC92DE8F9EC729264DB15D46C4E8", hash_generated_method = "97E31AAA060F07AD76F1AB16ED1910AF")
-    @Deprecated
-    public int getHeight() {
-        synchronized
-(mTmpPoint)        {
-            long now = SystemClock.uptimeMillis();
-            if(now > (mLastGetTime+20))            
-            {
-                getSizeInternal(mTmpPoint, true);
-                mLastGetTime = now;
-            } //End block
-            int var25849A03021EC6EA8945BF7BEA9B7E0C_513477395 = (mTmpPoint.y);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1106065099 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1106065099;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mTmpPoint) {
-            //long now = SystemClock.uptimeMillis();
-            //if (now > (mLastGetTime+20)) {
-                //getSizeInternal(mTmpPoint, true);
-                //mLastGetTime = now;
-            //}
-            //return mTmpPoint.y;
-        //}
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.521 -0400", hash_original_method = "B1AC967D724C688D478E66D81CB079DE", hash_generated_method = "62C7E3CE07717E516B996020BB6FD984")
-    public void getRealSize(Point outSize) {
-        addTaint(outSize.getTaint());
-        try 
-        {
-            IWindowManager wm = getWindowManager();
-            if(wm != null)            
-            {
-                wm.getRealDisplaySize(outSize);
-            } //End block
-            else
-            {
-                outSize.x = getRawWidth();
-                outSize.y = getRawHeight();
-            } //End block
-            if(DEBUG_DISPLAY_SIZE){ }
-        } //End block
-        catch (RemoteException e)
-        {
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //IWindowManager wm = getWindowManager();
-            //if (wm != null) {
-                //wm.getRealDisplaySize(outSize);
-            //} else {
-                //outSize.x = getRawWidth();
-                //outSize.y = getRawHeight();
-            //}
-            //if (DEBUG_DISPLAY_SIZE) Slog.v(
-                    //TAG, "Returning real display size: " + outSize);
-        //} catch (RemoteException e) {
-            //Slog.w("Display", "Unable to get real display size", e);
-        //}
-    }
-
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.521 -0400", hash_original_method = "1DDDF7191F0FF0F7297CF97C1DA4B799", hash_generated_method = "53F5931042A3A9ABEB0BD425BAE35711")
-    public int getRawWidth() {
-        int w = getRawWidthNative();
-        if(DEBUG_DISPLAY_SIZE){ }        int varF1290186A5D0B1CEAB27F4E77C0C5D68_1062537658 = (w);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1214869220 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1214869220;
-        // ---------- Original Method ----------
-        //int w = getRawWidthNative();
-        //if (DEBUG_DISPLAY_SIZE) Slog.v(
-                //TAG, "Returning raw display width: " + w);
-        //return w;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.521 -0400", hash_original_method = "F4A84F8F2FFCAD78922F38438709A2E6", hash_generated_method = "637FA7E97699D4D1A11645BA136790D2")
-    private int getRawWidthNative() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1567774368 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1567774368;
-    }
-
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.522 -0400", hash_original_method = "3ACB8E9BEACC517B317C29EAF3634629", hash_generated_method = "0DD5CC70672A02C5C6E0CFE6C5F91284")
-    public int getRawHeight() {
-        int h = getRawHeightNative();
-        if(DEBUG_DISPLAY_SIZE){ }        int var2510C39011C5BE704182423E3A695E91_19921183 = (h);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2141844666 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2141844666;
-        // ---------- Original Method ----------
-        //int h = getRawHeightNative();
-        //if (DEBUG_DISPLAY_SIZE) Slog.v(
-                //TAG, "Returning raw display height: " + h);
-        //return h;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.522 -0400", hash_original_method = "0BBCECD524BDD54CA608342D94B23905", hash_generated_method = "B69213FD63C0422F6B0396F12EF991E3")
-    private int getRawHeightNative() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_504669123 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_504669123;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.522 -0400", hash_original_method = "0627945D4A6FEA5F8EF1880CC4DB952B", hash_generated_method = "F5C622C075253C71BD449D9B0DC521F9")
-    public int getRotation() {
-        int var39ABA20B52E0B25AEA7A16A0988A2804_1973622146 = (getOrientation());
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_471115705 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_471115705;
-        // ---------- Original Method ----------
-        //return getOrientation();
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.522 -0400", hash_original_method = "6E125A4EC20477CEC647612C37C0ECFE", hash_generated_method = "A33D1390FEDA7AFBC7DEFF26E10ACDBE")
-    @Deprecated
-    public int getOrientation() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1856239683 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1856239683;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.523 -0400", hash_original_method = "441029F9FCB9AB0438A81D4AE48234F0", hash_generated_method = "BF162669D335C181CC3EED8F487101FB")
-    public int getPixelFormat() {
-        int var29727137934799BC1D0686EA1284D9AC_923416210 = (mPixelFormat);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1034384305 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1034384305;
-        // ---------- Original Method ----------
-        //return mPixelFormat;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.523 -0400", hash_original_method = "79009E426290AE6AA1C61D7B07738692", hash_generated_method = "1A5BEA550E47A95D66B561236A0254C3")
-    public float getRefreshRate() {
-        float var96892C3CA593DB3BD1DCFF4EAD9D60E2_811920979 = (mRefreshRate);
-                float var546ADE640B6EDFBC8A086EF31347E768_1516553870 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_1516553870;
-        // ---------- Original Method ----------
-        //return mRefreshRate;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.523 -0400", hash_original_method = "81980A722EF93A85BC60465488AFFEA3", hash_generated_method = "EAE44A184D3656423D69A4CFF18B486D")
-    public void getMetrics(DisplayMetrics outMetrics) {
-        addTaint(outMetrics.getTaint());
-        synchronized
-(mTmpPoint)        {
-            getSizeInternal(mTmpPoint, false);
-            getMetricsWithSize(outMetrics, mTmpPoint.x, mTmpPoint.y);
-        } //End block
-        CompatibilityInfo ci = mCompatibilityInfo.getIfNeeded();
-        if(ci != null)        
-        {
-            ci.applyToDisplayMetrics(outMetrics);
-        } //End block
-        if(DEBUG_DISPLAY_SIZE){ }
-        // ---------- Original Method ----------
-        //synchronized (mTmpPoint) {
-            //getSizeInternal(mTmpPoint, false);
-            //getMetricsWithSize(outMetrics, mTmpPoint.x, mTmpPoint.y);
-        //}
-        //CompatibilityInfo ci = mCompatibilityInfo.getIfNeeded();
-        //if (ci != null) {
-            //ci.applyToDisplayMetrics(outMetrics);
-        //}
-        //if (DEBUG_DISPLAY_SIZE) Slog.v(TAG, "Returning DisplayMetrics: "
-                //+ outMetrics.widthPixels + "x" + outMetrics.heightPixels
-                //+ " " + outMetrics.density);
-    }
-
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.523 -0400", hash_original_method = "EF32DD6952DB89EBAA6A7EFF5769279F", hash_generated_method = "CEB9F6CDC024DCF0EC6F879D5778E32C")
-    public void getRealMetrics(DisplayMetrics outMetrics) {
-        addTaint(outMetrics.getTaint());
-        synchronized
-(mTmpPoint)        {
-            getRealSize(mTmpPoint);
-            getMetricsWithSize(outMetrics, mTmpPoint.x, mTmpPoint.y);
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mTmpPoint) {
-            //getRealSize(mTmpPoint);
-            //getMetricsWithSize(outMetrics, mTmpPoint.x, mTmpPoint.y);
-        //}
-    }
-
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.523 -0400", hash_original_method = "FDECD188634E4AD18CD2905FF365772D", hash_generated_method = "763FA032A6C73A5F121D489A6F4E2EE3")
-    public int getRawExternalWidth() {
-        int varDA11E8CD1811ACB79CCF0FD62CD58F86_1656875826 = (1280);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1924182824 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1924182824;
-        // ---------- Original Method ----------
-        //return 1280;
-    }
-
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.524 -0400", hash_original_method = "376AC17F1270BAB2AB31395345202FD2", hash_generated_method = "DB8AA79266E59B237C0461FF2BC2753B")
-    public int getRawExternalHeight() {
-        int var5F2C22CB4A5380AF7CA75622A6426917_669291068 = (720);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_387047971 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_387047971;
-        // ---------- Original Method ----------
-        //return 720;
-    }
-
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.524 -0400", hash_original_method = "9D75A337ADB9CB99DE08523595E3FF43", hash_generated_method = "076F3564DD94D07B124591656DC49DE9")
-    public void getMetricsWithSize(DisplayMetrics outMetrics,
-            int width, int height) {
-        addTaint(height);
-        addTaint(width);
-        addTaint(outMetrics.getTaint());
-        outMetrics.densityDpi   = (int)((mDensity*DisplayMetrics.DENSITY_DEFAULT)+.5f);
-        outMetrics.noncompatWidthPixels  = outMetrics.widthPixels = width;
-        outMetrics.noncompatHeightPixels = outMetrics.heightPixels = height;
-        outMetrics.density = outMetrics.noncompatDensity = mDensity;
-        outMetrics.scaledDensity = outMetrics.noncompatScaledDensity = outMetrics.density;
-        outMetrics.xdpi = outMetrics.noncompatXdpi = mDpiX;
-        outMetrics.ydpi = outMetrics.noncompatYdpi = mDpiY;
-        // ---------- Original Method ----------
-        //outMetrics.densityDpi   = (int)((mDensity*DisplayMetrics.DENSITY_DEFAULT)+.5f);
-        //outMetrics.noncompatWidthPixels  = outMetrics.widthPixels = width;
-        //outMetrics.noncompatHeightPixels = outMetrics.heightPixels = height;
-        //outMetrics.density = outMetrics.noncompatDensity = mDensity;
-        //outMetrics.scaledDensity = outMetrics.noncompatScaledDensity = outMetrics.density;
-        //outMetrics.xdpi = outMetrics.noncompatXdpi = mDpiX;
-        //outMetrics.ydpi = outMetrics.noncompatYdpi = mDpiY;
-    }
-
-    
-    @DSModeled(DSC.BAN)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:13.738 -0500", hash_original_method = "EAA8F8A14B9F77AE841E750047985ABA", hash_generated_method = "E85C3B1E8EB8D4474C2CFD73095C7800")
     static IWindowManager getWindowManager() {
         synchronized (sStaticInit) {
             if (sWindowManager == null) {
@@ -482,36 +43,408 @@ public class Display {
     private static void nativeClassInit() {
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.524 -0400", hash_original_method = "CE3A43F20C9E9D8C85E043AD25A6B3E9", hash_generated_method = "86A89056B78EFFB6F1C0AB9CF5755DEE")
-    private void init(int display) {
-    }
-
-    
-    @DSModeled(DSC.BAN)
+    /**
+     * Returns a display object which uses the metric's width/height instead.
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:13.752 -0500", hash_original_method = "0B13ECC3F100D49D8BCFE6A30F50129A", hash_generated_method = "EF80024A00D7E526068FD0AA7374CDCF")
     public static Display createCompatibleDisplay(int displayId, CompatibilityInfoHolder compat) {
         return new Display(displayId, compat);
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.524 -0400", hash_original_field = "1EBF27F42EEDCBCC0F731E08D860E11F", hash_generated_field = "223CCD915B07E407EFEFA564FDB2DC20")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:13.714 -0500", hash_original_field = "4D90A9FA3052D3EDC22DC1D54D37C400", hash_generated_field = "223CCD915B07E407EFEFA564FDB2DC20")
 
     static final String TAG = "Display";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.524 -0400", hash_original_field = "5D5F1111C8AB800CF99BD2FF21D97A63", hash_generated_field = "329D6DE5FD992832882D33C274C4BB6D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:13.715 -0500", hash_original_field = "0BEA5D8ECCFFBC6DCB7190B03E168DA0", hash_generated_field = "329D6DE5FD992832882D33C274C4BB6D")
 
     static final boolean DEBUG_DISPLAY_SIZE = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.524 -0400", hash_original_field = "6A0F429E8AAC5F34459248C31C56E729", hash_generated_field = "DE0938F6522CA6DA05C305B8778F7B69")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:13.716 -0500", hash_original_field = "998D754C5B2258E250D60237967BBA0B", hash_generated_field = "DE0938F6522CA6DA05C305B8778F7B69")
 
     public static final int DEFAULT_DISPLAY = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.524 -0400", hash_original_field = "7170B744DAC66055703A154E1B3F312E", hash_generated_field = "3688F7B3534C6CD8F91C89CB5E40FE68")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:13.749 -0500", hash_original_field = "5DD5AFB956F82E56442C6720CD888418", hash_generated_field = "3688F7B3534C6CD8F91C89CB5E40FE68")
+
 
     private static final Object sStaticInit = new Object();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.525 -0400", hash_original_field = "36D6DBDDC3151D8D435DE4367930C71A", hash_generated_field = "815F7815DE01033DD7A51FFFBC42763D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:13.750 -0500", hash_original_field = "FF0D215A6350FF708FCE993AD427F9D1", hash_generated_field = "815F7815DE01033DD7A51FFFBC42763D")
 
     private static boolean sInitialized = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.525 -0400", hash_original_field = "DE97087D3E19CB4D19590D5EDC0B28DE", hash_generated_field = "9FFB1E54F186971CA192F7BE25683B37")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:13.751 -0500", hash_original_field = "F8394A0A868CD62A3B859D8862E95ED4", hash_generated_field = "9FFB1E54F186971CA192F7BE25683B37")
 
     private static IWindowManager sWindowManager;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:13.741 -0500", hash_original_field = "5EAC126C193FC41ACB184C1D10F2C250", hash_generated_field = "01AEB6BE7A1CFB44C6B781D7301EC317")
+
+
+    private  CompatibilityInfoHolder mCompatibilityInfo;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:13.742 -0500", hash_original_field = "32484B09E23EA969F843AD1B3AF0B883", hash_generated_field = "C3D33931672C9997D02DE67B6B8FC170")
+
+    private  int   mDisplay;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:13.743 -0500", hash_original_field = "2C810B4E3BA1B3CF1D70CD3A6C6C42DA", hash_generated_field = "A3BE31732297BF4F97F73715693F8671")
+
+    private int         mPixelFormat;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:13.744 -0500", hash_original_field = "1B397F74F922019F2121302F8A04D632", hash_generated_field = "3B186DE7AE43652AB2C26B4DC04F9761")
+
+    private float       mRefreshRate;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:13.744 -0500", hash_original_field = "B5DC68677E93FA7FF1DA60AF3938C510", hash_generated_field = "B5DC68677E93FA7FF1DA60AF3938C510")
+ float   mDensity;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:13.745 -0500", hash_original_field = "B2E7A1F0CAE99DBD9D3D65E29165C84A", hash_generated_field = "B2E7A1F0CAE99DBD9D3D65E29165C84A")
+ float   mDpiX;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:13.746 -0500", hash_original_field = "BC1908C6E1D0054138584C2D01126D3C", hash_generated_field = "BC1908C6E1D0054138584C2D01126D3C")
+ float   mDpiY;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:13.746 -0500", hash_original_field = "C2BAC675E69529ADCFDBC8F23A87249F", hash_generated_field = "538425559D2BF0F635F9288868FC8D78")
+
+    
+    private final Point mTmpPoint = new Point();
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:13.747 -0500", hash_original_field = "1D8990DD0AE47C2EF8F82812E1AB1108", hash_generated_field = "3C9E4AC56655D3050A4B4F36D2BBE1DC")
+
+    private final DisplayMetrics mTmpMetrics = new DisplayMetrics();
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:13.748 -0500", hash_original_field = "5CE7CF2F6BE1854E13EB1C178B39AB19", hash_generated_field = "362C6D41A17812DA983C811277AF00AE")
+
+    private float mLastGetTime;
+
+    /**
+     * Use {@link android.view.WindowManager#getDefaultDisplay()
+     * WindowManager.getDefaultDisplay()} to create a Display object.
+     * Display gives you access to some information about a particular display
+     * connected to the device.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:13.716 -0500", hash_original_method = "C9519A69B693719AC1491BF9F92C5C8E", hash_generated_method = "482C09FFFDB57BC8D0C88DE0A02382B2")
+    Display(int display, CompatibilityInfoHolder compatInfo) {
+        // initalize the statics when this class is first instansiated. This is
+        // done here instead of in the static block because Zygote
+        synchronized (sStaticInit) {
+            if (!sInitialized) {
+                nativeClassInit();
+                sInitialized = true;
+            }
+        }
+        mCompatibilityInfo = compatInfo != null ? compatInfo : new CompatibilityInfoHolder();
+        mDisplay = display;
+        init(display);
+    }
+
+    /**
+     * Returns the index of this display.  This is currently undefined; do
+     * not use.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:13.717 -0500", hash_original_method = "107F25776C4AB2DB96852EDD25D31975", hash_generated_method = "1C8EF4CE2343D615351A4D0090FBFC7B")
+    public int getDisplayId() {
+        return mDisplay;
+    }
+    
+    /**
+     * Gets the size of the display, in pixels.
+     * <p>
+     * Note that this value should <em>not</em> be used for computing layouts,
+     * since a device will typically have screen decoration (such as a status bar)
+     * along the edges of the display that reduce the amount of application
+     * space available from the size returned here.  Layouts should instead use
+     * the window size.
+     * </p><p>
+     * The size is adjusted based on the current rotation of the display.
+     * </p><p>
+     * The size returned by this method does not necessarily represent the
+     * actual raw size (native resolution) of the display.  The returned size may
+     * be adjusted to exclude certain system decor elements that are always visible.
+     * It may also be scaled to provide compatibility with older applications that
+     * were originally designed for smaller displays.
+     * </p>
+     *
+     * @param outSize A {@link Point} object to receive the size information.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:13.719 -0500", hash_original_method = "17F24EABE37BDCE44DDE55CD705BD7B9", hash_generated_method = "BC8EF3BA048941B41AD13CC2332CDB1B")
+    public void getSize(Point outSize) {
+        getSizeInternal(outSize, true);
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:13.720 -0500", hash_original_method = "79B8C4439194701109AF7AA6129A555C", hash_generated_method = "50C67704465B26566DAA72B1350433D7")
+    private void getSizeInternal(Point outSize, boolean doCompat) {
+        try {
+            IWindowManager wm = getWindowManager();
+            if (wm != null) {
+                wm.getDisplaySize(outSize);
+                CompatibilityInfo ci;
+                if (doCompat && (ci=mCompatibilityInfo.getIfNeeded()) != null) {
+                    synchronized (mTmpMetrics) {
+                        mTmpMetrics.noncompatWidthPixels = outSize.x;
+                        mTmpMetrics.noncompatHeightPixels = outSize.y;
+                        mTmpMetrics.density = mDensity;
+                        ci.applyToDisplayMetrics(mTmpMetrics);
+                        outSize.x = mTmpMetrics.widthPixels;
+                        outSize.y = mTmpMetrics.heightPixels;
+                    }
+                }
+            } else {
+                // This is just for boot-strapping, initializing the
+                // system process before the window manager is up.
+                outSize.x = getRawWidth();
+                outSize.y = getRawHeight();
+            }
+            if (false) {
+                RuntimeException here = new RuntimeException("here");
+                here.fillInStackTrace();
+                Slog.v(TAG, "Returning display size: " + outSize, here);
+            }
+            if (DEBUG_DISPLAY_SIZE && doCompat) Slog.v(
+                    TAG, "Returning display size: " + outSize);
+        } catch (RemoteException e) {
+            Slog.w("Display", "Unable to get display size", e);
+        }
+    }
+    
+    /**
+     * Gets the size of the display as a rectangle, in pixels.
+     *
+     * @param outSize A {@link Rect} object to receive the size information.
+     * @see #getSize(Point)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:13.721 -0500", hash_original_method = "92D5B5EBFB706321BDD6B906C6DF5945", hash_generated_method = "555AAF8F81735CF11D4BE1BFF3CEFA78")
+    public void getRectSize(Rect outSize) {
+        synchronized (mTmpPoint) {
+            getSizeInternal(mTmpPoint, true);
+            outSize.set(0, 0, mTmpPoint.x, mTmpPoint.y);
+        }
+    }
+
+    /**
+     * Return the maximum screen size dimension that will happen.  This is
+     * mostly for wallpapers.
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:13.722 -0500", hash_original_method = "404C4EF6FA3AD3B9975B754C597D6C0E", hash_generated_method = "A34A4080F73EE8B2B7760D3F3BCC074C")
+    public int getMaximumSizeDimension() {
+        try {
+            IWindowManager wm = getWindowManager();
+            return wm.getMaximumSizeDimension();
+        } catch (RemoteException e) {
+            Slog.w("Display", "Unable to get display maximum size dimension", e);
+            return 0;
+        }
+    }
+
+    /**
+     * @deprecated Use {@link #getSize(Point)} instead.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:13.723 -0500", hash_original_method = "2F7FD849240377F4AD58DDE704C1CFAA", hash_generated_method = "BA73A9C9C8FCBA8528451F8212BABE9D")
+    @Deprecated
+public int getWidth() {
+        synchronized (mTmpPoint) {
+            long now = SystemClock.uptimeMillis();
+            if (now > (mLastGetTime+20)) {
+                getSizeInternal(mTmpPoint, true);
+                mLastGetTime = now;
+            }
+            return mTmpPoint.x;
+        }
+    }
+
+    /**
+     * @deprecated Use {@link #getSize(Point)} instead.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:13.724 -0500", hash_original_method = "60FBCC92DE8F9EC729264DB15D46C4E8", hash_generated_method = "5643E07DE3A1DF429C96D173AA292F28")
+    @Deprecated
+public int getHeight() {
+        synchronized (mTmpPoint) {
+            long now = SystemClock.uptimeMillis();
+            if (now > (mLastGetTime+20)) {
+                getSizeInternal(mTmpPoint, true);
+                mLastGetTime = now;
+            }
+            return mTmpPoint.y;
+        }
+    }
+
+    /**
+     * Gets the real size of the display without subtracting any window decor or
+     * applying any compatibility scale factors.
+     * <p>
+     * The real size may be smaller than the raw size when the window manager
+     * is emulating a smaller display (using adb shell am display-size).
+     * </p><p>
+     * The size is adjusted based on the current rotation of the display.
+     * </p>
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:13.725 -0500", hash_original_method = "B1AC967D724C688D478E66D81CB079DE", hash_generated_method = "29CF76A3DE88DB7B77389FBE638C4BF6")
+    public void getRealSize(Point outSize) {
+        try {
+            IWindowManager wm = getWindowManager();
+            if (wm != null) {
+                wm.getRealDisplaySize(outSize);
+            } else {
+                // This is just for boot-strapping, initializing the
+                // system process before the window manager is up.
+                outSize.x = getRawWidth();
+                outSize.y = getRawHeight();
+            }
+            if (DEBUG_DISPLAY_SIZE) Slog.v(
+                    TAG, "Returning real display size: " + outSize);
+        } catch (RemoteException e) {
+            Slog.w("Display", "Unable to get real display size", e);
+        }
+    }
+
+    /**
+     * Gets the raw width of the display, in pixels.
+     * <p>
+     * The size is adjusted based on the current rotation of the display.
+     * </p>
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:13.726 -0500", hash_original_method = "1DDDF7191F0FF0F7297CF97C1DA4B799", hash_generated_method = "D5F3350F9FBA6FBCEEDB8360A5823864")
+    public int getRawWidth() {
+        int w = getRawWidthNative();
+        if (DEBUG_DISPLAY_SIZE) Slog.v(
+                TAG, "Returning raw display width: " + w);
+        return w;
+    }
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:33:38.852 -0500", hash_original_method = "F4A84F8F2FFCAD78922F38438709A2E6", hash_generated_method = "AD61DDB1335568D17DCD03533EBA08E6")
+    private native int getRawWidthNative();
+
+    /**
+     * Gets the raw height of the display, in pixels.
+     * <p>
+     * The size is adjusted based on the current rotation of the display.
+     * </p>
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:13.728 -0500", hash_original_method = "3ACB8E9BEACC517B317C29EAF3634629", hash_generated_method = "AD1DD2BAFB4CC93C4CAEC065F4E6113F")
+    public int getRawHeight() {
+        int h = getRawHeightNative();
+        if (DEBUG_DISPLAY_SIZE) Slog.v(
+                TAG, "Returning raw display height: " + h);
+        return h;
+    }
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:33:38.854 -0500", hash_original_method = "0BBCECD524BDD54CA608342D94B23905", hash_generated_method = "48A3CC71B454471523A765603E8F2113")
+    private native int getRawHeightNative();
+    
+    /**
+     * Returns the rotation of the screen from its "natural" orientation.
+     * The returned value may be {@link Surface#ROTATION_0 Surface.ROTATION_0}
+     * (no rotation), {@link Surface#ROTATION_90 Surface.ROTATION_90},
+     * {@link Surface#ROTATION_180 Surface.ROTATION_180}, or
+     * {@link Surface#ROTATION_270 Surface.ROTATION_270}.  For
+     * example, if a device has a naturally tall screen, and the user has
+     * turned it on its side to go into a landscape orientation, the value
+     * returned here may be either {@link Surface#ROTATION_90 Surface.ROTATION_90}
+     * or {@link Surface#ROTATION_270 Surface.ROTATION_270} depending on
+     * the direction it was turned.  The angle is the rotation of the drawn
+     * graphics on the screen, which is the opposite direction of the physical
+     * rotation of the device.  For example, if the device is rotated 90
+     * degrees counter-clockwise, to compensate rendering will be rotated by
+     * 90 degrees clockwise and thus the returned value here will be
+     * {@link Surface#ROTATION_90 Surface.ROTATION_90}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:13.730 -0500", hash_original_method = "0627945D4A6FEA5F8EF1880CC4DB952B", hash_generated_method = "9F82DC778CFEFA13C888B6C1F98A1C59")
+    public int getRotation() {
+        return getOrientation();
+    }
+    
+    /**
+     * @deprecated use {@link #getRotation}
+     * @return orientation of this display.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:33:38.856 -0500", hash_original_method = "6E125A4EC20477CEC647612C37C0ECFE", hash_generated_method = "579A0203D6236D81664B553F26B2711E")
+    @Deprecated
+native public int getOrientation();
+
+    /**
+     * Return the native pixel format of the display.  The returned value
+     * may be one of the constants int {@link android.graphics.PixelFormat}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:13.732 -0500", hash_original_method = "441029F9FCB9AB0438A81D4AE48234F0", hash_generated_method = "113D6BD2144B8B471B058272F811664F")
+    public int getPixelFormat() {
+        return mPixelFormat;
+    }
+    
+    /**
+     * Return the refresh rate of this display in frames per second.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:13.733 -0500", hash_original_method = "79009E426290AE6AA1C61D7B07738692", hash_generated_method = "915A0C2921F8E445C8BBB81C6178EFF8")
+    public float getRefreshRate() {
+        return mRefreshRate;
+    }
+    
+    /**
+     * Gets display metrics that describe the size and density of this display.
+     * <p>
+     * The size is adjusted based on the current rotation of the display.
+     * </p><p>
+     * The size returned by this method does not necessarily represent the
+     * actual raw size (native resolution) of the display.  The returned size may
+     * be adjusted to exclude certain system decor elements that are always visible.
+     * It may also be scaled to provide compatibility with older applications that
+     * were originally designed for smaller displays.
+     * </p>
+     *
+     * @param outMetrics A {@link DisplayMetrics} object to receive the metrics.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:13.734 -0500", hash_original_method = "81980A722EF93A85BC60465488AFFEA3", hash_generated_method = "127EAF7824B13820ADCF3A73223C6D4F")
+    public void getMetrics(DisplayMetrics outMetrics) {
+        synchronized (mTmpPoint) {
+            getSizeInternal(mTmpPoint, false);
+            getMetricsWithSize(outMetrics, mTmpPoint.x, mTmpPoint.y);
+        }
+
+        CompatibilityInfo ci = mCompatibilityInfo.getIfNeeded();
+        if (ci != null) {
+            ci.applyToDisplayMetrics(outMetrics);
+        }
+
+        if (DEBUG_DISPLAY_SIZE) Slog.v(TAG, "Returning DisplayMetrics: "
+                + outMetrics.widthPixels + "x" + outMetrics.heightPixels
+                + " " + outMetrics.density);
+    }
+
+    /**
+     * Gets display metrics based on the real size of this display.
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:13.734 -0500", hash_original_method = "EF32DD6952DB89EBAA6A7EFF5769279F", hash_generated_method = "E737A504C65C9004D2AE668D6E1E2856")
+    public void getRealMetrics(DisplayMetrics outMetrics) {
+        synchronized (mTmpPoint) {
+            getRealSize(mTmpPoint);
+            getMetricsWithSize(outMetrics, mTmpPoint.x, mTmpPoint.y);
+        }
+    }
+
+    /**
+     * If the display is mirrored to an external HDMI display, returns the
+     * width of that display.
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:13.736 -0500", hash_original_method = "FDECD188634E4AD18CD2905FF365772D", hash_generated_method = "F7A6FB561BE3D49C5DEF359505C6D727")
+    public int getRawExternalWidth() {
+        return 1280;
+    }
+
+    /**
+     * If the display is mirrored to an external HDMI display, returns the
+     * height of that display.
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:13.736 -0500", hash_original_method = "376AC17F1270BAB2AB31395345202FD2", hash_generated_method = "AC8AE7757D41023D900EFB2D71052C04")
+    public int getRawExternalHeight() {
+        return 720;
+    }
+
+    /**
+     * Gets display metrics based on an explicit assumed display size.
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:13.737 -0500", hash_original_method = "9D75A337ADB9CB99DE08523595E3FF43", hash_generated_method = "193166C12048EB9FDF36A519520DCDCC")
+    public void getMetricsWithSize(DisplayMetrics outMetrics,
+            int width, int height) {
+        outMetrics.densityDpi   = (int)((mDensity*DisplayMetrics.DENSITY_DEFAULT)+.5f);
+
+        outMetrics.noncompatWidthPixels  = outMetrics.widthPixels = width;
+        outMetrics.noncompatHeightPixels = outMetrics.heightPixels = height;
+
+        outMetrics.density = outMetrics.noncompatDensity = mDensity;
+        outMetrics.scaledDensity = outMetrics.noncompatScaledDensity = outMetrics.density;
+        outMetrics.xdpi = outMetrics.noncompatXdpi = mDpiX;
+        outMetrics.ydpi = outMetrics.noncompatYdpi = mDpiY;
+    }
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:33:38.866 -0500", hash_original_method = "CE3A43F20C9E9D8C85E043AD25A6B3E9", hash_generated_method = "665C622029752F1221564D280B11E5B0")
+    private native void init(int display);
 }
 

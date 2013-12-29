@@ -1,6 +1,8 @@
 package java.text;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.Serializable;
 
@@ -10,100 +12,8 @@ import java.io.Serializable;
 
 
 public abstract class Format implements Serializable, Cloneable {
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.525 -0400", hash_original_method = "6FBA04B2B44BD6140150C63C748AD62A", hash_generated_method = "8A4387ADC0046A91B4EE8D219103BC9A")
-    protected  Format() {
-        // ---------- Original Method ----------
-    }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.526 -0400", hash_original_method = "0B6FE6D01B20019581445CB40F5DED3F", hash_generated_method = "C9645302D063753FFAB2BADFD02E92B6")
-    @Override
-    public Object clone() {
-        try 
-        {
-Object var46F3A0D86742C1D6E099C2B166941A33_259151495 =             super.clone();
-            var46F3A0D86742C1D6E099C2B166941A33_259151495.addTaint(taint);
-            return var46F3A0D86742C1D6E099C2B166941A33_259151495;
-        } //End block
-        catch (CloneNotSupportedException e)
-        {
-            AssertionError varA5A331D65C8C3F32D42E49D64BCF4109_461924189 = new AssertionError(e);
-            varA5A331D65C8C3F32D42E49D64BCF4109_461924189.addTaint(taint);
-            throw varA5A331D65C8C3F32D42E49D64BCF4109_461924189;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return super.clone();
-        //} catch (CloneNotSupportedException e) {
-            //throw new AssertionError(e);
-        //}
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.526 -0400", hash_original_method = "37693C41F5C0477FFE14A538377AD1D2", hash_generated_method = "BAD74ED666EC189584D6FD6AB33F90BB")
-    public final String format(Object object) {
-        addTaint(object.getTaint());
-String var8CB4AA7B650AA7040D828797C5473E3E_1079027195 =         format(object, new StringBuffer(), new FieldPosition(0))
-                .toString();
-        var8CB4AA7B650AA7040D828797C5473E3E_1079027195.addTaint(taint);
-        return var8CB4AA7B650AA7040D828797C5473E3E_1079027195;
-        // ---------- Original Method ----------
-        //return format(object, new StringBuffer(), new FieldPosition(0))
-                //.toString();
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    public abstract StringBuffer format(Object object, StringBuffer buffer,
-            FieldPosition field);
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.527 -0400", hash_original_method = "29C223BA8E4C1B7CC40F40C2878521D9", hash_generated_method = "3720D3086FAD156FB52DF8D12A8F00BE")
-    public AttributedCharacterIterator formatToCharacterIterator(Object object) {
-        addTaint(object.getTaint());
-AttributedCharacterIterator var55BEE374F3F96F74248D37376B200680_507043001 =         new AttributedString(format(object)).getIterator();
-        var55BEE374F3F96F74248D37376B200680_507043001.addTaint(taint);
-        return var55BEE374F3F96F74248D37376B200680_507043001;
-        // ---------- Original Method ----------
-        //return new AttributedString(format(object)).getIterator();
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.527 -0400", hash_original_method = "6F2C2FABFB0232DE8BE4D0269373F5D5", hash_generated_method = "654FCA3DB89931322ADE5FC96B3C2F8A")
-    public Object parseObject(String string) throws ParseException {
-        addTaint(string.getTaint());
-        ParsePosition position = new ParsePosition(0);
-        Object result = parseObject(string, position);
-        if(position.getIndex() == 0)        
-        {
-            ParseException varE37A2D5B4EBF9E36CFB19B811F94CB20_1931239906 = new ParseException("Parse failure", position.getErrorIndex());
-            varE37A2D5B4EBF9E36CFB19B811F94CB20_1931239906.addTaint(taint);
-            throw varE37A2D5B4EBF9E36CFB19B811F94CB20_1931239906;
-        } //End block
-Object varDC838461EE2FA0CA4C9BBB70A15456B0_962123644 =         result;
-        varDC838461EE2FA0CA4C9BBB70A15456B0_962123644.addTaint(taint);
-        return varDC838461EE2FA0CA4C9BBB70A15456B0_962123644;
-        // ---------- Original Method ----------
-        //ParsePosition position = new ParsePosition(0);
-        //Object result = parseObject(string, position);
-        //if (position.getIndex() == 0) {
-            //throw new ParseException("Parse failure", position.getErrorIndex());
-        //}
-        //return result;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    public abstract Object parseObject(String string, ParsePosition position);
-
-    
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.560 -0500", hash_original_method = "342F58D58D7CDE61587D20CC55F1BF65", hash_generated_method = "E40E3DF50A129A615CEDF26F12F19796")
     static boolean upTo(String string, ParsePosition position,
             StringBuffer buffer, char stop) {
         int index = position.getIndex(), length = string.length();
@@ -128,8 +38,7 @@ Object varDC838461EE2FA0CA4C9BBB70A15456B0_962123644 =         result;
         return false;
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.561 -0500", hash_original_method = "E4DAD8C2181AF3C8695050B31E68F195", hash_generated_method = "EC7B532152BFC21D3BEC28BD5621AAB5")
     static boolean upToWithQuotes(String string, ParsePosition position,
             StringBuffer buffer, char stop, char start) {
         int index = position.getIndex(), length = string.length(), count = 1;
@@ -155,28 +64,151 @@ Object varDC838461EE2FA0CA4C9BBB70A15456B0_962123644 =         result;
         }
         throw new IllegalArgumentException("Unmatched braces in the pattern");
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.553 -0500", hash_original_field = "0DB40A090DF073D3D23310F63EA8393F", hash_generated_field = "F20B0022FF8D3E84304897148427AD29")
+
+
+    private static final long serialVersionUID = -299282585814624189L;
+
+    /**
+     * Used by subclasses. This was public in Java 5.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.554 -0500", hash_original_method = "6FBA04B2B44BD6140150C63C748AD62A", hash_generated_method = "EFA7B769FE1AEB1EF8661CFADF6D58B2")
+    protected Format() {
+    }
+
+    /**
+     * Returns a copy of this {@code Format} instance.
+     *
+     * @return a shallow copy of this format.
+     *
+     * @see java.lang.Cloneable
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.555 -0500", hash_original_method = "0B6FE6D01B20019581445CB40F5DED3F", hash_generated_method = "88F588A1F8F1E65DC62D9CB72E24BF48")
+    @Override
+public Object clone() {
+        try {
+            return super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError(e);
+        }
+    }
+
+    /**
+     * Formats the specified object using the rules of this format.
+     *
+     * @param object
+     *            the object to format.
+     * @return the formatted string.
+     * @throws IllegalArgumentException
+     *         if the object cannot be formatted by this format.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.555 -0500", hash_original_method = "37693C41F5C0477FFE14A538377AD1D2", hash_generated_method = "D6FF871E879357E151D2BDB709C4FF98")
+    public final String format(Object object) {
+        return format(object, new StringBuffer(), new FieldPosition(0))
+                .toString();
+    }
+
+    /**
+     * Appends the specified object to the specified string buffer using the
+     * rules of this format.
+     * <p>
+     * {@code field} is an input/output parameter. If its {@code field}
+     * member contains an enum value specifying a field on input, then its
+     * {@code beginIndex} and {@code endIndex} members will be updated with the
+     * text offset of the first occurrence of this field in the formatted text.
+     *
+     * @param object
+     *            the object to format.
+     * @param buffer
+     *            the string buffer where the formatted string is appended to.
+     * @param field
+     *            on input: an optional alignment field; on output: the offsets
+     *            of the alignment field in the formatted text.
+     * @return the string buffer.
+     * @throws IllegalArgumentException
+     *            if the object cannot be formatted by this format.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.556 -0500", hash_original_method = "51EFA60E0E20FDE37B9F085D9B58A623", hash_generated_method = "8613FF54F89F6D1F30A04F56DAF4DDD3")
+    public abstract StringBuffer format(Object object, StringBuffer buffer,
+            FieldPosition field);
+
+    /**
+     * Formats the specified object using the rules of this format and returns
+     * an {@code AttributedCharacterIterator} with the formatted string and no
+     * attributes.
+     * <p>
+     * Subclasses should return an {@code AttributedCharacterIterator} with the
+     * appropriate attributes.
+     *
+     * @param object
+     *            the object to format.
+     * @return an {@code AttributedCharacterIterator} with the formatted object
+     *         and attributes.
+     * @throws IllegalArgumentException
+     *            if the object cannot be formatted by this format.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.557 -0500", hash_original_method = "29C223BA8E4C1B7CC40F40C2878521D9", hash_generated_method = "EE414D44458FA6E5766F6B76051CCB77")
+    public AttributedCharacterIterator formatToCharacterIterator(Object object) {
+        return new AttributedString(format(object)).getIterator();
+    }
+
+    /**
+     * Parses the specified string using the rules of this format.
+     *
+     * @param string
+     *            the string to parse.
+     * @return the object resulting from the parse.
+     * @throws ParseException
+     *            if an error occurs during parsing.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.558 -0500", hash_original_method = "6F2C2FABFB0232DE8BE4D0269373F5D5", hash_generated_method = "4599B9C84ED9B8144980A818CAE01834")
+    public Object parseObject(String string) throws ParseException {
+        ParsePosition position = new ParsePosition(0);
+        Object result = parseObject(string, position);
+        if (position.getIndex() == 0) {
+            throw new ParseException("Parse failure", position.getErrorIndex());
+        }
+        return result;
+    }
 
     
     public static class Field extends AttributedCharacterIterator.Attribute {
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.528 -0400", hash_original_method = "5600516370D16E6925F34153CC1B60B8", hash_generated_method = "465767ECB3AF93CD4C2D7AEDA23F18B3")
-        protected  Field(String fieldName) {
-            super(fieldName);
-            addTaint(fieldName.getTaint());
-            // ---------- Original Method ----------
-        }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.563 -0500", hash_original_field = "7B33E614D84C5CC7F14E8DA120EFE29B", hash_generated_field = "DE61A40CF1E88A2D4F1C7CBD694BE984")
 
-        
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.528 -0400", hash_original_field = "CD3DAE455C77872D19C5AEA7227DBEF8", hash_generated_field = "DE61A40CF1E88A2D4F1C7CBD694BE984")
 
         private static final long serialVersionUID = 276966692217360283L;
+
+        /**
+         * Constructs a new instance of {@code Field} with the given field name.
+         *
+         * @param fieldName
+         *            the field name.
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.564 -0500", hash_original_method = "5600516370D16E6925F34153CC1B60B8", hash_generated_method = "8E9E2E9A1129AAE1C0A40E201C67690D")
+        protected Field(String fieldName) {
+            super(fieldName);
+        }
     }
 
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.528 -0400", hash_original_field = "C56B73F9CC0B5F51F3C2FEF02E637B2F", hash_generated_field = "F20B0022FF8D3E84304897148427AD29")
-
-    private static final long serialVersionUID = -299282585814624189L;
+    /**
+     * Parses the specified string starting at the index specified by
+     * {@code position}. If the string is successfully parsed then the index of
+     * the {@code ParsePosition} is updated to the index following the parsed
+     * text. On error, the index is unchanged and the error index of
+     * {@code ParsePosition} is set to the index where the error occurred.
+     *
+     * @param string
+     *            the string to parse.
+     * @param position
+     *            input/output parameter, specifies the start index in
+     *            {@code string} from where to start parsing. If parsing is
+     *            successful, it is updated with the index following the parsed
+     *            text; on error, the index is unchanged and the error index is
+     *            set to the index where the error occurred.
+     * @return the object resulting from the parse or {@code null} if there is
+     *         an error.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:17.559 -0500", hash_original_method = "B30F2D29CF174E11D687387FB98BED90", hash_generated_method = "2D7138DA8CBCBAF9EF63AF3FC800E113")
+    public abstract Object parseObject(String string, ParsePosition position);
 }
 

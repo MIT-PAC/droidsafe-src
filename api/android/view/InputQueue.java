@@ -1,6 +1,8 @@
 package android.view;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Random;
@@ -15,17 +17,6 @@ import android.util.Slog;
 
 
 public final class InputQueue {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.122 -0400", hash_original_field = "8E934369C1BCE6316A2C1FFFF8C383AB", hash_generated_field = "9822897BD047FB46E3B13005AC739818")
-
-    InputChannel mChannel;
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.122 -0400", hash_original_method = "578F9F8C0543A874EC0424533736E385", hash_generated_method = "CE3B3177795F0AF995D39C9B3A066820")
-    public  InputQueue(InputChannel channel) {
-        mChannel = channel;
-        // ---------- Original Method ----------
-        //mChannel = channel;
-    }
     
     private static HashSet<InputChannel> channels = new HashSet<InputChannel>();
 
@@ -55,17 +46,6 @@ public final class InputQueue {
     }
 
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.123 -0400", hash_original_method = "61914318E0BCFE3BB34C0890B61B6D95", hash_generated_method = "94A66D684A65D61EA725EB5919A30C55")
-    public InputChannel getInputChannel() {
-InputChannel varE2D76F05D260658A7D968B6D9CBA0D40_1864546670 =         mChannel;
-        varE2D76F05D260658A7D968B6D9CBA0D40_1864546670.addTaint(taint);
-        return varE2D76F05D260658A7D968B6D9CBA0D40_1864546670;
-        // ---------- Original Method ----------
-        //return mChannel;
-    }
-
-    
     @DSModeled(DSC.SPEC)
     public static void registerInputChannel(InputChannel inputChannel, InputHandler inputHandler,
             MessageQueue messageQueue) {
@@ -91,41 +71,38 @@ InputChannel varE2D76F05D260658A7D968B6D9CBA0D40_1864546670 =         mChannel;
         }
         nativeUnregisterInputChannel(inputChannel);
     }
-
     
-    @DSModeled(DSC.BAN)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:23.899 -0500", hash_original_method = "36C17BD34CDDCF86AAD54E86A65CBE17", hash_generated_method = "48F220CF03DE9F3A2BEC15ED27315F57")
     @SuppressWarnings("unused")
-    private static void dispatchKeyEvent(InputHandler inputHandler,
+private static void dispatchKeyEvent(InputHandler inputHandler,
             KeyEvent event, long finishedToken) {
         FinishedCallback finishedCallback = FinishedCallback.obtain(finishedToken);
         inputHandler.handleKey(event, finishedCallback);
     }
 
-    
-    @DSModeled(DSC.BAN)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:23.900 -0500", hash_original_method = "1DB369BCBC340EA73F202ACFFFE6A3DD", hash_generated_method = "945929AAFC4E215FA8BC3E6248F28423")
     @SuppressWarnings("unused")
-    private static void dispatchMotionEvent(InputHandler inputHandler,
+private static void dispatchMotionEvent(InputHandler inputHandler,
             MotionEvent event, long finishedToken) {
         FinishedCallback finishedCallback = FinishedCallback.obtain(finishedToken);
         inputHandler.handleMotion(event, finishedCallback);
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:23.887 -0500", hash_original_field = "DF383A2ACFEE05AC3BD4A4406C46C7E2", hash_generated_field = "94920E7D18ECE70284EAAEB037392224")
+
+    private static final String TAG = "InputQueue";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:23.888 -0500", hash_original_field = "81DD852ECBE07BA98A61C8F3D0C85F01", hash_generated_field = "58EDF43BA541A4D47EECFEC3901C7AED")
+
+    
+    private static final boolean DEBUG = false;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:23.891 -0500", hash_original_field = "3892ABA92B7F95295E8CFDAE8B79791E", hash_generated_field = "BDCA99E42BC506D141E07BE230771AE3")
+
+    
+    private static final Object sLock = new Object();
 
     
     public static final class FinishedCallback {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.124 -0400", hash_original_field = "6BF86F902744979BA23F6DD1588AEE5E", hash_generated_field = "11EDD9B738A3761EEA6282CC3588BF9E")
-
-        private FinishedCallback mRecycleNext;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.124 -0400", hash_original_field = "159C1A4458FBBEEFFEFE7A218E806BE7", hash_generated_field = "1C857E4F95050669EDA465BE12C181F0")
-
-        private long mFinishedToken;
         
         static HashMap<Long, FinishedCallback> callBackMap = new HashMap<Long, FinishedCallback>();
-        
-        @DSModeled(DSC.BAN)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.124 -0400", hash_original_method = "85C1D812E7267DE4D8D0FC0F23F521F1", hash_generated_method = "FE7116F7FDD08D0BCD50ADD251496AB3")
-        private  FinishedCallback() {
-            // ---------- Original Method ----------
-        }
 
         @DSModeled(DSC.SAFE)
         public static FinishedCallback obtain(long finishedToken) {
@@ -135,6 +112,17 @@ InputChannel varE2D76F05D260658A7D968B6D9CBA0D40_1864546670 =         mChannel;
                 callBackMap.put(finishedToken, callback);
             }
             return callBackMap.get(finishedToken);
+        }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:23.905 -0500", hash_original_field = "5A9C4804E43B1DA0BA241FB5470EF97E", hash_generated_field = "11EDD9B738A3761EEA6282CC3588BF9E")
+
+        
+        private FinishedCallback mRecycleNext;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:23.905 -0500", hash_original_field = "67A0FC1AB73DFA1EF77B1023746AD614", hash_generated_field = "1C857E4F95050669EDA465BE12C181F0")
+
+        private long mFinishedToken;
+        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:23.907 -0500", hash_original_method = "85C1D812E7267DE4D8D0FC0F23F521F1", hash_generated_method = "2E154B4C61D82C8A0B2C3D1599F5A3C6")
+        private FinishedCallback() {
         }
 
         
@@ -178,15 +166,21 @@ InputChannel varE2D76F05D260658A7D968B6D9CBA0D40_1864546670 =         mChannel;
         
         void onInputQueueDestroyed(InputQueue queue);
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:23.890 -0500", hash_original_field = "9822897BD047FB46E3B13005AC739818", hash_generated_field = "9822897BD047FB46E3B13005AC739818")
+
+
+     InputChannel mChannel;
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.125 -0400", hash_original_field = "E9069E9EEDEBF04CDBA5993149C153A3", hash_generated_field = "94920E7D18ECE70284EAAEB037392224")
-
-    private static final String TAG = "InputQueue";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.125 -0400", hash_original_field = "021906CCEC815FC820B74F760E7368C7", hash_generated_field = "58EDF43BA541A4D47EECFEC3901C7AED")
-
-    private static final boolean DEBUG = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.125 -0400", hash_original_field = "6FBEC3E7BB69D1E09ECABF075E18871F", hash_generated_field = "BDCA99E42BC506D141E07BE230771AE3")
-
-    private static final Object sLock = new Object();
+    /** @hide */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:23.895 -0500", hash_original_method = "578F9F8C0543A874EC0424533736E385", hash_generated_method = "F3609ACFC4EBC9F4C56997CE627C55BF")
+    public InputQueue(InputChannel channel) {
+        mChannel = channel;
+    }
+    
+    /** @hide */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:23.896 -0500", hash_original_method = "61914318E0BCFE3BB34C0890B61B6D95", hash_generated_method = "4041D8E4263F3B4F9618C753D89620DE")
+    public InputChannel getInputChannel() {
+        return mChannel;
+    }
 }
 

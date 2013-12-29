@@ -1,6 +1,8 @@
 package org.apache.harmony.security.asn1;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 
@@ -10,173 +12,33 @@ import java.io.IOException;
 
 
 public class ASN1Oid extends ASN1Primitive {
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.376 -0400", hash_original_method = "8EE7336DC066715E76590AA2BFCE7307", hash_generated_method = "5EE615B9F25ED765F08A7690EA0EA432")
-    public  ASN1Oid() {
-        super(TAG_OID);
-        // ---------- Original Method ----------
-    }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Returns ASN.1 Object Identifier type default implementation
+     *
+     * The default implementation works with encoding
+     * that is represented as array of integers.
+     *
+     * @return ASN.1 Object Identifier type default implementation
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.117 -0500", hash_original_method = "5E65A7295BE5D2F9170BAE5522B68E33", hash_generated_method = "1F1BE41A3621422B13C5D1294D1E6378")
     public static ASN1Oid getInstance() {
         return ASN1;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.376 -0400", hash_original_method = "3D94E48E0DC6BD33E3C9167EF5944677", hash_generated_method = "2E0BEA51B881D414A1E381748E87624E")
-    public Object decode(BerInputStream in) throws IOException {
-        addTaint(in.getTaint());
-        in.readOID();
-        if(in.isVerify)        
-        {
-Object var540C13E9E156B687226421B24F2DF178_45270407 =             null;
-            var540C13E9E156B687226421B24F2DF178_45270407.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_45270407;
-        } //End block
-Object var6AD043AF0280111F31D0D60A6CD70863_1096479710 =         getDecodedObject(in);
-        var6AD043AF0280111F31D0D60A6CD70863_1096479710.addTaint(taint);
-        return var6AD043AF0280111F31D0D60A6CD70863_1096479710;
-        // ---------- Original Method ----------
-        //in.readOID();
-        //if (in.isVerify) {
-            //return null;
-        //}
-        //return getDecodedObject(in);
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.378 -0400", hash_original_method = "F2E30F5A7FF0BD89B1DBA25737A1DD6D", hash_generated_method = "9970F6826E165E4CDB6C5B934BEE9D18")
-    @Override
-    public Object getDecodedObject(BerInputStream in) throws IOException {
-        addTaint(in.getTaint());
-        int oidElement = in.oidElement;
-        int[] oid = new int[oidElement];
-for(int id = 1, i = 0;id < oid.length;id++,i++)
-        {
-            int octet = in.buffer[in.contentOffset + i];
-            oidElement = octet & 0x7F;
-            while
-((octet & 0x80) != 0)            
-            {
-                i++;
-                octet = in.buffer[in.contentOffset + i];
-                oidElement = oidElement << 7 | (octet & 0x7f);
-            } //End block
-            oid[id] = oidElement;
-        } //End block
-        if(oid[1] > 79)        
-        {
-            oid[0] = 2;
-            oid[1] = oid[1] - 80;
-        } //End block
-        else
-        {
-            oid[0] = oid[1] / 40;
-            oid[1] = oid[1] % 40;
-        } //End block
-Object var6EE0E520E830DF58CC7591C0A7BECFB6_2078007922 =         oid;
-        var6EE0E520E830DF58CC7591C0A7BECFB6_2078007922.addTaint(taint);
-        return var6EE0E520E830DF58CC7591C0A7BECFB6_2078007922;
-        // ---------- Original Method ----------
-        //int oidElement = in.oidElement;
-        //int[] oid = new int[oidElement];
-        //for (int id = 1, i = 0; id < oid.length; id++, i++) {
-            //int octet = in.buffer[in.contentOffset + i];
-            //oidElement = octet & 0x7F;
-            //while ((octet & 0x80) != 0) {
-                //i++;
-                //octet = in.buffer[in.contentOffset + i];
-                //oidElement = oidElement << 7 | (octet & 0x7f);
-            //}
-            //oid[id] = oidElement;
-        //}
-        //if (oid[1] > 79) {
-            //oid[0] = 2;
-            //oid[1] = oid[1] - 80;
-        //} else {
-            //oid[0] = oid[1] / 40;
-            //oid[1] = oid[1] % 40;
-        //}
-        //return oid;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.378 -0400", hash_original_method = "2B9753A86B000221B8C7FE7F76F39078", hash_generated_method = "CCA01931BD8DFF43CF235A94311C1003")
-    public void encodeContent(BerOutputStream out) {
-        addTaint(out.getTaint());
-        out.encodeOID();
-        // ---------- Original Method ----------
-        //out.encodeOID();
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.379 -0400", hash_original_method = "EFEF2EC121CF26DF89AF9E72AC4EE02E", hash_generated_method = "AA8F06F23BB1045643198CC6D3E70EA0")
-    public void setEncodingContent(BerOutputStream out) {
-        addTaint(out.getTaint());
-        int[] oid = (int[]) out.content;
-        int length = 0;
-        int elem = oid[0] * 40 + oid[1];
-        if(elem == 0)        
-        {
-            length = 1;
-        } //End block
-        else
-        {
-for(;elem > 0;elem = elem >> 7)
-            {
-                length++;
-            } //End block
-        } //End block
-for(int i = 2;i < oid.length;i++)
-        {
-            if(oid[i] == 0)            
-            {
-                length++;
-                continue;
-            } //End block
-for(elem = oid[i];elem > 0;elem = elem >> 7)
-            {
-                length++;
-            } //End block
-        } //End block
-        out.length = length;
-        // ---------- Original Method ----------
-        //int[] oid = (int[]) out.content;
-        //int length = 0;
-        //int elem = oid[0] * 40 + oid[1];
-        //if (elem == 0) {
-            //length = 1;
-        //} else {
-            //for (; elem > 0; elem = elem >> 7) {
-                //length++;
-            //}
-        //}
-        //for (int i = 2; i < oid.length; i++) {
-            //if (oid[i] == 0) {
-                //length++;
-                //continue;
-            //}
-            //for (elem = oid[i]; elem > 0; elem = elem >> 7) {
-                //length++;
-            //}
-        //}
-        //out.length = length;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Returns ASN.1 Object Identifier type implementation
+     *
+     * This implementation works with encoding
+     * that is mapped to java.lang.String object.
+     *
+     * @return ASN.1 Object Identifier type implementation
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.126 -0500", hash_original_method = "DE949297883E398E1EB4558C161D2578", hash_generated_method = "393C765E8DA9FA6B1298E887F199D60F")
     public static ASN1Oid getInstanceForString() {
         return STRING_OID;
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.380 -0400", hash_original_field = "D50A76961EC7FDB68B43778986BD2D19", hash_generated_field = "67D6F26FD049FE76173416774B5BEB68")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.116 -0500", hash_original_field = "F3A0F319DC5F03170274C5163D2FD8DB", hash_generated_field = "67D6F26FD049FE76173416774B5BEB68")
 
     private static final ASN1Oid ASN1 = new ASN1Oid();
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.597 -0400", hash_original_field = "A17235E1E62013241F58D7FEA3397ABE", hash_generated_field = "7C71E1FAB479FEB541AEBE0F6A00EF0D")
@@ -241,5 +103,94 @@ for(elem = oid[i];elem > 0;elem = elem >> 7)
 
         
 };
+
+    /**
+     * Constructs ASN.1 Object Identifier type
+     *
+     * The constructor is provided for inheritance purposes
+     * when there is a need to create a custom ASN.1 Object Identifier type.
+     * To get a default implementation it is recommended to use
+     * getInstance() method.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.117 -0500", hash_original_method = "8EE7336DC066715E76590AA2BFCE7307", hash_generated_method = "68B37FC2A9638E2A5864F88359CE5FCA")
+    public ASN1Oid() {
+        super(TAG_OID);
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.118 -0500", hash_original_method = "3D94E48E0DC6BD33E3C9167EF5944677", hash_generated_method = "DACE7F80FA7E1155B471E3DD28D723C1")
+    public Object decode(BerInputStream in) throws IOException {
+        in.readOID();
+
+        if (in.isVerify) {
+            return null;
+        }
+        return getDecodedObject(in);
+    }
+
+    /**
+     * Extracts array of integers from BER input stream.
+     *
+     * @return array of integers
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.120 -0500", hash_original_method = "F2E30F5A7FF0BD89B1DBA25737A1DD6D", hash_generated_method = "2DECE60E03D737615DA7DCAC4AF316F8")
+    @Override
+public Object getDecodedObject(BerInputStream in) throws IOException {
+        // Allocate and decode
+        int oidElement = in.oidElement;
+        int[] oid = new int[oidElement];
+        for (int id = 1, i = 0; id < oid.length; id++, i++) {
+            int octet = in.buffer[in.contentOffset + i];
+            oidElement = octet & 0x7F;
+            while ((octet & 0x80) != 0) {
+                i++;
+                octet = in.buffer[in.contentOffset + i];
+                oidElement = oidElement << 7 | (octet & 0x7f);
+            }
+            oid[id] = oidElement;
+        }
+        // Special handling for the first packed OID element
+        if (oid[1] > 79) {
+            oid[0] = 2;
+            oid[1] = oid[1] - 80;
+        } else {
+            oid[0] = oid[1] / 40;
+            oid[1] = oid[1] % 40;
+        }
+        return oid;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.121 -0500", hash_original_method = "2B9753A86B000221B8C7FE7F76F39078", hash_generated_method = "0F2D3B5DB62D81567C712329EAC4451C")
+    public void encodeContent(BerOutputStream out) {
+        out.encodeOID();
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.122 -0500", hash_original_method = "EFEF2EC121CF26DF89AF9E72AC4EE02E", hash_generated_method = "BFE853E80F39183052429A83100ADDCB")
+    public void setEncodingContent(BerOutputStream out) {
+        int[] oid = (int[]) out.content;
+
+        int length = 0;
+
+        // first subidentifier
+        int elem = oid[0] * 40 + oid[1];
+        if (elem == 0) {
+            length = 1;
+        } else {
+            for (; elem > 0; elem = elem >> 7) {
+                length++;
+            }
+        }
+
+        // the rest of subidentifiers
+        for (int i = 2; i < oid.length; i++) {
+            if (oid[i] == 0) {
+                length++;
+                continue;
+            }
+            for (elem = oid[i]; elem > 0; elem = elem >> 7) {
+                length++;
+            }
+        }
+        out.length = length;
+    }
 }
 

@@ -1,6 +1,8 @@
 package java.nio.channels.spi;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.nio.channels.SelectionKey;
 
@@ -10,42 +12,43 @@ import java.nio.channels.SelectionKey;
 
 
 public abstract class AbstractSelectionKey extends SelectionKey {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.350 -0400", hash_original_field = "8AEB5FF3DF8A5B1CEA44718D6D637F23", hash_generated_field = "FFFCC50D3A278EF95DEB022E99DE2B21")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.534 -0500", hash_original_field = "FFFCC50D3A278EF95DEB022E99DE2B21", hash_generated_field = "FFFCC50D3A278EF95DEB022E99DE2B21")
 
     boolean isValid = true;
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.351 -0400", hash_original_method = "A659BC27757815EB634E5D963F0A56EB", hash_generated_method = "52C6E15195C092E6066AA2AE54BDD2E1")
-    protected  AbstractSelectionKey() {
-        // ---------- Original Method ----------
+
+    /**
+     * Constructs a new {@code AbstractSelectionKey}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.536 -0500", hash_original_method = "A659BC27757815EB634E5D963F0A56EB", hash_generated_method = "9B4E27A7807670D7CB0964E7593083F7")
+    protected AbstractSelectionKey() {
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.351 -0400", hash_original_method = "1D07A2DB88FBC8505561F98CE95D4D40", hash_generated_method = "92B34CA5904295B85804ECCE9FDD5F18")
+    /**
+     * Indicates whether this key is valid. A key is valid as long as it has not
+     * been canceled.
+     *
+     * @return {@code true} if this key has not been canceled, {@code false}
+     *         otherwise.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.537 -0500", hash_original_method = "1D07A2DB88FBC8505561F98CE95D4D40", hash_generated_method = "5CAB1804A992395EE26A5B382908E240")
     @Override
-    public final boolean isValid() {
-        boolean varCE74825B5A01C99B06AF231DE0BD667D_402939377 = (isValid);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1153482514 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1153482514;
-        // ---------- Original Method ----------
-        //return isValid;
+public final boolean isValid() {
+        return isValid;
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.351 -0400", hash_original_method = "A279029257087CE11FC7A37CBDFB5215", hash_generated_method = "2EAA993CEBCBCF295DB2F81EBEA8396B")
+    /**
+     * Cancels this key.
+     * <p>
+     * A key that has been canceled is no longer valid. Calling this method on
+     * an already canceled key does nothing.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.538 -0500", hash_original_method = "A279029257087CE11FC7A37CBDFB5215", hash_generated_method = "BBF29FCAD5F9A043B65C4DCCD2050B9A")
     @Override
-    public final void cancel() {
-        if(isValid)        
-        {
+public final void cancel() {
+        if (isValid) {
             isValid = false;
             ((AbstractSelector) selector()).cancel(this);
-        } //End block
-        // ---------- Original Method ----------
-        //if (isValid) {
-            //isValid = false;
-            //((AbstractSelector) selector()).cancel(this);
-        //}
+        }
     }
 
     

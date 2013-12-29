@@ -1,6 +1,8 @@
 package org.apache.http.conn.routing;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import org.apache.http.HttpException;
 import org.apache.http.HttpHost;

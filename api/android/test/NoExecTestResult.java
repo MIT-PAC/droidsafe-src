@@ -1,6 +1,8 @@
 package android.test;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import junit.framework.TestCase;
 import junit.framework.TestResult;
@@ -14,17 +16,15 @@ class NoExecTestResult extends TestResult {
         //Synthesized constructor
     }
 
-
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.780 -0400", hash_original_method = "89F3D03C5156AFAF550D3AA0FD377E62", hash_generated_method = "69560D9A3517E63B0B46968A100C410A")
+    /**
+     * Override parent to just inform listeners of test,
+     * and skip test execution.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:42.465 -0500", hash_original_method = "89F3D03C5156AFAF550D3AA0FD377E62", hash_generated_method = "58233B713A68AFA01F3A12659B0F4385")
     @Override
-    protected void run(final TestCase test) {
-        addTaint(test.getTaint());
+protected void run(final TestCase test) {
         startTest(test);
         endTest(test);
-        // ---------- Original Method ----------
-        //startTest(test);
-        //endTest(test);
     }
 
     

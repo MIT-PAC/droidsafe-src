@@ -1,6 +1,8 @@
 package java.io;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Arrays;
 
@@ -10,329 +12,329 @@ import java.util.Arrays;
 
 
 public class PushbackInputStream extends FilterInputStream {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.340 -0400", hash_original_field = "CB7E52B21171FB9A53B498202607F0BD", hash_generated_field = "083037218D1B4F9535944A48D3FD1BCA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.101 -0500", hash_original_field = "001DD3820C6A6A544AB42831C6F17A05", hash_generated_field = "083037218D1B4F9535944A48D3FD1BCA")
 
     protected byte[] buf;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.340 -0400", hash_original_field = "5E0BDCBDDCCCA4D66D74BA8C1CEE1A68", hash_generated_field = "3039C52FCC40405280C80DE756778CBF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.102 -0500", hash_original_field = "5780BC7BCF265A6425A5A90F1AD9B24E", hash_generated_field = "3039C52FCC40405280C80DE756778CBF")
 
     protected int pos;
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.340 -0400", hash_original_method = "AC9553B1FAFFB4A8FBFF65B03BBACC5E", hash_generated_method = "3F5564E951E35BDFCBCD7F9B903974D4")
-    public  PushbackInputStream(InputStream in) {
+
+    /**
+     * Constructs a new {@code PushbackInputStream} with the specified input
+     * stream as source. The size of the pushback buffer is set to the default
+     * value of 1 byte.
+     *
+     * <p><strong>Warning:</strong> passing a null source creates an invalid
+     * {@code PushbackInputStream}. All read operations on such a stream will
+     * fail.
+     *
+     * @param in
+     *            the source input stream.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.103 -0500", hash_original_method = "AC9553B1FAFFB4A8FBFF65B03BBACC5E", hash_generated_method = "D360854ACE2AA0CA85C5491A466A340C")
+    public PushbackInputStream(InputStream in) {
         super(in);
         buf = (in == null) ? null : new byte[1];
         pos = 1;
-        // ---------- Original Method ----------
-        //buf = (in == null) ? null : new byte[1];
-        //pos = 1;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.341 -0400", hash_original_method = "5FC607CA483EF0D15EF5263D4BBC83BA", hash_generated_method = "E082049566C7B3E6BD6EFB65CFCF32C6")
-    public  PushbackInputStream(InputStream in, int size) {
+    /**
+     * Constructs a new {@code PushbackInputStream} with {@code in} as source
+     * input stream. The size of the pushback buffer is set to {@code size}.
+     *
+     * <p><strong>Warning:</strong> passing a null source creates an invalid
+     * {@code PushbackInputStream}. All read operations on such a stream will
+     * fail.
+     *
+     * @param in
+     *            the source input stream.
+     * @param size
+     *            the size of the pushback buffer.
+     * @throws IllegalArgumentException
+     *             if {@code size} is negative.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.104 -0500", hash_original_method = "5FC607CA483EF0D15EF5263D4BBC83BA", hash_generated_method = "CA99E296F05811C04CC8506980310862")
+    public PushbackInputStream(InputStream in, int size) {
         super(in);
-        if(size <= 0)        
-        {
-            IllegalArgumentException var5AFB46BA040E4CEE38200888DC74991F_1208877539 = new IllegalArgumentException("size <= 0");
-            var5AFB46BA040E4CEE38200888DC74991F_1208877539.addTaint(taint);
-            throw var5AFB46BA040E4CEE38200888DC74991F_1208877539;
-        } //End block
+        if (size <= 0) {
+            throw new IllegalArgumentException("size <= 0");
+        }
         buf = (in == null) ? null : new byte[size];
         pos = size;
-        // ---------- Original Method ----------
-        //if (size <= 0) {
-            //throw new IllegalArgumentException("size <= 0");
-        //}
-        //buf = (in == null) ? null : new byte[size];
-        //pos = size;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.341 -0400", hash_original_method = "446E244C062F8716B384D306C558B705", hash_generated_method = "D558B4378EE0BEEF128D61DC9814446B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.105 -0500", hash_original_method = "446E244C062F8716B384D306C558B705", hash_generated_method = "70B65E77014A2AD13CE7E13AC69CAE3A")
     @Override
-    public int available() throws IOException {
-        if(buf == null)        
-        {
-            IOException var1508E3FDF27FD56D4E1051DB16DE1816_2129690160 = new IOException();
-            var1508E3FDF27FD56D4E1051DB16DE1816_2129690160.addTaint(taint);
-            throw var1508E3FDF27FD56D4E1051DB16DE1816_2129690160;
-        } //End block
-        int var3D32F8324B13BED4C9BAB5426B17A76D_402312017 = (buf.length - pos + in.available());
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_725358388 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_725358388;
-        // ---------- Original Method ----------
-        //if (buf == null) {
-            //throw new IOException();
-        //}
-        //return buf.length - pos + in.available();
+public int available() throws IOException {
+        if (buf == null) {
+            throw new IOException();
+        }
+        return buf.length - pos + in.available();
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.342 -0400", hash_original_method = "74DA7764B5809B26A354DD7668DF4A77", hash_generated_method = "C1903668237FDB5C713ACF10513B5390")
+    /**
+     * Closes this stream. This implementation closes the source stream
+     * and releases the pushback buffer.
+     *
+     * @throws IOException
+     *             if an error occurs while closing this stream.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.106 -0500", hash_original_method = "74DA7764B5809B26A354DD7668DF4A77", hash_generated_method = "E8F8B044021BD44FB7B4A0DB83968990")
     @Override
-    public void close() throws IOException {
-        if(in != null)        
-        {
+public void close() throws IOException {
+        if (in != null) {
             in.close();
             in = null;
             buf = null;
-        } //End block
-        // ---------- Original Method ----------
-        //if (in != null) {
-            //in.close();
-            //in = null;
-            //buf = null;
-        //}
+        }
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.342 -0400", hash_original_method = "12DAC0CE56878A53F37AFF65E12010EB", hash_generated_method = "A645C76D6B3DAF13094D151FD1F56353")
+    /**
+     * Indicates whether this stream supports the {@code mark(int)} and
+     * {@code reset()} methods. {@code PushbackInputStream} does not support
+     * them, so it returns {@code false}.
+     *
+     * @return always {@code false}.
+     * @see #mark(int)
+     * @see #reset()
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.107 -0500", hash_original_method = "12DAC0CE56878A53F37AFF65E12010EB", hash_generated_method = "98834879561C7504F012DD22F86DCE30")
     @Override
-    public boolean markSupported() {
-        boolean var68934A3E9455FA72420237EB05902327_188427187 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1419044272 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1419044272;
-        // ---------- Original Method ----------
-        //return false;
+public boolean markSupported() {
+        return false;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.343 -0400", hash_original_method = "146BBECA823F7801A366293B4A5C7497", hash_generated_method = "4842C5B76729638D23676070E0215B6D")
+    /**
+     * Reads a single byte from this stream and returns it as an integer in the
+     * range from 0 to 255. If the pushback buffer does not contain any
+     * available bytes then a byte from the source input stream is returned.
+     * Blocks until one byte has been read, the end of the source stream is
+     * detected or an exception is thrown.
+     *
+     * @return the byte read or -1 if the end of the source stream has been
+     *         reached.
+     * @throws IOException
+     *             if this stream is closed or an I/O error occurs while reading
+     *             from this stream.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.108 -0500", hash_original_method = "146BBECA823F7801A366293B4A5C7497", hash_generated_method = "ABC96A72A8ADD58AE2E0786F9FC8E24B")
     @Override
-    public int read() throws IOException {
-        if(buf == null)        
-        {
-            IOException var1508E3FDF27FD56D4E1051DB16DE1816_992464583 = new IOException();
-            var1508E3FDF27FD56D4E1051DB16DE1816_992464583.addTaint(taint);
-            throw var1508E3FDF27FD56D4E1051DB16DE1816_992464583;
-        } //End block
-        if(pos < buf.length)        
-        {
-            int var7BA40CDA8787C8B57CD926EA9659088F_1961798011 = ((buf[pos++] & 0xFF));
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1894426515 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1894426515;
-        } //End block
-        int varC746AA2461228F1337791E992A2C4661_835496444 = (in.read());
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1804963516 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1804963516;
-        // ---------- Original Method ----------
-        //if (buf == null) {
-            //throw new IOException();
-        //}
-        //if (pos < buf.length) {
-            //return (buf[pos++] & 0xFF);
-        //}
-        //return in.read();
+public int read() throws IOException {
+        if (buf == null) {
+            throw new IOException();
+        }
+        // Is there a pushback byte available?
+        if (pos < buf.length) {
+            return (buf[pos++] & 0xFF);
+        }
+        // Assume read() in the InputStream will return low-order byte or -1
+        // if end of stream.
+        return in.read();
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.356 -0400", hash_original_method = "1B53276B26E96C9AEFE2F3C951EF5EAE", hash_generated_method = "0881C3355861A975DE4F16CCA5561890")
+    /**
+     * Reads at most {@code length} bytes from this stream and stores them in
+     * the byte array {@code buffer} starting at {@code offset}. Bytes are read
+     * from the pushback buffer first, then from the source stream if more bytes
+     * are required. Blocks until {@code count} bytes have been read, the end of
+     * the source stream is detected or an exception is thrown.
+     *
+     * @param buffer
+     *            the array in which to store the bytes read from this stream.
+     * @param offset
+     *            the initial position in {@code buffer} to store the bytes read
+     *            from this stream.
+     * @param length
+     *            the maximum number of bytes to store in {@code buffer}.
+     * @return the number of bytes read or -1 if the end of the source stream
+     *         has been reached.
+     * @throws IndexOutOfBoundsException
+     *             if {@code offset < 0} or {@code length < 0}, or if
+     *             {@code offset + length} is greater than the length of
+     *             {@code buffer}.
+     * @throws IOException
+     *             if this stream is closed or another I/O error occurs while
+     *             reading from this stream.
+     * @throws NullPointerException
+     *             if {@code buffer} is {@code null}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.109 -0500", hash_original_method = "1B53276B26E96C9AEFE2F3C951EF5EAE", hash_generated_method = "8166BEB41CDADC014E3C1918E6FB3725")
     @Override
-    public int read(byte[] buffer, int offset, int length) throws IOException {
-        addTaint(length);
-        addTaint(offset);
-        addTaint(buffer[0]);
-        if(buf == null)        
-        {
-            java.io.IOException varA98E388EB7D58355C3D9798BF8FEED22_164353958 = streamClosed();
-            varA98E388EB7D58355C3D9798BF8FEED22_164353958.addTaint(taint);
-            throw varA98E388EB7D58355C3D9798BF8FEED22_164353958;
-        } //End block
+public int read(byte[] buffer, int offset, int length) throws IOException {
+        if (buf == null) {
+            throw streamClosed();
+        }
         Arrays.checkOffsetAndCount(buffer.length, offset, length);
-        int copiedBytes = 0;
-        int copyLength = 0;
-        int newOffset = offset;
-        if(pos < buf.length)        
-        {
+        int copiedBytes = 0, copyLength = 0, newOffset = offset;
+        // Are there pushback bytes available?
+        if (pos < buf.length) {
             copyLength = (buf.length - pos >= length) ? length : buf.length
                     - pos;
             System.arraycopy(buf, pos, buffer, newOffset, copyLength);
             newOffset += copyLength;
             copiedBytes += copyLength;
+            // Use up the bytes in the local buffer
             pos += copyLength;
-        } //End block
-        if(copyLength == length)        
-        {
-            int var2FA47F7C65FEC19CC163B195725E3844_1310236396 = (length);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_580318594 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_580318594;
-        } //End block
+        }
+        // Have we copied enough?
+        if (copyLength == length) {
+            return length;
+        }
         int inCopied = in.read(buffer, newOffset, length - copiedBytes);
-        if(inCopied > 0)        
-        {
-            int varDB0770958FBE9F872F2BC732090BF239_1087762998 = (inCopied + copiedBytes);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2116341421 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2116341421;
-        } //End block
-        if(copiedBytes == 0)        
-        {
-            int var787E8700E82D0C2395ECBB8EA3AA68D6_256106943 = (inCopied);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_100759360 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_100759360;
-        } //End block
-        int var61A4D4698CE31A96A8B3DB19604C002C_994753211 = (copiedBytes);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1898324689 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1898324689;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        if (inCopied > 0) {
+            return inCopied + copiedBytes;
+        }
+        if (copiedBytes == 0) {
+            return inCopied;
+        }
+        return copiedBytes;
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.357 -0400", hash_original_method = "2E2FBA951DCC3C9DB1EDAE98D88B8EBD", hash_generated_method = "1DCE197321B75F236B122D5CB1805B81")
-    private IOException streamClosed() throws IOException {
-        IOException varA0BB301E46D4FCBF44B7C62E997ABEAD_1557202841 = new IOException("PushbackInputStream is closed");
-        varA0BB301E46D4FCBF44B7C62E997ABEAD_1557202841.addTaint(taint);
-        throw varA0BB301E46D4FCBF44B7C62E997ABEAD_1557202841;
-        // ---------- Original Method ----------
-        //throw new IOException("PushbackInputStream is closed");
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.110 -0500", hash_original_method = "2E2FBA951DCC3C9DB1EDAE98D88B8EBD", hash_generated_method = "69313A2FE135E1A632378547FD715C13")
+    private IOException streamClosed() throws IOException  {
+        throw new IOException("PushbackInputStream is closed");
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.369 -0400", hash_original_method = "640B22F7B00DCEA150CE7BE86C25A8AB", hash_generated_method = "B0A9D018300356ACFE7F90CD0CF8B5B8")
+    /**
+     * Skips {@code byteCount} bytes in this stream. This implementation skips bytes
+     * in the pushback buffer first and then in the source stream if necessary.
+     *
+     * @return the number of bytes actually skipped.
+     * @throws IOException
+     *             if this stream is closed or another I/O error occurs.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.111 -0500", hash_original_method = "640B22F7B00DCEA150CE7BE86C25A8AB", hash_generated_method = "5943182388EB20F5DDA697A803583DA5")
     @Override
-    public long skip(long byteCount) throws IOException {
-        addTaint(byteCount);
-        if(in == null)        
-        {
-            java.io.IOException varA98E388EB7D58355C3D9798BF8FEED22_532578126 = streamClosed();
-            varA98E388EB7D58355C3D9798BF8FEED22_532578126.addTaint(taint);
-            throw varA98E388EB7D58355C3D9798BF8FEED22_532578126;
-        } //End block
-        if(byteCount <= 0)        
-        {
-            long varCFCD208495D565EF66E7DFF9F98764DA_701488345 = (0);
-                        long var0F5264038205EDFB1AC05FBB0E8C5E94_1974643761 = getTaintLong();
-            return var0F5264038205EDFB1AC05FBB0E8C5E94_1974643761;
-        } //End block
+public long skip(long byteCount) throws IOException {
+        if (in == null) {
+            throw streamClosed();
+        }
+        if (byteCount <= 0) {
+            return 0;
+        }
         int numSkipped = 0;
-        if(pos < buf.length)        
-        {
+        if (pos < buf.length) {
             numSkipped += (byteCount < buf.length - pos) ? byteCount : buf.length - pos;
             pos += numSkipped;
-        } //End block
-        if(numSkipped < byteCount)        
-        {
+        }
+        if (numSkipped < byteCount) {
             numSkipped += in.skip(byteCount - numSkipped);
-        } //End block
-        long var19B188D897AB08790F4D81B26C6FB431_1861314512 = (numSkipped);
-                long var0F5264038205EDFB1AC05FBB0E8C5E94_1746355608 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_1746355608;
-        // ---------- Original Method ----------
-        //if (in == null) {
-            //throw streamClosed();
-        //}
-        //if (byteCount <= 0) {
-            //return 0;
-        //}
-        //int numSkipped = 0;
-        //if (pos < buf.length) {
-            //numSkipped += (byteCount < buf.length - pos) ? byteCount : buf.length - pos;
-            //pos += numSkipped;
-        //}
-        //if (numSkipped < byteCount) {
-            //numSkipped += in.skip(byteCount - numSkipped);
-        //}
-        //return numSkipped;
+        }
+        return numSkipped;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.370 -0400", hash_original_method = "C8192A3011924069F2B71E7D3088F3DC", hash_generated_method = "FF0E04C75F4ADF97E37C2B1AC9D50386")
+    /**
+     * Pushes all the bytes in {@code buffer} back to this stream. The bytes are
+     * pushed back in such a way that the next byte read from this stream is
+     * buffer[0], then buffer[1] and so on.
+     * <p>
+     * If this stream's internal pushback buffer cannot store the entire
+     * contents of {@code buffer}, an {@code IOException} is thrown. Parts of
+     * {@code buffer} may have already been copied to the pushback buffer when
+     * the exception is thrown.
+     *
+     * @param buffer
+     *            the buffer containing the bytes to push back to this stream.
+     * @throws IOException
+     *             if the free space in the internal pushback buffer is not
+     *             sufficient to store the contents of {@code buffer}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.111 -0500", hash_original_method = "C8192A3011924069F2B71E7D3088F3DC", hash_generated_method = "E3B26592E9220AEE0471A023816C1918")
     public void unread(byte[] buffer) throws IOException {
-        addTaint(buffer[0]);
         unread(buffer, 0, buffer.length);
-        // ---------- Original Method ----------
-        //unread(buffer, 0, buffer.length);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.378 -0400", hash_original_method = "DF65BDEADDE37C8EC8A6D2405E9B2E68", hash_generated_method = "577211ADFED3472DBAD0735C27410BD9")
+    /**
+     * Pushes a subset of the bytes in {@code buffer} back to this stream. The
+     * subset is defined by the start position {@code offset} within
+     * {@code buffer} and the number of bytes specified by {@code length}. The
+     * bytes are pushed back in such a way that the next byte read from this
+     * stream is {@code buffer[offset]}, then {@code buffer[1]} and so on.
+     * <p>
+     * If this stream's internal pushback buffer cannot store the selected
+     * subset of {@code buffer}, an {@code IOException} is thrown. Parts of
+     * {@code buffer} may have already been copied to the pushback buffer when
+     * the exception is thrown.
+     *
+     * @param buffer
+     *            the buffer containing the bytes to push back to this stream.
+     * @param offset
+     *            the index of the first byte in {@code buffer} to push back.
+     * @param length
+     *            the number of bytes to push back.
+     * @throws IndexOutOfBoundsException
+     *             if {@code offset < 0} or {@code length < 0}, or if
+     *             {@code offset + length} is greater than the length of
+     *             {@code buffer}.
+     * @throws IOException
+     *             if the free space in the internal pushback buffer is not
+     *             sufficient to store the selected contents of {@code buffer}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.112 -0500", hash_original_method = "DF65BDEADDE37C8EC8A6D2405E9B2E68", hash_generated_method = "9CAD033DFC15BA84921E61D8ED94391D")
     public void unread(byte[] buffer, int offset, int length) throws IOException {
-        addTaint(offset);
-        addTaint(buffer[0]);
-        if(length > pos)        
-        {
-            IOException var026BB6CEDAAF18AFE37343DFB85FF3B4_2085480512 = new IOException("Pushback buffer full");
-            var026BB6CEDAAF18AFE37343DFB85FF3B4_2085480512.addTaint(taint);
-            throw var026BB6CEDAAF18AFE37343DFB85FF3B4_2085480512;
-        } //End block
+        if (length > pos) {
+            throw new IOException("Pushback buffer full");
+        }
         Arrays.checkOffsetAndCount(buffer.length, offset, length);
-        if(buf == null)        
-        {
-            java.io.IOException varA98E388EB7D58355C3D9798BF8FEED22_1115625771 = streamClosed();
-            varA98E388EB7D58355C3D9798BF8FEED22_1115625771.addTaint(taint);
-            throw varA98E388EB7D58355C3D9798BF8FEED22_1115625771;
-        } //End block
+        if (buf == null) {
+            throw streamClosed();
+        }
+
         System.arraycopy(buffer, offset, buf, pos - length, length);
         pos = pos - length;
-        // ---------- Original Method ----------
-        //if (length > pos) {
-            //throw new IOException("Pushback buffer full");
-        //}
-        //Arrays.checkOffsetAndCount(buffer.length, offset, length);
-        //if (buf == null) {
-            //throw streamClosed();
-        //}
-        //System.arraycopy(buffer, offset, buf, pos - length, length);
-        //pos = pos - length;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.379 -0400", hash_original_method = "98848F28DD25FD585D8212E035CA9267", hash_generated_method = "37CBC0DDE761A1A1900FB207B441CF3A")
+    /**
+     * Pushes the specified byte {@code oneByte} back to this stream. Only the
+     * least significant byte of the integer {@code oneByte} is pushed back.
+     * This is done in such a way that the next byte read from this stream is
+     * {@code (byte) oneByte}.
+     * <p>
+     * If this stream's internal pushback buffer cannot store the byte, an
+     * {@code IOException} is thrown.
+     *
+     * @param oneByte
+     *            the byte to push back to this stream.
+     * @throws IOException
+     *             if this stream is closed or the internal pushback buffer is
+     *             full.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.113 -0500", hash_original_method = "98848F28DD25FD585D8212E035CA9267", hash_generated_method = "BA3E56535EE8E6396EAC1C1F27A9326F")
     public void unread(int oneByte) throws IOException {
-        if(buf == null)        
-        {
-            IOException var1508E3FDF27FD56D4E1051DB16DE1816_1959164008 = new IOException();
-            var1508E3FDF27FD56D4E1051DB16DE1816_1959164008.addTaint(taint);
-            throw var1508E3FDF27FD56D4E1051DB16DE1816_1959164008;
-        } //End block
-        if(pos == 0)        
-        {
-            IOException var026BB6CEDAAF18AFE37343DFB85FF3B4_300711446 = new IOException("Pushback buffer full");
-            var026BB6CEDAAF18AFE37343DFB85FF3B4_300711446.addTaint(taint);
-            throw var026BB6CEDAAF18AFE37343DFB85FF3B4_300711446;
-        } //End block
+        if (buf == null) {
+            throw new IOException();
+        }
+        if (pos == 0) {
+            throw new IOException("Pushback buffer full");
+        }
         buf[--pos] = (byte) oneByte;
-        // ---------- Original Method ----------
-        //if (buf == null) {
-            //throw new IOException();
-        //}
-        //if (pos == 0) {
-            //throw new IOException("Pushback buffer full");
-        //}
-        //buf[--pos] = (byte) oneByte;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.380 -0400", hash_original_method = "99EDC8CF58ACEFC383E40E1B1F253896", hash_generated_method = "374E02FA36CE7C442AE21827EF6D82FC")
+    /**
+     * Marks the current position in this stream. Setting a mark is not
+     * supported in this class; this implementation does nothing.
+     *
+     * @param readlimit
+     *            the number of bytes that can be read from this stream before
+     *            the mark is invalidated; this parameter is ignored.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.114 -0500", hash_original_method = "99EDC8CF58ACEFC383E40E1B1F253896", hash_generated_method = "3661B9E6F99225CA9976B419D6E2DE03")
     @Override
-    public void mark(int readlimit) {
-        addTaint(readlimit);
-        // ---------- Original Method ----------
+public void mark(int readlimit) {
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.380 -0400", hash_original_method = "B2B0ACE34E24898AD20F33154DDE5ADD", hash_generated_method = "50DCA95D17CA6DA3D75BD97AD44EEEE8")
+    /**
+     * Resets this stream to the last marked position. Resetting the stream is
+     * not supported in this class; this implementation always throws an
+     * {@code IOException}.
+     *
+     * @throws IOException
+     *             if this method is called.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:32.115 -0500", hash_original_method = "B2B0ACE34E24898AD20F33154DDE5ADD", hash_generated_method = "982040414CDBED77657D44B5E5A8ACAA")
     @Override
-    public void reset() throws IOException {
-        IOException var1508E3FDF27FD56D4E1051DB16DE1816_966024071 = new IOException();
-        var1508E3FDF27FD56D4E1051DB16DE1816_966024071.addTaint(taint);
-        throw var1508E3FDF27FD56D4E1051DB16DE1816_966024071;
-        // ---------- Original Method ----------
-        //throw new IOException();
+public void reset() throws IOException {
+        throw new IOException();
     }
 
     

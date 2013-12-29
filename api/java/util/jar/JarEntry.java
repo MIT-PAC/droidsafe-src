@@ -1,6 +1,8 @@
 package java.util.jar;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 import java.security.CodeSigner;
@@ -21,263 +23,200 @@ import javax.security.auth.x500.X500Principal;
 
 
 public class JarEntry extends ZipEntry {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.805 -0400", hash_original_field = "736B91750E516139ACC13C5EB6564F92", hash_generated_field = "B58329F5904269DD97B6B42BAA3B838E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:00.439 -0500", hash_original_field = "14CC0F9D3F04FE972837D6018D833138", hash_generated_field = "B58329F5904269DD97B6B42BAA3B838E")
 
     private Attributes attributes;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.805 -0400", hash_original_field = "4374869048AA58B1433401B9C7F5307B", hash_generated_field = "E10AC56F726B2514C26051F710368016")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:00.440 -0500", hash_original_field = "E10AC56F726B2514C26051F710368016", hash_generated_field = "E10AC56F726B2514C26051F710368016")
+
 
     JarFile parentJar;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.805 -0400", hash_original_field = "2A9DABFB5877C2D88FB685555751D512", hash_generated_field = "278E8EAD2807325636A698ADB675DF9F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:00.440 -0500", hash_original_field = "278E8EAD2807325636A698ADB675DF9F", hash_generated_field = "278E8EAD2807325636A698ADB675DF9F")
+
 
     CodeSigner signers[];
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.841 -0400", hash_original_field = "9549DD6065D019211460C59A86DD6536", hash_generated_field = "5868DDDCE4F3C752A45AD023AADEC2C1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:00.441 -0500", hash_original_field = "5ADDC3687C0D2332122E19DFD2FBBE25", hash_generated_field = "5868DDDCE4F3C752A45AD023AADEC2C1")
 
     private CertificateFactory factory;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.841 -0400", hash_original_field = "29120CE52A10C079B8CF1D81CB2DEDF9", hash_generated_field = "E4A6C0FA878C2F2F60B68706B8A0D905")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:00.442 -0500", hash_original_field = "346F62713CBD19CC8ED42787A40B2075", hash_generated_field = "E4A6C0FA878C2F2F60B68706B8A0D905")
+
 
     private boolean isFactoryChecked = false;
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.841 -0400", hash_original_method = "AEA0BF7FF3634BE004E609E393DDAC13", hash_generated_method = "004F45C4360C33A8418FAF75D7A064C4")
-    public  JarEntry(String name) {
+
+    /**
+     * Creates a new {@code JarEntry} named name.
+     *
+     * @param name
+     *            The name of the new {@code JarEntry}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:00.443 -0500", hash_original_method = "AEA0BF7FF3634BE004E609E393DDAC13", hash_generated_method = "8AA59FC24C0EBBA738B0C9EF6B870A0D")
+    public JarEntry(String name) {
         super(name);
-        addTaint(name.getTaint());
-        // ---------- Original Method ----------
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.841 -0400", hash_original_method = "506E89BB6203E00495B453235D9825F2", hash_generated_method = "18A7936E08334675DBAB107536A600CD")
-    public  JarEntry(ZipEntry entry) {
+    /**
+     * Creates a new {@code JarEntry} using the values obtained from entry.
+     *
+     * @param entry
+     *            The ZipEntry to obtain values from.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:00.444 -0500", hash_original_method = "506E89BB6203E00495B453235D9825F2", hash_generated_method = "12B972B2E5039535BB717C01C9A22741")
+    public JarEntry(ZipEntry entry) {
         super(entry);
-        addTaint(entry.getTaint());
-        // ---------- Original Method ----------
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.841 -0400", hash_original_method = "AA77415E9035EF2C32FB40C3C659C5A8", hash_generated_method = "EDB553C4BAF0AAA25B857AC0FD2A6E2F")
-    public  JarEntry(JarEntry je) {
+    /**
+     * Create a new {@code JarEntry} using the values obtained from the
+     * argument.
+     *
+     * @param je
+     *            The {@code JarEntry} to obtain values from.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:00.447 -0500", hash_original_method = "AA77415E9035EF2C32FB40C3C659C5A8", hash_generated_method = "CCFCB2DB8D256D3162B57F94E65AE071")
+    public JarEntry(JarEntry je) {
         super(je);
         parentJar = je.parentJar;
         attributes = je.attributes;
         signers = je.signers;
-        // ---------- Original Method ----------
-        //parentJar = je.parentJar;
-        //attributes = je.attributes;
-        //signers = je.signers;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.842 -0400", hash_original_method = "8B6D7741BEFEF015D0439F90F97A5465", hash_generated_method = "A9614B4938ACABC5BD96B46329535A09")
+    /**
+     * Returns the {@code Attributes} object associated with this entry or
+     * {@code null} if none exists.
+     *
+     * @return the {@code Attributes} for this entry.
+     * @exception IOException
+     *                If an error occurs obtaining the {@code Attributes}.
+     * @see Attributes
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:00.445 -0500", hash_original_method = "8B6D7741BEFEF015D0439F90F97A5465", hash_generated_method = "01772515427EE7A6E87F03C886405BA1")
     public Attributes getAttributes() throws IOException {
-        if(attributes != null || parentJar == null)        
-        {
-Attributes var4BBC8979DB64A9C3E2328AA1E06CDBB3_801890934 =             attributes;
-            var4BBC8979DB64A9C3E2328AA1E06CDBB3_801890934.addTaint(taint);
-            return var4BBC8979DB64A9C3E2328AA1E06CDBB3_801890934;
-        } //End block
+        if (attributes != null || parentJar == null) {
+            return attributes;
+        }
         Manifest manifest = parentJar.getManifest();
-        if(manifest == null)        
-        {
-Attributes var540C13E9E156B687226421B24F2DF178_1639472427 =             null;
-            var540C13E9E156B687226421B24F2DF178_1639472427.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_1639472427;
-        } //End block
-Attributes varEC5B5AF019317A7C65484BE85B3AD11D_2077710027 =         attributes = manifest.getAttributes(getName());
-        varEC5B5AF019317A7C65484BE85B3AD11D_2077710027.addTaint(taint);
-        return varEC5B5AF019317A7C65484BE85B3AD11D_2077710027;
-        // ---------- Original Method ----------
-        //if (attributes != null || parentJar == null) {
-            //return attributes;
-        //}
-        //Manifest manifest = parentJar.getManifest();
-        //if (manifest == null) {
-            //return null;
-        //}
-        //return attributes = manifest.getAttributes(getName());
+        if (manifest == null) {
+            return null;
+        }
+        return attributes = manifest.getAttributes(getName());
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.842 -0400", hash_original_method = "3CE58A412B40810ECA641FDC022C6998", hash_generated_method = "D4FCE1B172D3C1938A890D56B51354BC")
+    /**
+     * Returns an array of {@code Certificate} Objects associated with this
+     * entry or {@code null} if none exists. Make sure that the everything is
+     * read from the input stream before calling this method, or else the method
+     * returns {@code null}.
+     *
+     * @return the certificate for this entry.
+     * @see java.security.cert.Certificate
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:00.445 -0500", hash_original_method = "3CE58A412B40810ECA641FDC022C6998", hash_generated_method = "D51C318AD9E10263B0A1440BAD94130D")
     public Certificate[] getCertificates() {
-        if(parentJar == null)        
-        {
-Certificate[] var540C13E9E156B687226421B24F2DF178_409073143 =             null;
-            var540C13E9E156B687226421B24F2DF178_409073143.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_409073143;
-        } //End block
+        if (parentJar == null) {
+            return null;
+        }
         JarVerifier jarVerifier = parentJar.verifier;
-        if(jarVerifier == null)        
-        {
-Certificate[] var540C13E9E156B687226421B24F2DF178_1968268714 =             null;
-            var540C13E9E156B687226421B24F2DF178_1968268714.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_1968268714;
-        } //End block
-Certificate[] varD7F6AB131BE738B5E6706A18E82B3D10_299678811 =         jarVerifier.getCertificates(getName());
-        varD7F6AB131BE738B5E6706A18E82B3D10_299678811.addTaint(taint);
-        return varD7F6AB131BE738B5E6706A18E82B3D10_299678811;
-        // ---------- Original Method ----------
-        //if (parentJar == null) {
-            //return null;
-        //}
-        //JarVerifier jarVerifier = parentJar.verifier;
-        //if (jarVerifier == null) {
-            //return null;
-        //}
-        //return jarVerifier.getCertificates(getName());
+        if (jarVerifier == null) {
+            return null;
+        }
+        return jarVerifier.getCertificates(getName());
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.842 -0400", hash_original_method = "DAF50D69E39A2A8F586C4ACAC36673DD", hash_generated_method = "FDB2887914FAA4104F2D0ED03D0034E5")
-     void setAttributes(Attributes attrib) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:00.446 -0500", hash_original_method = "DAF50D69E39A2A8F586C4ACAC36673DD", hash_generated_method = "DAF50D69E39A2A8F586C4ACAC36673DD")
+    void setAttributes(Attributes attrib) {
         attributes = attrib;
-        // ---------- Original Method ----------
-        //attributes = attrib;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.842 -0400", hash_original_method = "AC53E883AD9D8ECF5D160A6258BB3798", hash_generated_method = "CF44A6BC51CFE6168D9BAA78CE06B524")
+    /**
+     * Returns the code signers for the digital signatures associated with the
+     * JAR file. If there is no such code signer, it returns {@code null}. Make
+     * sure that the everything is read from the input stream before calling
+     * this method, or else the method returns {@code null}.
+     *
+     * @return the code signers for the JAR entry.
+     * @see CodeSigner
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:00.448 -0500", hash_original_method = "AC53E883AD9D8ECF5D160A6258BB3798", hash_generated_method = "A813CC59DD53731C777BD1BABDF3A3DA")
     public CodeSigner[] getCodeSigners() {
-        if(signers == null)        
-        {
+        if (signers == null) {
             signers = getCodeSigners(getCertificates());
-        } //End block
-        if(signers == null)        
-        {
-CodeSigner[] var540C13E9E156B687226421B24F2DF178_1873578232 =             null;
-            var540C13E9E156B687226421B24F2DF178_1873578232.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_1873578232;
-        } //End block
+        }
+        if (signers == null) {
+            return null;
+        }
+
         CodeSigner[] tmp = new CodeSigner[signers.length];
         System.arraycopy(signers, 0, tmp, 0, tmp.length);
-CodeSigner[] var3F12A0424932F6B5155AA6C49B63FE6E_2118316795 =         tmp;
-        var3F12A0424932F6B5155AA6C49B63FE6E_2118316795.addTaint(taint);
-        return var3F12A0424932F6B5155AA6C49B63FE6E_2118316795;
-        // ---------- Original Method ----------
-        //if (signers == null) {
-            //signers = getCodeSigners(getCertificates());
-        //}
-        //if (signers == null) {
-            //return null;
-        //}
-        //CodeSigner[] tmp = new CodeSigner[signers.length];
-        //System.arraycopy(signers, 0, tmp, 0, tmp.length);
-        //return tmp;
+        return tmp;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.842 -0400", hash_original_method = "3B125BDC3FCBCE7977A58F597174AB72", hash_generated_method = "3E62305D96AC3A2B5DF5BD0BE5B75F99")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:00.449 -0500", hash_original_method = "3B125BDC3FCBCE7977A58F597174AB72", hash_generated_method = "1A48D5118AFBCB71D52D18C8C964E387")
     private CodeSigner[] getCodeSigners(Certificate[] certs) {
-        addTaint(certs[0].getTaint());
-        if(certs == null)        
-        {
-CodeSigner[] var540C13E9E156B687226421B24F2DF178_1231141859 =             null;
-            var540C13E9E156B687226421B24F2DF178_1231141859.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_1231141859;
-        } //End block
+        if (certs == null) {
+            return null;
+        }
+
         X500Principal prevIssuer = null;
         ArrayList<Certificate> list = new ArrayList<Certificate>(certs.length);
         ArrayList<CodeSigner> asigners = new ArrayList<CodeSigner>();
-for(Certificate element : certs)
-        {
-            if(!(element instanceof X509Certificate))            
-            {
+
+        for (Certificate element : certs) {
+            if (!(element instanceof X509Certificate)) {
+                // Only X509Certificate-s are taken into account - see API spec.
                 continue;
-            } //End block
+            }
             X509Certificate x509 = (X509Certificate) element;
-            if(prevIssuer != null)            
-            {
+            if (prevIssuer != null) {
                 X500Principal subj = x509.getSubjectX500Principal();
-                if(!prevIssuer.equals(subj))                
-                {
+                if (!prevIssuer.equals(subj)) {
+                    // Ok, this ends the previous chain,
+                    // so transform this one into CertPath ...
                     addCodeSigner(asigners, list);
+                    // ... and start a new one
                     list.clear();
-                } //End block
-            } //End block
+                }// else { it's still the same chain }
+
+            }
             prevIssuer = x509.getIssuerX500Principal();
             list.add(x509);
-        } //End block
-        if(!list.isEmpty())        
-        {
+        }
+        if (!list.isEmpty()) {
             addCodeSigner(asigners, list);
-        } //End block
-        if(asigners.isEmpty())        
-        {
-CodeSigner[] var540C13E9E156B687226421B24F2DF178_830412474 =             null;
-            var540C13E9E156B687226421B24F2DF178_830412474.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_830412474;
-        } //End block
+        }
+        if (asigners.isEmpty()) {
+            // 'signers' is 'null' already
+            return null;
+        }
+
         CodeSigner[] tmp = new CodeSigner[asigners.size()];
         asigners.toArray(tmp);
-CodeSigner[] var3F12A0424932F6B5155AA6C49B63FE6E_1283571926 =         tmp;
-        var3F12A0424932F6B5155AA6C49B63FE6E_1283571926.addTaint(taint);
-        return var3F12A0424932F6B5155AA6C49B63FE6E_1283571926;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        return tmp;
+
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.843 -0400", hash_original_method = "E5BFF52E3E0C861E597B700E67310005", hash_generated_method = "BBE8D0FF01DBAFDFDD4CDE08BFD2261B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:00.450 -0500", hash_original_method = "E5BFF52E3E0C861E597B700E67310005", hash_generated_method = "5B2036D63A49C709C779700B21318669")
     private void addCodeSigner(ArrayList<CodeSigner> asigners,
             List<Certificate> list) {
-        addTaint(list.getTaint());
-        addTaint(asigners.getTaint());
         CertPath certPath = null;
-        if(!isFactoryChecked)        
-        {
-            try 
-            {
+        if (!isFactoryChecked) {
+            try {
                 factory = CertificateFactory.getInstance("X.509");
-            } //End block
-            catch (CertificateException ex)
-            {
-            } //End block
-            finally 
-            {
+            } catch (CertificateException ex) {
+                // do nothing
+            } finally {
                 isFactoryChecked = true;
-            } //End block
-        } //End block
-        if(factory == null)        
-        {
+            }
+        }
+        if (factory == null) {
             return;
-        } //End block
-        try 
-        {
+        }
+        try {
             certPath = factory.generateCertPath(list);
-        } //End block
-        catch (CertificateException ex)
-        {
-        } //End block
-        if(certPath != null)        
-        {
+        } catch (CertificateException ex) {
+            // do nothing
+        }
+        if (certPath != null) {
             asigners.add(new CodeSigner(certPath, null));
-        } //End block
-        // ---------- Original Method ----------
-        //CertPath certPath = null;
-        //if (!isFactoryChecked) {
-            //try {
-                //factory = CertificateFactory.getInstance("X.509");
-            //} catch (CertificateException ex) {
-            //} finally {
-                //isFactoryChecked = true;
-            //}
-        //}
-        //if (factory == null) {
-            //return;
-        //}
-        //try {
-            //certPath = factory.generateCertPath(list);
-        //} catch (CertificateException ex) {
-        //}
-        //if (certPath != null) {
-            //asigners.add(new CodeSigner(certPath, null));
-        //}
+        }
     }
 
     

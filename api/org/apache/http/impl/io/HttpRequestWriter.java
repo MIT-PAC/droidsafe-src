@@ -1,6 +1,8 @@
 package org.apache.http.impl.io;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 
@@ -14,31 +16,21 @@ import org.apache.http.util.CharArrayBuffer;
 
 
 public class HttpRequestWriter extends AbstractMessageWriter {
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.579 -0400", hash_original_method = "4AD2311BD1B24C9EE9C1B85C315E33B2", hash_generated_method = "FF844301E0401D425CC90AC5CD00F237")
-    public  HttpRequestWriter(final SessionOutputBuffer buffer,
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:22.366 -0500", hash_original_method = "4AD2311BD1B24C9EE9C1B85C315E33B2", hash_generated_method = "55CB82CAB3A84B52CAA08358E1220F90")
+    public HttpRequestWriter(final SessionOutputBuffer buffer,
                              final LineFormatter formatter,
                              final HttpParams params) {
         super(buffer, formatter, params);
-        addTaint(params.getTaint());
-        addTaint(formatter.getTaint());
-        addTaint(buffer.getTaint());
-        // ---------- Original Method ----------
     }
-
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.580 -0400", hash_original_method = "649D146D64C47E17693DC42ABE1DC1B6", hash_generated_method = "BAF0059BBA4BE200CFE74DEE0E7E60D6")
-    protected void writeHeadLine(final HttpMessage message) throws IOException {
-        addTaint(message.getTaint());
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:22.367 -0500", hash_original_method = "649D146D64C47E17693DC42ABE1DC1B6", hash_generated_method = "1CFA7771AFE5DA9C7591FEB2F3118AF4")
+    protected void writeHeadLine(final HttpMessage message)
+        throws IOException {
+
         final CharArrayBuffer buffer = lineFormatter.formatRequestLine
             (this.lineBuf, ((HttpRequest) message).getRequestLine());
         this.sessionBuffer.writeLine(buffer);
-        // ---------- Original Method ----------
-        //final CharArrayBuffer buffer = lineFormatter.formatRequestLine
-            //(this.lineBuf, ((HttpRequest) message).getRequestLine());
-        //this.sessionBuffer.writeLine(buffer);
     }
 
     

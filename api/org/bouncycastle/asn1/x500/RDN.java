@@ -1,6 +1,8 @@
 package org.bouncycastle.asn1.x500;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import org.bouncycastle.asn1.ASN1Encodable;
 import org.bouncycastle.asn1.ASN1EncodableVector;
@@ -16,56 +18,10 @@ import org.bouncycastle.asn1.DERSet;
 
 
 public class RDN extends ASN1Encodable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.305 -0400", hash_original_field = "F09CC7EE3A9A93273F4B80601CAFB00C", hash_generated_field = "239F5B210A7B8675111CDBD0D5490D28")
 
-    private ASN1Set values;
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.305 -0400", hash_original_method = "B2B65A892B577B3023594DECDAE0C7BC", hash_generated_method = "89280BB26732A955423A2E05E8E72AFE")
-    private  RDN(ASN1Set values) {
-        this.values = values;
-        // ---------- Original Method ----------
-        //this.values = values;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.307 -0400", hash_original_method = "34395E14B37CB09607BC1384911068DF", hash_generated_method = "4730855AD6D722A19B03FA23E3955A1C")
-    public  RDN(ASN1ObjectIdentifier oid, ASN1Encodable value) {
-        addTaint(value.getTaint());
-        addTaint(oid.getTaint());
-        ASN1EncodableVector v = new ASN1EncodableVector();
-        v.add(oid);
-        v.add(value);
-        this.values = new DERSet(new DERSequence(v));
-        // ---------- Original Method ----------
-        //ASN1EncodableVector v = new ASN1EncodableVector();
-        //v.add(oid);
-        //v.add(value);
-        //this.values = new DERSet(new DERSequence(v));
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.308 -0400", hash_original_method = "70441AB748507844E6B6BCC428FBB7E0", hash_generated_method = "7BBD5B09B6231808260E121EB4C29BD7")
-    public  RDN(AttributeTypeAndValue attrTAndV) {
-        this.values = new DERSet(attrTAndV);
-        // ---------- Original Method ----------
-        //this.values = new DERSet(attrTAndV);
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.308 -0400", hash_original_method = "64FFFA196C50B73DE4BDB139C105E877", hash_generated_method = "FE3A4F5D64F6663C43C30F2372D32E20")
-    public  RDN(AttributeTypeAndValue[] aAndVs) {
-        this.values = new DERSet(aAndVs);
-        // ---------- Original Method ----------
-        //this.values = new DERSet(aAndVs);
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    public static RDN getInstance(Object obj) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:54.030 -0500", hash_original_method = "7D890349CF7796BE43E218B30EC245DF", hash_generated_method = "67356EBF15BC4F825F7E5C92B7EB0FD9")
+    public static RDN getInstance(Object obj)
+    {
         if (obj instanceof RDN)
         {
             return (RDN)obj;
@@ -74,71 +30,96 @@ public class RDN extends ASN1Encodable {
         {
             return new RDN(ASN1Set.getInstance(obj));
         }
+
         return null;
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:54.028 -0500", hash_original_field = "74914FBEF3FC1AA8D2851A1F4D8C6B4B", hash_generated_field = "239F5B210A7B8675111CDBD0D5490D28")
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.309 -0400", hash_original_method = "8A639F09C3F110E6BEBA76653F26863C", hash_generated_method = "C4BCA3A97BCF1359FC215A38B5548E2C")
-    public boolean isMultiValued() {
-        boolean var4BD1DF8E036A3E994525BA373DB11683_91546325 = (this.values.size() > 1);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1843922394 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1843922394;
-        // ---------- Original Method ----------
-        //return this.values.size() > 1;
+    private ASN1Set values;
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:54.029 -0500", hash_original_method = "B2B65A892B577B3023594DECDAE0C7BC", hash_generated_method = "A2A80CEE22C6315FE34647E5E45FDA87")
+    private RDN(ASN1Set values)
+    {
+        this.values = values;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.310 -0400", hash_original_method = "C47887FAFD60151A3B1C3C44B7665548", hash_generated_method = "75184A2153212FEF2CDCB303CAC7F131")
-    public AttributeTypeAndValue getFirst() {
-        if(this.values.size() == 0)        
+    /**
+     * Create a single valued RDN.
+     *
+     * @param oid
+     * @param value
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:54.032 -0500", hash_original_method = "34395E14B37CB09607BC1384911068DF", hash_generated_method = "75DD381234BE8FCEDB5CCD1EFCAA7952")
+    public RDN(ASN1ObjectIdentifier oid, ASN1Encodable value)
+    {
+        ASN1EncodableVector v = new ASN1EncodableVector();
+
+        v.add(oid);
+        v.add(value);
+
+        this.values = new DERSet(new DERSequence(v));
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:54.033 -0500", hash_original_method = "70441AB748507844E6B6BCC428FBB7E0", hash_generated_method = "3CF08689D93AFFA623AA66B3C761AD4B")
+    public RDN(AttributeTypeAndValue attrTAndV)
+    {
+        this.values = new DERSet(attrTAndV);
+    }
+
+    /**
+     * Create a multi-valued RDN.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:54.034 -0500", hash_original_method = "64FFFA196C50B73DE4BDB139C105E877", hash_generated_method = "440C08403B82EDEBF7F0E57E23E2719D")
+    public RDN(AttributeTypeAndValue[] aAndVs)
+    {
+        this.values = new DERSet(aAndVs);
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:54.034 -0500", hash_original_method = "8A639F09C3F110E6BEBA76653F26863C", hash_generated_method = "AEBF5D310D7992A27D18ACB5BA831E33")
+    public boolean isMultiValued()
+    {
+        return this.values.size() > 1;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:54.035 -0500", hash_original_method = "C47887FAFD60151A3B1C3C44B7665548", hash_generated_method = "824E5830F244F3FDC6557694C09D015D")
+    public AttributeTypeAndValue getFirst()
+    {
+        if (this.values.size() == 0)
         {
-AttributeTypeAndValue var540C13E9E156B687226421B24F2DF178_6825976 =             null;
-            var540C13E9E156B687226421B24F2DF178_6825976.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_6825976;
-        } //End block
-AttributeTypeAndValue var3E668B3FBD36C203E122F3AF63D5393B_1307873572 =         AttributeTypeAndValue.getInstance(this.values.getObjectAt(0));
-        var3E668B3FBD36C203E122F3AF63D5393B_1307873572.addTaint(taint);
-        return var3E668B3FBD36C203E122F3AF63D5393B_1307873572;
-        // ---------- Original Method ----------
-        //if (this.values.size() == 0)
-        //{
-            //return null;
-        //}
-        //return AttributeTypeAndValue.getInstance(this.values.getObjectAt(0));
+            return null;
+        }
+
+        return AttributeTypeAndValue.getInstance(this.values.getObjectAt(0));
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.311 -0400", hash_original_method = "BEE890DAA6519CDB424A36294BC48156", hash_generated_method = "E22DBFA6AD6E5E1DC2707233EBC4C04E")
-    public AttributeTypeAndValue[] getTypesAndValues() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:54.036 -0500", hash_original_method = "BEE890DAA6519CDB424A36294BC48156", hash_generated_method = "DD920379A215D159F683BD8D3E56F71F")
+    public AttributeTypeAndValue[] getTypesAndValues()
+    {
         AttributeTypeAndValue[] tmp = new AttributeTypeAndValue[values.size()];
-for(int i = 0;i != tmp.length;i++)
+
+        for (int i = 0; i != tmp.length; i++)
         {
             tmp[i] = AttributeTypeAndValue.getInstance(values.getObjectAt(i));
-        } //End block
-AttributeTypeAndValue[] var3F12A0424932F6B5155AA6C49B63FE6E_1186259651 =         tmp;
-        var3F12A0424932F6B5155AA6C49B63FE6E_1186259651.addTaint(taint);
-        return var3F12A0424932F6B5155AA6C49B63FE6E_1186259651;
-        // ---------- Original Method ----------
-        //AttributeTypeAndValue[] tmp = new AttributeTypeAndValue[values.size()];
-        //for (int i = 0; i != tmp.length; i++)
-        //{
-            //tmp[i] = AttributeTypeAndValue.getInstance(values.getObjectAt(i));
-        //}
-        //return tmp;
+        }
+
+        return tmp;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.312 -0400", hash_original_method = "C51EA85277B01B717571B534CACD612E", hash_generated_method = "2129FD6EA8D29FB0C418D6A68969C593")
-    public DERObject toASN1Object() {
-DERObject var674B10C763DBAAF9696AD9A3DDAE07B3_589780258 =         values;
-        var674B10C763DBAAF9696AD9A3DDAE07B3_589780258.addTaint(taint);
-        return var674B10C763DBAAF9696AD9A3DDAE07B3_589780258;
-        // ---------- Original Method ----------
-        //return values;
+    /**
+     * <pre>
+     * RelativeDistinguishedName ::=
+     *                     SET OF AttributeTypeAndValue
+
+     * AttributeTypeAndValue ::= SEQUENCE {
+     *        type     AttributeType,
+     *        value    AttributeValue }
+     * </pre>
+     * @return
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:54.037 -0500", hash_original_method = "C51EA85277B01B717571B534CACD612E", hash_generated_method = "DC37C5D36C347AB6417D417EAF46C8A1")
+    public DERObject toASN1Object()
+    {
+        return values;
     }
 
     

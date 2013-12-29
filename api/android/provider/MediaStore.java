@@ -1,6 +1,8 @@
 package android.provider;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -32,20 +34,24 @@ import android.util.Log;
 
 
 public final class MediaStore {
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.452 -0400", hash_original_method = "463B9D094169FDB0633EE291129364D2", hash_generated_method = "463B9D094169FDB0633EE291129364D2")
-    public MediaStore ()
-    {
-        //Synthesized constructor
-    }
 
-
-    @DSModeled(DSC.SPEC)
+    /**
+     * Uri for querying the state of the media scanner.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.732 -0500", hash_original_method = "2AB61FF2E7140B128AA8E0CB2E9AAED9", hash_generated_method = "4ED1F31638B10772A3D991934AC9340B")
     public static Uri getMediaScannerUri() {
         return Uri.parse(CONTENT_AUTHORITY_SLASH + "none/media_scanner");
     }
 
-    
+    /**
+     * Get the media provider's version.
+     * Applications that import data from the media provider into their own caches
+     * can use this to detect that the media provider changed, and reimport data
+     * as needed. No other assumptions should be made about the meaning of the version.
+     * @param context Context to use for performing the query.
+     * @return A version string, or null if the version could not be determined.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.734 -0500", hash_original_method = "AE38216E99DAE811D25BA0107413939D", hash_generated_method = "A5E3282E23260DB91E9A5D82657E9B69")
     public static String getVersion(Context context) {
         Cursor c = context.getContentResolver().query(
                 Uri.parse(CONTENT_AUTHORITY_SLASH + "none/version"),
@@ -61,52 +67,77 @@ public final class MediaStore {
         }
         return null;
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.543 -0500", hash_original_field = "504782FD0E09BF98DA916EB9A1FAC803", hash_generated_field = "2728F4DF8F6CC34C57214DE271030F14")
+
+    private final static String TAG = "MediaStore";
 
     
     public static final class Files {
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.452 -0400", hash_original_method = "92603C48FC2D95D83FC45AFBA8CE46C5", hash_generated_method = "92603C48FC2D95D83FC45AFBA8CE46C5")
-        public Files ()
-        {
-            //Synthesized constructor
-        }
 
-
-        @DSModeled(DSC.SPEC)
+        /**
+         * Get the content:// style URI for the files table on the
+         * given volume.
+         *
+         * @param volumeName the name of the volume to get the URI for
+         * @return the URI to the files table on the given volume
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.567 -0500", hash_original_method = "409759DEA77E6C649AE2EA692A3554B8", hash_generated_method = "A280A2BA0F4395634F272135FE1EBA34")
         public static Uri getContentUri(String volumeName) {
             return Uri.parse(CONTENT_AUTHORITY_SLASH + volumeName +
                     "/file");
         }
 
-        
-        @DSModeled(DSC.SPEC)
+        /**
+         * Get the content:// style URI for a single row in the files table on the
+         * given volume.
+         *
+         * @param volumeName the name of the volume to get the URI for
+         * @param rowId the file to get the URI for
+         * @return the URI to the files table on the given volume
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.568 -0500", hash_original_method = "093C2982E064F68E36812413D73335AF", hash_generated_method = "F02C710E69F22870280DA8940CF6B34E")
         public static final Uri getContentUri(String volumeName,
                 long rowId) {
             return Uri.parse(CONTENT_AUTHORITY_SLASH + volumeName
                     + "/file/" + rowId);
         }
 
-        
-        @DSModeled(DSC.SPEC)
+        /**
+         * For use only by the MTP implementation.
+         * @hide
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.569 -0500", hash_original_method = "2FA8FCD7E4B4B360F21FD1B576A95B66", hash_generated_method = "0F65AACC551D6280680A5F4F5034162B")
         public static Uri getMtpObjectsUri(String volumeName) {
             return Uri.parse(CONTENT_AUTHORITY_SLASH + volumeName +
                     "/object");
         }
 
-        
-        @DSModeled(DSC.SPEC)
+        /**
+         * For use only by the MTP implementation.
+         * @hide
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.571 -0500", hash_original_method = "4D06DA2298DFF5AAAB3A88C1D51AE35B", hash_generated_method = "79359F0971EFBA5ABE8627030F660389")
         public static final Uri getMtpObjectsUri(String volumeName,
                 long fileId) {
             return Uri.parse(CONTENT_AUTHORITY_SLASH + volumeName
                     + "/object/" + fileId);
         }
 
-        
-        @DSModeled(DSC.SPEC)
+        /**
+         * Used to implement the MTP GetObjectReferences and SetObjectReferences commands.
+         * @hide
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.572 -0500", hash_original_method = "156D6BD07D5B040A2C58E7948D6F92A6", hash_generated_method = "53A9AF6975906E0F395058EF2299221C")
         public static final Uri getMtpReferencesUri(String volumeName,
                 long fileId) {
             return Uri.parse(CONTENT_AUTHORITY_SLASH + volumeName
                     + "/object/" + fileId + "/references");
+        }
+        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.452 -0400", hash_original_method = "92603C48FC2D95D83FC45AFBA8CE46C5", hash_generated_method = "92603C48FC2D95D83FC45AFBA8CE46C5")
+        public Files ()
+        {
+            //Synthesized constructor
         }
 
         
@@ -150,16 +181,8 @@ public final class MediaStore {
 
     
     private static class InternalThumbnails implements BaseColumns {
-        
-        @DSModeled(DSC.BAN)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.453 -0400", hash_original_method = "B538DEE370A2D5B0ED2152EA1CB2C251", hash_generated_method = "B538DEE370A2D5B0ED2152EA1CB2C251")
-        public InternalThumbnails ()
-        {
-            //Synthesized constructor
-        }
 
-
-        @DSModeled(DSC.BAN)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.583 -0500", hash_original_method = "55184BD5503D496525DD695550EB0913", hash_generated_method = "4A503CB3F3D7E6D2923157E41CC0CD05")
         private static Bitmap getMiniThumbFromFile(Cursor c, Uri baseUri, ContentResolver cr, BitmapFactory.Options options) {
             Bitmap bitmap = null;
             Uri thumbUri = null;
@@ -182,8 +205,17 @@ public final class MediaStore {
             return bitmap;
         }
 
-        
-        @DSModeled(DSC.SPEC)
+        /**
+         * This method cancels the thumbnail request so clients waiting for getThumbnail will be
+         * interrupted and return immediately. Only the original process which made the getThumbnail
+         * requests can cancel their own requests.
+         *
+         * @param cr ContentResolver
+         * @param origId original image or video id. use -1 to cancel all requests.
+         * @param groupId the same groupId used in getThumbnail
+         * @param baseUri the base URI of requested thumbnails
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.584 -0500", hash_original_method = "F29A79C31A2CA4FED1ACCEFFCCC8C171", hash_generated_method = "ED094E0A84AEB6D086FD82573B890E67")
         static void cancelThumbnailRequest(ContentResolver cr, long origId, Uri baseUri,
                 long groupId) {
             Uri cancelUri = baseUri.buildUpon().appendQueryParameter("cancel", "1")
@@ -197,13 +229,29 @@ public final class MediaStore {
                 if (c != null) c.close();
             }
         }
-
-        
-        @DSModeled(DSC.SPEC)
+        /**
+         * This method ensure thumbnails associated with origId are generated and decode the byte
+         * stream from database (MICRO_KIND) or file (MINI_KIND).
+         *
+         * Special optimization has been done to avoid further IPC communication for MICRO_KIND
+         * thumbnails.
+         *
+         * @param cr ContentResolver
+         * @param origId original image or video id
+         * @param kind could be MINI_KIND or MICRO_KIND
+         * @param options this is only used for MINI_KIND when decoding the Bitmap
+         * @param baseUri the base URI of requested thumbnails
+         * @param groupId the id of group to which this request belongs
+         * @return Bitmap bitmap of specified thumbnail kind
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.586 -0500", hash_original_method = "BF0AC792D5E1630C97F13B7A4FE7C203", hash_generated_method = "DD44E1F24FCA640B73CF7DDB7DDEF9A9")
         static Bitmap getThumbnail(ContentResolver cr, long origId, long groupId, int kind,
                 BitmapFactory.Options options, Uri baseUri, boolean isVideo) {
             Bitmap bitmap = null;
             String filePath = null;
+            // Log.v(TAG, "getThumbnail: origId="+origId+", kind="+kind+", isVideo="+isVideo);
+            // If the magic is non-zero, we simply return thumbnail if it does exist.
+            // querying MediaProvider and simply return thumbnail.
             MiniThumbFile thumbFile = new MiniThumbFile(isVideo ? Video.Media.EXTERNAL_CONTENT_URI
                     : Images.Media.EXTERNAL_CONTENT_URI);
             Cursor c = null;
@@ -234,12 +282,16 @@ public final class MediaStore {
                         }
                     }
                 }
+
                 Uri blockingUri = baseUri.buildUpon().appendQueryParameter("blocking", "1")
                         .appendQueryParameter("orig_id", String.valueOf(origId))
                         .appendQueryParameter("group_id", String.valueOf(groupId)).build();
                 if (c != null) c.close();
                 c = cr.query(blockingUri, PROJECTION, null, null, null);
+                // This happens when original image/video doesn't exist.
                 if (c == null) return null;
+
+                // Assuming thumbnail has been generated, at least original image exists.
                 if (kind == MICRO_KIND) {
                     synchronized (sThumbBufLock) {
                         if (sThumbBuf == null) {
@@ -259,6 +311,8 @@ public final class MediaStore {
                 } else {
                     throw new IllegalArgumentException("Unsupported kind: " + kind);
                 }
+
+                // We probably run out of space, so create the thumbnail in memory.
                 if (bitmap == null) {
                     Log.v(TAG, "Create the thumbnail in memory: origId=" + origId
                             + ", kind=" + kind + ", isVideo="+isVideo);
@@ -283,34 +337,40 @@ public final class MediaStore {
                 Log.w(TAG, ex);
             } finally {
                 if (c != null) c.close();
+                // To avoid file descriptor leak in application process.
                 thumbFile.deactivate();
                 thumbFile = null;
             }
             return bitmap;
         }
-
-        
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.453 -0400", hash_original_field = "86BB24EA9B9FBBBCF2150F37EF9B1916", hash_generated_field = "F1B2DCDB4D650E7562CCD24C7413239D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.576 -0500", hash_original_field = "9F5E3E6762DD29258CAFD54043B629BD", hash_generated_field = "F1B2DCDB4D650E7562CCD24C7413239D")
 
         private static final int MINI_KIND = 1;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.454 -0400", hash_original_field = "F0B1111C9C9BC310F2F7201792E2DF93", hash_generated_field = "528D339F12DE56917828F7FCAF7982C0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.577 -0500", hash_original_field = "884ECD205446BA7FAADFFE34D03FE08B", hash_generated_field = "528D339F12DE56917828F7FCAF7982C0")
 
         private static final int FULL_SCREEN_KIND = 2;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.454 -0400", hash_original_field = "9AB923142D918EADF946D75CF9101595", hash_generated_field = "90F2A2712808066B51263DD7FB1B1780")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.578 -0500", hash_original_field = "E74DC664648224BDEE25E164A4C02ADD", hash_generated_field = "90F2A2712808066B51263DD7FB1B1780")
 
         private static final int MICRO_KIND = 3;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.454 -0400", hash_original_field = "4DEBAF48445726B7090832553F36809E", hash_generated_field = "29B2B6BAF49B801FB32E186C3BC159CD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.579 -0500", hash_original_field = "86529439729A0F3B72E641F65E4C97BF", hash_generated_field = "29B2B6BAF49B801FB32E186C3BC159CD")
 
         private static final String[] PROJECTION = new String[] {_ID, MediaColumns.DATA};
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.454 -0400", hash_original_field = "92A2B399CC7E44930E4A8E45F6984AE5", hash_generated_field = "BF5200770C239590998D8302DE616555")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.580 -0500", hash_original_field = "A693A71BF3C116046E9EE35F94C4CDEF", hash_generated_field = "BF5200770C239590998D8302DE616555")
 
         static final int DEFAULT_GROUP_ID = 0;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.454 -0400", hash_original_field = "742A3DD9A153311B6B50FEEF370CBE85", hash_generated_field = "EFA5E9100500815C37703B7F5AF9081E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.581 -0500", hash_original_field = "9A2E729A19D6C18D99DAE1FD0CC65473", hash_generated_field = "EFA5E9100500815C37703B7F5AF9081E")
 
         private static final Object sThumbBufLock = new Object();
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.454 -0400", hash_original_field = "76D3B5D860F60F5C905AB52729B04F05", hash_generated_field = "4E95DEC378A5C2690E58198734A359AE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.582 -0500", hash_original_field = "DCD592AB9367D7D2F8240C488393C3B5", hash_generated_field = "4E95DEC378A5C2690E58198734A359AE")
 
         private static byte[] sThumbBuf;
+        
+        @DSModeled(DSC.BAN)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.453 -0400", hash_original_method = "B538DEE370A2D5B0ED2152EA1CB2C251", hash_generated_method = "B538DEE370A2D5B0ED2152EA1CB2C251")
+        public InternalThumbnails ()
+        {
+            //Synthesized constructor
+        }
     }
 
 
@@ -325,46 +385,56 @@ public final class MediaStore {
 
 
         public static final class Media implements ImageColumns {
-            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.454 -0400", hash_original_method = "AABF7D5402BFD519F4DA876621C956DE", hash_generated_method = "AABF7D5402BFD519F4DA876621C956DE")
-            public Media ()
-            {
-                //Synthesized constructor
-            }
-
-
-            @DSModeled(DSC.SPEC)
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.591 -0500", hash_original_method = "D33973CFD3614E757CA6971FCFC77D62", hash_generated_method = "522FA5EC19DCD037B3DD1291CCDDFA1F")
             public static final Cursor query(ContentResolver cr, Uri uri, String[] projection) {
                 return cr.query(uri, projection, null, null, DEFAULT_SORT_ORDER);
             }
 
-            
-            @DSModeled(DSC.SPEC)
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.592 -0500", hash_original_method = "53C3E712D0BE7622019DC7632C44AEC5", hash_generated_method = "9710B946F5D5EAAE3323EA0EEB6309D5")
             public static final Cursor query(ContentResolver cr, Uri uri, String[] projection,
                     String where, String orderBy) {
                 return cr.query(uri, projection, where,
                                              null, orderBy == null ? DEFAULT_SORT_ORDER : orderBy);
             }
 
-            
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.593 -0500", hash_original_method = "021F54ACE26AA0D28BD6812D454BB821", hash_generated_method = "C0CA4DFB37E599E4AFBBDA5E7B4ACF4F")
             public static final Cursor query(ContentResolver cr, Uri uri, String[] projection,
                     String selection, String [] selectionArgs, String orderBy) {
                 return cr.query(uri, projection, selection,
                         selectionArgs, orderBy == null ? DEFAULT_SORT_ORDER : orderBy);
             }
 
-            
-            @DSModeled(DSC.SPEC)
-            public static final Bitmap getBitmap(ContentResolver cr, Uri url) throws FileNotFoundException, IOException {
+            /**
+             * Retrieves an image for the given url as a {@link Bitmap}.
+             *
+             * @param cr The content resolver to use
+             * @param url The url of the image
+             * @throws FileNotFoundException
+             * @throws IOException
+             */
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.594 -0500", hash_original_method = "5ACE4CC33982008EF7E75DDF8CDA73C1", hash_generated_method = "DEAC5D332371380082BED66FBEC35502")
+            public static final Bitmap getBitmap(ContentResolver cr, Uri url)
+                    throws FileNotFoundException, IOException {
                 InputStream input = cr.openInputStream(url);
                 Bitmap bitmap = BitmapFactory.decodeStream(input);
                 input.close();
                 return bitmap;
             }
 
-            
+            /**
+             * Insert an image and create a thumbnail for it.
+             *
+             * @param cr The content resolver to use
+             * @param imagePath The path to the image to insert
+             * @param name The name of the image
+             * @param description The description of the image
+             * @return The URL to the newly created image
+             * @throws FileNotFoundException
+             */
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.596 -0500", hash_original_method = "7EDFE27F4065D73B827ECCB92823E704", hash_generated_method = "F4811B325135D139327C3CD84EF94612")
             public static final String insertImage(ContentResolver cr, String imagePath,
                     String name, String description) throws FileNotFoundException {
+                // Check if file exists with a FileInputStream
                 FileInputStream stream = new FileInputStream(imagePath);
                 try {
                     Bitmap bm = BitmapFactory.decodeFile(imagePath);
@@ -379,30 +449,37 @@ public final class MediaStore {
                 }
             }
 
-            
-            @DSModeled(DSC.BAN)
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.597 -0500", hash_original_method = "DAAD784C0B233997846E8495A2862A0E", hash_generated_method = "E66F09C3C1BA3D7840ECBDFEBEF632EB")
             private static final Bitmap StoreThumbnail(
                     ContentResolver cr,
                     Bitmap source,
                     long id,
                     float width, float height,
                     int kind) {
+                // create the matrix to scale it
                 Matrix matrix = new Matrix();
+
                 float scaleX = width / source.getWidth();
                 float scaleY = height / source.getHeight();
+
                 matrix.setScale(scaleX, scaleY);
+
                 Bitmap thumb = Bitmap.createBitmap(source, 0, 0,
                                                    source.getWidth(),
                                                    source.getHeight(), matrix,
                                                    true);
+
                 ContentValues values = new ContentValues(4);
                 values.put(Images.Thumbnails.KIND,     kind);
                 values.put(Images.Thumbnails.IMAGE_ID, (int)id);
                 values.put(Images.Thumbnails.HEIGHT,   thumb.getHeight());
                 values.put(Images.Thumbnails.WIDTH,    thumb.getWidth());
+
                 Uri url = cr.insert(Images.Thumbnails.EXTERNAL_CONTENT_URI, values);
+
                 try {
                     OutputStream thumbOut = cr.openOutputStream(url);
+
                     thumb.compress(Bitmap.CompressFormat.JPEG, 100, thumbOut);
                     thumbOut.close();
                     return thumb;
@@ -415,17 +492,30 @@ public final class MediaStore {
                 }
             }
 
-            
+            /**
+             * Insert an image and create a thumbnail for it.
+             *
+             * @param cr The content resolver to use
+             * @param source The stream to use for the image
+             * @param title The name of the image
+             * @param description The description of the image
+             * @return The URL to the newly created image, or <code>null</code> if the image failed to be stored
+             *              for any reason.
+             */
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.598 -0500", hash_original_method = "69A0DD4660ADD7C5594E4FDC51D65483", hash_generated_method = "A734C04153E78B8243BB6411677AF49A")
             public static final String insertImage(ContentResolver cr, Bitmap source,
                                                    String title, String description) {
                 ContentValues values = new ContentValues();
                 values.put(Images.Media.TITLE, title);
                 values.put(Images.Media.DESCRIPTION, description);
                 values.put(Images.Media.MIME_TYPE, "image/jpeg");
+
                 Uri url = null;
-                String stringUrl = null;
+                String stringUrl = null;    /* value to be returned */
+
                 try {
                     url = cr.insert(EXTERNAL_CONTENT_URI, values);
+
                     if (source != null) {
                         OutputStream imageOut = cr.openOutputStream(url);
                         try {
@@ -433,9 +523,12 @@ public final class MediaStore {
                         } finally {
                             imageOut.close();
                         }
+
                         long id = ContentUris.parseId(url);
+                        // Wait until MINI_KIND thumbnail is generated.
                         Bitmap miniThumb = Images.Thumbnails.getThumbnail(cr, id,
                                 Images.Thumbnails.MINI_KIND, null);
+                        // This is for backward compatibility.
                         Bitmap microThumb = StoreThumbnail(cr, miniThumb, id, 50F, 50F,
                                 Images.Thumbnails.MICRO_KIND);
                     } else {
@@ -450,74 +543,95 @@ public final class MediaStore {
                         url = null;
                     }
                 }
+
                 if (url != null) {
                     stringUrl = url.toString();
                 }
+
                 return stringUrl;
             }
 
-            
-            @DSModeled(DSC.SPEC)
+            /**
+             * Get the content:// style URI for the image media table on the
+             * given volume.
+             *
+             * @param volumeName the name of the volume to get the URI for
+             * @return the URI to the image media table on the given volume
+             */
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.599 -0500", hash_original_method = "D25E6866BAFE283BBBEC1A86738374B0", hash_generated_method = "E0194B654B4D913F989AC78CE4F389A6")
             public static Uri getContentUri(String volumeName) {
                 return Uri.parse(CONTENT_AUTHORITY_SLASH + volumeName +
                         "/images/media");
             }
-
-            
-            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.456 -0400", hash_original_field = "B4CA71E6A6DABB62CF00BA6BA06DF1F6", hash_generated_field = "B03D2FDF8E9CE307F35F0543471D4078")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.709 -0500", hash_original_field = "B269D74210F6643EC8FFDC9943F2FBBA", hash_generated_field = "B03D2FDF8E9CE307F35F0543471D4078")
 
             public static final Uri INTERNAL_CONTENT_URI =
                     getContentUri("internal");
-            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.456 -0400", hash_original_field = "6BB27CAB940C3235D66FE1017AB8E95E", hash_generated_field = "FBB5C806FDA043F5F0D49E4B0E043B06")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.710 -0500", hash_original_field = "03E6D4DE406DF4FB8653B600C7452025", hash_generated_field = "FBB5C806FDA043F5F0D49E4B0E043B06")
 
             public static final Uri EXTERNAL_CONTENT_URI =
                     getContentUri("external");
-            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.456 -0400", hash_original_field = "C0199BC5A4DF9BD7520B391EB4963FCA", hash_generated_field = "D7278D58DCCF3AFCDABD397E23995D1D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.602 -0500", hash_original_field = "66EB1425844869CC93ED41492A36AC8A", hash_generated_field = "D7278D58DCCF3AFCDABD397E23995D1D")
 
             public static final String CONTENT_TYPE = "vnd.android.cursor.dir/image";
-            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.456 -0400", hash_original_field = "939A3643F974445C4F2248C9A8078B83", hash_generated_field = "D1EC0DF370F9CCDEE096DFD36593C492")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.603 -0500", hash_original_field = "653EB65FF0BA3C50B158A90CD33BF9D4", hash_generated_field = "D1EC0DF370F9CCDEE096DFD36593C492")
 
             public static final String DEFAULT_SORT_ORDER = ImageColumns.BUCKET_DISPLAY_NAME;
+            
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.454 -0400", hash_original_method = "AABF7D5402BFD519F4DA876621C956DE", hash_generated_method = "AABF7D5402BFD519F4DA876621C956DE")
+            public Media ()
+            {
+                //Synthesized constructor
+            }
         }
 
 
         
         public static class Thumbnails implements BaseColumns {
-            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.456 -0400", hash_original_method = "CEC4957051438E94FE667AB7B98C828F", hash_generated_method = "CEC4957051438E94FE667AB7B98C828F")
-            public Thumbnails ()
-            {
-                //Synthesized constructor
-            }
-
-
-            @DSModeled(DSC.SPEC)
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.606 -0500", hash_original_method = "D33973CFD3614E757CA6971FCFC77D62", hash_generated_method = "522FA5EC19DCD037B3DD1291CCDDFA1F")
             public static final Cursor query(ContentResolver cr, Uri uri, String[] projection) {
                 return cr.query(uri, projection, null, null, DEFAULT_SORT_ORDER);
             }
 
-            
-            @DSModeled(DSC.SPEC)
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.607 -0500", hash_original_method = "D2C6FBB7BEB4CEA6BEF0854A82D35C79", hash_generated_method = "3EC21CDA307390D0BBE9F235AE4A64E3")
             public static final Cursor queryMiniThumbnails(ContentResolver cr, Uri uri, int kind,
                     String[] projection) {
                 return cr.query(uri, projection, "kind = " + kind, null, DEFAULT_SORT_ORDER);
             }
 
-            
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.608 -0500", hash_original_method = "BE9254821AC284A8AB44D13688ACA7DE", hash_generated_method = "E5ADCA2D02DCA0BD2BD1E6467DD1DEF8")
             public static final Cursor queryMiniThumbnail(ContentResolver cr, long origId, int kind,
                     String[] projection) {
                 return cr.query(EXTERNAL_CONTENT_URI, projection,
                         IMAGE_ID + " = " + origId + " AND " + KIND + " = " +
                         kind, null, null);
             }
-
-            
+            /**
+             * This method cancels the thumbnail request so clients waiting for getThumbnail will be
+             * interrupted and return immediately. Only the original process which made the getThumbnail
+             * requests can cancel their own requests.
+             *
+             * @param cr ContentResolver
+             * @param origId original video id
+             */
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.714 -0500", hash_original_method = "1F04B09633BC6FD3251DA0AD2BE516F3", hash_generated_method = "983E9B9D79C85DB2DD69AA68A9F3DB51")
             public static void cancelThumbnailRequest(ContentResolver cr, long origId) {
                 InternalThumbnails.cancelThumbnailRequest(cr, origId, EXTERNAL_CONTENT_URI,
                         InternalThumbnails.DEFAULT_GROUP_ID);
             }
 
-            
+            /**
+             * This method checks if the thumbnails of the specified image (origId) has been created.
+             * It will be blocked until the thumbnails are generated.
+             *
+             * @param cr ContentResolver used to dispatch queries to MediaProvider.
+             * @param origId Original image id associated with thumbnail of interest.
+             * @param kind The type of thumbnail to fetch. Should be either MINI_KIND or MICRO_KIND.
+             * @param options this is only used for MINI_KIND when decoding the Bitmap
+             * @return A Bitmap instance. It could be null if the original image
+             *         associated with origId doesn't exist or memory is not enough.
+             */
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.610 -0500", hash_original_method = "069003E9CCA7A32718F8DD9AFC8DF3AC", hash_generated_method = "A2CA56D487630ADB7C82FA26BA7E1D58")
             public static Bitmap getThumbnail(ContentResolver cr, long origId, int kind,
                     BitmapFactory.Options options) {
                 return InternalThumbnails.getThumbnail(cr, origId,
@@ -525,64 +639,96 @@ public final class MediaStore {
                         EXTERNAL_CONTENT_URI, false);
             }
 
-            
+            /**
+             * This method cancels the thumbnail request so clients waiting for getThumbnail will be
+             * interrupted and return immediately. Only the original process which made the getThumbnail
+             * requests can cancel their own requests.
+             *
+             * @param cr ContentResolver
+             * @param origId original video id
+             * @param groupId the same groupId used in getThumbnail.
+             */
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.717 -0500", hash_original_method = "9AAEF167BAB79AB4F88321224520B47D", hash_generated_method = "D1446C5613D089036ABDE6782BA7A84D")
             public static void cancelThumbnailRequest(ContentResolver cr, long origId, long groupId) {
                 InternalThumbnails.cancelThumbnailRequest(cr, origId, EXTERNAL_CONTENT_URI, groupId);
             }
 
-            
+            /**
+             * This method checks if the thumbnails of the specified image (origId) has been created.
+             * It will be blocked until the thumbnails are generated.
+             *
+             * @param cr ContentResolver used to dispatch queries to MediaProvider.
+             * @param origId Original image id associated with thumbnail of interest.
+             * @param groupId the id of group to which this request belongs
+             * @param kind The type of thumbnail to fetch. Should be either MINI_KIND or MICRO_KIND.
+             * @param options this is only used for MINI_KIND when decoding the Bitmap
+             * @return A Bitmap instance. It could be null if the original image
+             *         associated with origId doesn't exist or memory is not enough.
+             */
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.612 -0500", hash_original_method = "5AD0BFBA0AD49773CFC5CC711D3149F0", hash_generated_method = "0DB0B69D293B44BF86D28E74E32FBB26")
             public static Bitmap getThumbnail(ContentResolver cr, long origId, long groupId,
                     int kind, BitmapFactory.Options options) {
                 return InternalThumbnails.getThumbnail(cr, origId, groupId, kind, options,
                         EXTERNAL_CONTENT_URI, false);
             }
 
-            
-            @DSModeled(DSC.SPEC)
+            /**
+             * Get the content:// style URI for the image media table on the
+             * given volume.
+             *
+             * @param volumeName the name of the volume to get the URI for
+             * @return the URI to the image media table on the given volume
+             */
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.612 -0500", hash_original_method = "30E2B09E332E4F02ED1ADF0B393967EF", hash_generated_method = "7C81AAFED814529EAF49F67E334DB91E")
             public static Uri getContentUri(String volumeName) {
                 return Uri.parse(CONTENT_AUTHORITY_SLASH + volumeName +
                         "/images/thumbnails");
             }
-
-            
-            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.456 -0400", hash_original_field = "B4CA71E6A6DABB62CF00BA6BA06DF1F6", hash_generated_field = "B03D2FDF8E9CE307F35F0543471D4078")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.719 -0500", hash_original_field = "B269D74210F6643EC8FFDC9943F2FBBA", hash_generated_field = "B03D2FDF8E9CE307F35F0543471D4078")
 
             public static final Uri INTERNAL_CONTENT_URI =
                     getContentUri("internal");
-            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.456 -0400", hash_original_field = "6BB27CAB940C3235D66FE1017AB8E95E", hash_generated_field = "FBB5C806FDA043F5F0D49E4B0E043B06")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.720 -0500", hash_original_field = "03E6D4DE406DF4FB8653B600C7452025", hash_generated_field = "FBB5C806FDA043F5F0D49E4B0E043B06")
 
             public static final Uri EXTERNAL_CONTENT_URI =
                     getContentUri("external");
-            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.457 -0400", hash_original_field = "DA2DA563BEF05D1D2333009DF76B4BAB", hash_generated_field = "201F7D4B8AAD2124C6E2FB0F7E0E0501")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.617 -0500", hash_original_field = "59315B23C674A066EB8A6BCDD73D4C2E", hash_generated_field = "201F7D4B8AAD2124C6E2FB0F7E0E0501")
 
             public static final String DEFAULT_SORT_ORDER = "image_id ASC";
-            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.457 -0400", hash_original_field = "1DA2383FC2FFA0E5D2654EA151089BF3", hash_generated_field = "A66DA404DB529637DF4981C792367756")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.722 -0500", hash_original_field = "26E58B2737B6B9BE3C45DCC90071CE18", hash_generated_field = "A66DA404DB529637DF4981C792367756")
 
             public static final String DATA = "_data";
-            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.457 -0400", hash_original_field = "044F6187080038BC94F83783D30BF85A", hash_generated_field = "4C4192B03F8FCBB7BDBCB8BE2736E4B7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.618 -0500", hash_original_field = "CCFE7AD193B1077478601BFAD7F2B5AD", hash_generated_field = "4C4192B03F8FCBB7BDBCB8BE2736E4B7")
 
             public static final String IMAGE_ID = "image_id";
-            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.457 -0400", hash_original_field = "5C4A1F77A7D94E0CAF07EEC33B2F1286", hash_generated_field = "C4772988085372FF3551CC4315A50E0B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.724 -0500", hash_original_field = "689313FD747CBABD81EDBCAEF84DD0DE", hash_generated_field = "C4772988085372FF3551CC4315A50E0B")
 
             public static final String KIND = "kind";
-            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.457 -0400", hash_original_field = "86BB24EA9B9FBBBCF2150F37EF9B1916", hash_generated_field = "99CE8D50C31FD4187F2F339D8B9B48C7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.725 -0500", hash_original_field = "9F5E3E6762DD29258CAFD54043B629BD", hash_generated_field = "99CE8D50C31FD4187F2F339D8B9B48C7")
+
 
             public static final int MINI_KIND = 1;
-            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.457 -0400", hash_original_field = "F0B1111C9C9BC310F2F7201792E2DF93", hash_generated_field = "8C0560965409D5FE4F991B1D52B6B6A8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.725 -0500", hash_original_field = "884ECD205446BA7FAADFFE34D03FE08B", hash_generated_field = "8C0560965409D5FE4F991B1D52B6B6A8")
 
             public static final int FULL_SCREEN_KIND = 2;
-            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.457 -0400", hash_original_field = "9AB923142D918EADF946D75CF9101595", hash_generated_field = "623F298E957ADDE8E0DCD7F12E785698")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.726 -0500", hash_original_field = "E74DC664648224BDEE25E164A4C02ADD", hash_generated_field = "623F298E957ADDE8E0DCD7F12E785698")
 
             public static final int MICRO_KIND = 3;
-            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.457 -0400", hash_original_field = "83284FE5FE0753306FD4EBC19524D50E", hash_generated_field = "2779A363AF0116D23A35D20CEC14443A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.623 -0500", hash_original_field = "45C5658A932D745086DAD64AB749CB53", hash_generated_field = "2779A363AF0116D23A35D20CEC14443A")
 
             public static final String THUMB_DATA = "thumb_data";
-            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.457 -0400", hash_original_field = "CE07B77F3FD4244A5F7485F0D4C17B45", hash_generated_field = "FE9CB65DA5AC820EB66328B1E325F141")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.727 -0500", hash_original_field = "35FFDC6AA2ACA6BB8E3DDCA7833AD47B", hash_generated_field = "FE9CB65DA5AC820EB66328B1E325F141")
 
             public static final String WIDTH = "width";
-            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.457 -0400", hash_original_field = "58A8FFDB42E31B05F5E0AA01DBD77A10", hash_generated_field = "A6B1CAF6BB48877DB47F660C1A4B4504")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.728 -0500", hash_original_field = "98F89B8C3667067141A5ECF88D1ECD7E", hash_generated_field = "A6B1CAF6BB48877DB47F660C1A4B4504")
 
             public static final String HEIGHT = "height";
+            
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.456 -0400", hash_original_method = "CEC4957051438E94FE667AB7B98C828F", hash_generated_method = "CEC4957051438E94FE667AB7B98C828F")
+            public Thumbnails ()
+            {
+                //Synthesized constructor
+            }
         }
 
 
@@ -624,20 +770,31 @@ public final class MediaStore {
 
     
     public static final class Audio {
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.457 -0400", hash_original_method = "553D011F7A7937C6B31A2ECF0083B637", hash_generated_method = "553D011F7A7937C6B31A2ECF0083B637")
-        public Audio ()
-        {
-            //Synthesized constructor
-        }
 
-
+        /**
+         * Converts a name to a "key" that can be used for grouping, sorting
+         * and searching.
+         * The rules that govern this conversion are:
+         * - remove 'special' characters like ()[]'!?.,
+         * - remove leading/trailing spaces
+         * - convert everything to lowercase
+         * - remove leading "the ", "an " and "a "
+         * - remove trailing ", the|an|a"
+         * - remove accents. This step leaves us with CollationKey data,
+         *   which is not human readable
+         *
+         * @param name The artist or album name to convert
+         * @return The "key" for the given name.
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.635 -0500", hash_original_method = "95C694273499781A6977EEA3A6EB256B", hash_generated_method = "DD118F7DB3B777EDEDF07C7206EE0C52")
         public static String keyFor(String name) {
             if (name != null)  {
                 boolean sortfirst = false;
                 if (name.equals(UNKNOWN_STRING)) {
                     return "\001";
                 }
+                // Check if the first character is \001. We use this to
+                // force sorting of certain special files, like the silent ringtone.
                 if (name.startsWith("\001")) {
                     sortfirst = true;
                 }
@@ -658,6 +815,9 @@ public final class MediaStore {
                 }
                 name = name.replaceAll("[\\[\\]\\(\\)\"'.,?!]", "").trim();
                 if (name.length() > 0) {
+                    // Insert a separator between the characters to avoid
+                    // matches on a partial character. If we ever change
+                    // to start-of-word-only matches, this can be removed.
                     StringBuilder b = new StringBuilder();
                     b.append('.');
                     int nl = name.length();
@@ -677,25 +837,29 @@ public final class MediaStore {
             }
             return null;
         }
+        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.457 -0400", hash_original_method = "553D011F7A7937C6B31A2ECF0083B637", hash_generated_method = "553D011F7A7937C6B31A2ECF0083B637")
+        public Audio ()
+        {
+            //Synthesized constructor
+        }
 
         
         public static final class Media implements AudioColumns {
-            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.458 -0400", hash_original_method = "AABF7D5402BFD519F4DA876621C956DE", hash_generated_method = "AABF7D5402BFD519F4DA876621C956DE")
-            public Media ()
-            {
-                //Synthesized constructor
-            }
-
-
-            @DSModeled(DSC.SPEC)
+            /**
+             * Get the content:// style URI for the audio media table on the
+             * given volume.
+             *
+             * @param volumeName the name of the volume to get the URI for
+             * @return the URI to the audio media table on the given volume
+             */
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.636 -0500", hash_original_method = "7BC2F03DF14329F6FE08C0A58CBF1643", hash_generated_method = "A992774CE618273FBFB6557783752FC3")
             public static Uri getContentUri(String volumeName) {
                 return Uri.parse(CONTENT_AUTHORITY_SLASH + volumeName +
                         "/audio/media");
             }
 
-            
-            @DSModeled(DSC.SPEC)
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.637 -0500", hash_original_method = "3C6A6D60A779BAAF3BF8B77D7DFF40A3", hash_generated_method = "7B99D09EDD1ACB797F0D5DF0AB7533A2")
             public static Uri getContentUriForPath(String path) {
                 return (path.startsWith(Environment.getExternalStorageDirectory().getPath()) ?
                         EXTERNAL_CONTENT_URI : INTERNAL_CONTENT_URI);
@@ -710,134 +874,149 @@ public final class MediaStore {
 
             public static final Uri EXTERNAL_CONTENT_URI =
                     getContentUri("external");
-            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.459 -0400", hash_original_field = "790974CF03A7A2442F98A04BEB043705", hash_generated_field = "5DFF3EF904D1B5DFDB7238BA1EF13627")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.640 -0500", hash_original_field = "4EA651CA8308CB03976C9B6A67EB0B11", hash_generated_field = "5DFF3EF904D1B5DFDB7238BA1EF13627")
 
             public static final String CONTENT_TYPE = "vnd.android.cursor.dir/audio";
-            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.459 -0400", hash_original_field = "AB13DAE5B15ED75CB9A148DE80A5C576", hash_generated_field = "9CA0957FE990E6612A17A5ADC5B5AF40")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.641 -0500", hash_original_field = "66FCF672A5DAB7FFEC981248C791B49E", hash_generated_field = "9CA0957FE990E6612A17A5ADC5B5AF40")
 
             public static final String DEFAULT_SORT_ORDER = TITLE_KEY;
-            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.459 -0400", hash_original_field = "24B146D7FE1D328C2E5E05032C389317", hash_generated_field = "98FCF6EE0488D8931189FA8705E80FB7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.642 -0500", hash_original_field = "62D639623316D76E23286097564CF8C3", hash_generated_field = "98FCF6EE0488D8931189FA8705E80FB7")
 
             public static final String RECORD_SOUND_ACTION =
                     "android.provider.MediaStore.RECORD_SOUND";
-            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.459 -0400", hash_original_field = "BEAEC5678AF195F54B9032A918AFD461", hash_generated_field = "16C267F4F82A95E267906C622A2EEAA6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.643 -0500", hash_original_field = "DDE8B5F3413A5E6DD52D1C5BEEFC87A4", hash_generated_field = "16C267F4F82A95E267906C622A2EEAA6")
 
-            public static final String EXTRA_MAX_BYTES =
+             public static final String EXTRA_MAX_BYTES =
                     "android.provider.MediaStore.extra.MAX_BYTES";
+            
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.458 -0400", hash_original_method = "AABF7D5402BFD519F4DA876621C956DE", hash_generated_method = "AABF7D5402BFD519F4DA876621C956DE")
+            public Media ()
+            {
+                //Synthesized constructor
+            }
         }
 
 
         
         public static final class Genres implements BaseColumns, GenresColumns {
-            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.459 -0400", hash_original_method = "5A301F51AFE295226C0A121512898093", hash_generated_method = "5A301F51AFE295226C0A121512898093")
-            public Genres ()
-            {
-                //Synthesized constructor
-            }
-
-
-            @DSModeled(DSC.SPEC)
+            /**
+             * Get the content:// style URI for the audio genres table on the
+             * given volume.
+             *
+             * @param volumeName the name of the volume to get the URI for
+             * @return the URI to the audio genres table on the given volume
+             */
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.646 -0500", hash_original_method = "1CF6BD090DABA01652B1DE33E8033EFA", hash_generated_method = "89E9B7287F9A9CFB4DB23910AE63589F")
             public static Uri getContentUri(String volumeName) {
                 return Uri.parse(CONTENT_AUTHORITY_SLASH + volumeName +
                         "/audio/genres");
             }
 
-            
-            @DSModeled(DSC.SPEC)
+            /**
+             * Get the content:// style URI for querying the genres of an audio file.
+             *
+             * @param volumeName the name of the volume to get the URI for
+             * @param audioId the ID of the audio file for which to retrieve the genres
+             * @return the URI to for querying the genres for the audio file
+             * with the given the volume and audioID
+             */
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.647 -0500", hash_original_method = "41F194A6497C33D9B998B598C479E322", hash_generated_method = "C4F80A0D540BD4402723086A758E6E80")
             public static Uri getContentUriForAudioId(String volumeName, int audioId) {
                 return Uri.parse(CONTENT_AUTHORITY_SLASH + volumeName +
                         "/audio/media/" + audioId + "/genres");
             }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.648 -0500", hash_original_field = "B269D74210F6643EC8FFDC9943F2FBBA", hash_generated_field = "B03D2FDF8E9CE307F35F0543471D4078")
+
+            public static final Uri INTERNAL_CONTENT_URI =
+                    getContentUri("internal");
 
             
             public static final class Members implements AudioColumns {
+
+                @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.653 -0500", hash_original_method = "55CF68002905D503AB205A6C04930549", hash_generated_method = "31826974FF95BF68DC8C7EDB78615960")
+                public static final Uri getContentUri(String volumeName,
+                        long genreId) {
+                    return Uri.parse(CONTENT_AUTHORITY_SLASH + volumeName
+                            + "/audio/genres/" + genreId + "/members");
+                }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.671 -0500", hash_original_field = "12B70289C724F477A1EBFEC95AF65186", hash_generated_field = "DB7ADB2B4AB00C495BEDDDD281A9FEA3")
+
+                public static final String CONTENT_DIRECTORY = "members";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.655 -0500", hash_original_field = "66FCF672A5DAB7FFEC981248C791B49E", hash_generated_field = "9CA0957FE990E6612A17A5ADC5B5AF40")
+
+                public static final String DEFAULT_SORT_ORDER = TITLE_KEY;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.672 -0500", hash_original_field = "EB1249F314E7481F0D13A1CB51BE5427", hash_generated_field = "382D7EB918B49C78EB06492C73BC97FB")
+
+                public static final String AUDIO_ID = "audio_id";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.657 -0500", hash_original_field = "D1D43ECD689962B225F042DEAB33B54C", hash_generated_field = "39198E92E9A65D017CA1639585E0DF84")
+
+                public static final String GENRE_ID = "genre_id";
                 
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.459 -0400", hash_original_method = "A4C48D9C87FE7EE1DA0DC145BA44FFAF", hash_generated_method = "A4C48D9C87FE7EE1DA0DC145BA44FFAF")
                 public Members ()
                 {
                     //Synthesized constructor
                 }
-
-
-                @DSModeled(DSC.SPEC)
-                public static final Uri getContentUri(String volumeName,
-                        long genreId) {
-                    return Uri.parse(CONTENT_AUTHORITY_SLASH + volumeName
-                            + "/audio/genres/" + genreId + "/members");
-                }
-
-                
-                @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.459 -0400", hash_original_field = "D46E914A8CFDE411714424962678DE60", hash_generated_field = "DB7ADB2B4AB00C495BEDDDD281A9FEA3")
-
-                public static final String CONTENT_DIRECTORY = "members";
-                @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.459 -0400", hash_original_field = "AB13DAE5B15ED75CB9A148DE80A5C576", hash_generated_field = "9CA0957FE990E6612A17A5ADC5B5AF40")
-
-                public static final String DEFAULT_SORT_ORDER = TITLE_KEY;
-                @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.459 -0400", hash_original_field = "F48A44710BB263A5D7C9A6B38C638850", hash_generated_field = "382D7EB918B49C78EB06492C73BC97FB")
-
-                public static final String AUDIO_ID = "audio_id";
-                @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.459 -0400", hash_original_field = "EC4403C5CAFB8C8E406078FA89B6559D", hash_generated_field = "39198E92E9A65D017CA1639585E0DF84")
-
-                public static final String GENRE_ID = "genre_id";
             }
-
-
-            
-            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.460 -0400", hash_original_field = "B4CA71E6A6DABB62CF00BA6BA06DF1F6", hash_generated_field = "B03D2FDF8E9CE307F35F0543471D4078")
-
-            public static final Uri INTERNAL_CONTENT_URI =
-                    getContentUri("internal");
-            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.460 -0400", hash_original_field = "6BB27CAB940C3235D66FE1017AB8E95E", hash_generated_field = "FBB5C806FDA043F5F0D49E4B0E043B06")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.649 -0500", hash_original_field = "03E6D4DE406DF4FB8653B600C7452025", hash_generated_field = "FBB5C806FDA043F5F0D49E4B0E043B06")
 
             public static final Uri EXTERNAL_CONTENT_URI =
                     getContentUri("external");
-            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.460 -0400", hash_original_field = "A0D60D946B18B4F268B6018989EE4B99", hash_generated_field = "E1B6CFD623C2263B7E469FD88BCF8D69")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.650 -0500", hash_original_field = "99570A574CD0BD8C548E0B76CC151CA6", hash_generated_field = "E1B6CFD623C2263B7E469FD88BCF8D69")
 
             public static final String CONTENT_TYPE = "vnd.android.cursor.dir/genre";
-            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.460 -0400", hash_original_field = "7062B818241D9D146326FB2D3C4D4BE7", hash_generated_field = "2B7DC59AF9446FD67FDE51146B04B78B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.651 -0500", hash_original_field = "4A9E4D38A1CE6E613862592F303585E1", hash_generated_field = "2B7DC59AF9446FD67FDE51146B04B78B")
 
             public static final String ENTRY_CONTENT_TYPE = "vnd.android.cursor.item/genre";
-            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.460 -0400", hash_original_field = "DF4A7F1A332196E8DE5F535A48CC15E8", hash_generated_field = "A2FB1268F0AAE758649FA6BFE2C4E5D6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.652 -0500", hash_original_field = "B9322FDDB9BC287B4AE15C2E93599F56", hash_generated_field = "A2FB1268F0AAE758649FA6BFE2C4E5D6")
 
             public static final String DEFAULT_SORT_ORDER = NAME;
+            
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.459 -0400", hash_original_method = "5A301F51AFE295226C0A121512898093", hash_generated_method = "5A301F51AFE295226C0A121512898093")
+            public Genres ()
+            {
+                //Synthesized constructor
+            }
         }
 
 
         
         public static final class Playlists implements BaseColumns, PlaylistsColumns {
-            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.460 -0400", hash_original_method = "74E3D69F5F937E9AFBC239AC6178742A", hash_generated_method = "74E3D69F5F937E9AFBC239AC6178742A")
-            public Playlists ()
-            {
-                //Synthesized constructor
-            }
-
-
-            @DSModeled(DSC.SPEC)
+            /**
+             * Get the content:// style URI for the audio playlists table on the
+             * given volume.
+             *
+             * @param volumeName the name of the volume to get the URI for
+             * @return the URI to the audio playlists table on the given volume
+             */
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.661 -0500", hash_original_method = "645770BE430EC26F3820C55E3B33E2DF", hash_generated_method = "381C3C055A0109C1EF249AEA5FF2E149")
             public static Uri getContentUri(String volumeName) {
                 return Uri.parse(CONTENT_AUTHORITY_SLASH + volumeName +
                         "/audio/playlists");
             }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.663 -0500", hash_original_field = "B269D74210F6643EC8FFDC9943F2FBBA", hash_generated_field = "B03D2FDF8E9CE307F35F0543471D4078")
+
+            public static final Uri INTERNAL_CONTENT_URI =
+                    getContentUri("internal");
 
             
             public static final class Members implements AudioColumns {
-                
-                @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.460 -0400", hash_original_method = "A4C48D9C87FE7EE1DA0DC145BA44FFAF", hash_generated_method = "A4C48D9C87FE7EE1DA0DC145BA44FFAF")
-                public Members ()
-                {
-                    //Synthesized constructor
-                }
-
-
-                @DSModeled(DSC.SPEC)
+                @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.668 -0500", hash_original_method = "96BDCFD6E7CB52F7223465A2D6EE9A74", hash_generated_method = "9010678E8195591DFDC953DE2DED9116")
                 public static final Uri getContentUri(String volumeName,
                         long playlistId) {
                     return Uri.parse(CONTENT_AUTHORITY_SLASH + volumeName
                             + "/audio/playlists/" + playlistId + "/members");
                 }
 
-                
+                /**
+                 * Convenience method to move a playlist item to a new location
+                 * @param res The content resolver to use
+                 * @param playlistId The numeric id of the playlist
+                 * @param from The position of the item to move
+                 * @param to The position to move the item to
+                 * @return true on success
+                 */
+                @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.669 -0500", hash_original_method = "9DA25B025FE28EC3AC4ACBCE0C1BFD50", hash_generated_method = "5034B493CD7750526DFD99DE63E751DD")
                 public static final boolean moveItem(ContentResolver res,
                         long playlistId, int from, int to) {
                     Uri uri = MediaStore.Audio.Playlists.Members.getContentUri("external",
@@ -850,9 +1029,7 @@ public final class MediaStore {
                     values.put(MediaStore.Audio.Playlists.Members.PLAY_ORDER, to);
                     return res.update(uri, values, null, null) != 0;
                 }
-
-                
-                @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.460 -0400", hash_original_field = "1D76A1C4932B9BE76F07C85A41B71D02", hash_generated_field = "B34A1444880FA153E0220CFB867105F7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.670 -0500", hash_original_field = "6FDF2F856E52A2C35AACBF9AF8171666", hash_generated_field = "B34A1444880FA153E0220CFB867105F7")
 
                 public static final String _ID = "_id";
                 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.460 -0400", hash_original_field = "D46E914A8CFDE411714424962678DE60", hash_generated_field = "DB7ADB2B4AB00C495BEDDDD281A9FEA3")
@@ -861,57 +1038,71 @@ public final class MediaStore {
                 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.460 -0400", hash_original_field = "F48A44710BB263A5D7C9A6B38C638850", hash_generated_field = "382D7EB918B49C78EB06492C73BC97FB")
 
                 public static final String AUDIO_ID = "audio_id";
-                @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.460 -0400", hash_original_field = "9181E709002D2BA8E125631575B558A1", hash_generated_field = "8B99B390580EC4D8EC34CC087D44092D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.673 -0500", hash_original_field = "F0E9652E6A8F2A9B512AC414635A271A", hash_generated_field = "8B99B390580EC4D8EC34CC087D44092D")
 
                 public static final String PLAYLIST_ID = "playlist_id";
-                @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.460 -0400", hash_original_field = "E6B58ACA1379DD2A910CED94E5CCA2F5", hash_generated_field = "6C3FE81A0BACA3DA560AAD1D806E9D96")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.674 -0500", hash_original_field = "B81BBB54CABAF8860C30C750F0F7D510", hash_generated_field = "6C3FE81A0BACA3DA560AAD1D806E9D96")
 
                 public static final String PLAY_ORDER = "play_order";
-                @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.460 -0400", hash_original_field = "49E240684255848107C13083258B8240", hash_generated_field = "A8F59651FB55C4C2E1DD16A17470594E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.675 -0500", hash_original_field = "1A395B2B3E39F0502BFB37B1FE80463F", hash_generated_field = "A8F59651FB55C4C2E1DD16A17470594E")
 
                 public static final String DEFAULT_SORT_ORDER = PLAY_ORDER;
+                
+                @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.460 -0400", hash_original_method = "A4C48D9C87FE7EE1DA0DC145BA44FFAF", hash_generated_method = "A4C48D9C87FE7EE1DA0DC145BA44FFAF")
+                public Members ()
+                {
+                    //Synthesized constructor
+                }
             }
-
-
-            
-            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.460 -0400", hash_original_field = "B4CA71E6A6DABB62CF00BA6BA06DF1F6", hash_generated_field = "B03D2FDF8E9CE307F35F0543471D4078")
-
-            public static final Uri INTERNAL_CONTENT_URI =
-                    getContentUri("internal");
-            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.460 -0400", hash_original_field = "6BB27CAB940C3235D66FE1017AB8E95E", hash_generated_field = "FBB5C806FDA043F5F0D49E4B0E043B06")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.664 -0500", hash_original_field = "03E6D4DE406DF4FB8653B600C7452025", hash_generated_field = "FBB5C806FDA043F5F0D49E4B0E043B06")
 
             public static final Uri EXTERNAL_CONTENT_URI =
                     getContentUri("external");
-            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.460 -0400", hash_original_field = "FA421BBB49A245517B454B7D5164E557", hash_generated_field = "7886ED7A80A0EA66150F49DF90C591DC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.665 -0500", hash_original_field = "10AF5E531059B1A35852762E8D6D4D79", hash_generated_field = "7886ED7A80A0EA66150F49DF90C591DC")
 
             public static final String CONTENT_TYPE = "vnd.android.cursor.dir/playlist";
-            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.460 -0400", hash_original_field = "FEAA5A714B717E16B55D875B600AAAC5", hash_generated_field = "A3425404F8D772BE71E2B6C9EAD1785A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.666 -0500", hash_original_field = "2CA7C2803EE9B9461AA42F66D7395D6B", hash_generated_field = "A3425404F8D772BE71E2B6C9EAD1785A")
 
             public static final String ENTRY_CONTENT_TYPE = "vnd.android.cursor.item/playlist";
-            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.460 -0400", hash_original_field = "DF4A7F1A332196E8DE5F535A48CC15E8", hash_generated_field = "A2FB1268F0AAE758649FA6BFE2C4E5D6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.667 -0500", hash_original_field = "B9322FDDB9BC287B4AE15C2E93599F56", hash_generated_field = "A2FB1268F0AAE758649FA6BFE2C4E5D6")
 
             public static final String DEFAULT_SORT_ORDER = NAME;
+            
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.460 -0400", hash_original_method = "74E3D69F5F937E9AFBC239AC6178742A", hash_generated_method = "74E3D69F5F937E9AFBC239AC6178742A")
+            public Playlists ()
+            {
+                //Synthesized constructor
+            }
         }
 
 
         
         public static final class Artists implements BaseColumns, ArtistColumns {
-            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.461 -0400", hash_original_method = "5A569BA5E9300E73D18EF84988BF2B4D", hash_generated_method = "5A569BA5E9300E73D18EF84988BF2B4D")
-            public Artists ()
-            {
-                //Synthesized constructor
-            }
-
-
-            @DSModeled(DSC.SPEC)
+            /**
+             * Get the content:// style URI for the artists table on the
+             * given volume.
+             *
+             * @param volumeName the name of the volume to get the URI for
+             * @return the URI to the audio artists table on the given volume
+             */
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.681 -0500", hash_original_method = "FD66489C6245EC419D305AD593BAF7F8", hash_generated_method = "1694B6CD5E48801661ACBEE648621070")
             public static Uri getContentUri(String volumeName) {
                 return Uri.parse(CONTENT_AUTHORITY_SLASH + volumeName +
                         "/audio/artists");
             }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.682 -0500", hash_original_field = "B269D74210F6643EC8FFDC9943F2FBBA", hash_generated_field = "B03D2FDF8E9CE307F35F0543471D4078")
+
+            public static final Uri INTERNAL_CONTENT_URI =
+                    getContentUri("internal");
 
             
             public static final class Albums implements AlbumColumns {
+                @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.687 -0500", hash_original_method = "C95690BA5A28FE2CD2430F02E3EC9539", hash_generated_method = "A56894B0FDB584F61C28239BC0137602")
+                public static final Uri getContentUri(String volumeName,
+                        long artistId) {
+                    return Uri.parse(CONTENT_AUTHORITY_SLASH + volumeName
+                            + "/audio/artists/" + artistId + "/albums");
+                }
                 
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.461 -0400", hash_original_method = "7EBF89799AE4644EBE85B32B12FD367D", hash_generated_method = "7EBF89799AE4644EBE85B32B12FD367D")
                 public Albums ()
@@ -919,73 +1110,67 @@ public final class MediaStore {
                     //Synthesized constructor
                 }
 
-
-                @DSModeled(DSC.SPEC)
-                public static final Uri getContentUri(String volumeName,
-                        long artistId) {
-                    return Uri.parse(CONTENT_AUTHORITY_SLASH + volumeName
-                            + "/audio/artists/" + artistId + "/albums");
-                }
-
                 
             }
-
-
-            
-            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.461 -0400", hash_original_field = "B4CA71E6A6DABB62CF00BA6BA06DF1F6", hash_generated_field = "B03D2FDF8E9CE307F35F0543471D4078")
-
-            public static final Uri INTERNAL_CONTENT_URI =
-                    getContentUri("internal");
-            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.461 -0400", hash_original_field = "6BB27CAB940C3235D66FE1017AB8E95E", hash_generated_field = "FBB5C806FDA043F5F0D49E4B0E043B06")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.682 -0500", hash_original_field = "03E6D4DE406DF4FB8653B600C7452025", hash_generated_field = "FBB5C806FDA043F5F0D49E4B0E043B06")
 
             public static final Uri EXTERNAL_CONTENT_URI =
                     getContentUri("external");
-            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.461 -0400", hash_original_field = "0E595BB54891C827453B49DE1ED8919A", hash_generated_field = "4D2C185FD5D3770BBB496266841B2798")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.683 -0500", hash_original_field = "259A9405C4A2E5E58BFDBE37B431071D", hash_generated_field = "4D2C185FD5D3770BBB496266841B2798")
 
             public static final String CONTENT_TYPE = "vnd.android.cursor.dir/artists";
-            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.461 -0400", hash_original_field = "71FCADE44973F58BD05B795F8E708B03", hash_generated_field = "98400472C82334F395927F8E1AEF2AEB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.684 -0500", hash_original_field = "CE15CCFB76C653750012B3224ACD5556", hash_generated_field = "98400472C82334F395927F8E1AEF2AEB")
 
             public static final String ENTRY_CONTENT_TYPE = "vnd.android.cursor.item/artist";
-            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.461 -0400", hash_original_field = "853E24A760A5E967308572644AC40856", hash_generated_field = "332893369A4BBA52F86F1E98B47F7C33")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.685 -0500", hash_original_field = "CAADB616D47CBFBD69FFC5FC8CD1C507", hash_generated_field = "332893369A4BBA52F86F1E98B47F7C33")
 
             public static final String DEFAULT_SORT_ORDER = ARTIST_KEY;
+            
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.461 -0400", hash_original_method = "5A569BA5E9300E73D18EF84988BF2B4D", hash_generated_method = "5A569BA5E9300E73D18EF84988BF2B4D")
+            public Artists ()
+            {
+                //Synthesized constructor
+            }
         }
 
 
         
         public static final class Albums implements BaseColumns, AlbumColumns {
+            /**
+             * Get the content:// style URI for the albums table on the
+             * given volume.
+             *
+             * @param volumeName the name of the volume to get the URI for
+             * @return the URI to the audio albums table on the given volume
+             */
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.692 -0500", hash_original_method = "4BBBF90040E52C1783C62EF76D7CBADD", hash_generated_method = "6BE0A51081C5362D4920B43F3116DAF1")
+            public static Uri getContentUri(String volumeName) {
+                return Uri.parse(CONTENT_AUTHORITY_SLASH + volumeName +
+                        "/audio/albums");
+            }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.693 -0500", hash_original_field = "B269D74210F6643EC8FFDC9943F2FBBA", hash_generated_field = "B03D2FDF8E9CE307F35F0543471D4078")
+
+            public static final Uri INTERNAL_CONTENT_URI =
+                    getContentUri("internal");
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.694 -0500", hash_original_field = "03E6D4DE406DF4FB8653B600C7452025", hash_generated_field = "FBB5C806FDA043F5F0D49E4B0E043B06")
+
+            public static final Uri EXTERNAL_CONTENT_URI =
+                    getContentUri("external");
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.695 -0500", hash_original_field = "7595D5D03EE52CA7561E7FC7C5E61D82", hash_generated_field = "5B57B84C208FF887BC56BE52F5F242A8")
+
+            public static final String CONTENT_TYPE = "vnd.android.cursor.dir/albums";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.696 -0500", hash_original_field = "DA98EE0205C37ADF83E515BE0A59FB7A", hash_generated_field = "AD71577E74C0A9EDD832620AE0172EC4")
+
+            public static final String ENTRY_CONTENT_TYPE = "vnd.android.cursor.item/album";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.697 -0500", hash_original_field = "CEB694F4023D516A269F7537A8E53A8B", hash_generated_field = "379F25D8A8F63DE3CF34DAC50E06B398")
+
+            public static final String DEFAULT_SORT_ORDER = ALBUM_KEY;
             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.461 -0400", hash_original_method = "7EBF89799AE4644EBE85B32B12FD367D", hash_generated_method = "7EBF89799AE4644EBE85B32B12FD367D")
             public Albums ()
             {
                 //Synthesized constructor
             }
-
-
-            @DSModeled(DSC.SPEC)
-            public static Uri getContentUri(String volumeName) {
-                return Uri.parse(CONTENT_AUTHORITY_SLASH + volumeName +
-                        "/audio/albums");
-            }
-
-            
-            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.461 -0400", hash_original_field = "B4CA71E6A6DABB62CF00BA6BA06DF1F6", hash_generated_field = "B03D2FDF8E9CE307F35F0543471D4078")
-
-            public static final Uri INTERNAL_CONTENT_URI =
-                    getContentUri("internal");
-            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.461 -0400", hash_original_field = "6BB27CAB940C3235D66FE1017AB8E95E", hash_generated_field = "FBB5C806FDA043F5F0D49E4B0E043B06")
-
-            public static final Uri EXTERNAL_CONTENT_URI =
-                    getContentUri("external");
-            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.461 -0400", hash_original_field = "6E244DA9008EB36DFDAD749717F23FBA", hash_generated_field = "5B57B84C208FF887BC56BE52F5F242A8")
-
-            public static final String CONTENT_TYPE = "vnd.android.cursor.dir/albums";
-            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.461 -0400", hash_original_field = "14B70FEC6D53B0C92EAAC8795D30A159", hash_generated_field = "AD71577E74C0A9EDD832620AE0172EC4")
-
-            public static final String ENTRY_CONTENT_TYPE = "vnd.android.cursor.item/album";
-            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.461 -0400", hash_original_field = "E5E6826E5577AAD65C81D3D2F681757F", hash_generated_field = "379F25D8A8F63DE3CF34DAC50E06B398")
-
-            public static final String DEFAULT_SORT_ORDER = ALBUM_KEY;
         }
 
 
@@ -1121,30 +1306,25 @@ public final class MediaStore {
 
     
     public static final class Video {
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.461 -0400", hash_original_method = "8FC1394ED845BB72BFE890B41D7CAD7E", hash_generated_method = "8FC1394ED845BB72BFE890B41D7CAD7E")
-        public Video ()
-        {
-            //Synthesized constructor
-        }
 
-
-        @DSModeled(DSC.SPEC)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.702 -0500", hash_original_method = "D33973CFD3614E757CA6971FCFC77D62", hash_generated_method = "522FA5EC19DCD037B3DD1291CCDDFA1F")
         public static final Cursor query(ContentResolver cr, Uri uri, String[] projection) {
             return cr.query(uri, projection, null, null, DEFAULT_SORT_ORDER);
         }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.701 -0500", hash_original_field = "1EB73F7AF49C3C1C8871210B895EF301", hash_generated_field = "A72EF801920E6D0FBCC298B3F48750D9")
+
+        public static final String DEFAULT_SORT_ORDER = MediaColumns.DISPLAY_NAME;
 
         
         public static final class Media implements VideoColumns {
-            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.462 -0400", hash_original_method = "AABF7D5402BFD519F4DA876621C956DE", hash_generated_method = "AABF7D5402BFD519F4DA876621C956DE")
-            public Media ()
-            {
-                //Synthesized constructor
-            }
-
-
-            @DSModeled(DSC.SPEC)
+            /**
+             * Get the content:// style URI for the video media table on the
+             * given volume.
+             *
+             * @param volumeName the name of the volume to get the URI for
+             * @return the URI to the video media table on the given volume
+             */
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.708 -0500", hash_original_method = "62F44913137B8C4A13A1C32E412D06B5", hash_generated_method = "C4FC987BE0CBD99859AFF3DB34B45299")
             public static Uri getContentUri(String volumeName) {
                 return Uri.parse(CONTENT_AUTHORITY_SLASH + volumeName +
                         "/video/media");
@@ -1159,23 +1339,23 @@ public final class MediaStore {
 
             public static final Uri EXTERNAL_CONTENT_URI =
                     getContentUri("external");
-            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.462 -0400", hash_original_field = "406C33AF4AF6B66DE577C80910936503", hash_generated_field = "D9F9D24ED20803B056D0DA2161C944E7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.711 -0500", hash_original_field = "B9E172789E21354B46BE117D61A0F5B7", hash_generated_field = "D9F9D24ED20803B056D0DA2161C944E7")
 
             public static final String CONTENT_TYPE = "vnd.android.cursor.dir/video";
-            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.462 -0400", hash_original_field = "5BAEEEFEE52A23EB50FF8B763BB44595", hash_generated_field = "F1AD81D67BCA33411A74FB57B6D6FE7D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.712 -0500", hash_original_field = "3CDD8B08D6F00022AAC8D91F270CB6BA", hash_generated_field = "F1AD81D67BCA33411A74FB57B6D6FE7D")
 
             public static final String DEFAULT_SORT_ORDER = TITLE;
+            
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.462 -0400", hash_original_method = "AABF7D5402BFD519F4DA876621C956DE", hash_generated_method = "AABF7D5402BFD519F4DA876621C956DE")
+            public Media ()
+            {
+                //Synthesized constructor
+            }
         }
 
 
         
         public static class Thumbnails implements BaseColumns {
-            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.462 -0400", hash_original_method = "CEC4957051438E94FE667AB7B98C828F", hash_generated_method = "CEC4957051438E94FE667AB7B98C828F")
-            public Thumbnails ()
-            {
-                //Synthesized constructor
-            }
 
 
             public static void cancelThumbnailRequest(ContentResolver cr, long origId) {
@@ -1183,7 +1363,18 @@ public final class MediaStore {
                         InternalThumbnails.DEFAULT_GROUP_ID);
             }
 
-            
+            /**
+             * This method checks if the thumbnails of the specified image (origId) has been created.
+             * It will be blocked until the thumbnails are generated.
+             *
+             * @param cr ContentResolver used to dispatch queries to MediaProvider.
+             * @param origId Original image id associated with thumbnail of interest.
+             * @param kind The type of thumbnail to fetch. Should be either MINI_KIND or MICRO_KIND.
+             * @param options this is only used for MINI_KIND when decoding the Bitmap
+             * @return A Bitmap instance. It could be null if the original image
+             *         associated with origId doesn't exist or memory is not enough.
+             */
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.715 -0500", hash_original_method = "172FCB0110A1F99EBF930D5E744C7BE9", hash_generated_method = "6465FE82FEED7285B8536C3A4981C6CB")
             public static Bitmap getThumbnail(ContentResolver cr, long origId, int kind,
                     BitmapFactory.Options options) {
                 return InternalThumbnails.getThumbnail(cr, origId,
@@ -1191,7 +1382,19 @@ public final class MediaStore {
                         EXTERNAL_CONTENT_URI, true);
             }
 
-            
+            /**
+             * This method checks if the thumbnails of the specified image (origId) has been created.
+             * It will be blocked until the thumbnails are generated.
+             *
+             * @param cr ContentResolver used to dispatch queries to MediaProvider.
+             * @param origId Original image id associated with thumbnail of interest.
+             * @param groupId the id of group to which this request belongs
+             * @param kind The type of thumbnail to fetch. Should be either MINI_KIND or MICRO_KIND
+             * @param options this is only used for MINI_KIND when decoding the Bitmap
+             * @return A Bitmap instance. It could be null if the original image associated with
+             *         origId doesn't exist or memory is not enough.
+             */
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.716 -0500", hash_original_method = "0DF93B55084418555A720C042FA08001", hash_generated_method = "3D9177C741CFED1C5A49D925F38B9A2D")
             public static Bitmap getThumbnail(ContentResolver cr, long origId, long groupId,
                     int kind, BitmapFactory.Options options) {
                 return InternalThumbnails.getThumbnail(cr, origId, groupId, kind, options,
@@ -1203,8 +1406,14 @@ public final class MediaStore {
                 InternalThumbnails.cancelThumbnailRequest(cr, origId, EXTERNAL_CONTENT_URI, groupId);
             }
 
-            
-            @DSModeled(DSC.SPEC)
+            /**
+             * Get the content:// style URI for the image media table on the
+             * given volume.
+             *
+             * @param volumeName the name of the volume to get the URI for
+             * @return the URI to the image media table on the given volume
+             */
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.718 -0500", hash_original_method = "15FBBC3EA73486A6D659DC0927D4EC42", hash_generated_method = "BAAF5B7DAD7F5A3186DA6B6DBF384D60")
             public static Uri getContentUri(String volumeName) {
                 return Uri.parse(CONTENT_AUTHORITY_SLASH + volumeName +
                         "/video/thumbnails");
@@ -1219,13 +1428,13 @@ public final class MediaStore {
 
             public static final Uri EXTERNAL_CONTENT_URI =
                     getContentUri("external");
-            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.463 -0400", hash_original_field = "B7FCADEE7F0EC02CA6F285CA094C35EF", hash_generated_field = "A5388A3303EC2C70E303BC1733345832")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.721 -0500", hash_original_field = "17D6CDD6D3DDA4E2D99740C4575AD78C", hash_generated_field = "A5388A3303EC2C70E303BC1733345832")
 
             public static final String DEFAULT_SORT_ORDER = "video_id ASC";
             @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.463 -0400", hash_original_field = "1DA2383FC2FFA0E5D2654EA151089BF3", hash_generated_field = "A66DA404DB529637DF4981C792367756")
 
             public static final String DATA = "_data";
-            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.463 -0400", hash_original_field = "E293470BEBEDD4BB46B4AD98A800F424", hash_generated_field = "C16F73320C40AC771DE6456ABC479D42")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.723 -0500", hash_original_field = "089AFB43908C7E62C6CC5494CBDBBA87", hash_generated_field = "C16F73320C40AC771DE6456ABC479D42")
 
             public static final String VIDEO_ID = "video_id";
             @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.463 -0400", hash_original_field = "5C4A1F77A7D94E0CAF07EEC33B2F1286", hash_generated_field = "C4772988085372FF3551CC4315A50E0B")
@@ -1246,6 +1455,12 @@ public final class MediaStore {
             @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.463 -0400", hash_original_field = "58A8FFDB42E31B05F5E0AA01DBD77A10", hash_generated_field = "A6B1CAF6BB48877DB47F660C1A4B4504")
 
             public static final String HEIGHT = "height";
+            
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.462 -0400", hash_original_method = "CEC4957051438E94FE667AB7B98C828F", hash_generated_method = "CEC4957051438E94FE667AB7B98C828F")
+            public Thumbnails ()
+            {
+                //Synthesized constructor
+            }
         }
 
 
@@ -1301,9 +1516,11 @@ public final class MediaStore {
             public static final String BOOKMARK = "bookmark";
         }
         
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.463 -0400", hash_original_field = "E0A47896DEB3EFCAA0754EC9CF7029B0", hash_generated_field = "A72EF801920E6D0FBCC298B3F48750D9")
-
-        public static final String DEFAULT_SORT_ORDER = MediaColumns.DISPLAY_NAME;
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.461 -0400", hash_original_method = "8FC1394ED845BB72BFE890B41D7CAD7E", hash_generated_method = "8FC1394ED845BB72BFE890B41D7CAD7E")
+        public Video ()
+        {
+            //Synthesized constructor
+        }
     }
 
 
@@ -1342,88 +1559,92 @@ public final class MediaStore {
         
         public static final String HEIGHT = "height";
      }
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.463 -0400", hash_original_field = "C8002D2138131AF4063F90C8D5E799E9", hash_generated_field = "2728F4DF8F6CC34C57214DE271030F14")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.544 -0500", hash_original_field = "AA55383DC3F7BD6C287AFC306AD5D7E5", hash_generated_field = "A7DFC8694D3D0E7657229CD0FFF5B630")
 
-    private final static String TAG = "MediaStore";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.463 -0400", hash_original_field = "DEE8B069CA82B2649B001D40126EC1E6", hash_generated_field = "A7DFC8694D3D0E7657229CD0FFF5B630")
 
     public static final String AUTHORITY = "media";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.463 -0400", hash_original_field = "986BBAE6D3E285B3AEE548565E838BB1", hash_generated_field = "027422C86865920C2F404F289EE08DA8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.544 -0500", hash_original_field = "412777ED2A77CB0564FBC452E4AAD65B", hash_generated_field = "027422C86865920C2F404F289EE08DA8")
+
 
     private static final String CONTENT_AUTHORITY_SLASH = "content://" + AUTHORITY + "/";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.464 -0400", hash_original_field = "D0495468C95E05AA50AC20A66C056AA9", hash_generated_field = "4AC3ACCC87E038F10B80832F5408B1BC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.545 -0500", hash_original_field = "E664179887E4517F77CF655287E8095A", hash_generated_field = "4AC3ACCC87E038F10B80832F5408B1BC")
 
     public static final String ACTION_MTP_SESSION_END = "android.provider.action.MTP_SESSION_END";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.464 -0400", hash_original_field = "928C91FEA98EEAA58A48D210083D3F9A", hash_generated_field = "E09B7FA4C274836F20284B58798CF9B5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.546 -0500", hash_original_field = "5B22B5E1BFC2F8D5369583F17FF8F0A4", hash_generated_field = "E09B7FA4C274836F20284B58798CF9B5")
 
     @Deprecated
     @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION)
     public static final String INTENT_ACTION_MUSIC_PLAYER = "android.intent.action.MUSIC_PLAYER";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.464 -0400", hash_original_field = "8B0F7E457FFF9F2F29066B28191F6C50", hash_generated_field = "14E225D86AD9F750F07ABB2CC0A1F78B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.547 -0500", hash_original_field = "B0408390CCF36707200DE5ED25E94B26", hash_generated_field = "14E225D86AD9F750F07ABB2CC0A1F78B")
 
     @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION)
     public static final String INTENT_ACTION_MEDIA_SEARCH = "android.intent.action.MEDIA_SEARCH";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.464 -0400", hash_original_field = "50276D3F81AC9A9022B5EBBB75A410CD", hash_generated_field = "BCF79BCDD2A8D0223693A47E87B3FB87")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.548 -0500", hash_original_field = "7681931D5A3E0EE88B61CCC40138C85D", hash_generated_field = "BCF79BCDD2A8D0223693A47E87B3FB87")
 
     public static final String INTENT_ACTION_MEDIA_PLAY_FROM_SEARCH =
             "android.media.action.MEDIA_PLAY_FROM_SEARCH";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.464 -0400", hash_original_field = "5D04B864959661DF078FA09360DC451B", hash_generated_field = "8C6545564FADA5903D0948466EC12557")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.549 -0500", hash_original_field = "7D8824DD566953523D2921AFEFA075D9", hash_generated_field = "8C6545564FADA5903D0948466EC12557")
 
     public static final String EXTRA_MEDIA_ARTIST = "android.intent.extra.artist";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.464 -0400", hash_original_field = "27E1E7EE4D2BEF605C6F2D89F8D02BAA", hash_generated_field = "C980456F9DD94096B28012B67800926D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.550 -0500", hash_original_field = "E2071BB55A52B4A66D17B0898785EBBE", hash_generated_field = "C980456F9DD94096B28012B67800926D")
 
     public static final String EXTRA_MEDIA_ALBUM = "android.intent.extra.album";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.464 -0400", hash_original_field = "58F3D469A06C1604FCF3035819394099", hash_generated_field = "4792CF25AC338288960AFE12B613D6A2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.551 -0500", hash_original_field = "5B12FCA8413B287F57860981C644CD49", hash_generated_field = "4792CF25AC338288960AFE12B613D6A2")
 
     public static final String EXTRA_MEDIA_TITLE = "android.intent.extra.title";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.464 -0400", hash_original_field = "3CB914AB0F7A8D4324FD372342599B09", hash_generated_field = "72D132B1C5F6D2B7078ED4AB0F036952")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.552 -0500", hash_original_field = "36AD670B64F17C8D437C451E9C9BE563", hash_generated_field = "72D132B1C5F6D2B7078ED4AB0F036952")
 
     public static final String EXTRA_MEDIA_FOCUS = "android.intent.extra.focus";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.464 -0400", hash_original_field = "B21783E1062C0672256FF81218DF12D0", hash_generated_field = "EFE407D2F32BF5ADCB7717684CF92CC6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.553 -0500", hash_original_field = "60C54FB7B0D37705C410D2C01C5CCF5F", hash_generated_field = "EFE407D2F32BF5ADCB7717684CF92CC6")
 
     public static final String EXTRA_SCREEN_ORIENTATION = "android.intent.extra.screenOrientation";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.464 -0400", hash_original_field = "DAE10EA90A9539BD465CA188CD9EE282", hash_generated_field = "A5DBF907AD5A6EC1A25F8010D89A1B12")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.553 -0500", hash_original_field = "23686E0D9CD1F1134D25623F6B44A2AE", hash_generated_field = "A5DBF907AD5A6EC1A25F8010D89A1B12")
 
     public static final String EXTRA_FULL_SCREEN = "android.intent.extra.fullScreen";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.464 -0400", hash_original_field = "3D93C2C0F299114A7BDD15BB5105E69E", hash_generated_field = "8B2470F342CF29E36A8468DA20BB144A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.554 -0500", hash_original_field = "F8CE050322FF94463A2908BE6900C6F6", hash_generated_field = "8B2470F342CF29E36A8468DA20BB144A")
 
     public static final String EXTRA_SHOW_ACTION_ICONS = "android.intent.extra.showActionIcons";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.464 -0400", hash_original_field = "2226B7DA19085C227A76D6B589B3B116", hash_generated_field = "832680E96220C6307238C134A8AAF73F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.556 -0500", hash_original_field = "A2B81E8140C808448BBC5AD42D62712C", hash_generated_field = "832680E96220C6307238C134A8AAF73F")
 
     public static final String EXTRA_FINISH_ON_COMPLETION = "android.intent.extra.finishOnCompletion";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.464 -0400", hash_original_field = "6F9604608D02C9AA1EF828AA3AAD46B1", hash_generated_field = "860A7DFD760F4321420148084D173747")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.557 -0500", hash_original_field = "005DB39AA53559438B779DD7A31BE29E", hash_generated_field = "860A7DFD760F4321420148084D173747")
 
     public static final String INTENT_ACTION_STILL_IMAGE_CAMERA = "android.media.action.STILL_IMAGE_CAMERA";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.464 -0400", hash_original_field = "149F172BB5932F0ECAF0612E37EB7FA9", hash_generated_field = "733F786611D450A0A68A4EF7B2D3BFFF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.558 -0500", hash_original_field = "7F602566C0A40EECC0128C4D6352B937", hash_generated_field = "733F786611D450A0A68A4EF7B2D3BFFF")
 
     public static final String INTENT_ACTION_VIDEO_CAMERA = "android.media.action.VIDEO_CAMERA";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.464 -0400", hash_original_field = "1EB0708295D1D32B4371EA2394CA9DC4", hash_generated_field = "EB213F3388033EA8ACC753E0170748C0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.559 -0500", hash_original_field = "560626CDBD2EC12987FA365D132E6448", hash_generated_field = "EB213F3388033EA8ACC753E0170748C0")
 
     public final static String ACTION_IMAGE_CAPTURE = "android.media.action.IMAGE_CAPTURE";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.464 -0400", hash_original_field = "A5FD1F86CE92B39EBA46E298D4A3C51A", hash_generated_field = "5914F06B7133898D3EB0FE683B022154")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.560 -0500", hash_original_field = "C4104E4511F4E51C03AF41FBE15E823E", hash_generated_field = "5914F06B7133898D3EB0FE683B022154")
 
     public final static String ACTION_VIDEO_CAPTURE = "android.media.action.VIDEO_CAPTURE";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.464 -0400", hash_original_field = "06956D925F6F7484F3B6C33AED08F331", hash_generated_field = "FE0F2F344BEEED50C4B9B25035AD566A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.560 -0500", hash_original_field = "4485B1821D74550A825AF203EB142D13", hash_generated_field = "FE0F2F344BEEED50C4B9B25035AD566A")
 
     public final static String EXTRA_VIDEO_QUALITY = "android.intent.extra.videoQuality";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.464 -0400", hash_original_field = "3A64C7585A64AF9CF4FF3F4BA32A601E", hash_generated_field = "58265C65BBD1D2C4DE9D186B226EF361")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.561 -0500", hash_original_field = "7D09085F51B12016B0605341C9B5454B", hash_generated_field = "58265C65BBD1D2C4DE9D186B226EF361")
 
     public final static String EXTRA_SIZE_LIMIT = "android.intent.extra.sizeLimit";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.464 -0400", hash_original_field = "DFBB96F667A37C434E2350A86CD8A6F6", hash_generated_field = "4885F3925500336C9B74AD82F9F8B38E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.562 -0500", hash_original_field = "5295C47350E8A8749A93A0632B0B9AFA", hash_generated_field = "4885F3925500336C9B74AD82F9F8B38E")
 
     public final static String EXTRA_DURATION_LIMIT = "android.intent.extra.durationLimit";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.464 -0400", hash_original_field = "06585FC0D3A19A51DA603CAC4D3D4F3F", hash_generated_field = "A7FA8BD777FCC1FECD1E96853C582359")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.563 -0500", hash_original_field = "A9889A9CAE97527910A4CB0807E86331", hash_generated_field = "A7FA8BD777FCC1FECD1E96853C582359")
 
     public final static String EXTRA_OUTPUT = "output";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.464 -0400", hash_original_field = "F67AB1895B6F18E04CF94889A61746ED", hash_generated_field = "389D1922445E3024CFD51027EC75BBD6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.564 -0500", hash_original_field = "0334075654C0FF27461392EE3D4E51B1", hash_generated_field = "389D1922445E3024CFD51027EC75BBD6")
 
     public static final String UNKNOWN_STRING = "<unknown>";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.465 -0400", hash_original_field = "E66073E28FD82D757F62F3E6EA13E896", hash_generated_field = "7D2FACD66491E00572801F8C8B9C6463")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.733 -0500", hash_original_field = "697C2FF740F7916B4A3CC1739473AFBC", hash_generated_field = "7D2FACD66491E00572801F8C8B9C6463")
 
     public static final String MEDIA_SCANNER_VOLUME = "volume";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.465 -0400", hash_original_field = "3F855865F9729329F0756F4990B9397D", hash_generated_field = "6FCA486A7CA08615D278EDF15EB8B907")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:46.733 -0500", hash_original_field = "52165A87631EC54F837B3EC3AB856A4B", hash_generated_field = "6FCA486A7CA08615D278EDF15EB8B907")
 
     public static final String MEDIA_IGNORE_FILENAME = ".nomedia";
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.452 -0400", hash_original_method = "463B9D094169FDB0633EE291129364D2", hash_generated_method = "463B9D094169FDB0633EE291129364D2")
+    public MediaStore ()
+    {
+        //Synthesized constructor
+    }
 }
 

@@ -1,6 +1,8 @@
 package java.security.cert;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.ByteArrayInputStream;
 import java.io.NotSerializableException;
@@ -16,225 +18,211 @@ import java.util.List;
 
 
 public abstract class CertPath implements Serializable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.618 -0400", hash_original_field = "599DCCE2998A6B40B1E38E8C6006CB0A", hash_generated_field = "AB2C9E2EF2C4EBDBF6BF18A679B45B62")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:15.612 -0500", hash_original_field = "F7F6448E7F6B5D82CA42BAE092094F29", hash_generated_field = "22A8873A3B050ACEADFDDE2FD50272BD")
 
-    private String type;
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.619 -0400", hash_original_method = "302897E6BB0E40528F36909A6049B176", hash_generated_method = "32FAE556A05A6016667B95DE68F07950")
-    protected  CertPath(String type) {
+
+    private static final long serialVersionUID = 6068470306649138683L;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:15.613 -0500", hash_original_field = "1B03D0EF3E71EB350936336F82D5E0C5", hash_generated_field = "AB2C9E2EF2C4EBDBF6BF18A679B45B62")
+
+    private  String type;
+
+    /**
+     * Creates a new {@code CertPath} instance for the specified certificate
+     * type.
+     *
+     * @param type
+     *            the certificate type.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:15.613 -0500", hash_original_method = "302897E6BB0E40528F36909A6049B176", hash_generated_method = "E98D35C9ACB3B4A38BC7920B543F7D09")
+    protected CertPath(String type) {
         this.type = type;
-        // ---------- Original Method ----------
-        //this.type = type;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.619 -0400", hash_original_method = "0E0B07C7C3039087C9D268CAF8DACC19", hash_generated_method = "4DC4C4B6DF7772E5659454A7F3708FEC")
+    /**
+     * Returns the type of {@code Certificate} in this instance.
+     *
+     * @return the certificate type.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:15.614 -0500", hash_original_method = "0E0B07C7C3039087C9D268CAF8DACC19", hash_generated_method = "375DB45064AFC367CAD6F27C4CB89612")
     public String getType() {
-String varC5B9F25B4EEAD3E8E2C33F9429204397_1160410815 =         type;
-        varC5B9F25B4EEAD3E8E2C33F9429204397_1160410815.addTaint(taint);
-        return varC5B9F25B4EEAD3E8E2C33F9429204397_1160410815;
-        // ---------- Original Method ----------
-        //return type;
+        return type;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.620 -0400", hash_original_method = "8F841F69BEA866198CC0B2087E3E8CE8", hash_generated_method = "8D4806A1193367F3DF0F31EE17F74935")
+    /**
+     * Returns {@code true} if {@code Certificate}s in the list are the same
+     * type and the lists are equal (and by implication the certificates
+     * contained within are the same).
+     *
+     * @param other
+     *            {@code CertPath} to be compared for equality.
+     * @return {@code true} if the object are equal, {@code false} otherwise.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:15.615 -0500", hash_original_method = "8F841F69BEA866198CC0B2087E3E8CE8", hash_generated_method = "2250B7527981C6F3AE3CD0DF2F747DDF")
     public boolean equals(Object other) {
-        addTaint(other.getTaint());
-        if(this == other)        
-        {
-            boolean varB326B5062B2F0E69046810717534CB09_1660602100 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1562395827 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1562395827;
-        } //End block
-        if(other instanceof CertPath)        
-        {
+        if (this == other) {
+            return true;
+        }
+        if (other instanceof CertPath) {
             CertPath o = (CertPath)other;
-            if(getType().equals(o.getType()))            
-            {
-                if(getCertificates().equals(o.getCertificates()))                
-                {
-                    boolean varB326B5062B2F0E69046810717534CB09_1816122694 = (true);
-                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_400934492 = getTaintBoolean();
-                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_400934492;
-                } //End block
-            } //End block
-        } //End block
-        boolean var68934A3E9455FA72420237EB05902327_671825992 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1028100883 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1028100883;
-        // ---------- Original Method ----------
-        //if (this == other) {
-            //return true;
-        //}
-        //if (other instanceof CertPath) {
-            //CertPath o = (CertPath)other;
-            //if (getType().equals(o.getType())) {
-                //if (getCertificates().equals(o.getCertificates())) {
-                    //return true;
-                //}
-            //}
-        //}
-        //return false;
+            if (getType().equals(o.getType())) {
+                if (getCertificates().equals(o.getCertificates())) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.621 -0400", hash_original_method = "E8BB667E09C60EB11FBFEAA1F9E519B1", hash_generated_method = "24C52F000BA8340F32C2EF9C6DD402AB")
+    /**
+     * Overrides {@code Object.hashCode()}. The function is defined as follows:
+     * <pre>
+     * {@code hashCode = 31 * path.getType().hashCode() +
+     * path.getCertificates().hashCode();}
+     * </pre>
+     *
+     * @return the hash code for this instance.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:15.616 -0500", hash_original_method = "E8BB667E09C60EB11FBFEAA1F9E519B1", hash_generated_method = "E84BB1278EC2D7E171B60EFD5E631879")
     public int hashCode() {
         int hash = getType().hashCode();
         hash = hash*31 + getCertificates().hashCode();
-        int var0800FC577294C34E0B28AD2839435945_1728132734 = (hash);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_35514899 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_35514899;
-        // ---------- Original Method ----------
-        //int hash = getType().hashCode();
-        //hash = hash*31 + getCertificates().hashCode();
-        //return hash;
+        return hash;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.621 -0400", hash_original_method = "476AF39C272D39EAE140D33789265072", hash_generated_method = "3729E237A84A54874DAC8CED89C85EBE")
+    /**
+     * Returns a {@code String} representation of this {@code CertPath}
+     * instance. It is the result of calling {@code toString} on all {@code
+     * Certificate}s in the {@code List}.
+     *
+     * @return a string representation of this instance.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:15.617 -0500", hash_original_method = "476AF39C272D39EAE140D33789265072", hash_generated_method = "C5ABBA0D12DFB2C6B5FC45CDFF854B7B")
     public String toString() {
         StringBuilder sb = new StringBuilder(getType());
         sb.append(" Cert Path, len=");
         sb.append(getCertificates().size());
         sb.append(": [\n");
-        int n = 1;
-for(Iterator<? extends Certificate> i=getCertificates().iterator();i.hasNext();n++)
-        {
+        int n=1;
+        for (Iterator<? extends Certificate> i=getCertificates().iterator(); i.hasNext(); n++) {
             sb.append("---------------certificate ");
             sb.append(n);
             sb.append("---------------\n");
             sb.append(((Certificate)i.next()).toString());
-        } //End block
+        }
         sb.append("\n]");
-String var2460B846747F8B22185AD8BE722266A5_891863046 =         sb.toString();
-        var2460B846747F8B22185AD8BE722266A5_891863046.addTaint(taint);
-        return var2460B846747F8B22185AD8BE722266A5_891863046;
-        // ---------- Original Method ----------
-        //StringBuilder sb = new StringBuilder(getType());
-        //sb.append(" Cert Path, len=");
-        //sb.append(getCertificates().size());
-        //sb.append(": [\n");
-        //int n=1;
-        //for (Iterator<? extends Certificate> i=getCertificates().iterator(); i.hasNext(); n++) {
-            //sb.append("---------------certificate ");
-            //sb.append(n);
-            //sb.append("---------------\n");
-            //sb.append(((Certificate)i.next()).toString());
-        //}
-        //sb.append("\n]");
-        //return sb.toString();
+        return sb.toString();
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Returns an immutable List of the {@code Certificate}s contained
+     * in the {@code CertPath}.
+     *
+     * @return a list of {@code Certificate}s in the {@code CertPath}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:15.618 -0500", hash_original_method = "F1426E2A44812D0AE4014B7629FA559D", hash_generated_method = "2227574931B83954DB8047C4709A4C7E")
     public abstract List<? extends Certificate> getCertificates();
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Returns an encoding of the {@code CertPath} using the default encoding.
+     *
+     * @return default encoding of the {@code CertPath}.
+     * @throws CertificateEncodingException
+     *             if the encoding fails.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:15.619 -0500", hash_original_method = "97985BC010DD1187CA9D18F27C6321CC", hash_generated_method = "967CA908BE3445AA84C7FF1C69EFF907")
     public abstract byte[] getEncoded()
         throws CertificateEncodingException;
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Returns an encoding of the {@code CertPath} using the specified encoding.
+     *
+     * @param encoding
+     *            encoding that should be generated.
+     * @return default encoding of the {@code CertPath}.
+     * @throws CertificateEncodingException
+     *             if the encoding fails.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:15.620 -0500", hash_original_method = "5A28674A03609094F71CED2E9CFD4EAB", hash_generated_method = "F97B4E54ACD29AFDDC963FCA87397711")
     public abstract byte[] getEncoded(String encoding)
         throws CertificateEncodingException;
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Returns an {@code Iterator} over the supported encodings for a
+     * representation of the certificate path.
+     *
+     * @return {@code Iterator} over supported encodings (as {@code String}s).
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:15.621 -0500", hash_original_method = "501BBB87AB4FA040A3C6E82444EEB8D9", hash_generated_method = "12EE1216881B2F2E57E65D52688C2530")
     public abstract Iterator<String> getEncodings();
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.623 -0400", hash_original_method = "52819054EFF055A3D86733F1F32E0BA5", hash_generated_method = "B608B58785A9F121248EA00CD765020A")
-    protected Object writeReplace() throws ObjectStreamException {
-        try 
-        {
-Object varF32523CCB977B1DE0F6996279C4CFB92_2089604252 =             new CertPathRep(getType(), getEncoded());
-            varF32523CCB977B1DE0F6996279C4CFB92_2089604252.addTaint(taint);
-            return varF32523CCB977B1DE0F6996279C4CFB92_2089604252;
-        } //End block
-        catch (CertificateEncodingException e)
-        {
-            NotSerializableException varD10E63AB14446D5829D48417DD9728EF_440171043 = new NotSerializableException("Could not create serialization object: " + e);
-            varD10E63AB14446D5829D48417DD9728EF_440171043.addTaint(taint);
-            throw varD10E63AB14446D5829D48417DD9728EF_440171043;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return new CertPathRep(getType(), getEncoded());
-        //} catch (CertificateEncodingException e) {
-            //throw new NotSerializableException("Could not create serialization object: " + e);
-        //}
-    }
-
-    
     protected static class CertPathRep implements Serializable {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.623 -0400", hash_original_field = "599DCCE2998A6B40B1E38E8C6006CB0A", hash_generated_field = "AB2C9E2EF2C4EBDBF6BF18A679B45B62")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:15.623 -0500", hash_original_field = "9A7C3890B74FF03B82960D0B2EBE95DB", hash_generated_field = "257527E5D7CAC38935714E2F9D854C92")
 
-        private String type;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.623 -0400", hash_original_field = "8D777F385D3DFEC8815D20F7496026DC", hash_generated_field = "BCB00A81B11593F3A75239028B6E65B9")
-
-        private byte[] data;
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.623 -0400", hash_original_method = "306F916982958535E78B2E37AF24DE52", hash_generated_method = "19372CAD6BE4BFEBCEC4EB919465B09C")
-        protected  CertPathRep(String type, byte[] data) {
-            this.type = type;
-            this.data = data;
-            // ---------- Original Method ----------
-            //this.type = type;
-            //this.data = data;
-        }
-
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.624 -0400", hash_original_method = "901613A0C14C6295CBB5D8B0F4F8E8BD", hash_generated_method = "4AE8F69DEC71F391F69CE3ABEFEC8A62")
-        protected Object readResolve() throws ObjectStreamException {
-            try 
-            {
-                CertificateFactory cf = CertificateFactory.getInstance(type);
-Object var4779577E48F22F818854F762C7F32E27_1834783897 =                 cf.generateCertPath(new ByteArrayInputStream(data));
-                var4779577E48F22F818854F762C7F32E27_1834783897.addTaint(taint);
-                return var4779577E48F22F818854F762C7F32E27_1834783897;
-            } //End block
-            catch (Throwable t)
-            {
-                NotSerializableException varE7122A44B8BF6A773A22CCDDF1A73575_638132191 = new NotSerializableException("Could not resolve cert path: " + t);
-                varE7122A44B8BF6A773A22CCDDF1A73575_638132191.addTaint(taint);
-                throw varE7122A44B8BF6A773A22CCDDF1A73575_638132191;
-            } //End block
-            // ---------- Original Method ----------
-            //try {
-                //CertificateFactory cf = CertificateFactory.getInstance(type);
-                //return cf.generateCertPath(new ByteArrayInputStream(data));
-            //} catch (Throwable t) {
-                //throw new NotSerializableException("Could not resolve cert path: " + t);
-            //}
-        }
-
-        
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.624 -0400", hash_original_field = "0B634D7FC833919416D0496374E4AF21", hash_generated_field = "257527E5D7CAC38935714E2F9D854C92")
 
         private static final long serialVersionUID = 3015633072427920915L;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.624 -0400", hash_original_field = "9F024A6EA4C454294BBA3B153ECEE2E9", hash_generated_field = "E876B47DC0C1A51B5A847035A18C8EA1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:15.626 -0500", hash_original_field = "F8F43F98A8F5BDD8B9EFA794FE49C02B", hash_generated_field = "1A6C530EB5E4196889B6FB535AA83362")
 
+        // for cert path data
         private static final ObjectStreamField[] serialPersistentFields = {
             new ObjectStreamField("type", String.class),
             new ObjectStreamField("data", byte[].class, true),
         };
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:15.624 -0500", hash_original_field = "1B03D0EF3E71EB350936336F82D5E0C5", hash_generated_field = "AB2C9E2EF2C4EBDBF6BF18A679B45B62")
+
+        private  String type;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:15.625 -0500", hash_original_field = "B330DF564CD90A5498A9E4F0AB344BB9", hash_generated_field = "BCB00A81B11593F3A75239028B6E65B9")
+
+        private  byte[] data;
+
+        /**
+         * Creates a new {@code CertPathRep} instance with the specified type
+         * and encoded data.
+         *
+         * @param type
+         *            the certificate type.
+         * @param data
+         *            the encoded data.
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:15.627 -0500", hash_original_method = "306F916982958535E78B2E37AF24DE52", hash_generated_method = "A18ADE7BDBAC4941AECC3E79C5031EEB")
+        protected CertPathRep(String type, byte[] data) {
+            this.type = type;
+            this.data = data;
+        }
+
+        /**
+         * Deserializes a {@code CertPath} from a serialized {@code CertPathRep}
+         * object.
+         *
+         * @return the deserialized {@code CertPath}.
+         * @throws ObjectStreamException
+         *             if deserialization fails.
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:15.628 -0500", hash_original_method = "901613A0C14C6295CBB5D8B0F4F8E8BD", hash_generated_method = "CADCD91BE94BBD4B9D205EA68A8F4543")
+        protected Object readResolve() throws ObjectStreamException {
+            try {
+                CertificateFactory cf = CertificateFactory.getInstance(type);
+                return cf.generateCertPath(new ByteArrayInputStream(data));
+            } catch (Throwable t) {
+                throw new NotSerializableException("Could not resolve cert path: " + t);
+            }
+        }
     }
 
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.624 -0400", hash_original_field = "38366AF561608EE79125A53C2B98C3CF", hash_generated_field = "22A8873A3B050ACEADFDDE2FD50272BD")
-
-    private static final long serialVersionUID = 6068470306649138683L;
+    /**
+     * Returns an alternate object to be serialized.
+     *
+     * @return an alternate object to be serialized.
+     * @throws ObjectStreamException
+     *             if the creation of the alternate object fails.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:15.622 -0500", hash_original_method = "52819054EFF055A3D86733F1F32E0BA5", hash_generated_method = "5880328DF22DAE81B71A829795742E27")
+    protected Object writeReplace() throws ObjectStreamException {
+        try {
+            return new CertPathRep(getType(), getEncoded());
+        } catch (CertificateEncodingException e) {
+            throw new NotSerializableException("Could not create serialization object: " + e);
+        }
+    }
 }
 

@@ -1,6 +1,8 @@
 package android.preference;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -10,13 +12,11 @@ import android.widget.Checkable;
 
 
 public class CheckBoxPreference extends TwoStatePreference {
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.136 -0400", hash_original_method = "0F16DADCBE1918B293B8D2F1611CB9A4", hash_generated_method = "CE64A25D1E7D287B20D519420D8E20B9")
-    public  CheckBoxPreference(Context context, AttributeSet attrs, int defStyle) {
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:15.502 -0500", hash_original_method = "0F16DADCBE1918B293B8D2F1611CB9A4", hash_generated_method = "B667D154E92E896C41095BC6B5570722")
+    public CheckBoxPreference(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-        addTaint(defStyle);
-        addTaint(attrs.getTaint());
-        addTaint(context.getTaint());
+        
         TypedArray a = context.obtainStyledAttributes(attrs,
                 com.android.internal.R.styleable.CheckBoxPreference, defStyle, 0);
         setSummaryOn(a.getString(com.android.internal.R.styleable.CheckBoxPreference_summaryOn));
@@ -24,55 +24,30 @@ public class CheckBoxPreference extends TwoStatePreference {
         setDisableDependentsState(a.getBoolean(
                 com.android.internal.R.styleable.CheckBoxPreference_disableDependentsState, false));
         a.recycle();
-        // ---------- Original Method ----------
-        //TypedArray a = context.obtainStyledAttributes(attrs,
-                //com.android.internal.R.styleable.CheckBoxPreference, defStyle, 0);
-        //setSummaryOn(a.getString(com.android.internal.R.styleable.CheckBoxPreference_summaryOn));
-        //setSummaryOff(a.getString(com.android.internal.R.styleable.CheckBoxPreference_summaryOff));
-        //setDisableDependentsState(a.getBoolean(
-                //com.android.internal.R.styleable.CheckBoxPreference_disableDependentsState, false));
-        //a.recycle();
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.137 -0400", hash_original_method = "5BAF688B2DF41A97AF3D677D6FF48D6E", hash_generated_method = "E192B17B96012DEB73E342F8AB87F197")
-    public  CheckBoxPreference(Context context, AttributeSet attrs) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:15.503 -0500", hash_original_method = "5BAF688B2DF41A97AF3D677D6FF48D6E", hash_generated_method = "FDFEF114544B247CF58305BE4B522736")
+    public CheckBoxPreference(Context context, AttributeSet attrs) {
         this(context, attrs, com.android.internal.R.attr.checkBoxPreferenceStyle);
-        addTaint(attrs.getTaint());
-        addTaint(context.getTaint());
-        // ---------- Original Method ----------
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.138 -0400", hash_original_method = "18AEC3D719265C2FC8E8B7F461A380C1", hash_generated_method = "08ED9C50853F463326FD616F53D1F8A8")
-    public  CheckBoxPreference(Context context) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:15.504 -0500", hash_original_method = "18AEC3D719265C2FC8E8B7F461A380C1", hash_generated_method = "EB6AA4716E56F964B64FE646BF746047")
+    public CheckBoxPreference(Context context) {
         this(context, null);
-        addTaint(context.getTaint());
-        // ---------- Original Method ----------
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.139 -0400", hash_original_method = "BFAE06CFE69D4939F40B9B050EA1DB64", hash_generated_method = "7871F857AAAB1147566CC48D6239F053")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:15.505 -0500", hash_original_method = "BFAE06CFE69D4939F40B9B050EA1DB64", hash_generated_method = "95E4B1642A869B2C34E4AC55781D9110")
     @Override
-    protected void onBindView(View view) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(view.getTaint());
+protected void onBindView(View view) {
         super.onBindView(view);
+
         View checkboxView = view.findViewById(com.android.internal.R.id.checkbox);
-        if(checkboxView != null && checkboxView instanceof Checkable)        
-        {
+        if (checkboxView != null && checkboxView instanceof Checkable) {
             ((Checkable) checkboxView).setChecked(mChecked);
             sendAccessibilityEvent(checkboxView);
-        } //End block
+        }
+
         syncSummaryView(view);
-        // ---------- Original Method ----------
-        //super.onBindView(view);
-        //View checkboxView = view.findViewById(com.android.internal.R.id.checkbox);
-        //if (checkboxView != null && checkboxView instanceof Checkable) {
-            //((Checkable) checkboxView).setChecked(mChecked);
-            //sendAccessibilityEvent(checkboxView);
-        //}
-        //syncSummaryView(view);
     }
 
     

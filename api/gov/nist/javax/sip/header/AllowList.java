@@ -1,6 +1,8 @@
 package gov.nist.javax.sip.header;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.text.ParseException;
 import java.util.Iterator;
@@ -16,76 +18,75 @@ import javax.sip.header.AllowHeader;
 
 
 public class AllowList extends SIPHeaderList<Allow> {
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:32.787 -0400", hash_original_method = "F4CA7E921A2CAA269087CDE3B4673EDF", hash_generated_method = "D9C4828F0D645AEECBD56D2F64C1FA84")
-    public  AllowList() {
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:54.619 -0500", hash_original_field = "3126D085B18C0C241D668F6D8D8B569F", hash_generated_field = "8863FD75AF45B1DB104BC3DD11CC5A05")
+
+    private static final long serialVersionUID = -4699795429662562358L;
+
+
+    /** default constructor
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:54.621 -0500", hash_original_method = "F4CA7E921A2CAA269087CDE3B4673EDF", hash_generated_method = "72E03A22D2A84D8D19DD811CA6FF01E8")
+    public AllowList() {
         super(Allow.class, AllowHeader.NAME);
-        // ---------- Original Method ----------
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:32.787 -0400", hash_original_method = "0478A1539FEF5A12FA1EE4755C128735", hash_generated_method = "5ADAC8ABC6C3432D43710BE89379131D")
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:54.620 -0500", hash_original_method = "0478A1539FEF5A12FA1EE4755C128735", hash_generated_method = "DEDECA4600B8A2FB49B9D4A254B06A32")
     public Object clone() {
         AllowList retval = new AllowList();
         retval.clonehlist(this.hlist);
-Object varF9E19AD6135C970F387F77C6F3DE4477_1945215458 =         retval;
-        varF9E19AD6135C970F387F77C6F3DE4477_1945215458.addTaint(taint);
-        return varF9E19AD6135C970F387F77C6F3DE4477_1945215458;
-        // ---------- Original Method ----------
-        //AllowList retval = new AllowList();
-        //retval.clonehlist(this.hlist);
-        //return retval;
+        return retval;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:32.788 -0400", hash_original_method = "AEA3F358A5E0CA1930C1FE1C96E2D485", hash_generated_method = "3FC0AAA2DEFC2F65012987053BFA4576")
+    /**
+     * Gets an Iterator of all the methods of the AllowHeader. Returns an empty
+     *
+     * Iterator if no methods are defined in this Allow Header.
+     *
+     *
+     *
+     * @return Iterator of String objects each identifing the methods of
+     *
+     * AllowHeader.
+     *
+     *
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:54.622 -0500", hash_original_method = "AEA3F358A5E0CA1930C1FE1C96E2D485", hash_generated_method = "EBD2DBE5931875805EE50D4F3F19DCE7")
     public ListIterator<String> getMethods() {
+
         LinkedList<String> ll = new LinkedList<String> ();
-for(Iterator<Allow> it = this.hlist.iterator();it.hasNext();)
-        {
+
+        for ( Iterator<Allow> it = this.hlist.iterator(); it.hasNext();) {
             Allow a = (Allow)it.next();
             ll.add(a.getMethod());
-        } //End block
-ListIterator<String> var7235968E19DD3F2C4738A491078B8CA6_1799830549 =         ll.listIterator();
-        var7235968E19DD3F2C4738A491078B8CA6_1799830549.addTaint(taint);
-        return var7235968E19DD3F2C4738A491078B8CA6_1799830549;
-        // ---------- Original Method ----------
-        //LinkedList<String> ll = new LinkedList<String> ();
-        //for ( Iterator<Allow> it = this.hlist.iterator(); it.hasNext();) {
-            //Allow a = (Allow)it.next();
-            //ll.add(a.getMethod());
-        //}
-        //return ll.listIterator();
+        }
+
+        return ll.listIterator();
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:32.788 -0400", hash_original_method = "6420AFA8DFEC18654E9A726650C49FF0", hash_generated_method = "121A0AF6D88CE71F847A81186C2C2266")
+    /**
+     * Sets the methods supported defined by this AllowHeader.
+     *
+     *
+     *
+     * @param methods - the Iterator of Strings defining the methods supported
+     *
+     * in this AllowHeader
+     *
+     * @throws ParseException which signals that an error has been reached
+     *
+     * unexpectedly while parsing the Strings defining the methods supported.
+     *
+     *
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:54.623 -0500", hash_original_method = "6420AFA8DFEC18654E9A726650C49FF0", hash_generated_method = "D7E7781B5CBB37132AAC1EA1B8FF6648")
     public void setMethods(List<String> methods) throws ParseException {
-        addTaint(methods.getTaint());
         ListIterator<String> it = methods.listIterator();
-        while
-(it.hasNext())        
-        {
+        while (it.hasNext()) {
             Allow allow = new Allow();
             allow.setMethod((String) it.next());
             this.add(allow);
-        } //End block
-        // ---------- Original Method ----------
-        //ListIterator<String> it = methods.listIterator();
-        //while (it.hasNext()) {
-            //Allow allow = new Allow();
-            //allow.setMethod((String) it.next());
-            //this.add(allow);
-        //}
+        }
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:32.788 -0400", hash_original_field = "677FE0780DF95025943ABD130FD2DC12", hash_generated_field = "8863FD75AF45B1DB104BC3DD11CC5A05")
-
-    private static final long serialVersionUID = -4699795429662562358L;
 }
 

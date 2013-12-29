@@ -1,6 +1,8 @@
 package android.webkit;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.InputStream;
@@ -16,238 +18,190 @@ import android.os.Message;
 
 
 abstract class StreamLoader implements Handler.Callback {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.128 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "B3359F86E29A965BC1436888E98C55A8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:24.139 -0500", hash_original_field = "BA0608C6B11945797C746BA9FCD1FB67", hash_generated_field = "116567EA42424CED6A518F03ECAEF9D0")
 
-    protected Context mContext;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.128 -0400", hash_original_field = "FD98EF1D956356B754B181390D5904EB", hash_generated_field = "E2AC94C6534F51915562E9E51CE4D893")
-
-    protected LoadListener mLoadListener;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.128 -0400", hash_original_field = "71176C7D8BB8A867631C3FBAD06414DC", hash_generated_field = "F182CEB3CE562DC3186CF7BAB9AD8EC7")
-
-    protected InputStream mDataStream;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.128 -0400", hash_original_field = "D4BC2D0F0185C97879D7062C4CEFD633", hash_generated_field = "D56DA25B404AFDA8695ED0F36A7C56D4")
-
-    protected long mContentLength;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.128 -0400", hash_original_field = "B7DE4FF1B7CCEFDA36733D8B6DFF2904", hash_generated_field = "04254C7D5555806109D3DE22B9918A82")
-
-    private byte [] mData;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.128 -0400", hash_original_field = "C78BEDFC523DB73DF63EFB071AF1C35B", hash_generated_field = "03E47BA0CE42772601F0A13D178B12B5")
-
-    private Handler mHandler;
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.129 -0400", hash_original_method = "5C97985D356D0B8BED26A67B0D8173AD", hash_generated_method = "946A007DCB3F4FFE5E10BC4ACF10927B")
-      StreamLoader(LoadListener loadlistener) {
-        mLoadListener = loadlistener;
-        mContext = loadlistener.getContext();
-        // ---------- Original Method ----------
-        //mLoadListener = loadlistener;
-        //mContext = loadlistener.getContext();
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    protected abstract boolean setupStreamAndSendStatus();
-
-    
-    @DSModeled(DSC.SAFE)
-    abstract protected void buildHeaders(Headers headers);
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.130 -0400", hash_original_method = "9A005467E60C2D9227C099A6A0EA45F6", hash_generated_method = "E90337EC0A476EFB36BEAF650C7551C5")
-    final void load() {
-        synchronized
-(this)        {
-            if(mHandler == null)            
-            {
-                mHandler = new Handler(this);
-            } //End block
-        } //End block
-        if(!mLoadListener.isSynchronous())        
-        {
-            mHandler.sendEmptyMessage(MSG_STATUS);
-        } //End block
-        else
-        {
-            if(setupStreamAndSendStatus())            
-            {
-                mData = new byte[8192];
-                sendHeaders();
-                while
-(!sendData() && !mLoadListener.cancelled())                
-                ;
-                closeStreamAndSendEndData();
-                mLoadListener.loadSynchronousMessages();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //if (mHandler == null) {
-                //mHandler = new Handler(this);
-            //}
-        //}
-        //if (!mLoadListener.isSynchronous()) {
-            //mHandler.sendEmptyMessage(MSG_STATUS);
-        //} else {
-            //if (setupStreamAndSendStatus()) {
-                //mData = new byte[8192];
-                //sendHeaders();
-                //while (!sendData() && !mLoadListener.cancelled());
-                //closeStreamAndSendEndData();
-                //mLoadListener.loadSynchronousMessages();
-            //}
-        //}
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.131 -0400", hash_original_method = "00FB85FDD84A2FA0A52746CD7D8A6203", hash_generated_method = "EE9A78A5D807CB3A64ABE9ACCD5C2B23")
-    public boolean handleMessage(Message msg) {
-        addTaint(msg.getTaint());
-        if(mLoadListener.isSynchronous())        
-        {
-            AssertionError varA81442E36297E737EB908877E58260E8_1542167214 = new AssertionError();
-            varA81442E36297E737EB908877E58260E8_1542167214.addTaint(taint);
-            throw varA81442E36297E737EB908877E58260E8_1542167214;
-        } //End block
-        if(mLoadListener.cancelled())        
-        {
-            closeStreamAndSendEndData();
-            boolean varB326B5062B2F0E69046810717534CB09_413216664 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_834426987 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_834426987;
-        } //End block
-switch(msg.what){
-        case MSG_STATUS:
-        if(setupStreamAndSendStatus())        
-        {
-            mData = new byte[8192];
-            mHandler.sendEmptyMessage(MSG_HEADERS);
-        } //End block
-        break;
-        case MSG_HEADERS:
-        sendHeaders();
-        mHandler.sendEmptyMessage(MSG_DATA);
-        break;
-        case MSG_DATA:
-        if(sendData())        
-        {
-            mHandler.sendEmptyMessage(MSG_END);
-        } //End block
-        else
-        {
-            mHandler.sendEmptyMessage(MSG_DATA);
-        } //End block
-        break;
-        case MSG_END:
-        closeStreamAndSendEndData();
-        break;
-        default:
-        boolean var68934A3E9455FA72420237EB05902327_659567541 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1383705277 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1383705277;
-}        boolean varB326B5062B2F0E69046810717534CB09_539015299 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1864401522 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1864401522;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.131 -0400", hash_original_method = "65A84C3A774E903513B92EB5B550F331", hash_generated_method = "F97064E3938DEEBD16AA40E70959E257")
-    private void sendHeaders() {
-        Headers headers = new Headers();
-        if(mContentLength > 0)        
-        {
-            headers.setContentLength(mContentLength);
-        } //End block
-        buildHeaders(headers);
-        mLoadListener.headers(headers);
-        // ---------- Original Method ----------
-        //Headers headers = new Headers();
-        //if (mContentLength > 0) {
-            //headers.setContentLength(mContentLength);
-        //}
-        //buildHeaders(headers);
-        //mLoadListener.headers(headers);
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.131 -0400", hash_original_method = "4C4D4DF9D04A987F005277A578061144", hash_generated_method = "3DFAB7A302C91B9CDE63F595CC3D5ACE")
-    private boolean sendData() {
-        if(mDataStream != null)        
-        {
-            try 
-            {
-                int amount = mDataStream.read(mData);
-                if(amount > 0)                
-                {
-                    mLoadListener.data(mData, amount);
-                    boolean var68934A3E9455FA72420237EB05902327_574699813 = (false);
-                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_361309006 = getTaintBoolean();
-                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_361309006;
-                } //End block
-            } //End block
-            catch (IOException ex)
-            {
-                mLoadListener.error(EventHandler.FILE_ERROR, ex.getMessage());
-            } //End block
-        } //End block
-        boolean varB326B5062B2F0E69046810717534CB09_1553414376 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_321896820 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_321896820;
-        // ---------- Original Method ----------
-        //if (mDataStream != null) {
-            //try {
-                //int amount = mDataStream.read(mData);
-                //if (amount > 0) {
-                    //mLoadListener.data(mData, amount);
-                    //return false;
-                //}
-            //} catch (IOException ex) {
-                //mLoadListener.error(EventHandler.FILE_ERROR, ex.getMessage());
-            //}
-        //}
-        //return true;
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.131 -0400", hash_original_method = "1E3300194DB856434710C1AC838853B7", hash_generated_method = "85C7FCBAE96F31152501A4FECB65A952")
-    private void closeStreamAndSendEndData() {
-        if(mDataStream != null)        
-        {
-            try 
-            {
-                mDataStream.close();
-            } //End block
-            catch (IOException ex)
-            {
-            } //End block
-        } //End block
-        mLoadListener.endData();
-        // ---------- Original Method ----------
-        //if (mDataStream != null) {
-            //try {
-                //mDataStream.close();
-            //} catch (IOException ex) {
-            //}
-        //}
-        //mLoadListener.endData();
-    }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.131 -0400", hash_original_field = "3B4EDCD356FF8FD8A81606390C1D31E7", hash_generated_field = "116567EA42424CED6A518F03ECAEF9D0")
 
     private static final int MSG_STATUS = 100;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.131 -0400", hash_original_field = "B5CF47C9CB13830E5FEF6A561C9C73CD", hash_generated_field = "2560EAA9C0C83E19C62565F808C069B9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:24.140 -0500", hash_original_field = "E2A18147AC49D79948BBF5BF0A7BB520", hash_generated_field = "2560EAA9C0C83E19C62565F808C069B9")
 
     private static final int MSG_HEADERS = 101;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.131 -0400", hash_original_field = "824252C5EBC5267DA1C9532BA0F4F003", hash_generated_field = "B7C277C22A8740A16DB4ABF4E167CE64")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:24.140 -0500", hash_original_field = "D3A2E8BBFD02A172394991DABC4F1D7F", hash_generated_field = "B7C277C22A8740A16DB4ABF4E167CE64")
 
     private static final int MSG_DATA = 102;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.132 -0400", hash_original_field = "7B0322BAC1CD991CE8CA33B865EEC5BD", hash_generated_field = "02484FCE1BED4E8C22849757523483A9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:24.141 -0500", hash_original_field = "A3E984D8827653138F204025DF2828A5", hash_generated_field = "02484FCE1BED4E8C22849757523483A9")
 
     private static final int MSG_END = 103;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:24.142 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "B3359F86E29A965BC1436888E98C55A8")
+
+
+    protected  Context mContext;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:24.143 -0500", hash_original_field = "469095379AEB9651D259E87F1B97E396", hash_generated_field = "E2AC94C6534F51915562E9E51CE4D893")
+
+    protected  LoadListener mLoadListener;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:24.144 -0500", hash_original_field = "320B4C89537218FDC93BB66C3CDD2A79", hash_generated_field = "F182CEB3CE562DC3186CF7BAB9AD8EC7")
+
+    protected InputStream mDataStream;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:24.144 -0500", hash_original_field = "43FA6B89410ACDDFB4B89F954A0B5BF7", hash_generated_field = "D56DA25B404AFDA8695ED0F36A7C56D4")
+
+    protected long mContentLength;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:24.145 -0500", hash_original_field = "5D97F7C0534662C5183D05D4FFD1A145", hash_generated_field = "04254C7D5555806109D3DE22B9918A82")
+
+    private byte [] mData;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:35:01.441 -0500", hash_original_field = "A163099B522120C606A3CA562F90E927", hash_generated_field = "0288BD825793D674670D619CC8A17A15")
+
+
+    // Handler which will be initialized in the thread where load() is called.
+    private Handler mHandler;
+
+    /**
+     * Constructor. Although this class calls the LoadListener, it only calls
+     * the EventHandler Interface methods. LoadListener concrete class is used
+     * to avoid the penality of calling an interface.
+     *
+     * @param loadlistener The LoadListener to call with the data.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:24.147 -0500", hash_original_method = "5C97985D356D0B8BED26A67B0D8173AD", hash_generated_method = "5C97985D356D0B8BED26A67B0D8173AD")
+    StreamLoader(LoadListener loadlistener) {
+        mLoadListener = loadlistener;
+        mContext = loadlistener.getContext();
+    }
+
+    /**
+     * This method is called when the derived class should setup mDataStream,
+     * and call mLoadListener.status() to indicate that the load can occur. If it
+     * fails to setup, it should still call status() with the error code.
+     *
+     * @return true if stream was successfully setup
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:24.148 -0500", hash_original_method = "E85C43EBDEF851A6A0ECD12470692B56", hash_generated_method = "375CFDB1CC5CBA05F3B9BF82FC309522")
+    protected abstract boolean setupStreamAndSendStatus();
+
+    /**
+     * This method is called when the headers are about to be sent to the
+     * load framework. The derived class has the opportunity to add addition
+     * headers.
+     *
+     * @param headers Map of HTTP headers that will be sent to the loader.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:24.149 -0500", hash_original_method = "F5DF79E852C25F3930CA8E9B0C3908D7", hash_generated_method = "2EDFB7C27FECF21F038ACFC3824E7E29")
+    abstract protected void buildHeaders(Headers headers);
+
+    /**
+     * Calling this method starts the load of the content for this StreamLoader.
+     * This method simply creates a Handler in the current thread and posts a
+     * message to send the status and returns immediately.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:24.150 -0500", hash_original_method = "9A005467E60C2D9227C099A6A0EA45F6", hash_generated_method = "6A3D2FCA161C2CAC23E96A8966B1DEF7")
+    final void load() {
+        synchronized (this) {
+            if (mHandler == null) {
+                mHandler = new Handler(this);
+            }
+        }
+
+        if (!mLoadListener.isSynchronous()) {
+            mHandler.sendEmptyMessage(MSG_STATUS);
+        } else {
+            // Load the stream synchronously.
+            if (setupStreamAndSendStatus()) {
+                // We were able to open the stream, create the array
+                // to pass data to the loader
+                mData = new byte[8192];
+                sendHeaders();
+                while (!sendData() && !mLoadListener.cancelled());
+                closeStreamAndSendEndData();
+                mLoadListener.loadSynchronousMessages();
+            }
+        }
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:24.151 -0500", hash_original_method = "00FB85FDD84A2FA0A52746CD7D8A6203", hash_generated_method = "242A5A5E63A12E7A78FEFB6E31CB9BDB")
+    public boolean handleMessage(Message msg) {
+        if (mLoadListener.isSynchronous()) {
+            throw new AssertionError();
+        }
+        if (mLoadListener.cancelled()) {
+            closeStreamAndSendEndData();
+            return true;
+        }
+        switch(msg.what) {
+            case MSG_STATUS:
+                if (setupStreamAndSendStatus()) {
+                    // We were able to open the stream, create the array
+                    // to pass data to the loader
+                    mData = new byte[8192];
+                    mHandler.sendEmptyMessage(MSG_HEADERS);
+                }
+                break;
+            case MSG_HEADERS:
+                sendHeaders();
+                mHandler.sendEmptyMessage(MSG_DATA);
+                break;
+            case MSG_DATA:
+                if (sendData()) {
+                    mHandler.sendEmptyMessage(MSG_END);
+                } else {
+                    mHandler.sendEmptyMessage(MSG_DATA);
+                }
+                break;
+            case MSG_END:
+                closeStreamAndSendEndData();
+                break;
+            default:
+                return false;
+        }
+        return true;
+    }
+
+    /**
+     * Construct the headers and pass them to the EventHandler.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:24.151 -0500", hash_original_method = "65A84C3A774E903513B92EB5B550F331", hash_generated_method = "74B1B6A78C0F26CEA1A577531FB96C5B")
+    private void sendHeaders() {
+        Headers headers = new Headers();
+        if (mContentLength > 0) {
+            headers.setContentLength(mContentLength);
+        }
+        buildHeaders(headers);
+        mLoadListener.headers(headers);
+    }
+
+    /**
+     * Read data from the stream and pass it to the EventHandler.
+     * If an error occurs reading the stream, then an error is sent to the
+     * EventHandler, and moves onto the next state - end of data.
+     * @return True if all the data has been read. False if sendData should be
+     *         called again.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:24.152 -0500", hash_original_method = "4C4D4DF9D04A987F005277A578061144", hash_generated_method = "629106C0C894E0B189989BB0005C5456")
+    private boolean sendData() {
+        if (mDataStream != null) {
+            try {
+                int amount = mDataStream.read(mData);
+                if (amount > 0) {
+                    mLoadListener.data(mData, amount);
+                    return false;
+                }
+            } catch (IOException ex) {
+                mLoadListener.error(EventHandler.FILE_ERROR, ex.getMessage());
+            }
+        }
+        return true;
+    }
+
+    /**
+     * Close the stream and inform the EventHandler that load is complete.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:24.153 -0500", hash_original_method = "1E3300194DB856434710C1AC838853B7", hash_generated_method = "B74557C5D73AC0B9A0C54F5C177F3878")
+    private void closeStreamAndSendEndData() {
+        if (mDataStream != null) {
+            try {
+                mDataStream.close();
+            } catch (IOException ex) {
+                // ignore.
+            }
+        }
+        mLoadListener.endData();
+    }
 }
 

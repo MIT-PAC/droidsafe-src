@@ -1,6 +1,8 @@
 package gov.nist.javax.sip.parser;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import gov.nist.core.Token;
 import gov.nist.javax.sip.header.ContentEncoding;
@@ -15,48 +17,54 @@ import java.text.ParseException;
 
 
 public class ContentEncodingParser extends HeaderParser {
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:37.103 -0400", hash_original_method = "025E1AD213DC2532673CB1D1FC75B1CC", hash_generated_method = "FFAAEC346361910DA318E1B0118C932F")
-    public  ContentEncodingParser(String contentEncoding) {
+
+    /**
+     * Creates a new instance of ContentEncodingParser
+     * @param contentEncoding the header to parse
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:09.913 -0500", hash_original_method = "025E1AD213DC2532673CB1D1FC75B1CC", hash_generated_method = "AF9BD842838DEB26BE1BF73447B9C978")
+    public ContentEncodingParser(String contentEncoding) {
         super(contentEncoding);
-        addTaint(contentEncoding.getTaint());
-        // ---------- Original Method ----------
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:37.104 -0400", hash_original_method = "15007428AB3C93C7C47122E74B782E26", hash_generated_method = "AF577344E81FCFEAE8DA389C0D71631C")
-    protected  ContentEncodingParser(Lexer lexer) {
+    /**
+     * Constructor
+     * @param lexer the lexer to use to parse the header
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:09.914 -0500", hash_original_method = "15007428AB3C93C7C47122E74B782E26", hash_generated_method = "4F38E4650F7DEAEE468A52EC2980675D")
+    protected ContentEncodingParser(Lexer lexer) {
         super(lexer);
-        addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:37.178 -0400", hash_original_method = "8ACC6861A4ACA970AEBA8CCFE6984687", hash_generated_method = "012AB41C28403B26B6CD60A3550274BB")
+    /**
+     * parse the ContentEncodingHeader String header
+     * @return SIPHeader (ContentEncodingList object)
+     * @throws SIPParseException if the message does not respect the spec.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:09.915 -0500", hash_original_method = "8ACC6861A4ACA970AEBA8CCFE6984687", hash_generated_method = "7B1E5B53927553375DCF3987967EF71D")
     public SIPHeader parse() throws ParseException {
-        if(debug)        
-        dbg_enter("ContentEncodingParser.parse");
+
+        if (debug)
+            dbg_enter("ContentEncodingParser.parse");
         ContentEncodingList list = new ContentEncodingList();
-        try 
-        {
+
+        try {
             headerName(TokenTypes.CONTENT_ENCODING);
-            while
-(lexer.lookAhead(0) != '\n')            
-            {
+
+            while (lexer.lookAhead(0) != '\n') {
                 ContentEncoding cl = new ContentEncoding();
                 cl.setHeaderName(SIPHeaderNames.CONTENT_ENCODING);
+
                 this.lexer.SPorHT();
                 this.lexer.match(TokenTypes.ID);
+
                 Token token = lexer.getNextToken();
                 cl.setEncoding(token.getTokenValue());
+
                 this.lexer.SPorHT();
                 list.add(cl);
-                while
-(lexer.lookAhead(0) == ',')                
-                {
+
+                while (lexer.lookAhead(0) == ',') {
                     cl = new ContentEncoding();
                     this.lexer.match(',');
                     this.lexer.SPorHT();
@@ -66,25 +74,16 @@ public class ContentEncodingParser extends HeaderParser {
                     cl.setEncoding(token.getTokenValue());
                     this.lexer.SPorHT();
                     list.add(cl);
-                } //End block
-            } //End block
-SIPHeader varED12C351C2E8CA4F85F097DDC7E77B4D_1070799665 =             list;
-            varED12C351C2E8CA4F85F097DDC7E77B4D_1070799665.addTaint(taint);
-            return varED12C351C2E8CA4F85F097DDC7E77B4D_1070799665;
-        } //End block
-        catch (ParseException ex)
-        {
-            java.text.ParseException varB8C80F72F95BF6A850D07F4EC5726C09_1598971405 = createParseException(ex.getMessage());
-            varB8C80F72F95BF6A850D07F4EC5726C09_1598971405.addTaint(taint);
-            throw varB8C80F72F95BF6A850D07F4EC5726C09_1598971405;
-        } //End block
-        finally 
-        {
-            if(debug)            
-            dbg_leave("ContentEncodingParser.parse");
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                }
+            }
+
+            return list;
+        } catch (ParseException ex) {
+            throw createParseException(ex.getMessage());
+        } finally {
+            if (debug)
+                dbg_leave("ContentEncodingParser.parse");
+        }
     }
 
     

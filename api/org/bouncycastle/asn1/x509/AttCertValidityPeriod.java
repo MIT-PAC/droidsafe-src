@@ -1,6 +1,8 @@
 package org.bouncycastle.asn1.x509;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import org.bouncycastle.asn1.ASN1Encodable;
 import org.bouncycastle.asn1.ASN1EncodableVector;
@@ -15,53 +17,11 @@ import org.bouncycastle.asn1.DERSequence;
 
 
 public class AttCertValidityPeriod extends ASN1Encodable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.556 -0400", hash_original_field = "2919902F9A6E0F5FCF60B41418F11D15", hash_generated_field = "47DE96B4FD02A134DD50DFF525BEE2DC")
 
-    DERGeneralizedTime notBeforeTime;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.556 -0400", hash_original_field = "F6D45B6FEDB08A0673FA9C388F80AC1F", hash_generated_field = "F8DBABB88A466E46C9DA55A579BE1BBD")
-
-    DERGeneralizedTime notAfterTime;
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.557 -0400", hash_original_method = "4935F5EA06A87E5EB822F7F5CCD2C830", hash_generated_method = "6D9800B66F3A1A9FED45EB94499B289F")
-    public  AttCertValidityPeriod(
-        ASN1Sequence    seq) {
-        if(seq.size() != 2)        
-        {
-            IllegalArgumentException varA2072CF614C7B8C7696DD5A02DBCCE9C_1322082490 = new IllegalArgumentException("Bad sequence size: "
-                    + seq.size());
-            varA2072CF614C7B8C7696DD5A02DBCCE9C_1322082490.addTaint(taint);
-            throw varA2072CF614C7B8C7696DD5A02DBCCE9C_1322082490;
-        } //End block
-        notBeforeTime = DERGeneralizedTime.getInstance(seq.getObjectAt(0));
-        notAfterTime = DERGeneralizedTime.getInstance(seq.getObjectAt(1));
-        // ---------- Original Method ----------
-        //if (seq.size() != 2)
-        //{
-            //throw new IllegalArgumentException("Bad sequence size: "
-                    //+ seq.size());
-        //}
-        //notBeforeTime = DERGeneralizedTime.getInstance(seq.getObjectAt(0));
-        //notAfterTime = DERGeneralizedTime.getInstance(seq.getObjectAt(1));
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.558 -0400", hash_original_method = "EE3E4821B31B071C83A5954362B6FCF9", hash_generated_method = "78645F960C6BB66568007E45DEE436B1")
-    public  AttCertValidityPeriod(
-        DERGeneralizedTime notBeforeTime,
-        DERGeneralizedTime notAfterTime) {
-        this.notBeforeTime = notBeforeTime;
-        this.notAfterTime = notAfterTime;
-        // ---------- Original Method ----------
-        //this.notBeforeTime = notBeforeTime;
-        //this.notAfterTime = notAfterTime;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.677 -0500", hash_original_method = "74F498B55FB68D93DAFE2C1357919BFF", hash_generated_method = "1153F5E8BD8298EFFE7837E954E85782")
     public static AttCertValidityPeriod getInstance(
-            Object  obj) {
+            Object  obj)
+    {
         if (obj instanceof AttCertValidityPeriod)
         {
             return (AttCertValidityPeriod)obj;
@@ -70,46 +30,73 @@ public class AttCertValidityPeriod extends ASN1Encodable {
         {
             return new AttCertValidityPeriod((ASN1Sequence)obj);
         }
+        
         throw new IllegalArgumentException("unknown object in factory: " + obj.getClass().getName());
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.676 -0500", hash_original_field = "47DE96B4FD02A134DD50DFF525BEE2DC", hash_generated_field = "47DE96B4FD02A134DD50DFF525BEE2DC")
 
+    DERGeneralizedTime  notBeforeTime;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.677 -0500", hash_original_field = "F8DBABB88A466E46C9DA55A579BE1BBD", hash_generated_field = "F8DBABB88A466E46C9DA55A579BE1BBD")
+
+    DERGeneralizedTime  notAfterTime;
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.558 -0400", hash_original_method = "61005B71BB5E250DAD749F45259F34BB", hash_generated_method = "7D4ADF3EA1D0B7B81A1E6219B0034DC1")
-    public DERGeneralizedTime getNotBeforeTime() {
-DERGeneralizedTime varD79BF4F5D1C2BF1B626C250DDDC1BBBB_251018387 =         notBeforeTime;
-        varD79BF4F5D1C2BF1B626C250DDDC1BBBB_251018387.addTaint(taint);
-        return varD79BF4F5D1C2BF1B626C250DDDC1BBBB_251018387;
-        // ---------- Original Method ----------
-        //return notBeforeTime;
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.678 -0500", hash_original_method = "4935F5EA06A87E5EB822F7F5CCD2C830", hash_generated_method = "39A4AF2D9F6BD675365DC8CB03944E39")
+    public AttCertValidityPeriod(
+        ASN1Sequence    seq)
+    {
+        if (seq.size() != 2)
+        {
+            throw new IllegalArgumentException("Bad sequence size: "
+                    + seq.size());
+        }
+
+        notBeforeTime = DERGeneralizedTime.getInstance(seq.getObjectAt(0));
+        notAfterTime = DERGeneralizedTime.getInstance(seq.getObjectAt(1));
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.559 -0400", hash_original_method = "3C0941D5D83A6A464C361337736D354A", hash_generated_method = "2CEED7796FCAF88FC06324E1EBF03EDF")
-    public DERGeneralizedTime getNotAfterTime() {
-DERGeneralizedTime varA4D5BDCFF20FBB2AB9CF4A743D5EF45E_1843085765 =         notAfterTime;
-        varA4D5BDCFF20FBB2AB9CF4A743D5EF45E_1843085765.addTaint(taint);
-        return varA4D5BDCFF20FBB2AB9CF4A743D5EF45E_1843085765;
-        // ---------- Original Method ----------
-        //return notAfterTime;
+    /**
+     * @param notBeforeTime
+     * @param notAfterTime
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.679 -0500", hash_original_method = "EE3E4821B31B071C83A5954362B6FCF9", hash_generated_method = "8D7AD889F370A1E5C71857438584093E")
+    public AttCertValidityPeriod(
+        DERGeneralizedTime notBeforeTime,
+        DERGeneralizedTime notAfterTime)
+    {
+        this.notBeforeTime = notBeforeTime;
+        this.notAfterTime = notAfterTime;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.559 -0400", hash_original_method = "F304C055A3AB57005A726D651B674F2F", hash_generated_method = "B861C31E1C11C0A3BC84AE25640B767B")
-    public DERObject toASN1Object() {
-        ASN1EncodableVector v = new ASN1EncodableVector();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.680 -0500", hash_original_method = "61005B71BB5E250DAD749F45259F34BB", hash_generated_method = "EFC6F30FE31D5A57584A7000D0C741E5")
+    public DERGeneralizedTime getNotBeforeTime()
+    {
+        return notBeforeTime;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.681 -0500", hash_original_method = "3C0941D5D83A6A464C361337736D354A", hash_generated_method = "B15A0DB1053307709A16A02C67369B73")
+    public DERGeneralizedTime getNotAfterTime()
+    {
+        return notAfterTime;
+    }
+
+    /**
+     * Produce an object suitable for an ASN1OutputStream.
+     * <pre>
+     *  AttCertValidityPeriod  ::= SEQUENCE {
+     *       notBeforeTime  GeneralizedTime,
+     *       notAfterTime   GeneralizedTime
+     *  } 
+     * </pre>
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:52.682 -0500", hash_original_method = "F304C055A3AB57005A726D651B674F2F", hash_generated_method = "186E7F585650074D7AFA534FA667CCDA")
+    public DERObject toASN1Object()
+    {
+        ASN1EncodableVector  v = new ASN1EncodableVector();
+
         v.add(notBeforeTime);
         v.add(notAfterTime);
-DERObject var0B338F106E3279986C87B595B0F4A439_976002119 =         new DERSequence(v);
-        var0B338F106E3279986C87B595B0F4A439_976002119.addTaint(taint);
-        return var0B338F106E3279986C87B595B0F4A439_976002119;
-        // ---------- Original Method ----------
-        //ASN1EncodableVector  v = new ASN1EncodableVector();
-        //v.add(notBeforeTime);
-        //v.add(notAfterTime);
-        //return new DERSequence(v);
+
+        return new DERSequence(v);
     }
 
     

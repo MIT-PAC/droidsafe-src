@@ -1,6 +1,9 @@
 package android.net.http;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
+import android.util.Log;
 import droidsafe.annotations.*;
 import java.io.IOException;
 import java.net.InetAddress;
@@ -44,683 +47,440 @@ import org.apache.http.util.CharArrayBuffer;
 
 
 public class AndroidHttpClientConnection implements HttpInetConnection, HttpConnection {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.770 -0400", hash_original_field = "DC681AA2DD2A0BE47CBDD78540D5A8BD", hash_generated_field = "B0D6D00F71FC030A17C26A2601F3BE87")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.426 -0500", hash_original_field = "51AEA610F55961E2DEAE8E33F14CC584", hash_generated_field = "B0D6D00F71FC030A17C26A2601F3BE87")
+
 
     private SessionInputBuffer inbuffer = null;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.770 -0400", hash_original_field = "2CF5A5642A030530FB530CE6AD73F644", hash_generated_field = "10B58CBE3BBA8B7201F396357A83D45E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.427 -0500", hash_original_field = "D37E01EB8D7F3CC9AD7133D08AB04720", hash_generated_field = "10B58CBE3BBA8B7201F396357A83D45E")
 
     private SessionOutputBuffer outbuffer = null;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.770 -0400", hash_original_field = "9E79D1C5118BFD93F2EA3354BE3B7BB3", hash_generated_field = "51B3B1D6F029892B5D1B485F1E8449D4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.428 -0500", hash_original_field = "F0C13102950DF6DEECC29E1050A6EEE7", hash_generated_field = "51B3B1D6F029892B5D1B485F1E8449D4")
 
     private int maxHeaderCount;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.770 -0400", hash_original_field = "4C632171BE04EE204137B2D22962BCCE", hash_generated_field = "C2CDDB4530FA37C525863212B278B681")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.428 -0500", hash_original_field = "86307AB9869BB09B7197621A6EABCFF7", hash_generated_field = "C2CDDB4530FA37C525863212B278B681")
 
     private int maxLineLength;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.770 -0400", hash_original_field = "34C401953BC184959C583775D7C02C06", hash_generated_field = "AB3FDC91331A5753EE17C338AC9D0381")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.429 -0500", hash_original_field = "FDB5A9B9AD2A7A41FA2463863E97E07B", hash_generated_field = "AB3FDC91331A5753EE17C338AC9D0381")
 
-    private EntitySerializer entityserializer;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.770 -0400", hash_original_field = "715711ECB9730DA286C315F4B203F1D7", hash_generated_field = "F323E9D16DC81146FC2969062D7F8C7E")
+
+    private  EntitySerializer entityserializer;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.430 -0500", hash_original_field = "C92B1D7A604A0991F570C5C22AE92582", hash_generated_field = "F323E9D16DC81146FC2969062D7F8C7E")
+
 
     private HttpMessageWriter requestWriter = null;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.770 -0400", hash_original_field = "E6899A7B60D3CD0F0F3E11DDE4844FF7", hash_generated_field = "EE4B08A08CEE9A462065794CA86E6F61")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.431 -0500", hash_original_field = "10648022F55E6D4D6A7E5414064AE29D", hash_generated_field = "EE4B08A08CEE9A462065794CA86E6F61")
 
     private HttpConnectionMetricsImpl metrics = null;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.770 -0400", hash_original_field = "7CEF8A734855777C2A9D0CAF42666E69", hash_generated_field = "F8642D5396CC441E503E603D20259781")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.431 -0500", hash_original_field = "B4185B849AB8251A0F1052DF377DB9A2", hash_generated_field = "F8642D5396CC441E503E603D20259781")
 
     private volatile boolean open;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.770 -0400", hash_original_field = "E728D69D332AE7988C6FE7869D66573E", hash_generated_field = "9FD10C539AD3B0FAAA147E92379F8AC8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.432 -0500", hash_original_field = "E7F90F41B90C8A055F53F64B106EF2DC", hash_generated_field = "9FD10C539AD3B0FAAA147E92379F8AC8")
 
     private Socket socket = null;
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.771 -0400", hash_original_method = "34D8A32964859B1FAAC1AC49D9EAB8C7", hash_generated_method = "5D5370FE957D216B92C117496F770B7E")
-    public  AndroidHttpClientConnection() {
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.433 -0500", hash_original_method = "34D8A32964859B1FAAC1AC49D9EAB8C7", hash_generated_method = "724B23751891E64CC0AE8C46D487447E")
+    public AndroidHttpClientConnection() {
         this.entityserializer =  new EntitySerializer(
                 new StrictContentLengthStrategy());
-        // ---------- Original Method ----------
-        //this.entityserializer =  new EntitySerializer(
-                //new StrictContentLengthStrategy());
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.771 -0400", hash_original_method = "B7940401E9D410C3E0007DD81BDA911F", hash_generated_method = "70AF7E958BC9713F71D6BCE8CE7A7CE5")
+    /**
+     * Bind socket and set HttpParams to AndroidHttpClientConnection
+     * @param socket outgoing socket
+     * @param params HttpParams
+     * @throws IOException
+      */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.434 -0500", hash_original_method = "B7940401E9D410C3E0007DD81BDA911F", hash_generated_method = "A02E352C63788D84A841872A26CC26AC")
     public void bind(
             final Socket socket,
             final HttpParams params) throws IOException {
-        if(socket == null)        
-        {
-            IllegalArgumentException varCBABC6A96FAFFF53CCBEEA230A20A836_1977567167 = new IllegalArgumentException("Socket may not be null");
-            varCBABC6A96FAFFF53CCBEEA230A20A836_1977567167.addTaint(taint);
-            throw varCBABC6A96FAFFF53CCBEEA230A20A836_1977567167;
-        } //End block
-        if(params == null)        
-        {
-            IllegalArgumentException var497CCC27A43EDD6EE25BEEC5507E2BE2_1392297349 = new IllegalArgumentException("HTTP parameters may not be null");
-            var497CCC27A43EDD6EE25BEEC5507E2BE2_1392297349.addTaint(taint);
-            throw var497CCC27A43EDD6EE25BEEC5507E2BE2_1392297349;
-        } //End block
+        if (socket == null) {
+            throw new IllegalArgumentException("Socket may not be null");
+        }
+        if (params == null) {
+            throw new IllegalArgumentException("HTTP parameters may not be null");
+        }
         assertNotOpen();
         socket.setTcpNoDelay(HttpConnectionParams.getTcpNoDelay(params));
         socket.setSoTimeout(HttpConnectionParams.getSoTimeout(params));
+
         int linger = HttpConnectionParams.getLinger(params);
-        if(linger >= 0)        
-        {
+        if (linger >= 0) {
             socket.setSoLinger(linger > 0, linger);
-        } //End block
+        }
         this.socket = socket;
+
         int buffersize = HttpConnectionParams.getSocketBufferSize(params);
         this.inbuffer = new SocketInputBuffer(socket, buffersize, params);
         this.outbuffer = new SocketOutputBuffer(socket, buffersize, params);
+
         maxHeaderCount = params.getIntParameter(
                 CoreConnectionPNames.MAX_HEADER_COUNT, -1);
         maxLineLength = params.getIntParameter(
                 CoreConnectionPNames.MAX_LINE_LENGTH, -1);
+
         this.requestWriter = new HttpRequestWriter(outbuffer, null, params);
+
         this.metrics = new HttpConnectionMetricsImpl(
                 inbuffer.getMetrics(),
                 outbuffer.getMetrics());
+
         this.open = true;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.771 -0400", hash_original_method = "EF7CB084264EC0FC42FD48CA086E7FEB", hash_generated_method = "BF33FC15E8D5F7BBA5698AA9D4DE8899")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.435 -0500", hash_original_method = "EF7CB084264EC0FC42FD48CA086E7FEB", hash_generated_method = "9782A619B445536B5BB9B37FDDA0CAA0")
     @Override
-    public String toString() {
+public String toString() {
         StringBuilder buffer = new StringBuilder();
         buffer.append(getClass().getSimpleName()).append("[");
-        if(isOpen())        
-        {
+        if (isOpen()) {
             buffer.append(getRemotePort());
-        } //End block
-        else
-        {
+        } else {
             buffer.append("closed");
-        } //End block
+        }
         buffer.append("]");
-String varD03843288D33B9E1D3062E25339ECF6D_1840684208 =         buffer.toString();
-        varD03843288D33B9E1D3062E25339ECF6D_1840684208.addTaint(taint);
-        return varD03843288D33B9E1D3062E25339ECF6D_1840684208;
-        // ---------- Original Method ----------
-        //StringBuilder buffer = new StringBuilder();
-        //buffer.append(getClass().getSimpleName()).append("[");
-        //if (isOpen()) {
-            //buffer.append(getRemotePort());
-        //} else {
-            //buffer.append("closed");
-        //}
-        //buffer.append("]");
-        //return buffer.toString();
+        return buffer.toString();
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.772 -0400", hash_original_method = "BD86A908767A86776B5DCBFC714C696F", hash_generated_method = "DC1AA50674A805557AAF326F9B9D49FB")
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.436 -0500", hash_original_method = "BD86A908767A86776B5DCBFC714C696F", hash_generated_method = "FA059EA16C6BD439D56873736FDE28AE")
     private void assertNotOpen() {
-        if(this.open)        
-        {
-            IllegalStateException var84A3AD519B18408EB344ACE934F6C410_537205609 = new IllegalStateException("Connection is already open");
-            var84A3AD519B18408EB344ACE934F6C410_537205609.addTaint(taint);
-            throw var84A3AD519B18408EB344ACE934F6C410_537205609;
-        } //End block
-        // ---------- Original Method ----------
-        //if (this.open) {
-            //throw new IllegalStateException("Connection is already open");
-        //}
+        if (this.open) {
+            throw new IllegalStateException("Connection is already open");
+        }
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.772 -0400", hash_original_method = "ACED44A56037ABE0B09ED18FFAC2A6E6", hash_generated_method = "4BAA9E8808635CB59C63629D7F721A83")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.436 -0500", hash_original_method = "ACED44A56037ABE0B09ED18FFAC2A6E6", hash_generated_method = "800BA487D09C6D9F62760FED6B11DCF8")
     private void assertOpen() {
-        if(!this.open)        
-        {
-            IllegalStateException var9ADD238E8FA39BC97A70F042343A30CA_1735138950 = new IllegalStateException("Connection is not open");
-            var9ADD238E8FA39BC97A70F042343A30CA_1735138950.addTaint(taint);
-            throw var9ADD238E8FA39BC97A70F042343A30CA_1735138950;
-        } //End block
-        // ---------- Original Method ----------
-        //if (!this.open) {
-            //throw new IllegalStateException("Connection is not open");
-        //}
+        if (!this.open) {
+            throw new IllegalStateException("Connection is not open");
+        }
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.772 -0400", hash_original_method = "8E8BDB37899E8F9E80D937FD54AF461B", hash_generated_method = "FE9E11BC57B16E5E8CDD58CE7A9AF1EA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.437 -0500", hash_original_method = "8E8BDB37899E8F9E80D937FD54AF461B", hash_generated_method = "DAB4782EDDCF0CCF46E3A0208F9AC369")
     public boolean isOpen() {
-        boolean varE850F00B58D108E3C63F93C8F17C0010_723105941 = ((this.open && this.socket != null && this.socket.isConnected()));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_940379994 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_940379994;
-        // ---------- Original Method ----------
-        //return (this.open && this.socket != null && this.socket.isConnected());
+        // to make this method useful, we want to check if the socket is connected
+        return (this.open && this.socket != null && this.socket.isConnected());
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.772 -0400", hash_original_method = "37A4CCD5FC4FE8478033812CF6081247", hash_generated_method = "CB78E0AEAE483DFA04211FE17D9B9235")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.438 -0500", hash_original_method = "37A4CCD5FC4FE8478033812CF6081247", hash_generated_method = "EA530790EC409832EC35D8CAE50145BF")
     public InetAddress getLocalAddress() {
-        if(this.socket != null)        
-        {
-InetAddress var55250CAC8E472010A9C3BCFFCA885EF9_1281407191 =             this.socket.getLocalAddress();
-            var55250CAC8E472010A9C3BCFFCA885EF9_1281407191.addTaint(taint);
-            return var55250CAC8E472010A9C3BCFFCA885EF9_1281407191;
-        } //End block
-        else
-        {
-InetAddress var540C13E9E156B687226421B24F2DF178_242035424 =             null;
-            var540C13E9E156B687226421B24F2DF178_242035424.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_242035424;
-        } //End block
-        // ---------- Original Method ----------
-        //if (this.socket != null) {
-            //return this.socket.getLocalAddress();
-        //} else {
-            //return null;
-        //}
+        if (this.socket != null) {
+            return this.socket.getLocalAddress();
+        } else {
+            return null;
+        }
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.772 -0400", hash_original_method = "CB3D09E80AD036DA49A9727AFFCF9E16", hash_generated_method = "31EDC2680B5CD073E7ED7E95ECC8709C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.439 -0500", hash_original_method = "CB3D09E80AD036DA49A9727AFFCF9E16", hash_generated_method = "3A0C54C4A483F7C7ABC3323E7544AA7B")
     public int getLocalPort() {
-        if(this.socket != null)        
-        {
-            int varA1A37855EF64705F2D43A30D558084D5_1526716002 = (this.socket.getLocalPort());
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1240330861 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1240330861;
-        } //End block
-        else
-        {
-            int var6BB61E3B7BCE0931DA574D19D1D82C88_1160110417 = (-1);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1379867295 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1379867295;
-        } //End block
-        // ---------- Original Method ----------
-        //if (this.socket != null) {
-            //return this.socket.getLocalPort();
-        //} else {
-            //return -1;
-        //}
+        if (this.socket != null) {
+            return this.socket.getLocalPort();
+        } else {
+            return -1;
+        }
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.772 -0400", hash_original_method = "738E936ADE4702B2396BC3DC05386FBD", hash_generated_method = "00865E34507345CD9E67310C13C06F13")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.439 -0500", hash_original_method = "738E936ADE4702B2396BC3DC05386FBD", hash_generated_method = "A53D10A004E6582D7D26BD15F7A46312")
     public InetAddress getRemoteAddress() {
-        if(this.socket != null)        
-        {
-InetAddress var601DF1EB7A81FFA1EAA0DD611F88A9A1_1044135727 =             this.socket.getInetAddress();
-            var601DF1EB7A81FFA1EAA0DD611F88A9A1_1044135727.addTaint(taint);
-            return var601DF1EB7A81FFA1EAA0DD611F88A9A1_1044135727;
-        } //End block
-        else
-        {
-InetAddress var540C13E9E156B687226421B24F2DF178_1723283285 =             null;
-            var540C13E9E156B687226421B24F2DF178_1723283285.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_1723283285;
-        } //End block
-        // ---------- Original Method ----------
-        //if (this.socket != null) {
-            //return this.socket.getInetAddress();
-        //} else {
-            //return null;
-        //}
+        if (this.socket != null) {
+            return this.socket.getInetAddress();
+        } else {
+            return null;
+        }
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.772 -0400", hash_original_method = "D939EFD523917F0149002711980337D5", hash_generated_method = "F4934E23F1FBA5A42782303583754952")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.440 -0500", hash_original_method = "D939EFD523917F0149002711980337D5", hash_generated_method = "E09502CC817CBCDCE2D379B1FD8CEA55")
     public int getRemotePort() {
-        if(this.socket != null)        
-        {
-            int var502403C994AC2D85DCA0890A45B626BE_1301584232 = (this.socket.getPort());
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2133902178 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2133902178;
-        } //End block
-        else
-        {
-            int var6BB61E3B7BCE0931DA574D19D1D82C88_660737642 = (-1);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1777695048 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1777695048;
-        } //End block
-        // ---------- Original Method ----------
-        //if (this.socket != null) {
-            //return this.socket.getPort();
-        //} else {
-            //return -1;
-        //}
+        if (this.socket != null) {
+            return this.socket.getPort();
+        } else {
+            return -1;
+        }
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.773 -0400", hash_original_method = "1060FB10CE7965802AECEE442A1DB6DF", hash_generated_method = "BE67356934499B3F4828E090EF89D577")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.442 -0500", hash_original_method = "1060FB10CE7965802AECEE442A1DB6DF", hash_generated_method = "A990F9F152705D0F8E5F26717A2CA640")
     public void setSocketTimeout(int timeout) {
-        addTaint(timeout);
         assertOpen();
-        if(this.socket != null)        
-        {
-            try 
-            {
+        if (this.socket != null) {
+            try {
                 this.socket.setSoTimeout(timeout);
-            } //End block
-            catch (SocketException ignore)
-            {
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //assertOpen();
-        //if (this.socket != null) {
-            //try {
-                //this.socket.setSoTimeout(timeout);
-            //} catch (SocketException ignore) {
-            //}
-        //}
+            } catch (SocketException ignore) {
+                // It is not quite clear from the original documentation if there are any
+                // other legitimate cases for a socket exception to be thrown when setting
+                // SO_TIMEOUT besides the socket being already closed
+            }
+        }
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.773 -0400", hash_original_method = "65027FF3AE16248E56640778A6A4578D", hash_generated_method = "48B8550A6B116C5E13DFCDC7169ADA6E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.442 -0500", hash_original_method = "65027FF3AE16248E56640778A6A4578D", hash_generated_method = "655443F0128AABC6EA28FA9B52CC5D57")
     public int getSocketTimeout() {
-        if(this.socket != null)        
-        {
-            try 
-            {
-                int var1F56CB3CA7DD779FD088C15B14EF2D6D_1344579033 = (this.socket.getSoTimeout());
-                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1887113449 = getTaintInt();
-                return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1887113449;
-            } //End block
-            catch (SocketException ignore)
-            {
-                int var6BB61E3B7BCE0931DA574D19D1D82C88_1807665511 = (-1);
-                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1375121642 = getTaintInt();
-                return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1375121642;
-            } //End block
-        } //End block
-        else
-        {
-            int var6BB61E3B7BCE0931DA574D19D1D82C88_229628263 = (-1);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_948941331 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_948941331;
-        } //End block
-        // ---------- Original Method ----------
-        //if (this.socket != null) {
-            //try {
-                //return this.socket.getSoTimeout();
-            //} catch (SocketException ignore) {
-                //return -1;
-            //}
-        //} else {
-            //return -1;
-        //}
+        if (this.socket != null) {
+            try {
+                return this.socket.getSoTimeout();
+            } catch (SocketException ignore) {
+                return -1;
+            }
+        } else {
+            return -1;
+        }
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.773 -0400", hash_original_method = "CEF80ABEDD17E9F414E04B4979CC6A82", hash_generated_method = "A28E06A0CA260323C8F4F1C99DF0CED4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.443 -0500", hash_original_method = "CEF80ABEDD17E9F414E04B4979CC6A82", hash_generated_method = "C3605AB6514A2B9C5B898F69DC37D353")
     public void shutdown() throws IOException {
         this.open = false;
         Socket tmpsocket = this.socket;
-        if(tmpsocket != null)        
-        {
+        if (tmpsocket != null) {
             tmpsocket.close();
-        } //End block
-        // ---------- Original Method ----------
-        //this.open = false;
-        //Socket tmpsocket = this.socket;
-        //if (tmpsocket != null) {
-            //tmpsocket.close();
-        //}
+        }
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.773 -0400", hash_original_method = "E2A0230BE95C4B74092464470E281A24", hash_generated_method = "F1846722FD7DAA0EB6FBC61594D64B90")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.444 -0500", hash_original_method = "E2A0230BE95C4B74092464470E281A24", hash_generated_method = "0212C870A827603A75CFFEDCEE597CF0")
     public void close() throws IOException {
-        if(!this.open)        
-        {
+        if (!this.open) {
             return;
-        } //End block
+        }
         this.open = false;
         doFlush();
-        try 
-        {
-            try 
-            {
+        try {
+            try {
                 this.socket.shutdownOutput();
-            } //End block
-            catch (IOException ignore)
-            {
-            } //End block
-            try 
-            {
+            } catch (IOException ignore) {
+            }
+            try {
                 this.socket.shutdownInput();
-            } //End block
-            catch (IOException ignore)
-            {
-            } //End block
-        } //End block
-        catch (UnsupportedOperationException ignore)
-        {
-        } //End block
+            } catch (IOException ignore) {
+            }
+        } catch (UnsupportedOperationException ignore) {
+            // if one isn't supported, the other one isn't either
+        }
         this.socket.close();
-        // ---------- Original Method ----------
-        //if (!this.open) {
-            //return;
-        //}
-        //this.open = false;
-        //doFlush();
-        //try {
-            //try {
-                //this.socket.shutdownOutput();
-            //} catch (IOException ignore) {
-            //}
-            //try {
-                //this.socket.shutdownInput();
-            //} catch (IOException ignore) {
-            //}
-        //} catch (UnsupportedOperationException ignore) {
-        //}
-        //this.socket.close();
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.773 -0400", hash_original_method = "9CF9D3D7B73D0AA22EE5EB3E861EF60E", hash_generated_method = "0F1770ADB6ED50FDECE3533E0FAA9369")
-    public void sendRequestHeader(final HttpRequest request) throws HttpException, IOException {
-        addTaint(request.getTaint());
-        if(request == null)        
-        {
-            IllegalArgumentException varF07DEF4BA25028D1DB51C0BA629AF0B4_918048415 = new IllegalArgumentException("HTTP request may not be null");
-            varF07DEF4BA25028D1DB51C0BA629AF0B4_918048415.addTaint(taint);
-            throw varF07DEF4BA25028D1DB51C0BA629AF0B4_918048415;
-        } //End block
+    /**
+     * Sends the request line and all headers over the connection.
+     * @param request the request whose headers to send.
+     * @throws HttpException
+     * @throws IOException
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.445 -0500", hash_original_method = "9CF9D3D7B73D0AA22EE5EB3E861EF60E", hash_generated_method = "81445D5814C6BEA82945B6FFD6FF302A")
+    public void sendRequestHeader(final HttpRequest request)
+            throws HttpException, IOException {
+        if (request == null) {
+            throw new IllegalArgumentException("HTTP request may not be null");
+        }
         assertOpen();
         this.requestWriter.write(request);
         this.metrics.incrementRequestCount();
-        // ---------- Original Method ----------
-        //if (request == null) {
-            //throw new IllegalArgumentException("HTTP request may not be null");
-        //}
-        //assertOpen();
-        //this.requestWriter.write(request);
-        //this.metrics.incrementRequestCount();
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.774 -0400", hash_original_method = "73C1557906EF5C67B1A62D382FCB88AB", hash_generated_method = "A0ED3FA67DF50270635DF1F6D1A328EF")
-    public void sendRequestEntity(final HttpEntityEnclosingRequest request) throws HttpException, IOException {
-        addTaint(request.getTaint());
-        if(request == null)        
-        {
-            IllegalArgumentException varF07DEF4BA25028D1DB51C0BA629AF0B4_946024869 = new IllegalArgumentException("HTTP request may not be null");
-            varF07DEF4BA25028D1DB51C0BA629AF0B4_946024869.addTaint(taint);
-            throw varF07DEF4BA25028D1DB51C0BA629AF0B4_946024869;
-        } //End block
+    /**
+     * Sends the request entity over the connection.
+     * @param request the request whose entity to send.
+     * @throws HttpException
+     * @throws IOException
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.445 -0500", hash_original_method = "73C1557906EF5C67B1A62D382FCB88AB", hash_generated_method = "238D8AF41F3258C0147B298BF895C371")
+    public void sendRequestEntity(final HttpEntityEnclosingRequest request)
+            throws HttpException, IOException {
+        if (request == null) {
+            throw new IllegalArgumentException("HTTP request may not be null");
+        }
         assertOpen();
-        if(request.getEntity() == null)        
-        {
+        if (request.getEntity() == null) {
             return;
-        } //End block
+        }
         this.entityserializer.serialize(
                 this.outbuffer,
                 request,
                 request.getEntity());
-        // ---------- Original Method ----------
-        //if (request == null) {
-            //throw new IllegalArgumentException("HTTP request may not be null");
-        //}
-        //assertOpen();
-        //if (request.getEntity() == null) {
-            //return;
-        //}
-        //this.entityserializer.serialize(
-                //this.outbuffer,
-                //request,
-                //request.getEntity());
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.774 -0400", hash_original_method = "DE0B8B580EE6D4219521C9A2503EB8AB", hash_generated_method = "4D1A2508A821B55E0B18D024D4D93DA1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.446 -0500", hash_original_method = "DE0B8B580EE6D4219521C9A2503EB8AB", hash_generated_method = "95B55363290D586DFB2DF36999E3EB5A")
     protected void doFlush() throws IOException {
         this.outbuffer.flush();
-        // ---------- Original Method ----------
-        //this.outbuffer.flush();
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.774 -0400", hash_original_method = "166CB1CAE087E4752127F8680D07EE90", hash_generated_method = "C32057FFD327A27B41D17512113B46BE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.447 -0500", hash_original_method = "166CB1CAE087E4752127F8680D07EE90", hash_generated_method = "7DC12AEDC1E3BAC50748171377DE0490")
     public void flush() throws IOException {
         assertOpen();
         doFlush();
-        // ---------- Original Method ----------
-        //assertOpen();
-        //doFlush();
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.774 -0400", hash_original_method = "5382496E6517DB13491696C30DF0839D", hash_generated_method = "1926810DD273271C9582F91749450C10")
-    public StatusLine parseResponseHeader(Headers headers) throws IOException, ParseException {
-        addTaint(headers.getTaint());
+    /**
+     * Parses the response headers and adds them to the
+     * given {@code headers} object, and returns the response StatusLine
+     * @param headers store parsed header to headers.
+     * @throws IOException
+     * @return StatusLine
+     * @see HttpClientConnection#receiveResponseHeader()
+      */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.448 -0500", hash_original_method = "5382496E6517DB13491696C30DF0839D", hash_generated_method = "0FB17C3737EC5FCAD6265FF322D190DC")
+    public StatusLine parseResponseHeader(Headers headers)
+            throws IOException, ParseException {
         assertOpen();
+
         CharArrayBuffer current = new CharArrayBuffer(64);
-        if(inbuffer.readLine(current) == -1)        
-        {
-            NoHttpResponseException var8E6E6A11E770AF132B510E2C0E1EA88C_1826577227 = new NoHttpResponseException("The target server failed to respond");
-            var8E6E6A11E770AF132B510E2C0E1EA88C_1826577227.addTaint(taint);
-            throw var8E6E6A11E770AF132B510E2C0E1EA88C_1826577227;
-        } //End block
+
+        if (inbuffer.readLine(current) == -1) {
+            throw new NoHttpResponseException("The target server failed to respond");
+        }
+
+        // Create the status line from the status string
         StatusLine statusline = BasicLineParser.DEFAULT.parseStatusLine(
                 current, new ParserCursor(0, current.length()));
-        if(HttpLog.LOGV)        
-        HttpLog.v("read: " + statusline);
+        
+        if (HttpLog.LOGV) HttpLog.v("read: " + statusline);
         int statusCode = statusline.getStatusCode();
+
+        // Parse header body
         CharArrayBuffer previous = null;
         int headerNumber = 0;
-        while
-(true)        
-        {
-            if(current == null)            
-            {
+        while(true) {
+            if (current == null) {
                 current = new CharArrayBuffer(64);
-            } //End block
-            else
-            {
+            } else {
+                // This must be he buffer used to parse the status
                 current.clear();
-            } //End block
+            }
             int l = inbuffer.readLine(current);
-            if(l == -1 || current.length() < 1)            
-            {
+            if (l == -1 || current.length() < 1) {
                 break;
-            } //End block
+            }
+            // Parse the header name and value
+            // Check for folded headers first
+            // Detect LWS-char see HTTP/1.0 or HTTP/1.1 Section 2.2
+            // discussion on folded headers
             char first = current.charAt(0);
-            if((first == ' ' || first == '\t') && previous != null)            
-            {
+            if ((first == ' ' || first == '\t') && previous != null) {
+                // we have continuation folded header
+                // so append value
                 int start = 0;
                 int length = current.length();
-                while
-(start < length)                
-                {
+                while (start < length) {
                     char ch = current.charAt(start);
-                    if(ch != ' ' && ch != '\t')                    
-                    {
+                    if (ch != ' ' && ch != '\t') {
                         break;
-                    } //End block
+                    }
                     start++;
-                } //End block
-                if(maxLineLength > 0 &&
+                }
+                if (maxLineLength > 0 &&
                         previous.length() + 1 + current.length() - start >
-                            maxLineLength)                
-                {
-                    IOException var12ACD845FE59D4DF91577F545067D44A_216760866 = new IOException("Maximum line length limit exceeded");
-                    var12ACD845FE59D4DF91577F545067D44A_216760866.addTaint(taint);
-                    throw var12ACD845FE59D4DF91577F545067D44A_216760866;
-                } //End block
+                            maxLineLength) {
+                    throw new IOException("Maximum line length limit exceeded");
+                }
                 previous.append(' ');
                 previous.append(current, start, current.length() - start);
-            } //End block
-            else
-            {
-                if(previous != null)                
-                {
+            } else {
+                if (previous != null) {
                     headers.parseHeader(previous);
-                } //End block
+                }
                 headerNumber++;
                 previous = current;
                 current = null;
-            } //End block
-            if(maxHeaderCount > 0 && headerNumber >= maxHeaderCount)            
-            {
-                IOException var715D62412F40E87C48B3054F65A13D4F_830190014 = new IOException("Maximum header count exceeded");
-                var715D62412F40E87C48B3054F65A13D4F_830190014.addTaint(taint);
-                throw var715D62412F40E87C48B3054F65A13D4F_830190014;
-            } //End block
-        } //End block
-        if(previous != null)        
-        {
+            }
+            if (maxHeaderCount > 0 && headerNumber >= maxHeaderCount) {
+                throw new IOException("Maximum header count exceeded");
+            }
+        }
+
+        if (previous != null) {
             headers.parseHeader(previous);
-        } //End block
-        if(statusCode >= 200)        
-        {
+        }
+
+        if (statusCode >= 200) {
             this.metrics.incrementResponseCount();
-        } //End block
-StatusLine varECE1183D548EEF2334B847FDE0390490_134462201 =         statusline;
-        varECE1183D548EEF2334B847FDE0390490_134462201.addTaint(taint);
-        return varECE1183D548EEF2334B847FDE0390490_134462201;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        }
+        return statusline;
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.775 -0400", hash_original_method = "1E84D06F522FAB67F7B7209EA462145E", hash_generated_method = "0B57A1710E2C22E0CCB1BD40C8CB62EC")
+    /**
+     * Return the next response entity.
+     * @param headers contains values for parsing entity
+     * @see HttpClientConnection#receiveResponseEntity(HttpResponse response)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.449 -0500", hash_original_method = "1E84D06F522FAB67F7B7209EA462145E", hash_generated_method = "2132BBACB0AA83CF35658A046EFF1076")
     public HttpEntity receiveResponseEntity(final Headers headers) {
-        addTaint(headers.getTaint());
         assertOpen();
         BasicHttpEntity entity = new BasicHttpEntity();
+
         long len = determineLength(headers);
-        if(len == ContentLengthStrategy.CHUNKED)        
-        {
+        if (len == ContentLengthStrategy.CHUNKED) {
             entity.setChunked(true);
             entity.setContentLength(-1);
             entity.setContent(new ChunkedInputStream(inbuffer));
-        } //End block
-        else
-        if(len == ContentLengthStrategy.IDENTITY)        
-        {
+        } else if (len == ContentLengthStrategy.IDENTITY) {
             entity.setChunked(false);
             entity.setContentLength(-1);
             entity.setContent(new IdentityInputStream(inbuffer));
-        } //End block
-        else
-        {
+        } else {
             entity.setChunked(false);
             entity.setContentLength(len);
             entity.setContent(new ContentLengthInputStream(inbuffer, len));
-        } //End block
+        }
+
         String contentTypeHeader = headers.getContentType();
-        if(contentTypeHeader != null)        
-        {
+        if (contentTypeHeader != null) {
             entity.setContentType(contentTypeHeader);
-        } //End block
+        }
         String contentEncodingHeader = headers.getContentEncoding();
-        if(contentEncodingHeader != null)        
-        {
+        if (contentEncodingHeader != null) {
             entity.setContentEncoding(contentEncodingHeader);
-        } //End block
-HttpEntity var5E2D610DE63DCFFE14343DA0A43AB041_2074931648 =         entity;
-        var5E2D610DE63DCFFE14343DA0A43AB041_2074931648.addTaint(taint);
-        return var5E2D610DE63DCFFE14343DA0A43AB041_2074931648;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        }
+
+       return entity;
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.775 -0400", hash_original_method = "DFC24C3199FB5D6CC47411FD6E7FCAFF", hash_generated_method = "712A5426CC8577FEFA09259DE810826B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.450 -0500", hash_original_method = "DFC24C3199FB5D6CC47411FD6E7FCAFF", hash_generated_method = "36989700B1229E52071669676C89DAE6")
     private long determineLength(final Headers headers) {
-        addTaint(headers.getTaint());
         long transferEncoding = headers.getTransferEncoding();
-        if(transferEncoding < Headers.NO_TRANSFER_ENCODING)        
-        {
-            long varBF0487A5497D96D26C24936A4DAD1B2F_959674538 = (transferEncoding);
-                        long var0F5264038205EDFB1AC05FBB0E8C5E94_1451266410 = getTaintLong();
-            return var0F5264038205EDFB1AC05FBB0E8C5E94_1451266410;
-        } //End block
-        else
-        {
+        // We use Transfer-Encoding if present and ignore Content-Length.
+        // RFC2616, 4.4 item number 3
+        if (transferEncoding < Headers.NO_TRANSFER_ENCODING) {
+            return transferEncoding;
+        } else {
             long contentlen = headers.getContentLength();
-            if(contentlen > Headers.NO_CONTENT_LENGTH)            
-            {
-                long varCB93A9937843A987DEAF858742557F95_453311361 = (contentlen);
-                                long var0F5264038205EDFB1AC05FBB0E8C5E94_1421670469 = getTaintLong();
-                return var0F5264038205EDFB1AC05FBB0E8C5E94_1421670469;
-            } //End block
-            else
-            {
-                long var85A74CC368A28A3EE8374941BD402BFD_1008463711 = (ContentLengthStrategy.IDENTITY);
-                                long var0F5264038205EDFB1AC05FBB0E8C5E94_1879914357 = getTaintLong();
-                return var0F5264038205EDFB1AC05FBB0E8C5E94_1879914357;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //long transferEncoding = headers.getTransferEncoding();
-        //if (transferEncoding < Headers.NO_TRANSFER_ENCODING) {
-            //return transferEncoding;
-        //} else {
-            //long contentlen = headers.getContentLength();
-            //if (contentlen > Headers.NO_CONTENT_LENGTH) {
-                //return contentlen;
-            //} else {
-                //return ContentLengthStrategy.IDENTITY;
-            //}
-        //}
+            if (contentlen > Headers.NO_CONTENT_LENGTH) {
+                return contentlen;
+            } else {
+                return ContentLengthStrategy.IDENTITY;
+            }
+        }
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.776 -0400", hash_original_method = "3BE812D13F4292433A7C6B8D5ADAC2E8", hash_generated_method = "2FE4C2607C48A4FECAF07EBBF6053055")
+    /**
+     * Checks whether this connection has gone down.
+     * Network connections may get closed during some time of inactivity
+     * for several reasons. The next time a read is attempted on such a
+     * connection it will throw an IOException.
+     * This method tries to alleviate this inconvenience by trying to
+     * find out if a connection is still usable. Implementations may do
+     * that by attempting a read with a very small timeout. Thus this
+     * method may block for a small amount of time before returning a result.
+     * It is therefore an <i>expensive</i> operation.
+     *
+     * @return  <code>true</code> if attempts to use this connection are
+     *          likely to succeed, or <code>false</code> if they are likely
+     *          to fail and this connection should be closed
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.451 -0500", hash_original_method = "3BE812D13F4292433A7C6B8D5ADAC2E8", hash_generated_method = "1EAD57D36840D6CAEA4FEE7766AE3376")
     public boolean isStale() {
         assertOpen();
-        try 
-        {
+        try {
             this.inbuffer.isDataAvailable(1);
-            boolean var68934A3E9455FA72420237EB05902327_419228713 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2044505941 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_2044505941;
-        } //End block
-        catch (IOException ex)
-        {
-            boolean varB326B5062B2F0E69046810717534CB09_379888160 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1663754848 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1663754848;
-        } //End block
-        // ---------- Original Method ----------
-        //assertOpen();
-        //try {
-            //this.inbuffer.isDataAvailable(1);
-            //return false;
-        //} catch (IOException ex) {
-            //return true;
-        //}
+            return false;
+        } catch (IOException ex) {
+            return true;
+        }
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.776 -0400", hash_original_method = "B4ACF96912B4372C3DFCBFF37024F952", hash_generated_method = "90E03BDA83F9128F7E96D6EAAF488096")
+    /**
+     * Returns a collection of connection metrcis
+     * @return HttpConnectionMetrics
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.452 -0500", hash_original_method = "B4ACF96912B4372C3DFCBFF37024F952", hash_generated_method = "7AD9A1BFEB710F66C989015EA8C10499")
     public HttpConnectionMetrics getMetrics() {
-HttpConnectionMetrics varFC1AE2E8C2526EA66FBB8E6B024A2CB6_233664329 =         this.metrics;
-        varFC1AE2E8C2526EA66FBB8E6B024A2CB6_233664329.addTaint(taint);
-        return varFC1AE2E8C2526EA66FBB8E6B024A2CB6_233664329;
-        // ---------- Original Method ----------
-        //return this.metrics;
+        return this.metrics;
     }
 
     

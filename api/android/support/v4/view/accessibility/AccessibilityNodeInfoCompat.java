@@ -1,6 +1,8 @@
 package android.support.v4.view.accessibility;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -15,550 +17,638 @@ import android.view.View;
 
 
 public class AccessibilityNodeInfoCompat {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.899 -0400", hash_original_field = "1715FF63502BEC0E28C8D7CA89F0F72E", hash_generated_field = "EA545B797CAE6A5B712CE13E995894C9")
 
-    private Object mInfo;
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.899 -0400", hash_original_method = "27EEB78B664A0859CE9D2482B14EDA44", hash_generated_method = "5D13B8B7945325E456070CD74C88BF1B")
-    public  AccessibilityNodeInfoCompat(Object info) {
-        mInfo = info;
-        // ---------- Original Method ----------
-        //mInfo = info;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.900 -0400", hash_original_method = "180B11831FF091AFD58918B491DA5734", hash_generated_method = "7BB8C73F5DD083C034742BE0BAA9456C")
-    public Object getImpl() {
-Object var3A968EAC93D51342CCDD9EFE8723F737_2060431345 =         mInfo;
-        var3A968EAC93D51342CCDD9EFE8723F737_2060431345.addTaint(taint);
-        return var3A968EAC93D51342CCDD9EFE8723F737_2060431345;
-        // ---------- Original Method ----------
-        //return mInfo;
-    }
-
-    
+    /**
+     * Returns a cached instance if such is available otherwise a new one and
+     * sets the source.
+     *
+     * @return An instance.
+     * @see #setSource(View)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.810 -0500", hash_original_method = "1F4E2CFCB9B6AB6D284C53D40E0B0314", hash_generated_method = "A9A572826662B37A8332B0CCB494C3BE")
     public static AccessibilityNodeInfoCompat obtain(View source) {
         return new AccessibilityNodeInfoCompat(IMPL.obtain(source));
     }
 
-    
+    /**
+     * Returns a cached instance if such is available otherwise a new one.
+     *
+     * @return An instance.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.811 -0500", hash_original_method = "A402A726760E6DAF1E0AF76E81952BC6", hash_generated_method = "5524ABA8A430A99C4C0ACAFF6398D588")
     public static AccessibilityNodeInfoCompat obtain() {
         return new AccessibilityNodeInfoCompat(IMPL.obtain());
     }
 
-    
+    /**
+     * Returns a cached instance if such is available or a new one is create.
+     * The returned instance is initialized from the given <code>info</code>.
+     *
+     * @param info The other info.
+     * @return An instance.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.812 -0500", hash_original_method = "549A745DD67419074C2DCCEFB81C709E", hash_generated_method = "3F244144ECF370F52B96AD0C8888B9ED")
     public static AccessibilityNodeInfoCompat obtain(AccessibilityNodeInfoCompat info) {
         return new AccessibilityNodeInfoCompat(IMPL.obtain(info.mInfo));
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.803 -0500", hash_original_field = "B1D8AB103F046CFEA3FC9CDC8BCBC3C0", hash_generated_field = "97BD12C859C1DA2B5849DD1AFA547C72")
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.901 -0400", hash_original_method = "DBD6C4E567C7947922529BA45E2088C3", hash_generated_method = "96D1C979791CA51F586D42025B355A21")
+
+    private static  AccessibilityNodeInfoImpl IMPL;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:34:02.018 -0500", hash_original_field = "617EB5A49831D4E42CC1FEF3965E4033", hash_generated_field = "F78F9523CB351E82CADC0E3370F65663")
+
+
+    /**
+     * Action that focuses the node.
+     */
+    public static final int ACTION_FOCUS = 0x00000001;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.806 -0500", hash_original_field = "9F650D1FD27771928876D8E4DD202D99", hash_generated_field = "4E51052F791AAD7CED4606387206AC02")
+
+    public static final int ACTION_CLEAR_FOCUS = 0x00000002;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.807 -0500", hash_original_field = "0DF782BD9DC3375190032A37A32E539E", hash_generated_field = "D94F4C12E9D93257353DF25CED690B59")
+
+    public static final int ACTION_SELECT = 0x00000004;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.807 -0500", hash_original_field = "8ECD989E8F1471431728127462E951C5", hash_generated_field = "A07F23DA35D396F8F58D59EF3496C08F")
+
+    public static final int ACTION_CLEAR_SELECTION = 0x00000008;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.804 -0500", hash_original_field = "6DDA95A03CB574AE472C66BB1085F01C", hash_generated_field = "EA545B797CAE6A5B712CE13E995894C9")
+
+
+    private  Object mInfo;
+
+    /*
+     * Hide constructor from clients.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.808 -0500", hash_original_method = "27EEB78B664A0859CE9D2482B14EDA44", hash_generated_method = "1537DEEDF291D03E1EC9A2D44728DFE0")
+    public AccessibilityNodeInfoCompat(Object info) {
+        mInfo = info;
+    }
+
+    /**
+     * @return The wrapped actual implementation.
+     *
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.809 -0500", hash_original_method = "180B11831FF091AFD58918B491DA5734", hash_generated_method = "C29B40C85E86F5B0F40B2123568397B1")
+    public Object getImpl() {
+        return mInfo;
+    }
+
+    /**
+     * Sets the source.
+     *
+     * @param source The info source.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.812 -0500", hash_original_method = "DBD6C4E567C7947922529BA45E2088C3", hash_generated_method = "90B66C2995A5D6DDFBBCBCFC7050DA5D")
     public void setSource(View source) {
-        addTaint(source.getTaint());
         IMPL.setSource(mInfo, source);
-        // ---------- Original Method ----------
-        //IMPL.setSource(mInfo, source);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.901 -0400", hash_original_method = "2FCD3C5691FCBE6EB393188032460842", hash_generated_method = "D6E9C9E94BF25F53E43D8C74506E0124")
+    /**
+     * Gets the id of the window from which the info comes from.
+     *
+     * @return The window id.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.813 -0500", hash_original_method = "2FCD3C5691FCBE6EB393188032460842", hash_generated_method = "532CDC7BE655D6CCA090E084464B70A9")
     public int getWindowId() {
-        int varA6542EF1E8520CFD8FA35E921B4733FA_1526373286 = (IMPL.getWindowId(mInfo));
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1051683506 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1051683506;
-        // ---------- Original Method ----------
-        //return IMPL.getWindowId(mInfo);
+        return IMPL.getWindowId(mInfo);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.901 -0400", hash_original_method = "2AD4C51D718899601C93A5649AD946AD", hash_generated_method = "9F2EA2F8A109EE2D9D923E1CFBC3FED3")
+    /**
+     * Gets the number of children.
+     *
+     * @return The child count.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.814 -0500", hash_original_method = "2AD4C51D718899601C93A5649AD946AD", hash_generated_method = "A8C4B49542793C1ECB3A1A24BEC4FBB9")
     public int getChildCount() {
-        int var023CE45408957D180E638B192CAE01B2_599451533 = (IMPL.getChildCount(mInfo));
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1795452177 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1795452177;
-        // ---------- Original Method ----------
-        //return IMPL.getChildCount(mInfo);
+        return IMPL.getChildCount(mInfo);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.902 -0400", hash_original_method = "8EA123998643A19BBF17F459FF07BE7E", hash_generated_method = "FAEC8BCDFECB8C38870B63A42CFBE9F5")
+    /**
+     * Get the child at given index.
+     * <p>
+     * <strong>Note:</strong> It is a client responsibility to recycle the
+     * received info by calling {@link AccessibilityNodeInfoCompat#recycle()} to
+     * avoid creating of multiple instances.
+     * </p>
+     *
+     * @param index The child index.
+     * @return The child node.
+     * @throws IllegalStateException If called outside of an
+     *             AccessibilityService.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.815 -0500", hash_original_method = "8EA123998643A19BBF17F459FF07BE7E", hash_generated_method = "3D4836C004522DDCF2D4E1208945D15B")
     public AccessibilityNodeInfoCompat getChild(int index) {
-        addTaint(index);
-AccessibilityNodeInfoCompat var2605D89E858102C2A1CCC621632F47F1_646659109 =         new AccessibilityNodeInfoCompat(IMPL.getChild(mInfo, index));
-        var2605D89E858102C2A1CCC621632F47F1_646659109.addTaint(taint);
-        return var2605D89E858102C2A1CCC621632F47F1_646659109;
-        // ---------- Original Method ----------
-        //return new AccessibilityNodeInfoCompat(IMPL.getChild(mInfo, index));
+        return new AccessibilityNodeInfoCompat(IMPL.getChild(mInfo, index));
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.902 -0400", hash_original_method = "96991CF3D104F82AE28D15A837764722", hash_generated_method = "07698E1827C644ED9389ABC9B0153729")
+    /**
+     * Adds a child.
+     * <p>
+     * <strong>Note:</strong> Cannot be called from an
+     * {@link android.accessibilityservice.AccessibilityService}. This class is
+     * made immutable before being delivered to an AccessibilityService.
+     * </p>
+     *
+     * @param child The child.
+     * @throws IllegalStateException If called from an AccessibilityService.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.815 -0500", hash_original_method = "96991CF3D104F82AE28D15A837764722", hash_generated_method = "16E809D8BA444B09A15AA1DB6234B0DB")
     public void addChild(View child) {
-        addTaint(child.getTaint());
         IMPL.addChild(mInfo, child);
-        // ---------- Original Method ----------
-        //IMPL.addChild(mInfo, child);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.902 -0400", hash_original_method = "933CE3223B5CD7F54D5F21B403DB8A7E", hash_generated_method = "834B2B82444D856219DA6B34C455361E")
+    /**
+     * Gets the actions that can be performed on the node.
+     *
+     * @return The bit mask of with actions.
+     * @see android.view.accessibility.AccessibilityNodeInfo#ACTION_FOCUS
+     * @see android.view.accessibility.AccessibilityNodeInfo#ACTION_CLEAR_FOCUS
+     * @see android.view.accessibility.AccessibilityNodeInfo#ACTION_SELECT
+     * @see android.view.accessibility.AccessibilityNodeInfo#ACTION_CLEAR_SELECTION
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.816 -0500", hash_original_method = "933CE3223B5CD7F54D5F21B403DB8A7E", hash_generated_method = "537D5CB0A559CBBF67228F479B60ED73")
     public int getActions() {
-        int var8569F370D1382923E0B8563F43031884_146959774 = (IMPL.getActions(mInfo));
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1772094985 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1772094985;
-        // ---------- Original Method ----------
-        //return IMPL.getActions(mInfo);
+        return IMPL.getActions(mInfo);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.903 -0400", hash_original_method = "F620D8EC3817B6EC64D02A805E40B2B4", hash_generated_method = "F3C7E4538858F00931E35733583E9BF6")
+    /**
+     * Adds an action that can be performed on the node.
+     * <p>
+     * <strong>Note:</strong> Cannot be called from an
+     * {@link android.accessibilityservice.AccessibilityService}. This class is
+     * made immutable before being delivered to an AccessibilityService.
+     * </p>
+     *
+     * @param action The action.
+     * @throws IllegalStateException If called from an AccessibilityService.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.817 -0500", hash_original_method = "F620D8EC3817B6EC64D02A805E40B2B4", hash_generated_method = "1F3F2FFA9362EAD00B99DB76616D4CD3")
     public void addAction(int action) {
-        addTaint(action);
         IMPL.addAction(mInfo, action);
-        // ---------- Original Method ----------
-        //IMPL.addAction(mInfo, action);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.903 -0400", hash_original_method = "76F70B64C56F7E2DCA168B652A090370", hash_generated_method = "BA37160B8A9AE9FEA0AA24AB6DDA4E90")
+    /**
+     * Performs an action on the node.
+     * <p>
+     * <strong>Note:</strong> An action can be performed only if the request is
+     * made from an {@link android.accessibilityservice.AccessibilityService}.
+     * </p>
+     *
+     * @param action The action to perform.
+     * @return True if the action was performed.
+     * @throws IllegalStateException If called outside of an
+     *             AccessibilityService.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.818 -0500", hash_original_method = "76F70B64C56F7E2DCA168B652A090370", hash_generated_method = "93DD76A34CE5DF8253F6A81AF8E167E4")
     public boolean performAction(int action) {
-        addTaint(action);
-        boolean var390DBE2902D20317D8BAAE03F4F21A62_1534270220 = (IMPL.performAction(mInfo, action));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_342145118 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_342145118;
-        // ---------- Original Method ----------
-        //return IMPL.performAction(mInfo, action);
+        return IMPL.performAction(mInfo, action);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.904 -0400", hash_original_method = "D972868A6ABA9BEE83DE29ABCCDE4A4C", hash_generated_method = "F260FBF47FFF6042F7A67631962DAD44")
+    /**
+     * Finds {@link android.view.accessibility.AccessibilityNodeInfo}s by text. The match
+     * is case insensitive containment. The search is relative to this info i.e. this
+     * info is the root of the traversed tree.
+     * <p>
+     * <strong>Note:</strong> It is a client responsibility to recycle the
+     * received info by calling {@link android.view.accessibility.AccessibilityNodeInfo#recycle()}
+     * to avoid creating of multiple instances.
+     * </p>
+     *
+     * @param text The searched text.
+     * @return A list of node info.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.819 -0500", hash_original_method = "D972868A6ABA9BEE83DE29ABCCDE4A4C", hash_generated_method = "D4FCE95BF9B8E9E49357701DFD27F6B5")
     public List<AccessibilityNodeInfoCompat> findAccessibilityNodeInfosByText(String text) {
-        addTaint(text.getTaint());
         List<AccessibilityNodeInfoCompat> result = new ArrayList<AccessibilityNodeInfoCompat>();
         List<Object> infos = IMPL.findAccessibilityNodeInfosByText(mInfo, text);
         final int infoCount = infos.size();
-for(int i = 0;i < infoCount;i++)
-        {
+        for (int i = 0; i < infoCount; i++) {
             Object info = infos.get(i);
             result.add(new AccessibilityNodeInfoCompat(info));
-        } //End block
-List<AccessibilityNodeInfoCompat> varDC838461EE2FA0CA4C9BBB70A15456B0_1223923643 =         result;
-        varDC838461EE2FA0CA4C9BBB70A15456B0_1223923643.addTaint(taint);
-        return varDC838461EE2FA0CA4C9BBB70A15456B0_1223923643;
-        // ---------- Original Method ----------
-        //List<AccessibilityNodeInfoCompat> result = new ArrayList<AccessibilityNodeInfoCompat>();
-        //List<Object> infos = IMPL.findAccessibilityNodeInfosByText(mInfo, text);
-        //final int infoCount = infos.size();
-        //for (int i = 0; i < infoCount; i++) {
-            //Object info = infos.get(i);
-            //result.add(new AccessibilityNodeInfoCompat(info));
-        //}
-        //return result;
+        }
+        return result;
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.904 -0400", hash_original_method = "2E852E0313CFFDFAD47286627DB8F00F", hash_generated_method = "D466F589D238657189A84C3BFFFB473C")
+    /**
+     * Gets the parent.
+     * <p>
+     * <strong>Note:</strong> It is a client responsibility to recycle the
+     * received info by calling {@link android.view.accessibility.AccessibilityNodeInfo#recycle()}
+     * to avoid creating of multiple instances.
+     * </p>
+     *
+     * @return The parent.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.819 -0500", hash_original_method = "2E852E0313CFFDFAD47286627DB8F00F", hash_generated_method = "5832632681BAC2C122FB1FB1B6407E64")
     public AccessibilityNodeInfoCompat getParent() {
-AccessibilityNodeInfoCompat var3A7512F2201A458C8A653FFCCAFC5906_953283302 =         new AccessibilityNodeInfoCompat(IMPL.getParent(mInfo));
-        var3A7512F2201A458C8A653FFCCAFC5906_953283302.addTaint(taint);
-        return var3A7512F2201A458C8A653FFCCAFC5906_953283302;
-        // ---------- Original Method ----------
-        //return new AccessibilityNodeInfoCompat(IMPL.getParent(mInfo));
+        return new AccessibilityNodeInfoCompat(IMPL.getParent(mInfo));
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.904 -0400", hash_original_method = "86518FC5D5AE3E2BA199BEEAA088933F", hash_generated_method = "A9925D1A891853762BFC2FE37B3FA328")
+    /**
+     * Sets the parent.
+     * <p>
+     * <strong>Note:</strong> Cannot be called from an
+     * {@link android.accessibilityservice.AccessibilityService}. This class is
+     * made immutable before being delivered to an AccessibilityService.
+     * </p>
+     *
+     * @param parent The parent.
+     * @throws IllegalStateException If called from an AccessibilityService.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.820 -0500", hash_original_method = "86518FC5D5AE3E2BA199BEEAA088933F", hash_generated_method = "A9CC7F035545F94FB6F4921F709546B9")
     public void setParent(View parent) {
-        addTaint(parent.getTaint());
         IMPL.setParent(mInfo, parent);
-        // ---------- Original Method ----------
-        //IMPL.setParent(mInfo, parent);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.904 -0400", hash_original_method = "E0ACD239D05CD134F4788FDE11AB973D", hash_generated_method = "7CC874153C050630804412E683E7E62F")
+    /**
+     * Gets the node bounds in parent coordinates.
+     *
+     * @param outBounds The output node bounds.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.821 -0500", hash_original_method = "E0ACD239D05CD134F4788FDE11AB973D", hash_generated_method = "DF442BEA6EFF145BFDDC74F1596920B2")
     public void getBoundsInParent(Rect outBounds) {
-        addTaint(outBounds.getTaint());
         IMPL.getBoundsInParent(mInfo, outBounds);
-        // ---------- Original Method ----------
-        //IMPL.getBoundsInParent(mInfo, outBounds);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.905 -0400", hash_original_method = "3D18F1D3A722CB931F3C0EA8FCAAFCB7", hash_generated_method = "09906DCD9F8705DB8E3FB8E8173228E4")
+    /**
+     * Sets the node bounds in parent coordinates.
+     * <p>
+     * <strong>Note:</strong> Cannot be called from an
+     * {@link android.accessibilityservice.AccessibilityService}. This class is
+     * made immutable before being delivered to an AccessibilityService.
+     * </p>
+     *
+     * @param bounds The node bounds.
+     *@throws IllegalStateException If called from an AccessibilityService.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.822 -0500", hash_original_method = "3D18F1D3A722CB931F3C0EA8FCAAFCB7", hash_generated_method = "4800FFEAA8FE374D7F76DD508373AD10")
     public void setBoundsInParent(Rect bounds) {
-        addTaint(bounds.getTaint());
         IMPL.setBoundsInParent(mInfo, bounds);
-        // ---------- Original Method ----------
-        //IMPL.setBoundsInParent(mInfo, bounds);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.905 -0400", hash_original_method = "603EEE18F9883128AEF640A26C131D4C", hash_generated_method = "6DBA668FEEB42A1CB1BE32712AED4D73")
+    /**
+     * Gets the node bounds in screen coordinates.
+     *
+     * @param outBounds The output node bounds.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.823 -0500", hash_original_method = "603EEE18F9883128AEF640A26C131D4C", hash_generated_method = "DD24380EE95AB6750BC5D493BDB21D91")
     public void getBoundsInScreen(Rect outBounds) {
-        addTaint(outBounds.getTaint());
         IMPL.getBoundsInScreen(mInfo, outBounds);
-        // ---------- Original Method ----------
-        //IMPL.getBoundsInScreen(mInfo, outBounds);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.905 -0400", hash_original_method = "59EABEF98A7E138E1AB24AE8A708DBC4", hash_generated_method = "31129F3B6257CD60F48D9A97CFCCF6D4")
+    /**
+     * Sets the node bounds in screen coordinates.
+     * <p>
+     * <strong>Note:</strong> Cannot be called from an
+     * {@link android.accessibilityservice.AccessibilityService}. This class is
+     * made immutable before being delivered to an AccessibilityService.
+     * </p>
+     *
+     * @param bounds The node bounds.
+     * @throws IllegalStateException If called from an AccessibilityService.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.823 -0500", hash_original_method = "59EABEF98A7E138E1AB24AE8A708DBC4", hash_generated_method = "BD71A64F0D3604B386EE96EB08AD35D1")
     public void setBoundsInScreen(Rect bounds) {
-        addTaint(bounds.getTaint());
         IMPL.setBoundsInParent(mInfo, bounds);
-        // ---------- Original Method ----------
-        //IMPL.setBoundsInParent(mInfo, bounds);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.906 -0400", hash_original_method = "AC8D43F54DC3BA7E7C149D4503D525F3", hash_generated_method = "71853747A865B3792ED65ED5E93DD4C8")
+    /**
+     * Gets whether this node is checkable.
+     *
+     * @return True if the node is checkable.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.824 -0500", hash_original_method = "AC8D43F54DC3BA7E7C149D4503D525F3", hash_generated_method = "F2938EAA3048AB629FE1EE997D43827D")
     public boolean isCheckable() {
-        boolean var685F4011AF6E4D2986BDCC68720B0399_895198588 = (IMPL.isCheckable(mInfo));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1588157606 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1588157606;
-        // ---------- Original Method ----------
-        //return IMPL.isCheckable(mInfo);
+        return IMPL.isCheckable(mInfo);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.906 -0400", hash_original_method = "02532B45DC391F52A2535027893C38AD", hash_generated_method = "C7B38FFBB8FC14ADA2271A87AC1361F0")
+    /**
+     * Sets whether this node is checkable.
+     * <p>
+     * <strong>Note:</strong> Cannot be called from an
+     * {@link android.accessibilityservice.AccessibilityService}. This class is
+     * made immutable before being delivered to an AccessibilityService.
+     * </p>
+     *
+     * @param checkable True if the node is checkable.
+     * @throws IllegalStateException If called from an AccessibilityService.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.825 -0500", hash_original_method = "02532B45DC391F52A2535027893C38AD", hash_generated_method = "DB9149D5D970D65DD9A6A80E6072ABDF")
     public void setCheckable(boolean checkable) {
-        addTaint(checkable);
         IMPL.setCheckable(mInfo, checkable);
-        // ---------- Original Method ----------
-        //IMPL.setCheckable(mInfo, checkable);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.907 -0400", hash_original_method = "519FEB307C383A2CCF5C74B89068518B", hash_generated_method = "8DD5C87E849AFA9F3C84D1A1AD660211")
+    /**
+     * Gets whether this node is checked.
+     *
+     * @return True if the node is checked.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.826 -0500", hash_original_method = "519FEB307C383A2CCF5C74B89068518B", hash_generated_method = "43860E8682617411EB0F8D925489E905")
     public boolean isChecked() {
-        boolean var33F9D569DBB4402543C1779FBB014D50_1102730527 = (IMPL.isChecked(mInfo));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_694057368 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_694057368;
-        // ---------- Original Method ----------
-        //return IMPL.isChecked(mInfo);
+        return IMPL.isChecked(mInfo);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.907 -0400", hash_original_method = "FAB30364812370D4A3BF52C70FA75BB2", hash_generated_method = "23BAF728D1F14A1222F1C6EC59F5FC5F")
+    /**
+     * Sets whether this node is checked.
+     * <p>
+     * <strong>Note:</strong> Cannot be called from an
+     * {@link android.accessibilityservice.AccessibilityService}. This class is
+     * made immutable before being delivered to an AccessibilityService.
+     * </p>
+     *
+     * @param checked True if the node is checked.
+     * @throws IllegalStateException If called from an AccessibilityService.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.827 -0500", hash_original_method = "FAB30364812370D4A3BF52C70FA75BB2", hash_generated_method = "A59C6BCE2CD8DB866372B92FC3B179DB")
     public void setChecked(boolean checked) {
-        addTaint(checked);
         IMPL.setChecked(mInfo, checked);
-        // ---------- Original Method ----------
-        //IMPL.setChecked(mInfo, checked);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.908 -0400", hash_original_method = "C9FC8F868000F9B33292AD780E66DCA0", hash_generated_method = "BCA84CAC9CDE5B0AF845C4DE5A712B80")
+    /**
+     * Gets whether this node is focusable.
+     *
+     * @return True if the node is focusable.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.828 -0500", hash_original_method = "C9FC8F868000F9B33292AD780E66DCA0", hash_generated_method = "1B0C7C9ED4E3061FC117CF300391E932")
     public boolean isFocusable() {
-        boolean var3BB37A0698B8505BC22CF5C6D88C0EEB_18913854 = (IMPL.isFocusable(mInfo));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1793042783 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1793042783;
-        // ---------- Original Method ----------
-        //return IMPL.isFocusable(mInfo);
+        return IMPL.isFocusable(mInfo);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.909 -0400", hash_original_method = "FBAE0F38121F1E86CBC8B993867A4A27", hash_generated_method = "33CD65E82A144246B95AABB47A4ADA51")
+    /**
+     * Sets whether this node is focusable.
+     * <p>
+     * <strong>Note:</strong> Cannot be called from an
+     * {@link android.accessibilityservice.AccessibilityService}. This class is
+     * made immutable before being delivered to an AccessibilityService.
+     * </p>
+     *
+     * @param focusable True if the node is focusable.
+     * @throws IllegalStateException If called from an AccessibilityService.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.828 -0500", hash_original_method = "FBAE0F38121F1E86CBC8B993867A4A27", hash_generated_method = "9EE3B225F0BB900FFF66FF8CFE4D2755")
     public void setFocusable(boolean focusable) {
-        addTaint(focusable);
         IMPL.setFocusable(mInfo, focusable);
-        // ---------- Original Method ----------
-        //IMPL.setFocusable(mInfo, focusable);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.909 -0400", hash_original_method = "4F186107AF4B40F30B1A87108529D484", hash_generated_method = "7E9B8608BC3DF204DB6481129A7008B9")
+    /**
+     * Gets whether this node is focused.
+     *
+     * @return True if the node is focused.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.829 -0500", hash_original_method = "4F186107AF4B40F30B1A87108529D484", hash_generated_method = "1CE5FAA6469CB8E3576D4A61733A2FB1")
     public boolean isFocused() {
-        boolean var00711EF416F1BA8A3800587F0BAC689D_988166458 = (IMPL.isFocused(mInfo));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1683597024 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1683597024;
-        // ---------- Original Method ----------
-        //return IMPL.isFocused(mInfo);
+        return IMPL.isFocused(mInfo);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.910 -0400", hash_original_method = "9869A69DD9422BD72F2EA6EC374F4934", hash_generated_method = "95B8577E8A942DD29AEEEFE5D7237F7B")
+    /**
+     * Sets whether this node is focused.
+     * <p>
+     * <strong>Note:</strong> Cannot be called from an
+     * {@link android.accessibilityservice.AccessibilityService}. This class is
+     * made immutable before being delivered to an AccessibilityService.
+     * </p>
+     *
+     * @param focused True if the node is focused.
+     * @throws IllegalStateException If called from an AccessibilityService.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.830 -0500", hash_original_method = "9869A69DD9422BD72F2EA6EC374F4934", hash_generated_method = "20F520430D8D21E4D7B31FF626E2060D")
     public void setFocused(boolean focused) {
-        addTaint(focused);
         IMPL.setFocused(mInfo, focused);
-        // ---------- Original Method ----------
-        //IMPL.setFocused(mInfo, focused);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.910 -0400", hash_original_method = "DDA60D7434111992259669E63D890C29", hash_generated_method = "51508CD6FA505574A818CC5843036373")
+    /**
+     * Gets whether this node is selected.
+     *
+     * @return True if the node is selected.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.830 -0500", hash_original_method = "DDA60D7434111992259669E63D890C29", hash_generated_method = "F851DFD3AB4682AEC9781FD2E8716529")
     public boolean isSelected() {
-        boolean varE100557C9239498F7159ABAB0035E995_1669036655 = (IMPL.isSelected(mInfo));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_621306201 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_621306201;
-        // ---------- Original Method ----------
-        //return IMPL.isSelected(mInfo);
+        return IMPL.isSelected(mInfo);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.910 -0400", hash_original_method = "CCBAF3645335D86B821DEAC9BDDB4ED2", hash_generated_method = "9BC7205A9389E43E5F8805EE6DF68AF9")
+    /**
+     * Sets whether this node is selected.
+     * <p>
+     * <strong>Note:</strong> Cannot be called from an
+     * {@link android.accessibilityservice.AccessibilityService}. This class is
+     * made immutable before being delivered to an AccessibilityService.
+     * </p>
+     *
+     * @param selected True if the node is selected.
+     * @throws IllegalStateException If called from an AccessibilityService.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.831 -0500", hash_original_method = "CCBAF3645335D86B821DEAC9BDDB4ED2", hash_generated_method = "00F8596CE99ACE290DD1B676F34D71C6")
     public void setSelected(boolean selected) {
-        addTaint(selected);
         IMPL.setSelected(mInfo, selected);
-        // ---------- Original Method ----------
-        //IMPL.setSelected(mInfo, selected);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.910 -0400", hash_original_method = "6F39B6C0009288DFEA1A8807AE028922", hash_generated_method = "6FF93CFA699687A78D4D0BF59A9BDDC5")
+    /**
+     * Gets whether this node is clickable.
+     *
+     * @return True if the node is clickable.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.832 -0500", hash_original_method = "6F39B6C0009288DFEA1A8807AE028922", hash_generated_method = "A3D847D73DF1E2DD92FCBC32FE6B781B")
     public boolean isClickable() {
-        boolean var50B5B2E08A22B3AD29A9E7E355DB395A_323919475 = (IMPL.isClickable(mInfo));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1245578811 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1245578811;
-        // ---------- Original Method ----------
-        //return IMPL.isClickable(mInfo);
+        return IMPL.isClickable(mInfo);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.911 -0400", hash_original_method = "CBF9AA1E7F6DA4EEE21EFD519E970C6E", hash_generated_method = "EACEF5087FD082FDE8C7968E38B86C7A")
+    /**
+     * Sets whether this node is clickable.
+     * <p>
+     * <strong>Note:</strong> Cannot be called from an
+     * {@link android.accessibilityservice.AccessibilityService}. This class is
+     * made immutable before being delivered to an AccessibilityService.
+     * </p>
+     *
+     * @param clickable True if the node is clickable.
+     * @throws IllegalStateException If called from an AccessibilityService.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.832 -0500", hash_original_method = "CBF9AA1E7F6DA4EEE21EFD519E970C6E", hash_generated_method = "43B26BD6D513B5F41067E1E4D4FAF666")
     public void setClickable(boolean clickable) {
-        addTaint(clickable);
         IMPL.setClickable(mInfo, clickable);
-        // ---------- Original Method ----------
-        //IMPL.setClickable(mInfo, clickable);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.911 -0400", hash_original_method = "2A0651AA24697C87D5B10A2F592D15AE", hash_generated_method = "ECC36E7ADE05CFD140310E4821068DA1")
+    /**
+     * Gets whether this node is long clickable.
+     *
+     * @return True if the node is long clickable.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.833 -0500", hash_original_method = "2A0651AA24697C87D5B10A2F592D15AE", hash_generated_method = "4D2C2FC18945A9E163C831680B184A24")
     public boolean isLongClickable() {
-        boolean varF4EAA6F4997241DF13A848FDABDE2DE3_1843014490 = (IMPL.isLongClickable(mInfo));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_815569525 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_815569525;
-        // ---------- Original Method ----------
-        //return IMPL.isLongClickable(mInfo);
+        return IMPL.isLongClickable(mInfo);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.911 -0400", hash_original_method = "C41DB90B24D967665ADB7BE195D933F7", hash_generated_method = "27E416E65DAA2E3D4144E2260D86D7E7")
+    /**
+     * Sets whether this node is long clickable.
+     * <p>
+     * <strong>Note:</strong> Cannot be called from an
+     * {@link android.accessibilityservice.AccessibilityService}. This class is
+     * made immutable before being delivered to an AccessibilityService.
+     * </p>
+     *
+     * @param longClickable True if the node is long clickable.
+     * @throws IllegalStateException If called from an AccessibilityService.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.834 -0500", hash_original_method = "C41DB90B24D967665ADB7BE195D933F7", hash_generated_method = "450B17F683658666E99C7B3076539982")
     public void setLongClickable(boolean longClickable) {
-        addTaint(longClickable);
         IMPL.setLongClickable(mInfo, longClickable);
-        // ---------- Original Method ----------
-        //IMPL.setLongClickable(mInfo, longClickable);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.911 -0400", hash_original_method = "652E5B5F063CB50BC77186FF37F33BDF", hash_generated_method = "A7829AD92A96295FB446AA4096E4CBD8")
+    /**
+     * Gets whether this node is enabled.
+     *
+     * @return True if the node is enabled.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.835 -0500", hash_original_method = "652E5B5F063CB50BC77186FF37F33BDF", hash_generated_method = "6BA66641655E00C9ED155D7F2DCE0E9C")
     public boolean isEnabled() {
-        boolean var51B48439FD11F5F658E2CBFAF91AFAA8_1518422621 = (IMPL.isEnabled(mInfo));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_98228139 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_98228139;
-        // ---------- Original Method ----------
-        //return IMPL.isEnabled(mInfo);
+        return IMPL.isEnabled(mInfo);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.911 -0400", hash_original_method = "38B56F1A12BFB4B4EFFD2BC2116AF996", hash_generated_method = "21DA0CFFDB4C804D5A4A91108CBD7CD7")
+    /**
+     * Sets whether this node is enabled.
+     * <p>
+     * <strong>Note:</strong> Cannot be called from an
+     * {@link android.accessibilityservice.AccessibilityService}. This class is
+     * made immutable before being delivered to an AccessibilityService.
+     * </p>
+     *
+     * @param enabled True if the node is enabled.
+     * @throws IllegalStateException If called from an AccessibilityService.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.835 -0500", hash_original_method = "38B56F1A12BFB4B4EFFD2BC2116AF996", hash_generated_method = "6CE97DBF8734F261892A971A7D8BDF52")
     public void setEnabled(boolean enabled) {
-        addTaint(enabled);
         IMPL.setEnabled(mInfo, enabled);
-        // ---------- Original Method ----------
-        //IMPL.setEnabled(mInfo, enabled);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.911 -0400", hash_original_method = "65A99E085FF9E307AFC93D67B83055DB", hash_generated_method = "87DC269012931A13C1A5C1F338B3120A")
+    /**
+     * Gets whether this node is a password.
+     *
+     * @return True if the node is a password.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.836 -0500", hash_original_method = "65A99E085FF9E307AFC93D67B83055DB", hash_generated_method = "C464D20B5B06D4A8BB2AAB921D019802")
     public boolean isPassword() {
-        boolean var5B3CA3EE69541E38082AD0239B1B6074_62510698 = (IMPL.isPassword(mInfo));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1983269749 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1983269749;
-        // ---------- Original Method ----------
-        //return IMPL.isPassword(mInfo);
+        return IMPL.isPassword(mInfo);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.911 -0400", hash_original_method = "B97A25B40B977908B12069641BAB55A8", hash_generated_method = "2824D3EBA03E41186B592DB1A76A6B96")
+    /**
+     * Sets whether this node is a password.
+     * <p>
+     * <strong>Note:</strong> Cannot be called from an
+     * {@link android.accessibilityservice.AccessibilityService}. This class is
+     * made immutable before being delivered to an AccessibilityService.
+     * </p>
+     *
+     * @param password True if the node is a password.
+     * @throws IllegalStateException If called from an AccessibilityService.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.837 -0500", hash_original_method = "B97A25B40B977908B12069641BAB55A8", hash_generated_method = "F607BC9F283964AD117DE9BEB44E99B1")
     public void setPassword(boolean password) {
-        addTaint(password);
         IMPL.setPassword(mInfo, password);
-        // ---------- Original Method ----------
-        //IMPL.setPassword(mInfo, password);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.911 -0400", hash_original_method = "C7AAD2830522B8BD5949276001A4D042", hash_generated_method = "A5804360C86798CF4A3467002ABEB2DE")
+    /**
+     * Gets if the node is scrollable.
+     *
+     * @return True if the node is scrollable, false otherwise.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.838 -0500", hash_original_method = "C7AAD2830522B8BD5949276001A4D042", hash_generated_method = "930838EDEF0DD5A1791DF4F002E34E4C")
     public boolean isScrollable() {
-        boolean var386B817CD3380B6278D51C5463FC5279_430815435 = (IMPL.isScrollable(mInfo));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1075645415 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1075645415;
-        // ---------- Original Method ----------
-        //return IMPL.isScrollable(mInfo);
+        return IMPL.isScrollable(mInfo);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.911 -0400", hash_original_method = "EF0CC581E7F7F261AFF7A1550C16EBCA", hash_generated_method = "DE592F606AC5C3DFA486E36F4A7214E0")
+    /**
+     * Sets if the node is scrollable.
+     * <p>
+     * <strong>Note:</strong> Cannot be called from an
+     * {@link android.accessibilityservice.AccessibilityService}. This class is
+     * made immutable before being delivered to an AccessibilityService.
+     * </p>
+     *
+     * @param scrollable True if the node is scrollable, false otherwise.
+     * @throws IllegalStateException If called from an AccessibilityService.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.838 -0500", hash_original_method = "EF0CC581E7F7F261AFF7A1550C16EBCA", hash_generated_method = "FF10968521D7D7EE6AA386EF051FC800")
     public void setScrollable(boolean scrollable) {
-        addTaint(scrollable);
         IMPL.setScrollable(mInfo, scrollable);
-        // ---------- Original Method ----------
-        //IMPL.setScrollable(mInfo, scrollable);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.911 -0400", hash_original_method = "11DA2F2F6D35A0A5BD4D3AD5855546F2", hash_generated_method = "22A549EC8E14067C9086883B3883CCB2")
+    /**
+     * Gets the package this node comes from.
+     *
+     * @return The package name.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.839 -0500", hash_original_method = "11DA2F2F6D35A0A5BD4D3AD5855546F2", hash_generated_method = "E376132D49C22EECF8940FC095DC9C7A")
     public CharSequence getPackageName() {
-CharSequence varE0B20734E37C2B46025E4F8131365FD2_1713273493 =         IMPL.getPackageName(mInfo);
-        varE0B20734E37C2B46025E4F8131365FD2_1713273493.addTaint(taint);
-        return varE0B20734E37C2B46025E4F8131365FD2_1713273493;
-        // ---------- Original Method ----------
-        //return IMPL.getPackageName(mInfo);
+        return IMPL.getPackageName(mInfo);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.912 -0400", hash_original_method = "51BDE657C455C3947A276CD4621D88BF", hash_generated_method = "9A61E15B94A65BC44A91F487A5663A1A")
+    /**
+     * Sets the package this node comes from.
+     * <p>
+     * <strong>Note:</strong> Cannot be called from an
+     * {@link android.accessibilityservice.AccessibilityService}. This class is
+     * made immutable before being delivered to an AccessibilityService.
+     * </p>
+     *
+     * @param packageName The package name.
+     * @throws IllegalStateException If called from an AccessibilityService.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.841 -0500", hash_original_method = "51BDE657C455C3947A276CD4621D88BF", hash_generated_method = "B10217DFFD45DFE59CD0708B3A3739E6")
     public void setPackageName(CharSequence packageName) {
-        addTaint(packageName.getTaint());
         IMPL.setPackageName(mInfo, packageName);
-        // ---------- Original Method ----------
-        //IMPL.setPackageName(mInfo, packageName);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.912 -0400", hash_original_method = "80725931141339E528C95BCDFA69AC67", hash_generated_method = "5A2BA13E66E497D76E1549A61BCBCD07")
+    /**
+     * Gets the class this node comes from.
+     *
+     * @return The class name.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.841 -0500", hash_original_method = "80725931141339E528C95BCDFA69AC67", hash_generated_method = "AD5985DA033FE7AA31D10BC4686F4408")
     public CharSequence getClassName() {
-CharSequence var13976FE2411926A27FCB8E00EEE7AAD4_432317811 =         IMPL.getClassName(mInfo);
-        var13976FE2411926A27FCB8E00EEE7AAD4_432317811.addTaint(taint);
-        return var13976FE2411926A27FCB8E00EEE7AAD4_432317811;
-        // ---------- Original Method ----------
-        //return IMPL.getClassName(mInfo);
+        return IMPL.getClassName(mInfo);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.912 -0400", hash_original_method = "95DBB6C9D00CCAE01AE6EC9F7D77613E", hash_generated_method = "F66BE18B952BCADB658E7C23182022A4")
+    /**
+     * Sets the class this node comes from.
+     * <p>
+     * <strong>Note:</strong> Cannot be called from an
+     * {@link android.accessibilityservice.AccessibilityService}. This class is
+     * made immutable before being delivered to an AccessibilityService.
+     * </p>
+     *
+     * @param className The class name.
+     * @throws IllegalStateException If called from an AccessibilityService.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.842 -0500", hash_original_method = "95DBB6C9D00CCAE01AE6EC9F7D77613E", hash_generated_method = "8F56A94F6ACCE2223C09F279D7B8EC3A")
     public void setClassName(CharSequence className) {
-        addTaint(className.getTaint());
         IMPL.setClassName(mInfo, className);
-        // ---------- Original Method ----------
-        //IMPL.setClassName(mInfo, className);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.912 -0400", hash_original_method = "384621808EBD921F20A6EB28B91ADAD5", hash_generated_method = "C158BFB466793188729FDD8820F27DA8")
+    /**
+     * Gets the text of this node.
+     *
+     * @return The text.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.843 -0500", hash_original_method = "384621808EBD921F20A6EB28B91ADAD5", hash_generated_method = "5E5A150E827CB2DE5FA31B44CEBACCE2")
     public CharSequence getText() {
-CharSequence var1DF1200F05671DF9D4AB0C5F6C8DAAA4_626847862 =         IMPL.getText(mInfo);
-        var1DF1200F05671DF9D4AB0C5F6C8DAAA4_626847862.addTaint(taint);
-        return var1DF1200F05671DF9D4AB0C5F6C8DAAA4_626847862;
-        // ---------- Original Method ----------
-        //return IMPL.getText(mInfo);
+        return IMPL.getText(mInfo);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.912 -0400", hash_original_method = "CCE84BD471DC2DB3AF81C568CF944475", hash_generated_method = "6443F8BA015BAFA56BE9E33E21F5D8E5")
+    /**
+     * Sets the text of this node.
+     * <p>
+     * <strong>Note:</strong> Cannot be called from an
+     * {@link android.accessibilityservice.AccessibilityService}. This class is
+     * made immutable before being delivered to an AccessibilityService.
+     * </p>
+     *
+     * @param text The text.
+     * @throws IllegalStateException If called from an AccessibilityService.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.844 -0500", hash_original_method = "CCE84BD471DC2DB3AF81C568CF944475", hash_generated_method = "21AF717A075F3D5014CAD534ABD735C0")
     public void setText(CharSequence text) {
-        addTaint(text.getTaint());
         IMPL.setText(mInfo, text);
-        // ---------- Original Method ----------
-        //IMPL.setText(mInfo, text);
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.912 -0400", hash_original_method = "17A5AE651613EAEE40274E28D0DBF3CB", hash_generated_method = "18DCD58EBDD6A233371A7649A0F96367")
-    public CharSequence getContentDescription() {
-CharSequence varC4BA732E0BE0020738370211FB549BA9_221820327 =         IMPL.getContentDescription(mInfo);
-        varC4BA732E0BE0020738370211FB549BA9_221820327.addTaint(taint);
-        return varC4BA732E0BE0020738370211FB549BA9_221820327;
-        // ---------- Original Method ----------
-        //return IMPL.getContentDescription(mInfo);
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.912 -0400", hash_original_method = "0581568FD089D03E78C8C673EC290A8E", hash_generated_method = "9B7BD8E2BC21A367B4D01A839E39FDB6")
-    public void setContentDescription(CharSequence contentDescription) {
-        addTaint(contentDescription.getTaint());
-        IMPL.setContentDescription(mInfo, contentDescription);
-        // ---------- Original Method ----------
-        //IMPL.setContentDescription(mInfo, contentDescription);
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.912 -0400", hash_original_method = "4012C2A77CF6E1C54F1B4372AFDF8962", hash_generated_method = "C65940CB1FE55E31C8C8CA907DBC92D5")
-    public void recycle() {
-        IMPL.recycle(mInfo);
-        // ---------- Original Method ----------
-        //IMPL.recycle(mInfo);
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.912 -0400", hash_original_method = "3D44C3AC54A391BB7EEFE6DCE99834D5", hash_generated_method = "5C61BEB110CEA2E10C908BA81B926027")
-    @Override
-    public int hashCode() {
-        int var625C9F3E5BE1C6E8EA2CEBDE7561D065_2097581976 = ((mInfo == null) ? 0 : mInfo.hashCode());
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_119665132 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_119665132;
-        // ---------- Original Method ----------
-        //return (mInfo == null) ? 0 : mInfo.hashCode();
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.913 -0400", hash_original_method = "9F360410AD288A74DD17C77A13BAB054", hash_generated_method = "41CA14B05DE42EC79F5FCA6891D462EE")
-    @Override
-    public boolean equals(Object obj) {
-        addTaint(obj.getTaint());
-        if(this == obj)        
-        {
-            boolean varB326B5062B2F0E69046810717534CB09_1939781463 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_510874604 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_510874604;
-        } //End block
-        if(obj == null)        
-        {
-            boolean var68934A3E9455FA72420237EB05902327_1206958100 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_807803962 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_807803962;
-        } //End block
-        if(getClass() != obj.getClass())        
-        {
-            boolean var68934A3E9455FA72420237EB05902327_1513043913 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_57383357 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_57383357;
-        } //End block
-        AccessibilityNodeInfoCompat other = (AccessibilityNodeInfoCompat) obj;
-        if(mInfo == null)        
-        {
-            if(other.mInfo != null)            
-            {
-                boolean var68934A3E9455FA72420237EB05902327_1715389481 = (false);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_287297776 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_287297776;
-            } //End block
-        } //End block
-        else
-        if(!mInfo.equals(other.mInfo))        
-        {
-            boolean var68934A3E9455FA72420237EB05902327_715054587 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_938180279 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_938180279;
-        } //End block
-        boolean varB326B5062B2F0E69046810717534CB09_822773925 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1182058033 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1182058033;
-        // ---------- Original Method ----------
-        //if (this == obj) {
-            //return true;
-        //}
-        //if (obj == null) {
-            //return false;
-        //}
-        //if (getClass() != obj.getClass()) {
-            //return false;
-        //}
-        //AccessibilityNodeInfoCompat other = (AccessibilityNodeInfoCompat) obj;
-        //if (mInfo == null) {
-            //if (other.mInfo != null) {
-                //return false;
-            //}
-        //} else if (!mInfo.equals(other.mInfo)) {
-            //return false;
-        //}
-        //return true;
     }
 
     
@@ -570,500 +660,239 @@ CharSequence varC4BA732E0BE0020738370211FB549BA9_221820327 =         IMPL.getCon
         {
             //Synthesized constructor
         }
-
-
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.913 -0400", hash_original_method = "817FD8D623FDA4524F619AFC293F09EC", hash_generated_method = "C22676B56DF071A7F5CF6788FE18A34A")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.720 -0500", hash_original_method = "817FD8D623FDA4524F619AFC293F09EC", hash_generated_method = "E63F20960B6D02B12716A3819EFD1DB3")
         public Object obtain() {
-Object var540C13E9E156B687226421B24F2DF178_1040934607 =             null;
-            var540C13E9E156B687226421B24F2DF178_1040934607.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_1040934607;
-            // ---------- Original Method ----------
-            //return null;
+            return null;
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.913 -0400", hash_original_method = "92695667FFAB3FACD22606EFAA0A43BA", hash_generated_method = "428FCD4EBF9849DCA7C7BCB5941DCB1D")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.720 -0500", hash_original_method = "92695667FFAB3FACD22606EFAA0A43BA", hash_generated_method = "B228B913824C0061F3FC9E0ACFA1513A")
         public Object obtain(View source) {
-            addTaint(source.getTaint());
-Object var540C13E9E156B687226421B24F2DF178_1468704625 =             null;
-            var540C13E9E156B687226421B24F2DF178_1468704625.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_1468704625;
-            // ---------- Original Method ----------
-            //return null;
+            return null;
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.914 -0400", hash_original_method = "773588C99ADE780DBDFC19514017BC1F", hash_generated_method = "1C42FB8843EC80E28B12893B8DDA3996")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.721 -0500", hash_original_method = "773588C99ADE780DBDFC19514017BC1F", hash_generated_method = "35116944E92967590C7B1582759A075D")
         public Object obtain(Object info) {
-            addTaint(info.getTaint());
-Object var540C13E9E156B687226421B24F2DF178_1360766167 =             null;
-            var540C13E9E156B687226421B24F2DF178_1360766167.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_1360766167;
-            // ---------- Original Method ----------
-            //return null;
+            return null;
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.914 -0400", hash_original_method = "8D71C6A90F236F7F17CE9F0DA3BE99D2", hash_generated_method = "5F00060CAB9B4B2566E623D909A28FE0")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.722 -0500", hash_original_method = "8D71C6A90F236F7F17CE9F0DA3BE99D2", hash_generated_method = "D079D6F3460222FD56CB17FD00B22288")
         public void addAction(Object info, int action) {
-            addTaint(action);
-            addTaint(info.getTaint());
-            // ---------- Original Method ----------
+
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.914 -0400", hash_original_method = "6B9372E604C01DF70F526B6A8E570148", hash_generated_method = "46FE01FA0CFC681CC6BB779E2143207C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.723 -0500", hash_original_method = "6B9372E604C01DF70F526B6A8E570148", hash_generated_method = "CA4334FE615ADF5FF93BDEFF92048E15")
         public void addChild(Object info, View child) {
-            addTaint(child.getTaint());
-            addTaint(info.getTaint());
-            // ---------- Original Method ----------
+
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.914 -0400", hash_original_method = "DDFBD7F537083E060F4196E4CBB1F004", hash_generated_method = "223906D14B1366CB768D5585282A9374")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.724 -0500", hash_original_method = "DDFBD7F537083E060F4196E4CBB1F004", hash_generated_method = "0C302232632E2BE33F7B1E2F99F920B0")
         public List<Object> findAccessibilityNodeInfosByText(Object info, String text) {
-            addTaint(text.getTaint());
-            addTaint(info.getTaint());
-List<Object> varB803AB532741AA7D5C2F301CCDDD25F2_1989815313 =             Collections.emptyList();
-            varB803AB532741AA7D5C2F301CCDDD25F2_1989815313.addTaint(taint);
-            return varB803AB532741AA7D5C2F301CCDDD25F2_1989815313;
-            // ---------- Original Method ----------
-            //return Collections.emptyList();
+            return Collections.emptyList();
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.914 -0400", hash_original_method = "62879C9A6873AFA1FE78492502C9E8C1", hash_generated_method = "6731D5282942741D23214A873AEAEEB0")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.725 -0500", hash_original_method = "62879C9A6873AFA1FE78492502C9E8C1", hash_generated_method = "1B09725F28EC0FD7CCC68EC5681527B1")
         public int getActions(Object info) {
-            addTaint(info.getTaint());
-            int varCFCD208495D565EF66E7DFF9F98764DA_945072697 = (0);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_781183492 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_781183492;
-            // ---------- Original Method ----------
-            //return 0;
+            return 0;
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.914 -0400", hash_original_method = "194BB4DCA6CDD611708C0DBE13AE8AE6", hash_generated_method = "3C000B93FEEBF5C47B18A21222CC810A")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.725 -0500", hash_original_method = "194BB4DCA6CDD611708C0DBE13AE8AE6", hash_generated_method = "FDF96C587609658A1C7CC7B85FE7AA2F")
         public void getBoundsInParent(Object info, Rect outBounds) {
-            addTaint(outBounds.getTaint());
-            addTaint(info.getTaint());
-            // ---------- Original Method ----------
+
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.914 -0400", hash_original_method = "AD025A7E801C16406D0F86CAFA041F7F", hash_generated_method = "5D8984E8D4D82D8FAB88F2396774FB3D")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.726 -0500", hash_original_method = "AD025A7E801C16406D0F86CAFA041F7F", hash_generated_method = "EAC0067D53A64557D6AC53C7F0EEC501")
         public void getBoundsInScreen(Object info, Rect outBounds) {
-            addTaint(outBounds.getTaint());
-            addTaint(info.getTaint());
-            // ---------- Original Method ----------
+
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.914 -0400", hash_original_method = "3EFC24789BAB789DBA02244C19291A8A", hash_generated_method = "40C84CF3785E094D813BFD5A6A73E381")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.727 -0500", hash_original_method = "3EFC24789BAB789DBA02244C19291A8A", hash_generated_method = "870DBE28D652511DF55C447015312F10")
         public Object getChild(Object info, int index) {
-            addTaint(index);
-            addTaint(info.getTaint());
-Object var540C13E9E156B687226421B24F2DF178_84511909 =             null;
-            var540C13E9E156B687226421B24F2DF178_84511909.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_84511909;
-            // ---------- Original Method ----------
-            //return null;
+            return null;
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.915 -0400", hash_original_method = "DE0573752D5D98EE2B44C4024F5102E5", hash_generated_method = "120A3C333C23C0A79C298CDF028C1E14")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.728 -0500", hash_original_method = "DE0573752D5D98EE2B44C4024F5102E5", hash_generated_method = "6B94932D70B58FA45BCEFC06F48841A1")
         public int getChildCount(Object info) {
-            addTaint(info.getTaint());
-            int varCFCD208495D565EF66E7DFF9F98764DA_1296444467 = (0);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_651125123 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_651125123;
-            // ---------- Original Method ----------
-            //return 0;
+            return 0;
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.915 -0400", hash_original_method = "0F7CFAB631E1B134DCF395A7797DAF67", hash_generated_method = "332F58C34E004BAF0E3F0DC1446D5AA0")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.729 -0500", hash_original_method = "0F7CFAB631E1B134DCF395A7797DAF67", hash_generated_method = "E8E0B48CB275E1E67174E1852A0D2501")
         public CharSequence getClassName(Object info) {
-            addTaint(info.getTaint());
-CharSequence var540C13E9E156B687226421B24F2DF178_464677271 =             null;
-            var540C13E9E156B687226421B24F2DF178_464677271.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_464677271;
-            // ---------- Original Method ----------
-            //return null;
+            return null;
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.915 -0400", hash_original_method = "7D3E1748FD6A5B3BAF1D83AAF2AE15DE", hash_generated_method = "A651D94E331335FDD31E75DBE6324B99")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.729 -0500", hash_original_method = "7D3E1748FD6A5B3BAF1D83AAF2AE15DE", hash_generated_method = "C2A3B2C429CC7C82C38ABC848FC736B5")
         public CharSequence getContentDescription(Object info) {
-            addTaint(info.getTaint());
-CharSequence var540C13E9E156B687226421B24F2DF178_2004204139 =             null;
-            var540C13E9E156B687226421B24F2DF178_2004204139.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_2004204139;
-            // ---------- Original Method ----------
-            //return null;
+            return null;
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.915 -0400", hash_original_method = "D7A11002847EF3E5746055DA2B429105", hash_generated_method = "6DDDD691E35DDFC43AD4965A0F8F4580")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.730 -0500", hash_original_method = "D7A11002847EF3E5746055DA2B429105", hash_generated_method = "27815C2DE12138498A811FD259DFB57A")
         public CharSequence getPackageName(Object info) {
-            addTaint(info.getTaint());
-CharSequence var540C13E9E156B687226421B24F2DF178_846134427 =             null;
-            var540C13E9E156B687226421B24F2DF178_846134427.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_846134427;
-            // ---------- Original Method ----------
-            //return null;
+            return null;
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.915 -0400", hash_original_method = "6E57EFC15A3C835051BC240D78A056B3", hash_generated_method = "06C29B35230D9C2A03DFFAA30C2BEE21")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.731 -0500", hash_original_method = "6E57EFC15A3C835051BC240D78A056B3", hash_generated_method = "49261D57053CC23BA22654333616A8A3")
         public AccessibilityNodeInfoCompat getParent(Object info) {
-            addTaint(info.getTaint());
-AccessibilityNodeInfoCompat var540C13E9E156B687226421B24F2DF178_217224083 =             null;
-            var540C13E9E156B687226421B24F2DF178_217224083.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_217224083;
-            // ---------- Original Method ----------
-            //return null;
+            return null;
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.915 -0400", hash_original_method = "CA1AE5519AB49B9F955ADEDF9C3C214E", hash_generated_method = "FB4F453C70EEE90213D81EC91DAC7AE9")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.732 -0500", hash_original_method = "CA1AE5519AB49B9F955ADEDF9C3C214E", hash_generated_method = "BD45C21C71A5796FEB425A789EB7111D")
         public CharSequence getText(Object info) {
-            addTaint(info.getTaint());
-CharSequence var540C13E9E156B687226421B24F2DF178_426406822 =             null;
-            var540C13E9E156B687226421B24F2DF178_426406822.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_426406822;
-            // ---------- Original Method ----------
-            //return null;
+            return null;
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.915 -0400", hash_original_method = "EB7D2054B13C972973DD67D9B21CE0E5", hash_generated_method = "C439079EA6F598B0EB54F5E0F5A049EE")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.733 -0500", hash_original_method = "EB7D2054B13C972973DD67D9B21CE0E5", hash_generated_method = "1CA2BBF715ED25817F4D259DF2170015")
         public int getWindowId(Object info) {
-            addTaint(info.getTaint());
-            int varCFCD208495D565EF66E7DFF9F98764DA_1240209974 = (0);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_111491701 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_111491701;
-            // ---------- Original Method ----------
-            //return 0;
+            return 0;
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.915 -0400", hash_original_method = "4E39FE68FD90D69FA08C7AD1E979DF07", hash_generated_method = "2A56A0AA92FC00F555760CE938255496")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.734 -0500", hash_original_method = "4E39FE68FD90D69FA08C7AD1E979DF07", hash_generated_method = "5AA5713FEAF2A3541F057FB3F0EA6AB3")
         public boolean isCheckable(Object info) {
-            addTaint(info.getTaint());
-            boolean var68934A3E9455FA72420237EB05902327_653285470 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_984624090 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_984624090;
-            // ---------- Original Method ----------
-            //return false;
+            return false;
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.915 -0400", hash_original_method = "F2469434A89FA62BE9B2DB78034140F5", hash_generated_method = "8D6F77D4078679E1957182F1511A57C6")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.734 -0500", hash_original_method = "F2469434A89FA62BE9B2DB78034140F5", hash_generated_method = "66ED3C092CC7019EF9829DF445BFF20D")
         public boolean isChecked(Object info) {
-            addTaint(info.getTaint());
-            boolean var68934A3E9455FA72420237EB05902327_1687903031 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1197183923 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1197183923;
-            // ---------- Original Method ----------
-            //return false;
+            return false;
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.916 -0400", hash_original_method = "F7781A93E107315385A57825C2B0B78A", hash_generated_method = "2B9E68459C4444FAB3A60ED42976F0D6")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.736 -0500", hash_original_method = "F7781A93E107315385A57825C2B0B78A", hash_generated_method = "8B729B21713FDFDA602278279787045F")
         public boolean isClickable(Object info) {
-            addTaint(info.getTaint());
-            boolean var68934A3E9455FA72420237EB05902327_733561169 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_587694012 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_587694012;
-            // ---------- Original Method ----------
-            //return false;
+            return false;
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.916 -0400", hash_original_method = "6BAAC3777342DFE283E965C06FC8D874", hash_generated_method = "482153F30448AD98BFB27ACC5FE1B1B9")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.736 -0500", hash_original_method = "6BAAC3777342DFE283E965C06FC8D874", hash_generated_method = "C7502920BB7EB353859573348C7487BF")
         public boolean isEnabled(Object info) {
-            addTaint(info.getTaint());
-            boolean var68934A3E9455FA72420237EB05902327_1314570303 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_508961167 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_508961167;
-            // ---------- Original Method ----------
-            //return false;
+            return false;
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.916 -0400", hash_original_method = "24826F7A102BA4F82C9D9B08241E284F", hash_generated_method = "92BFC06E77DCD654545C86AAE1ED03F3")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.737 -0500", hash_original_method = "24826F7A102BA4F82C9D9B08241E284F", hash_generated_method = "4A8E8BF489067EBEBBA043153F5E11C3")
         public boolean isFocusable(Object info) {
-            addTaint(info.getTaint());
-            boolean var68934A3E9455FA72420237EB05902327_399290581 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_629163545 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_629163545;
-            // ---------- Original Method ----------
-            //return false;
+            return false;
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.916 -0400", hash_original_method = "4D0616B5A88718B8558E59C7943E57B4", hash_generated_method = "0DA42201F4880A5D7F2404FCC348284C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.738 -0500", hash_original_method = "4D0616B5A88718B8558E59C7943E57B4", hash_generated_method = "7C70A61FF4EB9417B79D26C961A54C95")
         public boolean isFocused(Object info) {
-            addTaint(info.getTaint());
-            boolean var68934A3E9455FA72420237EB05902327_135245669 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_114256132 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_114256132;
-            // ---------- Original Method ----------
-            //return false;
+            return false;
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.916 -0400", hash_original_method = "3EB36752093CDD3C24048A6DFD7EC73D", hash_generated_method = "C070550102AC2B76E95846A89BCD4429")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.739 -0500", hash_original_method = "3EB36752093CDD3C24048A6DFD7EC73D", hash_generated_method = "689344C1E023DD6328F379B8EDE0FF66")
         public boolean isLongClickable(Object info) {
-            addTaint(info.getTaint());
-            boolean var68934A3E9455FA72420237EB05902327_1024372960 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1408047017 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1408047017;
-            // ---------- Original Method ----------
-            //return false;
+            return false;
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.916 -0400", hash_original_method = "CB922389EC3BD00D9BEE74A550F7293C", hash_generated_method = "561284904FF2C75228EF3BD396F91EC1")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.739 -0500", hash_original_method = "CB922389EC3BD00D9BEE74A550F7293C", hash_generated_method = "0631DDA363DE7088678E7AAF9AE290A0")
         public boolean isPassword(Object info) {
-            addTaint(info.getTaint());
-            boolean var68934A3E9455FA72420237EB05902327_1120051209 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1335428126 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1335428126;
-            // ---------- Original Method ----------
-            //return false;
+            return false;
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.916 -0400", hash_original_method = "0A24FC3E128A848006031E8724C7F0A9", hash_generated_method = "8E167448D81CC77907E83E4ECAB9775E")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.740 -0500", hash_original_method = "0A24FC3E128A848006031E8724C7F0A9", hash_generated_method = "ECE07DC162E0BB665D8F33A417CE59B6")
         public boolean isScrollable(Object info) {
-            addTaint(info.getTaint());
-            boolean var68934A3E9455FA72420237EB05902327_121108552 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_637836720 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_637836720;
-            // ---------- Original Method ----------
-            //return false;
+            return false;
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.916 -0400", hash_original_method = "6AFAC3555346166234EF254615BCA05C", hash_generated_method = "AA9E9F5D23AA924F53DE6D02EC5B2566")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.741 -0500", hash_original_method = "6AFAC3555346166234EF254615BCA05C", hash_generated_method = "1E1C35E786DCA17F23D23B5E0D714103")
         public boolean isSelected(Object info) {
-            addTaint(info.getTaint());
-            boolean var68934A3E9455FA72420237EB05902327_1322036354 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1036356663 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1036356663;
-            // ---------- Original Method ----------
-            //return false;
+            return false;
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.916 -0400", hash_original_method = "FCBED87974E8349E51CFE67F3FE8BAAB", hash_generated_method = "FC8B27D1EF41A3F95092F7CA96F51474")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.742 -0500", hash_original_method = "FCBED87974E8349E51CFE67F3FE8BAAB", hash_generated_method = "981939D2E2CE075D7961575819539A89")
         public boolean performAction(Object info, int action) {
-            addTaint(action);
-            addTaint(info.getTaint());
-            boolean var68934A3E9455FA72420237EB05902327_225874550 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_243141773 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_243141773;
-            // ---------- Original Method ----------
-            //return false;
+            return false;
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.917 -0400", hash_original_method = "6311EA40C38D5B6B34E9E1F7C3DBB879", hash_generated_method = "C7F581AF90B338E0925C62A3024C6F67")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.742 -0500", hash_original_method = "6311EA40C38D5B6B34E9E1F7C3DBB879", hash_generated_method = "A26B4E2A7BDD2FA71BC9BAAB08E4C552")
         public void setBoundsInParent(Object info, Rect bounds) {
-            addTaint(bounds.getTaint());
-            addTaint(info.getTaint());
-            // ---------- Original Method ----------
+
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.917 -0400", hash_original_method = "D2C9C693466BA3A7E4B14036D2B17A5B", hash_generated_method = "E05AFA6EA9AAF9FB0ECD646B93254DD9")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.743 -0500", hash_original_method = "D2C9C693466BA3A7E4B14036D2B17A5B", hash_generated_method = "0FC111DB7DE6058E7083B0209F29310E")
         public void setBoundsInScreen(Object info, Rect bounds) {
-            addTaint(bounds.getTaint());
-            addTaint(info.getTaint());
-            // ---------- Original Method ----------
+
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.917 -0400", hash_original_method = "38431A6D5EE00E0099D8DB2DEFF6D601", hash_generated_method = "804DCE913D9E6070F8E550B71AD22B80")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.744 -0500", hash_original_method = "38431A6D5EE00E0099D8DB2DEFF6D601", hash_generated_method = "4D3ABFBBB0E2573CC1DCD5EE529CB2FC")
         public void setCheckable(Object info, boolean checkable) {
-            addTaint(checkable);
-            addTaint(info.getTaint());
-            // ---------- Original Method ----------
+
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.918 -0400", hash_original_method = "4FE562645B89F53A2E3F577D51BE4F8C", hash_generated_method = "4543C14DB341621D93F6F2621D639CFB")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.745 -0500", hash_original_method = "4FE562645B89F53A2E3F577D51BE4F8C", hash_generated_method = "98DE3AC033BFE06B26C4F0698FFC32D2")
         public void setChecked(Object info, boolean checked) {
-            addTaint(checked);
-            addTaint(info.getTaint());
-            // ---------- Original Method ----------
+
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.918 -0400", hash_original_method = "82032763AB44B88BDF6C3C4AC2ABB1CF", hash_generated_method = "161EF9CD79B216300D2AF4B61D1E4F45")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.745 -0500", hash_original_method = "82032763AB44B88BDF6C3C4AC2ABB1CF", hash_generated_method = "AFE296A61CCEE4D84EF0872398D9733C")
         public void setClassName(Object info, CharSequence className) {
-            addTaint(className.getTaint());
-            addTaint(info.getTaint());
-            // ---------- Original Method ----------
+
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.918 -0400", hash_original_method = "31E6103163DC809F9F67CE01A33EE87B", hash_generated_method = "D519D0F39A07EEB0AEEBA5E5875F6150")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.746 -0500", hash_original_method = "31E6103163DC809F9F67CE01A33EE87B", hash_generated_method = "D43E421195E9BB3ADFD20F1A34A77B94")
         public void setClickable(Object info, boolean clickable) {
-            addTaint(clickable);
-            addTaint(info.getTaint());
-            // ---------- Original Method ----------
+
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.918 -0400", hash_original_method = "B500330A66D743DBA7E460FD212D7744", hash_generated_method = "27D40B14BF3DEDB56AAB9AECA05C82A0")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.747 -0500", hash_original_method = "B500330A66D743DBA7E460FD212D7744", hash_generated_method = "EB7B5797CB096E840BA1BF48B7980B6C")
         public void setContentDescription(Object info, CharSequence contentDescription) {
-            addTaint(contentDescription.getTaint());
-            addTaint(info.getTaint());
-            // ---------- Original Method ----------
+
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.918 -0400", hash_original_method = "2E8A30481E49B666D7564B714DFA8A28", hash_generated_method = "CA3CFCFE549F59FC75A446D5BCE0A521")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.748 -0500", hash_original_method = "2E8A30481E49B666D7564B714DFA8A28", hash_generated_method = "D814BFEA204A885E830BD4627DD5B8E2")
         public void setEnabled(Object info, boolean enabled) {
-            addTaint(enabled);
-            addTaint(info.getTaint());
-            // ---------- Original Method ----------
+
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.918 -0400", hash_original_method = "6FC489938507A8AC8A67E31F4C0F3485", hash_generated_method = "BD5881FAC223E930D2E2E37E44B33C3C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.748 -0500", hash_original_method = "6FC489938507A8AC8A67E31F4C0F3485", hash_generated_method = "CED39C71C8CA57FCD42E56264A07759C")
         public void setFocusable(Object info, boolean focusable) {
-            addTaint(focusable);
-            addTaint(info.getTaint());
-            // ---------- Original Method ----------
+
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.918 -0400", hash_original_method = "D760A9B869FD1EE026AE8BC4B17036E8", hash_generated_method = "14E41B822435BE880FB3392798601F91")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.750 -0500", hash_original_method = "D760A9B869FD1EE026AE8BC4B17036E8", hash_generated_method = "90D84AF15CF9D150E277CDCAB2FEDC9D")
         public void setFocused(Object info, boolean focused) {
-            addTaint(focused);
-            addTaint(info.getTaint());
-            // ---------- Original Method ----------
+
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.918 -0400", hash_original_method = "FD5EDA58E4935860A3097167F37FF25A", hash_generated_method = "3DDF3ED1B3E0FC0801A2CBFA37667157")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.751 -0500", hash_original_method = "FD5EDA58E4935860A3097167F37FF25A", hash_generated_method = "F7AF40C77103695AA347AF345D4408E2")
         public void setLongClickable(Object info, boolean longClickable) {
-            addTaint(longClickable);
-            addTaint(info.getTaint());
-            // ---------- Original Method ----------
+
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.918 -0400", hash_original_method = "7ACCCA5C650FD61E0E741AE4759FF12D", hash_generated_method = "3D2CB84EBAF7AE0D0E07B4791BF148D9")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.752 -0500", hash_original_method = "7ACCCA5C650FD61E0E741AE4759FF12D", hash_generated_method = "52138046DAE4B6428E3CA6B1062E96F8")
         public void setPackageName(Object info, CharSequence packageName) {
-            addTaint(packageName.getTaint());
-            addTaint(info.getTaint());
-            // ---------- Original Method ----------
+
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.919 -0400", hash_original_method = "69043B1B7F4EB8EB9BDC8511E4B08BEE", hash_generated_method = "4A942148EB5C52DD6E700A02688275C9")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.752 -0500", hash_original_method = "69043B1B7F4EB8EB9BDC8511E4B08BEE", hash_generated_method = "8F59DCA4A71FFC66B6C4776E8B8E43FC")
         public void setParent(Object info, View parent) {
-            addTaint(parent.getTaint());
-            addTaint(info.getTaint());
-            // ---------- Original Method ----------
+
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.919 -0400", hash_original_method = "363672B9055A3FB9061F2E3103405704", hash_generated_method = "B195B3F20A419F8DC07BEA2D24B96A97")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.753 -0500", hash_original_method = "363672B9055A3FB9061F2E3103405704", hash_generated_method = "AFB485FB25B45D94517E202F237D9102")
         public void setPassword(Object info, boolean password) {
-            addTaint(password);
-            addTaint(info.getTaint());
-            // ---------- Original Method ----------
+
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.919 -0400", hash_original_method = "709C7E935F852B3F6266600FDF6B6337", hash_generated_method = "DE0FD2B7B59EB7B909C49C4E237BDD07")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.754 -0500", hash_original_method = "709C7E935F852B3F6266600FDF6B6337", hash_generated_method = "00FF14C5054D7CF0D9FEEFAACFC3C21F")
         public void setScrollable(Object info, boolean scrollable) {
-            addTaint(scrollable);
-            addTaint(info.getTaint());
-            // ---------- Original Method ----------
+
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.919 -0400", hash_original_method = "3EF8627D1C0109EB2B6665EF94BA680A", hash_generated_method = "8F344D2BAB0B685E1E5931897D28D77F")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.756 -0500", hash_original_method = "3EF8627D1C0109EB2B6665EF94BA680A", hash_generated_method = "2022E389F5DF8560EB0A77F324639730")
         public void setSelected(Object info, boolean selected) {
-            addTaint(selected);
-            addTaint(info.getTaint());
-            // ---------- Original Method ----------
+
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.919 -0400", hash_original_method = "483D361A53672C2015F284EB727D68EB", hash_generated_method = "6E7CE2F4361113870428E586C12141BF")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.756 -0500", hash_original_method = "483D361A53672C2015F284EB727D68EB", hash_generated_method = "1A75E73E829BC172520C248A709D2A6D")
         public void setSource(Object info, View source) {
-            addTaint(source.getTaint());
-            addTaint(info.getTaint());
-            // ---------- Original Method ----------
+
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.919 -0400", hash_original_method = "A82131F0C1B3FA9CC52D0C37845C305A", hash_generated_method = "A869718C721ADA1CBF5B40E6DCF8AA00")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.757 -0500", hash_original_method = "A82131F0C1B3FA9CC52D0C37845C305A", hash_generated_method = "EB3701D4E9A7B92B651A7349176BE310")
         public void setText(Object info, CharSequence text) {
-            addTaint(text.getTaint());
-            addTaint(info.getTaint());
-            // ---------- Original Method ----------
+
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.919 -0400", hash_original_method = "83070C3537D062E3CF530D85D02FB919", hash_generated_method = "9CA19930CBA17161800873D06B09C0C2")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.758 -0500", hash_original_method = "83070C3537D062E3CF530D85D02FB919", hash_generated_method = "9F9D28B5FEF5D06E1BC9D148E7B407A1")
         public void recycle(Object info) {
-            addTaint(info.getTaint());
-            // ---------- Original Method ----------
+
         }
 
         
@@ -1079,547 +908,286 @@ CharSequence var540C13E9E156B687226421B24F2DF178_426406822 =             null;
         {
             //Synthesized constructor
         }
-
-
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.920 -0400", hash_original_method = "E5E40CEE71B96A750609FB525C810C40", hash_generated_method = "7960978FB42BBD1908203CDE0C055919")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.760 -0500", hash_original_method = "E5E40CEE71B96A750609FB525C810C40", hash_generated_method = "9C98B20F720B793D88C1C7807C4ABC07")
         @Override
-        public Object obtain() {
-Object var18E616ED4124E416419712D8A33E1555_1112526389 =             AccessibilityNodeInfoCompatIcs.obtain();
-            var18E616ED4124E416419712D8A33E1555_1112526389.addTaint(taint);
-            return var18E616ED4124E416419712D8A33E1555_1112526389;
-            // ---------- Original Method ----------
-            //return AccessibilityNodeInfoCompatIcs.obtain();
+public Object obtain() {
+            return AccessibilityNodeInfoCompatIcs.obtain();
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.920 -0400", hash_original_method = "8DA77B182C4547DFE3D4092985103CE0", hash_generated_method = "EA6109307244898B3F025B1BE915F854")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.761 -0500", hash_original_method = "8DA77B182C4547DFE3D4092985103CE0", hash_generated_method = "4E31A3B5FDD4A65E1D06687FA68A0F78")
         @Override
-        public Object obtain(View source) {
-            addTaint(source.getTaint());
-Object var72AFDB1E0D71CABB69ABFDF218476CD8_1631993890 =             AccessibilityNodeInfoCompatIcs.obtain(source);
-            var72AFDB1E0D71CABB69ABFDF218476CD8_1631993890.addTaint(taint);
-            return var72AFDB1E0D71CABB69ABFDF218476CD8_1631993890;
-            // ---------- Original Method ----------
-            //return AccessibilityNodeInfoCompatIcs.obtain(source);
+public Object obtain(View source) {
+            return AccessibilityNodeInfoCompatIcs.obtain(source);
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.920 -0400", hash_original_method = "AAB3A8D4C437B198564587B92520BA15", hash_generated_method = "417D3329750DA46E7F3E3BE11E1B2FCA")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.762 -0500", hash_original_method = "AAB3A8D4C437B198564587B92520BA15", hash_generated_method = "6A67AF30C976CF56FB1A5B26BDF9AC73")
         @Override
-        public Object obtain(Object info) {
-            addTaint(info.getTaint());
-Object var9655CD537A169570B739BF9CC4952AF2_803820218 =             AccessibilityNodeInfoCompatIcs.obtain(info);
-            var9655CD537A169570B739BF9CC4952AF2_803820218.addTaint(taint);
-            return var9655CD537A169570B739BF9CC4952AF2_803820218;
-            // ---------- Original Method ----------
-            //return AccessibilityNodeInfoCompatIcs.obtain(info);
+public Object obtain(Object info) {
+            return AccessibilityNodeInfoCompatIcs.obtain(info);
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.920 -0400", hash_original_method = "0A7E097CDAE39DDB6B86DB3C969CB42E", hash_generated_method = "4265DEC8A88EB69AFE7E14F7A6FA9844")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.763 -0500", hash_original_method = "0A7E097CDAE39DDB6B86DB3C969CB42E", hash_generated_method = "88D0C38EC0A685382C3E43BE4FD6AE00")
         @Override
-        public void addAction(Object info, int action) {
-            addTaint(action);
-            addTaint(info.getTaint());
+public void addAction(Object info, int action) {
             AccessibilityNodeInfoCompatIcs.addAction(info, action);
-            // ---------- Original Method ----------
-            //AccessibilityNodeInfoCompatIcs.addAction(info, action);
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.920 -0400", hash_original_method = "341A0CD277745082770A69C5D7681A5A", hash_generated_method = "1D68C7EFD3CEF96931E1517562A1DA7F")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.764 -0500", hash_original_method = "341A0CD277745082770A69C5D7681A5A", hash_generated_method = "7999F78E1CC3D9E70A88BF8BFF37E7E3")
         @Override
-        public void addChild(Object info, View child) {
-            addTaint(child.getTaint());
-            addTaint(info.getTaint());
+public void addChild(Object info, View child) {
             AccessibilityNodeInfoCompatIcs.addChild(info, child);
-            // ---------- Original Method ----------
-            //AccessibilityNodeInfoCompatIcs.addChild(info, child);
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.920 -0400", hash_original_method = "E451DF79B85F7C5360B2FFDA4305ECB9", hash_generated_method = "D10942A00E25272914BF8D6EDF38C28F")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.764 -0500", hash_original_method = "E451DF79B85F7C5360B2FFDA4305ECB9", hash_generated_method = "6F1167718C902018835EA9A740AD5193")
         @Override
-        public List<Object> findAccessibilityNodeInfosByText(Object info, String text) {
-            addTaint(text.getTaint());
-            addTaint(info.getTaint());
-List<Object> var8DC6DAB02BA4C7815AC89010EB33D0AD_1129306425 =             AccessibilityNodeInfoCompatIcs.findAccessibilityNodeInfosByText(info, text);
-            var8DC6DAB02BA4C7815AC89010EB33D0AD_1129306425.addTaint(taint);
-            return var8DC6DAB02BA4C7815AC89010EB33D0AD_1129306425;
-            // ---------- Original Method ----------
-            //return AccessibilityNodeInfoCompatIcs.findAccessibilityNodeInfosByText(info, text);
+public List<Object> findAccessibilityNodeInfosByText(Object info, String text) {
+            return AccessibilityNodeInfoCompatIcs.findAccessibilityNodeInfosByText(info, text);
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.920 -0400", hash_original_method = "D17F96C78962590280138C187D4A4D01", hash_generated_method = "0715547C5FE75D0606683B1C108047E0")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.765 -0500", hash_original_method = "D17F96C78962590280138C187D4A4D01", hash_generated_method = "038D94C9057E39C9288E52941419AD78")
         @Override
-        public int getActions(Object info) {
-            addTaint(info.getTaint());
-            int varE1C5C8F3250A60420574AB5876C073E0_1403990300 = (AccessibilityNodeInfoCompatIcs.getActions(info));
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_439061894 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_439061894;
-            // ---------- Original Method ----------
-            //return AccessibilityNodeInfoCompatIcs.getActions(info);
+public int getActions(Object info) {
+            return AccessibilityNodeInfoCompatIcs.getActions(info);
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.921 -0400", hash_original_method = "B26B5755D84A45820A9127024B317E2D", hash_generated_method = "8A979AA8B478E449ED6DCD3881A07425")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.766 -0500", hash_original_method = "B26B5755D84A45820A9127024B317E2D", hash_generated_method = "06F460BFEEB23C3FD04EFA2BF13716BC")
         @Override
-        public void getBoundsInParent(Object info, Rect outBounds) {
-            addTaint(outBounds.getTaint());
-            addTaint(info.getTaint());
+public void getBoundsInParent(Object info, Rect outBounds) {
             AccessibilityNodeInfoCompatIcs.getBoundsInParent(info, outBounds);
-            // ---------- Original Method ----------
-            //AccessibilityNodeInfoCompatIcs.getBoundsInParent(info, outBounds);
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.921 -0400", hash_original_method = "B5FD542CD4348223D6FD8509002D9D1B", hash_generated_method = "5B1CF93FA477C47F230F9FF0DF0F5A19")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.767 -0500", hash_original_method = "B5FD542CD4348223D6FD8509002D9D1B", hash_generated_method = "EE9A68D2A596C89C4D07EC4668B9C5A5")
         @Override
-        public void getBoundsInScreen(Object info, Rect outBounds) {
-            addTaint(outBounds.getTaint());
-            addTaint(info.getTaint());
+public void getBoundsInScreen(Object info, Rect outBounds) {
             AccessibilityNodeInfoCompatIcs.getBoundsInScreen(info, outBounds);
-            // ---------- Original Method ----------
-            //AccessibilityNodeInfoCompatIcs.getBoundsInScreen(info, outBounds);
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.921 -0400", hash_original_method = "11896B02F65554BEE96755430EF5F8E2", hash_generated_method = "DCF98ED7630E2080390A60B596845E12")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.768 -0500", hash_original_method = "11896B02F65554BEE96755430EF5F8E2", hash_generated_method = "E0FE1CA459F4C28E358E588FD767FA52")
         @Override
-        public AccessibilityNodeInfoCompat getChild(Object info, int index) {
-            addTaint(index);
-            addTaint(info.getTaint());
-AccessibilityNodeInfoCompat varC082D3DF38BC3C4721A24C567F2203D9_74743173 =             new AccessibilityNodeInfoCompat(IMPL.getChild(info, index));
-            varC082D3DF38BC3C4721A24C567F2203D9_74743173.addTaint(taint);
-            return varC082D3DF38BC3C4721A24C567F2203D9_74743173;
-            // ---------- Original Method ----------
-            //return new AccessibilityNodeInfoCompat(IMPL.getChild(info, index));
+public AccessibilityNodeInfoCompat getChild(Object info, int index) {
+            return new AccessibilityNodeInfoCompat(IMPL.getChild(info, index));
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.921 -0400", hash_original_method = "1060851E4756FF33B64BCC78AB967D36", hash_generated_method = "1F3A543185BD223D374D92DAF5839E2B")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.769 -0500", hash_original_method = "1060851E4756FF33B64BCC78AB967D36", hash_generated_method = "32758C1B8D07C83633D4FC00528FE373")
         @Override
-        public int getChildCount(Object info) {
-            addTaint(info.getTaint());
-            int var453D2111E45109D707554F829D387FC3_1453200138 = (AccessibilityNodeInfoCompatIcs.getChildCount(info));
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_226904314 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_226904314;
-            // ---------- Original Method ----------
-            //return AccessibilityNodeInfoCompatIcs.getChildCount(info);
+public int getChildCount(Object info) {
+            return AccessibilityNodeInfoCompatIcs.getChildCount(info);
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.921 -0400", hash_original_method = "001ED67ACCB05215E0C0C1269607FAAC", hash_generated_method = "EA7D2EEFBFF99FB6796FE8591D18320D")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.770 -0500", hash_original_method = "001ED67ACCB05215E0C0C1269607FAAC", hash_generated_method = "02CC4E2B9DE0B55A9158EBB03462AB59")
         @Override
-        public CharSequence getClassName(Object info) {
-            addTaint(info.getTaint());
-CharSequence varC282983408C091643715DAD53F515590_848367529 =             AccessibilityNodeInfoCompatIcs.getClassName(info);
-            varC282983408C091643715DAD53F515590_848367529.addTaint(taint);
-            return varC282983408C091643715DAD53F515590_848367529;
-            // ---------- Original Method ----------
-            //return AccessibilityNodeInfoCompatIcs.getClassName(info);
+public CharSequence getClassName(Object info) {
+            return AccessibilityNodeInfoCompatIcs.getClassName(info);
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.921 -0400", hash_original_method = "49E68BE928284122DC1CE4D1F9B3E016", hash_generated_method = "5E7956FEF7889F46332A5E8E5EA60818")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.771 -0500", hash_original_method = "49E68BE928284122DC1CE4D1F9B3E016", hash_generated_method = "907350C22A9366745ED071193F7E294F")
         @Override
-        public CharSequence getContentDescription(Object info) {
-            addTaint(info.getTaint());
-CharSequence var32F5476EEDF6FF1279E269184BC4EEF0_820935326 =             AccessibilityNodeInfoCompatIcs.getContentDescription(info);
-            var32F5476EEDF6FF1279E269184BC4EEF0_820935326.addTaint(taint);
-            return var32F5476EEDF6FF1279E269184BC4EEF0_820935326;
-            // ---------- Original Method ----------
-            //return AccessibilityNodeInfoCompatIcs.getContentDescription(info);
+public CharSequence getContentDescription(Object info) {
+            return AccessibilityNodeInfoCompatIcs.getContentDescription(info);
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.921 -0400", hash_original_method = "E8A4C3E3432029A8834D6142201B45ED", hash_generated_method = "A6F40BBC5464B16C80F03490DFD4BAE8")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.771 -0500", hash_original_method = "E8A4C3E3432029A8834D6142201B45ED", hash_generated_method = "14F4E302FCAD3DA68454BCFFAE48AE96")
         @Override
-        public CharSequence getPackageName(Object info) {
-            addTaint(info.getTaint());
-CharSequence var25E39EB6D9B13CC71DEE96F6E8413836_560614857 =             AccessibilityNodeInfoCompatIcs.getPackageName(info);
-            var25E39EB6D9B13CC71DEE96F6E8413836_560614857.addTaint(taint);
-            return var25E39EB6D9B13CC71DEE96F6E8413836_560614857;
-            // ---------- Original Method ----------
-            //return AccessibilityNodeInfoCompatIcs.getPackageName(info);
+public CharSequence getPackageName(Object info) {
+            return AccessibilityNodeInfoCompatIcs.getPackageName(info);
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.921 -0400", hash_original_method = "D663E14A044DAD7A809F789DAE716A60", hash_generated_method = "BC2E600CE20CFC154A9990D02B7BC2DE")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.772 -0500", hash_original_method = "D663E14A044DAD7A809F789DAE716A60", hash_generated_method = "605D88CAFE15BE7C063F9F484056BF87")
         @Override
-        public AccessibilityNodeInfoCompat getParent(Object info) {
-            addTaint(info.getTaint());
-AccessibilityNodeInfoCompat var7941D4894D6ACA970D05A94330CFE6E2_1453628228 =             new AccessibilityNodeInfoCompat(IMPL.getParent(info));
-            var7941D4894D6ACA970D05A94330CFE6E2_1453628228.addTaint(taint);
-            return var7941D4894D6ACA970D05A94330CFE6E2_1453628228;
-            // ---------- Original Method ----------
-            //return new AccessibilityNodeInfoCompat(IMPL.getParent(info));
+public AccessibilityNodeInfoCompat getParent(Object info) {
+            return new AccessibilityNodeInfoCompat(IMPL.getParent(info));
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.921 -0400", hash_original_method = "E0898B972D5792ED49F6E082AA078009", hash_generated_method = "60D688ED4B8778F72176F4ADB3E775F9")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.773 -0500", hash_original_method = "E0898B972D5792ED49F6E082AA078009", hash_generated_method = "D1F5BA0C76A99F61B56536882DF82B52")
         @Override
-        public CharSequence getText(Object info) {
-            addTaint(info.getTaint());
-CharSequence varC39EDBF46B20FFFBE67EBDDAFFAF4404_1052541694 =             AccessibilityNodeInfoCompatIcs.getText(info);
-            varC39EDBF46B20FFFBE67EBDDAFFAF4404_1052541694.addTaint(taint);
-            return varC39EDBF46B20FFFBE67EBDDAFFAF4404_1052541694;
-            // ---------- Original Method ----------
-            //return AccessibilityNodeInfoCompatIcs.getText(info);
+public CharSequence getText(Object info) {
+            return AccessibilityNodeInfoCompatIcs.getText(info);
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.921 -0400", hash_original_method = "E3B5F3C7383213DB54B59D99B9C21DDF", hash_generated_method = "F9924F7CA2A445A4AF565C7CB35E2C76")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.774 -0500", hash_original_method = "E3B5F3C7383213DB54B59D99B9C21DDF", hash_generated_method = "1CE8ED298F6B874449851FC58CF93C9C")
         @Override
-        public int getWindowId(Object info) {
-            addTaint(info.getTaint());
-            int var7E755BE734029BAEE15574E279891519_2027115381 = (AccessibilityNodeInfoCompatIcs.getWindowId(info));
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2002278447 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2002278447;
-            // ---------- Original Method ----------
-            //return AccessibilityNodeInfoCompatIcs.getWindowId(info);
+public int getWindowId(Object info) {
+            return AccessibilityNodeInfoCompatIcs.getWindowId(info);
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.922 -0400", hash_original_method = "E86FBEBDF802FE51EE90043BABBDBD26", hash_generated_method = "E9722525BBB6844C6E4B6604A56D115A")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.775 -0500", hash_original_method = "E86FBEBDF802FE51EE90043BABBDBD26", hash_generated_method = "DE047490AC2B11B4296E0FD160E8CC44")
         @Override
-        public boolean isCheckable(Object info) {
-            addTaint(info.getTaint());
-            boolean var6EBF9497CE9D8DB73C60338542DEE7A0_1878821180 = (AccessibilityNodeInfoCompatIcs.isCheckable(info));
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2079501210 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_2079501210;
-            // ---------- Original Method ----------
-            //return AccessibilityNodeInfoCompatIcs.isCheckable(info);
+public boolean isCheckable(Object info) {
+            return AccessibilityNodeInfoCompatIcs.isCheckable(info);
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.922 -0400", hash_original_method = "100CB854A73833CFD79DA770C6A93054", hash_generated_method = "CDB3FE8C925EC4A20B94F4B14B9869CD")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.776 -0500", hash_original_method = "100CB854A73833CFD79DA770C6A93054", hash_generated_method = "82B7660DB47C866157C8108546AB384D")
         @Override
-        public boolean isChecked(Object info) {
-            addTaint(info.getTaint());
-            boolean var5FE936E046D67E017ADAFED3989D8217_7724802 = (AccessibilityNodeInfoCompatIcs.isChecked(info));
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_813287248 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_813287248;
-            // ---------- Original Method ----------
-            //return AccessibilityNodeInfoCompatIcs.isChecked(info);
+public boolean isChecked(Object info) {
+            return AccessibilityNodeInfoCompatIcs.isChecked(info);
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.922 -0400", hash_original_method = "D3DFDB52B10ADA5E3C3F15A26FC7FBD7", hash_generated_method = "C2CEC0498727EE6AA49883ED7A330C65")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.777 -0500", hash_original_method = "D3DFDB52B10ADA5E3C3F15A26FC7FBD7", hash_generated_method = "0D7A1720CB072A34CFF678C13F695D1E")
         @Override
-        public boolean isClickable(Object info) {
-            addTaint(info.getTaint());
-            boolean var7F39A5797EB1A99D99E2343C7CAE7411_1713906126 = (AccessibilityNodeInfoCompatIcs.isClickable(info));
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1502796019 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1502796019;
-            // ---------- Original Method ----------
-            //return AccessibilityNodeInfoCompatIcs.isClickable(info);
+public boolean isClickable(Object info) {
+            return AccessibilityNodeInfoCompatIcs.isClickable(info);
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.922 -0400", hash_original_method = "36209ADA0F5A959372A76079E2B78D93", hash_generated_method = "4A1EAC85B115F15725F69ECAD36214E3")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.777 -0500", hash_original_method = "36209ADA0F5A959372A76079E2B78D93", hash_generated_method = "E29BDD50E4DC9B959C09780C69F6FD7A")
         @Override
-        public boolean isEnabled(Object info) {
-            addTaint(info.getTaint());
-            boolean var882EA9E175AFA2A78B164B1A1EDAA334_1520275482 = (AccessibilityNodeInfoCompatIcs.isEnabled(info));
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1054988454 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1054988454;
-            // ---------- Original Method ----------
-            //return AccessibilityNodeInfoCompatIcs.isEnabled(info);
+public boolean isEnabled(Object info) {
+            return AccessibilityNodeInfoCompatIcs.isEnabled(info);
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.922 -0400", hash_original_method = "C6DC12553020499681AB366980A40B1F", hash_generated_method = "0586EB72F60DFD83B8099E49F018CEAC")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.778 -0500", hash_original_method = "C6DC12553020499681AB366980A40B1F", hash_generated_method = "6EC46A37653A83E48901BE244882BF20")
         @Override
-        public boolean isFocusable(Object info) {
-            addTaint(info.getTaint());
-            boolean varF205ED058EE2032775A632B9C55F0576_215525486 = (AccessibilityNodeInfoCompatIcs.isFocusable(info));
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1117218863 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1117218863;
-            // ---------- Original Method ----------
-            //return AccessibilityNodeInfoCompatIcs.isFocusable(info);
+public boolean isFocusable(Object info) {
+            return AccessibilityNodeInfoCompatIcs.isFocusable(info);
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.923 -0400", hash_original_method = "3B18C47ECC5B4B3818BF155318346723", hash_generated_method = "BA35A0D63A9CCE3D6398A9764BE80A5D")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.779 -0500", hash_original_method = "3B18C47ECC5B4B3818BF155318346723", hash_generated_method = "163F0B900F046D6F3F210B1C7A2A04B5")
         @Override
-        public boolean isFocused(Object info) {
-            addTaint(info.getTaint());
-            boolean var968A4F44201F839E9BD8A149DDC95B50_1888852285 = (AccessibilityNodeInfoCompatIcs.isFocused(info));
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1291084763 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1291084763;
-            // ---------- Original Method ----------
-            //return AccessibilityNodeInfoCompatIcs.isFocused(info);
+public boolean isFocused(Object info) {
+            return AccessibilityNodeInfoCompatIcs.isFocused(info);
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.923 -0400", hash_original_method = "0E74B77ABC4CEB867A986595A38161A2", hash_generated_method = "4688C112A0800B4A7E30770D15B54015")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.781 -0500", hash_original_method = "0E74B77ABC4CEB867A986595A38161A2", hash_generated_method = "9E615A3969469B8289F10A7B1C37821C")
         @Override
-        public boolean isLongClickable(Object info) {
-            addTaint(info.getTaint());
-            boolean var7FD4110AC14E635626C3442A1C47C6C0_1319509304 = (AccessibilityNodeInfoCompatIcs.isLongClickable(info));
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1128296848 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1128296848;
-            // ---------- Original Method ----------
-            //return AccessibilityNodeInfoCompatIcs.isLongClickable(info);
+public boolean isLongClickable(Object info) {
+            return AccessibilityNodeInfoCompatIcs.isLongClickable(info);
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.923 -0400", hash_original_method = "B10B564B73623100875F088E9DD770C1", hash_generated_method = "9668F6DF02FBCD3F4A33EFC9E43E3513")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.781 -0500", hash_original_method = "B10B564B73623100875F088E9DD770C1", hash_generated_method = "CA1E6BDCE51D4C07C98DD4EF41D80543")
         @Override
-        public boolean isPassword(Object info) {
-            addTaint(info.getTaint());
-            boolean var591107E717E8BE76738CDD50302FB72E_1384467756 = (AccessibilityNodeInfoCompatIcs.isPassword(info));
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_647006876 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_647006876;
-            // ---------- Original Method ----------
-            //return AccessibilityNodeInfoCompatIcs.isPassword(info);
+public boolean isPassword(Object info) {
+            return AccessibilityNodeInfoCompatIcs.isPassword(info);
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.923 -0400", hash_original_method = "27190DC49C8364B899CAE814D744FE8B", hash_generated_method = "6A26808D427DBF5EF1951B707B84DA49")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.782 -0500", hash_original_method = "27190DC49C8364B899CAE814D744FE8B", hash_generated_method = "02CED8A5437B075AB364CD9ECB96FA6F")
         @Override
-        public boolean isScrollable(Object info) {
-            addTaint(info.getTaint());
-            boolean var0DBA0213B6D1A14FBEE7922D4AE5EFDB_494730980 = (AccessibilityNodeInfoCompatIcs.isScrollable(info));
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_868909699 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_868909699;
-            // ---------- Original Method ----------
-            //return AccessibilityNodeInfoCompatIcs.isScrollable(info);
+public boolean isScrollable(Object info) {
+            return AccessibilityNodeInfoCompatIcs.isScrollable(info);
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.924 -0400", hash_original_method = "A622640AC1F4DA88BF6801D78709518C", hash_generated_method = "9C92F06A5103FCD74B20B3B5CD9A13F1")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.783 -0500", hash_original_method = "A622640AC1F4DA88BF6801D78709518C", hash_generated_method = "921F83D61EA7C1FDA3BBA7080EC22AFF")
         @Override
-        public boolean isSelected(Object info) {
-            addTaint(info.getTaint());
-            boolean var64D15A97240D47FE0C8EC2B678FEEE31_1964899666 = (AccessibilityNodeInfoCompatIcs.isSelected(info));
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_18524684 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_18524684;
-            // ---------- Original Method ----------
-            //return AccessibilityNodeInfoCompatIcs.isSelected(info);
+public boolean isSelected(Object info) {
+            return AccessibilityNodeInfoCompatIcs.isSelected(info);
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.924 -0400", hash_original_method = "9AD9C2656115753FB34BB6FBDDF94F3E", hash_generated_method = "FB64B4CFA31C37936CD837B1EC23E15D")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.784 -0500", hash_original_method = "9AD9C2656115753FB34BB6FBDDF94F3E", hash_generated_method = "B5456A3DAFC4BD79F67F653CBC98498C")
         @Override
-        public boolean performAction(Object info, int action) {
-            addTaint(action);
-            addTaint(info.getTaint());
-            boolean varF9AF688EECBFC4106C6E922E0F041AEF_1102985263 = (AccessibilityNodeInfoCompatIcs.performAction(info, action));
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1204537717 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1204537717;
-            // ---------- Original Method ----------
-            //return AccessibilityNodeInfoCompatIcs.performAction(info, action);
+public boolean performAction(Object info, int action) {
+            return AccessibilityNodeInfoCompatIcs.performAction(info, action);
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.924 -0400", hash_original_method = "B83B9E944F82D8AD27FBEADECC6E7EF2", hash_generated_method = "B5DB3E00269FD3E90A39F18B1B246286")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.785 -0500", hash_original_method = "B83B9E944F82D8AD27FBEADECC6E7EF2", hash_generated_method = "2647F3478ED17B710ACBA53542B4D843")
         @Override
-        public void setBoundsInParent(Object info, Rect bounds) {
-            addTaint(bounds.getTaint());
-            addTaint(info.getTaint());
+public void setBoundsInParent(Object info, Rect bounds) {
             AccessibilityNodeInfoCompatIcs.setBoundsInParent(info, bounds);
-            // ---------- Original Method ----------
-            //AccessibilityNodeInfoCompatIcs.setBoundsInParent(info, bounds);
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.924 -0400", hash_original_method = "AA193C796629869323B4C215F767EF10", hash_generated_method = "272EDD93017BFDCA6BC9F9B69976FE38")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.785 -0500", hash_original_method = "AA193C796629869323B4C215F767EF10", hash_generated_method = "4D9981938FF2DF453C3B1DA339874E4F")
         @Override
-        public void setBoundsInScreen(Object info, Rect bounds) {
-            addTaint(bounds.getTaint());
-            addTaint(info.getTaint());
+public void setBoundsInScreen(Object info, Rect bounds) {
             AccessibilityNodeInfoCompatIcs.setBoundsInScreen(info, bounds);
-            // ---------- Original Method ----------
-            //AccessibilityNodeInfoCompatIcs.setBoundsInScreen(info, bounds);
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.925 -0400", hash_original_method = "E50D3EA2B511910BFCFCC317E73F9BD4", hash_generated_method = "C0FD246CF600A12AFC819660661B5557")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.786 -0500", hash_original_method = "E50D3EA2B511910BFCFCC317E73F9BD4", hash_generated_method = "C23E7F7A01F078C532951911CC56301B")
         @Override
-        public void setCheckable(Object info, boolean checkable) {
-            addTaint(checkable);
-            addTaint(info.getTaint());
+public void setCheckable(Object info, boolean checkable) {
             AccessibilityNodeInfoCompatIcs.setCheckable(info, checkable);
-            // ---------- Original Method ----------
-            //AccessibilityNodeInfoCompatIcs.setCheckable(info, checkable);
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.925 -0400", hash_original_method = "AC21400C52299765810DFE83F0ADACE8", hash_generated_method = "769CDD4B596A3EC9CAA2C40838E5A7B8")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.787 -0500", hash_original_method = "AC21400C52299765810DFE83F0ADACE8", hash_generated_method = "F0FA6DA513BF5F50BB6A8B4E16DE6CE6")
         @Override
-        public void setChecked(Object info, boolean checked) {
-            addTaint(checked);
-            addTaint(info.getTaint());
+public void setChecked(Object info, boolean checked) {
             AccessibilityNodeInfoCompatIcs.setChecked(info, checked);
-            // ---------- Original Method ----------
-            //AccessibilityNodeInfoCompatIcs.setChecked(info, checked);
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.925 -0400", hash_original_method = "7A94FF987D45DDACFD0402C8FB7DDE97", hash_generated_method = "5845EEBEDABF97F8D2A7AB51F28E54EC")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.788 -0500", hash_original_method = "7A94FF987D45DDACFD0402C8FB7DDE97", hash_generated_method = "82F21377F35F8C3A6FAB50E56122B5EE")
         @Override
-        public void setClassName(Object info, CharSequence className) {
-            addTaint(className.getTaint());
-            addTaint(info.getTaint());
+public void setClassName(Object info, CharSequence className) {
             AccessibilityNodeInfoCompatIcs.setClassName(info, className);
-            // ---------- Original Method ----------
-            //AccessibilityNodeInfoCompatIcs.setClassName(info, className);
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.926 -0400", hash_original_method = "BB8527C09D9C6151F737E8B59EC0FCE8", hash_generated_method = "1E377FC61F83E3E5C15A80672A862C99")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.789 -0500", hash_original_method = "BB8527C09D9C6151F737E8B59EC0FCE8", hash_generated_method = "828D506B4248EC1034B2DB716480810B")
         @Override
-        public void setClickable(Object info, boolean clickable) {
-            addTaint(clickable);
-            addTaint(info.getTaint());
+public void setClickable(Object info, boolean clickable) {
             AccessibilityNodeInfoCompatIcs.setClickable(info, clickable);
-            // ---------- Original Method ----------
-            //AccessibilityNodeInfoCompatIcs.setClickable(info, clickable);
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.926 -0400", hash_original_method = "0169AC239075ED7B4C4FDF21404839A2", hash_generated_method = "DA3622123B77CD2E451C413D9BB4143B")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.789 -0500", hash_original_method = "0169AC239075ED7B4C4FDF21404839A2", hash_generated_method = "3696DA6EEEAE2402D0D48EF468736B52")
         @Override
-        public void setContentDescription(Object info, CharSequence contentDescription) {
-            addTaint(contentDescription.getTaint());
-            addTaint(info.getTaint());
+public void setContentDescription(Object info, CharSequence contentDescription) {
             AccessibilityNodeInfoCompatIcs.setContentDescription(info, contentDescription);
-            // ---------- Original Method ----------
-            //AccessibilityNodeInfoCompatIcs.setContentDescription(info, contentDescription);
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.926 -0400", hash_original_method = "E3468D53BBC641A160F74004C61B3122", hash_generated_method = "EE6F5DA7CC7016A40B21D7C83D70A756")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.790 -0500", hash_original_method = "E3468D53BBC641A160F74004C61B3122", hash_generated_method = "8E2BC90C970B0AE37CE8A8CFBCC7C2E8")
         @Override
-        public void setEnabled(Object info, boolean enabled) {
-            addTaint(enabled);
-            addTaint(info.getTaint());
+public void setEnabled(Object info, boolean enabled) {
             AccessibilityNodeInfoCompatIcs.setEnabled(info, enabled);
-            // ---------- Original Method ----------
-            //AccessibilityNodeInfoCompatIcs.setEnabled(info, enabled);
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.926 -0400", hash_original_method = "DF0F47AC0A3E9517E54BD77506E987C2", hash_generated_method = "295C8D89291147AAA9AEC4F4540EBFFF")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.791 -0500", hash_original_method = "DF0F47AC0A3E9517E54BD77506E987C2", hash_generated_method = "8278AB1BEFF52DE050C1265A2D9642B6")
         @Override
-        public void setFocusable(Object info, boolean focusable) {
-            addTaint(focusable);
-            addTaint(info.getTaint());
+public void setFocusable(Object info, boolean focusable) {
             AccessibilityNodeInfoCompatIcs.setFocusable(info, focusable);
-            // ---------- Original Method ----------
-            //AccessibilityNodeInfoCompatIcs.setFocusable(info, focusable);
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.927 -0400", hash_original_method = "06FD2B381779CA5EC6EDBB576923A85B", hash_generated_method = "51DAF5E6FFCA5AFCC41CE4DF37F5875C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.792 -0500", hash_original_method = "06FD2B381779CA5EC6EDBB576923A85B", hash_generated_method = "479FC632BE92B78EE5DA7FE389163392")
         @Override
-        public void setFocused(Object info, boolean focused) {
-            addTaint(focused);
-            addTaint(info.getTaint());
+public void setFocused(Object info, boolean focused) {
             AccessibilityNodeInfoCompatIcs.setFocused(info, focused);
-            // ---------- Original Method ----------
-            //AccessibilityNodeInfoCompatIcs.setFocused(info, focused);
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.927 -0400", hash_original_method = "C3AB7DB810B3043F9F52463A756847CD", hash_generated_method = "971690CB8D25CAF7394EF34846FC720D")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.793 -0500", hash_original_method = "C3AB7DB810B3043F9F52463A756847CD", hash_generated_method = "B6B08A7DED397287E74115917150B6B7")
         @Override
-        public void setLongClickable(Object info, boolean longClickable) {
-            addTaint(longClickable);
-            addTaint(info.getTaint());
+public void setLongClickable(Object info, boolean longClickable) {
             AccessibilityNodeInfoCompatIcs.setLongClickable(info, longClickable);
-            // ---------- Original Method ----------
-            //AccessibilityNodeInfoCompatIcs.setLongClickable(info, longClickable);
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.927 -0400", hash_original_method = "7DAB17659A9A31AE8995C1EE54CC3933", hash_generated_method = "45B00EE74F0171DC54A79C1B0D835A91")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.794 -0500", hash_original_method = "7DAB17659A9A31AE8995C1EE54CC3933", hash_generated_method = "27ED886B166104585F6E9E4357A853D0")
         @Override
-        public void setPackageName(Object info, CharSequence packageName) {
-            addTaint(packageName.getTaint());
-            addTaint(info.getTaint());
+public void setPackageName(Object info, CharSequence packageName) {
             AccessibilityNodeInfoCompatIcs.setPackageName(info, packageName);
-            // ---------- Original Method ----------
-            //AccessibilityNodeInfoCompatIcs.setPackageName(info, packageName);
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.927 -0400", hash_original_method = "DDE950F8FB9AD10FE97D3324E7FA0C0C", hash_generated_method = "5004BA1E4773E52DAE97853A1F12618E")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.795 -0500", hash_original_method = "DDE950F8FB9AD10FE97D3324E7FA0C0C", hash_generated_method = "96ECE2EB2E2BD04EA7D069BA191E8613")
         @Override
-        public void setParent(Object info, View parent) {
-            addTaint(parent.getTaint());
-            addTaint(info.getTaint());
+public void setParent(Object info, View parent) {
             AccessibilityNodeInfoCompatIcs.setParent(info, parent);
-            // ---------- Original Method ----------
-            //AccessibilityNodeInfoCompatIcs.setParent(info, parent);
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.927 -0400", hash_original_method = "784E93A04B49626C38656FD7564AAD9D", hash_generated_method = "F0B8EBC78DDDAD293AAF066CB748C7B9")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.796 -0500", hash_original_method = "784E93A04B49626C38656FD7564AAD9D", hash_generated_method = "4F0AEBDBDE4D47BE8F28A1BE381503C7")
         @Override
-        public void setPassword(Object info, boolean password) {
-            addTaint(password);
-            addTaint(info.getTaint());
+public void setPassword(Object info, boolean password) {
             AccessibilityNodeInfoCompatIcs.setPassword(info, password);
-            // ---------- Original Method ----------
-            //AccessibilityNodeInfoCompatIcs.setPassword(info, password);
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.928 -0400", hash_original_method = "B5EF4CAA0C493D78F8DD003411B53892", hash_generated_method = "93DC401C378BC231B855E47C29332094")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.797 -0500", hash_original_method = "B5EF4CAA0C493D78F8DD003411B53892", hash_generated_method = "8E186105448657C47B519F094B0CC976")
         @Override
-        public void setScrollable(Object info, boolean scrollable) {
-            addTaint(scrollable);
-            addTaint(info.getTaint());
+public void setScrollable(Object info, boolean scrollable) {
             AccessibilityNodeInfoCompatIcs.setScrollable(info, scrollable);
-            // ---------- Original Method ----------
-            //AccessibilityNodeInfoCompatIcs.setScrollable(info, scrollable);
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.928 -0400", hash_original_method = "1A8DBC2AB955429552ADF95538A7CF85", hash_generated_method = "23DE6E65C107A64E981959F9E092DEFC")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.798 -0500", hash_original_method = "1A8DBC2AB955429552ADF95538A7CF85", hash_generated_method = "AF6B7FD9DB06043378A520A8640081DC")
         @Override
-        public void setSelected(Object info, boolean selected) {
-            addTaint(selected);
-            addTaint(info.getTaint());
+public void setSelected(Object info, boolean selected) {
             AccessibilityNodeInfoCompatIcs.setSelected(info, selected);
-            // ---------- Original Method ----------
-            //AccessibilityNodeInfoCompatIcs.setSelected(info, selected);
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.928 -0400", hash_original_method = "F051415C170BC070EB1133EF8AE51280", hash_generated_method = "894BFD92FBB49740E2F99E521E5152B1")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.799 -0500", hash_original_method = "F051415C170BC070EB1133EF8AE51280", hash_generated_method = "C8AF2D2470D4AE2BAE446AC2F4B6B0B0")
         @Override
-        public void setSource(Object info, View source) {
-            addTaint(source.getTaint());
-            addTaint(info.getTaint());
+public void setSource(Object info, View source) {
             AccessibilityNodeInfoCompatIcs.setSource(info, source);
-            // ---------- Original Method ----------
-            //AccessibilityNodeInfoCompatIcs.setSource(info, source);
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.932 -0400", hash_original_method = "FF3C01EEB678F09ADF7342B2D20BBA32", hash_generated_method = "151286B39A90F1E88BEDCF5ECAEA65FA")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.800 -0500", hash_original_method = "FF3C01EEB678F09ADF7342B2D20BBA32", hash_generated_method = "68BCF6BEE66DB1403AE813E2D8EF035A")
         @Override
-        public void setText(Object info, CharSequence text) {
-            addTaint(text.getTaint());
-            addTaint(info.getTaint());
+public void setText(Object info, CharSequence text) {
             AccessibilityNodeInfoCompatIcs.setText(info, text);
-            // ---------- Original Method ----------
-            //AccessibilityNodeInfoCompatIcs.setText(info, text);
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.933 -0400", hash_original_method = "4487949C2661410233FC93B0FC70F4AF", hash_generated_method = "AAD645FF065F336CE08995545206834C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.801 -0500", hash_original_method = "4487949C2661410233FC93B0FC70F4AF", hash_generated_method = "3E165CCF1F1883A3DC5E2292F5CA7577")
         @Override
-        public void recycle(Object info) {
-            addTaint(info.getTaint());
+public void recycle(Object info) {
             AccessibilityNodeInfoCompatIcs.recycle(info);
-            // ---------- Original Method ----------
-            //AccessibilityNodeInfoCompatIcs.recycle(info);
         }
 
         
@@ -1684,21 +1252,72 @@ CharSequence varC39EDBF46B20FFFBE67EBDDAFFAF4404_1052541694 =             Access
             IMPL = new AccessibilityNodeInfoStubImpl();
         }
     }
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.933 -0400", hash_original_field = "27A9F92549363F04EF46148FE9E87EEE", hash_generated_field = "97BD12C859C1DA2B5849DD1AFA547C72")
 
-    private static AccessibilityNodeInfoImpl IMPL;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.933 -0400", hash_original_field = "88C2D1887EB31B570369B487597D045B", hash_generated_field = "F5FAE335945DC9AAC45448FAE7461FBF")
+    /**
+     * Gets the content description of this node.
+     *
+     * @return The content description.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.844 -0500", hash_original_method = "17A5AE651613EAEE40274E28D0DBF3CB", hash_generated_method = "7BA20ABCE576512166E9EC2E2C4CCBB0")
+    public CharSequence getContentDescription() {
+        return IMPL.getContentDescription(mInfo);
+    }
 
-    public static final int ACTION_FOCUS = 0x00000001;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.933 -0400", hash_original_field = "1BA8A453AF0935765BB13E51D3B78770", hash_generated_field = "4E51052F791AAD7CED4606387206AC02")
+    /**
+     * Sets the content description of this node.
+     * <p>
+     * <strong>Note:</strong> Cannot be called from an
+     * {@link android.accessibilityservice.AccessibilityService}. This class is
+     * made immutable before being delivered to an AccessibilityService.
+     * </p>
+     *
+     * @param contentDescription The content description.
+     * @throws IllegalStateException If called from an AccessibilityService.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.845 -0500", hash_original_method = "0581568FD089D03E78C8C673EC290A8E", hash_generated_method = "68AF30028603DEE6092DD3B53086E5AA")
+    public void setContentDescription(CharSequence contentDescription) {
+        IMPL.setContentDescription(mInfo, contentDescription);
+    }
 
-    public static final int ACTION_CLEAR_FOCUS = 0x00000002;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.933 -0400", hash_original_field = "1B92A207713BC68EA97823DAC23B10A2", hash_generated_field = "D94F4C12E9D93257353DF25CED690B59")
+    /**
+     * Return an instance back to be reused.
+     * <p>
+     * <strong>Note:</strong> You must not touch the object after calling this function.
+     *
+     * @throws IllegalStateException If the info is already recycled.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.846 -0500", hash_original_method = "4012C2A77CF6E1C54F1B4372AFDF8962", hash_generated_method = "371816176A0FE984D43E7A281211A3A7")
+    public void recycle() {
+        IMPL.recycle(mInfo);
+    }
 
-    public static final int ACTION_SELECT = 0x00000004;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.933 -0400", hash_original_field = "61076BF1E4699C26E8B0724E793847FD", hash_generated_field = "A07F23DA35D396F8F58D59EF3496C08F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.847 -0500", hash_original_method = "3D44C3AC54A391BB7EEFE6DCE99834D5", hash_generated_method = "1820D3808537E877B4E310BAB0EC6052")
+    @Override
+public int hashCode() {
+        return (mInfo == null) ? 0 : mInfo.hashCode();
+    }
 
-    public static final int ACTION_CLEAR_SELECTION = 0x00000008;
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:34.848 -0500", hash_original_method = "9F360410AD288A74DD17C77A13BAB054", hash_generated_method = "C5D6ED61C819BF3A883EE2D10FA827A0")
+    @Override
+public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        AccessibilityNodeInfoCompat other = (AccessibilityNodeInfoCompat) obj;
+        if (mInfo == null) {
+            if (other.mInfo != null) {
+                return false;
+            }
+        } else if (!mInfo.equals(other.mInfo)) {
+            return false;
+        }
+        return true;
+    }
 }
 

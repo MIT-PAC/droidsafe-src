@@ -1,6 +1,8 @@
 package org.bouncycastle.jce.spec;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.security.spec.KeySpec;
 
@@ -10,28 +12,24 @@ import java.security.spec.KeySpec;
 
 
 public class ECKeySpec implements KeySpec {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.689 -0400", hash_original_field = "B979C2934AC0B4BA3F08DABFDD1B2299", hash_generated_field = "82AE92EF7773AA5ED9F82BE71242C394")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.641 -0500", hash_original_field = "A7A02EC26949D55D933B940037565E9D", hash_generated_field = "82AE92EF7773AA5ED9F82BE71242C394")
 
-    private ECParameterSpec spec;
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.690 -0400", hash_original_method = "26671DF5D8347FB8E2181E6D1CD58161", hash_generated_method = "33F8C75912C13380AEF70792CA92BEAA")
-    protected  ECKeySpec(
-        ECParameterSpec spec) {
+    private ECParameterSpec     spec;
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.642 -0500", hash_original_method = "26671DF5D8347FB8E2181E6D1CD58161", hash_generated_method = "27E9FDE7237BD507ABAD0F67C34E5F24")
+    protected ECKeySpec(
+        ECParameterSpec spec)
+    {
         this.spec = spec;
-        // ---------- Original Method ----------
-        //this.spec = spec;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.690 -0400", hash_original_method = "CAD2937E5922AD2A7FB69B4EF0F6DA5F", hash_generated_method = "D4946B2EB77D0360668E409F4A7D2483")
-    public ECParameterSpec getParams() {
-ECParameterSpec var3BF97C0C26DE0A5840A15BDE544612CA_1079899107 =         spec;
-        var3BF97C0C26DE0A5840A15BDE544612CA_1079899107.addTaint(taint);
-        return var3BF97C0C26DE0A5840A15BDE544612CA_1079899107;
-        // ---------- Original Method ----------
-        //return spec;
+    /**
+     * return the domain parameters for the curve
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:57.643 -0500", hash_original_method = "CAD2937E5922AD2A7FB69B4EF0F6DA5F", hash_generated_method = "24E307A7A6EB43935894FA56E34FA2C4")
+    public ECParameterSpec getParams()
+    {
+        return spec;
     }
 
     

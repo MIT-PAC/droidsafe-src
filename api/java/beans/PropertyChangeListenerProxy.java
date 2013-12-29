@@ -1,6 +1,8 @@
 package java.beans;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.EventListenerProxy;
 
@@ -10,41 +12,41 @@ import java.util.EventListenerProxy;
 
 
 public class PropertyChangeListenerProxy extends EventListenerProxy implements PropertyChangeListener {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.137 -0400", hash_original_field = "9190E95D1C478ACEB70AC5C82692A74C", hash_generated_field = "F6E23082B68F75302CA6A0F5F57467FF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.536 -0500", hash_original_field = "F6E23082B68F75302CA6A0F5F57467FF", hash_generated_field = "F6E23082B68F75302CA6A0F5F57467FF")
+
 
     String propertyName;
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.139 -0400", hash_original_method = "0B942B492C5F8BB18EE120311A2A0D6B", hash_generated_method = "3F85D01D8D9BC4DC92208A056D62ADE1")
-    public  PropertyChangeListenerProxy(String propertyName,
+
+    /**
+     * Creates a new listener proxy that associates a listener with a property
+     * name.
+     *
+     * @param propertyName
+     *            the name of the associated property.
+     * @param listener
+     *            the listener to delegate incoming events to.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.537 -0500", hash_original_method = "0B942B492C5F8BB18EE120311A2A0D6B", hash_generated_method = "678F242E04D04F6D88BA9B8744D64E7F")
+    public PropertyChangeListenerProxy(String propertyName,
             PropertyChangeListener listener) {
         super(listener);
-        addTaint(listener.getTaint());
         this.propertyName = propertyName;
-        // ---------- Original Method ----------
-        //this.propertyName = propertyName;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.139 -0400", hash_original_method = "F855330D0A49F166D335D3D735B1EC12", hash_generated_method = "1701FD2CECBBB30D39A885422C9E650A")
+    /**
+     * Returns the name of the property associated with this listener proxy.
+     *
+     * @return the name of the associated property.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.537 -0500", hash_original_method = "F855330D0A49F166D335D3D735B1EC12", hash_generated_method = "79D137ECBA6D10D7E0F2DC15CD7EDB65")
     public String getPropertyName() {
-String var3D632F0E4FFF94E691F92D3669CF1392_2123913349 =         propertyName;
-        var3D632F0E4FFF94E691F92D3669CF1392_2123913349.addTaint(taint);
-        return var3D632F0E4FFF94E691F92D3669CF1392_2123913349;
-        // ---------- Original Method ----------
-        //return propertyName;
+        return propertyName;
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.140 -0400", hash_original_method = "BBFB0B3B3DD9FEC3EABA35E8C67A978E", hash_generated_method = "8B64B5CEB711C3F7D18A7823B5846CFC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.538 -0500", hash_original_method = "BBFB0B3B3DD9FEC3EABA35E8C67A978E", hash_generated_method = "AF25D61E9DB4ACA7583E68CD25FCD032")
     public void propertyChange(PropertyChangeEvent event) {
-        addTaint(event.getTaint());
         PropertyChangeListener listener = (PropertyChangeListener) getListener();
         listener.propertyChange(event);
-        // ---------- Original Method ----------
-        //PropertyChangeListener listener = (PropertyChangeListener) getListener();
-        //listener.propertyChange(event);
     }
 
     

@@ -1,6 +1,9 @@
 package android.net.wifi.p2p;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
+import android.util.Log;
 import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -10,420 +13,81 @@ import android.os.Parcelable;
 
 
 public class WifiP2pDevice implements Parcelable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.606 -0400", hash_original_field = "271FEAE7FBE3640A38493945A82BE63F", hash_generated_field = "9A7D4F81FAFB7D27EA987849BE77B870")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.711 -0500", hash_original_field = "F04D9FB2301464066CA4B658866B1A7C", hash_generated_field = "2D3FA46E684AAF11DB903AED32FED7F0")
 
-    public String deviceName;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.606 -0400", hash_original_field = "519D99D9C5FAC874DB35B04A27557D9B", hash_generated_field = "AF33174D1ECF5398CFAFDB3DA69ECE9B")
-
-    public String deviceAddress;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.606 -0400", hash_original_field = "3C3899100031989CA8DC1CD5899032D0", hash_generated_field = "D9677D104688FDB3640FCDFC7678BD77")
-
-    public String interfaceAddress;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.606 -0400", hash_original_field = "5476575B2F57F8C80F22DEF75E8D228B", hash_generated_field = "C8560C786D68383CDDC32BE9AF81775C")
-
-    public String primaryDeviceType;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.606 -0400", hash_original_field = "92B3FF13AF549C4CD6B5B65E360FEEE7", hash_generated_field = "A0E2331A45EBC682CDD39EC85B9272F4")
-
-    public String secondaryDeviceType;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.606 -0400", hash_original_field = "9B21FABAED5EBC11E1EF7EE8AF35DC3F", hash_generated_field = "057DC56034FD8E15F0EE29D17084FE88")
-
-    public int wpsConfigMethodsSupported;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.607 -0400", hash_original_field = "01840975B61547AAF4F354C1A4E68B58", hash_generated_field = "24F1D51080FEAB5C6723A8A0299BEEA4")
-
-    public int deviceCapability;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.607 -0400", hash_original_field = "F8E080D14294024BBDA5AD376B3C6CB0", hash_generated_field = "A7627F4B2A75A5A2B99BAF760EB86A74")
-
-    public int groupCapability;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.607 -0400", hash_original_field = "44C13B312673A1B4CD877AF886680F7D", hash_generated_field = "0FCEE9D7758B8948ABBBB774FA2E2C5C")
-
-    public int status = UNAVAILABLE;
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.607 -0400", hash_original_method = "6DEE1BC764FD2CB933A4912269652401", hash_generated_method = "F64008BCEC449AEC52DED02A9FF6F441")
-    public  WifiP2pDevice() {
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.610 -0400", hash_original_method = "B4DFEB594E50AA2111054B3A3A6DF197", hash_generated_method = "3E65347525C4054E532F6FA0FA653812")
-    public  WifiP2pDevice(String string) throws IllegalArgumentException {
-        String[] tokens = string.split(" ");
-        if(tokens.length < 1)        
-        {
-            IllegalArgumentException varC6004F11587813439225B94CE376D336_1703909235 = new IllegalArgumentException("Malformed supplicant event");
-            varC6004F11587813439225B94CE376D336_1703909235.addTaint(taint);
-            throw varC6004F11587813439225B94CE376D336_1703909235;
-        } //End block
-        if(tokens.length == 1)        
-        {
-            deviceAddress = string;
-            return;
-        } //End block
-for(String token : tokens)
-        {
-            String[] nameValue = token.split("=");
-            if(nameValue.length != 2)            
-            continue;
-            if(nameValue[0].equals("p2p_dev_addr"))            
-            {
-                deviceAddress = nameValue[1];
-                continue;
-            } //End block
-            if(nameValue[0].equals("pri_dev_type"))            
-            {
-                primaryDeviceType = nameValue[1];
-                continue;
-            } //End block
-            if(nameValue[0].equals("name"))            
-            {
-                deviceName = trimQuotes(nameValue[1]);
-                continue;
-            } //End block
-            if(nameValue[0].equals("config_methods"))            
-            {
-                wpsConfigMethodsSupported = parseHex(nameValue[1]);
-                continue;
-            } //End block
-            if(nameValue[0].equals("dev_capab"))            
-            {
-                deviceCapability = parseHex(nameValue[1]);
-                continue;
-            } //End block
-            if(nameValue[0].equals("group_capab"))            
-            {
-                groupCapability = parseHex(nameValue[1]);
-                continue;
-            } //End block
-        } //End block
-        if(tokens[0].startsWith("P2P-DEVICE-FOUND"))        
-        {
-            status = AVAILABLE;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.614 -0400", hash_original_method = "8BE5EC4742BDBC547BA4DA345C8E71E1", hash_generated_method = "DA5AC86B594A9ED5697AEB6D0BB3C08F")
-    public  WifiP2pDevice(WifiP2pDevice source) {
-        if(source != null)        
-        {
-            deviceName = source.deviceName;
-            deviceAddress = source.deviceAddress;
-            interfaceAddress = source.interfaceAddress;
-            primaryDeviceType = source.primaryDeviceType;
-            secondaryDeviceType = source.secondaryDeviceType;
-            wpsConfigMethodsSupported = source.wpsConfigMethodsSupported;
-            deviceCapability = source.deviceCapability;
-            groupCapability = source.groupCapability;
-            status = source.status;
-        } //End block
-        // ---------- Original Method ----------
-        //if (source != null) {
-            //deviceName = source.deviceName;
-            //deviceAddress = source.deviceAddress;
-            //interfaceAddress = source.interfaceAddress;
-            //primaryDeviceType = source.primaryDeviceType;
-            //secondaryDeviceType = source.secondaryDeviceType;
-            //wpsConfigMethodsSupported = source.wpsConfigMethodsSupported;
-            //deviceCapability = source.deviceCapability;
-            //groupCapability = source.groupCapability;
-            //status = source.status;
-        //}
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.615 -0400", hash_original_method = "76992CA06444764D9CF7DB1AFF10640E", hash_generated_method = "C7A24BDF4A50D658EA6BD90C3608143C")
-    public boolean wpsPbcSupported() {
-        boolean var3C08D742A43F3CA6BCBC29B07201315B_1071345442 = ((wpsConfigMethodsSupported & WPS_CONFIG_PUSHBUTTON) != 0);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2004098649 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2004098649;
-        // ---------- Original Method ----------
-        //return (wpsConfigMethodsSupported & WPS_CONFIG_PUSHBUTTON) != 0;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.615 -0400", hash_original_method = "B2A0BAE23B24F963FF842B8EAAF5D840", hash_generated_method = "E70885F8753A437CFEC4E95F1050A97C")
-    public boolean wpsKeypadSupported() {
-        boolean var1C14923349E39578A26384C6AAF203C8_1124888488 = ((wpsConfigMethodsSupported & WPS_CONFIG_KEYPAD) != 0);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_934581184 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_934581184;
-        // ---------- Original Method ----------
-        //return (wpsConfigMethodsSupported & WPS_CONFIG_KEYPAD) != 0;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.616 -0400", hash_original_method = "89517E0D3099BE3BB50FEAB8A124BB8F", hash_generated_method = "A84142958333D76D77D42F4B2D9AEDFD")
-    public boolean wpsDisplaySupported() {
-        boolean var26C0ADF20D06F65D2845F4DBA6CB06E9_107805015 = ((wpsConfigMethodsSupported & WPS_CONFIG_DISPLAY) != 0);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1986978235 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1986978235;
-        // ---------- Original Method ----------
-        //return (wpsConfigMethodsSupported & WPS_CONFIG_DISPLAY) != 0;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.616 -0400", hash_original_method = "3FBC138270F4ADEAF27B9A0357206073", hash_generated_method = "983214BB4A0ACF90D4AC44E6E0A6E9F9")
-    public boolean isServiceDiscoveryCapable() {
-        boolean var5EA4B87FB1FADC800F9BA0C2976C9B9B_735183792 = ((deviceCapability & DEVICE_CAPAB_SERVICE_DISCOVERY) != 0);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_362065477 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_362065477;
-        // ---------- Original Method ----------
-        //return (deviceCapability & DEVICE_CAPAB_SERVICE_DISCOVERY) != 0;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.617 -0400", hash_original_method = "A041F8E96FF7F1638DE5EDEE0D23FE8B", hash_generated_method = "2B1EB17BFE1DDC899DCF5F8E967E4FB4")
-    public boolean isGroupOwner() {
-        boolean var5AA29A5D99A1CCDE4C4E4C88D30C9F46_1184720812 = ((groupCapability & GROUP_CAPAB_GROUP_OWNER) != 0);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2093630501 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2093630501;
-        // ---------- Original Method ----------
-        //return (groupCapability & GROUP_CAPAB_GROUP_OWNER) != 0;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.618 -0400", hash_original_method = "09392A3C152DA1725DCCBD5DEBB248C2", hash_generated_method = "2056781088D0D5BEB7BE0C4B577D02DB")
-    @Override
-    public boolean equals(Object obj) {
-        addTaint(obj.getTaint());
-        if(this == obj)        
-        {
-        boolean varB326B5062B2F0E69046810717534CB09_2021386002 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2140360025 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2140360025;
-        }
-        if(!(obj instanceof WifiP2pDevice))        
-        {
-        boolean var68934A3E9455FA72420237EB05902327_2056563107 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1531232032 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1531232032;
-        }
-        WifiP2pDevice other = (WifiP2pDevice) obj;
-        if(other == null || other.deviceAddress == null)        
-        {
-            boolean var0D483FE855C694067868829C3EC1FDB2_491293135 = ((deviceAddress == null));
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1169254213 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1169254213;
-        } //End block
-        boolean varBA854C6752A405C2F84DE40A233F53E0_1058175398 = (other.deviceAddress.equals(deviceAddress));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_3921276 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_3921276;
-        // ---------- Original Method ----------
-        //if (this == obj) return true;
-        //if (!(obj instanceof WifiP2pDevice)) return false;
-        //WifiP2pDevice other = (WifiP2pDevice) obj;
-        //if (other == null || other.deviceAddress == null) {
-            //return (deviceAddress == null);
-        //}
-        //return other.deviceAddress.equals(deviceAddress);
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.619 -0400", hash_original_method = "016D59A2B811BA8203F4683B5513F2D5", hash_generated_method = "C518D6AC0F19F980791398C663913FEB")
-    public String toString() {
-        StringBuffer sbuf = new StringBuffer();
-        sbuf.append("Device: ").append(deviceName);
-        sbuf.append("\n deviceAddress: ").append(deviceAddress);
-        sbuf.append("\n interfaceAddress: ").append(interfaceAddress);
-        sbuf.append("\n primary type: ").append(primaryDeviceType);
-        sbuf.append("\n secondary type: ").append(secondaryDeviceType);
-        sbuf.append("\n wps: ").append(wpsConfigMethodsSupported);
-        sbuf.append("\n grpcapab: ").append(groupCapability);
-        sbuf.append("\n devcapab: ").append(deviceCapability);
-        sbuf.append("\n status: ").append(status);
-String var69222FFA45D1268AEE1923C5558B0BD5_1984423810 =         sbuf.toString();
-        var69222FFA45D1268AEE1923C5558B0BD5_1984423810.addTaint(taint);
-        return var69222FFA45D1268AEE1923C5558B0BD5_1984423810;
-        // ---------- Original Method ----------
-        //StringBuffer sbuf = new StringBuffer();
-        //sbuf.append("Device: ").append(deviceName);
-        //sbuf.append("\n deviceAddress: ").append(deviceAddress);
-        //sbuf.append("\n interfaceAddress: ").append(interfaceAddress);
-        //sbuf.append("\n primary type: ").append(primaryDeviceType);
-        //sbuf.append("\n secondary type: ").append(secondaryDeviceType);
-        //sbuf.append("\n wps: ").append(wpsConfigMethodsSupported);
-        //sbuf.append("\n grpcapab: ").append(groupCapability);
-        //sbuf.append("\n devcapab: ").append(deviceCapability);
-        //sbuf.append("\n status: ").append(status);
-        //return sbuf.toString();
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.619 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "D828C018A032AB2F561D2B1CBFB28669")
-    public int describeContents() {
-        int varCFCD208495D565EF66E7DFF9F98764DA_719438199 = (0);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2026953551 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2026953551;
-        // ---------- Original Method ----------
-        //return 0;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.620 -0400", hash_original_method = "F1F1C1D05E28ABD7E03ACA6C9259AC2F", hash_generated_method = "CAC736DCC6093181C1E19002887B656A")
-    public void writeToParcel(Parcel dest, int flags) {
-        addTaint(flags);
-        addTaint(dest.getTaint());
-        dest.writeString(deviceName);
-        dest.writeString(deviceAddress);
-        dest.writeString(interfaceAddress);
-        dest.writeString(primaryDeviceType);
-        dest.writeString(secondaryDeviceType);
-        dest.writeInt(wpsConfigMethodsSupported);
-        dest.writeInt(deviceCapability);
-        dest.writeInt(groupCapability);
-        dest.writeInt(status);
-        // ---------- Original Method ----------
-        //dest.writeString(deviceName);
-        //dest.writeString(deviceAddress);
-        //dest.writeString(interfaceAddress);
-        //dest.writeString(primaryDeviceType);
-        //dest.writeString(secondaryDeviceType);
-        //dest.writeInt(wpsConfigMethodsSupported);
-        //dest.writeInt(deviceCapability);
-        //dest.writeInt(groupCapability);
-        //dest.writeInt(status);
-    }
-
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.620 -0400", hash_original_method = "81EACEB4EB0E2420630EBFC84E59B2A4", hash_generated_method = "CE91589973490FD97B9E0E26502C61DA")
-    private String trimQuotes(String str) {
-        addTaint(str.getTaint());
-        str = str.trim();
-        if(str.startsWith("'") && str.endsWith("'"))        
-        {
-String var8B365E7532D232C6C0049AB493A762A6_1144616856 =             str.substring(1, str.length()-1);
-            var8B365E7532D232C6C0049AB493A762A6_1144616856.addTaint(taint);
-            return var8B365E7532D232C6C0049AB493A762A6_1144616856;
-        } //End block
-String var061B89662D09DE43FE2A2D88636258A2_1452513810 =         str;
-        var061B89662D09DE43FE2A2D88636258A2_1452513810.addTaint(taint);
-        return var061B89662D09DE43FE2A2D88636258A2_1452513810;
-        // ---------- Original Method ----------
-        //str = str.trim();
-        //if (str.startsWith("'") && str.endsWith("'")) {
-            //return str.substring(1, str.length()-1);
-        //}
-        //return str;
-    }
-
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.621 -0400", hash_original_method = "C0F4185566F115FC2220CE409C454DF3", hash_generated_method = "527877CA6F302B4F2F1B49EBDE782FF1")
-    private int parseHex(String hexString) {
-        addTaint(hexString.getTaint());
-        int num = 0;
-        if(hexString.startsWith("0x") || hexString.startsWith("0X"))        
-        {
-            hexString = hexString.substring(2);
-        } //End block
-        try 
-        {
-            num = Integer.parseInt(hexString, 16);
-        } //End block
-        catch (NumberFormatException e)
-        {
-        } //End block
-        int var0FC3CFBC27E91EA60A787DE13DAE3E3C_1698792409 = (num);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_156915067 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_156915067;
-        // ---------- Original Method ----------
-        //int num = 0;
-        //if (hexString.startsWith("0x") || hexString.startsWith("0X")) {
-            //hexString = hexString.substring(2);
-        //}
-        //try {
-            //num = Integer.parseInt(hexString, 16);
-        //} catch(NumberFormatException e) {
-            //Log.e(TAG, "Failed to parse hex string " + hexString);
-        //}
-        //return num;
-    }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.622 -0400", hash_original_field = "AE43CB08180DDB93087C004ADAB60C50", hash_generated_field = "2D3FA46E684AAF11DB903AED32FED7F0")
 
     private static final String TAG = "WifiP2pDevice";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.622 -0400", hash_original_field = "8598204F3C37E7E1F5019D0FBDF50847", hash_generated_field = "D2C76F901E5BC3A5C02272862E00F60C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:36:19.214 -0500", hash_original_field = "277B34EC794982313F1D75A836F7B86F", hash_generated_field = "34C7BFF4A71DE101F52E5FEEC7E3D4DD")
 
-    private static final int WPS_CONFIG_DISPLAY = 0x0008;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.622 -0400", hash_original_field = "32FDFB589F79EA959F0618C849371C92", hash_generated_field = "78E701778F1AAA542995E26A9F4815B3")
+    /* WPS config methods supported */
+    private static final int WPS_CONFIG_DISPLAY         = 0x0008;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.717 -0500", hash_original_field = "F717D91FF96C9C9EC7FA53EED4647EDA", hash_generated_field = "78E701778F1AAA542995E26A9F4815B3")
 
-    private static final int WPS_CONFIG_PUSHBUTTON = 0x0080;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.622 -0400", hash_original_field = "A677601AA4FDC4E1C90E63620FB86358", hash_generated_field = "4441C9AC819F241188C2F8B8A1223F6F")
+    private static final int WPS_CONFIG_PUSHBUTTON      = 0x0080;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.718 -0500", hash_original_field = "B333D01AC44B5A99730B745F8AEF3314", hash_generated_field = "4441C9AC819F241188C2F8B8A1223F6F")
 
-    private static final int WPS_CONFIG_KEYPAD = 0x0100;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.622 -0400", hash_original_field = "64E3C91CE49305F32DF8E49258AF40F6", hash_generated_field = "ED7E840AF6B67252A5F338FC4F9F5C16")
+    private static final int WPS_CONFIG_KEYPAD          = 0x0100;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.718 -0500", hash_original_field = "EF9B64FC69DA901C8B52C86E38EACB94", hash_generated_field = "ED7E840AF6B67252A5F338FC4F9F5C16")
 
-    private static final int DEVICE_CAPAB_SERVICE_DISCOVERY = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.622 -0400", hash_original_field = "848A578E2570E7EBD1C50FBED0CC6E34", hash_generated_field = "B3F55D1FD38440F6A01D01E71751E240")
+    private static final int DEVICE_CAPAB_SERVICE_DISCOVERY         = 1;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.719 -0500", hash_original_field = "84824328ADBA71FEA215811B5BEA4BB3", hash_generated_field = "B3F55D1FD38440F6A01D01E71751E240")
 
-    private static final int DEVICE_CAPAB_CLIENT_DISCOVERABILITY = 1<<1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.622 -0400", hash_original_field = "22F2BB19D52A359661973536C90EE58F", hash_generated_field = "C11C29B1C6B7394FEDFE0A204E03D494")
+    private static final int DEVICE_CAPAB_CLIENT_DISCOVERABILITY    = 1<<1;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.720 -0500", hash_original_field = "33F3C4F2D4FB0B56A929EE20C73076FF", hash_generated_field = "C11C29B1C6B7394FEDFE0A204E03D494")
 
-    private static final int DEVICE_CAPAB_CONCURRENT_OPER = 1<<2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.622 -0400", hash_original_field = "D3F2BF333B7E0DE0788F68FB9992E66D", hash_generated_field = "E4889542C18A4CAD394FE39FD0A7E53A")
+    private static final int DEVICE_CAPAB_CONCURRENT_OPER           = 1<<2;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.721 -0500", hash_original_field = "2B7784C51800E6EA5D3685CDB060CADF", hash_generated_field = "E4889542C18A4CAD394FE39FD0A7E53A")
 
-    private static final int DEVICE_CAPAB_INFRA_MANAGED = 1<<3;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.622 -0400", hash_original_field = "FAE3F8097286B2388CB5E9E722FA9376", hash_generated_field = "C6FDFEE4D831077E17A8F87B79E1542B")
+    private static final int DEVICE_CAPAB_INFRA_MANAGED             = 1<<3;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.722 -0500", hash_original_field = "5D219595828A825F2FDCE4BDA24F4655", hash_generated_field = "C6FDFEE4D831077E17A8F87B79E1542B")
 
-    private static final int DEVICE_CAPAB_DEVICE_LIMIT = 1<<4;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.622 -0400", hash_original_field = "6ADE38D2E2FE37191B2F042452FA7CA6", hash_generated_field = "E11BF5DA4C652DC3885D2F89B8BC8CBC")
+    private static final int DEVICE_CAPAB_DEVICE_LIMIT              = 1<<4;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.723 -0500", hash_original_field = "1018D187A218B4592E92BE1B7C919462", hash_generated_field = "E11BF5DA4C652DC3885D2F89B8BC8CBC")
 
-    private static final int DEVICE_CAPAB_INVITATION_PROCEDURE = 1<<5;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.623 -0400", hash_original_field = "DE296303D36B91631485D4E1AB7E6C9B", hash_generated_field = "660117B2CCF1684725E38F606720D4F8")
+    private static final int DEVICE_CAPAB_INVITATION_PROCEDURE      = 1<<5;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.724 -0500", hash_original_field = "24F661532E9D1B4D08BE5F212CB3E17A", hash_generated_field = "660117B2CCF1684725E38F606720D4F8")
 
-    private static final int GROUP_CAPAB_GROUP_OWNER = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.623 -0400", hash_original_field = "B5C1065E7C45300EE1C1FEE28BEC039A", hash_generated_field = "1ED43ED6AC42E70FA6E2AE19C57697F9")
+    private static final int GROUP_CAPAB_GROUP_OWNER                = 1;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.725 -0500", hash_original_field = "F4A90B0A9E7C28CBABB56A2E0AF37DD8", hash_generated_field = "1ED43ED6AC42E70FA6E2AE19C57697F9")
 
-    private static final int GROUP_CAPAB_PERSISTENT_GROUP = 1<<1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.623 -0400", hash_original_field = "E6C7146C910619650200D213B9387ED7", hash_generated_field = "0E2B6BAC640107ABB60FC85978FC8B33")
+    private static final int GROUP_CAPAB_PERSISTENT_GROUP           = 1<<1;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.725 -0500", hash_original_field = "9E66DE990F0D7A5BCEBBEC2630135172", hash_generated_field = "0E2B6BAC640107ABB60FC85978FC8B33")
 
-    private static final int GROUP_CAPAB_GROUP_LIMIT = 1<<2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.623 -0400", hash_original_field = "8C0EFCE86E4ECC424E835E5919446ADF", hash_generated_field = "B55D83B08662B8007693B6A4BCB60BB7")
+    private static final int GROUP_CAPAB_GROUP_LIMIT                = 1<<2;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.726 -0500", hash_original_field = "5F6D0EF31719FCE25D837681ABA1B626", hash_generated_field = "B55D83B08662B8007693B6A4BCB60BB7")
 
-    private static final int GROUP_CAPAB_INTRA_BSS_DIST = 1<<3;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.623 -0400", hash_original_field = "32DCF2A6593404424A352455EA15DB35", hash_generated_field = "A7083D15E179404DC8C6B584349D2977")
+    private static final int GROUP_CAPAB_INTRA_BSS_DIST             = 1<<3;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.727 -0500", hash_original_field = "4BC4F53128197C7412B89789773B026A", hash_generated_field = "A7083D15E179404DC8C6B584349D2977")
 
-    private static final int GROUP_CAPAB_CROSS_CONN = 1<<4;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.623 -0400", hash_original_field = "15694CADE2F6777E124BD9136061231B", hash_generated_field = "B109428E0DF961D64558D4C2EB0C7A20")
+    private static final int GROUP_CAPAB_CROSS_CONN                 = 1<<4;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.728 -0500", hash_original_field = "AE1B00A39883DE1A246441B48134F5BF", hash_generated_field = "B109428E0DF961D64558D4C2EB0C7A20")
 
-    private static final int GROUP_CAPAB_PERSISTENT_RECONN = 1<<5;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.623 -0400", hash_original_field = "8471780A070C5212C3BE09A278FE278B", hash_generated_field = "ABA5135F62F4403CCC24802B45944736")
+    private static final int GROUP_CAPAB_PERSISTENT_RECONN          = 1<<5;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.729 -0500", hash_original_field = "5A238D1DD68031E8EB01569FB8A26A2A", hash_generated_field = "ABA5135F62F4403CCC24802B45944736")
 
-    private static final int GROUP_CAPAB_GROUP_FORMATION = 1<<6;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.623 -0400", hash_original_field = "6B5E0957DCB6301BBFD7E668EB84B035", hash_generated_field = "C64FAE939570F571A8BAE24D1B70BD13")
+    private static final int GROUP_CAPAB_GROUP_FORMATION            = 1<<6;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.732 -0500", hash_original_field = "1E24F9D848DD61AFCB4567859AC1F346", hash_generated_field = "C64FAE939570F571A8BAE24D1B70BD13")
+
 
     public static final int CONNECTED   = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.623 -0400", hash_original_field = "06D821117E1B6D57A639606827F9604E", hash_generated_field = "B6613B33DED36EABAC0CBA0C7B969929")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.733 -0500", hash_original_field = "8BCF35DAC151898B7E0676E11300D32A", hash_generated_field = "B6613B33DED36EABAC0CBA0C7B969929")
 
     public static final int INVITED     = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.623 -0400", hash_original_field = "72D423E6C58FCDECEC7381F5C89F6C03", hash_generated_field = "CFFB40C2E01759BFC10D884F773E1A4F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.734 -0500", hash_original_field = "000FFC8FE97CA2AB4E413EC0653951D5", hash_generated_field = "CFFB40C2E01759BFC10D884F773E1A4F")
 
     public static final int FAILED      = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.623 -0400", hash_original_field = "1478E7FA7161A6AE612B8761D910DB5B", hash_generated_field = "3420700E53DA1A9A7046D001075E3AE8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.735 -0500", hash_original_field = "C611119B863329F40641FC29F0354467", hash_generated_field = "3420700E53DA1A9A7046D001075E3AE8")
 
     public static final int AVAILABLE   = 3;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.624 -0400", hash_original_field = "9BB63F437347685327DE4C4126C58692", hash_generated_field = "EBDD50BA8ED35706997081541733CA67")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.736 -0500", hash_original_field = "0DEDA97B66D944C394999D09C8277D82", hash_generated_field = "EBDD50BA8ED35706997081541733CA67")
 
     public static final int UNAVAILABLE = 4;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.624 -0400", hash_original_field = "9AB723F7F4AC03B860BFCAE90A6330E9", hash_generated_field = "C2F80F230659999E6A4528EC4530DF69")
 
     public static final Creator<WifiP2pDevice> CREATOR =
         new Creator<WifiP2pDevice>() {
-            public WifiP2pDevice createFromParcel(Parcel in) {
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.748 -0500", hash_original_method = "5387382CA16A3AD5682D1C391F3488A3", hash_generated_method = "DB007C546816C2DDE05F93E41058B0E5")
+        public WifiP2pDevice createFromParcel(Parcel in) {
                 WifiP2pDevice device = new WifiP2pDevice();
                 device.deviceName = in.readString();
                 device.deviceAddress = in.readString();
@@ -437,11 +101,240 @@ String var061B89662D09DE43FE2A2D88636258A2_1452513810 =         str;
                 return device;
             }
 
-            @DSModeled(DSC.SAFE)
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.749 -0500", hash_original_method = "984A6A383474F78D9CC3B6A5D85D6E25", hash_generated_method = "0D37828AC4D1484F573DBA82BF341A7B")
         public WifiP2pDevice[] newArray(int size) {
                 return new WifiP2pDevice[size];
             }
         };
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.712 -0500", hash_original_field = "A372F52D013F6BC1A5F9285AD3DD76BD", hash_generated_field = "9A7D4F81FAFB7D27EA987849BE77B870")
+
+    public String deviceName;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.713 -0500", hash_original_field = "5680069B0A3D4DFE817187C6DB2A220A", hash_generated_field = "AF33174D1ECF5398CFAFDB3DA69ECE9B")
+
+    public String deviceAddress;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.713 -0500", hash_original_field = "C6E9D1B190579E67491392023B2D5CFB", hash_generated_field = "D9677D104688FDB3640FCDFC7678BD77")
+
+    public String interfaceAddress;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.714 -0500", hash_original_field = "D4D2818B4D6F39F379EC8B79657B094C", hash_generated_field = "C8560C786D68383CDDC32BE9AF81775C")
+
+    public String primaryDeviceType;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.715 -0500", hash_original_field = "047AC8625134AAEB04163BBEA4DBE772", hash_generated_field = "A0E2331A45EBC682CDD39EC85B9272F4")
+
+    public String secondaryDeviceType;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.730 -0500", hash_original_field = "8EF211DFFFE4A4C9E32C5EDC7C584581", hash_generated_field = "057DC56034FD8E15F0EE29D17084FE88")
+
+    public int wpsConfigMethodsSupported;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.731 -0500", hash_original_field = "05536B106DCAD6286CA13396646E1606", hash_generated_field = "24F1D51080FEAB5C6723A8A0299BEEA4")
+
+    public int deviceCapability;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.732 -0500", hash_original_field = "86469BBD4C008876FFA94DD0F89455DB", hash_generated_field = "A7627F4B2A75A5A2B99BAF760EB86A74")
+
+    public int groupCapability;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.736 -0500", hash_original_field = "29430799A944FDBDB26E548B96A723D0", hash_generated_field = "0FCEE9D7758B8948ABBBB774FA2E2C5C")
+
+    public int status = UNAVAILABLE;
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.737 -0500", hash_original_method = "6DEE1BC764FD2CB933A4912269652401", hash_generated_method = "F16508AAFF899630171AC9A8E9233A52")
+    public WifiP2pDevice() {
+    }
+
+    /**
+     * @param string formats supported include
+     *  P2P-DEVICE-FOUND fa:7b:7a:42:02:13 p2p_dev_addr=fa:7b:7a:42:02:13
+     *  pri_dev_type=1-0050F204-1 name='p2p-TEST1' config_methods=0x188 dev_capab=0x27
+     *  group_capab=0x0
+     *
+     *  P2P-DEVICE-LOST p2p_dev_addr=fa:7b:7a:42:02:13
+     *
+     *  fa:7b:7a:42:02:13
+     *
+     *  P2P-PROV-DISC-PBC-REQ 42:fc:89:e1:e2:27 p2p_dev_addr=42:fc:89:e1:e2:27
+     *  pri_dev_type=1-0050F204-1 name='p2p-TEST2' config_methods=0x188 dev_capab=0x27
+     *  group_capab=0x0
+     *
+     *  P2P-PROV-DISC-ENTER-PIN 42:fc:89:e1:e2:27 p2p_dev_addr=42:fc:89:e1:e2:27
+     *  pri_dev_type=1-0050F204-1 name='p2p-TEST2' config_methods=0x188 dev_capab=0x27
+     *  group_capab=0x0
+     *
+     *  P2P-PROV-DISC-SHOW-PIN 42:fc:89:e1:e2:27 44490607 p2p_dev_addr=42:fc:89:e1:e2:27
+     *  pri_dev_type=1-0050F204-1 name='p2p-TEST2' config_methods=0x188 dev_capab=0x27
+     *  group_capab=0x0
+     *
+     *  Note: The events formats can be looked up in the wpa_supplicant code
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.738 -0500", hash_original_method = "B4DFEB594E50AA2111054B3A3A6DF197", hash_generated_method = "FE0BA10AC47EA8541703F7DA0FF274C1")
+    public WifiP2pDevice(String string) throws IllegalArgumentException {
+        String[] tokens = string.split(" ");
+
+        if (tokens.length < 1) {
+            throw new IllegalArgumentException("Malformed supplicant event");
+        }
+
+        /* Just a device address */
+        if (tokens.length == 1) {
+            deviceAddress = string;
+            return;
+        }
+
+        for (String token : tokens) {
+            String[] nameValue = token.split("=");
+            if (nameValue.length != 2) continue;
+
+            if (nameValue[0].equals("p2p_dev_addr")) {
+                deviceAddress = nameValue[1];
+                continue;
+            }
+
+            if (nameValue[0].equals("pri_dev_type")) {
+                primaryDeviceType = nameValue[1];
+                continue;
+            }
+
+            if (nameValue[0].equals("name")) {
+                deviceName = trimQuotes(nameValue[1]);
+                continue;
+            }
+
+            if (nameValue[0].equals("config_methods")) {
+                wpsConfigMethodsSupported = parseHex(nameValue[1]);
+                continue;
+            }
+
+            if (nameValue[0].equals("dev_capab")) {
+                deviceCapability = parseHex(nameValue[1]);
+                continue;
+            }
+
+            if (nameValue[0].equals("group_capab")) {
+                groupCapability = parseHex(nameValue[1]);
+                continue;
+            }
+        }
+
+        if (tokens[0].startsWith("P2P-DEVICE-FOUND")) {
+            status = AVAILABLE;
+        }
+    }
+
+    /** copy constructor */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.746 -0500", hash_original_method = "8BE5EC4742BDBC547BA4DA345C8E71E1", hash_generated_method = "793018AD230FBA8C91A1710C1DB2C406")
+    public WifiP2pDevice(WifiP2pDevice source) {
+        if (source != null) {
+            deviceName = source.deviceName;
+            deviceAddress = source.deviceAddress;
+            interfaceAddress = source.interfaceAddress;
+            primaryDeviceType = source.primaryDeviceType;
+            secondaryDeviceType = source.secondaryDeviceType;
+            wpsConfigMethodsSupported = source.wpsConfigMethodsSupported;
+            deviceCapability = source.deviceCapability;
+            groupCapability = source.groupCapability;
+            status = source.status;
+        }
+    }
+
+    /** Returns true if WPS push button configuration is supported */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.739 -0500", hash_original_method = "76992CA06444764D9CF7DB1AFF10640E", hash_generated_method = "5B1E0534FC73153EA3F058EDA9D163AF")
+    public boolean wpsPbcSupported() {
+        return (wpsConfigMethodsSupported & WPS_CONFIG_PUSHBUTTON) != 0;
+    }
+
+    /** Returns true if WPS keypad configuration is supported */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.740 -0500", hash_original_method = "B2A0BAE23B24F963FF842B8EAAF5D840", hash_generated_method = "8291981AB63407AE29C5D4C7916DDECA")
+    public boolean wpsKeypadSupported() {
+        return (wpsConfigMethodsSupported & WPS_CONFIG_KEYPAD) != 0;
+    }
+
+    /** Returns true if WPS display configuration is supported */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.741 -0500", hash_original_method = "89517E0D3099BE3BB50FEAB8A124BB8F", hash_generated_method = "FA68B779C0A9D00C5971A12EE0357A09")
+    public boolean wpsDisplaySupported() {
+        return (wpsConfigMethodsSupported & WPS_CONFIG_DISPLAY) != 0;
+    }
+
+    /** Returns true if the device is capable of service discovery */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.741 -0500", hash_original_method = "3FBC138270F4ADEAF27B9A0357206073", hash_generated_method = "A008793A021577C8A500442E7593AECB")
+    public boolean isServiceDiscoveryCapable() {
+        return (deviceCapability & DEVICE_CAPAB_SERVICE_DISCOVERY) != 0;
+    }
+
+    /** Returns true if the device is a group owner */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.742 -0500", hash_original_method = "A041F8E96FF7F1638DE5EDEE0D23FE8B", hash_generated_method = "5EF2B59EC71A41C6F2469CE5E44BCCC8")
+    public boolean isGroupOwner() {
+        return (groupCapability & GROUP_CAPAB_GROUP_OWNER) != 0;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.743 -0500", hash_original_method = "09392A3C152DA1725DCCBD5DEBB248C2", hash_generated_method = "5D550A39FAC86B8A1E962F0736DBB9A9")
+    @Override
+public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (!(obj instanceof WifiP2pDevice)) return false;
+
+        WifiP2pDevice other = (WifiP2pDevice) obj;
+        if (other == null || other.deviceAddress == null) {
+            return (deviceAddress == null);
+        }
+        return other.deviceAddress.equals(deviceAddress);
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.744 -0500", hash_original_method = "016D59A2B811BA8203F4683B5513F2D5", hash_generated_method = "011133C52A8A5C2BA1398ECCF2140305")
+    public String toString() {
+        StringBuffer sbuf = new StringBuffer();
+        sbuf.append("Device: ").append(deviceName);
+        sbuf.append("\n deviceAddress: ").append(deviceAddress);
+        sbuf.append("\n interfaceAddress: ").append(interfaceAddress);
+        sbuf.append("\n primary type: ").append(primaryDeviceType);
+        sbuf.append("\n secondary type: ").append(secondaryDeviceType);
+        sbuf.append("\n wps: ").append(wpsConfigMethodsSupported);
+        sbuf.append("\n grpcapab: ").append(groupCapability);
+        sbuf.append("\n devcapab: ").append(deviceCapability);
+        sbuf.append("\n status: ").append(status);
+        return sbuf.toString();
+    }
+
+    /** Implement the Parcelable interface */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.745 -0500", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "D90463461B2A94FF94D13FDF69BB80C9")
+    public int describeContents() {
+        return 0;
+    }
+
+    /** Implement the Parcelable interface */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.747 -0500", hash_original_method = "F1F1C1D05E28ABD7E03ACA6C9259AC2F", hash_generated_method = "9823E54C53B079EDAC31D5C9B4C87A7F")
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(deviceName);
+        dest.writeString(deviceAddress);
+        dest.writeString(interfaceAddress);
+        dest.writeString(primaryDeviceType);
+        dest.writeString(secondaryDeviceType);
+        dest.writeInt(wpsConfigMethodsSupported);
+        dest.writeInt(deviceCapability);
+        dest.writeInt(groupCapability);
+        dest.writeInt(status);
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.751 -0500", hash_original_method = "81EACEB4EB0E2420630EBFC84E59B2A4", hash_generated_method = "C0E2D1AD994CCEE1CBE97C16FA3E6C1C")
+    private String trimQuotes(String str) {
+        str = str.trim();
+        if (str.startsWith("'") && str.endsWith("'")) {
+            return str.substring(1, str.length()-1);
+        }
+        return str;
+    }
+
+    //supported formats: 0x1abc, 0X1abc, 1abc
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.752 -0500", hash_original_method = "C0F4185566F115FC2220CE409C454DF3", hash_generated_method = "26CE78F6E6F315F479373762C2EBF819")
+    private int parseHex(String hexString) {
+        int num = 0;
+        if (hexString.startsWith("0x") || hexString.startsWith("0X")) {
+            hexString = hexString.substring(2);
+        }
+
+        try {
+            num = Integer.parseInt(hexString, 16);
+        } catch(NumberFormatException e) {
+            Log.e(TAG, "Failed to parse hex string " + hexString);
+        }
+        return num;
+    }
     // orphaned legacy method
     public WifiP2pDevice createFromParcel(Parcel in) {
                 WifiP2pDevice device = new WifiP2pDevice();

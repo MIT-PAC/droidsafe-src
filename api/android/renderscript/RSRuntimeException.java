@@ -5,13 +5,9 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 public class RSRuntimeException extends java.lang.RuntimeException {
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-19 12:47:21.941 -0400", hash_original_method = "AAC03E0583EBE74CD67A73B383BF3A8F", hash_generated_method = "C3D465C848262260AAFA8CB169E901A9")
-    public  RSRuntimeException(String string) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.351 -0500", hash_original_method = "AAC03E0583EBE74CD67A73B383BF3A8F", hash_generated_method = "BDCE09C69A95A9EED50140F4AFA24DAB")
+    public RSRuntimeException(String string) {
         super(string);
-        addTaint(string.getTaint());
-        // ---------- Original Method ----------
     }
 
     

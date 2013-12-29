@@ -1,6 +1,8 @@
 package libcore.io;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import static libcore.io.OsConstants.MAP_SHARED;
 import static libcore.io.OsConstants.O_RDONLY;
@@ -15,25 +17,11 @@ import java.nio.ByteOrder;
 
 
 public final class MemoryMappedFile implements AutoCloseable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.641 -0400", hash_original_field = "884D9804999FC47A3C2694E49AD2536A", hash_generated_field = "A3F92EACCD07E081D12E0C4FE5B97927")
 
-    private long address;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.641 -0400", hash_original_field = "F7BD60B75B29D79B660A2859395C1A24", hash_generated_field = "CB917F06730B11F4BAAAFECA2C1D90A2")
-
-    private long size;
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.641 -0400", hash_original_method = "DB7FD4AAB3D9EFEAFD8D0DCEC168BCAA", hash_generated_method = "91C9353EEAEA7638DF5FBFD8454CF94B")
-    public  MemoryMappedFile(long address, long size) {
-        this.address = address;
-        this.size = size;
-        // ---------- Original Method ----------
-        //this.address = address;
-        //this.size = size;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Use this to mmap the whole file read-only.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:37.275 -0500", hash_original_method = "FA3DDF9B94B3CDEBE6839DEC194373B4", hash_generated_method = "CC5C3CF1AA1440CDF3C238739770F717")
     public static MemoryMappedFile mmapRO(String path) throws ErrnoException {
         FileDescriptor fd = Libcore.os.open(path, O_RDONLY, 0);
         long size = Libcore.os.fstat(fd).st_size;
@@ -41,53 +29,60 @@ public final class MemoryMappedFile implements AutoCloseable {
         Libcore.os.close(fd);
         return new MemoryMappedFile(address, size);
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:37.273 -0500", hash_original_field = "98E46D2F5C8C426EF3AADF170DF60277", hash_generated_field = "A3F92EACCD07E081D12E0C4FE5B97927")
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.641 -0400", hash_original_method = "306B75FBBEB2593BE41A1551019979E1", hash_generated_method = "E02BB407DCCB37CF3FE71FF4852CBF31")
+    private long address;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:37.274 -0500", hash_original_field = "298A39EB1E059FD1DCE8DF5205BAB3E6", hash_generated_field = "CB917F06730B11F4BAAAFECA2C1D90A2")
+
+    private  long size;
+
+    /**
+     * Use this if you've called {@code mmap} yourself.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:37.274 -0500", hash_original_method = "DB7FD4AAB3D9EFEAFD8D0DCEC168BCAA", hash_generated_method = "53D7BD36BF43AE5D98CBE4AD53159000")
+    public MemoryMappedFile(long address, long size) {
+        this.address = address;
+        this.size = size;
+    }
+
+    /**
+     * Unmaps this memory-mapped file using munmap(2). This is a no-op if close has already been
+     * called. Note that this class does <i>not</i> use finalization; you must call {@code close}
+     * yourself.
+     *
+     * Calling this method invalidates any iterators over this {@code MemoryMappedFile}. It is an
+     * error to use such an iterator after calling {@code close}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:37.276 -0500", hash_original_method = "306B75FBBEB2593BE41A1551019979E1", hash_generated_method = "9740CC12F640C268AF7D4CDD85564DD0")
     public synchronized void close() throws ErrnoException {
-        if(address != 0)        
-        {
+        if (address != 0) {
             Libcore.os.munmap(address, size);
             address = 0;
-        } //End block
-        // ---------- Original Method ----------
-        //if (address != 0) {
-            //Libcore.os.munmap(address, size);
-            //address = 0;
-        //}
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.642 -0400", hash_original_method = "F5E87BA491C8F9D5AD5FD041B46AF87F", hash_generated_method = "12441DE4C92F62DF447D60D13BE8A08B")
+    /**
+     * Returns a new iterator that treats the mapped data as big-endian.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:37.277 -0500", hash_original_method = "F5E87BA491C8F9D5AD5FD041B46AF87F", hash_generated_method = "DCAEB9ADE838E5674B56B22DABAFC4F3")
     public BufferIterator bigEndianIterator() {
-BufferIterator varB4EC9D0E062809A0704546019BCC988B_279174044 =         new NioBufferIterator((int) address, (int) size, ByteOrder.nativeOrder() != ByteOrder.BIG_ENDIAN);
-        varB4EC9D0E062809A0704546019BCC988B_279174044.addTaint(taint);
-        return varB4EC9D0E062809A0704546019BCC988B_279174044;
-        // ---------- Original Method ----------
-        //return new NioBufferIterator((int) address, (int) size, ByteOrder.nativeOrder() != ByteOrder.BIG_ENDIAN);
+        return new NioBufferIterator((int) address, (int) size, ByteOrder.nativeOrder() != ByteOrder.BIG_ENDIAN);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.642 -0400", hash_original_method = "C36F73D80556F0AA7A8914E669A58B4A", hash_generated_method = "C67638EC448C9E3ABCE3E566E24D06DF")
+    /**
+     * Returns a new iterator that treats the mapped data as little-endian.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:37.278 -0500", hash_original_method = "C36F73D80556F0AA7A8914E669A58B4A", hash_generated_method = "93CE7279FC564F96637EFF721C7474AD")
     public BufferIterator littleEndianIterator() {
-BufferIterator var8816B5A8C55B4007EB0ABFE9767037E6_530804442 =         new NioBufferIterator((int) address, (int) size, ByteOrder.nativeOrder() != ByteOrder.LITTLE_ENDIAN);
-        var8816B5A8C55B4007EB0ABFE9767037E6_530804442.addTaint(taint);
-        return var8816B5A8C55B4007EB0ABFE9767037E6_530804442;
-        // ---------- Original Method ----------
-        //return new NioBufferIterator((int) address, (int) size, ByteOrder.nativeOrder() != ByteOrder.LITTLE_ENDIAN);
+        return new NioBufferIterator((int) address, (int) size, ByteOrder.nativeOrder() != ByteOrder.LITTLE_ENDIAN);
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.642 -0400", hash_original_method = "EA3441215E7ACDF721D34D006EDC791B", hash_generated_method = "1B63B1339588399105855BC3CBCBD317")
+    /**
+     * Returns the size in bytes of the memory-mapped region.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:37.278 -0500", hash_original_method = "EA3441215E7ACDF721D34D006EDC791B", hash_generated_method = "CBDD520D6DB2631112CE08685ED4E80A")
     public long size() {
-        long varF7BD60B75B29D79B660A2859395C1A24_912141151 = (size);
-                long var0F5264038205EDFB1AC05FBB0E8C5E94_1012717690 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_1012717690;
-        // ---------- Original Method ----------
-        //return size;
+        return size;
     }
 
     

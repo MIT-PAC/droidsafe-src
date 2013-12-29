@@ -1,6 +1,8 @@
 package java.util.zip;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.EOFException;
 import java.io.IOException;
@@ -12,293 +14,194 @@ import libcore.io.Memory;
 
 
 public class GZIPInputStream extends InflaterInputStream {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.599 -0400", hash_original_field = "7261E76873EC00F13387C2BADC428359", hash_generated_field = "C9B4058E3717760CA96883C40FEF405D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.470 -0500", hash_original_field = "562DED064ECF9245FD9964B42E1B365A", hash_generated_field = "02DDC74956F881D64CE1C7D6050C9F70")
+
+    private static final int FCOMMENT = 16;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.471 -0500", hash_original_field = "959B3384CBC0C3E67D0ECCEA64D202E1", hash_generated_field = "E75B8E4FDF02F0C7E68C62FE1BBF493F")
+
+
+    private static final int FEXTRA = 4;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.472 -0500", hash_original_field = "93C6A00BB570B22DACF6A67FBE45DDB0", hash_generated_field = "390F1EF548C925A41577D8A8F438ADC9")
+
+
+    private static final int FHCRC = 2;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.473 -0500", hash_original_field = "B844997ECF08C6CD1FC43F320571A37F", hash_generated_field = "BEF062C8719D26CFC454C2C6074500B1")
+
+
+    private static final int FNAME = 8;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.474 -0500", hash_original_field = "A60D6887DA9295E3D6BABAE0A26A0251", hash_generated_field = "EA43AF0273B6C3B8DADF1F68E7A59DEF")
+
+    public static final int GZIP_MAGIC = 0x8b1f;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.475 -0500", hash_original_field = "8797544496C08ADE2D4F77E9A38D0FB1", hash_generated_field = "C9B4058E3717760CA96883C40FEF405D")
 
     protected CRC32 crc = new CRC32();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.599 -0400", hash_original_field = "4B9123C8B7E4C75BE588658E49981750", hash_generated_field = "CDC6F178723B8CC90E4127274A60802C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.475 -0500", hash_original_field = "542D70E5D5A3290907DA75B37B0954FD", hash_generated_field = "CDC6F178723B8CC90E4127274A60802C")
 
     protected boolean eos = false;
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.599 -0400", hash_original_method = "DC7C53463DEA3BC77C9FF2C25FAEFF14", hash_generated_method = "ECF56D48272603D00991EA987D1C51A7")
-    public  GZIPInputStream(InputStream is) throws IOException {
+
+    /**
+     * Construct a {@code GZIPInputStream} to read from GZIP data from the
+     * underlying stream.
+     *
+     * @param is
+     *            the {@code InputStream} to read data from.
+     * @throws IOException
+     *             if an {@code IOException} occurs.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.476 -0500", hash_original_method = "DC7C53463DEA3BC77C9FF2C25FAEFF14", hash_generated_method = "4CACDDA3C01475C988E89A026717E9AA")
+    public GZIPInputStream(InputStream is) throws IOException {
         this(is, BUF_SIZE);
-        addTaint(is.getTaint());
-        // ---------- Original Method ----------
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.600 -0400", hash_original_method = "5DD740AE0EB83490269826B6CD66524C", hash_generated_method = "ECE065E71CBACBDE4953162582525AE9")
-    public  GZIPInputStream(InputStream is, int size) throws IOException {
+    /**
+     * Construct a {@code GZIPInputStream} to read from GZIP data from the
+     * underlying stream. Set the internal buffer size to {@code size}.
+     *
+     * @param is
+     *            the {@code InputStream} to read data from.
+     * @param size
+     *            the internal read buffer size.
+     * @throws IOException
+     *             if an {@code IOException} occurs.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.477 -0500", hash_original_method = "5DD740AE0EB83490269826B6CD66524C", hash_generated_method = "AF15E3C7F5B5382DCDADBB1DF73D5083")
+    public GZIPInputStream(InputStream is, int size) throws IOException {
         super(is, new Inflater(true), size);
-        addTaint(size);
-        addTaint(is.getTaint());
         byte[] header = new byte[10];
         readFully(header, 0, header.length);
         short magic = Memory.peekShort(header, 0, ByteOrder.LITTLE_ENDIAN);
-        if(magic != (short) GZIP_MAGIC)        
-        {
-            IOException var46E31AEAA46980334AFA13D41AD42F50_393582184 = new IOException(String.format("unknown format (magic number %x)", magic));
-            var46E31AEAA46980334AFA13D41AD42F50_393582184.addTaint(taint);
-            throw var46E31AEAA46980334AFA13D41AD42F50_393582184;
-        } //End block
+        if (magic != (short) GZIP_MAGIC) {
+            throw new IOException(String.format("unknown format (magic number %x)", magic));
+        }
         int flags = header[3];
         boolean hcrc = (flags & FHCRC) != 0;
-        if(hcrc)        
-        {
+        if (hcrc) {
             crc.update(header, 0, header.length);
-        } //End block
-        if((flags & FEXTRA) != 0)        
-        {
+        }
+        if ((flags & FEXTRA) != 0) {
             readFully(header, 0, 2);
-            if(hcrc)            
-            {
+            if (hcrc) {
                 crc.update(header, 0, 2);
-            } //End block
+            }
             int length = Memory.peekShort(header, 0, ByteOrder.LITTLE_ENDIAN) & 0xffff;
-            while
-(length > 0)            
-            {
+            while (length > 0) {
                 int max = length > buf.length ? buf.length : length;
                 int result = in.read(buf, 0, max);
-                if(result == -1)                
-                {
-                    EOFException var0239D63DB748BB20D119EB36D6D1C384_589083630 = new EOFException();
-                    var0239D63DB748BB20D119EB36D6D1C384_589083630.addTaint(taint);
-                    throw var0239D63DB748BB20D119EB36D6D1C384_589083630;
-                } //End block
-                if(hcrc)                
-                {
+                if (result == -1) {
+                    throw new EOFException();
+                }
+                if (hcrc) {
                     crc.update(buf, 0, result);
-                } //End block
+                }
                 length -= result;
-            } //End block
-        } //End block
-        if((flags & FNAME) != 0)        
-        {
+            }
+        }
+        if ((flags & FNAME) != 0) {
             readZeroTerminated(hcrc);
-        } //End block
-        if((flags & FCOMMENT) != 0)        
-        {
+        }
+        if ((flags & FCOMMENT) != 0) {
             readZeroTerminated(hcrc);
-        } //End block
-        if(hcrc)        
-        {
+        }
+        if (hcrc) {
             readFully(header, 0, 2);
             short crc16 = Memory.peekShort(header, 0, ByteOrder.LITTLE_ENDIAN);
-            if((short) crc.getValue() != crc16)            
-            {
-                IOException var6662443A05BBD7E56314F659252E34FC_302651697 = new IOException("CRC mismatch");
-                var6662443A05BBD7E56314F659252E34FC_302651697.addTaint(taint);
-                throw var6662443A05BBD7E56314F659252E34FC_302651697;
-            } //End block
+            if ((short) crc.getValue() != crc16) {
+                throw new IOException("CRC mismatch");
+            }
             crc.reset();
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.601 -0400", hash_original_method = "BB5EB4821217BB73F8D521350E3FEC7B", hash_generated_method = "3F2B46524DBDCE46E7A36A9F327E3A4C")
+    /**
+     * Closes this stream and any underlying streams.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.478 -0500", hash_original_method = "BB5EB4821217BB73F8D521350E3FEC7B", hash_generated_method = "BA6BD4389234E8C218462453C8EB683C")
     @Override
-    public void close() throws IOException {
+public void close() throws IOException {
         eos = true;
         super.close();
-        // ---------- Original Method ----------
-        //eos = true;
-        //super.close();
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.602 -0400", hash_original_method = "FAE53FCD1CA8F33ECA2437ABBFBE85CF", hash_generated_method = "42515D6BB4D0195C4170F09DBA658B85")
+    /**
+     * Reads and decompresses GZIP data from the underlying stream into the
+     * given buffer.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.479 -0500", hash_original_method = "FAE53FCD1CA8F33ECA2437ABBFBE85CF", hash_generated_method = "46FBC679AB395A203BA80D20DE3C76DA")
     @Override
-    public int read(byte[] buffer, int offset, int byteCount) throws IOException {
-        addTaint(byteCount);
-        addTaint(offset);
-        addTaint(buffer[0]);
-        if(closed)        
-        {
-            IOException var4E3F8A3DA623CEFCDEFE68AFA0DAB154_2136984374 = new IOException("Stream is closed");
-            var4E3F8A3DA623CEFCDEFE68AFA0DAB154_2136984374.addTaint(taint);
-            throw var4E3F8A3DA623CEFCDEFE68AFA0DAB154_2136984374;
-        } //End block
-        if(eos)        
-        {
-            int var6BB61E3B7BCE0931DA574D19D1D82C88_1765813811 = (-1);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_249446840 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_249446840;
-        } //End block
+public int read(byte[] buffer, int offset, int byteCount) throws IOException {
+        if (closed) {
+            throw new IOException("Stream is closed");
+        }
+        if (eos) {
+            return -1;
+        }
         Arrays.checkOffsetAndCount(buffer.length, offset, byteCount);
+
         int bytesRead;
-        try 
-        {
+        try {
             bytesRead = super.read(buffer, offset, byteCount);
-        } //End block
-        finally 
-        {
-            eos = eof;
-        } //End block
-        if(bytesRead != -1)        
-        {
+        } finally {
+            eos = eof; // update eos after every read(), even when it throws
+        }
+
+        if (bytesRead != -1) {
             crc.update(buffer, offset, bytesRead);
-        } //End block
-        if(eos)        
-        {
+        }
+
+        if (eos) {
             verifyCrc();
-        } //End block
-        int varD871906E18D7E876E6494103DA4BEEBD_1211883767 = (bytesRead);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_814060700 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_814060700;
-        // ---------- Original Method ----------
-        //if (closed) {
-            //throw new IOException("Stream is closed");
-        //}
-        //if (eos) {
-            //return -1;
-        //}
-        //Arrays.checkOffsetAndCount(buffer.length, offset, byteCount);
-        //int bytesRead;
-        //try {
-            //bytesRead = super.read(buffer, offset, byteCount);
-        //} finally {
-            //eos = eof; 
-        //}
-        //if (bytesRead != -1) {
-            //crc.update(buffer, offset, bytesRead);
-        //}
-        //if (eos) {
-            //verifyCrc();
-        //}
-        //return bytesRead;
+        }
+
+        return bytesRead;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.604 -0400", hash_original_method = "6D843C12482D0F9414C1006D7B90FFFD", hash_generated_method = "6B59DEE3224CF52857A8182836E188BE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.481 -0500", hash_original_method = "6D843C12482D0F9414C1006D7B90FFFD", hash_generated_method = "8C3AD726F1F3E6CDDABB7FC7BFC4171A")
     private void verifyCrc() throws IOException {
+        // Get non-compressed bytes read by fill
         int size = inf.getRemaining();
-        final int trailerSize = 8;
+        final int trailerSize = 8; // crc (4 bytes) + total out (4 bytes)
         byte[] b = new byte[trailerSize];
         int copySize = (size > trailerSize) ? trailerSize : size;
+
         System.arraycopy(buf, len - size, b, 0, copySize);
         readFully(b, copySize, trailerSize - copySize);
-        if(Memory.peekInt(b, 0, ByteOrder.LITTLE_ENDIAN) != (int) crc.getValue())        
-        {
-            IOException var6662443A05BBD7E56314F659252E34FC_1796955974 = new IOException("CRC mismatch");
-            var6662443A05BBD7E56314F659252E34FC_1796955974.addTaint(taint);
-            throw var6662443A05BBD7E56314F659252E34FC_1796955974;
-        } //End block
-        if(Memory.peekInt(b, 4, ByteOrder.LITTLE_ENDIAN) != inf.getTotalOut())        
-        {
-            IOException var51D8211A9B3A3EEB7C5C665E9D174100_1841519398 = new IOException("Size mismatch");
-            var51D8211A9B3A3EEB7C5C665E9D174100_1841519398.addTaint(taint);
-            throw var51D8211A9B3A3EEB7C5C665E9D174100_1841519398;
-        } //End block
-        // ---------- Original Method ----------
-        //int size = inf.getRemaining();
-        //final int trailerSize = 8;
-        //byte[] b = new byte[trailerSize];
-        //int copySize = (size > trailerSize) ? trailerSize : size;
-        //System.arraycopy(buf, len - size, b, 0, copySize);
-        //readFully(b, copySize, trailerSize - copySize);
-        //if (Memory.peekInt(b, 0, ByteOrder.LITTLE_ENDIAN) != (int) crc.getValue()) {
-            //throw new IOException("CRC mismatch");
-        //}
-        //if (Memory.peekInt(b, 4, ByteOrder.LITTLE_ENDIAN) != inf.getTotalOut()) {
-            //throw new IOException("Size mismatch");
-        //}
+
+        if (Memory.peekInt(b, 0, ByteOrder.LITTLE_ENDIAN) != (int) crc.getValue()) {
+            throw new IOException("CRC mismatch");
+        }
+        if (Memory.peekInt(b, 4, ByteOrder.LITTLE_ENDIAN) != inf.getTotalOut()) {
+            throw new IOException("Size mismatch");
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.606 -0400", hash_original_method = "9B3EB008D719ED0FB3E689755FC76BB5", hash_generated_method = "1AD877AB675543FE10BCBD2C5673A333")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.482 -0500", hash_original_method = "9B3EB008D719ED0FB3E689755FC76BB5", hash_generated_method = "CC43A6B9AB766388B022EC0324861731")
     private void readFully(byte[] buffer, int offset, int length) throws IOException {
-        addTaint(length);
-        addTaint(offset);
-        addTaint(buffer[0]);
         int result;
-        while
-(length > 0)        
-        {
+        while (length > 0) {
             result = in.read(buffer, offset, length);
-            if(result == -1)            
-            {
-                EOFException var0239D63DB748BB20D119EB36D6D1C384_1672414337 = new EOFException();
-                var0239D63DB748BB20D119EB36D6D1C384_1672414337.addTaint(taint);
-                throw var0239D63DB748BB20D119EB36D6D1C384_1672414337;
-            } //End block
+            if (result == -1) {
+                throw new EOFException();
+            }
             offset += result;
             length -= result;
-        } //End block
-        // ---------- Original Method ----------
-        //int result;
-        //while (length > 0) {
-            //result = in.read(buffer, offset, length);
-            //if (result == -1) {
-                //throw new EOFException();
-            //}
-            //offset += result;
-            //length -= result;
-        //}
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.607 -0400", hash_original_method = "7C6B7FFA42529CFE943A1AC064CF5BC3", hash_generated_method = "077D3E0C1AFDB1725FA6EB10CAD57AE1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:49.483 -0500", hash_original_method = "7C6B7FFA42529CFE943A1AC064CF5BC3", hash_generated_method = "B001FE4DE62E99E6040B8044D96F693E")
     private void readZeroTerminated(boolean hcrc) throws IOException {
-        addTaint(hcrc);
         int result;
-        while
-((result = in.read()) > 0)        
-        {
-            if(hcrc)            
-            {
+        while ((result = in.read()) > 0) {
+            if (hcrc) {
                 crc.update(result);
-            } //End block
-        } //End block
-        if(result == -1)        
-        {
-            EOFException var0239D63DB748BB20D119EB36D6D1C384_1108474621 = new EOFException();
-            var0239D63DB748BB20D119EB36D6D1C384_1108474621.addTaint(taint);
-            throw var0239D63DB748BB20D119EB36D6D1C384_1108474621;
-        } //End block
-        if(hcrc)        
-        {
+            }
+        }
+        if (result == -1) {
+            throw new EOFException();
+        }
+        // Add the zero
+        if (hcrc) {
             crc.update(result);
-        } //End block
-        // ---------- Original Method ----------
-        //int result;
-        //while ((result = in.read()) > 0) {
-            //if (hcrc) {
-                //crc.update(result);
-            //}
-        //}
-        //if (result == -1) {
-            //throw new EOFException();
-        //}
-        //if (hcrc) {
-            //crc.update(result);
-        //}
+        }
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.608 -0400", hash_original_field = "875720C110599DE52B9DC8CE6451C081", hash_generated_field = "02DDC74956F881D64CE1C7D6050C9F70")
-
-    private static final int FCOMMENT = 16;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.608 -0400", hash_original_field = "ADE4C8777B60E58CE08786BAB5CE86D5", hash_generated_field = "E75B8E4FDF02F0C7E68C62FE1BBF493F")
-
-    private static final int FEXTRA = 4;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.608 -0400", hash_original_field = "51F0D8B57181E4BEDBD79221D8779327", hash_generated_field = "390F1EF548C925A41577D8A8F438ADC9")
-
-    private static final int FHCRC = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.608 -0400", hash_original_field = "B4B65558C09E945560CEE2A6095DF899", hash_generated_field = "BEF062C8719D26CFC454C2C6074500B1")
-
-    private static final int FNAME = 8;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.608 -0400", hash_original_field = "5037AA396B919BA9517AC7C577F457C5", hash_generated_field = "EA43AF0273B6C3B8DADF1F68E7A59DEF")
-
-    public static final int GZIP_MAGIC = 0x8b1f;
 }
 

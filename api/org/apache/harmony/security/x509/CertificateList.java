@@ -1,6 +1,8 @@
 package org.apache.harmony.security.x509;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import org.apache.harmony.security.asn1.ASN1BitString;
 import org.apache.harmony.security.asn1.ASN1Sequence;
@@ -15,115 +17,6 @@ import org.apache.harmony.security.utils.Array;
 
 
 public final class CertificateList {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.930 -0400", hash_original_field = "434A8DAF2056B5C3BDA6E59178AA316C", hash_generated_field = "77B3A284D6DF0EF4A47E1206333ED0FE")
-
-    private TBSCertList tbsCertList;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.930 -0400", hash_original_field = "0C3D482A41621822B95C4386FD1F1FC2", hash_generated_field = "4CC78CEDF5C854EC0CED71E47BBFC813")
-
-    private AlgorithmIdentifier signatureAlgorithm;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.930 -0400", hash_original_field = "A83E026224A6F552557EF9C7ABF67D37", hash_generated_field = "9AB01BF01A2AD28FB638C6788268D049")
-
-    private byte[] signatureValue;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.930 -0400", hash_original_field = "84BEA1F0FD2CE16F7E562A9F06EF03D3", hash_generated_field = "ACB189C73E1A6432570001B3B9D3D516")
-
-    private byte[] encoding;
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.931 -0400", hash_original_method = "08126E4FD8546D7C66517E47FC438E4A", hash_generated_method = "83B6B6743FC51D8D2C6FB4B4C0C94E98")
-    public  CertificateList(TBSCertList tbsCertList,
-                       AlgorithmIdentifier signatureAlgorithm,
-                       byte[] signatureValue) {
-        this.tbsCertList = tbsCertList;
-        this.signatureAlgorithm = signatureAlgorithm;
-        this.signatureValue = new byte[signatureValue.length];
-        System.arraycopy(signatureValue, 0, this.signatureValue, 0,
-                                                    signatureValue.length);
-        // ---------- Original Method ----------
-        //this.tbsCertList = tbsCertList;
-        //this.signatureAlgorithm = signatureAlgorithm;
-        //this.signatureValue = new byte[signatureValue.length];
-        //System.arraycopy(signatureValue, 0, this.signatureValue, 0,
-                                                    //signatureValue.length);
-    }
-
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.931 -0400", hash_original_method = "296A8B306ED3B280093A8F830EEE1E41", hash_generated_method = "17F3BE8A0536D3DD761284DABCBA7EF4")
-    private  CertificateList(TBSCertList tbsCertList,
-                       AlgorithmIdentifier signatureAlgorithm,
-                       byte[] signatureValue, byte[] encoding) {
-        this(tbsCertList, signatureAlgorithm, signatureValue);
-        addTaint(signatureValue[0]);
-        addTaint(signatureAlgorithm.getTaint());
-        addTaint(tbsCertList.getTaint());
-        this.encoding = encoding;
-        // ---------- Original Method ----------
-        //this.encoding = encoding;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.932 -0400", hash_original_method = "C6096C9759CF7088E874A2A2D3801E56", hash_generated_method = "EE3B431406BA79DDB9BE79C9A6052E53")
-    public TBSCertList getTbsCertList() {
-TBSCertList varF641072E9F7501C501F295828FE4FD8B_456366090 =         tbsCertList;
-        varF641072E9F7501C501F295828FE4FD8B_456366090.addTaint(taint);
-        return varF641072E9F7501C501F295828FE4FD8B_456366090;
-        // ---------- Original Method ----------
-        //return tbsCertList;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.932 -0400", hash_original_method = "FD6792B7396143D84E51253527677292", hash_generated_method = "9D216D6766A09BCC39AC70C6FDF4E5E0")
-    public byte[] getSignatureValue() {
-        byte[] result = new byte[signatureValue.length];
-        System.arraycopy(signatureValue, 0, result, 0, signatureValue.length);
-        byte[] varB4A88417B3D0170D754C647C30B7216A_1892190723 = (result);
-                byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_2134515722 = {getTaintByte()};
-        return var2F9C81BC6E497382285CD6B7A7E33DE1_2134515722;
-        // ---------- Original Method ----------
-        //byte[] result = new byte[signatureValue.length];
-        //System.arraycopy(signatureValue, 0, result, 0, signatureValue.length);
-        //return result;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.933 -0400", hash_original_method = "80C69E334C5CE31111385C23EECA9331", hash_generated_method = "EB1043AA8FF05F2A759E68FA2207C9D1")
-    @Override
-    public String toString() {
-        StringBuilder result = new StringBuilder();
-        tbsCertList.dumpValue(result);
-        result.append("\nSignature Value:\n");
-        result.append(Array.toString(signatureValue, ""));
-String varE65B3A02759122992CB82C0E651AD408_1863074237 =         result.toString();
-        varE65B3A02759122992CB82C0E651AD408_1863074237.addTaint(taint);
-        return varE65B3A02759122992CB82C0E651AD408_1863074237;
-        // ---------- Original Method ----------
-        //StringBuilder result = new StringBuilder();
-        //tbsCertList.dumpValue(result);
-        //result.append("\nSignature Value:\n");
-        //result.append(Array.toString(signatureValue, ""));
-        //return result.toString();
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.933 -0400", hash_original_method = "32DCE62651649D85CD3AB4D018999455", hash_generated_method = "62290695424DAC3243876052EB7BC09A")
-    public byte[] getEncoded() {
-        if(encoding == null)        
-        {
-            encoding = CertificateList.ASN1.encode(this);
-        } //End block
-        byte[] var84BEA1F0FD2CE16F7E562A9F06EF03D3_1667397293 = (encoding);
-                byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1403697483 = {getTaintByte()};
-        return var2F9C81BC6E497382285CD6B7A7E33DE1_1403697483;
-        // ---------- Original Method ----------
-        //if (encoding == null) {
-            //encoding = CertificateList.ASN1.encode(this);
-        //}
-        //return encoding;
-    }
 
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.934 -0400", hash_original_field = "736366582672C5EC0590C01C14D1FD1B", hash_generated_field = "CEEF377160D4527069F2AE9EE6F61908")
@@ -133,24 +26,96 @@ String varE65B3A02759122992CB82C0E651AD408_1863074237 =         result.toString(
                 {TBSCertList.ASN1, AlgorithmIdentifier.ASN1,
                     ASN1BitString.getInstance()}) {
 
-        @DSModeled(DSC.SPEC)
-        @Override protected Object getDecodedObject(BerInputStream in) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:06.870 -0500", hash_original_method = "AC0862005B3ED7BF3B72B40A50B20B3D", hash_generated_method = "C342C60F682D5F653B2D4FBE56952277")
+        @Override
+protected Object getDecodedObject(BerInputStream in) {
             Object[] values = (Object[]) in.content;
             return new CertificateList(
                     (TBSCertList) values[0],
                     (AlgorithmIdentifier) values[1],
-                    ((BitString) values[2]).bytes, 
+                    ((BitString) values[2]).bytes, // FIXME keep as BitString object
                     in.getEncoded()
                     );
         }
 
-        @DSModeled(DSC.BAN)
-        @Override protected void getValues(Object object, Object[] values) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:06.871 -0500", hash_original_method = "A02258897C0BA2BA079F5C92BD0C8E9B", hash_generated_method = "FD4581F8839BEC11F1B7FE4034EE647E")
+        @Override
+protected void getValues(Object object, Object[] values) {
             CertificateList certificateList = (CertificateList) object;
             values[0] = certificateList.tbsCertList;
             values[1] = certificateList.signatureAlgorithm;
             values[2] = new BitString(certificateList.signatureValue, 0);
         }
     };
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:06.860 -0500", hash_original_field = "894D071EFC59C716ABB532FBFE5DB823", hash_generated_field = "77B3A284D6DF0EF4A47E1206333ED0FE")
+
+    private  TBSCertList tbsCertList;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:06.861 -0500", hash_original_field = "2F7BE616514E885F71195FC5A07117B0", hash_generated_field = "4CC78CEDF5C854EC0CED71E47BBFC813")
+
+    private  AlgorithmIdentifier signatureAlgorithm;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:06.862 -0500", hash_original_field = "9521EB9F2B8E8BECDD1F8EF0CD48C6D0", hash_generated_field = "9AB01BF01A2AD28FB638C6788268D049")
+
+    private  byte[] signatureValue;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:06.863 -0500", hash_original_field = "B36A946B5145D992E53209BC6743765D", hash_generated_field = "ACB189C73E1A6432570001B3B9D3D516")
+
+    private byte[] encoding;
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:06.864 -0500", hash_original_method = "08126E4FD8546D7C66517E47FC438E4A", hash_generated_method = "0A90F36126D368E7D8B8F45D6AD707CB")
+    public CertificateList(TBSCertList tbsCertList,
+                       AlgorithmIdentifier signatureAlgorithm,
+                       byte[] signatureValue) {
+        this.tbsCertList = tbsCertList;
+        this.signatureAlgorithm = signatureAlgorithm;
+        this.signatureValue = new byte[signatureValue.length];
+        System.arraycopy(signatureValue, 0, this.signatureValue, 0,
+                                                    signatureValue.length);
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:06.865 -0500", hash_original_method = "296A8B306ED3B280093A8F830EEE1E41", hash_generated_method = "1F895138C5CB067D58F8B2825ECBCED2")
+    private CertificateList(TBSCertList tbsCertList,
+                       AlgorithmIdentifier signatureAlgorithm,
+                       byte[] signatureValue, byte[] encoding) {
+        this(tbsCertList, signatureAlgorithm, signatureValue);
+        this.encoding = encoding;
+    }
+
+    /**
+     * Returns the value of tbsCertList field of the structure.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:06.866 -0500", hash_original_method = "C6096C9759CF7088E874A2A2D3801E56", hash_generated_method = "1CEA433A40B3D8623CD847992ADF5C8F")
+    public TBSCertList getTbsCertList() {
+        return tbsCertList;
+    }
+
+    /**
+     * Returns the value of signatureValue field of the structure.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:06.867 -0500", hash_original_method = "FD6792B7396143D84E51253527677292", hash_generated_method = "9BB6F5653A95BBE1BAA5CA0C7E370DD2")
+    public byte[] getSignatureValue() {
+        byte[] result = new byte[signatureValue.length];
+        System.arraycopy(signatureValue, 0, result, 0, signatureValue.length);
+        return result;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:06.868 -0500", hash_original_method = "80C69E334C5CE31111385C23EECA9331", hash_generated_method = "10A5518EE6A67B7F5FAD0C31338B4C27")
+    @Override
+public String toString() {
+        StringBuilder result = new StringBuilder();
+        tbsCertList.dumpValue(result);
+        result.append("\nSignature Value:\n");
+        result.append(Array.toString(signatureValue, ""));
+        return result.toString();
+    }
+
+    /**
+     * Returns ASN.1 encoded form of this X.509 TBSCertList value.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:06.869 -0500", hash_original_method = "32DCE62651649D85CD3AB4D018999455", hash_generated_method = "B8502A287DD409B99C7907A12406E14B")
+    public byte[] getEncoded() {
+        if (encoding == null) {
+            encoding = CertificateList.ASN1.encode(this);
+        }
+        return encoding;
+    }
 }
 

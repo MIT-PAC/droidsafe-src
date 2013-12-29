@@ -1,6 +1,8 @@
 package org.xml.sax.helpers;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 
@@ -26,162 +28,423 @@ public class DefaultHandler implements EntityResolver, DTDHandler, ContentHandle
         //Synthesized constructor
     }
 
+
+    ////////////////////////////////////////////////////////////////////
+    // Default implementation of the EntityResolver interface.
+    ////////////////////////////////////////////////////////////////////
 
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.327 -0400", hash_original_method = "9EAB8438172711193BA945D78BF156AE", hash_generated_method = "3F08F6CD0745425DE5A852E2476EE0B0")
-    public InputSource resolveEntity(String publicId, String systemId) throws IOException, SAXException {
-        addTaint(systemId.getTaint());
-        addTaint(publicId.getTaint());
-InputSource var540C13E9E156B687226421B24F2DF178_989437463 =         null;
-        var540C13E9E156B687226421B24F2DF178_989437463.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_989437463;
-        // ---------- Original Method ----------
-        //return null;
+    /**
+     * Resolve an external entity.
+     *
+     * <p>Always return null, so that the parser will use the system
+     * identifier provided in the XML document.  This method implements
+     * the SAX default behaviour: application writers can override it
+     * in a subclass to do special translations such as catalog lookups
+     * or URI redirection.</p>
+     *
+     * @param publicId The public identifer, or null if none is
+     *                 available.
+     * @param systemId The system identifier provided in the XML
+     *                 document.
+     * @return The new input source, or null to require the
+     *         default behaviour.
+     * @exception java.io.IOException If there is an error setting
+     *            up the new input source.
+     * @exception org.xml.sax.SAXException Any SAX exception, possibly
+     *            wrapping another exception.
+     * @see org.xml.sax.EntityResolver#resolveEntity
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.736 -0500", hash_original_method = "9EAB8438172711193BA945D78BF156AE", hash_generated_method = "6079F24DCCF84F8A2034CB9B0484C6F5")
+    public InputSource resolveEntity (String publicId, String systemId)
+    throws IOException, SAXException
+    {
+    return null;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.327 -0400", hash_original_method = "E183481C16DEC5D87834DCD30C3A4B47", hash_generated_method = "DBA5510A270BE9D04EFE186FE796F9FD")
-    public void notationDecl(String name, String publicId, String systemId) throws SAXException {
-        addTaint(systemId.getTaint());
-        addTaint(publicId.getTaint());
-        addTaint(name.getTaint());
-        // ---------- Original Method ----------
+
+
+    ////////////////////////////////////////////////////////////////////
+    // Default implementation of DTDHandler interface.
+    ////////////////////////////////////////////////////////////////////
+
+
+    /**
+     * Receive notification of a notation declaration.
+     *
+     * <p>By default, do nothing.  Application writers may override this
+     * method in a subclass if they wish to keep track of the notations
+     * declared in a document.</p>
+     *
+     * @param name The notation name.
+     * @param publicId The notation public identifier, or null if not
+     *                 available.
+     * @param systemId The notation system identifier.
+     * @exception org.xml.sax.SAXException Any SAX exception, possibly
+     *            wrapping another exception.
+     * @see org.xml.sax.DTDHandler#notationDecl
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.737 -0500", hash_original_method = "E183481C16DEC5D87834DCD30C3A4B47", hash_generated_method = "ABC3A129BCCCAFA25078A7742DEAC82A")
+    public void notationDecl (String name, String publicId, String systemId)
+    throws SAXException
+    {
+    // no op
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.327 -0400", hash_original_method = "A4218B7445EF8022439A8D7DC57F2FF7", hash_generated_method = "11BEB082870EA57D656F4D60FBB99F22")
-    public void unparsedEntityDecl(String name, String publicId,
-                    String systemId, String notationName) throws SAXException {
-        addTaint(notationName.getTaint());
-        addTaint(systemId.getTaint());
-        addTaint(publicId.getTaint());
-        addTaint(name.getTaint());
-        // ---------- Original Method ----------
+
+    /**
+     * Receive notification of an unparsed entity declaration.
+     *
+     * <p>By default, do nothing.  Application writers may override this
+     * method in a subclass to keep track of the unparsed entities
+     * declared in a document.</p>
+     *
+     * @param name The entity name.
+     * @param publicId The entity public identifier, or null if not
+     *                 available.
+     * @param systemId The entity system identifier.
+     * @param notationName The name of the associated notation.
+     * @exception org.xml.sax.SAXException Any SAX exception, possibly
+     *            wrapping another exception.
+     * @see org.xml.sax.DTDHandler#unparsedEntityDecl
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.738 -0500", hash_original_method = "A4218B7445EF8022439A8D7DC57F2FF7", hash_generated_method = "39EA436AC2CA313C3173E04B950DFC15")
+    public void unparsedEntityDecl (String name, String publicId,
+                    String systemId, String notationName)
+    throws SAXException
+    {
+    // no op
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.327 -0400", hash_original_method = "764EC710ED4FDFB68C9E6FE9ED249649", hash_generated_method = "8982242C86C53DDD9F8374B3C93C1CFB")
-    public void setDocumentLocator(Locator locator) {
-        addTaint(locator.getTaint());
-        // ---------- Original Method ----------
+
+
+    ////////////////////////////////////////////////////////////////////
+    // Default implementation of ContentHandler interface.
+    ////////////////////////////////////////////////////////////////////
+
+
+    /**
+     * Receive a Locator object for document events.
+     *
+     * <p>By default, do nothing.  Application writers may override this
+     * method in a subclass if they wish to store the locator for use
+     * with other document events.</p>
+     *
+     * @param locator A locator for all SAX document events.
+     * @see org.xml.sax.ContentHandler#setDocumentLocator
+     * @see org.xml.sax.Locator
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.739 -0500", hash_original_method = "764EC710ED4FDFB68C9E6FE9ED249649", hash_generated_method = "9BA8507971680553E082ED561F93A7C5")
+    public void setDocumentLocator (Locator locator)
+    {
+    // no op
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.327 -0400", hash_original_method = "FAA725B72A2ADC391C781CAB49B849AD", hash_generated_method = "F5ABC17320CB17FAFC02F6F62510312E")
-    public void startDocument() throws SAXException {
-        // ---------- Original Method ----------
+
+    /**
+     * Receive notification of the beginning of the document.
+     *
+     * <p>By default, do nothing.  Application writers may override this
+     * method in a subclass to take specific actions at the beginning
+     * of a document (such as allocating the root node of a tree or
+     * creating an output file).</p>
+     *
+     * @exception org.xml.sax.SAXException Any SAX exception, possibly
+     *            wrapping another exception.
+     * @see org.xml.sax.ContentHandler#startDocument
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.739 -0500", hash_original_method = "FAA725B72A2ADC391C781CAB49B849AD", hash_generated_method = "3955D568D23D91849FC2AFF57016EC23")
+    public void startDocument ()
+    throws SAXException
+    {
+    // no op
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.327 -0400", hash_original_method = "08AD4CBC251CA96B103DE58FB6AA2921", hash_generated_method = "3ACBE0E14DE791A4A89F8374A54B4D72")
-    public void endDocument() throws SAXException {
-        // ---------- Original Method ----------
+
+    /**
+     * Receive notification of the end of the document.
+     *
+     * <p>By default, do nothing.  Application writers may override this
+     * method in a subclass to take specific actions at the end
+     * of a document (such as finalising a tree or closing an output
+     * file).</p>
+     *
+     * @exception org.xml.sax.SAXException Any SAX exception, possibly
+     *            wrapping another exception.
+     * @see org.xml.sax.ContentHandler#endDocument
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.740 -0500", hash_original_method = "08AD4CBC251CA96B103DE58FB6AA2921", hash_generated_method = "2E393C8D7D82B97D34D7D61966B266D5")
+    public void endDocument ()
+    throws SAXException
+    {
+    // no op
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.327 -0400", hash_original_method = "9A8DBFCDD6673580DBBCEDB8AE69733A", hash_generated_method = "20857BED78DD6479B3F78F4A256F1BE5")
-    public void startPrefixMapping(String prefix, String uri) throws SAXException {
-        addTaint(uri.getTaint());
-        addTaint(prefix.getTaint());
-        // ---------- Original Method ----------
+
+    /**
+     * Receive notification of the start of a Namespace mapping.
+     *
+     * <p>By default, do nothing.  Application writers may override this
+     * method in a subclass to take specific actions at the start of
+     * each Namespace prefix scope (such as storing the prefix mapping).</p>
+     *
+     * @param prefix The Namespace prefix being declared.
+     * @param uri The Namespace URI mapped to the prefix.
+     * @exception org.xml.sax.SAXException Any SAX exception, possibly
+     *            wrapping another exception.
+     * @see org.xml.sax.ContentHandler#startPrefixMapping
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.741 -0500", hash_original_method = "9A8DBFCDD6673580DBBCEDB8AE69733A", hash_generated_method = "E318F5A382F6DD3A6D9B9ED0A805C948")
+    public void startPrefixMapping (String prefix, String uri)
+    throws SAXException
+    {
+    // no op
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.327 -0400", hash_original_method = "0E90E85A66154559EA3C98CC7177C34F", hash_generated_method = "5B3A24B5853AE441BDBBB759C4F775AE")
-    public void endPrefixMapping(String prefix) throws SAXException {
-        addTaint(prefix.getTaint());
-        // ---------- Original Method ----------
+
+    /**
+     * Receive notification of the end of a Namespace mapping.
+     *
+     * <p>By default, do nothing.  Application writers may override this
+     * method in a subclass to take specific actions at the end of
+     * each prefix mapping.</p>
+     *
+     * @param prefix The Namespace prefix being declared.
+     * @exception org.xml.sax.SAXException Any SAX exception, possibly
+     *            wrapping another exception.
+     * @see org.xml.sax.ContentHandler#endPrefixMapping
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.742 -0500", hash_original_method = "0E90E85A66154559EA3C98CC7177C34F", hash_generated_method = "12507F578F76F1D4B4C4275405456B5F")
+    public void endPrefixMapping (String prefix)
+    throws SAXException
+    {
+    // no op
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.327 -0400", hash_original_method = "4370BBADFC324ACBBC533D016E5331B9", hash_generated_method = "2191E21FDD4E7FD66F1424B82364BB48")
-    public void startElement(String uri, String localName,
-                  String qName, Attributes attributes) throws SAXException {
-        addTaint(attributes.getTaint());
-        addTaint(qName.getTaint());
-        addTaint(localName.getTaint());
-        addTaint(uri.getTaint());
-        // ---------- Original Method ----------
+
+    /**
+     * Receive notification of the start of an element.
+     *
+     * <p>By default, do nothing.  Application writers may override this
+     * method in a subclass to take specific actions at the start of
+     * each element (such as allocating a new tree node or writing
+     * output to a file).</p>
+     *
+     * @param uri The Namespace URI, or the empty string if the
+     *        element has no Namespace URI or if Namespace
+     *        processing is not being performed.
+     * @param localName The local name (without prefix), or the
+     *        empty string if Namespace processing is not being
+     *        performed.
+     * @param qName The qualified name (with prefix), or the
+     *        empty string if qualified names are not available.
+     * @param attributes The attributes attached to the element.  If
+     *        there are no attributes, it shall be an empty
+     *        Attributes object.
+     * @exception org.xml.sax.SAXException Any SAX exception, possibly
+     *            wrapping another exception.
+     * @see org.xml.sax.ContentHandler#startElement
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.743 -0500", hash_original_method = "4370BBADFC324ACBBC533D016E5331B9", hash_generated_method = "A43BCFB3590903ED462CCADA0953A76D")
+    public void startElement (String uri, String localName,
+                  String qName, Attributes attributes)
+    throws SAXException
+    {
+    // no op
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.327 -0400", hash_original_method = "D1BB65E44FB06EB911D3CDAFED8D37CD", hash_generated_method = "BFE49779406A7A401F6A5AB3A552B7D7")
-    public void endElement(String uri, String localName, String qName) throws SAXException {
-        addTaint(qName.getTaint());
-        addTaint(localName.getTaint());
-        addTaint(uri.getTaint());
-        // ---------- Original Method ----------
+
+    /**
+     * Receive notification of the end of an element.
+     *
+     * <p>By default, do nothing.  Application writers may override this
+     * method in a subclass to take specific actions at the end of
+     * each element (such as finalising a tree node or writing
+     * output to a file).</p>
+     *
+     * @param uri The Namespace URI, or the empty string if the
+     *        element has no Namespace URI or if Namespace
+     *        processing is not being performed.
+     * @param localName The local name (without prefix), or the
+     *        empty string if Namespace processing is not being
+     *        performed.
+     * @param qName The qualified name (with prefix), or the
+     *        empty string if qualified names are not available.
+     * @exception org.xml.sax.SAXException Any SAX exception, possibly
+     *            wrapping another exception.
+     * @see org.xml.sax.ContentHandler#endElement
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.743 -0500", hash_original_method = "D1BB65E44FB06EB911D3CDAFED8D37CD", hash_generated_method = "0BCE982FF5852BF7039A7416E6F1C03A")
+    public void endElement (String uri, String localName, String qName)
+    throws SAXException
+    {
+    // no op
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.327 -0400", hash_original_method = "62C2434D460BC8554CF92975C4745DF3", hash_generated_method = "D43A2F493DE034DD2DA66C4C64375D7B")
-    public void characters(char ch[], int start, int length) throws SAXException {
-        addTaint(length);
-        addTaint(start);
-        addTaint(ch[0]);
-        // ---------- Original Method ----------
+
+    /**
+     * Receive notification of character data inside an element.
+     *
+     * <p>By default, do nothing.  Application writers may override this
+     * method to take specific actions for each chunk of character data
+     * (such as adding the data to a node or buffer, or printing it to
+     * a file).</p>
+     *
+     * @param ch The characters.
+     * @param start The start position in the character array.
+     * @param length The number of characters to use from the
+     *               character array.
+     * @exception org.xml.sax.SAXException Any SAX exception, possibly
+     *            wrapping another exception.
+     * @see org.xml.sax.ContentHandler#characters
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.744 -0500", hash_original_method = "62C2434D460BC8554CF92975C4745DF3", hash_generated_method = "D16272D013A1528940CEA00C0F124898")
+    public void characters (char ch[], int start, int length)
+    throws SAXException
+    {
+    // no op
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.327 -0400", hash_original_method = "9049C36C2683070F72629A8BA1D4C193", hash_generated_method = "E804F1D7B5EF34836B1823F580D6DE63")
-    public void ignorableWhitespace(char ch[], int start, int length) throws SAXException {
-        addTaint(length);
-        addTaint(start);
-        addTaint(ch[0]);
-        // ---------- Original Method ----------
+
+    /**
+     * Receive notification of ignorable whitespace in element content.
+     *
+     * <p>By default, do nothing.  Application writers may override this
+     * method to take specific actions for each chunk of ignorable
+     * whitespace (such as adding data to a node or buffer, or printing
+     * it to a file).</p>
+     *
+     * @param ch The whitespace characters.
+     * @param start The start position in the character array.
+     * @param length The number of characters to use from the
+     *               character array.
+     * @exception org.xml.sax.SAXException Any SAX exception, possibly
+     *            wrapping another exception.
+     * @see org.xml.sax.ContentHandler#ignorableWhitespace
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.745 -0500", hash_original_method = "9049C36C2683070F72629A8BA1D4C193", hash_generated_method = "D8858A88BA20CC0A6A20C0B768D5BE33")
+    public void ignorableWhitespace (char ch[], int start, int length)
+    throws SAXException
+    {
+    // no op
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.327 -0400", hash_original_method = "D7C64873BD0FC0A0449628F53B089507", hash_generated_method = "BEB1DCA8CBE8BFAF869A1EA04F4CBAE4")
-    public void processingInstruction(String target, String data) throws SAXException {
-        addTaint(data.getTaint());
-        addTaint(target.getTaint());
-        // ---------- Original Method ----------
+
+    /**
+     * Receive notification of a processing instruction.
+     *
+     * <p>By default, do nothing.  Application writers may override this
+     * method in a subclass to take specific actions for each
+     * processing instruction, such as setting status variables or
+     * invoking other methods.</p>
+     *
+     * @param target The processing instruction target.
+     * @param data The processing instruction data, or null if
+     *             none is supplied.
+     * @exception org.xml.sax.SAXException Any SAX exception, possibly
+     *            wrapping another exception.
+     * @see org.xml.sax.ContentHandler#processingInstruction
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.746 -0500", hash_original_method = "D7C64873BD0FC0A0449628F53B089507", hash_generated_method = "E7A100FD0C93F22A1CE30CA6639AC7DE")
+    public void processingInstruction (String target, String data)
+    throws SAXException
+    {
+    // no op
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.328 -0400", hash_original_method = "1616136BE44E483876717F8A446FD8E6", hash_generated_method = "78177C3306D49108B776A6C694C380AB")
-    public void skippedEntity(String name) throws SAXException {
-        addTaint(name.getTaint());
-        // ---------- Original Method ----------
+
+    /**
+     * Receive notification of a skipped entity.
+     *
+     * <p>By default, do nothing.  Application writers may override this
+     * method in a subclass to take specific actions for each
+     * processing instruction, such as setting status variables or
+     * invoking other methods.</p>
+     *
+     * @param name The name of the skipped entity.
+     * @exception org.xml.sax.SAXException Any SAX exception, possibly
+     *            wrapping another exception.
+     * @see org.xml.sax.ContentHandler#processingInstruction
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.747 -0500", hash_original_method = "1616136BE44E483876717F8A446FD8E6", hash_generated_method = "5C21F38AD3AF8C855A3835FBFBE5B603")
+    public void skippedEntity (String name)
+    throws SAXException
+    {
+    // no op
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.328 -0400", hash_original_method = "2057473EBAC4D7FF54AEDE0043F741F4", hash_generated_method = "E3D1BDD789EA8A16065134010FB3E5E9")
-    public void warning(SAXParseException e) throws SAXException {
-        addTaint(e.getTaint());
-        // ---------- Original Method ----------
+
+
+    ////////////////////////////////////////////////////////////////////
+    // Default implementation of the ErrorHandler interface.
+    ////////////////////////////////////////////////////////////////////
+
+
+    /**
+     * Receive notification of a parser warning.
+     *
+     * <p>The default implementation does nothing.  Application writers
+     * may override this method in a subclass to take specific actions
+     * for each warning, such as inserting the message in a log file or
+     * printing it to the console.</p>
+     *
+     * @param e The warning information encoded as an exception.
+     * @exception org.xml.sax.SAXException Any SAX exception, possibly
+     *            wrapping another exception.
+     * @see org.xml.sax.ErrorHandler#warning
+     * @see org.xml.sax.SAXParseException
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.748 -0500", hash_original_method = "2057473EBAC4D7FF54AEDE0043F741F4", hash_generated_method = "30BA8887E7A010663223CDC747054835")
+    public void warning (SAXParseException e)
+    throws SAXException
+    {
+    // no op
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.328 -0400", hash_original_method = "3C476190220BFC4330D41CB0A7E5D96B", hash_generated_method = "A2F3CC24CEE024DB2C3C4D29E0C2AA9C")
-    public void error(SAXParseException e) throws SAXException {
-        addTaint(e.getTaint());
-        // ---------- Original Method ----------
+
+    /**
+     * Receive notification of a recoverable parser error.
+     *
+     * <p>The default implementation does nothing.  Application writers
+     * may override this method in a subclass to take specific actions
+     * for each error, such as inserting the message in a log file or
+     * printing it to the console.</p>
+     *
+     * @param e The warning information encoded as an exception.
+     * @exception org.xml.sax.SAXException Any SAX exception, possibly
+     *            wrapping another exception.
+     * @see org.xml.sax.ErrorHandler#warning
+     * @see org.xml.sax.SAXParseException
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.748 -0500", hash_original_method = "3C476190220BFC4330D41CB0A7E5D96B", hash_generated_method = "CACE9FD48F5BBAC46481DE007E53B3CB")
+    public void error (SAXParseException e)
+    throws SAXException
+    {
+    // no op
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.328 -0400", hash_original_method = "3CBD306431C0846BE7A7FBEF3B9920DA", hash_generated_method = "0179C6E37915287522939865529DEE7D")
-    public void fatalError(SAXParseException e) throws SAXException {
-        addTaint(e.getTaint());
-        e.addTaint(taint);
-        throw e;
-        // ---------- Original Method ----------
-        //throw e;
+
+    /**
+     * Report a fatal XML parsing error.
+     *
+     * <p>The default implementation throws a SAXParseException.
+     * Application writers may override this method in a subclass if
+     * they need to take specific actions for each fatal error (such as
+     * collecting all of the errors into a single report): in any case,
+     * the application must stop all regular processing when this
+     * method is invoked, since the document is no longer reliable, and
+     * the parser may no longer report parsing events.</p>
+     *
+     * @param e The error information encoded as an exception.
+     * @exception org.xml.sax.SAXException Any SAX exception, possibly
+     *            wrapping another exception.
+     * @see org.xml.sax.ErrorHandler#fatalError
+     * @see org.xml.sax.SAXParseException
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:03.749 -0500", hash_original_method = "3CBD306431C0846BE7A7FBEF3B9920DA", hash_generated_method = "8BE9290E5A78003CD3400FC7458B6660")
+    public void fatalError (SAXParseException e)
+    throws SAXException
+    {
+    throw e;
     }
 
     

@@ -1,6 +1,8 @@
 package android.app;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.content.Context;
 import android.os.Binder;
@@ -13,7 +15,7 @@ import android.view.IWindowManager;
 
 
 public class KeyguardManager {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.547 -0400", hash_original_field = "4FEDCF33DA439800CB483956AE637716", hash_generated_field = "900206E0E1CB232AC9B36B78FD174716")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:18.979 -0500", hash_original_field = "71165EAD9C083BBFAF16999CC816A558", hash_generated_field = "900206E0E1CB232AC9B36B78FD174716")
 
     private IWindowManager mWM;
     
@@ -24,19 +26,27 @@ public class KeyguardManager {
         // ---------- Original Method ----------
         //mWM = IWindowManager.Stub.asInterface(ServiceManager.getService(Context.WINDOW_SERVICE));
     }
-    
-    
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.547 -0400", hash_original_method = "5C652CD18FFB9FB973F397E439BEDA7E", hash_generated_method = "F21168EF43019EA1A25026ADCA91DA7E")
+    /**
+     * @deprecated Use {@link android.view.WindowManager.LayoutParams#FLAG_DISMISS_KEYGUARD}
+     * and/or {@link android.view.WindowManager.LayoutParams#FLAG_SHOW_WHEN_LOCKED}
+     * instead; this allows you to seamlessly hide the keyguard as your application
+     * moves in and out of the foreground and does not require that any special
+     * permissions be requested.
+     *
+     * Enables you to lock or unlock the keyboard. Get an instance of this class by
+     * calling {@link android.content.Context#getSystemService(java.lang.String) Context.getSystemService()}. 
+     * This class is wrapped by {@link android.app.KeyguardManager KeyguardManager}.
+     * @param tag A tag that informally identifies who you are (for debugging who
+     *   is disabling he keyguard).
+     *
+     * @return A {@link KeyguardLock} handle to use to disable and reenable the
+     *   keyguard.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:18.988 -0500", hash_original_method = "5C652CD18FFB9FB973F397E439BEDA7E", hash_generated_method = "CD6447334B6D5472BB47560DDD8C84F3")
     @Deprecated
-    public KeyguardLock newKeyguardLock(String tag) {
-        addTaint(tag.getTaint());
-        KeyguardLock varF94DC7E8A9793C7121D37FAB19D77E2D_113462621 =         new KeyguardLock(tag);
-        varF94DC7E8A9793C7121D37FAB19D77E2D_113462621.addTaint(taint);
-        return varF94DC7E8A9793C7121D37FAB19D77E2D_113462621;
-        // ---------- Original Method ----------
-        //return new KeyguardLock(tag);
+public KeyguardLock newKeyguardLock(String tag) {
+        return new KeyguardLock(tag);
     }
 
     
@@ -75,52 +85,52 @@ public class KeyguardManager {
         //}
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.548 -0400", hash_original_method = "FE8F5B525A90789B7FAA52BD35F0F030", hash_generated_method = "29141734F4DD02E0CD9A3E159435A44B")
+    /**
+     * @deprecated Use {@link android.view.WindowManager.LayoutParams#FLAG_DISMISS_KEYGUARD}
+     * and/or {@link android.view.WindowManager.LayoutParams#FLAG_SHOW_WHEN_LOCKED}
+     * instead; this allows you to seamlessly hide the keyguard as your application
+     * moves in and out of the foreground and does not require that any special
+     * permissions be requested.
+     *
+     * Exit the keyguard securely.  The use case for this api is that, after
+     * disabling the keyguard, your app, which was granted permission to
+     * disable the keyguard and show a limited amount of information deemed
+     * safe without the user getting past the keyguard, needs to navigate to
+     * something that is not safe to view without getting past the keyguard.
+     *
+     * This will, if the keyguard is secure, bring up the unlock screen of
+     * the keyguard.
+     *
+     * @param callback Let's you know whether the operation was succesful and
+     *   it is safe to launch anything that would normally be considered safe
+     *   once the user has gotten past the keyguard.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:18.992 -0500", hash_original_method = "FE8F5B525A90789B7FAA52BD35F0F030", hash_generated_method = "3DBA21B3C6F2E1FCDFFFE6D6B1EA77BE")
     @Deprecated
-    public void exitKeyguardSecurely(final OnKeyguardExitResult callback) {
-        addTaint(callback.getTaint());
-        try 
-        {
-            mWM.exitKeyguardSecurely(new IOnKeyguardExitResult.Stub() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.548 -0400", hash_original_method = "3EC2E5FCC08061EF9551EB1CD521B8A8", hash_generated_method = "D3CE17FC8F30A272A316DE9D2D6CBA05")
-        public void onKeyguardExitResult(boolean success) throws RemoteException {
-            //DSFIXME:  CODE0009: Possible callback target function detected
-            addTaint(success);
-            callback.onKeyguardExitResult(success);
-            // ---------- Original Method ----------
-            //callback.onKeyguardExitResult(success);
+public void exitKeyguardSecurely(final OnKeyguardExitResult callback) {
+        try {
+            mWM.exitKeyguardSecurely(new IOnKeyguardExitResult.Stub() {
+                public void onKeyguardExitResult(boolean success) throws RemoteException {
+                    callback.onKeyguardExitResult(success);
+                }
+            });
+        } catch (RemoteException e) {
+
         }
-});
-        } //End block
-        catch (RemoteException e)
-        {
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //mWM.exitKeyguardSecurely(new IOnKeyguardExitResult.Stub() {
-                //public void onKeyguardExitResult(boolean success) throws RemoteException {
-                    //callback.onKeyguardExitResult(success);
-                //}
-            //});
-        //} catch (RemoteException e) {
-        //}
     }
 
     
     public class KeyguardLock {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.548 -0400", hash_original_field = "0483E306D297FF9F10FBB2053BA4F86A", hash_generated_field = "0A3D50E0763C2392A4FD5877627E0D78")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:18.980 -0500", hash_original_field = "0DA9108D2E2A711522F589279D2F355A", hash_generated_field = "0A3D50E0763C2392A4FD5877627E0D78")
 
         private IBinder mToken = new Binder();
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.548 -0400", hash_original_field = "07496860B5C53FDD66588727158D5F73", hash_generated_field = "0950070738D23525D6B35F116326FC98")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:18.981 -0500", hash_original_field = "05B32B05746742D3A5261C827E7D8852", hash_generated_field = "0950070738D23525D6B35F116326FC98")
 
         private String mTag;
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.549 -0400", hash_original_method = "4D032B51654914D2B6BB0DA8DB46B141", hash_generated_method = "C4956F8D2CA9FF0EA9184C6E2220865C")
-          KeyguardLock(String tag) {
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:18.982 -0500", hash_original_method = "4D032B51654914D2B6BB0DA8DB46B141", hash_generated_method = "4D032B51654914D2B6BB0DA8DB46B141")
+        KeyguardLock(String tag) {
             mTag = tag;
-            // ---------- Original Method ----------
-            //mTag = tag;
         }
         
         @DSModeled(DSC.BAN)

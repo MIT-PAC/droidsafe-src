@@ -1,6 +1,8 @@
 package android.webkit;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.view.Gravity;
 import android.view.View;
@@ -14,147 +16,87 @@ import android.widget.ZoomButtonsController;
 
 
 class ZoomControlEmbedded implements ZoomControlBase {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.580 -0400", hash_original_field = "61BC42C317CA14BCEFF4FD2F3EBC8E34", hash_generated_field = "9B99C2FE2EA0A3C0CAEC1D267CB6150C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:32.205 -0500", hash_original_field = "89F04BCF2CEF2FF9614BE546923CA10D", hash_generated_field = "9B99C2FE2EA0A3C0CAEC1D267CB6150C")
 
-    private ZoomManager mZoomManager;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.580 -0400", hash_original_field = "72439B8F99EB438C3DA5D9CD798C6786", hash_generated_field = "99346B50377E115231263981E00655CA")
 
-    private WebView mWebView;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.581 -0400", hash_original_field = "BF7E3585F7DD6E770EB21D3F6C8B81A5", hash_generated_field = "A8A0DD9E8E1D109A248CAEBBC4A8688D")
+    private  ZoomManager mZoomManager;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:32.206 -0500", hash_original_field = "E044D69EE05B24F4B93E3A3B208F5343", hash_generated_field = "99346B50377E115231263981E00655CA")
+
+    private  WebView mWebView;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:32.207 -0500", hash_original_field = "4AD90657AB7879F5FF6863A18E81A79F", hash_generated_field = "A8A0DD9E8E1D109A248CAEBBC4A8688D")
 
     private ZoomButtonsController mZoomButtonsController;
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.581 -0400", hash_original_method = "58B848602B04675A34284534D0242989", hash_generated_method = "1DA489FE3D377B93AABC14896EC5C4EF")
-    public  ZoomControlEmbedded(ZoomManager zoomManager, WebView webView) {
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:32.208 -0500", hash_original_method = "58B848602B04675A34284534D0242989", hash_generated_method = "D748EB4302246DD00F5F94F46567B16A")
+    public ZoomControlEmbedded(ZoomManager zoomManager, WebView webView) {
         mZoomManager = zoomManager;
         mWebView = webView;
-        // ---------- Original Method ----------
-        //mZoomManager = zoomManager;
-        //mWebView = webView;
     }
 
-    
-        @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.582 -0400", hash_original_method = "AC6DDF8CBB501A63B7872C74FE4374B8", hash_generated_method = "1A28E8477C555DB0AEDA75C30B6B794D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:32.209 -0500", hash_original_method = "AC6DDF8CBB501A63B7872C74FE4374B8", hash_generated_method = "328A0AB607EB91E6D512D071D2A483CD")
     public void show() {
-        if(!getControls().isVisible() && !mZoomManager.isZoomScaleFixed())        
-        {
+        if (!getControls().isVisible() && !mZoomManager.isZoomScaleFixed()) {
+
             mZoomButtonsController.setVisible(true);
-            if(mZoomManager.isDoubleTapEnabled())            
-            {
+
+            if (mZoomManager.isDoubleTapEnabled()) {
                 WebSettings settings = mWebView.getSettings();
                 int count = settings.getDoubleTapToastCount();
-                if(mZoomManager.isInZoomOverview() && count > 0)                
-                {
+                if (mZoomManager.isInZoomOverview() && count > 0) {
                     settings.setDoubleTapToastCount(--count);
                     Toast.makeText(mWebView.getContext(),
                             com.android.internal.R.string.double_tap_toast,
                             Toast.LENGTH_LONG).show();
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (!getControls().isVisible() && !mZoomManager.isZoomScaleFixed()) {
-            //mZoomButtonsController.setVisible(true);
-            //if (mZoomManager.isDoubleTapEnabled()) {
-                //WebSettings settings = mWebView.getSettings();
-                //int count = settings.getDoubleTapToastCount();
-                //if (mZoomManager.isInZoomOverview() && count > 0) {
-                    //settings.setDoubleTapToastCount(--count);
-                    //Toast.makeText(mWebView.getContext(),
-                            //com.android.internal.R.string.double_tap_toast,
-                            //Toast.LENGTH_LONG).show();
-                //}
-            //}
-        //}
+                }
+            }
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.582 -0400", hash_original_method = "01D9936CB3AEEFE463F6049C6D59A6E4", hash_generated_method = "912A6ED3B2CAD76F92BF6854B868239B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:32.209 -0500", hash_original_method = "01D9936CB3AEEFE463F6049C6D59A6E4", hash_generated_method = "0B40AA260FFF7C1BE2FE7387A99F28AF")
     public void hide() {
-        if(mZoomButtonsController != null)        
-        {
+        if (mZoomButtonsController != null) {
             mZoomButtonsController.setVisible(false);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mZoomButtonsController != null) {
-            //mZoomButtonsController.setVisible(false);
-        //}
+        }
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.582 -0400", hash_original_method = "518B1D44CA5DDB1FC736D41ED30011CF", hash_generated_method = "A74FDEBED925D34CD0B62EFDD07EBDD0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:32.210 -0500", hash_original_method = "518B1D44CA5DDB1FC736D41ED30011CF", hash_generated_method = "5BD531AE3778221A23DFC231A1D18C84")
     public boolean isVisible() {
-        boolean var8C5CB663405B3296CE37A0A59A033D65_715325723 = (mZoomButtonsController != null && mZoomButtonsController.isVisible());
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1669090212 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1669090212;
-        // ---------- Original Method ----------
-        //return mZoomButtonsController != null && mZoomButtonsController.isVisible();
+        return mZoomButtonsController != null && mZoomButtonsController.isVisible();
     }
 
-    
-        @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.583 -0400", hash_original_method = "3EEB1B7639B141DBF4A839E2ACE958E1", hash_generated_method = "94A1E6D0BA86E472CCB24703F0D38AC5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:32.211 -0500", hash_original_method = "3EEB1B7639B141DBF4A839E2ACE958E1", hash_generated_method = "4EB328696D58A43BEC74059B167A3B43")
     public void update() {
-        if(mZoomButtonsController == null)        
-        {
+        if (mZoomButtonsController == null) {
             return;
-        } //End block
+        }
+
         boolean canZoomIn = mZoomManager.canZoomIn();
         boolean canZoomOut = mZoomManager.canZoomOut() && !mZoomManager.isInZoomOverview();
-        if(!canZoomIn && !canZoomOut)        
-        {
+        if (!canZoomIn && !canZoomOut) {
+            // Hide the zoom in and out buttons if the page cannot zoom
             mZoomButtonsController.getZoomControls().setVisibility(View.GONE);
-        } //End block
-        else
-        {
+        } else {
+            // Set each one individually, as a page may be able to zoom in or out
             mZoomButtonsController.setZoomInEnabled(canZoomIn);
             mZoomButtonsController.setZoomOutEnabled(canZoomOut);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mZoomButtonsController == null) {
-            //return;
-        //}
-        //boolean canZoomIn = mZoomManager.canZoomIn();
-        //boolean canZoomOut = mZoomManager.canZoomOut() && !mZoomManager.isInZoomOverview();
-        //if (!canZoomIn && !canZoomOut) {
-            //mZoomButtonsController.getZoomControls().setVisibility(View.GONE);
-        //} else {
-            //mZoomButtonsController.setZoomInEnabled(canZoomIn);
-            //mZoomButtonsController.setZoomOutEnabled(canZoomOut);
-        //}
+        }
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.584 -0400", hash_original_method = "0263F8BCA60BCA372CF61DE8AB7A303B", hash_generated_method = "2806508593E16D71FD51D18EF2D23597")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:32.212 -0500", hash_original_method = "0263F8BCA60BCA372CF61DE8AB7A303B", hash_generated_method = "F5D4F746BF08592E30559E547F0A1A5D")
     private ZoomButtonsController getControls() {
-        if(mZoomButtonsController == null)        
-        {
+        if (mZoomButtonsController == null) {
             mZoomButtonsController = new ZoomButtonsController(mWebView);
             mZoomButtonsController.setOnZoomListener(new ZoomListener());
+            // ZoomButtonsController positions the buttons at the bottom, but in
+            // the middle. Change their layout parameters so they appear on the
+            // right.
             View controls = mZoomButtonsController.getZoomControls();
             ViewGroup.LayoutParams params = controls.getLayoutParams();
-            if(params instanceof FrameLayout.LayoutParams)            
-            {
+            if (params instanceof FrameLayout.LayoutParams) {
                 ((FrameLayout.LayoutParams) params).gravity = Gravity.RIGHT;
-            } //End block
-        } //End block
-ZoomButtonsController var63565BB54144B4ECD496B8D8A0409C92_991097420 =         mZoomButtonsController;
-        var63565BB54144B4ECD496B8D8A0409C92_991097420.addTaint(taint);
-        return var63565BB54144B4ECD496B8D8A0409C92_991097420;
-        // ---------- Original Method ----------
-        //if (mZoomButtonsController == null) {
-            //mZoomButtonsController = new ZoomButtonsController(mWebView);
-            //mZoomButtonsController.setOnZoomListener(new ZoomListener());
-            //View controls = mZoomButtonsController.getZoomControls();
-            //ViewGroup.LayoutParams params = controls.getLayoutParams();
-            //if (params instanceof FrameLayout.LayoutParams) {
-                //((FrameLayout.LayoutParams) params).gravity = Gravity.RIGHT;
-            //}
-        //}
-        //return mZoomButtonsController;
+            }
+        }
+        return mZoomButtonsController;
     }
 
     
@@ -166,48 +108,24 @@ ZoomButtonsController var63565BB54144B4ECD496B8D8A0409C92_991097420 =         mZ
             //Synthesized constructor
         }
 
-
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.585 -0400", hash_original_method = "CAB57885F430D7392888CFD12B17B225", hash_generated_method = "D1B2D1C2CFDE0020D266B7E083F173E5")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:32.213 -0500", hash_original_method = "CAB57885F430D7392888CFD12B17B225", hash_generated_method = "4111D1A62E6EB55B091510A8B69395AA")
         public void onVisibilityChanged(boolean visible) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
-            addTaint(visible);
-            if(visible)            
-            {
+            if (visible) {
                 mWebView.switchOutDrawHistory();
+                // Bring back the hidden zoom controls.
                 mZoomButtonsController.getZoomControls().setVisibility(View.VISIBLE);
                 update();
-            } //End block
-            // ---------- Original Method ----------
-            //if (visible) {
-                //mWebView.switchOutDrawHistory();
-                //mZoomButtonsController.getZoomControls().setVisibility(View.VISIBLE);
-                //update();
-            //}
+            }
         }
 
-        
-                @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.585 -0400", hash_original_method = "A16881C1E119771D4FCCD4DE4DCAF173", hash_generated_method = "2831C0F143F93F97D96A757365DD63F5")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:32.214 -0500", hash_original_method = "A16881C1E119771D4FCCD4DE4DCAF173", hash_generated_method = "3724CEBC8BB7643EC7A121CA32DBAB53")
         public void onZoom(boolean zoomIn) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
-            addTaint(zoomIn);
-            if(zoomIn)            
-            {
+            if (zoomIn) {
                 mWebView.zoomIn();
-            } //End block
-            else
-            {
+            } else {
                 mWebView.zoomOut();
-            } //End block
+            }
             update();
-            // ---------- Original Method ----------
-            //if (zoomIn) {
-                //mWebView.zoomIn();
-            //} else {
-                //mWebView.zoomOut();
-            //}
-            //update();
         }
 
         

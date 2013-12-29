@@ -1,6 +1,8 @@
 package gov.nist.javax.sip.stack;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import gov.nist.core.InternalErrorHandler;
 import gov.nist.core.ServerLogger;
@@ -39,94 +41,117 @@ import javax.sip.address.Hop;
 
 
 public class UDPMessageChannel extends MessageChannel implements ParseExceptionListener, Runnable, RawMessageChannel {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.053 -0400", hash_original_field = "37460D4BF2BA47A13FF9D922C4B14B2E", hash_generated_field = "3233C5012C49C796F9D6BBC8E02EAB41")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:58.227 -0500", hash_original_field = "A4B05DD1A2BDFAA2E8FCD10E8D1815B6", hash_generated_field = "3233C5012C49C796F9D6BBC8E02EAB41")
 
     protected SIPTransactionStack sipStack;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.053 -0400", hash_original_field = "8C35693B192604DA4AB63AD19D48096F", hash_generated_field = "0A43681EE1A6E215BE82E39AC59DFE7C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:58.227 -0500", hash_original_field = "E2A480FE405F8276F1EFBE824E1FF2A5", hash_generated_field = "0A43681EE1A6E215BE82E39AC59DFE7C")
 
     protected StringMsgParser myParser;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.053 -0400", hash_original_field = "D7FA5E7DC9BACC5016B81E35D44D1C5F", hash_generated_field = "DB2440387A41D5016778DA700632E003")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:58.228 -0500", hash_original_field = "366B1D4629185E73902FFD7D04A7B174", hash_generated_field = "DB2440387A41D5016778DA700632E003")
 
     private InetAddress peerAddress;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.053 -0400", hash_original_field = "AA48C74491DE12FAB31F14F04DE0F567", hash_generated_field = "DEE18A414D72F7D580E73EF519B5B75F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:58.229 -0500", hash_original_field = "95EABD5ABD88E35E559B3906991D12AE", hash_generated_field = "DEE18A414D72F7D580E73EF519B5B75F")
+
 
     private String myAddress;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.053 -0400", hash_original_field = "E2843BEFA12DEA2BD46F0D29DAA8CB35", hash_generated_field = "917EBAB90EE3EF0904EF1CC7129F7C3B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:58.230 -0500", hash_original_field = "8AEBC2998B5E75EE998FC822539710AC", hash_generated_field = "917EBAB90EE3EF0904EF1CC7129F7C3B")
+
 
     private int peerPacketSourcePort;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.053 -0400", hash_original_field = "1906DDE6FBF1A1A564E69A91EBCF4043", hash_generated_field = "31AFBD6F92700654B3E6CD25C4BAE79B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:58.231 -0500", hash_original_field = "21FBD1F3C626244BE5AA333519378971", hash_generated_field = "31AFBD6F92700654B3E6CD25C4BAE79B")
+
 
     private InetAddress peerPacketSourceAddress;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.053 -0400", hash_original_field = "BBD5741C4F9994864582D25DD194C4DE", hash_generated_field = "FE74A5BA5CFBB5B6DC2B68FEFA76ECFC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:58.232 -0500", hash_original_field = "A714E58FF483C2E33F156CBA7BFCD38B", hash_generated_field = "FE74A5BA5CFBB5B6DC2B68FEFA76ECFC")
 
     private int peerPort;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.053 -0400", hash_original_field = "EDB6E8FD971C3E6879E1A00995BCB702", hash_generated_field = "EB665B7537D07145A6FCAD2DB460EADC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:58.233 -0500", hash_original_field = "D89E736D3DD25A80B53E476FF3F84027", hash_generated_field = "EB665B7537D07145A6FCAD2DB460EADC")
 
     private String peerProtocol;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.053 -0400", hash_original_field = "AB99FC537949F4680FB25A11A38B0042", hash_generated_field = "AD61806C610E09EDA888D5EC477B22F2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:58.234 -0500", hash_original_field = "05A0D771A4A24E58EF91191716865F5C", hash_generated_field = "AD61806C610E09EDA888D5EC477B22F2")
+
 
     protected int myPort;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.053 -0400", hash_original_field = "C1C12C1266B0C0AC2B9F460C87F4F641", hash_generated_field = "5DCE0469450ABB74FDB5A37D9DFDF23A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:58.235 -0500", hash_original_field = "E54462E997B322B09DD0125AB641B35D", hash_generated_field = "5DCE0469450ABB74FDB5A37D9DFDF23A")
+
 
     private DatagramPacket incomingPacket;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.053 -0400", hash_original_field = "52E9EDC753D35EB688ED2EC5FA2A70C4", hash_generated_field = "FDC149166FA9FE14388FB5695DD3C00D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:58.236 -0500", hash_original_field = "F237DE63057BE39BEE7D4F09606ACEC6", hash_generated_field = "FDC149166FA9FE14388FB5695DD3C00D")
+
 
     private long receptionTime;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.053 -0400", hash_original_field = "19007373CE3841015C166CC983644A31", hash_generated_field = "DE4903FFD06AF3966ED05EEB79D4D38C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:58.237 -0500", hash_original_field = "29BFA636248D06F96C75EB4382FADC8E", hash_generated_field = "DE4903FFD06AF3966ED05EEB79D4D38C")
 
     private Hashtable<String,PingBackTimerTask> pingBackRecord = new Hashtable<String,PingBackTimerTask>();
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.054 -0400", hash_original_method = "03A64681434F0E8B0C9121AC8F1C5237", hash_generated_method = "19FE0DB1F35C1B867E3F19F8F675652D")
-    protected  UDPMessageChannel(SIPTransactionStack stack,
+
+    /**
+     * Constructor - takes a datagram packet and a stack structure Extracts the
+     * address of the other from the datagram packet and stashes away the
+     * pointer to the passed stack structure.
+     *
+     * @param stack
+     *            is the shared SIPStack structure
+     * @param messageProcessor
+     *            is the creating message processor.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:58.245 -0500", hash_original_method = "03A64681434F0E8B0C9121AC8F1C5237", hash_generated_method = "19DBE9E2C64D275D739DC191502C8FA6")
+    protected UDPMessageChannel(SIPTransactionStack stack,
             UDPMessageProcessor messageProcessor) {
         super.messageProcessor = messageProcessor;
         this.sipStack = stack;
+
         Thread mythread = new Thread(this);
+
         this.myAddress = messageProcessor.getIpAddress().getHostAddress();
         this.myPort = messageProcessor.getPort();
+
         mythread.setName("UDPMessageChannelThread");
         mythread.setDaemon(true);
         mythread.start();
-        // ---------- Original Method ----------
-        //super.messageProcessor = messageProcessor;
-        //this.sipStack = stack;
-        //Thread mythread = new Thread(this);
-        //this.myAddress = messageProcessor.getIpAddress().getHostAddress();
-        //this.myPort = messageProcessor.getPort();
-        //mythread.setName("UDPMessageChannelThread");
-        //mythread.setDaemon(true);
-        //mythread.start();
+
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.055 -0400", hash_original_method = "1756885BA9DE2BFD3C0F236D276D29E7", hash_generated_method = "B6119B8D65B92CD937056FF8F4DDCCDC")
-    protected  UDPMessageChannel(SIPTransactionStack stack,
+    /**
+     * Constructor. We create one of these in order to process an incoming
+     * message.
+     *
+     * @param stack
+     *            is the SIP sipStack.
+     * @param messageProcessor
+     *            is the creating message processor.
+     * @param packet
+     *            is the incoming datagram packet.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:58.246 -0500", hash_original_method = "1756885BA9DE2BFD3C0F236D276D29E7", hash_generated_method = "320648BCE35C505AE51358F4E7EA9A25")
+    protected UDPMessageChannel(SIPTransactionStack stack,
             UDPMessageProcessor messageProcessor, DatagramPacket packet) {
+
         this.incomingPacket = packet;
         super.messageProcessor = messageProcessor;
         this.sipStack = stack;
+
         this.myAddress = messageProcessor.getIpAddress().getHostAddress();
         this.myPort = messageProcessor.getPort();
         Thread mythread = new Thread(this);
         mythread.setDaemon(true);
         mythread.setName("UDPMessageChannelThread");
+
         mythread.start();
-        // ---------- Original Method ----------
-        //this.incomingPacket = packet;
-        //super.messageProcessor = messageProcessor;
-        //this.sipStack = stack;
-        //this.myAddress = messageProcessor.getIpAddress().getHostAddress();
-        //this.myPort = messageProcessor.getPort();
-        //Thread mythread = new Thread(this);
-        //mythread.setDaemon(true);
-        //mythread.setName("UDPMessageChannelThread");
-        //mythread.start();
+
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.057 -0400", hash_original_method = "776DD93072EC88FB0665477FC0515605", hash_generated_method = "7613B602B46BE7944019C9100A86CCB1")
-    protected  UDPMessageChannel(InetAddress targetAddr, int port,
+    /**
+     * Constructor. We create one of these when we send out a message.
+     *
+     * @param targetAddr
+     *            INET address of the place where we want to send messages.
+     * @param port
+     *            target port (where we want to send the message).
+     * @param sipStack
+     *            our SIP Stack.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:58.248 -0500", hash_original_method = "776DD93072EC88FB0665477FC0515605", hash_generated_method = "0588306C663F5E0F317AA5BDA696CBD0")
+    protected UDPMessageChannel(InetAddress targetAddr, int port,
             SIPTransactionStack sipStack, UDPMessageProcessor messageProcessor) {
         peerAddress = targetAddr;
         peerPort = port;
@@ -135,187 +160,178 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
         this.myAddress = messageProcessor.getIpAddress().getHostAddress();
         this.myPort = messageProcessor.getPort();
         this.sipStack = sipStack;
-        if(sipStack.isLoggingEnabled())        
-        {
+        if (sipStack.isLoggingEnabled()) {
             this.sipStack.getStackLogger().logDebug("Creating message channel "
                     + targetAddr.getHostAddress() + "/" + port);
-        } //End block
-        // ---------- Original Method ----------
-        //peerAddress = targetAddr;
-        //peerPort = port;
-        //peerProtocol = "UDP";
-        //super.messageProcessor = messageProcessor;
-        //this.myAddress = messageProcessor.getIpAddress().getHostAddress();
-        //this.myPort = messageProcessor.getPort();
-        //this.sipStack = sipStack;
-        //if (sipStack.isLoggingEnabled()) {
-            //this.sipStack.getStackLogger().logDebug("Creating message channel "
-                    //+ targetAddr.getHostAddress() + "/" + port);
-        //}
+        }
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.059 -0400", hash_original_method = "E6EA1046257028C8ED28AF4C13B7A731", hash_generated_method = "5E52B0490617E2DCAB6B4A11F2874906")
+    /**
+     * Run method specified by runnnable.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:58.249 -0500", hash_original_method = "E6EA1046257028C8ED28AF4C13B7A731", hash_generated_method = "BE404AD3B81220A0192E0E3AEA67BFF9")
     public void run() {
+        // Assume no thread pooling (bug fix by spierhj)
         ThreadAuditor.ThreadHandle threadHandle = null;
-        while
-(true)        
-        {
-            if(myParser == null)            
-            {
+
+        while (true) {
+            // Create a new string message parser to parse the list of messages.
+            if (myParser == null) {
                 myParser = new StringMsgParser();
                 myParser.setParseExceptionListener(this);
-            } //End block
+            }
+            // messages that we write out to him.
             DatagramPacket packet;
-            if(sipStack.threadPoolSize != -1)            
-            {
-                synchronized
-(((UDPMessageProcessor) messageProcessor).messageQueue)                {
-                    while
-(((UDPMessageProcessor) messageProcessor).messageQueue
-                            .isEmpty())                    
-                    {
-                        if(!((UDPMessageProcessor) messageProcessor).isRunning)                        
-                        return;
-                        try 
-                        {
-                            if(threadHandle == null)                            
-                            {
+
+            if (sipStack.threadPoolSize != -1) {
+                synchronized (((UDPMessageProcessor) messageProcessor).messageQueue) {
+                    while (((UDPMessageProcessor) messageProcessor).messageQueue
+                            .isEmpty()) {
+                        // Check to see if we need to exit.
+                        if (!((UDPMessageProcessor) messageProcessor).isRunning)
+                            return;
+                        try {
+                            // We're part of a thread pool. Ask the auditor to
+                            // monitor this thread.
+                            if (threadHandle == null) {
                                 threadHandle = sipStack.getThreadAuditor()
                                         .addCurrentThread();
-                            } //End block
+                            }
+
+                            // Send a heartbeat to the thread auditor
                             threadHandle.ping();
+
+                            // Wait for packets
+                            // Note: getPingInterval returns 0 (infinite) if the
+                            // thread auditor is disabled.
                             ((UDPMessageProcessor) messageProcessor).messageQueue
                                     .wait(threadHandle
                                             .getPingIntervalInMillisecs());
-                        } //End block
-                        catch (InterruptedException ex)
-                        {
-                            if(!((UDPMessageProcessor) messageProcessor).isRunning)                            
-                            return;
-                        } //End block
-                    } //End block
+                        } catch (InterruptedException ex) {
+                            if (!((UDPMessageProcessor) messageProcessor).isRunning)
+                                return;
+                        }
+                    }
                     packet = (DatagramPacket) ((UDPMessageProcessor) messageProcessor).messageQueue
                             .removeFirst();
-                } //End block
+
+                }
                 this.incomingPacket = packet;
-            } //End block
-            else
-            {
+            } else {
                 packet = this.incomingPacket;
-            } //End block
-            try 
-            {
+            }
+
+            // Process the packet. Catch and log any exception we may throw.
+            try {
                 processIncomingDataPacket(packet);
-            } //End block
-            catch (Exception e)
-            {
+            } catch (Exception e) {
+
                 sipStack.getStackLogger().logError(
                         "Error while processing incoming UDP packet", e);
-            } //End block
-            if(sipStack.threadPoolSize == -1)            
-            {
+            }
+
+            if (sipStack.threadPoolSize == -1) {
                 return;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            }
+        }
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.063 -0400", hash_original_method = "2D23A147968127857F47AE9C2F0B0301", hash_generated_method = "2CA7A331983DDF57027DA579105AD0C0")
-    private void processIncomingDataPacket(DatagramPacket packet) throws Exception {
+    /**
+     * Process an incoming datagram
+     *
+     * @param packet
+     *            is the incoming datagram packet.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:58.251 -0500", hash_original_method = "2D23A147968127857F47AE9C2F0B0301", hash_generated_method = "6B719ED1CA7C5621A0C4F218A60E7CA7")
+    private void processIncomingDataPacket(DatagramPacket packet)
+            throws Exception {
         this.peerAddress = packet.getAddress();
         int packetLength = packet.getLength();
+        // Read bytes and put it in a eueue.
         byte[] bytes = packet.getData();
         byte[] msgBytes = new byte[packetLength];
         System.arraycopy(bytes, 0, msgBytes, 0, packetLength);
-        if(sipStack.isLoggingEnabled())        
-        {
+
+        // Do debug logging.
+        if (sipStack.isLoggingEnabled()) {
             this.sipStack.getStackLogger()
                     .logDebug("UDPMessageChannel: processIncomingDataPacket : peerAddress = "
                             + peerAddress.getHostAddress() + "/"
                             + packet.getPort() + " Length = " + packetLength);
-        } //End block
+
+        }
+
         SIPMessage sipMessage = null;
-        try 
-        {
+        try {
             this.receptionTime = System.currentTimeMillis();
             sipMessage = myParser.parseSIPMessage(msgBytes);
             myParser = null;
-        } //End block
-        catch (ParseException ex)
-        {
-            myParser = null;
-            if(sipStack.isLoggingEnabled())            
-            {
+        } catch (ParseException ex) {
+            myParser = null; // let go of the parser reference.
+            if (sipStack.isLoggingEnabled()) {
                 this.sipStack.getStackLogger().logDebug("Rejecting message !  "
                         + new String(msgBytes));
                 this.sipStack.getStackLogger().logDebug("error message "
                         + ex.getMessage());
                 this.sipStack.getStackLogger().logException(ex);
-            } //End block
+            }
+
+
+            // JvB: send a 400 response for requests (except ACK)
+            // Currently only UDP, @todo also other transports
             String msgString = new String(msgBytes, 0, packetLength);
-            if(!msgString.startsWith("SIP/") && !msgString.startsWith("ACK "))            
-            {
+            if (!msgString.startsWith("SIP/") && !msgString.startsWith("ACK ")) {
+
                 String badReqRes = createBadReqRes(msgString, ex);
-                if(badReqRes != null)                
-                {
-                    if(sipStack.isLoggingEnabled())                    
-                    {
+                if (badReqRes != null) {
+                    if (sipStack.isLoggingEnabled()) {
                         sipStack.getStackLogger().logDebug(
                                 "Sending automatic 400 Bad Request:");
                         sipStack.getStackLogger().logDebug(badReqRes);
-                    } //End block
-                    try 
-                    {
+                    }
+                    try {
                         this.sendMessage(badReqRes.getBytes(), peerAddress,
                                 packet.getPort(), "UDP", false);
-                    } //End block
-                    catch (IOException e)
-                    {
+                    } catch (IOException e) {
                         this.sipStack.getStackLogger().logException(e);
-                    } //End block
-                } //End block
-                else
-                {
-                    if(sipStack.isLoggingEnabled())                    
-                    {
+                    }
+                } else {
+                    if (sipStack.isLoggingEnabled()) {
                         sipStack
                                 .getStackLogger()
                                 .logDebug(
                                         "Could not formulate automatic 400 Bad Request");
-                    } //End block
-                } //End block
-            } //End block
+                    }
+                }
+            }
+
             return;
-        } //End block
-        if(sipMessage == null)        
-        {
-            if(sipStack.isLoggingEnabled())            
-            {
+        }
+        // No parse exception but null message - reject it and
+        // march on (or return).
+        // exit this message processor if the message did not parse.
+
+        if (sipMessage == null) {
+            if (sipStack.isLoggingEnabled()) {
                 this.sipStack.getStackLogger().logDebug("Rejecting message !  + Null message parsed.");
-            } //End block
-            if(pingBackRecord.get(packet.getAddress().getHostAddress() + ":" + packet.getPort()) == null)            
-            {
+            }
+            if (pingBackRecord.get(packet.getAddress().getHostAddress() + ":" + packet.getPort()) == null ) {
                 byte[] retval = "\r\n\r\n".getBytes();
                 DatagramPacket keepalive = new DatagramPacket(retval,0,retval.length,packet.getAddress(),packet.getPort());
                 ((UDPMessageProcessor)this.messageProcessor).sock.send(keepalive);
                 this.sipStack.getTimer().schedule(new PingBackTimerTask(packet.getAddress().getHostAddress(), 
-                            packet.getPort()), 1000);
-            } //End block
+                            packet.getPort()), 1000);                
+            }
             return;
-        } //End block
+        }
         ViaList viaList = sipMessage.getViaHeaders();
-        if(sipMessage.getFrom() == null || sipMessage.getTo() == null
+        // Check for the required headers.
+        if (sipMessage.getFrom() == null || sipMessage.getTo() == null
                 || sipMessage.getCallId() == null
                 || sipMessage.getCSeq() == null
-                || sipMessage.getViaHeaders() == null)        
-        {
+                || sipMessage.getViaHeaders() == null) {
             String badmsg = new String(msgBytes);
-            if(sipStack.isLoggingEnabled())            
-            {
+            if (sipStack.isLoggingEnabled()) {
                 this.sipStack.getStackLogger().logError("bad message " + badmsg);
                 this.sipStack.getStackLogger().logError(">>> Dropped Bad Msg "
                         + "From = " + sipMessage.getFrom() + "To = "
@@ -323,676 +339,581 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
                         + sipMessage.getCallId() + "CSeq = "
                         + sipMessage.getCSeq() + "Via = "
                         + sipMessage.getViaHeaders());
-            } //End block
+            }
             return;
-        } //End block
-        if(sipMessage instanceof SIPRequest)        
-        {
+        }
+        // For a request first via header tells where the message
+        // is coming from.
+        // For response, just get the port from the packet.
+        if (sipMessage instanceof SIPRequest) {
             Via v = (Via) viaList.getFirst();
             Hop hop = sipStack.addressResolver.resolveAddress(v.getHop());
             this.peerPort = hop.getPort();
             this.peerProtocol = v.getTransport();
+
             this.peerPacketSourceAddress = packet.getAddress();
             this.peerPacketSourcePort = packet.getPort();
-            try 
-            {
+            try {
                 this.peerAddress = packet.getAddress();
+                // Check to see if the received parameter matches
+                // the peer address and tag it appropriately.
+
+
                 boolean hasRPort = v.hasParameter(Via.RPORT);
-                if(hasRPort
+                if (hasRPort
                         || !hop.getHost().equals(
-                                this.peerAddress.getHostAddress()))                
-                {
+                                this.peerAddress.getHostAddress())) {
                     v.setParameter(Via.RECEIVED, this.peerAddress
                             .getHostAddress());
-                } //End block
-                if(hasRPort)                
-                {
+                }
+
+                if (hasRPort) {
                     v.setParameter(Via.RPORT, Integer
                             .toString(this.peerPacketSourcePort));
-                } //End block
-            } //End block
-            catch (java.text.ParseException ex1)
-            {
+                }
+            } catch (java.text.ParseException ex1) {
                 InternalErrorHandler.handleException(ex1);
-            } //End block
-        } //End block
-        else
-        {
+            }
+
+        } else {
+
             this.peerPacketSourceAddress = packet.getAddress();
             this.peerPacketSourcePort = packet.getPort();
             this.peerAddress = packet.getAddress();
             this.peerPort = packet.getPort();
             this.peerProtocol = ((Via) viaList.getFirst()).getTransport();
-        } //End block
+        }
+
         this.processMessage(sipMessage);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.065 -0400", hash_original_method = "DCEA2882E2241B5A52F15EAA80B8F270", hash_generated_method = "809D794932CC21C98A933CAAFC45C586")
+    /**
+     * Actually proces the parsed message.
+     *
+     * @param sipMessage
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:58.253 -0500", hash_original_method = "DCEA2882E2241B5A52F15EAA80B8F270", hash_generated_method = "2CA44E47C5C5FAEA4907F1E6D36A559C")
     public void processMessage(SIPMessage sipMessage) {
-        addTaint(sipMessage.getTaint());
-        if(sipMessage instanceof SIPRequest)        
-        {
+
+        if (sipMessage instanceof SIPRequest) {
             SIPRequest sipRequest = (SIPRequest) sipMessage;
-            if(sipStack.getStackLogger().isLoggingEnabled(ServerLogger.TRACE_MESSAGES))            
-            {
+
+            // This is a request - process it.
+            // So far so good -- we will commit this message if
+            // all processing is OK.
+            if (sipStack.getStackLogger().isLoggingEnabled(ServerLogger.TRACE_MESSAGES)) {
+
                 this.sipStack.serverLogger.logMessage(sipMessage, this
                         .getPeerHostPort().toString(), this.getHost() + ":"
                         + this.myPort, false, receptionTime);
-            } //End block
+
+            }
             ServerRequestInterface sipServerRequest = sipStack
                     .newSIPServerRequest(sipRequest, this);
-            if(sipServerRequest == null)            
-            {
-                if(sipStack.isLoggingEnabled())                
-                {
+            // Drop it if there is no request returned
+            if (sipServerRequest == null) {
+                if (sipStack.isLoggingEnabled()) {
                     this.sipStack.getStackLogger()
                             .logWarning("Null request interface returned -- dropping request");
-                } //End block
+                }
+
+
                 return;
-            } //End block
-            if(sipStack.isLoggingEnabled())            
-            this.sipStack.getStackLogger().logDebug("About to process "
+            }
+            if (sipStack.isLoggingEnabled())
+                this.sipStack.getStackLogger().logDebug("About to process "
                         + sipRequest.getFirstLine() + "/" + sipServerRequest);
-            try 
-            {
+            try {
                 sipServerRequest.processRequest(sipRequest, this);
-            } //End block
-            finally 
-            {
-                if(sipServerRequest instanceof SIPTransaction)                
-                {
+            } finally {
+                if (sipServerRequest instanceof SIPTransaction) {
                     SIPServerTransaction sipServerTx = (SIPServerTransaction) sipServerRequest;
-                    if(!sipServerTx.passToListener())                    
-                    {
+                    if (!sipServerTx.passToListener()) {
                         ((SIPTransaction) sipServerRequest).releaseSem();
-                    } //End block
-                } //End block
-            } //End block
-            if(sipStack.isLoggingEnabled())            
-            this.sipStack.getStackLogger().logDebug("Done processing "
+                    }
+                }
+            }
+            if (sipStack.isLoggingEnabled())
+                this.sipStack.getStackLogger().logDebug("Done processing "
                         + sipRequest.getFirstLine() + "/" + sipServerRequest);
-        } //End block
-        else
-        {
+
+            // So far so good -- we will commit this message if
+            // all processing is OK.
+
+        } else {
+            // Handle a SIP Reply message.
             SIPResponse sipResponse = (SIPResponse) sipMessage;
-            try 
-            {
+            try {
                 sipResponse.checkHeaders();
-            } //End block
-            catch (ParseException ex)
-            {
-                if(sipStack.isLoggingEnabled())                
-                sipStack.getStackLogger()
+            } catch (ParseException ex) {
+                if (sipStack.isLoggingEnabled())
+                    sipStack.getStackLogger()
                             .logError("Dropping Badly formatted response message >>> "
                                     + sipResponse);
                 return;
-            } //End block
+            }
             ServerResponseInterface sipServerResponse = sipStack
                     .newSIPServerResponse(sipResponse, this);
-            if(sipServerResponse != null)            
-            {
-                try 
-                {
-                    if(sipServerResponse instanceof SIPClientTransaction
+            if (sipServerResponse != null) {
+                try {
+                    if (sipServerResponse instanceof SIPClientTransaction
                             && !((SIPClientTransaction) sipServerResponse)
-                                    .checkFromTag(sipResponse))                    
-                    {
-                        if(sipStack.isLoggingEnabled())                        
-                        sipStack.getStackLogger()
+                                    .checkFromTag(sipResponse)) {
+                        if (sipStack.isLoggingEnabled())
+                            sipStack.getStackLogger()
                                     .logError("Dropping response message with invalid tag >>> "
                                             + sipResponse);
                         return;
-                    } //End block
+                    }
+
                     sipServerResponse.processResponse(sipResponse, this);
-                } //End block
-                finally 
-                {
-                    if(sipServerResponse instanceof SIPTransaction
+                } finally {
+                    if (sipServerResponse instanceof SIPTransaction
                             && !((SIPTransaction) sipServerResponse)
-                                    .passToListener())                    
-                    ((SIPTransaction) sipServerResponse).releaseSem();
-                } //End block
-            } //End block
-            else
-            {
-                if(sipStack.isLoggingEnabled())                
-                {
+                                    .passToListener())
+                        ((SIPTransaction) sipServerResponse).releaseSem();
+                }
+
+                // Normal processing of message.
+            } else {
+                if (sipStack.isLoggingEnabled()) {
                     this.sipStack.getStackLogger().logDebug("null sipServerResponse!");
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                }
+            }
+
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.066 -0400", hash_original_method = "148F3D833D327E61A5116C1FE99BCAC0", hash_generated_method = "016E6D1B68FB40B431353D5431004703")
+    /**
+     * JvB: added method to check for known buggy clients (Windows Messenger) to
+     * fix the port to which responses are sent
+     *
+     * checks for User-Agent: RTC/1.3.5470 (Messenger 5.1.0701)
+     *
+     * JvB 22/7/2006 better to take this out for the moment, it is only a
+     * problem in rare cases (unregister)
+     *
+     * private final boolean isBuggyClient( SIPRequest r ) { UserAgent uah =
+     * (UserAgent) r.getHeader( UserAgent.NAME ); if (uah!=null) {
+     * java.util.ListIterator i = uah.getProduct(); if (i.hasNext()) { String p =
+     * (String) uah.getProduct().next(); return p.startsWith( "RTC" ); } }
+     * return false; }
+     */
+
+    /**
+     * Implementation of the ParseExceptionListener interface.
+     *
+     * @param ex
+     *            Exception that is given to us by the parser.
+     * @throws ParseException
+     *             If we choose to reject the header or message.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:58.255 -0500", hash_original_method = "148F3D833D327E61A5116C1FE99BCAC0", hash_generated_method = "1DCC4F339640A2676A62F39974DC3ED7")
     public void handleException(ParseException ex, SIPMessage sipMessage,
-            Class hdrClass, String header, String message) throws ParseException {
-        addTaint(message.getTaint());
-        addTaint(header.getTaint());
-        addTaint(hdrClass.getTaint());
-        addTaint(sipMessage.getTaint());
-        addTaint(ex.getTaint());
-        if(sipStack.isLoggingEnabled())        
-        this.sipStack.getStackLogger().logException(ex);
-        if((hdrClass != null)
+            Class hdrClass, String header, String message)
+            throws ParseException {
+        if (sipStack.isLoggingEnabled())
+            this.sipStack.getStackLogger().logException(ex);
+        // Log the bad message for later reference.
+        if ((hdrClass != null)
                 && (hdrClass.equals(From.class) || hdrClass.equals(To.class)
                         || hdrClass.equals(CSeq.class)
                         || hdrClass.equals(Via.class)
                         || hdrClass.equals(CallID.class)
                         || hdrClass.equals(RequestLine.class) || hdrClass
-                        .equals(StatusLine.class)))        
-        {
-            if(sipStack.isLoggingEnabled())            
-            {
-                sipStack.getStackLogger().logError("BAD MESSAGE!");
-                sipStack.getStackLogger().logError(message);
-            } //End block
-            ex.addTaint(taint);
+                        .equals(StatusLine.class))) {
+        	if (sipStack.isLoggingEnabled()) {
+        		sipStack.getStackLogger().logError("BAD MESSAGE!");
+            	sipStack.getStackLogger().logError(message);
+        	}
             throw ex;
-        } //End block
-        else
-        {
+        } else {
             sipMessage.addUnparsed(header);
-        } //End block
-        // ---------- Original Method ----------
-        //if (sipStack.isLoggingEnabled())
-            //this.sipStack.getStackLogger().logException(ex);
-        //if ((hdrClass != null)
-                //&& (hdrClass.equals(From.class) || hdrClass.equals(To.class)
-                        //|| hdrClass.equals(CSeq.class)
-                        //|| hdrClass.equals(Via.class)
-                        //|| hdrClass.equals(CallID.class)
-                        //|| hdrClass.equals(RequestLine.class) || hdrClass
-                        //.equals(StatusLine.class))) {
-        	//if (sipStack.isLoggingEnabled()) {
-        		//sipStack.getStackLogger().logError("BAD MESSAGE!");
-            	//sipStack.getStackLogger().logError(message);
-        	//}
-            //throw ex;
-        //} else {
-            //sipMessage.addUnparsed(header);
-        //}
+        }
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.067 -0400", hash_original_method = "5949601888B92CAB7F6BB9E6373E9083", hash_generated_method = "E2C84BC50D52D4CBEAAC273BEA41E931")
+    /**
+     * Return a reply from a pre-constructed reply. This sends the message back
+     * to the entity who caused us to create this channel in the first place.
+     *
+     * @param sipMessage
+     *            Message string to send.
+     * @throws IOException
+     *             If there is a problem with sending the message.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:58.256 -0500", hash_original_method = "5949601888B92CAB7F6BB9E6373E9083", hash_generated_method = "CA5DED15EEDBEE2F93349DDF45384D85")
     public void sendMessage(SIPMessage sipMessage) throws IOException {
-        addTaint(sipMessage.getTaint());
-        if(sipStack.isLoggingEnabled() && this.sipStack.isLogStackTraceOnMessageSend())        
-        {
-            if(sipMessage instanceof SIPRequest &&
-                    ((SIPRequest)sipMessage).getRequestLine() != null)            
-            {
+        if (sipStack.isLoggingEnabled() && this.sipStack.isLogStackTraceOnMessageSend()) {
+            if ( sipMessage instanceof SIPRequest &&
+                    ((SIPRequest)sipMessage).getRequestLine() != null) {
+                /*
+                 * We dont want to log empty trace messages.
+                 */
                 this.sipStack.getStackLogger().logStackTrace(StackLogger.TRACE_INFO);
-            } //End block
-            else
-            {
+            } else {
                 this.sipStack.getStackLogger().logStackTrace(StackLogger.TRACE_INFO);
-            } //End block
-        } //End block
+            }
+        }
+
+        // Test and see where we are going to send the messsage. If the message
+        // is sent back to oursleves, just
+        // shortcircuit processing.
         long time = System.currentTimeMillis();
-        try 
-        {
-for(MessageProcessor messageProcessor : sipStack
-                    .getMessageProcessors())
-            {
-                if(messageProcessor.getIpAddress().equals(this.peerAddress)
+        try {
+            for (MessageProcessor messageProcessor : sipStack
+                    .getMessageProcessors()) {
+                if (messageProcessor.getIpAddress().equals(this.peerAddress)
                         && messageProcessor.getPort() == this.peerPort
                         && messageProcessor.getTransport().equals(
-                                this.peerProtocol))                
-                {
+                                this.peerProtocol)) {
                     MessageChannel messageChannel = messageProcessor
                             .createMessageChannel(this.peerAddress,
                                     this.peerPort);
-                    if(messageChannel instanceof RawMessageChannel)                    
-                    {
+                    if (messageChannel instanceof RawMessageChannel) {
                         ((RawMessageChannel) messageChannel)
                                 .processMessage(sipMessage);
-                        if(sipStack.isLoggingEnabled())                        
-                        sipStack.getStackLogger().logDebug("Self routing message");
+                        if (sipStack.isLoggingEnabled())
+                        	sipStack.getStackLogger().logDebug("Self routing message");
                         return;
-                    } //End block
-                } //End block
-            } //End block
+                    }
+
+                }
+            }
+
             byte[] msg = sipMessage.encodeAsBytes( this.getTransport() );
+
             sendMessage(msg, peerAddress, peerPort, peerProtocol,
                     sipMessage instanceof SIPRequest);
-        } //End block
-        catch (IOException ex)
-        {
-            ex.addTaint(taint);
+
+        } catch (IOException ex) {
             throw ex;
-        } //End block
-        catch (Exception ex)
-        {
+        } catch (Exception ex) {
             sipStack.getStackLogger().logError("An exception occured while sending message",ex);
-            IOException var295C1AD2872F097E096FF695C791C8A3_1469144677 = new IOException(
+            throw new IOException(
                     "An exception occured while sending message");
-            var295C1AD2872F097E096FF695C791C8A3_1469144677.addTaint(taint);
-            throw var295C1AD2872F097E096FF695C791C8A3_1469144677;
-        } //End block
-        finally 
-        {
-            if(sipStack.getStackLogger().isLoggingEnabled(ServerLogger.TRACE_MESSAGES) && !sipMessage.isNullRequest())            
-            logMessage(sipMessage, peerAddress, peerPort, time);
-            else
-            if(sipStack.getStackLogger().isLoggingEnabled(ServerLogger.TRACE_DEBUG))            
-            sipStack.getStackLogger().logDebug("Sent EMPTY Message");
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } finally {
+            if (sipStack.getStackLogger().isLoggingEnabled(ServerLogger.TRACE_MESSAGES) && !sipMessage.isNullRequest())
+                logMessage(sipMessage, peerAddress, peerPort, time);
+            else if (sipStack.getStackLogger().isLoggingEnabled(ServerLogger.TRACE_DEBUG))
+                sipStack.getStackLogger().logDebug("Sent EMPTY Message");
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.070 -0400", hash_original_method = "E29573D85212414C15B5600ED44221C0", hash_generated_method = "9745BE369FE44CAF7A5A502B2FF7805C")
+    /**
+     * Send a message to a specified receiver address.
+     *
+     * @param msg
+     *            string to send.
+     * @param peerAddress
+     *            Address of the place to send it to.
+     * @param peerPort
+     *            the port to send it to.
+     * @throws IOException
+     *             If there is trouble sending this message.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:58.258 -0500", hash_original_method = "E29573D85212414C15B5600ED44221C0", hash_generated_method = "45AB3E76A33739E95CE9CE6CD6FCDA89")
     protected void sendMessage(byte[] msg, InetAddress peerAddress,
             int peerPort, boolean reConnect) throws IOException {
-        addTaint(reConnect);
-        addTaint(peerPort);
-        addTaint(peerAddress.getTaint());
-        addTaint(msg[0]);
-        if(sipStack.isLoggingEnabled() && this.sipStack.isLogStackTraceOnMessageSend())        
-        {
+        // Via is not included in the request so silently drop the reply.
+        if (sipStack.isLoggingEnabled() && this.sipStack.isLogStackTraceOnMessageSend() ) {
             this.sipStack.getStackLogger().logStackTrace(StackLogger.TRACE_INFO);
-        } //End block
-        if(peerPort == -1)        
-        {
-            if(sipStack.isLoggingEnabled())            
-            {
+        }
+        if (peerPort == -1) {
+            if (sipStack.isLoggingEnabled()) {
                 this.sipStack.getStackLogger().logDebug(getClass().getName()
                         + ":sendMessage: Dropping reply!");
-            } //End block
-            IOException var77D7B83DCCAE312A2B89EEC914DE8301_991172258 = new IOException("Receiver port not set ");
-            var77D7B83DCCAE312A2B89EEC914DE8301_991172258.addTaint(taint);
-            throw var77D7B83DCCAE312A2B89EEC914DE8301_991172258;
-        } //End block
-        else
-        {
-            if(sipStack.isLoggingEnabled())            
-            {
+            }
+            throw new IOException("Receiver port not set ");
+        } else {
+            if (sipStack.isLoggingEnabled()) {
                 this.sipStack.getStackLogger().logDebug("sendMessage " + peerAddress.getHostAddress() + "/"
-                        + peerPort + "\n" + "messageSize =  "  + msg.length + " message = " + new String(msg));
+                        + peerPort + "\n" + "messageSize =  "  + msg.length + " message = " + new String(msg)) ;
                 this.sipStack.getStackLogger().logDebug("*******************\n");
-            } //End block
-        } //End block
+            }
+
+        }
         DatagramPacket reply = new DatagramPacket(msg, msg.length, peerAddress,
                 peerPort);
-        try 
-        {
+        try {
             DatagramSocket sock;
             boolean created = false;
-            if(sipStack.udpFlag)            
-            {
+
+            if (sipStack.udpFlag) {
+                // Use the socket from the message processor (for firewall
+                // support use the same socket as the message processor
+                // socket -- feature request # 18 from java.net). This also
+                // makes the whole thing run faster!
                 sock = ((UDPMessageProcessor) messageProcessor).sock;
-            } //End block
-            else
-            {
+
+                // Bind the socket to the stack address in case there
+                // are multiple interfaces on the machine (feature reqeust
+                // by Will Scullin) 0 binds to an ephemeral port.
+                // sock = new DatagramSocket(0,sipStack.stackInetAddress);
+            } else {
+                // bind to any interface and port.
                 sock = new DatagramSocket();
                 created = true;
-            } //End block
+            }
             sock.send(reply);
-            if(created)            
-            sock.close();
-        } //End block
-        catch (IOException ex)
-        {
-            ex.addTaint(taint);
+            if (created)
+                sock.close();
+        } catch (IOException ex) {
             throw ex;
-        } //End block
-        catch (Exception ex)
-        {
+        } catch (Exception ex) {
             InternalErrorHandler.handleException(ex);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.072 -0400", hash_original_method = "38908DF8BAD797C5C3B9904DFAB1ABDF", hash_generated_method = "7A5E49801E96AECF222C89F21FFFCAF3")
+    /**
+     * Send a message to a specified receiver address.
+     *
+     * @param msg
+     *            message string to send.
+     * @param peerAddress
+     *            Address of the place to send it to.
+     * @param peerPort
+     *            the port to send it to.
+     * @param peerProtocol
+     *            protocol to use to send.
+     * @throws IOException
+     *             If there is trouble sending this message.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:58.259 -0500", hash_original_method = "38908DF8BAD797C5C3B9904DFAB1ABDF", hash_generated_method = "59B899B6291A4C7B230D2ED5A9CCDA94")
     protected void sendMessage(byte[] msg, InetAddress peerAddress,
-            int peerPort, String peerProtocol, boolean retry) throws IOException {
-        addTaint(retry);
-        addTaint(peerProtocol.getTaint());
-        addTaint(peerPort);
-        addTaint(peerAddress.getTaint());
-        addTaint(msg[0]);
-        if(peerPort == -1)        
-        {
-            if(sipStack.isLoggingEnabled())            
-            {
+            int peerPort, String peerProtocol, boolean retry)
+            throws IOException {
+        // Via is not included in the request so silently drop the reply.
+        if (peerPort == -1) {
+            if (sipStack.isLoggingEnabled()) {
                 this.sipStack.getStackLogger().logDebug(getClass().getName()
                         + ":sendMessage: Dropping reply!");
-            } //End block
-            IOException var77D7B83DCCAE312A2B89EEC914DE8301_1621944204 = new IOException("Receiver port not set ");
-            var77D7B83DCCAE312A2B89EEC914DE8301_1621944204.addTaint(taint);
-            throw var77D7B83DCCAE312A2B89EEC914DE8301_1621944204;
-        } //End block
-        else
-        {
-            if(sipStack.isLoggingEnabled())            
-            {
+            }
+            throw new IOException("Receiver port not set ");
+        } else {
+            if (sipStack.isLoggingEnabled()) {
                 this.sipStack.getStackLogger().logDebug( ":sendMessage " + peerAddress.getHostAddress() + "/"
                         + peerPort + "\n" + " messageSize = " + msg.length);
-            } //End block
-        } //End block
-        if(peerProtocol.compareToIgnoreCase("UDP") == 0)        
-        {
+            }
+        }
+        if (peerProtocol.compareToIgnoreCase("UDP") == 0) {
             DatagramPacket reply = new DatagramPacket(msg, msg.length,
                     peerAddress, peerPort);
-            try 
-            {
+
+            try {
                 DatagramSocket sock;
-                if(sipStack.udpFlag)                
-                {
+                if (sipStack.udpFlag) {
                     sock = ((UDPMessageProcessor) messageProcessor).sock;
-                } //End block
-                else
-                {
+
+                } else {
+                    // bind to any interface and port.
                     sock = sipStack.getNetworkLayer().createDatagramSocket();
-                } //End block
-                if(sipStack.isLoggingEnabled())                
-                {
+                }
+                if (sipStack.isLoggingEnabled()) {
                     this.sipStack.getStackLogger().logDebug("sendMessage "
                             + peerAddress.getHostAddress() + "/" + peerPort
                             + "\n" + new String(msg));
-                } //End block
+                }
                 sock.send(reply);
-                if(!sipStack.udpFlag)                
-                sock.close();
-            } //End block
-            catch (IOException ex)
-            {
-                ex.addTaint(taint);
+                if (!sipStack.udpFlag)
+                    sock.close();
+            } catch (IOException ex) {
                 throw ex;
-            } //End block
-            catch (Exception ex)
-            {
+            } catch (Exception ex) {
                 InternalErrorHandler.handleException(ex);
-            } //End block
-        } //End block
-        else
-        {
+            }
+
+        } else {
+            // Use TCP to talk back to the sender.
             Socket outputSocket = sipStack.ioHandler.sendBytes(
                     this.messageProcessor.getIpAddress(), peerAddress,
                     peerPort, "tcp", msg, retry,this);
             OutputStream myOutputStream = outputSocket.getOutputStream();
             myOutputStream.write(msg, 0, msg.length);
             myOutputStream.flush();
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.072 -0400", hash_original_method = "4789C177AC8ECE60B231BA8A866F9D66", hash_generated_method = "9886BD4C37165540AA249BD0E8BD2A2D")
-    public SIPTransactionStack getSIPStack() {
-SIPTransactionStack var0FC1F21ED47F4C0C48881B0DAF112A16_1220940735 =         sipStack;
-        var0FC1F21ED47F4C0C48881B0DAF112A16_1220940735.addTaint(taint);
-        return var0FC1F21ED47F4C0C48881B0DAF112A16_1220940735;
-        // ---------- Original Method ----------
-        //return sipStack;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.072 -0400", hash_original_method = "B7A5D479C43293000A9EAFE6F93DF6D0", hash_generated_method = "0A6CDAC496708B416BA0515007147944")
-    public String getTransport() {
-String varB9F6AB126E8E48FAE23CD708DF3205F6_939518682 =         SIPConstants.UDP;
-        varB9F6AB126E8E48FAE23CD708DF3205F6_939518682.addTaint(taint);
-        return varB9F6AB126E8E48FAE23CD708DF3205F6_939518682;
-        // ---------- Original Method ----------
-        //return SIPConstants.UDP;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.073 -0400", hash_original_method = "EA072AA1AE1B409D48E6BC6990EBDEC5", hash_generated_method = "C4C36BA5D4C44B297FECC263C9127673")
-    public String getHost() {
-String var3010CADA26293A91387A56B6EBEF85DF_872371468 =         messageProcessor.getIpAddress().getHostAddress();
-        var3010CADA26293A91387A56B6EBEF85DF_872371468.addTaint(taint);
-        return var3010CADA26293A91387A56B6EBEF85DF_872371468;
-        // ---------- Original Method ----------
-        //return messageProcessor.getIpAddress().getHostAddress();
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.073 -0400", hash_original_method = "891FD85C4A46ECEDCCE8E5933BDC3ADD", hash_generated_method = "415BD76B901A495D54608EC7638AAFD4")
-    public int getPort() {
-        int var621830C7D878CD68BF97A2283D3307A1_664951716 = (((UDPMessageProcessor) messageProcessor).getPort());
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_179990409 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_179990409;
-        // ---------- Original Method ----------
-        //return ((UDPMessageProcessor) messageProcessor).getPort();
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.073 -0400", hash_original_method = "86CAA293F63DFC3CC87A4ACD6BC27DDA", hash_generated_method = "D5ED85478FC0F37E7A1E75C7F3E7024F")
-    public String getPeerName() {
-String var1A57F3CFCCC4040722A799E9F720F59E_436740486 =         peerAddress.getHostName();
-        var1A57F3CFCCC4040722A799E9F720F59E_436740486.addTaint(taint);
-        return var1A57F3CFCCC4040722A799E9F720F59E_436740486;
-        // ---------- Original Method ----------
-        //return peerAddress.getHostName();
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.073 -0400", hash_original_method = "A07C7EAAB254DF7A2A64ECDA7F650470", hash_generated_method = "9B0DC758AB3979FE53B12EA701B994C9")
-    public String getPeerAddress() {
-String var4D1B58EF74DF31190A62E0DF268BAE94_2076613966 =         peerAddress.getHostAddress();
-        var4D1B58EF74DF31190A62E0DF268BAE94_2076613966.addTaint(taint);
-        return var4D1B58EF74DF31190A62E0DF268BAE94_2076613966;
-        // ---------- Original Method ----------
-        //return peerAddress.getHostAddress();
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.074 -0400", hash_original_method = "1F29EC3BC94C3E0863F530FCD37A61F3", hash_generated_method = "0BFB4A5F0E3B87604DF7D190EA3C977E")
-    protected InetAddress getPeerInetAddress() {
-InetAddress var73F565C01AAA4A3FCE210191AB87441A_1624596376 =         peerAddress;
-        var73F565C01AAA4A3FCE210191AB87441A_1624596376.addTaint(taint);
-        return var73F565C01AAA4A3FCE210191AB87441A_1624596376;
-        // ---------- Original Method ----------
-        //return peerAddress;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.074 -0400", hash_original_method = "3F01B3F60F79E6CB5C3DF3B66FDD88DE", hash_generated_method = "12FFB93B772389660E3E99EB71BFAF82")
-    public boolean equals(Object other) {
-        addTaint(other.getTaint());
-        if(other == null)        
-        {
-        boolean var68934A3E9455FA72420237EB05902327_623782516 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_394489596 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_394489596;
+            // The socket is cached (dont close it!);
         }
+    }
+
+    /**
+     * get the stack pointer.
+     *
+     * @return The sip stack for this channel.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:58.260 -0500", hash_original_method = "4789C177AC8ECE60B231BA8A866F9D66", hash_generated_method = "7DFF2B9EFB272B5F349D68AD73E9A18C")
+    public SIPTransactionStack getSIPStack() {
+        return sipStack;
+    }
+
+    /**
+     * Return a transport string.
+     *
+     * @return the string "udp" in this case.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:58.261 -0500", hash_original_method = "B7A5D479C43293000A9EAFE6F93DF6D0", hash_generated_method = "B57FF53F26536E4C501842CE5287A618")
+    public String getTransport() {
+        return SIPConstants.UDP;
+    }
+
+    /**
+     * get the stack address for the stack that received this message.
+     *
+     * @return The stack address for our sipStack.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:58.262 -0500", hash_original_method = "EA072AA1AE1B409D48E6BC6990EBDEC5", hash_generated_method = "EE16D1D8C9AE581ED2CCA97AC6535DF6")
+    public String getHost() {
+        return messageProcessor.getIpAddress().getHostAddress();
+    }
+
+    /**
+     * get the port.
+     *
+     * @return Our port (on which we are getting datagram packets).
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:58.263 -0500", hash_original_method = "891FD85C4A46ECEDCCE8E5933BDC3ADD", hash_generated_method = "DCC1945BA7447A8694B492C43AC047C1")
+    public int getPort() {
+        return ((UDPMessageProcessor) messageProcessor).getPort();
+    }
+
+    /**
+     * get the name (address) of the host that sent me the message
+     *
+     * @return The name of the sender (from the datagram packet).
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:58.264 -0500", hash_original_method = "86CAA293F63DFC3CC87A4ACD6BC27DDA", hash_generated_method = "CEEABD187B992E552A2F75ABEE69FD52")
+    public String getPeerName() {
+        return peerAddress.getHostName();
+    }
+
+    /**
+     * get the address of the host that sent me the message
+     *
+     * @return The senders ip address.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:58.265 -0500", hash_original_method = "A07C7EAAB254DF7A2A64ECDA7F650470", hash_generated_method = "85684F6812C32531656E4D13F9F6C173")
+    public String getPeerAddress() {
+        return peerAddress.getHostAddress();
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:58.266 -0500", hash_original_method = "1F29EC3BC94C3E0863F530FCD37A61F3", hash_generated_method = "5D52F16A6CD419A72363BEE2FA3651BF")
+    protected InetAddress getPeerInetAddress() {
+        return peerAddress;
+    }
+
+    /**
+     * Compare two UDP Message channels for equality.
+     *
+     * @param other
+     *            The other message channel with which to compare oursleves.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:58.267 -0500", hash_original_method = "3F01B3F60F79E6CB5C3DF3B66FDD88DE", hash_generated_method = "943E61EA1E8D9909869C845CB85685D1")
+    public boolean equals(Object other) {
+
+        if (other == null)
+            return false;
         boolean retval;
-        if(!this.getClass().equals(other.getClass()))        
-        {
+        if (!this.getClass().equals(other.getClass())) {
             retval = false;
-        } //End block
-        else
-        {
+        } else {
             UDPMessageChannel that = (UDPMessageChannel) other;
             retval = this.getKey().equals(that.getKey());
-        } //End block
-        boolean var020B759ADEF679A47CB9AFE965BB2314_1966364116 = (retval);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_972598906 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_972598906;
-        // ---------- Original Method ----------
-        //if (other == null)
-            //return false;
-        //boolean retval;
-        //if (!this.getClass().equals(other.getClass())) {
-            //retval = false;
-        //} else {
-            //UDPMessageChannel that = (UDPMessageChannel) other;
-            //retval = this.getKey().equals(that.getKey());
-        //}
-        //return retval;
+        }
+
+        return retval;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.075 -0400", hash_original_method = "8A0A97143B2090B701AABAA2A97E73FB", hash_generated_method = "FB776CA082DBEA102FC50B07D1C283B9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:58.268 -0500", hash_original_method = "8A0A97143B2090B701AABAA2A97E73FB", hash_generated_method = "59F690BF8E95F42C1CA01C43B567E0DD")
     public String getKey() {
-String varE99C9D8FFDB2234A8E8B2D86E3B2B163_1266550456 =         getKey(peerAddress, peerPort, "UDP");
-        varE99C9D8FFDB2234A8E8B2D86E3B2B163_1266550456.addTaint(taint);
-        return varE99C9D8FFDB2234A8E8B2D86E3B2B163_1266550456;
-        // ---------- Original Method ----------
-        //return getKey(peerAddress, peerPort, "UDP");
+        return getKey(peerAddress, peerPort, "UDP");
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.075 -0400", hash_original_method = "66F44212C04D4B032E5D57BC9126F4FF", hash_generated_method = "630D7D415D00E9657AD7F7D3C96D9FA6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:58.269 -0500", hash_original_method = "66F44212C04D4B032E5D57BC9126F4FF", hash_generated_method = "F40B7BBDADE2EDD9E4FFD8062E730749")
     public int getPeerPacketSourcePort() {
-        int varE2843BEFA12DEA2BD46F0D29DAA8CB35_1935618646 = (peerPacketSourcePort);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_471008515 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_471008515;
-        // ---------- Original Method ----------
-        //return peerPacketSourcePort;
+        return peerPacketSourcePort;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.075 -0400", hash_original_method = "DC065FB3DE06142DBC04F100FD01BCF3", hash_generated_method = "418F4C3823998716575B181AA85ABC70")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:58.270 -0500", hash_original_method = "DC065FB3DE06142DBC04F100FD01BCF3", hash_generated_method = "701FF88A1C843AC53C75CCA208A2C7BF")
     public InetAddress getPeerPacketSourceAddress() {
-InetAddress var01E4E5B4A09CE35E2D0F4C2A49E83401_573044958 =         peerPacketSourceAddress;
-        var01E4E5B4A09CE35E2D0F4C2A49E83401_573044958.addTaint(taint);
-        return var01E4E5B4A09CE35E2D0F4C2A49E83401_573044958;
-        // ---------- Original Method ----------
-        //return peerPacketSourceAddress;
+        return peerPacketSourceAddress;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.075 -0400", hash_original_method = "B7C8CBECE48532207EA3107C3752BABB", hash_generated_method = "2BC284C010C780220A7EA731E5F5EE51")
+    /**
+     * Get the logical originator of the message (from the top via header).
+     *
+     * @return topmost via header sentby field
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:58.271 -0500", hash_original_method = "B7C8CBECE48532207EA3107C3752BABB", hash_generated_method = "23B273ABD579FDAD40680D771CF63201")
     public String getViaHost() {
-String varE17BD31CB51ED41A42007A2AA16E19B8_87498555 =         this.myAddress;
-        varE17BD31CB51ED41A42007A2AA16E19B8_87498555.addTaint(taint);
-        return varE17BD31CB51ED41A42007A2AA16E19B8_87498555;
-        // ---------- Original Method ----------
-        //return this.myAddress;
+        return this.myAddress;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.075 -0400", hash_original_method = "F69C682C43E3A7CF8FCB14E212CB7049", hash_generated_method = "66C75121D6C7A10E7308E348C870691A")
+    /**
+     * Get the logical port of the message orginator (from the top via hdr).
+     *
+     * @return the via port from the topmost via header.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:58.272 -0500", hash_original_method = "F69C682C43E3A7CF8FCB14E212CB7049", hash_generated_method = "98003D137B978019D797CBA84B76EDD8")
     public int getViaPort() {
-        int varC6715F0AAF6C865AE075715F5CF6B31B_569444158 = (this.myPort);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_581418413 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_581418413;
-        // ---------- Original Method ----------
-        //return this.myPort;
+        return this.myPort;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.076 -0400", hash_original_method = "457243F9D7A1AB9FD34866D85709C85D", hash_generated_method = "DE0D7E79F0F2EA1198A6151D8E445F8B")
+    /**
+     * Returns "false" as this is an unreliable transport.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:58.273 -0500", hash_original_method = "457243F9D7A1AB9FD34866D85709C85D", hash_generated_method = "A39955CCDB637DC031D6F4E12755F242")
     public boolean isReliable() {
-        boolean var68934A3E9455FA72420237EB05902327_72456643 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1777340173 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1777340173;
-        // ---------- Original Method ----------
-        //return false;
+        return false;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.076 -0400", hash_original_method = "51201694E0EE76265BF39848EF10BE9C", hash_generated_method = "E34DE3AD3FE9FE9BE2490A8C230FF4A9")
+    /**
+     * UDP is not a secure protocol.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:58.274 -0500", hash_original_method = "51201694E0EE76265BF39848EF10BE9C", hash_generated_method = "49E6B3D175AEB85C0CC035D6E473FA9A")
     public boolean isSecure() {
-        boolean var68934A3E9455FA72420237EB05902327_64443567 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_171683783 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_171683783;
-        // ---------- Original Method ----------
-        //return false;
+        return false;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.076 -0400", hash_original_method = "356711D154A2D021F9E9DF4BCD609AF2", hash_generated_method = "F0B74623848EAE9A1FB27C6737BD94D5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:58.275 -0500", hash_original_method = "356711D154A2D021F9E9DF4BCD609AF2", hash_generated_method = "0A13911FE5FD34A377B4DEB23C492969")
     public int getPeerPort() {
-        int varBBD5741C4F9994864582D25DD194C4DE_1348410129 = (peerPort);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1645511141 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1645511141;
-        // ---------- Original Method ----------
-        //return peerPort;
+        return peerPort;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.076 -0400", hash_original_method = "DB79607DA3ACB5FA2D24428DF2713F98", hash_generated_method = "FB73F840F76CB6C0B8DF13B13DE47F19")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:58.276 -0500", hash_original_method = "DB79607DA3ACB5FA2D24428DF2713F98", hash_generated_method = "9EF71D175A0EFE47AE567BEC7BFAC16F")
     public String getPeerProtocol() {
-String var6B5233BA3C9F99490638F3C0025EA1D3_1480770416 =         this.peerProtocol;
-        var6B5233BA3C9F99490638F3C0025EA1D3_1480770416.addTaint(taint);
-        return var6B5233BA3C9F99490638F3C0025EA1D3_1480770416;
-        // ---------- Original Method ----------
-        //return this.peerProtocol;
+        return this.peerProtocol;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.076 -0400", hash_original_method = "B96EF178F3ED1A0DFACDA94649407E5C", hash_generated_method = "1CF5A5DB4E3FE1187B00A561217E4793")
+    /**
+     * Close the message channel.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:58.276 -0500", hash_original_method = "B96EF178F3ED1A0DFACDA94649407E5C", hash_generated_method = "388BFD43642BF851D61AF8A45943A910")
     public void close() {
-        // ---------- Original Method ----------
     }
 
     
     class PingBackTimerTask extends TimerTask {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.077 -0400", hash_original_field = "9D0DE3EE8DA929F164DA3D6942A26C0E", hash_generated_field = "902291576A6EA4536D6C9669E1B1BFD7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:58.238 -0500", hash_original_field = "902291576A6EA4536D6C9669E1B1BFD7", hash_generated_field = "902291576A6EA4536D6C9669E1B1BFD7")
 
         String ipAddress;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.077 -0400", hash_original_field = "901555FB06E346CB065CEB9808DCFC25", hash_generated_field = "5A948EF636511EF149269A68FE278AED")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:58.239 -0500", hash_original_field = "5A948EF636511EF149269A68FE278AED", hash_generated_field = "5A948EF636511EF149269A68FE278AED")
 
         int port;
         
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.077 -0400", hash_original_method = "041AEFB77EA8D7413831FA09D8E7E5F2", hash_generated_method = "AF34990A25633808182801353E3CAE7C")
-        public  PingBackTimerTask(String ipAddress, int port) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:58.241 -0500", hash_original_method = "041AEFB77EA8D7413831FA09D8E7E5F2", hash_generated_method = "B55AEF49B20D581977398E040DF00CAB")
+        public PingBackTimerTask(String ipAddress, int port) {
             this.ipAddress = ipAddress;
             this.port = port;
             pingBackRecord.put(ipAddress + ":" + port, this);
-            // ---------- Original Method ----------
-            //this.ipAddress = ipAddress;
-            //this.port = port;
-            //pingBackRecord.put(ipAddress + ":" + port, this);
         }
-
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.078 -0400", hash_original_method = "6BA8F9798D5715ABDAD288256921D45A", hash_generated_method = "A12DB3F698D6F6B742E8AA41F07B747A")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:58.242 -0500", hash_original_method = "6BA8F9798D5715ABDAD288256921D45A", hash_generated_method = "EF37FFA55F8CCCD46D3860DFA16198BB")
         @Override
-        public void run() {
-            pingBackRecord.remove(ipAddress + ":" + port);
-            // ---------- Original Method ----------
-            //pingBackRecord.remove(ipAddress + ":" + port);
+public void run() {
+           pingBackRecord.remove(ipAddress + ":" + port);
         }
-
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.078 -0400", hash_original_method = "E214E7BC5755C758A91BCF58AAE3832E", hash_generated_method = "8641BE77ABE3BD885E71C12734B6C9BB")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:58.243 -0500", hash_original_method = "E214E7BC5755C758A91BCF58AAE3832E", hash_generated_method = "63F2CBC1B172A8153F23BBA3081A9BCD")
         @Override
-        public int hashCode() {
-            int var099F0198AE3EF107E309423157D58795_1985068139 = ((ipAddress + ":" + port).hashCode());
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_686268882 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_686268882;
-            // ---------- Original Method ----------
-            //return (ipAddress + ":" + port).hashCode();
+public int hashCode() {
+            return (ipAddress + ":" + port).hashCode();
         }
 
         

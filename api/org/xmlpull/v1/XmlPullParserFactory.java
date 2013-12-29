@@ -1,6 +1,8 @@
 package org.xmlpull.v1;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -10,207 +12,84 @@ import java.util.Iterator;
 
 
 public class XmlPullParserFactory {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.563 -0400", hash_original_field = "14BEBD4FE8FDA41093F759C7F277FE01", hash_generated_field = "54143D5A47805B96D87F2B494B2365A9")
 
-    protected ArrayList parserClasses;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.563 -0400", hash_original_field = "BA35A57009C6C35F5CC29B7CA958266B", hash_generated_field = "4B69BDE61BD215652CA9D56912ECEE01")
-
-    protected String classNamesLocation;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.563 -0400", hash_original_field = "A734FC4B2E273BBD063C98E5B345794A", hash_generated_field = "A56B50284BF3A9A7CDBB5BF303434496")
-
-    protected ArrayList serializerClasses;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.563 -0400", hash_original_field = "542B7A8D073CF2CF5BF366A27BC8964F", hash_generated_field = "2433B5B679656583A2F6E8E5BB139F19")
-
-    protected HashMap features = new HashMap();
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.563 -0400", hash_original_method = "59320E09A9AFF113592C1ECE87FC559F", hash_generated_method = "68325C6D2BA66CB5DC2172316E778C58")
-    protected  XmlPullParserFactory() {
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.563 -0400", hash_original_method = "37707163E7D75DA023F216E9B819E8F1", hash_generated_method = "281866DA3490845B831FACC4BFF03D24")
-    public void setFeature(String name, boolean state) throws XmlPullParserException {
-        addTaint(state);
-        addTaint(name.getTaint());
-        features.put(name, state);
-        // ---------- Original Method ----------
-        //features.put(name, state);
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.564 -0400", hash_original_method = "C9956302BBB91FCF3572BD64EE7FBD09", hash_generated_method = "F99CD254F271BE71EF21BC76DBC98CB0")
-    public boolean getFeature(String name) {
-        addTaint(name.getTaint());
-        Boolean value = (Boolean) features.get(name);
-        boolean varDC48A27EDADE465507184A31325067DD_1621438792 = (value != null ? value.booleanValue() : false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1934649370 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1934649370;
-        // ---------- Original Method ----------
-        //Boolean value = (Boolean) features.get(name);
-        //return value != null ? value.booleanValue() : false;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.564 -0400", hash_original_method = "7D3BF21C0D11A10F81ABD73B19B61390", hash_generated_method = "2A65F06D4BE9FBAA0C357B468191C460")
-    public void setNamespaceAware(boolean awareness) {
-        addTaint(awareness);
-        features.put (XmlPullParser.FEATURE_PROCESS_NAMESPACES, awareness);
-        // ---------- Original Method ----------
-        //features.put (XmlPullParser.FEATURE_PROCESS_NAMESPACES, awareness);
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.564 -0400", hash_original_method = "DD0A1E37D5A6E0D61FD3265D348DFEF0", hash_generated_method = "5ED4A517EF7FD933E0E63DA3007204A7")
-    public boolean isNamespaceAware() {
-        boolean var6315A68DCC9052F6A43C9B5B41FEF245_29658185 = (getFeature (XmlPullParser.FEATURE_PROCESS_NAMESPACES));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_384325500 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_384325500;
-        // ---------- Original Method ----------
-        //return getFeature (XmlPullParser.FEATURE_PROCESS_NAMESPACES);
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.565 -0400", hash_original_method = "756F754F40CB32AB0AD4E4D0A9342AA0", hash_generated_method = "ECF89D5A161A9AC4587B1B6D69A60AC9")
-    public void setValidating(boolean validating) {
-        addTaint(validating);
-        features.put (XmlPullParser.FEATURE_VALIDATION, validating);
-        // ---------- Original Method ----------
-        //features.put (XmlPullParser.FEATURE_VALIDATION, validating);
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.565 -0400", hash_original_method = "B31DF449D9A1DA367D662873CDA0DA23", hash_generated_method = "3AD0CFA0C91A995401E6555FABC14A5D")
-    public boolean isValidating() {
-        boolean var7071369F79CC67F9563C3D976C3FB483_1359755357 = (getFeature (XmlPullParser.FEATURE_VALIDATION));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_267173981 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_267173981;
-        // ---------- Original Method ----------
-        //return getFeature (XmlPullParser.FEATURE_VALIDATION);
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.566 -0400", hash_original_method = "0194E8A94417A2CEABB2D1EB1F726482", hash_generated_method = "F85F0D294F7D043F26A333F041884981")
-    public XmlPullParser newPullParser() throws XmlPullParserException {
-        if(parserClasses == null)        
-        {
-        XmlPullParserException var9BA65B1FEA8F788406824A6FF583F78A_236079722 = new XmlPullParserException
-                ("Factory initialization was incomplete - has not tried "+classNamesLocation);
-        var9BA65B1FEA8F788406824A6FF583F78A_236079722.addTaint(taint);
-        throw var9BA65B1FEA8F788406824A6FF583F78A_236079722;
-        }
-        if(parserClasses.size() == 0)        
-        {
-        XmlPullParserException varCC427323E7049EEBA44DEBE96C9DFF7A_1159474459 = new XmlPullParserException
-                ("No valid parser classes found in "+classNamesLocation);
-        varCC427323E7049EEBA44DEBE96C9DFF7A_1159474459.addTaint(taint);
-        throw varCC427323E7049EEBA44DEBE96C9DFF7A_1159474459;
-        }
-        final StringBuilder issues = new StringBuilder();
-for(int i = 0;i < parserClasses.size();i++)
-        {
-            final Class ppClass = (Class) parserClasses.get(i);
-            try 
-            {
-                final XmlPullParser pp = (XmlPullParser) ppClass.newInstance();
-for(Iterator iter = features.keySet().iterator();iter.hasNext();)
-                {
-                    final String key = (String) iter.next();
-                    final Boolean value = (Boolean) features.get(key);
-                    if(value != null && value.booleanValue())                    
-                    {
-                        pp.setFeature(key, true);
-                    } //End block
-                } //End block
-XmlPullParser var6B083770A9017854BE96B8873F66785B_2118004604 =                 pp;
-                var6B083770A9017854BE96B8873F66785B_2118004604.addTaint(taint);
-                return var6B083770A9017854BE96B8873F66785B_2118004604;
-            } //End block
-            catch (Exception ex)
-            {
-                issues.append (ppClass.getName () + ": "+ ex.toString ()+"; ");
-            } //End block
-        } //End block
-        XmlPullParserException var70853AEE3D8A231D2863B4DB9E5A409A_447227147 = new XmlPullParserException ("could not create parser: "+issues);
-        var70853AEE3D8A231D2863B4DB9E5A409A_447227147.addTaint(taint);
-        throw var70853AEE3D8A231D2863B4DB9E5A409A_447227147;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.567 -0400", hash_original_method = "72277D8D6A4CD4D2004A6DECEFEB4DA7", hash_generated_method = "17119BD372181244C2C8F2D3DC21FECB")
-    public XmlSerializer newSerializer() throws XmlPullParserException {
-        if(serializerClasses == null)        
-        {
-            XmlPullParserException var827A074F8D267967AE8E445BC221BB7E_118897247 = new XmlPullParserException
-                ("Factory initialization incomplete - has not tried "+classNamesLocation);
-            var827A074F8D267967AE8E445BC221BB7E_118897247.addTaint(taint);
-            throw var827A074F8D267967AE8E445BC221BB7E_118897247;
-        } //End block
-        if(serializerClasses.size() == 0)        
-        {
-            XmlPullParserException varDFF88D1B04C06EF39538B1EBDDC41291_760303993 = new XmlPullParserException
-                ("No valid serializer classes found in "+classNamesLocation);
-            varDFF88D1B04C06EF39538B1EBDDC41291_760303993.addTaint(taint);
-            throw varDFF88D1B04C06EF39538B1EBDDC41291_760303993;
-        } //End block
-        final StringBuilder issues = new StringBuilder ();
-for(int i = 0;i < serializerClasses.size ();i++)
-        {
-            final Class ppClass = (Class) serializerClasses.get(i);
-            try 
-            {
-                final XmlSerializer ser = (XmlSerializer) ppClass.newInstance();
-XmlSerializer var0BEA34000EE709D03EB4BC9DC3C2B533_953300717 =                 ser;
-                var0BEA34000EE709D03EB4BC9DC3C2B533_953300717.addTaint(taint);
-                return var0BEA34000EE709D03EB4BC9DC3C2B533_953300717;
-            } //End block
-            catch (Exception ex)
-            {
-                issues.append (ppClass.getName () + ": "+ ex.toString ()+"; ");
-            } //End block
-        } //End block
-        XmlPullParserException varEDB43EB3E2ECB9AA2EEF51B749857ADB_1294214086 = new XmlPullParserException ("could not create serializer: "+issues);
-        varEDB43EB3E2ECB9AA2EEF51B749857ADB_1294214086.addTaint(taint);
-        throw varEDB43EB3E2ECB9AA2EEF51B749857ADB_1294214086;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    public static XmlPullParserFactory newInstance() throws XmlPullParserException {
+    /**
+     * Create a new instance of a PullParserFactory that can be used
+     * to create XML pull parsers (see class description for more
+     * details).
+     *
+     * @return a new instance of a PullParserFactory, as returned by newInstance (null, null);
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.676 -0500", hash_original_method = "FDB67D996B87AFA9828831030DD04774", hash_generated_method = "CF201CA93963A12DA7AA2B504A495C37")
+    public static XmlPullParserFactory newInstance () throws XmlPullParserException {
         return newInstance(null, null);
     }
 
-    
-    @DSModeled(DSC.BAN)
-    public static XmlPullParserFactory newInstance(String classNames, Class context) throws XmlPullParserException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.678 -0500", hash_original_method = "2957323A9BBFD5C32789AB8ACDA9401B", hash_generated_method = "E17ECAC088F67E7E851A0EDD655019DD")
+    public static XmlPullParserFactory newInstance (String classNames, Class context)
+        throws XmlPullParserException {
+
+        /*
+        if (context == null) {
+            //NOTE: make sure context uses the same class loader as API classes
+            //      this is the best we can do without having access to context classloader in J2ME
+            //      if API is in the same classloader as implementation then this will work
+            context = referenceContextClass;
+        }
+
+        String  classNamesLocation = null;
+
+        if (classNames == null || classNames.length() == 0 || "DEFAULT".equals(classNames)) {
+            try {
+                InputStream is = context.getResourceAsStream (RESOURCE_NAME);
+
+                if (is == null) throw new XmlPullParserException
+                        ("resource not found: "+RESOURCE_NAME
+                             +" make sure that parser implementing XmlPull API is available");
+                final StringBuilder sb = new StringBuilder();
+
+                while (true) {
+                    final int ch = is.read();
+                    if (ch < 0) break;
+                    else if (ch > ' ')
+                        sb.append((char) ch);
+                }
+                is.close ();
+
+                classNames = sb.toString ();
+            }
+            catch (Exception e) {
+                throw new XmlPullParserException (null, null, e);
+            }
+            classNamesLocation = "resource "+RESOURCE_NAME+" that contained '"+classNames+"'";
+        } else {
+            classNamesLocation =
+                "parameter classNames to newInstance() that contained '"+classNames+"'";
+        }
+        */
         classNames = "org.kxml2.io.KXmlParser,org.kxml2.io.KXmlSerializer";
+
         XmlPullParserFactory factory = null;
         final ArrayList parserClasses = new ArrayList();
         final ArrayList serializerClasses = new ArrayList();
         int pos = 0;
+
         while (pos < classNames.length ()) {
             int cut = classNames.indexOf (',', pos);
+
             if (cut == -1) cut = classNames.length ();
             final String name = classNames.substring (pos, cut);
+
             Class candidate = null;
             Object instance = null;
+
             try {
                 candidate = Class.forName (name);
+                // necessary because of J2ME .class issue
                 instance = candidate.newInstance ();
             }
             catch (Exception e) {}
+
             if (candidate != null) {
                 boolean recognized = false;
                 if (instance instanceof XmlPullParser) {
@@ -233,6 +112,7 @@ XmlSerializer var0BEA34000EE709D03EB4BC9DC3C2B533_953300717 =                 se
             }
             pos = cut + 1;
         }
+
         if (factory == null) {
             factory = new XmlPullParserFactory ();
         }
@@ -241,22 +121,217 @@ XmlSerializer var0BEA34000EE709D03EB4BC9DC3C2B533_953300717 =                 se
         factory.classNamesLocation = "org.kxml2.io.kXmlParser,org.kxml2.io.KXmlSerializer";
         return factory;
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.663 -0500", hash_original_field = "3742FB62CB5112FCF7BDF7526BC8191C", hash_generated_field = "883198D89D71761DBB74BFD5A655879D")
 
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.568 -0400", hash_original_field = "85E092DE17CB1169218C8B191C4D88D4", hash_generated_field = "883198D89D71761DBB74BFD5A655879D")
+     static Class referenceContextClass;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.664 -0500", hash_original_field = "A56E5319A37849D3B7C93AF58147B2AD", hash_generated_field = "C6E7862EC1172DC262780F881FC06DEC")
 
-    static Class referenceContextClass;
+
+
+    public static final String PROPERTY_NAME =
+        "org.xmlpull.v1.XmlPullParserFactory";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.665 -0500", hash_original_field = "00E0F3E761546C7AD8F0BF9B3886946B", hash_generated_field = "857B4961AF71D0398E9BF439994827F2")
+
+
+    private static final String RESOURCE_NAME =
+        "/META-INF/services/" + PROPERTY_NAME;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.666 -0500", hash_original_field = "C06A7F068F852EB78059D820A38AFC03", hash_generated_field = "878D036EAB1344134C01960C2D67C553")
+
+    //    "org.xmlpull.xpp3.XmlPullParser,org.kxml2.io.KXmlParser";
+
+
+    protected ArrayList parserClasses;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.666 -0500", hash_original_field = "178D027C48D58C53B7F7DA305D8F3745", hash_generated_field = "4B69BDE61BD215652CA9D56912ECEE01")
+
+    protected String classNamesLocation;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.667 -0500", hash_original_field = "2115E1EF8711BCAE252E39271BFFDEAD", hash_generated_field = "A56B50284BF3A9A7CDBB5BF303434496")
+
+
+    protected ArrayList serializerClasses;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.668 -0500", hash_original_field = "1ED7D14D596CC9841E075441007F0AB6", hash_generated_field = "2433B5B679656583A2F6E8E5BB139F19")
+
+    protected HashMap features = new HashMap();
+
+
+    /**
+     * Protected constructor to be called by factory implementations.
+     */
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.669 -0500", hash_original_method = "59320E09A9AFF113592C1ECE87FC559F", hash_generated_method = "FA362A326E78E98959AFC1700BB3C521")
+    protected XmlPullParserFactory() {
+    }
+
+
+
+    /**
+     * Set the features to be set when XML Pull Parser is created by this factory.
+     * <p><b>NOTE:</b> factory features are not used for XML Serializer.
+     *
+     * @param name string with URI identifying feature
+     * @param state if true feature will be set; if false will be ignored
+     */
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.670 -0500", hash_original_method = "37707163E7D75DA023F216E9B819E8F1", hash_generated_method = "4DDF60F750C5C1A768ACF458011AB841")
+    public void setFeature(String name, boolean state) throws XmlPullParserException {
+        features.put(name, state);
+    }
+
+
+    /**
+     * Return the current value of the feature with given name.
+     * <p><b>NOTE:</b> factory features are not used for XML Serializer.
+     *
+     * @param name The name of feature to be retrieved.
+     * @return The value of named feature.
+     *     Unknown features are <string>always</strong> returned as false
+     */
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.670 -0500", hash_original_method = "C9956302BBB91FCF3572BD64EE7FBD09", hash_generated_method = "68F4C36DBC649591A0AEEB495A1DF349")
+    public boolean getFeature (String name) {
+        Boolean value = (Boolean) features.get(name);
+        return value != null ? value.booleanValue() : false;
+    }
+
+    /**
+     * Specifies that the parser produced by this factory will provide
+     * support for XML namespaces.
+     * By default the value of this is set to false.
+     *
+     * @param awareness true if the parser produced by this code
+     *    will provide support for XML namespaces;  false otherwise.
+     */
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.671 -0500", hash_original_method = "7D3BF21C0D11A10F81ABD73B19B61390", hash_generated_method = "6A0488D3310840EFAF8243BCE74765E0")
+    public void setNamespaceAware(boolean awareness) {
+        features.put (XmlPullParser.FEATURE_PROCESS_NAMESPACES, awareness);
+    }
+
+    /**
+     * Indicates whether or not the factory is configured to produce
+     * parsers which are namespace aware
+     * (it simply set feature XmlPullParser.FEATURE_PROCESS_NAMESPACES to true or false).
+     *
+     * @return  true if the factory is configured to produce parsers
+     *    which are namespace aware; false otherwise.
+     */
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.672 -0500", hash_original_method = "DD0A1E37D5A6E0D61FD3265D348DFEF0", hash_generated_method = "993B7A16D49BFB39DEAEA6DF2B396C59")
+    public boolean isNamespaceAware() {
+        return getFeature (XmlPullParser.FEATURE_PROCESS_NAMESPACES);
+    }
+
+
+    /**
+     * Specifies that the parser produced by this factory will be validating
+     * (it simply set feature XmlPullParser.FEATURE_VALIDATION to true or false).
+     *
+     * By default the value of this is set to false.
+     *
+     * @param validating - if true the parsers created by this factory  must be validating.
+     */
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.673 -0500", hash_original_method = "756F754F40CB32AB0AD4E4D0A9342AA0", hash_generated_method = "5B60EDCCF8D221FF3AC4105A064D8592")
+    public void setValidating(boolean validating) {
+        features.put (XmlPullParser.FEATURE_VALIDATION, validating);
+    }
+
+    /**
+     * Indicates whether or not the factory is configured to produce parsers
+     * which validate the XML content during parse.
+     *
+     * @return   true if the factory is configured to produce parsers
+     * which validate the XML content during parse; false otherwise.
+     */
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.674 -0500", hash_original_method = "B31DF449D9A1DA367D662873CDA0DA23", hash_generated_method = "F9ACE3351C702548782D5E8CB13F7469")
+    public boolean isValidating() {
+        return getFeature (XmlPullParser.FEATURE_VALIDATION);
+    }
     static {
         XmlPullParserFactory f = new XmlPullParserFactory();
         referenceContextClass = f.getClass();
     }
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.568 -0400", hash_original_field = "33FC263AFDBB4EEDBBE1504047AE9A37", hash_generated_field = "C6E7862EC1172DC262780F881FC06DEC")
 
-    public static final String PROPERTY_NAME =
-        "org.xmlpull.v1.XmlPullParserFactory";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.568 -0400", hash_original_field = "2A2F7FF4F241CDA2C6261B43F6383287", hash_generated_field = "857B4961AF71D0398E9BF439994827F2")
+    /**
+     * Creates a new instance of a XML Pull Parser
+     * using the currently configured factory features.
+     *
+     * @return A new instance of a XML Pull Parser.
+     * @throws XmlPullParserException if a parser cannot be created which satisfies the
+     * requested configuration.
+     */
 
-    private static final String RESOURCE_NAME = "/META-INF/services/" + PROPERTY_NAME;
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.675 -0500", hash_original_method = "0194E8A94417A2CEABB2D1EB1F726482", hash_generated_method = "C0016DE88A673311BBA5B3D10DAC16C8")
+    public XmlPullParser newPullParser() throws XmlPullParserException {
+
+        if (parserClasses == null) throw new XmlPullParserException
+                ("Factory initialization was incomplete - has not tried "+classNamesLocation);
+
+        if (parserClasses.size() == 0) throw new XmlPullParserException
+                ("No valid parser classes found in "+classNamesLocation);
+
+        final StringBuilder issues = new StringBuilder();
+
+        for (int i = 0; i < parserClasses.size(); i++) {
+            final Class ppClass = (Class) parserClasses.get(i);
+            try {
+                final XmlPullParser pp = (XmlPullParser) ppClass.newInstance();
+
+                for (Iterator iter = features.keySet().iterator(); iter.hasNext(); ) {
+                    final String key = (String) iter.next();
+                    final Boolean value = (Boolean) features.get(key);
+                    if(value != null && value.booleanValue()) {
+                        pp.setFeature(key, true);
+                    }
+                }
+                return pp;
+
+            } catch(Exception ex) {
+                issues.append (ppClass.getName () + ": "+ ex.toString ()+"; ");
+            }
+        }
+
+        throw new XmlPullParserException ("could not create parser: "+issues);
+    }
+
+
+    /**
+     * Creates a new instance of a XML Serializer.
+     *
+     * <p><b>NOTE:</b> factory features are not used for XML Serializer.
+     *
+     * @return A new instance of a XML Serializer.
+     * @throws XmlPullParserException if a parser cannot be created which satisfies the
+     * requested configuration.
+     */
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:49.676 -0500", hash_original_method = "72277D8D6A4CD4D2004A6DECEFEB4DA7", hash_generated_method = "30DB49AE89C5C9FED8A64249CF2111A3")
+    public XmlSerializer newSerializer() throws XmlPullParserException {
+
+        if (serializerClasses == null) {
+            throw new XmlPullParserException
+                ("Factory initialization incomplete - has not tried "+classNamesLocation);
+        }
+        if(serializerClasses.size() == 0) {
+            throw new XmlPullParserException
+                ("No valid serializer classes found in "+classNamesLocation);
+        }
+
+        final StringBuilder issues = new StringBuilder ();
+
+        for (int i = 0; i < serializerClasses.size (); i++) {
+            final Class ppClass = (Class) serializerClasses.get(i);
+            try {
+                final XmlSerializer ser = (XmlSerializer) ppClass.newInstance();
+
+                return ser;
+
+            } catch(Exception ex) {
+                issues.append (ppClass.getName () + ": "+ ex.toString ()+"; ");
+            }
+        }
+
+        throw new XmlPullParserException ("could not create serializer: "+issues);
+    }
 }
 

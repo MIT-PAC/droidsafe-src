@@ -1,6 +1,8 @@
 package android.view.animation;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -11,56 +13,40 @@ import android.util.AttributeSet;
 
 
 public class AnticipateInterpolator implements Interpolator {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.864 -0400", hash_original_field = "BACCDDE44E4D1D72971417472395EF45", hash_generated_field = "D99941F5581612BAF56000DD0A59C563")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.997 -0500", hash_original_field = "8768F20F89FEA365257D9CA7103B2BB5", hash_generated_field = "D99941F5581612BAF56000DD0A59C563")
 
-    private float mTension;
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.864 -0400", hash_original_method = "7C2506D70A86643AB33B7796EA331F9D", hash_generated_method = "761E0AC6C5BE23250969F07445914E84")
-    public  AnticipateInterpolator() {
+    private  float mTension;
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.998 -0500", hash_original_method = "7C2506D70A86643AB33B7796EA331F9D", hash_generated_method = "56386AE77777F64CC46CB677C4AD5216")
+    public AnticipateInterpolator() {
         mTension = 2.0f;
-        // ---------- Original Method ----------
-        //mTension = 2.0f;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.865 -0400", hash_original_method = "9BAE6E66C77EF37188591BAA368F1B92", hash_generated_method = "41BB8ADF848B4D75A305C8076C5221D1")
-    public  AnticipateInterpolator(float tension) {
+    /**
+     * @param tension Amount of anticipation. When tension equals 0.0f, there is
+     *                no anticipation and the interpolator becomes a simple
+     *                acceleration interpolator.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.999 -0500", hash_original_method = "9BAE6E66C77EF37188591BAA368F1B92", hash_generated_method = "C018AC8FC72D77E4614785DD14807538")
+    public AnticipateInterpolator(float tension) {
         mTension = tension;
-        // ---------- Original Method ----------
-        //mTension = tension;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.865 -0400", hash_original_method = "82BFA8AC47DF9DDA6D8E3F7FE8B02F6B", hash_generated_method = "904814DD998FA5C8676C061F993C9AA7")
-    public  AnticipateInterpolator(Context context, AttributeSet attrs) {
-        addTaint(attrs.getTaint());
-        addTaint(context.getTaint());
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.000 -0500", hash_original_method = "82BFA8AC47DF9DDA6D8E3F7FE8B02F6B", hash_generated_method = "9845E06A81ABD3C9150462EB3DC34A84")
+    public AnticipateInterpolator(Context context, AttributeSet attrs) {
         TypedArray a = context.obtainStyledAttributes(attrs,
                 com.android.internal.R.styleable.AnticipateInterpolator);
+
         mTension =
                 a.getFloat(com.android.internal.R.styleable.AnticipateInterpolator_tension, 2.0f);
+
         a.recycle();
-        // ---------- Original Method ----------
-        //TypedArray a = context.obtainStyledAttributes(attrs,
-                //com.android.internal.R.styleable.AnticipateInterpolator);
-        //mTension =
-                //a.getFloat(com.android.internal.R.styleable.AnticipateInterpolator_tension, 2.0f);
-        //a.recycle();
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.865 -0400", hash_original_method = "708C87963D95E01AE56D23D7408FFDE5", hash_generated_method = "18F5DD36248C6C56EBAD8ABE594AFE87")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.000 -0500", hash_original_method = "708C87963D95E01AE56D23D7408FFDE5", hash_generated_method = "AFF8D259EE2AC025B68E37A702DB5284")
     public float getInterpolation(float t) {
-        addTaint(t);
-        float var6BD61A0C8E974A43B4F77DB44E0C2B3B_1886363167 = (t * t * ((mTension + 1) * t - mTension));
-                float var546ADE640B6EDFBC8A086EF31347E768_1180138855 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_1180138855;
-        // ---------- Original Method ----------
-        //return t * t * ((mTension + 1) * t - mTension);
+        // a(t) = t * t * ((tension + 1) * t - tension)
+        return t * t * ((mTension + 1) * t - mTension);
     }
 
     

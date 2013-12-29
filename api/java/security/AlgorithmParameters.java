@@ -1,6 +1,8 @@
 package java.security;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 import java.security.spec.AlgorithmParameterSpec;
@@ -14,35 +16,23 @@ import org.apache.harmony.security.fortress.Engine;
 
 
 public class AlgorithmParameters {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.759 -0400", hash_original_field = "9E9F3D70BD8C8957627EADA96D967706", hash_generated_field = "2D84320E029EBF537A8555BC820086EF")
 
-    private Provider provider;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.759 -0400", hash_original_field = "96FF779E0BE718F2D29D8C56320393D2", hash_generated_field = "9D41D4F6030CE195996EC7214F8C92A4")
-
-    private AlgorithmParametersSpi spiImpl;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.760 -0400", hash_original_field = "ED469618898D75B149E5C7C4B6A1C415", hash_generated_field = "40E4722A302366B2A43F1CD6C99E2454")
-
-    private String algorithm;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.760 -0400", hash_original_field = "84D10A1ED612E61DBF6880F6E3EE533A", hash_generated_field = "D96AC35F2092AB08D47BC799DE8F3A01")
-
-    private boolean initialized;
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.761 -0400", hash_original_method = "8DBC0799ED7E4900EBC29238B9DE7938", hash_generated_method = "FC9EF5F3B00E0445DB638E5CE884E307")
-    protected  AlgorithmParameters(AlgorithmParametersSpi algPramSpi,
-            Provider provider, String algorithm) {
-        this.provider = provider;
-        this.algorithm = algorithm;
-        this.spiImpl = algPramSpi;
-        // ---------- Original Method ----------
-        //this.provider = provider;
-        //this.algorithm = algorithm;
-        //this.spiImpl = algPramSpi;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    public static AlgorithmParameters getInstance(String algorithm) throws NoSuchAlgorithmException {
+    /**
+     * Returns a new instance of {@code AlgorithmParameters} for the specified
+     * algorithm.
+     *
+     * @param algorithm
+     *            the name of the algorithm to use.
+     * @return a new instance of {@code AlgorithmParameters} for the specified
+     *         algorithm.
+     * @throws NoSuchAlgorithmException
+     *             if the specified algorithm is not available.
+     * @throws NullPointerException
+     *             if {@code algorithm} is {@code null}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.789 -0500", hash_original_method = "DC5D93AFAABA216D2504A813B834D6CA", hash_generated_method = "AFA69B810C3CBBDCFED9F1B8680D5F5B")
+    public static AlgorithmParameters getInstance(String algorithm)
+            throws NoSuchAlgorithmException {
         if (algorithm == null) {
             throw new NullPointerException();
         }
@@ -50,8 +40,25 @@ public class AlgorithmParameters {
         return new AlgorithmParameters((AlgorithmParametersSpi) sap.spi, sap.provider, algorithm);
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Returns a new instance of {@code AlgorithmParameters} from the specified
+     * provider for the specified algorithm.
+     *
+     * @param algorithm
+     *            the name of the algorithm to use.
+     * @param provider
+     *            name of the provider of the {@code AlgorithmParameters}.
+     * @return a new instance of {@code AlgorithmParameters} for the specified
+     *         algorithm.
+     * @throws NoSuchAlgorithmException
+     *             if the specified algorithm is not available.
+     * @throws NoSuchProviderException
+     *             if the specified provider is not available.
+     * @throws IllegalArgumentException if {@code provider == null || provider.isEmpty()}
+     * @throws NullPointerException
+     *             if {@code algorithm} is {@code null}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.789 -0500", hash_original_method = "C2C2EC01024A6B49BB2E941E05C66526", hash_generated_method = "26833208D3CE93A392B1E964F664C4BF")
     public static AlgorithmParameters getInstance(String algorithm,
             String provider) throws NoSuchAlgorithmException,
             NoSuchProviderException {
@@ -65,8 +72,23 @@ public class AlgorithmParameters {
         return getInstance(algorithm, p);
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Returns a new instance of {@code AlgorithmParameters} from the specified
+     * provider for the specified algorithm.
+     *
+     * @param algorithm
+     *            the name of the algorithm to use.
+     * @param provider
+     *            the provider of the {@code AlgorithmParameters}.
+     * @return a new instance of {@code AlgorithmParameters} for the specified
+     *         algorithm.
+     * @throws NoSuchAlgorithmException
+     *             if the specified algorithm is not available.
+     * @throws NullPointerException
+     *             if {@code algorithm} is {@code null}.
+     * @throws IllegalArgumentException if {@code provider == null}
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.790 -0500", hash_original_method = "7B13EBBD6929DB755B15BB9995ABE950", hash_generated_method = "83F482073F167CCE99F2558E019CE775")
     public static AlgorithmParameters getInstance(String algorithm,
             Provider provider) throws NoSuchAlgorithmException {
         if (provider == null) {
@@ -78,91 +100,124 @@ public class AlgorithmParameters {
         Object spi = ENGINE.getInstance(algorithm, provider, null);
         return new AlgorithmParameters((AlgorithmParametersSpi) spi, provider, algorithm);
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.782 -0500", hash_original_field = "0FCDC856007B81E0CB5C85C093C27715", hash_generated_field = "2A5FC69C67235739D89B6E72871223E3")
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.762 -0400", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "712E2C3D99359BC895B2DB34838937E1")
+    private static final String SEVICE = "AlgorithmParameters";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.783 -0500", hash_original_field = "ADBB0C64F9DE4D45E937EA4C4B84EA61", hash_generated_field = "00A78935B1DF849DB7CCEEA674A30AFE")
+
+    private static final Engine ENGINE = new Engine(SEVICE);
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.784 -0500", hash_original_field = "70389BF55D92237F4948951640719A18", hash_generated_field = "2D84320E029EBF537A8555BC820086EF")
+
+    private  Provider provider;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.785 -0500", hash_original_field = "7FD3F93E39A4D5293CDF7F423F3BB6A8", hash_generated_field = "9D41D4F6030CE195996EC7214F8C92A4")
+
+    private  AlgorithmParametersSpi spiImpl;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.786 -0500", hash_original_field = "1DDAED4286CC7F9A2BC49502885440CE", hash_generated_field = "40E4722A302366B2A43F1CD6C99E2454")
+
+    private  String algorithm;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.787 -0500", hash_original_field = "6FBE6536E7CE204510C4979FD7989151", hash_generated_field = "D96AC35F2092AB08D47BC799DE8F3A01")
+
+    private boolean initialized;
+
+    /**
+     * Constructs a new instance of {@code AlgorithmParameters} with the given
+     * arguments.
+     *
+     * @param algPramSpi
+     *            the concrete implementation.
+     * @param provider
+     *            the security provider.
+     * @param algorithm
+     *            the name of the algorithm.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.788 -0500", hash_original_method = "8DBC0799ED7E4900EBC29238B9DE7938", hash_generated_method = "4B65AC216190E6D0A6D36DE7E12BEB9F")
+    protected AlgorithmParameters(AlgorithmParametersSpi algPramSpi,
+            Provider provider, String algorithm) {
+        this.provider = provider;
+        this.algorithm = algorithm;
+        this.spiImpl = algPramSpi;
+    }
+
+    /**
+     * Returns the provider associated with this {@code AlgorithmParameters}.
+     *
+     * @return the provider associated with this {@code AlgorithmParameters}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.791 -0500", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "443000CF13C77ABCABFC8B67E2DE556F")
     public final Provider getProvider() {
-Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_1971789133 =         provider;
-        varC1EB7B12CCABB27D431E5B91E5FF9ECB_1971789133.addTaint(taint);
-        return varC1EB7B12CCABB27D431E5B91E5FF9ECB_1971789133;
-        // ---------- Original Method ----------
-        //return provider;
+        return provider;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.762 -0400", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "94BF1DA20E39B1FB373A6E74410665CE")
+    /**
+     * Returns the name of the algorithm.
+     *
+     * @return the name of the algorithm.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.792 -0500", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "8A7AA6162519FFB2228039F3D6331CE9")
     public final String getAlgorithm() {
-String var44A46B4003FC81ACB0223385BA1FA818_567538338 =         algorithm;
-        var44A46B4003FC81ACB0223385BA1FA818_567538338.addTaint(taint);
-        return var44A46B4003FC81ACB0223385BA1FA818_567538338;
-        // ---------- Original Method ----------
-        //return algorithm;
+        return algorithm;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.763 -0400", hash_original_method = "7E6C59119732596BEFEB2E6E8A90EC10", hash_generated_method = "8AC8EF5D25C8AA68F6F3B6B9716076F7")
-    public final void init(AlgorithmParameterSpec paramSpec) throws InvalidParameterSpecException {
-        addTaint(paramSpec.getTaint());
-        if(initialized)        
-        {
-            InvalidParameterSpecException var5DB2ADB5E96DF64DAD68995CB4827B7B_1147983965 = new InvalidParameterSpecException("Parameter has already been initialized");
-            var5DB2ADB5E96DF64DAD68995CB4827B7B_1147983965.addTaint(taint);
-            throw var5DB2ADB5E96DF64DAD68995CB4827B7B_1147983965;
-        } //End block
+    /**
+     * Initializes this {@code AlgorithmParameters} with the specified {@code
+     * AlgorithmParameterSpec}.
+     *
+     * @param paramSpec
+     *            the parameter specification.
+     * @throws InvalidParameterSpecException
+     *             if this {@code AlgorithmParameters} has already been
+     *             initialized or the given {@code paramSpec} is not appropriate
+     *             for initializing this {@code AlgorithmParameters}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.793 -0500", hash_original_method = "7E6C59119732596BEFEB2E6E8A90EC10", hash_generated_method = "44D0FA33002C5953CDB40B19856ABC88")
+    public final void init(AlgorithmParameterSpec paramSpec)
+            throws InvalidParameterSpecException {
+        if (initialized) {
+            throw new InvalidParameterSpecException("Parameter has already been initialized");
+        }
         spiImpl.engineInit(paramSpec);
         initialized = true;
-        // ---------- Original Method ----------
-        //if (initialized) {
-            //throw new InvalidParameterSpecException("Parameter has already been initialized");
-        //}
-        //spiImpl.engineInit(paramSpec);
-        //initialized = true;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.763 -0400", hash_original_method = "617D5B707C3D1A91A18634DFC0D9F364", hash_generated_method = "4CB3CF2A238FD214AD15F19EFC3E8D81")
+    /**
+     * Initializes this {@code AlgorithmParameters} with the specified {@code
+     * byte[]} using the default decoding format for parameters. The default
+     * encoding format is ASN.1.
+     *
+     * @param params
+     *            the encoded parameters.
+     * @throws IOException
+     *             if this {@code AlgorithmParameters} has already been
+     *             initialized, or the parameter could not be encoded.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.794 -0500", hash_original_method = "617D5B707C3D1A91A18634DFC0D9F364", hash_generated_method = "5F70E00BD154F130EC77FCFF24CCEB2C")
     public final void init(byte[] params) throws IOException {
-        addTaint(params[0]);
-        if(initialized)        
-        {
-            IOException var26602866FB927D6A5CB453D4A246F2C3_155041819 = new IOException("Parameter has already been initialized");
-            var26602866FB927D6A5CB453D4A246F2C3_155041819.addTaint(taint);
-            throw var26602866FB927D6A5CB453D4A246F2C3_155041819;
-        } //End block
+        if (initialized) {
+            throw new IOException("Parameter has already been initialized");
+        }
         spiImpl.engineInit(params);
         initialized = true;
-        // ---------- Original Method ----------
-        //if (initialized) {
-            //throw new IOException("Parameter has already been initialized");
-        //}
-        //spiImpl.engineInit(params);
-        //initialized = true;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.764 -0400", hash_original_method = "7B3B0E8CD7575D668CB68D6510D827CC", hash_generated_method = "172F4F88C26D1B37D09196A64D906A8F")
+    /**
+     * Initializes this {@code AlgorithmParameters} with the specified {@code
+     * byte[]} using the specified decoding format.
+     *
+     * @param params
+     *            the encoded parameters.
+     * @param format
+     *            the name of the decoding format.
+     * @throws IOException
+     *             if this {@code AlgorithmParameters} has already been
+     *             initialized, or the parameter could not be encoded.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.796 -0500", hash_original_method = "7B3B0E8CD7575D668CB68D6510D827CC", hash_generated_method = "CEEB9842CD678FA22CEC1F9D058C61A1")
     public final void init(byte[] params, String format) throws IOException {
-        addTaint(format.getTaint());
-        addTaint(params[0]);
-        if(initialized)        
-        {
-            IOException var26602866FB927D6A5CB453D4A246F2C3_2129151439 = new IOException("Parameter has already been initialized");
-            var26602866FB927D6A5CB453D4A246F2C3_2129151439.addTaint(taint);
-            throw var26602866FB927D6A5CB453D4A246F2C3_2129151439;
-        } //End block
+        if (initialized) {
+            throw new IOException("Parameter has already been initialized");
+        }
         spiImpl.engineInit(params, format);
         initialized = true;
-        // ---------- Original Method ----------
-        //if (initialized) {
-            //throw new IOException("Parameter has already been initialized");
-        //}
-        //spiImpl.engineInit(params, format);
-        //initialized = true;
     }
 
     
@@ -185,74 +240,55 @@ T var85314A191FE096CEB6FC1BB15A481DB0_510525874 =         spiImpl.engineGetParam
         //return spiImpl.engineGetParameterSpec(paramSpec);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.765 -0400", hash_original_method = "2345D83B19F14D228FA4A748BB5C0696", hash_generated_method = "6C0398B86C726A6FF0D279495CC43B78")
+    /**
+     * Returns this {@code AlgorithmParameters} in their default encoding
+     * format. The default encoding format is ASN.1.
+     *
+     * @return the encoded parameters.
+     * @throws IOException
+     *             if this {@code AlgorithmParameters} has already been
+     *             initialized, or if this parameters could not be encoded.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.797 -0500", hash_original_method = "2345D83B19F14D228FA4A748BB5C0696", hash_generated_method = "5798FBF69FA064167E6238428A1B2D3B")
     public final byte[] getEncoded() throws IOException {
-        if(!initialized)        
-        {
-            IOException varFF5A49CE886DAE4E8184341E6FCF0FCB_1786353718 = new IOException("Parameter has not been initialized");
-            varFF5A49CE886DAE4E8184341E6FCF0FCB_1786353718.addTaint(taint);
-            throw varFF5A49CE886DAE4E8184341E6FCF0FCB_1786353718;
-        } //End block
-        byte[] var74DF2EDCBF8D5B4561F96A3F84E23BB1_455208756 = (spiImpl.engineGetEncoded());
-                byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1147107733 = {getTaintByte()};
-        return var2F9C81BC6E497382285CD6B7A7E33DE1_1147107733;
-        // ---------- Original Method ----------
-        //if (!initialized) {
-            //throw new IOException("Parameter has not been initialized");
-        //}
-        //return spiImpl.engineGetEncoded();
+        if (!initialized) {
+            throw new IOException("Parameter has not been initialized");
+        }
+        return spiImpl.engineGetEncoded();
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.766 -0400", hash_original_method = "5F0B9F7B1E2AFA510F6DA0646E7306FA", hash_generated_method = "E3B5CBA7E622F37265106A27206C7260")
+    /**
+     * Returns this {@code AlgorithmParameters} in the specified encoding
+     * format.
+     *
+     * @param format
+     *            the name of the encoding format.
+     * @return the encoded parameters.
+     * @throws IOException
+     *             if this {@code AlgorithmParameters} has already been
+     *             initialized, or if this parameters could not be encoded.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.798 -0500", hash_original_method = "5F0B9F7B1E2AFA510F6DA0646E7306FA", hash_generated_method = "361CDB3F64F8985DC91A54ED6E0860A7")
     public final byte[] getEncoded(String format) throws IOException {
-        addTaint(format.getTaint());
-        if(!initialized)        
-        {
-            IOException varFF5A49CE886DAE4E8184341E6FCF0FCB_1326932397 = new IOException("Parameter has not been initialized");
-            varFF5A49CE886DAE4E8184341E6FCF0FCB_1326932397.addTaint(taint);
-            throw varFF5A49CE886DAE4E8184341E6FCF0FCB_1326932397;
-        } //End block
-        byte[] varF1DD7B79C07D160117794D1825EAE692_1873096010 = (spiImpl.engineGetEncoded(format));
-                byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_878094143 = {getTaintByte()};
-        return var2F9C81BC6E497382285CD6B7A7E33DE1_878094143;
-        // ---------- Original Method ----------
-        //if (!initialized) {
-            //throw new IOException("Parameter has not been initialized");
-        //}
-        //return spiImpl.engineGetEncoded(format);
+        if (!initialized) {
+            throw new IOException("Parameter has not been initialized");
+        }
+        return spiImpl.engineGetEncoded(format);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.767 -0400", hash_original_method = "3487587F52CF5404E8DAC6B47C5FD08C", hash_generated_method = "6FABEB4C58A2537CBF82CA060A2F9A50")
+    /**
+     * Returns a string containing a concise, human-readable description of this
+     * {@code AlgorithmParameters}.
+     *
+     * @return a printable representation for this {@code AlgorithmParameters}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.799 -0500", hash_original_method = "3487587F52CF5404E8DAC6B47C5FD08C", hash_generated_method = "6F4D8CA2BCED524EC1B179ECDC4095CB")
     @Override
-    public final String toString() {
-        if(!initialized)        
-        {
-String var540C13E9E156B687226421B24F2DF178_853032847 =             null;
-            var540C13E9E156B687226421B24F2DF178_853032847.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_853032847;
-        } //End block
-String varCE1E0EFB1D2A110810605AD0151D4ECA_1982536909 =         spiImpl.engineToString();
-        varCE1E0EFB1D2A110810605AD0151D4ECA_1982536909.addTaint(taint);
-        return varCE1E0EFB1D2A110810605AD0151D4ECA_1982536909;
-        // ---------- Original Method ----------
-        //if (!initialized) {
-            //return null;
-        //}
-        //return spiImpl.engineToString();
+public final String toString() {
+        if (!initialized) {
+            return null;
+        }
+        return spiImpl.engineToString();
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.767 -0400", hash_original_field = "BD287EEC5C314A263C8A703B0C369591", hash_generated_field = "2A5FC69C67235739D89B6E72871223E3")
-
-    private static final String SEVICE = "AlgorithmParameters";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.767 -0400", hash_original_field = "F520423B8D44D86CE24ED3349D3881B9", hash_generated_field = "00A78935B1DF849DB7CCEEA674A30AFE")
-
-    private static final Engine ENGINE = new Engine(SEVICE);
 }
 

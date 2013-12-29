@@ -1,6 +1,8 @@
 package org.apache.http.impl.cookie;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import org.apache.http.cookie.Cookie;
 import org.apache.http.cookie.CookieAttributeHandler;
@@ -12,51 +14,30 @@ import org.apache.http.cookie.SetCookie2;
 
 
 public class RFC2965CommentUrlAttributeHandler implements CookieAttributeHandler {
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.134 -0400", hash_original_method = "099D2A6A922F722517A29E0583320390", hash_generated_method = "345D1882F6B7C7775370B2F3368D9EB6")
-    public  RFC2965CommentUrlAttributeHandler() {
-        super();
-        // ---------- Original Method ----------
-    }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.135 -0400", hash_original_method = "7C96283B530725C6069CC0E44B32CD2E", hash_generated_method = "70B04622C473B4C315177CB075473F46")
-    public void parse(final SetCookie cookie, final String commenturl) throws MalformedCookieException {
-        addTaint(commenturl.getTaint());
-        addTaint(cookie.getTaint());
-        if(cookie instanceof SetCookie2)        
-        {
-            SetCookie2 cookie2 = (SetCookie2) cookie;
-            cookie2.setCommentURL(commenturl);
-        } //End block
-        // ---------- Original Method ----------
-        //if (cookie instanceof SetCookie2) {
-              //SetCookie2 cookie2 = (SetCookie2) cookie;
-              //cookie2.setCommentURL(commenturl);
-          //}
-    }
+      @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:20.924 -0500", hash_original_method = "099D2A6A922F722517A29E0583320390", hash_generated_method = "F34BA6D6F101B42AA87F8CB18B7723D7")
+    public RFC2965CommentUrlAttributeHandler() {
+          super();
+      }
+      
+      @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:20.925 -0500", hash_original_method = "7C96283B530725C6069CC0E44B32CD2E", hash_generated_method = "4869F60EC3F31F416F6B26CCD9CF1182")
+    public void parse(final SetCookie cookie, final String commenturl)
+              throws MalformedCookieException {
+          if (cookie instanceof SetCookie2) {
+              SetCookie2 cookie2 = (SetCookie2) cookie;
+              cookie2.setCommentURL(commenturl);
+          }
+      }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.135 -0400", hash_original_method = "991845E9A77B56F0C05EBC8CED80518E", hash_generated_method = "8B6987ACBD2487D5D2EE39BB6FEC15C9")
-    public void validate(final Cookie cookie, final CookieOrigin origin) throws MalformedCookieException {
-        addTaint(origin.getTaint());
-        addTaint(cookie.getTaint());
-        // ---------- Original Method ----------
-    }
+      @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:20.926 -0500", hash_original_method = "991845E9A77B56F0C05EBC8CED80518E", hash_generated_method = "D423132887E3AEEA2C18EF664F0E34EE")
+    public void validate(final Cookie cookie, final CookieOrigin origin)
+              throws MalformedCookieException {
+      }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.136 -0400", hash_original_method = "768BC0018D608E66268B8C5C0AE76B3A", hash_generated_method = "38CFB572C45930C3CAB416BF39BF4C6B")
+      @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:20.927 -0500", hash_original_method = "768BC0018D608E66268B8C5C0AE76B3A", hash_generated_method = "D83CEB3751B5960131E4566E29C7FC53")
     public boolean match(final Cookie cookie, final CookieOrigin origin) {
-        addTaint(origin.getTaint());
-        addTaint(cookie.getTaint());
-        boolean varB326B5062B2F0E69046810717534CB09_1444681481 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_324225677 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_324225677;
-        // ---------- Original Method ----------
-        //return true;
-    }
+          return true;
+      }
 
     
 }

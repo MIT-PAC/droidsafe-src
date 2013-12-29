@@ -1,6 +1,8 @@
 package org.apache.harmony.security.x509;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -17,32 +19,8 @@ import org.apache.harmony.security.asn1.BerInputStream;
 
 
 public final class CertificatePolicies extends ExtensionValue {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.947 -0400", hash_original_field = "8A453A2022E1867EC2E64B54690F3E98", hash_generated_field = "29ED1BA56666577354DE7DACD9A96978")
 
-    private List<PolicyInformation> policyInformations;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.947 -0400", hash_original_field = "84BEA1F0FD2CE16F7E562A9F06EF03D3", hash_generated_field = "ACB189C73E1A6432570001B3B9D3D516")
-
-    private byte[] encoding;
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.947 -0400", hash_original_method = "C31E4B8F2A567252600FDAE2EEE40805", hash_generated_method = "596ED5D28F3D7EA812E6FDACCFE73898")
-    public  CertificatePolicies() {
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.948 -0400", hash_original_method = "96307D3270AEFEAD70E1FBA0E6122CDE", hash_generated_method = "291C5527D4B0C336C8ABE03770958C2A")
-    private  CertificatePolicies(List<PolicyInformation> policyInformations, byte[] encoding) {
-        this.policyInformations = policyInformations;
-        this.encoding = encoding;
-        // ---------- Original Method ----------
-        //this.policyInformations = policyInformations;
-        //this.encoding = encoding;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:08.356 -0500", hash_original_method = "DC44CF52860484CAD2DBA77AF7318FF9", hash_generated_method = "BE5F1D718329979E0707634D244A77A5")
     public static CertificatePolicies decode(byte[] encoding) throws IOException {
         CertificatePolicies cps = ((CertificatePolicies) ASN1.decode(encoding));
         cps.encoding = encoding;
@@ -50,99 +28,82 @@ public final class CertificatePolicies extends ExtensionValue {
     }
 
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.949 -0400", hash_original_method = "183BA6590E2DC5B6BD268518AC8D5EF9", hash_generated_method = "6B3BB26E98BE4E0EED34F4174AC93AA6")
-    public List<PolicyInformation> getPolicyInformations() {
-List<PolicyInformation> var6CCDA06F3940A33DB354D86B75B7FE27_2090734327 =         new ArrayList<PolicyInformation>(policyInformations);
-        var6CCDA06F3940A33DB354D86B75B7FE27_2090734327.addTaint(taint);
-        return var6CCDA06F3940A33DB354D86B75B7FE27_2090734327;
-        // ---------- Original Method ----------
-        //return new ArrayList<PolicyInformation>(policyInformations);
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.950 -0400", hash_original_method = "A02C1EF38503FEE398CFC051AC7B3321", hash_generated_method = "A8308BE8AA8BC9280BAEC0DF637A20C4")
-    public CertificatePolicies addPolicyInformation(PolicyInformation policyInformation) {
-        addTaint(policyInformation.getTaint());
-        encoding = null;
-        if(policyInformations == null)        
-        {
-            policyInformations = new ArrayList<PolicyInformation>();
-        } //End block
-        policyInformations.add(policyInformation);
-CertificatePolicies var72A74007B2BE62B849F475C7BDA4658B_1092497033 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_1092497033.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_1092497033;
-        // ---------- Original Method ----------
-        //encoding = null;
-        //if (policyInformations == null) {
-            //policyInformations = new ArrayList<PolicyInformation>();
-        //}
-        //policyInformations.add(policyInformation);
-        //return this;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.950 -0400", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "BB43B2A280049E20BD9D3CB9D88B0CAF")
-    @Override
-    public byte[] getEncoded() {
-        if(encoding == null)        
-        {
-            encoding = ASN1.encode(this);
-        } //End block
-        byte[] var84BEA1F0FD2CE16F7E562A9F06EF03D3_844209500 = (encoding);
-                byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1779414905 = {getTaintByte()};
-        return var2F9C81BC6E497382285CD6B7A7E33DE1_1779414905;
-        // ---------- Original Method ----------
-        //if (encoding == null) {
-            //encoding = ASN1.encode(this);
-        //}
-        //return encoding;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.951 -0400", hash_original_method = "B37538291358B4289176EF26A3BFC720", hash_generated_method = "9964310256E79850122CC41E4A2EE6A9")
-    @Override
-    public void dumpValue(StringBuilder sb, String prefix) {
-        addTaint(prefix.getTaint());
-        addTaint(sb.getTaint());
-        sb.append(prefix).append("CertificatePolicies [\n");
-for(PolicyInformation policyInformation : policyInformations)
-        {
-            sb.append(prefix);
-            sb.append("  ");
-            policyInformation.dumpValue(sb);
-            sb.append('\n');
-        } //End block
-        sb.append(prefix).append("]\n");
-        // ---------- Original Method ----------
-        //sb.append(prefix).append("CertificatePolicies [\n");
-        //for (PolicyInformation policyInformation : policyInformations) {
-            //sb.append(prefix);
-            //sb.append("  ");
-            //policyInformation.dumpValue(sb);
-            //sb.append('\n');
-        //}
-        //sb.append(prefix).append("]\n");
-    }
-
-    
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.952 -0400", hash_original_field = "513989838E566B722E0AE48FE445DE0C", hash_generated_field = "C5B8ADE8005B79F0446643932F6EFA0A")
 
     public static final ASN1Type ASN1 = new ASN1SequenceOf(PolicyInformation.ASN1) {
-        @DSModeled(DSC.BAN)
-        @Override public Object getDecodedObject(BerInputStream in) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:08.361 -0500", hash_original_method = "457342872C7F92CB7E191C0BDCD7A375", hash_generated_method = "786DA4CE0CC88A458B725FFD82275D44")
+        @Override
+public Object getDecodedObject(BerInputStream in) {
             return new CertificatePolicies((List<PolicyInformation>) in.content, in.getEncoded());
         }
 
-        @DSModeled(DSC.SAFE)
-        @Override public Collection getValues(Object object) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:08.362 -0500", hash_original_method = "563F4100455C194AB82610E48FB026CF", hash_generated_method = "C22E0B5D2039FB737EDE953AC64BEACB")
+        @Override
+public Collection getValues(Object object) {
             CertificatePolicies cps = (CertificatePolicies) object;
             return cps.policyInformations;
         }
     };
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:08.353 -0500", hash_original_field = "D7154010CA73EBC692833293BF18127E", hash_generated_field = "29ED1BA56666577354DE7DACD9A96978")
+
+    private List<PolicyInformation> policyInformations;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:08.354 -0500", hash_original_field = "B36A946B5145D992E53209BC6743765D", hash_generated_field = "ACB189C73E1A6432570001B3B9D3D516")
+
+    private byte[] encoding;
+
+    /**
+     * Constructs an object representing the value of CertificatePolicies.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:08.355 -0500", hash_original_method = "C31E4B8F2A567252600FDAE2EEE40805", hash_generated_method = "4CD365A78323C4BB36D47418BB273373")
+    public CertificatePolicies() {}
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:08.357 -0500", hash_original_method = "96307D3270AEFEAD70E1FBA0E6122CDE", hash_generated_method = "3D44680DA2DFBACB6C01B668A744797F")
+    private CertificatePolicies(List<PolicyInformation> policyInformations, byte[] encoding) {
+        this.policyInformations = policyInformations;
+        this.encoding = encoding;
+    }
+
+    /**
+     * Returns the values of policyInformation field of the structure.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:08.357 -0500", hash_original_method = "183BA6590E2DC5B6BD268518AC8D5EF9", hash_generated_method = "11677BD68D1BD97D14F77EF37A9260A2")
+    public List<PolicyInformation> getPolicyInformations() {
+        return new ArrayList<PolicyInformation>(policyInformations);
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:08.358 -0500", hash_original_method = "A02C1EF38503FEE398CFC051AC7B3321", hash_generated_method = "46F1380A0B7A63350A01721B694437E7")
+    public CertificatePolicies addPolicyInformation(PolicyInformation policyInformation) {
+        encoding = null;
+        if (policyInformations == null) {
+            policyInformations = new ArrayList<PolicyInformation>();
+        }
+        policyInformations.add(policyInformation);
+        return this;
+    }
+
+    /**
+     * Returns ASN.1 encoded form of this X.509 CertificatePolicies value.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:08.359 -0500", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "552F71A862C62513AAC32037F4D2FC1B")
+    @Override
+public byte[] getEncoded() {
+        if (encoding == null) {
+            encoding = ASN1.encode(this);
+        }
+        return encoding;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:08.360 -0500", hash_original_method = "B37538291358B4289176EF26A3BFC720", hash_generated_method = "11675135B8D5FD981EE6CBC6E3BF12F5")
+    @Override
+public void dumpValue(StringBuilder sb, String prefix) {
+        sb.append(prefix).append("CertificatePolicies [\n");
+        for (PolicyInformation policyInformation : policyInformations) {
+            sb.append(prefix);
+            sb.append("  ");
+            policyInformation.dumpValue(sb);
+            sb.append('\n');
+        }
+        sb.append(prefix).append("]\n");
+    }
 }
 

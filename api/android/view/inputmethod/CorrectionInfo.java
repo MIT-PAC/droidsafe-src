@@ -1,6 +1,8 @@
 package android.view.inputmethod;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -11,111 +13,6 @@ import android.text.TextUtils;
 
 
 public final class CorrectionInfo implements Parcelable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.288 -0400", hash_original_field = "E8439EB32866F13AD7ABD06DB4A15343", hash_generated_field = "F358652CEEA6BACE7E593752AA27CBE6")
-
-    private int mOffset;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.288 -0400", hash_original_field = "584DB9839E8990DC7A624740F928A86B", hash_generated_field = "21F81963919AD1B6FEAE170B2FD8DF2A")
-
-    private CharSequence mOldText;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.288 -0400", hash_original_field = "E3FE29B0EC2FDC3E4AC20859BAA967E2", hash_generated_field = "919C489EB83DD5B1D70C52520AF2491D")
-
-    private CharSequence mNewText;
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.290 -0400", hash_original_method = "4BC4C4C6E34B6ABB755CFB5627F6324D", hash_generated_method = "EA69ED117B11915946ED99C129695DDB")
-    public  CorrectionInfo(int offset, CharSequence oldText, CharSequence newText) {
-        mOffset = offset;
-        mOldText = oldText;
-        mNewText = newText;
-        // ---------- Original Method ----------
-        //mOffset = offset;
-        //mOldText = oldText;
-        //mNewText = newText;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.291 -0400", hash_original_method = "ACB844101F7B730F0891325C0B2B59C5", hash_generated_method = "B20EB25A9119C4194DCBE441924D46CF")
-    private  CorrectionInfo(Parcel source) {
-        mOffset = source.readInt();
-        mOldText = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(source);
-        mNewText = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(source);
-        // ---------- Original Method ----------
-        //mOffset = source.readInt();
-        //mOldText = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(source);
-        //mNewText = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(source);
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.291 -0400", hash_original_method = "FB2FFBF84EFDF3FAC1DB07E1BCD653F5", hash_generated_method = "E56BEDC7F86924A32A7C6EBB29E991D2")
-    public int getOffset() {
-        int varE8439EB32866F13AD7ABD06DB4A15343_2015392665 = (mOffset);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_155005586 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_155005586;
-        // ---------- Original Method ----------
-        //return mOffset;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.292 -0400", hash_original_method = "B5F6375A5B3C1F7513E2C762D0A387DE", hash_generated_method = "C78B8959E473542EC5667B90DA53CD54")
-    public CharSequence getOldText() {
-CharSequence varCB42793B5FCD16AD78A843462295CF9F_207662710 =         mOldText;
-        varCB42793B5FCD16AD78A843462295CF9F_207662710.addTaint(taint);
-        return varCB42793B5FCD16AD78A843462295CF9F_207662710;
-        // ---------- Original Method ----------
-        //return mOldText;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.292 -0400", hash_original_method = "A44877BB52BDCF0EDD87983832FB9E30", hash_generated_method = "1B42E30EB79E5CB858DAAB0F26C5BD1C")
-    public CharSequence getNewText() {
-CharSequence var4418CD7C5DA1D77AC17AEFF7277BF87B_308432667 =         mNewText;
-        var4418CD7C5DA1D77AC17AEFF7277BF87B_308432667.addTaint(taint);
-        return var4418CD7C5DA1D77AC17AEFF7277BF87B_308432667;
-        // ---------- Original Method ----------
-        //return mNewText;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.292 -0400", hash_original_method = "7D587C528DCE451F3ED32B059F93B063", hash_generated_method = "77F0DB428B705ACC3518738A4236EEB8")
-    @Override
-    public String toString() {
-String var9F600BFBE887033823CFD91DDDB01734_1344950003 =         "CorrectionInfo{#" + mOffset + " \"" + mOldText + "\" -> \"" + mNewText + "\"}";
-        var9F600BFBE887033823CFD91DDDB01734_1344950003.addTaint(taint);
-        return var9F600BFBE887033823CFD91DDDB01734_1344950003;
-        // ---------- Original Method ----------
-        //return "CorrectionInfo{#" + mOffset + " \"" + mOldText + "\" -> \"" + mNewText + "\"}";
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.292 -0400", hash_original_method = "4D2AAA8E4AD44FCBAED8BA48A77A4AE0", hash_generated_method = "2CA872B42EA1D19B21FAAF912A382EF1")
-    public void writeToParcel(Parcel dest, int flags) {
-        addTaint(flags);
-        addTaint(dest.getTaint());
-        dest.writeInt(mOffset);
-        TextUtils.writeToParcel(mOldText, dest, flags);
-        TextUtils.writeToParcel(mNewText, dest, flags);
-        // ---------- Original Method ----------
-        //dest.writeInt(mOffset);
-        //TextUtils.writeToParcel(mOldText, dest, flags);
-        //TextUtils.writeToParcel(mNewText, dest, flags);
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.293 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "EC82BF857E24984F4E76C4E455AA636B")
-    public int describeContents() {
-        int varCFCD208495D565EF66E7DFF9F98764DA_610436539 = (0);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1317143618 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1317143618;
-        // ---------- Original Method ----------
-        //return 0;
-    }
 
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.293 -0400", hash_original_field = "0802A0FE3EDE98511D93025B888127A6", hash_generated_field = "545C65D572FA367719FAFB5FF700B68D")
@@ -136,6 +33,83 @@ String var9F600BFBE887033823CFD91DDDB01734_1344950003 =         "CorrectionInfo{
             return new CorrectionInfo[size];
         }
     };
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:15.710 -0500", hash_original_field = "824ACE8F55518F51C4ECB112DA3987C7", hash_generated_field = "F358652CEEA6BACE7E593752AA27CBE6")
+
+    private  int mOffset;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:15.711 -0500", hash_original_field = "A88490DDD674A7C89508260F108DEC9B", hash_generated_field = "21F81963919AD1B6FEAE170B2FD8DF2A")
+
+    private  CharSequence mOldText;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:15.712 -0500", hash_original_field = "2D575539D9A4161C40F1F3347F6E1F96", hash_generated_field = "919C489EB83DD5B1D70C52520AF2491D")
+
+    private  CharSequence mNewText;
+
+    /**
+     * @param offset The offset in the edited text where the old and new text start.
+     * @param oldText The old text that has been replaced.
+     * @param newText The replacement text.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:15.713 -0500", hash_original_method = "4BC4C4C6E34B6ABB755CFB5627F6324D", hash_generated_method = "6799C5DCFB8A4B0543183A3C81BF3584")
+    public CorrectionInfo(int offset, CharSequence oldText, CharSequence newText) {
+        mOffset = offset;
+        mOldText = oldText;
+        mNewText = newText;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:15.714 -0500", hash_original_method = "ACB844101F7B730F0891325C0B2B59C5", hash_generated_method = "D49883314DCB4296A37CDB623298E2DD")
+    private CorrectionInfo(Parcel source) {
+        mOffset = source.readInt();
+        mOldText = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(source);
+        mNewText = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(source);
+    }
+
+    /**
+     * Return the offset position of this correction in the text. Both the {@link #getOldText()} and
+     * {@link #getNewText()} start at this offset.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:15.715 -0500", hash_original_method = "FB2FFBF84EFDF3FAC1DB07E1BCD653F5", hash_generated_method = "6F0A4A5FCF19E7C347B9315FF86C0189")
+    public int getOffset() {
+        return mOffset;
+    }
+
+    /**
+     * Return the text that has actually been typed by the user, and which has been corrected.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:15.716 -0500", hash_original_method = "B5F6375A5B3C1F7513E2C762D0A387DE", hash_generated_method = "120CF55EBB2F568B5E24FB54C3274BD2")
+    public CharSequence getOldText() {
+        return mOldText;
+    }
+
+    /**
+     * Return the new text that corrects what was typed by the user.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:15.716 -0500", hash_original_method = "A44877BB52BDCF0EDD87983832FB9E30", hash_generated_method = "161EFAB57732DEAC597AF92B819C9B2C")
+    public CharSequence getNewText() {
+        return mNewText;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:15.717 -0500", hash_original_method = "7D587C528DCE451F3ED32B059F93B063", hash_generated_method = "C69486CC7183B40E68E5B690FD2DB57C")
+    @Override
+public String toString() {
+        return "CorrectionInfo{#" + mOffset + " \"" + mOldText + "\" -> \"" + mNewText + "\"}";
+    }
+
+    /**
+     * Used to package this object into a {@link Parcel}.
+     *
+     * @param dest The {@link Parcel} to be written.
+     * @param flags The flags used for parceling.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:15.718 -0500", hash_original_method = "4D2AAA8E4AD44FCBAED8BA48A77A4AE0", hash_generated_method = "C7C6E988E3C15E289C9FB58447E14EBA")
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(mOffset);
+        TextUtils.writeToParcel(mOldText, dest, flags);
+        TextUtils.writeToParcel(mNewText, dest, flags);
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:15.722 -0500", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "D90463461B2A94FF94D13FDF69BB80C9")
+    public int describeContents() {
+        return 0;
+    }
     
     /*
     // orphaned legacy method

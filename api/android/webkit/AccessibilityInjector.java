@@ -1,6 +1,8 @@
 package android.webkit;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.Stack;
@@ -19,514 +21,303 @@ import android.webkit.WebViewCore.EventHub;
 
 
 class AccessibilityInjector {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.104 -0400", hash_original_field = "72439B8F99EB438C3DA5D9CD798C6786", hash_generated_field = "99346B50377E115231263981E00655CA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:23.868 -0500", hash_original_field = "ACB89AAF1263E8A9795CBB4955DE9A0D", hash_generated_field = "355BE79B3786523315A38F99C8EFD0EF")
 
-    private WebView mWebView;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.104 -0400", hash_original_field = "D1A330370DBEBA42FF52A0368B62EDD0", hash_generated_field = "3E57A1C4DB07EE64FCEAD72CC440E45E")
+    private static final String LOG_TAG = "AccessibilityInjector";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:23.869 -0500", hash_original_field = "9C97D618612CFF386E7AF19655372855", hash_generated_field = "0DA17BC1AEF6DBF011A4A750F5A71D57")
+
+
+    private static final boolean DEBUG = true;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:23.870 -0500", hash_original_field = "56A03426DE70624A8891C135C791DBBC", hash_generated_field = "12B31C0D92351F48989DB7D421B336D5")
+
+
+    private static final int ACTION_SET_CURRENT_AXIS = 0;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:23.870 -0500", hash_original_field = "49A6DB3A3DCCBA3C0FC1476BBB715506", hash_generated_field = "58291536D1F80FD93588C2E4178BDAD6")
+
+    private static final int ACTION_TRAVERSE_CURRENT_AXIS = 1;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:23.871 -0500", hash_original_field = "EB9696F0E7BFE80B2B9708B9C90B493C", hash_generated_field = "BBB0B8A34D0FE9233A286CF9AF35FBDF")
+
+    private static final int ACTION_TRAVERSE_GIVEN_AXIS = 2;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:23.872 -0500", hash_original_field = "6E074BB111789B91D07F4570AF2469BE", hash_generated_field = "9DC1A870966F6613A76EDD9AF5A52F83")
+
+    private static final int ACTION_PERFORM_AXIS_TRANSITION = 3;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:23.873 -0500", hash_original_field = "DC595DB654F514814E1AE9AA60E5BAF6", hash_generated_field = "795FF9003847153FEDDC6135D24C99D1")
+
+    private static final int ACTION_TRAVERSE_DEFAULT_WEB_VIEW_BEHAVIOR_AXIS = 4;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:23.874 -0500", hash_original_field = "ECECC5BFA46FF57F472BF8DF0648875A", hash_generated_field = "2A75193CE584F6498192A47349148458")
+
+    private static final int NAVIGATION_AXIS_DEFAULT_WEB_VIEW_BEHAVIOR = 7;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:23.875 -0500", hash_original_field = "CA8C5E839923CC2BB6341C82D5D4938C", hash_generated_field = "4C5C7E9C43BB16E424C598EA8932A1C4")
+
+    private static ArrayList<AccessibilityWebContentKeyBinding> sBindings =
+        new ArrayList<AccessibilityWebContentKeyBinding>();
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:23.876 -0500", hash_original_field = "E044D69EE05B24F4B93E3A3B208F5343", hash_generated_field = "99346B50377E115231263981E00655CA")
+
+    private  WebView mWebView;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:23.877 -0500", hash_original_field = "B430A06153AF4C02B94D687BF212EA90", hash_generated_field = "3E57A1C4DB07EE64FCEAD72CC440E45E")
 
     private final Stack<AccessibilityEvent> mScheduledEventStack = new Stack<AccessibilityEvent>();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.104 -0400", hash_original_field = "7F548E9293768117746509FFDB5A3057", hash_generated_field = "4330EB8AA5A2FE255DBD22415D04ED16")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:23.878 -0500", hash_original_field = "84FC2C5913D6861EA052018925079A5E", hash_generated_field = "4330EB8AA5A2FE255DBD22415D04ED16")
 
     private int mCurrentAxis = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.104 -0400", hash_original_field = "C1651C38A7F93096FAEEABE5AEB2FDDD", hash_generated_field = "224025CAF4716F1644AA382FABDDDD40")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:35:01.127 -0500", hash_original_field = "EB715AD3A256DBE3990BA7ACE73D6261", hash_generated_field = "A930633B2A9AAAF914D3D7A7480791B6")
 
+
+    // we need to consume the up if we have handled the last down
     private boolean mLastDownEventHandled;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.104 -0400", hash_original_field = "C35004E7DA14679F0A0D20E077785059", hash_generated_field = "8A7EF6B120836C189817F81132C96CE4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:23.879 -0500", hash_original_field = "E87655336A9AF866922667147DF6332C", hash_generated_field = "8A7EF6B120836C189817F81132C96CE4")
 
     private boolean mIsLastSelectionStringNull;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.104 -0400", hash_original_field = "56D9C42186B57F5F56DBBA60DCED4505", hash_generated_field = "20DA94CEADB2B1E6F5C2261C53B2ECE7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:23.880 -0500", hash_original_field = "F552E35E5E42D4C9C7235D3663258934", hash_generated_field = "20DA94CEADB2B1E6F5C2261C53B2ECE7")
 
     private int mLastDirection;
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.104 -0400", hash_original_method = "EF4641FD66F12CE398EFC703194D8E58", hash_generated_method = "2F86D7F6824D2022926CFD290AF26273")
-    public  AccessibilityInjector(WebView webView) {
+
+    /**
+     * Creates a new injector associated with a given {@link WebView}.
+     *
+     * @param webView The associated WebView.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:23.881 -0500", hash_original_method = "EF4641FD66F12CE398EFC703194D8E58", hash_generated_method = "ECA7A8ADF8DCF430DD17A60E305CD34B")
+    public AccessibilityInjector(WebView webView) {
         mWebView = webView;
         ensureWebContentKeyBindings();
-        // ---------- Original Method ----------
-        //mWebView = webView;
-        //ensureWebContentKeyBindings();
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.108 -0400", hash_original_method = "EB800BB0EE5BEF185F11F0CA48ECBE70", hash_generated_method = "1FE68CDBD2379BC00036EA7DAC374692")
+    /**
+     * Processes a key down <code>event</code>.
+     *
+     * @return True if the event was processed.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:23.883 -0500", hash_original_method = "EB800BB0EE5BEF185F11F0CA48ECBE70", hash_generated_method = "9F673CA79464E8D7D448ED1AD5F9D034")
     public boolean onKeyEvent(KeyEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(event.getTaint());
-        if(isEnterActionKey(event.getKeyCode()))        
-        {
-            boolean var68934A3E9455FA72420237EB05902327_1907318118 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1032766285 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1032766285;
-        } //End block
-        if(event.getAction() == KeyEvent.ACTION_UP)        
-        {
-            boolean varC1651C38A7F93096FAEEABE5AEB2FDDD_178072177 = (mLastDownEventHandled);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_149740677 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_149740677;
-        } //End block
+        // We do not handle ENTER in any circumstances.
+        if (isEnterActionKey(event.getKeyCode())) {
+            return false;
+        }
+
+        if (event.getAction() == KeyEvent.ACTION_UP) {
+            return mLastDownEventHandled;
+        }
+
         mLastDownEventHandled = false;
+
         AccessibilityWebContentKeyBinding binding = null;
-for(AccessibilityWebContentKeyBinding candidate : sBindings)
-        {
-            if(event.getKeyCode() == candidate.getKeyCode()
-                    && event.hasModifiers(candidate.getModifiers()))            
-            {
+        for (AccessibilityWebContentKeyBinding candidate : sBindings) {
+            if (event.getKeyCode() == candidate.getKeyCode()
+                    && event.hasModifiers(candidate.getModifiers())) {
                 binding = candidate;
                 break;
-            } //End block
-        } //End block
-        if(binding == null)        
-        {
-            boolean var68934A3E9455FA72420237EB05902327_758256543 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1986629024 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1986629024;
-        } //End block
-for(int i = 0, count = binding.getActionCount();i < count;i++)
-        {
+            }
+        }
+
+        if (binding == null) {
+            return false;
+        }
+
+        for (int i = 0, count = binding.getActionCount(); i < count; i++) {
             int actionCode = binding.getActionCode(i);
             String contentDescription = Integer.toHexString(binding.getAction(i));
-switch(actionCode){
-            case ACTION_SET_CURRENT_AXIS:
-            int axis = binding.getFirstArgument(i);
-            boolean sendEvent = (binding.getSecondArgument(i) == 1);
-            setCurrentAxis(axis, sendEvent, contentDescription);
-            mLastDownEventHandled = true;
-            break;
-            case ACTION_TRAVERSE_CURRENT_AXIS:
-            int direction = binding.getFirstArgument(i);
-            if(direction == mLastDirection && mIsLastSelectionStringNull)            
-            {
-                mIsLastSelectionStringNull = false;
-                boolean var68934A3E9455FA72420237EB05902327_1315557381 = (false);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_602146481 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_602146481;
-            } //End block
-            mLastDirection = direction;
-            sendEvent = (binding.getSecondArgument(i) == 1);
-            mLastDownEventHandled = traverseCurrentAxis(direction, sendEvent,
+            switch (actionCode) {
+                case ACTION_SET_CURRENT_AXIS:
+                    int axis = binding.getFirstArgument(i);
+                    boolean sendEvent = (binding.getSecondArgument(i) == 1);
+                    setCurrentAxis(axis, sendEvent, contentDescription);
+                    mLastDownEventHandled = true;
+                    break;
+                case ACTION_TRAVERSE_CURRENT_AXIS:
+                    int direction = binding.getFirstArgument(i);
+                    // on second null selection string in same direction - WebView handles the event
+                    if (direction == mLastDirection && mIsLastSelectionStringNull) {
+                        mIsLastSelectionStringNull = false;
+                        return false;
+                    }
+                    mLastDirection = direction;
+                    sendEvent = (binding.getSecondArgument(i) == 1);
+                    mLastDownEventHandled = traverseCurrentAxis(direction, sendEvent,
                             contentDescription);
-            break;
-            case ACTION_TRAVERSE_GIVEN_AXIS:
-            direction = binding.getFirstArgument(i);
-            if(direction == mLastDirection && mIsLastSelectionStringNull)            
-            {
-                mIsLastSelectionStringNull = false;
-                boolean var68934A3E9455FA72420237EB05902327_1121938165 = (false);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1575537521 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1575537521;
-            } //End block
-            mLastDirection = direction;
-            axis =  binding.getSecondArgument(i);
-            sendEvent = (binding.getThirdArgument(i) == 1);
-            traverseGivenAxis(direction, axis, sendEvent, contentDescription);
-            mLastDownEventHandled = true;
-            break;
-            case ACTION_PERFORM_AXIS_TRANSITION:
-            int fromAxis = binding.getFirstArgument(i);
-            int toAxis = binding.getSecondArgument(i);
-            sendEvent = (binding.getThirdArgument(i) == 1);
-            prefromAxisTransition(fromAxis, toAxis, sendEvent, contentDescription);
-            mLastDownEventHandled = true;
-            break;
-            case ACTION_TRAVERSE_DEFAULT_WEB_VIEW_BEHAVIOR_AXIS:
-            if(mCurrentAxis == NAVIGATION_AXIS_DEFAULT_WEB_VIEW_BEHAVIOR)            
-            {
-                mLastDirection = binding.getFirstArgument(i);
-                sendEvent = (binding.getSecondArgument(i) == 1);
-                traverseGivenAxis(mLastDirection, NAVIGATION_AXIS_DEFAULT_WEB_VIEW_BEHAVIOR,
+                    break;
+                case ACTION_TRAVERSE_GIVEN_AXIS:
+                    direction = binding.getFirstArgument(i);
+                    // on second null selection string in same direction => WebView handle the event
+                    if (direction == mLastDirection && mIsLastSelectionStringNull) {
+                        mIsLastSelectionStringNull = false;
+                        return false;
+                    }
+                    mLastDirection = direction;
+                    axis =  binding.getSecondArgument(i);
+                    sendEvent = (binding.getThirdArgument(i) == 1);
+                    traverseGivenAxis(direction, axis, sendEvent, contentDescription);
+                    mLastDownEventHandled = true;
+                    break;
+                case ACTION_PERFORM_AXIS_TRANSITION:
+                    int fromAxis = binding.getFirstArgument(i);
+                    int toAxis = binding.getSecondArgument(i);
+                    sendEvent = (binding.getThirdArgument(i) == 1);
+                    prefromAxisTransition(fromAxis, toAxis, sendEvent, contentDescription);
+                    mLastDownEventHandled = true;
+                    break;
+                case ACTION_TRAVERSE_DEFAULT_WEB_VIEW_BEHAVIOR_AXIS:
+                    // This is a special case since we treat the default WebView navigation
+                    // behavior as one of the possible navigation axis the user can use.
+                    // If we are not on the default WebView navigation axis this is NOP.
+                    if (mCurrentAxis == NAVIGATION_AXIS_DEFAULT_WEB_VIEW_BEHAVIOR) {
+                        // While WebVew handles navigation we do not get null selection
+                        // strings so do not check for that here as the cases above.
+                        mLastDirection = binding.getFirstArgument(i);
+                        sendEvent = (binding.getSecondArgument(i) == 1);
+                        traverseGivenAxis(mLastDirection, NAVIGATION_AXIS_DEFAULT_WEB_VIEW_BEHAVIOR,
                             sendEvent, contentDescription);
-                mLastDownEventHandled = false;
-            } //End block
-            else
-            {
-                mLastDownEventHandled = true;
-            } //End block
-            break;
-            default:
-}
-        } //End block
-        boolean varC1651C38A7F93096FAEEABE5AEB2FDDD_615869260 = (mLastDownEventHandled);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_836128876 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_836128876;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
+                        mLastDownEventHandled = false;
+                    } else {
+                        mLastDownEventHandled = true;
+                    }
+                    break;
+                default:
+                    Log.w(LOG_TAG, "Unknown action code: " + actionCode);
+            }
+        }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.109 -0400", hash_original_method = "3B116BB7452CBE6872A5E570E7D08041", hash_generated_method = "9C005923B78F09727FF20186EF2353DE")
-    private void setCurrentAxis(int axis, boolean sendEvent, String contentDescription) {
-        addTaint(contentDescription.getTaint());
-        addTaint(sendEvent);
-        mCurrentAxis = axis;
-        if(sendEvent)        
-        {
-            AccessibilityEvent event = getPartialyPopulatedAccessibilityEvent();
-            event.getText().add(String.valueOf(axis));
-            event.setContentDescription(contentDescription);
-            sendAccessibilityEvent(event);
-        } //End block
-        // ---------- Original Method ----------
-        //mCurrentAxis = axis;
-        //if (sendEvent) {
-            //AccessibilityEvent event = getPartialyPopulatedAccessibilityEvent();
-            //event.getText().add(String.valueOf(axis));
-            //event.setContentDescription(contentDescription);
-            //sendAccessibilityEvent(event);
-        //}
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.109 -0400", hash_original_method = "60CFCAC68A8E46E83373A5BD6B186EBB", hash_generated_method = "6F06C03EC59681E59269B33F0E12B5A7")
-    private void prefromAxisTransition(int fromAxis, int toAxis, boolean sendEvent,
-            String contentDescription) {
-        addTaint(contentDescription.getTaint());
-        addTaint(sendEvent);
-        addTaint(toAxis);
-        addTaint(fromAxis);
-        if(mCurrentAxis == fromAxis)        
-        {
-            setCurrentAxis(toAxis, sendEvent, contentDescription);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mCurrentAxis == fromAxis) {
-            //setCurrentAxis(toAxis, sendEvent, contentDescription);
-        //}
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.110 -0400", hash_original_method = "FD1B61A72867CD7ABA9E4FFEC34475BF", hash_generated_method = "DCB68D1D900D15B9AEBD250E6D5F6F9A")
-    private boolean traverseCurrentAxis(int direction, boolean sendEvent,
-            String contentDescription) {
-        addTaint(contentDescription.getTaint());
-        addTaint(sendEvent);
-        addTaint(direction);
-        boolean var68361291D1B55A22856F2004E68E620B_1463618220 = (traverseGivenAxis(direction, mCurrentAxis, sendEvent, contentDescription));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_551639043 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_551639043;
-        // ---------- Original Method ----------
-        //return traverseGivenAxis(direction, mCurrentAxis, sendEvent, contentDescription);
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.111 -0400", hash_original_method = "D76A1821B2762F1F39CCFC0B2614F6FE", hash_generated_method = "ED4E3FD4F974992F714BF63331164651")
-    private boolean traverseGivenAxis(int direction, int axis, boolean sendEvent,
-            String contentDescription) {
-        addTaint(contentDescription.getTaint());
-        addTaint(sendEvent);
-        addTaint(axis);
-        addTaint(direction);
-        WebViewCore webViewCore = mWebView.getWebViewCore();
-        if(webViewCore == null)        
-        {
-            boolean var68934A3E9455FA72420237EB05902327_2068478523 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_727992263 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_727992263;
-        } //End block
-        AccessibilityEvent event = null;
-        if(sendEvent)        
-        {
-            event = getPartialyPopulatedAccessibilityEvent();
-            event.setContentDescription(contentDescription);
-        } //End block
-        mScheduledEventStack.push(event);
-        if(axis == NAVIGATION_AXIS_DEFAULT_WEB_VIEW_BEHAVIOR)        
-        {
-            boolean var68934A3E9455FA72420237EB05902327_643865510 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2105871519 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_2105871519;
-        } //End block
-        webViewCore.sendMessage(EventHub.MODIFY_SELECTION, direction, axis);
-        boolean varB326B5062B2F0E69046810717534CB09_471420962 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_804365142 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_804365142;
-        // ---------- Original Method ----------
-        //WebViewCore webViewCore = mWebView.getWebViewCore();
-        //if (webViewCore == null) {
-            //return false;
-        //}
-        //AccessibilityEvent event = null;
-        //if (sendEvent) {
-            //event = getPartialyPopulatedAccessibilityEvent();
-            //event.setContentDescription(contentDescription);
-        //}
-        //mScheduledEventStack.push(event);
-        //if (axis == NAVIGATION_AXIS_DEFAULT_WEB_VIEW_BEHAVIOR) {
-            //return false;
-        //}
-        //webViewCore.sendMessage(EventHub.MODIFY_SELECTION, direction, axis);
-        //return true;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.112 -0400", hash_original_method = "C444A575AEA295F9C8E995BA1405A425", hash_generated_method = "DEF6ED9ECF768097014613BE17F54785")
-    public void onSelectionStringChange(String selectionString) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        if(DEBUG)        
-        {
-            Log.d(LOG_TAG, "Selection string: " + selectionString);
-        } //End block
-        mIsLastSelectionStringNull = (selectionString == null);
-        if(mScheduledEventStack.isEmpty())        
-        {
-            return;
-        } //End block
-        AccessibilityEvent event = mScheduledEventStack.pop();
-        if(event != null)        
-        {
-            event.getText().add(selectionString);
-            sendAccessibilityEvent(event);
-        } //End block
-        // ---------- Original Method ----------
-        //if (DEBUG) {
-            //Log.d(LOG_TAG, "Selection string: " + selectionString);
-        //}
-        //mIsLastSelectionStringNull = (selectionString == null);
-        //if (mScheduledEventStack.isEmpty()) {
-            //return;
-        //}
-        //AccessibilityEvent event = mScheduledEventStack.pop();
-        //if (event != null) {
-            //event.getText().add(selectionString);
-            //sendAccessibilityEvent(event);
-        //}
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.113 -0400", hash_original_method = "A93E1B734733D18B27A729FA6BA2D3D4", hash_generated_method = "3EC130305D7F73985F55B3A610D4C3C7")
-    private void sendAccessibilityEvent(AccessibilityEvent event) {
-        addTaint(event.getTaint());
-        if(DEBUG)        
-        {
-            Log.d(LOG_TAG, "Dispatching: " + event);
-        } //End block
-        AccessibilityManager accessibilityManager = AccessibilityManager.getInstance(mWebView.getContext());
-        if(accessibilityManager.isEnabled())        
-        {
-            accessibilityManager.sendAccessibilityEvent(event);
-        } //End block
-        // ---------- Original Method ----------
-        //if (DEBUG) {
-            //Log.d(LOG_TAG, "Dispatching: " + event);
-        //}
-        //AccessibilityManager accessibilityManager =
-            //AccessibilityManager.getInstance(mWebView.getContext());
-        //if (accessibilityManager.isEnabled()) {
-            //accessibilityManager.sendAccessibilityEvent(event);
-        //}
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.113 -0400", hash_original_method = "97CE5C613C0F00A9204AE55F86D0A1E4", hash_generated_method = "F838313C005872AA74D57321ADDC571A")
-    private AccessibilityEvent getPartialyPopulatedAccessibilityEvent() {
-        AccessibilityEvent event = AccessibilityEvent.obtain(AccessibilityEvent.TYPE_VIEW_SELECTED);
-        event.setClassName(mWebView.getClass().getName());
-        event.setPackageName(mWebView.getContext().getPackageName());
-        event.setEnabled(mWebView.isEnabled());
-AccessibilityEvent var3162E7A4A1E5D72F1058A9B39A6A8738_1864484490 =         event;
-        var3162E7A4A1E5D72F1058A9B39A6A8738_1864484490.addTaint(taint);
-        return var3162E7A4A1E5D72F1058A9B39A6A8738_1864484490;
-        // ---------- Original Method ----------
-        //AccessibilityEvent event = AccessibilityEvent.obtain(AccessibilityEvent.TYPE_VIEW_SELECTED);
-        //event.setClassName(mWebView.getClass().getName());
-        //event.setPackageName(mWebView.getContext().getPackageName());
-        //event.setEnabled(mWebView.isEnabled());
-        //return event;
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.114 -0400", hash_original_method = "391E7039B2527FA351ED94B9C1004246", hash_generated_method = "AFAA3A8DCCCF3CD9C3FC40E66BD0B862")
-    private void ensureWebContentKeyBindings() {
-        if(sBindings.size() > 0)        
-        {
-            return;
-        } //End block
-        String webContentKeyBindingsString = Settings.Secure.getString(
-                mWebView.getContext().getContentResolver(),
-                Settings.Secure.ACCESSIBILITY_WEB_CONTENT_KEY_BINDINGS);
-        SimpleStringSplitter semiColonSplitter = new SimpleStringSplitter(';');
-        semiColonSplitter.setString(webContentKeyBindingsString);
-        while
-(semiColonSplitter.hasNext())        
-        {
-            String bindingString = semiColonSplitter.next();
-            if(TextUtils.isEmpty(bindingString))            
-            {
-                continue;
-            } //End block
-            String[] keyValueArray = bindingString.split("=");
-            if(keyValueArray.length != 2)            
-            {
-                continue;
-            } //End block
-            try 
-            {
-                long keyCodeAndModifiers = Long.decode(keyValueArray[0].trim());
-                String[] actionStrings = keyValueArray[1].split(":");
-                int[] actions = new int[actionStrings.length];
-for(int i = 0, count = actions.length;i < count;i++)
-                {
-                    actions[i] = Integer.decode(actionStrings[i].trim());
-                } //End block
-                sBindings.add(new AccessibilityWebContentKeyBinding(keyCodeAndModifiers, actions));
-            } //End block
-            catch (NumberFormatException nfe)
-            {
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
-
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.115 -0400", hash_original_method = "6AB19E93948D2A1BBE98A475D0E38626", hash_generated_method = "A5B0E6E5FFC63D354665BB588A337B75")
-    private boolean isEnterActionKey(int keyCode) {
-        addTaint(keyCode);
-        boolean var70CD4F4EC1EE6CA63BEE6D7DF6CF566D_1376700521 = (keyCode == KeyEvent.KEYCODE_DPAD_CENTER
-                || keyCode == KeyEvent.KEYCODE_ENTER
-                || keyCode == KeyEvent.KEYCODE_NUMPAD_ENTER);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1021729818 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1021729818;
-        // ---------- Original Method ----------
-        //return keyCode == KeyEvent.KEYCODE_DPAD_CENTER
-                //|| keyCode == KeyEvent.KEYCODE_ENTER
-                //|| keyCode == KeyEvent.KEYCODE_NUMPAD_ENTER;
+        return mLastDownEventHandled;
     }
 
     
     private static final class AccessibilityWebContentKeyBinding {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.115 -0400", hash_original_field = "CFAA3AA1A2D9FBFD8E3F4A62BE28F7AF", hash_generated_field = "ED9AFF5D0BE3F3908705CAFA2BF1844E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:23.892 -0500", hash_original_field = "41D4F6636ABD75FA51662DE9262FB0E2", hash_generated_field = "F8D2FA352C0BA0C64C99BC74D59C6DE5")
 
-        private long mKeyCodeAndModifiers;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.115 -0400", hash_original_field = "FC1559E434165DEC394AC0678DE16FCB", hash_generated_field = "3C3518CA99FABFDBA4EEED5204CA0958")
 
-        private int [] mActionSequence;
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.115 -0400", hash_original_method = "A50D0B5AC0368A8E12CF6CC75EC809BD", hash_generated_method = "798F030C871F13812FE22F360B3AB5E6")
-        public  AccessibilityWebContentKeyBinding(long keyCodeAndModifiers, int[] actionSequence) {
+        private static final int MODIFIERS_OFFSET = 32;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:23.893 -0500", hash_original_field = "7056BD87623FB8ADCEE799472F810C7E", hash_generated_field = "F15D255C8A53F382E8E42786FABAD969")
+
+        private static final long MODIFIERS_MASK = 0xFFFFFFF00000000L;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:23.894 -0500", hash_original_field = "F1D3E04A6F4A9CE347535E9E4DA2586F", hash_generated_field = "20B9B8442924C25F1223DFD4562CD64E")
+
+
+        private static final int KEY_CODE_OFFSET = 0;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:23.895 -0500", hash_original_field = "1E906E29D4C89ED504FEE37F0001DBB2", hash_generated_field = "B2CEF4BD57CC748D47EB33527D82B47A")
+
+        private static final long KEY_CODE_MASK = 0x00000000FFFFFFFFL;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:23.896 -0500", hash_original_field = "5B4CB7BA768A1DEC937DE0A1D5755E4B", hash_generated_field = "8F5435B4DF6B7CFAD8E1946F8438D2B5")
+
+
+        private static final int ACTION_OFFSET = 24;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:23.897 -0500", hash_original_field = "4CCBF76D1138EDBD003691AC4CCD7451", hash_generated_field = "32DF52DD728ADC6D34953391F47C41D6")
+
+        private static final int ACTION_MASK = 0xFF000000;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:23.897 -0500", hash_original_field = "6446895D134867947C9F6DB054D34058", hash_generated_field = "B9AF7AE6175C7800E8579A20EC2D26D0")
+
+
+        private static final int FIRST_ARGUMENT_OFFSET = 16;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:23.898 -0500", hash_original_field = "C803E5ABD1C04F57FDAC85C9B0796E20", hash_generated_field = "E574C2A0E6EC1F21410525FD57E75FF1")
+
+        private static final int FIRST_ARGUMENT_MASK = 0x00FF0000;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:23.899 -0500", hash_original_field = "FA120277FA8E34FE342E8D61ABEC6C0E", hash_generated_field = "B17B97D0AC9CE57566EDCD781528A4A2")
+
+
+        private static final int SECOND_ARGUMENT_OFFSET = 8;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:23.900 -0500", hash_original_field = "A5465F69553CEC1DC69E0A816DB8E0CC", hash_generated_field = "817F021C237E947C0BC3253F16A7EA47")
+
+        private static final int SECOND_ARGUMENT_MASK = 0x0000FF00;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:23.901 -0500", hash_original_field = "FE693384BC24063D6A7D0ACC69CAE62D", hash_generated_field = "63F3F631667C122A4E9AB568B7FA393E")
+
+
+        private static final int THIRD_ARGUMENT_OFFSET = 0;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:23.902 -0500", hash_original_field = "F123833A02A5F6C7D7FDF97461DCEC50", hash_generated_field = "532061882B38166B9A4AFA798321EC67")
+
+        private static final int THIRD_ARGUMENT_MASK = 0x000000FF;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:23.903 -0500", hash_original_field = "C7EF2968598FE2B648085E2C95612262", hash_generated_field = "ED9AFF5D0BE3F3908705CAFA2BF1844E")
+
+
+        private  long mKeyCodeAndModifiers;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:23.904 -0500", hash_original_field = "B3C4F9C18E062F366016C41A99B374F3", hash_generated_field = "3C3518CA99FABFDBA4EEED5204CA0958")
+
+
+        private  int [] mActionSequence;
+
+        /**
+         * Creates a new instance.
+         * @param keyCodeAndModifiers The key for the binding (key and modifiers).
+         * @param actionSequence The sequence of action for the binding.
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:23.911 -0500", hash_original_method = "A50D0B5AC0368A8E12CF6CC75EC809BD", hash_generated_method = "6D2CBD014CB05323E58D6ECF135C506E")
+        public AccessibilityWebContentKeyBinding(long keyCodeAndModifiers, int[] actionSequence) {
             mKeyCodeAndModifiers = keyCodeAndModifiers;
             mActionSequence = actionSequence;
-            // ---------- Original Method ----------
-            //mKeyCodeAndModifiers = keyCodeAndModifiers;
-            //mActionSequence = actionSequence;
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.115 -0400", hash_original_method = "8E50A2B3D320E1E0EE376617185D134A", hash_generated_method = "59289DBB77851DE2CF84E4A1F770C5DE")
+        /**
+         * @return The key code of the binding key.
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:23.905 -0500", hash_original_method = "8E50A2B3D320E1E0EE376617185D134A", hash_generated_method = "463E89BA3DE0C91F64F637735933E3F1")
         public int getKeyCode() {
-            int varA75A3D80301F215059C189AB3A651AD9_824909930 = ((int) ((mKeyCodeAndModifiers & KEY_CODE_MASK) >> KEY_CODE_OFFSET));
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_278912579 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_278912579;
-            // ---------- Original Method ----------
-            //return (int) ((mKeyCodeAndModifiers & KEY_CODE_MASK) >> KEY_CODE_OFFSET);
+            return (int) ((mKeyCodeAndModifiers & KEY_CODE_MASK) >> KEY_CODE_OFFSET);
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.115 -0400", hash_original_method = "C813CFA88B40923E17E3BC75AACF9837", hash_generated_method = "E7219215709134580A480FBD9459B253")
+        /**
+         * @return The meta state of the binding key.
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:23.906 -0500", hash_original_method = "C813CFA88B40923E17E3BC75AACF9837", hash_generated_method = "FBF62286FBC080E8009FEBAD169CC0EB")
         public int getModifiers() {
-            int var604E7C877BF7C2FFEE4E8B7678BA2487_1556422575 = ((int) ((mKeyCodeAndModifiers & MODIFIERS_MASK) >> MODIFIERS_OFFSET));
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_243703677 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_243703677;
-            // ---------- Original Method ----------
-            //return (int) ((mKeyCodeAndModifiers & MODIFIERS_MASK) >> MODIFIERS_OFFSET);
+            return (int) ((mKeyCodeAndModifiers & MODIFIERS_MASK) >> MODIFIERS_OFFSET);
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.115 -0400", hash_original_method = "7BDD12B6399A0F96D6927AAB9227781B", hash_generated_method = "E86A5371000B199DE96E6CE4F68EDCFB")
+        /**
+         * @return The number of actions in the key binding.
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:23.907 -0500", hash_original_method = "7BDD12B6399A0F96D6927AAB9227781B", hash_generated_method = "3CB9E34A989438B7D037060947024172")
         public int getActionCount() {
-            int var55EBD6CE5F216B713C69296A75FC4C26_1691235694 = (mActionSequence.length);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1426216434 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1426216434;
-            // ---------- Original Method ----------
-            //return mActionSequence.length;
+            return mActionSequence.length;
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.116 -0400", hash_original_method = "7D2F0A4FD4E90A95C2DF2F50740199D4", hash_generated_method = "5646A56B1CC1B8CD56823ADEA879F00F")
+        /**
+         * @param index The action for a given action <code>index</code>.
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:23.907 -0500", hash_original_method = "7D2F0A4FD4E90A95C2DF2F50740199D4", hash_generated_method = "13E85B00BD6A0B96484A78D38D600ADE")
         public int getAction(int index) {
-            addTaint(index);
-            int varE31817265A0A094F5753AAC0B308FE6C_1180640096 = (mActionSequence[index]);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_699722616 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_699722616;
-            // ---------- Original Method ----------
-            //return mActionSequence[index];
+            return mActionSequence[index];
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.116 -0400", hash_original_method = "CA4B639111BCEE7DB87E06F000E025C0", hash_generated_method = "F9441501CEDFBE3BC181DE3C9CD257E0")
+        /**
+         * @param index The action code for a given action <code>index</code>.
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:23.908 -0500", hash_original_method = "CA4B639111BCEE7DB87E06F000E025C0", hash_generated_method = "B6AB1F50D29F52FFF438913497513DF5")
         public int getActionCode(int index) {
-            addTaint(index);
-            int varECE6401468DA90AB7AC358CBE3757694_901035875 = ((mActionSequence[index] & ACTION_MASK) >> ACTION_OFFSET);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1247131143 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1247131143;
-            // ---------- Original Method ----------
-            //return (mActionSequence[index] & ACTION_MASK) >> ACTION_OFFSET;
+            return (mActionSequence[index] & ACTION_MASK) >> ACTION_OFFSET;
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.116 -0400", hash_original_method = "D4FD6DE193B436AB1DC7E71BD25D2E14", hash_generated_method = "C12736AB9B8B6FB319B89686AD2FB2C0")
+        /**
+         * @param index The first argument for a given action <code>index</code>.
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:23.909 -0500", hash_original_method = "D4FD6DE193B436AB1DC7E71BD25D2E14", hash_generated_method = "B580A4336AD2F27C685321604084BA0B")
         public int getFirstArgument(int index) {
-            addTaint(index);
-            int var18D2A268AC6D28E541C200508A0640F7_1474504938 = ((mActionSequence[index] & FIRST_ARGUMENT_MASK) >> FIRST_ARGUMENT_OFFSET);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_603485318 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_603485318;
-            // ---------- Original Method ----------
-            //return (mActionSequence[index] & FIRST_ARGUMENT_MASK) >> FIRST_ARGUMENT_OFFSET;
+            return (mActionSequence[index] & FIRST_ARGUMENT_MASK) >> FIRST_ARGUMENT_OFFSET;
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.116 -0400", hash_original_method = "632B802F886C3F34DA2DAC0FE9DCCFBA", hash_generated_method = "CF20A0B30F63F1EF428CE51A5204534E")
+        /**
+         * @param index The second argument for a given action <code>index</code>.
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:23.910 -0500", hash_original_method = "632B802F886C3F34DA2DAC0FE9DCCFBA", hash_generated_method = "66366F3F047C54B32EDD374CD3BF7F8E")
         public int getSecondArgument(int index) {
-            addTaint(index);
-            int var35FEAFB18A135150C6FD76566BEE267C_84163196 = ((mActionSequence[index] & SECOND_ARGUMENT_MASK) >> SECOND_ARGUMENT_OFFSET);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1143233013 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1143233013;
-            // ---------- Original Method ----------
-            //return (mActionSequence[index] & SECOND_ARGUMENT_MASK) >> SECOND_ARGUMENT_OFFSET;
+            return (mActionSequence[index] & SECOND_ARGUMENT_MASK) >> SECOND_ARGUMENT_OFFSET;
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.116 -0400", hash_original_method = "F37454AACD85ADFC551E32B3CAA53EB4", hash_generated_method = "7D383726F4264D451430DA840CCDB478")
+        /**
+         * @param index The third argument for a given action <code>index</code>.
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:23.911 -0500", hash_original_method = "F37454AACD85ADFC551E32B3CAA53EB4", hash_generated_method = "9DF1A778A4A6698D325F9C0E58013BEB")
         public int getThirdArgument(int index) {
-            addTaint(index);
-            int var5A96A24059FFDFF4B544F9DA67323D00_1634988571 = ((mActionSequence[index] & THIRD_ARGUMENT_MASK) >> THIRD_ARGUMENT_OFFSET);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1017217382 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1017217382;
-            // ---------- Original Method ----------
-            //return (mActionSequence[index] & THIRD_ARGUMENT_MASK) >> THIRD_ARGUMENT_OFFSET;
+            return (mActionSequence[index] & THIRD_ARGUMENT_MASK) >> THIRD_ARGUMENT_OFFSET;
         }
 
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.116 -0400", hash_original_method = "DADE2DD09F8576C0E4A43D6B7E83F05B", hash_generated_method = "B45959DAB99DAC4267CCA6F4DDDB82B3")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:23.913 -0500", hash_original_method = "DADE2DD09F8576C0E4A43D6B7E83F05B", hash_generated_method = "E6A6AAD15ACE8C8260621F1150C5B272")
         @Override
-        public String toString() {
+public String toString() {
             StringBuilder builder = new StringBuilder();
             builder.append("modifiers: ");
             builder.append(getModifiers());
             builder.append(", keyCode: ");
             builder.append(getKeyCode());
             builder.append(", actions[");
-for(int i = 0, count = getActionCount();i < count;i++)
-            {
+            for (int i = 0, count = getActionCount(); i < count; i++) {
                 builder.append("{actionCode");
                 builder.append(i);
                 builder.append(": ");
@@ -538,82 +329,194 @@ for(int i = 0, count = getActionCount();i < count;i++)
                 builder.append(", thirdArgument: ");
                 builder.append(getThirdArgument(i));
                 builder.append("}");
-            } //End block
+            }
             builder.append("]");
-String varF4CF030572656354ACFDF83FEE21D7A6_693491140 =             builder.toString();
-            varF4CF030572656354ACFDF83FEE21D7A6_693491140.addTaint(taint);
-            return varF4CF030572656354ACFDF83FEE21D7A6_693491140;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            return builder.toString();
         }
-
-        
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.116 -0400", hash_original_field = "0C0B71EEE0395BA6D7CBE31AC5F9AEC2", hash_generated_field = "F8D2FA352C0BA0C64C99BC74D59C6DE5")
-
-        private static final int MODIFIERS_OFFSET = 32;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.116 -0400", hash_original_field = "4505992BBEFFAF0A453237676832770F", hash_generated_field = "F15D255C8A53F382E8E42786FABAD969")
-
-        private static final long MODIFIERS_MASK = 0xFFFFFFF00000000L;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.116 -0400", hash_original_field = "268BF15DBF6497E56A11F1B50F6CC54B", hash_generated_field = "20B9B8442924C25F1223DFD4562CD64E")
-
-        private static final int KEY_CODE_OFFSET = 0;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.117 -0400", hash_original_field = "A03F82C7BF66F13BCD5F7E1BEA4E3A63", hash_generated_field = "B2CEF4BD57CC748D47EB33527D82B47A")
-
-        private static final long KEY_CODE_MASK = 0x00000000FFFFFFFFL;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.117 -0400", hash_original_field = "45C52D9E1A24CD6445095FA543065832", hash_generated_field = "8F5435B4DF6B7CFAD8E1946F8438D2B5")
-
-        private static final int ACTION_OFFSET = 24;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.117 -0400", hash_original_field = "8D3C4D3FB51A62D4CB68E91C75A5376D", hash_generated_field = "32DF52DD728ADC6D34953391F47C41D6")
-
-        private static final int ACTION_MASK = 0xFF000000;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.117 -0400", hash_original_field = "4B391CE42B2BE595405534F2DF2EFDA9", hash_generated_field = "B9AF7AE6175C7800E8579A20EC2D26D0")
-
-        private static final int FIRST_ARGUMENT_OFFSET = 16;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.117 -0400", hash_original_field = "E9317B50C32C42701F4886DE2617571A", hash_generated_field = "E574C2A0E6EC1F21410525FD57E75FF1")
-
-        private static final int FIRST_ARGUMENT_MASK = 0x00FF0000;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.117 -0400", hash_original_field = "6EC87210E442CD14032D5F0F01B65FC7", hash_generated_field = "B17B97D0AC9CE57566EDCD781528A4A2")
-
-        private static final int SECOND_ARGUMENT_OFFSET = 8;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.117 -0400", hash_original_field = "AB08A64255E0C7B85E28CCDD77FCEA6F", hash_generated_field = "817F021C237E947C0BC3253F16A7EA47")
-
-        private static final int SECOND_ARGUMENT_MASK = 0x0000FF00;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.117 -0400", hash_original_field = "9E77A176E5CCF91A8D053D3475189A4E", hash_generated_field = "63F3F631667C122A4E9AB568B7FA393E")
-
-        private static final int THIRD_ARGUMENT_OFFSET = 0;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.117 -0400", hash_original_field = "A645DA048CC672D05E187D3253EC1A0B", hash_generated_field = "532061882B38166B9A4AFA798321EC67")
-
-        private static final int THIRD_ARGUMENT_MASK = 0x000000FF;
     }
 
+    /**
+     * Set the current navigation axis which will be used while
+     * calling {@link #traverseCurrentAxis(int, boolean, String)}.
+     *
+     * @param axis The axis to set.
+     * @param sendEvent Whether to send an accessibility event to
+     *        announce the change.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:23.884 -0500", hash_original_method = "3B116BB7452CBE6872A5E570E7D08041", hash_generated_method = "158B7F9D08A3F76C8015220613332334")
+    private void setCurrentAxis(int axis, boolean sendEvent, String contentDescription) {
+        mCurrentAxis = axis;
+        if (sendEvent) {
+            AccessibilityEvent event = getPartialyPopulatedAccessibilityEvent();
+            event.getText().add(String.valueOf(axis));
+            event.setContentDescription(contentDescription);
+            sendAccessibilityEvent(event);
+        }
+    }
 
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.117 -0400", hash_original_field = "7A4A6FF299BC184104AF90C5A869703C", hash_generated_field = "355BE79B3786523315A38F99C8EFD0EF")
+    /**
+     * Performs conditional transition one axis to another.
+     *
+     * @param fromAxis The axis which must be the current for the transition to occur.
+     * @param toAxis The axis to which to transition.
+     * @param sendEvent Flag if to send an event to announce successful transition.
+     * @param contentDescription A description of the performed action.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:23.885 -0500", hash_original_method = "60CFCAC68A8E46E83373A5BD6B186EBB", hash_generated_method = "FDCD7ECCD5F7A2026D8F5CFF20A42996")
+    private void prefromAxisTransition(int fromAxis, int toAxis, boolean sendEvent,
+            String contentDescription) {
+        if (mCurrentAxis == fromAxis) {
+            setCurrentAxis(toAxis, sendEvent, contentDescription);
+        }
+    }
 
-    private static final String LOG_TAG = "AccessibilityInjector";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.117 -0400", hash_original_field = "BC4FF4C62A62F66D6D2E0A35B84DD24A", hash_generated_field = "0DA17BC1AEF6DBF011A4A750F5A71D57")
+    /**
+     * Traverse the document along the current navigation axis.
+     *
+     * @param direction The direction of traversal.
+     * @param sendEvent Whether to send an accessibility event to
+     *        announce the change.
+     * @param contentDescription A description of the performed action.
+     * @see #setCurrentAxis(int, boolean, String)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:23.885 -0500", hash_original_method = "FD1B61A72867CD7ABA9E4FFEC34475BF", hash_generated_method = "B9FEA51B2B2B7EBC32DCE6FE614CFE0E")
+    private boolean traverseCurrentAxis(int direction, boolean sendEvent,
+            String contentDescription) {
+        return traverseGivenAxis(direction, mCurrentAxis, sendEvent, contentDescription);
+    }
 
-    private static final boolean DEBUG = true;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.117 -0400", hash_original_field = "D174E8BCC0AED576327B0F1324BA60E7", hash_generated_field = "12B31C0D92351F48989DB7D421B336D5")
+    /**
+     * Traverse the document along the given navigation axis.
+     *
+     * @param direction The direction of traversal.
+     * @param axis The axis along which to traverse.
+     * @param sendEvent Whether to send an accessibility event to
+     *        announce the change.
+     * @param contentDescription A description of the performed action.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:23.886 -0500", hash_original_method = "D76A1821B2762F1F39CCFC0B2614F6FE", hash_generated_method = "85DCEA3C9ED01CD1E637E6BEF09DDAC7")
+    private boolean traverseGivenAxis(int direction, int axis, boolean sendEvent,
+            String contentDescription) {
+        WebViewCore webViewCore = mWebView.getWebViewCore();
+        if (webViewCore == null) {
+            return false;
+        }
 
-    private static final int ACTION_SET_CURRENT_AXIS = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.117 -0400", hash_original_field = "D8B4D1E3B010BB703AB75B54023AF722", hash_generated_field = "58291536D1F80FD93588C2E4178BDAD6")
+        AccessibilityEvent event = null;
+        if (sendEvent) {
+            event = getPartialyPopulatedAccessibilityEvent();
+            // the text will be set upon receiving the selection string
+            event.setContentDescription(contentDescription);
+        }
+        mScheduledEventStack.push(event);
 
-    private static final int ACTION_TRAVERSE_CURRENT_AXIS = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.117 -0400", hash_original_field = "84277BDA8832766167541A97D9B03555", hash_generated_field = "BBB0B8A34D0FE9233A286CF9AF35FBDF")
+        // if the axis is the default let WebView handle the event which will
+        // result in cursor ring movement and selection of its content
+        if (axis == NAVIGATION_AXIS_DEFAULT_WEB_VIEW_BEHAVIOR) {
+            return false;
+        }
 
-    private static final int ACTION_TRAVERSE_GIVEN_AXIS = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.117 -0400", hash_original_field = "914DC005E92F1387BA3876F25D96B7D9", hash_generated_field = "9DC1A870966F6613A76EDD9AF5A52F83")
+        webViewCore.sendMessage(EventHub.MODIFY_SELECTION, direction, axis);
+        return true;
+    }
 
-    private static final int ACTION_PERFORM_AXIS_TRANSITION = 3;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.117 -0400", hash_original_field = "892EF700461E7EA84893534B3C007ED8", hash_generated_field = "795FF9003847153FEDDC6135D24C99D1")
+    /**
+     * Called when the <code>selectionString</code> has changed.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:23.887 -0500", hash_original_method = "C444A575AEA295F9C8E995BA1405A425", hash_generated_method = "F4FA90B78B2EB701CCA6C72BBED426F8")
+    public void onSelectionStringChange(String selectionString) {
+        if (DEBUG) {
+            Log.d(LOG_TAG, "Selection string: " + selectionString);
+        }
+        mIsLastSelectionStringNull = (selectionString == null);
+        if (mScheduledEventStack.isEmpty()) {
+            return;
+        }
+        AccessibilityEvent event = mScheduledEventStack.pop();
+        if (event != null) {
+            event.getText().add(selectionString);
+            sendAccessibilityEvent(event);
+        }
+    }
 
-    private static final int ACTION_TRAVERSE_DEFAULT_WEB_VIEW_BEHAVIOR_AXIS = 4;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.117 -0400", hash_original_field = "CEA850454B129A29D1E5F8174751004E", hash_generated_field = "2A75193CE584F6498192A47349148458")
+    /**
+     * Sends an {@link AccessibilityEvent}.
+     *
+     * @param event The event to send.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:23.888 -0500", hash_original_method = "A93E1B734733D18B27A729FA6BA2D3D4", hash_generated_method = "2FC0F06CF4A4D54F5682496E2A763FA6")
+    private void sendAccessibilityEvent(AccessibilityEvent event) {
+        if (DEBUG) {
+            Log.d(LOG_TAG, "Dispatching: " + event);
+        }
+        // accessibility may be disabled while waiting for the selection string
+        AccessibilityManager accessibilityManager =
+            AccessibilityManager.getInstance(mWebView.getContext());
+        if (accessibilityManager.isEnabled()) {
+            accessibilityManager.sendAccessibilityEvent(event);
+        }
+    }
 
-    private static final int NAVIGATION_AXIS_DEFAULT_WEB_VIEW_BEHAVIOR = 7;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.117 -0400", hash_original_field = "9952A1D46E5D034CB3461690E0BC8CAF", hash_generated_field = "4C5C7E9C43BB16E424C598EA8932A1C4")
+    /**
+     * @return An accessibility event whose members are populated except its
+     *         text and content description.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:23.889 -0500", hash_original_method = "97CE5C613C0F00A9204AE55F86D0A1E4", hash_generated_method = "77662BA77326FE621C60C6B05D073523")
+    private AccessibilityEvent getPartialyPopulatedAccessibilityEvent() {
+        AccessibilityEvent event = AccessibilityEvent.obtain(AccessibilityEvent.TYPE_VIEW_SELECTED);
+        event.setClassName(mWebView.getClass().getName());
+        event.setPackageName(mWebView.getContext().getPackageName());
+        event.setEnabled(mWebView.isEnabled());
+        return event;
+    }
 
-    private static ArrayList<AccessibilityWebContentKeyBinding> sBindings = new ArrayList<AccessibilityWebContentKeyBinding>();
+    /**
+     * Ensures that the Web content key bindings are loaded.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:23.890 -0500", hash_original_method = "391E7039B2527FA351ED94B9C1004246", hash_generated_method = "579B77F351718BE58AD7B7B280502260")
+    private void ensureWebContentKeyBindings() {
+        if (sBindings.size() > 0) {
+            return;
+        }
+
+        String webContentKeyBindingsString  = Settings.Secure.getString(
+                mWebView.getContext().getContentResolver(),
+                Settings.Secure.ACCESSIBILITY_WEB_CONTENT_KEY_BINDINGS);
+
+        SimpleStringSplitter semiColonSplitter = new SimpleStringSplitter(';');
+        semiColonSplitter.setString(webContentKeyBindingsString);
+
+        while (semiColonSplitter.hasNext()) {
+            String bindingString = semiColonSplitter.next();
+            if (TextUtils.isEmpty(bindingString)) {
+                Log.e(LOG_TAG, "Disregarding malformed Web content key binding: "
+                        + webContentKeyBindingsString);
+                continue;
+            }
+            String[] keyValueArray = bindingString.split("=");
+            if (keyValueArray.length != 2) {
+                Log.e(LOG_TAG, "Disregarding malformed Web content key binding: " + bindingString);
+                continue;
+            }
+            try {
+                long keyCodeAndModifiers = Long.decode(keyValueArray[0].trim());
+                String[] actionStrings = keyValueArray[1].split(":");
+                int[] actions = new int[actionStrings.length];
+                for (int i = 0, count = actions.length; i < count; i++) {
+                    actions[i] = Integer.decode(actionStrings[i].trim());
+                }
+                sBindings.add(new AccessibilityWebContentKeyBinding(keyCodeAndModifiers, actions));
+            } catch (NumberFormatException nfe) {
+                Log.e(LOG_TAG, "Disregarding malformed key binding: " + bindingString);
+            }
+        }
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:23.891 -0500", hash_original_method = "6AB19E93948D2A1BBE98A475D0E38626", hash_generated_method = "A11ABE9645CFB85AB3245D436E4A8107")
+    private boolean isEnterActionKey(int keyCode) {
+        return keyCode == KeyEvent.KEYCODE_DPAD_CENTER
+                || keyCode == KeyEvent.KEYCODE_ENTER
+                || keyCode == KeyEvent.KEYCODE_NUMPAD_ENTER;
+    }
 }
 

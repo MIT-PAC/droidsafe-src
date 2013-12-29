@@ -1,6 +1,8 @@
 package org.apache.http.conn.routing;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.net.InetAddress;
 
@@ -12,417 +14,306 @@ import org.apache.http.HttpHost;
 
 
 public final class RouteTracker implements RouteInfo, Cloneable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.914 -0400", hash_original_field = "3F08D0C1EE30947C2F84BB49ACD4C461", hash_generated_field = "7B58806231BEF3BA039CB1C0F515C7D6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:17.986 -0500", hash_original_field = "905C01B4FE2157113AE81815E13AB5AC", hash_generated_field = "7B58806231BEF3BA039CB1C0F515C7D6")
 
-    private HttpHost targetHost;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.914 -0400", hash_original_field = "5C73038C2146DC3AED672FCA3B0ADB95", hash_generated_field = "10EEA7EDCC69FFFCA8BA704DF8B9F4B1")
+    private  HttpHost targetHost;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:17.987 -0500", hash_original_field = "6D0817E97781DDC5DCC8C96F35E70EDB", hash_generated_field = "10EEA7EDCC69FFFCA8BA704DF8B9F4B1")
 
-    private InetAddress localAddress;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.914 -0400", hash_original_field = "06AA6FA8BDC2078E7E1BD903E70C8F6A", hash_generated_field = "C918229792F6B488CD7E2D698EFF8324")
+    private  InetAddress localAddress;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:17.988 -0500", hash_original_field = "F29BF14E2D06802EFFABC46F01FDE626", hash_generated_field = "AE881BEA99A956FB32928BC2C30B9E85")
 
+    // now follow attributes that indicate the established route
+
+    /** Whether the first hop of the route is established. */
     private boolean connected;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.914 -0400", hash_original_field = "7A2DD2189AFBB29C40B72010D69E5341", hash_generated_field = "9682DC3432E3E3ED390A25A380BAA9D2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:17.989 -0500", hash_original_field = "C347087C6B3C58ACC349324C1DD767B1", hash_generated_field = "9682DC3432E3E3ED390A25A380BAA9D2")
 
     private HttpHost[] proxyChain;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.915 -0400", hash_original_field = "67C7F7D4D32F4FB2F36BB398BBCACCC0", hash_generated_field = "E015AA325755E4410D4EEEB2DE5795E3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:17.990 -0500", hash_original_field = "57EDF877C937AB638E451F146941127D", hash_generated_field = "E015AA325755E4410D4EEEB2DE5795E3")
 
     private TunnelType tunnelled;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.915 -0400", hash_original_field = "9442E6482C63DEF4C35BC13B704C52E2", hash_generated_field = "54A65546030D5940821BF07A848F0902")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:17.990 -0500", hash_original_field = "5333F91ABB8C106413CA644E1B704E25", hash_generated_field = "54A65546030D5940821BF07A848F0902")
 
     private LayerType layered;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.915 -0400", hash_original_field = "1C0B76FCE779F78F51BE339C49445C49", hash_generated_field = "D17DE8BC324386A0F759A8245C34BC17")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:17.991 -0500", hash_original_field = "63DC6869FF37EDAA23661806B080C4ED", hash_generated_field = "D17DE8BC324386A0F759A8245C34BC17")
 
     private boolean secure;
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.916 -0400", hash_original_method = "225F1E2FD25662F69AE6A7484F5A3DE6", hash_generated_method = "E9D21B01112E8BD7B2331CD92A121978")
-    public  RouteTracker(HttpHost target, InetAddress local) {
-        if(target == null)        
-        {
-            IllegalArgumentException var0834355F17AB1D6D8F9C33D9EE9B8ED6_647035969 = new IllegalArgumentException("Target host may not be null.");
-            var0834355F17AB1D6D8F9C33D9EE9B8ED6_647035969.addTaint(taint);
-            throw var0834355F17AB1D6D8F9C33D9EE9B8ED6_647035969;
-        } //End block
+
+
+    /**
+     * Creates a new route tracker.
+     * The target and origin need to be specified at creation time.
+     *
+     * @param target    the host to which to route
+     * @param local     the local address to route from, or
+     *                  <code>null</code> for the default
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:17.992 -0500", hash_original_method = "225F1E2FD25662F69AE6A7484F5A3DE6", hash_generated_method = "0B873B5BDB61A0A73ACAAADB7F7D472A")
+    public RouteTracker(HttpHost target, InetAddress local) {
+        if (target == null) {
+            throw new IllegalArgumentException("Target host may not be null.");
+        }
         this.targetHost   = target;
         this.localAddress = local;
         this.tunnelled    = TunnelType.PLAIN;
         this.layered      = LayerType.PLAIN;
-        // ---------- Original Method ----------
-        //if (target == null) {
-            //throw new IllegalArgumentException("Target host may not be null.");
-        //}
-        //this.targetHost   = target;
-        //this.localAddress = local;
-        //this.tunnelled    = TunnelType.PLAIN;
-        //this.layered      = LayerType.PLAIN;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.916 -0400", hash_original_method = "9F2302B948E2DACBF43BEB44AB6E1806", hash_generated_method = "1431D61C28009DA2526CE6306C32B6F9")
-    public  RouteTracker(HttpRoute route) {
+
+    /**
+     * Creates a new tracker for the given route.
+     * Only target and origin are taken from the route,
+     * everything else remains to be tracked.
+     *
+     * @param route     the route to track
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:17.993 -0500", hash_original_method = "9F2302B948E2DACBF43BEB44AB6E1806", hash_generated_method = "50FA3A9A4962DBECF2BDBFD829E818F4")
+    public RouteTracker(HttpRoute route) {
         this(route.getTargetHost(), route.getLocalAddress());
-        addTaint(route.getTaint());
-        // ---------- Original Method ----------
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.917 -0400", hash_original_method = "BF1F9DC8D5382B51655F853917583FAE", hash_generated_method = "E3876B31315E201209DE930C9A7AF9B7")
+
+    /**
+     * Tracks connecting to the target.
+     *
+     * @param secure    <code>true</code> if the route is secure,
+     *                  <code>false</code> otherwise
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:17.994 -0500", hash_original_method = "BF1F9DC8D5382B51655F853917583FAE", hash_generated_method = "34668A5982D6B9136EC1FEE0CEB13223")
     public final void connectTarget(boolean secure) {
-        if(this.connected)        
-        {
-            IllegalStateException var0CA65896F322A09D3E6BD61A388FA8B5_1621264654 = new IllegalStateException("Already connected.");
-            var0CA65896F322A09D3E6BD61A388FA8B5_1621264654.addTaint(taint);
-            throw var0CA65896F322A09D3E6BD61A388FA8B5_1621264654;
-        } //End block
+        if (this.connected) {
+            throw new IllegalStateException("Already connected.");
+        }
         this.connected = true;
         this.secure = secure;
-        // ---------- Original Method ----------
-        //if (this.connected) {
-            //throw new IllegalStateException("Already connected.");
-        //}
-        //this.connected = true;
-        //this.secure = secure;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.918 -0400", hash_original_method = "3003DC7DA59FD970800BABF8F86CE4CE", hash_generated_method = "BA7CC4B8DAFFCBF4D391FEAB7D84D0DB")
+
+    /**
+     * Tracks connecting to the first proxy.
+     *
+     * @param proxy     the proxy connected to
+     * @param secure    <code>true</code> if the route is secure,
+     *                  <code>false</code> otherwise
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:17.995 -0500", hash_original_method = "3003DC7DA59FD970800BABF8F86CE4CE", hash_generated_method = "A05F49A324F76D94861C4DC456DEFD13")
     public final void connectProxy(HttpHost proxy, boolean secure) {
-        addTaint(proxy.getTaint());
-        if(proxy == null)        
-        {
-            IllegalArgumentException var0CD84C903ADF2DDB413B21B5128ACE60_1058755973 = new IllegalArgumentException("Proxy host may not be null.");
-            var0CD84C903ADF2DDB413B21B5128ACE60_1058755973.addTaint(taint);
-            throw var0CD84C903ADF2DDB413B21B5128ACE60_1058755973;
-        } //End block
-        if(this.connected)        
-        {
-            IllegalStateException var0CA65896F322A09D3E6BD61A388FA8B5_1386922557 = new IllegalStateException("Already connected.");
-            var0CA65896F322A09D3E6BD61A388FA8B5_1386922557.addTaint(taint);
-            throw var0CA65896F322A09D3E6BD61A388FA8B5_1386922557;
-        } //End block
+        if (proxy == null) {
+            throw new IllegalArgumentException("Proxy host may not be null.");
+        }
+        if (this.connected) {
+            throw new IllegalStateException("Already connected.");
+        }
         this.connected  = true;
         this.proxyChain = new HttpHost[]{ proxy };
         this.secure     = secure;
-        // ---------- Original Method ----------
-        //if (proxy == null) {
-            //throw new IllegalArgumentException("Proxy host may not be null.");
-        //}
-        //if (this.connected) {
-            //throw new IllegalStateException("Already connected.");
-        //}
-        //this.connected  = true;
-        //this.proxyChain = new HttpHost[]{ proxy };
-        //this.secure     = secure;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.919 -0400", hash_original_method = "E27069CB33BE85EAA2A2A23BD0F575F7", hash_generated_method = "8F44723C2C33C36D3EBA623984B7CE59")
+
+    /**
+     * Tracks tunnelling to the target.
+     *
+     * @param secure    <code>true</code> if the route is secure,
+     *                  <code>false</code> otherwise
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:17.996 -0500", hash_original_method = "E27069CB33BE85EAA2A2A23BD0F575F7", hash_generated_method = "6A98932C22C2CB8ABCF2AF613C907DAD")
     public final void tunnelTarget(boolean secure) {
-        if(!this.connected)        
-        {
-            IllegalStateException var84B6D964FE82434F45EFD2853AD96CB7_468815544 = new IllegalStateException("No tunnel unless connected.");
-            var84B6D964FE82434F45EFD2853AD96CB7_468815544.addTaint(taint);
-            throw var84B6D964FE82434F45EFD2853AD96CB7_468815544;
-        } //End block
-        if(this.proxyChain == null)        
-        {
-            IllegalStateException var6381764CC756A597EE30F01CAC6781FB_718101639 = new IllegalStateException("No tunnel without proxy.");
-            var6381764CC756A597EE30F01CAC6781FB_718101639.addTaint(taint);
-            throw var6381764CC756A597EE30F01CAC6781FB_718101639;
-        } //End block
+        if (!this.connected) {
+            throw new IllegalStateException("No tunnel unless connected.");
+        }
+        if (this.proxyChain == null) {
+            throw new IllegalStateException("No tunnel without proxy.");
+        }
         this.tunnelled = TunnelType.TUNNELLED;
         this.secure    = secure;
-        // ---------- Original Method ----------
-        //if (!this.connected) {
-            //throw new IllegalStateException("No tunnel unless connected.");
-        //}
-        //if (this.proxyChain == null) {
-            //throw new IllegalStateException("No tunnel without proxy.");
-        //}
-        //this.tunnelled = TunnelType.TUNNELLED;
-        //this.secure    = secure;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.921 -0400", hash_original_method = "F92C099980BF3075944300484370C03E", hash_generated_method = "1CB086EE439B6BF9752AC7267F8E0EF5")
+
+    /**
+     * Tracks tunnelling to a proxy in a proxy chain.
+     * This will extend the tracked proxy chain, but it does not mark
+     * the route as tunnelled. Only end-to-end tunnels are considered there.
+     *
+     * @param proxy     the proxy tunnelled to
+     * @param secure    <code>true</code> if the route is secure,
+     *                  <code>false</code> otherwise
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:17.996 -0500", hash_original_method = "F92C099980BF3075944300484370C03E", hash_generated_method = "77BC8B89B31A6D4C76D7878ADA540AEF")
     public final void tunnelProxy(HttpHost proxy, boolean secure) {
-        addTaint(proxy.getTaint());
-        if(proxy == null)        
-        {
-            IllegalArgumentException var0CD84C903ADF2DDB413B21B5128ACE60_1737822856 = new IllegalArgumentException("Proxy host may not be null.");
-            var0CD84C903ADF2DDB413B21B5128ACE60_1737822856.addTaint(taint);
-            throw var0CD84C903ADF2DDB413B21B5128ACE60_1737822856;
-        } //End block
-        if(!this.connected)        
-        {
-            IllegalStateException var84B6D964FE82434F45EFD2853AD96CB7_1938012772 = new IllegalStateException("No tunnel unless connected.");
-            var84B6D964FE82434F45EFD2853AD96CB7_1938012772.addTaint(taint);
-            throw var84B6D964FE82434F45EFD2853AD96CB7_1938012772;
-        } //End block
-        if(this.proxyChain == null)        
-        {
-            IllegalStateException var28AF9133120E1F47404F4E22D650F28A_1762161042 = new IllegalStateException("No proxy tunnel without proxy.");
-            var28AF9133120E1F47404F4E22D650F28A_1762161042.addTaint(taint);
-            throw var28AF9133120E1F47404F4E22D650F28A_1762161042;
-        } //End block
+        if (proxy == null) {
+            throw new IllegalArgumentException("Proxy host may not be null.");
+        }
+        if (!this.connected) {
+            throw new IllegalStateException("No tunnel unless connected.");
+        }
+        if (this.proxyChain == null) {
+            throw new IllegalStateException("No proxy tunnel without proxy.");
+        }
+
+        // prepare an extended proxy chain
         HttpHost[] proxies = new HttpHost[this.proxyChain.length+1];
         System.arraycopy(this.proxyChain, 0,
                          proxies, 0, this.proxyChain.length);
         proxies[proxies.length-1] = proxy;
+
         this.proxyChain = proxies;
         this.secure     = secure;
-        // ---------- Original Method ----------
-        //if (proxy == null) {
-            //throw new IllegalArgumentException("Proxy host may not be null.");
-        //}
-        //if (!this.connected) {
-            //throw new IllegalStateException("No tunnel unless connected.");
-        //}
-        //if (this.proxyChain == null) {
-            //throw new IllegalStateException("No proxy tunnel without proxy.");
-        //}
-        //HttpHost[] proxies = new HttpHost[this.proxyChain.length+1];
-        //System.arraycopy(this.proxyChain, 0,
-                         //proxies, 0, this.proxyChain.length);
-        //proxies[proxies.length-1] = proxy;
-        //this.proxyChain = proxies;
-        //this.secure     = secure;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.922 -0400", hash_original_method = "54E7131A3C39BD59A18A0ED51B306BB3", hash_generated_method = "E52496B5E844C902EC2CF66533D477E5")
+
+    /**
+     * Tracks layering a protocol.
+     *
+     * @param secure    <code>true</code> if the route is secure,
+     *                  <code>false</code> otherwise
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:17.997 -0500", hash_original_method = "54E7131A3C39BD59A18A0ED51B306BB3", hash_generated_method = "D579B0D15373BD7654C8DE6DBEC8A9F4")
     public final void layerProtocol(boolean secure) {
-        if(!this.connected)        
-        {
-            IllegalStateException varDCA3356D51E641A02D8D439B2EC6C6CB_318156112 = new IllegalStateException
+        // it is possible to layer a protocol over a direct connection,
+        // although this case is probably not considered elsewhere
+        if (!this.connected) {
+            throw new IllegalStateException
                 ("No layered protocol unless connected.");
-            varDCA3356D51E641A02D8D439B2EC6C6CB_318156112.addTaint(taint);
-            throw varDCA3356D51E641A02D8D439B2EC6C6CB_318156112;
-        } //End block
+        }
         this.layered = LayerType.LAYERED;
         this.secure  = secure;
-        // ---------- Original Method ----------
-        //if (!this.connected) {
-            //throw new IllegalStateException
-                //("No layered protocol unless connected.");
-        //}
-        //this.layered = LayerType.LAYERED;
-        //this.secure  = secure;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.923 -0400", hash_original_method = "00F8E4422BF57DE6758D681F4A99BDB6", hash_generated_method = "0F0F03282FFC8CA149488AFFD043D67F")
+
+
+    // non-JavaDoc, see interface RouteInfo
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:17.998 -0500", hash_original_method = "00F8E4422BF57DE6758D681F4A99BDB6", hash_generated_method = "3CF09B50D9FFB38E80EC0DF2754F3C7C")
     public final HttpHost getTargetHost() {
-HttpHost var67C71439C5981484698447EE93E1A003_1453220130 =         this.targetHost;
-        var67C71439C5981484698447EE93E1A003_1453220130.addTaint(taint);
-        return var67C71439C5981484698447EE93E1A003_1453220130;
-        // ---------- Original Method ----------
-        //return this.targetHost;
+        return this.targetHost;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.923 -0400", hash_original_method = "28495B9032685860E947A62701D0E919", hash_generated_method = "19C77BD7AD1FFE103445A5EEC97590A3")
+
+    // non-JavaDoc, see interface RouteInfo
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:17.999 -0500", hash_original_method = "28495B9032685860E947A62701D0E919", hash_generated_method = "B1EF19B51880E604C3C8A9B2EC317276")
     public final InetAddress getLocalAddress() {
-InetAddress varD252CCE80C2F3B9DE81EE46EA65F5895_1545736463 =         this.localAddress;
-        varD252CCE80C2F3B9DE81EE46EA65F5895_1545736463.addTaint(taint);
-        return varD252CCE80C2F3B9DE81EE46EA65F5895_1545736463;
-        // ---------- Original Method ----------
-        //return this.localAddress;
+        return this.localAddress;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.924 -0400", hash_original_method = "6ABB5CCC8F0E8E8F1BDF34E043639F85", hash_generated_method = "37046C7962046851E42482A02303EF3D")
+
+    // non-JavaDoc, see interface RouteInfo
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:18.000 -0500", hash_original_method = "6ABB5CCC8F0E8E8F1BDF34E043639F85", hash_generated_method = "AD1EC8D5550945F77A5A84A92BB90212")
     public final int getHopCount() {
         int hops = 0;
-        if(this.connected)        
-        {
-            if(proxyChain == null)            
-            hops = 1;
+        if (this.connected) {
+            if (proxyChain == null)
+                hops = 1;
             else
-            hops = proxyChain.length + 1;
-        } //End block
-        int varA6B9236BF6C7A3DFAFDBC0709208ACC0_955162906 = (hops);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_322950879 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_322950879;
-        // ---------- Original Method ----------
-        //int hops = 0;
-        //if (this.connected) {
-            //if (proxyChain == null)
-                //hops = 1;
-            //else
-                //hops = proxyChain.length + 1;
-        //}
-        //return hops;
+                hops = proxyChain.length + 1;
+        }
+        return hops;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.925 -0400", hash_original_method = "CFC4B3441FDC551CC1F391519968AE1F", hash_generated_method = "FC86257485D333EB890386DD7A00422D")
+
+    // non-JavaDoc, see interface RouteInfo
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:18.001 -0500", hash_original_method = "CFC4B3441FDC551CC1F391519968AE1F", hash_generated_method = "357DFC3EEE7A7ACCEF102E9E374192CE")
     public final HttpHost getHopTarget(int hop) {
-        addTaint(hop);
-        if(hop < 0)        
-        {
-        IllegalArgumentException var853EA8D3011B4A803E1D3E44BA5221BB_479576065 = new IllegalArgumentException
+        if (hop < 0)
+            throw new IllegalArgumentException
                 ("Hop index must not be negative: " + hop);
-        var853EA8D3011B4A803E1D3E44BA5221BB_479576065.addTaint(taint);
-        throw var853EA8D3011B4A803E1D3E44BA5221BB_479576065;
-        }
         final int hopcount = getHopCount();
-        if(hop >= hopcount)        
-        {
-            IllegalArgumentException var1799D5024220AB2FFBB3F8AC12DD69BF_625045221 = new IllegalArgumentException
+        if (hop >= hopcount) {
+            throw new IllegalArgumentException
                 ("Hop index " + hop +
                  " exceeds tracked route length " + hopcount +".");
-            var1799D5024220AB2FFBB3F8AC12DD69BF_625045221.addTaint(taint);
-            throw var1799D5024220AB2FFBB3F8AC12DD69BF_625045221;
-        } //End block
+        }
+
         HttpHost result = null;
-        if(hop < hopcount-1)        
-        result = this.proxyChain[hop];
+        if (hop < hopcount-1)
+            result = this.proxyChain[hop];
         else
-        result = this.targetHost;
-HttpHost varDC838461EE2FA0CA4C9BBB70A15456B0_1962763159 =         result;
-        varDC838461EE2FA0CA4C9BBB70A15456B0_1962763159.addTaint(taint);
-        return varDC838461EE2FA0CA4C9BBB70A15456B0_1962763159;
-        // ---------- Original Method ----------
-        //if (hop < 0)
-            //throw new IllegalArgumentException
-                //("Hop index must not be negative: " + hop);
-        //final int hopcount = getHopCount();
-        //if (hop >= hopcount) {
-            //throw new IllegalArgumentException
-                //("Hop index " + hop +
-                 //" exceeds tracked route length " + hopcount +".");
-        //}
-        //HttpHost result = null;
-        //if (hop < hopcount-1)
-            //result = this.proxyChain[hop];
-        //else
-            //result = this.targetHost;
-        //return result;
+            result = this.targetHost;
+
+        return result;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.926 -0400", hash_original_method = "E9E1E8AC6D9C2477F7E0F63BF0C4ED60", hash_generated_method = "131E32B6482E8A8099DB4F436EFA627A")
+
+    // non-JavaDoc, see interface RouteInfo
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:18.002 -0500", hash_original_method = "E9E1E8AC6D9C2477F7E0F63BF0C4ED60", hash_generated_method = "30E7E8E67A319853D2C851FAF279DA52")
     public final HttpHost getProxyHost() {
-HttpHost varF8CC471EE86A19D0A727D1FC9C328686_1175552183 =         (this.proxyChain == null) ? null : this.proxyChain[0];
-        varF8CC471EE86A19D0A727D1FC9C328686_1175552183.addTaint(taint);
-        return varF8CC471EE86A19D0A727D1FC9C328686_1175552183;
-        // ---------- Original Method ----------
-        //return (this.proxyChain == null) ? null : this.proxyChain[0];
+        return (this.proxyChain == null) ? null : this.proxyChain[0];
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.926 -0400", hash_original_method = "42622BE2571C040A9FEE72D0CCBA0217", hash_generated_method = "DDFCD61D25B7227CA28F9CBA0205460E")
+
+    // non-JavaDoc, see interface RouteInfo
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:18.003 -0500", hash_original_method = "42622BE2571C040A9FEE72D0CCBA0217", hash_generated_method = "272079035DD4B0E10E8C769843BFB4F3")
     public final boolean isConnected() {
-        boolean varB72E10DC8F160FCBA9062C311E010F86_21075167 = (this.connected);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1158086446 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1158086446;
-        // ---------- Original Method ----------
-        //return this.connected;
+        return this.connected;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.927 -0400", hash_original_method = "350E5C2EB4A104FE6F444729C8CD5444", hash_generated_method = "95072EE34F32CE78BDDFBE90A83D948C")
+
+    // non-JavaDoc, see interface RouteInfo
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:18.003 -0500", hash_original_method = "350E5C2EB4A104FE6F444729C8CD5444", hash_generated_method = "34D96FF8C8A24960212FD51CCBD1FAE7")
     public final TunnelType getTunnelType() {
-TunnelType var2217FBB31A61A2BC06264383F23E2C7F_1821141208 =         this.tunnelled;
-        var2217FBB31A61A2BC06264383F23E2C7F_1821141208.addTaint(taint);
-        return var2217FBB31A61A2BC06264383F23E2C7F_1821141208;
-        // ---------- Original Method ----------
-        //return this.tunnelled;
+        return this.tunnelled;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.927 -0400", hash_original_method = "5CD3D72A708D2B06B9BD542F01F3D0EE", hash_generated_method = "2F104F6CE2D765EB0BA46AB08DD32E9D")
+
+    // non-JavaDoc, see interface RouteInfo
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:18.004 -0500", hash_original_method = "5CD3D72A708D2B06B9BD542F01F3D0EE", hash_generated_method = "9C3F884A327393840A81C20C66CDA5A9")
     public final boolean isTunnelled() {
-        boolean var6E17A163EAADFAAEEF827D05D550510F_1045013786 = ((this.tunnelled == TunnelType.TUNNELLED));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1507089070 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1507089070;
-        // ---------- Original Method ----------
-        //return (this.tunnelled == TunnelType.TUNNELLED);
+        return (this.tunnelled == TunnelType.TUNNELLED);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.928 -0400", hash_original_method = "24DDB6A6987422E004B186B027F8E19E", hash_generated_method = "90742058E4A9C386D9AD83ACC8D42269")
+
+    // non-JavaDoc, see interface RouteInfo
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:18.005 -0500", hash_original_method = "24DDB6A6987422E004B186B027F8E19E", hash_generated_method = "16B0A69A0FDF7D043EE16E0E25CFF1F6")
     public final LayerType getLayerType() {
-LayerType var0B365440B9E6602F90569354BDD2D5AF_1530682020 =         this.layered;
-        var0B365440B9E6602F90569354BDD2D5AF_1530682020.addTaint(taint);
-        return var0B365440B9E6602F90569354BDD2D5AF_1530682020;
-        // ---------- Original Method ----------
-        //return this.layered;
+        return this.layered;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.928 -0400", hash_original_method = "90484F935FB331F087FF42A42BD08719", hash_generated_method = "7AD1D6EFDBDAD044ECFE1F4376592287")
+
+    // non-JavaDoc, see interface RouteInfo
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:18.006 -0500", hash_original_method = "90484F935FB331F087FF42A42BD08719", hash_generated_method = "C6CAA6739334D47F3B176C5B89C711DE")
     public final boolean isLayered() {
-        boolean var78483962D1129A47EBB9F287858CE500_1311015258 = ((this.layered == LayerType.LAYERED));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1074014324 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1074014324;
-        // ---------- Original Method ----------
-        //return (this.layered == LayerType.LAYERED);
+        return (this.layered == LayerType.LAYERED);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.929 -0400", hash_original_method = "F448B780707B5356535204966A8ECD14", hash_generated_method = "462157B6EA50BFE1AD9207DADBCF6FAE")
+
+    // non-JavaDoc, see interface RouteInfo
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:18.007 -0500", hash_original_method = "F448B780707B5356535204966A8ECD14", hash_generated_method = "D63F92E2829B7A464F6073C5CB36443A")
     public final boolean isSecure() {
-        boolean var1A6CF3022022F86E5EAF7A933D51276A_2124339138 = (this.secure);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_742454923 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_742454923;
-        // ---------- Original Method ----------
-        //return this.secure;
+        return this.secure;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.929 -0400", hash_original_method = "F708D9F908B17C9085BF9A499A01375A", hash_generated_method = "0D404DF0E7CE9CAD5B229EBD14E6B988")
+
+    /**
+     * Obtains the tracked route.
+     * If a route has been tracked, it is {@link #isConnected connected}.
+     * If not connected, nothing has been tracked so far.
+     *
+     * @return  the tracked route, or
+     *          <code>null</code> if nothing has been tracked so far
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:18.008 -0500", hash_original_method = "F708D9F908B17C9085BF9A499A01375A", hash_generated_method = "96ADD9E6FABD0224F8868F657F2EEC8B")
     public final HttpRoute toRoute() {
-HttpRoute varE41698FEE7663C0A9148DADE09262853_705790838 =         !this.connected ?
+        return !this.connected ?
             null : new HttpRoute(this.targetHost, this.localAddress,
                                  this.proxyChain, this.secure,
                                  this.tunnelled, this.layered);
-        varE41698FEE7663C0A9148DADE09262853_705790838.addTaint(taint);
-        return varE41698FEE7663C0A9148DADE09262853_705790838;
-        // ---------- Original Method ----------
-        //return !this.connected ?
-            //null : new HttpRoute(this.targetHost, this.localAddress,
-                                 //this.proxyChain, this.secure,
-                                 //this.tunnelled, this.layered);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.930 -0400", hash_original_method = "63363EB4B4D28F766A23B83B48599393", hash_generated_method = "FB2FD647993FAE33C0B3D6BE68E28E20")
+
+    /**
+     * Compares this tracked route to another.
+     *
+     * @param o         the object to compare with
+     *
+     * @return  <code>true</code> if the argument is the same tracked route,
+     *          <code>false</code>
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:18.009 -0500", hash_original_method = "63363EB4B4D28F766A23B83B48599393", hash_generated_method = "83E6B08A153F5D18F61651070F02427A")
     @Override
-    public final boolean equals(Object o) {
-        addTaint(o.getTaint());
-        if(o == this)        
-        {
-        boolean varB326B5062B2F0E69046810717534CB09_2082058926 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2089681078 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2089681078;
-        }
-        if(!(o instanceof RouteTracker))        
-        {
-        boolean var68934A3E9455FA72420237EB05902327_637467488 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_675176706 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_675176706;
-        }
+public final boolean equals(Object o) {
+        if (o == this)
+            return true;
+        if (!(o instanceof RouteTracker))
+            return false;
+
         RouteTracker that = (RouteTracker) o;
         boolean equal = this.targetHost.equals(that.targetHost);
         equal &=
@@ -434,113 +325,100 @@ HttpRoute varE41698FEE7663C0A9148DADE09262853_705790838 =         !this.connecte
             ((this.proxyChain        != null) &&
              (that.proxyChain        != null) &&
              (this.proxyChain.length == that.proxyChain.length));
+        // comparison of actual proxies follows below
         equal &=
             (this.connected == that.connected) &&
             (this.secure    == that.secure) &&
             (this.tunnelled == that.tunnelled) &&
             (this.layered   == that.layered);
-        if(equal && (this.proxyChain != null))        
-        {
-for(int i=0;equal && (i<this.proxyChain.length);i++)
-            equal = this.proxyChain[i].equals(that.proxyChain[i]);
-        } //End block
-        boolean var465289687A70DB7AA7217CC240C29F0F_1091984567 = (equal);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_715571284 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_715571284;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+
+        // chain length has been compared above, now check the proxies
+        if (equal && (this.proxyChain != null)) {
+            for (int i=0; equal && (i<this.proxyChain.length); i++)
+                equal = this.proxyChain[i].equals(that.proxyChain[i]);
+        }
+
+        return equal;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.931 -0400", hash_original_method = "DF8EA32EAB4DFA40B45F048298D9408F", hash_generated_method = "3148F00990B841041F1DF4131E7FBD88")
+
+    /**
+     * Generates a hash code for this tracked route.
+     * Route trackers are modifiable and should therefore not be used
+     * as lookup keys. Use {@link #toRoute toRoute} to obtain an
+     * unmodifiable representation of the tracked route.
+     *
+     * @return  the hash code
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:18.010 -0500", hash_original_method = "DF8EA32EAB4DFA40B45F048298D9408F", hash_generated_method = "58514B974B1316ABCC1A82491B013001")
     @Override
-    public final int hashCode() {
+public final int hashCode() {
+
         int hc = this.targetHost.hashCode();
-        if(this.localAddress != null)        
-        hc ^= localAddress.hashCode();
-        if(this.proxyChain != null)        
-        {
+
+        if (this.localAddress != null)
+            hc ^= localAddress.hashCode();
+        if (this.proxyChain != null) {
             hc ^= proxyChain.length;
-for(int i=0;i<proxyChain.length;i++)
-            hc ^= proxyChain[i].hashCode();
-        } //End block
-        if(this.connected)        
-        hc ^= 0x11111111;
-        if(this.secure)        
-        hc ^= 0x22222222;
+            for (int i=0; i<proxyChain.length; i++)
+                hc ^= proxyChain[i].hashCode();
+        }
+
+        if (this.connected)
+            hc ^= 0x11111111;
+        if (this.secure)
+            hc ^= 0x22222222;
+
         hc ^= this.tunnelled.hashCode();
         hc ^= this.layered.hashCode();
-        int var6320C1115D5BC2B6CA615B96BE050884_1129117210 = (hc);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_115619777 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_115619777;
-        // ---------- Original Method ----------
-        //int hc = this.targetHost.hashCode();
-        //if (this.localAddress != null)
-            //hc ^= localAddress.hashCode();
-        //if (this.proxyChain != null) {
-            //hc ^= proxyChain.length;
-            //for (int i=0; i<proxyChain.length; i++)
-                //hc ^= proxyChain[i].hashCode();
-        //}
-        //if (this.connected)
-            //hc ^= 0x11111111;
-        //if (this.secure)
-            //hc ^= 0x22222222;
-        //hc ^= this.tunnelled.hashCode();
-        //hc ^= this.layered.hashCode();
-        //return hc;
+
+        return hc;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.932 -0400", hash_original_method = "B9AFE31805DA49D5CF66B21B19FA6A72", hash_generated_method = "EEB4524CC6602E0C43EC8653194030E8")
+
+    /**
+     * Obtains a description of the tracked route.
+     *
+     * @return  a human-readable representation of the tracked route
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:18.011 -0500", hash_original_method = "B9AFE31805DA49D5CF66B21B19FA6A72", hash_generated_method = "6BD011116FB54A602164B5846E190397")
     @Override
-    public final String toString() {
+public final String toString() {
         StringBuilder cab = new StringBuilder(50 + getHopCount()*30);
+
         cab.append("RouteTracker[");
-        if(this.localAddress != null)        
-        {
+        if (this.localAddress != null) {
             cab.append(this.localAddress);
             cab.append("->");
-        } //End block
+        }
         cab.append('{');
-        if(this.connected)        
-        cab.append('c');
-        if(this.tunnelled == TunnelType.TUNNELLED)        
-        cab.append('t');
-        if(this.layered == LayerType.LAYERED)        
-        cab.append('l');
-        if(this.secure)        
-        cab.append('s');
+        if (this.connected)
+            cab.append('c');
+        if (this.tunnelled == TunnelType.TUNNELLED)
+            cab.append('t');
+        if (this.layered == LayerType.LAYERED)
+            cab.append('l');
+        if (this.secure)
+            cab.append('s');
         cab.append("}->");
-        if(this.proxyChain != null)        
-        {
-for(int i=0;i<this.proxyChain.length;i++)
-            {
+        if (this.proxyChain != null) {
+            for (int i=0; i<this.proxyChain.length; i++) {
                 cab.append(this.proxyChain[i]);
                 cab.append("->");
-            } //End block
-        } //End block
+            }
+        }
         cab.append(this.targetHost);
         cab.append(']');
-String var5D73975C9EFF81CD9FF6232386AC7C22_1799321174 =         cab.toString();
-        var5D73975C9EFF81CD9FF6232386AC7C22_1799321174.addTaint(taint);
-        return var5D73975C9EFF81CD9FF6232386AC7C22_1799321174;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+
+        return cab.toString();
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.933 -0400", hash_original_method = "66DEBDF0D0405CDDBB7BD5DED76064DF", hash_generated_method = "6F713336D1194406AAFA4730CB9B86B4")
+
+    // default implementation of clone() is sufficient
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:18.012 -0500", hash_original_method = "66DEBDF0D0405CDDBB7BD5DED76064DF", hash_generated_method = "49055EB107CA2B05DED5ACBCE67DF575")
     @Override
-    public Object clone() throws CloneNotSupportedException {
-Object var46F3A0D86742C1D6E099C2B166941A33_958811096 =         super.clone();
-        var46F3A0D86742C1D6E099C2B166941A33_958811096.addTaint(taint);
-        return var46F3A0D86742C1D6E099C2B166941A33_958811096;
-        // ---------- Original Method ----------
-        //return super.clone();
+public Object clone() throws CloneNotSupportedException {
+        return super.clone();
     }
 
     

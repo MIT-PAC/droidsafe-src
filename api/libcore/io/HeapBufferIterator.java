@@ -1,6 +1,8 @@
 package libcore.io;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.nio.ByteOrder;
 
@@ -10,132 +12,82 @@ import java.nio.ByteOrder;
 
 
 public final class HeapBufferIterator extends BufferIterator {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.420 -0400", hash_original_field = "7F2DB423A49B305459147332FB01CF87", hash_generated_field = "67DBC7965A32AEE1CAB7B25294021930")
 
-    private byte[] buffer;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.420 -0400", hash_original_field = "7A86C157EE9713C34FBD7A1EE40F0C5A", hash_generated_field = "EA4C80BAC452228E60AC0DA2D3E0C953")
+    /**
+     * Returns a new iterator over {@code buffer}, starting at {@code offset} and continuing for
+     * {@code byteCount} bytes. Items larger than a byte are interpreted using the given byte order.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:37.352 -0500", hash_original_method = "50DDBF65236F6B74CE26E4FFEB599E26", hash_generated_method = "1C6F16E9EC71C8983BCCE2335895A333")
+    public static BufferIterator iterator(byte[] buffer, int offset, int byteCount, ByteOrder order) {
+        return new HeapBufferIterator(buffer, offset, byteCount, order);
+    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:37.342 -0500", hash_original_field = "3923F3F9F9ECABE8D28493E863FC2CD8", hash_generated_field = "67DBC7965A32AEE1CAB7B25294021930")
 
-    private int offset;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.420 -0400", hash_original_field = "A43EF6D60A83013EA1A61A23BDB16029", hash_generated_field = "DC277C639F48D7E94DBBE3413CDE414C")
+    private  byte[] buffer;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:37.343 -0500", hash_original_field = "B7E810BF01B52122CB927525A0CA4721", hash_generated_field = "EA4C80BAC452228E60AC0DA2D3E0C953")
 
-    private int byteCount;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.420 -0400", hash_original_field = "70A17FFA722A3985B86D30B034AD06D7", hash_generated_field = "5EA306A71C575DAB9547A05F7BED60EB")
+    private  int offset;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:37.343 -0500", hash_original_field = "FC1D512EB5A05C1E1E196E59E2DEC859", hash_generated_field = "DC277C639F48D7E94DBBE3413CDE414C")
 
-    private ByteOrder order;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.420 -0400", hash_original_field = "4757FE07FD492A8BE0EA6A760D683D6E", hash_generated_field = "312206EA2404526B7BBC621459C87A80")
+    private  int byteCount;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:37.344 -0500", hash_original_field = "E082DA3C44F503226ED810D6BA3A24C0", hash_generated_field = "5EA306A71C575DAB9547A05F7BED60EB")
+
+    private  ByteOrder order;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:37.345 -0500", hash_original_field = "92D7808EB8CD548A137230400384C6DC", hash_generated_field = "312206EA2404526B7BBC621459C87A80")
+
 
     private int position;
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.421 -0400", hash_original_method = "A6C30EED25CCFD2AB62FEA4E16ACBAB8", hash_generated_method = "823E99C85FB6B418E4A8B14A07E9B962")
-      HeapBufferIterator(byte[] buffer, int offset, int byteCount, ByteOrder order) {
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:37.346 -0500", hash_original_method = "A6C30EED25CCFD2AB62FEA4E16ACBAB8", hash_generated_method = "A6C30EED25CCFD2AB62FEA4E16ACBAB8")
+    HeapBufferIterator(byte[] buffer, int offset, int byteCount, ByteOrder order) {
         this.buffer = buffer;
         this.offset = offset;
         this.byteCount = byteCount;
         this.order = order;
-        // ---------- Original Method ----------
-        //this.buffer = buffer;
-        //this.offset = offset;
-        //this.byteCount = byteCount;
-        //this.order = order;
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.421 -0400", hash_original_method = "E36D4B83C08A879BB369FD4BF3E743B5", hash_generated_method = "D66EB936D868E838CC6FBF758BD016A1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:37.347 -0500", hash_original_method = "E36D4B83C08A879BB369FD4BF3E743B5", hash_generated_method = "89EF647B0FB134CB7088C8FC04ED9705")
     public void seek(int offset) {
         position = offset;
-        // ---------- Original Method ----------
-        //position = offset;
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.421 -0400", hash_original_method = "5C6BD475B81B38C95ED571F8A0E18EDC", hash_generated_method = "940E96887BCB1FBE664555A63C820A3C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:37.347 -0500", hash_original_method = "5C6BD475B81B38C95ED571F8A0E18EDC", hash_generated_method = "C71B63B55A78ABE126A2084325A3BF14")
     public void skip(int byteCount) {
         position += byteCount;
-        // ---------- Original Method ----------
-        //position += byteCount;
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.421 -0400", hash_original_method = "3E61A2FCBE8F1A085EF50016EDA93C91", hash_generated_method = "F2A972725E0F950EABF7D46C2A9BF48F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:37.348 -0500", hash_original_method = "3E61A2FCBE8F1A085EF50016EDA93C91", hash_generated_method = "B04DA2391690FAC6443414964BD05355")
     public void readByteArray(byte[] dst, int dstOffset, int byteCount) {
-        addTaint(dstOffset);
-        addTaint(dst[0]);
         System.arraycopy(buffer, offset + position, dst, dstOffset, byteCount);
         position += byteCount;
-        // ---------- Original Method ----------
-        //System.arraycopy(buffer, offset + position, dst, dstOffset, byteCount);
-        //position += byteCount;
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.421 -0400", hash_original_method = "7E225AB4906C9181CA855352CCAC2289", hash_generated_method = "0B554F35C2F9558D440F918A447E49CC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:37.349 -0500", hash_original_method = "7E225AB4906C9181CA855352CCAC2289", hash_generated_method = "A1801187CC0C135B81530FBE3F56BD6E")
     public byte readByte() {
         byte result = buffer[offset + position];
         ++position;
-        byte varB4A88417B3D0170D754C647C30B7216A_139188560 = (result);
-                byte var40EA57D3EE3C07BF1C102B466E1C3091_102535440 = getTaintByte();
-        return var40EA57D3EE3C07BF1C102B466E1C3091_102535440;
-        // ---------- Original Method ----------
-        //byte result = buffer[offset + position];
-        //++position;
-        //return result;
+        return result;
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.421 -0400", hash_original_method = "DB59E455EA40BB4A6ED9DEE68F53B94D", hash_generated_method = "E0B737010494C202529575E36469A726")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:37.350 -0500", hash_original_method = "DB59E455EA40BB4A6ED9DEE68F53B94D", hash_generated_method = "5523EA7EBBA3701703A6ECB156B3D0B0")
     public int readInt() {
         int result = Memory.peekInt(buffer, offset + position, order);
         position += SizeOf.INT;
-        int varB4A88417B3D0170D754C647C30B7216A_1680905591 = (result);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_300024117 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_300024117;
-        // ---------- Original Method ----------
-        //int result = Memory.peekInt(buffer, offset + position, order);
-        //position += SizeOf.INT;
-        //return result;
+        return result;
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.421 -0400", hash_original_method = "329E16A9527E1EB7B49C2B3423D775A3", hash_generated_method = "F9498F674AF7E8E07D616E60E23ACF01")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:37.351 -0500", hash_original_method = "329E16A9527E1EB7B49C2B3423D775A3", hash_generated_method = "87CE23AEB6ED153D49ED54CDFB1D7681")
     public void readIntArray(int[] dst, int dstOffset, int intCount) {
-        addTaint(intCount);
-        addTaint(dstOffset);
-        addTaint(dst[0]);
         final int byteCount = intCount * SizeOf.INT;
         Memory.unsafeBulkGet(dst, dstOffset, byteCount, buffer, offset + position, SizeOf.INT, order.needsSwap);
         position += byteCount;
-        // ---------- Original Method ----------
-        //final int byteCount = intCount * SizeOf.INT;
-        //Memory.unsafeBulkGet(dst, dstOffset, byteCount, buffer, offset + position, SizeOf.INT, order.needsSwap);
-        //position += byteCount;
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.422 -0400", hash_original_method = "DE8A7EDE581D91941B0B91B035994D93", hash_generated_method = "30A1901A590DB9B0ED38B365F12E9890")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:37.351 -0500", hash_original_method = "DE8A7EDE581D91941B0B91B035994D93", hash_generated_method = "52CA29CF8633B1B8AC3C914C142C277D")
     public short readShort() {
         short result = Memory.peekShort(buffer, offset + position, order);
         position += SizeOf.SHORT;
-        short varB4A88417B3D0170D754C647C30B7216A_2037930627 = (result);
-                short var4F09DAA9D95BCB166A302407A0E0BABE_138275056 = getTaintShort();
-        return var4F09DAA9D95BCB166A302407A0E0BABE_138275056;
-        // ---------- Original Method ----------
-        //short result = Memory.peekShort(buffer, offset + position, order);
-        //position += SizeOf.SHORT;
-        //return result;
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    public static BufferIterator iterator(byte[] buffer, int offset, int byteCount, ByteOrder order) {
-        return new HeapBufferIterator(buffer, offset, byteCount, order);
+        return result;
     }
 
     

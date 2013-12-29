@@ -1,6 +1,8 @@
 package org.apache.harmony.xml.dom;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import org.w3c.dom.CharacterData;
 import org.w3c.dom.DOMException;
@@ -11,168 +13,82 @@ import org.w3c.dom.DOMException;
 
 
 public abstract class CharacterDataImpl extends LeafNodeImpl implements CharacterData {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.168 -0400", hash_original_field = "7F2DB423A49B305459147332FB01CF87", hash_generated_field = "8AF0FC6820B1A3CAE77FB8E492E96A1F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:15.595 -0500", hash_original_field = "A9CAEEE2FF165AC333A62258118495FF", hash_generated_field = "8AF0FC6820B1A3CAE77FB8E492E96A1F")
+
 
     protected StringBuffer buffer;
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.169 -0400", hash_original_method = "2CB76BA87C10BADB4B5943F1B8732E1D", hash_generated_method = "8F15F2CC9C5F87747EE4E20D290E4362")
-      CharacterDataImpl(DocumentImpl document, String data) {
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:15.596 -0500", hash_original_method = "2CB76BA87C10BADB4B5943F1B8732E1D", hash_generated_method = "2CB76BA87C10BADB4B5943F1B8732E1D")
+    CharacterDataImpl(DocumentImpl document, String data) {
         super(document);
-        addTaint(data.getTaint());
-        addTaint(document.getTaint());
         setData(data);
-        // ---------- Original Method ----------
-        //setData(data);
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.170 -0400", hash_original_method = "8D2E95955BDAA1E5036D56B6067F1E47", hash_generated_method = "059971E5260F5004355F12D91A21B538")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:15.597 -0500", hash_original_method = "8D2E95955BDAA1E5036D56B6067F1E47", hash_generated_method = "7D20DBB56DC3EEA9BE11C9C2098F5A18")
     public void appendData(String arg) throws DOMException {
-        addTaint(arg.getTaint());
         buffer.append(arg);
-        // ---------- Original Method ----------
-        //buffer.append(arg);
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.171 -0400", hash_original_method = "C5CFAF8AE779968C86BDE7FF84B0F3C2", hash_generated_method = "ADC178DB02344097BAF3C71212EE3B37")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:15.598 -0500", hash_original_method = "C5CFAF8AE779968C86BDE7FF84B0F3C2", hash_generated_method = "96D2A0CF005BB6E6C9C2795098D76E79")
     public void deleteData(int offset, int count) throws DOMException {
-        addTaint(count);
-        addTaint(offset);
         buffer.delete(offset, offset + count);
-        // ---------- Original Method ----------
-        //buffer.delete(offset, offset + count);
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.171 -0400", hash_original_method = "0E5A18340A236774C2757554A3CD1C3E", hash_generated_method = "7C4A44DDD903C830CD1B0F72A7F15DE6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:15.599 -0500", hash_original_method = "0E5A18340A236774C2757554A3CD1C3E", hash_generated_method = "E88571BC406AD60D137504BDC277894D")
     public String getData() throws DOMException {
-String varD03843288D33B9E1D3062E25339ECF6D_1394181815 =         buffer.toString();
-        varD03843288D33B9E1D3062E25339ECF6D_1394181815.addTaint(taint);
-        return varD03843288D33B9E1D3062E25339ECF6D_1394181815;
-        // ---------- Original Method ----------
-        //return buffer.toString();
+        return buffer.toString();
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.172 -0400", hash_original_method = "DF8889919B491656E0252194C5FFA90E", hash_generated_method = "A918F92CF730A33AC3F60E20C95E0B62")
+    /**
+     * Appends this node's text content to the given builder.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:15.599 -0500", hash_original_method = "DF8889919B491656E0252194C5FFA90E", hash_generated_method = "D87174C4B8E2D68B4A903DF949F60DBE")
     public void appendDataTo(StringBuilder stringBuilder) {
-        addTaint(stringBuilder.getTaint());
         stringBuilder.append(buffer);
-        // ---------- Original Method ----------
-        //stringBuilder.append(buffer);
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.172 -0400", hash_original_method = "106EC06D9039E5E9A5A139C346DB10D2", hash_generated_method = "4D7746B90941B9F37323A20986818735")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:15.600 -0500", hash_original_method = "106EC06D9039E5E9A5A139C346DB10D2", hash_generated_method = "6982BC3E7A3243A8899A15B8AA18E2B7")
     public int getLength() {
-        int var2F91DDEFEC2C6B29A9FB08A23412E50A_1602636668 = (buffer.length());
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_430260808 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_430260808;
-        // ---------- Original Method ----------
-        //return buffer.length();
+        return buffer.length();
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.172 -0400", hash_original_method = "25D9FE8F6D2D11968D5C5576BFCDE9E9", hash_generated_method = "0FFC9682601914FA459B15E84A54AC84")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:15.601 -0500", hash_original_method = "25D9FE8F6D2D11968D5C5576BFCDE9E9", hash_generated_method = "355DC249A20997EE2DDDEF00945A93EB")
     @Override
-    public String getNodeValue() {
-String var440EBBDCD2C81ACAD0A4F29C408AA623_1901007973 =         getData();
-        var440EBBDCD2C81ACAD0A4F29C408AA623_1901007973.addTaint(taint);
-        return var440EBBDCD2C81ACAD0A4F29C408AA623_1901007973;
-        // ---------- Original Method ----------
-        //return getData();
+public String getNodeValue() {
+        return getData();
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.173 -0400", hash_original_method = "A6FF009A3A3E2831559B90C314C3B8F7", hash_generated_method = "875DCB02E1BD43E61F1E169C2554AA1C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:15.602 -0500", hash_original_method = "A6FF009A3A3E2831559B90C314C3B8F7", hash_generated_method = "C07C5A734496CD0BAC7D6B4D348C1563")
     public void insertData(int offset, String arg) throws DOMException {
-        addTaint(arg.getTaint());
-        addTaint(offset);
-        try 
-        {
+        try {
             buffer.insert(offset, arg);
-        } //End block
-        catch (ArrayIndexOutOfBoundsException ex)
-        {
-            DOMException var9289CB175910D102FDEE25262796A51E_1777955064 = new DOMException(DOMException.INDEX_SIZE_ERR, null);
-            var9289CB175910D102FDEE25262796A51E_1777955064.addTaint(taint);
-            throw var9289CB175910D102FDEE25262796A51E_1777955064;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //buffer.insert(offset, arg);
-        //} catch (ArrayIndexOutOfBoundsException ex) {
-            //throw new DOMException(DOMException.INDEX_SIZE_ERR, null);
-        //}
+        } catch (ArrayIndexOutOfBoundsException ex) {
+            throw new DOMException(DOMException.INDEX_SIZE_ERR, null);
+        }
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.174 -0400", hash_original_method = "902A00AF0157FBC9B2C5E619B021F2A0", hash_generated_method = "886570609EBEC4CB332BE966A7573D66")
-    public void replaceData(int offset, int count, String arg) throws DOMException {
-        addTaint(arg.getTaint());
-        addTaint(count);
-        addTaint(offset);
-        try 
-        {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:15.603 -0500", hash_original_method = "902A00AF0157FBC9B2C5E619B021F2A0", hash_generated_method = "B80657FFBD1C3F72F0D9B72712F53D86")
+    public void replaceData(int offset, int count, String arg)
+            throws DOMException {
+        try {
             buffer.replace(offset, offset + count, arg);
-        } //End block
-        catch (ArrayIndexOutOfBoundsException ex)
-        {
-            DOMException var9289CB175910D102FDEE25262796A51E_1915835095 = new DOMException(DOMException.INDEX_SIZE_ERR, null);
-            var9289CB175910D102FDEE25262796A51E_1915835095.addTaint(taint);
-            throw var9289CB175910D102FDEE25262796A51E_1915835095;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //buffer.replace(offset, offset + count, arg);
-        //} catch (ArrayIndexOutOfBoundsException ex) {
-            //throw new DOMException(DOMException.INDEX_SIZE_ERR, null);
-        //}
+        } catch (ArrayIndexOutOfBoundsException ex) {
+            throw new DOMException(DOMException.INDEX_SIZE_ERR, null);
+        }
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.174 -0400", hash_original_method = "5BA6B073B626BFB26050E72E23806022", hash_generated_method = "6496183DCE4DB6F8C176C6F810C8C422")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:15.603 -0500", hash_original_method = "5BA6B073B626BFB26050E72E23806022", hash_generated_method = "D119B080B48318E2AA7109BC0FDFCB03")
     public void setData(String data) throws DOMException {
         buffer = new StringBuffer(data);
-        // ---------- Original Method ----------
-        //buffer = new StringBuffer(data);
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.175 -0400", hash_original_method = "A81B93BB1735B5989CFA37B27C9FA648", hash_generated_method = "C91B2B8C6903D070CE8F8B6751C23023")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:15.604 -0500", hash_original_method = "A81B93BB1735B5989CFA37B27C9FA648", hash_generated_method = "1AC7A6F99FFE1123A320628FE7C21DFB")
     public String substringData(int offset, int count) throws DOMException {
-        addTaint(count);
-        addTaint(offset);
-        try 
-        {
-String varA73FBC0ECD565CFC05C059EA0FBBD8AE_787601323 =             buffer.substring(offset, offset + count);
-            varA73FBC0ECD565CFC05C059EA0FBBD8AE_787601323.addTaint(taint);
-            return varA73FBC0ECD565CFC05C059EA0FBBD8AE_787601323;
-        } //End block
-        catch (ArrayIndexOutOfBoundsException ex)
-        {
-            DOMException var9289CB175910D102FDEE25262796A51E_1264142034 = new DOMException(DOMException.INDEX_SIZE_ERR, null);
-            var9289CB175910D102FDEE25262796A51E_1264142034.addTaint(taint);
-            throw var9289CB175910D102FDEE25262796A51E_1264142034;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return buffer.substring(offset, offset + count);
-        //} catch (ArrayIndexOutOfBoundsException ex) {
-            //throw new DOMException(DOMException.INDEX_SIZE_ERR, null);
-        //}
+        try {
+            return buffer.substring(offset, offset + count);
+        } catch (ArrayIndexOutOfBoundsException ex) {
+            throw new DOMException(DOMException.INDEX_SIZE_ERR, null);
+        }
     }
 
     

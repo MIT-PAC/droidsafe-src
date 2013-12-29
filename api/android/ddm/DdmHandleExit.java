@@ -1,6 +1,9 @@
 package android.ddm;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
+import android.util.Log;
 import droidsafe.annotations.*;
 import java.nio.ByteBuffer;
 
@@ -14,59 +17,61 @@ import org.apache.harmony.dalvik.ddmc.DdmServer;
 
 
 public class DdmHandleExit extends ChunkHandler {
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.131 -0400", hash_original_method = "4CE2D1F4C1C2D74BBC9BDD8F112E8266", hash_generated_method = "E1D802991165E9F58003EAF806F78F0E")
-    private  DdmHandleExit() {
-        // ---------- Original Method ----------
-    }
 
-    
-    @DSModeled(DSC.BAN)
+    /**
+     * Register for the messages we're interested in.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:14.154 -0500", hash_original_method = "2C162FFAD344A5CDEA9F9F6270AC8B9D", hash_generated_method = "7008F5653BFCECB85C70EC2FACC5F89A")
     public static void register() {
         DdmServer.registerHandler(CHUNK_EXIT, mInstance);
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:14.152 -0500", hash_original_field = "8157E52A71C2E662BFD594C40F33A43C", hash_generated_field = "DAAD47F6FA6C4CC32717481A9CF9A22B")
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.132 -0400", hash_original_method = "FF1AB110B94FCC8AEFA697D75FFC57DD", hash_generated_method = "234EA70F7C5F3B8EA6891C34DC4DD59D")
-    public void connected() {
-        // ---------- Original Method ----------
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.132 -0400", hash_original_method = "7ECE87C8E0B6AC612BF4B05EB3BE89DA", hash_generated_method = "A03BB8B8FD980F77D1775E26C3251D60")
-    public void disconnected() {
-        // ---------- Original Method ----------
-    }
-
-    
-        @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.133 -0400", hash_original_method = "82AA707C3D594DFF9A299AE775B6B0C9", hash_generated_method = "14AAB2C807D9412B359CEFBDFE74B6A6")
-    public Chunk handleChunk(Chunk request) {
-        addTaint(request.getTaint());
-        if(false){ }        ByteBuffer in = wrapChunk(request);
-        int statusCode = in.getInt();
-        Runtime.getRuntime().halt(statusCode);
-Chunk var540C13E9E156B687226421B24F2DF178_178119972 =         null;
-        var540C13E9E156B687226421B24F2DF178_178119972.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_178119972;
-        // ---------- Original Method ----------
-        //if (false)
-            //Log.v("ddm-exit", "Handling " + name(request.type) + " chunk");
-        //ByteBuffer in = wrapChunk(request);
-        //int statusCode = in.getInt();
-        //Runtime.getRuntime().halt(statusCode);
-        //return null;
-    }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.133 -0400", hash_original_field = "9C2D1D219ADFA92F41C9C1232643CA15", hash_generated_field = "DAAD47F6FA6C4CC32717481A9CF9A22B")
 
     public static final int CHUNK_EXIT = type("EXIT");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.133 -0400", hash_original_field = "1E74222B4CCB7C07805D4174191619EA", hash_generated_field = "5929389BB4771070576D8746DF348AC9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:14.152 -0500", hash_original_field = "CFC7735AE34A95928FF1A286CB5255C0", hash_generated_field = "5929389BB4771070576D8746DF348AC9")
+
 
     private static DdmHandleExit mInstance = new DdmHandleExit();
+
+
+    /* singleton, do not instantiate */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:14.153 -0500", hash_original_method = "4CE2D1F4C1C2D74BBC9BDD8F112E8266", hash_generated_method = "2DF6E57612A3447A887AE56C7D8A9376")
+    private DdmHandleExit() {}
+
+    /**
+     * Called when the DDM server connects.  The handler is allowed to
+     * send messages to the server.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:14.155 -0500", hash_original_method = "FF1AB110B94FCC8AEFA697D75FFC57DD", hash_generated_method = "B371B1A5EBF86980C6290FA035BAE684")
+    public void connected() {}
+
+    /**
+     * Called when the DDM server disconnects.  Can be used to disable
+     * periodic transmissions or clean up saved state.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:14.156 -0500", hash_original_method = "7ECE87C8E0B6AC612BF4B05EB3BE89DA", hash_generated_method = "5061C51BA9AB55A45A330545ECB336D2")
+    public void disconnected() {}
+
+    /**
+     * Handle a chunk of data.  We're only registered for "EXIT".
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:14.156 -0500", hash_original_method = "82AA707C3D594DFF9A299AE775B6B0C9", hash_generated_method = "98E6B087723D101A0E68731DFDBCE4D0")
+    public Chunk handleChunk(Chunk request) {
+        if (false)
+            Log.v("ddm-exit", "Handling " + name(request.type) + " chunk");
+
+        /*
+         * Process the request.
+         */
+        ByteBuffer in = wrapChunk(request);
+
+        int statusCode = in.getInt();
+
+        Runtime.getRuntime().halt(statusCode);
+
+        // if that doesn't work, return an empty message
+        return null;
+    }
 }
 

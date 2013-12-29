@@ -1,6 +1,8 @@
 package javax.net.ssl;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.security.Principal;
 import java.security.cert.Certificate;
@@ -14,106 +16,119 @@ import javax.security.cert.X509Certificate;
 
 
 public class HandshakeCompletedEvent extends EventObject {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.593 -0400", hash_original_field = "21D6F40CFB511982E4424E0E250A9557", hash_generated_field = "263AF05607311316518E2566C59FC14C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:29.300 -0500", hash_original_field = "F313759BDBF4B9277516E56C5D7DFEA3", hash_generated_field = "263AF05607311316518E2566C59FC14C")
+
 
     private transient SSLSession session;
-    
-        @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.593 -0400", hash_original_method = "49E2221C7C9E09C593B53C8D7CC4ED30", hash_generated_method = "7A8448F3800B0E2713B80E8EAA9DE7DE")
-    public  HandshakeCompletedEvent(SSLSocket sock, SSLSession s) {
+
+    /**
+     * Creates a new {@code HandshakeCompletedEvent} with the specified SSL
+     * socket and SSL session.
+     *
+     * @param sock
+     *            the SSL socket.
+     * @param s
+     *            the SSL session.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:29.301 -0500", hash_original_method = "49E2221C7C9E09C593B53C8D7CC4ED30", hash_generated_method = "3E009F112554F672821987086E176639")
+    public HandshakeCompletedEvent(SSLSocket sock, SSLSession s) {
         super(sock);
-        addTaint(sock.getTaint());
         session = s;
-        // ---------- Original Method ----------
-        //session = s;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.594 -0400", hash_original_method = "2F35DBDDEE25D44180770FC68EA02FBF", hash_generated_method = "86753B685EFB8B04F1BAFAB440B29F4A")
+    /**
+     * Returns the SSL session associated with this event.
+     *
+     * @return the SSL session associated with this event.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:29.301 -0500", hash_original_method = "2F35DBDDEE25D44180770FC68EA02FBF", hash_generated_method = "BD23FC6460B0B92CC62DD72D6181F539")
     public SSLSession getSession() {
-SSLSession varD555E544A66E0F97DA6BCDE940E3E79C_1380388782 =         session;
-        varD555E544A66E0F97DA6BCDE940E3E79C_1380388782.addTaint(taint);
-        return varD555E544A66E0F97DA6BCDE940E3E79C_1380388782;
-        // ---------- Original Method ----------
-        //return session;
+        return session;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.594 -0400", hash_original_method = "AA50F870D8B0EDDAC30AA11C075FA460", hash_generated_method = "918CF92591056CBB2A504EFE70C20355")
+    /**
+     * Returns the name of the cipher suite negotiated during this handshake.
+     *
+     * @return the name of the cipher suite negotiated during this handshake.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:29.302 -0500", hash_original_method = "AA50F870D8B0EDDAC30AA11C075FA460", hash_generated_method = "1E2316B36D9A675C7A1758C2B77C8D60")
     public String getCipherSuite() {
-String var17F7C6541C3AC9A1AB7A1A7947F67092_1298997231 =         session.getCipherSuite();
-        var17F7C6541C3AC9A1AB7A1A7947F67092_1298997231.addTaint(taint);
-        return var17F7C6541C3AC9A1AB7A1A7947F67092_1298997231;
-        // ---------- Original Method ----------
-        //return session.getCipherSuite();
+        return session.getCipherSuite();
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.594 -0400", hash_original_method = "12F750698B4C5596A2F6F73DC7614702", hash_generated_method = "77E7109DC564CB29AB7A2DC22FC2B975")
+    /**
+     * Returns the list of local certificates used during the handshake. These
+     * certificates were sent to the peer.
+     *
+     * @return Returns the list of certificates used during the handshake with
+     *         the local identity certificate followed by CAs, or {@code null}
+     *         if no certificates were used during the handshake.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:29.303 -0500", hash_original_method = "12F750698B4C5596A2F6F73DC7614702", hash_generated_method = "FEA58E2B2F18281695F91F43418F913F")
     public Certificate[] getLocalCertificates() {
-Certificate[] var814C5E0AD153A50BA7251795F2B21D70_1377716341 =         session.getLocalCertificates();
-        var814C5E0AD153A50BA7251795F2B21D70_1377716341.addTaint(taint);
-        return var814C5E0AD153A50BA7251795F2B21D70_1377716341;
-        // ---------- Original Method ----------
-        //return session.getLocalCertificates();
+        return session.getLocalCertificates();
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.595 -0400", hash_original_method = "4973BE3A4ED587D46EBF93135059669C", hash_generated_method = "649CFB66FF63743550215E390C8F7564")
+    /**
+     * Return the list of certificates identifying the peer during the
+     * handshake.
+     *
+     * @return the list of certificates identifying the peer with the peer's
+     *         identity certificate followed by CAs.
+     * @throws SSLPeerUnverifiedException
+     *             if the identity of the peer has not been verified.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:29.304 -0500", hash_original_method = "4973BE3A4ED587D46EBF93135059669C", hash_generated_method = "97670E79A63F3CAA72BC4440460312FF")
     public Certificate[] getPeerCertificates() throws SSLPeerUnverifiedException {
-Certificate[] var95023AC60737474272021AD776AF6739_479019612 =         session.getPeerCertificates();
-        var95023AC60737474272021AD776AF6739_479019612.addTaint(taint);
-        return var95023AC60737474272021AD776AF6739_479019612;
-        // ---------- Original Method ----------
-        //return session.getPeerCertificates();
+        return session.getPeerCertificates();
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.595 -0400", hash_original_method = "8A3AA58C9CA390E089E395D78527A15D", hash_generated_method = "B10C2F91372D2E1F80C17537B0C08AE3")
+    /**
+     * Returns the list of certificates identifying the peer. The peer's
+     * identity certificate is followed by the validated certificate authority
+     * certificates.
+     * <p>
+     * <b>Replaced by:</b> {@link #getPeerCertificates()}
+     *
+     * @return the list of certificates identifying the peer
+     * @throws SSLPeerUnverifiedException
+     *             if the identity of the peer has not been verified.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:29.304 -0500", hash_original_method = "8A3AA58C9CA390E089E395D78527A15D", hash_generated_method = "A00D8369328A7F94E77615415D402AB0")
     public X509Certificate[] getPeerCertificateChain() throws SSLPeerUnverifiedException {
-X509Certificate[] varDD253E96FEFE5AFA9B8333B5E04E8D52_365562285 =         session.getPeerCertificateChain();
-        varDD253E96FEFE5AFA9B8333B5E04E8D52_365562285.addTaint(taint);
-        return varDD253E96FEFE5AFA9B8333B5E04E8D52_365562285;
-        // ---------- Original Method ----------
-        //return session.getPeerCertificateChain();
+        return session.getPeerCertificateChain();
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.595 -0400", hash_original_method = "E52328DA42ED4C7658029875D0FD2A85", hash_generated_method = "6B976C81D69CC3A8E4093C2A7DBA2183")
+    /**
+     * Returns the {@code Principal} identifying the peer.
+     *
+     * @return the {@code Principal} identifying the peer.
+     * @throws SSLPeerUnverifiedException
+     *             if the identity of the peer has not been verified.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:29.306 -0500", hash_original_method = "E52328DA42ED4C7658029875D0FD2A85", hash_generated_method = "E324F5EECAE3FF37E04A099278BAB1CF")
     public Principal getPeerPrincipal() throws SSLPeerUnverifiedException {
-Principal varE32C5C017D2564D4CA9314996F3A7199_861515882 =         session.getPeerPrincipal();
-        varE32C5C017D2564D4CA9314996F3A7199_861515882.addTaint(taint);
-        return varE32C5C017D2564D4CA9314996F3A7199_861515882;
-        // ---------- Original Method ----------
-        //return session.getPeerPrincipal();
+        return session.getPeerPrincipal();
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.596 -0400", hash_original_method = "9AEFAC82D29E63E6CA9E21A60A8B85D0", hash_generated_method = "B12AF50D5BB5450439C37439FC996167")
+    /**
+     * Returns the {@code Principal} used to identify during the handshake.
+     *
+     * @return the {@code Principal} used to identify during the handshake.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:29.307 -0500", hash_original_method = "9AEFAC82D29E63E6CA9E21A60A8B85D0", hash_generated_method = "C8B4F8151B42CE0791579ACAFA97691F")
     public Principal getLocalPrincipal() {
-Principal var1392FB01BD123E39BCC698D8FF713577_693718310 =         session.getLocalPrincipal();
-        var1392FB01BD123E39BCC698D8FF713577_693718310.addTaint(taint);
-        return var1392FB01BD123E39BCC698D8FF713577_693718310;
-        // ---------- Original Method ----------
-        //return session.getLocalPrincipal();
+        return session.getLocalPrincipal();
     }
 
-    
-        @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.596 -0400", hash_original_method = "D59F011BF3B2DFBF72B84D897263E8E1", hash_generated_method = "E11C0771D685130F29EC3E3606184920")
+    /**
+     * Returns the SSL socket that produced this event.
+     *
+     * @return the SSL socket that produced this event.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:29.307 -0500", hash_original_method = "D59F011BF3B2DFBF72B84D897263E8E1", hash_generated_method = "BB47FC9AF47A846EBF1058E99ECDE85D")
     public SSLSocket getSocket() {
-SSLSocket varB4DBB6057745BC2AB2ECD0D5AFD60222_499342565 =         (SSLSocket) this.source;
-        varB4DBB6057745BC2AB2ECD0D5AFD60222_499342565.addTaint(taint);
-        return varB4DBB6057745BC2AB2ECD0D5AFD60222_499342565;
-        // ---------- Original Method ----------
-        //return (SSLSocket) this.source;
+        return (SSLSocket) this.source;
     }
 
     

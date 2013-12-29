@@ -1,6 +1,8 @@
 package android.content.pm;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.text.Collator;
 import java.util.Comparator;
@@ -17,62 +19,47 @@ import android.util.Printer;
 
 
 public class PackageItemInfo {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:04.242 -0400", hash_original_field = "B068931CC450442B63F5B3D276EA4297", hash_generated_field = "D29EB809CD7E712070B86A449A5F2E82")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:04.429 -0500", hash_original_field = "BF45F7481B8091DE3CBF80E94F7F940B", hash_generated_field = "D29EB809CD7E712070B86A449A5F2E82")
 
     public String name;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:04.242 -0400", hash_original_field = "387F1FA6FC99B8AE187C010A06120611", hash_generated_field = "AEA3D3739F492530AF8FD6582FAACBD9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:04.430 -0500", hash_original_field = "6F92EE1B3BCDC0C4179CF5FD998BE046", hash_generated_field = "AEA3D3739F492530AF8FD6582FAACBD9")
 
     public String packageName;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:04.242 -0400", hash_original_field = "8F580A9F881BD5248ABCF6CA4C789B48", hash_generated_field = "5CCBCEA64151325A8B45AD50EEEC958F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:04.431 -0500", hash_original_field = "72766807210949DB14E0A53D32EEFA42", hash_generated_field = "5CCBCEA64151325A8B45AD50EEEC958F")
 
     public int labelRes;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:04.242 -0400", hash_original_field = "C217EC6D87004328FDE9713C8BDFACF1", hash_generated_field = "EEEEA3B26D8CB06153CCE64BF10C94B7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:04.432 -0500", hash_original_field = "E41FD8D985C7C7980A3E63475B8D976E", hash_generated_field = "EEEEA3B26D8CB06153CCE64BF10C94B7")
 
     public CharSequence nonLocalizedLabel;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:04.242 -0400", hash_original_field = "BAEC6461B0D69DDE1B861AEFBE375D8A", hash_generated_field = "CB969AD5516AE5767E5AFFB8BD6B4D43")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:04.433 -0500", hash_original_field = "107298D9FB7BD66B47A702264D3B04F5", hash_generated_field = "CB969AD5516AE5767E5AFFB8BD6B4D43")
 
     public int icon;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:04.242 -0400", hash_original_field = "96D6F2E7E1F705AB5E59C84A6DC009B2", hash_generated_field = "922885A8A44FD4A4B2D8F0B49A2EDED6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:04.433 -0500", hash_original_field = "40F1731F6DDC59241C091ACC1EFBC7B2", hash_generated_field = "922885A8A44FD4A4B2D8F0B49A2EDED6")
 
     public int logo;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:04.243 -0400", hash_original_field = "F39B17E1DA2AF1CD34AAE99B867A1C61", hash_generated_field = "94B83340D21CBE8DE8F4A432223AA875")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:04.434 -0500", hash_original_field = "28705BB70A2AE2760BB13E62CB7CCF68", hash_generated_field = "94B83340D21CBE8DE8F4A432223AA875")
 
     public Bundle metaData;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:04.243 -0400", hash_original_method = "0DA45D98B1805BAB6DB37663419819EF", hash_generated_method = "A53952B9C896D4AF9B209F1D87FED0D1")
-    public  PackageItemInfo() {
-        // ---------- Original Method ----------
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:04.436 -0500", hash_original_method = "0DA45D98B1805BAB6DB37663419819EF", hash_generated_method = "FA7F902D5212EFF50E51D00BC4A84214")
+    public PackageItemInfo() {
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:04.244 -0400", hash_original_method = "31AB547002878BF41C4DB5C45B98DB0F", hash_generated_method = "A215D05FC72E691F04139ABEF7F69CC7")
-    public  PackageItemInfo(PackageItemInfo orig) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:04.437 -0500", hash_original_method = "31AB547002878BF41C4DB5C45B98DB0F", hash_generated_method = "8584BA5F0BEE6B869FCB42A2F7001824")
+    public PackageItemInfo(PackageItemInfo orig) {
         name = orig.name;
-        if(name != null)        
-        name = name.trim();
+        if (name != null) name = name.trim();
         packageName = orig.packageName;
         labelRes = orig.labelRes;
         nonLocalizedLabel = orig.nonLocalizedLabel;
-        if(nonLocalizedLabel != null)        
-        nonLocalizedLabel = nonLocalizedLabel.toString().trim();
+        if (nonLocalizedLabel != null) nonLocalizedLabel = nonLocalizedLabel.toString().trim();
         icon = orig.icon;
         logo = orig.logo;
         metaData = orig.metaData;
-        // ---------- Original Method ----------
-        //name = orig.name;
-        //if (name != null) name = name.trim();
-        //packageName = orig.packageName;
-        //labelRes = orig.labelRes;
-        //nonLocalizedLabel = orig.nonLocalizedLabel;
-        //if (nonLocalizedLabel != null) nonLocalizedLabel = nonLocalizedLabel.toString().trim();
-        //icon = orig.icon;
-        //logo = orig.logo;
-        //metaData = orig.metaData;
     }
-
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:04.246 -0400", hash_original_method = "2EB380960A16EA21F3A081E2F7A7694B", hash_generated_method = "22AEBE2055E4E604C1C7E383018418CE")
-    protected  PackageItemInfo(Parcel source) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:04.445 -0500", hash_original_method = "2EB380960A16EA21F3A081E2F7A7694B", hash_generated_method = "126BA77B707EFB841D48D4AD94835B70")
+    protected PackageItemInfo(Parcel source) {
         name = source.readString();
         packageName = source.readString();
         labelRes = source.readInt();
@@ -81,211 +68,157 @@ public class PackageItemInfo {
         icon = source.readInt();
         logo = source.readInt();
         metaData = source.readBundle();
-        // ---------- Original Method ----------
-        //name = source.readString();
-        //packageName = source.readString();
-        //labelRes = source.readInt();
-        //nonLocalizedLabel
-                //= TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(source);
-        //icon = source.readInt();
-        //logo = source.readInt();
-        //metaData = source.readBundle();
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:04.246 -0400", hash_original_method = "7587CF1BD2560A6C6F4B753C933F3AB0", hash_generated_method = "19A24B19DE8F094D2FD243A5EBE64B56")
+    /**
+     * Retrieve the current textual label associated with this item.  This
+     * will call back on the given PackageManager to load the label from
+     * the application.
+     * 
+     * @param pm A PackageManager from which the label can be loaded; usually
+     * the PackageManager from which you originally retrieved this item.
+     * 
+     * @return Returns a CharSequence containing the item's label.  If the
+     * item does not have a label, its name is returned.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:04.438 -0500", hash_original_method = "7587CF1BD2560A6C6F4B753C933F3AB0", hash_generated_method = "F7142DA33E913DB7BEF3B8D354DCE8DC")
     public CharSequence loadLabel(PackageManager pm) {
-        addTaint(pm.getTaint());
-        if(nonLocalizedLabel != null)        
-        {
-CharSequence varBE906C9C8D8F58EFBFC8C81E44574921_794088166 =             nonLocalizedLabel;
-            varBE906C9C8D8F58EFBFC8C81E44574921_794088166.addTaint(taint);
-            return varBE906C9C8D8F58EFBFC8C81E44574921_794088166;
-        } //End block
-        if(labelRes != 0)        
-        {
+        if (nonLocalizedLabel != null) {
+            return nonLocalizedLabel;
+        }
+        if (labelRes != 0) {
             CharSequence label = pm.getText(packageName, labelRes, getApplicationInfo());
-            if(label != null)            
-            {
-CharSequence var6A0C0BC3872CAFE02E69329DEB10F42C_1878615486 =                 label.toString().trim();
-                var6A0C0BC3872CAFE02E69329DEB10F42C_1878615486.addTaint(taint);
-                return var6A0C0BC3872CAFE02E69329DEB10F42C_1878615486;
-            } //End block
-        } //End block
-        if(name != null)        
-        {
-CharSequence varB017984728AC60AD1F0BF8734F33F15C_1610032190 =             name;
-            varB017984728AC60AD1F0BF8734F33F15C_1610032190.addTaint(taint);
-            return varB017984728AC60AD1F0BF8734F33F15C_1610032190;
-        } //End block
-CharSequence varC56556E908F763F1A1F55590F97A185E_1818688751 =         packageName;
-        varC56556E908F763F1A1F55590F97A185E_1818688751.addTaint(taint);
-        return varC56556E908F763F1A1F55590F97A185E_1818688751;
-        // ---------- Original Method ----------
-        //if (nonLocalizedLabel != null) {
-            //return nonLocalizedLabel;
-        //}
-        //if (labelRes != 0) {
-            //CharSequence label = pm.getText(packageName, labelRes, getApplicationInfo());
-            //if (label != null) {
-                //return label.toString().trim();
-            //}
-        //}
-        //if (name != null) {
-            //return name;
-        //}
-        //return packageName;
+            if (label != null) {
+                return label.toString().trim();
+            }
+        }
+        if (name != null) {
+            return name;
+        }
+        return packageName;
     }
-
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:04.248 -0400", hash_original_method = "28CAE1EAC4906E828B7AB10B1D04EBA6", hash_generated_method = "6748CB78FCE7B71F2CFA85113F0147BD")
+    /**
+     * Retrieve the current graphical icon associated with this item.  This
+     * will call back on the given PackageManager to load the icon from
+     * the application.
+     * 
+     * @param pm A PackageManager from which the icon can be loaded; usually
+     * the PackageManager from which you originally retrieved this item.
+     * 
+     * @return Returns a Drawable containing the item's icon.  If the
+     * item does not have an icon, the item's default icon is returned
+     * such as the default activity icon.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:04.439 -0500", hash_original_method = "28CAE1EAC4906E828B7AB10B1D04EBA6", hash_generated_method = "EA73B7A27ACDD8CB3869132A9DA3CA2A")
     public Drawable loadIcon(PackageManager pm) {
-        addTaint(pm.getTaint());
-        if(icon != 0)        
-        {
+        if (icon != 0) {
             Drawable dr = pm.getDrawable(packageName, icon, getApplicationInfo());
-            if(dr != null)            
-            {
-Drawable varDA2FE1A9D9D8285A7F4D54668C2E4AE3_1828284224 =                 dr;
-                varDA2FE1A9D9D8285A7F4D54668C2E4AE3_1828284224.addTaint(taint);
-                return varDA2FE1A9D9D8285A7F4D54668C2E4AE3_1828284224;
-            } //End block
-        } //End block
-Drawable varB77E3BDD223F0ECAD6D8B57AE6CCEB66_1733270520 =         loadDefaultIcon(pm);
-        varB77E3BDD223F0ECAD6D8B57AE6CCEB66_1733270520.addTaint(taint);
-        return varB77E3BDD223F0ECAD6D8B57AE6CCEB66_1733270520;
-        // ---------- Original Method ----------
-        //if (icon != 0) {
-            //Drawable dr = pm.getDrawable(packageName, icon, getApplicationInfo());
-            //if (dr != null) {
-                //return dr;
-            //}
-        //}
-        //return loadDefaultIcon(pm);
+            if (dr != null) {
+                return dr;
+            }
+        }
+        return loadDefaultIcon(pm);
     }
-
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:04.248 -0400", hash_original_method = "8E0B311EF662738B18859A93F77EBD0A", hash_generated_method = "770ABEBCDCE5C726BEA1CA33E7FC148C")
+    /**
+     * Retrieve the default graphical icon associated with this item.
+     * 
+     * @param pm A PackageManager from which the icon can be loaded; usually
+     * the PackageManager from which you originally retrieved this item.
+     * 
+     * @return Returns a Drawable containing the item's default icon
+     * such as the default activity icon.
+     * 
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:04.439 -0500", hash_original_method = "8E0B311EF662738B18859A93F77EBD0A", hash_generated_method = "7F3ABD94AC5707F2B693CA2A6A0497E8")
     protected Drawable loadDefaultIcon(PackageManager pm) {
-        addTaint(pm.getTaint());
-Drawable varAD0C68E9FDEBCDCC559AABA877077272_989753011 =         pm.getDefaultActivityIcon();
-        varAD0C68E9FDEBCDCC559AABA877077272_989753011.addTaint(taint);
-        return varAD0C68E9FDEBCDCC559AABA877077272_989753011;
-        // ---------- Original Method ----------
-        //return pm.getDefaultActivityIcon();
+        return pm.getDefaultActivityIcon();
     }
-
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:04.249 -0400", hash_original_method = "E08D2EB4B7AA31EEDBDC94D57D687BA7", hash_generated_method = "B46B88C9FF27FDFA4951AB37C5EE9791")
+    /**
+     * Retrieve the current graphical logo associated with this item. This
+     * will call back on the given PackageManager to load the logo from
+     * the application.
+     * 
+     * @param pm A PackageManager from which the logo can be loaded; usually
+     * the PackageManager from which you originally retrieved this item.
+     * 
+     * @return Returns a Drawable containing the item's logo. If the item
+     * does not have a logo, this method will return null.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:04.440 -0500", hash_original_method = "E08D2EB4B7AA31EEDBDC94D57D687BA7", hash_generated_method = "5E8227AADAE2C50C985BFE31AECFACB2")
     public Drawable loadLogo(PackageManager pm) {
-        addTaint(pm.getTaint());
-        if(logo != 0)        
-        {
+        if (logo != 0) {
             Drawable d = pm.getDrawable(packageName, logo, getApplicationInfo());
-            if(d != null)            
-            {
-Drawable varBE245B24E7ED509FDFAAA6CD39E35D89_1485216149 =                 d;
-                varBE245B24E7ED509FDFAAA6CD39E35D89_1485216149.addTaint(taint);
-                return varBE245B24E7ED509FDFAAA6CD39E35D89_1485216149;
-            } //End block
-        } //End block
-Drawable var3716CCA1FFFC9EFA2CF03E314A8A1A27_837026196 =         loadDefaultLogo(pm);
-        var3716CCA1FFFC9EFA2CF03E314A8A1A27_837026196.addTaint(taint);
-        return var3716CCA1FFFC9EFA2CF03E314A8A1A27_837026196;
-        // ---------- Original Method ----------
-        //if (logo != 0) {
-            //Drawable d = pm.getDrawable(packageName, logo, getApplicationInfo());
-            //if (d != null) {
-                //return d;
-            //}
-        //}
-        //return loadDefaultLogo(pm);
+            if (d != null) {
+                return d;
+            }
+        }
+        return loadDefaultLogo(pm);
     }
-
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:04.250 -0400", hash_original_method = "790329C099FCB9AD7C46A077CBE50219", hash_generated_method = "782A9BC2CD89E7BE939D1758B86D147F")
+    /**
+     * Retrieve the default graphical logo associated with this item.
+     * 
+     * @param pm A PackageManager from which the logo can be loaded; usually
+     * the PackageManager from which you originally retrieved this item.
+     * 
+     * @return Returns a Drawable containing the item's default logo
+     * or null if no default logo is available.
+     * 
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:04.441 -0500", hash_original_method = "790329C099FCB9AD7C46A077CBE50219", hash_generated_method = "2FAC081356342D0DF3F1550E489D8328")
     protected Drawable loadDefaultLogo(PackageManager pm) {
-        addTaint(pm.getTaint());
-Drawable var540C13E9E156B687226421B24F2DF178_1321898739 =         null;
-        var540C13E9E156B687226421B24F2DF178_1321898739.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_1321898739;
-        // ---------- Original Method ----------
-        //return null;
+        return null;
     }
-
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:04.251 -0400", hash_original_method = "3469F3AC66BE0248CB548730284A6983", hash_generated_method = "6E0289619C805FB164BE315F28638A4F")
+    /**
+     * Load an XML resource attached to the meta-data of this item.  This will
+     * retrieved the name meta-data entry, and if defined call back on the
+     * given PackageManager to load its XML file from the application.
+     * 
+     * @param pm A PackageManager from which the XML can be loaded; usually
+     * the PackageManager from which you originally retrieved this item.
+     * @param name Name of the meta-date you would like to load.
+     * 
+     * @return Returns an XmlPullParser you can use to parse the XML file
+     * assigned as the given meta-data.  If the meta-data name is not defined
+     * or the XML resource could not be found, null is returned.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:04.442 -0500", hash_original_method = "3469F3AC66BE0248CB548730284A6983", hash_generated_method = "2485624FC9F5EDA0944762D77FF0BA2E")
     public XmlResourceParser loadXmlMetaData(PackageManager pm, String name) {
-        addTaint(name.getTaint());
-        addTaint(pm.getTaint());
-        if(metaData != null)        
-        {
+        if (metaData != null) {
             int resid = metaData.getInt(name);
-            if(resid != 0)            
-            {
-XmlResourceParser var2E55A1CF770686CBBF2A21A4D0335E15_524110765 =                 pm.getXml(packageName, resid, getApplicationInfo());
-                var2E55A1CF770686CBBF2A21A4D0335E15_524110765.addTaint(taint);
-                return var2E55A1CF770686CBBF2A21A4D0335E15_524110765;
-            } //End block
-        } //End block
-XmlResourceParser var540C13E9E156B687226421B24F2DF178_684238922 =         null;
-        var540C13E9E156B687226421B24F2DF178_684238922.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_684238922;
-        // ---------- Original Method ----------
-        //if (metaData != null) {
-            //int resid = metaData.getInt(name);
-            //if (resid != 0) {
-                //return pm.getXml(packageName, resid, getApplicationInfo());
-            //}
-        //}
-        //return null;
+            if (resid != 0) {
+                return pm.getXml(packageName, resid, getApplicationInfo());
+            }
+        }
+        return null;
     }
-
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:04.251 -0400", hash_original_method = "6B8B2642A2B8BBF6D444F1A91AC9FDCB", hash_generated_method = "C69823C8C0B8018FC8EF92FC3E631086")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:04.443 -0500", hash_original_method = "6B8B2642A2B8BBF6D444F1A91AC9FDCB", hash_generated_method = "BF2CAC1FBFC42CCC0CE813D4DA6DE59E")
     protected void dumpFront(Printer pw, String prefix) {
-        addTaint(prefix.getTaint());
-        addTaint(pw.getTaint());
-        if(name != null)        
-        {
+        if (name != null) {
             pw.println(prefix + "name=" + name);
-        } //End block
+        }
         pw.println(prefix + "packageName=" + packageName);
-        if(labelRes != 0 || nonLocalizedLabel != null || icon != 0)        
-        {
+        if (labelRes != 0 || nonLocalizedLabel != null || icon != 0) {
             pw.println(prefix + "labelRes=0x" + Integer.toHexString(labelRes)
                     + " nonLocalizedLabel=" + nonLocalizedLabel
                     + " icon=0x" + Integer.toHexString(icon));
-        } //End block
-        // ---------- Original Method ----------
-        //if (name != null) {
-            //pw.println(prefix + "name=" + name);
-        //}
-        //pw.println(prefix + "packageName=" + packageName);
-        //if (labelRes != 0 || nonLocalizedLabel != null || icon != 0) {
-            //pw.println(prefix + "labelRes=0x" + Integer.toHexString(labelRes)
-                    //+ " nonLocalizedLabel=" + nonLocalizedLabel
-                    //+ " icon=0x" + Integer.toHexString(icon));
-        //}
+        }
     }
-
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:04.252 -0400", hash_original_method = "B7061250601C1EA92C43E5184BBC6241", hash_generated_method = "E7500C2A6335C8EBED547E7514F82CE5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:04.444 -0500", hash_original_method = "B7061250601C1EA92C43E5184BBC6241", hash_generated_method = "10F0726956FC6EA401BAE896ACFFA0C2")
     protected void dumpBack(Printer pw, String prefix) {
-        addTaint(prefix.getTaint());
-        addTaint(pw.getTaint());
-        // ---------- Original Method ----------
+        // no back here
     }
-
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:04.253 -0400", hash_original_method = "EBFCAD6F5CD0994BD82522BC30DB76DD", hash_generated_method = "8FE55B7ADC8F1F6AEF2BD3A9D4B3B2AA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:04.444 -0500", hash_original_method = "EBFCAD6F5CD0994BD82522BC30DB76DD", hash_generated_method = "F240B07B8F98FF37957218BD5D9B3BD1")
     public void writeToParcel(Parcel dest, int parcelableFlags) {
-        addTaint(parcelableFlags);
-        addTaint(dest.getTaint());
         dest.writeString(name);
         dest.writeString(packageName);
         dest.writeInt(labelRes);
@@ -293,63 +226,42 @@ XmlResourceParser var540C13E9E156B687226421B24F2DF178_684238922 =         null;
         dest.writeInt(icon);
         dest.writeInt(logo);
         dest.writeBundle(metaData);
-        // ---------- Original Method ----------
-        //dest.writeString(name);
-        //dest.writeString(packageName);
-        //dest.writeInt(labelRes);
-        //TextUtils.writeToParcel(nonLocalizedLabel, dest, parcelableFlags);
-        //dest.writeInt(icon);
-        //dest.writeInt(logo);
-        //dest.writeBundle(metaData);
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:04.253 -0400", hash_original_method = "3C095FBE28E1D0A5D79820831D5573F9", hash_generated_method = "C917DFC50DA984F6ECD5D325C0097FBD")
+    /**
+     * Get the ApplicationInfo for the application to which this item belongs,
+     * if available, otherwise returns null.
+     * 
+     * @return Returns the ApplicationInfo of this item, or null if not known.
+     * 
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:04.446 -0500", hash_original_method = "3C095FBE28E1D0A5D79820831D5573F9", hash_generated_method = "F2E8493838D7C31F6FA4B5446F237F21")
     protected ApplicationInfo getApplicationInfo() {
-ApplicationInfo var540C13E9E156B687226421B24F2DF178_698361942 =         null;
-        var540C13E9E156B687226421B24F2DF178_698361942.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_698361942;
-        // ---------- Original Method ----------
-        //return null;
+        return null;
     }
 
     
     public static class DisplayNameComparator implements Comparator<PackageItemInfo> {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:04.253 -0400", hash_original_field = "8535BFF02E263AB07820336F2B6CBE9E", hash_generated_field = "0F522A2F9FEC0AE6C7C0EFB2E65868E6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:04.449 -0500", hash_original_field = "EE5E44F3B728B272AD02D50E8F128A4E", hash_generated_field = "0F522A2F9FEC0AE6C7C0EFB2E65868E6")
 
-        private final Collator sCollator = Collator.getInstance();
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:04.254 -0400", hash_original_field = "3D87516393C6B091D0B0E6C38455BD37", hash_generated_field = "B9590FAB3CF140F08C9CD4E0309ED58A")
 
-        private PackageManager mPM;
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:04.254 -0400", hash_original_method = "01BC6A405956ED34F2FEA27AD8C34186", hash_generated_method = "00B9637435B2DF20319BD9D174F2475F")
-        public  DisplayNameComparator(PackageManager pm) {
+        private final Collator   sCollator = Collator.getInstance();
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:04.450 -0500", hash_original_field = "D7E1102720CC9E76648EB86B25CA5216", hash_generated_field = "B9590FAB3CF140F08C9CD4E0309ED58A")
+
+        private PackageManager   mPM;
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:04.447 -0500", hash_original_method = "01BC6A405956ED34F2FEA27AD8C34186", hash_generated_method = "93A18F8F07DA31EBC88951995E1C514A")
+        public DisplayNameComparator(PackageManager pm) {
             mPM = pm;
-            // ---------- Original Method ----------
-            //mPM = pm;
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:04.255 -0400", hash_original_method = "2595E40DD10804FAA28D70201572BA0B", hash_generated_method = "BA8D55F0C3A2C706CE8E68CC8D35F93C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:04.448 -0500", hash_original_method = "2595E40DD10804FAA28D70201572BA0B", hash_generated_method = "EC1D9AC66743F7F0831EDFDF3E7DDE60")
         public final int compare(PackageItemInfo aa, PackageItemInfo ab) {
-            addTaint(ab.getTaint());
-            addTaint(aa.getTaint());
-            CharSequence sa = aa.loadLabel(mPM);
-            if(sa == null)            
-            sa = aa.name;
-            CharSequence sb = ab.loadLabel(mPM);
-            if(sb == null)            
-            sb = ab.name;
-            int var7A8EA953ABC7951DF47FDA1BDAC98D15_1066856343 = (sCollator.compare(sa.toString(), sb.toString()));
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_200938723 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_200938723;
-            // ---------- Original Method ----------
-            //CharSequence  sa = aa.loadLabel(mPM);
-            //if (sa == null) sa = aa.name;
-            //CharSequence  sb = ab.loadLabel(mPM);
-            //if (sb == null) sb = ab.name;
-            //return sCollator.compare(sa.toString(), sb.toString());
+            CharSequence  sa = aa.loadLabel(mPM);
+            if (sa == null) sa = aa.name;
+            CharSequence  sb = ab.loadLabel(mPM);
+            if (sb == null) sb = ab.name;
+            return sCollator.compare(sa.toString(), sb.toString());
         }
 
         

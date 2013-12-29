@@ -1,6 +1,8 @@
 package com.android.internal.telephony.gsm;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import com.android.internal.telephony.IccServiceTable;
 
@@ -9,49 +11,27 @@ import com.android.internal.telephony.IccServiceTable;
 
 
 public final class UsimServiceTable extends IccServiceTable {
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.003 -0400", hash_original_method = "817BD5CF49BC23E6643D1124A4E1BE41", hash_generated_method = "6D7E057B1FC8F501ED71E554CCC54EE8")
-    public  UsimServiceTable(byte[] table) {
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:13.129 -0500", hash_original_method = "817BD5CF49BC23E6643D1124A4E1BE41", hash_generated_method = "150542268E0F45E4B0E90D2995ECAF23")
+    public UsimServiceTable(byte[] table) {
         super(table);
-        addTaint(table[0]);
-        // ---------- Original Method ----------
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.004 -0400", hash_original_method = "DBA3BE1184DAC743D00CD4A8E44903BD", hash_generated_method = "9B177E920D221B77E4F5942BB224A596")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:13.129 -0500", hash_original_method = "DBA3BE1184DAC743D00CD4A8E44903BD", hash_generated_method = "6A590D4EAB7DD9114E1A9B7AE87BB34A")
     public boolean isAvailable(UsimService service) {
-        addTaint(service.getTaint());
-        boolean var2EDD1F513AFE4DE46B928F411AF48E9D_962484819 = (super.isAvailable(service.ordinal()));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_618439212 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_618439212;
-        // ---------- Original Method ----------
-        //return super.isAvailable(service.ordinal());
+        return super.isAvailable(service.ordinal());
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.004 -0400", hash_original_method = "E87A72CCD83C43A988523404C93A686A", hash_generated_method = "AA72CE65F7035B518D9449AAFF990DFC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:13.130 -0500", hash_original_method = "E87A72CCD83C43A988523404C93A686A", hash_generated_method = "B571DFE3EED0772F1CF5DFD247BE4C20")
     @Override
-    protected String getTag() {
-String var577DBB8C3CC289BB3D816ABEFC0282D3_2084780740 =         "UsimServiceTable";
-        var577DBB8C3CC289BB3D816ABEFC0282D3_2084780740.addTaint(taint);
-        return var577DBB8C3CC289BB3D816ABEFC0282D3_2084780740;
-        // ---------- Original Method ----------
-        //return "UsimServiceTable";
+protected String getTag() {
+        return "UsimServiceTable";
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.004 -0400", hash_original_method = "5896C19C7C6B06EFB443A2DEA834E8BC", hash_generated_method = "0049935081E1C70776E2F72AADBE9E48")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:13.131 -0500", hash_original_method = "5896C19C7C6B06EFB443A2DEA834E8BC", hash_generated_method = "9AF79B41A56042B3A8942DF1FC353844")
     @Override
-    protected Object[] getValues() {
-Object[] var74892C36FDC595431098BEF14C91C82B_659460213 =         UsimService.values();
-        var74892C36FDC595431098BEF14C91C82B_659460213.addTaint(taint);
-        return var74892C36FDC595431098BEF14C91C82B_659460213;
-        // ---------- Original Method ----------
-        //return UsimService.values();
+protected Object[] getValues() {
+        return UsimService.values();
     }
 
     

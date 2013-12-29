@@ -1,6 +1,8 @@
 package javax.crypto.spec;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.Serializable;
 import java.security.spec.KeySpec;
@@ -14,207 +16,158 @@ import javax.crypto.SecretKey;
 
 
 public class SecretKeySpec implements SecretKey, KeySpec, Serializable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.426 -0400", hash_original_field = "3C6E0B8A9C15224A8228B9A98CA1531D", hash_generated_field = "AEF19C0A7530E140588DCBA91FF66D28")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.909 -0500", hash_original_field = "CF2978D77A300F2288929DE02B014AE5", hash_generated_field = "DA1718E019BA5BA63D43B50C98DB7BC3")
 
-    private byte[] key;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.426 -0400", hash_original_field = "ED469618898D75B149E5C7C4B6A1C415", hash_generated_field = "40E4722A302366B2A43F1CD6C99E2454")
+    // In order to be compatible it is explicitly declared here
+    // for details see HARMONY-233
+    private static final long serialVersionUID = 6577238317307289933L;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.910 -0500", hash_original_field = "874EBF47D328D135486F03BCE6DDD19A", hash_generated_field = "AEF19C0A7530E140588DCBA91FF66D28")
 
-    private String algorithm;
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.427 -0400", hash_original_method = "46BCBD91E8C2018C32B65BFBDD14DAE3", hash_generated_method = "ED26F1887C1EFB232B313FBF7E157331")
-    public  SecretKeySpec(byte[] key, String algorithm) {
-        if(key == null)        
-        {
-            IllegalArgumentException var961CFAFB0DC64E45A11DB330A0727C67_140981475 = new IllegalArgumentException("key == null");
-            var961CFAFB0DC64E45A11DB330A0727C67_140981475.addTaint(taint);
-            throw var961CFAFB0DC64E45A11DB330A0727C67_140981475;
-        } //End block
-        if(key.length == 0)        
-        {
-            IllegalArgumentException varA3F1879A000F82A666B70199929D288F_1585156304 = new IllegalArgumentException("key.length == 0");
-            varA3F1879A000F82A666B70199929D288F_1585156304.addTaint(taint);
-            throw varA3F1879A000F82A666B70199929D288F_1585156304;
-        } //End block
-        if(algorithm == null)        
-        {
-            IllegalArgumentException varB04CCFA97B93D3ED1EB3F4E597A5D0AE_117106053 = new IllegalArgumentException("algorithm == null");
-            varB04CCFA97B93D3ED1EB3F4E597A5D0AE_117106053.addTaint(taint);
-            throw varB04CCFA97B93D3ED1EB3F4E597A5D0AE_117106053;
-        } //End block
+
+    private  byte[] key;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.911 -0500", hash_original_field = "1DDAED4286CC7F9A2BC49502885440CE", hash_generated_field = "40E4722A302366B2A43F1CD6C99E2454")
+
+    private  String algorithm;
+
+    /**
+     * Creates a new <code>SecretKeySpec</code> for the specified key data and
+     * algorithm name.
+     *
+     * @param key
+     *            the key data.
+     * @param algorithm
+     *            the algorithm name.
+     * @throws IllegalArgumentException
+     *             if the key data or the algorithm name is null or if the key
+     *             data is empty.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.912 -0500", hash_original_method = "46BCBD91E8C2018C32B65BFBDD14DAE3", hash_generated_method = "94EDA31E0B802545D5ED76E97A38F3EB")
+    public SecretKeySpec(byte[] key, String algorithm) {
+        if (key == null) {
+            throw new IllegalArgumentException("key == null");
+        }
+        if (key.length == 0) {
+            throw new IllegalArgumentException("key.length == 0");
+        }
+        if (algorithm == null) {
+            throw new IllegalArgumentException("algorithm == null");
+        }
+
         this.algorithm = algorithm;
         this.key = new byte[key.length];
         System.arraycopy(key, 0, this.key, 0, key.length);
-        // ---------- Original Method ----------
-        //if (key == null) {
-            //throw new IllegalArgumentException("key == null");
-        //}
-        //if (key.length == 0) {
-            //throw new IllegalArgumentException("key.length == 0");
-        //}
-        //if (algorithm == null) {
-            //throw new IllegalArgumentException("algorithm == null");
-        //}
-        //this.algorithm = algorithm;
-        //this.key = new byte[key.length];
-        //System.arraycopy(key, 0, this.key, 0, key.length);
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.429 -0400", hash_original_method = "97539A44FE944982691962B490B5A049", hash_generated_method = "7CF95768150A60C349FFC299F7876049")
-    public  SecretKeySpec(byte[] key, int offset, int len, String algorithm) {
-        addTaint(offset);
-        if(key == null)        
-        {
-            IllegalArgumentException var961CFAFB0DC64E45A11DB330A0727C67_869598996 = new IllegalArgumentException("key == null");
-            var961CFAFB0DC64E45A11DB330A0727C67_869598996.addTaint(taint);
-            throw var961CFAFB0DC64E45A11DB330A0727C67_869598996;
-        } //End block
-        if(key.length == 0)        
-        {
-            IllegalArgumentException varA3F1879A000F82A666B70199929D288F_922886519 = new IllegalArgumentException("key.length == 0");
-            varA3F1879A000F82A666B70199929D288F_922886519.addTaint(taint);
-            throw varA3F1879A000F82A666B70199929D288F_922886519;
-        } //End block
-        if(len < 0 || offset < 0)        
-        {
-            ArrayIndexOutOfBoundsException varB0D44B57D146731E07C91456440128FB_1167851666 = new ArrayIndexOutOfBoundsException("len < 0 || offset < 0");
-            varB0D44B57D146731E07C91456440128FB_1167851666.addTaint(taint);
-            throw varB0D44B57D146731E07C91456440128FB_1167851666;
-        } //End block
-        if(key.length - offset < len)        
-        {
-            IllegalArgumentException var4C9D46BFF501DB6E5A95F677A6BFE42A_941401922 = new IllegalArgumentException("key too short");
-            var4C9D46BFF501DB6E5A95F677A6BFE42A_941401922.addTaint(taint);
-            throw var4C9D46BFF501DB6E5A95F677A6BFE42A_941401922;
-        } //End block
-        if(algorithm == null)        
-        {
-            IllegalArgumentException varB04CCFA97B93D3ED1EB3F4E597A5D0AE_170182570 = new IllegalArgumentException("algorithm == null");
-            varB04CCFA97B93D3ED1EB3F4E597A5D0AE_170182570.addTaint(taint);
-            throw varB04CCFA97B93D3ED1EB3F4E597A5D0AE_170182570;
-        } //End block
+    /**
+     * Creates a new <code>SecretKeySpec</code> for the key data from the
+     * specified buffer <code>key</code> starting at <code>offset</code> with
+     * length <code>len</code> and the specified <code>algorithm</code> name.
+     *
+     * @param key
+     *            the key data.
+     * @param offset
+     *            the offset.
+     * @param len
+     *            the size of the key data.
+     * @param algorithm
+     *            the algorithm name.
+     * @throws IllegalArgumentException
+     *             if the key data or the algorithm name is null, the key data
+     *             is empty or <code>offset</code> and <code>len</code> do not
+     *             specify a valid chunk in the buffer <code>key</code>.
+     * @throws ArrayIndexOutOfBoundsException
+     *             if <code>offset</code> or <code>len</code> is negative.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.913 -0500", hash_original_method = "97539A44FE944982691962B490B5A049", hash_generated_method = "CBFA8797FEE471D07D72810BCB736253")
+    public SecretKeySpec(byte[] key, int offset, int len, String algorithm) {
+        if (key == null) {
+            throw new IllegalArgumentException("key == null");
+        }
+        if (key.length == 0) {
+            throw new IllegalArgumentException("key.length == 0");
+        }
+        if (len < 0 || offset < 0) {
+            throw new ArrayIndexOutOfBoundsException("len < 0 || offset < 0");
+        }
+        if (key.length - offset < len) {
+            throw new IllegalArgumentException("key too short");
+        }
+        if (algorithm == null) {
+            throw new IllegalArgumentException("algorithm == null");
+        }
         this.algorithm = algorithm;
         this.key = new byte[len];
         System.arraycopy(key, offset, this.key, 0, len);
-        // ---------- Original Method ----------
-        //if (key == null) {
-            //throw new IllegalArgumentException("key == null");
-        //}
-        //if (key.length == 0) {
-            //throw new IllegalArgumentException("key.length == 0");
-        //}
-        //if (len < 0 || offset < 0) {
-            //throw new ArrayIndexOutOfBoundsException("len < 0 || offset < 0");
-        //}
-        //if (key.length - offset < len) {
-            //throw new IllegalArgumentException("key too short");
-        //}
-        //if (algorithm == null) {
-            //throw new IllegalArgumentException("algorithm == null");
-        //}
-        //this.algorithm = algorithm;
-        //this.key = new byte[len];
-        //System.arraycopy(key, offset, this.key, 0, len);
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.430 -0400", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "E6237228955208E836B055701FB6EF0C")
+    /**
+     * Returns the algorithm name.
+     *
+     * @return the algorithm name.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.914 -0500", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "09B8CB0F05513E7BA5A386900D5BF6E6")
     public String getAlgorithm() {
-String var44A46B4003FC81ACB0223385BA1FA818_1153937796 =         algorithm;
-        var44A46B4003FC81ACB0223385BA1FA818_1153937796.addTaint(taint);
-        return var44A46B4003FC81ACB0223385BA1FA818_1153937796;
-        // ---------- Original Method ----------
-        //return algorithm;
+        return algorithm;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.430 -0400", hash_original_method = "DA06499CB28B740B0D3C21B02311BB46", hash_generated_method = "EC1025BFBA228E6DE6F9849CB43A898D")
+    /**
+     * Returns the name of the format used to encode the key.
+     *
+     * @return the format name "RAW".
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.915 -0500", hash_original_method = "DA06499CB28B740B0D3C21B02311BB46", hash_generated_method = "FEA02E291B25C9E5FCD19EC4D87B562C")
     public String getFormat() {
-String var75AE4CAF1CB13EF15783F46A006C5A7F_1006321397 =         "RAW";
-        var75AE4CAF1CB13EF15783F46A006C5A7F_1006321397.addTaint(taint);
-        return var75AE4CAF1CB13EF15783F46A006C5A7F_1006321397;
-        // ---------- Original Method ----------
-        //return "RAW";
+        return "RAW";
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.430 -0400", hash_original_method = "3F6C1397C7B2518265F6653D66E9AC87", hash_generated_method = "C0673FF907B0E0F111D761E93EA3ABE8")
+    /**
+     * Returns the encoded form of this secret key.
+     *
+     * @return the encoded form of this secret key.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.915 -0500", hash_original_method = "3F6C1397C7B2518265F6653D66E9AC87", hash_generated_method = "556F207E69FF8E135FD4E6DBE9F6BD56")
     public byte[] getEncoded() {
         byte[] result = new byte[key.length];
         System.arraycopy(key, 0, result, 0, key.length);
-        byte[] varB4A88417B3D0170D754C647C30B7216A_1381180994 = (result);
-                byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_936011268 = {getTaintByte()};
-        return var2F9C81BC6E497382285CD6B7A7E33DE1_936011268;
-        // ---------- Original Method ----------
-        //byte[] result = new byte[key.length];
-        //System.arraycopy(key, 0, result, 0, key.length);
-        //return result;
+        return result;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.431 -0400", hash_original_method = "561BEB6A8D834A34E4D5A2503144263D", hash_generated_method = "7390866004837C61FBA8564FFA076300")
+    /**
+     * Returns the hash code of this <code>SecretKeySpec</code> object.
+     *
+     * @return the hash code.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.916 -0500", hash_original_method = "561BEB6A8D834A34E4D5A2503144263D", hash_generated_method = "818CA09102D790BE8758F466E76831EF")
     @Override
-    public int hashCode() {
+public int hashCode() {
         int result = algorithm.length();
-for(byte element : key)
-        {
+        for (byte element : key) {
             result += element;
-        } //End block
-        int varB4A88417B3D0170D754C647C30B7216A_1211367510 = (result);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_148681707 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_148681707;
-        // ---------- Original Method ----------
-        //int result = algorithm.length();
-        //for (byte element : key) {
-            //result += element;
-        //}
-        //return result;
+        }
+        return result;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.432 -0400", hash_original_method = "7E1551F3E39A01E70E4CFF4FAB6C7AC5", hash_generated_method = "244CA1F0B43A29D2C4CACD9225EEC5DE")
+    /**
+     * Compares the specified object with this <code>SecretKeySpec</code>
+     * instance.
+     *
+     * @param obj
+     *            the object to compare.
+     * @return true if the algorithm name and key of both object are equal,
+     *         otherwise false.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.917 -0500", hash_original_method = "7E1551F3E39A01E70E4CFF4FAB6C7AC5", hash_generated_method = "0BEA9D56F8E11881D5EAFC0DB244A1CD")
     @Override
-    public boolean equals(Object obj) {
-        addTaint(obj.getTaint());
-        if(obj == this)        
-        {
-            boolean varB326B5062B2F0E69046810717534CB09_955200126 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1918149516 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1918149516;
-        } //End block
-        if(!(obj instanceof SecretKeySpec))        
-        {
-            boolean var68934A3E9455FA72420237EB05902327_399375910 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_30568769 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_30568769;
-        } //End block
+public boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (!(obj instanceof SecretKeySpec)) {
+            return false;
+        }
         SecretKeySpec ks = (SecretKeySpec) obj;
-        boolean var5AED73F5AACCD0347305DC862E7CFDD6_308029256 = ((algorithm.equalsIgnoreCase(ks.algorithm))
-            && (Arrays.equals(key, ks.key)));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_482417488 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_482417488;
-        // ---------- Original Method ----------
-        //if (obj == this) {
-            //return true;
-        //}
-        //if (!(obj instanceof SecretKeySpec)) {
-            //return false;
-        //}
-        //SecretKeySpec ks = (SecretKeySpec) obj;
-        //return (algorithm.equalsIgnoreCase(ks.algorithm))
-            //&& (Arrays.equals(key, ks.key));
+        return (algorithm.equalsIgnoreCase(ks.algorithm))
+            && (Arrays.equals(key, ks.key));
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.432 -0400", hash_original_field = "5088DB7B37FA60A2A439242D11325983", hash_generated_field = "84F6801DA315233B24EACF83A24EEC96")
-
-    private static final long serialVersionUID = 6577238317307289933L;
 }
 

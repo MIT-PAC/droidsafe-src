@@ -1,6 +1,8 @@
 package java.util;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 public interface Set<E> extends Collection<E> {

@@ -1,6 +1,8 @@
 package org.apache.http.impl.client;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.InterruptedIOException;
@@ -69,63 +71,68 @@ import org.apache.http.protocol.HttpRequestExecutor;
 
 
 public class DefaultRequestDirector implements RequestDirector {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.813 -0400", hash_original_field = "0B7469F2850D918A96D1C36E99B23F5C", hash_generated_field = "3FCE5BFF671FE7B3BB3E2D744C5E5D2C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.643 -0500", hash_original_field = "0DA7E40E862C937570CA6B0D96D2555A", hash_generated_field = "3FCE5BFF671FE7B3BB3E2D744C5E5D2C")
+
 
     private final Log log = LogFactory.getLog(getClass());
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.814 -0400", hash_original_field = "7094FDC3C48BF4047F1C3E46D7A0B7D4", hash_generated_field = "02A8F7D7605C029767E3572CFEE2F34C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.644 -0500", hash_original_field = "79C539F0631DE1ED22CABB863DF47A25", hash_generated_field = "02A8F7D7605C029767E3572CFEE2F34C")
 
-    protected ClientConnectionManager connManager;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.814 -0400", hash_original_field = "16B9BCB9C810B5FB9F1218ABF5433F0A", hash_generated_field = "C85BE630FF179384873F74B45C3D1A5E")
+    protected  ClientConnectionManager connManager;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.645 -0500", hash_original_field = "8823E067EE1A73A5A4F8381AD9DE926C", hash_generated_field = "C85BE630FF179384873F74B45C3D1A5E")
 
-    protected HttpRoutePlanner routePlanner;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.814 -0400", hash_original_field = "6841B3DB425CF924E2406CCC3EC7D0C4", hash_generated_field = "D092FC62D0768D92CCEB66662883652A")
+    protected  HttpRoutePlanner routePlanner;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.645 -0500", hash_original_field = "28E659C3D090811B03AB9280351D82C6", hash_generated_field = "D092FC62D0768D92CCEB66662883652A")
 
-    protected ConnectionReuseStrategy reuseStrategy;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.814 -0400", hash_original_field = "06037BBEEBDAD4B9CCEA6123FF7CEF48", hash_generated_field = "CC83794776099E15447E3B95C8DA1298")
+    protected  ConnectionReuseStrategy reuseStrategy;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.646 -0500", hash_original_field = "DC7075B9CA312E5C377DD150B9B7DC40", hash_generated_field = "CC83794776099E15447E3B95C8DA1298")
 
-    protected ConnectionKeepAliveStrategy keepAliveStrategy;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.814 -0400", hash_original_field = "EBFB9A3D3F58438E791B5FA697F0E019", hash_generated_field = "AE8B5D85021B1C853E8228EC07BB45BD")
+    protected  ConnectionKeepAliveStrategy keepAliveStrategy;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.647 -0500", hash_original_field = "8F281D2DD0CAF0CB49AD825611A30021", hash_generated_field = "AE8B5D85021B1C853E8228EC07BB45BD")
 
-    protected HttpRequestExecutor requestExec;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.814 -0400", hash_original_field = "752D4EFA0487789E224C2A1BB7CC684E", hash_generated_field = "BE58AA1EBB61C1DA0052321621920348")
+    protected  HttpRequestExecutor requestExec;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.648 -0500", hash_original_field = "0B667B56B623A6709D8228F6864C17B9", hash_generated_field = "BE58AA1EBB61C1DA0052321621920348")
 
-    protected HttpProcessor httpProcessor;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.814 -0400", hash_original_field = "9276D9188CF6BA2DC6A4953C0672BC3D", hash_generated_field = "98BC4E4D2CA69028F19F530E761B7A50")
+    protected  HttpProcessor httpProcessor;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.649 -0500", hash_original_field = "BE7CB17045E13BE02A346FA0C3A4D12A", hash_generated_field = "98BC4E4D2CA69028F19F530E761B7A50")
 
-    protected HttpRequestRetryHandler retryHandler;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.814 -0400", hash_original_field = "F350623671C50CD5233E0DC58B4BC69F", hash_generated_field = "1D6916AFC0FC11340932EC2AB84E4EEA")
+    protected  HttpRequestRetryHandler retryHandler;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.649 -0500", hash_original_field = "C389F7622E181983E4C8376E70EDBD71", hash_generated_field = "1D6916AFC0FC11340932EC2AB84E4EEA")
 
-    protected RedirectHandler redirectHandler;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.814 -0400", hash_original_field = "6FA7D1184BC1FAC634576AE3416BC1FC", hash_generated_field = "6C80A901FF52F10B6A44B9702DD7CAAC")
+    protected  RedirectHandler redirectHandler;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.650 -0500", hash_original_field = "DBA4951E5E541F8099D40BF93DF5F36F", hash_generated_field = "6C80A901FF52F10B6A44B9702DD7CAAC")
 
-    private AuthenticationHandler targetAuthHandler;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.814 -0400", hash_original_field = "0F58376CC8049DF18F70792E6CDE0CBB", hash_generated_field = "BEE8D0545E89B6E0C8B7E30053A9F7B8")
+    private  AuthenticationHandler targetAuthHandler;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.651 -0500", hash_original_field = "5E81B4DA49E5D7964FC77151D6BD375D", hash_generated_field = "BEE8D0545E89B6E0C8B7E30053A9F7B8")
 
-    private AuthenticationHandler proxyAuthHandler;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.814 -0400", hash_original_field = "7CA4C2AD16B3CB439480B96FCAB580BC", hash_generated_field = "EB0695AD7F13D362DB9842F689B4BC95")
+    private  AuthenticationHandler proxyAuthHandler;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.652 -0500", hash_original_field = "CAE4A7A320983E8C1CCB152CF3DFF728", hash_generated_field = "EB0695AD7F13D362DB9842F689B4BC95")
 
-    private UserTokenHandler userTokenHandler;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.814 -0400", hash_original_field = "21FFCE5B8A6CC8CC6A41448DD69623C9", hash_generated_field = "3B20DD38103AF5BA4B3F3187700011E0")
+    private  UserTokenHandler userTokenHandler;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.653 -0500", hash_original_field = "E1952F00A693661EA0D1C7B3D836F77E", hash_generated_field = "3B20DD38103AF5BA4B3F3187700011E0")
 
-    protected HttpParams params;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.814 -0400", hash_original_field = "58ED85B7F214AB5BB7A822D300274AA0", hash_generated_field = "A39C84F92F3A7EA4C05EE395EC188DAE")
+    protected  HttpParams params;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.654 -0500", hash_original_field = "ECC1A1A1F3BB31DE20717F98D44EFC60", hash_generated_field = "A39C84F92F3A7EA4C05EE395EC188DAE")
 
     protected ManagedClientConnection managedConn;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.814 -0400", hash_original_field = "EC981A5CB5248DB431EB0C0A85CB6583", hash_generated_field = "D59A8F322AA61B2EDF1BDFFFEB284AB6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.654 -0500", hash_original_field = "0AE41E5E8D5B3D970EA29093BE41B738", hash_generated_field = "D59A8F322AA61B2EDF1BDFFFEB284AB6")
+
 
     private int redirectCount;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.814 -0400", hash_original_field = "192E8F7D1AC88DB04E4D404EEFE3BA12", hash_generated_field = "C858360B99BF75CE96620A237ADD6C16")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.655 -0500", hash_original_field = "74902B111622E9E3A744EFC5D329328E", hash_generated_field = "C858360B99BF75CE96620A237ADD6C16")
+
 
     private int maxRedirects;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.815 -0400", hash_original_field = "42FB65007B91DD7B4C2B4593948697DD", hash_generated_field = "09D81EEE3AA06EF4775316736BFDA2B2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.656 -0500", hash_original_field = "5A35C8104FC2D865E8F8A0879C0F7F9A", hash_generated_field = "09D81EEE3AA06EF4775316736BFDA2B2")
 
-    private AuthState targetAuthState;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.815 -0400", hash_original_field = "BB590229B7E3F737CC2E4575475A1353", hash_generated_field = "04947E0C0D6A7F5789678D91EF5BFD42")
-
-    private AuthState proxyAuthState;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.822 -0400", hash_original_method = "0B21A162BE3540982FD94EA0624DFDC2", hash_generated_method = "1C89CC839DACE6F62DB386775FD06301")
-    public  DefaultRequestDirector(
+    private  AuthState targetAuthState;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.657 -0500", hash_original_field = "A6CA6072C1BFCC3C72577263E286D091", hash_generated_field = "04947E0C0D6A7F5789678D91EF5BFD42")
+
+    
+    private  AuthState proxyAuthState;
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.658 -0500", hash_original_method = "0B21A162BE3540982FD94EA0624DFDC2", hash_generated_method = "F6CEE975853313FCFBBAA42B262AAD1E")
+    public DefaultRequestDirector(
             final HttpRequestExecutor requestExec,
             final ClientConnectionManager conman,
             final ConnectionReuseStrategy reustrat,
@@ -138,90 +145,55 @@ public class DefaultRequestDirector implements RequestDirector {
             final AuthenticationHandler proxyAuthHandler,
             final UserTokenHandler userTokenHandler,
             final HttpParams params) {
-        if(requestExec == null)        
-        {
-            IllegalArgumentException varBD20B6DE94BA160E38D6A19FE620972B_1085161961 = new IllegalArgumentException
+
+        if (requestExec == null) {
+            throw new IllegalArgumentException
                 ("Request executor may not be null.");
-            varBD20B6DE94BA160E38D6A19FE620972B_1085161961.addTaint(taint);
-            throw varBD20B6DE94BA160E38D6A19FE620972B_1085161961;
-        } //End block
-        if(conman == null)        
-        {
-            IllegalArgumentException var2CAE72D222E2018F21A500BBB781366A_1066882273 = new IllegalArgumentException
+        }
+        if (conman == null) {
+            throw new IllegalArgumentException
                 ("Client connection manager may not be null.");
-            var2CAE72D222E2018F21A500BBB781366A_1066882273.addTaint(taint);
-            throw var2CAE72D222E2018F21A500BBB781366A_1066882273;
-        } //End block
-        if(reustrat == null)        
-        {
-            IllegalArgumentException varAC1BE54E06BD0BF73EC95A07797E6CC6_426073987 = new IllegalArgumentException
+        }
+        if (reustrat == null) {
+            throw new IllegalArgumentException
                 ("Connection reuse strategy may not be null.");
-            varAC1BE54E06BD0BF73EC95A07797E6CC6_426073987.addTaint(taint);
-            throw varAC1BE54E06BD0BF73EC95A07797E6CC6_426073987;
-        } //End block
-        if(kastrat == null)        
-        {
-            IllegalArgumentException var5D18D55E95DEDD7525CEB1D5D4EDA5AE_76229940 = new IllegalArgumentException
+        }
+        if (kastrat == null) {
+            throw new IllegalArgumentException
                 ("Connection keep alive strategy may not be null.");
-            var5D18D55E95DEDD7525CEB1D5D4EDA5AE_76229940.addTaint(taint);
-            throw var5D18D55E95DEDD7525CEB1D5D4EDA5AE_76229940;
-        } //End block
-        if(rouplan == null)        
-        {
-            IllegalArgumentException var61450AC721478F07064D5CA3DC87688F_1810044586 = new IllegalArgumentException
+        }
+        if (rouplan == null) {
+            throw new IllegalArgumentException
                 ("Route planner may not be null.");
-            var61450AC721478F07064D5CA3DC87688F_1810044586.addTaint(taint);
-            throw var61450AC721478F07064D5CA3DC87688F_1810044586;
-        } //End block
-        if(httpProcessor == null)        
-        {
-            IllegalArgumentException var483355B68B755FD92D77FBBC0550B939_381588495 = new IllegalArgumentException
+        }
+        if (httpProcessor == null) {
+            throw new IllegalArgumentException
                 ("HTTP protocol processor may not be null.");
-            var483355B68B755FD92D77FBBC0550B939_381588495.addTaint(taint);
-            throw var483355B68B755FD92D77FBBC0550B939_381588495;
-        } //End block
-        if(retryHandler == null)        
-        {
-            IllegalArgumentException varC2CE5DC5C328BB16435F5ED993581E10_1276006953 = new IllegalArgumentException
+        }
+        if (retryHandler == null) {
+            throw new IllegalArgumentException
                 ("HTTP request retry handler may not be null.");
-            varC2CE5DC5C328BB16435F5ED993581E10_1276006953.addTaint(taint);
-            throw varC2CE5DC5C328BB16435F5ED993581E10_1276006953;
-        } //End block
-        if(redirectHandler == null)        
-        {
-            IllegalArgumentException varBF23C9695C0C4964C86566E857075907_78193037 = new IllegalArgumentException
+        }
+        if (redirectHandler == null) {
+            throw new IllegalArgumentException
                 ("Redirect handler may not be null.");
-            varBF23C9695C0C4964C86566E857075907_78193037.addTaint(taint);
-            throw varBF23C9695C0C4964C86566E857075907_78193037;
-        } //End block
-        if(targetAuthHandler == null)        
-        {
-            IllegalArgumentException varC21C33DC73C90A72F11A21040411F90C_581743496 = new IllegalArgumentException
+        }
+        if (targetAuthHandler == null) {
+            throw new IllegalArgumentException
                 ("Target authentication handler may not be null.");
-            varC21C33DC73C90A72F11A21040411F90C_581743496.addTaint(taint);
-            throw varC21C33DC73C90A72F11A21040411F90C_581743496;
-        } //End block
-        if(proxyAuthHandler == null)        
-        {
-            IllegalArgumentException var891BA88640E4B3379FCF2CCC866D25AF_554833703 = new IllegalArgumentException
+        }
+        if (proxyAuthHandler == null) {
+            throw new IllegalArgumentException
                 ("Proxy authentication handler may not be null.");
-            var891BA88640E4B3379FCF2CCC866D25AF_554833703.addTaint(taint);
-            throw var891BA88640E4B3379FCF2CCC866D25AF_554833703;
-        } //End block
-        if(userTokenHandler == null)        
-        {
-            IllegalArgumentException var9380208749C6633F93F784E902C07784_1081642131 = new IllegalArgumentException
+        }
+        if (userTokenHandler == null) {
+            throw new IllegalArgumentException
                 ("User token handler may not be null.");
-            var9380208749C6633F93F784E902C07784_1081642131.addTaint(taint);
-            throw var9380208749C6633F93F784E902C07784_1081642131;
-        } //End block
-        if(params == null)        
-        {
-            IllegalArgumentException var497CCC27A43EDD6EE25BEEC5507E2BE2_1230432554 = new IllegalArgumentException
+        }
+        if (params == null) {
+            throw new IllegalArgumentException
                 ("HTTP parameters may not be null");
-            var497CCC27A43EDD6EE25BEEC5507E2BE2_1230432554.addTaint(taint);
-            throw var497CCC27A43EDD6EE25BEEC5507E2BE2_1230432554;
-        } //End block
+        }
         this.requestExec       = requestExec;
         this.connManager       = conman;
         this.reuseStrategy     = reustrat;
@@ -232,198 +204,172 @@ public class DefaultRequestDirector implements RequestDirector {
         this.redirectHandler   = redirectHandler;
         this.targetAuthHandler = targetAuthHandler;
         this.proxyAuthHandler  = proxyAuthHandler;
-        this.userTokenHandler  = userTokenHandler;
+        this.userTokenHandler  = userTokenHandler; 
         this.params            = params;
+
         this.managedConn       = null;
+        
         this.redirectCount = 0;
         this.maxRedirects = this.params.getIntParameter(ClientPNames.MAX_REDIRECTS, 100);
         this.targetAuthState = new AuthState();
         this.proxyAuthState = new AuthState();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
+    } // constructor
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.823 -0400", hash_original_method = "61E87BBE33E8E65E80E9F3F1C82F2660", hash_generated_method = "7F670B2EBE1422E8A44AF135D1C69B91")
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.659 -0500", hash_original_method = "61E87BBE33E8E65E80E9F3F1C82F2660", hash_generated_method = "6FBF59CD03CC8B4D52C23997423EADC5")
     private RequestWrapper wrapRequest(
             final HttpRequest request) throws ProtocolException {
-        addTaint(request.getTaint());
-        if(request instanceof HttpEntityEnclosingRequest)        
-        {
-RequestWrapper var0C4280835D14C11473AAA56C205C196E_69750663 =             new EntityEnclosingRequestWrapper(
+        if (request instanceof HttpEntityEnclosingRequest) {
+            return new EntityEnclosingRequestWrapper(
                     (HttpEntityEnclosingRequest) request);
-            var0C4280835D14C11473AAA56C205C196E_69750663.addTaint(taint);
-            return var0C4280835D14C11473AAA56C205C196E_69750663;
-        } //End block
-        else
-        {
-RequestWrapper varECE469D25B56B0BCEBCCBF137D95445B_1295689652 =             new RequestWrapper(
+        } else {
+            return new RequestWrapper(
                     request);
-            varECE469D25B56B0BCEBCCBF137D95445B_1295689652.addTaint(taint);
-            return varECE469D25B56B0BCEBCCBF137D95445B_1295689652;
-        } //End block
-        // ---------- Original Method ----------
-        //if (request instanceof HttpEntityEnclosingRequest) {
-            //return new EntityEnclosingRequestWrapper(
-                    //(HttpEntityEnclosingRequest) request);
-        //} else {
-            //return new RequestWrapper(
-                    //request);
-        //}
+        }
     }
-
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.823 -0400", hash_original_method = "6DDB48FED3712857B06BA2C85DA91575", hash_generated_method = "56FC19C47F200C9C51682659348EFFFD")
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.660 -0500", hash_original_method = "6DDB48FED3712857B06BA2C85DA91575", hash_generated_method = "127EB3421BD46398C7ABCCC86B5FF295")
     protected void rewriteRequestURI(
             final RequestWrapper request,
             final HttpRoute route) throws ProtocolException {
-        addTaint(route.getTaint());
-        addTaint(request.getTaint());
-        try 
-        {
+        try {
+            
             URI uri = request.getURI();
-            if(route.getProxyHost() != null && !route.isTunnelled())            
-            {
-                if(!uri.isAbsolute())                
-                {
+            if (route.getProxyHost() != null && !route.isTunnelled()) {
+                // Make sure the request URI is absolute
+                if (!uri.isAbsolute()) {
                     HttpHost target = route.getTargetHost();
                     uri = URIUtils.rewriteURI(uri, target);
                     request.setURI(uri);
-                } //End block
-            } //End block
-            else
-            {
-                if(uri.isAbsolute())                
-                {
+                }
+            } else {
+                // Make sure the request URI is relative
+                if (uri.isAbsolute()) {
                     uri = URIUtils.rewriteURI(uri, null);
                     request.setURI(uri);
-                } //End block
-            } //End block
-        } //End block
-        catch (URISyntaxException ex)
-        {
-            ProtocolException var7A0C22AEC7611C0CB0FD9196AE88644C_639004217 = new ProtocolException("Invalid URI: " + 
+                }
+            }
+            
+        } catch (URISyntaxException ex) {
+            throw new ProtocolException("Invalid URI: " + 
                     request.getRequestLine().getUri(), ex);
-            var7A0C22AEC7611C0CB0FD9196AE88644C_639004217.addTaint(taint);
-            throw var7A0C22AEC7611C0CB0FD9196AE88644C_639004217;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //URI uri = request.getURI();
-            //if (route.getProxyHost() != null && !route.isTunnelled()) {
-                //if (!uri.isAbsolute()) {
-                    //HttpHost target = route.getTargetHost();
-                    //uri = URIUtils.rewriteURI(uri, target);
-                    //request.setURI(uri);
-                //}
-            //} else {
-                //if (uri.isAbsolute()) {
-                    //uri = URIUtils.rewriteURI(uri, null);
-                    //request.setURI(uri);
-                //}
-            //}
-        //} catch (URISyntaxException ex) {
-            //throw new ProtocolException("Invalid URI: " + 
-                    //request.getRequestLine().getUri(), ex);
-        //}
+        }
     }
-
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.826 -0400", hash_original_method = "FF11182248C158BE9943CC5E99D59AB1", hash_generated_method = "48A3F0096BB1067B9B77E58BA009FB46")
+    
+    // non-javadoc, see interface ClientRequestDirector
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.662 -0500", hash_original_method = "FF11182248C158BE9943CC5E99D59AB1", hash_generated_method = "FADA447509B07675118E8E4872FBFA31")
     public HttpResponse execute(HttpHost target, HttpRequest request,
-                                HttpContext context) throws HttpException, IOException {
-        addTaint(context.getTaint());
-        addTaint(request.getTaint());
-        addTaint(target.getTaint());
+                                HttpContext context)
+        throws HttpException, IOException {
+
         HttpRequest orig = request;
         RequestWrapper origWrapper = wrapRequest(orig);
         origWrapper.setParams(params);
         HttpRoute origRoute = determineRoute(target, origWrapper, context);
-        RoutedRequest roureq = new RoutedRequest(origWrapper, origRoute);
+
+        RoutedRequest roureq = new RoutedRequest(origWrapper, origRoute); 
+
         long timeout = ConnManagerParams.getTimeout(params);
+        
         int execCount = 0;
+        
         boolean reuse = false;
         HttpResponse response = null;
         boolean done = false;
-        try 
-        {
-            while
-(!done)            
-            {
+        try {
+            while (!done) {
+                // In this loop, the RoutedRequest may be replaced by a
+                // followup request and route. The request and route passed
+                // in the method arguments will be replaced. The original
+                // request is still available in 'orig'.
+
                 RequestWrapper wrapper = roureq.getRequest();
                 HttpRoute route = roureq.getRoute();
+                
+                // See if we have a user token bound to the execution context
                 Object userToken = context.getAttribute(ClientContext.USER_TOKEN);
-                if(managedConn == null)                
-                {
+                
+                // Allocate connection if needed
+                if (managedConn == null) {
                     ClientConnectionRequest connRequest = connManager.requestConnection(
                             route, userToken);
-                    if(orig instanceof AbortableHttpRequest)                    
-                    {
+                    if (orig instanceof AbortableHttpRequest) {
                         ((AbortableHttpRequest) orig).setConnectionRequest(connRequest);
-                    } //End block
-                    try 
-                    {
+                    }
+                    
+                    try {
                         managedConn = connRequest.getConnection(timeout, TimeUnit.MILLISECONDS);
-                    } //End block
-                    catch (InterruptedException interrupted)
-                    {
+                    } catch(InterruptedException interrupted) {
                         InterruptedIOException iox = new InterruptedIOException();
                         iox.initCause(interrupted);
-                        iox.addTaint(taint);
                         throw iox;
-                    } //End block
-                    if(HttpConnectionParams.isStaleCheckingEnabled(params))                    
-                    {
+                    }
+
+                    if (HttpConnectionParams.isStaleCheckingEnabled(params)) {
+                        // validate connection
                         this.log.debug("Stale connection check");
-                        if(managedConn.isStale())                        
-                        {
+                        if (managedConn.isStale()) {
                             this.log.debug("Stale connection detected");
-                            try 
-                            {
+                            // BEGIN android-changed
+                            try {
                                 managedConn.close();
-                            } //End block
-                            catch (IOException ignored)
-                            {
-                            } //End block
-                        } //End block
-                    } //End block
-                } //End block
-                if(orig instanceof AbortableHttpRequest)                
-                {
+                            } catch (IOException ignored) {
+                                // SSLSocket's will throw IOException
+                                // because they can't send a "close
+                                // notify" protocol message to the
+                                // server. Just supresss any
+                                // exceptions related to closing the
+                                // stale connection.
+                            }
+                            // END android-changed
+                        }
+                    }
+                }
+
+                if (orig instanceof AbortableHttpRequest) {
                     ((AbortableHttpRequest) orig).setReleaseTrigger(managedConn);
-                } //End block
-                if(!managedConn.isOpen())                
-                {
+                }
+
+                // Reopen connection if needed
+                if (!managedConn.isOpen()) {
                     managedConn.open(route, context, params);
-                } //End block
-                else
-                {
+                }
+                // BEGIN android-added
+                else {
+                    // b/3241899 set the per request timeout parameter on reused connections
                     managedConn.setSocketTimeout(HttpConnectionParams.getSoTimeout(params));
-                } //End block
-                try 
-                {
+                }
+                // END android-added
+                
+                try {
                     establishRoute(route, context);
-                } //End block
-                catch (TunnelRefusedException ex)
-                {
-                    if(this.log.isDebugEnabled())                    
-                    {
+                } catch (TunnelRefusedException ex) {
+                    if (this.log.isDebugEnabled()) {
                         this.log.debug(ex.getMessage());
-                    } //End block
+                    }
                     response = ex.getResponse();
                     break;
-                } //End block
+                }
+
+                // Reset headers on the request wrapper
                 wrapper.resetHeaders();
+                
+                // Re-write request URI if needed
                 rewriteRequestURI(wrapper, route);
+
+                // Use virtual host if set
                 target = (HttpHost) wrapper.getParams().getParameter(
                         ClientPNames.VIRTUAL_HOST);
-                if(target == null)                
-                {
+
+                if (target == null) {
                     target = route.getTargetHost();
-                } //End block
+                }
+
                 HttpHost proxy = route.getProxyHost();
+
+                // Populate the execution context
                 context.setAttribute(ExecutionContext.HTTP_TARGET_HOST,
                         target);
                 context.setAttribute(ExecutionContext.HTTP_PROXY_HOST,
@@ -434,744 +380,727 @@ RequestWrapper varECE469D25B56B0BCEBCCBF137D95445B_1295689652 =             new 
                         targetAuthState);
                 context.setAttribute(ClientContext.PROXY_AUTH_STATE,
                         proxyAuthState);
+                
+                // Run request protocol interceptors
                 requestExec.preProcess(wrapper, httpProcessor, context);
+                
                 context.setAttribute(ExecutionContext.HTTP_REQUEST,
                         wrapper);
+
                 boolean retrying = true;
-                while
-(retrying)                
-                {
+                while (retrying) {
+                    // Increment total exec count (with redirects)
                     execCount++;
+                    // Increment exec count for this particular request
                     wrapper.incrementExecCount();
-                    if(wrapper.getExecCount() > 1 && !wrapper.isRepeatable())                    
-                    {
-                        NonRepeatableRequestException varBE8956FD29594D8614365E775C241D18_946575156 = new NonRepeatableRequestException("Cannot retry request " +
+                    if (wrapper.getExecCount() > 1 && !wrapper.isRepeatable()) {
+                        throw new NonRepeatableRequestException("Cannot retry request " +
                                 "with a non-repeatable request entity");
-                        varBE8956FD29594D8614365E775C241D18_946575156.addTaint(taint);
-                        throw varBE8956FD29594D8614365E775C241D18_946575156;
-                    } //End block
-                    try 
-                    {
-                        if(this.log.isDebugEnabled())                        
-                        {
+                    }
+                    
+                    try {
+                        if (this.log.isDebugEnabled()) {
                             this.log.debug("Attempt " + execCount + " to execute request");
-                        } //End block
+                        }
                         response = requestExec.execute(wrapper, managedConn, context);
                         retrying = false;
-                    } //End block
-                    catch (IOException ex)
-                    {
+                        
+                    } catch (IOException ex) {
                         this.log.debug("Closing the connection.");
                         managedConn.close();
-                        if(retryHandler.retryRequest(ex, execCount, context))                        
-                        {
-                            if(this.log.isInfoEnabled())                            
-                            {
+                        if (retryHandler.retryRequest(ex, execCount, context)) {
+                            if (this.log.isInfoEnabled()) {
                                 this.log.info("I/O exception ("+ ex.getClass().getName() + 
                                         ") caught when processing request: "
                                         + ex.getMessage());
-                            } //End block
-                            if(this.log.isDebugEnabled())                            
-                            {
+                            }
+                            if (this.log.isDebugEnabled()) {
                                 this.log.debug(ex.getMessage(), ex);
-                            } //End block
+                            }
                             this.log.info("Retrying request");
-                        } //End block
-                        else
-                        {
-                            ex.addTaint(taint);
+                        } else {
                             throw ex;
-                        } //End block
-                        if(route.getHopCount() == 1)                        
-                        {
+                        }
+
+                        // If we have a direct route to the target host
+                        // just re-open connection and re-try the request
+                        if (route.getHopCount() == 1) {
                             this.log.debug("Reopening the direct connection.");
                             managedConn.open(route, context, params);
-                        } //End block
-                        else
-                        {
-                            ex.addTaint(taint);
+                        } else {
+                            // otherwise give up
                             throw ex;
-                        } //End block
-                    } //End block
-                } //End block
+                        }
+                        
+                    }
+
+                }
+
+                // Run response protocol interceptors
                 response.setParams(params);
                 requestExec.postProcess(response, httpProcessor, context);
+                
+
+                // The connection is in or can be brought to a re-usable state.
                 reuse = reuseStrategy.keepAlive(response, context);
-                if(reuse)                
-                {
+                if(reuse) {
+                    // Set the idle duration of this connection
                     long duration = keepAliveStrategy.getKeepAliveDuration(response, context);
                     managedConn.setIdleDuration(duration, TimeUnit.MILLISECONDS);
-                } //End block
+                }
+                
                 RoutedRequest followup = handleResponse(roureq, response, context);
-                if(followup == null)                
-                {
+                if (followup == null) {
                     done = true;
-                } //End block
-                else
-                {
-                    if(reuse)                    
-                    {
+                } else {
+                    if (reuse) {
                         this.log.debug("Connection kept alive");
+                        // Make sure the response body is fully consumed, if present
                         HttpEntity entity = response.getEntity();
-                        if(entity != null)                        
-                        {
+                        if (entity != null) {
                             entity.consumeContent();
-                        } //End block
+                        }
+                        // entity consumed above is not an auto-release entity,
+                        // need to mark the connection re-usable explicitly
                         managedConn.markReusable();
-                    } //End block
-                    else
-                    {
+                    } else {
                         managedConn.close();
-                    } //End block
-                    if(!followup.getRoute().equals(roureq.getRoute()))                    
-                    {
+                    }
+                    // check if we can use the same connection for the followup
+                    if (!followup.getRoute().equals(roureq.getRoute())) {
                         releaseConnection();
-                    } //End block
+                    }
                     roureq = followup;
-                } //End block
+                }
+                
                 userToken = this.userTokenHandler.getUserToken(context);
                 context.setAttribute(ClientContext.USER_TOKEN, userToken);
-                if(managedConn != null)                
-                {
+                if (managedConn != null) {
                     managedConn.setState(userToken);
-                } //End block
-            } //End block
-            if((response == null) || (response.getEntity() == null) ||
-                !response.getEntity().isStreaming())            
-            {
-                if(reuse)                
-                managedConn.markReusable();
+                }
+            } // while not done
+
+
+            // check for entity, release connection if possible
+            if ((response == null) || (response.getEntity() == null) ||
+                !response.getEntity().isStreaming()) {
+                // connection not needed and (assumed to be) in re-usable state
+                if (reuse)
+                    managedConn.markReusable();
                 releaseConnection();
-            } //End block
-            else
-            {
+            } else {
+                // install an auto-release entity
                 HttpEntity entity = response.getEntity();
                 entity = new BasicManagedEntity(entity, managedConn, reuse);
                 response.setEntity(entity);
-            } //End block
-HttpResponse var2A1114F4272D753FE23A36E3D68CD293_997377750 =             response;
-            var2A1114F4272D753FE23A36E3D68CD293_997377750.addTaint(taint);
-            return var2A1114F4272D753FE23A36E3D68CD293_997377750;
-        } //End block
-        catch (HttpException ex)
-        {
-            abortConnection();
-            ex.addTaint(taint);
-            throw ex;
-        } //End block
-        catch (IOException ex)
-        {
-            abortConnection();
-            ex.addTaint(taint);
-            throw ex;
-        } //End block
-        catch (RuntimeException ex)
-        {
-            abortConnection();
-            ex.addTaint(taint);
-            throw ex;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
+            }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.829 -0400", hash_original_method = "72FBB2C6656BE4AE3AB40DA6CB70F970", hash_generated_method = "715CF4FA77516E276A6E0260E216C641")
+            return response;
+            
+        } catch (HttpException ex) {
+            abortConnection();
+            throw ex;
+        } catch (IOException ex) {
+            abortConnection();
+            throw ex;
+        } catch (RuntimeException ex) {
+            abortConnection();
+            throw ex;
+        }
+    } // execute
+
+    /**
+     * Returns the connection back to the connection manager
+     * and prepares for retrieving a new connection during
+     * the next request.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.663 -0500", hash_original_method = "72FBB2C6656BE4AE3AB40DA6CB70F970", hash_generated_method = "8BE1B8153A027B32D41BF07FD000777A")
     protected void releaseConnection() {
-        try 
-        {
+        // Release the connection through the ManagedConnection instead of the
+        // ConnectionManager directly.  This lets the connection control how
+        // it is released.
+        try {
             managedConn.releaseConnection();
-        } //End block
-        catch (IOException ignored)
-        {
+        } catch(IOException ignored) {
             this.log.debug("IOException releasing connection", ignored);
-        } //End block
+        }
         managedConn = null;
-        // ---------- Original Method ----------
-        //try {
-            //managedConn.releaseConnection();
-        //} catch(IOException ignored) {
-            //this.log.debug("IOException releasing connection", ignored);
-        //}
-        //managedConn = null;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.830 -0400", hash_original_method = "855E342C251EB2356D381DD4230A53C3", hash_generated_method = "415DA8F0AF4612F76124E7EB7439B06D")
+    /**
+     * Determines the route for a request.
+     * Called by {@link #execute}
+     * to determine the route for either the original or a followup request.
+     *
+     * @param target    the target host for the request.
+     *                  Implementations may accept <code>null</code>
+     *                  if they can still determine a route, for example
+     *                  to a default target or by inspecting the request.
+     * @param request   the request to execute
+     * @param context   the context to use for the execution,
+     *                  never <code>null</code>
+     *
+     * @return  the route the request should take
+     *
+     * @throws HttpException    in case of a problem
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.664 -0500", hash_original_method = "855E342C251EB2356D381DD4230A53C3", hash_generated_method = "A332452DAA3A752D6FC6722C5C72039F")
     protected HttpRoute determineRoute(HttpHost    target,
                                            HttpRequest request,
-                                           HttpContext context) throws HttpException {
-        addTaint(context.getTaint());
-        addTaint(request.getTaint());
-        addTaint(target.getTaint());
-        if(target == null)        
-        {
+                                           HttpContext context)
+        throws HttpException {
+
+        if (target == null) {
             target = (HttpHost) request.getParams().getParameter(
                 ClientPNames.DEFAULT_HOST);
-        } //End block
-        if(target == null)        
-        {
+        }
+        if (target == null) {
+            // BEGIN android-changed
+            //     If the URI was malformed, make it obvious where there's no host component
             String scheme = null;
             String host = null;
             String path = null;
             URI uri;
-            if(request instanceof HttpUriRequest
-                    && (uri = ((HttpUriRequest) request).getURI()) != null)            
-            {
+            if (request instanceof HttpUriRequest
+                    && (uri = ((HttpUriRequest) request).getURI()) != null) {
                 scheme = uri.getScheme();
                 host = uri.getHost();
                 path = uri.getPath();
-            } //End block
-            IllegalStateException var7A13D68460776BAB9F175883D2724744_508204401 = new IllegalStateException( "Target host must not be null, or set in parameters."
+            }
+            throw new IllegalStateException( "Target host must not be null, or set in parameters."
                     + " scheme=" + scheme + ", host=" + host + ", path=" + path);
-            var7A13D68460776BAB9F175883D2724744_508204401.addTaint(taint);
-            throw var7A13D68460776BAB9F175883D2724744_508204401;
-        } //End block
-HttpRoute var18D2C66D78254B27FEC5244CEBAE6575_856531488 =         this.routePlanner.determineRoute(target, request, context);
-        var18D2C66D78254B27FEC5244CEBAE6575_856531488.addTaint(taint);
-        return var18D2C66D78254B27FEC5244CEBAE6575_856531488;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            // END android-changed
+        }
+
+        return this.routePlanner.determineRoute(target, request, context);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.831 -0400", hash_original_method = "7601A49E11EC8C911923D57ABD663D23", hash_generated_method = "3CB1D84AD04CC0161F8BF41B665AEE4F")
-    protected void establishRoute(HttpRoute route, HttpContext context) throws HttpException, IOException {
-        addTaint(context.getTaint());
-        addTaint(route.getTaint());
+
+    /**
+     * Establishes the target route.
+     *
+     * @param route     the route to establish
+     * @param context   the context for the request execution
+     *
+     * @throws HttpException    in case of a problem
+     * @throws IOException      in case of an IO problem
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.665 -0500", hash_original_method = "7601A49E11EC8C911923D57ABD663D23", hash_generated_method = "93361CD9C318CE622A8DACDDD93D80AA")
+    protected void establishRoute(HttpRoute route, HttpContext context)
+        throws HttpException, IOException {
+
+        //@@@ how to handle CONNECT requests for tunnelling?
+        //@@@ refuse to send external CONNECT via director? special handling?
+
+        //@@@ should the request parameters already be used below?
+        //@@@ probably yes, but they're not linked yet
+        //@@@ will linking above cause problems with linking in reqExec?
+        //@@@ probably not, because the parent is replaced
+        //@@@ just make sure we don't link parameters to themselves
+
         HttpRouteDirector rowdy = new BasicRouteDirector();
         int step;
         do {
-            {
-                HttpRoute fact = managedConn.getRoute();
-                step = rowdy.nextStep(route, fact);
-switch(step){
-                case HttpRouteDirector.CONNECT_TARGET:
-                case HttpRouteDirector.CONNECT_PROXY:
+            HttpRoute fact = managedConn.getRoute();
+            step = rowdy.nextStep(route, fact);
+
+            switch (step) {
+
+            case HttpRouteDirector.CONNECT_TARGET:
+            case HttpRouteDirector.CONNECT_PROXY:
                 managedConn.open(route, context, this.params);
                 break;
-                case HttpRouteDirector.TUNNEL_TARGET:
-                {
-                    boolean secure = createTunnelToTarget(route, context);
-                    this.log.debug("Tunnel to target created.");
-                    managedConn.tunnelTarget(secure, this.params);
-                } //End block
-                break;
-                case HttpRouteDirector.TUNNEL_PROXY:
-                {
-                    final int hop = fact.getHopCount()-1;
-                    boolean secure = createTunnelToProxy(route, hop, context);
-                    this.log.debug("Tunnel to proxy created.");
-                    managedConn.tunnelProxy(route.getHopTarget(hop),
+
+            case HttpRouteDirector.TUNNEL_TARGET: {
+                boolean secure = createTunnelToTarget(route, context);
+                this.log.debug("Tunnel to target created.");
+                managedConn.tunnelTarget(secure, this.params);
+            }   break;
+
+            case HttpRouteDirector.TUNNEL_PROXY: {
+                // The most simple example for this case is a proxy chain
+                // of two proxies, where P1 must be tunnelled to P2.
+                // route: Source -> P1 -> P2 -> Target (3 hops)
+                // fact:  Source -> P1 -> Target       (2 hops)
+                final int hop = fact.getHopCount()-1; // the hop to establish
+                boolean secure = createTunnelToProxy(route, hop, context);
+                this.log.debug("Tunnel to proxy created.");
+                managedConn.tunnelProxy(route.getHopTarget(hop),
                                         secure, this.params);
-                } //End block
-                break;
-                case HttpRouteDirector.LAYER_PROTOCOL:
+            }   break;
+
+
+            case HttpRouteDirector.LAYER_PROTOCOL:
                 managedConn.layerProtocol(context, this.params);
                 break;
-                case HttpRouteDirector.UNREACHABLE:
-                IllegalStateException var41E4D464A14C97E1EC762FC59C493EE0_710019003 = new IllegalStateException
+
+            case HttpRouteDirector.UNREACHABLE:
+                throw new IllegalStateException
                     ("Unable to establish route." +
                      "\nplanned = " + route +
                      "\ncurrent = " + fact);
-                var41E4D464A14C97E1EC762FC59C493EE0_710019003.addTaint(taint);
-                throw var41E4D464A14C97E1EC762FC59C493EE0_710019003;
-                case HttpRouteDirector.COMPLETE:
-                break;
-                default:
-                IllegalStateException var8F4BA28D8DE40A5BAB04A0DC81D7EB48_1134160548 = new IllegalStateException
-                    ("Unknown step indicator "+step+" from RouteDirector.");
-                var8F4BA28D8DE40A5BAB04A0DC81D7EB48_1134160548.addTaint(taint);
-                throw var8F4BA28D8DE40A5BAB04A0DC81D7EB48_1134160548;
-}
-            } //End block
-} while (step > HttpRouteDirector.COMPLETE);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.833 -0400", hash_original_method = "135ABB51CD042C7BF2D35A5F6450399E", hash_generated_method = "1627B99E1102F756DE8EE65E33B3ABA8")
+            case HttpRouteDirector.COMPLETE:
+                // do nothing
+                break;
+
+            default:
+                throw new IllegalStateException
+                    ("Unknown step indicator "+step+" from RouteDirector.");
+            } // switch
+
+        } while (step > HttpRouteDirector.COMPLETE);
+
+    } // establishConnection
+
+
+    /**
+     * Creates a tunnel to the target server.
+     * The connection must be established to the (last) proxy.
+     * A CONNECT request for tunnelling through the proxy will
+     * be created and sent, the response received and checked.
+     * This method does <i>not</i> update the connection with
+     * information about the tunnel, that is left to the caller.
+     *
+     * @param route     the route to establish
+     * @param context   the context for request execution
+     *
+     * @return  <code>true</code> if the tunnelled route is secure,
+     *          <code>false</code> otherwise.
+     *          The implementation here always returns <code>false</code>,
+     *          but derived classes may override.
+     *
+     * @throws HttpException    in case of a problem
+     * @throws IOException      in case of an IO problem
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.667 -0500", hash_original_method = "135ABB51CD042C7BF2D35A5F6450399E", hash_generated_method = "863385F4DDF4E2867E79479775F0563A")
     protected boolean createTunnelToTarget(HttpRoute route,
-                                           HttpContext context) throws HttpException, IOException {
-        addTaint(context.getTaint());
-        addTaint(route.getTaint());
+                                           HttpContext context)
+        throws HttpException, IOException {
+
         HttpHost proxy = route.getProxyHost();
         HttpHost target = route.getTargetHost();
         HttpResponse response = null;
+        
         boolean done = false;
-        while
-(!done)        
-        {
+        while (!done) {
+
             done = true;
-            if(!this.managedConn.isOpen())            
-            {
+            
+            if (!this.managedConn.isOpen()) {
                 this.managedConn.open(route, context, this.params);
-            } //End block
+            }
+            
             HttpRequest connect = createConnectRequest(route, context);
+            
             String agent = HttpProtocolParams.getUserAgent(params);
-            if(agent != null)            
-            {
+            if (agent != null) {
                 connect.addHeader(HTTP.USER_AGENT, agent);
-            } //End block
+            }
             connect.addHeader(HTTP.TARGET_HOST, target.toHostString());
+            
             AuthScheme authScheme = this.proxyAuthState.getAuthScheme();
             AuthScope authScope = this.proxyAuthState.getAuthScope();
             Credentials creds = this.proxyAuthState.getCredentials();
-            if(creds != null)            
-            {
-                if(authScope != null || !authScheme.isConnectionBased())                
-                {
-                    try 
-                    {
+            if (creds != null) {
+                if (authScope != null || !authScheme.isConnectionBased()) {
+                    try {
                         connect.addHeader(authScheme.authenticate(creds, connect));
-                    } //End block
-                    catch (AuthenticationException ex)
-                    {
-                        if(this.log.isErrorEnabled())                        
-                        {
+                    } catch (AuthenticationException ex) {
+                        if (this.log.isErrorEnabled()) {
                             this.log.error("Proxy authentication error: " + ex.getMessage());
-                        } //End block
-                    } //End block
-                } //End block
-            } //End block
+                        }
+                    }
+                }
+            }
+            
             response = requestExec.execute(connect, this.managedConn, context);
+            
             int status = response.getStatusLine().getStatusCode();
-            if(status < 200)            
-            {
-                HttpException varD3EF24224D53CFEC9101DECAEC6951EE_394084008 = new HttpException("Unexpected response to CONNECT request: " +
+            if (status < 200) {
+                throw new HttpException("Unexpected response to CONNECT request: " +
                         response.getStatusLine());
-                varD3EF24224D53CFEC9101DECAEC6951EE_394084008.addTaint(taint);
-                throw varD3EF24224D53CFEC9101DECAEC6951EE_394084008;
-            } //End block
+            }
+            
             CredentialsProvider credsProvider = (CredentialsProvider)
                 context.getAttribute(ClientContext.CREDS_PROVIDER);
-            if(credsProvider != null && HttpClientParams.isAuthenticating(params))            
-            {
-                if(this.proxyAuthHandler.isAuthenticationRequested(response, context))                
-                {
+            
+            if (credsProvider != null && HttpClientParams.isAuthenticating(params)) {
+                if (this.proxyAuthHandler.isAuthenticationRequested(response, context)) {
+
                     this.log.debug("Proxy requested authentication");
                     Map<String, Header> challenges = this.proxyAuthHandler.getChallenges(
                             response, context);
-                    try 
-                    {
+                    try {
                         processChallenges(
                                 challenges, this.proxyAuthState, this.proxyAuthHandler, 
                                 response, context);
-                    } //End block
-                    catch (AuthenticationException ex)
-                    {
-                        if(this.log.isWarnEnabled())                        
-                        {
+                    } catch (AuthenticationException ex) {
+                        if (this.log.isWarnEnabled()) {
                             this.log.warn("Authentication error: " +  ex.getMessage());
                             break;
-                        } //End block
-                    } //End block
+                        }
+                    }
                     updateAuthState(this.proxyAuthState, proxy, credsProvider);
-                    if(this.proxyAuthState.getCredentials() != null)                    
-                    {
+                    
+                    if (this.proxyAuthState.getCredentials() != null) {
                         done = false;
-                        if(this.reuseStrategy.keepAlive(response, context))                        
-                        {
+
+                        // Retry request
+                        if (this.reuseStrategy.keepAlive(response, context)) {
                             this.log.debug("Connection kept alive");
+                            // Consume response content
                             HttpEntity entity = response.getEntity();
-                            if(entity != null)                            
-                            {
+                            if (entity != null) {
                                 entity.consumeContent();
-                            } //End block
-                        } //End block
-                        else
-                        {
+                            }                
+                        } else {
                             this.managedConn.close();
-                        } //End block
-                    } //End block
-                } //End block
-                else
-                {
+                        }
+                        
+                    }
+                    
+                } else {
+                    // Reset proxy auth scope
                     this.proxyAuthState.setAuthScope(null);
-                } //End block
-            } //End block
-        } //End block
+                }
+            }
+        }
+        
         int status = response.getStatusLine().getStatusCode();
-        if(status > 299)        
-        {
+
+        if (status > 299) {
+
+            // Buffer response content
             HttpEntity entity = response.getEntity();
-            if(entity != null)            
-            {
+            if (entity != null) {
                 response.setEntity(new BufferedHttpEntity(entity));
-            } //End block
+            }                
+            
             this.managedConn.close();
-            TunnelRefusedException varB63C984E4D7FCF92F245BAD42F4DFE6F_491891182 = new TunnelRefusedException("CONNECT refused by proxy: " +
+            throw new TunnelRefusedException("CONNECT refused by proxy: " +
                     response.getStatusLine(), response);
-            varB63C984E4D7FCF92F245BAD42F4DFE6F_491891182.addTaint(taint);
-            throw varB63C984E4D7FCF92F245BAD42F4DFE6F_491891182;
-        } //End block
+        }
+
         this.managedConn.markReusable();
-        boolean var68934A3E9455FA72420237EB05902327_571152908 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1063354158 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1063354158;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
+        
+        // How to decide on security of the tunnelled connection?
+        // The socket factory knows only about the segment to the proxy.
+        // Even if that is secure, the hop to the target may be insecure.
+        // Leave it to derived classes, consider insecure by default here.
+        return false;
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.835 -0400", hash_original_method = "F6C0B77A6F010BA1F972A9366C7E6CE6", hash_generated_method = "36AE56BB7A4F30C0EFF30FDDAC17A718")
+    } // createTunnelToTarget
+
+
+
+    /**
+     * Creates a tunnel to an intermediate proxy.
+     * This method is <i>not</i> implemented in this class.
+     * It just throws an exception here.
+     *
+     * @param route     the route to establish
+     * @param hop       the hop in the route to establish now.
+     *                  <code>route.getHopTarget(hop)</code>
+     *                  will return the proxy to tunnel to.
+     * @param context   the context for request execution
+     *
+     * @return  <code>true</code> if the partially tunnelled connection
+     *          is secure, <code>false</code> otherwise.
+     *
+     * @throws HttpException    in case of a problem
+     * @throws IOException      in case of an IO problem
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.668 -0500", hash_original_method = "F6C0B77A6F010BA1F972A9366C7E6CE6", hash_generated_method = "7E55AD8D0773EBBDA8B51AD34E5BAF6B")
     protected boolean createTunnelToProxy(HttpRoute route, int hop,
-                                          HttpContext context) throws HttpException, IOException {
-        addTaint(context.getTaint());
-        addTaint(hop);
-        addTaint(route.getTaint());
-        UnsupportedOperationException varFE02595BC82A88C5229C259936D54501_400764733 = new UnsupportedOperationException
+                                          HttpContext context)
+        throws HttpException, IOException {
+
+        // Have a look at createTunnelToTarget and replicate the parts
+        // you need in a custom derived class. If your proxies don't require
+        // authentication, it is not too hard. But for the stock version of
+        // HttpClient, we cannot make such simplifying assumptions and would
+        // have to include proxy authentication code. The HttpComponents team
+        // is currently not in a position to support rarely used code of this
+        // complexity. Feel free to submit patches that refactor the code in
+        // createTunnelToTarget to facilitate re-use for proxy tunnelling.
+
+        throw new UnsupportedOperationException
             ("Proxy chains are not supported.");
-        varFE02595BC82A88C5229C259936D54501_400764733.addTaint(taint);
-        throw varFE02595BC82A88C5229C259936D54501_400764733;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException
-            //("Proxy chains are not supported.");
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.835 -0400", hash_original_method = "7799E26CF8933DA985404F8B4CB5983A", hash_generated_method = "E41E4B451B398CFE3FA43E437007FBA6")
+
+
+    /**
+     * Creates the CONNECT request for tunnelling.
+     * Called by {@link #createTunnelToTarget createTunnelToTarget}.
+     *
+     * @param route     the route to establish
+     * @param context   the context for request execution
+     *
+     * @return  the CONNECT request for tunnelling
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.669 -0500", hash_original_method = "7799E26CF8933DA985404F8B4CB5983A", hash_generated_method = "DCF19388C8A870851BDAE2D1C0669598")
     protected HttpRequest createConnectRequest(HttpRoute route,
                                                HttpContext context) {
-        addTaint(context.getTaint());
-        addTaint(route.getTaint());
+        // see RFC 2817, section 5.2 and 
+        // INTERNET-DRAFT: Tunneling TCP based protocols through 
+        // Web proxy servers
+            
         HttpHost target = route.getTargetHost();
+        
         String host = target.getHostName();
         int port = target.getPort();
-        if(port < 0)        
-        {
+        if (port < 0) {
             Scheme scheme = connManager.getSchemeRegistry().
                 getScheme(target.getSchemeName());
             port = scheme.getDefaultPort();
-        } //End block
+        }
+        
         StringBuilder buffer = new StringBuilder(host.length() + 6);
         buffer.append(host);
         buffer.append(':');
         buffer.append(Integer.toString(port));
+        
         String authority = buffer.toString();
         ProtocolVersion ver = HttpProtocolParams.getVersion(params);
         HttpRequest req = new BasicHttpRequest
             ("CONNECT", authority, ver);
-HttpRequest var71AC1B13807E2EDC246A42B3DB2D8EEA_345801757 =         req;
-        var71AC1B13807E2EDC246A42B3DB2D8EEA_345801757.addTaint(taint);
-        return var71AC1B13807E2EDC246A42B3DB2D8EEA_345801757;
-        // ---------- Original Method ----------
-        //HttpHost target = route.getTargetHost();
-        //String host = target.getHostName();
-        //int port = target.getPort();
-        //if (port < 0) {
-            //Scheme scheme = connManager.getSchemeRegistry().
-                //getScheme(target.getSchemeName());
-            //port = scheme.getDefaultPort();
-        //}
-        //StringBuilder buffer = new StringBuilder(host.length() + 6);
-        //buffer.append(host);
-        //buffer.append(':');
-        //buffer.append(Integer.toString(port));
-        //String authority = buffer.toString();
-        //ProtocolVersion ver = HttpProtocolParams.getVersion(params);
-        //HttpRequest req = new BasicHttpRequest
-            //("CONNECT", authority, ver);
-        //return req;
+
+        return req;
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.836 -0400", hash_original_method = "E253F133593C4FA5CC62D333761B1C94", hash_generated_method = "39992CA38935D35DCEB87C51D89A9486")
+
+    /**
+     * Analyzes a response to check need for a followup.
+     *
+     * @param roureq    the request and route. 
+     * @param response  the response to analayze
+     * @param context   the context used for the current request execution
+     *
+     * @return  the followup request and route if there is a followup, or
+     *          <code>null</code> if the response should be returned as is
+     *
+     * @throws HttpException    in case of a problem
+     * @throws IOException      in case of an IO problem
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.671 -0500", hash_original_method = "E253F133593C4FA5CC62D333761B1C94", hash_generated_method = "24E27C826C46B023BB99412DF746179B")
     protected RoutedRequest handleResponse(RoutedRequest roureq,
                                            HttpResponse response,
-                                           HttpContext context) throws HttpException, IOException {
-        addTaint(context.getTaint());
-        addTaint(response.getTaint());
-        addTaint(roureq.getTaint());
+                                           HttpContext context)
+        throws HttpException, IOException {
+
         HttpRoute route = roureq.getRoute();
         HttpHost proxy = route.getProxyHost();
         RequestWrapper request = roureq.getRequest();
+        
         HttpParams params = request.getParams();
-        if(HttpClientParams.isRedirecting(params) && 
-                this.redirectHandler.isRedirectRequested(response, context))        
-        {
-            if(redirectCount >= maxRedirects)            
-            {
-                RedirectException var29BC0BAED8BB7987E47C0BA80AF93FBD_909838165 = new RedirectException("Maximum redirects ("
+        if (HttpClientParams.isRedirecting(params) && 
+                this.redirectHandler.isRedirectRequested(response, context)) {
+
+            if (redirectCount >= maxRedirects) {
+                throw new RedirectException("Maximum redirects ("
                         + maxRedirects + ") exceeded");
-                var29BC0BAED8BB7987E47C0BA80AF93FBD_909838165.addTaint(taint);
-                throw var29BC0BAED8BB7987E47C0BA80AF93FBD_909838165;
-            } //End block
+            }
             redirectCount++;
+            
             URI uri = this.redirectHandler.getLocationURI(response, context);
+
             HttpHost newTarget = new HttpHost(
                     uri.getHost(), 
                     uri.getPort(),
                     uri.getScheme());
+            
             HttpGet redirect = new HttpGet(uri);
+            
             HttpRequest orig = request.getOriginal();
             redirect.setHeaders(orig.getAllHeaders());
+            
             RequestWrapper wrapper = new RequestWrapper(redirect);
             wrapper.setParams(params);
+            
             HttpRoute newRoute = determineRoute(newTarget, wrapper, context);
             RoutedRequest newRequest = new RoutedRequest(wrapper, newRoute);
-            if(this.log.isDebugEnabled())            
-            {
+            
+            if (this.log.isDebugEnabled()) {
                 this.log.debug("Redirecting to '" + uri + "' via " + newRoute);
-            } //End block
-RoutedRequest var843B90BB67BB5454D25E3643EF8010AB_1521830247 =             newRequest;
-            var843B90BB67BB5454D25E3643EF8010AB_1521830247.addTaint(taint);
-            return var843B90BB67BB5454D25E3643EF8010AB_1521830247;
-        } //End block
+            }
+            
+            return newRequest;
+        }
+
         CredentialsProvider credsProvider = (CredentialsProvider)
             context.getAttribute(ClientContext.CREDS_PROVIDER);
-        if(credsProvider != null && HttpClientParams.isAuthenticating(params))        
-        {
-            if(this.targetAuthHandler.isAuthenticationRequested(response, context))            
-            {
+    
+        if (credsProvider != null && HttpClientParams.isAuthenticating(params)) {
+
+            if (this.targetAuthHandler.isAuthenticationRequested(response, context)) {
+
                 HttpHost target = (HttpHost)
                     context.getAttribute(ExecutionContext.HTTP_TARGET_HOST);
-                if(target == null)                
-                {
+                if (target == null) {
                     target = route.getTargetHost();
-                } //End block
+                }
+                
                 this.log.debug("Target requested authentication");
                 Map<String, Header> challenges = this.targetAuthHandler.getChallenges(
-                        response, context);
-                try 
-                {
+                        response, context); 
+                try {
                     processChallenges(challenges, 
                             this.targetAuthState, this.targetAuthHandler,
                             response, context);
-                } //End block
-                catch (AuthenticationException ex)
-                {
-                    if(this.log.isWarnEnabled())                    
-                    {
+                } catch (AuthenticationException ex) {
+                    if (this.log.isWarnEnabled()) {
                         this.log.warn("Authentication error: " +  ex.getMessage());
-RoutedRequest var540C13E9E156B687226421B24F2DF178_724028341 =                         null;
-                        var540C13E9E156B687226421B24F2DF178_724028341.addTaint(taint);
-                        return var540C13E9E156B687226421B24F2DF178_724028341;
-                    } //End block
-                } //End block
+                        return null;
+                    }
+                }
                 updateAuthState(this.targetAuthState, target, credsProvider);
-                if(this.targetAuthState.getCredentials() != null)                
-                {
-RoutedRequest var6648910846287553B78C1318790BB204_760703723 =                     roureq;
-                    var6648910846287553B78C1318790BB204_760703723.addTaint(taint);
-                    return var6648910846287553B78C1318790BB204_760703723;
-                } //End block
-                else
-                {
-RoutedRequest var540C13E9E156B687226421B24F2DF178_1250611475 =                     null;
-                    var540C13E9E156B687226421B24F2DF178_1250611475.addTaint(taint);
-                    return var540C13E9E156B687226421B24F2DF178_1250611475;
-                } //End block
-            } //End block
-            else
-            {
+                
+                if (this.targetAuthState.getCredentials() != null) {
+                    // Re-try the same request via the same route
+                    return roureq;
+                } else {
+                    return null;
+                }
+            } else {
+                // Reset target auth scope
                 this.targetAuthState.setAuthScope(null);
-            } //End block
-            if(this.proxyAuthHandler.isAuthenticationRequested(response, context))            
-            {
+            }
+            
+            if (this.proxyAuthHandler.isAuthenticationRequested(response, context)) {
+
                 this.log.debug("Proxy requested authentication");
                 Map<String, Header> challenges = this.proxyAuthHandler.getChallenges(
                         response, context);
-                try 
-                {
+                try {
                     processChallenges(challenges, 
                             this.proxyAuthState, this.proxyAuthHandler, 
                             response, context);
-                } //End block
-                catch (AuthenticationException ex)
-                {
-                    if(this.log.isWarnEnabled())                    
-                    {
+                } catch (AuthenticationException ex) {
+                    if (this.log.isWarnEnabled()) {
                         this.log.warn("Authentication error: " +  ex.getMessage());
-RoutedRequest var540C13E9E156B687226421B24F2DF178_1902368442 =                         null;
-                        var540C13E9E156B687226421B24F2DF178_1902368442.addTaint(taint);
-                        return var540C13E9E156B687226421B24F2DF178_1902368442;
-                    } //End block
-                } //End block
+                        return null;
+                    }
+                }
                 updateAuthState(this.proxyAuthState, proxy, credsProvider);
-                if(this.proxyAuthState.getCredentials() != null)                
-                {
-RoutedRequest var6648910846287553B78C1318790BB204_1669495651 =                     roureq;
-                    var6648910846287553B78C1318790BB204_1669495651.addTaint(taint);
-                    return var6648910846287553B78C1318790BB204_1669495651;
-                } //End block
-                else
-                {
-RoutedRequest var540C13E9E156B687226421B24F2DF178_1634909064 =                     null;
-                    var540C13E9E156B687226421B24F2DF178_1634909064.addTaint(taint);
-                    return var540C13E9E156B687226421B24F2DF178_1634909064;
-                } //End block
-            } //End block
-            else
-            {
+                
+                if (this.proxyAuthState.getCredentials() != null) {
+                    // Re-try the same request via the same route
+                    return roureq;
+                } else {
+                    return null;
+                }
+            } else {
+                // Reset proxy auth scope
                 this.proxyAuthState.setAuthScope(null);
-            } //End block
-        } //End block
-RoutedRequest var540C13E9E156B687226421B24F2DF178_639884716 =         null;
-        var540C13E9E156B687226421B24F2DF178_639884716.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_639884716;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
+            }
+        }
+        return null;
+    } // handleResponse
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.838 -0400", hash_original_method = "1B42C243E9B570B37B5AA18DF368B31A", hash_generated_method = "17198A02B2E5C37081B5A7BE5C174595")
+
+    /**
+     * Shuts down the connection.
+     * This method is called from a <code>catch</code> block in
+     * {@link #execute execute} during exception handling.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.672 -0500", hash_original_method = "1B42C243E9B570B37B5AA18DF368B31A", hash_generated_method = "6068E21F3A76D203B26A018E1BECEB31")
     private void abortConnection() {
         ManagedClientConnection mcc = managedConn;
-        if(mcc != null)        
-        {
+        if (mcc != null) {
+            // we got here as the result of an exception
+            // no response will be returned, release the connection
             managedConn = null;
-            try 
-            {
+            try {
                 mcc.abortConnection();
-            } //End block
-            catch (IOException ex)
-            {
-                if(this.log.isDebugEnabled())                
-                {
+            } catch (IOException ex) {
+                if (this.log.isDebugEnabled()) {
                     this.log.debug(ex.getMessage(), ex);
-                } //End block
-            } //End block
-            try 
-            {
+                }
+            }
+            // ensure the connection manager properly releases this connection
+            try {
                 mcc.releaseConnection();
-            } //End block
-            catch (IOException ignored)
-            {
+            } catch(IOException ignored) {
                 this.log.debug("Error releasing connection", ignored);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //ManagedClientConnection mcc = managedConn;
-        //if (mcc != null) {
-            //managedConn = null;
-            //try {
-                //mcc.abortConnection();
-            //} catch (IOException ex) {
-                //if (this.log.isDebugEnabled()) {
-                    //this.log.debug(ex.getMessage(), ex);
-                //}
-            //}
-            //try {
-                //mcc.releaseConnection();
-            //} catch(IOException ignored) {
-                //this.log.debug("Error releasing connection", ignored);
-            //}
-        //}
-    }
+            }
+        }
+    } // abortConnection
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.839 -0400", hash_original_method = "582621DB4D93E0412F3CDB3DDE871FB7", hash_generated_method = "EA679C6F1AA8CE77E96E16ABF551363F")
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.673 -0500", hash_original_method = "582621DB4D93E0412F3CDB3DDE871FB7", hash_generated_method = "83C7CA03A31FEC6F6006FB8DE25DCE8F")
     private void processChallenges(
             final Map<String, Header> challenges, 
             final AuthState authState,
             final AuthenticationHandler authHandler,
             final HttpResponse response, 
-            final HttpContext context) throws MalformedChallengeException, AuthenticationException {
-        addTaint(context.getTaint());
-        addTaint(response.getTaint());
-        addTaint(authHandler.getTaint());
-        addTaint(authState.getTaint());
-        addTaint(challenges.getTaint());
+            final HttpContext context) 
+                throws MalformedChallengeException, AuthenticationException {
+        
         AuthScheme authScheme = authState.getAuthScheme();
-        if(authScheme == null)        
-        {
+        if (authScheme == null) {
+            // Authentication not attempted before
             authScheme = authHandler.selectScheme(challenges, response, context);
             authState.setAuthScheme(authScheme);
-        } //End block
+        }
         String id = authScheme.getSchemeName();
+
         Header challenge = challenges.get(id.toLowerCase(Locale.ENGLISH));
-        if(challenge == null)        
-        {
-            AuthenticationException varADD197DE4731E0165FACB33B3B3666F1_1816628298 = new AuthenticationException(id + 
+        if (challenge == null) {
+            throw new AuthenticationException(id + 
                 " authorization challenge expected, but not found");
-            varADD197DE4731E0165FACB33B3B3666F1_1816628298.addTaint(taint);
-            throw varADD197DE4731E0165FACB33B3B3666F1_1816628298;
-        } //End block
+        }
         authScheme.processChallenge(challenge);
         this.log.debug("Authorization challenge processed");
-        // ---------- Original Method ----------
-        //AuthScheme authScheme = authState.getAuthScheme();
-        //if (authScheme == null) {
-            //authScheme = authHandler.selectScheme(challenges, response, context);
-            //authState.setAuthScheme(authScheme);
-        //}
-        //String id = authScheme.getSchemeName();
-        //Header challenge = challenges.get(id.toLowerCase(Locale.ENGLISH));
-        //if (challenge == null) {
-            //throw new AuthenticationException(id + 
-                //" authorization challenge expected, but not found");
-        //}
-        //authScheme.processChallenge(challenge);
-        //this.log.debug("Authorization challenge processed");
     }
-
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.839 -0400", hash_original_method = "48429FCD8E54925B92F9CF361D5F9B0A", hash_generated_method = "9F4D9E0699D7444EDF75B415F2AA6026")
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.674 -0500", hash_original_method = "48429FCD8E54925B92F9CF361D5F9B0A", hash_generated_method = "ADD32D1227248CB9BD42747DB98E512A")
     private void updateAuthState(
             final AuthState authState, 
             final HttpHost host,
             final CredentialsProvider credsProvider) {
-        addTaint(credsProvider.getTaint());
-        addTaint(host.getTaint());
-        addTaint(authState.getTaint());
-        if(!authState.isValid())        
-        {
+        
+        if (!authState.isValid()) {
             return;
-        } //End block
+        }
+        
         String hostname = host.getHostName();
         int port = host.getPort();
-        if(port < 0)        
-        {
+        if (port < 0) {
             Scheme scheme = connManager.getSchemeRegistry().getScheme(host);
             port = scheme.getDefaultPort();
-        } //End block
+        }
+        
         AuthScheme authScheme = authState.getAuthScheme();
         AuthScope authScope = new AuthScope(
                 hostname,
                 port,
                 authScheme.getRealm(), 
-                authScheme.getSchemeName());
-        if(this.log.isDebugEnabled())        
-        {
+                authScheme.getSchemeName());  
+        
+        if (this.log.isDebugEnabled()) {
             this.log.debug("Authentication scope: " + authScope);
-        } //End block
+        }
         Credentials creds = authState.getCredentials();
-        if(creds == null)        
-        {
+        if (creds == null) {
             creds = credsProvider.getCredentials(authScope);
-            if(this.log.isDebugEnabled())            
-            {
-                if(creds != null)                
-                {
+            if (this.log.isDebugEnabled()) {
+                if (creds != null) {
                     this.log.debug("Found credentials");
-                } //End block
-                else
-                {
+                } else {
                     this.log.debug("Credentials not found");
-                } //End block
-            } //End block
-        } //End block
-        else
-        {
-            if(authScheme.isComplete())            
-            {
+                }
+            }
+        } else {
+            if (authScheme.isComplete()) {
                 this.log.debug("Authentication failed");
                 creds = null;
-            } //End block
-        } //End block
+            }
+        }
         authState.setAuthScope(authScope);
         authState.setCredentials(creds);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
     }
 
     

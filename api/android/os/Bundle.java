@@ -14,55 +14,85 @@ import android.util.SparseArray;
 import java.io.Serializable;
 import java.util.HashMap;
 public final class Bundle implements Parcelable, Cloneable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:54.857 -0400", hash_original_field = "6C9D7AEB7CF5AE9F2141CB23F95F4D45", hash_generated_field = "6C79F547522536A208CAFCE9016DC05F")
 
-    @DSVAModeled
-    Map<String, Object> mMap = null;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:54.865 -0400", hash_original_field = "6F0688E91A01AD80018225C89D147561", hash_generated_field = "E5162DF86C59E17EA59FEBB7EF559274")
+    /**
+     * Make a Bundle for a single key/value pair.
+     *
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.097 -0500", hash_original_method = "7228E76FDB53607D003E8E811CE36961", hash_generated_method = "5750746718A1E8C6C2CA1F87F40A83F9")
+    public static Bundle forPair(String key, String value) {
+        // TODO: optimize this case.
+        Bundle b = new Bundle(1);
+        b.putString(key, value);
+        return b;
+    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.084 -0500", hash_original_field = "07F897F75D2772CED4A52BA1760A3D18", hash_generated_field = "B4A59EF1F4C419B90A176C13462BE720")
 
-    Parcel mParcelledData = null;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:54.866 -0400", hash_original_field = "9BDF733D1D0EFCF06F719222F55E0B82", hash_generated_field = "118C47CE2184B36A84368A2523875D08")
+    private static final String LOG_TAG = "Bundle";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.085 -0500", hash_original_field = "96B58C1963D7EFDC9006E7C4C0C6B96C", hash_generated_field = "4A4568FB693A86216C53FDCE59A4411E")
+
+    public static  Bundle EMPTY;
+    
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.831 -0400", hash_original_field = "B4FE070174283716AFC584FD34F1BAE3", hash_generated_field = "C6D8CFB9909EC6A413DB28D9E9FEC6F2")
+
+    public static final Parcelable.Creator<Bundle> CREATOR =
+        new Parcelable.Creator<Bundle>() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.171 -0500", hash_original_method = "4187614240FC5282A7CB86A3FCAECB06", hash_generated_method = "2886D3B3EE607F31AE6ADF0F5552BE50")
+        public Bundle createFromParcel(Parcel in) {
+            return in.readBundle();
+        }
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.172 -0500", hash_original_method = "5E82917C5DD51CF815A5AE0167A86BCD", hash_generated_method = "A1B84E1D370373495779D4026ECFB2FC")
+        public Bundle[] newArray(int size) {
+            return new Bundle[size];
+        }
+    };
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:35:18.746 -0500", hash_original_field = "6C79F547522536A208CAFCE9016DC05F", hash_generated_field = "09043077682E4B16C29DC90BFAB3DAE5")
+
+    // (except inside a call to unparcel)
+
+    /* package */ Map<String, Object> mMap = null;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:35:18.747 -0500", hash_original_field = "E5162DF86C59E17EA59FEBB7EF559274", hash_generated_field = "E946E9EF60C24CFB270D51C185FC58B8")
+
+    /* package */ Parcel mParcelledData = null;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.087 -0500", hash_original_field = "3C6E1DAFF86B5C3AFAC7EFF4C589B67C", hash_generated_field = "118C47CE2184B36A84368A2523875D08")
+
 
     private boolean mHasFds = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:54.868 -0400", hash_original_field = "93BA40E6351E40670C537B5E15D7DF94", hash_generated_field = "9003EC392C88BA1EADB5D26698887EBB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.088 -0500", hash_original_field = "7CF2780BD59FB07D81DA25AAE5AFB6B0", hash_generated_field = "9003EC392C88BA1EADB5D26698887EBB")
 
     private boolean mFdsKnown = true;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:54.870 -0400", hash_original_field = "C459D1B5B4B22FFBFAEDCC421A1613ED", hash_generated_field = "C91DCF8BDF06F4CA952EC1031BBDC33F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.089 -0500", hash_original_field = "679050C68EEC5DDC5DEE2DA338632182", hash_generated_field = "C91DCF8BDF06F4CA952EC1031BBDC33F")
 
     private boolean mAllowFds = true;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:54.979 -0400", hash_original_field = "334890635C1887AB66991B9374637EE6", hash_generated_field = "ABE17DFC947454E8F85FE66E61741F7A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.090 -0500", hash_original_field = "C796B6EA08214602D7AD9664511F1AF7", hash_generated_field = "ABE17DFC947454E8F85FE66E61741F7A")
 
     private ClassLoader mClassLoader;
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.014 -0400", hash_original_method = "40BE022BD5AEEE3B1F4C24A599FDBBB4", hash_generated_method = "D0B412F9D9C998F60A5827E098F54A80")
-    public  Bundle() {
+
+    /**
+     * Constructs a new, empty Bundle.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.091 -0500", hash_original_method = "40BE022BD5AEEE3B1F4C24A599FDBBB4", hash_generated_method = "2E4F8DD9FFAB812A4C4E1772928E04E9")
+    public Bundle() {
         mMap = new HashMap<String, Object>();
         mClassLoader = getClass().getClassLoader();
-        // ---------- Original Method ----------
-        //mMap = new HashMap<String, Object>();
-        //mClassLoader = getClass().getClassLoader();
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.019 -0400", hash_original_method = "DB07395F523937B25016D60988A66D69", hash_generated_method = "84401EF7C5E724C9A0A8712DD56C891C")
-      Bundle(Parcel parcelledData) {
-        addTaint(parcelledData.getTaint());
+    /**
+     * Constructs a Bundle whose data is stored as a Parcel.  The data
+     * will be unparcelled on first contact, using the assigned ClassLoader.
+     *
+     * @param parcelledData a Parcel containing a Bundle
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.092 -0500", hash_original_method = "DB07395F523937B25016D60988A66D69", hash_generated_method = "DB07395F523937B25016D60988A66D69")
+    Bundle(Parcel parcelledData) {
         readFromParcel(parcelledData);
-        // ---------- Original Method ----------
-        //readFromParcel(parcelledData);
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.023 -0400", hash_original_method = "4CBA8A75160127E76B9D77B8452C524A", hash_generated_method = "5325D673E1E11CEF8833CE6FAD5B0719")
-      Bundle(Parcel parcelledData, int length) {
-        addTaint(length);
-        addTaint(parcelledData.getTaint());
+    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.093 -0500", hash_original_method = "4CBA8A75160127E76B9D77B8452C524A", hash_generated_method = "4CBA8A75160127E76B9D77B8452C524A")
+    Bundle(Parcel parcelledData, int length) {
         readFromParcelInner(parcelledData, length);
-        // ---------- Original Method ----------
-        //readFromParcelInner(parcelledData, length);
     }
 
     
@@ -133,14 +163,6 @@ public final class Bundle implements Parcelable, Cloneable {
     }
 
     
-        @DSModeled(DSC.BAN)
-    public static Bundle forPair(String key, String value) {
-        Bundle b = new Bundle(1);
-        b.putString(key, value);
-        return b;
-    }
-
-    
     @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.101 -0400", hash_original_method = "B3609B2F52C0BA6BE21E26730F76FD99", hash_generated_method = "9C90301FB89A3A9EB402F91B96770480")
     public String getPairValue() {
@@ -180,15 +202,12 @@ public final class Bundle implements Parcelable, Cloneable {
         //mClassLoader = loader;
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.114 -0400", hash_original_method = "DF35DB07DA97BBA7096331B39E871560", hash_generated_method = "62C8F52BAD08A79175D3875EC690E99B")
+    /**
+     * Return the ClassLoader currently associated with this Bundle.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.099 -0500", hash_original_method = "DF35DB07DA97BBA7096331B39E871560", hash_generated_method = "666A56A90106E4EA1164F12E6967534C")
     public ClassLoader getClassLoader() {
-        ClassLoader var03260047576FFCA5A37C413ABA8D1CD1_431669795 =         mClassLoader;
-        var03260047576FFCA5A37C413ABA8D1CD1_431669795.addTaint(taint);
-        return var03260047576FFCA5A37C413ABA8D1CD1_431669795;
-        // ---------- Original Method ----------
-        //return mClassLoader;
+        return mClassLoader;
     }
 
     
@@ -207,52 +226,36 @@ public final class Bundle implements Parcelable, Cloneable {
         //return orig;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.127 -0400", hash_original_method = "8ED269C57B5B4F834AF78EEAE05F20CC", hash_generated_method = "F588CA2BECD4DDA189F7971BCE67E136")
+    /**
+     * Clones the current Bundle. The internal map is cloned, but the keys and
+     * values to which it refers are copied by reference.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.101 -0500", hash_original_method = "8ED269C57B5B4F834AF78EEAE05F20CC", hash_generated_method = "05C0BDAE85DE493D806AFBD3AE58240D")
     @Override
-    public Object clone() {
-Object var4CCA019CFB07D192DF8D7237E7F0B00E_1469191763 =         new Bundle(this);
-        var4CCA019CFB07D192DF8D7237E7F0B00E_1469191763.addTaint(taint);
-        return var4CCA019CFB07D192DF8D7237E7F0B00E_1469191763;
-        // ---------- Original Method ----------
-        //return new Bundle(this);
+public Object clone() {
+        return new Bundle(this);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.138 -0400", hash_original_method = "C84307F15A2AB40D2A9CA51D74C5FD0F", hash_generated_method = "FF841A661A20106D58F8562D36CF0EA2")
+    /**
+     * If the underlying data are stored as a Parcel, unparcel them
+     * using the currently assigned class loader.
+     */
+    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.102 -0500", hash_original_method = "C84307F15A2AB40D2A9CA51D74C5FD0F", hash_generated_method = "ED5D513DE4FFFE667446D5431C83A8D7")
     synchronized void unparcel() {
-        if(mParcelledData == null)        
-        {
+        if (mParcelledData == null) {
             return;
-        } //End block
+        }
+
         int N = mParcelledData.readInt();
-        if(N < 0)        
-        {
+        if (N < 0) {
             return;
-        } //End block
-        if(mMap == null)        
-        {
+        }
+        if (mMap == null) {
             mMap = new HashMap<String, Object>();
-        } //End block
+        }
         mParcelledData.readMapInternal(mMap, N, mClassLoader);
         mParcelledData.recycle();
         mParcelledData = null;
-        // ---------- Original Method ----------
-        //if (mParcelledData == null) {
-            //return;
-        //}
-        //int N = mParcelledData.readInt();
-        //if (N < 0) {
-            //return;
-        //}
-        //if (mMap == null) {
-            //mMap = new HashMap<String, Object>();
-        //}
-        //mParcelledData.readMapInternal(mMap, N, mClassLoader);
-        //mParcelledData.recycle();
-        //mParcelledData = null;
     }
 
     
@@ -279,89 +282,78 @@ Object var4CCA019CFB07D192DF8D7237E7F0B00E_1469191763 =         new Bundle(this)
         //return mMap.isEmpty();
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.168 -0400", hash_original_method = "9DC77B5F54151FE5CD815F7C8172B2ED", hash_generated_method = "E511022D09E81C4678253AC729CF8B7F")
+    /**
+     * Removes all elements from the mapping of this Bundle.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.104 -0500", hash_original_method = "9DC77B5F54151FE5CD815F7C8172B2ED", hash_generated_method = "2349A50CCF393CB495DF5F2FA6277027")
     public void clear() {
         unparcel();
         mMap.clear();
         mHasFds = false;
         mFdsKnown = true;
-        // ---------- Original Method ----------
-        //unparcel();
-        //mMap.clear();
-        //mHasFds = false;
-        //mFdsKnown = true;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.175 -0400", hash_original_method = "F5C0B952F7E6EDB282A82D73FA397DBD", hash_generated_method = "E6F890920065CFAA3B575715C7F86935")
+    /**
+     * Returns true if the given key is contained in the mapping
+     * of this Bundle.
+     *
+     * @param key a String key
+     * @return true if the key is part of the mapping, false otherwise
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.105 -0500", hash_original_method = "F5C0B952F7E6EDB282A82D73FA397DBD", hash_generated_method = "B78738A491B15050745DD41B2D9BECE8")
     public boolean containsKey(String key) {
-        addTaint(key.getTaint());
         unparcel();
-        boolean var5BEEF4E2131DD3C69603DDE982CF106F_1833945091 = (mMap.containsKey(key));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1093463768 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1093463768;
-        // ---------- Original Method ----------
-        //unparcel();
-        //return mMap.containsKey(key);
+        return mMap.containsKey(key);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.183 -0400", hash_original_method = "E6C9158A697ED4C4296ED4A1595BA584", hash_generated_method = "AFE89B72F1690F1A63221BE4E89CB501")
+    /**
+     * Returns the entry with the given key as an object.
+     *
+     * @param key a String key
+     * @return an Object, or null
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.106 -0500", hash_original_method = "E6C9158A697ED4C4296ED4A1595BA584", hash_generated_method = "E7E26841E84A6B6A9D5EC9D7CD01763B")
     public Object get(String key) {
-        addTaint(key.getTaint());
         unparcel();
-Object var854B7A61C03CF753466A11AD5A6F683C_2142006971 =         mMap.get(key);
-        var854B7A61C03CF753466A11AD5A6F683C_2142006971.addTaint(taint);
-        return var854B7A61C03CF753466A11AD5A6F683C_2142006971;
-        // ---------- Original Method ----------
-        //unparcel();
-        //return mMap.get(key);
+        return mMap.get(key);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.190 -0400", hash_original_method = "717A16AB4D98DDB60DEBCEA5CDF9B0B2", hash_generated_method = "1141D5516355B422B713906ADDE3884C")
+    /**
+     * Removes any entry with the given key from the mapping of this Bundle.
+     *
+     * @param key a String key
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.107 -0500", hash_original_method = "717A16AB4D98DDB60DEBCEA5CDF9B0B2", hash_generated_method = "AD0429969CFF11E49824D5999E82F350")
     public void remove(String key) {
-        addTaint(key.getTaint());
         unparcel();
         mMap.remove(key);
-        // ---------- Original Method ----------
-        //unparcel();
-        //mMap.remove(key);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.203 -0400", hash_original_method = "F30E47B42E381C2413B1100E1A47D1F8", hash_generated_method = "19C8D719C8CECA801C0058973A2CCB2F")
+    /**
+     * Inserts all mappings from the given Bundle into this Bundle.
+     *
+     * @param map a Bundle
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.108 -0500", hash_original_method = "F30E47B42E381C2413B1100E1A47D1F8", hash_generated_method = "C674B3B3DD0691391001B45F0CE3A9E5")
     public void putAll(Bundle map) {
         unparcel();
         map.unparcel();
         mMap.putAll(map.mMap);
+
+        // fd state is now known if and only if both bundles already knew
         mHasFds |= map.mHasFds;
         mFdsKnown = mFdsKnown && map.mFdsKnown;
-        // ---------- Original Method ----------
-        //unparcel();
-        //map.unparcel();
-        //mMap.putAll(map.mMap);
-        //mHasFds |= map.mHasFds;
-        //mFdsKnown = mFdsKnown && map.mFdsKnown;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.211 -0400", hash_original_method = "00E2D8861948F8DB601BFD39768039D0", hash_generated_method = "EFE9837B21DD8E2A2A1FD4C36ABF5AE2")
+    /**
+     * Returns a Set containing the Strings used as keys in this Bundle.
+     *
+     * @return a Set of String keys
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.108 -0500", hash_original_method = "00E2D8861948F8DB601BFD39768039D0", hash_generated_method = "BE31F1C699094CF6E6C11BAADEFB05F1")
     public Set<String> keySet() {
         unparcel();
-        Set<String> var7A82B7B57B6F40AC93309FDE8103AFB9_1026892867 =         mMap.keySet();
-        var7A82B7B57B6F40AC93309FDE8103AFB9_1026892867.addTaint(taint);
-        return var7A82B7B57B6F40AC93309FDE8103AFB9_1026892867;
-        // ---------- Original Method ----------
-        //unparcel();
-        //return mMap.keySet();
+        return mMap.keySet();
     }
 
     
@@ -372,427 +364,427 @@ Object var854B7A61C03CF753466A11AD5A6F683C_2142006971 =         mMap.get(key);
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
-
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.262 -0400", hash_original_method = "94490DFEC498722DA435B9597CF0EDDE", hash_generated_method = "AA0232F6D518DCA833F071F38CF1937A")
+    /**
+     * Inserts a Boolean value into the mapping of this Bundle, replacing
+     * any existing value for the given key.  Either key or value may be null.
+     *
+     * @param key a String, or null
+     * @param value a Boolean, or null
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.110 -0500", hash_original_method = "94490DFEC498722DA435B9597CF0EDDE", hash_generated_method = "D06CBF81F2867BB687F3C98679973161")
     public void putBoolean(String key, boolean value) {
-        addTaint(value);
-        addTaint(key.getTaint());
         unparcel();
         mMap.put(key, value);
-        // ---------- Original Method ----------
-        //unparcel();
-        //mMap.put(key, value);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.267 -0400", hash_original_method = "60D945D31D7D04981E268C4CC855B009", hash_generated_method = "6BB88309DEA94D43AAF97E07C329172E")
+    /**
+     * Inserts a byte value into the mapping of this Bundle, replacing
+     * any existing value for the given key.
+     *
+     * @param key a String, or null
+     * @param value a byte
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.111 -0500", hash_original_method = "60D945D31D7D04981E268C4CC855B009", hash_generated_method = "240CCC45A5DAEB561D1B1CD9883B6407")
     public void putByte(String key, byte value) {
-        addTaint(value);
-        addTaint(key.getTaint());
         unparcel();
         mMap.put(key, value);
-        // ---------- Original Method ----------
-        //unparcel();
-        //mMap.put(key, value);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.272 -0400", hash_original_method = "C6C3CAC58AEE8EB92E7D233D1233B510", hash_generated_method = "87E15F5F33271346FE1A7737456D4587")
+    /**
+     * Inserts a char value into the mapping of this Bundle, replacing
+     * any existing value for the given key.
+     *
+     * @param key a String, or null
+     * @param value a char, or null
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.112 -0500", hash_original_method = "C6C3CAC58AEE8EB92E7D233D1233B510", hash_generated_method = "69802445E72FE1E207C3697FD4610E2E")
     public void putChar(String key, char value) {
-        addTaint(value);
-        addTaint(key.getTaint());
         unparcel();
         mMap.put(key, value);
-        // ---------- Original Method ----------
-        //unparcel();
-        //mMap.put(key, value);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.277 -0400", hash_original_method = "48338BC49C4A94D5C3F73368CEF11822", hash_generated_method = "B08056C1BA8ED71F1F7CB1755B1C3DCD")
+    /**
+     * Inserts a short value into the mapping of this Bundle, replacing
+     * any existing value for the given key.
+     *
+     * @param key a String, or null
+     * @param value a short
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.113 -0500", hash_original_method = "48338BC49C4A94D5C3F73368CEF11822", hash_generated_method = "40E5D56C660E674AEAC1983F06C125A3")
     public void putShort(String key, short value) {
-        addTaint(value);
-        addTaint(key.getTaint());
         unparcel();
         mMap.put(key, value);
-        // ---------- Original Method ----------
-        //unparcel();
-        //mMap.put(key, value);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.282 -0400", hash_original_method = "C2DD503B984E96C46288CB6F7C364E09", hash_generated_method = "75717305E5DC5CBB1C23249C31B0B731")
+    /**
+     * Inserts an int value into the mapping of this Bundle, replacing
+     * any existing value for the given key.
+     *
+     * @param key a String, or null
+     * @param value an int, or null
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.113 -0500", hash_original_method = "C2DD503B984E96C46288CB6F7C364E09", hash_generated_method = "4AC8318C015B20964426413A31217551")
     public void putInt(String key, int value) {
-        addTaint(value);
-        addTaint(key.getTaint());
         unparcel();
         mMap.put(key, value);
-        // ---------- Original Method ----------
-        //unparcel();
-        //mMap.put(key, value);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.287 -0400", hash_original_method = "32D4E331D0F655A9205640C19ABF2B58", hash_generated_method = "380947CE9008B515597665A1F21EFAD9")
+    /**
+     * Inserts a long value into the mapping of this Bundle, replacing
+     * any existing value for the given key.
+     *
+     * @param key a String, or null
+     * @param value a long
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.114 -0500", hash_original_method = "32D4E331D0F655A9205640C19ABF2B58", hash_generated_method = "8F57D9890D036571C1D1866F6CF386C5")
     public void putLong(String key, long value) {
-        addTaint(value);
-        addTaint(key.getTaint());
         unparcel();
         mMap.put(key, value);
-        // ---------- Original Method ----------
-        //unparcel();
-        //mMap.put(key, value);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.292 -0400", hash_original_method = "292C24CEC676EE3F6A373A1AE7371B82", hash_generated_method = "22B491D84FD27D572913A7624349E839")
+    /**
+     * Inserts a float value into the mapping of this Bundle, replacing
+     * any existing value for the given key.
+     *
+     * @param key a String, or null
+     * @param value a float
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.115 -0500", hash_original_method = "292C24CEC676EE3F6A373A1AE7371B82", hash_generated_method = "2FACA41C84A2478691CF5236461898B1")
     public void putFloat(String key, float value) {
-        addTaint(value);
-        addTaint(key.getTaint());
         unparcel();
         mMap.put(key, value);
-        // ---------- Original Method ----------
-        //unparcel();
-        //mMap.put(key, value);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.297 -0400", hash_original_method = "1F6C5CEB9374270482ED4835594D6EF1", hash_generated_method = "9871782FE26AB748D515061EFFB96781")
+    /**
+     * Inserts a double value into the mapping of this Bundle, replacing
+     * any existing value for the given key.
+     *
+     * @param key a String, or null
+     * @param value a double
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.116 -0500", hash_original_method = "1F6C5CEB9374270482ED4835594D6EF1", hash_generated_method = "877978322BA244A0BEA7112AEE13C2F5")
     public void putDouble(String key, double value) {
-        addTaint(value);
-        addTaint(key.getTaint());
         unparcel();
         mMap.put(key, value);
-        // ---------- Original Method ----------
-        //unparcel();
-        //mMap.put(key, value);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.302 -0400", hash_original_method = "E7336EB9055C9F862A0B8D336BB5AE0F", hash_generated_method = "FB618D2195B1DE7959F738C2433A3309")
+    /**
+     * Inserts a String value into the mapping of this Bundle, replacing
+     * any existing value for the given key.  Either key or value may be null.
+     *
+     * @param key a String, or null
+     * @param value a String, or null
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.116 -0500", hash_original_method = "E7336EB9055C9F862A0B8D336BB5AE0F", hash_generated_method = "9B77596588C53FA62A7F6A9D3F01E4F8")
     public void putString(String key, String value) {
-        addTaint(value.getTaint());
-        addTaint(key.getTaint());
         unparcel();
         mMap.put(key, value);
-        // ---------- Original Method ----------
-        //unparcel();
-        //mMap.put(key, value);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.308 -0400", hash_original_method = "23A8E01E039C76712F2C134222EAC45B", hash_generated_method = "9FEC25DABD5FDC79C27E36673337DF25")
+    /**
+     * Inserts a CharSequence value into the mapping of this Bundle, replacing
+     * any existing value for the given key.  Either key or value may be null.
+     *
+     * @param key a String, or null
+     * @param value a CharSequence, or null
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.117 -0500", hash_original_method = "23A8E01E039C76712F2C134222EAC45B", hash_generated_method = "EA68455D0713862A2AE3E437A935F177")
     public void putCharSequence(String key, CharSequence value) {
-        addTaint(value.getTaint());
-        addTaint(key.getTaint());
         unparcel();
         mMap.put(key, value);
-        // ---------- Original Method ----------
-        //unparcel();
-        //mMap.put(key, value);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.315 -0400", hash_original_method = "F17082A305780CE778B93F20A20D0318", hash_generated_method = "B825AFB40717D029FF00DE37201693D6")
+    /**
+     * Inserts a Parcelable value into the mapping of this Bundle, replacing
+     * any existing value for the given key.  Either key or value may be null.
+     *
+     * @param key a String, or null
+     * @param value a Parcelable object, or null
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.118 -0500", hash_original_method = "F17082A305780CE778B93F20A20D0318", hash_generated_method = "328E649DB95D7BCD75AD520B7DB513E8")
     public void putParcelable(String key, Parcelable value) {
-        addTaint(value.getTaint());
-        addTaint(key.getTaint());
         unparcel();
         mMap.put(key, value);
         mFdsKnown = false;
-        // ---------- Original Method ----------
-        //unparcel();
-        //mMap.put(key, value);
-        //mFdsKnown = false;
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.323 -0400", hash_original_method = "1666E21FDEAC3D0C57D8E38C022A7AD2", hash_generated_method = "580D4638CF5D0C7A5BA38455C1D06A54")
+    /**
+     * Inserts an array of Parcelable values into the mapping of this Bundle,
+     * replacing any existing value for the given key.  Either key or value may
+     * be null.
+     *
+     * @param key a String, or null
+     * @param value an array of Parcelable objects, or null
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.119 -0500", hash_original_method = "1666E21FDEAC3D0C57D8E38C022A7AD2", hash_generated_method = "2400F64B7D1A1D47FB478A0CEC8DD502")
     public void putParcelableArray(String key, Parcelable[] value) {
-        addTaint(value[0].getTaint());
-        addTaint(key.getTaint());
         unparcel();
         mMap.put(key, value);
         mFdsKnown = false;
-        // ---------- Original Method ----------
-        //unparcel();
-        //mMap.put(key, value);
-        //mFdsKnown = false;
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.332 -0400", hash_original_method = "C07428EAC6D62CA3DF6F67489B512A7E", hash_generated_method = "C69B2B9F8E6A634EE595EF4A1E1B7114")
+    /**
+     * Inserts a List of Parcelable values into the mapping of this Bundle,
+     * replacing any existing value for the given key.  Either key or value may
+     * be null.
+     *
+     * @param key a String, or null
+     * @param value an ArrayList of Parcelable objects, or null
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.120 -0500", hash_original_method = "C07428EAC6D62CA3DF6F67489B512A7E", hash_generated_method = "D4F0BB866FF91AE238790A8A6EE5AF88")
     public void putParcelableArrayList(String key,
         ArrayList<? extends Parcelable> value) {
-        addTaint(value.getTaint());
-        addTaint(key.getTaint());
         unparcel();
         mMap.put(key, value);
         mFdsKnown = false;
-        // ---------- Original Method ----------
-        //unparcel();
-        //mMap.put(key, value);
-        //mFdsKnown = false;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.341 -0400", hash_original_method = "93FD4CBDA1682EAF0E9F2535BF397F65", hash_generated_method = "451996BF97545F96A4EEF3FFA82A5164")
+    /**
+     * Inserts a SparceArray of Parcelable values into the mapping of this
+     * Bundle, replacing any existing value for the given key.  Either key
+     * or value may be null.
+     *
+     * @param key a String, or null
+     * @param value a SparseArray of Parcelable objects, or null
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.121 -0500", hash_original_method = "93FD4CBDA1682EAF0E9F2535BF397F65", hash_generated_method = "650875F4F65C3A61BA4CCCBEFD84BCF5")
     public void putSparseParcelableArray(String key,
             SparseArray<? extends Parcelable> value) {
-        addTaint(value.getTaint());
-        addTaint(key.getTaint());
         unparcel();
         mMap.put(key, value);
         mFdsKnown = false;
-        // ---------- Original Method ----------
-        //unparcel();
-        //mMap.put(key, value);
-        //mFdsKnown = false;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.346 -0400", hash_original_method = "6C90B1571D2A36769CB59FB958C842F7", hash_generated_method = "BFF84763B105CAF23DC060A49B801701")
+    /**
+     * Inserts an ArrayList<Integer> value into the mapping of this Bundle, replacing
+     * any existing value for the given key.  Either key or value may be null.
+     *
+     * @param key a String, or null
+     * @param value an ArrayList<Integer> object, or null
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.122 -0500", hash_original_method = "6C90B1571D2A36769CB59FB958C842F7", hash_generated_method = "427819B9974AD331D76B1095B8CA7023")
     public void putIntegerArrayList(String key, ArrayList<Integer> value) {
-        addTaint(value.getTaint());
-        addTaint(key.getTaint());
         unparcel();
         mMap.put(key, value);
-        // ---------- Original Method ----------
-        //unparcel();
-        //mMap.put(key, value);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.351 -0400", hash_original_method = "ABD9DF23A5A8A0A83F11C474E2CAFB17", hash_generated_method = "37F9146356DBDB6648C38BEAC5313EE3")
+    /**
+     * Inserts an ArrayList<String> value into the mapping of this Bundle, replacing
+     * any existing value for the given key.  Either key or value may be null.
+     *
+     * @param key a String, or null
+     * @param value an ArrayList<String> object, or null
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.122 -0500", hash_original_method = "ABD9DF23A5A8A0A83F11C474E2CAFB17", hash_generated_method = "196266A25FB1B61B7E293883A2B18682")
     public void putStringArrayList(String key, ArrayList<String> value) {
-        addTaint(value.getTaint());
-        addTaint(key.getTaint());
         unparcel();
         mMap.put(key, value);
-        // ---------- Original Method ----------
-        //unparcel();
-        //mMap.put(key, value);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.357 -0400", hash_original_method = "C0F2E9DF48888A828D6640DBBB8ADDE5", hash_generated_method = "6C01F67F412405F7DDDFCAEE4EFB7307")
+    /**
+     * Inserts an ArrayList<CharSequence> value into the mapping of this Bundle, replacing
+     * any existing value for the given key.  Either key or value may be null.
+     *
+     * @param key a String, or null
+     * @param value an ArrayList<CharSequence> object, or null
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.123 -0500", hash_original_method = "C0F2E9DF48888A828D6640DBBB8ADDE5", hash_generated_method = "D3ABD393302D2F8BD59B3AC7E2DC782D")
     public void putCharSequenceArrayList(String key, ArrayList<CharSequence> value) {
-        addTaint(value.getTaint());
-        addTaint(key.getTaint());
         unparcel();
         mMap.put(key, value);
-        // ---------- Original Method ----------
-        //unparcel();
-        //mMap.put(key, value);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.363 -0400", hash_original_method = "C647C81034119067E2383CA02CF65D5F", hash_generated_method = "2A4FB1229722946DE91D4EF0E38C280D")
+    /**
+     * Inserts a Serializable value into the mapping of this Bundle, replacing
+     * any existing value for the given key.  Either key or value may be null.
+     *
+     * @param key a String, or null
+     * @param value a Serializable object, or null
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.124 -0500", hash_original_method = "C647C81034119067E2383CA02CF65D5F", hash_generated_method = "4BA2962153220EE5043BE8A4597C831E")
     public void putSerializable(String key, Serializable value) {
-        addTaint(value.getTaint());
-        addTaint(key.getTaint());
         unparcel();
         mMap.put(key, value);
-        // ---------- Original Method ----------
-        //unparcel();
-        //mMap.put(key, value);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.367 -0400", hash_original_method = "8E721A4E4DD3EA40820BFACA50BE3D1C", hash_generated_method = "ACACC06951724C44CEB31C2C666267E0")
+    /**
+     * Inserts a boolean array value into the mapping of this Bundle, replacing
+     * any existing value for the given key.  Either key or value may be null.
+     *
+     * @param key a String, or null
+     * @param value a boolean array object, or null
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.125 -0500", hash_original_method = "8E721A4E4DD3EA40820BFACA50BE3D1C", hash_generated_method = "58BD281F5835739A9176EEFBD8CF5219")
     public void putBooleanArray(String key, boolean[] value) {
-        addTaint(value[0]);
-        addTaint(key.getTaint());
         unparcel();
         mMap.put(key, value);
-        // ---------- Original Method ----------
-        //unparcel();
-        //mMap.put(key, value);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.371 -0400", hash_original_method = "1C56E40FECAB1AC7C31C1D64DCBF74F0", hash_generated_method = "5213B1E070335D9401528254C481E52C")
+    /**
+     * Inserts a byte array value into the mapping of this Bundle, replacing
+     * any existing value for the given key.  Either key or value may be null.
+     *
+     * @param key a String, or null
+     * @param value a byte array object, or null
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.126 -0500", hash_original_method = "1C56E40FECAB1AC7C31C1D64DCBF74F0", hash_generated_method = "0206D8B9EEFAE3F5D1FE5F44A497BC16")
     public void putByteArray(String key, byte[] value) {
-        addTaint(value[0]);
-        addTaint(key.getTaint());
         unparcel();
         mMap.put(key, value);
-        // ---------- Original Method ----------
-        //unparcel();
-        //mMap.put(key, value);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.376 -0400", hash_original_method = "2FF709A9E88600F14AEB34FA372FB7A3", hash_generated_method = "3104E0304351AB9D6E24A13D4518EEE0")
+    /**
+     * Inserts a short array value into the mapping of this Bundle, replacing
+     * any existing value for the given key.  Either key or value may be null.
+     *
+     * @param key a String, or null
+     * @param value a short array object, or null
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.126 -0500", hash_original_method = "2FF709A9E88600F14AEB34FA372FB7A3", hash_generated_method = "BEF718C3C1F07F62E8C1D81C8B2729AD")
     public void putShortArray(String key, short[] value) {
-        addTaint(value[0]);
-        addTaint(key.getTaint());
         unparcel();
         mMap.put(key, value);
-        // ---------- Original Method ----------
-        //unparcel();
-        //mMap.put(key, value);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.382 -0400", hash_original_method = "5BBE3077A529F887080D848A31F1E40F", hash_generated_method = "20FA95EC5112A909F98F512F04084DA0")
+    /**
+     * Inserts a char array value into the mapping of this Bundle, replacing
+     * any existing value for the given key.  Either key or value may be null.
+     *
+     * @param key a String, or null
+     * @param value a char array object, or null
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.127 -0500", hash_original_method = "5BBE3077A529F887080D848A31F1E40F", hash_generated_method = "3192B333EC6E5C498F80E759DA81C637")
     public void putCharArray(String key, char[] value) {
-        addTaint(value[0]);
-        addTaint(key.getTaint());
         unparcel();
         mMap.put(key, value);
-        // ---------- Original Method ----------
-        //unparcel();
-        //mMap.put(key, value);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.387 -0400", hash_original_method = "6E03156089AB80D54004D251F8CBA9A8", hash_generated_method = "AA0D743CF2BF08A40853D73E8355A710")
+    /**
+     * Inserts an int array value into the mapping of this Bundle, replacing
+     * any existing value for the given key.  Either key or value may be null.
+     *
+     * @param key a String, or null
+     * @param value an int array object, or null
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.128 -0500", hash_original_method = "6E03156089AB80D54004D251F8CBA9A8", hash_generated_method = "C0C3A6D4334E11C7E7E55FB20260433D")
     public void putIntArray(String key, int[] value) {
-        addTaint(value[0]);
-        addTaint(key.getTaint());
         unparcel();
         mMap.put(key, value);
-        // ---------- Original Method ----------
-        //unparcel();
-        //mMap.put(key, value);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.392 -0400", hash_original_method = "749D6A41C446C63F668941511653896B", hash_generated_method = "6F5922EC0EE0EA20F9531881ECEA0CEC")
+    /**
+     * Inserts a long array value into the mapping of this Bundle, replacing
+     * any existing value for the given key.  Either key or value may be null.
+     *
+     * @param key a String, or null
+     * @param value a long array object, or null
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.129 -0500", hash_original_method = "749D6A41C446C63F668941511653896B", hash_generated_method = "55879D13B87CD3A5D8B928E5CF1696FB")
     public void putLongArray(String key, long[] value) {
-        addTaint(value[0]);
-        addTaint(key.getTaint());
         unparcel();
         mMap.put(key, value);
-        // ---------- Original Method ----------
-        //unparcel();
-        //mMap.put(key, value);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.396 -0400", hash_original_method = "6C49285A06086C4B176330EBC83C2D3B", hash_generated_method = "33F0CA57AA79BA462FC96478C4B6BBF1")
+    /**
+     * Inserts a float array value into the mapping of this Bundle, replacing
+     * any existing value for the given key.  Either key or value may be null.
+     *
+     * @param key a String, or null
+     * @param value a float array object, or null
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.129 -0500", hash_original_method = "6C49285A06086C4B176330EBC83C2D3B", hash_generated_method = "E7FBE6DA0D5B9B10EFF899381DE4E390")
     public void putFloatArray(String key, float[] value) {
-        addTaint(value[0]);
-        addTaint(key.getTaint());
         unparcel();
         mMap.put(key, value);
-        // ---------- Original Method ----------
-        //unparcel();
-        //mMap.put(key, value);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.401 -0400", hash_original_method = "BF0DED73B6BC272CA81A76D665AF3892", hash_generated_method = "B5D1C3A1B8E6873420787987F25DD229")
+    /**
+     * Inserts a double array value into the mapping of this Bundle, replacing
+     * any existing value for the given key.  Either key or value may be null.
+     *
+     * @param key a String, or null
+     * @param value a double array object, or null
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.130 -0500", hash_original_method = "BF0DED73B6BC272CA81A76D665AF3892", hash_generated_method = "A2076636F5AB03C501737F8FA41B4580")
     public void putDoubleArray(String key, double[] value) {
-        addTaint(value[0]);
-        addTaint(key.getTaint());
         unparcel();
         mMap.put(key, value);
-        // ---------- Original Method ----------
-        //unparcel();
-        //mMap.put(key, value);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.405 -0400", hash_original_method = "3F318C6E0F37B53192FF4A33987FF921", hash_generated_method = "1AC9029516C13EAFD5FB46257A07E20E")
+    /**
+     * Inserts a String array value into the mapping of this Bundle, replacing
+     * any existing value for the given key.  Either key or value may be null.
+     *
+     * @param key a String, or null
+     * @param value a String array object, or null
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.131 -0500", hash_original_method = "3F318C6E0F37B53192FF4A33987FF921", hash_generated_method = "FE79E8BA5AF6257B211C93119EFF9427")
     public void putStringArray(String key, String[] value) {
-        addTaint(value[0].getTaint());
-        addTaint(key.getTaint());
         unparcel();
         mMap.put(key, value);
-        // ---------- Original Method ----------
-        //unparcel();
-        //mMap.put(key, value);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.410 -0400", hash_original_method = "D442CACA5F4C37E249E32A5FC3EA1B00", hash_generated_method = "908F70222D570FC2AD602F222D7078F4")
+    /**
+     * Inserts a CharSequence array value into the mapping of this Bundle, replacing
+     * any existing value for the given key.  Either key or value may be null.
+     *
+     * @param key a String, or null
+     * @param value a CharSequence array object, or null
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.132 -0500", hash_original_method = "D442CACA5F4C37E249E32A5FC3EA1B00", hash_generated_method = "DDBB425D41D43B34CE4517F62847711C")
     public void putCharSequenceArray(String key, CharSequence[] value) {
-        addTaint(value[0].getTaint());
-        addTaint(key.getTaint());
         unparcel();
         mMap.put(key, value);
-        // ---------- Original Method ----------
-        //unparcel();
-        //mMap.put(key, value);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.414 -0400", hash_original_method = "8FC0D5E8787A84A268AF6F8743FC18A2", hash_generated_method = "F313ED86E5BFEA7548458BE72E8636BD")
+    /**
+     * Inserts a Bundle value into the mapping of this Bundle, replacing
+     * any existing value for the given key.  Either key or value may be null.
+     *
+     * @param key a String, or null
+     * @param value a Bundle object, or null
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.133 -0500", hash_original_method = "8FC0D5E8787A84A268AF6F8743FC18A2", hash_generated_method = "6F7D480D452EFF0784927D78F4534B62")
     public void putBundle(String key, Bundle value) {
-        addTaint(value.getTaint());
-        addTaint(key.getTaint());
         unparcel();
         mMap.put(key, value);
-        // ---------- Original Method ----------
-        //unparcel();
-        //mMap.put(key, value);
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.418 -0400", hash_original_method = "0DA9D5A0C7EE7D2AFD4BCC53AD3802F3", hash_generated_method = "1B458E4D89C58743C30A00821425F3A4")
+    /**
+     * Inserts an IBinder value into the mapping of this Bundle, replacing
+     * any existing value for the given key.  Either key or value may be null.
+     *
+     * @param key a String, or null
+     * @param value an IBinder object, or null
+     *
+     * @deprecated
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.133 -0500", hash_original_method = "0DA9D5A0C7EE7D2AFD4BCC53AD3802F3", hash_generated_method = "72956D90BC7B32B0D39A00538E67E3E0")
     @Deprecated
-    public void putIBinder(String key, IBinder value) {
-        addTaint(value.getTaint());
-        addTaint(key.getTaint());
+public void putIBinder(String key, IBinder value) {
         unparcel();
         mMap.put(key, value);
-        // ---------- Original Method ----------
-        //unparcel();
-        //mMap.put(key, value);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.424 -0400", hash_original_method = "44491868325766EC5AED04910C3A4D05", hash_generated_method = "0792A4C510348927DE175D15C43AFEDA")
+    /**
+     * Returns the value associated with the given key, or false if
+     * no mapping of the desired type exists for the given key.
+     *
+     * @param key a String
+     * @return a boolean value
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.134 -0500", hash_original_method = "44491868325766EC5AED04910C3A4D05", hash_generated_method = "D1979B14E028B71AE1D6B9674428E0B1")
     public boolean getBoolean(String key) {
-        addTaint(key.getTaint());
         unparcel();
-        boolean var28350F5318FFB4968F4B0B8FBE8208DE_192671122 = (getBoolean(key, false));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_297101267 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_297101267;
-        // ---------- Original Method ----------
-        //unparcel();
-        //return getBoolean(key, false);
+        return getBoolean(key, false);
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.432 -0400", hash_original_method = "017EA18B11E7843C44A73EB9482CE841", hash_generated_method = "01C88019C3CC5BB108D962E4B5A39588")
+    // Log a message if the value was non-null but not of the expected type
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.135 -0500", hash_original_method = "017EA18B11E7843C44A73EB9482CE841", hash_generated_method = "7C692202F11C0AFCA2ED479E051CDCCC")
     private void typeWarning(String key, Object value, String className,
         Object defaultValue, ClassCastException e) {
-        addTaint(e.getTaint());
-        addTaint(defaultValue.getTaint());
-        addTaint(className.getTaint());
-        addTaint(value.getTaint());
-        addTaint(key.getTaint());
         StringBuilder sb = new StringBuilder();
         sb.append("Key ");
         sb.append(key);
@@ -803,33 +795,14 @@ Object var854B7A61C03CF753466A11AD5A6F683C_2142006971 =         mMap.get(key);
         sb.append(".  The default value ");
         sb.append(defaultValue);
         sb.append(" was returned.");
-        // ---------- Original Method ----------
-        //StringBuilder sb = new StringBuilder();
-        //sb.append("Key ");
-        //sb.append(key);
-        //sb.append(" expected ");
-        //sb.append(className);
-        //sb.append(" but value was a ");
-        //sb.append(value.getClass().getName());
-        //sb.append(".  The default value ");
-        //sb.append(defaultValue);
-        //sb.append(" was returned.");
-        //Log.w(LOG_TAG, sb.toString());
-        //Log.w(LOG_TAG, "Attempt to cast generated internal exception:", e);
+        Log.w(LOG_TAG, sb.toString());
+        Log.w(LOG_TAG, "Attempt to cast generated internal exception:", e);
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.438 -0400", hash_original_method = "AA5C4C6D2863DB47E466486DB4471393", hash_generated_method = "0FAD8CB279163B0AEAFBED03688B0061")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.136 -0500", hash_original_method = "AA5C4C6D2863DB47E466486DB4471393", hash_generated_method = "2DD8F779FC54291A2423C235432192F3")
     private void typeWarning(String key, Object value, String className,
         ClassCastException e) {
-        addTaint(e.getTaint());
-        addTaint(className.getTaint());
-        addTaint(value.getTaint());
-        addTaint(key.getTaint());
         typeWarning(key, value, className, "<null>", e);
-        // ---------- Original Method ----------
-        //typeWarning(key, value, className, "<null>", e);
     }
 
     
@@ -905,521 +878,316 @@ Object var854B7A61C03CF753466A11AD5A6F683C_2142006971 =         mMap.get(key);
         //return getChar(key, (char) 0);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.474 -0400", hash_original_method = "1B86701C5E776F178851B3C57F1F092F", hash_generated_method = "65C4E1D1A209AB23EC7B86597AB5F345")
+    /**
+     * Returns the value associated with the given key, or (char) 0 if
+     * no mapping of the desired type exists for the given key.
+     *
+     * @param key a String
+     * @return a char value
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.140 -0500", hash_original_method = "1B86701C5E776F178851B3C57F1F092F", hash_generated_method = "403F5ABCD0D6ACA6E4A4CCE1CF295BA6")
     public char getChar(String key, char defaultValue) {
-        addTaint(defaultValue);
-        addTaint(key.getTaint());
         unparcel();
         Object o = mMap.get(key);
-        if(o == null)        
-        {
-            char var16830A58E1E33A4163524366BA7B701B_820807270 = (defaultValue);
-                        char varA87DEB01C5F539E6BDA34829C8EF2368_170910553 = getTaintChar();
-            return varA87DEB01C5F539E6BDA34829C8EF2368_170910553;
-        } //End block
-        try 
-        {
-            char var37564EA23825AA037265BAD3230BA4E6_1728468932 = ((Character) o);
-                        char varA87DEB01C5F539E6BDA34829C8EF2368_1166671927 = getTaintChar();
-            return varA87DEB01C5F539E6BDA34829C8EF2368_1166671927;
-        } //End block
-        catch (ClassCastException e)
-        {
+        if (o == null) {
+            return defaultValue;
+        }
+        try {
+            return (Character) o;
+        } catch (ClassCastException e) {
             typeWarning(key, o, "Character", defaultValue, e);
-            char var16830A58E1E33A4163524366BA7B701B_1645698315 = (defaultValue);
-                        char varA87DEB01C5F539E6BDA34829C8EF2368_83451759 = getTaintChar();
-            return varA87DEB01C5F539E6BDA34829C8EF2368_83451759;
-        } //End block
-        // ---------- Original Method ----------
-        //unparcel();
-        //Object o = mMap.get(key);
-        //if (o == null) {
-            //return defaultValue;
-        //}
-        //try {
-            //return (Character) o;
-        //} catch (ClassCastException e) {
-            //typeWarning(key, o, "Character", defaultValue, e);
-            //return defaultValue;
-        //}
+            return defaultValue;
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.481 -0400", hash_original_method = "949AF94B781EE8B084883F15F1BA2BF2", hash_generated_method = "65F69A51FE9CF3BEFB6157670846D9BE")
+    /**
+     * Returns the value associated with the given key, or (short) 0 if
+     * no mapping of the desired type exists for the given key.
+     *
+     * @param key a String
+     * @return a short value
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.141 -0500", hash_original_method = "949AF94B781EE8B084883F15F1BA2BF2", hash_generated_method = "B7E5A4C7DFC4E2524881B79F707A82AF")
     public short getShort(String key) {
-        addTaint(key.getTaint());
         unparcel();
-        short varF65C145A4B6788A86B59A1D71FA2611A_840817548 = (getShort(key, (short) 0));
-                short var4F09DAA9D95BCB166A302407A0E0BABE_402668918 = getTaintShort();
-        return var4F09DAA9D95BCB166A302407A0E0BABE_402668918;
-        // ---------- Original Method ----------
-        //unparcel();
-        //return getShort(key, (short) 0);
+        return getShort(key, (short) 0);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.488 -0400", hash_original_method = "CB97516320C4B19AFFFFC9855DAD2391", hash_generated_method = "3667B18570EB4C50BCE806EE48E25502")
+    /**
+     * Returns the value associated with the given key, or defaultValue if
+     * no mapping of the desired type exists for the given key.
+     *
+     * @param key a String
+     * @return a short value
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.142 -0500", hash_original_method = "CB97516320C4B19AFFFFC9855DAD2391", hash_generated_method = "25C0AAB0DC2B2D54D36CE0993C8D6EA4")
     public short getShort(String key, short defaultValue) {
-        addTaint(defaultValue);
-        addTaint(key.getTaint());
         unparcel();
         Object o = mMap.get(key);
-        if(o == null)        
-        {
-            short var16830A58E1E33A4163524366BA7B701B_1784783866 = (defaultValue);
-                        short var4F09DAA9D95BCB166A302407A0E0BABE_679156394 = getTaintShort();
-            return var4F09DAA9D95BCB166A302407A0E0BABE_679156394;
-        } //End block
-        try 
-        {
-            short var1E09BB19CC3789BCDC69F4BC5428A6ED_839253212 = ((Short) o);
-                        short var4F09DAA9D95BCB166A302407A0E0BABE_1125317520 = getTaintShort();
-            return var4F09DAA9D95BCB166A302407A0E0BABE_1125317520;
-        } //End block
-        catch (ClassCastException e)
-        {
+        if (o == null) {
+            return defaultValue;
+        }
+        try {
+            return (Short) o;
+        } catch (ClassCastException e) {
             typeWarning(key, o, "Short", defaultValue, e);
-            short var16830A58E1E33A4163524366BA7B701B_1106200287 = (defaultValue);
-                        short var4F09DAA9D95BCB166A302407A0E0BABE_1910888809 = getTaintShort();
-            return var4F09DAA9D95BCB166A302407A0E0BABE_1910888809;
-        } //End block
-        // ---------- Original Method ----------
-        //unparcel();
-        //Object o = mMap.get(key);
-        //if (o == null) {
-            //return defaultValue;
-        //}
-        //try {
-            //return (Short) o;
-        //} catch (ClassCastException e) {
-            //typeWarning(key, o, "Short", defaultValue, e);
-            //return defaultValue;
-        //}
+            return defaultValue;
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.495 -0400", hash_original_method = "E147114FE6EABC6FAB98EAC3907FD421", hash_generated_method = "042DA4E9C85BB550A632A8197D86F34C")
+    /**
+     * Returns the value associated with the given key, or 0 if
+     * no mapping of the desired type exists for the given key.
+     *
+     * @param key a String
+     * @return an int value
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.144 -0500", hash_original_method = "E147114FE6EABC6FAB98EAC3907FD421", hash_generated_method = "CB945A82DA2C8ED3356E82972EDE1C4A")
     public int getInt(String key) {
-        addTaint(key.getTaint());
         unparcel();
-        int var320E08F6784C27152A618018E9775889_818751612 = (getInt(key, 0));
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1066825651 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1066825651;
-        // ---------- Original Method ----------
-        //unparcel();
-        //return getInt(key, 0);
+        return getInt(key, 0);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.502 -0400", hash_original_method = "83073F806AC00C1E2EC4E710A5472BFA", hash_generated_method = "295D9DC365BAE4D611C8230D604E0364")
+    /**
+     * Returns the value associated with the given key, or defaultValue if
+     * no mapping of the desired type exists for the given key.
+     *
+     * @param key a String
+     * @return an int value
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.144 -0500", hash_original_method = "83073F806AC00C1E2EC4E710A5472BFA", hash_generated_method = "B4328D17C93F2CA0559B5562F5AC19F6")
     public int getInt(String key, int defaultValue) {
-        addTaint(defaultValue);
-        addTaint(key.getTaint());
         unparcel();
         Object o = mMap.get(key);
-        if(o == null)        
-        {
-            int var16830A58E1E33A4163524366BA7B701B_709778982 = (defaultValue);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_445400952 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_445400952;
-        } //End block
-        try 
-        {
-            int var26AB24744252AEB94A58D664AB3E9D05_267144146 = ((Integer) o);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_517884466 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_517884466;
-        } //End block
-        catch (ClassCastException e)
-        {
+        if (o == null) {
+            return defaultValue;
+        }
+        try {
+            return (Integer) o;
+        } catch (ClassCastException e) {
             typeWarning(key, o, "Integer", defaultValue, e);
-            int var16830A58E1E33A4163524366BA7B701B_917435546 = (defaultValue);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_486044223 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_486044223;
-        } //End block
-        // ---------- Original Method ----------
-        //unparcel();
-        //Object o = mMap.get(key);
-        //if (o == null) {
-            //return defaultValue;
-        //}
-        //try {
-            //return (Integer) o;
-        //} catch (ClassCastException e) {
-            //typeWarning(key, o, "Integer", defaultValue, e);
-            //return defaultValue;
-        //}
+            return defaultValue;
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.509 -0400", hash_original_method = "0CFFDE7713416A17E206C69E138AC0FF", hash_generated_method = "119BA7032AF4EEB37855DB273261568F")
+    /**
+     * Returns the value associated with the given key, or 0L if
+     * no mapping of the desired type exists for the given key.
+     *
+     * @param key a String
+     * @return a long value
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.145 -0500", hash_original_method = "0CFFDE7713416A17E206C69E138AC0FF", hash_generated_method = "280B3B770C86AAD43B0180F3944619B2")
     public long getLong(String key) {
-        addTaint(key.getTaint());
         unparcel();
-        long var0FDBB13DE0DC3D40CB711364CF60C85E_1568876848 = (getLong(key, 0L));
-                long var0F5264038205EDFB1AC05FBB0E8C5E94_838302104 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_838302104;
-        // ---------- Original Method ----------
-        //unparcel();
-        //return getLong(key, 0L);
+        return getLong(key, 0L);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.516 -0400", hash_original_method = "84BBB1371E3F4460B78F31822950EAAA", hash_generated_method = "8F4BBFCF9A536F133843E412C34B727C")
+    /**
+     * Returns the value associated with the given key, or defaultValue if
+     * no mapping of the desired type exists for the given key.
+     *
+     * @param key a String
+     * @return a long value
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.146 -0500", hash_original_method = "84BBB1371E3F4460B78F31822950EAAA", hash_generated_method = "C6EB7F9E11C719D6CA244BE7991CFEB6")
     public long getLong(String key, long defaultValue) {
-        addTaint(defaultValue);
-        addTaint(key.getTaint());
         unparcel();
         Object o = mMap.get(key);
-        if(o == null)        
-        {
-            long var16830A58E1E33A4163524366BA7B701B_194852498 = (defaultValue);
-                        long var0F5264038205EDFB1AC05FBB0E8C5E94_2056797913 = getTaintLong();
-            return var0F5264038205EDFB1AC05FBB0E8C5E94_2056797913;
-        } //End block
-        try 
-        {
-            long varB5E7A03E9D897C58684C61698AA7DC1A_1550515319 = ((Long) o);
-                        long var0F5264038205EDFB1AC05FBB0E8C5E94_2100552365 = getTaintLong();
-            return var0F5264038205EDFB1AC05FBB0E8C5E94_2100552365;
-        } //End block
-        catch (ClassCastException e)
-        {
+        if (o == null) {
+            return defaultValue;
+        }
+        try {
+            return (Long) o;
+        } catch (ClassCastException e) {
             typeWarning(key, o, "Long", defaultValue, e);
-            long var16830A58E1E33A4163524366BA7B701B_278125659 = (defaultValue);
-                        long var0F5264038205EDFB1AC05FBB0E8C5E94_116841076 = getTaintLong();
-            return var0F5264038205EDFB1AC05FBB0E8C5E94_116841076;
-        } //End block
-        // ---------- Original Method ----------
-        //unparcel();
-        //Object o = mMap.get(key);
-        //if (o == null) {
-            //return defaultValue;
-        //}
-        //try {
-            //return (Long) o;
-        //} catch (ClassCastException e) {
-            //typeWarning(key, o, "Long", defaultValue, e);
-            //return defaultValue;
-        //}
+            return defaultValue;
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.524 -0400", hash_original_method = "0D69D7EB25C8E886B27D28B7A30E217C", hash_generated_method = "1E6386AB058BA73C623E3E88AEF4566A")
+    /**
+     * Returns the value associated with the given key, or 0.0f if
+     * no mapping of the desired type exists for the given key.
+     *
+     * @param key a String
+     * @return a float value
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.147 -0500", hash_original_method = "0D69D7EB25C8E886B27D28B7A30E217C", hash_generated_method = "5DA71DD50FB35EB08C4A643AD592C4BA")
     public float getFloat(String key) {
-        addTaint(key.getTaint());
         unparcel();
-        float varBF23D61A5DA1AFA2DE55AB53E87ED61D_855965670 = (getFloat(key, 0.0f));
-                float var546ADE640B6EDFBC8A086EF31347E768_794839248 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_794839248;
-        // ---------- Original Method ----------
-        //unparcel();
-        //return getFloat(key, 0.0f);
+        return getFloat(key, 0.0f);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.531 -0400", hash_original_method = "8162EC4F2AE30557D489C5C6263EB256", hash_generated_method = "E83BA13BA52A97030B60C9AD3464E33C")
+    /**
+     * Returns the value associated with the given key, or defaultValue if
+     * no mapping of the desired type exists for the given key.
+     *
+     * @param key a String
+     * @return a float value
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.148 -0500", hash_original_method = "8162EC4F2AE30557D489C5C6263EB256", hash_generated_method = "F13375F497615D6D9855025B2EA4E90E")
     public float getFloat(String key, float defaultValue) {
-        addTaint(defaultValue);
-        addTaint(key.getTaint());
         unparcel();
         Object o = mMap.get(key);
-        if(o == null)        
-        {
-            float var16830A58E1E33A4163524366BA7B701B_1973094986 = (defaultValue);
-                        float var546ADE640B6EDFBC8A086EF31347E768_1098147408 = getTaintFloat();
-            return var546ADE640B6EDFBC8A086EF31347E768_1098147408;
-        } //End block
-        try 
-        {
-            float var8331AB1421C1C7163CDC80514402CB41_856792302 = ((Float) o);
-                        float var546ADE640B6EDFBC8A086EF31347E768_1111563874 = getTaintFloat();
-            return var546ADE640B6EDFBC8A086EF31347E768_1111563874;
-        } //End block
-        catch (ClassCastException e)
-        {
+        if (o == null) {
+            return defaultValue;
+        }
+        try {
+            return (Float) o;
+        } catch (ClassCastException e) {
             typeWarning(key, o, "Float", defaultValue, e);
-            float var16830A58E1E33A4163524366BA7B701B_766178724 = (defaultValue);
-                        float var546ADE640B6EDFBC8A086EF31347E768_1873101810 = getTaintFloat();
-            return var546ADE640B6EDFBC8A086EF31347E768_1873101810;
-        } //End block
-        // ---------- Original Method ----------
-        //unparcel();
-        //Object o = mMap.get(key);
-        //if (o == null) {
-            //return defaultValue;
-        //}
-        //try {
-            //return (Float) o;
-        //} catch (ClassCastException e) {
-            //typeWarning(key, o, "Float", defaultValue, e);
-            //return defaultValue;
-        //}
+            return defaultValue;
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.538 -0400", hash_original_method = "F5086ED2941BC7C3CB9930D22842FA44", hash_generated_method = "35529E9F01293922D589B60AB425FFBF")
+    /**
+     * Returns the value associated with the given key, or 0.0 if
+     * no mapping of the desired type exists for the given key.
+     *
+     * @param key a String
+     * @return a double value
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.148 -0500", hash_original_method = "F5086ED2941BC7C3CB9930D22842FA44", hash_generated_method = "6B14D80610B6A994D1F454669DF16088")
     public double getDouble(String key) {
-        addTaint(key.getTaint());
         unparcel();
-        double var0199B64F0100C891378130CE2B2D301A_1345678707 = (getDouble(key, 0.0));
-                double varE8CD7DA078A86726031AD64F35F5A6C0_5523153 = getTaintDouble();
-        return varE8CD7DA078A86726031AD64F35F5A6C0_5523153;
-        // ---------- Original Method ----------
-        //unparcel();
-        //return getDouble(key, 0.0);
+        return getDouble(key, 0.0);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.545 -0400", hash_original_method = "172C416958EF64BBE0F98CDA39B416EB", hash_generated_method = "97E153379084C475F49B6D8DF5272DE3")
+    /**
+     * Returns the value associated with the given key, or defaultValue if
+     * no mapping of the desired type exists for the given key.
+     *
+     * @param key a String
+     * @return a double value
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.149 -0500", hash_original_method = "172C416958EF64BBE0F98CDA39B416EB", hash_generated_method = "131757E610E53BD9778C8E13104DB84B")
     public double getDouble(String key, double defaultValue) {
-        addTaint(defaultValue);
-        addTaint(key.getTaint());
         unparcel();
         Object o = mMap.get(key);
-        if(o == null)        
-        {
-            double var16830A58E1E33A4163524366BA7B701B_974266455 = (defaultValue);
-                        double varE8CD7DA078A86726031AD64F35F5A6C0_1377110657 = getTaintDouble();
-            return varE8CD7DA078A86726031AD64F35F5A6C0_1377110657;
-        } //End block
-        try 
-        {
-            double var4A68A9E2AB417E2A6A41A28F465C1612_258936234 = ((Double) o);
-                        double varE8CD7DA078A86726031AD64F35F5A6C0_759759138 = getTaintDouble();
-            return varE8CD7DA078A86726031AD64F35F5A6C0_759759138;
-        } //End block
-        catch (ClassCastException e)
-        {
+        if (o == null) {
+            return defaultValue;
+        }
+        try {
+            return (Double) o;
+        } catch (ClassCastException e) {
             typeWarning(key, o, "Double", defaultValue, e);
-            double var16830A58E1E33A4163524366BA7B701B_927766609 = (defaultValue);
-                        double varE8CD7DA078A86726031AD64F35F5A6C0_1234291751 = getTaintDouble();
-            return varE8CD7DA078A86726031AD64F35F5A6C0_1234291751;
-        } //End block
-        // ---------- Original Method ----------
-        //unparcel();
-        //Object o = mMap.get(key);
-        //if (o == null) {
-            //return defaultValue;
-        //}
-        //try {
-            //return (Double) o;
-        //} catch (ClassCastException e) {
-            //typeWarning(key, o, "Double", defaultValue, e);
-            //return defaultValue;
-        //}
+            return defaultValue;
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.552 -0400", hash_original_method = "51BC83F6E10D252B7C417A14343A53BE", hash_generated_method = "F1C259503E73012EBC6F27D26112F616")
+    /**
+     * Returns the value associated with the given key, or null if
+     * no mapping of the desired type exists for the given key or a null
+     * value is explicitly associated with the key.
+     *
+     * @param key a String, or null
+     * @return a String value, or null
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.150 -0500", hash_original_method = "51BC83F6E10D252B7C417A14343A53BE", hash_generated_method = "DC94B211C8F775E38F2099A496DDDDAB")
     public String getString(String key) {
-        addTaint(key.getTaint());
         unparcel();
         Object o = mMap.get(key);
-        if(o == null)        
-        {
-String var540C13E9E156B687226421B24F2DF178_411840514 =             null;
-            var540C13E9E156B687226421B24F2DF178_411840514.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_411840514;
-        } //End block
-        try 
-        {
-String var05F8BA7898C830EEFB724B7656469F9E_1920512461 =             (String) o;
-            var05F8BA7898C830EEFB724B7656469F9E_1920512461.addTaint(taint);
-            return var05F8BA7898C830EEFB724B7656469F9E_1920512461;
-        } //End block
-        catch (ClassCastException e)
-        {
+        if (o == null) {
+            return null;
+        }
+        try {
+            return (String) o;
+        } catch (ClassCastException e) {
             typeWarning(key, o, "String", e);
-String var540C13E9E156B687226421B24F2DF178_867041943 =             null;
-            var540C13E9E156B687226421B24F2DF178_867041943.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_867041943;
-        } //End block
-        // ---------- Original Method ----------
-        //unparcel();
-        //Object o = mMap.get(key);
-        //if (o == null) {
-            //return null;
-        //}
-        //try {
-            //return (String) o;
-        //} catch (ClassCastException e) {
-            //typeWarning(key, o, "String", e);
-            //return null;
-        //}
+            return null;
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.560 -0400", hash_original_method = "BC80281EBAB10986EFB226B5D89A6368", hash_generated_method = "EF24E87D49A89EAE509B31FE379B7FB0")
+    /**
+     * Returns the value associated with the given key, or defaultValue if
+     * no mapping of the desired type exists for the given key.
+     *
+     * @param key a String, or null
+     * @param defaultValue Value to return if key does not exist
+     * @return a String value, or null
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.151 -0500", hash_original_method = "BC80281EBAB10986EFB226B5D89A6368", hash_generated_method = "17A1039E666A7650DA2AF0A5672C697D")
     public String getString(String key, String defaultValue) {
-        addTaint(defaultValue.getTaint());
-        addTaint(key.getTaint());
         unparcel();
         Object o = mMap.get(key);
-        if(o == null)        
-        {
-String var6042003835E71BD302E1524BA5D2EC10_1908642849 =             defaultValue;
-            var6042003835E71BD302E1524BA5D2EC10_1908642849.addTaint(taint);
-            return var6042003835E71BD302E1524BA5D2EC10_1908642849;
-        } //End block
-        try 
-        {
-String var05F8BA7898C830EEFB724B7656469F9E_73407712 =             (String) o;
-            var05F8BA7898C830EEFB724B7656469F9E_73407712.addTaint(taint);
-            return var05F8BA7898C830EEFB724B7656469F9E_73407712;
-        } //End block
-        catch (ClassCastException e)
-        {
+        if (o == null) {
+            return defaultValue;
+        }
+        try {
+            return (String) o;
+        } catch (ClassCastException e) {
             typeWarning(key, o, "String", e);
-String var6042003835E71BD302E1524BA5D2EC10_859841178 =             defaultValue;
-            var6042003835E71BD302E1524BA5D2EC10_859841178.addTaint(taint);
-            return var6042003835E71BD302E1524BA5D2EC10_859841178;
-        } //End block
-        // ---------- Original Method ----------
-        //unparcel();
-        //Object o = mMap.get(key);
-        //if (o == null) {
-            //return defaultValue;
-        //}
-        //try {
-            //return (String) o;
-        //} catch (ClassCastException e) {
-            //typeWarning(key, o, "String", e);
-            //return defaultValue;
-        //}
+            return defaultValue;
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.567 -0400", hash_original_method = "4D51A99620432005EDE9794C44D49E24", hash_generated_method = "9C34F2236BB9D8ABE915578B2AC07B5D")
+    /**
+     * Returns the value associated with the given key, or null if
+     * no mapping of the desired type exists for the given key or a null
+     * value is explicitly associated with the key.
+     *
+     * @param key a String, or null
+     * @return a CharSequence value, or null
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.152 -0500", hash_original_method = "4D51A99620432005EDE9794C44D49E24", hash_generated_method = "C749D871CDC137BBDCB4798223006DD3")
     public CharSequence getCharSequence(String key) {
-        addTaint(key.getTaint());
         unparcel();
         Object o = mMap.get(key);
-        if(o == null)        
-        {
-CharSequence var540C13E9E156B687226421B24F2DF178_660388080 =             null;
-            var540C13E9E156B687226421B24F2DF178_660388080.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_660388080;
-        } //End block
-        try 
-        {
-CharSequence var222AA52E30E95872ADF5687FA74CE561_1197165149 =             (CharSequence) o;
-            var222AA52E30E95872ADF5687FA74CE561_1197165149.addTaint(taint);
-            return var222AA52E30E95872ADF5687FA74CE561_1197165149;
-        } //End block
-        catch (ClassCastException e)
-        {
+        if (o == null) {
+            return null;
+        }
+        try {
+            return (CharSequence) o;
+        } catch (ClassCastException e) {
             typeWarning(key, o, "CharSequence", e);
-CharSequence var540C13E9E156B687226421B24F2DF178_2071610722 =             null;
-            var540C13E9E156B687226421B24F2DF178_2071610722.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_2071610722;
-        } //End block
-        // ---------- Original Method ----------
-        //unparcel();
-        //Object o = mMap.get(key);
-        //if (o == null) {
-            //return null;
-        //}
-        //try {
-            //return (CharSequence) o;
-        //} catch (ClassCastException e) {
-            //typeWarning(key, o, "CharSequence", e);
-            //return null;
-        //}
+            return null;
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.575 -0400", hash_original_method = "C5E593A01F019636F8A087C171F20745", hash_generated_method = "0488F0FE84DBC2918A37785DE369B7AA")
+    /**
+     * Returns the value associated with the given key, or defaultValue if
+     * no mapping of the desired type exists for the given key.
+     *
+     * @param key a String, or null
+     * @param defaultValue Value to return if key does not exist
+     * @return a CharSequence value, or null
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.153 -0500", hash_original_method = "C5E593A01F019636F8A087C171F20745", hash_generated_method = "40CE78F334294202BE659BFDFA1F54A4")
     public CharSequence getCharSequence(String key, CharSequence defaultValue) {
-        addTaint(defaultValue.getTaint());
-        addTaint(key.getTaint());
         unparcel();
         Object o = mMap.get(key);
-        if(o == null)        
-        {
-CharSequence var6042003835E71BD302E1524BA5D2EC10_734228447 =             defaultValue;
-            var6042003835E71BD302E1524BA5D2EC10_734228447.addTaint(taint);
-            return var6042003835E71BD302E1524BA5D2EC10_734228447;
-        } //End block
-        try 
-        {
-CharSequence var222AA52E30E95872ADF5687FA74CE561_186922720 =             (CharSequence) o;
-            var222AA52E30E95872ADF5687FA74CE561_186922720.addTaint(taint);
-            return var222AA52E30E95872ADF5687FA74CE561_186922720;
-        } //End block
-        catch (ClassCastException e)
-        {
+        if (o == null) {
+            return defaultValue;
+        }
+        try {
+            return (CharSequence) o;
+        } catch (ClassCastException e) {
             typeWarning(key, o, "CharSequence", e);
-CharSequence var6042003835E71BD302E1524BA5D2EC10_593000970 =             defaultValue;
-            var6042003835E71BD302E1524BA5D2EC10_593000970.addTaint(taint);
-            return var6042003835E71BD302E1524BA5D2EC10_593000970;
-        } //End block
-        // ---------- Original Method ----------
-        //unparcel();
-        //Object o = mMap.get(key);
-        //if (o == null) {
-            //return defaultValue;
-        //}
-        //try {
-            //return (CharSequence) o;
-        //} catch (ClassCastException e) {
-            //typeWarning(key, o, "CharSequence", e);
-            //return defaultValue;
-        //}
+            return defaultValue;
+        }
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.582 -0400", hash_original_method = "7BDB21170493B124DD321ED35C766BAB", hash_generated_method = "44EC067D722EFA56D090F8A36F1CCED4")
+    /**
+     * Returns the value associated with the given key, or null if
+     * no mapping of the desired type exists for the given key or a null
+     * value is explicitly associated with the key.
+     *
+     * @param key a String, or null
+     * @return a Bundle value, or null
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.153 -0500", hash_original_method = "7BDB21170493B124DD321ED35C766BAB", hash_generated_method = "C59829BF8BA797DC02E79C321DAD4ECD")
     public Bundle getBundle(String key) {
-        addTaint(key.getTaint());
         unparcel();
         Object o = mMap.get(key);
-        if(o == null)        
-        {
-Bundle var540C13E9E156B687226421B24F2DF178_801892027 =             null;
-            var540C13E9E156B687226421B24F2DF178_801892027.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_801892027;
-        } //End block
-        try 
-        {
-Bundle var45D34033B5203615BB9EF66A070A8AAD_1531579766 =             (Bundle) o;
-            var45D34033B5203615BB9EF66A070A8AAD_1531579766.addTaint(taint);
-            return var45D34033B5203615BB9EF66A070A8AAD_1531579766;
-        } //End block
-        catch (ClassCastException e)
-        {
+        if (o == null) {
+            return null;
+        }
+        try {
+            return (Bundle) o;
+        } catch (ClassCastException e) {
             typeWarning(key, o, "Bundle", e);
-Bundle var540C13E9E156B687226421B24F2DF178_16548805 =             null;
-            var540C13E9E156B687226421B24F2DF178_16548805.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_16548805;
-        } //End block
-        // ---------- Original Method ----------
-        //unparcel();
-        //Object o = mMap.get(key);
-        //if (o == null) {
-            //return null;
-        //}
-        //try {
-            //return (Bundle) o;
-        //} catch (ClassCastException e) {
-            //typeWarning(key, o, "Bundle", e);
-            //return null;
-        //}
+            return null;
+        }
     }
 
     
@@ -1462,44 +1230,27 @@ T var540C13E9E156B687226421B24F2DF178_1182490752 =             null;
         //}
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.596 -0400", hash_original_method = "ACB5B2AD81C8600B2F6954C0DE15936B", hash_generated_method = "4EE1A266D62055F3131EC9068A21282E")
+    /**
+     * Returns the value associated with the given key, or null if
+     * no mapping of the desired type exists for the given key or a null
+     * value is explicitly associated with the key.
+     *
+     * @param key a String, or null
+     * @return a Parcelable[] value, or null
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.155 -0500", hash_original_method = "ACB5B2AD81C8600B2F6954C0DE15936B", hash_generated_method = "45FD4581CE7E9024FA7FADC100EE838C")
     public Parcelable[] getParcelableArray(String key) {
-        addTaint(key.getTaint());
         unparcel();
         Object o = mMap.get(key);
-        if(o == null)        
-        {
-Parcelable[] var540C13E9E156B687226421B24F2DF178_305690966 =             null;
-            var540C13E9E156B687226421B24F2DF178_305690966.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_305690966;
-        } //End block
-        try 
-        {
-Parcelable[] var0A41EE4FAE6003B4C09B9A204979D444_283092909 =             (Parcelable[]) o;
-            var0A41EE4FAE6003B4C09B9A204979D444_283092909.addTaint(taint);
-            return var0A41EE4FAE6003B4C09B9A204979D444_283092909;
-        } //End block
-        catch (ClassCastException e)
-        {
+        if (o == null) {
+            return null;
+        }
+        try {
+            return (Parcelable[]) o;
+        } catch (ClassCastException e) {
             typeWarning(key, o, "Parcelable[]", e);
-Parcelable[] var540C13E9E156B687226421B24F2DF178_568796894 =             null;
-            var540C13E9E156B687226421B24F2DF178_568796894.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_568796894;
-        } //End block
-        // ---------- Original Method ----------
-        //unparcel();
-        //Object o = mMap.get(key);
-        //if (o == null) {
-            //return null;
-        //}
-        //try {
-            //return (Parcelable[]) o;
-        //} catch (ClassCastException e) {
-            //typeWarning(key, o, "Parcelable[]", e);
-            //return null;
-        //}
+            return null;
+        }
     }
 
     
@@ -1581,768 +1332,450 @@ SparseArray<T> var540C13E9E156B687226421B24F2DF178_1931449992 =             null
         //}
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.619 -0400", hash_original_method = "3E1FB271E8FDF7CD375ECA97D496DB8C", hash_generated_method = "BCF1D0F94CE0C414FF86D7B0B3E679D1")
-    @DSModeled(DSC.SAFE)
+    /**
+     * Returns the value associated with the given key, or null if
+     * no mapping of the desired type exists for the given key or a null
+     * value is explicitly associated with the key.
+     *
+     * @param key a String, or null
+     * @return a Serializable value, or null
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.157 -0500", hash_original_method = "3E1FB271E8FDF7CD375ECA97D496DB8C", hash_generated_method = "B0217288359245D82FE428677F8F5FF2")
     public Serializable getSerializable(String key) {
-        addTaint(key.getTaint());
         unparcel();
         Object o = mMap.get(key);
-        if(o == null)        
-        {
-Serializable var540C13E9E156B687226421B24F2DF178_841498197 =             null;
-            var540C13E9E156B687226421B24F2DF178_841498197.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_841498197;
-        } //End block
-        try 
-        {
-Serializable var7B8912D0D65C721E62169791E036D2E4_920549546 =             (Serializable) o;
-            var7B8912D0D65C721E62169791E036D2E4_920549546.addTaint(taint);
-            return var7B8912D0D65C721E62169791E036D2E4_920549546;
-        } //End block
-        catch (ClassCastException e)
-        {
+        if (o == null) {
+            return null;
+        }
+        try {
+            return (Serializable) o;
+        } catch (ClassCastException e) {
             typeWarning(key, o, "Serializable", e);
-Serializable var540C13E9E156B687226421B24F2DF178_1370844656 =             null;
-            var540C13E9E156B687226421B24F2DF178_1370844656.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_1370844656;
-        } //End block
-        // ---------- Original Method ----------
-        //unparcel();
-        //Object o = mMap.get(key);
-        //if (o == null) {
-            //return null;
-        //}
-        //try {
-            //return (Serializable) o;
-        //} catch (ClassCastException e) {
-            //typeWarning(key, o, "Serializable", e);
-            //return null;
-        //}
+            return null;
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.626 -0400", hash_original_method = "129B869D98875CE72FDC17E4CC2A1579", hash_generated_method = "95C12CD88D5B5DE07C21B9AF78FC4E44")
+    /**
+     * Returns the value associated with the given key, or null if
+     * no mapping of the desired type exists for the given key or a null
+     * value is explicitly associated with the key.
+     *
+     * @param key a String, or null
+     * @return an ArrayList<String> value, or null
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.158 -0500", hash_original_method = "129B869D98875CE72FDC17E4CC2A1579", hash_generated_method = "4A0476877431153D04CBCEC5C6DA6A8B")
     public ArrayList<Integer> getIntegerArrayList(String key) {
-        addTaint(key.getTaint());
         unparcel();
         Object o = mMap.get(key);
-        if(o == null)        
-        {
-ArrayList<Integer> var540C13E9E156B687226421B24F2DF178_1964908972 =             null;
-            var540C13E9E156B687226421B24F2DF178_1964908972.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_1964908972;
-        } //End block
-        try 
-        {
-ArrayList<Integer> varB8F385EFF336E304845C55B19DEFED99_1857354362 =             (ArrayList<Integer>) o;
-            varB8F385EFF336E304845C55B19DEFED99_1857354362.addTaint(taint);
-            return varB8F385EFF336E304845C55B19DEFED99_1857354362;
-        } //End block
-        catch (ClassCastException e)
-        {
+        if (o == null) {
+            return null;
+        }
+        try {
+            return (ArrayList<Integer>) o;
+        } catch (ClassCastException e) {
             typeWarning(key, o, "ArrayList<Integer>", e);
-ArrayList<Integer> var540C13E9E156B687226421B24F2DF178_1225224617 =             null;
-            var540C13E9E156B687226421B24F2DF178_1225224617.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_1225224617;
-        } //End block
-        // ---------- Original Method ----------
-        //unparcel();
-        //Object o = mMap.get(key);
-        //if (o == null) {
-            //return null;
-        //}
-        //try {
-            //return (ArrayList<Integer>) o;
-        //} catch (ClassCastException e) {
-            //typeWarning(key, o, "ArrayList<Integer>", e);
-            //return null;
-        //}
+            return null;
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.634 -0400", hash_original_method = "2869BDF5623DD5162F6A69DFD2D1F8AB", hash_generated_method = "62E3EC321F9218194D1AE92ADCF08D7A")
+    /**
+     * Returns the value associated with the given key, or null if
+     * no mapping of the desired type exists for the given key or a null
+     * value is explicitly associated with the key.
+     *
+     * @param key a String, or null
+     * @return an ArrayList<String> value, or null
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.159 -0500", hash_original_method = "2869BDF5623DD5162F6A69DFD2D1F8AB", hash_generated_method = "A38B3BACEDB6F26ECC5AC23BAEDFF3E0")
     public ArrayList<String> getStringArrayList(String key) {
-        addTaint(key.getTaint());
         unparcel();
         Object o = mMap.get(key);
-        if(o == null)        
-        {
-ArrayList<String> var540C13E9E156B687226421B24F2DF178_357606402 =             null;
-            var540C13E9E156B687226421B24F2DF178_357606402.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_357606402;
-        } //End block
-        try 
-        {
-ArrayList<String> var6CB978612A32DB65E9747B2CE440DBD9_1533796135 =             (ArrayList<String>) o;
-            var6CB978612A32DB65E9747B2CE440DBD9_1533796135.addTaint(taint);
-            return var6CB978612A32DB65E9747B2CE440DBD9_1533796135;
-        } //End block
-        catch (ClassCastException e)
-        {
+        if (o == null) {
+            return null;
+        }
+        try {
+            return (ArrayList<String>) o;
+        } catch (ClassCastException e) {
             typeWarning(key, o, "ArrayList<String>", e);
-ArrayList<String> var540C13E9E156B687226421B24F2DF178_908077852 =             null;
-            var540C13E9E156B687226421B24F2DF178_908077852.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_908077852;
-        } //End block
-        // ---------- Original Method ----------
-        //unparcel();
-        //Object o = mMap.get(key);
-        //if (o == null) {
-            //return null;
-        //}
-        //try {
-            //return (ArrayList<String>) o;
-        //} catch (ClassCastException e) {
-            //typeWarning(key, o, "ArrayList<String>", e);
-            //return null;
-        //}
+            return null;
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.673 -0400", hash_original_method = "9A13BDFEA4BB8512D10DFA31FFDE883A", hash_generated_method = "4D5FF7EF8EB3E0911CDF7EDA198FF55D")
+    /**
+     * Returns the value associated with the given key, or null if
+     * no mapping of the desired type exists for the given key or a null
+     * value is explicitly associated with the key.
+     *
+     * @param key a String, or null
+     * @return an ArrayList<CharSequence> value, or null
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.160 -0500", hash_original_method = "9A13BDFEA4BB8512D10DFA31FFDE883A", hash_generated_method = "23BAEC3568AD3BF79C3FA060C6272547")
     public ArrayList<CharSequence> getCharSequenceArrayList(String key) {
-        addTaint(key.getTaint());
         unparcel();
         Object o = mMap.get(key);
-        if(o == null)        
-        {
-ArrayList<CharSequence> var540C13E9E156B687226421B24F2DF178_1815356050 =             null;
-            var540C13E9E156B687226421B24F2DF178_1815356050.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_1815356050;
-        } //End block
-        try 
-        {
-ArrayList<CharSequence> var1B0D8FC24E767E0352471E3AC3D561A2_358573905 =             (ArrayList<CharSequence>) o;
-            var1B0D8FC24E767E0352471E3AC3D561A2_358573905.addTaint(taint);
-            return var1B0D8FC24E767E0352471E3AC3D561A2_358573905;
-        } //End block
-        catch (ClassCastException e)
-        {
+        if (o == null) {
+            return null;
+        }
+        try {
+            return (ArrayList<CharSequence>) o;
+        } catch (ClassCastException e) {
             typeWarning(key, o, "ArrayList<CharSequence>", e);
-ArrayList<CharSequence> var540C13E9E156B687226421B24F2DF178_276212002 =             null;
-            var540C13E9E156B687226421B24F2DF178_276212002.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_276212002;
-        } //End block
-        // ---------- Original Method ----------
-        //unparcel();
-        //Object o = mMap.get(key);
-        //if (o == null) {
-            //return null;
-        //}
-        //try {
-            //return (ArrayList<CharSequence>) o;
-        //} catch (ClassCastException e) {
-            //typeWarning(key, o, "ArrayList<CharSequence>", e);
-            //return null;
-        //}
+            return null;
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.708 -0400", hash_original_method = "2242EDC01DC8898E91E207F436901294", hash_generated_method = "15189C2AB4185D5D44B23ED40C592370")
+    /**
+     * Returns the value associated with the given key, or null if
+     * no mapping of the desired type exists for the given key or a null
+     * value is explicitly associated with the key.
+     *
+     * @param key a String, or null
+     * @return a boolean[] value, or null
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.161 -0500", hash_original_method = "2242EDC01DC8898E91E207F436901294", hash_generated_method = "C4BC1E97D5F4531CF91DD4A2C1D48C93")
     public boolean[] getBooleanArray(String key) {
-        addTaint(key.getTaint());
         unparcel();
         Object o = mMap.get(key);
-        if(o == null)        
-        {
-            boolean[] var37A6259CC0C1DAE299A7866489DFF0BD_807167422 = (null);
-                        boolean[] var503EB2F420079C4024483971CE5EDEA8_2083638041 = {getTaintBoolean()};
-            return var503EB2F420079C4024483971CE5EDEA8_2083638041;
-        } //End block
-        try 
-        {
-            boolean[] varE2BA3674FD9266CFB01DBFA76FCA616D_194911999 = ((boolean[]) o);
-                        boolean[] var503EB2F420079C4024483971CE5EDEA8_402748073 = {getTaintBoolean()};
-            return var503EB2F420079C4024483971CE5EDEA8_402748073;
-        } //End block
-        catch (ClassCastException e)
-        {
+        if (o == null) {
+            return null;
+        }
+        try {
+            return (boolean[]) o;
+        } catch (ClassCastException e) {
             typeWarning(key, o, "byte[]", e);
-            boolean[] var37A6259CC0C1DAE299A7866489DFF0BD_89353039 = (null);
-                        boolean[] var503EB2F420079C4024483971CE5EDEA8_97324517 = {getTaintBoolean()};
-            return var503EB2F420079C4024483971CE5EDEA8_97324517;
-        } //End block
-        // ---------- Original Method ----------
-        //unparcel();
-        //Object o = mMap.get(key);
-        //if (o == null) {
-            //return null;
-        //}
-        //try {
-            //return (boolean[]) o;
-        //} catch (ClassCastException e) {
-            //typeWarning(key, o, "byte[]", e);
-            //return null;
-        //}
+            return null;
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.719 -0400", hash_original_method = "61BA553FC99180BEC5D34878EFD2124D", hash_generated_method = "A327C0505A1320D65B68BB35E746DB2A")
+    /**
+     * Returns the value associated with the given key, or null if
+     * no mapping of the desired type exists for the given key or a null
+     * value is explicitly associated with the key.
+     *
+     * @param key a String, or null
+     * @return a byte[] value, or null
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.161 -0500", hash_original_method = "61BA553FC99180BEC5D34878EFD2124D", hash_generated_method = "E14823F73517A05703F9457CFF4AF591")
     public byte[] getByteArray(String key) {
-        addTaint(key.getTaint());
         unparcel();
         Object o = mMap.get(key);
-        if(o == null)        
-        {
-            byte[] var37A6259CC0C1DAE299A7866489DFF0BD_275011432 = (null);
-                        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1305418136 = {getTaintByte()};
-            return var2F9C81BC6E497382285CD6B7A7E33DE1_1305418136;
-        } //End block
-        try 
-        {
-            byte[] var9FE822C0B0667ABCB28F8576DB481C08_1919000653 = ((byte[]) o);
-                        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1445427224 = {getTaintByte()};
-            return var2F9C81BC6E497382285CD6B7A7E33DE1_1445427224;
-        } //End block
-        catch (ClassCastException e)
-        {
+        if (o == null) {
+            return null;
+        }
+        try {
+            return (byte[]) o;
+        } catch (ClassCastException e) {
             typeWarning(key, o, "byte[]", e);
-            byte[] var37A6259CC0C1DAE299A7866489DFF0BD_1041875256 = (null);
-                        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_609747152 = {getTaintByte()};
-            return var2F9C81BC6E497382285CD6B7A7E33DE1_609747152;
-        } //End block
-        // ---------- Original Method ----------
-        //unparcel();
-        //Object o = mMap.get(key);
-        //if (o == null) {
-            //return null;
-        //}
-        //try {
-            //return (byte[]) o;
-        //} catch (ClassCastException e) {
-            //typeWarning(key, o, "byte[]", e);
-            //return null;
-        //}
+            return null;
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.729 -0400", hash_original_method = "7BB50DA07B268F9685287E0D939131D4", hash_generated_method = "113F00766841A817D296D6C30C898190")
+    /**
+     * Returns the value associated with the given key, or null if
+     * no mapping of the desired type exists for the given key or a null
+     * value is explicitly associated with the key.
+     *
+     * @param key a String, or null
+     * @return a short[] value, or null
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.162 -0500", hash_original_method = "7BB50DA07B268F9685287E0D939131D4", hash_generated_method = "E67BE2F4F77612B930FFDC65AF7DB704")
     public short[] getShortArray(String key) {
-        addTaint(key.getTaint());
         unparcel();
         Object o = mMap.get(key);
-        if(o == null)        
-        {
-            short[] var37A6259CC0C1DAE299A7866489DFF0BD_625225208 = (null);
-                        short[] var48EE7E2DDF8A83602BC526873BD0F875_402490443 = {getTaintShort()};
-            return var48EE7E2DDF8A83602BC526873BD0F875_402490443;
-        } //End block
-        try 
-        {
-            short[] var12B9A95732292904819C1404E2CBA6AB_1074360355 = ((short[]) o);
-                        short[] var48EE7E2DDF8A83602BC526873BD0F875_2121380683 = {getTaintShort()};
-            return var48EE7E2DDF8A83602BC526873BD0F875_2121380683;
-        } //End block
-        catch (ClassCastException e)
-        {
+        if (o == null) {
+            return null;
+        }
+        try {
+            return (short[]) o;
+        } catch (ClassCastException e) {
             typeWarning(key, o, "short[]", e);
-            short[] var37A6259CC0C1DAE299A7866489DFF0BD_842581742 = (null);
-                        short[] var48EE7E2DDF8A83602BC526873BD0F875_1067733254 = {getTaintShort()};
-            return var48EE7E2DDF8A83602BC526873BD0F875_1067733254;
-        } //End block
-        // ---------- Original Method ----------
-        //unparcel();
-        //Object o = mMap.get(key);
-        //if (o == null) {
-            //return null;
-        //}
-        //try {
-            //return (short[]) o;
-        //} catch (ClassCastException e) {
-            //typeWarning(key, o, "short[]", e);
-            //return null;
-        //}
+            return null;
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.737 -0400", hash_original_method = "E77DD9D06089068562F2943DA73C8461", hash_generated_method = "1F1FB875B4676ABC1495EAFA056048E3")
+    /**
+     * Returns the value associated with the given key, or null if
+     * no mapping of the desired type exists for the given key or a null
+     * value is explicitly associated with the key.
+     *
+     * @param key a String, or null
+     * @return a char[] value, or null
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.163 -0500", hash_original_method = "E77DD9D06089068562F2943DA73C8461", hash_generated_method = "E77932C571C2A9C6D0161CA918963F21")
     public char[] getCharArray(String key) {
-        addTaint(key.getTaint());
         unparcel();
         Object o = mMap.get(key);
-        if(o == null)        
-        {
-            char[] var37A6259CC0C1DAE299A7866489DFF0BD_1787543551 = (null);
-                        char[] var50607924ABD4C17119BAF3A1CE41C0EC_1566260927 = {getTaintChar()};
-            return var50607924ABD4C17119BAF3A1CE41C0EC_1566260927;
-        } //End block
-        try 
-        {
-            char[] var84081F0F01B25F1ACF8564E92E3D7FB9_1779978329 = ((char[]) o);
-                        char[] var50607924ABD4C17119BAF3A1CE41C0EC_488832271 = {getTaintChar()};
-            return var50607924ABD4C17119BAF3A1CE41C0EC_488832271;
-        } //End block
-        catch (ClassCastException e)
-        {
+        if (o == null) {
+            return null;
+        }
+        try {
+            return (char[]) o;
+        } catch (ClassCastException e) {
             typeWarning(key, o, "char[]", e);
-            char[] var37A6259CC0C1DAE299A7866489DFF0BD_1416024884 = (null);
-                        char[] var50607924ABD4C17119BAF3A1CE41C0EC_1661256254 = {getTaintChar()};
-            return var50607924ABD4C17119BAF3A1CE41C0EC_1661256254;
-        } //End block
-        // ---------- Original Method ----------
-        //unparcel();
-        //Object o = mMap.get(key);
-        //if (o == null) {
-            //return null;
-        //}
-        //try {
-            //return (char[]) o;
-        //} catch (ClassCastException e) {
-            //typeWarning(key, o, "char[]", e);
-            //return null;
-        //}
+            return null;
+        }
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.745 -0400", hash_original_method = "85622F3A5EF64119863AB7B7CCBF9703", hash_generated_method = "E2484F84F5C1BE05F35CD09C90F6A757")
+    /**
+     * Returns the value associated with the given key, or null if
+     * no mapping of the desired type exists for the given key or a null
+     * value is explicitly associated with the key.
+     *
+     * @param key a String, or null
+     * @return an int[] value, or null
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.164 -0500", hash_original_method = "85622F3A5EF64119863AB7B7CCBF9703", hash_generated_method = "31EEEB18F7D9BB9C51649185024522F8")
     public int[] getIntArray(String key) {
-        addTaint(key.getTaint());
         unparcel();
         Object o = mMap.get(key);
-        if(o == null)        
-        {
-            int[] var37A6259CC0C1DAE299A7866489DFF0BD_1737767537 = (null);
-                        int[] varB4CCCA26F9DB9189C32F33E82D425CFB_735871208 = {getTaintInt()};
-            return varB4CCCA26F9DB9189C32F33E82D425CFB_735871208;
-        } //End block
-        try 
-        {
-            int[] var1C8435EA995977647E605AA4DB8D057D_1922677515 = ((int[]) o);
-                        int[] varB4CCCA26F9DB9189C32F33E82D425CFB_1942055176 = {getTaintInt()};
-            return varB4CCCA26F9DB9189C32F33E82D425CFB_1942055176;
-        } //End block
-        catch (ClassCastException e)
-        {
+        if (o == null) {
+            return null;
+        }
+        try {
+            return (int[]) o;
+        } catch (ClassCastException e) {
             typeWarning(key, o, "int[]", e);
-            int[] var37A6259CC0C1DAE299A7866489DFF0BD_1776923482 = (null);
-                        int[] varB4CCCA26F9DB9189C32F33E82D425CFB_35632234 = {getTaintInt()};
-            return varB4CCCA26F9DB9189C32F33E82D425CFB_35632234;
-        } //End block
-        // ---------- Original Method ----------
-        //unparcel();
-        //Object o = mMap.get(key);
-        //if (o == null) {
-            //return null;
-        //}
-        //try {
-            //return (int[]) o;
-        //} catch (ClassCastException e) {
-            //typeWarning(key, o, "int[]", e);
-            //return null;
-        //}
+            return null;
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.754 -0400", hash_original_method = "27B2CD54F5F69E8E74D59A821000C81A", hash_generated_method = "501DCC3B4C16516BBE1DE0E399CDD060")
+    /**
+     * Returns the value associated with the given key, or null if
+     * no mapping of the desired type exists for the given key or a null
+     * value is explicitly associated with the key.
+     *
+     * @param key a String, or null
+     * @return a long[] value, or null
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.165 -0500", hash_original_method = "27B2CD54F5F69E8E74D59A821000C81A", hash_generated_method = "BE88D5C92732324A1681CD39A146DC06")
     public long[] getLongArray(String key) {
-        addTaint(key.getTaint());
         unparcel();
         Object o = mMap.get(key);
-        if(o == null)        
-        {
-            long[] var37A6259CC0C1DAE299A7866489DFF0BD_2125071402 = (null);
-                        long[] var3908C7C3AF5171CEE1F112DAE77A5C4D_1266039852 = {getTaintLong()};
-            return var3908C7C3AF5171CEE1F112DAE77A5C4D_1266039852;
-        } //End block
-        try 
-        {
-            long[] var324FBE7B770A1FB7F944234CDD8D8302_1489698154 = ((long[]) o);
-                        long[] var3908C7C3AF5171CEE1F112DAE77A5C4D_12853156 = {getTaintLong()};
-            return var3908C7C3AF5171CEE1F112DAE77A5C4D_12853156;
-        } //End block
-        catch (ClassCastException e)
-        {
+        if (o == null) {
+            return null;
+        }
+        try {
+            return (long[]) o;
+        } catch (ClassCastException e) {
             typeWarning(key, o, "long[]", e);
-            long[] var37A6259CC0C1DAE299A7866489DFF0BD_1365254270 = (null);
-                        long[] var3908C7C3AF5171CEE1F112DAE77A5C4D_282116229 = {getTaintLong()};
-            return var3908C7C3AF5171CEE1F112DAE77A5C4D_282116229;
-        } //End block
-        // ---------- Original Method ----------
-        //unparcel();
-        //Object o = mMap.get(key);
-        //if (o == null) {
-            //return null;
-        //}
-        //try {
-            //return (long[]) o;
-        //} catch (ClassCastException e) {
-            //typeWarning(key, o, "long[]", e);
-            //return null;
-        //}
+            return null;
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.762 -0400", hash_original_method = "CF7D6838E0F23E6456879FF35A2AC714", hash_generated_method = "9004E2FF28ED4D52C129ED16B9065D66")
+    /**
+     * Returns the value associated with the given key, or null if
+     * no mapping of the desired type exists for the given key or a null
+     * value is explicitly associated with the key.
+     *
+     * @param key a String, or null
+     * @return a float[] value, or null
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.166 -0500", hash_original_method = "CF7D6838E0F23E6456879FF35A2AC714", hash_generated_method = "5F8D8A65D252D6C8AF09A7E22DB0F191")
     public float[] getFloatArray(String key) {
-        addTaint(key.getTaint());
         unparcel();
         Object o = mMap.get(key);
-        if(o == null)        
-        {
-            float[] var37A6259CC0C1DAE299A7866489DFF0BD_629386976 = (null);
-                        float[] varB2C245003BAB9224CFB496218F7DAFE0_1002429199 = {getTaintFloat()};
-            return varB2C245003BAB9224CFB496218F7DAFE0_1002429199;
-        } //End block
-        try 
-        {
-            float[] varB6BC16331AA469D6884123613ABE79E7_866254005 = ((float[]) o);
-                        float[] varB2C245003BAB9224CFB496218F7DAFE0_1166688436 = {getTaintFloat()};
-            return varB2C245003BAB9224CFB496218F7DAFE0_1166688436;
-        } //End block
-        catch (ClassCastException e)
-        {
+        if (o == null) {
+            return null;
+        }
+        try {
+            return (float[]) o;
+        } catch (ClassCastException e) {
             typeWarning(key, o, "float[]", e);
-            float[] var37A6259CC0C1DAE299A7866489DFF0BD_188065042 = (null);
-                        float[] varB2C245003BAB9224CFB496218F7DAFE0_316475482 = {getTaintFloat()};
-            return varB2C245003BAB9224CFB496218F7DAFE0_316475482;
-        } //End block
-        // ---------- Original Method ----------
-        //unparcel();
-        //Object o = mMap.get(key);
-        //if (o == null) {
-            //return null;
-        //}
-        //try {
-            //return (float[]) o;
-        //} catch (ClassCastException e) {
-            //typeWarning(key, o, "float[]", e);
-            //return null;
-        //}
+            return null;
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.771 -0400", hash_original_method = "3231DDBB4D17868FEAA7FF4365CACCDA", hash_generated_method = "2144C95B7DB011D2E71A07AE5E323CBF")
+    /**
+     * Returns the value associated with the given key, or null if
+     * no mapping of the desired type exists for the given key or a null
+     * value is explicitly associated with the key.
+     *
+     * @param key a String, or null
+     * @return a double[] value, or null
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.167 -0500", hash_original_method = "3231DDBB4D17868FEAA7FF4365CACCDA", hash_generated_method = "E83E31F4EFDA6E6B782F4ADCE29DB2C8")
     public double[] getDoubleArray(String key) {
-        addTaint(key.getTaint());
         unparcel();
         Object o = mMap.get(key);
-        if(o == null)        
-        {
-            double[] var37A6259CC0C1DAE299A7866489DFF0BD_223649728 = (null);
-                        double[] var74D44D7D9EE6FE6C3433D694F869E521_766264446 = {getTaintDouble()};
-            return var74D44D7D9EE6FE6C3433D694F869E521_766264446;
-        } //End block
-        try 
-        {
-            double[] var799D16D1B5D5DF2402D4DA39D4423C0D_484285510 = ((double[]) o);
-                        double[] var74D44D7D9EE6FE6C3433D694F869E521_813902414 = {getTaintDouble()};
-            return var74D44D7D9EE6FE6C3433D694F869E521_813902414;
-        } //End block
-        catch (ClassCastException e)
-        {
+        if (o == null) {
+            return null;
+        }
+        try {
+            return (double[]) o;
+        } catch (ClassCastException e) {
             typeWarning(key, o, "double[]", e);
-            double[] var37A6259CC0C1DAE299A7866489DFF0BD_1116038045 = (null);
-                        double[] var74D44D7D9EE6FE6C3433D694F869E521_25589592 = {getTaintDouble()};
-            return var74D44D7D9EE6FE6C3433D694F869E521_25589592;
-        } //End block
-        // ---------- Original Method ----------
-        //unparcel();
-        //Object o = mMap.get(key);
-        //if (o == null) {
-            //return null;
-        //}
-        //try {
-            //return (double[]) o;
-        //} catch (ClassCastException e) {
-            //typeWarning(key, o, "double[]", e);
-            //return null;
-        //}
+            return null;
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.778 -0400", hash_original_method = "00D6B9CB5DC261567748885D1CE89780", hash_generated_method = "816F9DB42925B99B97B83FCCF687B7E9")
+    /**
+     * Returns the value associated with the given key, or null if
+     * no mapping of the desired type exists for the given key or a null
+     * value is explicitly associated with the key.
+     *
+     * @param key a String, or null
+     * @return a String[] value, or null
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.168 -0500", hash_original_method = "00D6B9CB5DC261567748885D1CE89780", hash_generated_method = "A5D3472959DEE1DD04513F9A01144F61")
     public String[] getStringArray(String key) {
-        addTaint(key.getTaint());
         unparcel();
         Object o = mMap.get(key);
-        if(o == null)        
-        {
-String[] var540C13E9E156B687226421B24F2DF178_1284066183 =             null;
-            var540C13E9E156B687226421B24F2DF178_1284066183.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_1284066183;
-        } //End block
-        try 
-        {
-String[] var16C153FE5E6565C51E3D998C42B91976_1601581206 =             (String[]) o;
-            var16C153FE5E6565C51E3D998C42B91976_1601581206.addTaint(taint);
-            return var16C153FE5E6565C51E3D998C42B91976_1601581206;
-        } //End block
-        catch (ClassCastException e)
-        {
+        if (o == null) {
+            return null;
+        }
+        try {
+            return (String[]) o;
+        } catch (ClassCastException e) {
             typeWarning(key, o, "String[]", e);
-String[] var540C13E9E156B687226421B24F2DF178_272511910 =             null;
-            var540C13E9E156B687226421B24F2DF178_272511910.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_272511910;
-        } //End block
-        // ---------- Original Method ----------
-        //unparcel();
-        //Object o = mMap.get(key);
-        //if (o == null) {
-            //return null;
-        //}
-        //try {
-            //return (String[]) o;
-        //} catch (ClassCastException e) {
-            //typeWarning(key, o, "String[]", e);
-            //return null;
-        //}
+            return null;
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.785 -0400", hash_original_method = "E55D822FE040164347A1371A3EEFE758", hash_generated_method = "E7391010DB508FE42E45C8A536AA6509")
+    /**
+     * Returns the value associated with the given key, or null if
+     * no mapping of the desired type exists for the given key or a null
+     * value is explicitly associated with the key.
+     *
+     * @param key a String, or null
+     * @return a CharSequence[] value, or null
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.169 -0500", hash_original_method = "E55D822FE040164347A1371A3EEFE758", hash_generated_method = "7EB06F33C6319D9FE03593E24CDED0ED")
     public CharSequence[] getCharSequenceArray(String key) {
-        addTaint(key.getTaint());
         unparcel();
         Object o = mMap.get(key);
-        if(o == null)        
-        {
-CharSequence[] var540C13E9E156B687226421B24F2DF178_924634234 =             null;
-            var540C13E9E156B687226421B24F2DF178_924634234.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_924634234;
-        } //End block
-        try 
-        {
-CharSequence[] varE0F35EE7132543529B2EBACAA10305AF_1908050922 =             (CharSequence[]) o;
-            varE0F35EE7132543529B2EBACAA10305AF_1908050922.addTaint(taint);
-            return varE0F35EE7132543529B2EBACAA10305AF_1908050922;
-        } //End block
-        catch (ClassCastException e)
-        {
+        if (o == null) {
+            return null;
+        }
+        try {
+            return (CharSequence[]) o;
+        } catch (ClassCastException e) {
             typeWarning(key, o, "CharSequence[]", e);
-CharSequence[] var540C13E9E156B687226421B24F2DF178_404066238 =             null;
-            var540C13E9E156B687226421B24F2DF178_404066238.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_404066238;
-        } //End block
-        // ---------- Original Method ----------
-        //unparcel();
-        //Object o = mMap.get(key);
-        //if (o == null) {
-            //return null;
-        //}
-        //try {
-            //return (CharSequence[]) o;
-        //} catch (ClassCastException e) {
-            //typeWarning(key, o, "CharSequence[]", e);
-            //return null;
-        //}
+            return null;
+        }
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.791 -0400", hash_original_method = "D295BFB1D3C25A7A56AF1D8267856D3B", hash_generated_method = "889610D9A60F746FC1D8A1C139ADCEA1")
+    /**
+     * Returns the value associated with the given key, or null if
+     * no mapping of the desired type exists for the given key or a null
+     * value is explicitly associated with the key.
+     *
+     * @param key a String, or null
+     * @return an IBinder value, or null
+     *
+     * @deprecated
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.170 -0500", hash_original_method = "D295BFB1D3C25A7A56AF1D8267856D3B", hash_generated_method = "E7CA20643940928A7E9217CDBAEC3E7D")
     @Deprecated
-    public IBinder getIBinder(String key) {
-        addTaint(key.getTaint());
+public IBinder getIBinder(String key) {
         unparcel();
         Object o = mMap.get(key);
-        if(o == null)        
-        {
-IBinder var540C13E9E156B687226421B24F2DF178_1528512988 =             null;
-            var540C13E9E156B687226421B24F2DF178_1528512988.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_1528512988;
-        } //End block
-        try 
-        {
-IBinder varF1CBEA30581462C8D282C5AF2BF1C748_1926244210 =             (IBinder) o;
-            varF1CBEA30581462C8D282C5AF2BF1C748_1926244210.addTaint(taint);
-            return varF1CBEA30581462C8D282C5AF2BF1C748_1926244210;
-        } //End block
-        catch (ClassCastException e)
-        {
+        if (o == null) {
+            return null;
+        }
+        try {
+            return (IBinder) o;
+        } catch (ClassCastException e) {
             typeWarning(key, o, "IBinder", e);
-IBinder var540C13E9E156B687226421B24F2DF178_2690998 =             null;
-            var540C13E9E156B687226421B24F2DF178_2690998.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_2690998;
-        } //End block
-        // ---------- Original Method ----------
-        //unparcel();
-        //Object o = mMap.get(key);
-        //if (o == null) {
-            //return null;
-        //}
-        //try {
-            //return (IBinder) o;
-        //} catch (ClassCastException e) {
-            //typeWarning(key, o, "IBinder", e);
-            //return null;
-        //}
+            return null;
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.798 -0400", hash_original_method = "E95F1FE0EF3EE3193ED648BBE2C98991", hash_generated_method = "094BB75C6AE3C7BC5B767F656449F189")
+    /**
+     * Report the nature of this Parcelable's contents
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.174 -0500", hash_original_method = "E95F1FE0EF3EE3193ED648BBE2C98991", hash_generated_method = "4ECAF7C88D126E501DD7015D1C03A00B")
     public int describeContents() {
         int mask = 0;
-        if(hasFileDescriptors())        
-        {
+        if (hasFileDescriptors()) {
             mask |= Parcelable.CONTENTS_FILE_DESCRIPTOR;
-        } //End block
-        int varF2CE11EBF110993621BEDD8E747D7B1B_281888032 = (mask);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1923342432 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1923342432;
-        // ---------- Original Method ----------
-        //int mask = 0;
-        //if (hasFileDescriptors()) {
-            //mask |= Parcelable.CONTENTS_FILE_DESCRIPTOR;
-        //}
-        //return mask;
+        }
+        return mask;
     }
-
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.804 -0400", hash_original_method = "90A94F467F11AD2B1AEECA4B5BC07A1D", hash_generated_method = "8B5FF5BA32445196D63B4BEEC0C2DC54")
+    /**
+     * Writes the Bundle contents to a Parcel, typically in order for
+     * it to be passed through an IBinder connection.
+     * @param parcel The parcel to copy this bundle to.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.175 -0500", hash_original_method = "90A94F467F11AD2B1AEECA4B5BC07A1D", hash_generated_method = "13FC4A3A2DEAA47DAD8328A7A3631F3B")
     public void writeToParcel(Parcel parcel, int flags) {
-        addTaint(flags);
-        addTaint(parcel.getTaint());
         final boolean oldAllowFds = parcel.pushAllowFds(mAllowFds);
-        try 
-        {
-            if(mParcelledData != null)            
-            {
+        try {
+            if (mParcelledData != null) {
                 int length = mParcelledData.dataSize();
                 parcel.writeInt(length);
-                parcel.writeInt(0x4C444E42);
+                parcel.writeInt(0x4C444E42); // 'B' 'N' 'D' 'L'
                 parcel.appendFrom(mParcelledData, 0, length);
-            } //End block
-            else
-            {
-                parcel.writeInt(-1);
-                parcel.writeInt(0x4C444E42);
+            } else {
+                parcel.writeInt(-1); // dummy, will hold length
+                parcel.writeInt(0x4C444E42); // 'B' 'N' 'D' 'L'
+    
                 int oldPos = parcel.dataPosition();
                 parcel.writeMapInternal(mMap);
                 int newPos = parcel.dataPosition();
+    
+                // Backpatch length
                 parcel.setDataPosition(oldPos - 8);
                 int length = newPos - oldPos;
                 parcel.writeInt(length);
                 parcel.setDataPosition(newPos);
-            } //End block
-        } //End block
-        finally 
-        {
+            }
+        } finally {
             parcel.restoreAllowFds(oldAllowFds);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        }
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.810 -0400", hash_original_method = "046D2D4D1B8612C0E98B2174C0C88DC5", hash_generated_method = "D8013CB2A7D78E371DDA67A65A8C57CA")
+    /**
+     * Reads the Parcel contents into this Bundle, typically in order for
+     * it to be passed through an IBinder connection.
+     * @param parcel The parcel to overwrite this bundle from.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.175 -0500", hash_original_method = "046D2D4D1B8612C0E98B2174C0C88DC5", hash_generated_method = "CCF966184DD966B4A8431E00C8E0C9B9")
     public void readFromParcel(Parcel parcel) {
-        addTaint(parcel.getTaint());
         int length = parcel.readInt();
-        if(length < 0)        
-        {
-            RuntimeException var84B5513F50EA60D710D121E42982F402_1554248883 = new RuntimeException("Bad length in parcel: " + length);
-            var84B5513F50EA60D710D121E42982F402_1554248883.addTaint(taint);
-            throw var84B5513F50EA60D710D121E42982F402_1554248883;
-        } //End block
+        if (length < 0) {
+            throw new RuntimeException("Bad length in parcel: " + length);
+        }
         readFromParcelInner(parcel, length);
-        // ---------- Original Method ----------
-        //int length = parcel.readInt();
-        //if (length < 0) {
-            //throw new RuntimeException("Bad length in parcel: " + length);
-        //}
-        //readFromParcelInner(parcel, length);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.820 -0400", hash_original_method = "BA7474E49C1BD74E29BF5B4706535141", hash_generated_method = "3E86D5953AE1E1E145CDC43602BF739E")
-     void readFromParcelInner(Parcel parcel, int length) {
-        addTaint(length);
-        addTaint(parcel.getTaint());
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.176 -0500", hash_original_method = "BA7474E49C1BD74E29BF5B4706535141", hash_generated_method = "4626EAB7D7A0699ECA6C3A432923F19B")
+    void readFromParcelInner(Parcel parcel, int length) {
         int magic = parcel.readInt();
-        if(magic != 0x4C444E42)        
-        {
+        if (magic != 0x4C444E42) {
+            //noinspection ThrowableInstanceNeverThrown
             String st = Log.getStackTraceString(new RuntimeException());
-        } //End block
+            Log.e("Bundle", "readBundle: bad magic number");
+            Log.e("Bundle", "readBundle: trace = " + st);
+        }
+
+        // Advance within this Parcel
         int offset = parcel.dataPosition();
         parcel.setDataPosition(offset + length);
+
         Parcel p = Parcel.obtain();
         p.setDataPosition(0);
         p.appendFrom(parcel, offset, length);
         p.setDataPosition(0);
+        
         mParcelledData = p;
         mHasFds = p.hasFileDescriptors();
         mFdsKnown = true;
-        // ---------- Original Method ----------
-        //int magic = parcel.readInt();
-        //if (magic != 0x4C444E42) {
-            //String st = Log.getStackTraceString(new RuntimeException());
-            //Log.e("Bundle", "readBundle: bad magic number");
-            //Log.e("Bundle", "readBundle: trace = " + st);
-        //}
-        //int offset = parcel.dataPosition();
-        //parcel.setDataPosition(offset + length);
-        //Parcel p = Parcel.obtain();
-        //p.setDataPosition(0);
-        //p.appendFrom(parcel, offset, length);
-        //p.setDataPosition(0);
-        //mParcelledData = p;
-        //mHasFds = p.hasFileDescriptors();
-        //mFdsKnown = true;
     }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.825 -0400", hash_original_method = "6D3D0FD7A771D9A5F3ECAE6DEB73615C", hash_generated_method = "797D61F7D8AC8611435844CB1D0F8120")
-    @Override
-    public synchronized String toString() {
-        if(mParcelledData != null)        
-        {
-String varFF08288414AE5DAA590BBD75B1F9D1A6_485575690 =             "Bundle[mParcelledData.dataSize=" +
-                    mParcelledData.dataSize() + "]";
-            varFF08288414AE5DAA590BBD75B1F9D1A6_485575690.addTaint(taint);
-            return varFF08288414AE5DAA590BBD75B1F9D1A6_485575690;
-        } //End block
-String var7912B2DCBC9E314551464676F1365845_364843374 =         "Bundle[" + mMap.toString() + "]";
-        var7912B2DCBC9E314551464676F1365845_364843374.addTaint(taint);
-        return var7912B2DCBC9E314551464676F1365845_364843374;
-        // ---------- Original Method ----------
-        //if (mParcelledData != null) {
-            //return "Bundle[mParcelledData.dataSize=" +
-                    //mParcelledData.dataSize() + "]";
-        //}
-        //return "Bundle[" + mMap.toString() + "]";
-    }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.828 -0400", hash_original_field = "9D5F877D7AA7E8D8702157333DF2C046", hash_generated_field = "B4A59EF1F4C419B90A176C13462BE720")
-
-    private static final String LOG_TAG = "Bundle";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.830 -0400", hash_original_field = "BA2B45BDC11E2A4A6E86AAB2AC693CBB", hash_generated_field = "801351E620DCAB87B984F712F19DA2C3")
-
-    public static final Bundle EMPTY;
     static {
         EMPTY = new Bundle();
         EMPTY.mMap = Collections.unmodifiableMap(new HashMap<String, Object>());
     }
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.831 -0400", hash_original_field = "B4FE070174283716AFC584FD34F1BAE3", hash_generated_field = "C6D8CFB9909EC6A413DB28D9E9FEC6F2")
 
-    public static final Parcelable.Creator<Bundle> CREATOR =
-        new Parcelable.Creator<Bundle>() {
-        @DSModeled(DSC.SAFE)
-        public Bundle createFromParcel(Parcel in) {
-            return in.readBundle();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.177 -0500", hash_original_method = "6D3D0FD7A771D9A5F3ECAE6DEB73615C", hash_generated_method = "0355024C495606547CD5BFBEF3CBEDE1")
+    @Override
+public synchronized String toString() {
+        if (mParcelledData != null) {
+            return "Bundle[mParcelledData.dataSize=" +
+                    mParcelledData.dataSize() + "]";
         }
-
-        @DSModeled(DSC.SAFE)
-        public Bundle[] newArray(int size) {
-            return new Bundle[size];
-        }
-    };
+        return "Bundle[" + mMap.toString() + "]";
+    }
 }
 

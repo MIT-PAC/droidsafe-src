@@ -1,26 +1,22 @@
 package android.nfc;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 
 
 
 public class TagLostException extends IOException {
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.388 -0400", hash_original_method = "CBC103EF7AC32AEF91409A49527DDCFB", hash_generated_method = "25C1E25DA00F6A263E31CB53D6E1A15D")
-    public  TagLostException() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.560 -0500", hash_original_method = "CBC103EF7AC32AEF91409A49527DDCFB", hash_generated_method = "C68855AE03A93B4B35492ECEDDB91651")
+    public TagLostException() {
         super();
-        // ---------- Original Method ----------
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.388 -0400", hash_original_method = "239642EC7BB7F7E7C0FD631CE1F9537C", hash_generated_method = "C2CF0D5741DE84E0868DF5282BEDA9C7")
-    public  TagLostException(String message) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.561 -0500", hash_original_method = "239642EC7BB7F7E7C0FD631CE1F9537C", hash_generated_method = "1689781C79202287B703764D87B8DBA0")
+    public TagLostException(String message) {
         super(message);
-        addTaint(message.getTaint());
-        // ---------- Original Method ----------
     }
 
     

@@ -1,6 +1,8 @@
 package java.text;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -20,432 +22,20 @@ import libcore.util.EmptyArray;
 
 
 public class MessageFormat extends Format {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.727 -0400", hash_original_field = "FB216D9E8791E63C8D12BDC420956839", hash_generated_field = "3C599F5969C756C105E47474D7BCB663")
 
-    private Locale locale;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.727 -0400", hash_original_field = "8BCF6629759BD278A5C6266BD9C054F8", hash_generated_field = "44BD3039B18FC631AF3469BBAABEF8A6")
-
-    transient private String[] strings;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.727 -0400", hash_original_field = "014D9D5B07EC4A49CDA113BD9A52F736", hash_generated_field = "0CC8F912A4CE816F33718A9E926CC5E3")
-
-    private int[] argumentNumbers;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.727 -0400", hash_original_field = "57E77C4C0B351CEA2ABB4E8B0042B074", hash_generated_field = "4840DFEFCC78103675C456B661F97552")
-
-    private Format[] formats;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.727 -0400", hash_original_field = "7CEE806716EA80C535651AF1C8AC2885", hash_generated_field = "8E5941FA03E4EAD10C76316C2B10EB9E")
-
-    private int maxOffset;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.727 -0400", hash_original_field = "1D1C20ADB1AC0C122B3C1FA2123C4DA8", hash_generated_field = "D0A8CB4E81B16C7EDB6C78624EE723CF")
-
-    transient private int maxArgumentIndex;
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.727 -0400", hash_original_method = "DF99A7D88BE30484426F461C5ED2222D", hash_generated_method = "E719E3A26C5068F11E196361CE198F4F")
-    public  MessageFormat(String template, Locale locale) {
-        addTaint(template.getTaint());
-        this.locale = locale;
-        applyPattern(template);
-        // ---------- Original Method ----------
-        //this.locale = locale;
-        //applyPattern(template);
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.727 -0400", hash_original_method = "BAA918AD1B6BB7758E580E5A4864BDBA", hash_generated_method = "81896B9388D8AB87ADBF31550E3A1963")
-    public  MessageFormat(String template) {
-        this(template, Locale.getDefault());
-        addTaint(template.getTaint());
-        // ---------- Original Method ----------
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.729 -0400", hash_original_method = "20F481C3B4FB7D239D889AD1AE3136D7", hash_generated_method = "4B318AB8A7469EB9BB030D2D6529C563")
-    public void applyPattern(String template) {
-        addTaint(template.getTaint());
-        int length = template.length();
-        StringBuffer buffer = new StringBuffer();
-        ParsePosition position = new ParsePosition(0);
-        ArrayList<String> localStrings = new ArrayList<String>();
-        int argCount = 0;
-        int[] args = new int[10];
-        int maxArg = -1;
-        ArrayList<Format> localFormats = new ArrayList<Format>();
-        while
-(position.getIndex() < length)        
-        {
-            if(Format.upTo(template, position, buffer, '{'))            
-            {
-                int arg = 0;
-                int offset = position.getIndex();
-                if(offset >= length)                
-                {
-                    IllegalArgumentException var5EE1EC2DB5E968AC4AD83F3273F4574E_1840105869 = new IllegalArgumentException("Invalid argument number");
-                    var5EE1EC2DB5E968AC4AD83F3273F4574E_1840105869.addTaint(taint);
-                    throw var5EE1EC2DB5E968AC4AD83F3273F4574E_1840105869;
-                } //End block
-                char ch;
-                while
-((ch = template.charAt(offset++)) != '}' && ch != ',')                
-                {
-                    if(ch < '0' && ch > '9')                    
-                    {
-                        IllegalArgumentException var5EE1EC2DB5E968AC4AD83F3273F4574E_1795809738 = new IllegalArgumentException("Invalid argument number");
-                        var5EE1EC2DB5E968AC4AD83F3273F4574E_1795809738.addTaint(taint);
-                        throw var5EE1EC2DB5E968AC4AD83F3273F4574E_1795809738;
-                    } //End block
-                    arg = arg * 10 + (ch - '0');
-                    if(arg < 0 || offset >= length)                    
-                    {
-                        IllegalArgumentException var5EE1EC2DB5E968AC4AD83F3273F4574E_399432461 = new IllegalArgumentException("Invalid argument number");
-                        var5EE1EC2DB5E968AC4AD83F3273F4574E_399432461.addTaint(taint);
-                        throw var5EE1EC2DB5E968AC4AD83F3273F4574E_399432461;
-                    } //End block
-                } //End block
-                offset--;
-                position.setIndex(offset);
-                localFormats.add(parseVariable(template, position));
-                if(argCount >= args.length)                
-                {
-                    int[] newArgs = new int[args.length * 2];
-                    System.arraycopy(args, 0, newArgs, 0, args.length);
-                    args = newArgs;
-                } //End block
-                args[argCount++] = arg;
-                if(arg > maxArg)                
-                {
-                    maxArg = arg;
-                } //End block
-            } //End block
-            localStrings.add(buffer.toString());
-            buffer.setLength(0);
-        } //End block
-        this.strings = localStrings.toArray(new String[localStrings.size()]);
-        argumentNumbers = args;
-        this.formats = localFormats.toArray(new Format[argCount]);
-        maxOffset = argCount - 1;
-        maxArgumentIndex = maxArg;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.731 -0400", hash_original_method = "B53A9961D24B646CE17498A2E8FD8A6F", hash_generated_method = "D844EFE5EC73BB2927D24BE9E1C3D1AC")
-    @Override
-    public Object clone() {
-        MessageFormat clone = (MessageFormat) super.clone();
-        Format[] array = new Format[formats.length];
-for(int i = formats.length;--i >= 0;)
-        {
-            if(formats[i] != null)            
-            {
-                array[i] = (Format) formats[i].clone();
-            } //End block
-        } //End block
-        clone.formats = array;
-Object var3DE52045BFD3C1BF3742F994ED6139AD_725325188 =         clone;
-        var3DE52045BFD3C1BF3742F994ED6139AD_725325188.addTaint(taint);
-        return var3DE52045BFD3C1BF3742F994ED6139AD_725325188;
-        // ---------- Original Method ----------
-        //MessageFormat clone = (MessageFormat) super.clone();
-        //Format[] array = new Format[formats.length];
-        //for (int i = formats.length; --i >= 0;) {
-            //if (formats[i] != null) {
-                //array[i] = (Format) formats[i].clone();
-            //}
-        //}
-        //clone.formats = array;
-        //return clone;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.732 -0400", hash_original_method = "2E70B47400B10858E99F75E16A06D539", hash_generated_method = "5BEDD4E526FBA434126B2C7C71CBFB43")
-    @Override
-    public boolean equals(Object object) {
-        addTaint(object.getTaint());
-        if(this == object)        
-        {
-            boolean varB326B5062B2F0E69046810717534CB09_1122457032 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2023387899 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_2023387899;
-        } //End block
-        if(!(object instanceof MessageFormat))        
-        {
-            boolean var68934A3E9455FA72420237EB05902327_546693878 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_699877976 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_699877976;
-        } //End block
-        MessageFormat format = (MessageFormat) object;
-        if(maxOffset != format.maxOffset)        
-        {
-            boolean var68934A3E9455FA72420237EB05902327_385803179 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1622132711 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1622132711;
-        } //End block
-for(int i = 0;i <= maxOffset;i++)
-        {
-            if(argumentNumbers[i] != format.argumentNumbers[i])            
-            {
-                boolean var68934A3E9455FA72420237EB05902327_26086572 = (false);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1436768662 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1436768662;
-            } //End block
-        } //End block
-        boolean varA475EC639C74D8223DEBD993E08AD64D_1364570033 = (locale.equals(format.locale)
-                && Arrays.equals(strings, format.strings)
-                && Arrays.equals(formats, format.formats));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_264751420 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_264751420;
-        // ---------- Original Method ----------
-        //if (this == object) {
-            //return true;
-        //}
-        //if (!(object instanceof MessageFormat)) {
-            //return false;
-        //}
-        //MessageFormat format = (MessageFormat) object;
-        //if (maxOffset != format.maxOffset) {
-            //return false;
-        //}
-        //for (int i = 0; i <= maxOffset; i++) {
-            //if (argumentNumbers[i] != format.argumentNumbers[i]) {
-                //return false;
-            //}
-        //}
-        //return locale.equals(format.locale)
-                //&& Arrays.equals(strings, format.strings)
-                //&& Arrays.equals(formats, format.formats);
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.733 -0400", hash_original_method = "2F36A5BCF5EDBC18FDC7136A6298BFC9", hash_generated_method = "CA053DC050916D556956367DA0B49953")
-    @Override
-    public AttributedCharacterIterator formatToCharacterIterator(Object object) {
-        addTaint(object.getTaint());
-        if(object == null)        
-        {
-            NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_1946857641 = new NullPointerException();
-            var7338BC9F48D81FE0BBD6183F4014DCC4_1946857641.addTaint(taint);
-            throw var7338BC9F48D81FE0BBD6183F4014DCC4_1946857641;
-        } //End block
-        StringBuffer buffer = new StringBuffer();
-        ArrayList<FieldContainer> fields = new ArrayList<FieldContainer>();
-        formatImpl((Object[]) object, buffer, new FieldPosition(0), fields);
-        AttributedString as = new AttributedString(buffer.toString());
-for(FieldContainer fc : fields)
-        {
-            as.addAttribute(fc.attribute, fc.value, fc.start, fc.end);
-        } //End block
-AttributedCharacterIterator varE3ABF6B4C0DDC070CF0843A4557F5D73_1289279131 =         as.getIterator();
-        varE3ABF6B4C0DDC070CF0843A4557F5D73_1289279131.addTaint(taint);
-        return varE3ABF6B4C0DDC070CF0843A4557F5D73_1289279131;
-        // ---------- Original Method ----------
-        //if (object == null) {
-            //throw new NullPointerException();
-        //}
-        //StringBuffer buffer = new StringBuffer();
-        //ArrayList<FieldContainer> fields = new ArrayList<FieldContainer>();
-        //formatImpl((Object[]) object, buffer, new FieldPosition(0), fields);
-        //AttributedString as = new AttributedString(buffer.toString());
-        //for (FieldContainer fc : fields) {
-            //as.addAttribute(fc.attribute, fc.value, fc.start, fc.end);
-        //}
-        //return as.getIterator();
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.734 -0400", hash_original_method = "A9B03AC07F14FDC18F9B212B66591284", hash_generated_method = "39E881031A7F24261AA7D3251D02C61D")
-    public final StringBuffer format(Object[] objects, StringBuffer buffer,
-            FieldPosition field) {
-        addTaint(field.getTaint());
-        addTaint(buffer.getTaint());
-        addTaint(objects[0].getTaint());
-StringBuffer var1F66D20762CFEE3B98D9E22CDAD14062_1066641912 =         formatImpl(objects, buffer, field, null);
-        var1F66D20762CFEE3B98D9E22CDAD14062_1066641912.addTaint(taint);
-        return var1F66D20762CFEE3B98D9E22CDAD14062_1066641912;
-        // ---------- Original Method ----------
-        //return formatImpl(objects, buffer, field, null);
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.735 -0400", hash_original_method = "CB09F1AB0972A7396E3B2DB81FB1793E", hash_generated_method = "5E13A600C4506E81D0A548EB3D03B101")
-    private StringBuffer formatImpl(Object[] objects, StringBuffer buffer,
-            FieldPosition position, List<FieldContainer> fields) {
-        addTaint(fields.getTaint());
-        addTaint(position.getTaint());
-        addTaint(buffer.getTaint());
-        addTaint(objects[0].getTaint());
-        FieldPosition passedField = new FieldPosition(0);
-for(int i = 0;i <= maxOffset;i++)
-        {
-            buffer.append(strings[i]);
-            int begin = buffer.length();
-            Object arg;
-            if(objects != null && argumentNumbers[i] < objects.length)            
-            {
-                arg = objects[argumentNumbers[i]];
-            } //End block
-            else
-            {
-                buffer.append('{');
-                buffer.append(argumentNumbers[i]);
-                buffer.append('}');
-                handleArgumentField(begin, buffer.length(), argumentNumbers[i], position, fields);
-                continue;
-            } //End block
-            Format format = formats[i];
-            if(format == null || arg == null)            
-            {
-                if(arg instanceof Number)                
-                {
-                    format = NumberFormat.getInstance();
-                } //End block
-                else
-                if(arg instanceof Date)                
-                {
-                    format = DateFormat.getInstance();
-                } //End block
-                else
-                {
-                    buffer.append(arg);
-                    handleArgumentField(begin, buffer.length(), argumentNumbers[i], position, fields);
-                    continue;
-                } //End block
-            } //End block
-            if(format instanceof ChoiceFormat)            
-            {
-                String result = format.format(arg);
-                MessageFormat mf = new MessageFormat(result);
-                mf.setLocale(locale);
-                mf.format(objects, buffer, passedField);
-                handleArgumentField(begin, buffer.length(), argumentNumbers[i], position, fields);
-                handleFormat(format, arg, begin, fields);
-            } //End block
-            else
-            {
-                format.format(arg, buffer, passedField);
-                handleArgumentField(begin, buffer.length(), argumentNumbers[i], position, fields);
-                handleFormat(format, arg, begin, fields);
-            } //End block
-        } //End block
-        if(maxOffset + 1 < strings.length)        
-        {
-            buffer.append(strings[maxOffset + 1]);
-        } //End block
-StringBuffer varE75BCB56CC6A0BCEED51BE38E1BB3F38_975541629 =         buffer;
-        varE75BCB56CC6A0BCEED51BE38E1BB3F38_975541629.addTaint(taint);
-        return varE75BCB56CC6A0BCEED51BE38E1BB3F38_975541629;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.736 -0400", hash_original_method = "C43D87ABB966C2154325453E86772F9C", hash_generated_method = "7A4B320F81F8BFFBCFEB8B08AD9B35D6")
-    private void handleArgumentField(int begin, int end, int argIndex,
-            FieldPosition position, List<FieldContainer> fields) {
-        addTaint(fields.getTaint());
-        addTaint(position.getTaint());
-        addTaint(argIndex);
-        addTaint(end);
-        addTaint(begin);
-        if(fields != null)        
-        {
-            fields.add(new FieldContainer(begin, end, Field.ARGUMENT, Integer.valueOf(argIndex)));
-        } //End block
-        else
-        {
-            if(position != null
-                    && position.getFieldAttribute() == Field.ARGUMENT
-                    && position.getEndIndex() == 0)            
-            {
-                position.setBeginIndex(begin);
-                position.setEndIndex(end);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (fields != null) {
-            //fields.add(new FieldContainer(begin, end, Field.ARGUMENT, Integer.valueOf(argIndex)));
-        //} else {
-            //if (position != null
-                    //&& position.getFieldAttribute() == Field.ARGUMENT
-                    //&& position.getEndIndex() == 0) {
-                //position.setBeginIndex(begin);
-                //position.setEndIndex(end);
-            //}
-        //}
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.737 -0400", hash_original_method = "DE679CD49EEE558B2CA2B7C9C9DE5810", hash_generated_method = "29B771FD742389F8993909A481D8A249")
-    private void handleFormat(Format format, Object arg, int begin, List<FieldContainer> fields) {
-        addTaint(fields.getTaint());
-        addTaint(begin);
-        addTaint(arg.getTaint());
-        addTaint(format.getTaint());
-        if(fields == null)        
-        {
-            return;
-        } //End block
-        AttributedCharacterIterator iterator = format.formatToCharacterIterator(arg);
-        while
-(iterator.getIndex() != iterator.getEndIndex())        
-        {
-            int start = iterator.getRunStart();
-            int end = iterator.getRunLimit();
-            Iterator<?> it = iterator.getAttributes().keySet().iterator();
-            while
-(it.hasNext())            
-            {
-                AttributedCharacterIterator.Attribute attribute = (AttributedCharacterIterator.Attribute) it.next();
-                Object value = iterator.getAttribute(attribute);
-                fields.add(new FieldContainer(begin + start, begin + end, attribute, value));
-            } //End block
-            iterator.setIndex(end);
-        } //End block
-        // ---------- Original Method ----------
-        //if (fields == null) {
-            //return;
-        //}
-        //AttributedCharacterIterator iterator = format.formatToCharacterIterator(arg);
-        //while (iterator.getIndex() != iterator.getEndIndex()) {
-            //int start = iterator.getRunStart();
-            //int end = iterator.getRunLimit();
-            //Iterator<?> it = iterator.getAttributes().keySet().iterator();
-            //while (it.hasNext()) {
-                //AttributedCharacterIterator.Attribute attribute =
-                        //(AttributedCharacterIterator.Attribute) it.next();
-                //Object value = iterator.getAttribute(attribute);
-                //fields.add(new FieldContainer(begin + start, begin + end, attribute, value));
-            //}
-            //iterator.setIndex(end);
-        //}
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.737 -0400", hash_original_method = "86D79FEBC73D19AFFF1CE089D06D0A2E", hash_generated_method = "E510EA554F68462BC47B9B4EE4325ACF")
-    @Override
-    public final StringBuffer format(Object object, StringBuffer buffer,
-            FieldPosition field) {
-        addTaint(field.getTaint());
-        addTaint(buffer.getTaint());
-        addTaint(object.getTaint());
-StringBuffer var14D385A8E7CB8E4D28D01B9DC3DB475C_1080020786 =         format((Object[]) object, buffer, field);
-        var14D385A8E7CB8E4D28D01B9DC3DB475C_1080020786.addTaint(taint);
-        return var14D385A8E7CB8E4D28D01B9DC3DB475C_1080020786;
-        // ---------- Original Method ----------
-        //return format((Object[]) object, buffer, field);
-    }
-
-    
+    /**
+     * Formats the supplied objects using the specified message format pattern.
+     *
+     * @param format the format string (see {@link java.util.Formatter#format})
+     * @param args
+     *            the list of arguments passed to the formatter. If there are
+     *            more arguments than required by {@code format},
+     *            additional arguments are ignored.
+     * @return the formatted result.
+     * @throws IllegalArgumentException
+     *            if the pattern cannot be parsed.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.825 -0500", hash_original_method = "028A0A610E31197643C52E1AA7424EFD", hash_generated_method = "1A432DCE8A1D9FDC87F89E0825D717EC")
     public static String format(String format, Object... args) {
         if (args != null) {
             for (int i = 0; i < args.length; i++) {
@@ -456,801 +46,891 @@ StringBuffer var14D385A8E7CB8E4D28D01B9DC3DB475C_1080020786 =         format((Ob
         }
         return new MessageFormat(format).format(args);
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.803 -0500", hash_original_field = "85F1E124B97D00A90D3E87E898848851", hash_generated_field = "DDAF9963C56DC8D3CC72243FA6D60F41")
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.738 -0400", hash_original_method = "7EB79515AF02A4588C0D82DEFC2945FA", hash_generated_method = "99D4098188E75014A5BE398879BF26C1")
-    public Format[] getFormats() {
-Format[] var3B05A551DC66BAA4CECF637E01483D61_1786466055 =         formats.clone();
-        var3B05A551DC66BAA4CECF637E01483D61_1786466055.addTaint(taint);
-        return var3B05A551DC66BAA4CECF637E01483D61_1786466055;
-        // ---------- Original Method ----------
-        //return formats.clone();
+
+    private static final long serialVersionUID = 6479157306784022952L;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.844 -0500", hash_original_field = "C160E54DEE9507CFBF7E5C8074ABADA4", hash_generated_field = "F3984ED43D46FE3C3FFDBA430A29142D")
+
+
+    private static final ObjectStreamField[] serialPersistentFields = {
+        new ObjectStreamField("argumentNumbers", int[].class),
+        new ObjectStreamField("formats", Format[].class),
+        new ObjectStreamField("locale", Locale.class),
+        new ObjectStreamField("maxOffset", int.class),
+        new ObjectStreamField("offsets", int[].class),
+        new ObjectStreamField("pattern", String.class),
+    };
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.804 -0500", hash_original_field = "A25411C3C357716626A9185E220A5EAA", hash_generated_field = "3C599F5969C756C105E47474D7BCB663")
+
+
+    private Locale locale;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.805 -0500", hash_original_field = "7EC9F198E5C9DB627479076AA671E13C", hash_generated_field = "44BD3039B18FC631AF3469BBAABEF8A6")
+
+
+    transient private String[] strings;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.806 -0500", hash_original_field = "464C7E4860BE692CF9902BB4BA8A342C", hash_generated_field = "0CC8F912A4CE816F33718A9E926CC5E3")
+
+
+    private int[] argumentNumbers;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.807 -0500", hash_original_field = "487548212267DE48557B9CCE14AB5577", hash_generated_field = "4840DFEFCC78103675C456B661F97552")
+
+
+    private Format[] formats;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.807 -0500", hash_original_field = "B77A978D018717DE754B211259BC526D", hash_generated_field = "8E5941FA03E4EAD10C76316C2B10EB9E")
+
+
+    private int maxOffset;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.808 -0500", hash_original_field = "A02BC4DC53512ED88E55A9A6CFBF2C5B", hash_generated_field = "D0A8CB4E81B16C7EDB6C78624EE723CF")
+
+
+    transient private int maxArgumentIndex;
+
+    /**
+     * Constructs a new {@code MessageFormat} using the specified pattern and {@code locale}.
+     *
+     * @param template
+     *            the pattern.
+     * @param locale
+     *            the locale.
+     * @throws IllegalArgumentException
+     *            if the pattern cannot be parsed.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.809 -0500", hash_original_method = "DF99A7D88BE30484426F461C5ED2222D", hash_generated_method = "5C72D6FD9844B81FF2D91678F28F001B")
+    public MessageFormat(String template, Locale locale) {
+        this.locale = locale;
+        applyPattern(template);
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.738 -0400", hash_original_method = "6305A24530517BEB5A0FB94704F4E840", hash_generated_method = "9FCCF62FBB908BD837E3DB3841008277")
+    /**
+     * Constructs a new {@code MessageFormat} using the specified pattern and
+     * the user's default locale.
+     * See "<a href="../util/Locale.html#default_locale">Be wary of the default locale</a>".
+     *
+     * @param template
+     *            the pattern.
+     * @throws IllegalArgumentException
+     *            if the pattern cannot be parsed.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.810 -0500", hash_original_method = "BAA918AD1B6BB7758E580E5A4864BDBA", hash_generated_method = "4E40857C718EFBC3ADDFDFD00CC1B9D9")
+    public MessageFormat(String template) {
+        this(template, Locale.getDefault());
+    }
+
+    /**
+     * Changes this {@code MessageFormat} to use the specified pattern.
+     *
+     * @param template
+     *            the new pattern.
+     * @throws IllegalArgumentException
+     *            if the pattern cannot be parsed.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.811 -0500", hash_original_method = "20F481C3B4FB7D239D889AD1AE3136D7", hash_generated_method = "BD92F01FABE93B475B84627EAB102842")
+    public void applyPattern(String template) {
+        int length = template.length();
+        StringBuffer buffer = new StringBuffer();
+        ParsePosition position = new ParsePosition(0);
+        ArrayList<String> localStrings = new ArrayList<String>();
+        int argCount = 0;
+        int[] args = new int[10];
+        int maxArg = -1;
+        ArrayList<Format> localFormats = new ArrayList<Format>();
+        while (position.getIndex() < length) {
+            if (Format.upTo(template, position, buffer, '{')) {
+                int arg = 0;
+                int offset = position.getIndex();
+                if (offset >= length) {
+                    throw new IllegalArgumentException("Invalid argument number");
+                }
+                // Get argument number
+                char ch;
+                while ((ch = template.charAt(offset++)) != '}' && ch != ',') {
+                    if (ch < '0' && ch > '9') {
+                        throw new IllegalArgumentException("Invalid argument number");
+                    }
+
+                    arg = arg * 10 + (ch - '0');
+
+                    if (arg < 0 || offset >= length) {
+                        throw new IllegalArgumentException("Invalid argument number");
+                    }
+                }
+                offset--;
+                position.setIndex(offset);
+                localFormats.add(parseVariable(template, position));
+                if (argCount >= args.length) {
+                    int[] newArgs = new int[args.length * 2];
+                    System.arraycopy(args, 0, newArgs, 0, args.length);
+                    args = newArgs;
+                }
+                args[argCount++] = arg;
+                if (arg > maxArg) {
+                    maxArg = arg;
+                }
+            }
+            localStrings.add(buffer.toString());
+            buffer.setLength(0);
+        }
+        this.strings = localStrings.toArray(new String[localStrings.size()]);
+        argumentNumbers = args;
+        this.formats = localFormats.toArray(new Format[argCount]);
+        maxOffset = argCount - 1;
+        maxArgumentIndex = maxArg;
+    }
+
+    /**
+     * Returns a new instance of {@code MessageFormat} with the same pattern and
+     * formats as this {@code MessageFormat}.
+     *
+     * @return a shallow copy of this {@code MessageFormat}.
+     * @see java.lang.Cloneable
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.812 -0500", hash_original_method = "B53A9961D24B646CE17498A2E8FD8A6F", hash_generated_method = "BE9C143266B7735695443EF07FD6A8D8")
+    @Override
+public Object clone() {
+        MessageFormat clone = (MessageFormat) super.clone();
+        Format[] array = new Format[formats.length];
+        for (int i = formats.length; --i >= 0;) {
+            if (formats[i] != null) {
+                array[i] = (Format) formats[i].clone();
+            }
+        }
+        clone.formats = array;
+        return clone;
+    }
+
+    /**
+     * Compares the specified object to this {@code MessageFormat} and indicates
+     * if they are equal. In order to be equal, {@code object} must be an
+     * instance of {@code MessageFormat} and have the same pattern.
+     *
+     * @param object
+     *            the object to compare with this object.
+     * @return {@code true} if the specified object is equal to this
+     *         {@code MessageFormat}; {@code false} otherwise.
+     * @see #hashCode
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.813 -0500", hash_original_method = "2E70B47400B10858E99F75E16A06D539", hash_generated_method = "72FD03440AA98A2EBBBBE6A2972227C4")
+    @Override
+public boolean equals(Object object) {
+        if (this == object) {
+            return true;
+        }
+        if (!(object instanceof MessageFormat)) {
+            return false;
+        }
+        MessageFormat format = (MessageFormat) object;
+        if (maxOffset != format.maxOffset) {
+            return false;
+        }
+        // Must use a loop since the lengths may be different due
+        // to serialization cross-loading
+        for (int i = 0; i <= maxOffset; i++) {
+            if (argumentNumbers[i] != format.argumentNumbers[i]) {
+                return false;
+            }
+        }
+        return locale.equals(format.locale)
+                && Arrays.equals(strings, format.strings)
+                && Arrays.equals(formats, format.formats);
+    }
+
+    /**
+     * Formats the specified object using the rules of this message format and
+     * returns an {@code AttributedCharacterIterator} with the formatted message and
+     * attributes. The {@code AttributedCharacterIterator} returned also includes the
+     * attributes from the formats of this message format.
+     *
+     * @param object
+     *            the object to format.
+     * @return an {@code AttributedCharacterIterator} with the formatted message and
+     *         attributes.
+     * @throws IllegalArgumentException
+     *            if the arguments in the object array cannot be formatted
+     *            by this message format.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.814 -0500", hash_original_method = "2F36A5BCF5EDBC18FDC7136A6298BFC9", hash_generated_method = "CDFF5F0C66FBFAF4CD44AA0CF0CCCC67")
+    @Override
+public AttributedCharacterIterator formatToCharacterIterator(Object object) {
+        if (object == null) {
+            throw new NullPointerException();
+        }
+
+        StringBuffer buffer = new StringBuffer();
+        ArrayList<FieldContainer> fields = new ArrayList<FieldContainer>();
+
+        // format the message, and find fields
+        formatImpl((Object[]) object, buffer, new FieldPosition(0), fields);
+
+        // create an AttributedString with the formatted buffer
+        AttributedString as = new AttributedString(buffer.toString());
+
+        // add MessageFormat field attributes and values to the AttributedString
+        for (FieldContainer fc : fields) {
+            as.addAttribute(fc.attribute, fc.value, fc.start, fc.end);
+        }
+
+        // return the CharacterIterator from AttributedString
+        return as.getIterator();
+    }
+
+    /**
+     * Converts the specified objects into a string which it appends to the
+     * specified string buffer using the pattern of this message format.
+     * <p>
+     * If the {@code field} member of the specified {@code FieldPosition} is
+     * {@code MessageFormat.Field.ARGUMENT}, then the begin and end index of
+     * this field position is set to the location of the first occurrence of a
+     * message format argument. Otherwise, the {@code FieldPosition} is ignored.
+     *
+     * @param objects
+     *            the array of objects to format.
+     * @param buffer
+     *            the target string buffer to append the formatted message to.
+     * @param field
+     *            on input: an optional alignment field; on output: the offsets
+     *            of the alignment field in the formatted text.
+     * @return the string buffer.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.815 -0500", hash_original_method = "A9B03AC07F14FDC18F9B212B66591284", hash_generated_method = "C954A19EC965760787C56DC99EEC2864")
+    public final StringBuffer format(Object[] objects, StringBuffer buffer,
+            FieldPosition field) {
+        return formatImpl(objects, buffer, field, null);
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.816 -0500", hash_original_method = "CB09F1AB0972A7396E3B2DB81FB1793E", hash_generated_method = "7897DDC60620BE71C92184A47C283A6E")
+    private StringBuffer formatImpl(Object[] objects, StringBuffer buffer,
+            FieldPosition position, List<FieldContainer> fields) {
+        FieldPosition passedField = new FieldPosition(0);
+        for (int i = 0; i <= maxOffset; i++) {
+            buffer.append(strings[i]);
+            int begin = buffer.length();
+            Object arg;
+            if (objects != null && argumentNumbers[i] < objects.length) {
+                arg = objects[argumentNumbers[i]];
+            } else {
+                buffer.append('{');
+                buffer.append(argumentNumbers[i]);
+                buffer.append('}');
+                handleArgumentField(begin, buffer.length(), argumentNumbers[i], position, fields);
+                continue;
+            }
+            Format format = formats[i];
+            if (format == null || arg == null) {
+                if (arg instanceof Number) {
+                    format = NumberFormat.getInstance();
+                } else if (arg instanceof Date) {
+                    format = DateFormat.getInstance();
+                } else {
+                    buffer.append(arg);
+                    handleArgumentField(begin, buffer.length(), argumentNumbers[i], position, fields);
+                    continue;
+                }
+            }
+            if (format instanceof ChoiceFormat) {
+                String result = format.format(arg);
+                MessageFormat mf = new MessageFormat(result);
+                mf.setLocale(locale);
+                mf.format(objects, buffer, passedField);
+                handleArgumentField(begin, buffer.length(), argumentNumbers[i], position, fields);
+                handleFormat(format, arg, begin, fields);
+            } else {
+                format.format(arg, buffer, passedField);
+                handleArgumentField(begin, buffer.length(), argumentNumbers[i], position, fields);
+                handleFormat(format, arg, begin, fields);
+            }
+        }
+        if (maxOffset + 1 < strings.length) {
+            buffer.append(strings[maxOffset + 1]);
+        }
+        return buffer;
+    }
+
+    /**
+     * Adds a new FieldContainer with MessageFormat.Field.ARGUMENT field,
+     * argIndex, begin and end index to the fields list, or sets the
+     * position's begin and end index if it has MessageFormat.Field.ARGUMENT as
+     * its field attribute.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.817 -0500", hash_original_method = "C43D87ABB966C2154325453E86772F9C", hash_generated_method = "92BB0A2A02A372271A864A9F99200768")
+    private void handleArgumentField(int begin, int end, int argIndex,
+            FieldPosition position, List<FieldContainer> fields) {
+        if (fields != null) {
+            fields.add(new FieldContainer(begin, end, Field.ARGUMENT, Integer.valueOf(argIndex)));
+        } else {
+            if (position != null
+                    && position.getFieldAttribute() == Field.ARGUMENT
+                    && position.getEndIndex() == 0) {
+                position.setBeginIndex(begin);
+                position.setEndIndex(end);
+            }
+        }
+    }
+
+    /**
+     * If fields list is not null, find and add the fields of this format to
+     * the fields list by iterating through its AttributedCharacterIterator
+     *
+     * @param format
+     *            the format to find fields for
+     * @param arg
+     *            object to format
+     * @param begin
+     *            the index where the string this format has formatted begins
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.823 -0500", hash_original_method = "DE679CD49EEE558B2CA2B7C9C9DE5810", hash_generated_method = "F2295C7377E10FA5920FF277B65858FC")
+    private void handleFormat(Format format, Object arg, int begin, List<FieldContainer> fields) {
+        if (fields == null) {
+            return;
+        }
+        AttributedCharacterIterator iterator = format.formatToCharacterIterator(arg);
+        while (iterator.getIndex() != iterator.getEndIndex()) {
+            int start = iterator.getRunStart();
+            int end = iterator.getRunLimit();
+            Iterator<?> it = iterator.getAttributes().keySet().iterator();
+            while (it.hasNext()) {
+                AttributedCharacterIterator.Attribute attribute =
+                        (AttributedCharacterIterator.Attribute) it.next();
+                Object value = iterator.getAttribute(attribute);
+                fields.add(new FieldContainer(begin + start, begin + end, attribute, value));
+            }
+            iterator.setIndex(end);
+        }
+    }
+
+    /**
+     * Converts the specified objects into a string which it appends to the
+     * specified string buffer using the pattern of this message format.
+     * <p>
+     * If the {@code field} member of the specified {@code FieldPosition} is
+     * {@code MessageFormat.Field.ARGUMENT}, then the begin and end index of
+     * this field position is set to the location of the first occurrence of a
+     * message format argument. Otherwise, the {@code FieldPosition} is ignored.
+     * <p>
+     * Calling this method is equivalent to calling
+     * <blockquote>
+     *
+     * <pre>
+     * format((Object[])object, buffer, field)
+     * </pre>
+     *
+     * </blockquote>
+     *
+     * @param object
+     *            the object to format, must be an array of {@code Object}.
+     * @param buffer
+     *            the target string buffer to append the formatted message to.
+     * @param field
+     *            on input: an optional alignment field; on output: the offsets
+     *            of the alignment field in the formatted text.
+     * @return the string buffer.
+     * @throws ClassCastException
+     *             if {@code object} is not an array of {@code Object}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.824 -0500", hash_original_method = "86D79FEBC73D19AFFF1CE089D06D0A2E", hash_generated_method = "5177FD74747F715BDF1462BB61283E0F")
+    @Override
+public final StringBuffer format(Object object, StringBuffer buffer,
+            FieldPosition field) {
+        return format((Object[]) object, buffer, field);
+    }
+
+    /**
+     * Returns the {@code Format} instances used by this message format.
+     *
+     * @return an array of {@code Format} instances.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.826 -0500", hash_original_method = "7EB79515AF02A4588C0D82DEFC2945FA", hash_generated_method = "7EFEE9D91FE14B594D203FA10FB1BCC1")
+    public Format[] getFormats() {
+        return formats.clone();
+    }
+
+    /**
+     * Returns the formats used for each argument index. If an argument is
+     * placed more than once in the pattern string, then this returns the format
+     * of the last one.
+     *
+     * @return an array of formats, ordered by argument index.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.827 -0500", hash_original_method = "6305A24530517BEB5A0FB94704F4E840", hash_generated_method = "7256C96823D4554EB8A201ECE2978ADC")
     public Format[] getFormatsByArgumentIndex() {
         Format[] answer = new Format[maxArgumentIndex + 1];
-for(int i = 0;i < maxOffset + 1;i++)
-        {
+        for (int i = 0; i < maxOffset + 1; i++) {
             answer[argumentNumbers[i]] = formats[i];
-        } //End block
-Format[] var5F54B2A44CB8DC27B659B464640CF0FE_1782070784 =         answer;
-        var5F54B2A44CB8DC27B659B464640CF0FE_1782070784.addTaint(taint);
-        return var5F54B2A44CB8DC27B659B464640CF0FE_1782070784;
-        // ---------- Original Method ----------
-        //Format[] answer = new Format[maxArgumentIndex + 1];
-        //for (int i = 0; i < maxOffset + 1; i++) {
-            //answer[argumentNumbers[i]] = formats[i];
-        //}
-        //return answer;
+        }
+        return answer;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.739 -0400", hash_original_method = "A090F158D8C76258E8307612B54D8E7F", hash_generated_method = "42FA83817605FB7F4F4BC33CB9445F7D")
+    /**
+     * Sets the format used for the argument at index {@code argIndex} to
+     * {@code format}.
+     *
+     * @param argIndex
+     *            the index of the format to set.
+     * @param format
+     *            the format that will be set at index {@code argIndex}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.827 -0500", hash_original_method = "A090F158D8C76258E8307612B54D8E7F", hash_generated_method = "BFFBE18BA64F9C4CA5AC6433624C3006")
     public void setFormatByArgumentIndex(int argIndex, Format format) {
-        addTaint(argIndex);
-for(int i = 0;i < maxOffset + 1;i++)
-        {
-            if(argumentNumbers[i] == argIndex)            
-            {
+        for (int i = 0; i < maxOffset + 1; i++) {
+            if (argumentNumbers[i] == argIndex) {
                 formats[i] = format;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //for (int i = 0; i < maxOffset + 1; i++) {
-            //if (argumentNumbers[i] == argIndex) {
-                //formats[i] = format;
-            //}
-        //}
+            }
+        }
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.739 -0400", hash_original_method = "A9324DA1CAF88845D05BF77827620ABB", hash_generated_method = "31644C92854D98FE8E5E120AACD78F64")
+    /**
+     * Sets the formats used for each argument. The {@code formats} array
+     * elements should be in the order of the argument indices.
+     *
+     * @param formats
+     *            the formats in an array.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.828 -0500", hash_original_method = "A9324DA1CAF88845D05BF77827620ABB", hash_generated_method = "FA410B89D84CEDA94F1AB0CCDADC3C2F")
     public void setFormatsByArgumentIndex(Format[] formats) {
-for(int j = 0;j < formats.length;j++)
-        {
-for(int i = 0;i < maxOffset + 1;i++)
-            {
-                if(argumentNumbers[i] == j)                
-                {
+        for (int j = 0; j < formats.length; j++) {
+            for (int i = 0; i < maxOffset + 1; i++) {
+                if (argumentNumbers[i] == j) {
                     this.formats[i] = formats[j];
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //for (int j = 0; j < formats.length; j++) {
-            //for (int i = 0; i < maxOffset + 1; i++) {
-                //if (argumentNumbers[i] == j) {
-                    //this.formats[i] = formats[j];
-                //}
-            //}
-        //}
+                }
+            }
+        }
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.740 -0400", hash_original_method = "4C873AD5A0D4D89DBA836C1C6CEC9B8D", hash_generated_method = "1F74E507254282A4E061E7B482B19CDE")
+    /**
+     * Returns the locale used when creating formats.
+     *
+     * @return the locale used to create formats.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.829 -0500", hash_original_method = "4C873AD5A0D4D89DBA836C1C6CEC9B8D", hash_generated_method = "424B5570E26DE121275BC9C58AD53C4D")
     public Locale getLocale() {
-Locale varB14E682FEAD06D8198D8ADBCBD62DEDB_1952390541 =         locale;
-        varB14E682FEAD06D8198D8ADBCBD62DEDB_1952390541.addTaint(taint);
-        return varB14E682FEAD06D8198D8ADBCBD62DEDB_1952390541;
-        // ---------- Original Method ----------
-        //return locale;
+        return locale;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.741 -0400", hash_original_method = "C3648461AA348ABE73C14E89998C9B55", hash_generated_method = "B5FDB0E1EB50253DA9ECFF84E5C755AC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.830 -0500", hash_original_method = "C3648461AA348ABE73C14E89998C9B55", hash_generated_method = "42842E44531261FB5273C00ABBA16DEA")
     @Override
-    public int hashCode() {
+public int hashCode() {
         int hashCode = 0;
-for(int i = 0;i <= maxOffset;i++)
-        {
+        for (int i = 0; i <= maxOffset; i++) {
             hashCode += argumentNumbers[i] + strings[i].hashCode();
-            if(formats[i] != null)            
-            {
+            if (formats[i] != null) {
                 hashCode += formats[i].hashCode();
-            } //End block
-        } //End block
-        if(maxOffset + 1 < strings.length)        
-        {
+            }
+        }
+        if (maxOffset + 1 < strings.length) {
             hashCode += strings[maxOffset + 1].hashCode();
-        } //End block
-        if(locale != null)        
-        {
-            int var055CA475F8D8C62EB35811630A45799B_672558269 = (hashCode + locale.hashCode());
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1755113323 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1755113323;
-        } //End block
-        int var550D1CC054A1B23A411DDDA46FD64811_867892697 = (hashCode);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_288186839 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_288186839;
-        // ---------- Original Method ----------
-        //int hashCode = 0;
-        //for (int i = 0; i <= maxOffset; i++) {
-            //hashCode += argumentNumbers[i] + strings[i].hashCode();
-            //if (formats[i] != null) {
-                //hashCode += formats[i].hashCode();
-            //}
-        //}
-        //if (maxOffset + 1 < strings.length) {
-            //hashCode += strings[maxOffset + 1].hashCode();
-        //}
-        //if (locale != null) {
-            //return hashCode + locale.hashCode();
-        //}
-        //return hashCode;
+        }
+        if (locale != null) {
+            return hashCode + locale.hashCode();
+        }
+        return hashCode;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.741 -0400", hash_original_method = "EC21A725ACD65B59B44C587C03791CB0", hash_generated_method = "2C7E2A75E8571D5349CE7960B9C3CD73")
+    /**
+     * Parses the message arguments from the specified string using the rules of
+     * this message format.
+     *
+     * @param string
+     *            the string to parse.
+     * @return the array of {@code Object} arguments resulting from the parse.
+     * @throws ParseException
+     *            if an error occurs during parsing.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.831 -0500", hash_original_method = "EC21A725ACD65B59B44C587C03791CB0", hash_generated_method = "1E6275FC145A23B549543A655868D2B3")
     public Object[] parse(String string) throws ParseException {
-        addTaint(string.getTaint());
         ParsePosition position = new ParsePosition(0);
         Object[] result = parse(string, position);
-        if(position.getIndex() == 0)        
-        {
-            ParseException varE37A2D5B4EBF9E36CFB19B811F94CB20_1786668851 = new ParseException("Parse failure", position.getErrorIndex());
-            varE37A2D5B4EBF9E36CFB19B811F94CB20_1786668851.addTaint(taint);
-            throw varE37A2D5B4EBF9E36CFB19B811F94CB20_1786668851;
-        } //End block
-Object[] varDC838461EE2FA0CA4C9BBB70A15456B0_1648685247 =         result;
-        varDC838461EE2FA0CA4C9BBB70A15456B0_1648685247.addTaint(taint);
-        return varDC838461EE2FA0CA4C9BBB70A15456B0_1648685247;
-        // ---------- Original Method ----------
-        //ParsePosition position = new ParsePosition(0);
-        //Object[] result = parse(string, position);
-        //if (position.getIndex() == 0) {
-            //throw new ParseException("Parse failure", position.getErrorIndex());
-        //}
-        //return result;
+        if (position.getIndex() == 0) {
+            throw new ParseException("Parse failure", position.getErrorIndex());
+        }
+        return result;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.743 -0400", hash_original_method = "D7228DDFC0E7ACF8FDCF2D792E0983E6", hash_generated_method = "47A58CE8E63C3BDB3240F11F87C11CDD")
+    /**
+     * Parses the message argument from the specified string starting at the
+     * index specified by {@code position}. If the string is successfully
+     * parsed then the index of the {@code ParsePosition} is updated to the
+     * index following the parsed text. On error, the index is unchanged and the
+     * error index of {@code ParsePosition} is set to the index where the error
+     * occurred.
+     *
+     * @param string
+     *            the string to parse.
+     * @param position
+     *            input/output parameter, specifies the start index in
+     *            {@code string} from where to start parsing. If parsing is
+     *            successful, it is updated with the index following the parsed
+     *            text; on error, the index is unchanged and the error index is
+     *            set to the index where the error occurred.
+     * @return the array of objects resulting from the parse, or {@code null} if
+     *         there is an error.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.832 -0500", hash_original_method = "D7228DDFC0E7ACF8FDCF2D792E0983E6", hash_generated_method = "A2B9D3FBF818C01E8D5B2503E2B4BBFD")
     public Object[] parse(String string, ParsePosition position) {
-        addTaint(position.getTaint());
-        addTaint(string.getTaint());
-        if(string == null)        
-        {
-Object[] var3CDAC8E1894CA4B3B37667162540A097_743211993 =             EmptyArray.OBJECT;
-            var3CDAC8E1894CA4B3B37667162540A097_743211993.addTaint(taint);
-            return var3CDAC8E1894CA4B3B37667162540A097_743211993;
-        } //End block
+        if (string == null) {
+            return EmptyArray.OBJECT;
+        }
         ParsePosition internalPos = new ParsePosition(0);
         int offset = position.getIndex();
         Object[] result = new Object[maxArgumentIndex + 1];
-for(int i = 0;i <= maxOffset;i++)
-        {
+        for (int i = 0; i <= maxOffset; i++) {
             String sub = strings[i];
-            if(!string.startsWith(sub, offset))            
-            {
+            if (!string.startsWith(sub, offset)) {
                 position.setErrorIndex(offset);
-Object[] var540C13E9E156B687226421B24F2DF178_255384275 =                 null;
-                var540C13E9E156B687226421B24F2DF178_255384275.addTaint(taint);
-                return var540C13E9E156B687226421B24F2DF178_255384275;
-            } //End block
+                return null;
+            }
             offset += sub.length();
             Object parse;
             Format format = formats[i];
-            if(format == null)            
-            {
-                if(i + 1 < strings.length)                
-                {
+            if (format == null) {
+                if (i + 1 < strings.length) {
                     int next = string.indexOf(strings[i + 1], offset);
-                    if(next == -1)                    
-                    {
+                    if (next == -1) {
                         position.setErrorIndex(offset);
-Object[] var540C13E9E156B687226421B24F2DF178_1065830070 =                         null;
-                        var540C13E9E156B687226421B24F2DF178_1065830070.addTaint(taint);
-                        return var540C13E9E156B687226421B24F2DF178_1065830070;
-                    } //End block
+                        return null;
+                    }
                     parse = string.substring(offset, next);
                     offset = next;
-                } //End block
-                else
-                {
+                } else {
                     parse = string.substring(offset);
                     offset = string.length();
-                } //End block
-            } //End block
-            else
-            {
+                }
+            } else {
                 internalPos.setIndex(offset);
                 parse = format.parseObject(string, internalPos);
-                if(internalPos.getErrorIndex() != -1)                
-                {
+                if (internalPos.getErrorIndex() != -1) {
                     position.setErrorIndex(offset);
-Object[] var540C13E9E156B687226421B24F2DF178_1296170980 =                     null;
-                    var540C13E9E156B687226421B24F2DF178_1296170980.addTaint(taint);
-                    return var540C13E9E156B687226421B24F2DF178_1296170980;
-                } //End block
+                    return null;
+                }
                 offset = internalPos.getIndex();
-            } //End block
+            }
             result[argumentNumbers[i]] = parse;
-        } //End block
-        if(maxOffset + 1 < strings.length)        
-        {
+        }
+        if (maxOffset + 1 < strings.length) {
             String sub = strings[maxOffset + 1];
-            if(!string.startsWith(sub, offset))            
-            {
+            if (!string.startsWith(sub, offset)) {
                 position.setErrorIndex(offset);
-Object[] var540C13E9E156B687226421B24F2DF178_664352047 =                 null;
-                var540C13E9E156B687226421B24F2DF178_664352047.addTaint(taint);
-                return var540C13E9E156B687226421B24F2DF178_664352047;
-            } //End block
+                return null;
+            }
             offset += sub.length();
-        } //End block
+        }
         position.setIndex(offset);
-Object[] varDC838461EE2FA0CA4C9BBB70A15456B0_728118585 =         result;
-        varDC838461EE2FA0CA4C9BBB70A15456B0_728118585.addTaint(taint);
-        return varDC838461EE2FA0CA4C9BBB70A15456B0_728118585;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        return result;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.744 -0400", hash_original_method = "C9AA8969DE1792F4979FB5B1F65B9849", hash_generated_method = "A90A30B6210A1B00F4F00A9696A71441")
+    /**
+     * Parses the message argument from the specified string starting at the
+     * index specified by {@code position}. If the string is successfully
+     * parsed then the index of the {@code ParsePosition} is updated to the
+     * index following the parsed text. On error, the index is unchanged and the
+     * error index of {@code ParsePosition} is set to the index where the error
+     * occurred.
+     *
+     * @param string
+     *            the string to parse.
+     * @param position
+     *            input/output parameter, specifies the start index in
+     *            {@code string} from where to start parsing. If parsing is
+     *            successful, it is updated with the index following the parsed
+     *            text; on error, the index is unchanged and the error index is
+     *            set to the index where the error occurred.
+     * @return the array of objects resulting from the parse, or {@code null} if
+     *         there is an error.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.833 -0500", hash_original_method = "C9AA8969DE1792F4979FB5B1F65B9849", hash_generated_method = "63216C42E69B7A23B760025E3A8B8D9B")
     @Override
-    public Object parseObject(String string, ParsePosition position) {
-        addTaint(position.getTaint());
-        addTaint(string.getTaint());
-Object var0D84F404ADD0A115F77E7D80294D92BC_392451055 =         parse(string, position);
-        var0D84F404ADD0A115F77E7D80294D92BC_392451055.addTaint(taint);
-        return var0D84F404ADD0A115F77E7D80294D92BC_392451055;
-        // ---------- Original Method ----------
-        //return parse(string, position);
+public Object parseObject(String string, ParsePosition position) {
+        return parse(string, position);
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.745 -0400", hash_original_method = "F0EBB1D410262325E53A6EB4F51F6A54", hash_generated_method = "E34ABB7DAE7046A0F28A91EEC1F36C0A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.834 -0500", hash_original_method = "F0EBB1D410262325E53A6EB4F51F6A54", hash_generated_method = "2DE98B380D6132E3EB063D2F69DC49F7")
     private int match(String string, ParsePosition position, boolean last,
             String[] tokens) {
-        addTaint(tokens[0].getTaint());
-        addTaint(last);
-        addTaint(position.getTaint());
-        addTaint(string.getTaint());
-        int length = string.length();
-        int offset = position.getIndex();
-        int token = -1;
-        while
-(offset < length && Character.isWhitespace(string.charAt(offset)))        
-        {
+        int length = string.length(), offset = position.getIndex(), token = -1;
+        while (offset < length && Character.isWhitespace(string.charAt(offset))) {
             offset++;
-        } //End block
-for(int i = tokens.length;--i >= 0;)
-        {
-            if(string.regionMatches(true, offset, tokens[i], 0, tokens[i]
-                    .length()))            
-            {
+        }
+        for (int i = tokens.length; --i >= 0;) {
+            if (string.regionMatches(true, offset, tokens[i], 0, tokens[i]
+                    .length())) {
                 token = i;
                 break;
-            } //End block
-        } //End block
-        if(token == -1)        
-        {
-            int var6BB61E3B7BCE0931DA574D19D1D82C88_1844151264 = (-1);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_691691894 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_691691894;
-        } //End block
+            }
+        }
+        if (token == -1) {
+            return -1;
+        }
         offset += tokens[token].length();
-        while
-(offset < length && Character.isWhitespace(string.charAt(offset)))        
-        {
+        while (offset < length && Character.isWhitespace(string.charAt(offset))) {
             offset++;
-        } //End block
+        }
         char ch;
-        if(offset < length
-                && ((ch = string.charAt(offset)) == '}' || (!last && ch == ',')))        
-        {
+        if (offset < length
+                && ((ch = string.charAt(offset)) == '}' || (!last && ch == ','))) {
             position.setIndex(offset + 1);
-            int var94A08DA1FECBB6E8B46990538C7B50B2_462681114 = (token);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1078478658 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1078478658;
-        } //End block
-        int var6BB61E3B7BCE0931DA574D19D1D82C88_1009287091 = (-1);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1859710344 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1859710344;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            return token;
+        }
+        return -1;
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.747 -0400", hash_original_method = "C959BA9FF5D67B6099707C942E630082", hash_generated_method = "EE0CB78E0606180E8A755487EF13D5AA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.835 -0500", hash_original_method = "C959BA9FF5D67B6099707C942E630082", hash_generated_method = "AB480404738039F21DDCBF37C62E644B")
     private Format parseVariable(String string, ParsePosition position) {
-        addTaint(position.getTaint());
-        addTaint(string.getTaint());
-        int length = string.length();
-        int offset = position.getIndex();
+        int length = string.length(), offset = position.getIndex();
         char ch;
-        if(offset >= length || ((ch = string.charAt(offset++)) != '}' && ch != ','))        
-        {
-            IllegalArgumentException varA5E7BD1FCB3868740C832FF64FE9F5AB_1943396192 = new IllegalArgumentException("Missing element format");
-            varA5E7BD1FCB3868740C832FF64FE9F5AB_1943396192.addTaint(taint);
-            throw varA5E7BD1FCB3868740C832FF64FE9F5AB_1943396192;
-        } //End block
+        if (offset >= length || ((ch = string.charAt(offset++)) != '}' && ch != ',')) {
+            throw new IllegalArgumentException("Missing element format");
+        }
         position.setIndex(offset);
-        if(ch == '}')        
-        {
-Format var540C13E9E156B687226421B24F2DF178_1007645908 =             null;
-            var540C13E9E156B687226421B24F2DF178_1007645908.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_1007645908;
-        } //End block
+        if (ch == '}') {
+            return null;
+        }
         int type = match(string, position, false,
                 new String[] { "time", "date", "number", "choice" });
-        if(type == -1)        
-        {
-            IllegalArgumentException var09E469ADB27BDF219F1BEEA3440222E0_1744886388 = new IllegalArgumentException("Unknown element format");
-            var09E469ADB27BDF219F1BEEA3440222E0_1744886388.addTaint(taint);
-            throw var09E469ADB27BDF219F1BEEA3440222E0_1744886388;
-        } //End block
+        if (type == -1) {
+            throw new IllegalArgumentException("Unknown element format");
+        }
         StringBuffer buffer = new StringBuffer();
         ch = string.charAt(position.getIndex() - 1);
-switch(type){
-        case 0:
-        case 1:
-        if(ch == '}')        
-        {
-Format var0C709448D0AB54751C0B08ACADFF8047_656036225 =             type == 1 ? DateFormat.getDateInstance(
+        switch (type) {
+            case 0: // time
+            case 1: // date
+                if (ch == '}') {
+                    return type == 1 ? DateFormat.getDateInstance(
                             DateFormat.DEFAULT, locale) : DateFormat
                             .getTimeInstance(DateFormat.DEFAULT, locale);
-            var0C709448D0AB54751C0B08ACADFF8047_656036225.addTaint(taint);
-            return var0C709448D0AB54751C0B08ACADFF8047_656036225;
-        } //End block
-        int dateStyle = match(string, position, true,
+                }
+                int dateStyle = match(string, position, true,
                         new String[] { "full", "long", "medium", "short" });
-        if(dateStyle == -1)        
-        {
-            Format.upToWithQuotes(string, position, buffer, '}', '{');
-Format varB2162946718138C88520981897980D1E_1037798939 =             new SimpleDateFormat(buffer.toString(), locale);
-            varB2162946718138C88520981897980D1E_1037798939.addTaint(taint);
-            return varB2162946718138C88520981897980D1E_1037798939;
-        } //End block
-switch(dateStyle){
-        case 0:
-        dateStyle = DateFormat.FULL;
-        break;
-        case 1:
-        dateStyle = DateFormat.LONG;
-        break;
-        case 2:
-        dateStyle = DateFormat.MEDIUM;
-        break;
-        case 3:
-        dateStyle = DateFormat.SHORT;
-        break;
-}Format var90CF270C7C4B8EB08FC9094DA689D26F_760964311 =         type == 1 ? DateFormat
+                if (dateStyle == -1) {
+                    Format.upToWithQuotes(string, position, buffer, '}', '{');
+                    return new SimpleDateFormat(buffer.toString(), locale);
+                }
+                switch (dateStyle) {
+                    case 0:
+                        dateStyle = DateFormat.FULL;
+                        break;
+                    case 1:
+                        dateStyle = DateFormat.LONG;
+                        break;
+                    case 2:
+                        dateStyle = DateFormat.MEDIUM;
+                        break;
+                    case 3:
+                        dateStyle = DateFormat.SHORT;
+                        break;
+                }
+                return type == 1 ? DateFormat
                         .getDateInstance(dateStyle, locale) : DateFormat
                         .getTimeInstance(dateStyle, locale);
-        var90CF270C7C4B8EB08FC9094DA689D26F_760964311.addTaint(taint);
-        return var90CF270C7C4B8EB08FC9094DA689D26F_760964311;
-        case 2:
-        if(ch == '}')        
-        {
-Format varC876ECCE2FE467BF4F669D83F42C1CC4_609295509 =             NumberFormat.getInstance(locale);
-            varC876ECCE2FE467BF4F669D83F42C1CC4_609295509.addTaint(taint);
-            return varC876ECCE2FE467BF4F669D83F42C1CC4_609295509;
-        } //End block
-        int numberStyle = match(string, position, true,
+            case 2: // number
+                if (ch == '}') {
+                    return NumberFormat.getInstance(locale);
+                }
+                int numberStyle = match(string, position, true,
                         new String[] { "currency", "percent", "integer" });
-        if(numberStyle == -1)        
-        {
-            Format.upToWithQuotes(string, position, buffer, '}', '{');
-Format var1E51E74597221772FC02440C803ECB0B_1937184767 =             new DecimalFormat(buffer.toString(),
+                if (numberStyle == -1) {
+                    Format.upToWithQuotes(string, position, buffer, '}', '{');
+                    return new DecimalFormat(buffer.toString(),
                             new DecimalFormatSymbols(locale));
-            var1E51E74597221772FC02440C803ECB0B_1937184767.addTaint(taint);
-            return var1E51E74597221772FC02440C803ECB0B_1937184767;
-        } //End block
-switch(numberStyle){
-        case 0:
-Format var6FF1AD4D31FD3125CD7111F9FBEC46FF_1221670056 =         NumberFormat.getCurrencyInstance(locale);
-        var6FF1AD4D31FD3125CD7111F9FBEC46FF_1221670056.addTaint(taint);
-        return var6FF1AD4D31FD3125CD7111F9FBEC46FF_1221670056;
-        case 1:
-Format varEA6C825C3E32D8F255175D38022E4D9C_1587405586 =         NumberFormat.getPercentInstance(locale);
-        varEA6C825C3E32D8F255175D38022E4D9C_1587405586.addTaint(taint);
-        return varEA6C825C3E32D8F255175D38022E4D9C_1587405586;
-}Format var4F8D91476BF3374B1EB5714A42AC5671_644267138 =         NumberFormat.getIntegerInstance(locale);
-        var4F8D91476BF3374B1EB5714A42AC5671_644267138.addTaint(taint);
-        return var4F8D91476BF3374B1EB5714A42AC5671_644267138;
-}        try 
-        {
+                }
+                switch (numberStyle) {
+                    case 0: // currency
+                        return NumberFormat.getCurrencyInstance(locale);
+                    case 1: // percent
+                        return NumberFormat.getPercentInstance(locale);
+                }
+                return NumberFormat.getIntegerInstance(locale);
+        }
+        // choice
+        try {
             Format.upToWithQuotes(string, position, buffer, '}', '{');
-        } //End block
-        catch (IllegalArgumentException e)
-        {
-        } //End block
-Format varF3AAE7A0C8A2D02E92D0F8827A6B82D9_1951322684 =         new ChoiceFormat(buffer.toString());
-        varF3AAE7A0C8A2D02E92D0F8827A6B82D9_1951322684.addTaint(taint);
-        return varF3AAE7A0C8A2D02E92D0F8827A6B82D9_1951322684;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } catch (IllegalArgumentException e) {
+            // ignored
+        }
+        return new ChoiceFormat(buffer.toString());
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.748 -0400", hash_original_method = "40ED9258145F8A9FA53AE23CC8BC5498", hash_generated_method = "F1F0700A79FE15C5103D16FF48D78E94")
+    /**
+     * Sets the specified format used by this message format.
+     *
+     * @param offset
+     *            the index of the format to change.
+     * @param format
+     *            the {@code Format} that replaces the old format.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.836 -0500", hash_original_method = "40ED9258145F8A9FA53AE23CC8BC5498", hash_generated_method = "D72E7BA9462DF346425955850537E9C6")
     public void setFormat(int offset, Format format) {
         formats[offset] = format;
-        // ---------- Original Method ----------
-        //formats[offset] = format;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.749 -0400", hash_original_method = "F9E7D69C4CD5EB0783A6761389D5E01C", hash_generated_method = "01BCEC32624587A39DE068B6ECE04A91")
+    /**
+     * Sets the formats used by this message format.
+     *
+     * @param formats
+     *            an array of {@code Format}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.837 -0500", hash_original_method = "F9E7D69C4CD5EB0783A6761389D5E01C", hash_generated_method = "FD117B80C69E8A4F820A18E6F08B47EA")
     public void setFormats(Format[] formats) {
         int min = this.formats.length;
-        if(formats.length < min)        
-        {
+        if (formats.length < min) {
             min = formats.length;
-        } //End block
-for(int i = 0;i < min;i++)
-        {
+        }
+        for (int i = 0; i < min; i++) {
             this.formats[i] = formats[i];
-        } //End block
-        // ---------- Original Method ----------
-        //int min = this.formats.length;
-        //if (formats.length < min) {
-            //min = formats.length;
-        //}
-        //for (int i = 0; i < min; i++) {
-            //this.formats[i] = formats[i];
-        //}
+        }
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.750 -0400", hash_original_method = "2EE5DAE8254A09BA3EE14891BDB8B487", hash_generated_method = "03E095937499E6AB0108A5656CC38A4C")
+    /**
+     * Sets the locale to use when creating {@code Format} instances. Changing
+     * the locale may change the behavior of {@code applyPattern},
+     * {@code toPattern}, {@code format} and {@code formatToCharacterIterator}.
+     *
+     * @param locale
+     *            the new locale.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.838 -0500", hash_original_method = "2EE5DAE8254A09BA3EE14891BDB8B487", hash_generated_method = "11A2FAE11FC1A5D597923FE104A96F38")
     public void setLocale(Locale locale) {
         this.locale = locale;
-for(int i = 0;i <= maxOffset;i++)
-        {
+        for (int i = 0; i <= maxOffset; i++) {
             Format format = formats[i];
-            if(format instanceof DecimalFormat)            
-            {
-                try 
-                {
+            // java specification undefined for null argument, change into
+            // a more tolerant implementation
+            if (format instanceof DecimalFormat) {
+                try {
                     formats[i] = new DecimalFormat(((DecimalFormat) format)
                             .toPattern(), new DecimalFormatSymbols(locale));
-                } //End block
-                catch (NullPointerException npe)
-                {
+                } catch (NullPointerException npe){
                     formats[i] = null;
-                } //End block
-            } //End block
-            else
-            if(format instanceof SimpleDateFormat)            
-            {
-                try 
-                {
+                }
+            } else if (format instanceof SimpleDateFormat) {
+                try {
                     formats[i] = new SimpleDateFormat(((SimpleDateFormat) format)
                             .toPattern(), locale);
-                } //End block
-                catch (NullPointerException npe)
-                {
+                } catch (NullPointerException npe) {
                     formats[i] = null;
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                }
+            }
+        }
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.750 -0400", hash_original_method = "BE681D9EC5F601D03AA4D2DED505610A", hash_generated_method = "E2A8BC1C32917E6036A41F9D4CB8525B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.839 -0500", hash_original_method = "BE681D9EC5F601D03AA4D2DED505610A", hash_generated_method = "2C86DA88F5AEBCB45B6AD2C00721CD90")
     private String decodeDecimalFormat(StringBuffer buffer, Format format) {
-        addTaint(format.getTaint());
-        addTaint(buffer.getTaint());
         buffer.append(",number");
-        if(format.equals(NumberFormat.getNumberInstance(locale)))        
-        {
-        } //End block
-        else
-        if(format.equals(NumberFormat.getIntegerInstance(locale)))        
-        {
+        if (format.equals(NumberFormat.getNumberInstance(locale))) {
+            // Empty block
+        } else if (format.equals(NumberFormat.getIntegerInstance(locale))) {
             buffer.append(",integer");
-        } //End block
-        else
-        if(format.equals(NumberFormat.getCurrencyInstance(locale)))        
-        {
+        } else if (format.equals(NumberFormat.getCurrencyInstance(locale))) {
             buffer.append(",currency");
-        } //End block
-        else
-        if(format.equals(NumberFormat.getPercentInstance(locale)))        
-        {
+        } else if (format.equals(NumberFormat.getPercentInstance(locale))) {
             buffer.append(",percent");
-        } //End block
-        else
-        {
+        } else {
             buffer.append(',');
-String var51B8C705848C8D4C7673437789869999_1720997177 =             ((DecimalFormat) format).toPattern();
-            var51B8C705848C8D4C7673437789869999_1720997177.addTaint(taint);
-            return var51B8C705848C8D4C7673437789869999_1720997177;
-        } //End block
-String var540C13E9E156B687226421B24F2DF178_1380089862 =         null;
-        var540C13E9E156B687226421B24F2DF178_1380089862.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_1380089862;
-        // ---------- Original Method ----------
-        //buffer.append(",number");
-        //if (format.equals(NumberFormat.getNumberInstance(locale))) {
-        //} else if (format.equals(NumberFormat.getIntegerInstance(locale))) {
-            //buffer.append(",integer");
-        //} else if (format.equals(NumberFormat.getCurrencyInstance(locale))) {
-            //buffer.append(",currency");
-        //} else if (format.equals(NumberFormat.getPercentInstance(locale))) {
-            //buffer.append(",percent");
-        //} else {
-            //buffer.append(',');
-            //return ((DecimalFormat) format).toPattern();
-        //}
-        //return null;
+            return ((DecimalFormat) format).toPattern();
+        }
+        return null;
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.750 -0400", hash_original_method = "4C7466ADB5C592A5046867709A03D0C4", hash_generated_method = "05F9B45DC3EF7D6D43C96208EB34535F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.840 -0500", hash_original_method = "4C7466ADB5C592A5046867709A03D0C4", hash_generated_method = "BBDE23B5D43A7B9999261B473823AB28")
     private String decodeSimpleDateFormat(StringBuffer buffer, Format format) {
-        addTaint(format.getTaint());
-        addTaint(buffer.getTaint());
-        if(format.equals(DateFormat.getTimeInstance(DateFormat.DEFAULT, locale)))        
-        {
+        if (format.equals(DateFormat.getTimeInstance(DateFormat.DEFAULT, locale))) {
             buffer.append(",time");
-        } //End block
-        else
-        if(format.equals(DateFormat.getDateInstance(DateFormat.DEFAULT,
-                locale)))        
-        {
+        } else if (format.equals(DateFormat.getDateInstance(DateFormat.DEFAULT,
+                locale))) {
             buffer.append(",date");
-        } //End block
-        else
-        if(format.equals(DateFormat.getTimeInstance(DateFormat.SHORT,
-                locale)))        
-        {
+        } else if (format.equals(DateFormat.getTimeInstance(DateFormat.SHORT,
+                locale))) {
             buffer.append(",time,short");
-        } //End block
-        else
-        if(format.equals(DateFormat.getDateInstance(DateFormat.SHORT,
-                locale)))        
-        {
+        } else if (format.equals(DateFormat.getDateInstance(DateFormat.SHORT,
+                locale))) {
             buffer.append(",date,short");
-        } //End block
-        else
-        if(format.equals(DateFormat.getTimeInstance(DateFormat.LONG,
-                locale)))        
-        {
+        } else if (format.equals(DateFormat.getTimeInstance(DateFormat.LONG,
+                locale))) {
             buffer.append(",time,long");
-        } //End block
-        else
-        if(format.equals(DateFormat.getDateInstance(DateFormat.LONG,
-                locale)))        
-        {
+        } else if (format.equals(DateFormat.getDateInstance(DateFormat.LONG,
+                locale))) {
             buffer.append(",date,long");
-        } //End block
-        else
-        if(format.equals(DateFormat.getTimeInstance(DateFormat.FULL,
-                locale)))        
-        {
+        } else if (format.equals(DateFormat.getTimeInstance(DateFormat.FULL,
+                locale))) {
             buffer.append(",time,full");
-        } //End block
-        else
-        if(format.equals(DateFormat.getDateInstance(DateFormat.FULL,
-                locale)))        
-        {
+        } else if (format.equals(DateFormat.getDateInstance(DateFormat.FULL,
+                locale))) {
             buffer.append(",date,full");
-        } //End block
-        else
-        {
+        } else {
             buffer.append(",date,");
-String varE4D840FE52EC3DDE1C4972E77CFD5992_2129405644 =             ((SimpleDateFormat) format).toPattern();
-            varE4D840FE52EC3DDE1C4972E77CFD5992_2129405644.addTaint(taint);
-            return varE4D840FE52EC3DDE1C4972E77CFD5992_2129405644;
-        } //End block
-String var540C13E9E156B687226421B24F2DF178_1772442474 =         null;
-        var540C13E9E156B687226421B24F2DF178_1772442474.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_1772442474;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            return ((SimpleDateFormat) format).toPattern();
+        }
+        return null;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.751 -0400", hash_original_method = "0A7E6003101ED48A94DA0D4F2E79183E", hash_generated_method = "414CE20609C84DC019F7BD689935614B")
+    /**
+     * Returns the pattern of this message format.
+     *
+     * @return the pattern.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.842 -0500", hash_original_method = "0A7E6003101ED48A94DA0D4F2E79183E", hash_generated_method = "5A29D53EB005C97126A1E9F2282E7B30")
     public String toPattern() {
         StringBuffer buffer = new StringBuffer();
-for(int i = 0;i <= maxOffset;i++)
-        {
+        for (int i = 0; i <= maxOffset; i++) {
             appendQuoted(buffer, strings[i]);
             buffer.append('{');
             buffer.append(argumentNumbers[i]);
             Format format = formats[i];
             String pattern = null;
-            if(format instanceof ChoiceFormat)            
-            {
+            if (format instanceof ChoiceFormat) {
                 buffer.append(",choice,");
                 pattern = ((ChoiceFormat) format).toPattern();
-            } //End block
-            else
-            if(format instanceof DecimalFormat)            
-            {
+            } else if (format instanceof DecimalFormat) {
                 pattern = decodeDecimalFormat(buffer, format);
-            } //End block
-            else
-            if(format instanceof SimpleDateFormat)            
-            {
+            } else if (format instanceof SimpleDateFormat) {
                 pattern = decodeSimpleDateFormat(buffer, format);
-            } //End block
-            else
-            if(format != null)            
-            {
-                IllegalArgumentException var384628D36ACAADA29BD94F3FBB049AED_1609245054 = new IllegalArgumentException("Unknown format");
-                var384628D36ACAADA29BD94F3FBB049AED_1609245054.addTaint(taint);
-                throw var384628D36ACAADA29BD94F3FBB049AED_1609245054;
-            } //End block
-            if(pattern != null)            
-            {
+            } else if (format != null) {
+                throw new IllegalArgumentException("Unknown format");
+            }
+            if (pattern != null) {
                 boolean quote = false;
-                int index = 0;
-                int length = pattern.length();
-                int count = 0;
-                while
-(index < length)                
-                {
+                int index = 0, length = pattern.length(), count = 0;
+                while (index < length) {
                     char ch = pattern.charAt(index++);
-                    if(ch == '\'')                    
-                    {
+                    if (ch == '\'') {
                         quote = !quote;
-                    } //End block
-                    if(!quote)                    
-                    {
-                        if(ch == '{')                        
-                        {
+                    }
+                    if (!quote) {
+                        if (ch == '{') {
                             count++;
-                        } //End block
-                        if(ch == '}')                        
-                        {
-                            if(count > 0)                            
-                            {
+                        }
+                        if (ch == '}') {
+                            if (count > 0) {
                                 count--;
-                            } //End block
-                            else
-                            {
+                            } else {
                                 buffer.append("'}");
                                 ch = '\'';
-                            } //End block
-                        } //End block
-                    } //End block
+                            }
+                        }
+                    }
                     buffer.append(ch);
-                } //End block
-            } //End block
+                }
+            }
             buffer.append('}');
-        } //End block
-        if(maxOffset + 1 < strings.length)        
-        {
+        }
+        if (maxOffset + 1 < strings.length) {
             appendQuoted(buffer, strings[maxOffset + 1]);
-        } //End block
-String varD03843288D33B9E1D3062E25339ECF6D_1105567738 =         buffer.toString();
-        varD03843288D33B9E1D3062E25339ECF6D_1105567738.addTaint(taint);
-        return varD03843288D33B9E1D3062E25339ECF6D_1105567738;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        }
+        return buffer.toString();
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.751 -0400", hash_original_method = "6D428A023D401981380713AD4CDA7F82", hash_generated_method = "8B6BA6E09C3D489FCB91453B3F79F9D0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.843 -0500", hash_original_method = "6D428A023D401981380713AD4CDA7F82", hash_generated_method = "2C1000AF8EA055B09AE9790989767646")
     private void appendQuoted(StringBuffer buffer, String string) {
-        addTaint(string.getTaint());
-        addTaint(buffer.getTaint());
         int length = string.length();
-for(int i = 0;i < length;i++)
-        {
+        for (int i = 0; i < length; i++) {
             char ch = string.charAt(i);
-            if(ch == '{' || ch == '}')            
-            {
+            if (ch == '{' || ch == '}') {
                 buffer.append('\'');
                 buffer.append(ch);
                 buffer.append('\'');
-            } //End block
-            else
-            {
+            } else {
                 buffer.append(ch);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //int length = string.length();
-        //for (int i = 0; i < length; i++) {
-            //char ch = string.charAt(i);
-            //if (ch == '{' || ch == '}') {
-                //buffer.append('\'');
-                //buffer.append(ch);
-                //buffer.append('\'');
-            //} else {
-                //buffer.append(ch);
-            //}
-        //}
-    }
-
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.752 -0400", hash_original_method = "9DFEE475D15759FEAAC0AFBD81E7E5BF", hash_generated_method = "CBB6943F5B04099A235DE6515F4971D6")
-    private void writeObject(ObjectOutputStream stream) throws IOException {
-        addTaint(stream.getTaint());
-        ObjectOutputStream.PutField fields = stream.putFields();
-        fields.put("argumentNumbers", argumentNumbers);
-        Format[] compatibleFormats = formats;
-        fields.put("formats", compatibleFormats);
-        fields.put("locale", locale);
-        fields.put("maxOffset", maxOffset);
-        int offset = 0;
-        int offsetsLength = maxOffset + 1;
-        int[] offsets = new int[offsetsLength];
-        StringBuilder pattern = new StringBuilder();
-for(int i = 0;i <= maxOffset;i++)
-        {
-            offset += strings[i].length();
-            offsets[i] = offset;
-            pattern.append(strings[i]);
-        } //End block
-        if(maxOffset + 1 < strings.length)        
-        {
-            pattern.append(strings[maxOffset + 1]);
-        } //End block
-        fields.put("offsets", offsets);
-        fields.put("pattern", pattern.toString());
-        stream.writeFields();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
-
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.753 -0400", hash_original_method = "A9ED7844547D5D70718F3EA12242A430", hash_generated_method = "95C3259BE192611991F9A2CC87BE8043")
-    private void readObject(ObjectInputStream stream) throws IOException,
-            ClassNotFoundException {
-        addTaint(stream.getTaint());
-        ObjectInputStream.GetField fields = stream.readFields();
-        argumentNumbers = (int[]) fields.get("argumentNumbers", null);
-        formats = (Format[]) fields.get("formats", null);
-        locale = (Locale) fields.get("locale", null);
-        maxOffset = fields.get("maxOffset", 0);
-        int[] offsets = (int[]) fields.get("offsets", null);
-        String pattern = (String) fields.get("pattern", null);
-        int length;
-        if(maxOffset < 0)        
-        {
-            length = pattern.length() > 0 ? 1 : 0;
-        } //End block
-        else
-        {
-            length = maxOffset
-                    + (offsets[maxOffset] == pattern.length() ? 1 : 2);
-        } //End block
-        strings = new String[length];
-        int last = 0;
-for(int i = 0;i <= maxOffset;i++)
-        {
-            strings[i] = pattern.substring(last, offsets[i]);
-            last = offsets[i];
-        } //End block
-        if(maxOffset + 1 < strings.length)        
-        {
-            strings[strings.length - 1] = pattern.substring(last, pattern
-                    .length());
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            }
+        }
     }
 
     
@@ -1261,26 +941,22 @@ for(int i = 0;i <= maxOffset;i++)
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.753 -0400", hash_original_field = "7F021A1415B86F2D013B2618FB31AE53", hash_generated_field = "302E5A3147803830441A79AED31F4022")
 
         int end;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.753 -0400", hash_original_field = "D2EB444E35C0A71F0A85DF8194ACB5B6", hash_generated_field = "3C510FC4DA58A78E7F390C1B8DF1DA17")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.819 -0500", hash_original_field = "3C510FC4DA58A78E7F390C1B8DF1DA17", hash_generated_field = "3C510FC4DA58A78E7F390C1B8DF1DA17")
+
 
         AttributedCharacterIterator.Attribute attribute;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.753 -0400", hash_original_field = "2063C1608D6E0BAF80249C42E2BE5804", hash_generated_field = "01495BEB834F5098BB0B06183674C819")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.820 -0500", hash_original_field = "01495BEB834F5098BB0B06183674C819", hash_generated_field = "01495BEB834F5098BB0B06183674C819")
+
 
         Object value;
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.753 -0400", hash_original_method = "79F81C9DE3A6ED731ECF4F86681A281A", hash_generated_method = "2168FA24EBD30878F8A9FAB65C5466CD")
-        public  FieldContainer(int start, int end,
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.821 -0500", hash_original_method = "79F81C9DE3A6ED731ECF4F86681A281A", hash_generated_method = "155E4C8EC62888044A6C19A3E266ED36")
+        public FieldContainer(int start, int end,
                 AttributedCharacterIterator.Attribute attribute, Object value) {
             this.start = start;
             this.end = end;
             this.attribute = attribute;
             this.value = value;
-            // ---------- Original Method ----------
-            //this.start = start;
-            //this.end = end;
-            //this.attribute = attribute;
-            //this.value = value;
         }
 
         
@@ -1289,38 +965,79 @@ for(int i = 0;i <= maxOffset;i++)
 
     
     public static class Field extends Format.Field {
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.753 -0400", hash_original_method = "5600516370D16E6925F34153CC1B60B8", hash_generated_method = "465767ECB3AF93CD4C2D7AEDA23F18B3")
-        protected  Field(String fieldName) {
-            super(fieldName);
-            addTaint(fieldName.getTaint());
-            // ---------- Original Method ----------
-        }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.847 -0500", hash_original_field = "5C42A4FC0D53FB69002D928FD16AB64B", hash_generated_field = "82B93A1D640327089FF038CC1C876D1A")
 
-        
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.753 -0400", hash_original_field = "65742A0DA2D101A482A0847D5411F3C4", hash_generated_field = "82B93A1D640327089FF038CC1C876D1A")
 
         private static final long serialVersionUID = 7899943957617360810L;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.753 -0400", hash_original_field = "D94CE10B685B435CA363911C15F03B9C", hash_generated_field = "BDDCF15FC3001123F8D4DF824E83B022")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.848 -0500", hash_original_field = "9F48ECB84499A13E88DB0AEA48EA998A", hash_generated_field = "BDDCF15FC3001123F8D4DF824E83B022")
 
         public static final Field ARGUMENT = new Field("message argument field");
+
+        /**
+         * Constructs a new instance of {@code MessageFormat.Field} with the
+         * given field name.
+         *
+         * @param fieldName
+         *            the field name.
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.849 -0500", hash_original_method = "5600516370D16E6925F34153CC1B60B8", hash_generated_method = "8E9E2E9A1129AAE1C0A40E201C67690D")
+        protected Field(String fieldName) {
+            super(fieldName);
+        }
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.845 -0500", hash_original_method = "9DFEE475D15759FEAAC0AFBD81E7E5BF", hash_generated_method = "9D0446B89AD916C03E682E9C7948B6D9")
+    private void writeObject(ObjectOutputStream stream) throws IOException {
+        ObjectOutputStream.PutField fields = stream.putFields();
+        fields.put("argumentNumbers", argumentNumbers);
+        Format[] compatibleFormats = formats;
+        fields.put("formats", compatibleFormats);
+        fields.put("locale", locale);
+        fields.put("maxOffset", maxOffset);
+        int offset = 0;
+        int offsetsLength = maxOffset + 1;
+        int[] offsets = new int[offsetsLength];
+        StringBuilder pattern = new StringBuilder();
+        for (int i = 0; i <= maxOffset; i++) {
+            offset += strings[i].length();
+            offsets[i] = offset;
+            pattern.append(strings[i]);
+        }
+        if (maxOffset + 1 < strings.length) {
+            pattern.append(strings[maxOffset + 1]);
+        }
+        fields.put("offsets", offsets);
+        fields.put("pattern", pattern.toString());
+        stream.writeFields();
+    }
 
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.754 -0400", hash_original_field = "CF53E2BEFB2CA37DB3AE5D58546ECE7A", hash_generated_field = "DDAF9963C56DC8D3CC72243FA6D60F41")
-
-    private static final long serialVersionUID = 6479157306784022952L;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.754 -0400", hash_original_field = "48F92F66CE5FE41C558A38F296DF8082", hash_generated_field = "F3984ED43D46FE3C3FFDBA430A29142D")
-
-    private static final ObjectStreamField[] serialPersistentFields = {
-        new ObjectStreamField("argumentNumbers", int[].class),
-        new ObjectStreamField("formats", Format[].class),
-        new ObjectStreamField("locale", Locale.class),
-        new ObjectStreamField("maxOffset", int.class),
-        new ObjectStreamField("offsets", int[].class),
-        new ObjectStreamField("pattern", String.class),
-    };
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:18.846 -0500", hash_original_method = "A9ED7844547D5D70718F3EA12242A430", hash_generated_method = "B81107E9FD03D52517BB8A93C941EE90")
+    private void readObject(ObjectInputStream stream) throws IOException,
+            ClassNotFoundException {
+        ObjectInputStream.GetField fields = stream.readFields();
+        argumentNumbers = (int[]) fields.get("argumentNumbers", null);
+        formats = (Format[]) fields.get("formats", null);
+        locale = (Locale) fields.get("locale", null);
+        maxOffset = fields.get("maxOffset", 0);
+        int[] offsets = (int[]) fields.get("offsets", null);
+        String pattern = (String) fields.get("pattern", null);
+        int length;
+        if (maxOffset < 0) {
+            length = pattern.length() > 0 ? 1 : 0;
+        } else {
+            length = maxOffset
+                    + (offsets[maxOffset] == pattern.length() ? 1 : 2);
+        }
+        strings = new String[length];
+        int last = 0;
+        for (int i = 0; i <= maxOffset; i++) {
+            strings[i] = pattern.substring(last, offsets[i]);
+            last = offsets[i];
+        }
+        if (maxOffset + 1 < strings.length) {
+            strings[strings.length - 1] = pattern.substring(last, pattern
+                    .length());
+        }
+    }
 }
 

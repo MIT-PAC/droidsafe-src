@@ -1,6 +1,8 @@
 package android.widget;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import static android.util.Log.d;
 
@@ -35,1207 +37,256 @@ import com.android.internal.R;
 
 
 public class RelativeLayout extends ViewGroup {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.495 -0400", hash_original_field = "824472FBDC9B8A7A1D14D0F19A7337AC", hash_generated_field = "C96F9BEAD28A0E01882C41D253AFA846")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.691 -0500", hash_original_field = "169005C941FC7F7E100BA41616FA682F", hash_generated_field = "57E1FE47E9272F2D3908282BD0F70602")
+
+    private static final String LOG_TAG = "RelativeLayout";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.691 -0500", hash_original_field = "643C3FD67311BF2F34753A1AC581691D", hash_generated_field = "2C82381CD2A9F5B5C76AFEACEC85DDDB")
+
+
+    private static final boolean DEBUG_GRAPH = false;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.692 -0500", hash_original_field = "0AD2CCC562A090EBE1618CB32DADD040", hash_generated_field = "B2899320334F57908731E112E94F1CDE")
+
+
+    public static final int TRUE = -1;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.693 -0500", hash_original_field = "5FD95E0A5EA54AA7A833FA46549BDCB7", hash_generated_field = "096208EA2AF3CC7E7141BFD38797A0EC")
+
+    public static final int LEFT_OF                  = 0;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.694 -0500", hash_original_field = "70D7446EF976C1E2214EAD09DBD67F05", hash_generated_field = "3F8E96F44674079400E1FE6BBEE7D7E2")
+
+    public static final int RIGHT_OF                 = 1;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.695 -0500", hash_original_field = "84CF839E20CD86CD96C471D2669E403A", hash_generated_field = "B25BAD9E800E104591FBDEB68402C4D7")
+
+    public static final int ABOVE                    = 2;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.696 -0500", hash_original_field = "EC5460FB4A5246D8976354CBD4A64B86", hash_generated_field = "C33F54ACAC005E4F7B577DF5ECD8B8CB")
+
+    public static final int BELOW                    = 3;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.696 -0500", hash_original_field = "781E287741295FBD42C6EA4356B5C4FD", hash_generated_field = "0367429D50A8B97E51A0EA79D61E8341")
+
+    public static final int ALIGN_BASELINE           = 4;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.697 -0500", hash_original_field = "012DF7AE2F13258B144250F39DEE5118", hash_generated_field = "B08FA699BB0A7B8EE01E81D8523B06B8")
+
+    public static final int ALIGN_LEFT               = 5;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.698 -0500", hash_original_field = "E2DDEBDFD7D76E12FB000BB852400450", hash_generated_field = "503D8ED8ADEFA09061443AB73E1105EB")
+
+    public static final int ALIGN_TOP                = 6;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.699 -0500", hash_original_field = "3CBA6C1AFDDEFDA7DC1023BE2890817C", hash_generated_field = "066A8ADE746ECE1F1116FA381AA46454")
+
+    public static final int ALIGN_RIGHT              = 7;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.700 -0500", hash_original_field = "E0403605E3D7DE5B8756D125AD768FF5", hash_generated_field = "0F184873DB5DF31E2DCF140BE0923551")
+
+    public static final int ALIGN_BOTTOM             = 8;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.701 -0500", hash_original_field = "CD7EECB38C06DE487410D22DF0F4E47B", hash_generated_field = "07136E510188D5E09CB6F7AA93561D06")
+
+    public static final int ALIGN_PARENT_LEFT        = 9;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.702 -0500", hash_original_field = "F79CD697E1AB4C4A48C2DDFF6C795ADE", hash_generated_field = "0949503221E389CCE8FB0E1467A44822")
+
+    public static final int ALIGN_PARENT_TOP         = 10;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.703 -0500", hash_original_field = "074A37847CBE944E051D882F599B6B08", hash_generated_field = "3EFDDDF20B46B24CC5FB727D20BD8554")
+
+    public static final int ALIGN_PARENT_RIGHT       = 11;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.704 -0500", hash_original_field = "704429770A7E1027B7D983855FF58FBD", hash_generated_field = "82EE6CB558A3BB3B4C93A79C69887380")
+
+    public static final int ALIGN_PARENT_BOTTOM      = 12;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.705 -0500", hash_original_field = "DFB5EA196B6AA64B562A5EC5B723FCAE", hash_generated_field = "D045131D6C0978E01C7E1F593FBD0FC4")
+
+    public static final int CENTER_IN_PARENT         = 13;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.705 -0500", hash_original_field = "6B712EE8C5A8CFB10C1A279E4FE9042F", hash_generated_field = "E7BDEFDBB1D8A752BEF0DA17BCC1DA06")
+
+    public static final int CENTER_HORIZONTAL        = 14;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.706 -0500", hash_original_field = "9D3A8C13ED7036B3B3942CBFA5AB11CB", hash_generated_field = "12CCDDB6CE0278C45C3ED35DE6FCDC8B")
+
+    public static final int CENTER_VERTICAL          = 15;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.707 -0500", hash_original_field = "0488C977BE3DA7023B9960129C34263B", hash_generated_field = "4C06C39E645DF1A64F0D7148873000D8")
+
+
+    private static final int VERB_COUNT              = 16;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.708 -0500", hash_original_field = "EC6C21865E2D148FB90AA744AB6F80AC", hash_generated_field = "C96F9BEAD28A0E01882C41D253AFA846")
+
 
     private View mBaselineView = null;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.495 -0400", hash_original_field = "94742DBD28E405550AB4998957C8C366", hash_generated_field = "6D2C0346DC0DDE3AEF5B4E55639F7BAB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.709 -0500", hash_original_field = "45C693CBCAE113606E119E6BE2888D3A", hash_generated_field = "6D2C0346DC0DDE3AEF5B4E55639F7BAB")
 
     private boolean mHasBaselineAlignedChild;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.495 -0400", hash_original_field = "5E1F1BFDB472CA8E7B81A98A346283DF", hash_generated_field = "0B3CD20786EC1640C99D342CF17DE4BB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.709 -0500", hash_original_field = "25D2AE967F212D40A7861414150A2389", hash_generated_field = "0B3CD20786EC1640C99D342CF17DE4BB")
+
 
     private int mGravity = Gravity.LEFT | Gravity.TOP;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.495 -0400", hash_original_field = "073BD2EBDB44B18FFCD2BC32B3DA1E9F", hash_generated_field = "24DC767A3ADC7BC83961E5A62989B517")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.711 -0500", hash_original_field = "5F531E2EED9BE73D1FE09735D9D75C84", hash_generated_field = "24DC767A3ADC7BC83961E5A62989B517")
 
     private final Rect mContentBounds = new Rect();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.495 -0400", hash_original_field = "19D950E97D0D17ED8E5107FA45A5A3B0", hash_generated_field = "3B16C2D681BFC370000C0D459ADC9C55")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.711 -0500", hash_original_field = "AEBFB1CC0E9149E5984F190C14B99AED", hash_generated_field = "3B16C2D681BFC370000C0D459ADC9C55")
 
     private final Rect mSelfBounds = new Rect();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.495 -0400", hash_original_field = "FB105EBFDC13B6E222D9A92A87D9D55D", hash_generated_field = "40144C1646BB169CEE55D007B33717AC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.712 -0500", hash_original_field = "22C842EBC892CF38904B9B9C7743883B", hash_generated_field = "40144C1646BB169CEE55D007B33717AC")
 
     private int mIgnoreGravity;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.495 -0400", hash_original_field = "774E2842298F46AC1B9526CC91732103", hash_generated_field = "681342FA517F01301240A0DCB6966955")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.713 -0500", hash_original_field = "BEBFA666A1757C3B869D6609F51BAB86", hash_generated_field = "681342FA517F01301240A0DCB6966955")
+
 
     private SortedSet<View> mTopToBottomLeftToRightSet = null;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.495 -0400", hash_original_field = "C82377679ED9B96074D2EE30653ACBD8", hash_generated_field = "0C8E33895AC589A2FF55DFCBCE389221")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.713 -0500", hash_original_field = "1E02C6BDDCCCC6F8154EE639FC772BCC", hash_generated_field = "0C8E33895AC589A2FF55DFCBCE389221")
 
+    
     private boolean mDirtyHierarchy;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.495 -0400", hash_original_field = "0C827560E628733CEDD556735281B077", hash_generated_field = "224DF440DDF6B166B3D2E241F0F3F984")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.714 -0500", hash_original_field = "1780A37D6E496F9B10B65159037B852D", hash_generated_field = "224DF440DDF6B166B3D2E241F0F3F984")
 
     private View[] mSortedHorizontalChildren = new View[0];
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.496 -0400", hash_original_field = "17A81D5CE0684E58A6D2CA78E6962AAC", hash_generated_field = "AB00FD5297C1C0ADA708BCFC1E36BC84")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.715 -0500", hash_original_field = "346129388D8AE68DC634717A95061E5C", hash_generated_field = "AB00FD5297C1C0ADA708BCFC1E36BC84")
 
     private View[] mSortedVerticalChildren = new View[0];
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.496 -0400", hash_original_field = "A57E30F91BD1BFAA0A6B76A46793D1F6", hash_generated_field = "A2A346771E3A79053A739D0A482EAA8C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.716 -0500", hash_original_field = "8C488F1B8195116B4C93352D1F93521B", hash_generated_field = "A2A346771E3A79053A739D0A482EAA8C")
 
     private final DependencyGraph mGraph = new DependencyGraph();
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.496 -0400", hash_original_method = "88251BE26FFBF8D7F97872F9366B970C", hash_generated_method = "16DDCC589E6274662D70770ADB01F95C")
-    public  RelativeLayout(Context context) {
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.716 -0500", hash_original_method = "88251BE26FFBF8D7F97872F9366B970C", hash_generated_method = "BA05857430E8CEE496EDF9209AE2C671")
+    public RelativeLayout(Context context) {
         super(context);
-        addTaint(context.getTaint());
-        // ---------- Original Method ----------
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.496 -0400", hash_original_method = "9502583C8FA8687465E0A06E15614A2F", hash_generated_method = "8D8CBE71CC46655CBA1F337C26EE79E6")
-    public  RelativeLayout(Context context, AttributeSet attrs) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.717 -0500", hash_original_method = "9502583C8FA8687465E0A06E15614A2F", hash_generated_method = "47D2CAF223A3954AE429BCD5431860B7")
+    public RelativeLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
-        addTaint(attrs.getTaint());
-        addTaint(context.getTaint());
         initFromAttributes(context, attrs);
-        // ---------- Original Method ----------
-        //initFromAttributes(context, attrs);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.496 -0400", hash_original_method = "4BEC7267CBAB87A927F52EE3092CF249", hash_generated_method = "22AEB27313C5E39553EFDFD1B2CD99EF")
-    public  RelativeLayout(Context context, AttributeSet attrs, int defStyle) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.718 -0500", hash_original_method = "4BEC7267CBAB87A927F52EE3092CF249", hash_generated_method = "A841B418971C03DC56CB5B1F78E892E2")
+    public RelativeLayout(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-        addTaint(defStyle);
-        addTaint(attrs.getTaint());
-        addTaint(context.getTaint());
         initFromAttributes(context, attrs);
-        // ---------- Original Method ----------
-        //initFromAttributes(context, attrs);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.497 -0400", hash_original_method = "2508EFC88C6F20ACAB1B8BFE22290A1F", hash_generated_method = "18773DCC3CD65F2AB9267E9D4FB35E51")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.719 -0500", hash_original_method = "2508EFC88C6F20ACAB1B8BFE22290A1F", hash_generated_method = "035C1D3E7CE7B3023D1F89667DF7364D")
     private void initFromAttributes(Context context, AttributeSet attrs) {
-        addTaint(attrs.getTaint());
-        addTaint(context.getTaint());
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.RelativeLayout);
         mIgnoreGravity = a.getResourceId(R.styleable.RelativeLayout_ignoreGravity, View.NO_ID);
         mGravity = a.getInt(R.styleable.RelativeLayout_gravity, mGravity);
         a.recycle();
-        // ---------- Original Method ----------
-        //TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.RelativeLayout);
-        //mIgnoreGravity = a.getResourceId(R.styleable.RelativeLayout_ignoreGravity, View.NO_ID);
-        //mGravity = a.getInt(R.styleable.RelativeLayout_gravity, mGravity);
-        //a.recycle();
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.497 -0400", hash_original_method = "9DA99B4E01A506E72BA59AF598A3C38D", hash_generated_method = "C8A69B9B2307C49DE981FA6800A316CB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.720 -0500", hash_original_method = "9DA99B4E01A506E72BA59AF598A3C38D", hash_generated_method = "FF1288C9953DCFF93F8070857A51FACB")
     @Override
-    public boolean shouldDelayChildPressedState() {
-        boolean var68934A3E9455FA72420237EB05902327_137831837 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1482990715 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1482990715;
-        // ---------- Original Method ----------
-        //return false;
+public boolean shouldDelayChildPressedState() {
+        return false;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.497 -0400", hash_original_method = "4B00B99E3D4A35B389EB4D3ED9BF824A", hash_generated_method = "2B6D5ACAF56866BE8DAC45848378F798")
+    /**
+     * Defines which View is ignored when the gravity is applied. This setting has no
+     * effect if the gravity is <code>Gravity.LEFT | Gravity.TOP</code>.
+     *
+     * @param viewId The id of the View to be ignored by gravity, or 0 if no View
+     *        should be ignored.
+     *
+     * @see #setGravity(int)
+     *
+     * @attr ref android.R.styleable#RelativeLayout_ignoreGravity
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.721 -0500", hash_original_method = "4B00B99E3D4A35B389EB4D3ED9BF824A", hash_generated_method = "AAE2AFA3237D050A1016F87EDD108E37")
     @android.view.RemotableViewMethod
-    public void setIgnoreGravity(int viewId) {
+public void setIgnoreGravity(int viewId) {
         mIgnoreGravity = viewId;
-        // ---------- Original Method ----------
-        //mIgnoreGravity = viewId;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.498 -0400", hash_original_method = "DC8D5E1211DE0926B9DDA2FADCED75EE", hash_generated_method = "9EC9CC9B5D5ABE7E2CDC34C12B8C039E")
+    /**
+     * Describes how the child views are positioned. Defaults to
+     * <code>Gravity.LEFT | Gravity.TOP</code>.
+     *
+     * <p>Note that since RelativeLayout considers the positioning of each child
+     * relative to one another to be significant, setting gravity will affect
+     * the positioning of all children as a single unit within the parent.
+     * This happens after children have been relatively positioned.</p>
+     *
+     * @param gravity See {@link android.view.Gravity}
+     *
+     * @see #setHorizontalGravity(int)
+     * @see #setVerticalGravity(int)
+     *
+     * @attr ref android.R.styleable#RelativeLayout_gravity
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.721 -0500", hash_original_method = "DC8D5E1211DE0926B9DDA2FADCED75EE", hash_generated_method = "ACC460D6D3A88CDE5F61A25B30D37A34")
     @android.view.RemotableViewMethod
-    public void setGravity(int gravity) {
-        if(mGravity != gravity)        
-        {
-            if((gravity & Gravity.RELATIVE_HORIZONTAL_GRAVITY_MASK) == 0)            
-            {
+public void setGravity(int gravity) {
+        if (mGravity != gravity) {
+            if ((gravity & Gravity.RELATIVE_HORIZONTAL_GRAVITY_MASK) == 0) {
                 gravity |= Gravity.START;
-            } //End block
-            if((gravity & Gravity.VERTICAL_GRAVITY_MASK) == 0)            
-            {
+            }
+
+            if ((gravity & Gravity.VERTICAL_GRAVITY_MASK) == 0) {
                 gravity |= Gravity.TOP;
-            } //End block
+            }
+
             mGravity = gravity;
             requestLayout();
-        } //End block
-        // ---------- Original Method ----------
-        //if (mGravity != gravity) {
-            //if ((gravity & Gravity.RELATIVE_HORIZONTAL_GRAVITY_MASK) == 0) {
-                //gravity |= Gravity.START;
-            //}
-            //if ((gravity & Gravity.VERTICAL_GRAVITY_MASK) == 0) {
-                //gravity |= Gravity.TOP;
-            //}
-            //mGravity = gravity;
-            //requestLayout();
-        //}
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.499 -0400", hash_original_method = "076C59065FCBD07F7CAA4FFA6D12CC3A", hash_generated_method = "A03836F2AB6748AC9B219828C5EEA77B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.722 -0500", hash_original_method = "076C59065FCBD07F7CAA4FFA6D12CC3A", hash_generated_method = "DD9C3C2378492508B428C0D28CCABAA5")
     @android.view.RemotableViewMethod
-    public void setHorizontalGravity(int horizontalGravity) {
-        addTaint(horizontalGravity);
+public void setHorizontalGravity(int horizontalGravity) {
         final int gravity = horizontalGravity & Gravity.RELATIVE_HORIZONTAL_GRAVITY_MASK;
-        if((mGravity & Gravity.RELATIVE_HORIZONTAL_GRAVITY_MASK) != gravity)        
-        {
+        if ((mGravity & Gravity.RELATIVE_HORIZONTAL_GRAVITY_MASK) != gravity) {
             mGravity = (mGravity & ~Gravity.RELATIVE_HORIZONTAL_GRAVITY_MASK) | gravity;
             requestLayout();
-        } //End block
-        // ---------- Original Method ----------
-        //final int gravity = horizontalGravity & Gravity.RELATIVE_HORIZONTAL_GRAVITY_MASK;
-        //if ((mGravity & Gravity.RELATIVE_HORIZONTAL_GRAVITY_MASK) != gravity) {
-            //mGravity = (mGravity & ~Gravity.RELATIVE_HORIZONTAL_GRAVITY_MASK) | gravity;
-            //requestLayout();
-        //}
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.499 -0400", hash_original_method = "EE245B70888F9F1582A126D948173E64", hash_generated_method = "E89CA8A9E7442430CE8604395B3DB0DE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.723 -0500", hash_original_method = "EE245B70888F9F1582A126D948173E64", hash_generated_method = "0591F7E10EF7E02B9451B299C8FAC684")
     @android.view.RemotableViewMethod
-    public void setVerticalGravity(int verticalGravity) {
-        addTaint(verticalGravity);
+public void setVerticalGravity(int verticalGravity) {
         final int gravity = verticalGravity & Gravity.VERTICAL_GRAVITY_MASK;
-        if((mGravity & Gravity.VERTICAL_GRAVITY_MASK) != gravity)        
-        {
+        if ((mGravity & Gravity.VERTICAL_GRAVITY_MASK) != gravity) {
             mGravity = (mGravity & ~Gravity.VERTICAL_GRAVITY_MASK) | gravity;
             requestLayout();
-        } //End block
-        // ---------- Original Method ----------
-        //final int gravity = verticalGravity & Gravity.VERTICAL_GRAVITY_MASK;
-        //if ((mGravity & Gravity.VERTICAL_GRAVITY_MASK) != gravity) {
-            //mGravity = (mGravity & ~Gravity.VERTICAL_GRAVITY_MASK) | gravity;
-            //requestLayout();
-        //}
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.499 -0400", hash_original_method = "73585EFBB2973430E05667E2654BAD3F", hash_generated_method = "A4EA1BD5D955863D0E82869F9DF07484")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.724 -0500", hash_original_method = "73585EFBB2973430E05667E2654BAD3F", hash_generated_method = "1B31E1BC181531E4C927179CADD06337")
     @Override
-    public int getBaseline() {
-        int var0D37D647B8BFB516A3C7BB5F06B87282_565088560 = (mBaselineView != null ? mBaselineView.getBaseline() : super.getBaseline());
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2105859926 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2105859926;
-        // ---------- Original Method ----------
-        //return mBaselineView != null ? mBaselineView.getBaseline() : super.getBaseline();
+public int getBaseline() {
+        return mBaselineView != null ? mBaselineView.getBaseline() : super.getBaseline();
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.500 -0400", hash_original_method = "D40C3344998DDA8004351F538E92F8E3", hash_generated_method = "D2AF17735BD8ABFA2FCAA161F6376D90")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.725 -0500", hash_original_method = "D40C3344998DDA8004351F538E92F8E3", hash_generated_method = "2B720D662B7DB6163ABA6B6C3731A805")
     @Override
-    public void requestLayout() {
+public void requestLayout() {
         super.requestLayout();
         mDirtyHierarchy = true;
-        // ---------- Original Method ----------
-        //super.requestLayout();
-        //mDirtyHierarchy = true;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.500 -0400", hash_original_method = "701273CD7B3C60F684ABCCF0BE7DD8A5", hash_generated_method = "8659C69625F6F3B717B7A04B2B942BE4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.727 -0500", hash_original_method = "701273CD7B3C60F684ABCCF0BE7DD8A5", hash_generated_method = "8DBEAC2230F15061FF523D186D1C89E4")
     private void sortChildren() {
         int count = getChildCount();
-        if(mSortedVerticalChildren.length != count)        
-        mSortedVerticalChildren = new View[count];
-        if(mSortedHorizontalChildren.length != count)        
-        mSortedHorizontalChildren = new View[count];
+        if (mSortedVerticalChildren.length != count) mSortedVerticalChildren = new View[count];
+        if (mSortedHorizontalChildren.length != count) mSortedHorizontalChildren = new View[count];
+
         final DependencyGraph graph = mGraph;
         graph.clear();
-for(int i = 0;i < count;i++)
-        {
+
+        for (int i = 0; i < count; i++) {
             final View child = getChildAt(i);
             graph.add(child);
-        } //End block
-        if(DEBUG_GRAPH)        
-        {
+        }
+
+        if (DEBUG_GRAPH) {
             d(LOG_TAG, "=== Sorted vertical children");
             graph.log(getResources(), ABOVE, BELOW, ALIGN_BASELINE, ALIGN_TOP, ALIGN_BOTTOM);
             d(LOG_TAG, "=== Sorted horizontal children");
             graph.log(getResources(), LEFT_OF, RIGHT_OF, ALIGN_LEFT, ALIGN_RIGHT);
-        } //End block
+        }
+
         graph.getSortedViews(mSortedVerticalChildren, ABOVE, BELOW, ALIGN_BASELINE,
                 ALIGN_TOP, ALIGN_BOTTOM);
         graph.getSortedViews(mSortedHorizontalChildren, LEFT_OF, RIGHT_OF, ALIGN_LEFT, ALIGN_RIGHT);
-        if(DEBUG_GRAPH)        
-        {
+
+        if (DEBUG_GRAPH) {
             d(LOG_TAG, "=== Ordered list of vertical children");
-for(View view : mSortedVerticalChildren)
-            {
+            for (View view : mSortedVerticalChildren) {
                 DependencyGraph.printViewId(getResources(), view);
-            } //End block
-            d(LOG_TAG, "=== Ordered list of horizontal children");
-for(View view : mSortedHorizontalChildren)
-            {
-                DependencyGraph.printViewId(getResources(), view);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.506 -0400", hash_original_method = "E2AF18A4E301BF9A8D0B175790671ACC", hash_generated_method = "BDEDAD25BEA0644821B0E6BC1C296147")
-    @Override
-    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(heightMeasureSpec);
-        addTaint(widthMeasureSpec);
-        if(mDirtyHierarchy)        
-        {
-            mDirtyHierarchy = false;
-            sortChildren();
-        } //End block
-        int myWidth = -1;
-        int myHeight = -1;
-        int width = 0;
-        int height = 0;
-        int widthMode = MeasureSpec.getMode(widthMeasureSpec);
-        int heightMode = MeasureSpec.getMode(heightMeasureSpec);
-        int widthSize = MeasureSpec.getSize(widthMeasureSpec);
-        int heightSize = MeasureSpec.getSize(heightMeasureSpec);
-        if(widthMode != MeasureSpec.UNSPECIFIED)        
-        {
-            myWidth = widthSize;
-        } //End block
-        if(heightMode != MeasureSpec.UNSPECIFIED)        
-        {
-            myHeight = heightSize;
-        } //End block
-        if(widthMode == MeasureSpec.EXACTLY)        
-        {
-            width = myWidth;
-        } //End block
-        if(heightMode == MeasureSpec.EXACTLY)        
-        {
-            height = myHeight;
-        } //End block
-        mHasBaselineAlignedChild = false;
-        View ignore = null;
-        int gravity = mGravity & Gravity.RELATIVE_HORIZONTAL_GRAVITY_MASK;
-        final boolean horizontalGravity = gravity != Gravity.LEFT && gravity != 0;
-        gravity = mGravity & Gravity.VERTICAL_GRAVITY_MASK;
-        final boolean verticalGravity = gravity != Gravity.TOP && gravity != 0;
-        int left = Integer.MAX_VALUE;
-        int top = Integer.MAX_VALUE;
-        int right = Integer.MIN_VALUE;
-        int bottom = Integer.MIN_VALUE;
-        boolean offsetHorizontalAxis = false;
-        boolean offsetVerticalAxis = false;
-        if((horizontalGravity || verticalGravity) && mIgnoreGravity != View.NO_ID)        
-        {
-            ignore = findViewById(mIgnoreGravity);
-        } //End block
-        final boolean isWrapContentWidth = widthMode != MeasureSpec.EXACTLY;
-        final boolean isWrapContentHeight = heightMode != MeasureSpec.EXACTLY;
-        View[] views = mSortedHorizontalChildren;
-        int count = views.length;
-for(int i = 0;i < count;i++)
-        {
-            View child = views[i];
-            if(child.getVisibility() != GONE)            
-            {
-                LayoutParams params = (LayoutParams) child.getLayoutParams();
-                applyHorizontalSizeRules(params, myWidth);
-                measureChildHorizontal(child, params, myWidth, myHeight);
-                if(positionChildHorizontal(child, params, myWidth, isWrapContentWidth))                
-                {
-                    offsetHorizontalAxis = true;
-                } //End block
-            } //End block
-        } //End block
-        views = mSortedVerticalChildren;
-        count = views.length;
-for(int i = 0;i < count;i++)
-        {
-            View child = views[i];
-            if(child.getVisibility() != GONE)            
-            {
-                LayoutParams params = (LayoutParams) child.getLayoutParams();
-                applyVerticalSizeRules(params, myHeight);
-                measureChild(child, params, myWidth, myHeight);
-                if(positionChildVertical(child, params, myHeight, isWrapContentHeight))                
-                {
-                    offsetVerticalAxis = true;
-                } //End block
-                if(isWrapContentWidth)                
-                {
-                    width = Math.max(width, params.mRight);
-                } //End block
-                if(isWrapContentHeight)                
-                {
-                    height = Math.max(height, params.mBottom);
-                } //End block
-                if(child != ignore || verticalGravity)                
-                {
-                    left = Math.min(left, params.mLeft - params.leftMargin);
-                    top = Math.min(top, params.mTop - params.topMargin);
-                } //End block
-                if(child != ignore || horizontalGravity)                
-                {
-                    right = Math.max(right, params.mRight + params.rightMargin);
-                    bottom = Math.max(bottom, params.mBottom + params.bottomMargin);
-                } //End block
-            } //End block
-        } //End block
-        if(mHasBaselineAlignedChild)        
-        {
-for(int i = 0;i < count;i++)
-            {
-                View child = getChildAt(i);
-                if(child.getVisibility() != GONE)                
-                {
-                    LayoutParams params = (LayoutParams) child.getLayoutParams();
-                    alignBaseline(child, params);
-                    if(child != ignore || verticalGravity)                    
-                    {
-                        left = Math.min(left, params.mLeft - params.leftMargin);
-                        top = Math.min(top, params.mTop - params.topMargin);
-                    } //End block
-                    if(child != ignore || horizontalGravity)                    
-                    {
-                        right = Math.max(right, params.mRight + params.rightMargin);
-                        bottom = Math.max(bottom, params.mBottom + params.bottomMargin);
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
-        if(isWrapContentWidth)        
-        {
-            width += mPaddingRight;
-            if(mLayoutParams.width >= 0)            
-            {
-                width = Math.max(width, mLayoutParams.width);
-            } //End block
-            width = Math.max(width, getSuggestedMinimumWidth());
-            width = resolveSize(width, widthMeasureSpec);
-            if(offsetHorizontalAxis)            
-            {
-for(int i = 0;i < count;i++)
-                {
-                    View child = getChildAt(i);
-                    if(child.getVisibility() != GONE)                    
-                    {
-                        LayoutParams params = (LayoutParams) child.getLayoutParams();
-                        final int[] rules = params.getRules();
-                        if(rules[CENTER_IN_PARENT] != 0 || rules[CENTER_HORIZONTAL] != 0)                        
-                        {
-                            centerHorizontal(child, params, width);
-                        } //End block
-                        else
-                        if(rules[ALIGN_PARENT_RIGHT] != 0)                        
-                        {
-                            final int childWidth = child.getMeasuredWidth();
-                            params.mLeft = width - mPaddingRight - childWidth;
-                            params.mRight = params.mLeft + childWidth;
-                        } //End block
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
-        if(isWrapContentHeight)        
-        {
-            height += mPaddingBottom;
-            if(mLayoutParams.height >= 0)            
-            {
-                height = Math.max(height, mLayoutParams.height);
-            } //End block
-            height = Math.max(height, getSuggestedMinimumHeight());
-            height = resolveSize(height, heightMeasureSpec);
-            if(offsetVerticalAxis)            
-            {
-for(int i = 0;i < count;i++)
-                {
-                    View child = getChildAt(i);
-                    if(child.getVisibility() != GONE)                    
-                    {
-                        LayoutParams params = (LayoutParams) child.getLayoutParams();
-                        final int[] rules = params.getRules();
-                        if(rules[CENTER_IN_PARENT] != 0 || rules[CENTER_VERTICAL] != 0)                        
-                        {
-                            centerVertical(child, params, height);
-                        } //End block
-                        else
-                        if(rules[ALIGN_PARENT_BOTTOM] != 0)                        
-                        {
-                            final int childHeight = child.getMeasuredHeight();
-                            params.mTop = height - mPaddingBottom - childHeight;
-                            params.mBottom = params.mTop + childHeight;
-                        } //End block
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
-        if(horizontalGravity || verticalGravity)        
-        {
-            final Rect selfBounds = mSelfBounds;
-            selfBounds.set(mPaddingLeft, mPaddingTop, width - mPaddingRight,
-                    height - mPaddingBottom);
-            final Rect contentBounds = mContentBounds;
-            final int layoutDirection = getResolvedLayoutDirection();
-            Gravity.apply(mGravity, right - left, bottom - top, selfBounds, contentBounds,
-                    layoutDirection);
-            final int horizontalOffset = contentBounds.left - left;
-            final int verticalOffset = contentBounds.top - top;
-            if(horizontalOffset != 0 || verticalOffset != 0)            
-            {
-for(int i = 0;i < count;i++)
-                {
-                    View child = getChildAt(i);
-                    if(child.getVisibility() != GONE && child != ignore)                    
-                    {
-                        LayoutParams params = (LayoutParams) child.getLayoutParams();
-                        if(horizontalGravity)                        
-                        {
-                            params.mLeft += horizontalOffset;
-                            params.mRight += horizontalOffset;
-                        } //End block
-                        if(verticalGravity)                        
-                        {
-                            params.mTop += verticalOffset;
-                            params.mBottom += verticalOffset;
-                        } //End block
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
-        setMeasuredDimension(width, height);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.509 -0400", hash_original_method = "572E26DE16208C5960AF0F468C9CEB6F", hash_generated_method = "E602CC6E7398BCFC60490F9549029B62")
-    private void alignBaseline(View child, LayoutParams params) {
-        addTaint(params.getTaint());
-        int[] rules = params.getRules();
-        int anchorBaseline = getRelatedViewBaseline(rules, ALIGN_BASELINE);
-        if(anchorBaseline != -1)        
-        {
-            LayoutParams anchorParams = getRelatedViewParams(rules, ALIGN_BASELINE);
-            if(anchorParams != null)            
-            {
-                int offset = anchorParams.mTop + anchorBaseline;
-                int baseline = child.getBaseline();
-                if(baseline != -1)                
-                {
-                    offset -= baseline;
-                } //End block
-                int height = params.mBottom - params.mTop;
-                params.mTop = offset;
-                params.mBottom = params.mTop + height;
-            } //End block
-        } //End block
-        if(mBaselineView == null)        
-        {
-            mBaselineView = child;
-        } //End block
-        else
-        {
-            LayoutParams lp = (LayoutParams) mBaselineView.getLayoutParams();
-            if(params.mTop < lp.mTop || (params.mTop == lp.mTop && params.mLeft < lp.mLeft))            
-            {
-                mBaselineView = child;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.509 -0400", hash_original_method = "6FAB1FA940C67F7A3A04C20DF403CDD7", hash_generated_method = "B56AEFCE4745206457591A7DDA5BDE0F")
-    private void measureChild(View child, LayoutParams params, int myWidth, int myHeight) {
-        addTaint(myHeight);
-        addTaint(myWidth);
-        addTaint(params.getTaint());
-        addTaint(child.getTaint());
-        int childWidthMeasureSpec = getChildMeasureSpec(params.mLeft,
-                params.mRight, params.width,
-                params.leftMargin, params.rightMargin,
-                mPaddingLeft, mPaddingRight,
-                myWidth);
-        int childHeightMeasureSpec = getChildMeasureSpec(params.mTop,
-                params.mBottom, params.height,
-                params.topMargin, params.bottomMargin,
-                mPaddingTop, mPaddingBottom,
-                myHeight);
-        child.measure(childWidthMeasureSpec, childHeightMeasureSpec);
-        // ---------- Original Method ----------
-        //int childWidthMeasureSpec = getChildMeasureSpec(params.mLeft,
-                //params.mRight, params.width,
-                //params.leftMargin, params.rightMargin,
-                //mPaddingLeft, mPaddingRight,
-                //myWidth);
-        //int childHeightMeasureSpec = getChildMeasureSpec(params.mTop,
-                //params.mBottom, params.height,
-                //params.topMargin, params.bottomMargin,
-                //mPaddingTop, mPaddingBottom,
-                //myHeight);
-        //child.measure(childWidthMeasureSpec, childHeightMeasureSpec);
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.510 -0400", hash_original_method = "C649DEFF309C12811323B81F575C7972", hash_generated_method = "24E132E767F7297960A0B4D954546A46")
-    private void measureChildHorizontal(View child, LayoutParams params, int myWidth, int myHeight) {
-        addTaint(myHeight);
-        addTaint(myWidth);
-        addTaint(params.getTaint());
-        addTaint(child.getTaint());
-        int childWidthMeasureSpec = getChildMeasureSpec(params.mLeft,
-                params.mRight, params.width,
-                params.leftMargin, params.rightMargin,
-                mPaddingLeft, mPaddingRight,
-                myWidth);
-        int childHeightMeasureSpec;
-        if(params.width == LayoutParams.MATCH_PARENT)        
-        {
-            childHeightMeasureSpec = MeasureSpec.makeMeasureSpec(myHeight, MeasureSpec.EXACTLY);
-        } //End block
-        else
-        {
-            childHeightMeasureSpec = MeasureSpec.makeMeasureSpec(myHeight, MeasureSpec.AT_MOST);
-        } //End block
-        child.measure(childWidthMeasureSpec, childHeightMeasureSpec);
-        // ---------- Original Method ----------
-        //int childWidthMeasureSpec = getChildMeasureSpec(params.mLeft,
-                //params.mRight, params.width,
-                //params.leftMargin, params.rightMargin,
-                //mPaddingLeft, mPaddingRight,
-                //myWidth);
-        //int childHeightMeasureSpec;
-        //if (params.width == LayoutParams.MATCH_PARENT) {
-            //childHeightMeasureSpec = MeasureSpec.makeMeasureSpec(myHeight, MeasureSpec.EXACTLY);
-        //} else {
-            //childHeightMeasureSpec = MeasureSpec.makeMeasureSpec(myHeight, MeasureSpec.AT_MOST);
-        //}
-        //child.measure(childWidthMeasureSpec, childHeightMeasureSpec);
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.512 -0400", hash_original_method = "78354A3A0D2C9A2AC648B99E7333EDDC", hash_generated_method = "17E0A87B0753FD17262D0B0307741C4B")
-    private int getChildMeasureSpec(int childStart, int childEnd,
-            int childSize, int startMargin, int endMargin, int startPadding,
-            int endPadding, int mySize) {
-        addTaint(mySize);
-        addTaint(endPadding);
-        addTaint(startPadding);
-        addTaint(endMargin);
-        addTaint(startMargin);
-        addTaint(childSize);
-        addTaint(childEnd);
-        addTaint(childStart);
-        int childSpecMode = 0;
-        int childSpecSize = 0;
-        int tempStart = childStart;
-        int tempEnd = childEnd;
-        if(tempStart < 0)        
-        {
-            tempStart = startPadding + startMargin;
-        } //End block
-        if(tempEnd < 0)        
-        {
-            tempEnd = mySize - endPadding - endMargin;
-        } //End block
-        int maxAvailable = tempEnd - tempStart;
-        if(childStart >= 0 && childEnd >= 0)        
-        {
-            childSpecMode = MeasureSpec.EXACTLY;
-            childSpecSize = maxAvailable;
-        } //End block
-        else
-        {
-            if(childSize >= 0)            
-            {
-                childSpecMode = MeasureSpec.EXACTLY;
-                if(maxAvailable >= 0)                
-                {
-                    childSpecSize = Math.min(maxAvailable, childSize);
-                } //End block
-                else
-                {
-                    childSpecSize = childSize;
-                } //End block
-            } //End block
-            else
-            if(childSize == LayoutParams.MATCH_PARENT)            
-            {
-                childSpecMode = MeasureSpec.EXACTLY;
-                childSpecSize = maxAvailable;
-            } //End block
-            else
-            if(childSize == LayoutParams.WRAP_CONTENT)            
-            {
-                if(maxAvailable >= 0)                
-                {
-                    childSpecMode = MeasureSpec.AT_MOST;
-                    childSpecSize = maxAvailable;
-                } //End block
-                else
-                {
-                    childSpecMode = MeasureSpec.UNSPECIFIED;
-                    childSpecSize = 0;
-                } //End block
-            } //End block
-        } //End block
-        int var841D81673E63494EF88D4D328E538547_1140651460 = (MeasureSpec.makeMeasureSpec(childSpecSize, childSpecMode));
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1756424068 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1756424068;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.515 -0400", hash_original_method = "B9478380B54B111B46A13309CA4FBB39", hash_generated_method = "0B10A4E9DF0C24B591F2E0735F93520E")
-    private boolean positionChildHorizontal(View child, LayoutParams params, int myWidth,
-            boolean wrapContent) {
-        addTaint(wrapContent);
-        addTaint(myWidth);
-        addTaint(params.getTaint());
-        addTaint(child.getTaint());
-        int[] rules = params.getRules();
-        if(params.mLeft < 0 && params.mRight >= 0)        
-        {
-            params.mLeft = params.mRight - child.getMeasuredWidth();
-        } //End block
-        else
-        if(params.mLeft >= 0 && params.mRight < 0)        
-        {
-            params.mRight = params.mLeft + child.getMeasuredWidth();
-        } //End block
-        else
-        if(params.mLeft < 0 && params.mRight < 0)        
-        {
-            if(rules[CENTER_IN_PARENT] != 0 || rules[CENTER_HORIZONTAL] != 0)            
-            {
-                if(!wrapContent)                
-                {
-                    centerHorizontal(child, params, myWidth);
-                } //End block
-                else
-                {
-                    params.mLeft = mPaddingLeft + params.leftMargin;
-                    params.mRight = params.mLeft + child.getMeasuredWidth();
-                } //End block
-                boolean varB326B5062B2F0E69046810717534CB09_1825675342 = (true);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1295440198 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1295440198;
-            } //End block
-            else
-            {
-                params.mLeft = mPaddingLeft + params.leftMargin;
-                params.mRight = params.mLeft + child.getMeasuredWidth();
-            } //End block
-        } //End block
-        boolean varB673573F0221FD08A4A6A5EAF380DAD9_377711562 = (rules[ALIGN_PARENT_RIGHT] != 0);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1627721102 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1627721102;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.516 -0400", hash_original_method = "09EB493CF05E8E659EC89F37304CD399", hash_generated_method = "5BDD4EF875801A22A50B0734E2C49DAF")
-    private boolean positionChildVertical(View child, LayoutParams params, int myHeight,
-            boolean wrapContent) {
-        addTaint(wrapContent);
-        addTaint(myHeight);
-        addTaint(params.getTaint());
-        addTaint(child.getTaint());
-        int[] rules = params.getRules();
-        if(params.mTop < 0 && params.mBottom >= 0)        
-        {
-            params.mTop = params.mBottom - child.getMeasuredHeight();
-        } //End block
-        else
-        if(params.mTop >= 0 && params.mBottom < 0)        
-        {
-            params.mBottom = params.mTop + child.getMeasuredHeight();
-        } //End block
-        else
-        if(params.mTop < 0 && params.mBottom < 0)        
-        {
-            if(rules[CENTER_IN_PARENT] != 0 || rules[CENTER_VERTICAL] != 0)            
-            {
-                if(!wrapContent)                
-                {
-                    centerVertical(child, params, myHeight);
-                } //End block
-                else
-                {
-                    params.mTop = mPaddingTop + params.topMargin;
-                    params.mBottom = params.mTop + child.getMeasuredHeight();
-                } //End block
-                boolean varB326B5062B2F0E69046810717534CB09_789683141 = (true);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1776606473 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1776606473;
-            } //End block
-            else
-            {
-                params.mTop = mPaddingTop + params.topMargin;
-                params.mBottom = params.mTop + child.getMeasuredHeight();
-            } //End block
-        } //End block
-        boolean var3D69162D9E6E2119B4912951E56A0158_938625374 = (rules[ALIGN_PARENT_BOTTOM] != 0);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_560415894 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_560415894;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.519 -0400", hash_original_method = "C61E9BCFF76D7B76D77F18D001923EFF", hash_generated_method = "C0C66D05E7E10A76C247FF4170C9A250")
-    private void applyHorizontalSizeRules(LayoutParams childParams, int myWidth) {
-        addTaint(myWidth);
-        addTaint(childParams.getTaint());
-        int[] rules = childParams.getRules();
-        RelativeLayout.LayoutParams anchorParams;
-        childParams.mLeft = -1;
-        childParams.mRight = -1;
-        anchorParams = getRelatedViewParams(rules, LEFT_OF);
-        if(anchorParams != null)        
-        {
-            childParams.mRight = anchorParams.mLeft - (anchorParams.leftMargin +
-                    childParams.rightMargin);
-        } //End block
-        else
-        if(childParams.alignWithParent && rules[LEFT_OF] != 0)        
-        {
-            if(myWidth >= 0)            
-            {
-                childParams.mRight = myWidth - mPaddingRight - childParams.rightMargin;
-            } //End block
-            else
-            {
-            } //End block
-        } //End block
-        anchorParams = getRelatedViewParams(rules, RIGHT_OF);
-        if(anchorParams != null)        
-        {
-            childParams.mLeft = anchorParams.mRight + (anchorParams.rightMargin +
-                    childParams.leftMargin);
-        } //End block
-        else
-        if(childParams.alignWithParent && rules[RIGHT_OF] != 0)        
-        {
-            childParams.mLeft = mPaddingLeft + childParams.leftMargin;
-        } //End block
-        anchorParams = getRelatedViewParams(rules, ALIGN_LEFT);
-        if(anchorParams != null)        
-        {
-            childParams.mLeft = anchorParams.mLeft + childParams.leftMargin;
-        } //End block
-        else
-        if(childParams.alignWithParent && rules[ALIGN_LEFT] != 0)        
-        {
-            childParams.mLeft = mPaddingLeft + childParams.leftMargin;
-        } //End block
-        anchorParams = getRelatedViewParams(rules, ALIGN_RIGHT);
-        if(anchorParams != null)        
-        {
-            childParams.mRight = anchorParams.mRight - childParams.rightMargin;
-        } //End block
-        else
-        if(childParams.alignWithParent && rules[ALIGN_RIGHT] != 0)        
-        {
-            if(myWidth >= 0)            
-            {
-                childParams.mRight = myWidth - mPaddingRight - childParams.rightMargin;
-            } //End block
-            else
-            {
-            } //End block
-        } //End block
-        if(0 != rules[ALIGN_PARENT_LEFT])        
-        {
-            childParams.mLeft = mPaddingLeft + childParams.leftMargin;
-        } //End block
-        if(0 != rules[ALIGN_PARENT_RIGHT])        
-        {
-            if(myWidth >= 0)            
-            {
-                childParams.mRight = myWidth - mPaddingRight - childParams.rightMargin;
-            } //End block
-            else
-            {
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.522 -0400", hash_original_method = "B3DE38D6CE01D7E90C154524E3D3CC84", hash_generated_method = "6B03BC71EF56FFB5D3948A541FDAE3DA")
-    private void applyVerticalSizeRules(LayoutParams childParams, int myHeight) {
-        addTaint(myHeight);
-        addTaint(childParams.getTaint());
-        int[] rules = childParams.getRules();
-        RelativeLayout.LayoutParams anchorParams;
-        childParams.mTop = -1;
-        childParams.mBottom = -1;
-        anchorParams = getRelatedViewParams(rules, ABOVE);
-        if(anchorParams != null)        
-        {
-            childParams.mBottom = anchorParams.mTop - (anchorParams.topMargin +
-                    childParams.bottomMargin);
-        } //End block
-        else
-        if(childParams.alignWithParent && rules[ABOVE] != 0)        
-        {
-            if(myHeight >= 0)            
-            {
-                childParams.mBottom = myHeight - mPaddingBottom - childParams.bottomMargin;
-            } //End block
-            else
-            {
-            } //End block
-        } //End block
-        anchorParams = getRelatedViewParams(rules, BELOW);
-        if(anchorParams != null)        
-        {
-            childParams.mTop = anchorParams.mBottom + (anchorParams.bottomMargin +
-                    childParams.topMargin);
-        } //End block
-        else
-        if(childParams.alignWithParent && rules[BELOW] != 0)        
-        {
-            childParams.mTop = mPaddingTop + childParams.topMargin;
-        } //End block
-        anchorParams = getRelatedViewParams(rules, ALIGN_TOP);
-        if(anchorParams != null)        
-        {
-            childParams.mTop = anchorParams.mTop + childParams.topMargin;
-        } //End block
-        else
-        if(childParams.alignWithParent && rules[ALIGN_TOP] != 0)        
-        {
-            childParams.mTop = mPaddingTop + childParams.topMargin;
-        } //End block
-        anchorParams = getRelatedViewParams(rules, ALIGN_BOTTOM);
-        if(anchorParams != null)        
-        {
-            childParams.mBottom = anchorParams.mBottom - childParams.bottomMargin;
-        } //End block
-        else
-        if(childParams.alignWithParent && rules[ALIGN_BOTTOM] != 0)        
-        {
-            if(myHeight >= 0)            
-            {
-                childParams.mBottom = myHeight - mPaddingBottom - childParams.bottomMargin;
-            } //End block
-            else
-            {
-            } //End block
-        } //End block
-        if(0 != rules[ALIGN_PARENT_TOP])        
-        {
-            childParams.mTop = mPaddingTop + childParams.topMargin;
-        } //End block
-        if(0 != rules[ALIGN_PARENT_BOTTOM])        
-        {
-            if(myHeight >= 0)            
-            {
-                childParams.mBottom = myHeight - mPaddingBottom - childParams.bottomMargin;
-            } //End block
-            else
-            {
-            } //End block
-        } //End block
-        if(rules[ALIGN_BASELINE] != 0)        
-        {
-            mHasBaselineAlignedChild = true;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.523 -0400", hash_original_method = "1C833E1C2ADE997D1187353BA16BCE70", hash_generated_method = "C215DE6A509BBD1FE50A706F10C5FE29")
-    private View getRelatedView(int[] rules, int relation) {
-        addTaint(relation);
-        addTaint(rules[0]);
-        int id = rules[relation];
-        if(id != 0)        
-        {
-            DependencyGraph.Node node = mGraph.mKeyNodes.get(id);
-            if(node == null)            
-            {
-View var540C13E9E156B687226421B24F2DF178_1930170756 =             null;
-            var540C13E9E156B687226421B24F2DF178_1930170756.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_1930170756;
             }
-            View v = node.view;
-            while
-(v.getVisibility() == View.GONE)            
-            {
-                rules = ((LayoutParams) v.getLayoutParams()).getRules();
-                node = mGraph.mKeyNodes.get((rules[relation]));
-                if(node == null)                
-                {
-View var540C13E9E156B687226421B24F2DF178_1167045941 =                 null;
-                var540C13E9E156B687226421B24F2DF178_1167045941.addTaint(taint);
-                return var540C13E9E156B687226421B24F2DF178_1167045941;
-                }
-                v = node.view;
-            } //End block
-View var6DC76BC51820DD65E8396280E884AA78_98620176 =             v;
-            var6DC76BC51820DD65E8396280E884AA78_98620176.addTaint(taint);
-            return var6DC76BC51820DD65E8396280E884AA78_98620176;
-        } //End block
-View var540C13E9E156B687226421B24F2DF178_737876707 =         null;
-        var540C13E9E156B687226421B24F2DF178_737876707.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_737876707;
-        // ---------- Original Method ----------
-        //int id = rules[relation];
-        //if (id != 0) {
-            //DependencyGraph.Node node = mGraph.mKeyNodes.get(id);
-            //if (node == null) return null;
-            //View v = node.view;
-            //while (v.getVisibility() == View.GONE) {
-                //rules = ((LayoutParams) v.getLayoutParams()).getRules();
-                //node = mGraph.mKeyNodes.get((rules[relation]));
-                //if (node == null) return null;
-                //v = node.view;
-            //}
-            //return v;
-        //}
-        //return null;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.523 -0400", hash_original_method = "1432C4369AF9849456CCA14753707552", hash_generated_method = "22691014038952AD6697FA9E32D9D6C0")
-    private LayoutParams getRelatedViewParams(int[] rules, int relation) {
-        addTaint(relation);
-        addTaint(rules[0]);
-        View v = getRelatedView(rules, relation);
-        if(v != null)        
-        {
-            ViewGroup.LayoutParams params = v.getLayoutParams();
-            if(params instanceof LayoutParams)            
-            {
-LayoutParams var4F75FEDE55B6B9296B3E4730B56C07FA_1321791096 =                 (LayoutParams) v.getLayoutParams();
-                var4F75FEDE55B6B9296B3E4730B56C07FA_1321791096.addTaint(taint);
-                return var4F75FEDE55B6B9296B3E4730B56C07FA_1321791096;
-            } //End block
-        } //End block
-LayoutParams var540C13E9E156B687226421B24F2DF178_1064684565 =         null;
-        var540C13E9E156B687226421B24F2DF178_1064684565.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_1064684565;
-        // ---------- Original Method ----------
-        //View v = getRelatedView(rules, relation);
-        //if (v != null) {
-            //ViewGroup.LayoutParams params = v.getLayoutParams();
-            //if (params instanceof LayoutParams) {
-                //return (LayoutParams) v.getLayoutParams();
-            //}
-        //}
-        //return null;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.542 -0400", hash_original_method = "B96AFAE3C58D6FFF0F9AB9328789A20B", hash_generated_method = "BEEE71C39EDB256F02B5E71F25658189")
-    private int getRelatedViewBaseline(int[] rules, int relation) {
-        addTaint(relation);
-        addTaint(rules[0]);
-        View v = getRelatedView(rules, relation);
-        if(v != null)        
-        {
-            int var7FCFEB6AAC114A346B332FBF5A437229_1742416697 = (v.getBaseline());
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1767076088 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1767076088;
-        } //End block
-        int var6BB61E3B7BCE0931DA574D19D1D82C88_1481084721 = (-1);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_21755287 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_21755287;
-        // ---------- Original Method ----------
-        //View v = getRelatedView(rules, relation);
-        //if (v != null) {
-            //return v.getBaseline();
-        //}
-        //return -1;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.542 -0400", hash_original_method = "8A1AB6E076A6FFB22058EEC6C343479D", hash_generated_method = "21EB867A17524776BC2CCE0B2E4DDC14")
-    private void centerHorizontal(View child, LayoutParams params, int myWidth) {
-        addTaint(myWidth);
-        addTaint(params.getTaint());
-        addTaint(child.getTaint());
-        int childWidth = child.getMeasuredWidth();
-        int left = (myWidth - childWidth) / 2;
-        params.mLeft = left;
-        params.mRight = left + childWidth;
-        // ---------- Original Method ----------
-        //int childWidth = child.getMeasuredWidth();
-        //int left = (myWidth - childWidth) / 2;
-        //params.mLeft = left;
-        //params.mRight = left + childWidth;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.543 -0400", hash_original_method = "D7FF6A5DD857E80D590F5847BEDB8204", hash_generated_method = "148EA00E48905863A48AF233142CDCC5")
-    private void centerVertical(View child, LayoutParams params, int myHeight) {
-        addTaint(myHeight);
-        addTaint(params.getTaint());
-        addTaint(child.getTaint());
-        int childHeight = child.getMeasuredHeight();
-        int top = (myHeight - childHeight) / 2;
-        params.mTop = top;
-        params.mBottom = top + childHeight;
-        // ---------- Original Method ----------
-        //int childHeight = child.getMeasuredHeight();
-        //int top = (myHeight - childHeight) / 2;
-        //params.mTop = top;
-        //params.mBottom = top + childHeight;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.543 -0400", hash_original_method = "05FEBBF616C51C2D421358B4A05D22CE", hash_generated_method = "C37C4D4DC4149051ED8D1DDED4A9A0A7")
-    @Override
-    protected void onLayout(boolean changed, int l, int t, int r, int b) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(b);
-        addTaint(r);
-        addTaint(t);
-        addTaint(l);
-        addTaint(changed);
-        int count = getChildCount();
-for(int i = 0;i < count;i++)
-        {
-            View child = getChildAt(i);
-            if(child.getVisibility() != GONE)            
-            {
-                RelativeLayout.LayoutParams st = (RelativeLayout.LayoutParams) child.getLayoutParams();
-                child.layout(st.mLeft, st.mTop, st.mRight, st.mBottom);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //int count = getChildCount();
-        //for (int i = 0; i < count; i++) {
-            //View child = getChildAt(i);
-            //if (child.getVisibility() != GONE) {
-                //RelativeLayout.LayoutParams st =
-                        //(RelativeLayout.LayoutParams) child.getLayoutParams();
-                //child.layout(st.mLeft, st.mTop, st.mRight, st.mBottom);
-            //}
-        //}
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.544 -0400", hash_original_method = "233CD3CEF6FDC0096CEB70C074DAEDA3", hash_generated_method = "7BDF2AC10FFE2F4A50D5EB6E91CEC052")
-    @Override
-    public LayoutParams generateLayoutParams(AttributeSet attrs) {
-        addTaint(attrs.getTaint());
-LayoutParams varE51DEBDDE107B67850345280552397D8_1944749788 =         new RelativeLayout.LayoutParams(getContext(), attrs);
-        varE51DEBDDE107B67850345280552397D8_1944749788.addTaint(taint);
-        return varE51DEBDDE107B67850345280552397D8_1944749788;
-        // ---------- Original Method ----------
-        //return new RelativeLayout.LayoutParams(getContext(), attrs);
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.544 -0400", hash_original_method = "9A6A2F1616AFA891B0951E317B143439", hash_generated_method = "04852983ECD5B6906EDBAA05FE9B47E0")
-    @Override
-    protected ViewGroup.LayoutParams generateDefaultLayoutParams() {
-ViewGroup.LayoutParams var65BA47367D3E2EC837A3E887EEE5A3B3_632408198 =         new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
-        var65BA47367D3E2EC837A3E887EEE5A3B3_632408198.addTaint(taint);
-        return var65BA47367D3E2EC837A3E887EEE5A3B3_632408198;
-        // ---------- Original Method ----------
-        //return new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.544 -0400", hash_original_method = "7AAD3A1C062434D08215151012F2CF47", hash_generated_method = "8157EEEFA19819B54627F7964C916024")
-    @Override
-    protected boolean checkLayoutParams(ViewGroup.LayoutParams p) {
-        addTaint(p.getTaint());
-        boolean varED9D922FA4FD692BC43C4F5784245E8A_95551558 = (p instanceof RelativeLayout.LayoutParams);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1712850691 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1712850691;
-        // ---------- Original Method ----------
-        //return p instanceof RelativeLayout.LayoutParams;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.545 -0400", hash_original_method = "B595E0482905B38051CD63239BB5F8BA", hash_generated_method = "C0A2408FC3FB88DE751D4437AB86934F")
-    @Override
-    protected ViewGroup.LayoutParams generateLayoutParams(ViewGroup.LayoutParams p) {
-        addTaint(p.getTaint());
-ViewGroup.LayoutParams varB945D213E5036F8DDF9B40811234DF64_758407523 =         new LayoutParams(p);
-        varB945D213E5036F8DDF9B40811234DF64_758407523.addTaint(taint);
-        return varB945D213E5036F8DDF9B40811234DF64_758407523;
-        // ---------- Original Method ----------
-        //return new LayoutParams(p);
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.545 -0400", hash_original_method = "02980C12A71A151B5687E23560D62A05", hash_generated_method = "DB2A2E02431DE588E33A99090DEF1259")
-    @Override
-    public boolean dispatchPopulateAccessibilityEvent(AccessibilityEvent event) {
-        addTaint(event.getTaint());
-        if(mTopToBottomLeftToRightSet == null)        
-        {
-            mTopToBottomLeftToRightSet = new TreeSet<View>(new TopToBottomLeftToRightComparator());
-        } //End block
-for(int i = 0, count = getChildCount();i < count;i++)
-        {
-            mTopToBottomLeftToRightSet.add(getChildAt(i));
-        } //End block
-for(View view : mTopToBottomLeftToRightSet)
-        {
-            if(view.getVisibility() == View.VISIBLE
-                    && view.dispatchPopulateAccessibilityEvent(event))            
-            {
-                mTopToBottomLeftToRightSet.clear();
-                boolean varB326B5062B2F0E69046810717534CB09_563312914 = (true);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_528770624 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_528770624;
-            } //End block
-        } //End block
-        mTopToBottomLeftToRightSet.clear();
-        boolean var68934A3E9455FA72420237EB05902327_197048034 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_810764403 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_810764403;
-        // ---------- Original Method ----------
-        //if (mTopToBottomLeftToRightSet == null) {
-            //mTopToBottomLeftToRightSet = new TreeSet<View>(new TopToBottomLeftToRightComparator());
-        //}
-        //for (int i = 0, count = getChildCount(); i < count; i++) {
-            //mTopToBottomLeftToRightSet.add(getChildAt(i));
-        //}
-        //for (View view : mTopToBottomLeftToRightSet) {
-            //if (view.getVisibility() == View.VISIBLE
-                    //&& view.dispatchPopulateAccessibilityEvent(event)) {
-                //mTopToBottomLeftToRightSet.clear();
-                //return true;
-            //}
-        //}
-        //mTopToBottomLeftToRightSet.clear();
-        //return false;
+            d(LOG_TAG, "=== Ordered list of horizontal children");
+            for (View view : mSortedHorizontalChildren) {
+                DependencyGraph.printViewId(getResources(), view);
+            }
+        }        
     }
 
     
@@ -1246,62 +297,29 @@ for(View view : mTopToBottomLeftToRightSet)
         {
             //Synthesized constructor
         }
-
-
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.546 -0400", hash_original_method = "A3AAE4860228E849F39A667518F04B9E", hash_generated_method = "A7B5B942B3149FE5451D4635C1B66E77")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.750 -0500", hash_original_method = "A3AAE4860228E849F39A667518F04B9E", hash_generated_method = "0050142F3FBC23713D5F9DA65F5E8DAE")
         public int compare(View first, View second) {
-            addTaint(second.getTaint());
-            addTaint(first.getTaint());
+            // top - bottom
             int topDifference = first.getTop() - second.getTop();
-            if(topDifference != 0)            
-            {
-                int var52339E5B13F6409E1601B19630C31099_1400669584 = (topDifference);
-                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1193412066 = getTaintInt();
-                return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1193412066;
-            } //End block
+            if (topDifference != 0) {
+                return topDifference;
+            }
+            // left - right
             int leftDifference = first.getLeft() - second.getLeft();
-            if(leftDifference != 0)            
-            {
-                int varE2DF44AD014175AB04B6953418D21658_1207953279 = (leftDifference);
-                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2000912986 = getTaintInt();
-                return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2000912986;
-            } //End block
+            if (leftDifference != 0) {
+                return leftDifference;
+            }
+            // break tie by height
             int heightDiference = first.getHeight() - second.getHeight();
-            if(heightDiference != 0)            
-            {
-                int var172A2AAD27F156A9E1E968C6D3E450F2_855346500 = (heightDiference);
-                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_268441715 = getTaintInt();
-                return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_268441715;
-            } //End block
+            if (heightDiference != 0) {
+                return heightDiference;
+            }
+            // break tie by width
             int widthDiference = first.getWidth() - second.getWidth();
-            if(widthDiference != 0)            
-            {
-                int var3A93EFFEA3BE861302CB37CF192F6AAB_1270266913 = (widthDiference);
-                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_48446215 = getTaintInt();
-                return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_48446215;
-            } //End block
-            int varCFCD208495D565EF66E7DFF9F98764DA_1145343613 = (0);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_81412399 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_81412399;
-            // ---------- Original Method ----------
-            //int topDifference = first.getTop() - second.getTop();
-            //if (topDifference != 0) {
-                //return topDifference;
-            //}
-            //int leftDifference = first.getLeft() - second.getLeft();
-            //if (leftDifference != 0) {
-                //return leftDifference;
-            //}
-            //int heightDiference = first.getHeight() - second.getHeight();
-            //if (heightDiference != 0) {
-                //return heightDiference;
-            //}
-            //int widthDiference = first.getWidth() - second.getWidth();
-            //if (widthDiference != 0) {
-                //return widthDiference;
-            //}
-            //return 0;
+            if (widthDiference != 0) {
+                return widthDiference;
+            }
+            return 0;
         }
 
         
@@ -1310,7 +328,7 @@ for(View view : mTopToBottomLeftToRightSet)
 
     
     public static class LayoutParams extends ViewGroup.MarginLayoutParams {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.547 -0400", hash_original_field = "88F74427B9E2F7D924182ECC7F0BA0E3", hash_generated_field = "138597A9D627AA60011D0A51DCF0C547")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.752 -0500", hash_original_field = "7CF62E1092EE225F39556F2BE1B1396D", hash_generated_field = "138597A9D627AA60011D0A51DCF0C547")
 
         @ViewDebug.ExportedProperty(category = "layout", resolveId = true, indexMapping = {
             @ViewDebug.IntToString(from = ABOVE,               to = "above"),
@@ -1332,7 +350,8 @@ for(View view : mTopToBottomLeftToRightSet)
         }, mapping = {
             @ViewDebug.IntToString(from = TRUE, to = "true"),
             @ViewDebug.IntToString(from = 0,    to = "false/NO_ID")
-        }) private int[] mRules = new int[VERB_COUNT];
+        })
+        private int[] mRules = new int[VERB_COUNT];
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.547 -0400", hash_original_field = "B5B776A6642DD69B16A47E6FCCAEEB6E", hash_generated_field = "AB08F003659B306A95990D148DDB5C29")
 
         private int mLeft;
@@ -1345,152 +364,156 @@ for(View view : mTopToBottomLeftToRightSet)
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.547 -0400", hash_original_field = "2FFD20D7E48915664FDF7F12FC3889D8", hash_generated_field = "4AF6ECE77AC654346D9C0CD81051EB99")
 
         private int mBottom;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.547 -0400", hash_original_field = "AC3033727FC96920DD8731A89FE8AF20", hash_generated_field = "666873D7B6DA8C6785E6C7DFC911FFA3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.754 -0500", hash_original_field = "12AE64BB2EAB9832CF6B29F292393E4A", hash_generated_field = "666873D7B6DA8C6785E6C7DFC911FFA3")
 
-        @ViewDebug.ExportedProperty(category = "layout") public boolean alignWithParent;
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.551 -0400", hash_original_method = "A3B36B82744E08B8B1AFF03A4315BD99", hash_generated_method = "2A51C5961170A890739CA818F87BB3F8")
-        public  LayoutParams(Context c, AttributeSet attrs) {
+        @ViewDebug.ExportedProperty(category = "layout")
+        public boolean alignWithParent;
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.757 -0500", hash_original_method = "A3B36B82744E08B8B1AFF03A4315BD99", hash_generated_method = "D0591FCEF8430F909BBA32E4B7EF78D4")
+        public LayoutParams(Context c, AttributeSet attrs) {
             super(c, attrs);
-            addTaint(attrs.getTaint());
-            addTaint(c.getTaint());
+
             TypedArray a = c.obtainStyledAttributes(attrs,
                     com.android.internal.R.styleable.RelativeLayout_Layout);
+
             final int[] rules = mRules;
+
             final int N = a.getIndexCount();
-for(int i = 0;i < N;i++)
-            {
+            for (int i = 0; i < N; i++) {
                 int attr = a.getIndex(i);
-switch(attr){
-                case com.android.internal.R.styleable.RelativeLayout_Layout_layout_alignWithParentIfMissing:
-                alignWithParent = a.getBoolean(attr, false);
-                break;
-                case com.android.internal.R.styleable.RelativeLayout_Layout_layout_toLeftOf:
-                rules[LEFT_OF] = a.getResourceId(attr, 0);
-                break;
-                case com.android.internal.R.styleable.RelativeLayout_Layout_layout_toRightOf:
-                rules[RIGHT_OF] = a.getResourceId(attr, 0);
-                break;
-                case com.android.internal.R.styleable.RelativeLayout_Layout_layout_above:
-                rules[ABOVE] = a.getResourceId(attr, 0);
-                break;
-                case com.android.internal.R.styleable.RelativeLayout_Layout_layout_below:
-                rules[BELOW] = a.getResourceId(attr, 0);
-                break;
-                case com.android.internal.R.styleable.RelativeLayout_Layout_layout_alignBaseline:
-                rules[ALIGN_BASELINE] = a.getResourceId(attr, 0);
-                break;
-                case com.android.internal.R.styleable.RelativeLayout_Layout_layout_alignLeft:
-                rules[ALIGN_LEFT] = a.getResourceId(attr, 0);
-                break;
-                case com.android.internal.R.styleable.RelativeLayout_Layout_layout_alignTop:
-                rules[ALIGN_TOP] = a.getResourceId(attr, 0);
-                break;
-                case com.android.internal.R.styleable.RelativeLayout_Layout_layout_alignRight:
-                rules[ALIGN_RIGHT] = a.getResourceId(attr, 0);
-                break;
-                case com.android.internal.R.styleable.RelativeLayout_Layout_layout_alignBottom:
-                rules[ALIGN_BOTTOM] = a.getResourceId(attr, 0);
-                break;
-                case com.android.internal.R.styleable.RelativeLayout_Layout_layout_alignParentLeft:
-                rules[ALIGN_PARENT_LEFT] = a.getBoolean(attr, false) ? TRUE : 0;
-                break;
-                case com.android.internal.R.styleable.RelativeLayout_Layout_layout_alignParentTop:
-                rules[ALIGN_PARENT_TOP] = a.getBoolean(attr, false) ? TRUE : 0;
-                break;
-                case com.android.internal.R.styleable.RelativeLayout_Layout_layout_alignParentRight:
-                rules[ALIGN_PARENT_RIGHT] = a.getBoolean(attr, false) ? TRUE : 0;
-                break;
-                case com.android.internal.R.styleable.RelativeLayout_Layout_layout_alignParentBottom:
-                rules[ALIGN_PARENT_BOTTOM] = a.getBoolean(attr, false) ? TRUE : 0;
-                break;
-                case com.android.internal.R.styleable.RelativeLayout_Layout_layout_centerInParent:
-                rules[CENTER_IN_PARENT] = a.getBoolean(attr, false) ? TRUE : 0;
-                break;
-                case com.android.internal.R.styleable.RelativeLayout_Layout_layout_centerHorizontal:
-                rules[CENTER_HORIZONTAL] = a.getBoolean(attr, false) ? TRUE : 0;
-                break;
-                case com.android.internal.R.styleable.RelativeLayout_Layout_layout_centerVertical:
-                rules[CENTER_VERTICAL] = a.getBoolean(attr, false) ? TRUE : 0;
-                break;
-}
-            } //End block
+                switch (attr) {
+                    case com.android.internal.R.styleable.RelativeLayout_Layout_layout_alignWithParentIfMissing:
+                        alignWithParent = a.getBoolean(attr, false);
+                        break;
+                    case com.android.internal.R.styleable.RelativeLayout_Layout_layout_toLeftOf:
+                        rules[LEFT_OF] = a.getResourceId(attr, 0);
+                        break;
+                    case com.android.internal.R.styleable.RelativeLayout_Layout_layout_toRightOf:
+                        rules[RIGHT_OF] = a.getResourceId(attr, 0);
+                        break;
+                    case com.android.internal.R.styleable.RelativeLayout_Layout_layout_above:
+                        rules[ABOVE] = a.getResourceId(attr, 0);
+                        break;
+                    case com.android.internal.R.styleable.RelativeLayout_Layout_layout_below:
+                        rules[BELOW] = a.getResourceId(attr, 0);
+                        break;
+                    case com.android.internal.R.styleable.RelativeLayout_Layout_layout_alignBaseline:
+                        rules[ALIGN_BASELINE] = a.getResourceId(attr, 0);
+                        break;
+                    case com.android.internal.R.styleable.RelativeLayout_Layout_layout_alignLeft:
+                        rules[ALIGN_LEFT] = a.getResourceId(attr, 0);
+                        break;
+                    case com.android.internal.R.styleable.RelativeLayout_Layout_layout_alignTop:
+                        rules[ALIGN_TOP] = a.getResourceId(attr, 0);
+                        break;
+                    case com.android.internal.R.styleable.RelativeLayout_Layout_layout_alignRight:
+                        rules[ALIGN_RIGHT] = a.getResourceId(attr, 0);
+                        break;
+                    case com.android.internal.R.styleable.RelativeLayout_Layout_layout_alignBottom:
+                        rules[ALIGN_BOTTOM] = a.getResourceId(attr, 0);
+                        break;
+                    case com.android.internal.R.styleable.RelativeLayout_Layout_layout_alignParentLeft:
+                        rules[ALIGN_PARENT_LEFT] = a.getBoolean(attr, false) ? TRUE : 0;
+                        break;
+                    case com.android.internal.R.styleable.RelativeLayout_Layout_layout_alignParentTop:
+                        rules[ALIGN_PARENT_TOP] = a.getBoolean(attr, false) ? TRUE : 0;
+                        break;
+                    case com.android.internal.R.styleable.RelativeLayout_Layout_layout_alignParentRight:
+                        rules[ALIGN_PARENT_RIGHT] = a.getBoolean(attr, false) ? TRUE : 0;
+                        break;
+                    case com.android.internal.R.styleable.RelativeLayout_Layout_layout_alignParentBottom:
+                        rules[ALIGN_PARENT_BOTTOM] = a.getBoolean(attr, false) ? TRUE : 0;
+                        break;
+                    case com.android.internal.R.styleable.RelativeLayout_Layout_layout_centerInParent:
+                        rules[CENTER_IN_PARENT] = a.getBoolean(attr, false) ? TRUE : 0;
+                        break;
+                    case com.android.internal.R.styleable.RelativeLayout_Layout_layout_centerHorizontal:
+                        rules[CENTER_HORIZONTAL] = a.getBoolean(attr, false) ? TRUE : 0;
+                        break;
+                    case com.android.internal.R.styleable.RelativeLayout_Layout_layout_centerVertical:
+                        rules[CENTER_VERTICAL] = a.getBoolean(attr, false) ? TRUE : 0;
+                       break;
+                }
+            }
+
             a.recycle();
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
         }
 
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.552 -0400", hash_original_method = "979C42732F8B715475115A738CE7596D", hash_generated_method = "503F8BCA6BB39449EFF41178BE64A21C")
-        public  LayoutParams(int w, int h) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.758 -0500", hash_original_method = "979C42732F8B715475115A738CE7596D", hash_generated_method = "A7516D57E99F3298A4CB1C063C44A289")
+        public LayoutParams(int w, int h) {
             super(w, h);
-            addTaint(h);
-            addTaint(w);
-            // ---------- Original Method ----------
         }
 
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.552 -0400", hash_original_method = "E78B3F1574E2791FC4B55C9E6B90274C", hash_generated_method = "37A5DBEF9177864A03971A9D81D7D3EE")
-        public  LayoutParams(ViewGroup.LayoutParams source) {
+        /**
+         * {@inheritDoc}
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.758 -0500", hash_original_method = "E78B3F1574E2791FC4B55C9E6B90274C", hash_generated_method = "35FAB65EFD30EE5BC910187CB4DA6F67")
+        public LayoutParams(ViewGroup.LayoutParams source) {
             super(source);
-            addTaint(source.getTaint());
-            // ---------- Original Method ----------
         }
 
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.552 -0400", hash_original_method = "600A366FF17B7D40DFA738E77A628E8F", hash_generated_method = "B2D13AC5BD03A134B95617DAFA8D7AF6")
-        public  LayoutParams(ViewGroup.MarginLayoutParams source) {
+        /**
+         * {@inheritDoc}
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.759 -0500", hash_original_method = "600A366FF17B7D40DFA738E77A628E8F", hash_generated_method = "DB62CC5C6AE5A2357A6BB246E8789BF6")
+        public LayoutParams(ViewGroup.MarginLayoutParams source) {
             super(source);
-            addTaint(source.getTaint());
-            // ---------- Original Method ----------
         }
 
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.553 -0400", hash_original_method = "E4ABE7598543A22DA450A925C25FFDEA", hash_generated_method = "0F0CA20CBEEB9101E23112E6C7B59269")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.760 -0500", hash_original_method = "E4ABE7598543A22DA450A925C25FFDEA", hash_generated_method = "3703F05F5DB5EE24B2B7671244D04F5E")
         @Override
-        public String debug(String output) {
-            addTaint(output.getTaint());
-String var415ADF52E55102ED4321EF30FF1080EF_1544025716 =             output + "ViewGroup.LayoutParams={ width=" + sizeToString(width) +
+public String debug(String output) {
+            return output + "ViewGroup.LayoutParams={ width=" + sizeToString(width) +
                     ", height=" + sizeToString(height) + " }";
-            var415ADF52E55102ED4321EF30FF1080EF_1544025716.addTaint(taint);
-            return var415ADF52E55102ED4321EF30FF1080EF_1544025716;
-            // ---------- Original Method ----------
-            //return output + "ViewGroup.LayoutParams={ width=" + sizeToString(width) +
-                    //", height=" + sizeToString(height) + " }";
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.553 -0400", hash_original_method = "F14B7CDC14D112CF9F86D0C64F4D29ED", hash_generated_method = "93452E0A48B7041D6E93F6CB23E7C08D")
+        /**
+         * Adds a layout rule to be interpreted by the RelativeLayout. This
+         * method should only be used for constraints that don't refer to another sibling
+         * (e.g., CENTER_IN_PARENT) or take a boolean value ({@link RelativeLayout#TRUE}
+         * for true or - for false). To specify a verb that takes a subject, use
+         * {@link #addRule(int, int)} instead.
+         *
+         * @param verb One of the verbs defined by
+         *        {@link android.widget.RelativeLayout RelativeLayout}, such as
+         *        ALIGN_WITH_PARENT_LEFT.
+         * @see #addRule(int, int)
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.761 -0500", hash_original_method = "F14B7CDC14D112CF9F86D0C64F4D29ED", hash_generated_method = "F888C197D33A9DD27F819D40D54B028F")
         public void addRule(int verb) {
             mRules[verb] = TRUE;
-            // ---------- Original Method ----------
-            //mRules[verb] = TRUE;
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.554 -0400", hash_original_method = "E6336A158C939972C1CFCFE234B123CF", hash_generated_method = "15C34D41A65E9FA80EF1B69E592566CD")
+        /**
+         * Adds a layout rule to be interpreted by the RelativeLayout. Use this for
+         * verbs that take a target, such as a sibling (ALIGN_RIGHT) or a boolean
+         * value (VISIBLE).
+         *
+         * @param verb One of the verbs defined by
+         *        {@link android.widget.RelativeLayout RelativeLayout}, such as
+         *         ALIGN_WITH_PARENT_LEFT.
+         * @param anchor The id of another view to use as an anchor,
+         *        or a boolean value(represented as {@link RelativeLayout#TRUE})
+         *        for true or 0 for false).  For verbs that don't refer to another sibling
+         *        (for example, ALIGN_WITH_PARENT_BOTTOM) just use -1.
+         * @see #addRule(int)
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.762 -0500", hash_original_method = "E6336A158C939972C1CFCFE234B123CF", hash_generated_method = "77CD180C6E32DEBAEFF64B715469A756")
         public void addRule(int verb, int anchor) {
             mRules[verb] = anchor;
-            // ---------- Original Method ----------
-            //mRules[verb] = anchor;
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.554 -0400", hash_original_method = "42AF2398E9BA5CDF378E196E0674D4AF", hash_generated_method = "702AE27491EF5340EB73331DDCE54615")
+        /**
+         * Retrieves a complete list of all supported rules, where the index is the rule
+         * verb, and the element value is the value specified, or "false" if it was never
+         * set.
+         *
+         * @return the supported rules
+         * @see #addRule(int, int)
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.763 -0500", hash_original_method = "42AF2398E9BA5CDF378E196E0674D4AF", hash_generated_method = "070C893267A247F6E4018633C24E9BB0")
         public int[] getRules() {
-            int[] varE219E87C8357C550D274AF6AD77D1221_616938365 = (mRules);
-                        int[] varB4CCCA26F9DB9189C32F33E82D425CFB_1213025186 = {getTaintInt()};
-            return varB4CCCA26F9DB9189C32F33E82D425CFB_1213025186;
-            // ---------- Original Method ----------
-            //return mRules;
+            return mRules;
         }
 
         
@@ -1499,173 +522,8 @@ String var415ADF52E55102ED4321EF30FF1080EF_1544025716 =             output + "Vi
 
     
     private static class DependencyGraph {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.554 -0400", hash_original_field = "DB82967F5D06BF98EFB4ACBA027F7402", hash_generated_field = "1B3148FB5A2450DADCF9B3CB97C1D5E0")
 
-        private ArrayList<Node> mNodes = new ArrayList<Node>();
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.554 -0400", hash_original_field = "1C1B3D8C2FB6A40BED49CA5117064AD5", hash_generated_field = "060FE5603F47B674AFC0F0792F7CB200")
-
-        private SparseArray<Node> mKeyNodes = new SparseArray<Node>();
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.554 -0400", hash_original_field = "1E43BF04D9AA2FB180EB6CB5F6659D68", hash_generated_field = "249978BD32E42A0796E8254A85A11B49")
-
-        private LinkedList<Node> mRoots = new LinkedList<Node>();
-        
-        @DSModeled(DSC.BAN)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.554 -0400", hash_original_method = "970FB9BC48F419CD4D1512AB366BD03A", hash_generated_method = "970FB9BC48F419CD4D1512AB366BD03A")
-        public DependencyGraph ()
-        {
-            //Synthesized constructor
-        }
-
-
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.555 -0400", hash_original_method = "686A3AF8289E33425B30BEC25704B03B", hash_generated_method = "6E263DE1C332A32A035DB6ED194F26A5")
-         void clear() {
-            final ArrayList<Node> nodes = mNodes;
-            final int count = nodes.size();
-for(int i = 0;i < count;i++)
-            {
-                nodes.get(i).release();
-            } //End block
-            nodes.clear();
-            mKeyNodes.clear();
-            mRoots.clear();
-            // ---------- Original Method ----------
-            //final ArrayList<Node> nodes = mNodes;
-            //final int count = nodes.size();
-            //for (int i = 0; i < count; i++) {
-                //nodes.get(i).release();
-            //}
-            //nodes.clear();
-            //mKeyNodes.clear();
-            //mRoots.clear();
-        }
-
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.555 -0400", hash_original_method = "2AE2D90F3BED583D61A7D72DDE9D78E7", hash_generated_method = "755A66AD6F0F9A54AB082244AEAC3FE0")
-         void add(View view) {
-            addTaint(view.getTaint());
-            final int id = view.getId();
-            final Node node = Node.acquire(view);
-            if(id != View.NO_ID)            
-            {
-                mKeyNodes.put(id, node);
-            } //End block
-            mNodes.add(node);
-            // ---------- Original Method ----------
-            //final int id = view.getId();
-            //final Node node = Node.acquire(view);
-            //if (id != View.NO_ID) {
-                //mKeyNodes.put(id, node);
-            //}
-            //mNodes.add(node);
-        }
-
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.556 -0400", hash_original_method = "A9C10EB6FA89DCA6CFC24E3AC1BF04E7", hash_generated_method = "6BE6BA382BB0A6CC539F812FC88ACCF0")
-         void getSortedViews(View[] sorted, int... rules) {
-            addTaint(rules[0]);
-            addTaint(sorted[0].getTaint());
-            final LinkedList<Node> roots = findRoots(rules);
-            int index = 0;
-            while
-(roots.size() > 0)            
-            {
-                final Node node = roots.removeFirst();
-                final View view = node.view;
-                final int key = view.getId();
-                sorted[index++] = view;
-                final HashSet<Node> dependents = node.dependents;
-for(Node dependent : dependents)
-                {
-                    final SparseArray<Node> dependencies = dependent.dependencies;
-                    dependencies.remove(key);
-                    if(dependencies.size() == 0)                    
-                    {
-                        roots.add(dependent);
-                    } //End block
-                } //End block
-            } //End block
-            if(index < sorted.length)            
-            {
-                IllegalStateException var04C5B0489467B0FD718C74CE5A26A97E_1274805561 = new IllegalStateException("Circular dependencies cannot exist"
-                        + " in RelativeLayout");
-                var04C5B0489467B0FD718C74CE5A26A97E_1274805561.addTaint(taint);
-                throw var04C5B0489467B0FD718C74CE5A26A97E_1274805561;
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
-        }
-
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.556 -0400", hash_original_method = "3833904997A1288F1E7950B84718C1E5", hash_generated_method = "33D4BFCCC4E864A5C8B5DB98D5C03878")
-        private LinkedList<Node> findRoots(int[] rulesFilter) {
-            addTaint(rulesFilter[0]);
-            final SparseArray<Node> keyNodes = mKeyNodes;
-            final ArrayList<Node> nodes = mNodes;
-            final int count = nodes.size();
-for(int i = 0;i < count;i++)
-            {
-                final Node node = nodes.get(i);
-                node.dependents.clear();
-                node.dependencies.clear();
-            } //End block
-for(int i = 0;i < count;i++)
-            {
-                final Node node = nodes.get(i);
-                final LayoutParams layoutParams = (LayoutParams) node.view.getLayoutParams();
-                final int[] rules = layoutParams.mRules;
-                final int rulesCount = rulesFilter.length;
-for(int j = 0;j < rulesCount;j++)
-                {
-                    final int rule = rules[rulesFilter[j]];
-                    if(rule > 0)                    
-                    {
-                        final Node dependency = keyNodes.get(rule);
-                        if(dependency == null || dependency == node)                        
-                        {
-                            continue;
-                        } //End block
-                        dependency.dependents.add(node);
-                        node.dependencies.put(rule, dependency);
-                    } //End block
-                } //End block
-            } //End block
-            final LinkedList<Node> roots = mRoots;
-            roots.clear();
-for(int i = 0;i < count;i++)
-            {
-                final Node node = nodes.get(i);
-                if(node.dependencies.size() == 0)                
-                roots.add(node);
-            } //End block
-LinkedList<Node> var907D3440FEE061C7C9FFFCA83FCE83DE_877105495 =             roots;
-            var907D3440FEE061C7C9FFFCA83FCE83DE_877105495.addTaint(taint);
-            return var907D3440FEE061C7C9FFFCA83FCE83DE_877105495;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
-        }
-
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.557 -0400", hash_original_method = "6C6DA74626C9CD8B150D67A2E9AEA5BB", hash_generated_method = "7347C0F545C6FFEA1812982CF1F31FEE")
-         void log(Resources resources, int... rules) {
-            addTaint(rules[0]);
-            addTaint(resources.getTaint());
-            final LinkedList<Node> roots = findRoots(rules);
-for(Node node : roots)
-            {
-                printNode(resources, node);
-            } //End block
-            // ---------- Original Method ----------
-            //final LinkedList<Node> roots = findRoots(rules);
-            //for (Node node : roots) {
-                //printNode(resources, node);
-            //}
-        }
-
-        
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.773 -0500", hash_original_method = "FAE4DC70618F6C3634F51BB32C060397", hash_generated_method = "4F30F97F72F8C27BB39E8A6F6AE387E1")
         static void printViewId(Resources resources, View view) {
             if (view.getId() != View.NO_ID) {
                 d(LOG_TAG, resources.getResourceEntryName(view.getId()));
@@ -1674,8 +532,7 @@ for(Node node : roots)
             }
         }
 
-        
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.774 -0500", hash_original_method = "9BBD1012C278C7D59EF7B9276E2C427A", hash_generated_method = "42599B0D4B2DEDA11894706758A47862")
         private static void appendViewId(Resources resources, Node node, StringBuilder buffer) {
             if (node.view.getId() != View.NO_ID) {
                 buffer.append(resources.getResourceEntryName(node.view.getId()));
@@ -1684,8 +541,7 @@ for(Node node : roots)
             }
         }
 
-        
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.775 -0500", hash_original_method = "EE33BB5914A230FEE21DAD74E82F4181", hash_generated_method = "8DA7C7D141128F7FFB5BB525806B2FEA")
         private static void printNode(Resources resources, Node node) {
             if (node.dependents.size() == 0) {
                 printViewId(resources, node.view);
@@ -1698,11 +554,11 @@ for(Node node : roots)
             }
         }
 
-        
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.776 -0500", hash_original_method = "D89FF62CD57013CC8FF22E8F5ABB7F55", hash_generated_method = "B253F7E66455D31732BCF41C5ED8A2FF")
         private static void printdependents(Resources resources, Node node, StringBuilder buffer) {
             buffer.append(" -> ");
             appendViewId(resources, node, buffer);
+
             if (node.dependents.size() == 0) {
                 d(LOG_TAG, buffer.toString());
             } else {
@@ -1712,22 +568,219 @@ for(Node node : roots)
                 }
             }
         }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.765 -0500", hash_original_field = "EEBCED0903B78B03542BECF17A6D32DC", hash_generated_field = "1B3148FB5A2450DADCF9B3CB97C1D5E0")
+
+        private ArrayList<Node> mNodes = new ArrayList<Node>();
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.766 -0500", hash_original_field = "7944E2BBA8066F3F708A1B5CF8FAF331", hash_generated_field = "060FE5603F47B674AFC0F0792F7CB200")
+
+        private SparseArray<Node> mKeyNodes = new SparseArray<Node>();
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.767 -0500", hash_original_field = "51F5C2B9DD0E6B38CF17C5A9DA650B55", hash_generated_field = "249978BD32E42A0796E8254A85A11B49")
+
+        private LinkedList<Node> mRoots = new LinkedList<Node>();
+        
+        @DSModeled(DSC.BAN)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.554 -0400", hash_original_method = "970FB9BC48F419CD4D1512AB366BD03A", hash_generated_method = "970FB9BC48F419CD4D1512AB366BD03A")
+        public DependencyGraph ()
+        {
+            //Synthesized constructor
+        }
+
+        /**
+         * Clears the graph.
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.767 -0500", hash_original_method = "686A3AF8289E33425B30BEC25704B03B", hash_generated_method = "686A3AF8289E33425B30BEC25704B03B")
+        void clear() {
+            final ArrayList<Node> nodes = mNodes;
+            final int count = nodes.size();
+
+            for (int i = 0; i < count; i++) {
+                nodes.get(i).release();
+            }
+            nodes.clear();
+
+            mKeyNodes.clear();
+            mRoots.clear();
+        }
+
+        /**
+         * Adds a view to the graph.
+         *
+         * @param view The view to be added as a node to the graph.
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.768 -0500", hash_original_method = "2AE2D90F3BED583D61A7D72DDE9D78E7", hash_generated_method = "2AE2D90F3BED583D61A7D72DDE9D78E7")
+        void add(View view) {
+            final int id = view.getId();
+            final Node node = Node.acquire(view);
+
+            if (id != View.NO_ID) {
+                mKeyNodes.put(id, node);
+            }
+
+            mNodes.add(node);
+        }
+
+        /**
+         * Builds a sorted list of views. The sorting order depends on the dependencies
+         * between the view. For instance, if view C needs view A to be processed first
+         * and view A needs view B to be processed first, the dependency graph
+         * is: B -> A -> C. The sorted array will contain views B, A and C in this order.
+         *
+         * @param sorted The sorted list of views. The length of this array must
+         *        be equal to getChildCount().
+         * @param rules The list of rules to take into account.
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.769 -0500", hash_original_method = "A9C10EB6FA89DCA6CFC24E3AC1BF04E7", hash_generated_method = "A9C10EB6FA89DCA6CFC24E3AC1BF04E7")
+        void getSortedViews(View[] sorted, int... rules) {
+            final LinkedList<Node> roots = findRoots(rules);
+            int index = 0;
+
+            while (roots.size() > 0) {
+                final Node node = roots.removeFirst();
+                final View view = node.view;
+                final int key = view.getId();
+
+                sorted[index++] = view;
+
+                final HashSet<Node> dependents = node.dependents;
+                for (Node dependent : dependents) {
+                    final SparseArray<Node> dependencies = dependent.dependencies;
+
+                    dependencies.remove(key);
+                    if (dependencies.size() == 0) {
+                        roots.add(dependent);
+                    }
+                }
+            }
+
+            if (index < sorted.length) {
+                throw new IllegalStateException("Circular dependencies cannot exist"
+                        + " in RelativeLayout");
+            }
+        }
+
+        /**
+         * Finds the roots of the graph. A root is a node with no dependency and
+         * with [0..n] dependents.
+         *
+         * @param rulesFilter The list of rules to consider when building the
+         *        dependencies
+         *
+         * @return A list of node, each being a root of the graph
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.771 -0500", hash_original_method = "3833904997A1288F1E7950B84718C1E5", hash_generated_method = "3C85F6F19C37221BA26E3341906EA33F")
+        private LinkedList<Node> findRoots(int[] rulesFilter) {
+            final SparseArray<Node> keyNodes = mKeyNodes;
+            final ArrayList<Node> nodes = mNodes;
+            final int count = nodes.size();
+
+            // Find roots can be invoked several times, so make sure to clear
+            // all dependents and dependencies before running the algorithm
+            for (int i = 0; i < count; i++) {
+                final Node node = nodes.get(i);
+                node.dependents.clear();
+                node.dependencies.clear();
+            }
+
+            // Builds up the dependents and dependencies for each node of the graph
+            for (int i = 0; i < count; i++) {
+                final Node node = nodes.get(i);
+
+                final LayoutParams layoutParams = (LayoutParams) node.view.getLayoutParams();
+                final int[] rules = layoutParams.mRules;
+                final int rulesCount = rulesFilter.length;
+
+                // Look only the the rules passed in parameter, this way we build only the
+                // dependencies for a specific set of rules
+                for (int j = 0; j < rulesCount; j++) {
+                    final int rule = rules[rulesFilter[j]];
+                    if (rule > 0) {
+                        // The node this node depends on
+                        final Node dependency = keyNodes.get(rule);
+                        // Skip unknowns and self dependencies
+                        if (dependency == null || dependency == node) {
+                            continue;
+                        }
+                        // Add the current node as a dependent
+                        dependency.dependents.add(node);
+                        // Add a dependency to the current node
+                        node.dependencies.put(rule, dependency);
+                    }
+                }
+            }
+
+            final LinkedList<Node> roots = mRoots;
+            roots.clear();
+
+            // Finds all the roots in the graph: all nodes with no dependencies
+            for (int i = 0; i < count; i++) {
+                final Node node = nodes.get(i);
+                if (node.dependencies.size() == 0) roots.add(node);
+            }
+
+            return roots;
+        }
+
+        /**
+         * Prints the dependency graph for the specified rules.
+         *
+         * @param resources The context's resources to print the ids.
+         * @param rules The list of rules to take into account.
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.772 -0500", hash_original_method = "6C6DA74626C9CD8B150D67A2E9AEA5BB", hash_generated_method = "6C6DA74626C9CD8B150D67A2E9AEA5BB")
+        void log(Resources resources, int... rules) {
+            final LinkedList<Node> roots = findRoots(rules);
+            for (Node node : roots) {
+                printNode(resources, node);
+            }
+        }
 
         
         static class Node implements Poolable<Node> {
-            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.558 -0400", hash_original_field = "1BDA80F2BE4D3658E0BAA43FBE7AE8C1", hash_generated_field = "203A52904F64FA8CF6CE15F1E8FE3025")
+
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.789 -0500", hash_original_method = "5BEA2EBE8A9726A61D7727A98B817545", hash_generated_method = "FE4170A50397D1C582004617E5635711")
+            static Node acquire(View view) {
+                final Node node = sPool.acquire();
+                node.view = view;
+
+                return node;
+            }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:34:35.605 -0500", hash_original_field = "4ECB48BEA7396C11BE182F6F36669B1F", hash_generated_field = "6FB52636485DA57366423F0D25A74C1D")
+
+            // The pool is static, so all nodes instances are shared across
+            // activities, that's why we give it a rather high limit
+            private static final int POOL_LIMIT = 100;
+            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.560 -0400", hash_original_field = "698BA341680326808CDA69878C18B225", hash_generated_field = "0C54963AD1342FCB8B8CE9807462CEFA")
+
+            private static final Pool<Node> sPool = Pools.synchronizedPool(
+                    Pools.finitePool(new PoolableManager<Node>() {
+                        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.781 -0500", hash_original_method = "CFC301DC547DCB51E71118D3B9DE66B5", hash_generated_method = "CCB5CCF51D5F75F1F21B03543304635A")
+                public Node newInstance() {
+                            return new Node();
+                        }
+
+                        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.782 -0500", hash_original_method = "D1D5932E05B7F3CB123A8C60A984D3D0", hash_generated_method = "6605188C75CB989C66BE0D8DCBC2AC5B")
+                public void onAcquired(Node element) {
+                        }
+
+                        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.783 -0500", hash_original_method = "80A28A87F7D5CAD8A3CF8F1873AA6233", hash_generated_method = "A7D7CD798D3DFDCE92306E20BBEF5413")
+                public void onReleased(Node element) {
+                        }
+                    }, POOL_LIMIT)
+            );
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.777 -0500", hash_original_field = "203A52904F64FA8CF6CE15F1E8FE3025", hash_generated_field = "203A52904F64FA8CF6CE15F1E8FE3025")
 
             View view;
-            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.558 -0400", hash_original_field = "E45EE0A3360491972145435FEA221205", hash_generated_field = "A98125254E0172625F934FA16377E7CD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.778 -0500", hash_original_field = "15404FAB3E19CCE5CED42FA586FF679D", hash_generated_field = "A98125254E0172625F934FA16377E7CD")
 
             final HashSet<Node> dependents = new HashSet<Node>();
-            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.558 -0400", hash_original_field = "D360F8069C7C16E4E73F95B33F2F9896", hash_generated_field = "316BDC31957F2C9443C511FFBE84DF28")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.778 -0500", hash_original_field = "51D91DD50794A2AD7CC8B731763D84F6", hash_generated_field = "316BDC31957F2C9443C511FFBE84DF28")
 
             final SparseArray<Node> dependencies = new SparseArray<Node>();
-            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.558 -0400", hash_original_field = "2271A9775971F952514B94408144FAA0", hash_generated_field = "0A1E5AFC0BA7AE75B487CB8ED7E2A9F4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.784 -0500", hash_original_field = "8B01B5FFB32F0F6A4DE0D73A6D01885C", hash_generated_field = "0A1E5AFC0BA7AE75B487CB8ED7E2A9F4")
+
 
             private Node mNext;
-            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.559 -0400", hash_original_field = "224D05F4261498DA1D9DF38424832532", hash_generated_field = "BD952C5DD2D86B34B4D5F4AFE196E837")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.785 -0500", hash_original_field = "016073DCFA93DD0305C42C8759ED2078", hash_generated_field = "BD952C5DD2D86B34B4D5F4AFE196E837")
 
             private boolean mIsPooled;
             
@@ -1737,91 +790,34 @@ for(Node node : roots)
                 //Synthesized constructor
             }
 
-
-                        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.559 -0400", hash_original_method = "A08BF9EBBE4B2747346D150314791002", hash_generated_method = "2FE07B58E0CD5DBB314046E4692100A0")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.786 -0500", hash_original_method = "A08BF9EBBE4B2747346D150314791002", hash_generated_method = "099EC2311D7A372794CCC40C4E16622B")
             public void setNextPoolable(Node element) {
                 mNext = element;
-                // ---------- Original Method ----------
-                //mNext = element;
             }
 
-            
-                        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.559 -0400", hash_original_method = "3B74D9DA1E659E0940912A17ED2BA31C", hash_generated_method = "C61C545D18839CD90AE21742829FFC02")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.787 -0500", hash_original_method = "3B74D9DA1E659E0940912A17ED2BA31C", hash_generated_method = "A9DEB90049533275703549BDFF83B197")
             public Node getNextPoolable() {
-Node varA29C6A1F0F29A0F3732076BE541D5DCD_1367590680 =                 mNext;
-                varA29C6A1F0F29A0F3732076BE541D5DCD_1367590680.addTaint(taint);
-                return varA29C6A1F0F29A0F3732076BE541D5DCD_1367590680;
-                // ---------- Original Method ----------
-                //return mNext;
+                return mNext;
             }
 
-            
-                        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.559 -0400", hash_original_method = "4CB4F04617162A1F2BEBBAC63163A5FB", hash_generated_method = "5943E38831216F7D5D3F22ACB72CE2FC")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.788 -0500", hash_original_method = "4CB4F04617162A1F2BEBBAC63163A5FB", hash_generated_method = "B6A97050680DD62F0E280740D1E9FA7B")
             public boolean isPooled() {
-                boolean var224D05F4261498DA1D9DF38424832532_1171519117 = (mIsPooled);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1984133987 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1984133987;
-                // ---------- Original Method ----------
-                //return mIsPooled;
+                return mIsPooled;
             }
 
-            
-                        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.560 -0400", hash_original_method = "CCE0492C3FBB65D8A1644633FE9AA3DF", hash_generated_method = "31CEC37D69D770078DC2E4A0F4797B2A")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.789 -0500", hash_original_method = "CCE0492C3FBB65D8A1644633FE9AA3DF", hash_generated_method = "B03D6BD405969AD6559FEB8A8380BDD8")
             public void setPooled(boolean isPooled) {
                 mIsPooled = isPooled;
-                // ---------- Original Method ----------
-                //mIsPooled = isPooled;
             }
 
-            
-            @DSModeled(DSC.SAFE)
-            static Node acquire(View view) {
-                final Node node = sPool.acquire();
-                node.view = view;
-                return node;
-            }
-
-            
-            @DSModeled(DSC.SAFE)
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.560 -0400", hash_original_method = "4A4B6653C3D2EF8B0AE5BB1353D36229", hash_generated_method = "01DCF22208A7B01047CEF53A1A4F2C6E")
-             void release() {
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.790 -0500", hash_original_method = "4A4B6653C3D2EF8B0AE5BB1353D36229", hash_generated_method = "4A4B6653C3D2EF8B0AE5BB1353D36229")
+            void release() {
                 view = null;
                 dependents.clear();
                 dependencies.clear();
+
                 sPool.release(this);
-                // ---------- Original Method ----------
-                //view = null;
-                //dependents.clear();
-                //dependencies.clear();
-                //sPool.release(this);
             }
-
-            
-            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.560 -0400", hash_original_field = "3303CE2CA63B453A0428C68DAD3EFE33", hash_generated_field = "9B2034265E9F4DD5C06037BD50EAEE36")
-
-            private static final int POOL_LIMIT = 100;
-            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.560 -0400", hash_original_field = "698BA341680326808CDA69878C18B225", hash_generated_field = "0C54963AD1342FCB8B8CE9807462CEFA")
-
-            private static final Pool<Node> sPool = Pools.synchronizedPool(
-                    Pools.finitePool(new PoolableManager<Node>() {
-                        @DSModeled(DSC.SAFE)
-                public Node newInstance() {
-                            return new Node();
-                        }
-
-                        @DSModeled(DSC.SAFE)
-                public void onAcquired(Node element) {
-                        }
-
-                        @DSModeled(DSC.SAFE)
-                public void onReleased(Node element) {
-                        }
-                    }, POOL_LIMIT)
-            );
             // orphaned legacy method
             public void onReleased(Node element) {
                         }
@@ -1841,67 +837,696 @@ Node varA29C6A1F0F29A0F3732076BE541D5DCD_1367590680 =                 mNext;
         
     }
 
+    // TODO: we need to find another way to implement RelativeLayout
+    // This implementation cannot handle every case
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.730 -0500", hash_original_method = "E2AF18A4E301BF9A8D0B175790671ACC", hash_generated_method = "182B860CF816F14578C0BA51E4345437")
+    @Override
+protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        if (mDirtyHierarchy) {
+            mDirtyHierarchy = false;
+            sortChildren();
+        }
 
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.561 -0400", hash_original_field = "B81C9D25359AE819312506FB4D454B3C", hash_generated_field = "57E1FE47E9272F2D3908282BD0F70602")
+        int myWidth = -1;
+        int myHeight = -1;
 
-    private static final String LOG_TAG = "RelativeLayout";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.561 -0400", hash_original_field = "A4AD3F5C4B55E9BB91428ACB3F00EB8D", hash_generated_field = "2C82381CD2A9F5B5C76AFEACEC85DDDB")
+        int width = 0;
+        int height = 0;
 
-    private static final boolean DEBUG_GRAPH = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.561 -0400", hash_original_field = "38E1112DF959C803A5554C727023AA17", hash_generated_field = "B2899320334F57908731E112E94F1CDE")
+        int widthMode = MeasureSpec.getMode(widthMeasureSpec);
+        int heightMode = MeasureSpec.getMode(heightMeasureSpec);
+        int widthSize = MeasureSpec.getSize(widthMeasureSpec);
+        int heightSize = MeasureSpec.getSize(heightMeasureSpec);
 
-    public static final int TRUE = -1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.561 -0400", hash_original_field = "0152EBE6648A1A849ABE5CCB369A5F61", hash_generated_field = "096208EA2AF3CC7E7141BFD38797A0EC")
+        // Record our dimensions if they are known;
+        if (widthMode != MeasureSpec.UNSPECIFIED) {
+            myWidth = widthSize;
+        }
 
-    public static final int LEFT_OF                  = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.561 -0400", hash_original_field = "BC8A963608B08F83E18CF292ADCB1EF2", hash_generated_field = "3F8E96F44674079400E1FE6BBEE7D7E2")
+        if (heightMode != MeasureSpec.UNSPECIFIED) {
+            myHeight = heightSize;
+        }
 
-    public static final int RIGHT_OF                 = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.561 -0400", hash_original_field = "A552BBF9EE1E682F7D687E2691837FAD", hash_generated_field = "B25BAD9E800E104591FBDEB68402C4D7")
+        if (widthMode == MeasureSpec.EXACTLY) {
+            width = myWidth;
+        }
 
-    public static final int ABOVE                    = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.561 -0400", hash_original_field = "F830A844112A468573A1372D853A00F0", hash_generated_field = "C33F54ACAC005E4F7B577DF5ECD8B8CB")
+        if (heightMode == MeasureSpec.EXACTLY) {
+            height = myHeight;
+        }
 
-    public static final int BELOW                    = 3;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.561 -0400", hash_original_field = "565F53F1AF518E64110614AF5FDFCB2F", hash_generated_field = "0367429D50A8B97E51A0EA79D61E8341")
+        mHasBaselineAlignedChild = false;
 
-    public static final int ALIGN_BASELINE           = 4;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.561 -0400", hash_original_field = "B400AB0A19AC559B655040F61D268739", hash_generated_field = "B08FA699BB0A7B8EE01E81D8523B06B8")
+        View ignore = null;
+        int gravity = mGravity & Gravity.RELATIVE_HORIZONTAL_GRAVITY_MASK;
+        final boolean horizontalGravity = gravity != Gravity.LEFT && gravity != 0;
+        gravity = mGravity & Gravity.VERTICAL_GRAVITY_MASK;
+        final boolean verticalGravity = gravity != Gravity.TOP && gravity != 0;
 
-    public static final int ALIGN_LEFT               = 5;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.561 -0400", hash_original_field = "74A2A03ABA276E34AB3C9322C33CDB50", hash_generated_field = "503D8ED8ADEFA09061443AB73E1105EB")
+        int left = Integer.MAX_VALUE;
+        int top = Integer.MAX_VALUE;
+        int right = Integer.MIN_VALUE;
+        int bottom = Integer.MIN_VALUE;
 
-    public static final int ALIGN_TOP                = 6;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.561 -0400", hash_original_field = "CDCCA2471B04431DDC51A918AD8834B6", hash_generated_field = "066A8ADE746ECE1F1116FA381AA46454")
+        boolean offsetHorizontalAxis = false;
+        boolean offsetVerticalAxis = false;
 
-    public static final int ALIGN_RIGHT              = 7;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.561 -0400", hash_original_field = "3723503AA3BFD474E29708678D1AB7A3", hash_generated_field = "0F184873DB5DF31E2DCF140BE0923551")
+        if ((horizontalGravity || verticalGravity) && mIgnoreGravity != View.NO_ID) {
+            ignore = findViewById(mIgnoreGravity);
+        }
 
-    public static final int ALIGN_BOTTOM             = 8;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.561 -0400", hash_original_field = "57EDC78D811DE81B14DD0D05A86F4D0D", hash_generated_field = "07136E510188D5E09CB6F7AA93561D06")
+        final boolean isWrapContentWidth = widthMode != MeasureSpec.EXACTLY;
+        final boolean isWrapContentHeight = heightMode != MeasureSpec.EXACTLY;
 
-    public static final int ALIGN_PARENT_LEFT        = 9;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.561 -0400", hash_original_field = "CE3851F8A5577E5BA49B2CB7B6BB878A", hash_generated_field = "0949503221E389CCE8FB0E1467A44822")
+        View[] views = mSortedHorizontalChildren;
+        int count = views.length;
+        for (int i = 0; i < count; i++) {
+            View child = views[i];
+            if (child.getVisibility() != GONE) {
+                LayoutParams params = (LayoutParams) child.getLayoutParams();
 
-    public static final int ALIGN_PARENT_TOP         = 10;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.561 -0400", hash_original_field = "4F39C7BC6D569B9912A6C401F5A04E01", hash_generated_field = "3EFDDDF20B46B24CC5FB727D20BD8554")
+                applyHorizontalSizeRules(params, myWidth);
+                measureChildHorizontal(child, params, myWidth, myHeight);
+                if (positionChildHorizontal(child, params, myWidth, isWrapContentWidth)) {
+                    offsetHorizontalAxis = true;
+                }
+            }
+        }
 
-    public static final int ALIGN_PARENT_RIGHT       = 11;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.561 -0400", hash_original_field = "38AA961AD0797B3EB35974B8D237E4DE", hash_generated_field = "82EE6CB558A3BB3B4C93A79C69887380")
+        views = mSortedVerticalChildren;
+        count = views.length;
 
-    public static final int ALIGN_PARENT_BOTTOM      = 12;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.561 -0400", hash_original_field = "A3DE69363031F50770D752E2DF01665D", hash_generated_field = "D045131D6C0978E01C7E1F593FBD0FC4")
+        for (int i = 0; i < count; i++) {
+            View child = views[i];
+            if (child.getVisibility() != GONE) {
+                LayoutParams params = (LayoutParams) child.getLayoutParams();
+                
+                applyVerticalSizeRules(params, myHeight);
+                measureChild(child, params, myWidth, myHeight);
+                if (positionChildVertical(child, params, myHeight, isWrapContentHeight)) {
+                    offsetVerticalAxis = true;
+                }
 
-    public static final int CENTER_IN_PARENT         = 13;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.562 -0400", hash_original_field = "26070F6C6231ACEE59A596606E5D0FDA", hash_generated_field = "E7BDEFDBB1D8A752BEF0DA17BCC1DA06")
+                if (isWrapContentWidth) {
+                    width = Math.max(width, params.mRight);
+                }
 
-    public static final int CENTER_HORIZONTAL        = 14;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.562 -0400", hash_original_field = "CE20BA373620FB57D0126DD228A7F498", hash_generated_field = "12CCDDB6CE0278C45C3ED35DE6FCDC8B")
+                if (isWrapContentHeight) {
+                    height = Math.max(height, params.mBottom);
+                }
 
-    public static final int CENTER_VERTICAL          = 15;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.562 -0400", hash_original_field = "DA3B5D996B18D578340E863FCDB56B8A", hash_generated_field = "4C06C39E645DF1A64F0D7148873000D8")
+                if (child != ignore || verticalGravity) {
+                    left = Math.min(left, params.mLeft - params.leftMargin);
+                    top = Math.min(top, params.mTop - params.topMargin);
+                }
 
-    private static final int VERB_COUNT = 16;
+                if (child != ignore || horizontalGravity) {
+                    right = Math.max(right, params.mRight + params.rightMargin);
+                    bottom = Math.max(bottom, params.mBottom + params.bottomMargin);
+                }
+            }
+        }
+
+        if (mHasBaselineAlignedChild) {
+            for (int i = 0; i < count; i++) {
+                View child = getChildAt(i);
+                if (child.getVisibility() != GONE) {
+                    LayoutParams params = (LayoutParams) child.getLayoutParams();
+                    alignBaseline(child, params);
+
+                    if (child != ignore || verticalGravity) {
+                        left = Math.min(left, params.mLeft - params.leftMargin);
+                        top = Math.min(top, params.mTop - params.topMargin);
+                    }
+
+                    if (child != ignore || horizontalGravity) {
+                        right = Math.max(right, params.mRight + params.rightMargin);
+                        bottom = Math.max(bottom, params.mBottom + params.bottomMargin);
+                    }
+                }
+            }
+        }
+
+        if (isWrapContentWidth) {
+            // Width already has left padding in it since it was calculated by looking at
+            // the right of each child view
+            width += mPaddingRight;
+
+            if (mLayoutParams.width >= 0) {
+                width = Math.max(width, mLayoutParams.width);
+            }
+
+            width = Math.max(width, getSuggestedMinimumWidth());
+            width = resolveSize(width, widthMeasureSpec);
+
+            if (offsetHorizontalAxis) {
+                for (int i = 0; i < count; i++) {
+                    View child = getChildAt(i);
+                    if (child.getVisibility() != GONE) {
+                        LayoutParams params = (LayoutParams) child.getLayoutParams();
+                        final int[] rules = params.getRules();
+                        if (rules[CENTER_IN_PARENT] != 0 || rules[CENTER_HORIZONTAL] != 0) {
+                            centerHorizontal(child, params, width);
+                        } else if (rules[ALIGN_PARENT_RIGHT] != 0) {
+                            final int childWidth = child.getMeasuredWidth();
+                            params.mLeft = width - mPaddingRight - childWidth;
+                            params.mRight = params.mLeft + childWidth;
+                        }
+                    }
+                }
+            }
+        }
+
+        if (isWrapContentHeight) {
+            // Height already has top padding in it since it was calculated by looking at
+            // the bottom of each child view
+            height += mPaddingBottom;
+
+            if (mLayoutParams.height >= 0) {
+                height = Math.max(height, mLayoutParams.height);
+            }
+
+            height = Math.max(height, getSuggestedMinimumHeight());
+            height = resolveSize(height, heightMeasureSpec);
+
+            if (offsetVerticalAxis) {
+                for (int i = 0; i < count; i++) {
+                    View child = getChildAt(i);
+                    if (child.getVisibility() != GONE) {
+                        LayoutParams params = (LayoutParams) child.getLayoutParams();
+                        final int[] rules = params.getRules();
+                        if (rules[CENTER_IN_PARENT] != 0 || rules[CENTER_VERTICAL] != 0) {
+                            centerVertical(child, params, height);
+                        } else if (rules[ALIGN_PARENT_BOTTOM] != 0) {
+                            final int childHeight = child.getMeasuredHeight();
+                            params.mTop = height - mPaddingBottom - childHeight;
+                            params.mBottom = params.mTop + childHeight;
+                        }
+                    }
+                }
+            }
+        }
+
+        if (horizontalGravity || verticalGravity) {
+            final Rect selfBounds = mSelfBounds;
+            selfBounds.set(mPaddingLeft, mPaddingTop, width - mPaddingRight,
+                    height - mPaddingBottom);
+
+            final Rect contentBounds = mContentBounds;
+            final int layoutDirection = getResolvedLayoutDirection();
+            Gravity.apply(mGravity, right - left, bottom - top, selfBounds, contentBounds,
+                    layoutDirection);
+
+            final int horizontalOffset = contentBounds.left - left;
+            final int verticalOffset = contentBounds.top - top;
+            if (horizontalOffset != 0 || verticalOffset != 0) {
+                for (int i = 0; i < count; i++) {
+                    View child = getChildAt(i);
+                    if (child.getVisibility() != GONE && child != ignore) {
+                        LayoutParams params = (LayoutParams) child.getLayoutParams();
+                        if (horizontalGravity) {
+                            params.mLeft += horizontalOffset;
+                            params.mRight += horizontalOffset;
+                        }
+                        if (verticalGravity) {
+                            params.mTop += verticalOffset;
+                            params.mBottom += verticalOffset;
+                        }
+                    }
+                }
+            }
+        }
+
+        setMeasuredDimension(width, height);
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.731 -0500", hash_original_method = "572E26DE16208C5960AF0F468C9CEB6F", hash_generated_method = "150B0976AFEBCE23A3F9621F683A208B")
+    private void alignBaseline(View child, LayoutParams params) {
+        int[] rules = params.getRules();
+        int anchorBaseline = getRelatedViewBaseline(rules, ALIGN_BASELINE);
+
+        if (anchorBaseline != -1) {
+            LayoutParams anchorParams = getRelatedViewParams(rules, ALIGN_BASELINE);
+            if (anchorParams != null) {
+                int offset = anchorParams.mTop + anchorBaseline;
+                int baseline = child.getBaseline();
+                if (baseline != -1) {
+                    offset -= baseline;
+                }
+                int height = params.mBottom - params.mTop;
+                params.mTop = offset;
+                params.mBottom = params.mTop + height;
+            }
+        }
+
+        if (mBaselineView == null) {
+            mBaselineView = child;
+        } else {
+            LayoutParams lp = (LayoutParams) mBaselineView.getLayoutParams();
+            if (params.mTop < lp.mTop || (params.mTop == lp.mTop && params.mLeft < lp.mLeft)) {
+                mBaselineView = child;
+            }
+        }
+    }
+
+    /**
+     * Measure a child. The child should have left, top, right and bottom information
+     * stored in its LayoutParams. If any of these values is -1 it means that the view
+     * can extend up to the corresponding edge.
+     *
+     * @param child Child to measure
+     * @param params LayoutParams associated with child
+     * @param myWidth Width of the the RelativeLayout
+     * @param myHeight Height of the RelativeLayout
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.732 -0500", hash_original_method = "6FAB1FA940C67F7A3A04C20DF403CDD7", hash_generated_method = "3C00073F57D54F6B181CA8CC2696B60B")
+    private void measureChild(View child, LayoutParams params, int myWidth, int myHeight) {
+        int childWidthMeasureSpec = getChildMeasureSpec(params.mLeft,
+                params.mRight, params.width,
+                params.leftMargin, params.rightMargin,
+                mPaddingLeft, mPaddingRight,
+                myWidth);
+        int childHeightMeasureSpec = getChildMeasureSpec(params.mTop,
+                params.mBottom, params.height,
+                params.topMargin, params.bottomMargin,
+                mPaddingTop, mPaddingBottom,
+                myHeight);
+        child.measure(childWidthMeasureSpec, childHeightMeasureSpec);
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.733 -0500", hash_original_method = "C649DEFF309C12811323B81F575C7972", hash_generated_method = "E97E6BC329F3080441FC412C4198730C")
+    private void measureChildHorizontal(View child, LayoutParams params, int myWidth, int myHeight) {
+        int childWidthMeasureSpec = getChildMeasureSpec(params.mLeft,
+                params.mRight, params.width,
+                params.leftMargin, params.rightMargin,
+                mPaddingLeft, mPaddingRight,
+                myWidth);
+        int childHeightMeasureSpec;
+        if (params.width == LayoutParams.MATCH_PARENT) {
+            childHeightMeasureSpec = MeasureSpec.makeMeasureSpec(myHeight, MeasureSpec.EXACTLY);
+        } else {
+            childHeightMeasureSpec = MeasureSpec.makeMeasureSpec(myHeight, MeasureSpec.AT_MOST);
+        }
+        child.measure(childWidthMeasureSpec, childHeightMeasureSpec);
+    }
+
+    /**
+     * Get a measure spec that accounts for all of the constraints on this view.
+     * This includes size contstraints imposed by the RelativeLayout as well as
+     * the View's desired dimension.
+     *
+     * @param childStart The left or top field of the child's layout params
+     * @param childEnd The right or bottom field of the child's layout params
+     * @param childSize The child's desired size (the width or height field of
+     *        the child's layout params)
+     * @param startMargin The left or top margin
+     * @param endMargin The right or bottom margin
+     * @param startPadding mPaddingLeft or mPaddingTop
+     * @param endPadding mPaddingRight or mPaddingBottom
+     * @param mySize The width or height of this view (the RelativeLayout)
+     * @return MeasureSpec for the child
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.734 -0500", hash_original_method = "78354A3A0D2C9A2AC648B99E7333EDDC", hash_generated_method = "16282200745A58B93E2CA5E9F000A4C6")
+    private int getChildMeasureSpec(int childStart, int childEnd,
+            int childSize, int startMargin, int endMargin, int startPadding,
+            int endPadding, int mySize) {
+        int childSpecMode = 0;
+        int childSpecSize = 0;
+
+        // Figure out start and end bounds.
+        int tempStart = childStart;
+        int tempEnd = childEnd;
+
+        // If the view did not express a layout constraint for an edge, use
+        // view's margins and our padding
+        if (tempStart < 0) {
+            tempStart = startPadding + startMargin;
+        }
+        if (tempEnd < 0) {
+            tempEnd = mySize - endPadding - endMargin;
+        }
+
+        // Figure out maximum size available to this view
+        int maxAvailable = tempEnd - tempStart;
+
+        if (childStart >= 0 && childEnd >= 0) {
+            // Constraints fixed both edges, so child must be an exact size
+            childSpecMode = MeasureSpec.EXACTLY;
+            childSpecSize = maxAvailable;
+        } else {
+            if (childSize >= 0) {
+                // Child wanted an exact size. Give as much as possible
+                childSpecMode = MeasureSpec.EXACTLY;
+
+                if (maxAvailable >= 0) {
+                    // We have a maxmum size in this dimension.
+                    childSpecSize = Math.min(maxAvailable, childSize);
+                } else {
+                    // We can grow in this dimension.
+                    childSpecSize = childSize;
+                }
+            } else if (childSize == LayoutParams.MATCH_PARENT) {
+                // Child wanted to be as big as possible. Give all availble
+                // space
+                childSpecMode = MeasureSpec.EXACTLY;
+                childSpecSize = maxAvailable;
+            } else if (childSize == LayoutParams.WRAP_CONTENT) {
+                // Child wants to wrap content. Use AT_MOST
+                // to communicate available space if we know
+                // our max size
+                if (maxAvailable >= 0) {
+                    // We have a maxmum size in this dimension.
+                    childSpecMode = MeasureSpec.AT_MOST;
+                    childSpecSize = maxAvailable;
+                } else {
+                    // We can grow in this dimension. Child can be as big as it
+                    // wants
+                    childSpecMode = MeasureSpec.UNSPECIFIED;
+                    childSpecSize = 0;
+                }
+            }
+        }
+
+        return MeasureSpec.makeMeasureSpec(childSpecSize, childSpecMode);
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.735 -0500", hash_original_method = "B9478380B54B111B46A13309CA4FBB39", hash_generated_method = "D416526859F67E914711B10B6344011D")
+    private boolean positionChildHorizontal(View child, LayoutParams params, int myWidth,
+            boolean wrapContent) {
+
+        int[] rules = params.getRules();
+
+        if (params.mLeft < 0 && params.mRight >= 0) {
+            // Right is fixed, but left varies
+            params.mLeft = params.mRight - child.getMeasuredWidth();
+        } else if (params.mLeft >= 0 && params.mRight < 0) {
+            // Left is fixed, but right varies
+            params.mRight = params.mLeft + child.getMeasuredWidth();
+        } else if (params.mLeft < 0 && params.mRight < 0) {
+            // Both left and right vary
+            if (rules[CENTER_IN_PARENT] != 0 || rules[CENTER_HORIZONTAL] != 0) {
+                if (!wrapContent) {
+                    centerHorizontal(child, params, myWidth);
+                } else {
+                    params.mLeft = mPaddingLeft + params.leftMargin;
+                    params.mRight = params.mLeft + child.getMeasuredWidth();
+                }
+                return true;
+            } else {
+                params.mLeft = mPaddingLeft + params.leftMargin;
+                params.mRight = params.mLeft + child.getMeasuredWidth();
+            }
+        }
+        return rules[ALIGN_PARENT_RIGHT] != 0;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.736 -0500", hash_original_method = "09EB493CF05E8E659EC89F37304CD399", hash_generated_method = "C0912D5A51A7AAEFB4D466AC9736EAB6")
+    private boolean positionChildVertical(View child, LayoutParams params, int myHeight,
+            boolean wrapContent) {
+
+        int[] rules = params.getRules();
+
+        if (params.mTop < 0 && params.mBottom >= 0) {
+            // Bottom is fixed, but top varies
+            params.mTop = params.mBottom - child.getMeasuredHeight();
+        } else if (params.mTop >= 0 && params.mBottom < 0) {
+            // Top is fixed, but bottom varies
+            params.mBottom = params.mTop + child.getMeasuredHeight();
+        } else if (params.mTop < 0 && params.mBottom < 0) {
+            // Both top and bottom vary
+            if (rules[CENTER_IN_PARENT] != 0 || rules[CENTER_VERTICAL] != 0) {
+                if (!wrapContent) {
+                    centerVertical(child, params, myHeight);
+                } else {
+                    params.mTop = mPaddingTop + params.topMargin;
+                    params.mBottom = params.mTop + child.getMeasuredHeight();
+                }
+                return true;
+            } else {
+                params.mTop = mPaddingTop + params.topMargin;
+                params.mBottom = params.mTop + child.getMeasuredHeight();
+            }
+        }
+        return rules[ALIGN_PARENT_BOTTOM] != 0;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.737 -0500", hash_original_method = "C61E9BCFF76D7B76D77F18D001923EFF", hash_generated_method = "32AA0EFA954962EE942A93E7F0DC8E2B")
+    private void applyHorizontalSizeRules(LayoutParams childParams, int myWidth) {
+        int[] rules = childParams.getRules();
+        RelativeLayout.LayoutParams anchorParams;
+
+        // -1 indicated a "soft requirement" in that direction. For example:
+        // left=10, right=-1 means the view must start at 10, but can go as far as it wants to the right
+        // left =-1, right=10 means the view must end at 10, but can go as far as it wants to the left
+        // left=10, right=20 means the left and right ends are both fixed
+        childParams.mLeft = -1;
+        childParams.mRight = -1;
+
+        anchorParams = getRelatedViewParams(rules, LEFT_OF);
+        if (anchorParams != null) {
+            childParams.mRight = anchorParams.mLeft - (anchorParams.leftMargin +
+                    childParams.rightMargin);
+        } else if (childParams.alignWithParent && rules[LEFT_OF] != 0) {
+            if (myWidth >= 0) {
+                childParams.mRight = myWidth - mPaddingRight - childParams.rightMargin;
+            } else {
+                // FIXME uh oh...
+            }
+        }
+
+        anchorParams = getRelatedViewParams(rules, RIGHT_OF);
+        if (anchorParams != null) {
+            childParams.mLeft = anchorParams.mRight + (anchorParams.rightMargin +
+                    childParams.leftMargin);
+        } else if (childParams.alignWithParent && rules[RIGHT_OF] != 0) {
+            childParams.mLeft = mPaddingLeft + childParams.leftMargin;
+        }
+
+        anchorParams = getRelatedViewParams(rules, ALIGN_LEFT);
+        if (anchorParams != null) {
+            childParams.mLeft = anchorParams.mLeft + childParams.leftMargin;
+        } else if (childParams.alignWithParent && rules[ALIGN_LEFT] != 0) {
+            childParams.mLeft = mPaddingLeft + childParams.leftMargin;
+        }
+
+        anchorParams = getRelatedViewParams(rules, ALIGN_RIGHT);
+        if (anchorParams != null) {
+            childParams.mRight = anchorParams.mRight - childParams.rightMargin;
+        } else if (childParams.alignWithParent && rules[ALIGN_RIGHT] != 0) {
+            if (myWidth >= 0) {
+                childParams.mRight = myWidth - mPaddingRight - childParams.rightMargin;
+            } else {
+                // FIXME uh oh...
+            }
+        }
+
+        if (0 != rules[ALIGN_PARENT_LEFT]) {
+            childParams.mLeft = mPaddingLeft + childParams.leftMargin;
+        }
+
+        if (0 != rules[ALIGN_PARENT_RIGHT]) {
+            if (myWidth >= 0) {
+                childParams.mRight = myWidth - mPaddingRight - childParams.rightMargin;
+            } else {
+                // FIXME uh oh...
+            }
+        }
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.739 -0500", hash_original_method = "B3DE38D6CE01D7E90C154524E3D3CC84", hash_generated_method = "B5FECB6636B7008DC2ACD689D4845B51")
+    private void applyVerticalSizeRules(LayoutParams childParams, int myHeight) {
+        int[] rules = childParams.getRules();
+        RelativeLayout.LayoutParams anchorParams;
+
+        childParams.mTop = -1;
+        childParams.mBottom = -1;
+
+        anchorParams = getRelatedViewParams(rules, ABOVE);
+        if (anchorParams != null) {
+            childParams.mBottom = anchorParams.mTop - (anchorParams.topMargin +
+                    childParams.bottomMargin);
+        } else if (childParams.alignWithParent && rules[ABOVE] != 0) {
+            if (myHeight >= 0) {
+                childParams.mBottom = myHeight - mPaddingBottom - childParams.bottomMargin;
+            } else {
+                // FIXME uh oh...
+            }
+        }
+
+        anchorParams = getRelatedViewParams(rules, BELOW);
+        if (anchorParams != null) {
+            childParams.mTop = anchorParams.mBottom + (anchorParams.bottomMargin +
+                    childParams.topMargin);
+        } else if (childParams.alignWithParent && rules[BELOW] != 0) {
+            childParams.mTop = mPaddingTop + childParams.topMargin;
+        }
+
+        anchorParams = getRelatedViewParams(rules, ALIGN_TOP);
+        if (anchorParams != null) {
+            childParams.mTop = anchorParams.mTop + childParams.topMargin;
+        } else if (childParams.alignWithParent && rules[ALIGN_TOP] != 0) {
+            childParams.mTop = mPaddingTop + childParams.topMargin;
+        }
+
+        anchorParams = getRelatedViewParams(rules, ALIGN_BOTTOM);
+        if (anchorParams != null) {
+            childParams.mBottom = anchorParams.mBottom - childParams.bottomMargin;
+        } else if (childParams.alignWithParent && rules[ALIGN_BOTTOM] != 0) {
+            if (myHeight >= 0) {
+                childParams.mBottom = myHeight - mPaddingBottom - childParams.bottomMargin;
+            } else {
+                // FIXME uh oh...
+            }
+        }
+
+        if (0 != rules[ALIGN_PARENT_TOP]) {
+            childParams.mTop = mPaddingTop + childParams.topMargin;
+        }
+
+        if (0 != rules[ALIGN_PARENT_BOTTOM]) {
+            if (myHeight >= 0) {
+                childParams.mBottom = myHeight - mPaddingBottom - childParams.bottomMargin;
+            } else {
+                // FIXME uh oh...
+            }
+        }
+
+        if (rules[ALIGN_BASELINE] != 0) {
+            mHasBaselineAlignedChild = true;
+        }
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.740 -0500", hash_original_method = "1C833E1C2ADE997D1187353BA16BCE70", hash_generated_method = "83F4CE1F5B509C83152C214D53FEC76D")
+    private View getRelatedView(int[] rules, int relation) {
+        int id = rules[relation];
+        if (id != 0) {
+            DependencyGraph.Node node = mGraph.mKeyNodes.get(id);
+            if (node == null) return null;
+            View v = node.view;
+
+            // Find the first non-GONE view up the chain
+            while (v.getVisibility() == View.GONE) {
+                rules = ((LayoutParams) v.getLayoutParams()).getRules();
+                node = mGraph.mKeyNodes.get((rules[relation]));
+                if (node == null) return null;
+                v = node.view;
+            }
+
+            return v;
+        }
+
+        return null;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.741 -0500", hash_original_method = "1432C4369AF9849456CCA14753707552", hash_generated_method = "87E0F8DD296FA0AA8E41B2D82A034AA5")
+    private LayoutParams getRelatedViewParams(int[] rules, int relation) {
+        View v = getRelatedView(rules, relation);
+        if (v != null) {
+            ViewGroup.LayoutParams params = v.getLayoutParams();
+            if (params instanceof LayoutParams) {
+                return (LayoutParams) v.getLayoutParams();
+            }
+        }
+        return null;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.741 -0500", hash_original_method = "B96AFAE3C58D6FFF0F9AB9328789A20B", hash_generated_method = "299A78988211003B8179EA049732589D")
+    private int getRelatedViewBaseline(int[] rules, int relation) {
+        View v = getRelatedView(rules, relation);
+        if (v != null) {
+            return v.getBaseline();
+        }
+        return -1;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.742 -0500", hash_original_method = "8A1AB6E076A6FFB22058EEC6C343479D", hash_generated_method = "33328618EF9E37013A7E8E94B72E04F8")
+    private void centerHorizontal(View child, LayoutParams params, int myWidth) {
+        int childWidth = child.getMeasuredWidth();
+        int left = (myWidth - childWidth) / 2;
+
+        params.mLeft = left;
+        params.mRight = left + childWidth;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.743 -0500", hash_original_method = "D7FF6A5DD857E80D590F5847BEDB8204", hash_generated_method = "18B708FABB2FF905BD9FD6AAA82FE571")
+    private void centerVertical(View child, LayoutParams params, int myHeight) {
+        int childHeight = child.getMeasuredHeight();
+        int top = (myHeight - childHeight) / 2;
+
+        params.mTop = top;
+        params.mBottom = top + childHeight;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.744 -0500", hash_original_method = "05FEBBF616C51C2D421358B4A05D22CE", hash_generated_method = "C8BD01794E72F9D0106426EDAF308952")
+    @Override
+protected void onLayout(boolean changed, int l, int t, int r, int b) {
+        //  The layout has actually already been performed and the positions
+        //  cached.  Apply the cached values to the children.
+        int count = getChildCount();
+
+        for (int i = 0; i < count; i++) {
+            View child = getChildAt(i);
+            if (child.getVisibility() != GONE) {
+                RelativeLayout.LayoutParams st =
+                        (RelativeLayout.LayoutParams) child.getLayoutParams();
+                child.layout(st.mLeft, st.mTop, st.mRight, st.mBottom);
+
+            }
+        }
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.745 -0500", hash_original_method = "233CD3CEF6FDC0096CEB70C074DAEDA3", hash_generated_method = "B50C38CF72F0312F7A4581FF4C56C893")
+    @Override
+public LayoutParams generateLayoutParams(AttributeSet attrs) {
+        return new RelativeLayout.LayoutParams(getContext(), attrs);
+    }
+
+    /**
+     * Returns a set of layout parameters with a width of
+     * {@link android.view.ViewGroup.LayoutParams#WRAP_CONTENT},
+     * a height of {@link android.view.ViewGroup.LayoutParams#WRAP_CONTENT} and no spanning.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.746 -0500", hash_original_method = "9A6A2F1616AFA891B0951E317B143439", hash_generated_method = "74CC428643796A680918FE0DB1A65779")
+    @Override
+protected ViewGroup.LayoutParams generateDefaultLayoutParams() {
+        return new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+    }
+
+    // Override to allow type-checking of LayoutParams.
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.747 -0500", hash_original_method = "7AAD3A1C062434D08215151012F2CF47", hash_generated_method = "5A37B644F5BCF6C2E9DC21DC8359141A")
+    @Override
+protected boolean checkLayoutParams(ViewGroup.LayoutParams p) {
+        return p instanceof RelativeLayout.LayoutParams;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.748 -0500", hash_original_method = "B595E0482905B38051CD63239BB5F8BA", hash_generated_method = "F04F425EAA932DD15846B3A8E447FBE2")
+    @Override
+protected ViewGroup.LayoutParams generateLayoutParams(ViewGroup.LayoutParams p) {
+        return new LayoutParams(p);
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:02.749 -0500", hash_original_method = "02980C12A71A151B5687E23560D62A05", hash_generated_method = "4F67BB22C02463A3BF21D4A6D96588A0")
+    @Override
+public boolean dispatchPopulateAccessibilityEvent(AccessibilityEvent event) {
+        if (mTopToBottomLeftToRightSet == null) {
+            mTopToBottomLeftToRightSet = new TreeSet<View>(new TopToBottomLeftToRightComparator());
+        }
+
+        // sort children top-to-bottom and left-to-right
+        for (int i = 0, count = getChildCount(); i < count; i++) {
+            mTopToBottomLeftToRightSet.add(getChildAt(i));
+        }
+
+        for (View view : mTopToBottomLeftToRightSet) {
+            if (view.getVisibility() == View.VISIBLE
+                    && view.dispatchPopulateAccessibilityEvent(event)) {
+                mTopToBottomLeftToRightSet.clear();
+                return true;
+            }
+        }
+
+        mTopToBottomLeftToRightSet.clear();
+        return false;
+    }
 }
 

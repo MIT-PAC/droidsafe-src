@@ -1,6 +1,8 @@
 package com.android.internal.telephony.cat;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 public enum LaunchBrowserMode {

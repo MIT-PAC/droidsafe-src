@@ -1,6 +1,8 @@
 package android.bluetooth;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -11,69 +13,68 @@ import java.io.OutputStream;
 
 
 final class BluetoothOutputStream extends OutputStream {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.560 -0400", hash_original_field = "ADAA094F2E9199B78AA3ADA013DBD64F", hash_generated_field = "F41529E7146F039F8982FD61509E896F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:19.962 -0500", hash_original_field = "F88CEEEA2A0982472DB6E6356FAA58B9", hash_generated_field = "F41529E7146F039F8982FD61509E896F")
 
     private BluetoothSocket mSocket;
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.562 -0400", hash_original_method = "6B802CCB266833E5725B115B8F18B649", hash_generated_method = "0A5737DCA899319336946825E00B057E")
-      BluetoothOutputStream(BluetoothSocket s) {
+
+    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:19.963 -0500", hash_original_method = "6B802CCB266833E5725B115B8F18B649", hash_generated_method = "6B802CCB266833E5725B115B8F18B649")
+    BluetoothOutputStream(BluetoothSocket s) {
         mSocket = s;
-        // ---------- Original Method ----------
-        //mSocket = s;
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.563 -0400", hash_original_method = "1323B57D07CB6385C2F8CE9373488A22", hash_generated_method = "FD4CC8D718C262BFF2A44C717A5A00BB")
+    /**
+     * Close this output stream and the socket associated with it.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:19.964 -0500", hash_original_method = "1323B57D07CB6385C2F8CE9373488A22", hash_generated_method = "C95071B8627034E7D9B94D5D2A0541A3")
     public void close() throws IOException {
         mSocket.close();
-        // ---------- Original Method ----------
-        //mSocket.close();
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.565 -0400", hash_original_method = "B2E185518772C6191E25665E6AAA6FD5", hash_generated_method = "DB7D3D348BD69B0B7267AB6966C95701")
+    /**
+     * Writes a single byte to this stream. Only the least significant byte of
+     * the integer {@code oneByte} is written to the stream.
+     *
+     * @param oneByte
+     *            the byte to be written.
+     * @throws IOException
+     *             if an error occurs while writing to this stream.
+     * @since Android 1.0
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:19.965 -0500", hash_original_method = "B2E185518772C6191E25665E6AAA6FD5", hash_generated_method = "2D5A46C23DD97DDE153E0C9506B1B72B")
     public void write(int oneByte) throws IOException {
-        addTaint(oneByte);
         byte b[] = new byte[1];
         b[0] = (byte)oneByte;
         mSocket.write(b, 0, 1);
-        // ---------- Original Method ----------
-        //byte b[] = new byte[1];
-        //b[0] = (byte)oneByte;
-        //mSocket.write(b, 0, 1);
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.566 -0400", hash_original_method = "DFA6C29609C7324702E3356FC466F21E", hash_generated_method = "5EE4EFCE06D4A71690600266B069FD77")
+    /**
+     * Writes {@code count} bytes from the byte array {@code buffer} starting
+     * at position {@code offset} to this stream.
+     *
+     * @param b
+     *            the buffer to be written.
+     * @param offset
+     *            the start position in {@code buffer} from where to get bytes.
+     * @param count
+     *            the number of bytes from {@code buffer} to write to this
+     *            stream.
+     * @throws IOException
+     *             if an error occurs while writing to this stream.
+     * @throws IndexOutOfBoundsException
+     *             if {@code offset < 0} or {@code count < 0}, or if
+     *             {@code offset + count} is bigger than the length of
+     *             {@code buffer}.
+     * @since Android 1.0
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:19.965 -0500", hash_original_method = "DFA6C29609C7324702E3356FC466F21E", hash_generated_method = "7AAC56040D447F28CDAF031F1B6BE1B8")
     public void write(byte[] b, int offset, int count) throws IOException {
-        addTaint(count);
-        addTaint(offset);
-        addTaint(b[0]);
-        if(b == null)        
-        {
-            NullPointerException var7FDB72E8E87DACDDA631EAE3D97D35EE_1500423063 = new NullPointerException("buffer is null");
-            var7FDB72E8E87DACDDA631EAE3D97D35EE_1500423063.addTaint(taint);
-            throw var7FDB72E8E87DACDDA631EAE3D97D35EE_1500423063;
-        } //End block
-        if((offset | count) < 0 || count > b.length - offset)        
-        {
-            IndexOutOfBoundsException varB360A176C8915EA1DA2BBA07F3D5CB2B_1367700056 = new IndexOutOfBoundsException("invalid offset or length");
-            varB360A176C8915EA1DA2BBA07F3D5CB2B_1367700056.addTaint(taint);
-            throw varB360A176C8915EA1DA2BBA07F3D5CB2B_1367700056;
-        } //End block
+        if (b == null) {
+            throw new NullPointerException("buffer is null");
+        }
+        if ((offset | count) < 0 || count > b.length - offset) {
+            throw new IndexOutOfBoundsException("invalid offset or length");
+        }
         mSocket.write(b, offset, count);
-        // ---------- Original Method ----------
-        //if (b == null) {
-            //throw new NullPointerException("buffer is null");
-        //}
-        //if ((offset | count) < 0 || count > b.length - offset) {
-            //throw new IndexOutOfBoundsException("invalid offset or length");
-        //}
-        //mSocket.write(b, offset, count);
     }
 
     

@@ -1,6 +1,8 @@
 package org.apache.http.impl.cookie;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Collection;
 import java.util.HashMap;
@@ -13,98 +15,66 @@ import org.apache.http.cookie.CookieSpec;
 
 
 public abstract class AbstractCookieSpec implements CookieSpec {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.525 -0400", hash_original_field = "495FEB68394F20BD9FD7141BB4B46729", hash_generated_field = "25D17092F85E51EF7D67F5963CE29C57")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.181 -0500", hash_original_field = "43A9094CB57C2C7C4EEDCFB17CF21065", hash_generated_field = "25D17092F85E51EF7D67F5963CE29C57")
 
-    private Map<String, CookieAttributeHandler> attribHandlerMap;
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.526 -0400", hash_original_method = "0B3B80B58135DE0CE3912FEB5FB0300B", hash_generated_method = "AD2F0091602CAB4242D76446C8217611")
-    public  AbstractCookieSpec() {
+    private  Map<String, CookieAttributeHandler> attribHandlerMap;
+
+    /** 
+     * Default constructor 
+     * */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.182 -0500", hash_original_method = "0B3B80B58135DE0CE3912FEB5FB0300B", hash_generated_method = "86A9B77828C40B0D962397C0CA763DAC")
+    public AbstractCookieSpec() {
         super();
-        this.attribHandlerMap = new HashMap<String, CookieAttributeHandler>(10);
-        // ---------- Original Method ----------
-        //this.attribHandlerMap = new HashMap<String, CookieAttributeHandler>(10);
+        this.attribHandlerMap = new HashMap<String, CookieAttributeHandler>(10);        
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.526 -0400", hash_original_method = "9190789BDD8DB6BFF150C07D3746174E", hash_generated_method = "CCBD7DF22F4FF56488A395A75FDAD55E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.184 -0500", hash_original_method = "9190789BDD8DB6BFF150C07D3746174E", hash_generated_method = "5DC1CF3DD658C7B900F0E5AA6BEABEC8")
     public void registerAttribHandler(
             final String name, final CookieAttributeHandler handler) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
-        addTaint(handler.getTaint());
-        addTaint(name.getTaint());
-        if(name == null)        
-        {
-            IllegalArgumentException varA390B70006C1E514A593DE2D1F4678FE_1271352135 = new IllegalArgumentException("Attribute name may not be null");
-            varA390B70006C1E514A593DE2D1F4678FE_1271352135.addTaint(taint);
-            throw varA390B70006C1E514A593DE2D1F4678FE_1271352135;
-        } //End block
-        if(handler == null)        
-        {
-            IllegalArgumentException var3E1C6FBDD5FF4F5B7F0BD01CC53EE29B_406822547 = new IllegalArgumentException("Attribute handler may not be null");
-            var3E1C6FBDD5FF4F5B7F0BD01CC53EE29B_406822547.addTaint(taint);
-            throw var3E1C6FBDD5FF4F5B7F0BD01CC53EE29B_406822547;
-        } //End block
+        if (name == null) {
+            throw new IllegalArgumentException("Attribute name may not be null");
+        }
+        if (handler == null) {
+            throw new IllegalArgumentException("Attribute handler may not be null");
+        }
         this.attribHandlerMap.put(name, handler);
-        // ---------- Original Method ----------
-        //if (name == null) {
-            //throw new IllegalArgumentException("Attribute name may not be null");
-        //}
-        //if (handler == null) {
-            //throw new IllegalArgumentException("Attribute handler may not be null");
-        //}
-        //this.attribHandlerMap.put(name, handler);
     }
-
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.527 -0400", hash_original_method = "BCC9FF9C8AB53BB12822345DA7DF2FF0", hash_generated_method = "89291137683F1A7E3BD7616BDD9E27E7")
+    /**
+     * Finds an attribute handler {@link CookieAttributeHandler} for the
+     * given attribute. Returns <tt>null</tt> if no attribute handler is
+     * found for the specified attribute.
+     *
+     * @param name attribute name. e.g. Domain, Path, etc.
+     * @return an attribute handler or <tt>null</tt>
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.185 -0500", hash_original_method = "BCC9FF9C8AB53BB12822345DA7DF2FF0", hash_generated_method = "A19E40CFE4D3700251430B85E09A9A15")
     protected CookieAttributeHandler findAttribHandler(final String name) {
-        addTaint(name.getTaint());
-CookieAttributeHandler var7CB6F905BCF04D6249C4063CC6DBE304_748946437 =         this.attribHandlerMap.get(name);
-        var7CB6F905BCF04D6249C4063CC6DBE304_748946437.addTaint(taint);
-        return var7CB6F905BCF04D6249C4063CC6DBE304_748946437;
-        // ---------- Original Method ----------
-        //return this.attribHandlerMap.get(name);
+        return this.attribHandlerMap.get(name);
     }
-
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.527 -0400", hash_original_method = "F6557A039F439C9724E0D7B320BEE361", hash_generated_method = "8058DCB1FE0A33C6E46D593E01CDF160")
+    /**
+     * Gets attribute handler {@link CookieAttributeHandler} for the
+     * given attribute.
+     *
+     * @param name attribute name. e.g. Domain, Path, etc.
+     * @throws IllegalStateException if handler not found for the
+     *          specified attribute.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.185 -0500", hash_original_method = "F6557A039F439C9724E0D7B320BEE361", hash_generated_method = "671F2766A8551191777C6CE147645DE3")
     protected CookieAttributeHandler getAttribHandler(final String name) {
-        addTaint(name.getTaint());
         CookieAttributeHandler handler = findAttribHandler(name);
-        if(handler == null)        
-        {
-            IllegalStateException var10744B93194C74D7CF3940968F159D2D_35567777 = new IllegalStateException("Handler not registered for " +
+        if (handler == null) {
+            throw new IllegalStateException("Handler not registered for " +
                                             name + " attribute.");
-            var10744B93194C74D7CF3940968F159D2D_35567777.addTaint(taint);
-            throw var10744B93194C74D7CF3940968F159D2D_35567777;
-        } //End block
-        else
-        {
-CookieAttributeHandler var3E73215C2EA435E7F052AAB7C8597D27_887618459 =             handler;
-            var3E73215C2EA435E7F052AAB7C8597D27_887618459.addTaint(taint);
-            return var3E73215C2EA435E7F052AAB7C8597D27_887618459;
-        } //End block
-        // ---------- Original Method ----------
-        //CookieAttributeHandler handler = findAttribHandler(name);
-        //if (handler == null) {
-            //throw new IllegalStateException("Handler not registered for " +
-                                            //name + " attribute.");
-        //} else {
-            //return handler;
-        //}
+        } else {
+            return handler;
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.528 -0400", hash_original_method = "BF6A284618BDB748E6134235BAFA5C45", hash_generated_method = "9BAC6B88A5D4F2DEB2FC693A7CF7188B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.186 -0500", hash_original_method = "BF6A284618BDB748E6134235BAFA5C45", hash_generated_method = "93061CCFA4D56EE62B9F8B8C7F8FA92F")
     protected Collection<CookieAttributeHandler> getAttribHandlers() {
-Collection<CookieAttributeHandler> var4186A4F29AAD2C613AF1424EC7B20E08_827240114 =         this.attribHandlerMap.values();
-        var4186A4F29AAD2C613AF1424EC7B20E08_827240114.addTaint(taint);
-        return var4186A4F29AAD2C613AF1424EC7B20E08_827240114;
-        // ---------- Original Method ----------
-        //return this.attribHandlerMap.values();
+        return this.attribHandlerMap.values();
     }
 
     

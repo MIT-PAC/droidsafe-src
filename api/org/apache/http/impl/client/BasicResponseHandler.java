@@ -21,31 +21,23 @@ public class BasicResponseHandler implements ResponseHandler<String> {
         //Synthesized constructor
     }
 
-
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:54.267 -0400", hash_original_method = "2A5E0F0DC068B1165A25576DA590B50A", hash_generated_method = "B110CBD2261469E411B04223FE9CD60F")
-    public String handleResponse(final HttpResponse response) throws HttpResponseException, IOException {
-        addTaint(response.getTaint());
+    /**
+     * Returns the response body as a String if the response was successful (a
+     * 2xx status code). If no response body exists, this returns null. If the
+     * response was unsuccessful (>= 300 status code), throws an
+     * {@link HttpResponseException}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.366 -0500", hash_original_method = "2A5E0F0DC068B1165A25576DA590B50A", hash_generated_method = "33B2188B3F54CBA9844743E409A83493")
+    public String handleResponse(final HttpResponse response)
+            throws HttpResponseException, IOException {
         StatusLine statusLine = response.getStatusLine();
-        if(statusLine.getStatusCode() >= 300)        
-        {
-            HttpResponseException var7624D5E0C7BF35DD37B1E2795B552D38_511869565 = new HttpResponseException(statusLine.getStatusCode(),
+        if (statusLine.getStatusCode() >= 300) {
+            throw new HttpResponseException(statusLine.getStatusCode(),
                     statusLine.getReasonPhrase());
-            var7624D5E0C7BF35DD37B1E2795B552D38_511869565.addTaint(taint);
-            throw var7624D5E0C7BF35DD37B1E2795B552D38_511869565;
-        } //End block
+        }
+
         HttpEntity entity = response.getEntity();
-String varA746E92923BA5CC7927BB79D1B3F0152_2086527699 =         entity == null ? null : EntityUtils.toString(entity);
-        varA746E92923BA5CC7927BB79D1B3F0152_2086527699.addTaint(taint);
-        return varA746E92923BA5CC7927BB79D1B3F0152_2086527699;
-        // ---------- Original Method ----------
-        //StatusLine statusLine = response.getStatusLine();
-        //if (statusLine.getStatusCode() >= 300) {
-            //throw new HttpResponseException(statusLine.getStatusCode(),
-                    //statusLine.getReasonPhrase());
-        //}
-        //HttpEntity entity = response.getEntity();
-        //return entity == null ? null : EntityUtils.toString(entity);
+        return entity == null ? null : EntityUtils.toString(entity);
     }
 
     

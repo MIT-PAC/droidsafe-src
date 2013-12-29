@@ -1,6 +1,8 @@
 package java.util;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.DroidSafeAndroidRuntime;
 import static java.util.TreeMap.Relation.CEILING;
@@ -24,13 +26,48 @@ import libcore.util.Objects;
 
 
 public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>, NavigableMap<K, V>, Cloneable, Serializable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.367 -0400", hash_original_field = "4092F21BD0E2CC3C9CA971DF59AA8608", hash_generated_field = "10E826BC31BCAB9BF3EF3CC29146C2D4")
+
+    /**
+     * Returns the number of elements in the iteration.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.173 -0500", hash_original_method = "FF9071DA9035F09D9A096319B6A6FDA6", hash_generated_method = "7C5B4DDB15F102DFA56E66C2F3366598")
+    static int count(Iterator<?> iterator) {
+        int count = 0;
+        while (iterator.hasNext()) {
+            iterator.next();
+            count++;
+        }
+        return count;
+    }
+
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:12.547 -0400", hash_original_field = "AAD864C939B46188F070706401E1932C", hash_generated_field = "C574FEBC92A9E5D83B951EB931304363")
+    @SuppressWarnings("unchecked") private static final Comparator<Comparable> NATURAL_ORDER = new Comparator<Comparable>() {        
+        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:12.547 -0400", hash_original_method = "078A1DB9555D9E606EA5FF406F56B2E6", hash_generated_method = "00940CF90AFA854079CAC5C992323851")
+        public int compare(Comparable a, Comparable b) {
+            int varC15B2565AD7A5177ED0132648C5386D9_18628642 = (a.compareTo(b));
+            addTaint(a.getTaint());
+            addTaint(b.getTaint());
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1221955437 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1221955437;
+            
+            
+        }
+
+        
+};
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.174 -0500", hash_original_field = "3CD11D9225509050B5FD3B16969A0EAC", hash_generated_field = "72B7CECA8AF68C19BE3FF8E965B18D99")
+
+
+    private static final long serialVersionUID = 919286545866124006L;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:56.979 -0500", hash_original_field = "10E826BC31BCAB9BF3EF3CC29146C2D4", hash_generated_field = "10E826BC31BCAB9BF3EF3CC29146C2D4")
+
 
     Comparator<? super K> comparator;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.367 -0400", hash_original_field = "63A9F0EA7BB98050796B649E85481845", hash_generated_field = "85295BCB9659691A12B83D4313F1A2F9")
     int size = 0;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:56.982 -0500", hash_original_field = "7C38AA8724D6D8AD727BB2AB85887DF0", hash_generated_field = "7C38AA8724D6D8AD727BB2AB85887DF0")
 
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.367 -0400", hash_original_field = "8626C3CD64A823DD7B97C6F5EF45A8FC", hash_generated_field = "7C38AA8724D6D8AD727BB2AB85887DF0")
     int modCount = 0;
 
 
@@ -364,127 +401,30 @@ NavigableMap<K, V> varAA2AC7CD4326D49962BB154708AC9F4E_234290265 =         new B
         //return new BoundedMap(true, null, NO_BOUND, to, toBound);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.389 -0400", hash_original_method = "CAC178CA3C39A0AC08FB27C63F9A635C", hash_generated_method = "F115429E0CC0CEC82092193D12298EAE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.027 -0500", hash_original_method = "CAC178CA3C39A0AC08FB27C63F9A635C", hash_generated_method = "5E28ACDB35448021D802883D3D598F9F")
     public SortedMap<K, V> headMap(K toExclusive) {
-        addTaint(toExclusive.getTaint());
-SortedMap<K, V> varF36207FD347C9B8A75FD36AB250F2562_2084544995 =         new BoundedMap(true, null, NO_BOUND, toExclusive, EXCLUSIVE);
-        varF36207FD347C9B8A75FD36AB250F2562_2084544995.addTaint(taint);
-        return varF36207FD347C9B8A75FD36AB250F2562_2084544995;
-        // ---------- Original Method ----------
-        //return new BoundedMap(true, null, NO_BOUND, toExclusive, EXCLUSIVE);
+        return new BoundedMap(true, null, NO_BOUND, toExclusive, EXCLUSIVE);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.389 -0400", hash_original_method = "828BC950C20B857C189141DA99499F09", hash_generated_method = "E1F799729CFB590546C7E3601ED3B253")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.027 -0500", hash_original_method = "828BC950C20B857C189141DA99499F09", hash_generated_method = "2B13CB958846CACC81EBC1E8E6730CEC")
     public NavigableMap<K, V> tailMap(K from, boolean inclusive) {
-        addTaint(inclusive);
-        addTaint(from.getTaint());
         Bound fromBound = inclusive ? INCLUSIVE : EXCLUSIVE;
-NavigableMap<K, V> var858AA4077810E3CAD30935021614C398_1172707928 =         new BoundedMap(true, from, fromBound, null, NO_BOUND);
-        var858AA4077810E3CAD30935021614C398_1172707928.addTaint(taint);
-        return var858AA4077810E3CAD30935021614C398_1172707928;
-        // ---------- Original Method ----------
-        //Bound fromBound = inclusive ? INCLUSIVE : EXCLUSIVE;
-        //return new BoundedMap(true, from, fromBound, null, NO_BOUND);
+        return new BoundedMap(true, from, fromBound, null, NO_BOUND);
     }
 
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.390 -0400", hash_original_method = "79B47D2E0956F27B23E0B18E5FD19D6A", hash_generated_method = "F76D8B004F22DC740F898636C13D287A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.028 -0500", hash_original_method = "79B47D2E0956F27B23E0B18E5FD19D6A", hash_generated_method = "EA4A42F6650782E4A9A36597C8F4B65D")
     public SortedMap<K, V> tailMap(K fromInclusive) {
-        addTaint(fromInclusive.getTaint());
-SortedMap<K, V> var238F6B1D3AB45506AAB3C8043B1183BA_692610858 =         new BoundedMap(true, fromInclusive, INCLUSIVE, null, NO_BOUND);
-        var238F6B1D3AB45506AAB3C8043B1183BA_692610858.addTaint(taint);
-        return var238F6B1D3AB45506AAB3C8043B1183BA_692610858;
-        // ---------- Original Method ----------
-        //return new BoundedMap(true, fromInclusive, INCLUSIVE, null, NO_BOUND);
+        return new BoundedMap(true, fromInclusive, INCLUSIVE, null, NO_BOUND);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.390 -0400", hash_original_method = "5AD6A5A37D3C9366BEF11B75DC396D31", hash_generated_method = "F6619A914F54F978F5CEFA48433AD62B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.030 -0500", hash_original_method = "5AD6A5A37D3C9366BEF11B75DC396D31", hash_generated_method = "C5AB7E904C696E1FE5D0368B0CE4B765")
     public NavigableMap<K, V> descendingMap() {
-NavigableMap<K, V> var1294C8AE6093F28046A52F9C508EC87F_691939230 =         new BoundedMap(false, null, NO_BOUND, null, NO_BOUND);
-        var1294C8AE6093F28046A52F9C508EC87F_691939230.addTaint(taint);
-        return var1294C8AE6093F28046A52F9C508EC87F_691939230;
-        // ---------- Original Method ----------
-        //return new BoundedMap(false, null, NO_BOUND, null, NO_BOUND);
+        return new BoundedMap(false, null, NO_BOUND, null, NO_BOUND);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.390 -0400", hash_original_method = "1207DF79B9959BCB242E95030D6177B0", hash_generated_method = "B55B98D34D1D0D4E321F3F2DE53BE34B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.031 -0500", hash_original_method = "1207DF79B9959BCB242E95030D6177B0", hash_generated_method = "3BF4DBEFF754C3B7EF74F3EAA9F616AC")
     public NavigableSet<K> descendingKeySet() {
-NavigableSet<K> var147103AFA753373FDDCF430FA02E998F_84879498 =         new BoundedMap(false, null, NO_BOUND, null, NO_BOUND).navigableKeySet();
-        var147103AFA753373FDDCF430FA02E998F_84879498.addTaint(taint);
-        return var147103AFA753373FDDCF430FA02E998F_84879498;
-        // ---------- Original Method ----------
-        //return new BoundedMap(false, null, NO_BOUND, null, NO_BOUND).navigableKeySet();
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    static int count(Iterator<?> iterator) {
-        int count = 0;
-        while (iterator.hasNext()) {
-            iterator.next();
-            count++;
-        }
-        return count;
-    }
-
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.390 -0400", hash_original_method = "BF81D129CE69F9BEB40CAD27F974F3C8", hash_generated_method = "913EA14829CB66885A0D07F3ADF68B3F")
-    private void writeObject(ObjectOutputStream stream) throws IOException {
-        addTaint(stream.getTaint());
-        stream.putFields().put("comparator", comparator != NATURAL_ORDER ? comparator : null);
-        stream.writeFields();
-        stream.writeInt(size);
-for(Map.Entry<K, V> entry : entrySet())
-        {
-            stream.writeObject(entry.getKey());
-            stream.writeObject(entry.getValue());
-        } //End block
-        // ---------- Original Method ----------
-        //stream.putFields().put("comparator", comparator != NATURAL_ORDER ? comparator : null);
-        //stream.writeFields();
-        //stream.writeInt(size);
-        //for (Map.Entry<K, V> entry : entrySet()) {
-            //stream.writeObject(entry.getKey());
-            //stream.writeObject(entry.getValue());
-        //}
-    }
-
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.390 -0400", hash_original_method = "4DE82E48A11AFCCB2DCFEAE704B1F475", hash_generated_method = "14915F7022307C7DC1B494E04297B335")
-    @SuppressWarnings("unchecked")
-    private void readObject(ObjectInputStream stream) throws IOException, ClassNotFoundException {
-        addTaint(stream.getTaint());
-        GetField fields = stream.readFields();
-        comparator = (Comparator<? super K>) fields.get("comparator", null);
-        if(comparator == null)        
-        {
-            comparator = (Comparator<? super K>) NATURAL_ORDER;
-        } //End block
-        int size = stream.readInt();
-for(int i = 0;i < size;i++)
-        {
-            put((K) stream.readObject(), (V) stream.readObject());
-        } //End block
-        // ---------- Original Method ----------
-        //GetField fields = stream.readFields();
-        //comparator = (Comparator<? super K>) fields.get("comparator", null);
-        //if (comparator == null) {
-            //comparator = (Comparator<? super K>) NATURAL_ORDER;
-        //}
-        //int size = stream.readInt();
-        //for (int i = 0; i < size; i++) {
-            //putInternal((K) stream.readObject(), (V) stream.readObject());
-        //}
+        return new BoundedMap(false, null, NO_BOUND, null, NO_BOUND).navigableKeySet();
     }
 
     
@@ -495,11 +435,18 @@ for(int i = 0;i < size;i++)
         CREATE,
         CEILING,
         HIGHER;
-        @DSModeled(DSC.SAFE)
-        Relation forOrder(boolean ascending) {
+
+        /**
+         * Returns a possibly-flipped relation for use in descending views.
+         *
+         * @param ascending false to flip; true to return this.
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:56.994 -0500", hash_original_method = "EFBF32CB50C452E33C63CC36D83F5183", hash_generated_method = "EFBF32CB50C452E33C63CC36D83F5183")
+            Relation forOrder(boolean ascending) {
             if (ascending) {
                 return this;
             }
+
             switch (this) {
                 case LOWER:
                     return HIGHER;
@@ -517,22 +464,16 @@ for(int i = 0;i < size;i++)
         }
     }
 
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:12.547 -0400", hash_original_field = "AAD864C939B46188F070706401E1932C", hash_generated_field = "C574FEBC92A9E5D83B951EB931304363")
-    @SuppressWarnings("unchecked") private static final Comparator<Comparable> NATURAL_ORDER = new Comparator<Comparable>() {        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:12.547 -0400", hash_original_method = "078A1DB9555D9E606EA5FF406F56B2E6", hash_generated_method = "00940CF90AFA854079CAC5C992323851")
-        public int compare(Comparable a, Comparable b) {
-            int varC15B2565AD7A5177ED0132648C5386D9_18628642 = (a.compareTo(b));
-            addTaint(a.getTaint());
-            addTaint(b.getTaint());
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1221955437 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1221955437;
-            
-            
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.175 -0500", hash_original_method = "BF81D129CE69F9BEB40CAD27F974F3C8", hash_generated_method = "A9E29606C45A113F6207F7DCFE6F3B68")
+    private void writeObject(ObjectOutputStream stream) throws IOException {
+        stream.putFields().put("comparator", comparator != NATURAL_ORDER ? comparator : null);
+        stream.writeFields();
+        stream.writeInt(size);
+        for (Map.Entry<K, V> entry : entrySet()) {
+            stream.writeObject(entry.getKey());
+            stream.writeObject(entry.getValue());
         }
-
-        
-};
+    }
     
     
 
@@ -558,85 +499,44 @@ for(int i = 0;i < size;i++)
                 //}
             //};
         }
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.395 -0400", hash_original_method = "E1A1305471DEE1FE749764F6E03BE3A0", hash_generated_method = "C7818EC65508E1FD0378C372C72437AE")
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.069 -0500", hash_original_method = "E1A1305471DEE1FE749764F6E03BE3A0", hash_generated_method = "CB4CD7DF0CCD2A82DD3C75AFD169557A")
         public Comparator<? super K> comparator() {
-            Comparator<? super K> varEE9621AAB15522B49DAC63CE835E2941_1657680967 =             TreeMap.this.comparator();
-            varEE9621AAB15522B49DAC63CE835E2941_1657680967.addTaint(taint);
-            return varEE9621AAB15522B49DAC63CE835E2941_1657680967;
-            // ---------- Original Method ----------
-            //return TreeMap.this.comparator();
+            return TreeMap.this.comparator();
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.395 -0400", hash_original_method = "3067DEE01FBBBFD061436C7D4561F434", hash_generated_method = "2C1F2B80BE5099C6CC737F87CBF345EC")
+        /*
+         * Navigable methods.
+         */
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.070 -0500", hash_original_method = "3067DEE01FBBBFD061436C7D4561F434", hash_generated_method = "9D4B100E64F6DF2015BCD2D7BC225D2D")
         public K first() {
-            K var59F2D49FC0979EFEDD893E9689C2AA6B_647562204 = firstKey();
-            var59F2D49FC0979EFEDD893E9689C2AA6B_647562204.addTaint(taint);
-            return var59F2D49FC0979EFEDD893E9689C2AA6B_647562204;
-            // ---------- Original Method ----------
-            //return firstKey();
+            return firstKey();
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.395 -0400", hash_original_method = "39C87F788E647BCD3FB86FFF34D7EF10", hash_generated_method = "E83882116D9474B8DA62E987E82D7AF4")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.071 -0500", hash_original_method = "39C87F788E647BCD3FB86FFF34D7EF10", hash_generated_method = "E3D9B6CB10AAA116B32F71E6DB2B6380")
         public K last() {
-            K var9DAA79F4D4E0401E91D6AAF423D49398_687491925 = lastKey();
-            var9DAA79F4D4E0401E91D6AAF423D49398_687491925.addTaint(taint);
-            return var9DAA79F4D4E0401E91D6AAF423D49398_687491925;
-            // ---------- Original Method ----------
-            //return lastKey();
+            return lastKey();
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.396 -0400", hash_original_method = "5CFE05BF706A06BBB501067306F1B9ED", hash_generated_method = "79CE01DB5D41E90D3D1961971D6B0A44")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.072 -0500", hash_original_method = "5CFE05BF706A06BBB501067306F1B9ED", hash_generated_method = "DBDD2998AFC8CE83BEAB095ECB519E3B")
         public K lower(K key) {
-            addTaint(key.getTaint());
-K var2B86BD115FCBD0ED4D0B4CB097A2C388_519970440 =             lowerKey(key);
-            var2B86BD115FCBD0ED4D0B4CB097A2C388_519970440.addTaint(taint);
-            return var2B86BD115FCBD0ED4D0B4CB097A2C388_519970440;
-            // ---------- Original Method ----------
-            //return lowerKey(key);
+            return lowerKey(key);
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.396 -0400", hash_original_method = "10BABB7BB2E837824A13AAE89EE7EC6F", hash_generated_method = "FC71AF77B8FE05D1A78FA69AF1E9FB2E")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.073 -0500", hash_original_method = "10BABB7BB2E837824A13AAE89EE7EC6F", hash_generated_method = "3D004A280E8FEB32FDB365774865D945")
         public K floor(K key) {
-            addTaint(key.getTaint());
-K var350534B70A929DCE92BCA350B3F7DA8E_124869356 =             floorKey(key);
-            var350534B70A929DCE92BCA350B3F7DA8E_124869356.addTaint(taint);
-            return var350534B70A929DCE92BCA350B3F7DA8E_124869356;
-            // ---------- Original Method ----------
-            //return floorKey(key);
+            return floorKey(key);
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.396 -0400", hash_original_method = "2AD4706A6D818B709A1E2CA64B48B4B9", hash_generated_method = "15DD3314DD9285CC86FFAF616F295E4A")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.074 -0500", hash_original_method = "2AD4706A6D818B709A1E2CA64B48B4B9", hash_generated_method = "40A857219EB91A8A956BE81B880F3BBB")
         public K ceiling(K key) {
-            addTaint(key.getTaint());
-K varC33643BEB47C1CC66B2C2CDB25527B59_1820794234 =             ceilingKey(key);
-            varC33643BEB47C1CC66B2C2CDB25527B59_1820794234.addTaint(taint);
-            return varC33643BEB47C1CC66B2C2CDB25527B59_1820794234;
-            // ---------- Original Method ----------
-            //return ceilingKey(key);
+            return ceilingKey(key);
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.396 -0400", hash_original_method = "8CC63649234BFC57DB10A2387AE34DD6", hash_generated_method = "211EEF49E9DB40A724C5B8B8EFC795AA")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.075 -0500", hash_original_method = "8CC63649234BFC57DB10A2387AE34DD6", hash_generated_method = "60A2E400BE223CD6421A6C9B6048790D")
         public K higher(K key) {
-            addTaint(key.getTaint());
-K var75CF48C4839A7AAF074C16D584CD6253_1611036069 =             higherKey(key);
-            var75CF48C4839A7AAF074C16D584CD6253_1611036069.addTaint(taint);
-            return var75CF48C4839A7AAF074C16D584CD6253_1611036069;
-            // ---------- Original Method ----------
-            //return higherKey(key);
+            return higherKey(key);
         }
 
         
@@ -665,82 +565,38 @@ K var75CF48C4839A7AAF074C16D584CD6253_1611036069 =             higherKey(key);
             //return entry != null ? entry.getKey() : null;
         }
 
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.396 -0400", hash_original_method = "21828DA90728B75367EF3BEE7D62C832", hash_generated_method = "2E4201D2362A504529F86E585130A331")
+        /*
+         * View factory methods.
+         */
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.077 -0500", hash_original_method = "21828DA90728B75367EF3BEE7D62C832", hash_generated_method = "1CBC0545A4B0744464984C21A2A06FAF")
         public NavigableSet<K> subSet(K from, boolean fromInclusive, K to, boolean toInclusive) {
-            addTaint(toInclusive);
-            addTaint(to.getTaint());
-            addTaint(fromInclusive);
-            addTaint(from.getTaint());
-            NavigableSet<K> var1E006BA33691F75FD5C590518669F7CF_1005058275 =             TreeMap.this.subMap(from, fromInclusive, to, toInclusive).navigableKeySet();
-            var1E006BA33691F75FD5C590518669F7CF_1005058275.addTaint(taint);
-            return var1E006BA33691F75FD5C590518669F7CF_1005058275;
-            // ---------- Original Method ----------
-            //return TreeMap.this.subMap(from, fromInclusive, to, toInclusive).navigableKeySet();
+            return TreeMap.this.subMap(from, fromInclusive, to, toInclusive).navigableKeySet();
         }
 
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.396 -0400", hash_original_method = "B37C6130D4B0113815E317EEB111D1E9", hash_generated_method = "8EED1081530EB87C5A39D4E4ED7881AB")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.078 -0500", hash_original_method = "B37C6130D4B0113815E317EEB111D1E9", hash_generated_method = "3C9FB98C9CDE6BA718A37B15A8A0C9A7")
         public SortedSet<K> subSet(K fromInclusive, K toExclusive) {
-            addTaint(toExclusive.getTaint());
-            addTaint(fromInclusive.getTaint());
-SortedSet<K> varAEEB9B76D84A9A3D1311D62B7C8E400F_254578809 =             TreeMap.this.subMap(fromInclusive, true, toExclusive, false).navigableKeySet();
-            varAEEB9B76D84A9A3D1311D62B7C8E400F_254578809.addTaint(taint);
-            return varAEEB9B76D84A9A3D1311D62B7C8E400F_254578809;
-            // ---------- Original Method ----------
-            //return TreeMap.this.subMap(fromInclusive, true, toExclusive, false).navigableKeySet();
+            return TreeMap.this.subMap(fromInclusive, true, toExclusive, false).navigableKeySet();
         }
 
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.396 -0400", hash_original_method = "15C518A93EE21ED6E81237BD492369B4", hash_generated_method = "A124BB0357679F203AEC92A15A76B098")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.079 -0500", hash_original_method = "15C518A93EE21ED6E81237BD492369B4", hash_generated_method = "522522D80E484E4DDB7C59EBECE8AF05")
         public NavigableSet<K> headSet(K to, boolean inclusive) {
-            addTaint(inclusive);
-            addTaint(to.getTaint());
-NavigableSet<K> var2AC6FCA4CD759F1D6886D1E522029C64_173148844 =             TreeMap.this.headMap(to, inclusive).navigableKeySet();
-            var2AC6FCA4CD759F1D6886D1E522029C64_173148844.addTaint(taint);
-            return var2AC6FCA4CD759F1D6886D1E522029C64_173148844;
-            // ---------- Original Method ----------
-            //return TreeMap.this.headMap(to, inclusive).navigableKeySet();
+            return TreeMap.this.headMap(to, inclusive).navigableKeySet();
         }
 
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.396 -0400", hash_original_method = "1E1BD4D122D1F75D80BDC2474EF32137", hash_generated_method = "E0814C0D314042BF9AFC76298E197FAA")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.080 -0500", hash_original_method = "1E1BD4D122D1F75D80BDC2474EF32137", hash_generated_method = "313A540CF15EBBFC2A3BE6A18A5C82EF")
         public SortedSet<K> headSet(K toExclusive) {
-            addTaint(toExclusive.getTaint());
-SortedSet<K> var9CABB3B743BD7889D426F02DACBBE99F_972687639 =             TreeMap.this.headMap(toExclusive, false).navigableKeySet();
-            var9CABB3B743BD7889D426F02DACBBE99F_972687639.addTaint(taint);
-            return var9CABB3B743BD7889D426F02DACBBE99F_972687639;
-            // ---------- Original Method ----------
-            //return TreeMap.this.headMap(toExclusive, false).navigableKeySet();
+            return TreeMap.this.headMap(toExclusive, false).navigableKeySet();
         }
 
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.397 -0400", hash_original_method = "3007AE414049BD587DD344AEC05F7630", hash_generated_method = "98F4F8D293381E7963362222061B8105")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.080 -0500", hash_original_method = "3007AE414049BD587DD344AEC05F7630", hash_generated_method = "9259F817C33477DE413F82ADBE3D8CCA")
         public NavigableSet<K> tailSet(K from, boolean inclusive) {
-            addTaint(inclusive);
-            addTaint(from.getTaint());
-NavigableSet<K> var119889AEAA5B3E18E2858897784D1CE7_1556931084 =             TreeMap.this.tailMap(from, inclusive).navigableKeySet();
-            var119889AEAA5B3E18E2858897784D1CE7_1556931084.addTaint(taint);
-            return var119889AEAA5B3E18E2858897784D1CE7_1556931084;
-            // ---------- Original Method ----------
-            //return TreeMap.this.tailMap(from, inclusive).navigableKeySet();
+            return TreeMap.this.tailMap(from, inclusive).navigableKeySet();
         }
 
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.397 -0400", hash_original_method = "4DA58A152F26E7271643C0314BDDDB69", hash_generated_method = "B8130BEB4ABD34E9261B84E5AE5F0053")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.081 -0500", hash_original_method = "4DA58A152F26E7271643C0314BDDDB69", hash_generated_method = "B88B298FC182BD3395F3A1BC5ECD17FE")
         public SortedSet<K> tailSet(K fromInclusive) {
-            addTaint(fromInclusive.getTaint());
-            SortedSet<K> varFF4E3FFD47F6151862E3275C1D99A159_239939253 =             TreeMap.this.tailMap(fromInclusive, true).navigableKeySet();
-            varFF4E3FFD47F6151862E3275C1D99A159_239939253.addTaint(taint);
-            return varFF4E3FFD47F6151862E3275C1D99A159_239939253;
-            // ---------- Original Method ----------
-            //return TreeMap.this.tailMap(fromInclusive, true).navigableKeySet();
+            return TreeMap.this.tailMap(fromInclusive, true).navigableKeySet();
         }
 
         
@@ -759,119 +615,100 @@ NavigableSet<K> var119889AEAA5B3E18E2858897784D1CE7_1556931084 =             Tre
      
      enum Bound {
          INCLUSIVE {
-             @DSModeled(DSC.SAFE)
-         @Override public String leftCap(Object from) {
-                 return "[" + from;
-             }
-             @DSModeled(DSC.SAFE)
-         @Override public String rightCap(Object to) {
-                 return to + "]";
-             }
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.084 -0500", hash_original_method = "073F67B6BE29765887D1F4C089B64AA3", hash_generated_method = "AC2EA77CB933F235B97F2BDDB9FAB575")
+            @Override
+public String leftCap(Object from) {
+                return "[" + from;
+            }
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.085 -0500", hash_original_method = "C45A89AEFDBE723DEC9D021A5F83239A", hash_generated_method = "CFD54F49A4BEF216D5F57847655D3D05")
+            @Override
+public String rightCap(Object to) {
+                return to + "]";
+            }
          },
          EXCLUSIVE {
-             @DSModeled(DSC.SAFE)
-         @Override public String leftCap(Object from) {
-                 return "(" + from;
-             }
-             @DSModeled(DSC.SAFE)
-         @Override public String rightCap(Object to) {
-                 return to + ")";
-             }
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.086 -0500", hash_original_method = "5F158415C849D224BCF53EC6117B3A13", hash_generated_method = "B2D0D090763F9920A2B8F9FB9B7AC70F")
+            @Override
+public String leftCap(Object from) {
+                return "(" + from;
+            }
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.087 -0500", hash_original_method = "20C4F08825F52F4E0E9077F40183EF52", hash_generated_method = "6175B00ADC3AD8247A2297856273B9F9")
+            @Override
+public String rightCap(Object to) {
+                return to + ")";
+            }
          },
          NO_BOUND {
-             @DSModeled(DSC.SAFE)
-         @Override public String leftCap(Object from) {
-                 return ".";
-             }
-             @DSModeled(DSC.SAFE)
-         @Override public String rightCap(Object to) {
-                 return ".";
-             }
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.088 -0500", hash_original_method = "CEBB04F65A03B4798F38F20D8779F352", hash_generated_method = "8B2073D5E471E82B3C606DF958F1B175")
+            @Override
+public String leftCap(Object from) {
+                return ".";
+            }
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.089 -0500", hash_original_method = "8951C726368107D69BE8AD997E7355B4", hash_generated_method = "D7F4B3844FA3BC289639812DAB4756AC")
+            @Override
+public String rightCap(Object to) {
+                return ".";
+            }
          };
-         @DSModeled(DSC.SAFE)
-         public abstract String leftCap(Object from);
-         @DSModeled(DSC.SAFE)
-         public abstract String rightCap(Object to);
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.090 -0500", hash_original_method = "82B3AB25225C0BF21057E47DCBEE85F5", hash_generated_method = "936FA9A0022E3D5278B0ABBBF2D8BB1E")
+            public abstract String leftCap(Object from);
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.091 -0500", hash_original_method = "226CAFED1F39B46CDB4F24AC92392978", hash_generated_method = "458146A233B5DFEDB0AAF37F08805F67")
+            public abstract String rightCap(Object to);
      }
      
      final class BoundedMap extends AbstractMap<K, V> implements NavigableMap<K, V>, Serializable {
-         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.397 -0400", hash_original_field = "9C9AB624360885FCF93B7643C93B6748", hash_generated_field = "BC70714ECDFF7490EBA777F7B93EF439")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.092 -0500", hash_original_field = "CC49B77FD1E67EDAB07E846FB3439264", hash_generated_field = "BC70714ECDFF7490EBA777F7B93EF439")
 
-         private transient boolean ascending;
-         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.397 -0400", hash_original_field = "D98A07F84921B24EE30F86FD8CD85C3C", hash_generated_field = "EEAE90D76D5F301C983CBE52CC99E066")
+        private  transient boolean ascending;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.093 -0500", hash_original_field = "EEDA388640089211213D8EC2A77A8B42", hash_generated_field = "EEAE90D76D5F301C983CBE52CC99E066")
 
-         private transient K from;
-         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.397 -0400", hash_original_field = "8632C30284D52AAEE2237CDB621740BD", hash_generated_field = "8ED035FAE673A429CD23C9E2219BCCAB")
+        private  transient K from;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.094 -0500", hash_original_field = "6B3AA8DA078A4CA2367AE7B02A4A7538", hash_generated_field = "8ED035FAE673A429CD23C9E2219BCCAB")
 
-         private transient Bound fromBound;
-         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.397 -0400", hash_original_field = "01B6E20344B68835C5ED1DDEDF20D531", hash_generated_field = "61687A1A941C5D04AF6012AAB46409E8")
+        private  transient Bound fromBound;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.095 -0500", hash_original_field = "CF41029638C40697EDA1A869E9A79A58", hash_generated_field = "61687A1A941C5D04AF6012AAB46409E8")
 
-         private transient K to;
-         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.397 -0400", hash_original_field = "7CA17358064D231F30EBE9DEA6953FC3", hash_generated_field = "AA1B7E444C65D0CB4426137E2FCF44C2")
+        private  transient K to;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.096 -0500", hash_original_field = "A23D1B50F69955C93C542987309F448F", hash_generated_field = "AA1B7E444C65D0CB4426137E2FCF44C2")
 
-         private transient Bound toBound;
-         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.397 -0400", hash_original_field = "D4E06C98DBA5A687CB6C836BF538EC81", hash_generated_field = "71A92C43EAA002A1D21DF22BACB230F5")
-
-         private transient BoundedEntrySet entrySet;
-         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.397 -0400", hash_original_field = "3E8ABCE844B6A8A95397486A3899B536", hash_generated_field = "8C5699591CBD5CFF428C3B6D5369D846")
-
-         private transient BoundedKeySet keySet;
-
-         @DSModeled(DSC.SAFE)
-         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.398 -0400", hash_original_method = "EAF770A918D33B7B0B98CAAC01791FDE", hash_generated_method = "1ED7235088DE7EE5A250298A66834C92")
-         BoundedMap(boolean ascending, K from, Bound fromBound, K to, Bound toBound) {
-             if(fromBound != NO_BOUND && toBound != NO_BOUND)            
-             {
-                 if(comparator.compare(from, to) > 0)                
-                 {
-                     IllegalArgumentException var8DDE4F833C7F6DD25182F12F52D69FD0_617920333 = new IllegalArgumentException(from + " > " + to);
-                     var8DDE4F833C7F6DD25182F12F52D69FD0_617920333.addTaint(taint);
-                     throw var8DDE4F833C7F6DD25182F12F52D69FD0_617920333;
-                 } //End block
-             } //End block
-             else
-                 if(fromBound != NO_BOUND)            
-                 {
-                     comparator.compare(from, from);
-                 } //End block
-                 else
-                     if(toBound != NO_BOUND)            
-                     {
-                         comparator.compare(to, to);
-                     } //End block
-             this.ascending = ascending;
-             this.from = from;
-             this.fromBound = fromBound;
-             this.to = to;
-             this.toBound = toBound;
-             // ---------- Original Method ----------
-             //if (fromBound != NO_BOUND && toBound != NO_BOUND) {
-             //if (comparator.compare(from, to) > 0) {
-             //throw new IllegalArgumentException(from + " > " + to);
-             //}
-             //} else if (fromBound != NO_BOUND) {
-             //comparator.compare(from, from);
-             //} else if (toBound != NO_BOUND) {
-             //comparator.compare(to, to);
-             //}
-             //this.ascending = ascending;
-             //this.from = from;
-             //this.fromBound = fromBound;
-             //this.to = to;
-             //this.toBound = toBound;
-         }
+        private  transient Bound toBound;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.122 -0500", hash_original_field = "7584453112B5BE241A3C7C86A887ED07", hash_generated_field = "71A92C43EAA002A1D21DF22BACB230F5")
 
 
-         @DSModeled(DSC.SAFE)
-         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.398 -0400", hash_original_method = "0165FF9BE82C19127CA9F7A8EFBCC5F6", hash_generated_method = "6EB40E9077DB31978A9EF7F2CB9A6CB5")
-         @Override
-         public int size() {
-             int var26AE06B895E339433E4D6CD04CD66FE7_1793751928 = (count(entrySet().iterator()));
-             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_920932493 = getTaintInt();
-             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_920932493;
-             // ---------- Original Method ----------
-             //return count(entrySet().iterator());
-         }
+        private transient BoundedEntrySet entrySet;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.123 -0500", hash_original_field = "205A62CE03B4069473E761A9731C1033", hash_generated_field = "8C5699591CBD5CFF428C3B6D5369D846")
+
+        private transient BoundedKeySet keySet;
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.097 -0500", hash_original_method = "EAF770A918D33B7B0B98CAAC01791FDE", hash_generated_method = "6313C42523F4B023AF9D4685BB8E5B6A")
+        BoundedMap(boolean ascending, K from, Bound fromBound, K to, Bound toBound) {
+            /*
+             * Validate the bounds. In addition to checking that from <= to, we
+             * verify that the comparator supports our bound objects.
+             */
+            if (fromBound != NO_BOUND && toBound != NO_BOUND) {
+                if (comparator.compare(from, to) > 0) {
+                    throw new IllegalArgumentException(from + " > " + to);
+                }
+            } else if (fromBound != NO_BOUND) {
+                comparator.compare(from, from);
+            } else if (toBound != NO_BOUND) {
+                comparator.compare(to, to);
+            }
+
+            this.ascending = ascending;
+            this.from = from;
+            this.fromBound = fromBound;
+            this.to = to;
+            this.toBound = toBound;
+        }
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.098 -0500", hash_original_method = "0165FF9BE82C19127CA9F7A8EFBCC5F6", hash_generated_method = "D25BB53F3C30538427F3E85787AC04C4")
+        @Override
+public int size() {
+            return count(entrySet().iterator());
+        }
 
          @DSModeled(DSC.BAN)
          @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.405 -0400", hash_original_method = "CBDDB4BBE438A9DB233DEA58A1C969FA", hash_generated_method = "8EDF25B3F305EDC0E18B84933E902E62")
@@ -1021,280 +858,121 @@ NavigableSet<K> var119889AEAA5B3E18E2858897784D1CE7_1556931084 =             Tre
              // Original Method Too Long, Refer to Original Implementation
          }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.113 -0500", hash_original_method = "BD9CF59DC295A4AE3510934F298E27E6", hash_generated_method = "D98E0B6F52EF21ACF480B85C1FE57FC1")
+        public Entry<K, V> lowerEntry(K key) {
+            return immutableCopy(findBounded(key, LOWER));
+        }
 
-         @DSModeled(DSC.SAFE)
-         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.410 -0400", hash_original_method = "BD9CF59DC295A4AE3510934F298E27E6", hash_generated_method = "800C44A75F0910ECF65DAFA4A14C589C")
-         public Entry<K, V> lowerEntry(K key) {
-             addTaint(key.getTaint());
-             Entry<K, V> var5EEE7716674B425CEA31D7AC72A401A4_1590730262 =             immutableCopy(findBounded(key, LOWER));
-             var5EEE7716674B425CEA31D7AC72A401A4_1590730262.addTaint(taint);
-             return var5EEE7716674B425CEA31D7AC72A401A4_1590730262;
-             // ---------- Original Method ----------
-             //return immutableCopy(findBounded(key, LOWER));
-         }
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.114 -0500", hash_original_method = "EBA87E3AFD9E90051DFFEBD0117773EA", hash_generated_method = "889326647EDCB0DBE772DBAE81BD3D7C")
+        public K lowerKey(K key) {
+            Entry<K, V> entry = findBounded(key, LOWER);
+            return entry != null ? entry.getKey() : null;
+        }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.116 -0500", hash_original_method = "581C54D570AF4193E6400C576ED95C35", hash_generated_method = "FECC7D1DBD517AFC10175EDDBFB56439")
+        public Entry<K, V> floorEntry(K key) {
+            return immutableCopy(findBounded(key, FLOOR));
+        }
 
-         @DSModeled(DSC.SAFE)
-         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.410 -0400", hash_original_method = "EBA87E3AFD9E90051DFFEBD0117773EA", hash_generated_method = "4897E67A7A0CEB95201B7CBDCF0CD284")
-         public K lowerKey(K key) {
-             addTaint(key.getTaint());
-             Entry<K, V> entry = findBounded(key, LOWER);
-             K var15DE16EBAA69B0A4EA051FB5DEC39C10_1076535905 =             entry != null ? entry.getKey() : null;
-             var15DE16EBAA69B0A4EA051FB5DEC39C10_1076535905.addTaint(taint);
-             return var15DE16EBAA69B0A4EA051FB5DEC39C10_1076535905;
-             // ---------- Original Method ----------
-             //Entry<K, V> entry = findBounded(key, LOWER);
-             //return entry != null ? entry.getKey() : null;
-         }
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.117 -0500", hash_original_method = "E92237DAC033388A5150FD58D66D705D", hash_generated_method = "6996DE5E56123C4D5451574A09E0B8C4")
+        public K floorKey(K key) {
+            Entry<K, V> entry = findBounded(key, FLOOR);
+            return entry != null ? entry.getKey() : null;
+        }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.118 -0500", hash_original_method = "C11821BD096982DAE03E94867B2C92BE", hash_generated_method = "009A970FDBE141CE28B00C2CA0C24213")
+        public Entry<K, V> ceilingEntry(K key) {
+            return immutableCopy(findBounded(key, CEILING));
+        }
 
-         @DSModeled(DSC.SAFE)
-         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.411 -0400", hash_original_method = "581C54D570AF4193E6400C576ED95C35", hash_generated_method = "09AAD82126671121348D3AF58979D787")
-         public Entry<K, V> floorEntry(K key) {
-             addTaint(key.getTaint());
-             Entry<K, V> varC2D8288DAEE7B2AD361DAA75FC2202C3_1985893705 =             immutableCopy(findBounded(key, FLOOR));
-             varC2D8288DAEE7B2AD361DAA75FC2202C3_1985893705.addTaint(taint);
-             return varC2D8288DAEE7B2AD361DAA75FC2202C3_1985893705;
-             // ---------- Original Method ----------
-             //return immutableCopy(findBounded(key, FLOOR));
-         }
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.118 -0500", hash_original_method = "01AF63D6DC81CC48D8C6B0BE37F83B4D", hash_generated_method = "66CA1010CEB26C1FBCC13D5DD11FDC12")
+        public K ceilingKey(K key) {
+            Entry<K, V> entry = findBounded(key, CEILING);
+            return entry != null ? entry.getKey() : null;
+        }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.119 -0500", hash_original_method = "4DE66AB7FA66EBE29F4E4509967D65D0", hash_generated_method = "33217078426E0C97E4C9A21711301460")
+        public Entry<K, V> higherEntry(K key) {
+            return immutableCopy(findBounded(key, HIGHER));
+        }
 
-         @DSModeled(DSC.SAFE)
-         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.411 -0400", hash_original_method = "E92237DAC033388A5150FD58D66D705D", hash_generated_method = "0DF297046DF8ACAB33998F61AAFD5064")
-         public K floorKey(K key) {
-             addTaint(key.getTaint());
-             Entry<K, V> entry = findBounded(key, FLOOR);
-             K var15DE16EBAA69B0A4EA051FB5DEC39C10_318602000 =             entry != null ? entry.getKey() : null;
-             var15DE16EBAA69B0A4EA051FB5DEC39C10_318602000.addTaint(taint);
-             return var15DE16EBAA69B0A4EA051FB5DEC39C10_318602000;
-             // ---------- Original Method ----------
-             //Entry<K, V> entry = findBounded(key, FLOOR);
-             //return entry != null ? entry.getKey() : null;
-         }
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.120 -0500", hash_original_method = "47A499322D06CDAFFEC1D4DA0A079F0A", hash_generated_method = "9025F91FE98CB68A8B1CFFA60CD1EA47")
+        public K higherKey(K key) {
+            Entry<K, V> entry = findBounded(key, HIGHER);
+            return entry != null ? entry.getKey() : null;
+        }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.121 -0500", hash_original_method = "631801B6DE22632DEACA2B547DEBE43A", hash_generated_method = "6776E935071C4D731C73BC02C3C7007F")
+        public Comparator<? super K> comparator() {
+          if (ascending) {
+            return TreeMap.this.comparator();
+          } else {
+            return Collections.reverseOrder(comparator);
+          }
+        }
 
-         @DSModeled(DSC.SAFE)
-         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.411 -0400", hash_original_method = "C11821BD096982DAE03E94867B2C92BE", hash_generated_method = "4BE2FEE6E92F9283260535F5A64E6A7C")
-         public Entry<K, V> ceilingEntry(K key) {
-             addTaint(key.getTaint());
-             Entry<K, V> var4231880C2A190D7782E1F90F0F7B868D_1665266098 =             immutableCopy(findBounded(key, CEILING));
-             var4231880C2A190D7782E1F90F0F7B868D_1665266098.addTaint(taint);
-             return var4231880C2A190D7782E1F90F0F7B868D_1665266098;
-             // ---------- Original Method ----------
-             //return immutableCopy(findBounded(key, CEILING));
-         }
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.124 -0500", hash_original_method = "7F86A739037DCA8312EEE2819E1107F8", hash_generated_method = "EDC4C200EEEB64F5D3A97E07F9DF937C")
+        @Override
+public Set<Entry<K, V>> entrySet() {
+            BoundedEntrySet result = entrySet;
+            return result != null ? result : (entrySet = new BoundedEntrySet());
+        }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.125 -0500", hash_original_method = "8D1D053C1D8B0756868AB879DB7CB086", hash_generated_method = "AC03ABC7AB52D57C862BA24029964BFE")
+        @Override
+public Set<K> keySet() {
+            return navigableKeySet();
+        }
 
-         @DSModeled(DSC.SAFE)
-         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.411 -0400", hash_original_method = "01AF63D6DC81CC48D8C6B0BE37F83B4D", hash_generated_method = "C073DCA1BAFA336BC39FC830CA93D0BC")
-         public K ceilingKey(K key) {
-             addTaint(key.getTaint());
-             Entry<K, V> entry = findBounded(key, CEILING);
-             K var15DE16EBAA69B0A4EA051FB5DEC39C10_1074725763 =             entry != null ? entry.getKey() : null;
-             var15DE16EBAA69B0A4EA051FB5DEC39C10_1074725763.addTaint(taint);
-             return var15DE16EBAA69B0A4EA051FB5DEC39C10_1074725763;
-             // ---------- Original Method ----------
-             //Entry<K, V> entry = findBounded(key, CEILING);
-             //return entry != null ? entry.getKey() : null;
-         }
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.126 -0500", hash_original_method = "58209BC6FD1C6420A0C3CE4B441A6EA8", hash_generated_method = "B743C1172DEB70C6E79C2DA88DE962A3")
+        public NavigableSet<K> navigableKeySet() {
+            BoundedKeySet result = keySet;
+            return result != null ? result : (keySet = new BoundedKeySet());
+        }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.127 -0500", hash_original_method = "6D358EC631E9E279A9C759613AD4CBF5", hash_generated_method = "74706AEA3091F44DAEA178C0705BBBF9")
+        public NavigableMap<K, V> descendingMap() {
+            return new BoundedMap(!ascending, from, fromBound, to, toBound);
+        }
 
-         @DSModeled(DSC.SAFE)
-         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.411 -0400", hash_original_method = "4DE66AB7FA66EBE29F4E4509967D65D0", hash_generated_method = "F157BC69B199F5C52B6F2E1E17636AD0")
-         public Entry<K, V> higherEntry(K key) {
-             addTaint(key.getTaint());
-             Entry<K, V> var0D6C34F1391AD2F31A7F6610A91CE3C1_1782524399 =             immutableCopy(findBounded(key, HIGHER));
-             var0D6C34F1391AD2F31A7F6610A91CE3C1_1782524399.addTaint(taint);
-             return var0D6C34F1391AD2F31A7F6610A91CE3C1_1782524399;
-             // ---------- Original Method ----------
-             //return immutableCopy(findBounded(key, HIGHER));
-         }
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.127 -0500", hash_original_method = "E068C75BD35AA3BEC427F457C352E2B5", hash_generated_method = "FF31C047AD6E2E99A613D19478B40123")
+        public NavigableSet<K> descendingKeySet() {
+            return new BoundedMap(!ascending, from, fromBound, to, toBound).navigableKeySet();
+        }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.128 -0500", hash_original_method = "3DC9A98D108EA5F857802D111DD4C7BC", hash_generated_method = "2EA8163F1D224E3A74F9685C702FF83B")
+        public NavigableMap<K, V> subMap(K from, boolean fromInclusive, K to, boolean toInclusive) {
+            Bound fromBound = fromInclusive ? INCLUSIVE : EXCLUSIVE;
+            Bound toBound = toInclusive ? INCLUSIVE : EXCLUSIVE;
+            return subMap(from, fromBound, to, toBound);
+        }
 
-         @DSModeled(DSC.SAFE)
-         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.411 -0400", hash_original_method = "47A499322D06CDAFFEC1D4DA0A079F0A", hash_generated_method = "AA2A51CC0D5D53CD767075732CB324C1")
-         public K higherKey(K key) {
-             addTaint(key.getTaint());
-             Entry<K, V> entry = findBounded(key, HIGHER);
-             K var15DE16EBAA69B0A4EA051FB5DEC39C10_1504091058 =             entry != null ? entry.getKey() : null;
-             var15DE16EBAA69B0A4EA051FB5DEC39C10_1504091058.addTaint(taint);
-             return var15DE16EBAA69B0A4EA051FB5DEC39C10_1504091058;
-             // ---------- Original Method ----------
-             //Entry<K, V> entry = findBounded(key, HIGHER);
-             //return entry != null ? entry.getKey() : null;
-         }
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.129 -0500", hash_original_method = "85C9C855FCFD7C01DE62316D427AA356", hash_generated_method = "75466109B5F64DCF01801262D3E63D70")
+        public NavigableMap<K, V> subMap(K fromInclusive, K toExclusive) {
+            return subMap(fromInclusive, INCLUSIVE, toExclusive, EXCLUSIVE);
+        }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.130 -0500", hash_original_method = "F0BAF6F2CF2FCD82E483E31B5C869204", hash_generated_method = "EB2FA4CF7151E809686E93013492597B")
+        public NavigableMap<K, V> headMap(K to, boolean inclusive) {
+            Bound toBound = inclusive ? INCLUSIVE : EXCLUSIVE;
+            return subMap(null, NO_BOUND, to, toBound);
+        }
 
-         @DSModeled(DSC.SAFE)
-         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.414 -0400", hash_original_method = "631801B6DE22632DEACA2B547DEBE43A", hash_generated_method = "9B52C499D53D4D52AB37A4E38E7ED06C")
-         public Comparator<? super K> comparator() {
-             if(ascending)            
-             {
-                 Comparator<? super K> varEE9621AAB15522B49DAC63CE835E2941_719622732 =                 TreeMap.this.comparator();
-                 varEE9621AAB15522B49DAC63CE835E2941_719622732.addTaint(taint);
-                 return varEE9621AAB15522B49DAC63CE835E2941_719622732;
-             } //End block
-             else
-             {
-                 Comparator<? super K> var189BFD6654899F3ED4575521560E0DC6_171463195 =                 Collections.reverseOrder(comparator);
-                 var189BFD6654899F3ED4575521560E0DC6_171463195.addTaint(taint);
-                 return var189BFD6654899F3ED4575521560E0DC6_171463195;
-             } //End block
-             // ---------- Original Method ----------
-             //if (ascending) {
-             //return TreeMap.this.comparator();
-             //} else {
-             //return Collections.reverseOrder(comparator);
-             //}
-         }
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.131 -0500", hash_original_method = "ABFE13DC9073E46E049BB999D5306953", hash_generated_method = "384801E44FEE35FE6E9166D2DDC4411F")
+        public NavigableMap<K, V> headMap(K toExclusive) {
+            return subMap(null, NO_BOUND, toExclusive, EXCLUSIVE);
+        }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.132 -0500", hash_original_method = "26986665A8C827C93D404190F2752B4C", hash_generated_method = "2F4DD29759936B93BF166AE9860A7116")
+        public NavigableMap<K, V> tailMap(K from, boolean inclusive) {
+            Bound fromBound = inclusive ? INCLUSIVE : EXCLUSIVE;
+            return subMap(from, fromBound, null, NO_BOUND);
+        }
 
-         @DSModeled(DSC.SAFE)
-         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.414 -0400", hash_original_method = "7F86A739037DCA8312EEE2819E1107F8", hash_generated_method = "1A825E07991CFBB133E661A46E7D8171")
-         @Override
-         public Set<Entry<K, V>> entrySet() {
-             BoundedEntrySet result = entrySet;
-             Set<Entry<K, V>> var7EA657578A416D0A7E3291794489838F_265723040 =             result != null ? result : (entrySet = new BoundedEntrySet());
-             var7EA657578A416D0A7E3291794489838F_265723040.addTaint(taint);
-             return var7EA657578A416D0A7E3291794489838F_265723040;
-             // ---------- Original Method ----------
-             //BoundedEntrySet result = entrySet;
-             //return result != null ? result : (entrySet = new BoundedEntrySet());
-         }
-
-
-         @DSModeled(DSC.SAFE)
-         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.415 -0400", hash_original_method = "8D1D053C1D8B0756868AB879DB7CB086", hash_generated_method = "846343F75D269EDEE1E03944A18F6A3B")
-         @Override
-         public Set<K> keySet() {
-             Set<K> varAF7F4C03A95ED30F86359E39EFFF72E9_523440260 =             navigableKeySet();
-             varAF7F4C03A95ED30F86359E39EFFF72E9_523440260.addTaint(taint);
-             return varAF7F4C03A95ED30F86359E39EFFF72E9_523440260;
-             // ---------- Original Method ----------
-             //return navigableKeySet();
-         }
-
-
-         @DSModeled(DSC.SAFE)
-         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.415 -0400", hash_original_method = "58209BC6FD1C6420A0C3CE4B441A6EA8", hash_generated_method = "B801D1D10C2B73017043CBBD21C17DD9")
-         public NavigableSet<K> navigableKeySet() {
-             BoundedKeySet result = keySet;
-             NavigableSet<K> var65433A428F01D1730EDF71551397CAE5_78673603 =             result != null ? result : (keySet = new BoundedKeySet());
-             var65433A428F01D1730EDF71551397CAE5_78673603.addTaint(taint);
-             return var65433A428F01D1730EDF71551397CAE5_78673603;
-             // ---------- Original Method ----------
-             //BoundedKeySet result = keySet;
-             //return result != null ? result : (keySet = new BoundedKeySet());
-         }
-
-
-         @DSModeled(DSC.SAFE)
-         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.415 -0400", hash_original_method = "6D358EC631E9E279A9C759613AD4CBF5", hash_generated_method = "9F6656E37C26FADAA473D0005E100ED5")
-         public NavigableMap<K, V> descendingMap() {
-             NavigableMap<K, V> var86E3BFF502581898758F73B9E6908FAD_183492606 =             new BoundedMap(!ascending, from, fromBound, to, toBound);
-             var86E3BFF502581898758F73B9E6908FAD_183492606.addTaint(taint);
-             return var86E3BFF502581898758F73B9E6908FAD_183492606;
-             // ---------- Original Method ----------
-             //return new BoundedMap(!ascending, from, fromBound, to, toBound);
-         }
-
-
-         @DSModeled(DSC.SAFE)
-         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.415 -0400", hash_original_method = "E068C75BD35AA3BEC427F457C352E2B5", hash_generated_method = "56B1884511540FA9BC3DF7CA660342AD")
-         public NavigableSet<K> descendingKeySet() {
-             NavigableSet<K> varAF8103DD5E04E7E5EEF583022A60862D_580695088 =             new BoundedMap(!ascending, from, fromBound, to, toBound).navigableKeySet();
-             varAF8103DD5E04E7E5EEF583022A60862D_580695088.addTaint(taint);
-             return varAF8103DD5E04E7E5EEF583022A60862D_580695088;
-             // ---------- Original Method ----------
-             //return new BoundedMap(!ascending, from, fromBound, to, toBound).navigableKeySet();
-         }
-
-
-         @DSModeled(DSC.SAFE)
-         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.415 -0400", hash_original_method = "3DC9A98D108EA5F857802D111DD4C7BC", hash_generated_method = "6BC69D98C39613DEC3DB97974813D115")
-         public NavigableMap<K, V> subMap(K from, boolean fromInclusive, K to, boolean toInclusive) {
-             addTaint(toInclusive);
-             addTaint(to.getTaint());
-             addTaint(fromInclusive);
-             addTaint(from.getTaint());
-             Bound fromBound = fromInclusive ? INCLUSIVE : EXCLUSIVE;
-             Bound toBound = toInclusive ? INCLUSIVE : EXCLUSIVE;
-             NavigableMap<K, V> var0455DF56F4615D9DE9D27B19AFAEF226_1546866907 =             subMap(from, fromBound, to, toBound);
-             var0455DF56F4615D9DE9D27B19AFAEF226_1546866907.addTaint(taint);
-             return var0455DF56F4615D9DE9D27B19AFAEF226_1546866907;
-             // ---------- Original Method ----------
-             //Bound fromBound = fromInclusive ? INCLUSIVE : EXCLUSIVE;
-             //Bound toBound = toInclusive ? INCLUSIVE : EXCLUSIVE;
-             //return subMap(from, fromBound, to, toBound);
-         }
-
-
-         @DSModeled(DSC.SAFE)
-         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.415 -0400", hash_original_method = "85C9C855FCFD7C01DE62316D427AA356", hash_generated_method = "3EC9C7E261EAB9455C49729E3FD0C80A")
-         public NavigableMap<K, V> subMap(K fromInclusive, K toExclusive) {
-             addTaint(toExclusive.getTaint());
-             addTaint(fromInclusive.getTaint());
-             NavigableMap<K, V> varB4D2F6DE1EAD448F88B0A434FEE1794C_1876922838 =             subMap(fromInclusive, INCLUSIVE, toExclusive, EXCLUSIVE);
-             varB4D2F6DE1EAD448F88B0A434FEE1794C_1876922838.addTaint(taint);
-             return varB4D2F6DE1EAD448F88B0A434FEE1794C_1876922838;
-             // ---------- Original Method ----------
-             //return subMap(fromInclusive, INCLUSIVE, toExclusive, EXCLUSIVE);
-         }
-
-
-         @DSModeled(DSC.SAFE)
-         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.418 -0400", hash_original_method = "F0BAF6F2CF2FCD82E483E31B5C869204", hash_generated_method = "1BFB2395AAD778DE8315306450FC93A0")
-         public NavigableMap<K, V> headMap(K to, boolean inclusive) {
-             addTaint(inclusive);
-             addTaint(to.getTaint());
-             Bound toBound = inclusive ? INCLUSIVE : EXCLUSIVE;
-             NavigableMap<K, V> var2AFE5CD544BBF55ECF5B05CE6BA0FAD1_688162958 =             subMap(null, NO_BOUND, to, toBound);
-             var2AFE5CD544BBF55ECF5B05CE6BA0FAD1_688162958.addTaint(taint);
-             return var2AFE5CD544BBF55ECF5B05CE6BA0FAD1_688162958;
-             // ---------- Original Method ----------
-             //Bound toBound = inclusive ? INCLUSIVE : EXCLUSIVE;
-             //return subMap(null, NO_BOUND, to, toBound);
-         }
-
-
-         @DSModeled(DSC.SAFE)
-         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.418 -0400", hash_original_method = "ABFE13DC9073E46E049BB999D5306953", hash_generated_method = "207215060221B14E9B528B6DA6262001")
-         public NavigableMap<K, V> headMap(K toExclusive) {
-             addTaint(toExclusive.getTaint());
-             NavigableMap<K, V> var765BFAC84EB1A83FC3B14F73D7910B18_149610979 =             subMap(null, NO_BOUND, toExclusive, EXCLUSIVE);
-             var765BFAC84EB1A83FC3B14F73D7910B18_149610979.addTaint(taint);
-             return var765BFAC84EB1A83FC3B14F73D7910B18_149610979;
-             // ---------- Original Method ----------
-             //return subMap(null, NO_BOUND, toExclusive, EXCLUSIVE);
-         }
-
-
-         @DSModeled(DSC.SAFE)
-         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.419 -0400", hash_original_method = "26986665A8C827C93D404190F2752B4C", hash_generated_method = "3DC6370EE24D87AD7E85250E7FB7D926")
-         public NavigableMap<K, V> tailMap(K from, boolean inclusive) {
-             addTaint(inclusive);
-             addTaint(from.getTaint());
-             Bound fromBound = inclusive ? INCLUSIVE : EXCLUSIVE;
-             NavigableMap<K, V> var35EFA145DEE09E716468DD6B2AFF8A39_117362615 =             subMap(from, fromBound, null, NO_BOUND);
-             var35EFA145DEE09E716468DD6B2AFF8A39_117362615.addTaint(taint);
-             return var35EFA145DEE09E716468DD6B2AFF8A39_117362615;
-             // ---------- Original Method ----------
-             //Bound fromBound = inclusive ? INCLUSIVE : EXCLUSIVE;
-             //return subMap(from, fromBound, null, NO_BOUND);
-         }
-
-
-         @DSModeled(DSC.SAFE)
-         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.419 -0400", hash_original_method = "CF387452C0473BBA846F53D5C56CE3B2", hash_generated_method = "2862E06CB5D0DE6E59DEF56226BC36BA")
-         public NavigableMap<K, V> tailMap(K fromInclusive) {
-             addTaint(fromInclusive.getTaint());
-             NavigableMap<K, V> varE8FB1045162A43BFD2F2D63D6DC8CED9_2069697177 =             subMap(fromInclusive, INCLUSIVE, null, NO_BOUND);
-             varE8FB1045162A43BFD2F2D63D6DC8CED9_2069697177.addTaint(taint);
-             return varE8FB1045162A43BFD2F2D63D6DC8CED9_2069697177;
-             // ---------- Original Method ----------
-             //return subMap(fromInclusive, INCLUSIVE, null, NO_BOUND);
-         }
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.132 -0500", hash_original_method = "CF387452C0473BBA846F53D5C56CE3B2", hash_generated_method = "03934C77D30476E61A9013D1BFCDA77D")
+        public NavigableMap<K, V> tailMap(K fromInclusive) {
+            return subMap(fromInclusive, INCLUSIVE, null, NO_BOUND);
+        }
 
 
          @DSModeled(DSC.SAFE)
@@ -1346,21 +1024,11 @@ NavigableSet<K> var119889AEAA5B3E18E2858897784D1CE7_1556931084 =             Tre
              // Original Method Too Long, Refer to Original Implementation
          }
 
-
-         @DSModeled(DSC.BAN)
-         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.439 -0400", hash_original_method = "65FB71F2A366D35F7884C2869AFAA6ED", hash_generated_method = "5D2BA88D46418ACDF68911C9EF8B0901")
-         private IllegalArgumentException outOfBounds(Object value, Bound fromBound, Bound toBound) {
-             addTaint(toBound.getTaint());
-             addTaint(fromBound.getTaint());
-             addTaint(value.getTaint());
-             IllegalArgumentException varB6209D04CF3E19CAD859CC3BE52189E0_1141603753 =             new IllegalArgumentException(value + " not in range "
-                     + fromBound.leftCap(from) + ".." + toBound.rightCap(to));
-             varB6209D04CF3E19CAD859CC3BE52189E0_1141603753.addTaint(taint);
-             return varB6209D04CF3E19CAD859CC3BE52189E0_1141603753;
-             // ---------- Original Method ----------
-             //return new IllegalArgumentException(value + " not in range "
-             //+ fromBound.leftCap(from) + ".." + toBound.rightCap(to));
-         }
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.134 -0500", hash_original_method = "65FB71F2A366D35F7884C2869AFAA6ED", hash_generated_method = "2C46A7F5132D77A96CA177951CF5664D")
+        private IllegalArgumentException outOfBounds(Object value, Bound fromBound, Bound toBound) {
+            return new IllegalArgumentException(value + " not in range "
+                    + fromBound.leftCap(from) + ".." + toBound.rightCap(to));
+        }
 
 
          @DSModeled(DSC.SAFE)
@@ -1411,206 +1079,126 @@ NavigableSet<K> var119889AEAA5B3E18E2858897784D1CE7_1556931084 =             Tre
                  //};
              }
 
-             @DSModeled(DSC.SAFE)
-             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.446 -0400", hash_original_method = "3067DEE01FBBBFD061436C7D4561F434", hash_generated_method = "CA6E4924867E4F986CF018AD08E18736")
-             public K first() {
-                 K var59F2D49FC0979EFEDD893E9689C2AA6B_796994586 =                 firstKey();
-                 var59F2D49FC0979EFEDD893E9689C2AA6B_796994586.addTaint(taint);
-                 return var59F2D49FC0979EFEDD893E9689C2AA6B_796994586;
-                 // ---------- Original Method ----------
-                 //return firstKey();
-             }
+            /*
+             * Navigable methods.
+             */
 
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.154 -0500", hash_original_method = "3067DEE01FBBBFD061436C7D4561F434", hash_generated_method = "9D4B100E64F6DF2015BCD2D7BC225D2D")
+            public K first() {
+                return firstKey();
+            }
 
-             @DSModeled(DSC.SAFE)
-             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.446 -0400", hash_original_method = "4985BB63726B115899F1811F08E80BDF", hash_generated_method = "A76D072F1F4D9514A547E982458E3B81")
-             public K pollFirst() {
-                 Entry<K, ?> entry = pollFirstEntry();
-                 K var15DE16EBAA69B0A4EA051FB5DEC39C10_1934134007 =                 entry != null ? entry.getKey() : null;
-                 var15DE16EBAA69B0A4EA051FB5DEC39C10_1934134007.addTaint(taint);
-                 return var15DE16EBAA69B0A4EA051FB5DEC39C10_1934134007;
-                 // ---------- Original Method ----------
-                 //Entry<K, ?> entry = pollFirstEntry();
-                 //return entry != null ? entry.getKey() : null;
-             }
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.155 -0500", hash_original_method = "4985BB63726B115899F1811F08E80BDF", hash_generated_method = "83C1DF1A1D7CD78EA56D2D8CC083DD76")
+            public K pollFirst() {
+                Entry<K, ?> entry = pollFirstEntry();
+                return entry != null ? entry.getKey() : null;
+            }
 
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.156 -0500", hash_original_method = "39C87F788E647BCD3FB86FFF34D7EF10", hash_generated_method = "E3D9B6CB10AAA116B32F71E6DB2B6380")
+            public K last() {
+                return lastKey();
+            }
 
-             @DSModeled(DSC.SAFE)
-             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.446 -0400", hash_original_method = "39C87F788E647BCD3FB86FFF34D7EF10", hash_generated_method = "72C5F9648DFB4910E387AF62C583F60B")
-             public K last() {
-                 K var9DAA79F4D4E0401E91D6AAF423D49398_1503771283 =                 lastKey();
-                 var9DAA79F4D4E0401E91D6AAF423D49398_1503771283.addTaint(taint);
-                 return var9DAA79F4D4E0401E91D6AAF423D49398_1503771283;
-                 // ---------- Original Method ----------
-                 //return lastKey();
-             }
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.157 -0500", hash_original_method = "B202B1B2AAB477548F6A0AD72C9B1701", hash_generated_method = "B754D89746FD8443A400371E3EC44F9A")
+            public K pollLast() {
+                Entry<K, ?> entry = pollLastEntry();
+                return entry != null ? entry.getKey() : null;
+            }
 
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.157 -0500", hash_original_method = "5CFE05BF706A06BBB501067306F1B9ED", hash_generated_method = "DBDD2998AFC8CE83BEAB095ECB519E3B")
+            public K lower(K key) {
+                return lowerKey(key);
+            }
 
-             @DSModeled(DSC.SAFE)
-             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.446 -0400", hash_original_method = "B202B1B2AAB477548F6A0AD72C9B1701", hash_generated_method = "D36D955CA2459804FDCE0EBC044D7958")
-             public K pollLast() {
-                 Entry<K, ?> entry = pollLastEntry();
-                 K var15DE16EBAA69B0A4EA051FB5DEC39C10_1399037975 =                 entry != null ? entry.getKey() : null;
-                 var15DE16EBAA69B0A4EA051FB5DEC39C10_1399037975.addTaint(taint);
-                 return var15DE16EBAA69B0A4EA051FB5DEC39C10_1399037975;
-                 // ---------- Original Method ----------
-                 //Entry<K, ?> entry = pollLastEntry();
-                 //return entry != null ? entry.getKey() : null;
-             }
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.158 -0500", hash_original_method = "10BABB7BB2E837824A13AAE89EE7EC6F", hash_generated_method = "3D004A280E8FEB32FDB365774865D945")
+            public K floor(K key) {
+                return floorKey(key);
+            }
 
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.159 -0500", hash_original_method = "2AD4706A6D818B709A1E2CA64B48B4B9", hash_generated_method = "40A857219EB91A8A956BE81B880F3BBB")
+            public K ceiling(K key) {
+                return ceilingKey(key);
+            }
 
-             @DSModeled(DSC.SAFE)
-             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.446 -0400", hash_original_method = "5CFE05BF706A06BBB501067306F1B9ED", hash_generated_method = "FAE98F1170EAAAD882483873EA2AED3C")
-             public K lower(K key) {
-                 addTaint(key.getTaint());
-                 K var2B86BD115FCBD0ED4D0B4CB097A2C388_1805832483 =                 lowerKey(key);
-                 var2B86BD115FCBD0ED4D0B4CB097A2C388_1805832483.addTaint(taint);
-                 return var2B86BD115FCBD0ED4D0B4CB097A2C388_1805832483;
-                 // ---------- Original Method ----------
-                 //return lowerKey(key);
-             }
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.160 -0500", hash_original_method = "8CC63649234BFC57DB10A2387AE34DD6", hash_generated_method = "60A2E400BE223CD6421A6C9B6048790D")
+            public K higher(K key) {
+                return higherKey(key);
+            }
 
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.161 -0500", hash_original_method = "C5DD330893039070B9523799F47D2DEB", hash_generated_method = "956CA89E95198F987C5A09B3A5EA4F8B")
+            public Comparator<? super K> comparator() {
+                return BoundedMap.this.comparator();
+            }
 
-             @DSModeled(DSC.SAFE)
-             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.446 -0400", hash_original_method = "10BABB7BB2E837824A13AAE89EE7EC6F", hash_generated_method = "EC6F459C9EB10CFEF0AD02E2AF218B03")
-             public K floor(K key) {
-                 addTaint(key.getTaint());
-                 K var350534B70A929DCE92BCA350B3F7DA8E_472819157 =                 floorKey(key);
-                 var350534B70A929DCE92BCA350B3F7DA8E_472819157.addTaint(taint);
-                 return var350534B70A929DCE92BCA350B3F7DA8E_472819157;
-                 // ---------- Original Method ----------
-                 //return floorKey(key);
-             }
+            /*
+             * View factory methods.
+             */
 
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.162 -0500", hash_original_method = "21039715CA3F916EA62F8064E71FC6CA", hash_generated_method = "AE5BC1EF0D3505A8639D4C82E0E38FCB")
+            public NavigableSet<K> subSet(K from, boolean fromInclusive, K to, boolean toInclusive) {
+                return subMap(from, fromInclusive, to, toInclusive).navigableKeySet();
+            }
 
-             @DSModeled(DSC.SAFE)
-             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.447 -0400", hash_original_method = "2AD4706A6D818B709A1E2CA64B48B4B9", hash_generated_method = "569D280400F0162F85FF8981A233FF39")
-             public K ceiling(K key) {
-                 addTaint(key.getTaint());
-                 K varC33643BEB47C1CC66B2C2CDB25527B59_1305879380 =                 ceilingKey(key);
-                 varC33643BEB47C1CC66B2C2CDB25527B59_1305879380.addTaint(taint);
-                 return varC33643BEB47C1CC66B2C2CDB25527B59_1305879380;
-                 // ---------- Original Method ----------
-                 //return ceilingKey(key);
-             }
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.163 -0500", hash_original_method = "AA0E5149ADFB9D8316CC8EA86FBC0B9E", hash_generated_method = "DB0AB2662773B1656211B500A39450E0")
+            public SortedSet<K> subSet(K fromInclusive, K toExclusive) {
+                return subMap(fromInclusive, toExclusive).navigableKeySet();
+            }
 
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.164 -0500", hash_original_method = "EDDD3784AC7E9834A18CCB5F2AE27346", hash_generated_method = "53BE5488ACDF77007061F0FA41E4CFF5")
+            public NavigableSet<K> headSet(K to, boolean inclusive) {
+                return headMap(to, inclusive).navigableKeySet();
+            }
 
-             @DSModeled(DSC.SAFE)
-             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.447 -0400", hash_original_method = "8CC63649234BFC57DB10A2387AE34DD6", hash_generated_method = "01085DCAF70DFFF2CF574521E87F2F36")
-             public K higher(K key) {
-                 addTaint(key.getTaint());
-                 K var75CF48C4839A7AAF074C16D584CD6253_1892759944 =                 higherKey(key);
-                 var75CF48C4839A7AAF074C16D584CD6253_1892759944.addTaint(taint);
-                 return var75CF48C4839A7AAF074C16D584CD6253_1892759944;
-                 // ---------- Original Method ----------
-                 //return higherKey(key);
-             }
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.165 -0500", hash_original_method = "85EE899AF4D85617CB858518BA70EA12", hash_generated_method = "CE92CE666A5C5FB8D39030541435E115")
+            public SortedSet<K> headSet(K toExclusive) {
+                return headMap(toExclusive).navigableKeySet();
+            }
 
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.166 -0500", hash_original_method = "B964A303D464756EDD8E9C26A8D54411", hash_generated_method = "D0B5D8C0FDC9530AA9196EF6E5B2E3F5")
+            public NavigableSet<K> tailSet(K from, boolean inclusive) {
+                return tailMap(from, inclusive).navigableKeySet();
+            }
 
-             @DSModeled(DSC.SAFE)
-             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.447 -0400", hash_original_method = "C5DD330893039070B9523799F47D2DEB", hash_generated_method = "D61C7ABC39C8C99F14398FFA25ABEF45")
-             public Comparator<? super K> comparator() {
-                 Comparator<? super K> varBA2FE525F1D4BFB7E44CC52BEB2076A0_1544429499 =                 BoundedMap.this.comparator();
-                 varBA2FE525F1D4BFB7E44CC52BEB2076A0_1544429499.addTaint(taint);
-                 return varBA2FE525F1D4BFB7E44CC52BEB2076A0_1544429499;
-                 // ---------- Original Method ----------
-                 //return BoundedMap.this.comparator();
-             }
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.167 -0500", hash_original_method = "9536952691BDDFD3D8EFB20A3BD9AE85", hash_generated_method = "AF864BDB849192A7B82A879F0DDE8156")
+            public SortedSet<K> tailSet(K fromInclusive) {
+                return tailMap(fromInclusive).navigableKeySet();
+            }
 
-
-             @DSModeled(DSC.SAFE)
-             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.447 -0400", hash_original_method = "21039715CA3F916EA62F8064E71FC6CA", hash_generated_method = "4B73A791B08783F8C00BD7D56348FD51")
-             public NavigableSet<K> subSet(K from, boolean fromInclusive, K to, boolean toInclusive) {
-                 addTaint(toInclusive);
-                 addTaint(to.getTaint());
-                 addTaint(fromInclusive);
-                 addTaint(from.getTaint());
-                 NavigableSet<K> var81C01024AF0DDE2CDF42AA146D845866_1186551349 =     subMap(from, fromInclusive, to, toInclusive).navigableKeySet();
-                 var81C01024AF0DDE2CDF42AA146D845866_1186551349.addTaint(taint);
-                 return var81C01024AF0DDE2CDF42AA146D845866_1186551349;
-                 // ---------- Original Method ----------
-                 //return subMap(from, fromInclusive, to, toInclusive).navigableKeySet();
-             }
-
-
-             @DSModeled(DSC.SAFE)
-             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.448 -0400", hash_original_method = "AA0E5149ADFB9D8316CC8EA86FBC0B9E", hash_generated_method = "E078CDE4EFCB6191251DCFDA57DBD585")
-             public SortedSet<K> subSet(K fromInclusive, K toExclusive) {
-                 addTaint(toExclusive.getTaint());
-                 addTaint(fromInclusive.getTaint());
-                 SortedSet<K> var4825DD5198D9DFA934AB97460E43155A_671359139 =                 subMap(fromInclusive, toExclusive).navigableKeySet();
-                 var4825DD5198D9DFA934AB97460E43155A_671359139.addTaint(taint);
-                 return var4825DD5198D9DFA934AB97460E43155A_671359139;
-                 // ---------- Original Method ----------
-                 //return subMap(fromInclusive, toExclusive).navigableKeySet();
-             }
-
-
-             @DSModeled(DSC.SAFE)
-             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.448 -0400", hash_original_method = "EDDD3784AC7E9834A18CCB5F2AE27346", hash_generated_method = "6A9E6EEE845B32044F26271A7C1458DE")
-             public NavigableSet<K> headSet(K to, boolean inclusive) {
-                 addTaint(inclusive);
-                 addTaint(to.getTaint());
-                 NavigableSet<K> var1DDC11FD80C467CDB58D05608701E96E_1843974992 =                 headMap(to, inclusive).navigableKeySet();
-                 var1DDC11FD80C467CDB58D05608701E96E_1843974992.addTaint(taint);
-                 return var1DDC11FD80C467CDB58D05608701E96E_1843974992;
-                 // ---------- Original Method ----------
-                 //return headMap(to, inclusive).navigableKeySet();
-             }
-
-
-             @DSModeled(DSC.SAFE)
-             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.448 -0400", hash_original_method = "85EE899AF4D85617CB858518BA70EA12", hash_generated_method = "9B29651F19890F97ADD7AC02EDB02228")
-             public SortedSet<K> headSet(K toExclusive) {
-                 addTaint(toExclusive.getTaint());
-                 SortedSet<K> var296570554B3647284DAA1B64FE89EA1C_1408494725 =                 headMap(toExclusive).navigableKeySet();
-                 var296570554B3647284DAA1B64FE89EA1C_1408494725.addTaint(taint);
-                 return var296570554B3647284DAA1B64FE89EA1C_1408494725;
-                 // ---------- Original Method ----------
-                 //return headMap(toExclusive).navigableKeySet();
-             }
-
-
-             @DSModeled(DSC.SAFE)
-             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.448 -0400", hash_original_method = "B964A303D464756EDD8E9C26A8D54411", hash_generated_method = "8C93F715487CF1208CBC9B98F5655B84")
-             public NavigableSet<K> tailSet(K from, boolean inclusive) {
-                 addTaint(inclusive);
-                 addTaint(from.getTaint());
-                 NavigableSet<K> varCAB92A74D6D2084A2C4FEA91193971BF_21951347 =                 tailMap(from, inclusive).navigableKeySet();
-                 varCAB92A74D6D2084A2C4FEA91193971BF_21951347.addTaint(taint);
-                 return varCAB92A74D6D2084A2C4FEA91193971BF_21951347;
-                 // ---------- Original Method ----------
-                 //return tailMap(from, inclusive).navigableKeySet();
-             }
-
-
-             @DSModeled(DSC.SAFE)
-             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.448 -0400", hash_original_method = "9536952691BDDFD3D8EFB20A3BD9AE85", hash_generated_method = "355E3C1D4458F32DBA78B9CB9087282D")
-             public SortedSet<K> tailSet(K fromInclusive) {
-                 addTaint(fromInclusive.getTaint());
-                 SortedSet<K> var599DB6DD96A121671494C9C10C8AD7AE_2063971726 =                 tailMap(fromInclusive).navigableKeySet();
-                 var599DB6DD96A121671494C9C10C8AD7AE_2063971726.addTaint(taint);
-                 return var599DB6DD96A121671494C9C10C8AD7AE_2063971726;
-                 // ---------- Original Method ----------
-                 //return tailMap(fromInclusive).navigableKeySet();
-             }
-
-
-             @DSModeled(DSC.SAFE)
-             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.448 -0400", hash_original_method = "2BD89B2F5D5D75B5A66FC121E2BE77F9", hash_generated_method = "7F76CFA1470D7577F0F9C0089A57F78D")
-             public NavigableSet<K> descendingSet() {
-                 NavigableSet<K> varAF8103DD5E04E7E5EEF583022A60862D_1663713395 =                 new BoundedMap(!ascending, from, fromBound, to, toBound).navigableKeySet();
-                 varAF8103DD5E04E7E5EEF583022A60862D_1663713395.addTaint(taint);
-                 return varAF8103DD5E04E7E5EEF583022A60862D_1663713395;
-                 // ---------- Original Method ----------
-                 //return new BoundedMap(!ascending, from, fromBound, to, toBound).navigableKeySet();
-             }
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:57.168 -0500", hash_original_method = "2BD89B2F5D5D75B5A66FC121E2BE77F9", hash_generated_method = "E6782313B23BCF5C6B7195D598B3B610")
+            public NavigableSet<K> descendingSet() {
+                return new BoundedMap(!ascending, from, fromBound, to, toBound).navigableKeySet();
+            }
          }
      }
 
-     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.453 -0400", hash_original_field = "0CB2D400AD555324093441A5EA2C6B7E", hash_generated_field = "72B7CECA8AF68C19BE3FF8E965B18D99")
-    private static final long serialVersionUID = 919286545866124006L;
+    
+        @DSModeled(DSC.BAN)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.390 -0400", hash_original_method = "4DE82E48A11AFCCB2DCFEAE704B1F475", hash_generated_method = "14915F7022307C7DC1B494E04297B335")
+    @SuppressWarnings("unchecked")
+    private void readObject(ObjectInputStream stream) throws IOException, ClassNotFoundException {
+        addTaint(stream.getTaint());
+        GetField fields = stream.readFields();
+        comparator = (Comparator<? super K>) fields.get("comparator", null);
+        if(comparator == null)        
+        {
+            comparator = (Comparator<? super K>) NATURAL_ORDER;
+        } //End block
+        int size = stream.readInt();
+for(int i = 0;i < size;i++)
+        {
+            put((K) stream.readObject(), (V) stream.readObject());
+        } //End block
+        // ---------- Original Method ----------
+        //GetField fields = stream.readFields();
+        //comparator = (Comparator<? super K>) fields.get("comparator", null);
+        //if (comparator == null) {
+            //comparator = (Comparator<? super K>) NATURAL_ORDER;
+        //}
+        //int size = stream.readInt();
+        //for (int i = 0; i < size; i++) {
+            //putInternal((K) stream.readObject(), (V) stream.readObject());
+        //}
+    }
 
 
 

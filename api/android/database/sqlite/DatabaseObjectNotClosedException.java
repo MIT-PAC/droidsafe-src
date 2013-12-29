@@ -1,23 +1,21 @@
 package android.database.sqlite;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
 
 public class DatabaseObjectNotClosedException extends RuntimeException {
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.155 -0400", hash_original_method = "94780EE97E0D3B24B7301C55822424F4", hash_generated_method = "2D2E511949251DC58070A74B02AFBEEF")
-    public  DatabaseObjectNotClosedException() {
-        super(s);
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.155 -0400", hash_original_field = "ADE3DB9CDC65C9BD692E1F48CA2870B7", hash_generated_field = "C279E742976D4EC8782AF6C65437682D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.600 -0500", hash_original_field = "C2FC2449D789701D4472507B725134CA", hash_generated_field = "C279E742976D4EC8782AF6C65437682D")
 
     private static final String s = "Application did not close the cursor or database object " +
             "that was opened here";
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:01.601 -0500", hash_original_method = "94780EE97E0D3B24B7301C55822424F4", hash_generated_method = "3FAE4582FC2DF78B7635977D745A81ED")
+    public DatabaseObjectNotClosedException() {
+        super(s);
+    }
 }
 

@@ -1,6 +1,8 @@
 package org.apache.harmony.xnet.provider.jsse;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import javax.net.ssl.SSLSession;
 
@@ -10,104 +12,68 @@ import javax.net.ssl.SSLSession;
 
 
 public class ServerSessionContext extends AbstractSessionContext {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.955 -0400", hash_original_field = "AA2F0669D76C361D6298E17FC081F394", hash_generated_field = "03372E20A94CFEB28F0443462F1FB862")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.870 -0500", hash_original_field = "E7EEAAE01EABB89BC3E379487CEBB368", hash_generated_field = "03372E20A94CFEB28F0443462F1FB862")
+
 
     private SSLServerSessionCache persistentCache;
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.956 -0400", hash_original_method = "9FA739694DBACEAA071D2AEDBA51A05E", hash_generated_method = "519FB45F9A385F0AC73A51E91875A433")
-    public  ServerSessionContext() {
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.871 -0500", hash_original_method = "9FA739694DBACEAA071D2AEDBA51A05E", hash_generated_method = "9294AAB5FDC3944344DC26B8620D5739")
+    public ServerSessionContext() {
         super(100, 0);
-        // ---------- Original Method ----------
+
+        // TODO make sure SSL_CTX does not automaticaly clear sessions we want it to cache
+        // SSL_CTX_set_session_cache_mode(sslCtxNativePointer, SSL_SESS_CACHE_NO_AUTO_CLEAR);
+
+        // TODO remove SSL_CTX session cache limit so we can manage it
+        // SSL_CTX_sess_set_cache_size(sslCtxNativePointer, 0);
+
+        // TODO override trimToSize and removeEldestEntry to use
+        // SSL_CTX_sessions to remove from native cache
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.956 -0400", hash_original_method = "72569EA6711DBA1D81D9BBC862AD3D03", hash_generated_method = "98DC823E6DF5392957E496FAD00FA2DE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.872 -0500", hash_original_method = "72569EA6711DBA1D81D9BBC862AD3D03", hash_generated_method = "0CE628A3442C9B41FB1AD0CD0840A6BD")
     public void setPersistentCache(SSLServerSessionCache persistentCache) {
         this.persistentCache = persistentCache;
-        // ---------- Original Method ----------
-        //this.persistentCache = persistentCache;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.957 -0400", hash_original_method = "D4D4D8A9ED5E99BC7DD197F41DEEDD43", hash_generated_method = "16DEE84B347D7E24654B9D4FF767833A")
-    protected void sessionRemoved(SSLSession session) {
-        addTaint(session.getTaint());
-        // ---------- Original Method ----------
-    }
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.873 -0500", hash_original_method = "D4D4D8A9ED5E99BC7DD197F41DEEDD43", hash_generated_method = "5E399269F22ECC6C6D361AA835F3E0CE")
+    protected void sessionRemoved(SSLSession session) {}
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.958 -0400", hash_original_method = "B67FD63429286D10E1FBB2A9ED634511", hash_generated_method = "862F7253F3055BCF7A22D8C10599EF5E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.874 -0500", hash_original_method = "B67FD63429286D10E1FBB2A9ED634511", hash_generated_method = "686501806461EE8B4EC98F9B766B54DC")
     @Override
-    public SSLSession getSession(byte[] sessionId) {
-        addTaint(sessionId[0]);
+public SSLSession getSession(byte[] sessionId) {
         SSLSession session = super.getSession(sessionId);
-        if(session != null)        
-        {
-SSLSession varD555E544A66E0F97DA6BCDE940E3E79C_1992569701 =             session;
-            varD555E544A66E0F97DA6BCDE940E3E79C_1992569701.addTaint(taint);
-            return varD555E544A66E0F97DA6BCDE940E3E79C_1992569701;
-        } //End block
-        if(persistentCache != null)        
-        {
+        if (session != null) {
+            return session;
+        }
+
+        // Check persistent cache.
+        if (persistentCache != null) {
             byte[] data = persistentCache.getSessionData(sessionId);
-            if(data != null)            
-            {
+            if (data != null) {
                 session = toSession(data, null, -1);
-                if(session != null && session.isValid())                
-                {
+                if (session != null && session.isValid()) {
                     super.putSession(session);
-SSLSession varD555E544A66E0F97DA6BCDE940E3E79C_1462924982 =                     session;
-                    varD555E544A66E0F97DA6BCDE940E3E79C_1462924982.addTaint(taint);
-                    return varD555E544A66E0F97DA6BCDE940E3E79C_1462924982;
-                } //End block
-            } //End block
-        } //End block
-SSLSession var540C13E9E156B687226421B24F2DF178_1459500170 =         null;
-        var540C13E9E156B687226421B24F2DF178_1459500170.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_1459500170;
-        // ---------- Original Method ----------
-        //SSLSession session = super.getSession(sessionId);
-        //if (session != null) {
-            //return session;
-        //}
-        //if (persistentCache != null) {
-            //byte[] data = persistentCache.getSessionData(sessionId);
-            //if (data != null) {
-                //session = toSession(data, null, -1);
-                //if (session != null && session.isValid()) {
-                    //super.putSession(session);
-                    //return session;
-                //}
-            //}
-        //}
-        //return null;
+                    return session;
+                }
+            }
+        }
+
+        return null;
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.959 -0400", hash_original_method = "6A881248A35D6FEA85AFAE8D9374366B", hash_generated_method = "FD43A503784B654CF4F587FDFE3AFB6E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:11.874 -0500", hash_original_method = "6A881248A35D6FEA85AFAE8D9374366B", hash_generated_method = "FC7A1CB319997E6C38E03AB1A8EC0177")
     @Override
-     void putSession(SSLSession session) {
-        addTaint(session.getTaint());
+void putSession(SSLSession session) {
         super.putSession(session);
-        if(persistentCache != null)        
-        {
+
+        // TODO: In background thread.
+        if (persistentCache != null) {
             byte[] data = toBytes(session);
-            if(data != null)            
-            {
+            if (data != null) {
                 persistentCache.putSessionData(session, data);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //super.putSession(session);
-        //if (persistentCache != null) {
-            //byte[] data = toBytes(session);
-            //if (data != null) {
-                //persistentCache.putSessionData(session, data);
-            //}
-        //}
+            }
+        }
     }
 
     

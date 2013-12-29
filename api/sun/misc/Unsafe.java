@@ -1,6 +1,8 @@
 package sun.misc;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
@@ -13,21 +15,54 @@ import dalvik.system.VMStack;
 import droidsafe.helpers.DSUtils;
 
 public final class Unsafe {
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.587 -0400", hash_original_method = "50D30E2F10A8434CB2B5A99A7DA391C8", hash_generated_method = "9AEC98E2560FBA06F6783E528E234F06")
-    private  Unsafe() {
-        // ---------- Original Method ----------
-    }
 
-    	@DSModeled(DSC.SAFE)
-        public static Unsafe getUnsafe() {
+    /**
+     * Gets the unique instance of this class. This is only allowed in
+     * very limited situations.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.682 -0500", hash_original_method = "74628BAB8E81DC2A00A81F4FA9A646FA", hash_generated_method = "30A6F9D65DD593CFCEB395F60D4C296F")
+    public static Unsafe getUnsafe() {
+        /*
+         * Only code on the bootclasspath is allowed to get at the
+         * Unsafe instance.
+         */
         ClassLoader calling = VMStack.getCallingClassLoader();
         if ((calling != null) && (calling != Unsafe.class.getClassLoader())) {
             throw new SecurityException("Unsafe access denied");
         }
+
         return THE_ONE;
     }
+
+    
+    @DSModeled(DSC.SAFE)
+    private static long objectFieldOffset0(Field field) {
+                long var0F5264038205EDFB1AC05FBB0E8C5E94_1351189090 = DSUtils.UNKNOWN_LONG;
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_1351189090;
+    }
+
+    
+    @DSModeled(DSC.SAFE)
+    private static int arrayBaseOffset0(Class clazz) {
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1809733368 = DSUtils.UNKNOWN_INT;
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1809733368;
+    }
+
+    
+    @DSModeled(DSC.SAFE)
+    private static int arrayIndexScale0(Class clazz) {
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_714713006 = DSUtils.UNKNOWN_INT;
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_714713006;
+    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.680 -0500", hash_original_field = "3083DF6B0AC55CB3E662F95128363160", hash_generated_field = "0E67CDB95370A302579A19EADA2AF913")
+
+    private static final Unsafe THE_ONE = new Unsafe();
+
+    /**
+     * This class is only privately instantiable.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.681 -0500", hash_original_method = "50D30E2F10A8434CB2B5A99A7DA391C8", hash_generated_method = "2F1337A71CFB2F9405F3B53E4913683F")
+    private Unsafe() {}
 
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.181 -0400", hash_original_method = "826DF3AF2C82C95E7B53BC94C24540AA", hash_generated_method = "37509F27C578466D3CFFA3A1C5C8873A")
@@ -52,127 +87,130 @@ public final class Unsafe {
         //return objectFieldOffset0(field);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    private static long objectFieldOffset0(Field field) {
-                long var0F5264038205EDFB1AC05FBB0E8C5E94_1351189090 = DSUtils.UNKNOWN_LONG;
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_1351189090;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.588 -0400", hash_original_method = "10321221A26E92770863061AD8298BFF", hash_generated_method = "849220CE57217FFE590A860A22135545")
+    /**
+     * Gets the offset from the start of an array object's memory to
+     * the memory used to store its initial (zeroeth) element.
+     *
+     * @param clazz non-null; class in question; must be an array class
+     * @return the offset to the initial element
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.686 -0500", hash_original_method = "10321221A26E92770863061AD8298BFF", hash_generated_method = "21FF5C484FE100BB69779AEC51F0555A")
     public int arrayBaseOffset(Class clazz) {
-        addTaint(clazz.getTaint());
-        if(! clazz.isArray())        
-        {
-            IllegalArgumentException var278D5518DEF9BA52DD0FD9A2E1081376_1478380312 = new IllegalArgumentException(
+        if (! clazz.isArray()) {
+            throw new IllegalArgumentException(
                     "valid for array classes only");
-            var278D5518DEF9BA52DD0FD9A2E1081376_1478380312.addTaint(taint);
-            throw var278D5518DEF9BA52DD0FD9A2E1081376_1478380312;
-        } //End block
-        int var7C5976EF3F0F633CB85C258B287BA249_1555856359 = (arrayBaseOffset0(clazz));
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_781500563 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_781500563;
-        // ---------- Original Method ----------
-        //if (! clazz.isArray()) {
-            //throw new IllegalArgumentException(
-                    //"valid for array classes only");
-        //}
-        //return arrayBaseOffset0(clazz);
+        }
+
+        return arrayBaseOffset0(clazz);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    private static int arrayBaseOffset0(Class clazz) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1809733368 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1809733368;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.589 -0400", hash_original_method = "756FA93315C90771D6287C6D6A8351D6", hash_generated_method = "F2FB41A0D615664D34B4AFB21A32AA4C")
+    /**
+     * Gets the size of each element of the given array class.
+     *
+     * @param clazz non-null; class in question; must be an array class
+     * @return &gt; 0; the size of each element of the array
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.688 -0500", hash_original_method = "756FA93315C90771D6287C6D6A8351D6", hash_generated_method = "CDE772B6CFD8340682662727579B3186")
     public int arrayIndexScale(Class clazz) {
-        addTaint(clazz.getTaint());
-        if(! clazz.isArray())        
-        {
-            IllegalArgumentException var278D5518DEF9BA52DD0FD9A2E1081376_1818655283 = new IllegalArgumentException(
+        if (! clazz.isArray()) {
+            throw new IllegalArgumentException(
                     "valid for array classes only");
-            var278D5518DEF9BA52DD0FD9A2E1081376_1818655283.addTaint(taint);
-            throw var278D5518DEF9BA52DD0FD9A2E1081376_1818655283;
-        } //End block
-        int var5EE94361AC68F81834EA41B3943D5754_1131993574 = (arrayIndexScale0(clazz));
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_175039633 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_175039633;
-        // ---------- Original Method ----------
-        //if (! clazz.isArray()) {
-            //throw new IllegalArgumentException(
-                    //"valid for array classes only");
-        //}
-        //return arrayIndexScale0(clazz);
+        }
+
+        return arrayIndexScale0(clazz);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    private static int arrayIndexScale0(Class clazz) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_714713006 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_714713006;
-    }
+    /**
+     * Performs a compare-and-set operation on an <code>int</code>
+     * field within the given object.
+     *
+     * @param obj non-null; object containing the field
+     * @param offset offset to the field within <code>obj</code>
+     * @param expectedValue expected value of the field
+     * @param newValue new value to store in the field if the contents are
+     * as expected
+     * @return <code>true</code> if the new value was in fact stored, and
+     * <code>false</code> if not
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.691 -0500", hash_original_method = "21E4F9CF99012374BBDA74248C46C8FD", hash_generated_method = "F52D965F6E1100A7ECA10658FD304EEB")
+    public native boolean compareAndSwapInt(Object obj, long offset,
+            int expectedValue, int newValue);
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.590 -0400", hash_original_method = "21E4F9CF99012374BBDA74248C46C8FD", hash_generated_method = "CED7206554AB9DDA468A21B61E8A70F2")
-    public boolean compareAndSwapInt(Object obj, long offset,
-            int expectedValue, int newValue) {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_594170875 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_594170875;
-    }
+    /**
+     * Performs a compare-and-set operation on a <code>long</code>
+     * field within the given object.
+     *
+     * @param obj non-null; object containing the field
+     * @param offset offset to the field within <code>obj</code>
+     * @param expectedValue expected value of the field
+     * @param newValue new value to store in the field if the contents are
+     * as expected
+     * @return <code>true</code> if the new value was in fact stored, and
+     * <code>false</code> if not
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.692 -0500", hash_original_method = "B07F728E6C3379FC842B1FF2090A16B1", hash_generated_method = "7EF789BE4059D8CBDBA2172C20567316")
+    public native boolean compareAndSwapLong(Object obj, long offset,
+            long expectedValue, long newValue);
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.590 -0400", hash_original_method = "B07F728E6C3379FC842B1FF2090A16B1", hash_generated_method = "D19331BC9AF6CCBF5B54557FBA2735F8")
-    public boolean compareAndSwapLong(Object obj, long offset,
-            long expectedValue, long newValue) {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_76542481 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_76542481;
-    }
+    /**
+     * Performs a compare-and-set operation on an <code>Object</code>
+     * field (that is, a reference field) within the given object.
+     *
+     * @param obj non-null; object containing the field
+     * @param offset offset to the field within <code>obj</code>
+     * @param expectedValue expected value of the field
+     * @param newValue new value to store in the field if the contents are
+     * as expected
+     * @return <code>true</code> if the new value was in fact stored, and
+     * <code>false</code> if not
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.694 -0500", hash_original_method = "65A652B3AC9F111924C01101653C4D66", hash_generated_method = "0EE7ED6404FE8D24CA7413689180FCE4")
+    public native boolean compareAndSwapObject(Object obj, long offset,
+            Object expectedValue, Object newValue);
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.591 -0400", hash_original_method = "65A652B3AC9F111924C01101653C4D66", hash_generated_method = "605AC2BADBBAF8F4727F5FA3ABD7A687")
-    public boolean compareAndSwapObject(Object obj, long offset,
-            Object expectedValue, Object newValue) {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1649963822 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1649963822;
-    }
+    /**
+     * Gets an <code>int</code> field from the given object,
+     * using <code>volatile</code> semantics.
+     *
+     * @param obj non-null; object containing the field
+     * @param offset offset to the field within <code>obj</code>
+     * @return the retrieved value
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.695 -0500", hash_original_method = "8D5B44DDE927FC459CE77FA18575E830", hash_generated_method = "05B53DF9AC4A3FB25D739D70D4562DD6")
+    public native int getIntVolatile(Object obj, long offset);
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.591 -0400", hash_original_method = "8D5B44DDE927FC459CE77FA18575E830", hash_generated_method = "D03838F10795B56B1242BD4CF58B7FAC")
-    public int getIntVolatile(Object obj, long offset) {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_62952539 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_62952539;
-    }
+    /**
+     * Stores an <code>int</code> field into the given object,
+     * using <code>volatile</code> semantics.
+     *
+     * @param obj non-null; object containing the field
+     * @param offset offset to the field within <code>obj</code>
+     * @param newValue the value to store
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.697 -0500", hash_original_method = "2D478903B4854FFA78FE99D55B867EDA", hash_generated_method = "EA603BC6523DC48076D975D7E331D47A")
+    public native void putIntVolatile(Object obj, long offset, int newValue);
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.591 -0400", hash_original_method = "2D478903B4854FFA78FE99D55B867EDA", hash_generated_method = "5A5E24E1D36AF1AB6E4BBDC6B10717DF")
-    public void putIntVolatile(Object obj, long offset, int newValue) {
-    }
+    /**
+     * Gets a <code>long</code> field from the given object,
+     * using <code>volatile</code> semantics.
+     *
+     * @param obj non-null; object containing the field
+     * @param offset offset to the field within <code>obj</code>
+     * @return the retrieved value
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.698 -0500", hash_original_method = "5D356F9FCB64558B37245C6E5D455D6F", hash_generated_method = "DD9AAAA6A6901D3B1BF7169A69B450CE")
+    public native long getLongVolatile(Object obj, long offset);
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.592 -0400", hash_original_method = "5D356F9FCB64558B37245C6E5D455D6F", hash_generated_method = "00FF1D23CDF7FABEBFBF7E8FDCB2E726")
-    public long getLongVolatile(Object obj, long offset) {
-        long var0F5264038205EDFB1AC05FBB0E8C5E94_778223786 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_778223786;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.592 -0400", hash_original_method = "5AB3D5DDF9043F3DC91C224AABAA6528", hash_generated_method = "F779406BA272DE63DFCD9F9456703DC2")
-    public void putLongVolatile(Object obj, long offset, long newValue) {
-    }
+    /**
+     * Stores a <code>long</code> field into the given object,
+     * using <code>volatile</code> semantics.
+     *
+     * @param obj non-null; object containing the field
+     * @param offset offset to the field within <code>obj</code>
+     * @param newValue the value to store
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.700 -0500", hash_original_method = "5AB3D5DDF9043F3DC91C224AABAA6528", hash_generated_method = "B84E80F32CA5E1A40C69811D219D6F0B")
+    public native void putLongVolatile(Object obj, long offset, long newValue);
 
     
     @DSModeled(DSC.SAFE)
@@ -184,52 +222,69 @@ public final class Unsafe {
     	return ret;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.593 -0400", hash_original_method = "F4C73687B1C91E2A955A746EFDA19758", hash_generated_method = "5A0B5DBAE41FE072547CFB28260C499A")
-    public void putObjectVolatile(Object obj, long offset,
-            Object newValue) {
-    }
+    /**
+     * Stores an <code>Object</code> field into the given object,
+     * using <code>volatile</code> semantics.
+     *
+     * @param obj non-null; object containing the field
+     * @param offset offset to the field within <code>obj</code>
+     * @param newValue the value to store
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.702 -0500", hash_original_method = "F4C73687B1C91E2A955A746EFDA19758", hash_generated_method = "227E65840F13ECA3AF63A799DD3D7DAE")
+    public native void putObjectVolatile(Object obj, long offset,
+            Object newValue);
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.593 -0400", hash_original_method = "F04350E1B41BC327004009309A9820C4", hash_generated_method = "B1091452AE461605242E450A35001F94")
-    public int getInt(Object obj, long offset) {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_649367505 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_649367505;
-    }
+    /**
+     * Gets an <code>int</code> field from the given object.
+     *
+     * @param obj non-null; object containing the field
+     * @param offset offset to the field within <code>obj</code>
+     * @return the retrieved value
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.704 -0500", hash_original_method = "F04350E1B41BC327004009309A9820C4", hash_generated_method = "3C5697B91BCA081D687B296EC98D9526")
+    public native int getInt(Object obj, long offset);
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.593 -0400", hash_original_method = "CE446F803EECC7090C6DE85B5F9727FB", hash_generated_method = "D6A2F62C2C1BEFFAF33584D8AF4A96C3")
-    public void putInt(Object obj, long offset, int newValue) {
-    }
+    /**
+     * Stores an <code>int</code> field into the given object.
+     *
+     * @param obj non-null; object containing the field
+     * @param offset offset to the field within <code>obj</code>
+     * @param newValue the value to store
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.705 -0500", hash_original_method = "CE446F803EECC7090C6DE85B5F9727FB", hash_generated_method = "AF21A17310CA7F1044EE1D1E67407DAF")
+    public native void putInt(Object obj, long offset, int newValue);
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.593 -0400", hash_original_method = "0F4EEADE82300C8A6D47BB66B25081FB", hash_generated_method = "1206522AD3C7C4CB5DC01B9D266A77C9")
-    public void putOrderedInt(Object obj, long offset, int newValue) {
-    }
+    /**
+     * Lazy set an int field.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.707 -0500", hash_original_method = "0F4EEADE82300C8A6D47BB66B25081FB", hash_generated_method = "8BD20D20C111F116C74FE2BEC9C70CE7")
+    public native void putOrderedInt(Object obj, long offset, int newValue);
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.593 -0400", hash_original_method = "A62D16CF4622F3468767ED41FD0C48D8", hash_generated_method = "233FADAB6FB076DE23B8118AAD5F6612")
-    public long getLong(Object obj, long offset) {
-        long var0F5264038205EDFB1AC05FBB0E8C5E94_1167916645 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_1167916645;
-    }
+    /**
+     * Gets a <code>long</code> field from the given object.
+     *
+     * @param obj non-null; object containing the field
+     * @param offset offset to the field within <code>obj</code>
+     * @return the retrieved value
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.708 -0500", hash_original_method = "A62D16CF4622F3468767ED41FD0C48D8", hash_generated_method = "88B06931B1F78A34FF38BF6A52765A14")
+    public native long getLong(Object obj, long offset);
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.593 -0400", hash_original_method = "031A6C224714E986F8A4D8A9D45D73DD", hash_generated_method = "AD33BF0F17190F26448FE3ED4C4CF324")
-    public void putLong(Object obj, long offset, long newValue) {
-    }
+    /**
+     * Stores a <code>long</code> field into the given object.
+     *
+     * @param obj non-null; object containing the field
+     * @param offset offset to the field within <code>obj</code>
+     * @param newValue the value to store
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.710 -0500", hash_original_method = "031A6C224714E986F8A4D8A9D45D73DD", hash_generated_method = "09C2D1DA5C1DB7B38217D202F2266334")
+    public native void putLong(Object obj, long offset, long newValue);
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.593 -0400", hash_original_method = "30A8F8DBA968E18C841B02CD11CE8C50", hash_generated_method = "91EABAB09EB9D3ADBE0B5D1A6698F365")
-    public void putOrderedLong(Object obj, long offset, long newValue) {
-    }
+    /**
+     * Lazy set a long field.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.711 -0500", hash_original_method = "30A8F8DBA968E18C841B02CD11CE8C50", hash_generated_method = "71EB813BACFDC83CCEBD8930717855F8")
+    public native void putOrderedLong(Object obj, long offset, long newValue);
 
     
     @DSModeled(DSC.SAFE)
@@ -241,67 +296,62 @@ public final class Unsafe {
     	return ret;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.594 -0400", hash_original_method = "C5B0C5B313647A39681E22F983DB9828", hash_generated_method = "0A515CB915F09C93D4FF711A1C549C7D")
-    public void putObject(Object obj, long offset, Object newValue) {
-    }
+    /**
+     * Stores an <code>Object</code> field into the given object.
+     *
+     * @param obj non-null; object containing the field
+     * @param offset offset to the field within <code>obj</code>
+     * @param newValue the value to store
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.714 -0500", hash_original_method = "C5B0C5B313647A39681E22F983DB9828", hash_generated_method = "58757AFE6786E8A6C71221B8B7FF1FBC")
+    public native void putObject(Object obj, long offset, Object newValue);
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.594 -0400", hash_original_method = "330A73F0EAD671011DED9E5367E246F7", hash_generated_method = "2BB6AD037CDF25725E1A0D170E7F2C39")
-    public void putOrderedObject(Object obj, long offset,
-            Object newValue) {
-    }
+    /**
+     * Lazy set an object field.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.715 -0500", hash_original_method = "330A73F0EAD671011DED9E5367E246F7", hash_generated_method = "08442279C7929933560AB28665CE4C86")
+    public native void putOrderedObject(Object obj, long offset,
+            Object newValue);
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.594 -0400", hash_original_method = "A0416E5885795BAB8716EF22A6E96095", hash_generated_method = "49C10995BAFC92B667347C7E071D4DD9")
+    /**
+     * Parks the calling thread for the specified amount of time,
+     * unless the "permit" for the thread is already available (due to
+     * a previous call to {@link #unpark}. This method may also return
+     * spuriously (that is, without the thread being told to unpark
+     * and without the indicated amount of time elapsing).
+     *
+     * <p>See {@link java.util.concurrent.locks.LockSupport} for more
+     * in-depth information of the behavior of this method.</p>
+     *
+     * @param absolute whether the given time value is absolute
+     * milliseconds-since-the-epoch (<code>true</code>) or relative
+     * nanoseconds-from-now (<code>false</code>)
+     * @param time the (absolute millis or relative nanos) time value
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.716 -0500", hash_original_method = "A0416E5885795BAB8716EF22A6E96095", hash_generated_method = "BCC6DA0B677C50C73234B16C2E03374C")
     public void park(boolean absolute, long time) {
-        addTaint(time);
-        addTaint(absolute);
-        if(absolute)        
-        {
+        if (absolute) {
             Thread.currentThread().parkUntil(time);
-        } //End block
-        else
-        {
+        } else {
             Thread.currentThread().parkFor(time);
-        } //End block
-        // ---------- Original Method ----------
-        //if (absolute) {
-            //Thread.currentThread().parkUntil(time);
-        //} else {
-            //Thread.currentThread().parkFor(time);
-        //}
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.595 -0400", hash_original_method = "D722FA56AE20F33E2A3A13A64FA43CE8", hash_generated_method = "8C6CB1263E59FCF4B7A4E28F1DE0B03C")
+    /**
+     * Unparks the given object, which must be a {@link Thread}.
+     *
+     * <p>See {@link java.util.concurrent.locks.LockSupport} for more
+     * in-depth information of the behavior of this method.</p>
+     *
+     * @param obj non-null; the object to unpark
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.717 -0500", hash_original_method = "D722FA56AE20F33E2A3A13A64FA43CE8", hash_generated_method = "8157480CBC445615D2CEC44C5420F670")
     public void unpark(Object obj) {
-        addTaint(obj.getTaint());
-        if(obj instanceof Thread)        
-        {
+        if (obj instanceof Thread) {
             ((Thread) obj).unpark();
-        } //End block
-        else
-        {
-            IllegalArgumentException varDADAC6841369B4979C3407B75F50C492_176851680 = new IllegalArgumentException("valid for Threads only");
-            varDADAC6841369B4979C3407B75F50C492_176851680.addTaint(taint);
-            throw varDADAC6841369B4979C3407B75F50C492_176851680;
-        } //End block
-        // ---------- Original Method ----------
-        //if (obj instanceof Thread) {
-            //((Thread) obj).unpark();
-        //} else {
-            //throw new IllegalArgumentException("valid for Threads only");
-        //}
+        } else {
+            throw new IllegalArgumentException("valid for Threads only");
+        }
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.595 -0400", hash_original_field = "8375C19453A8245980AC5B9E389C5C81", hash_generated_field = "0E67CDB95370A302579A19EADA2AF913")
-
-    private static final Unsafe THE_ONE = new Unsafe();
 }
 

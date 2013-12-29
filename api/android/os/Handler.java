@@ -1,6 +1,9 @@
 package android.os;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
+import android.util.Log;
 import droidsafe.annotations.*;
 import android.util.Printer;
 
@@ -9,11 +12,24 @@ import android.util.Printer;
 
 
 public class Handler {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:43.968 -0400", hash_original_field = "2D043F2822EC0D4E2690BDFE63EDDFCA", hash_generated_field = "331CAFDD37154BFFB4C27FB1EC4DE2ED")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.963 -0500", hash_original_field = "EF077B080E17BA8045DEC02712518733", hash_generated_field = "0511AC5400F6AB0B4374BEAACA5C07BE")
 
-    MessageQueue mQueue;
-    final Looper mLooper;
-    final Callback mCallback;
+    private static final boolean FIND_POTENTIAL_LEAKS = false;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.963 -0500", hash_original_field = "104D1D0D252AE2A79C970B6831381C21", hash_generated_field = "BFB213888655CBD96A5FA5BA90716E2A")
+
+    private static final String TAG = "Handler";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.999 -0500", hash_original_field = "331CAFDD37154BFFB4C27FB1EC4DE2ED", hash_generated_field = "331CAFDD37154BFFB4C27FB1EC4DE2ED")
+
+
+     MessageQueue mQueue;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:41.000 -0500", hash_original_field = "4C6A73D1D5351706C43659B423CF9288", hash_generated_field = "4C6A73D1D5351706C43659B423CF9288")
+
+     Looper mLooper;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:41.001 -0500", hash_original_field = "1A99E72B6409E38FBCC780D1BAB4898D", hash_generated_field = "1A99E72B6409E38FBCC780D1BAB4898D")
+
+     Callback mCallback;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:41.001 -0500", hash_original_field = "35095A7AFB955F43B213705056D01A47", hash_generated_field = "35095A7AFB955F43B213705056D01A47")
+
     IMessenger mMessenger;
     
     @DSModeled(DSC.SAFE)
@@ -80,17 +96,13 @@ public class Handler {
 		//mQueue = looper.mQueue;
 		mCallback = callback;
 	}
-
     
-    @DSModeled(DSC.SAFE)
-    public void handleMessage(Message msg){
-		// Original method
-		/*
-		{
+    /**
+     * Subclasses must implement this to receive messages.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.965 -0500", hash_original_method = "C13ECA453D39BD1621DCBD4764283A41", hash_generated_method = "C6FC13FE8E92DCBE16F162867E28E817")
+    public void handleMessage(Message msg) {
     }
-		*/
-		//Return nothing
-	}
 
     
     public void dispatchMessage(Message msg){
@@ -126,17 +138,16 @@ public class Handler {
 		return "";
 	}
 
-    
-    @DSModeled(DSC.SAFE)
-    public final Message obtainMessage(){
-		// Original method
-		/*
-		{
+    /**
+     * Returns a new {@link android.os.Message Message} from the global message pool. More efficient than
+     * creating and allocating new instances. The retrieved message has its handler set to this instance (Message.target == this).
+     *  If you don't want that facility, just call Message.obtain() instead.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.972 -0500", hash_original_method = "3FA1D1E6850485EFDFF54C55EBFDD1CC", hash_generated_method = "D4575D4F60FCD7C3F7B83BA70194059B")
+    public final Message obtainMessage()
+    {
         return Message.obtain(this);
     }
-		*/
-    	return Message.obtain(this);
-	}
 
     
     @DSModeled(DSC.SAFE)
@@ -495,17 +506,12 @@ public class Handler {
 		return getTaintBoolean();
 	}
 
-    
-    @DSModeled(DSC.SAFE)
-	public final Looper getLooper(){
-		// Original method
-		/*
-		{
+    // if we can get rid of this method, the handler need not remember its loop
+    // we could instead export a getMessageQueue() method... 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.992 -0500", hash_original_method = "6CA5860A95ACD9BB8C844ECC1E567192", hash_generated_method = "98064444349E07D7BAA3C9B4FAC15DC7")
+    public final Looper getLooper() {
         return mLooper;
     }
-		*/
-		return mLooper;
-	}
 
     
     public final void dump(Printer pw, String prefix){
@@ -585,35 +591,6 @@ public class Handler {
     }
 
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:43.985 -0400", hash_original_method = "001850E10F072AF670657F2F37A16A9C", hash_generated_method = "7675AE7E8DC5A859ADCFF3C6CDF65515")
-    private final Message getPostMessage(Runnable r, Object token) {
-        addTaint(token.getTaint());
-        addTaint(r.getTaint());
-        Message m = Message.obtain();
-        m.obj = token;
-        m.callback = r;
-Message varBD22C5ECD1F8BC3EE2416AF7A8014FD2_282552721 =         m;
-        varBD22C5ECD1F8BC3EE2416AF7A8014FD2_282552721.addTaint(taint);
-        return varBD22C5ECD1F8BC3EE2416AF7A8014FD2_282552721;
-        // ---------- Original Method ----------
-        //Message m = Message.obtain();
-        //m.obj = token;
-        //m.callback = r;
-        //return m;
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:43.985 -0400", hash_original_method = "6CA31B63D4772009E291A8EEE8116A2F", hash_generated_method = "4F5BF0AD5154E4E243D5141532570008")
-    private final void handleCallback(Message message) {
-        addTaint(message.getTaint());
-        message.callback.run();
-        // ---------- Original Method ----------
-        //message.callback.run();
-    }
-
-    
     private final class MessengerImpl extends IMessenger.Stub {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:43.985 -0400", hash_original_method = "68A768E132C1125DE9510AF39EB42EE7", hash_generated_method = "68A768E132C1125DE9510AF39EB42EE7")
@@ -621,14 +598,9 @@ Message varBD22C5ECD1F8BC3EE2416AF7A8014FD2_282552721 =         m;
         {
             //Synthesized constructor
         }
-
-
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:43.986 -0400", hash_original_method = "CF11BADC884B068E4FC98150B23E5EB1", hash_generated_method = "3D5BFAE5EFAA50E33F179B6665E82D73")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.996 -0500", hash_original_method = "CF11BADC884B068E4FC98150B23E5EB1", hash_generated_method = "F786300E27C986F542B94E2D484AD33A")
         public void send(Message msg) {
-            addTaint(msg.getTaint());
             Handler.this.sendMessage(msg);
-            // ---------- Original Method ----------
-            //Handler.this.sendMessage(msg);
         }
 
         
@@ -639,8 +611,18 @@ Message varBD22C5ECD1F8BC3EE2416AF7A8014FD2_282552721 =         m;
     public interface Callback {
         public boolean handleMessage(Message msg);
     }
-    
-    private static final boolean FIND_POTENTIAL_LEAKS = false;
-    private static final String TAG = "Handler";
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.998 -0500", hash_original_method = "001850E10F072AF670657F2F37A16A9C", hash_generated_method = "A5974E73A9C80C82DFA1C17347E03874")
+    private final Message getPostMessage(Runnable r, Object token) {
+        Message m = Message.obtain();
+        m.obj = token;
+        m.callback = r;
+        return m;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:40.999 -0500", hash_original_method = "6CA31B63D4772009E291A8EEE8116A2F", hash_generated_method = "AD0BE4CB06C28D91482679A28DE4CCB6")
+    private final void handleCallback(Message message) {
+        message.callback.run();
+    }
 }
 

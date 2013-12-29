@@ -1,6 +1,8 @@
 package android.net.rtp;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.net.InetAddress;
 import java.net.SocketException;
@@ -11,172 +13,140 @@ import java.net.SocketException;
 
 
 public class AudioStream extends RtpStream {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.027 -0400", hash_original_field = "55B2094583B3D384F35AED660A0AC170", hash_generated_field = "48FE1FD1A45DD00365BBA4B7AFE1C228")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:35.719 -0500", hash_original_field = "D7D3A6F306950CEA4B6FC85D0247F3C1", hash_generated_field = "48FE1FD1A45DD00365BBA4B7AFE1C228")
 
     private AudioCodec mCodec;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.027 -0400", hash_original_field = "75261E386DBD630353F25C4352ABA4E4", hash_generated_field = "AAAC9649291EA7E9AF23C6AFE907EAE5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:35.720 -0500", hash_original_field = "BBF38444A5F65E088584B6E688C4174B", hash_generated_field = "AAAC9649291EA7E9AF23C6AFE907EAE5")
 
     private int mDtmfType = -1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.027 -0400", hash_original_field = "21346FE9F16EBAFFE8F776F66247523D", hash_generated_field = "240D951663574AC277AC31BCA3E190DC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:35.720 -0500", hash_original_field = "751B610DA2A5D206C7B5EF0637C4DB48", hash_generated_field = "240D951663574AC277AC31BCA3E190DC")
 
     private AudioGroup mGroup;
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.028 -0400", hash_original_method = "409408EC0859D4060DA7CEF5328B7220", hash_generated_method = "6D79D768C8F6FE3D78AE99145267A775")
-    public  AudioStream(InetAddress address) throws SocketException {
+
+    /**
+     * Creates an AudioStream on the given local address. Note that the local
+     * port is assigned automatically to conform with RFC 3550.
+     *
+     * @param address The network address of the local host to bind to.
+     * @throws SocketException if the address cannot be bound or a problem
+     *     occurs during binding.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:35.721 -0500", hash_original_method = "409408EC0859D4060DA7CEF5328B7220", hash_generated_method = "E546AB87BEEBEDF71AF41D13671F26D0")
+    public AudioStream(InetAddress address) throws SocketException {
         super(address);
-        addTaint(address.getTaint());
-        // ---------- Original Method ----------
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.028 -0400", hash_original_method = "254DAECE553220B60B3DDCDB0D3A9A7B", hash_generated_method = "C291D10BC96CB0C84C5A7B70B8455D8F")
+    /**
+     * Returns {@code true} if the stream has already joined an
+     * {@link AudioGroup}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:35.722 -0500", hash_original_method = "254DAECE553220B60B3DDCDB0D3A9A7B", hash_generated_method = "7B21EB749E29507A4027BA11C4E55BF9")
     @Override
-    public final boolean isBusy() {
-        boolean var893EB519F818FFC871EF40D76FDB054E_87789966 = (mGroup != null);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1588328733 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1588328733;
-        // ---------- Original Method ----------
-        //return mGroup != null;
+public final boolean isBusy() {
+        return mGroup != null;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.028 -0400", hash_original_method = "477F536A3076B0B10A19072AA2686CEC", hash_generated_method = "C902D87C0F8237DFF7BED304D13BEF3D")
+    /**
+     * Returns the joined {@link AudioGroup}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:35.723 -0500", hash_original_method = "477F536A3076B0B10A19072AA2686CEC", hash_generated_method = "13763D327C25270880CF36A0BD0A059D")
     public AudioGroup getGroup() {
-AudioGroup var8FC275F44636F88FF4B87724812634C3_1694241955 =         mGroup;
-        var8FC275F44636F88FF4B87724812634C3_1694241955.addTaint(taint);
-        return var8FC275F44636F88FF4B87724812634C3_1694241955;
-        // ---------- Original Method ----------
-        //return mGroup;
+        return mGroup;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.029 -0400", hash_original_method = "119D45B9BF5FF64C97C7293B3DF5F7E3", hash_generated_method = "854D05190E7FE6F03C059E08515C79A6")
+    /**
+     * Joins an {@link AudioGroup}. Each stream can join only one group at a
+     * time. The group can be changed by passing a different one or removed
+     * by calling this method with {@code null}.
+     *
+     * @param group The AudioGroup to join or {@code null} to leave.
+     * @throws IllegalStateException if the stream is not properly configured.
+     * @see AudioGroup
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:35.724 -0500", hash_original_method = "119D45B9BF5FF64C97C7293B3DF5F7E3", hash_generated_method = "29ED583CFA904E738FF127CFB9F0B721")
     public void join(AudioGroup group) {
-        synchronized
-(this)        {
-            if(mGroup == group)            
-            {
+        synchronized (this) {
+            if (mGroup == group) {
                 return;
-            } //End block
-            if(mGroup != null)            
-            {
+            }
+            if (mGroup != null) {
                 mGroup.remove(this);
                 mGroup = null;
-            } //End block
-            if(group != null)            
-            {
+            }
+            if (group != null) {
                 group.add(this, mCodec, mDtmfType);
                 mGroup = group;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //if (mGroup == group) {
-                //return;
-            //}
-            //if (mGroup != null) {
-                //mGroup.remove(this);
-                //mGroup = null;
-            //}
-            //if (group != null) {
-                //group.add(this, mCodec, mDtmfType);
-                //mGroup = group;
-            //}
-        //}
+            }
+        }
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.029 -0400", hash_original_method = "477233579E49B9ACBFE0DA40A2D8DF9C", hash_generated_method = "C9DAB2F75F184DDAC8DC91402E126663")
+    /**
+     * Returns the {@link AudioCodec}, or {@code null} if it is not set.
+     *
+     * @see #setCodec(AudioCodec)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:35.724 -0500", hash_original_method = "477233579E49B9ACBFE0DA40A2D8DF9C", hash_generated_method = "5487DAF43AFC33675BBC0738CAC2EA16")
     public AudioCodec getCodec() {
-AudioCodec var37F81D7BD8453D5EBF6A6F3DDE0E93D2_1485196859 =         mCodec;
-        var37F81D7BD8453D5EBF6A6F3DDE0E93D2_1485196859.addTaint(taint);
-        return var37F81D7BD8453D5EBF6A6F3DDE0E93D2_1485196859;
-        // ---------- Original Method ----------
-        //return mCodec;
+        return mCodec;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.030 -0400", hash_original_method = "E0A36AFBD97A7B298B1941948E16CA1A", hash_generated_method = "69D66076D8D3B2BCC1BED98CA5C993BE")
+    /**
+     * Sets the {@link AudioCodec}.
+     *
+     * @param codec The AudioCodec to be used.
+     * @throws IllegalArgumentException if its type is used by DTMF.
+     * @throws IllegalStateException if the stream is busy.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:35.725 -0500", hash_original_method = "E0A36AFBD97A7B298B1941948E16CA1A", hash_generated_method = "36115B45816A017DE46648F643A7705B")
     public void setCodec(AudioCodec codec) {
-        if(isBusy())        
-        {
-            IllegalStateException varEB02D49C7F66BF6343EB56DDF1963715_348411878 = new IllegalStateException("Busy");
-            varEB02D49C7F66BF6343EB56DDF1963715_348411878.addTaint(taint);
-            throw varEB02D49C7F66BF6343EB56DDF1963715_348411878;
-        } //End block
-        if(codec.type == mDtmfType)        
-        {
-            IllegalArgumentException var8F6F87B886BF78DCA73ED1B291C49528_1660710945 = new IllegalArgumentException("The type is used by DTMF");
-            var8F6F87B886BF78DCA73ED1B291C49528_1660710945.addTaint(taint);
-            throw var8F6F87B886BF78DCA73ED1B291C49528_1660710945;
-        } //End block
+        if (isBusy()) {
+            throw new IllegalStateException("Busy");
+        }
+        if (codec.type == mDtmfType) {
+            throw new IllegalArgumentException("The type is used by DTMF");
+        }
         mCodec = codec;
-        // ---------- Original Method ----------
-        //if (isBusy()) {
-            //throw new IllegalStateException("Busy");
-        //}
-        //if (codec.type == mDtmfType) {
-            //throw new IllegalArgumentException("The type is used by DTMF");
-        //}
-        //mCodec = codec;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.031 -0400", hash_original_method = "67DA2B7B029AD6BDA2A522BA945FCCC7", hash_generated_method = "607D9BF8D44155741F136FADE3ADA606")
+    /**
+     * Returns the RTP payload type for dual-tone multi-frequency (DTMF) digits,
+     * or {@code -1} if it is not enabled.
+     *
+     * @see #setDtmfType(int)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:35.726 -0500", hash_original_method = "67DA2B7B029AD6BDA2A522BA945FCCC7", hash_generated_method = "3C0067CBF059856A8FA81892062A2D81")
     public int getDtmfType() {
-        int var076EC8EB5A4D8D6D0B7B64B27BFB2FB2_483825395 = (mDtmfType);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_515747722 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_515747722;
-        // ---------- Original Method ----------
-        //return mDtmfType;
+        return mDtmfType;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.031 -0400", hash_original_method = "08CFB9D3491C3CF797064DF404EB556C", hash_generated_method = "4F25C1F0B765B847FA9DFE5E4D7DD1D4")
+    /**
+     * Sets the RTP payload type for dual-tone multi-frequency (DTMF) digits.
+     * The primary usage is to send digits to the remote gateway to perform
+     * certain tasks, such as second-stage dialing. According to RFC 2833, the
+     * RTP payload type for DTMF is assigned dynamically, so it must be in the
+     * range of 96 and 127. One can use {@code -1} to disable DTMF and free up
+     * the previous assigned type. This method cannot be called when the stream
+     * already joined an {@link AudioGroup}.
+     *
+     * @param type The RTP payload type to be used or {@code -1} to disable it.
+     * @throws IllegalArgumentException if the type is invalid or used by codec.
+     * @throws IllegalStateException if the stream is busy.
+     * @see AudioGroup#sendDtmf(int)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:35.727 -0500", hash_original_method = "08CFB9D3491C3CF797064DF404EB556C", hash_generated_method = "069DE761EB980DB42ECB53D4DC66D0C6")
     public void setDtmfType(int type) {
-        if(isBusy())        
-        {
-            IllegalStateException varEB02D49C7F66BF6343EB56DDF1963715_1043453538 = new IllegalStateException("Busy");
-            varEB02D49C7F66BF6343EB56DDF1963715_1043453538.addTaint(taint);
-            throw varEB02D49C7F66BF6343EB56DDF1963715_1043453538;
-        } //End block
-        if(type != -1)        
-        {
-            if(type < 96 || type > 127)            
-            {
-                IllegalArgumentException var9318CB30B49EC598F0007E207440476A_20634240 = new IllegalArgumentException("Invalid type");
-                var9318CB30B49EC598F0007E207440476A_20634240.addTaint(taint);
-                throw var9318CB30B49EC598F0007E207440476A_20634240;
-            } //End block
-            if(type == mCodec.type)            
-            {
-                IllegalArgumentException var668DAC7753EFB03E4CBB71C2905E5098_432184579 = new IllegalArgumentException("The type is used by codec");
-                var668DAC7753EFB03E4CBB71C2905E5098_432184579.addTaint(taint);
-                throw var668DAC7753EFB03E4CBB71C2905E5098_432184579;
-            } //End block
-        } //End block
+        if (isBusy()) {
+            throw new IllegalStateException("Busy");
+        }
+        if (type != -1) {
+            if (type < 96 || type > 127) {
+                throw new IllegalArgumentException("Invalid type");
+            }
+            if (type == mCodec.type) {
+                throw new IllegalArgumentException("The type is used by codec");
+            }
+        }
         mDtmfType = type;
-        // ---------- Original Method ----------
-        //if (isBusy()) {
-            //throw new IllegalStateException("Busy");
-        //}
-        //if (type != -1) {
-            //if (type < 96 || type > 127) {
-                //throw new IllegalArgumentException("Invalid type");
-            //}
-            //if (type == mCodec.type) {
-                //throw new IllegalArgumentException("The type is used by codec");
-            //}
-        //}
-        //mDtmfType = type;
     }
 
     

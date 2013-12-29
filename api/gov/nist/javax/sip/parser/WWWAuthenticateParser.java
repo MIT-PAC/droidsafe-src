@@ -1,6 +1,8 @@
 package gov.nist.javax.sip.parser;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import gov.nist.javax.sip.header.SIPHeader;
 import gov.nist.javax.sip.header.WWWAuthenticate;
@@ -12,56 +14,43 @@ import java.text.ParseException;
 
 
 public class WWWAuthenticateParser extends ChallengeParser {
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.554 -0400", hash_original_method = "6138AB6ABE323397A90992BBA6CE68F7", hash_generated_method = "DFAFC5424B5FCEDA507EF61D6EC4EE97")
-    public  WWWAuthenticateParser(String wwwAuthenticate) {
+
+    /**
+     * Constructor
+     * @param wwwAuthenticate -  message to parse
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:11.391 -0500", hash_original_method = "6138AB6ABE323397A90992BBA6CE68F7", hash_generated_method = "5BBD20962E7C1C2DA74B21C3669D0241")
+    public WWWAuthenticateParser(String wwwAuthenticate) {
         super(wwwAuthenticate);
-        addTaint(wwwAuthenticate.getTaint());
-        // ---------- Original Method ----------
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.555 -0400", hash_original_method = "3C6BB1F0E541627B3210DAEB9F57410E", hash_generated_method = "E9EEE9E934149667B1F4EEFCD7537F23")
-    protected  WWWAuthenticateParser(Lexer lexer) {
+    /**
+     * Cosntructor
+     * @param  lexer - lexer to use.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:11.392 -0500", hash_original_method = "3C6BB1F0E541627B3210DAEB9F57410E", hash_generated_method = "908EA339A139F1CAC5965C2F8904BBC7")
+    protected WWWAuthenticateParser(Lexer lexer) {
         super(lexer);
-        addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.555 -0400", hash_original_method = "21D63394A7F5FCF103E716C1D0FF5141", hash_generated_method = "66FB4B03207845BB5C72D142937CF99D")
+    /**
+     * parse the String message
+     * @return SIPHeader (WWWAuthenticate object)
+     * @throws SIPParseException if the message does not respect the spec.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:11.393 -0500", hash_original_method = "21D63394A7F5FCF103E716C1D0FF5141", hash_generated_method = "52DAF62CFA21540E7031C5AAEB1696DA")
     public SIPHeader parse() throws ParseException {
-        if(debug)        
-        dbg_enter("parse");
-        try 
-        {
+        if (debug)
+            dbg_enter("parse");
+        try {
             headerName(TokenTypes.WWW_AUTHENTICATE);
             WWWAuthenticate wwwAuthenticate = new WWWAuthenticate();
             super.parse(wwwAuthenticate);
-SIPHeader varBCB9696E34DE6C6E990E36231F1734E3_1700765096 =             wwwAuthenticate;
-            varBCB9696E34DE6C6E990E36231F1734E3_1700765096.addTaint(taint);
-            return varBCB9696E34DE6C6E990E36231F1734E3_1700765096;
-        } //End block
-        finally 
-        {
-            if(debug)            
-            dbg_leave("parse");
-        } //End block
-        // ---------- Original Method ----------
-        //if (debug)
-            //dbg_enter("parse");
-        //try {
-            //headerName(TokenTypes.WWW_AUTHENTICATE);
-            //WWWAuthenticate wwwAuthenticate = new WWWAuthenticate();
-            //super.parse(wwwAuthenticate);
-            //return wwwAuthenticate;
-        //} finally {
-            //if (debug)
-                //dbg_leave("parse");
-        //}
+            return wwwAuthenticate;
+        } finally {
+            if (debug)
+                dbg_leave("parse");
+        }
     }
 
     

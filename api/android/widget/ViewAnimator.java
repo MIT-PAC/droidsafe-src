@@ -1,6 +1,8 @@
 package android.widget;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -15,463 +17,343 @@ import android.view.animation.AnimationUtils;
 
 
 public class ViewAnimator extends FrameLayout {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.203 -0400", hash_original_field = "EA21F533229388AA4B2EFE079FA29356", hash_generated_field = "A4199CA8B30F98AAF67F6FDF10E09266")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:56.160 -0500", hash_original_field = "A4199CA8B30F98AAF67F6FDF10E09266", hash_generated_field = "A4199CA8B30F98AAF67F6FDF10E09266")
+
 
     int mWhichChild = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.203 -0400", hash_original_field = "819CF91F91F67E3ABFDBBF304392B421", hash_generated_field = "319BF9E49F2FBE9453A9508A3A60521D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:56.160 -0500", hash_original_field = "319BF9E49F2FBE9453A9508A3A60521D", hash_generated_field = "319BF9E49F2FBE9453A9508A3A60521D")
 
     boolean mFirstTime = true;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.203 -0400", hash_original_field = "FDE1980A01124F9ECAD446EEE35F7267", hash_generated_field = "11022FC94DBD000AF0F23EE6D44DA07A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:56.161 -0500", hash_original_field = "11022FC94DBD000AF0F23EE6D44DA07A", hash_generated_field = "11022FC94DBD000AF0F23EE6D44DA07A")
+
 
     boolean mAnimateFirstTime = true;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.204 -0400", hash_original_field = "69EE9328057C3731E3E5851972F2D1BA", hash_generated_field = "29299F27489816D586AD948F6D96C9C1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:56.162 -0500", hash_original_field = "29299F27489816D586AD948F6D96C9C1", hash_generated_field = "29299F27489816D586AD948F6D96C9C1")
+
 
     Animation mInAnimation;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.204 -0400", hash_original_field = "00AD3937DA6C2650F811216846F50E5C", hash_generated_field = "9E3A714F1340062D6D1C605D96F85572")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:56.163 -0500", hash_original_field = "9E3A714F1340062D6D1C605D96F85572", hash_generated_field = "9E3A714F1340062D6D1C605D96F85572")
 
     Animation mOutAnimation;
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.204 -0400", hash_original_method = "66F6B937748E2D301A30C8F3ECD323BD", hash_generated_method = "03C6B7C68A925262E4CD3D5DC2B4A625")
-    public  ViewAnimator(Context context) {
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:56.164 -0500", hash_original_method = "66F6B937748E2D301A30C8F3ECD323BD", hash_generated_method = "C416DCDEE73239E8D576D62488884402")
+    public ViewAnimator(Context context) {
         super(context);
-        addTaint(context.getTaint());
         initViewAnimator(context, null);
-        // ---------- Original Method ----------
-        //initViewAnimator(context, null);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.205 -0400", hash_original_method = "F8EF7A2A27A81BBBD9162F58F1DAF59B", hash_generated_method = "5292DC58EC78DF5F1572327AD67AFBA2")
-    public  ViewAnimator(Context context, AttributeSet attrs) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:56.165 -0500", hash_original_method = "F8EF7A2A27A81BBBD9162F58F1DAF59B", hash_generated_method = "7BAB977C1DC3579243763FE6D1628B34")
+    public ViewAnimator(Context context, AttributeSet attrs) {
         super(context, attrs);
-        addTaint(attrs.getTaint());
-        addTaint(context.getTaint());
+
         TypedArray a = context.obtainStyledAttributes(attrs, com.android.internal.R.styleable.ViewAnimator);
         int resource = a.getResourceId(com.android.internal.R.styleable.ViewAnimator_inAnimation, 0);
-        if(resource > 0)        
-        {
+        if (resource > 0) {
             setInAnimation(context, resource);
-        } //End block
+        }
+
         resource = a.getResourceId(com.android.internal.R.styleable.ViewAnimator_outAnimation, 0);
-        if(resource > 0)        
-        {
+        if (resource > 0) {
             setOutAnimation(context, resource);
-        } //End block
+        }
+
         boolean flag = a.getBoolean(com.android.internal.R.styleable.ViewAnimator_animateFirstView, true);
         setAnimateFirstView(flag);
+
         a.recycle();
+
         initViewAnimator(context, attrs);
-        // ---------- Original Method ----------
-        //TypedArray a = context.obtainStyledAttributes(attrs, com.android.internal.R.styleable.ViewAnimator);
-        //int resource = a.getResourceId(com.android.internal.R.styleable.ViewAnimator_inAnimation, 0);
-        //if (resource > 0) {
-            //setInAnimation(context, resource);
-        //}
-        //resource = a.getResourceId(com.android.internal.R.styleable.ViewAnimator_outAnimation, 0);
-        //if (resource > 0) {
-            //setOutAnimation(context, resource);
-        //}
-        //boolean flag = a.getBoolean(com.android.internal.R.styleable.ViewAnimator_animateFirstView, true);
-        //setAnimateFirstView(flag);
-        //a.recycle();
-        //initViewAnimator(context, attrs);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.205 -0400", hash_original_method = "6B106D21A6B322E95178F19E05B7CE37", hash_generated_method = "213B99B199BEBC90733945C14C617525")
+    /**
+     * Initialize this {@link ViewAnimator}, possibly setting
+     * {@link #setMeasureAllChildren(boolean)} based on {@link FrameLayout} flags.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:56.166 -0500", hash_original_method = "6B106D21A6B322E95178F19E05B7CE37", hash_generated_method = "52F738E13C11CE8B2A0A08528D976E94")
     private void initViewAnimator(Context context, AttributeSet attrs) {
-        addTaint(attrs.getTaint());
-        addTaint(context.getTaint());
-        if(attrs == null)        
-        {
+        if (attrs == null) {
+            // For compatibility, always measure children when undefined.
             mMeasureAllChildren = true;
             return;
-        } //End block
+        }
+
+        // For compatibility, default to measure children, but allow XML
+        // attribute to override.
         final TypedArray a = context.obtainStyledAttributes(attrs,
                 com.android.internal.R.styleable.FrameLayout);
         final boolean measureAllChildren = a.getBoolean(
                 com.android.internal.R.styleable.FrameLayout_measureAllChildren, true);
         setMeasureAllChildren(measureAllChildren);
         a.recycle();
-        // ---------- Original Method ----------
-        //if (attrs == null) {
-            //mMeasureAllChildren = true;
-            //return;
-        //}
-        //final TypedArray a = context.obtainStyledAttributes(attrs,
-                //com.android.internal.R.styleable.FrameLayout);
-        //final boolean measureAllChildren = a.getBoolean(
-                //com.android.internal.R.styleable.FrameLayout_measureAllChildren, true);
-        //setMeasureAllChildren(measureAllChildren);
-        //a.recycle();
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.206 -0400", hash_original_method = "886E9E30E7E0F1B550AD6251245A0536", hash_generated_method = "B0B1E86F2BB8BE1005DD6B1D7F77B1D9")
+    /**
+     * Sets which child view will be displayed.
+     *
+     * @param whichChild the index of the child view to display
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:56.166 -0500", hash_original_method = "886E9E30E7E0F1B550AD6251245A0536", hash_generated_method = "85CFFD1038B757B608DC791E7423D275")
     @android.view.RemotableViewMethod
-    public void setDisplayedChild(int whichChild) {
+public void setDisplayedChild(int whichChild) {
         mWhichChild = whichChild;
-        if(whichChild >= getChildCount())        
-        {
+        if (whichChild >= getChildCount()) {
             mWhichChild = 0;
-        } //End block
-        else
-        if(whichChild < 0)        
-        {
+        } else if (whichChild < 0) {
             mWhichChild = getChildCount() - 1;
-        } //End block
+        }
         boolean hasFocus = getFocusedChild() != null;
+        // This will clear old focus if we had it
         showOnly(mWhichChild);
-        if(hasFocus)        
-        {
+        if (hasFocus) {
+            // Try to retake focus if we had it
             requestFocus(FOCUS_FORWARD);
-        } //End block
-        // ---------- Original Method ----------
-        //mWhichChild = whichChild;
-        //if (whichChild >= getChildCount()) {
-            //mWhichChild = 0;
-        //} else if (whichChild < 0) {
-            //mWhichChild = getChildCount() - 1;
-        //}
-        //boolean hasFocus = getFocusedChild() != null;
-        //showOnly(mWhichChild);
-        //if (hasFocus) {
-            //requestFocus(FOCUS_FORWARD);
-        //}
+        }
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.207 -0400", hash_original_method = "EEFA4D3ABF985412351A1BD0CB5D6161", hash_generated_method = "3923A6FFC40B0E6C25BAA19D9EED0901")
+    /**
+     * Returns the index of the currently displayed child view.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:56.167 -0500", hash_original_method = "EEFA4D3ABF985412351A1BD0CB5D6161", hash_generated_method = "7CCCB2C258F137F09749CB31D2CA0D0D")
     public int getDisplayedChild() {
-        int varDB5BE583416C3068C849D51E047EB136_696773621 = (mWhichChild);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_66829446 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_66829446;
-        // ---------- Original Method ----------
-        //return mWhichChild;
+        return mWhichChild;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.207 -0400", hash_original_method = "EFCC34AA69F6F34103211EDFAD5FB56A", hash_generated_method = "3385562BAE55ABDC097B8B20904F2D01")
+    /**
+     * Manually shows the next child.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:56.168 -0500", hash_original_method = "EFCC34AA69F6F34103211EDFAD5FB56A", hash_generated_method = "C8057A111EAE9FF161EAC71A04735053")
     @android.view.RemotableViewMethod
-    public void showNext() {
+public void showNext() {
         setDisplayedChild(mWhichChild + 1);
-        // ---------- Original Method ----------
-        //setDisplayedChild(mWhichChild + 1);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.207 -0400", hash_original_method = "F846DD3340718784FB63764FD5BBF0F3", hash_generated_method = "67432F7150CA193FAF87FB8FB63A56B3")
+    /**
+     * Manually shows the previous child.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:56.169 -0500", hash_original_method = "F846DD3340718784FB63764FD5BBF0F3", hash_generated_method = "F7A27E564FD03DC11A20DB63764AFE91")
     @android.view.RemotableViewMethod
-    public void showPrevious() {
+public void showPrevious() {
         setDisplayedChild(mWhichChild - 1);
-        // ---------- Original Method ----------
-        //setDisplayedChild(mWhichChild - 1);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.208 -0400", hash_original_method = "821F94AAA9585776C884C184A81B321A", hash_generated_method = "A02DD7BC39815085257A8E1C4DF61279")
-     void showOnly(int childIndex, boolean animate) {
-        addTaint(animate);
-        addTaint(childIndex);
+    /**
+     * Shows only the specified child. The other displays Views exit the screen,
+     * optionally with the with the {@link #getOutAnimation() out animation} and
+     * the specified child enters the screen, optionally with the
+     * {@link #getInAnimation() in animation}.
+     *
+     * @param childIndex The index of the child to be shown.
+     * @param animate Whether or not to use the in and out animations, defaults
+     *            to true.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:56.170 -0500", hash_original_method = "821F94AAA9585776C884C184A81B321A", hash_generated_method = "821F94AAA9585776C884C184A81B321A")
+    void showOnly(int childIndex, boolean animate) {
         final int count = getChildCount();
-for(int i = 0;i < count;i++)
-        {
+        for (int i = 0; i < count; i++) {
             final View child = getChildAt(i);
-            if(i == childIndex)            
-            {
-                if(animate && mInAnimation != null)                
-                {
+            if (i == childIndex) {
+                if (animate && mInAnimation != null) {
                     child.startAnimation(mInAnimation);
-                } //End block
+                }
                 child.setVisibility(View.VISIBLE);
                 mFirstTime = false;
-            } //End block
-            else
-            {
-                if(animate && mOutAnimation != null && child.getVisibility() == View.VISIBLE)                
-                {
+            } else {
+                if (animate && mOutAnimation != null && child.getVisibility() == View.VISIBLE) {
                     child.startAnimation(mOutAnimation);
-                } //End block
-                else
-                if(child.getAnimation() == mInAnimation)                
-                child.clearAnimation();
+                } else if (child.getAnimation() == mInAnimation)
+                    child.clearAnimation();
                 child.setVisibility(View.GONE);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //final int count = getChildCount();
-        //for (int i = 0; i < count; i++) {
-            //final View child = getChildAt(i);
-            //if (i == childIndex) {
-                //if (animate && mInAnimation != null) {
-                    //child.startAnimation(mInAnimation);
-                //}
-                //child.setVisibility(View.VISIBLE);
-                //mFirstTime = false;
-            //} else {
-                //if (animate && mOutAnimation != null && child.getVisibility() == View.VISIBLE) {
-                    //child.startAnimation(mOutAnimation);
-                //} else if (child.getAnimation() == mInAnimation)
-                    //child.clearAnimation();
-                //child.setVisibility(View.GONE);
-            //}
-        //}
+            }
+        }
     }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.208 -0400", hash_original_method = "F76460515723C04BD015D3AE7F75A8EE", hash_generated_method = "767C9C9F31BCC47F5AA881D850F3D21A")
-     void showOnly(int childIndex) {
-        addTaint(childIndex);
+    /**
+     * Shows only the specified child. The other displays Views exit the screen
+     * with the {@link #getOutAnimation() out animation} and the specified child
+     * enters the screen with the {@link #getInAnimation() in animation}.
+     *
+     * @param childIndex The index of the child to be shown.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:56.171 -0500", hash_original_method = "F76460515723C04BD015D3AE7F75A8EE", hash_generated_method = "F76460515723C04BD015D3AE7F75A8EE")
+    void showOnly(int childIndex) {
         final boolean animate = (!mFirstTime || mAnimateFirstTime);
         showOnly(childIndex, animate);
-        // ---------- Original Method ----------
-        //final boolean animate = (!mFirstTime || mAnimateFirstTime);
-        //showOnly(childIndex, animate);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.209 -0400", hash_original_method = "B6265928EFB656804D99665538BC6B35", hash_generated_method = "5D8367EE6F1497F146AAEB734F9CD82F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:56.172 -0500", hash_original_method = "B6265928EFB656804D99665538BC6B35", hash_generated_method = "21689BF928C4D8AC7D910941AC2D202D")
     @Override
-    public void addView(View child, int index, ViewGroup.LayoutParams params) {
-        addTaint(params.getTaint());
-        addTaint(index);
-        addTaint(child.getTaint());
+public void addView(View child, int index, ViewGroup.LayoutParams params) {
         super.addView(child, index, params);
-        if(getChildCount() == 1)        
-        {
+        if (getChildCount() == 1) {
             child.setVisibility(View.VISIBLE);
-        } //End block
-        else
-        {
+        } else {
             child.setVisibility(View.GONE);
-        } //End block
-        // ---------- Original Method ----------
-        //super.addView(child, index, params);
-        //if (getChildCount() == 1) {
-            //child.setVisibility(View.VISIBLE);
-        //} else {
-            //child.setVisibility(View.GONE);
-        //}
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.210 -0400", hash_original_method = "2876DED6BDEBD13B29080CE11E9063E4", hash_generated_method = "BCAA78D61167CAAC0C5353EF23AEBF73")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:56.173 -0500", hash_original_method = "2876DED6BDEBD13B29080CE11E9063E4", hash_generated_method = "5B940171BCBCAC8BFBD354C9728A6728")
     @Override
-    public void removeAllViews() {
+public void removeAllViews() {
         super.removeAllViews();
         mWhichChild = 0;
         mFirstTime = true;
-        // ---------- Original Method ----------
-        //super.removeAllViews();
-        //mWhichChild = 0;
-        //mFirstTime = true;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.210 -0400", hash_original_method = "96F6E7BCEF91AFFF9BCD877C8E22A578", hash_generated_method = "A7B4988A2710D09B3F767BF86D8D0CB0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:56.173 -0500", hash_original_method = "96F6E7BCEF91AFFF9BCD877C8E22A578", hash_generated_method = "4BCEB94DEB3DC069169CB7D5410262B4")
     @Override
-    public void removeView(View view) {
-        addTaint(view.getTaint());
+public void removeView(View view) {
         final int index = indexOfChild(view);
-        if(index >= 0)        
-        {
+        if (index >= 0) {
             removeViewAt(index);
-        } //End block
-        // ---------- Original Method ----------
-        //final int index = indexOfChild(view);
-        //if (index >= 0) {
-            //removeViewAt(index);
-        //}
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.211 -0400", hash_original_method = "39615E53633A229D459BCD129C9447D8", hash_generated_method = "3CF38E7B673C1B62368A850130F6539B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:56.174 -0500", hash_original_method = "39615E53633A229D459BCD129C9447D8", hash_generated_method = "0E14CC5B03390920FF44255802561C36")
     @Override
-    public void removeViewAt(int index) {
-        addTaint(index);
+public void removeViewAt(int index) {
         super.removeViewAt(index);
         final int childCount = getChildCount();
-        if(childCount == 0)        
-        {
+        if (childCount == 0) {
             mWhichChild = 0;
             mFirstTime = true;
-        } //End block
-        else
-        if(mWhichChild >= childCount)        
-        {
+        } else if (mWhichChild >= childCount) {
+            // Displayed is above child count, so float down to top of stack
             setDisplayedChild(childCount - 1);
-        } //End block
-        else
-        if(mWhichChild == index)        
-        {
+        } else if (mWhichChild == index) {
+            // Displayed was removed, so show the new child living in its place
             setDisplayedChild(mWhichChild);
-        } //End block
-        // ---------- Original Method ----------
-        //super.removeViewAt(index);
-        //final int childCount = getChildCount();
-        //if (childCount == 0) {
-            //mWhichChild = 0;
-            //mFirstTime = true;
-        //} else if (mWhichChild >= childCount) {
-            //setDisplayedChild(childCount - 1);
-        //} else if (mWhichChild == index) {
-            //setDisplayedChild(mWhichChild);
-        //}
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.212 -0400", hash_original_method = "E39155B01A3404328E46119B32BA0220", hash_generated_method = "5F148F7815F600867821DC7CB521B775")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:56.175 -0500", hash_original_method = "E39155B01A3404328E46119B32BA0220", hash_generated_method = "7FAD47F7594FF1176856FB7AA555F7BE")
     public void removeViewInLayout(View view) {
-        addTaint(view.getTaint());
         removeView(view);
-        // ---------- Original Method ----------
-        //removeView(view);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.212 -0400", hash_original_method = "E3FA5900F02B916C2065C9EFA9728FDF", hash_generated_method = "8B08F6DFC7318AAE929F06884EF6D751")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:56.176 -0500", hash_original_method = "E3FA5900F02B916C2065C9EFA9728FDF", hash_generated_method = "51DA4FA06D70978BF94CDC8180B5E391")
     public void removeViews(int start, int count) {
-        addTaint(count);
-        addTaint(start);
         super.removeViews(start, count);
-        if(getChildCount() == 0)        
-        {
+        if (getChildCount() == 0) {
             mWhichChild = 0;
             mFirstTime = true;
-        } //End block
-        else
-        if(mWhichChild >= start && mWhichChild < start + count)        
-        {
+        } else if (mWhichChild >= start && mWhichChild < start + count) {
+            // Try showing new displayed child, wrapping if needed
             setDisplayedChild(mWhichChild);
-        } //End block
-        // ---------- Original Method ----------
-        //super.removeViews(start, count);
-        //if (getChildCount() == 0) {
-            //mWhichChild = 0;
-            //mFirstTime = true;
-        //} else if (mWhichChild >= start && mWhichChild < start + count) {
-            //setDisplayedChild(mWhichChild);
-        //}
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.213 -0400", hash_original_method = "76C75A4C2363189C0B16150C5B7ECE1A", hash_generated_method = "E57F4172B992AF809E66F308997DA084")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:56.177 -0500", hash_original_method = "76C75A4C2363189C0B16150C5B7ECE1A", hash_generated_method = "73852041D10B70BBE7FFCA35F7D48BC1")
     public void removeViewsInLayout(int start, int count) {
-        addTaint(count);
-        addTaint(start);
         removeViews(start, count);
-        // ---------- Original Method ----------
-        //removeViews(start, count);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.213 -0400", hash_original_method = "844041B2553847C9CC4B36B79F20B7EC", hash_generated_method = "5511E056CD17DA0976485F9DCF7A5B3B")
+    /**
+     * Returns the View corresponding to the currently displayed child.
+     *
+     * @return The View currently displayed.
+     *
+     * @see #getDisplayedChild()
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:56.177 -0500", hash_original_method = "844041B2553847C9CC4B36B79F20B7EC", hash_generated_method = "34E1EA694076F22BBF84C85C43E13FE8")
     public View getCurrentView() {
-View var2EFE567B1041312ACA3B581D96281BE7_365652205 =         getChildAt(mWhichChild);
-        var2EFE567B1041312ACA3B581D96281BE7_365652205.addTaint(taint);
-        return var2EFE567B1041312ACA3B581D96281BE7_365652205;
-        // ---------- Original Method ----------
-        //return getChildAt(mWhichChild);
+        return getChildAt(mWhichChild);
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.213 -0400", hash_original_method = "9649A93AAEAC388E07F52DE503C0F001", hash_generated_method = "0875DA766A2B161A8325779CDF2204B4")
+    /**
+     * Returns the current animation used to animate a View that enters the screen.
+     *
+     * @return An Animation or null if none is set.
+     *
+     * @see #setInAnimation(android.view.animation.Animation)
+     * @see #setInAnimation(android.content.Context, int)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:56.178 -0500", hash_original_method = "9649A93AAEAC388E07F52DE503C0F001", hash_generated_method = "FEC2C051AA60B017CF0DB36CB1BCC183")
     public Animation getInAnimation() {
-Animation var4B5C05D2D2A95AF947FC9E803E337EB1_1991237944 =         mInAnimation;
-        var4B5C05D2D2A95AF947FC9E803E337EB1_1991237944.addTaint(taint);
-        return var4B5C05D2D2A95AF947FC9E803E337EB1_1991237944;
-        // ---------- Original Method ----------
-        //return mInAnimation;
+        return mInAnimation;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.213 -0400", hash_original_method = "3A3CF51D7EEDC43DA48CCA94EBF1692F", hash_generated_method = "E7E7233C13774685AA7A36D3ECAD7F34")
+    /**
+     * Specifies the animation used to animate a View that enters the screen.
+     *
+     * @param inAnimation The animation started when a View enters the screen.
+     *
+     * @see #getInAnimation()
+     * @see #setInAnimation(android.content.Context, int)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:56.179 -0500", hash_original_method = "3A3CF51D7EEDC43DA48CCA94EBF1692F", hash_generated_method = "615FE56B69AD0C06A3BDDB2BA5A7DC92")
     public void setInAnimation(Animation inAnimation) {
         mInAnimation = inAnimation;
-        // ---------- Original Method ----------
-        //mInAnimation = inAnimation;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.213 -0400", hash_original_method = "966AEDC04CB1C3738AA44B09B913030C", hash_generated_method = "1BE106FFFBC0CDD2EE2AD0ABD0E08D96")
+    /**
+     * Returns the current animation used to animate a View that exits the screen.
+     *
+     * @return An Animation or null if none is set.
+     *
+     * @see #setOutAnimation(android.view.animation.Animation)
+     * @see #setOutAnimation(android.content.Context, int)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:56.180 -0500", hash_original_method = "966AEDC04CB1C3738AA44B09B913030C", hash_generated_method = "0A77B9C7F911EA541864D2292977F9DB")
     public Animation getOutAnimation() {
-Animation var12545A6CD44F5F92DFAF41C046B9E960_911871511 =         mOutAnimation;
-        var12545A6CD44F5F92DFAF41C046B9E960_911871511.addTaint(taint);
-        return var12545A6CD44F5F92DFAF41C046B9E960_911871511;
-        // ---------- Original Method ----------
-        //return mOutAnimation;
+        return mOutAnimation;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.213 -0400", hash_original_method = "E7C95EC2E63D184B364637DD8AD18F73", hash_generated_method = "7702771938195AF2F91DFC7114BC7EB4")
+    /**
+     * Specifies the animation used to animate a View that exit the screen.
+     *
+     * @param outAnimation The animation started when a View exit the screen.
+     *
+     * @see #getOutAnimation()
+     * @see #setOutAnimation(android.content.Context, int)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:56.180 -0500", hash_original_method = "E7C95EC2E63D184B364637DD8AD18F73", hash_generated_method = "2750236BB1A6DFD678E483DE660F74A1")
     public void setOutAnimation(Animation outAnimation) {
         mOutAnimation = outAnimation;
-        // ---------- Original Method ----------
-        //mOutAnimation = outAnimation;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.214 -0400", hash_original_method = "4B14A90FDB2491821F3B7183A1AB7EB4", hash_generated_method = "A028A2D55E1E0E360872480B0EB9C0EF")
+    /**
+     * Specifies the animation used to animate a View that enters the screen.
+     *
+     * @param context The application's environment.
+     * @param resourceID The resource id of the animation.
+     *
+     * @see #getInAnimation()
+     * @see #setInAnimation(android.view.animation.Animation)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:56.181 -0500", hash_original_method = "4B14A90FDB2491821F3B7183A1AB7EB4", hash_generated_method = "025FDCC5D184A99FE1DAAE365D5613F7")
     public void setInAnimation(Context context, int resourceID) {
-        addTaint(resourceID);
-        addTaint(context.getTaint());
         setInAnimation(AnimationUtils.loadAnimation(context, resourceID));
-        // ---------- Original Method ----------
-        //setInAnimation(AnimationUtils.loadAnimation(context, resourceID));
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.214 -0400", hash_original_method = "C68FA8DD73709498CDF74B32AA0794E0", hash_generated_method = "2D772FA38A74DF4CE5F92F31E9029652")
+    /**
+     * Specifies the animation used to animate a View that exit the screen.
+     *
+     * @param context The application's environment.
+     * @param resourceID The resource id of the animation.
+     *
+     * @see #getOutAnimation()
+     * @see #setOutAnimation(android.view.animation.Animation)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:56.182 -0500", hash_original_method = "C68FA8DD73709498CDF74B32AA0794E0", hash_generated_method = "285D28BB5F2C5F362294AE0F5AA17676")
     public void setOutAnimation(Context context, int resourceID) {
-        addTaint(resourceID);
-        addTaint(context.getTaint());
         setOutAnimation(AnimationUtils.loadAnimation(context, resourceID));
-        // ---------- Original Method ----------
-        //setOutAnimation(AnimationUtils.loadAnimation(context, resourceID));
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.214 -0400", hash_original_method = "8FC95409534ABC48E92905DC8C518CE2", hash_generated_method = "B8F320B30FC7DD41541BCFCAA6FCA367")
+    /**
+     * Indicates whether the current View should be animated the first time
+     * the ViewAnimation is displayed.
+     *
+     * @param animate True to animate the current View the first time it is displayed,
+     *                false otherwise.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:56.183 -0500", hash_original_method = "8FC95409534ABC48E92905DC8C518CE2", hash_generated_method = "2161D1636A0BC5F12D5CCB943AE3E97C")
     public void setAnimateFirstView(boolean animate) {
         mAnimateFirstTime = animate;
-        // ---------- Original Method ----------
-        //mAnimateFirstTime = animate;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.214 -0400", hash_original_method = "0B91CAAE76789C8A4B2B18C9D0AAF852", hash_generated_method = "33726DF4D4524AD511BD4A7F3D751F82")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:56.183 -0500", hash_original_method = "0B91CAAE76789C8A4B2B18C9D0AAF852", hash_generated_method = "BC44695AA42F588274CA96129EE3350B")
     @Override
-    public int getBaseline() {
-        int var4702CD21947610980ED4BFE44C6C48B3_989332730 = ((getCurrentView() != null) ? getCurrentView().getBaseline() : super.getBaseline());
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_129357100 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_129357100;
-        // ---------- Original Method ----------
-        //return (getCurrentView() != null) ? getCurrentView().getBaseline() : super.getBaseline();
+public int getBaseline() {
+        return (getCurrentView() != null) ? getCurrentView().getBaseline() : super.getBaseline();
     }
 
     

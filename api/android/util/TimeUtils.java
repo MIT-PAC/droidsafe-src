@@ -1,6 +1,9 @@
 package android.util;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
+import android.util.Log;
 import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -23,46 +26,64 @@ import com.android.internal.util.XmlUtils;
 
 
 public class TimeUtils {
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.275 -0400", hash_original_method = "90FFA2BDF77FA646318F5F30EF504BD2", hash_generated_method = "011199797FD3B540ED86DA17205AFF1D")
-    public  TimeUtils() {
-        // ---------- Original Method ----------
-    }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Tries to return a time zone that would have had the specified offset
+     * and DST value at the specified moment in the specified country.
+     * Returns null if no suitable zone could be found.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.389 -0500", hash_original_method = "4143CA31021B7F12CE34EDC73285920C", hash_generated_method = "3B66059A8DC5127D77FDB65651B5A6E0")
     public static TimeZone getTimeZone(int offset, boolean dst, long when, String country) {
         if (country == null) {
             return null;
         }
+
         TimeZone best = null;
+
         Resources r = Resources.getSystem();
         XmlResourceParser parser = r.getXml(com.android.internal.R.xml.time_zones_by_country);
         Date d = new Date(when);
+
         TimeZone current = TimeZone.getDefault();
         String currentName = current.getID();
         int currentOffset = current.getOffset(when);
         boolean currentDst = current.inDaylightTime(d);
+
         try {
             XmlUtils.beginDocument(parser, "timezones");
+
             while (true) {
                 XmlUtils.nextElement(parser);
+
                 String element = parser.getName();
                 if (element == null || !(element.equals("timezone"))) {
                     break;
                 }
+
                 String code = parser.getAttributeValue(null, "code");
+
                 if (country.equals(code)) {
                     if (parser.next() == XmlPullParser.TEXT) {
                         String maybe = parser.getText();
+
+                        // If the current time zone is from the right country
+                        // and meets the other known properties, keep it
+                        // instead of changing to another one.
+
                         if (maybe.equals(currentName)) {
                             if (currentOffset == offset && currentDst == dst) {
                                 return current;
                             }
                         }
+
+                        // Otherwise, take the first zone from the right
+                        // country that has the correct current offset and DST.
+                        // (Keep iterating instead of returning in case we
+                        // haven't encountered the current time zone yet.)
+
                         if (best == null) {
                             TimeZone tz = TimeZone.getTimeZone(maybe);
+
                             if (tz.getOffset(when) == offset &&
                                 tz.inDaylightTime(d) == dst) {
                                 best = tz;
@@ -78,17 +99,33 @@ public class TimeUtils {
         } finally {
             parser.close();
         }
+
         return best;
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Returns a String indicating the version of the time zone database currently
+     * in use.  The format of the string is dependent on the underlying time zone
+     * database implementation, but will typically contain the year in which the database
+     * was updated plus a letter from a to z indicating changes made within that year.
+     *
+     * <p>Time zone database updates should be expected to occur periodically due to
+     * political and legal changes that cannot be anticipated in advance.  Therefore,
+     * when computing the UTC time for a future event, applications should be aware that
+     * the results may differ following a time zone database update.  This method allows
+     * applications to detect that a database change has occurred, and to recalculate any
+     * cached times accordingly.
+     *
+     * <p>The time zone database may be assumed to change only when the device runtime
+     * is restarted.  Therefore, it is not necessary to re-query the database version
+     * during the lifetime of an activity.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.389 -0500", hash_original_method = "1EDA04421B052D073A2A7549B576EB12", hash_generated_method = "BE0BB63257EE83C1BE5FB31F71FD083C")
     public static String getTimeZoneDatabaseVersion() {
         return ZoneInfoDB.getVersion();
     }
 
-    
-    @DSModeled(DSC.BAN)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.396 -0500", hash_original_method = "3FC6E7A781E4B58A630369339A3D0BEC", hash_generated_method = "EECD5E318F2EA565268D88054CAB5761")
     static private int accumField(int amt, int suffix, boolean always, int zeropad) {
         if (amt > 99 || (always && zeropad >= 3)) {
             return 3+suffix;
@@ -102,8 +139,7 @@ public class TimeUtils {
         return 0;
     }
 
-    
-    @DSModeled(DSC.BAN)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.397 -0500", hash_original_method = "1BBF330F6A4567EA2AE19E3B3560AD54", hash_generated_method = "07A4496E10EC28E39A60E68D4CA6C3CF")
     static private int printField(char[] formatStr, int amt, char suffix, int pos,
             boolean always, int zeropad) {
         if (always || amt > 0) {
@@ -128,13 +164,14 @@ public class TimeUtils {
         return pos;
     }
 
-    
-    @DSModeled(DSC.BAN)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.398 -0500", hash_original_method = "63DC78395A92F8A819496E7F93A5DE4F", hash_generated_method = "1910DA0DF2F867A025490BC8DEAF0595")
     private static int formatDurationLocked(long duration, int fieldLen) {
         if (sFormatStr.length < fieldLen) {
             sFormatStr = new char[fieldLen];
         }
+
         char[] formatStr = sFormatStr;
+
         if (duration == 0) {
             int pos = 0;
             fieldLen -= 1;
@@ -144,6 +181,7 @@ public class TimeUtils {
             formatStr[pos] = '0';
             return pos+1;
         }
+
         char prefix;
         if (duration > 0) {
             prefix = '+';
@@ -151,9 +189,11 @@ public class TimeUtils {
             prefix = '-';
             duration = -duration;
         }
+
         int millis = (int)(duration%1000);
         int seconds = (int) Math.floor(duration / 1000);
         int days = 0, hours = 0, minutes = 0;
+
         if (seconds > SECONDS_PER_DAY) {
             days = seconds / SECONDS_PER_DAY;
             seconds -= days * SECONDS_PER_DAY;
@@ -166,7 +206,9 @@ public class TimeUtils {
             minutes = seconds / SECONDS_PER_MINUTE;
             seconds -= minutes * SECONDS_PER_MINUTE;
         }
+
         int pos = 0;
+
         if (fieldLen != 0) {
             int myLen = accumField(days, 1, false, 0);
             myLen += accumField(hours, 1, myLen > 0, 2);
@@ -179,8 +221,10 @@ public class TimeUtils {
                 myLen++;
             }
         }
+
         formatStr[pos] = prefix;
         pos++;
+
         int start = pos;
         boolean zeropad = fieldLen != 0;
         pos = printField(formatStr, days, 'd', pos, false, 0);
@@ -192,8 +236,8 @@ public class TimeUtils {
         return pos + 1;
     }
 
-    
-    @DSModeled(DSC.BAN)
+    /** @hide Just for debugging; not internationalized. */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.399 -0500", hash_original_method = "1366E789E8CAAE7D93C89843FCE6813C", hash_generated_method = "E6F8E30BB5EB4EE5C89A332DA649D340")
     public static void formatDuration(long duration, StringBuilder builder) {
         synchronized (sFormatSync) {
             int len = formatDurationLocked(duration, 0);
@@ -201,8 +245,8 @@ public class TimeUtils {
         }
     }
 
-    
-    @DSModeled(DSC.BAN)
+    /** @hide Just for debugging; not internationalized. */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.401 -0500", hash_original_method = "DBDFBA5038D80AC5162259AFC65B8D4F", hash_generated_method = "E6DF4AD700BBBE4613CA341D1572CE70")
     public static void formatDuration(long duration, PrintWriter pw, int fieldLen) {
         synchronized (sFormatSync) {
             int len = formatDurationLocked(duration, fieldLen);
@@ -210,14 +254,14 @@ public class TimeUtils {
         }
     }
 
-    
-    @DSModeled(DSC.BAN)
+    /** @hide Just for debugging; not internationalized. */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.402 -0500", hash_original_method = "47E75E59C6A2D5D19177425D09DE2E1A", hash_generated_method = "F77CBB27F677652FA95219D81770895A")
     public static void formatDuration(long duration, PrintWriter pw) {
         formatDuration(duration, pw, 0);
     }
 
-    
-    @DSModeled(DSC.BAN)
+    /** @hide Just for debugging; not internationalized. */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.402 -0500", hash_original_method = "3AF68F24D91F7F9985830C67404B19FC", hash_generated_method = "AA8801589BF409B1AC30FEF25C089C46")
     public static void formatDuration(long time, long now, PrintWriter pw) {
         if (time == 0) {
             pw.print("--");
@@ -225,28 +269,30 @@ public class TimeUtils {
         }
         formatDuration(time-now, pw, 0);
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.294 -0400", hash_original_field = "2C9DBBB61E206F14FFD73174F05A8667", hash_generated_field = "A8D43672FE1DF54C2E9BEE03AC76E5B4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.387 -0500", hash_original_field = "AE4BF17D1CAC775C7E4405D8EFA8D705", hash_generated_field = "A8D43672FE1DF54C2E9BEE03AC76E5B4")
 
     private static final String TAG = "TimeUtils";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.294 -0400", hash_original_field = "4BD1A217FD230CDD43CFFB71E099EC84", hash_generated_field = "AA8754543EDE9EF090339F4F4DB754BC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.390 -0500", hash_original_field = "A41642690A9A95087E80F8ADBE7A1451", hash_generated_field = "AA8754543EDE9EF090339F4F4DB754BC")
 
     public static final int HUNDRED_DAY_FIELD_LEN = 19;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.294 -0400", hash_original_field = "6DF9C5AB42E1E0E9960BE792F6F8A042", hash_generated_field = "B4A690B48563C09FDB0833103369D4EF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.392 -0500", hash_original_field = "CCF3D7934C5CF0E828DC919DE4C03FBB", hash_generated_field = "B4A690B48563C09FDB0833103369D4EF")
+
 
     private static final int SECONDS_PER_MINUTE = 60;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.294 -0400", hash_original_field = "684A237ED847F645256FBA1485351335", hash_generated_field = "EE6A9733E692805B2E523E6D33DA4ACC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.393 -0500", hash_original_field = "B74C4AAABF949CC9638421C3FF2ED2F9", hash_generated_field = "EE6A9733E692805B2E523E6D33DA4ACC")
 
     private static final int SECONDS_PER_HOUR = 60 * 60;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.294 -0400", hash_original_field = "85D87D41138F9BD13B31F986F32BFCBF", hash_generated_field = "9A0BD6EC4A8335B331F784B15445E7E6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.394 -0500", hash_original_field = "326917843CE49F43CA3C8BFD7B20CB98", hash_generated_field = "9A0BD6EC4A8335B331F784B15445E7E6")
 
     private static final int SECONDS_PER_DAY = 24 * 60 * 60;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.294 -0400", hash_original_field = "C2324637B57092049D7068095D7E9185", hash_generated_field = "B62D876955C414BB9350CE4A9427EEC8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.394 -0500", hash_original_field = "57122C12B14FAFC205DF7ECFC3D203DA", hash_generated_field = "B62D876955C414BB9350CE4A9427EEC8")
+
 
     private static final Object sFormatSync = new Object();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.294 -0400", hash_original_field = "7F8EE94BEA697832BE6AFEC9AD753453", hash_generated_field = "23A1022E9F725A0F3BAADDA607255C69")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.395 -0500", hash_original_field = "2C9FFE246E6936B3E5EBBCA18E32E183", hash_generated_field = "23A1022E9F725A0F3BAADDA607255C69")
 
     private static char[] sFormatStr = new char[HUNDRED_DAY_FIELD_LEN+5];
+    /** @hide */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:36.386 -0500", hash_original_method = "90FFA2BDF77FA646318F5F30EF504BD2", hash_generated_method = "361EF821BA5F43FC70E63C69D2D0B27E")
+    public TimeUtils() {}
 }
 

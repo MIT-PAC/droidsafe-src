@@ -1,6 +1,8 @@
 package java.text;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Comparator;
 import java.util.Locale;
@@ -13,339 +15,291 @@ import libcore.icu.RuleBasedCollatorICU;
 
 
 public abstract class Collator implements Comparator<Object>, Cloneable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.700 -0400", hash_original_field = "6B1141D8E17A149C65A8272EB5BA314A", hash_generated_field = "571EB1F8C774D603CEDE0C031FD66C11")
 
-    RuleBasedCollatorICU icuColl;
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.701 -0400", hash_original_method = "18D47750B740CE28B17D63629E2E6276", hash_generated_method = "C76C95AB4C34DF3BF3A2153AA412ACD4")
-      Collator(RuleBasedCollatorICU icuColl) {
-        this.icuColl = icuColl;
-        // ---------- Original Method ----------
-        //this.icuColl = icuColl;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.701 -0400", hash_original_method = "D1E80A5B5BD1C7C64C7B560256B076FF", hash_generated_method = "7031D0D95FB73398508462AD1E04E9F7")
-    protected  Collator() {
-        icuColl = new RuleBasedCollatorICU(Locale.getDefault());
-        // ---------- Original Method ----------
-        //icuColl = new RuleBasedCollatorICU(Locale.getDefault());
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.702 -0400", hash_original_method = "2284DB2FEC4C2AB3A601FDA70F532028", hash_generated_method = "E7D1E80457C5355701E808AA79756874")
-    @Override
-    public Object clone() {
-        try 
-        {
-            Collator clone = (Collator) super.clone();
-            clone.icuColl = (RuleBasedCollatorICU) icuColl.clone();
-Object var3DE52045BFD3C1BF3742F994ED6139AD_1596496749 =             clone;
-            var3DE52045BFD3C1BF3742F994ED6139AD_1596496749.addTaint(taint);
-            return var3DE52045BFD3C1BF3742F994ED6139AD_1596496749;
-        } //End block
-        catch (CloneNotSupportedException e)
-        {
-            AssertionError varA5A331D65C8C3F32D42E49D64BCF4109_1810323419 = new AssertionError(e);
-            varA5A331D65C8C3F32D42E49D64BCF4109_1810323419.addTaint(taint);
-            throw varA5A331D65C8C3F32D42E49D64BCF4109_1810323419;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //Collator clone = (Collator) super.clone();
-            //clone.icuColl = (RuleBasedCollatorICU) icuColl.clone();
-            //return clone;
-        //} catch (CloneNotSupportedException e) {
-            //throw new AssertionError(e);
-        //}
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.702 -0400", hash_original_method = "7C02E06D11E019F44D80294CC033745E", hash_generated_method = "9A0AFE0B9AFC8ACFCE7FEF9D6567ADEC")
-    public int compare(Object object1, Object object2) {
-        addTaint(object2.getTaint());
-        addTaint(object1.getTaint());
-        int var02525A7221575FD74EB7D78347857663_1334204544 = (compare((String) object1, (String) object2));
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_101787083 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_101787083;
-        // ---------- Original Method ----------
-        //return compare((String) object1, (String) object2);
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    public abstract int compare(String string1, String string2);
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.703 -0400", hash_original_method = "F5E912698B2C6614F01702D72214A0C5", hash_generated_method = "E182E88BDB738324B10CAB1F8A7A4F21")
-    @Override
-    public boolean equals(Object object) {
-        addTaint(object.getTaint());
-        if(!(object instanceof Collator))        
-        {
-            boolean var68934A3E9455FA72420237EB05902327_958496844 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2128854688 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_2128854688;
-        } //End block
-        Collator collator = (Collator) object;
-        boolean var80158B588E8EED50E688A65D8C880751_323444238 = (icuColl == null ? collator.icuColl == null : icuColl.equals(collator.icuColl));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1678341065 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1678341065;
-        // ---------- Original Method ----------
-        //if (!(object instanceof Collator)) {
-            //return false;
-        //}
-        //Collator collator = (Collator) object;
-        //return icuColl == null ? collator.icuColl == null : icuColl.equals(collator.icuColl);
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.704 -0400", hash_original_method = "9F5D52877C91EB2005E3609373B16781", hash_generated_method = "02719272EA583F63CD538C0CEB2A6CE7")
-    public boolean equals(String string1, String string2) {
-        addTaint(string2.getTaint());
-        addTaint(string1.getTaint());
-        boolean var4AAA3B865B408D6B0359D885AC8C6D0F_493260987 = (compare(string1, string2) == 0);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1692698823 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1692698823;
-        // ---------- Original Method ----------
-        //return compare(string1, string2) == 0;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Returns an array of locales for which custom {@code Collator} instances
+     * are available.
+     * <p>Note that Android does not support user-supplied locale service providers.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:16.662 -0500", hash_original_method = "079D2BDCF2543C9EF39D2D400341A9D8", hash_generated_method = "746A813ED9B4684977432502F2AA3677")
     public static Locale[] getAvailableLocales() {
         return ICU.getAvailableCollatorLocales();
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    public abstract CollationKey getCollationKey(String string);
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.704 -0400", hash_original_method = "80384F871328DEB63A40E323709EFE86", hash_generated_method = "9F4D168D59A310300B50689E9A050B65")
-    public int getDecomposition() {
-        int var8AFEB19FFDDCB2325F99ABF72712BDF4_1298121875 = (decompositionMode_ICU_Java(icuColl.getDecomposition()));
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_81166277 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_81166277;
-        // ---------- Original Method ----------
-        //return decompositionMode_ICU_Java(icuColl.getDecomposition());
-    }
-
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Returns a {@code Collator} instance which is appropriate for the user's default
+     * {@code Locale}.
+     * See "<a href="../util/Locale.html#default_locale">Be wary of the default locale</a>".
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:16.672 -0500", hash_original_method = "36423D53959653C2984C84B905F35ABE", hash_generated_method = "5922C2B7903C130A111FFD3F547D8C2C")
     public static Collator getInstance() {
         return getInstance(Locale.getDefault());
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Returns a {@code Collator} instance which is appropriate for {@code locale}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:16.673 -0500", hash_original_method = "FDDB3D7E9466CD25FA15155141F4B994", hash_generated_method = "8A20382FC64DCF44DF83452E25D2BB49")
     public static Collator getInstance(Locale locale) {
         if (locale == null) {
             throw new NullPointerException();
         }
         return new RuleBasedCollator(new RuleBasedCollatorICU(locale));
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:16.648 -0500", hash_original_field = "93329CB9D361319AFB21377676C97BF2", hash_generated_field = "9E43ED873605C1C1034619325D9DA889")
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.705 -0400", hash_original_method = "1088192DB9E30CE77C93098214CBF249", hash_generated_method = "1AAAE790D8CAB0BB9D9E28E8E206E327")
-    public int getStrength() {
-        int var777C2C47A424614F34482572726B9CAF_784053857 = (strength_ICU_Java(icuColl.getStrength()));
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_346861300 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_346861300;
-        // ---------- Original Method ----------
-        //return strength_ICU_Java(icuColl.getStrength());
+    public static final int NO_DECOMPOSITION = 0;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:16.649 -0500", hash_original_field = "6DAC4EBCDEAC47E3A4AD91769058A94C", hash_generated_field = "CD40FC2067D59891F7BA4573BEF1DB6B")
+
+    public static final int CANONICAL_DECOMPOSITION = 1;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:16.650 -0500", hash_original_field = "CD82542B7C4968D170F6CEFF73179A09", hash_generated_field = "792407D4F0E9907685F71381C9FD4E61")
+
+    public static final int FULL_DECOMPOSITION = 2;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:16.651 -0500", hash_original_field = "10400586614D213A01A787357FB34D0C", hash_generated_field = "B6442BE7EB0FE61CE720EB713BF63684")
+
+    public static final int PRIMARY = 0;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:16.652 -0500", hash_original_field = "CD952DDD756F0240AD1202585D05941D", hash_generated_field = "545302936326A1D8CF924AC93757F924")
+
+    public static final int SECONDARY = 1;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:16.653 -0500", hash_original_field = "FF76A48A3A8382D0F892799DE2ED42A2", hash_generated_field = "CA7F342F2246C9B80B01671D88E6D41C")
+
+    public static final int TERTIARY = 2;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:16.653 -0500", hash_original_field = "46A5A37AECF3DF53FAF7C778E512FD94", hash_generated_field = "19D42BD9A98581EBEB400999C2E7C1B9")
+
+    public static final int IDENTICAL = 3;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:16.654 -0500", hash_original_field = "571EB1F8C774D603CEDE0C031FD66C11", hash_generated_field = "571EB1F8C774D603CEDE0C031FD66C11")
+
+
+    RuleBasedCollatorICU icuColl;
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:16.655 -0500", hash_original_method = "18D47750B740CE28B17D63629E2E6276", hash_generated_method = "18D47750B740CE28B17D63629E2E6276")
+    Collator(RuleBasedCollatorICU icuColl) {
+        this.icuColl = icuColl;
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Constructs a new {@code Collator} instance.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:16.656 -0500", hash_original_method = "D1E80A5B5BD1C7C64C7B560256B076FF", hash_generated_method = "542514D3955BA44323F328F19C1378D5")
+    protected Collator() {
+        icuColl = new RuleBasedCollatorICU(Locale.getDefault());
+    }
+
+    /**
+     * Returns a new collator with the same decomposition mode and
+     * strength value as this collator.
+     *
+     * @return a shallow copy of this collator.
+     * @see java.lang.Cloneable
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:16.657 -0500", hash_original_method = "2284DB2FEC4C2AB3A601FDA70F532028", hash_generated_method = "21F87DF2591203FC0F1B2A488AAA8A15")
+    @Override
+public Object clone() {
+        try {
+            Collator clone = (Collator) super.clone();
+            clone.icuColl = (RuleBasedCollatorICU) icuColl.clone();
+            return clone;
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError(e);
+        }
+    }
+
+    /**
+     * Compares two objects to determine their relative order. The objects must
+     * be strings.
+     *
+     * @param object1
+     *            the first string to compare.
+     * @param object2
+     *            the second string to compare.
+     * @return a negative value if {@code object1} is less than {@code object2},
+     *         0 if they are equal, and a positive value if {@code object1} is
+     *         greater than {@code object2}.
+     * @throws ClassCastException
+     *         if {@code object1} or {@code object2} is not a {@code String}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:16.658 -0500", hash_original_method = "7C02E06D11E019F44D80294CC033745E", hash_generated_method = "F85FDF97A13D35C0B3110E84B80DDE74")
+    public int compare(Object object1, Object object2) {
+        return compare((String) object1, (String) object2);
+    }
+
+    /**
+     * Compares two strings to determine their relative order.
+     *
+     * @param string1
+     *            the first string to compare.
+     * @param string2
+     *            the second string to compare.
+     * @return a negative value if {@code string1} is less than {@code string2},
+     *         0 if they are equal and a positive value if {@code string1} is
+     *         greater than {@code string2}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:16.659 -0500", hash_original_method = "9DEFA3A080C5B36241D14E3A04AEFBBF", hash_generated_method = "260149D2BD45EA572C2F49EEC2BD0711")
+    public abstract int compare(String string1, String string2);
+
+    /**
+     * Compares this collator with the specified object and indicates if they
+     * are equal.
+     *
+     * @param object
+     *            the object to compare with this object.
+     * @return {@code true} if {@code object} is a {@code Collator} object and
+     *         it has the same strength and decomposition values as this
+     *         collator; {@code false} otherwise.
+     * @see #hashCode
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:16.660 -0500", hash_original_method = "F5E912698B2C6614F01702D72214A0C5", hash_generated_method = "E19FDC12CACA1655EB3FF687EBB0791B")
+    @Override
+public boolean equals(Object object) {
+        if (!(object instanceof Collator)) {
+            return false;
+        }
+        Collator collator = (Collator) object;
+        return icuColl == null ? collator.icuColl == null : icuColl.equals(collator.icuColl);
+    }
+
+    /**
+     * Compares two strings using the collation rules to determine if they are
+     * equal.
+     *
+     * @param string1
+     *            the first string to compare.
+     * @param string2
+     *            the second string to compare.
+     * @return {@code true} if {@code string1} and {@code string2} are equal
+     *         using the collation rules, false otherwise.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:16.661 -0500", hash_original_method = "9F5D52877C91EB2005E3609373B16781", hash_generated_method = "1FFC8442EA80E70A4A0F5B8A9E58C86E")
+    public boolean equals(String string1, String string2) {
+        return compare(string1, string2) == 0;
+    }
+
+    /**
+     * Returns a {@link CollationKey} for the specified string for this collator
+     * with the current decomposition rule and strength value.
+     *
+     * @param string
+     *            the source string that is converted into a collation key.
+     * @return the collation key for {@code string}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:16.670 -0500", hash_original_method = "C0C15CDE83796D9CCD9CA148FDE67C91", hash_generated_method = "F440130EEB37B0341262C8EB9EF14EDE")
+    public abstract CollationKey getCollationKey(String string);
+
+    /**
+     * Returns the decomposition rule for this collator.
+     *
+     * @return the decomposition rule, either {@code NO_DECOMPOSITION} or
+     *         {@code CANONICAL_DECOMPOSITION}. {@code FULL_DECOMPOSITION} is
+     *         not supported.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:16.671 -0500", hash_original_method = "80384F871328DEB63A40E323709EFE86", hash_generated_method = "5EEB3791091FB7072EEC245609772E7A")
+    public int getDecomposition() {
+        return decompositionMode_ICU_Java(icuColl.getDecomposition());
+    }
+
+    /**
+     * Returns the strength value for this collator.
+     *
+     * @return the strength value, either PRIMARY, SECONDARY, TERTIARY or
+     *         IDENTICAL.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:16.673 -0500", hash_original_method = "1088192DB9E30CE77C93098214CBF249", hash_generated_method = "24992D02A8378C893C0606A884EC9451")
+    public int getStrength() {
+        return strength_ICU_Java(icuColl.getStrength());
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:16.676 -0500", hash_original_method = "55C270AB7FB96DF5C59CA61A88D62880", hash_generated_method = "DC0B80FFE6A69EF8A10E204DA3FCAB54")
     @Override
 public abstract int hashCode();
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.705 -0400", hash_original_method = "B72BC12BA62E721E78973B8AD1CD75B5", hash_generated_method = "8FC4EEACBB82F592FE4B31D881F338D5")
+    /**
+     * Sets the decomposition rule for this collator.
+     *
+     * @param value
+     *            the decomposition rule, either {@code NO_DECOMPOSITION} or
+     *            {@code CANONICAL_DECOMPOSITION}. {@code FULL_DECOMPOSITION}
+     *            is not supported.
+     * @throws IllegalArgumentException
+     *            if the provided decomposition rule is not valid. This includes
+     *            {@code FULL_DECOMPOSITION}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:16.676 -0500", hash_original_method = "B72BC12BA62E721E78973B8AD1CD75B5", hash_generated_method = "F1C2AFE44575D612EDDFFF43B6540109")
     public void setDecomposition(int value) {
-        addTaint(value);
         icuColl.setDecomposition(decompositionMode_Java_ICU(value));
-        // ---------- Original Method ----------
-        //icuColl.setDecomposition(decompositionMode_Java_ICU(value));
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.706 -0400", hash_original_method = "EE6B9836B69B72CAEC3F00255CD1C53E", hash_generated_method = "9DC092124BC10A7BCD833C2ADFB32F5C")
+    /**
+     * Sets the strength value for this collator.
+     *
+     * @param value
+     *            the strength value, either PRIMARY, SECONDARY, TERTIARY, or
+     *            IDENTICAL.
+     * @throws IllegalArgumentException
+     *            if the provided strength value is not valid.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:16.677 -0500", hash_original_method = "EE6B9836B69B72CAEC3F00255CD1C53E", hash_generated_method = "70C8E85EC36DDE7A493D9EF302947660")
     public void setStrength(int value) {
-        addTaint(value);
         icuColl.setStrength(strength_Java_ICU(value));
-        // ---------- Original Method ----------
-        //icuColl.setStrength(strength_Java_ICU(value));
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.707 -0400", hash_original_method = "59C448B2403440A52B430BC264B57CED", hash_generated_method = "B1C2768F039F44A409375BDCD9D750AE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:16.678 -0500", hash_original_method = "59C448B2403440A52B430BC264B57CED", hash_generated_method = "577F370F1D4A66A2107149B322EF3C48")
     private int decompositionMode_Java_ICU(int mode) {
-        addTaint(mode);
-switch(mode){
+        switch (mode) {
         case Collator.CANONICAL_DECOMPOSITION:
-        int var8037F47D6A3401905B635235A06E7265_361653622 = (RuleBasedCollatorICU.VALUE_ON);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_848485494 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_848485494;
+            return RuleBasedCollatorICU.VALUE_ON;
         case Collator.NO_DECOMPOSITION:
-        int var5634131098D25D5F8C59E4CAE1222EFA_1829428810 = (RuleBasedCollatorICU.VALUE_OFF);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_956004836 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_956004836;
-}        IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_538922665 = new IllegalArgumentException();
-        var5783EF97022AA508B74A1E3EA38534AF_538922665.addTaint(taint);
-        throw var5783EF97022AA508B74A1E3EA38534AF_538922665;
-        // ---------- Original Method ----------
-        //switch (mode) {
-        //case Collator.CANONICAL_DECOMPOSITION:
-            //return RuleBasedCollatorICU.VALUE_ON;
-        //case Collator.NO_DECOMPOSITION:
-            //return RuleBasedCollatorICU.VALUE_OFF;
-        //}
-        //throw new IllegalArgumentException();
+            return RuleBasedCollatorICU.VALUE_OFF;
+        }
+        throw new IllegalArgumentException();
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.708 -0400", hash_original_method = "221AF1495063A31B1C807B8FB0041DE6", hash_generated_method = "9FB6D7B95F549DA492FFBEE849B3DB01")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:16.679 -0500", hash_original_method = "221AF1495063A31B1C807B8FB0041DE6", hash_generated_method = "56E18FB8B2BA73FC2D26CDDE44BD3710")
     private int decompositionMode_ICU_Java(int mode) {
-        addTaint(mode);
         int javaMode = mode;
-switch(mode){
+        switch (mode) {
         case RuleBasedCollatorICU.VALUE_OFF:
-        javaMode = Collator.NO_DECOMPOSITION;
-        break;
+            javaMode = Collator.NO_DECOMPOSITION;
+            break;
         case RuleBasedCollatorICU.VALUE_ON:
-        javaMode = Collator.CANONICAL_DECOMPOSITION;
-        break;
-}        int varD7122828A8C44972D2F5358612FA62CF_992967075 = (javaMode);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1583203200 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1583203200;
-        // ---------- Original Method ----------
-        //int javaMode = mode;
-        //switch (mode) {
-        //case RuleBasedCollatorICU.VALUE_OFF:
-            //javaMode = Collator.NO_DECOMPOSITION;
-            //break;
-        //case RuleBasedCollatorICU.VALUE_ON:
-            //javaMode = Collator.CANONICAL_DECOMPOSITION;
-            //break;
-        //}
-        //return javaMode;
+            javaMode = Collator.CANONICAL_DECOMPOSITION;
+            break;
+        }
+        return javaMode;
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.708 -0400", hash_original_method = "8D5EE21418DD2AA072EEA3359693FB17", hash_generated_method = "4A0278C18A7F2E8BE58343A1A56CEA34")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:16.680 -0500", hash_original_method = "8D5EE21418DD2AA072EEA3359693FB17", hash_generated_method = "09A2E0392960F89DDB5B919F89124B94")
     private int strength_Java_ICU(int value) {
-        addTaint(value);
-switch(value){
+        switch (value) {
         case Collator.PRIMARY:
-        int varFA90E93FE5B8B7165CE7D7F4AA4F1FB8_298513813 = (RuleBasedCollatorICU.VALUE_PRIMARY);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1528595023 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1528595023;
+            return RuleBasedCollatorICU.VALUE_PRIMARY;
         case Collator.SECONDARY:
-        int var0652109A4927527137A2BC2E5666ACCE_1148322645 = (RuleBasedCollatorICU.VALUE_SECONDARY);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1434856360 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1434856360;
+            return RuleBasedCollatorICU.VALUE_SECONDARY;
         case Collator.TERTIARY:
-        int var40E3C4BB8548E76FE38EE9BBDCF30C84_1093825640 = (RuleBasedCollatorICU.VALUE_TERTIARY);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_394311685 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_394311685;
+            return RuleBasedCollatorICU.VALUE_TERTIARY;
         case Collator.IDENTICAL:
-        int var7138ACE0F178048644292E7A0B5832C5_1269584377 = (RuleBasedCollatorICU.VALUE_IDENTICAL);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1589642331 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1589642331;
-}        IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_1527219114 = new IllegalArgumentException();
-        var5783EF97022AA508B74A1E3EA38534AF_1527219114.addTaint(taint);
-        throw var5783EF97022AA508B74A1E3EA38534AF_1527219114;
-        // ---------- Original Method ----------
-        //switch (value) {
-        //case Collator.PRIMARY:
-            //return RuleBasedCollatorICU.VALUE_PRIMARY;
-        //case Collator.SECONDARY:
-            //return RuleBasedCollatorICU.VALUE_SECONDARY;
-        //case Collator.TERTIARY:
-            //return RuleBasedCollatorICU.VALUE_TERTIARY;
-        //case Collator.IDENTICAL:
-            //return RuleBasedCollatorICU.VALUE_IDENTICAL;
-        //}
-        //throw new IllegalArgumentException();
+            return RuleBasedCollatorICU.VALUE_IDENTICAL;
+        }
+        throw new IllegalArgumentException();
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.710 -0400", hash_original_method = "28CE8F975C7774291F421ACF5AFE6047", hash_generated_method = "F4F7E2300FB61384AFF5C342B0C283D4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:16.681 -0500", hash_original_method = "28CE8F975C7774291F421ACF5AFE6047", hash_generated_method = "C222350EAC3FDFAB68521A62D98E2944")
     private int strength_ICU_Java(int value) {
-        addTaint(value);
         int javaValue = value;
-switch(value){
+        switch (value) {
         case RuleBasedCollatorICU.VALUE_PRIMARY:
-        javaValue = Collator.PRIMARY;
-        break;
+            javaValue = Collator.PRIMARY;
+            break;
         case RuleBasedCollatorICU.VALUE_SECONDARY:
-        javaValue = Collator.SECONDARY;
-        break;
+            javaValue = Collator.SECONDARY;
+            break;
         case RuleBasedCollatorICU.VALUE_TERTIARY:
-        javaValue = Collator.TERTIARY;
-        break;
+            javaValue = Collator.TERTIARY;
+            break;
         case RuleBasedCollatorICU.VALUE_IDENTICAL:
-        javaValue = Collator.IDENTICAL;
-        break;
-}        int var8F8828D22EEB1215F16944AB7EA72FED_1081480348 = (javaValue);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1542535556 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1542535556;
-        // ---------- Original Method ----------
-        //int javaValue = value;
-        //switch (value) {
-        //case RuleBasedCollatorICU.VALUE_PRIMARY:
-            //javaValue = Collator.PRIMARY;
-            //break;
-        //case RuleBasedCollatorICU.VALUE_SECONDARY:
-            //javaValue = Collator.SECONDARY;
-            //break;
-        //case RuleBasedCollatorICU.VALUE_TERTIARY:
-            //javaValue = Collator.TERTIARY;
-            //break;
-        //case RuleBasedCollatorICU.VALUE_IDENTICAL:
-            //javaValue = Collator.IDENTICAL;
-            //break;
-        //}
-        //return javaValue;
+            javaValue = Collator.IDENTICAL;
+            break;
+        }
+        return javaValue;
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.710 -0400", hash_original_field = "6762616902C4FE35F14AF3BC1C4F2500", hash_generated_field = "9E43ED873605C1C1034619325D9DA889")
-
-    public static final int NO_DECOMPOSITION = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.710 -0400", hash_original_field = "50A96EA9E03B0B60EB4DCA1CA6213A49", hash_generated_field = "CD40FC2067D59891F7BA4573BEF1DB6B")
-
-    public static final int CANONICAL_DECOMPOSITION = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.710 -0400", hash_original_field = "03BA1A0EFA6772009E54D1243F9D3082", hash_generated_field = "792407D4F0E9907685F71381C9FD4E61")
-
-    public static final int FULL_DECOMPOSITION = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.710 -0400", hash_original_field = "52F61C0293E41BBFC5016FA11A7434B3", hash_generated_field = "B6442BE7EB0FE61CE720EB713BF63684")
-
-    public static final int PRIMARY = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.710 -0400", hash_original_field = "B69EE0CFDDFB918151F6D2BB7D5A5502", hash_generated_field = "545302936326A1D8CF924AC93757F924")
-
-    public static final int SECONDARY = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.710 -0400", hash_original_field = "1080F4A9469C4437D3D2B60A2EB3B472", hash_generated_field = "CA7F342F2246C9B80B01671D88E6D41C")
-
-    public static final int TERTIARY = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.710 -0400", hash_original_field = "299489327E17DC0A2DF650B8583A7842", hash_generated_field = "19D42BD9A98581EBEB400999C2E7C1B9")
-
-    public static final int IDENTICAL = 3;
 }
 

@@ -1,6 +1,8 @@
 package android.location;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -10,412 +12,38 @@ import android.os.Parcelable;
 
 
 public class Criteria implements Parcelable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.008 -0400", hash_original_field = "13196B050486260F665DAFD2DCB1423F", hash_generated_field = "1A506D6FCBAE89E5ED8986984C204EDF")
-
-    private int mHorizontalAccuracy = NO_REQUIREMENT;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.008 -0400", hash_original_field = "0E3223CDB10E8518132E5C3C8949A857", hash_generated_field = "9C948891D51E1ECED7D5B42EA88A1980")
-
-    private int mVerticalAccuracy = NO_REQUIREMENT;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.008 -0400", hash_original_field = "13BEB683610F4CA34C01AD5B72FB840D", hash_generated_field = "4206F17114FC87E89D5E2D934FD265D1")
-
-    private int mSpeedAccuracy = NO_REQUIREMENT;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.008 -0400", hash_original_field = "C8601B5B1BC4F79D3CFF6EFC67E5AFBF", hash_generated_field = "AFE00C78DEAD58C36FFBF596A3087BA3")
-
-    private int mBearingAccuracy = NO_REQUIREMENT;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.008 -0400", hash_original_field = "02F1E7376BDB45AD1CE174FBAE2021E0", hash_generated_field = "F89FA2DF8DA48BD5497DB50DA1CA47F5")
-
-    private int mPowerRequirement = NO_REQUIREMENT;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.008 -0400", hash_original_field = "575F35BF19BB272643940F388D2E2DB4", hash_generated_field = "1ABEB241EAFF3EEBFF568528AFCBA219")
-
-    private boolean mAltitudeRequired = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.008 -0400", hash_original_field = "9A6402C26B24D09EFCAC163486A70A18", hash_generated_field = "0299E987BE1DC1D0B0A7571822B9D8AA")
-
-    private boolean mBearingRequired = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.008 -0400", hash_original_field = "11B7FA9A4B9DEE5D16188AFC702520C8", hash_generated_field = "9B3C565095BC4FCEC789B430DD2467DF")
-
-    private boolean mSpeedRequired = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.008 -0400", hash_original_field = "767BA11EBC9E4746FB44A19596372104", hash_generated_field = "4FF764166F8A934C7C88D2C8472DFB24")
-
-    private boolean mCostAllowed = false;
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.009 -0400", hash_original_method = "56D25A23ADD1F3C93CB7F827DA5DFB02", hash_generated_method = "3EFEE149D939DD3A0C00E9F5B56EE461")
-    public  Criteria() {
-        // ---------- Original Method ----------
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.012 -0400", hash_original_method = "4027197A668FB712D0A5A09027B96247", hash_generated_method = "AF9F22AB717402C29CAE5B27F1850449")
-    public  Criteria(Criteria criteria) {
-        mHorizontalAccuracy = criteria.mHorizontalAccuracy;
-        mVerticalAccuracy = criteria.mVerticalAccuracy;
-        mSpeedAccuracy = criteria.mSpeedAccuracy;
-        mBearingAccuracy = criteria.mBearingAccuracy;
-        mPowerRequirement = criteria.mPowerRequirement;
-        mAltitudeRequired = criteria.mAltitudeRequired;
-        mBearingRequired = criteria.mBearingRequired;
-        mSpeedRequired = criteria.mSpeedRequired;
-        mCostAllowed = criteria.mCostAllowed;
-        // ---------- Original Method ----------
-        //mHorizontalAccuracy = criteria.mHorizontalAccuracy;
-        //mVerticalAccuracy = criteria.mVerticalAccuracy;
-        //mSpeedAccuracy = criteria.mSpeedAccuracy;
-        //mBearingAccuracy = criteria.mBearingAccuracy;
-        //mPowerRequirement = criteria.mPowerRequirement;
-        //mAltitudeRequired = criteria.mAltitudeRequired;
-        //mBearingRequired = criteria.mBearingRequired;
-        //mSpeedRequired = criteria.mSpeedRequired;
-        //mCostAllowed = criteria.mCostAllowed;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.012 -0400", hash_original_method = "F7CDA1AEB030C3E960B93BFBD444E4B1", hash_generated_method = "52B8FA720840D972634AEC73BB657779")
-    public void setHorizontalAccuracy(int accuracy) {
-        if(accuracy < NO_REQUIREMENT || accuracy > ACCURACY_HIGH)        
-        {
-            IllegalArgumentException varF790EF5E2E4FE72E5D1C0EA8A5531656_1583309643 = new IllegalArgumentException("accuracy=" + accuracy);
-            varF790EF5E2E4FE72E5D1C0EA8A5531656_1583309643.addTaint(taint);
-            throw varF790EF5E2E4FE72E5D1C0EA8A5531656_1583309643;
-        } //End block
-        mHorizontalAccuracy = accuracy;
-        // ---------- Original Method ----------
-        //if (accuracy < NO_REQUIREMENT || accuracy > ACCURACY_HIGH) {
-            //throw new IllegalArgumentException("accuracy=" + accuracy);
-        //}
-        //mHorizontalAccuracy = accuracy;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.013 -0400", hash_original_method = "2F566A20A5A9A3E4947DCE83AA9DF67E", hash_generated_method = "8F34A5D548E1139FEA9C958AE28836B5")
-    public int getHorizontalAccuracy() {
-        int var657284437DEB9E5B0F822222073D019D_1890004690 = (mHorizontalAccuracy);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_801260840 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_801260840;
-        // ---------- Original Method ----------
-        //return mHorizontalAccuracy;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.014 -0400", hash_original_method = "A234CD6EE2124B9B176BE728225522DE", hash_generated_method = "B649BA1793B0FFEF75641906B89EC917")
-    public void setVerticalAccuracy(int accuracy) {
-        if(accuracy < NO_REQUIREMENT || accuracy > ACCURACY_HIGH)        
-        {
-            IllegalArgumentException varF790EF5E2E4FE72E5D1C0EA8A5531656_1985360705 = new IllegalArgumentException("accuracy=" + accuracy);
-            varF790EF5E2E4FE72E5D1C0EA8A5531656_1985360705.addTaint(taint);
-            throw varF790EF5E2E4FE72E5D1C0EA8A5531656_1985360705;
-        } //End block
-        mVerticalAccuracy = accuracy;
-        // ---------- Original Method ----------
-        //if (accuracy < NO_REQUIREMENT || accuracy > ACCURACY_HIGH) {
-            //throw new IllegalArgumentException("accuracy=" + accuracy);
-        //}
-        //mVerticalAccuracy = accuracy;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.014 -0400", hash_original_method = "E46E133CF34270F0210C8D2BD309B3F5", hash_generated_method = "28EEE7A3A06DAFEDD5DE971F4286D98D")
-    public int getVerticalAccuracy() {
-        int var9DC0DEEA417C8E8EBF9F521967A757AB_1537681205 = (mVerticalAccuracy);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2080477112 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2080477112;
-        // ---------- Original Method ----------
-        //return mVerticalAccuracy;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.016 -0400", hash_original_method = "7DA41913012CB9940E77425DCF2D2731", hash_generated_method = "543C39EA56B675DB78101AD30EAD84E4")
-    public void setSpeedAccuracy(int accuracy) {
-        if(accuracy < NO_REQUIREMENT || accuracy > ACCURACY_HIGH)        
-        {
-            IllegalArgumentException varF790EF5E2E4FE72E5D1C0EA8A5531656_1595237212 = new IllegalArgumentException("accuracy=" + accuracy);
-            varF790EF5E2E4FE72E5D1C0EA8A5531656_1595237212.addTaint(taint);
-            throw varF790EF5E2E4FE72E5D1C0EA8A5531656_1595237212;
-        } //End block
-        mSpeedAccuracy = accuracy;
-        // ---------- Original Method ----------
-        //if (accuracy < NO_REQUIREMENT || accuracy > ACCURACY_HIGH) {
-            //throw new IllegalArgumentException("accuracy=" + accuracy);
-        //}
-        //mSpeedAccuracy = accuracy;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.017 -0400", hash_original_method = "87339E07174611DFFFF3AC3EA0F5BF3F", hash_generated_method = "236448CD211CB12C6E95E63872926D05")
-    public int getSpeedAccuracy() {
-        int varDD6DE31C3EA53337E8393DB1A3DDB208_1027003314 = (mSpeedAccuracy);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2079617042 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2079617042;
-        // ---------- Original Method ----------
-        //return mSpeedAccuracy;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.019 -0400", hash_original_method = "7D38552738106C949C369F73EBC07BAD", hash_generated_method = "B924D8393A9B1A9C8F627FCA6EC62C41")
-    public void setBearingAccuracy(int accuracy) {
-        if(accuracy < NO_REQUIREMENT || accuracy > ACCURACY_HIGH)        
-        {
-            IllegalArgumentException varF790EF5E2E4FE72E5D1C0EA8A5531656_567482522 = new IllegalArgumentException("accuracy=" + accuracy);
-            varF790EF5E2E4FE72E5D1C0EA8A5531656_567482522.addTaint(taint);
-            throw varF790EF5E2E4FE72E5D1C0EA8A5531656_567482522;
-        } //End block
-        mBearingAccuracy = accuracy;
-        // ---------- Original Method ----------
-        //if (accuracy < NO_REQUIREMENT || accuracy > ACCURACY_HIGH) {
-            //throw new IllegalArgumentException("accuracy=" + accuracy);
-        //}
-        //mBearingAccuracy = accuracy;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.020 -0400", hash_original_method = "0A4814C8F779184929A4F3680AE62C8F", hash_generated_method = "68F8DFC029A0362C183936B8C1676EA1")
-    public int getBearingAccuracy() {
-        int var0E53E998E66FEE913D5E92D4E04CA177_483590645 = (mBearingAccuracy);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_22551789 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_22551789;
-        // ---------- Original Method ----------
-        //return mBearingAccuracy;
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.021 -0400", hash_original_method = "F2B3644622DFC41E9C3EF3B6293185D6", hash_generated_method = "F34B00F4C086DF3B61A940215161B0C5")
-    public void setAccuracy(int accuracy) {
-        addTaint(accuracy);
-        if(accuracy < NO_REQUIREMENT || accuracy > ACCURACY_COARSE)        
-        {
-            IllegalArgumentException varF790EF5E2E4FE72E5D1C0EA8A5531656_1321633890 = new IllegalArgumentException("accuracy=" + accuracy);
-            varF790EF5E2E4FE72E5D1C0EA8A5531656_1321633890.addTaint(taint);
-            throw varF790EF5E2E4FE72E5D1C0EA8A5531656_1321633890;
-        } //End block
-        if(accuracy == ACCURACY_FINE)        
-        {
-            mHorizontalAccuracy = ACCURACY_HIGH;
-        } //End block
-        else
-        {
-            mHorizontalAccuracy = ACCURACY_LOW;
-        } //End block
-        // ---------- Original Method ----------
-        //if (accuracy < NO_REQUIREMENT || accuracy > ACCURACY_COARSE) {
-            //throw new IllegalArgumentException("accuracy=" + accuracy);
-        //}
-        //if (accuracy == ACCURACY_FINE) {
-            //mHorizontalAccuracy = ACCURACY_HIGH;
-        //} else {
-            //mHorizontalAccuracy = ACCURACY_LOW;
-        //}
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.023 -0400", hash_original_method = "738CC4C555122D617CAE26F950A7954B", hash_generated_method = "E5AE6E03F9DDD4FCFD29A1895DA19D3A")
-    public int getAccuracy() {
-        if(mHorizontalAccuracy >= ACCURACY_HIGH)        
-        {
-            int var245CB7E1095C6AE263632D8AC9A78D9D_715929988 = (ACCURACY_FINE);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_603873631 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_603873631;
-        } //End block
-        else
-        {
-            int var071AA21F3F4833EA1DFC453B75CCC2E7_2067897220 = (ACCURACY_COARSE);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_273990202 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_273990202;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mHorizontalAccuracy >= ACCURACY_HIGH) {
-            //return ACCURACY_FINE;
-        //} else {
-            //return ACCURACY_COARSE;
-        //}
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.024 -0400", hash_original_method = "91C2D38607A4F9F70C65E1811565AAD2", hash_generated_method = "FCB227990432D28CAF1CCEFB3A6A10E8")
-    public void setPowerRequirement(int level) {
-        if(level < NO_REQUIREMENT || level > POWER_HIGH)        
-        {
-            IllegalArgumentException var7FCAD3A78732A0E9BE9F94A31FA7836A_169602880 = new IllegalArgumentException("level=" + level);
-            var7FCAD3A78732A0E9BE9F94A31FA7836A_169602880.addTaint(taint);
-            throw var7FCAD3A78732A0E9BE9F94A31FA7836A_169602880;
-        } //End block
-        mPowerRequirement = level;
-        // ---------- Original Method ----------
-        //if (level < NO_REQUIREMENT || level > POWER_HIGH) {
-            //throw new IllegalArgumentException("level=" + level);
-        //}
-        //mPowerRequirement = level;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.025 -0400", hash_original_method = "50AB5D6061392E8FAC8A81CA41B14FB2", hash_generated_method = "63B5824F3F687F45DCA75441088657D4")
-    public int getPowerRequirement() {
-        int var8CE6AA00EE3C11F8598CD0D337F6CAE9_1031222149 = (mPowerRequirement);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1181842481 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1181842481;
-        // ---------- Original Method ----------
-        //return mPowerRequirement;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.026 -0400", hash_original_method = "F89CAE570739AB3028DA707B2893B5C5", hash_generated_method = "443B9DB636371A2B7B02DF32D76227F5")
-    public void setCostAllowed(boolean costAllowed) {
-        mCostAllowed = costAllowed;
-        // ---------- Original Method ----------
-        //mCostAllowed = costAllowed;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.027 -0400", hash_original_method = "A41D9C3F2D62A3EB42A9C94631C7A3C6", hash_generated_method = "F758BA5B226D64690214DBE407B90CCB")
-    public boolean isCostAllowed() {
-        boolean var693DBFD3D8595E83FEC37E42A7E10FC5_1634969469 = (mCostAllowed);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_470068075 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_470068075;
-        // ---------- Original Method ----------
-        //return mCostAllowed;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.027 -0400", hash_original_method = "22D4EC779FEBEFBD7A04B35673FD6242", hash_generated_method = "524AA438AB1E72E536604C84A2FEE4DD")
-    public void setAltitudeRequired(boolean altitudeRequired) {
-        mAltitudeRequired = altitudeRequired;
-        // ---------- Original Method ----------
-        //mAltitudeRequired = altitudeRequired;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.028 -0400", hash_original_method = "B960582E2C1A3651AC20223DA8436091", hash_generated_method = "B70D02F64EE67F9AFFF4216E3348F3DF")
-    public boolean isAltitudeRequired() {
-        boolean var68A3FE577355C936A23E450FE3D7DBC9_381399279 = (mAltitudeRequired);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1546617947 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1546617947;
-        // ---------- Original Method ----------
-        //return mAltitudeRequired;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.028 -0400", hash_original_method = "6A27513D0E2583F73F00042D0FDBD9E3", hash_generated_method = "8525723E1D70E6CFA504642A945EA5E3")
-    public void setSpeedRequired(boolean speedRequired) {
-        mSpeedRequired = speedRequired;
-        // ---------- Original Method ----------
-        //mSpeedRequired = speedRequired;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.029 -0400", hash_original_method = "F6BA7163C74D6BF39003C6333C2CFD6D", hash_generated_method = "7BD82D411AC8D36DB9902064AC83D3F2")
-    public boolean isSpeedRequired() {
-        boolean varCCB4571254AD4731D960379818749D41_1964309910 = (mSpeedRequired);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_401593104 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_401593104;
-        // ---------- Original Method ----------
-        //return mSpeedRequired;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.029 -0400", hash_original_method = "B68158C6EC7F405A349EABCD21ABA300", hash_generated_method = "9B323C768409D641E011EE1EA543FD58")
-    public void setBearingRequired(boolean bearingRequired) {
-        mBearingRequired = bearingRequired;
-        // ---------- Original Method ----------
-        //mBearingRequired = bearingRequired;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.029 -0400", hash_original_method = "17013BC273E96D7EA584C9522A6EEB48", hash_generated_method = "F35E31E2B868FA382067E20DF4A118B3")
-    public boolean isBearingRequired() {
-        boolean var2AF7CBE0467BF9F76706A2F707AE0899_1033941569 = (mBearingRequired);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_183079813 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_183079813;
-        // ---------- Original Method ----------
-        //return mBearingRequired;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.030 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "5F1EF615AE224FDDBFF0BAD43A3F2B0C")
-    public int describeContents() {
-        int varCFCD208495D565EF66E7DFF9F98764DA_1738181772 = (0);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_763133121 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_763133121;
-        // ---------- Original Method ----------
-        //return 0;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.030 -0400", hash_original_method = "F656AD17D4B37BFDE841686B6FE00CD9", hash_generated_method = "FC69A3A3CCA44B5D59BAF7FA25866C5E")
-    public void writeToParcel(Parcel parcel, int flags) {
-        addTaint(flags);
-        addTaint(parcel.getTaint());
-        parcel.writeInt(mHorizontalAccuracy);
-        parcel.writeInt(mVerticalAccuracy);
-        parcel.writeInt(mSpeedAccuracy);
-        parcel.writeInt(mBearingAccuracy);
-        parcel.writeInt(mPowerRequirement);
-        parcel.writeInt(mAltitudeRequired ? 1 : 0);
-        parcel.writeInt(mBearingRequired ? 1 : 0);
-        parcel.writeInt(mSpeedRequired ? 1 : 0);
-        parcel.writeInt(mCostAllowed ? 1 : 0);
-        // ---------- Original Method ----------
-        //parcel.writeInt(mHorizontalAccuracy);
-        //parcel.writeInt(mVerticalAccuracy);
-        //parcel.writeInt(mSpeedAccuracy);
-        //parcel.writeInt(mBearingAccuracy);
-        //parcel.writeInt(mPowerRequirement);
-        //parcel.writeInt(mAltitudeRequired ? 1 : 0);
-        //parcel.writeInt(mBearingRequired ? 1 : 0);
-        //parcel.writeInt(mSpeedRequired ? 1 : 0);
-        //parcel.writeInt(mCostAllowed ? 1 : 0);
-    }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.030 -0400", hash_original_field = "B7D400F2964C178B086E2679800E2D89", hash_generated_field = "26610DC2B1083D7D7A6C941CAD5368F1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.104 -0500", hash_original_field = "63CBE5A41264DBB1C341FCA49432714F", hash_generated_field = "26610DC2B1083D7D7A6C941CAD5368F1")
 
     public static final int NO_REQUIREMENT = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.031 -0400", hash_original_field = "AE41CE7BE0BEFEA4A6A38E49E0B398ED", hash_generated_field = "2A8F870C36199E6F65F6D3EB71E31BF0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.105 -0500", hash_original_field = "010D61EF0A509733DE2414B50C329E4F", hash_generated_field = "2A8F870C36199E6F65F6D3EB71E31BF0")
 
     public static final int POWER_LOW = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.031 -0400", hash_original_field = "890CC80159603097DD27C3C84AD4AF57", hash_generated_field = "DFA9FE4C32E292E3C452D97E2C3C6CDA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.106 -0500", hash_original_field = "25FCD11FFD22604D046B1576D342D939", hash_generated_field = "DFA9FE4C32E292E3C452D97E2C3C6CDA")
 
     public static final int POWER_MEDIUM = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.031 -0400", hash_original_field = "182F660573A26FA2AD27A11CD10B27F6", hash_generated_field = "38275E31E5C855126379B323DE5DD9C7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.107 -0500", hash_original_field = "5FF8AFECBBB1534C95EEBF6542758C17", hash_generated_field = "38275E31E5C855126379B323DE5DD9C7")
 
     public static final int POWER_HIGH = 3;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.031 -0400", hash_original_field = "124724F4BB45C3449013006EF5FEA6CE", hash_generated_field = "A366216338BB755942AC27704C9B79D8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.108 -0500", hash_original_field = "DEC7CDCFADCAE7F0EC3648335F977BAB", hash_generated_field = "A366216338BB755942AC27704C9B79D8")
 
     public static final int ACCURACY_FINE = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.031 -0400", hash_original_field = "EBA62E10E6E74191D33F5BCBA6CC9B50", hash_generated_field = "DD89026FA5904F8FEA9BF61E65028781")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.108 -0500", hash_original_field = "8246CA30F4F9B225B886772D0A5A9825", hash_generated_field = "DD89026FA5904F8FEA9BF61E65028781")
 
     public static final int ACCURACY_COARSE = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.031 -0400", hash_original_field = "5E61442237B10B60E07735DE8E99BF3F", hash_generated_field = "FEEA110B2F23E156C40D0225E9C1F5E7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.109 -0500", hash_original_field = "83A8E5A324F04564547EC7B1D33C7017", hash_generated_field = "FEEA110B2F23E156C40D0225E9C1F5E7")
 
     public static final int ACCURACY_LOW = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.031 -0400", hash_original_field = "6A771DF807E4482FD6D3523C2295A4D1", hash_generated_field = "B88A3F805E6768C02C982D1B682E62DD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.110 -0500", hash_original_field = "3F7A6FC693F3A2E08497D8F5D9694901", hash_generated_field = "B88A3F805E6768C02C982D1B682E62DD")
 
     public static final int ACCURACY_MEDIUM = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.031 -0400", hash_original_field = "1B20A5794EC66BE757CB2A24617C63E2", hash_generated_field = "DD965F02FCC4D35F6D665F7E61154460")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.111 -0500", hash_original_field = "50AC762D15A43641B6E9BF142DAC344F", hash_generated_field = "DD965F02FCC4D35F6D665F7E61154460")
 
     public static final int ACCURACY_HIGH = 3;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.031 -0400", hash_original_field = "40988B39F05D9D61C63D1AD45A024C82", hash_generated_field = "3FE2F16195852B6CF068FB9D971A81E2")
 
     public static final Parcelable.Creator<Criteria> CREATOR =
         new Parcelable.Creator<Criteria>() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.137 -0500", hash_original_method = "30491C0C577618E547D91203358C6C24", hash_generated_method = "11A7C9509B71460E736768A86BF2D488")
         public Criteria createFromParcel(Parcel in) {
             Criteria c = new Criteria();
             c.mHorizontalAccuracy = in.readInt();
@@ -430,11 +58,312 @@ public class Criteria implements Parcelable {
             return c;
         }
 
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.139 -0500", hash_original_method = "C6BB0D5E0D629C065866F485B5D61E63", hash_generated_method = "E08DDDDCBD7FC498BFD02550407DD5F5")
         public Criteria[] newArray(int size) {
             return new Criteria[size];
         }
     };
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.112 -0500", hash_original_field = "E2741479255CBADB4ACA5A82DB917D12", hash_generated_field = "1A506D6FCBAE89E5ED8986984C204EDF")
+
+
+    private int mHorizontalAccuracy    = NO_REQUIREMENT;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.113 -0500", hash_original_field = "D302B9EC3FF6A3B0F1FD7C3A3214A831", hash_generated_field = "9C948891D51E1ECED7D5B42EA88A1980")
+
+    private int mVerticalAccuracy      = NO_REQUIREMENT;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.113 -0500", hash_original_field = "56C6CA8B32681E7A813455A9AEDB27C4", hash_generated_field = "4206F17114FC87E89D5E2D934FD265D1")
+
+    private int mSpeedAccuracy         = NO_REQUIREMENT;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.114 -0500", hash_original_field = "2588554745FA1F044A1C4D13AC18A12C", hash_generated_field = "AFE00C78DEAD58C36FFBF596A3087BA3")
+
+    private int mBearingAccuracy       = NO_REQUIREMENT;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.115 -0500", hash_original_field = "2DC6C28639296467C40C948BC3E6A984", hash_generated_field = "F89FA2DF8DA48BD5497DB50DA1CA47F5")
+
+    private int mPowerRequirement      = NO_REQUIREMENT;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.116 -0500", hash_original_field = "C5EFCD856686A6D0716FCD0D7F6EFA21", hash_generated_field = "1ABEB241EAFF3EEBFF568528AFCBA219")
+
+    private boolean mAltitudeRequired  = false;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.117 -0500", hash_original_field = "1D45BEC15AD60F3EC84FD72A73A0CBB1", hash_generated_field = "0299E987BE1DC1D0B0A7571822B9D8AA")
+
+    private boolean mBearingRequired   = false;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.118 -0500", hash_original_field = "DE0438371E0B9CB3DFA6661645DE34A4", hash_generated_field = "9B3C565095BC4FCEC789B430DD2467DF")
+
+    private boolean mSpeedRequired     = false;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.118 -0500", hash_original_field = "03E05C4E7441ED7AED911104212295B7", hash_generated_field = "4FF764166F8A934C7C88D2C8472DFB24")
+
+    private boolean mCostAllowed       = false;
+
+    /**
+     * Constructs a new Criteria object.  The new object will have no
+     * requirements on accuracy, power, or response time; will not
+     * require altitude, speed, or bearing; and will not allow monetary
+     * cost.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.119 -0500", hash_original_method = "56D25A23ADD1F3C93CB7F827DA5DFB02", hash_generated_method = "B843D41D9AC4259E19148AB7E4644051")
+    public Criteria() {}
+
+    /**
+     * Constructs a new Criteria object that is a copy of the given criteria.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.120 -0500", hash_original_method = "4027197A668FB712D0A5A09027B96247", hash_generated_method = "9253179FA8FD9943E9EC8B7E0F2095E8")
+    public Criteria(Criteria criteria) {
+        mHorizontalAccuracy = criteria.mHorizontalAccuracy;
+        mVerticalAccuracy = criteria.mVerticalAccuracy;
+        mSpeedAccuracy = criteria.mSpeedAccuracy;
+        mBearingAccuracy = criteria.mBearingAccuracy;
+        mPowerRequirement = criteria.mPowerRequirement;
+        mAltitudeRequired = criteria.mAltitudeRequired;
+        mBearingRequired = criteria.mBearingRequired;
+        mSpeedRequired = criteria.mSpeedRequired;
+        mCostAllowed = criteria.mCostAllowed;
+    }
+
+    /**
+     * Indicates the desired horizontal accuracy (latitude and longitude).
+     * Accuracy may be {@link #ACCURACY_LOW}, {@link #ACCURACY_MEDIUM},
+     * {@link #ACCURACY_HIGH} or {@link #NO_REQUIREMENT}.
+     * More accurate location may consume more power and may take longer.
+     *
+     * @throws IllegalArgumentException if accuracy is not one of the supported constants
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.121 -0500", hash_original_method = "F7CDA1AEB030C3E960B93BFBD444E4B1", hash_generated_method = "395B5793E2926228F28A8561FDBE5527")
+    public void setHorizontalAccuracy(int accuracy) {
+        if (accuracy < NO_REQUIREMENT || accuracy > ACCURACY_HIGH) {
+            throw new IllegalArgumentException("accuracy=" + accuracy);
+        }
+        mHorizontalAccuracy = accuracy;
+    }
+
+    /**
+     * Returns a constant indicating the desired horizontal accuracy (latitude and longitude).
+     * Accuracy may be {@link #ACCURACY_LOW}, {@link #ACCURACY_MEDIUM},
+     * {@link #ACCURACY_HIGH} or {@link #NO_REQUIREMENT}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.122 -0500", hash_original_method = "2F566A20A5A9A3E4947DCE83AA9DF67E", hash_generated_method = "EB8464243AF7ED99CEFF9EF12492C38F")
+    public int getHorizontalAccuracy() {
+        return mHorizontalAccuracy;
+    }
+
+    /**
+     * Indicates the desired vertical accuracy (altitude).
+     * Accuracy may be {@link #ACCURACY_LOW}, {@link #ACCURACY_MEDIUM},
+     * {@link #ACCURACY_HIGH} or {@link #NO_REQUIREMENT}.
+     * More accurate location may consume more power and may take longer.
+     *
+     * @throws IllegalArgumentException if accuracy is not one of the supported constants
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.122 -0500", hash_original_method = "A234CD6EE2124B9B176BE728225522DE", hash_generated_method = "F6901B2897EB48139E1616D80DCE46DA")
+    public void setVerticalAccuracy(int accuracy) {
+        if (accuracy < NO_REQUIREMENT || accuracy > ACCURACY_HIGH) {
+            throw new IllegalArgumentException("accuracy=" + accuracy);
+        }
+        mVerticalAccuracy = accuracy;
+    }
+
+    /**
+     * Returns a constant indicating the desired vertical accuracy (altitude).
+     * Accuracy may be {@link #ACCURACY_LOW}, {@link #ACCURACY_HIGH},
+     * or {@link #NO_REQUIREMENT}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.123 -0500", hash_original_method = "E46E133CF34270F0210C8D2BD309B3F5", hash_generated_method = "94819062ECBCBB5F4BA9A798966004AB")
+    public int getVerticalAccuracy() {
+        return mVerticalAccuracy;
+    }
+
+    /**
+     * Indicates the desired speed accuracy.
+     * Accuracy may be {@link #ACCURACY_LOW}, {@link #ACCURACY_HIGH},
+     * or {@link #NO_REQUIREMENT}.
+     * More accurate location may consume more power and may take longer.
+     *
+     * @throws IllegalArgumentException if accuracy is not one of the supported constants
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.124 -0500", hash_original_method = "7DA41913012CB9940E77425DCF2D2731", hash_generated_method = "568CD3A2211FD367988935DD52811040")
+    public void setSpeedAccuracy(int accuracy) {
+        if (accuracy < NO_REQUIREMENT || accuracy > ACCURACY_HIGH) {
+            throw new IllegalArgumentException("accuracy=" + accuracy);
+        }
+        mSpeedAccuracy = accuracy;
+    }
+
+    /**
+     * Returns a constant indicating the desired speed accuracy
+     * Accuracy may be {@link #ACCURACY_LOW}, {@link #ACCURACY_HIGH},
+     * or {@link #NO_REQUIREMENT}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.124 -0500", hash_original_method = "87339E07174611DFFFF3AC3EA0F5BF3F", hash_generated_method = "D84B90D39E5AACB43C21888DD25278A3")
+    public int getSpeedAccuracy() {
+        return mSpeedAccuracy;
+    }
+
+    /**
+     * Indicates the desired bearing accuracy.
+     * Accuracy may be {@link #ACCURACY_LOW}, {@link #ACCURACY_HIGH},
+     * or {@link #NO_REQUIREMENT}.
+     * More accurate location may consume more power and may take longer.
+     *
+     * @throws IllegalArgumentException if accuracy is not one of the supported constants
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.125 -0500", hash_original_method = "7D38552738106C949C369F73EBC07BAD", hash_generated_method = "D2B2D29706A8B5EF4D11A9B04D9C0103")
+    public void setBearingAccuracy(int accuracy) {
+        if (accuracy < NO_REQUIREMENT || accuracy > ACCURACY_HIGH) {
+            throw new IllegalArgumentException("accuracy=" + accuracy);
+        }
+        mBearingAccuracy = accuracy;
+    }
+
+    /**
+     * Returns a constant indicating the desired bearing accuracy.
+     * Accuracy may be {@link #ACCURACY_LOW}, {@link #ACCURACY_HIGH},
+     * or {@link #NO_REQUIREMENT}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.126 -0500", hash_original_method = "0A4814C8F779184929A4F3680AE62C8F", hash_generated_method = "7697EC11E830EBC0BE062129992E126B")
+    public int getBearingAccuracy() {
+        return mBearingAccuracy;
+    }
+
+    /**
+     * Indicates the desired accuracy for latitude and longitude. Accuracy
+     * may be {@link #ACCURACY_FINE} if desired location
+     * is fine, else it can be {@link #ACCURACY_COARSE}.
+     * More accurate location may consume more power and may take longer.
+     *
+     * @throws IllegalArgumentException if accuracy is not one of the supported constants
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.127 -0500", hash_original_method = "F2B3644622DFC41E9C3EF3B6293185D6", hash_generated_method = "1A102D596F6E2D9DAE1D224E05ADE788")
+    public void setAccuracy(int accuracy) {
+        if (accuracy < NO_REQUIREMENT || accuracy > ACCURACY_COARSE) {
+            throw new IllegalArgumentException("accuracy=" + accuracy);
+        }
+        if (accuracy == ACCURACY_FINE) {
+            mHorizontalAccuracy = ACCURACY_HIGH;
+        } else {
+            mHorizontalAccuracy = ACCURACY_LOW;
+        }
+    }
+
+    /**
+     * Returns a constant indicating desired accuracy of location
+     * Accuracy may be {@link #ACCURACY_FINE} if desired location
+     * is fine, else it can be {@link #ACCURACY_COARSE}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.127 -0500", hash_original_method = "738CC4C555122D617CAE26F950A7954B", hash_generated_method = "00869F8EC38CFA4A6F3EE3578ACFA369")
+    public int getAccuracy() {
+        if (mHorizontalAccuracy >= ACCURACY_HIGH) {
+            return ACCURACY_FINE;
+        } else {
+            return ACCURACY_COARSE;
+        }
+    }
+
+    /**
+     * Indicates the desired maximum power level.  The level parameter
+     * must be one of NO_REQUIREMENT, POWER_LOW, POWER_MEDIUM, or
+     * POWER_HIGH.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.128 -0500", hash_original_method = "91C2D38607A4F9F70C65E1811565AAD2", hash_generated_method = "0EF8DF914CF98349FC7CDF24CF89D3FA")
+    public void setPowerRequirement(int level) {
+        if (level < NO_REQUIREMENT || level > POWER_HIGH) {
+            throw new IllegalArgumentException("level=" + level);
+        }
+        mPowerRequirement = level;
+    }
+
+    /**
+     * Returns a constant indicating the desired power requirement.  The
+     * returned
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.130 -0500", hash_original_method = "50AB5D6061392E8FAC8A81CA41B14FB2", hash_generated_method = "3E881DFE958F83CAFAEFC8ECCCA7BA30")
+    public int getPowerRequirement() {
+        return mPowerRequirement;
+    }
+
+    /**
+     * Indicates whether the provider is allowed to incur monetary cost.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.130 -0500", hash_original_method = "F89CAE570739AB3028DA707B2893B5C5", hash_generated_method = "6C6BEAC76587EDC68F07B4308B80DDA6")
+    public void setCostAllowed(boolean costAllowed) {
+        mCostAllowed = costAllowed;
+    }
+
+    /**
+     * Returns whether the provider is allowed to incur monetary cost.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.131 -0500", hash_original_method = "A41D9C3F2D62A3EB42A9C94631C7A3C6", hash_generated_method = "133E4BC88C6EBF706004D4C070670023")
+    public boolean isCostAllowed() {
+        return mCostAllowed;
+    }
+
+    /**
+     * Indicates whether the provider must provide altitude information.
+     * Not all fixes are guaranteed to contain such information.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.132 -0500", hash_original_method = "22D4EC779FEBEFBD7A04B35673FD6242", hash_generated_method = "57CCF4C061CD44F3AC28D9C851A3B818")
+    public void setAltitudeRequired(boolean altitudeRequired) {
+        mAltitudeRequired = altitudeRequired;
+    }
+
+    /**
+     * Returns whether the provider must provide altitude information.
+     * Not all fixes are guaranteed to contain such information.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.133 -0500", hash_original_method = "B960582E2C1A3651AC20223DA8436091", hash_generated_method = "90D760E4C8F665F8BC5239D7CE47F7BE")
+    public boolean isAltitudeRequired() {
+        return mAltitudeRequired;
+    }
+
+    /**
+     * Indicates whether the provider must provide speed information.
+     * Not all fixes are guaranteed to contain such information.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.134 -0500", hash_original_method = "6A27513D0E2583F73F00042D0FDBD9E3", hash_generated_method = "ED70CA5983122935A64226B480B75ED9")
+    public void setSpeedRequired(boolean speedRequired) {
+        mSpeedRequired = speedRequired;
+    }
+
+    /**
+     * Returns whether the provider must provide speed information.
+     * Not all fixes are guaranteed to contain such information.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.134 -0500", hash_original_method = "F6BA7163C74D6BF39003C6333C2CFD6D", hash_generated_method = "5BE759E173072751C08E54289964369D")
+    public boolean isSpeedRequired() {
+        return mSpeedRequired;
+    }
+
+    /**
+     * Indicates whether the provider must provide bearing information.
+     * Not all fixes are guaranteed to contain such information.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.135 -0500", hash_original_method = "B68158C6EC7F405A349EABCD21ABA300", hash_generated_method = "CCFB5BA3E59FE9614A29061580CF2070")
+    public void setBearingRequired(boolean bearingRequired) {
+        mBearingRequired = bearingRequired;
+    }
+
+    /**
+     * Returns whether the provider must provide bearing information.
+     * Not all fixes are guaranteed to contain such information.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.136 -0500", hash_original_method = "17013BC273E96D7EA584C9522A6EEB48", hash_generated_method = "385B4ABCA4BDC4FB2BF9CA212825AA83")
+    public boolean isBearingRequired() {
+        return mBearingRequired;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.140 -0500", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "D90463461B2A94FF94D13FDF69BB80C9")
+    public int describeContents() {
+        return 0;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.141 -0500", hash_original_method = "F656AD17D4B37BFDE841686B6FE00CD9", hash_generated_method = "7041913C16F7BEE4C7291DA8472BBABC")
+    public void writeToParcel(Parcel parcel, int flags) {
+        parcel.writeInt(mHorizontalAccuracy);
+        parcel.writeInt(mVerticalAccuracy);
+        parcel.writeInt(mSpeedAccuracy);
+        parcel.writeInt(mBearingAccuracy);
+        parcel.writeInt(mPowerRequirement);
+        parcel.writeInt(mAltitudeRequired ? 1 : 0);
+        parcel.writeInt(mBearingRequired ? 1 : 0);
+        parcel.writeInt(mSpeedRequired ? 1 : 0);
+        parcel.writeInt(mCostAllowed ? 1 : 0);
+    }
     // orphaned legacy method
     public Criteria createFromParcel(Parcel in) {
             Criteria c = new Criteria();

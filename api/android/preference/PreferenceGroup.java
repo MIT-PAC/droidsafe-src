@@ -1,6 +1,8 @@
 package android.preference;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -17,398 +19,312 @@ import android.util.AttributeSet;
 
 
 public abstract class PreferenceGroup extends Preference implements GenericInflater.Parent<Preference> {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.582 -0400", hash_original_field = "49E5F06342B9A756471C57C41582CFFB", hash_generated_field = "18F192958EC897931FD8B3DA5BF85A77")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:15.530 -0500", hash_original_field = "AA94F4A4BB2311E5FFF451A9F8B32E0B", hash_generated_field = "18F192958EC897931FD8B3DA5BF85A77")
 
     private List<Preference> mPreferenceList;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.583 -0400", hash_original_field = "BFB6611E214C8472FF036C77EE32C446", hash_generated_field = "C2971599AC8149900D387CCAE8E63B08")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:15.530 -0500", hash_original_field = "EF6436D4AA102956E4336C640C78C9D8", hash_generated_field = "C2971599AC8149900D387CCAE8E63B08")
+
 
     private boolean mOrderingAsAdded = true;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.583 -0400", hash_original_field = "04B749A6CF9DDEB82655F535E8D335A2", hash_generated_field = "89C3262ADB33D2CAACE003244FE80C06")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:15.531 -0500", hash_original_field = "409474000390D5B61F8A6A16539E8BC0", hash_generated_field = "89C3262ADB33D2CAACE003244FE80C06")
+
 
     private int mCurrentPreferenceOrder = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.583 -0400", hash_original_field = "291B1E207D704F5AC4DDD6CA2EB1ACB3", hash_generated_field = "5A686733D92531666006F9E403A759CD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:15.532 -0500", hash_original_field = "8EFBD00F7D5F5CC77C63FE080498A166", hash_generated_field = "5A686733D92531666006F9E403A759CD")
+
 
     private boolean mAttachedToActivity = false;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.583 -0400", hash_original_method = "8E566EF8D5358FA15B6B3A62F4F4EA92", hash_generated_method = "DD18DE710FB568DD1D3444E9E0E7FC5F")
-    public  PreferenceGroup(Context context, AttributeSet attrs, int defStyle) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:15.533 -0500", hash_original_method = "8E566EF8D5358FA15B6B3A62F4F4EA92", hash_generated_method = "71F455325815CAB22CA5E90F3B38FB33")
+    public PreferenceGroup(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-        addTaint(defStyle);
-        addTaint(attrs.getTaint());
-        addTaint(context.getTaint());
+
         mPreferenceList = new ArrayList<Preference>();
+
         TypedArray a = context.obtainStyledAttributes(attrs,
                 com.android.internal.R.styleable.PreferenceGroup, defStyle, 0);
         mOrderingAsAdded = a.getBoolean(com.android.internal.R.styleable.PreferenceGroup_orderingFromXml,
                 mOrderingAsAdded);
         a.recycle();
-        // ---------- Original Method ----------
-        //mPreferenceList = new ArrayList<Preference>();
-        //TypedArray a = context.obtainStyledAttributes(attrs,
-                //com.android.internal.R.styleable.PreferenceGroup, defStyle, 0);
-        //mOrderingAsAdded = a.getBoolean(com.android.internal.R.styleable.PreferenceGroup_orderingFromXml,
-                //mOrderingAsAdded);
-        //a.recycle();
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.583 -0400", hash_original_method = "88A912CB88465E21C56F7A6B1304F32F", hash_generated_method = "29B21C0176E427C5BA271D642F8B7D5D")
-    public  PreferenceGroup(Context context, AttributeSet attrs) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:15.534 -0500", hash_original_method = "88A912CB88465E21C56F7A6B1304F32F", hash_generated_method = "7E0ECBEDBF37D6443AE2000EB3966FFC")
+    public PreferenceGroup(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
-        addTaint(attrs.getTaint());
-        addTaint(context.getTaint());
-        // ---------- Original Method ----------
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.584 -0400", hash_original_method = "6CBD3E9C112A20CE725E0B14080873B3", hash_generated_method = "FBB1310A5EFCDF2B72BEFBD717EF881F")
+    /**
+     * Whether to order the {@link Preference} children of this group as they
+     * are added. If this is false, the ordering will follow each Preference
+     * order and default to alphabetic for those without an order.
+     * <p>
+     * If this is called after preferences are added, they will not be
+     * re-ordered in the order they were added, hence call this method early on.
+     * 
+     * @param orderingAsAdded Whether to order according to the order added.
+     * @see Preference#setOrder(int)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:15.534 -0500", hash_original_method = "6CBD3E9C112A20CE725E0B14080873B3", hash_generated_method = "0835EE10FA34895F80AF5C0A0D2EBAF2")
     public void setOrderingAsAdded(boolean orderingAsAdded) {
         mOrderingAsAdded = orderingAsAdded;
-        // ---------- Original Method ----------
-        //mOrderingAsAdded = orderingAsAdded;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.584 -0400", hash_original_method = "5AE1DA121FD737E8D77F265AA9EE4792", hash_generated_method = "3874DD00630DEBFF5F759BBBD5AACB88")
+    /**
+     * Whether this group is ordering preferences in the order they are added.
+     * 
+     * @return Whether this group orders based on the order the children are added.
+     * @see #setOrderingAsAdded(boolean)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:15.536 -0500", hash_original_method = "5AE1DA121FD737E8D77F265AA9EE4792", hash_generated_method = "FBA23CB8D0C8962C2F06E9D44D4C7408")
     public boolean isOrderingAsAdded() {
-        boolean var177908C532A27E32AC131CD0F3997D38_1789726556 = (mOrderingAsAdded);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1144887364 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1144887364;
-        // ---------- Original Method ----------
-        //return mOrderingAsAdded;
+        return mOrderingAsAdded;
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.584 -0400", hash_original_method = "DCFB2F7E3F738580B672E91DCD38CF42", hash_generated_method = "8A457159D9977C4A6273F678207C56D9")
+    /**
+     * Called by the inflater to add an item to this group.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:15.536 -0500", hash_original_method = "DCFB2F7E3F738580B672E91DCD38CF42", hash_generated_method = "F908F063590E806AC04D7ACB6D9B9CC1")
     public void addItemFromInflater(Preference preference) {
-        addTaint(preference.getTaint());
         addPreference(preference);
-        // ---------- Original Method ----------
-        //addPreference(preference);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.585 -0400", hash_original_method = "389AB97985CD6F44D465D155E8399BE9", hash_generated_method = "C2062EB5385267385B88AD83A36CA03C")
+    /**
+     * Returns the number of children {@link Preference}s.
+     * @return The number of preference children in this group.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:15.537 -0500", hash_original_method = "389AB97985CD6F44D465D155E8399BE9", hash_generated_method = "E7DB08B274C9259DE3854E25D9D2A0CD")
     public int getPreferenceCount() {
-        int varC421430EA712BB31552DDD51082F5040_920431253 = (mPreferenceList.size());
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_825296504 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_825296504;
-        // ---------- Original Method ----------
-        //return mPreferenceList.size();
+        return mPreferenceList.size();
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.585 -0400", hash_original_method = "109559B57B2B04AB981EEA935073C7C0", hash_generated_method = "751D0AC86407E72D23F6EF226FE22501")
+    /**
+     * Returns the {@link Preference} at a particular index.
+     * 
+     * @param index The index of the {@link Preference} to retrieve.
+     * @return The {@link Preference}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:15.538 -0500", hash_original_method = "109559B57B2B04AB981EEA935073C7C0", hash_generated_method = "996B696A80D0B5186DA171C96FE413E5")
     public Preference getPreference(int index) {
-        addTaint(index);
-Preference var96B1561EF6B3618DA693F1BA358F1ABA_439023261 =         mPreferenceList.get(index);
-        var96B1561EF6B3618DA693F1BA358F1ABA_439023261.addTaint(taint);
-        return var96B1561EF6B3618DA693F1BA358F1ABA_439023261;
-        // ---------- Original Method ----------
-        //return mPreferenceList.get(index);
+        return mPreferenceList.get(index);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.586 -0400", hash_original_method = "6848FE69024CCCF475A64E7D742A1E83", hash_generated_method = "B1F3A418AE5ACEF3230FC5ED00FC77C2")
+    /**
+     * Adds a {@link Preference} at the correct position based on the
+     * preference's order.
+     * 
+     * @param preference The preference to add.
+     * @return Whether the preference is now in this group.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:15.539 -0500", hash_original_method = "6848FE69024CCCF475A64E7D742A1E83", hash_generated_method = "72854703B35A3CDBA10D0B8803BD4FDF")
     public boolean addPreference(Preference preference) {
-        addTaint(preference.getTaint());
-        if(mPreferenceList.contains(preference))        
-        {
-            boolean varB326B5062B2F0E69046810717534CB09_988667061 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_414996786 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_414996786;
-        } //End block
-        if(preference.getOrder() == Preference.DEFAULT_ORDER)        
-        {
-            if(mOrderingAsAdded)            
-            {
+        if (mPreferenceList.contains(preference)) {
+            // Exists
+            return true;
+        }
+        
+        if (preference.getOrder() == Preference.DEFAULT_ORDER) {
+            if (mOrderingAsAdded) {
                 preference.setOrder(mCurrentPreferenceOrder++);
-            } //End block
-            if(preference instanceof PreferenceGroup)            
-            {
+            }
+
+            if (preference instanceof PreferenceGroup) {
+                // TODO: fix (method is called tail recursively when inflating,
+                // so we won't end up properly passing this flag down to children
                 ((PreferenceGroup)preference).setOrderingAsAdded(mOrderingAsAdded);
-            } //End block
-        } //End block
+            }
+        }
+
         int insertionIndex = Collections.binarySearch(mPreferenceList, preference);
-        if(insertionIndex < 0)        
-        {
+        if (insertionIndex < 0) {
             insertionIndex = insertionIndex * -1 - 1;
-        } //End block
-        if(!onPrepareAddPreference(preference))        
-        {
-            boolean var68934A3E9455FA72420237EB05902327_1867491272 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_141758665 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_141758665;
-        } //End block
-        synchronized
-(this)        {
+        }
+
+        if (!onPrepareAddPreference(preference)) {
+            return false;
+        }
+
+        synchronized(this) {
             mPreferenceList.add(insertionIndex, preference);
-        } //End block
+        }
+
         preference.onAttachedToHierarchy(getPreferenceManager());
-        if(mAttachedToActivity)        
-        {
+        
+        if (mAttachedToActivity) {
             preference.onAttachedToActivity();
-        } //End block
+        }
+        
         notifyHierarchyChanged();
-        boolean varB326B5062B2F0E69046810717534CB09_1758648206 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_949792327 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_949792327;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+
+        return true;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.586 -0400", hash_original_method = "72E836216B00BC7CD61ADE8B9836B308", hash_generated_method = "D79D46D10DB02E009965E335C9AE7CA3")
+    /**
+     * Removes a {@link Preference} from this group.
+     * 
+     * @param preference The preference to remove.
+     * @return Whether the preference was found and removed.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:15.540 -0500", hash_original_method = "72E836216B00BC7CD61ADE8B9836B308", hash_generated_method = "10C1FE01868DD10D0DB4D8BFF205AEDD")
     public boolean removePreference(Preference preference) {
-        addTaint(preference.getTaint());
         final boolean returnValue = removePreferenceInt(preference);
         notifyHierarchyChanged();
-        boolean varA7E53CE21691AB073D9660D615818899_370810181 = (returnValue);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1174986281 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1174986281;
-        // ---------- Original Method ----------
-        //final boolean returnValue = removePreferenceInt(preference);
-        //notifyHierarchyChanged();
-        //return returnValue;
+        return returnValue;
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.587 -0400", hash_original_method = "4864D54B8C7134B3A64BC66D9DDCC7C4", hash_generated_method = "62A0AFB42E4528A0A46D36D4E880A9D2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:15.541 -0500", hash_original_method = "4864D54B8C7134B3A64BC66D9DDCC7C4", hash_generated_method = "3DAE919CEBCE7DF8DCC2B51162CA8CD0")
     private boolean removePreferenceInt(Preference preference) {
-        addTaint(preference.getTaint());
-        synchronized
-(this)        {
+        synchronized(this) {
             preference.onPrepareForRemoval();
-            boolean var31B2B0450D4CA243A322C9DB37C8C3A2_734826142 = (mPreferenceList.remove(preference));
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_550955709 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_550955709;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized(this) {
-            //preference.onPrepareForRemoval();
-            //return mPreferenceList.remove(preference);
-        //}
+            return mPreferenceList.remove(preference);
+        }
     }
-
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.587 -0400", hash_original_method = "70997B14FB6DABF4C7D8165F55B0B7BF", hash_generated_method = "469366416CA59AC471CBDAF0932018AB")
+    /**
+     * Removes all {@link Preference Preferences} from this group.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:15.541 -0500", hash_original_method = "70997B14FB6DABF4C7D8165F55B0B7BF", hash_generated_method = "6B5525D33BE28D16BF09599FCD753CCC")
     public void removeAll() {
-        synchronized
-(this)        {
+        synchronized(this) {
             List<Preference> preferenceList = mPreferenceList;
-for(int i = preferenceList.size() - 1;i >= 0;i--)
-            {
+            for (int i = preferenceList.size() - 1; i >= 0; i--) {
                 removePreferenceInt(preferenceList.get(0));
-            } //End block
-        } //End block
+            }
+        }
         notifyHierarchyChanged();
-        // ---------- Original Method ----------
-        //synchronized(this) {
-            //List<Preference> preferenceList = mPreferenceList;
-            //for (int i = preferenceList.size() - 1; i >= 0; i--) {
-                //removePreferenceInt(preferenceList.get(0));
-            //}
-        //}
-        //notifyHierarchyChanged();
     }
-
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.587 -0400", hash_original_method = "6AE303446925DAEA15C349B1AB59000B", hash_generated_method = "3024F5DC57BCCD9DC9AD6C29264FBD05")
+    /**
+     * Prepares a {@link Preference} to be added to the group.
+     * 
+     * @param preference The preference to add.
+     * @return Whether to allow adding the preference (true), or not (false).
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:15.542 -0500", hash_original_method = "6AE303446925DAEA15C349B1AB59000B", hash_generated_method = "AA32D000C2F7490CCFDCB37B05E35324")
     protected boolean onPrepareAddPreference(Preference preference) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(preference.getTaint());
-        if(!super.isEnabled())        
-        {
+        if (!super.isEnabled()) {
             preference.setEnabled(false);
-        } //End block
-        boolean varB326B5062B2F0E69046810717534CB09_1984234168 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1165896351 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1165896351;
-        // ---------- Original Method ----------
-        //if (!super.isEnabled()) {
-            //preference.setEnabled(false);
-        //}
-        //return true;
+        }
+        
+        return true;
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.589 -0400", hash_original_method = "28FD4F6AEC9563866A4A8A8A3B9D4A51", hash_generated_method = "6114BE03059F8247AF4DC1F106A62D8F")
+    /**
+     * Finds a {@link Preference} based on its key. If two {@link Preference}
+     * share the same key (not recommended), the first to appear will be
+     * returned (to retrieve the other preference with the same key, call this
+     * method on the first preference). If this preference has the key, it will
+     * not be returned.
+     * <p>
+     * This will recursively search for the preference into children that are
+     * also {@link PreferenceGroup PreferenceGroups}.
+     * 
+     * @param key The key of the preference to retrieve.
+     * @return The {@link Preference} with the key, or null.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:15.543 -0500", hash_original_method = "28FD4F6AEC9563866A4A8A8A3B9D4A51", hash_generated_method = "610323619310552A4DB208919917AD46")
     public Preference findPreference(CharSequence key) {
-        addTaint(key.getTaint());
-        if(TextUtils.equals(getKey(), key))        
-        {
-Preference var72A74007B2BE62B849F475C7BDA4658B_271939079 =             this;
-            var72A74007B2BE62B849F475C7BDA4658B_271939079.addTaint(taint);
-            return var72A74007B2BE62B849F475C7BDA4658B_271939079;
-        } //End block
+        if (TextUtils.equals(getKey(), key)) {
+            return this;
+        }
         final int preferenceCount = getPreferenceCount();
-for(int i = 0;i < preferenceCount;i++)
-        {
+        for (int i = 0; i < preferenceCount; i++) {
             final Preference preference = getPreference(i);
             final String curKey = preference.getKey();
-            if(curKey != null && curKey.equals(key))            
-            {
-Preference var204804AD3E1DAEBFF2B86220D7DC88C3_241034239 =                 preference;
-                var204804AD3E1DAEBFF2B86220D7DC88C3_241034239.addTaint(taint);
-                return var204804AD3E1DAEBFF2B86220D7DC88C3_241034239;
-            } //End block
-            if(preference instanceof PreferenceGroup)            
-            {
+
+            if (curKey != null && curKey.equals(key)) {
+                return preference;
+            }
+            
+            if (preference instanceof PreferenceGroup) {
                 final Preference returnedPreference = ((PreferenceGroup)preference)
                         .findPreference(key);
-                if(returnedPreference != null)                
-                {
-Preference var0209C10F4B49591A05081D121FCC5A8D_665849559 =                     returnedPreference;
-                    var0209C10F4B49591A05081D121FCC5A8D_665849559.addTaint(taint);
-                    return var0209C10F4B49591A05081D121FCC5A8D_665849559;
-                } //End block
-            } //End block
-        } //End block
-Preference var540C13E9E156B687226421B24F2DF178_1696127965 =         null;
-        var540C13E9E156B687226421B24F2DF178_1696127965.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_1696127965;
-        // ---------- Original Method ----------
-        //if (TextUtils.equals(getKey(), key)) {
-            //return this;
-        //}
-        //final int preferenceCount = getPreferenceCount();
-        //for (int i = 0; i < preferenceCount; i++) {
-            //final Preference preference = getPreference(i);
-            //final String curKey = preference.getKey();
-            //if (curKey != null && curKey.equals(key)) {
-                //return preference;
-            //}
-            //if (preference instanceof PreferenceGroup) {
-                //final Preference returnedPreference = ((PreferenceGroup)preference)
-                        //.findPreference(key);
-                //if (returnedPreference != null) {
-                    //return returnedPreference;
-                //}
-            //}
-        //}
-        //return null;
+                if (returnedPreference != null) {
+                    return returnedPreference;
+                }
+            }
+        }
+
+        return null;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.590 -0400", hash_original_method = "DAC56CE9E9B1E4D46C67382001476B7D", hash_generated_method = "7441CC1AC85D563BB57EB341DC1EB661")
+    /**
+     * Whether this preference group should be shown on the same screen as its
+     * contained preferences.
+     * 
+     * @return True if the contained preferences should be shown on the same
+     *         screen as this preference.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:15.544 -0500", hash_original_method = "DAC56CE9E9B1E4D46C67382001476B7D", hash_generated_method = "03203CD5DF79291B20C6273EBC2A10F1")
     protected boolean isOnSameScreenAsChildren() {
-        boolean varB326B5062B2F0E69046810717534CB09_243413166 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1553139482 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1553139482;
-        // ---------- Original Method ----------
-        //return true;
+        return true;
     }
-
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.590 -0400", hash_original_method = "1FE8E9DF20201DB390C6CDB4B44A4648", hash_generated_method = "A81E485AFA3FF1DFDA41504943B7800E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:15.545 -0500", hash_original_method = "1FE8E9DF20201DB390C6CDB4B44A4648", hash_generated_method = "B2C8588A585FEA245CBD62A4A0FCE927")
     @Override
-    protected void onAttachedToActivity() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+protected void onAttachedToActivity() {
         super.onAttachedToActivity();
+
+        // Mark as attached so if a preference is later added to this group, we
+        // can tell it we are already attached
         mAttachedToActivity = true;
+        
+        // Dispatch to all contained preferences
         final int preferenceCount = getPreferenceCount();
-for(int i = 0;i < preferenceCount;i++)
-        {
+        for (int i = 0; i < preferenceCount; i++) {
             getPreference(i).onAttachedToActivity();
-        } //End block
-        // ---------- Original Method ----------
-        //super.onAttachedToActivity();
-        //mAttachedToActivity = true;
-        //final int preferenceCount = getPreferenceCount();
-        //for (int i = 0; i < preferenceCount; i++) {
-            //getPreference(i).onAttachedToActivity();
-        //}
+        }
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.591 -0400", hash_original_method = "3A7D9D1FD83E5C89A0E712EE5F3DBB8B", hash_generated_method = "A9FE2CD2FBC3C91399937F271D4EC0AC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:15.546 -0500", hash_original_method = "3A7D9D1FD83E5C89A0E712EE5F3DBB8B", hash_generated_method = "64F4E197E0F9D16BE9EEF208D4B193DE")
     @Override
-    protected void onPrepareForRemoval() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+protected void onPrepareForRemoval() {
         super.onPrepareForRemoval();
+        
+        // We won't be attached to the activity anymore
         mAttachedToActivity = false;
-        // ---------- Original Method ----------
-        //super.onPrepareForRemoval();
-        //mAttachedToActivity = false;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.591 -0400", hash_original_method = "10614F6B57E80AB6C964E551AE06AF94", hash_generated_method = "39BE01D538FACB38C87A7BE85A499456")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:15.547 -0500", hash_original_method = "10614F6B57E80AB6C964E551AE06AF94", hash_generated_method = "C311D30DF36A23FA5C6362FA5BAC7096")
     @Override
-    public void setEnabled(boolean enabled) {
-        addTaint(enabled);
+public void setEnabled(boolean enabled) {
         super.setEnabled(enabled);
+        
+        // Dispatch to all contained preferences
         final int preferenceCount = getPreferenceCount();
-for(int i = 0;i < preferenceCount;i++)
-        {
+        for (int i = 0; i < preferenceCount; i++) {
             getPreference(i).setEnabled(enabled);
-        } //End block
-        // ---------- Original Method ----------
-        //super.setEnabled(enabled);
-        //final int preferenceCount = getPreferenceCount();
-        //for (int i = 0; i < preferenceCount; i++) {
-            //getPreference(i).setEnabled(enabled);
-        //}
+        }
     }
-
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.591 -0400", hash_original_method = "8DBDAE7DDABF4AEFA524423E392EC9C9", hash_generated_method = "96B131528306350140BAFEADCD443D97")
-     void sortPreferences() {
-        synchronized
-(this)        {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:15.547 -0500", hash_original_method = "8DBDAE7DDABF4AEFA524423E392EC9C9", hash_generated_method = "8DBDAE7DDABF4AEFA524423E392EC9C9")
+    void sortPreferences() {
+        synchronized (this) {
             Collections.sort(mPreferenceList);
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //Collections.sort(mPreferenceList);
-        //}
+        }
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.592 -0400", hash_original_method = "62B814BB73D262A241B770A4F50FC903", hash_generated_method = "087684931AE1AE642EEFD82F6B190DD8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:15.548 -0500", hash_original_method = "62B814BB73D262A241B770A4F50FC903", hash_generated_method = "20BC2F893AE986C6378A03878CFD6B34")
     @Override
-    protected void dispatchSaveInstanceState(Bundle container) {
-        addTaint(container.getTaint());
+protected void dispatchSaveInstanceState(Bundle container) {
         super.dispatchSaveInstanceState(container);
-        final int preferenceCount = getPreferenceCount();
-for(int i = 0;i < preferenceCount;i++)
-        {
-            getPreference(i).dispatchSaveInstanceState(container);
-        } //End block
-        // ---------- Original Method ----------
-        //super.dispatchSaveInstanceState(container);
-        //final int preferenceCount = getPreferenceCount();
-        //for (int i = 0; i < preferenceCount; i++) {
-            //getPreference(i).dispatchSaveInstanceState(container);
-        //}
-    }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.592 -0400", hash_original_method = "F1DE64EBADCED3709EBA936E1D8777C2", hash_generated_method = "E8E0ED1FBC3EE7AD29DF562739797612")
-    @Override
-    protected void dispatchRestoreInstanceState(Bundle container) {
-        addTaint(container.getTaint());
-        super.dispatchRestoreInstanceState(container);
+        // Dispatch to all contained preferences
         final int preferenceCount = getPreferenceCount();
-for(int i = 0;i < preferenceCount;i++)
-        {
+        for (int i = 0; i < preferenceCount; i++) {
+            getPreference(i).dispatchSaveInstanceState(container);
+        }
+    }
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:15.549 -0500", hash_original_method = "F1DE64EBADCED3709EBA936E1D8777C2", hash_generated_method = "5F71E682ED5DE7F6C3896F7AA07004C0")
+    @Override
+protected void dispatchRestoreInstanceState(Bundle container) {
+        super.dispatchRestoreInstanceState(container);
+
+        // Dispatch to all contained preferences
+        final int preferenceCount = getPreferenceCount();
+        for (int i = 0; i < preferenceCount; i++) {
             getPreference(i).dispatchRestoreInstanceState(container);
-        } //End block
-        // ---------- Original Method ----------
-        //super.dispatchRestoreInstanceState(container);
-        //final int preferenceCount = getPreferenceCount();
-        //for (int i = 0; i < preferenceCount; i++) {
-            //getPreference(i).dispatchRestoreInstanceState(container);
-        //}
+        }
     }
 
     

@@ -1,6 +1,8 @@
 package org.apache.harmony.xnet.provider.jsse;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.InputStream;
@@ -24,782 +26,703 @@ import javax.net.ssl.SSLSocket;
 
 
 public class SSLSocketImpl extends SSLSocket {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.537 -0400", hash_original_field = "3AE81331685336BDF4905577358403FE", hash_generated_field = "43A471CC626A390C3F42C96A293CE4F3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.582 -0500", hash_original_field = "DD39B534563266F04E2B935538054204", hash_generated_field = "43A471CC626A390C3F42C96A293CE4F3")
 
     private boolean handshake_started = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.537 -0400", hash_original_field = "398E3ACF063793A09BD262C5C522B1DE", hash_generated_field = "EDC147518BA686E3DAEAF859EB64368C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.582 -0500", hash_original_field = "450F49BACBC7E7E38A182C4284626ACE", hash_generated_field = "EDC147518BA686E3DAEAF859EB64368C")
 
     protected SSLRecordProtocol recordProtocol;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.538 -0400", hash_original_field = "C8D4E1C676644CE99FCC63554749D588", hash_generated_field = "1032E45BD599BACD8B5F207A3C5A48C0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.583 -0500", hash_original_field = "C657785F6A0EDCF13D6ABCC66DA9658A", hash_generated_field = "1032E45BD599BACD8B5F207A3C5A48C0")
 
     private HandshakeProtocol handshakeProtocol;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.538 -0400", hash_original_field = "81D2B0D9B2A75D6611E459D125528CA5", hash_generated_field = "7F98BE8FCC656C783F586E8BC58013DC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.584 -0500", hash_original_field = "36D0D0F3C543230F133CC70A25806808", hash_generated_field = "7F98BE8FCC656C783F586E8BC58013DC")
 
     private AlertProtocol alertProtocol;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.538 -0400", hash_original_field = "B833D39B605EBB2737927AB5B4154643", hash_generated_field = "525094C3FC63278C6116C6DEB230FC51")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.585 -0500", hash_original_field = "C7E3A3FD3C246E691BCC0EDB5CE62A3C", hash_generated_field = "1890B16FD79B3D58ED0866BB395F4C0D")
 
+    // ssl socket as an input stream. Additionally this object is a
+    // place where application data will be stored by record protocol
     private SSLSocketInputStream appDataIS;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.538 -0400", hash_original_field = "D95015CADC11FD2EE735FEB5B8CFBC64", hash_generated_field = "F04547F05FBC3550B4832B6EFAD5429B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.586 -0500", hash_original_field = "BA53905A27FBC5226F70905CEDB2AA2A", hash_generated_field = "F04547F05FBC3550B4832B6EFAD5429B")
 
     private SSLSocketOutputStream appDataOS;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.538 -0400", hash_original_field = "21D6F40CFB511982E4424E0E250A9557", hash_generated_field = "14A9356888CCC2F5828130712AD7BEEF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.586 -0500", hash_original_field = "2FEA9607120FF1F874D7A8B19B248896", hash_generated_field = "14A9356888CCC2F5828130712AD7BEEF")
 
     private SSLSessionImpl session;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.538 -0400", hash_original_field = "2B2C58BD2F67680893D7D8171D248B07", hash_generated_field = "45E3FC29C212ED74F873A281D50900AB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.587 -0500", hash_original_field = "E750AD196A1678C76301EB87A36D17D5", hash_generated_field = "45E3FC29C212ED74F873A281D50900AB")
+
 
     private boolean socket_was_closed = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.538 -0400", hash_original_field = "275693D255E1C48D7D5797E25BF7F3FC", hash_generated_field = "193A05E0CE57E1D6165874B1C5DC807D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.588 -0500", hash_original_field = "8EC89ADA2574F1DBC3DD4508F1BBC0BF", hash_generated_field = "04F8E3EB3EE7E0CB408AFC33E7A72359")
 
+    // about supported and enabled cipher suites and protocols,
+    // as well as the information about client/server mode of
+    // ssl socket, whether it require/want client authentication or not,
+    // and controls whether new SSL sessions may be established by this
+    // socket or not.
     protected SSLParametersImpl sslParameters;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.538 -0400", hash_original_field = "A43C1B0AA53A0C908810C06AB1FF3967", hash_generated_field = "D316EEE6844FE498763EB8295772C4A2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.589 -0500", hash_original_field = "7E31439956010383C009CD8F9D1171C9", hash_generated_field = "D316EEE6844FE498763EB8295772C4A2")
 
     protected InputStream input;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.538 -0400", hash_original_field = "78E6221F6393D1356681DB398F14CE6D", hash_generated_field = "0E6723CD0F1F5210EC010C59DA7A47E7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.590 -0500", hash_original_field = "FAE7C74574174D6344D6E09AD843B317", hash_generated_field = "0E6723CD0F1F5210EC010C59DA7A47E7")
 
     protected OutputStream output;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.538 -0400", hash_original_field = "9F99697C78E088CB04E67AFD7A9D1068", hash_generated_field = "18AE5B2EA1E4D2608E5F816AEC3235B3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.590 -0500", hash_original_field = "62277C468EB34D88444F90B52C9C2418", hash_generated_field = "18AE5B2EA1E4D2608E5F816AEC3235B3")
 
     private ArrayList<HandshakeCompletedListener> listeners;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.538 -0400", hash_original_field = "54B84D2B1AE03DCCAE40C4858357B92A", hash_generated_field = "0327D000C0AB01CB97996B4D95743A26")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.591 -0500", hash_original_field = "DA51F0597BCD8FCD44A7B0CE5978547E", hash_generated_field = "0327D000C0AB01CB97996B4D95743A26")
 
     private Logger.Stream logger = Logger.getStream("socket");
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.539 -0400", hash_original_method = "7B6D79A24FC469186EEF1935CCE0FAAE", hash_generated_method = "76D8E06FA8235152D346BA475221EC7E")
-    protected  SSLSocketImpl(SSLParametersImpl sslParameters) {
+
+    // ----------------- Constructors and initializers --------------------
+
+    /**
+     * Constructor
+     * @param   sslParameters:  SSLParametersImpl
+     * @see javax.net.ssl.SSLSocket#SSLSocket() method documentation
+     * for more information.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.592 -0500", hash_original_method = "7B6D79A24FC469186EEF1935CCE0FAAE", hash_generated_method = "711FE1E8447AE5EE89CE997108A20791")
+    protected SSLSocketImpl(SSLParametersImpl sslParameters) {
         this.sslParameters = sslParameters;
-        // ---------- Original Method ----------
-        //this.sslParameters = sslParameters;
+        // init should be called after creation!
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.539 -0400", hash_original_method = "B90B14697CA53EAAAF818AFF9DD06A34", hash_generated_method = "3261414DF2F3A19C31EFB8993DEF27A9")
-    protected  SSLSocketImpl(String host, int port, SSLParametersImpl sslParameters) throws IOException, UnknownHostException {
+    /**
+     * Constructor
+     * @param   host:   String
+     * @param   port:   int
+     * @param   sslParameters:  SSLParametersImpl
+     * @throws  IOException
+     * @throws  UnknownHostException
+     * @see javax.net.ssl.SSLSocket#SSLSocket(String,int)
+     * method documentation for more information.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.593 -0500", hash_original_method = "B90B14697CA53EAAAF818AFF9DD06A34", hash_generated_method = "F5C31F5F37E8515A9609CE04C71658E7")
+    protected SSLSocketImpl(String host, int port, SSLParametersImpl sslParameters)
+            throws IOException, UnknownHostException {
         super(host, port);
-        addTaint(port);
-        addTaint(host.getTaint());
         this.sslParameters = sslParameters;
         init();
-        // ---------- Original Method ----------
-        //this.sslParameters = sslParameters;
-        //init();
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.540 -0400", hash_original_method = "A894226ED2FD2304A12A4E08266BE71A", hash_generated_method = "55CDA01F1466479C682388625FDC2D4C")
-    protected  SSLSocketImpl(String host, int port,
+    /**
+     * Constructor
+     * @param   host:   String
+     * @param   port:   int
+     * @param   localHost:  InetAddress
+     * @param   localPort:  int
+     * @param   sslParameters:  SSLParametersImpl
+     * @throws  IOException
+     * @throws  UnknownHostException
+     * @see javax.net.ssl.SSLSocket#SSLSocket(String,int,InetAddress,int)
+     * method documentation for more information.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.594 -0500", hash_original_method = "A894226ED2FD2304A12A4E08266BE71A", hash_generated_method = "739DCAACA80EE1E83D48A0D805CCAB4F")
+    protected SSLSocketImpl(String host, int port,
             InetAddress localHost, int localPort,
             SSLParametersImpl sslParameters) throws IOException,
             UnknownHostException {
         super(host, port, localHost, localPort);
-        addTaint(localPort);
-        addTaint(localHost.getTaint());
-        addTaint(port);
-        addTaint(host.getTaint());
         this.sslParameters = sslParameters;
         init();
-        // ---------- Original Method ----------
-        //this.sslParameters = sslParameters;
-        //init();
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.541 -0400", hash_original_method = "21D48E905F577E64713F2C7CA9B1B030", hash_generated_method = "E3692836413BEBD6771E68ED95F56D31")
-    protected  SSLSocketImpl(InetAddress host, int port,
+    /**
+     * Constructor
+     * @param   host:   InetAddress
+     * @param   port:   int
+     * @param   sslParameters:  SSLParametersImpl
+     * @return
+     * @throws  IOException
+     * @see javax.net.ssl.SSLSocket#SSLSocket(InetAddress,int)
+     * method documentation for more information.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.595 -0500", hash_original_method = "21D48E905F577E64713F2C7CA9B1B030", hash_generated_method = "B3F4627E9AD5F48F2BBFEC62042D4E64")
+    protected SSLSocketImpl(InetAddress host, int port,
             SSLParametersImpl sslParameters) throws IOException {
         super(host, port);
-        addTaint(port);
-        addTaint(host.getTaint());
         this.sslParameters = sslParameters;
         init();
-        // ---------- Original Method ----------
-        //this.sslParameters = sslParameters;
-        //init();
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.542 -0400", hash_original_method = "6C5671217798C1BD7239CC8FEB7B883B", hash_generated_method = "52F0C48883003DCEEE9B66342298C5C1")
-    protected  SSLSocketImpl(InetAddress address, int port,
+    /**
+     * Constructor
+     * @param   address:    InetAddress
+     * @param   port:   int
+     * @param   localAddress:   InetAddress
+     * @param   localPort:  int
+     * @param   sslParameters:  SSLParametersImpl
+     * @return
+     * @throws  IOException
+     * @see javax.net.ssl.SSLSocket#SSLSocket(InetAddress,int,InetAddress,int)
+     * method documentation for more information.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.596 -0500", hash_original_method = "6C5671217798C1BD7239CC8FEB7B883B", hash_generated_method = "98E2B3AADEC093B212C17CA7240D6368")
+    protected SSLSocketImpl(InetAddress address, int port,
             InetAddress localAddress, int localPort,
             SSLParametersImpl sslParameters) throws IOException {
         super(address, port, localAddress, localPort);
-        addTaint(localPort);
-        addTaint(localAddress.getTaint());
-        addTaint(port);
-        addTaint(address.getTaint());
         this.sslParameters = sslParameters;
         init();
-        // ---------- Original Method ----------
-        //this.sslParameters = sslParameters;
-        //init();
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.543 -0400", hash_original_method = "FD845B5AAD012D6985E0ADCD6A0F1286", hash_generated_method = "23311DA94F2D63FDDE3C6664CB30B326")
+    /**
+     * Initialize the SSL socket.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.597 -0500", hash_original_method = "FD845B5AAD012D6985E0ADCD6A0F1286", hash_generated_method = "6AC59E1019471B8D4B6D15BF0D0252FC")
     protected void init() throws IOException {
-        if(appDataIS != null)        
-        {
+        if (appDataIS != null) {
+            // already initialized
             return;
-        } //End block
+        }
         initTransportLayer();
         appDataIS = new SSLSocketInputStream(this);
         appDataOS = new SSLSocketOutputStream(this);
-        // ---------- Original Method ----------
-        //if (appDataIS != null) {
-            //return;
-        //}
-        //initTransportLayer();
-        //appDataIS = new SSLSocketInputStream(this);
-        //appDataOS = new SSLSocketOutputStream(this);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.544 -0400", hash_original_method = "F1A82616FFDC8899DB87D416AB14644B", hash_generated_method = "A4E325529E24EA029F3DA105A3FC705E")
+    /**
+     * Initialize the transport data streams.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.598 -0500", hash_original_method = "F1A82616FFDC8899DB87D416AB14644B", hash_generated_method = "D6AF9C14735C8B9884C35F7D7B605D3C")
     protected void initTransportLayer() throws IOException {
         input = super.getInputStream();
         output = super.getOutputStream();
-        // ---------- Original Method ----------
-        //input = super.getInputStream();
-        //output = super.getOutputStream();
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.544 -0400", hash_original_method = "651677798FC4CE70FB09611DD37A5D23", hash_generated_method = "1B0BF1F5AEE7A50951CD03EBFFE849C6")
+    /**
+     * Closes the transport data streams.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.598 -0500", hash_original_method = "651677798FC4CE70FB09611DD37A5D23", hash_generated_method = "D199AD0CE30B5F38BCBCD3D91E9021E0")
     protected void closeTransportLayer() throws IOException {
         super.close();
-        if(input != null)        
-        {
+        if (input != null) {
             input.close();
             output.close();
-        } //End block
-        // ---------- Original Method ----------
-        //super.close();
-        //if (input != null) {
-            //input.close();
-            //output.close();
-        //}
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.545 -0400", hash_original_method = "12BE90119F3183109C9DE5DBB63B352A", hash_generated_method = "8F42F17A97037D3A4CDDD14B2C9B5623")
+    // --------------- SSLParameters based methods ---------------------
+
+    /**
+     * This method works according to the specification of implemented class.
+     * @see javax.net.ssl.SSLSocket#getSupportedCipherSuites()
+     * method documentation for more information
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.599 -0500", hash_original_method = "12BE90119F3183109C9DE5DBB63B352A", hash_generated_method = "0E9DEB7FA21717EA39000930983C1B84")
     @Override
-    public String[] getSupportedCipherSuites() {
-String[] varF6F3ABBB205DDE294417F777EFDFB1AB_1965951898 =         CipherSuite.getSupportedCipherSuiteNames();
-        varF6F3ABBB205DDE294417F777EFDFB1AB_1965951898.addTaint(taint);
-        return varF6F3ABBB205DDE294417F777EFDFB1AB_1965951898;
-        // ---------- Original Method ----------
-        //return CipherSuite.getSupportedCipherSuiteNames();
+public String[] getSupportedCipherSuites() {
+        return CipherSuite.getSupportedCipherSuiteNames();
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.545 -0400", hash_original_method = "80B545F2398A25060AECB1A23E821DD5", hash_generated_method = "39DE7FF1FF1C2F8B08CC328B05989B7A")
+    /**
+     * This method works according to the specification of implemented class.
+     * @see javax.net.ssl.SSLSocket#getEnabledCipherSuites()
+     * method documentation for more information
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.601 -0500", hash_original_method = "80B545F2398A25060AECB1A23E821DD5", hash_generated_method = "9743EBAEBACB48E752148548CBED207E")
     @Override
-    public String[] getEnabledCipherSuites() {
-String[] varE73CF5FBDF510EEFDF00C7E4AF85C310_625958179 =         sslParameters.getEnabledCipherSuites();
-        varE73CF5FBDF510EEFDF00C7E4AF85C310_625958179.addTaint(taint);
-        return varE73CF5FBDF510EEFDF00C7E4AF85C310_625958179;
-        // ---------- Original Method ----------
-        //return sslParameters.getEnabledCipherSuites();
+public String[] getEnabledCipherSuites() {
+        return sslParameters.getEnabledCipherSuites();
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.545 -0400", hash_original_method = "7C4ABDE66C2DD67AB299013913F9BF06", hash_generated_method = "A502E0EAAECE8396CE85A55C0A04C6E0")
+    /**
+     * This method works according to the specification of implemented class.
+     * @see javax.net.ssl.SSLSocket#setEnabledCipherSuites(String[])
+     * method documentation for more information
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.601 -0500", hash_original_method = "7C4ABDE66C2DD67AB299013913F9BF06", hash_generated_method = "C5557FA44AA989E23B0178177369FD5D")
     @Override
-    public void setEnabledCipherSuites(String[] suites) {
-        addTaint(suites[0].getTaint());
+public void setEnabledCipherSuites(String[] suites) {
         sslParameters.setEnabledCipherSuites(suites);
-        // ---------- Original Method ----------
-        //sslParameters.setEnabledCipherSuites(suites);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.546 -0400", hash_original_method = "9A36300B3497119D0180A59D3E72D371", hash_generated_method = "6C69739DE1E98D06D111998283F4D52F")
+    /**
+     * This method works according to the specification of implemented class.
+     * @see javax.net.ssl.SSLSocket#getSupportedProtocols()
+     * method documentation for more information
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.602 -0500", hash_original_method = "9A36300B3497119D0180A59D3E72D371", hash_generated_method = "0336F8759C7C42688A7C93D456C43BA3")
     @Override
-    public String[] getSupportedProtocols() {
-String[] varCE68CF4030A908DFE590B8EDFA039BDD_1412884927 =         ProtocolVersion.supportedProtocols.clone();
-        varCE68CF4030A908DFE590B8EDFA039BDD_1412884927.addTaint(taint);
-        return varCE68CF4030A908DFE590B8EDFA039BDD_1412884927;
-        // ---------- Original Method ----------
-        //return ProtocolVersion.supportedProtocols.clone();
+public String[] getSupportedProtocols() {
+        return ProtocolVersion.supportedProtocols.clone();
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.546 -0400", hash_original_method = "9376751549A6436575C0783CA6C3A4A0", hash_generated_method = "A17664D1A9FCD1EBB959CB9B537B21B5")
+    /**
+     * This method works according to the specification of implemented class.
+     * @see javax.net.ssl.SSLSocket#getEnabledProtocols()
+     * method documentation for more information
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.603 -0500", hash_original_method = "9376751549A6436575C0783CA6C3A4A0", hash_generated_method = "33350DCBA69002691B7A369DC97FFA9B")
     @Override
-    public String[] getEnabledProtocols() {
-String[] var845A46B817F78B5E0728F82AD0FF52E6_499471581 =         sslParameters.getEnabledProtocols();
-        var845A46B817F78B5E0728F82AD0FF52E6_499471581.addTaint(taint);
-        return var845A46B817F78B5E0728F82AD0FF52E6_499471581;
-        // ---------- Original Method ----------
-        //return sslParameters.getEnabledProtocols();
+public String[] getEnabledProtocols() {
+        return sslParameters.getEnabledProtocols();
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.546 -0400", hash_original_method = "1CAC4BB68A222585D834DF0E7DBBD0B9", hash_generated_method = "CCBC6F8DD000D5739B00A3E9F868DB1C")
+    /**
+     * This method works according to the specification of implemented class.
+     * @see javax.net.ssl.SSLSocket#setEnabledProtocols(String[])
+     * method documentation for more information
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.604 -0500", hash_original_method = "1CAC4BB68A222585D834DF0E7DBBD0B9", hash_generated_method = "5199FC3D60A4E4583B057C0623C822F9")
     @Override
-    public void setEnabledProtocols(String[] protocols) {
-        addTaint(protocols[0].getTaint());
+public void setEnabledProtocols(String[] protocols) {
         sslParameters.setEnabledProtocols(protocols);
-        // ---------- Original Method ----------
-        //sslParameters.setEnabledProtocols(protocols);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.547 -0400", hash_original_method = "3BB959BD0875F4D150E69C54372A8DCB", hash_generated_method = "A4DAE812727CF8539314EC0531C87068")
+    /**
+     * This method works according to the specification of implemented class.
+     * @see javax.net.ssl.SSLSocket#setUseClientMode(boolean)
+     * method documentation for more information
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.605 -0500", hash_original_method = "3BB959BD0875F4D150E69C54372A8DCB", hash_generated_method = "9CA8AE73464BF134D0D3AFC6623315FF")
     @Override
-    public void setUseClientMode(boolean mode) {
-        addTaint(mode);
-        if(handshake_started)        
-        {
-            IllegalArgumentException var090A9C2074D1C9D942FE5C4CFD7155B6_703164340 = new IllegalArgumentException(
+public void setUseClientMode(boolean mode) {
+        if (handshake_started) {
+            throw new IllegalArgumentException(
             "Could not change the mode after the initial handshake has begun.");
-            var090A9C2074D1C9D942FE5C4CFD7155B6_703164340.addTaint(taint);
-            throw var090A9C2074D1C9D942FE5C4CFD7155B6_703164340;
-        } //End block
+        }
         sslParameters.setUseClientMode(mode);
-        // ---------- Original Method ----------
-        //if (handshake_started) {
-            //throw new IllegalArgumentException(
-            //"Could not change the mode after the initial handshake has begun.");
-        //}
-        //sslParameters.setUseClientMode(mode);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.547 -0400", hash_original_method = "01F03276D647357C499C358366605A7A", hash_generated_method = "44092ECFCE357DC0BA48AE8E0F4A5BC8")
+    /**
+     * This method works according to the specification of implemented class.
+     * @see javax.net.ssl.SSLSocket#getUseClientMode()
+     * method documentation for more information
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.605 -0500", hash_original_method = "01F03276D647357C499C358366605A7A", hash_generated_method = "C189C4A91AE7529C93E5FE1A68636F7D")
     @Override
-    public boolean getUseClientMode() {
-        boolean var264C485BBAEC609C8CEC6E380F554AB0_1233932025 = (sslParameters.getUseClientMode());
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1480298109 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1480298109;
-        // ---------- Original Method ----------
-        //return sslParameters.getUseClientMode();
+public boolean getUseClientMode() {
+        return sslParameters.getUseClientMode();
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.547 -0400", hash_original_method = "87B99BB5E16802D75B8230FD21E2413F", hash_generated_method = "BA7C72106D7ACD8A3990718038741929")
+    /**
+     * This method works according to the specification of implemented class.
+     * @see javax.net.ssl.SSLSocket#setNeedClientAuth(boolean)
+     * method documentation for more information
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.606 -0500", hash_original_method = "87B99BB5E16802D75B8230FD21E2413F", hash_generated_method = "C446CA4D04BF46EBA63D06A750C2C8C1")
     @Override
-    public void setNeedClientAuth(boolean need) {
-        addTaint(need);
+public void setNeedClientAuth(boolean need) {
         sslParameters.setNeedClientAuth(need);
-        // ---------- Original Method ----------
-        //sslParameters.setNeedClientAuth(need);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.548 -0400", hash_original_method = "01CDFCACAD6C113BE18D967A4C320F8F", hash_generated_method = "813177EA1080C831195AA8AB2685CB66")
+    /**
+     * This method works according to the specification of implemented class.
+     * @see javax.net.ssl.SSLSocket#getNeedClientAuth()
+     * method documentation for more information
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.607 -0500", hash_original_method = "01CDFCACAD6C113BE18D967A4C320F8F", hash_generated_method = "1AC7C5FF07516804848811840A468A8B")
     @Override
-    public boolean getNeedClientAuth() {
-        boolean var8775D3F02F22101BF43E8B27516BBE95_1382079291 = (sslParameters.getNeedClientAuth());
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1264735981 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1264735981;
-        // ---------- Original Method ----------
-        //return sslParameters.getNeedClientAuth();
+public boolean getNeedClientAuth() {
+        return sslParameters.getNeedClientAuth();
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.548 -0400", hash_original_method = "C4BE9213AE4AE3AE8B3FD470CA7DBEA1", hash_generated_method = "09030FB81E24A5D701A15381DB305A48")
+    /**
+     * This method works according to the specification of implemented class.
+     * @see javax.net.ssl.SSLSocket#setWantClientAuth(boolean)
+     * method documentation for more information
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.608 -0500", hash_original_method = "C4BE9213AE4AE3AE8B3FD470CA7DBEA1", hash_generated_method = "21E8FF7B7CE0E4FB146B4F3F0EE91E86")
     @Override
-    public void setWantClientAuth(boolean want) {
-        addTaint(want);
+public void setWantClientAuth(boolean want) {
         sslParameters.setWantClientAuth(want);
-        // ---------- Original Method ----------
-        //sslParameters.setWantClientAuth(want);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.548 -0400", hash_original_method = "BFCFACF4683D2DA63944456ACA1AFE4C", hash_generated_method = "BCA81B139567B4C3211302C5614C1ED0")
+    /**
+     * This method works according to the specification of implemented class.
+     * @see javax.net.ssl.SSLSocket#getWantClientAuth()
+     * method documentation for more information
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.609 -0500", hash_original_method = "BFCFACF4683D2DA63944456ACA1AFE4C", hash_generated_method = "C498EFFB7EA33937BE58E3D8E2A82C77")
     @Override
-    public boolean getWantClientAuth() {
-        boolean var49776A2797A76D9AE0E32B9F61634A24_1057282716 = (sslParameters.getWantClientAuth());
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_474765043 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_474765043;
-        // ---------- Original Method ----------
-        //return sslParameters.getWantClientAuth();
+public boolean getWantClientAuth() {
+        return sslParameters.getWantClientAuth();
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.549 -0400", hash_original_method = "CCC6382646A49B02E626A26467D69493", hash_generated_method = "85CCF52EB3F74FECC3630ABAAC720430")
+    /**
+     * This method works according to the specification of implemented class.
+     * @see javax.net.ssl.SSLSocket#setEnableSessionCreation(boolean)
+     * method documentation for more information
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.609 -0500", hash_original_method = "CCC6382646A49B02E626A26467D69493", hash_generated_method = "3DEA9628617E70F67E1471694350041C")
     @Override
-    public void setEnableSessionCreation(boolean flag) {
-        addTaint(flag);
+public void setEnableSessionCreation(boolean flag) {
         sslParameters.setEnableSessionCreation(flag);
-        // ---------- Original Method ----------
-        //sslParameters.setEnableSessionCreation(flag);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.549 -0400", hash_original_method = "67C983FA387520F5F3AF315C719B29E4", hash_generated_method = "6BB1804F77A938F1ECA1F6625D77EB3D")
+    /**
+     * This method works according to the specification of implemented class.
+     * @see javax.net.ssl.SSLSocket#getEnableSessionCreation()
+     * method documentation for more information
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.610 -0500", hash_original_method = "67C983FA387520F5F3AF315C719B29E4", hash_generated_method = "F0850E2B8F230278D1EE6575AFA464E6")
     @Override
-    public boolean getEnableSessionCreation() {
-        boolean var6A496EF2CB1B11366741370C45064742_705847243 = (sslParameters.getEnableSessionCreation());
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1846937046 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1846937046;
-        // ---------- Original Method ----------
-        //return sslParameters.getEnableSessionCreation();
+public boolean getEnableSessionCreation() {
+        return sslParameters.getEnableSessionCreation();
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.549 -0400", hash_original_method = "8713059613609B55626747E74A63D7AE", hash_generated_method = "8FAB776F5F11E9E0B31449B61DA5D75F")
+    // -----------------------------------------------------------------
+
+    /**
+     * This method works according to the specification of implemented class.
+     * @see javax.net.ssl.SSLSocket#getSession()
+     * method documentation for more information
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.611 -0500", hash_original_method = "8713059613609B55626747E74A63D7AE", hash_generated_method = "7E4C1E86E24FC80D331FAE75DCB37CF2")
     @Override
-    public SSLSession getSession() {
-        if(!handshake_started)        
-        {
-            try 
-            {
+public SSLSession getSession() {
+        if (!handshake_started) {
+            try {
                 startHandshake();
-            } //End block
-            catch (IOException e)
-            {
-SSLSession var33266EACB2455415ED08B160E2815F03_1262612018 =                 SSLSessionImpl.NULL_SESSION;
-                var33266EACB2455415ED08B160E2815F03_1262612018.addTaint(taint);
-                return var33266EACB2455415ED08B160E2815F03_1262612018;
-            } //End block
-        } //End block
-SSLSession varD555E544A66E0F97DA6BCDE940E3E79C_1224664420 =         session;
-        varD555E544A66E0F97DA6BCDE940E3E79C_1224664420.addTaint(taint);
-        return varD555E544A66E0F97DA6BCDE940E3E79C_1224664420;
-        // ---------- Original Method ----------
-        //if (!handshake_started) {
-            //try {
-                //startHandshake();
-            //} catch (IOException e) {
-                //return SSLSessionImpl.NULL_SESSION;
-            //}
-        //}
-        //return session;
+            } catch (IOException e) {
+                // return an invalid session with
+                // invalid cipher suite of "SSL_NULL_WITH_NULL_NULL"
+                return SSLSessionImpl.NULL_SESSION;
+            }
+        }
+        return session;
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.550 -0400", hash_original_method = "F46B9A73766B8D71CEE8B005CFE82615", hash_generated_method = "49DE989294F6B7AFFDA95CB8542C0B53")
+    /**
+     * This method works according to the specification of implemented class.
+     * @see javax.net.ssl.SSLSocket#addHandshakeCompletedListener(HandshakeCompletedListener)
+     * method documentation for more information
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.612 -0500", hash_original_method = "F46B9A73766B8D71CEE8B005CFE82615", hash_generated_method = "7933A4C77A4CFD3C8964936A38D20F91")
     @Override
-    public void addHandshakeCompletedListener(
+public void addHandshakeCompletedListener(
             HandshakeCompletedListener listener) {
-        addTaint(listener.getTaint());
-        if(listener == null)        
-        {
-            IllegalArgumentException varB02095FE0265340AABD25383D7376280_390974081 = new IllegalArgumentException("Provided listener is null");
-            varB02095FE0265340AABD25383D7376280_390974081.addTaint(taint);
-            throw varB02095FE0265340AABD25383D7376280_390974081;
-        } //End block
-        if(listeners == null)        
-        {
+        if (listener == null) {
+            throw new IllegalArgumentException("Provided listener is null");
+        }
+        if (listeners == null) {
             listeners = new ArrayList<HandshakeCompletedListener>();
-        } //End block
+        }
         listeners.add(listener);
-        // ---------- Original Method ----------
-        //if (listener == null) {
-            //throw new IllegalArgumentException("Provided listener is null");
-        //}
-        //if (listeners == null) {
-            //listeners = new ArrayList<HandshakeCompletedListener>();
-        //}
-        //listeners.add(listener);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.551 -0400", hash_original_method = "AD8204C7E0D7DFC602B3A996AAF9AC40", hash_generated_method = "7F2D6AE7E61E32D5AFF4830BE0EBD7AD")
+    /**
+     * This method works according to the specification of implemented class.
+     * @see javax.net.ssl.SSLSocket#removeHandshakeCompletedListener(HandshakeCompletedListener)
+     * method documentation for more information
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.613 -0500", hash_original_method = "AD8204C7E0D7DFC602B3A996AAF9AC40", hash_generated_method = "9ACD4602144599915DF0E9850F80A4D8")
     @Override
-    public void removeHandshakeCompletedListener(
+public void removeHandshakeCompletedListener(
             HandshakeCompletedListener listener) {
-        addTaint(listener.getTaint());
-        if(listener == null)        
-        {
-            IllegalArgumentException varB02095FE0265340AABD25383D7376280_1069345180 = new IllegalArgumentException("Provided listener is null");
-            varB02095FE0265340AABD25383D7376280_1069345180.addTaint(taint);
-            throw varB02095FE0265340AABD25383D7376280_1069345180;
-        } //End block
-        if(listeners == null)        
-        {
-            IllegalArgumentException var10FDB35631F14D25CC68C0C86726BCA4_1844752986 = new IllegalArgumentException(
+        if (listener == null) {
+            throw new IllegalArgumentException("Provided listener is null");
+        }
+        if (listeners == null) {
+            throw new IllegalArgumentException(
                     "Provided listener is not registered");
-            var10FDB35631F14D25CC68C0C86726BCA4_1844752986.addTaint(taint);
-            throw var10FDB35631F14D25CC68C0C86726BCA4_1844752986;
-        } //End block
-        if(!listeners.remove(listener))        
-        {
-            IllegalArgumentException var10FDB35631F14D25CC68C0C86726BCA4_436940001 = new IllegalArgumentException(
+        }
+        if (!listeners.remove(listener)) {
+            throw new IllegalArgumentException(
                     "Provided listener is not registered");
-            var10FDB35631F14D25CC68C0C86726BCA4_436940001.addTaint(taint);
-            throw var10FDB35631F14D25CC68C0C86726BCA4_436940001;
-        } //End block
-        // ---------- Original Method ----------
-        //if (listener == null) {
-            //throw new IllegalArgumentException("Provided listener is null");
-        //}
-        //if (listeners == null) {
-            //throw new IllegalArgumentException(
-                    //"Provided listener is not registered");
-        //}
-        //if (!listeners.remove(listener)) {
-            //throw new IllegalArgumentException(
-                    //"Provided listener is not registered");
-        //}
+        }
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.553 -0400", hash_original_method = "765B8FA015660A1850228BA85BA4D2EA", hash_generated_method = "451B00E9C4C74E76D5057BC0E7260548")
+    /**
+     * Performs the handshake process over the SSL/TLS connection
+     * as described in rfc 2246, TLS v1 specification
+     * http://www.ietf.org/rfc/rfc2246.txt. If the initial handshake
+     * has been already done, this method initiates rehandshake.
+     * This method works according to the specification of implemented class.
+     * @see javax.net.ssl.SSLSocket#startHandshake()
+     * method documentation for more information
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.614 -0500", hash_original_method = "765B8FA015660A1850228BA85BA4D2EA", hash_generated_method = "CA6ED245EC0E0A57425C294E408499EF")
     @Override
-    public void startHandshake() throws IOException {
-        if(appDataIS == null)        
-        {
-            IOException var99A85DDF1243551359017D19FA2DBF3F_1213246125 = new IOException("Socket is not connected.");
-            var99A85DDF1243551359017D19FA2DBF3F_1213246125.addTaint(taint);
-            throw var99A85DDF1243551359017D19FA2DBF3F_1213246125;
-        } //End block
-        if(socket_was_closed)        
-        {
-            IOException varEBBB0E65BA2598B9856A65403EB38C96_1806310800 = new IOException("Socket has already been closed.");
-            varEBBB0E65BA2598B9856A65403EB38C96_1806310800.addTaint(taint);
-            throw varEBBB0E65BA2598B9856A65403EB38C96_1806310800;
-        } //End block
-        if(!handshake_started)        
-        {
+public void startHandshake() throws IOException {
+        if (appDataIS == null) {
+            throw new IOException("Socket is not connected.");
+        }
+        if (socket_was_closed) {
+            throw new IOException("Socket has already been closed.");
+        }
+
+        if (!handshake_started) {
             handshake_started = true;
-            if(sslParameters.getUseClientMode())            
-            {
-                if(logger != null)                
-                {
+            if (sslParameters.getUseClientMode()) {
+                if (logger != null) {
                     logger.println("SSLSocketImpl: CLIENT");
-                } //End block
+                }
                 handshakeProtocol = new ClientHandshakeImpl(this);
-            } //End block
-            else
-            {
-                if(logger != null)                
-                {
+            } else {
+                if (logger != null) {
                     logger.println("SSLSocketImpl: SERVER");
-                } //End block
+                }
                 handshakeProtocol = new ServerHandshakeImpl(this);
-            } //End block
+            }
+
             alertProtocol = new AlertProtocol();
             recordProtocol = new SSLRecordProtocol(handshakeProtocol,
                     alertProtocol, new SSLStreamedInput(input),
                     appDataIS.dataPoint);
-        } //End block
-        if(logger != null)        
-        {
+        }
+
+        if (logger != null) {
             logger.println("SSLSocketImpl.startHandshake");
-        } //End block
+        }
+
         handshakeProtocol.start();
+
         doHandshake();
-        if(logger != null)        
-        {
+
+        if (logger != null) {
             logger.println("SSLSocketImpl.startHandshake: END");
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        }
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.555 -0400", hash_original_method = "9F4C1AA967218079AF1BF56E431987CC", hash_generated_method = "9796AB1773F7CED5F1C54309094E750D")
+    /**
+     * This method works according to the specification of implemented class.
+     * @see javax.net.ssl.SSLSocket#getInputStream()
+     * method documentation for more information
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.616 -0500", hash_original_method = "9F4C1AA967218079AF1BF56E431987CC", hash_generated_method = "A9AB11770AD56F04CBE49204BDB5EA30")
     @Override
-    public InputStream getInputStream() throws IOException {
-        if(socket_was_closed)        
-        {
-            IOException varEBBB0E65BA2598B9856A65403EB38C96_563243193 = new IOException("Socket has already been closed.");
-            varEBBB0E65BA2598B9856A65403EB38C96_563243193.addTaint(taint);
-            throw varEBBB0E65BA2598B9856A65403EB38C96_563243193;
-        } //End block
-InputStream var397DC1305100C24326D91594B7E88366_529548505 =         appDataIS;
-        var397DC1305100C24326D91594B7E88366_529548505.addTaint(taint);
-        return var397DC1305100C24326D91594B7E88366_529548505;
-        // ---------- Original Method ----------
-        //if (socket_was_closed) {
-            //throw new IOException("Socket has already been closed.");
-        //}
-        //return appDataIS;
+public InputStream getInputStream() throws IOException {
+        if (socket_was_closed) {
+            throw new IOException("Socket has already been closed.");
+        }
+        return appDataIS;
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.556 -0400", hash_original_method = "E9E36047983E43D9B4652427AFC0EE2E", hash_generated_method = "E21D81A8D33E106820D7794E6F18A0F8")
+    /**
+     * This method works according to the specification of implemented class.
+     * @see javax.net.ssl.SSLSocket#getOutputStream()
+     * method documentation for more information
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.616 -0500", hash_original_method = "E9E36047983E43D9B4652427AFC0EE2E", hash_generated_method = "349BE1051F6E996FDADC54EFE69E1809")
     @Override
-    public OutputStream getOutputStream() throws IOException {
-        if(socket_was_closed)        
-        {
-            IOException varEBBB0E65BA2598B9856A65403EB38C96_397765661 = new IOException("Socket has already been closed.");
-            varEBBB0E65BA2598B9856A65403EB38C96_397765661.addTaint(taint);
-            throw varEBBB0E65BA2598B9856A65403EB38C96_397765661;
-        } //End block
-OutputStream var7C35464E15AF057D033B64BB3C503DA0_2040576798 =         appDataOS;
-        var7C35464E15AF057D033B64BB3C503DA0_2040576798.addTaint(taint);
-        return var7C35464E15AF057D033B64BB3C503DA0_2040576798;
-        // ---------- Original Method ----------
-        //if (socket_was_closed) {
-            //throw new IOException("Socket has already been closed.");
-        //}
-        //return appDataOS;
+public OutputStream getOutputStream() throws IOException {
+        if (socket_was_closed) {
+            throw new IOException("Socket has already been closed.");
+        }
+        return appDataOS;
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.557 -0400", hash_original_method = "9C6F28F8DBD161E857A3A3894EC60A85", hash_generated_method = "D11D17292EA0E60281AC06E5333F6B4E")
+    /**
+     * This method works according to the specification of implemented class.
+     * @see java.net.Socket#connect(SocketAddress)
+     * method documentation for more information
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.617 -0500", hash_original_method = "9C6F28F8DBD161E857A3A3894EC60A85", hash_generated_method = "D7D8C3012B2E8229BBDDE272C9BE3C3D")
     @Override
-    public void connect(SocketAddress endpoint) throws IOException {
-        addTaint(endpoint.getTaint());
+public void connect(SocketAddress endpoint) throws IOException {
         super.connect(endpoint);
         init();
-        // ---------- Original Method ----------
-        //super.connect(endpoint);
-        //init();
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.557 -0400", hash_original_method = "E1471735BF64AF2EDFAE20D8138E7876", hash_generated_method = "582FFF7FF5631DE43D5A93184E537A73")
+    /**
+     * This method works according to the specification of implemented class.
+     * @see java.net.Socket#connect(SocketAddress,int)
+     * method documentation for more information
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.618 -0500", hash_original_method = "E1471735BF64AF2EDFAE20D8138E7876", hash_generated_method = "FDB570B2CBC178F03F604F889C186F51")
     @Override
-    public void connect(SocketAddress endpoint, int timeout) throws IOException {
-        addTaint(timeout);
-        addTaint(endpoint.getTaint());
+public void connect(SocketAddress endpoint, int timeout)
+            throws IOException {
         super.connect(endpoint, timeout);
         init();
-        // ---------- Original Method ----------
-        //super.connect(endpoint, timeout);
-        //init();
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.558 -0400", hash_original_method = "1C7BF244CDBA20FEDEE01D71D2117BF2", hash_generated_method = "4347C581CE5303DABD4BC43EEB2BC58E")
+    /**
+     * This method works according to the specification of implemented class.
+     * @see javax.net.ssl.SSLSocket#close()
+     * method documentation for more information
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.619 -0500", hash_original_method = "1C7BF244CDBA20FEDEE01D71D2117BF2", hash_generated_method = "BFBAC2E8A613A9A2D709CDE13C3A173B")
     @Override
-    public void close() throws IOException {
-        if(logger != null)        
-        {
+public void close() throws IOException {
+        if (logger != null) {
             logger.println("SSLSocket.close "+socket_was_closed);
-        } //End block
-        if(!socket_was_closed)        
-        {
-            if(handshake_started)            
-            {
+        }
+        if (!socket_was_closed) {
+            if (handshake_started) {
                 alertProtocol.alert(AlertProtocol.WARNING,
                         AlertProtocol.CLOSE_NOTIFY);
-                try 
-                {
+                try {
                     output.write(alertProtocol.wrap());
-                } //End block
-                catch (IOException ex)
-                {
-                } //End block
+                } catch (IOException ex) { }
                 alertProtocol.setProcessed();
-            } //End block
+            }
             shutdown();
             closeTransportLayer();
             socket_was_closed = true;
-        } //End block
-        // ---------- Original Method ----------
-        //if (logger != null) {
-            //logger.println("SSLSocket.close "+socket_was_closed);
-        //}
-        //if (!socket_was_closed) {
-            //if (handshake_started) {
-                //alertProtocol.alert(AlertProtocol.WARNING,
-                        //AlertProtocol.CLOSE_NOTIFY);
-                //try {
-                    //output.write(alertProtocol.wrap());
-                //} catch (IOException ex) { }
-                //alertProtocol.setProcessed();
-            //}
-            //shutdown();
-            //closeTransportLayer();
-            //socket_was_closed = true;
-        //}
+        }
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.558 -0400", hash_original_method = "76A321423E9827230577FC78A6A38E86", hash_generated_method = "F74358B7C5D77AA36AB038EC8B4EAFE6")
+    /**
+     * This method is not supported for SSLSocket implementation.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.620 -0500", hash_original_method = "76A321423E9827230577FC78A6A38E86", hash_generated_method = "B7DDBD1D342472346CC4D037D1CE3585")
     @Override
-    public void sendUrgentData(int data) throws IOException {
-        addTaint(data);
-        SocketException var50B8BFCDC6E8315B913207C5748AC53B_113215818 = new SocketException(
+public void sendUrgentData(int data) throws IOException {
+        throw new SocketException(
                 "Method sendUrgentData() is not supported.");
-        var50B8BFCDC6E8315B913207C5748AC53B_113215818.addTaint(taint);
-        throw var50B8BFCDC6E8315B913207C5748AC53B_113215818;
-        // ---------- Original Method ----------
-        //throw new SocketException(
-                //"Method sendUrgentData() is not supported.");
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.559 -0400", hash_original_method = "274CE2EF30305C6385D88E550D3E79A6", hash_generated_method = "416EFCD6C6BE02255E5510958739ED10")
+    /**
+     * This method is not supported for SSLSocket implementation.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.621 -0500", hash_original_method = "274CE2EF30305C6385D88E550D3E79A6", hash_generated_method = "B9FF049CD8864259C2E7D0184D2DD414")
     @Override
-    public void setOOBInline(boolean on) throws SocketException {
-        addTaint(on);
-        SocketException var88B0E59078F2F2FADE721829F824BF94_1036461244 = new SocketException(
+public void setOOBInline(boolean on) throws SocketException {
+        throw new SocketException(
                 "Methods sendUrgentData, setOOBInline are not supported.");
-        var88B0E59078F2F2FADE721829F824BF94_1036461244.addTaint(taint);
-        throw var88B0E59078F2F2FADE721829F824BF94_1036461244;
-        // ---------- Original Method ----------
-        //throw new SocketException(
-                //"Methods sendUrgentData, setOOBInline are not supported.");
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.559 -0400", hash_original_method = "14168DA1E68DB132A0DACBB007EAD125", hash_generated_method = "4A6C7BCC0141DA74C0F581BCD76FE06E")
+    // -----------------------------------------------------------------
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.622 -0500", hash_original_method = "14168DA1E68DB132A0DACBB007EAD125", hash_generated_method = "FCC0FBF4DFF5A546932E59AFF697EF35")
     private void shutdown() {
-        if(handshake_started)        
-        {
+        if (handshake_started) {
             alertProtocol.shutdown();
             alertProtocol = null;
             handshakeProtocol.shutdown();
             handshakeProtocol = null;
             recordProtocol.shutdown();
             recordProtocol = null;
-        } //End block
+        }
         socket_was_closed = true;
-        // ---------- Original Method ----------
-        //if (handshake_started) {
-            //alertProtocol.shutdown();
-            //alertProtocol = null;
-            //handshakeProtocol.shutdown();
-            //handshakeProtocol = null;
-            //recordProtocol.shutdown();
-            //recordProtocol = null;
-        //}
-        //socket_was_closed = true;
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.560 -0400", hash_original_method = "9F181DA813C5E35277B72423F9B4689F", hash_generated_method = "60A60E6FE8575FE188AFC15EF9EB08BA")
+    /**
+     * This method is called by SSLSocketInputStream class
+     * when client application tries to read application data from
+     * the stream, but there is no data in its underlying buffer.
+     * @throws  IOException
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.623 -0500", hash_original_method = "9F181DA813C5E35277B72423F9B4689F", hash_generated_method = "E55E6F09FFD1A2C94BDE35A848616422")
     protected void needAppData() throws IOException {
-        if(!handshake_started)        
-        {
+        if (!handshake_started) {
             startHandshake();
-        } //End block
+        }
         int type;
-        if(logger != null)        
-        {
+        if (logger != null) {
             logger.println("SSLSocket.needAppData..");
-        } //End block
-        try 
-        {
-            while
-(appDataIS.available() == 0)            
-            {
-switch(type = recordProtocol.unwrap()){
-                case ContentType.HANDSHAKE:
-                if(!handshakeProtocol.getStatus().equals(
+        }
+        try {
+            while(appDataIS.available() == 0) {
+                // read and unwrap the record contained in the transport
+                // input stream (SSLStreamedInput), pass it
+                // to appropriate client protocol (alert, handshake, or app)
+                // and retrieve the type of unwrapped data
+                switch (type = recordProtocol.unwrap()) {
+                    case ContentType.HANDSHAKE:
+                        if (!handshakeProtocol.getStatus().equals(
                                 SSLEngineResult.HandshakeStatus
-                                .NOT_HANDSHAKING))                
-                {
-                    doHandshake();
-                } //End block
-                break;
-                case ContentType.ALERT:
-                processAlert();
-                if(socket_was_closed)                
-                {
-                    return;
-                } //End block
-                break;
-                case ContentType.APPLICATION_DATA:
-                if(logger != null)                
-                {
-                    logger.println(
+                                .NOT_HANDSHAKING)) {
+                            // handshake protocol got addressed to it message
+                            // and did not ignore it, so it's a rehandshake
+                            doHandshake();
+                        }
+                        break;
+                    case ContentType.ALERT:
+                        processAlert();
+                        if (socket_was_closed) {
+                            return;
+                        }
+                        break;
+                    case ContentType.APPLICATION_DATA:
+                        if (logger != null) {
+                            logger.println(
                                     "SSLSocket.needAppData: got the data");
-                } //End block
-                break;
-                default:
-                reportFatalAlert(AlertProtocol.UNEXPECTED_MESSAGE,
+                        }
+                        break;
+                    default:
+                        // will throw exception
+                        reportFatalAlert(AlertProtocol.UNEXPECTED_MESSAGE,
                                 new SSLException("Unexpected message of type "
                                     + type + " has been got"));
-}                if(alertProtocol.hasAlert())                
-                {
+                }
+                if (alertProtocol.hasAlert()) {
+                    // warning alert occurred during wrap or unwrap
+                    // (note: fatal alert causes AlertException
+                    // to be thrown)
                     output.write(alertProtocol.wrap());
                     alertProtocol.setProcessed();
-                } //End block
-                if(socket_was_closed)                
-                {
+                }
+                if (socket_was_closed) {
                     appDataIS.setEnd();
                     return;
-                } //End block
-            } //End block
-        } //End block
-        catch (AlertException e)
-        {
+                }
+            }
+        } catch (AlertException e) {
+            // will throw exception
             reportFatalAlert(e.getDescriptionCode(), e.getReason());
-        } //End block
-        catch (EndOfSourceException e)
-        {
+        } catch (EndOfSourceException e) {
+            // end of socket's input stream has been reached
             appDataIS.setEnd();
-        } //End block
-        if(logger != null)        
-        {
+        }
+        if (logger != null) {
             logger.println("SSLSocket.needAppData: app data len: "
                     + appDataIS.available());
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        }
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.561 -0400", hash_original_method = "BD84CA3E70E7330B95C89C209BCE2D56", hash_generated_method = "FEB0CD9497014F7487B145C8E95167A5")
+    /**
+     * This method is called by SSLSocketOutputStream when a client application
+     * tries to send the data over ssl protocol.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.624 -0500", hash_original_method = "BD84CA3E70E7330B95C89C209BCE2D56", hash_generated_method = "73DFF748A323543548830A7D2DB94C80")
     protected void writeAppData(byte[] data, int offset, int len) throws IOException {
-        addTaint(len);
-        addTaint(offset);
-        addTaint(data[0]);
-        if(!handshake_started)        
-        {
+        if (!handshake_started) {
             startHandshake();
-        } //End block
-        if(logger != null)        
-        {
+        }
+        if (logger != null) {
             logger.println("SSLSocket.writeAppData: " +
                     len + " " + SSLRecordProtocol.MAX_DATA_LENGTH);
-        } //End block
-        try 
-        {
-            if(len < SSLRecordProtocol.MAX_DATA_LENGTH)            
-            {
+            //logger.println(new String(data, offset, len));
+        }
+        try {
+            if (len < SSLRecordProtocol.MAX_DATA_LENGTH) {
                 output.write(recordProtocol.wrap(ContentType.APPLICATION_DATA,
                             data, offset, len));
-            } //End block
-            else
-            {
-                while
-(len >= SSLRecordProtocol.MAX_DATA_LENGTH)                
-                {
+            } else {
+                while (len >= SSLRecordProtocol.MAX_DATA_LENGTH) {
                     output.write(recordProtocol.wrap(
                                 ContentType.APPLICATION_DATA, data, offset,
                                 SSLRecordProtocol.MAX_DATA_LENGTH));
                     offset += SSLRecordProtocol.MAX_DATA_LENGTH;
                     len -= SSLRecordProtocol.MAX_DATA_LENGTH;
-                } //End block
-                if(len > 0)                
-                {
+                }
+                if (len > 0) {
                     output.write(
                         recordProtocol.wrap(ContentType.APPLICATION_DATA,
                                             data, offset, len));
-                } //End block
-            } //End block
-        } //End block
-        catch (AlertException e)
-        {
+                }
+            }
+        } catch (AlertException e) {
+            // will throw exception
             reportFatalAlert(e.getDescriptionCode(), e.getReason());
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        }
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.562 -0400", hash_original_method = "B11A6FC07E880C42041746EA2FD3607A", hash_generated_method = "0890397EA3AC763A30A556831EB1CD54")
+    /*
+     * Performs handshake process over this connection. The handshake
+     * process is directed by the handshake status code provided by
+     * handshake protocol. If this status is NEED_WRAP, method retrieves
+     * handshake message from handshake protocol and sends it to another peer.
+     * If this status is NEED_UNWRAP, method receives and processes handshake
+     * message from another peer. Each of this stages (wrap/unwrap) change
+     * the state of handshake protocol and this process is performed
+     * until handshake status is FINISHED. After handshake process is finished
+     * handshake completed event are sent to the registered listeners.
+     * For more information about the handshake process see
+     * TLS v1 specification (http://www.ietf.org/rfc/rfc2246.txt) p 7.3.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.625 -0500", hash_original_method = "B11A6FC07E880C42041746EA2FD3607A", hash_generated_method = "B390D30128F47F32DFD6FAC34A8553D2")
     private void doHandshake() throws IOException {
         SSLEngineResult.HandshakeStatus status;
         int type;
-        try 
-        {
-            while
-(!(status = handshakeProtocol.getStatus()).equals(
-                        SSLEngineResult.HandshakeStatus.FINISHED))            
-            {
-                if(logger != null)                
-                {
+        try {
+            while (!(status = handshakeProtocol.getStatus()).equals(
+                        SSLEngineResult.HandshakeStatus.FINISHED)) {
+                if (logger != null) {
                     String s = (status.equals(
                                 SSLEngineResult.HandshakeStatus.NEED_WRAP))
                         ? "NEED_WRAP"
@@ -808,137 +731,121 @@ switch(type = recordProtocol.unwrap()){
                             ? "NEED_UNWRAP"
                             : "STATUS: OTHER!";
                     logger.println("SSLSocketImpl: HS status: "+s+" "+status);
-                } //End block
-                if(status.equals(SSLEngineResult.HandshakeStatus.NEED_WRAP))                
-                {
+                }
+                if (status.equals(SSLEngineResult.HandshakeStatus.NEED_WRAP)) {
                     output.write(handshakeProtocol.wrap());
-                } //End block
-                else
-                if(status.equals(
-                            SSLEngineResult.HandshakeStatus.NEED_UNWRAP))                
-                {
-switch(type = recordProtocol.unwrap()){
-                    case ContentType.HANDSHAKE:
-                    case ContentType.CHANGE_CIPHER_SPEC:
-                    break;
-                    case ContentType.APPLICATION_DATA:
-                    break;
-                    case ContentType.ALERT:
-                    processAlert();
-                    if(socket_was_closed)                    
-                    {
-                        return;
-                    } //End block
-                    break;
-                    default:
-                    reportFatalAlert(AlertProtocol.UNEXPECTED_MESSAGE,
+                } else if (status.equals(
+                            SSLEngineResult.HandshakeStatus.NEED_UNWRAP)) {
+                    // read and unwrap the record contained in the transport
+                    // input stream (SSLStreamedInput), pass it
+                    // to appropriate client protocol (alert, handshake, or app)
+                    // and retrieve the type of unwrapped data
+                    switch (type = recordProtocol.unwrap()) {
+                        case ContentType.HANDSHAKE:
+                        case ContentType.CHANGE_CIPHER_SPEC:
+                            break;
+                        case ContentType.APPLICATION_DATA:
+                            // So it's rehandshake and
+                            // if app data buffer will be overloaded
+                            // it will throw alert exception.
+                            // Probably we should count the number of
+                            // not handshaking data and make additional
+                            // constraints (do not expect buffer overflow).
+                            break;
+                        case ContentType.ALERT:
+                            processAlert();
+                            if (socket_was_closed) {
+                                return;
+                            }
+                            break;
+                        default:
+                            // will throw exception
+                            reportFatalAlert(AlertProtocol.UNEXPECTED_MESSAGE,
                                     new SSLException(
                                         "Unexpected message of type "
                                         + type + " has been got"));
-}
-                } //End block
-                else
-                {
+                    }
+                } else {
+                    // will throw exception
                     reportFatalAlert(AlertProtocol.INTERNAL_ERROR,
                         new SSLException(
                             "Handshake passed unexpected status: "+status));
-                } //End block
-                if(alertProtocol.hasAlert())                
-                {
+                }
+                if (alertProtocol.hasAlert()) {
+                    // warning alert occurred during wrap or unwrap
+                    // (note: fatal alert causes AlertException
+                    // to be thrown)
                     output.write(alertProtocol.wrap());
                     alertProtocol.setProcessed();
-                } //End block
-            } //End block
-        } //End block
-        catch (EndOfSourceException e)
-        {
+                }
+            }
+        } catch (EndOfSourceException e) {
             appDataIS.setEnd();
-            IOException var2C376D28D3F113EFF1565DB5EFCF58E6_1921412888 = new IOException("Connection was closed");
-            var2C376D28D3F113EFF1565DB5EFCF58E6_1921412888.addTaint(taint);
-            throw var2C376D28D3F113EFF1565DB5EFCF58E6_1921412888;
-        } //End block
-        catch (AlertException e)
-        {
+            throw new IOException("Connection was closed");
+        } catch (AlertException e) {
+            // will throw exception
             reportFatalAlert(e.getDescriptionCode(), e.getReason());
-        } //End block
+        }
+
         session = recordProtocol.getSession();
-        if(listeners != null)        
-        {
-            HandshakeCompletedEvent event = new HandshakeCompletedEvent(this, session);
+        if (listeners != null) {
+            // notify the listeners
+            HandshakeCompletedEvent event =
+                new HandshakeCompletedEvent(this, session);
             int size = listeners.size();
-for(int i=0;i<size;i++)
-            {
+            for (int i=0; i<size; i++) {
                 listeners.get(i)
                     .handshakeCompleted(event);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            }
+        }
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.562 -0400", hash_original_method = "1DCA961CD2F2BCD453967A97232AAFC6", hash_generated_method = "B3D04C5865EB60CA318C08AC4BF6AFC9")
+    /*
+     * Process received alert message
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.626 -0500", hash_original_method = "1DCA961CD2F2BCD453967A97232AAFC6", hash_generated_method = "A8B7062F8367F20FC4580E74BE3759BF")
     private void processAlert() throws IOException {
-        if(!alertProtocol.hasAlert())        
-        {
+        if (!alertProtocol.hasAlert()) {
             return;
-        } //End block
-        if(alertProtocol.isFatalAlert())        
-        {
+        }
+        if (alertProtocol.isFatalAlert()) {
             alertProtocol.setProcessed();
             String description = "Fatal alert received "
                 + alertProtocol.getAlertDescription();
             shutdown();
-            SSLException var30A4E97391385D7A4E772B8C367E9DCB_433962160 = new SSLException(description);
-            var30A4E97391385D7A4E772B8C367E9DCB_433962160.addTaint(taint);
-            throw var30A4E97391385D7A4E772B8C367E9DCB_433962160;
-        } //End block
-        if(logger != null)        
-        {
+            throw new SSLException(description);
+        }
+
+        if (logger != null) {
             logger.println("Warning alert received: "
                 + alertProtocol.getAlertDescription());
-        } //End block
-switch(alertProtocol.getDescriptionCode()){
-        case AlertProtocol.CLOSE_NOTIFY:
-        alertProtocol.setProcessed();
-        appDataIS.setEnd();
-        close();
-        return;
-        default:
-        alertProtocol.setProcessed();
-}
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        }
+        switch(alertProtocol.getDescriptionCode()) {
+            case AlertProtocol.CLOSE_NOTIFY:
+                alertProtocol.setProcessed();
+                appDataIS.setEnd();
+                close();
+                return;
+            default:
+                alertProtocol.setProcessed();
+            // TODO: process other warning messages
+        }
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.563 -0400", hash_original_method = "716B8ABB2A0B730F9297C2C81BE3F29D", hash_generated_method = "B93E3A59AAFB02D7ECF8E3BD24C7E8AD")
+    /*
+     * Sends fatal alert message and throws exception
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.627 -0500", hash_original_method = "716B8ABB2A0B730F9297C2C81BE3F29D", hash_generated_method = "6E69DEE0413F82146C20AEC1FA818168")
     private void reportFatalAlert(byte description_code,
             SSLException reason) throws IOException {
-        addTaint(reason.getTaint());
-        addTaint(description_code);
         alertProtocol.alert(AlertProtocol.FATAL, description_code);
-        try 
-        {
+        try {
+            // the output stream can be closed
             output.write(alertProtocol.wrap());
-        } //End block
-        catch (IOException ex)
-        {
-        } //End block
+        } catch (IOException ex) { }
         alertProtocol.setProcessed();
         shutdown();
-        reason.addTaint(taint);
         throw reason;
-        // ---------- Original Method ----------
-        //alertProtocol.alert(AlertProtocol.FATAL, description_code);
-        //try {
-            //output.write(alertProtocol.wrap());
-        //} catch (IOException ex) { }
-        //alertProtocol.setProcessed();
-        //shutdown();
-        //throw reason;
     }
 
     

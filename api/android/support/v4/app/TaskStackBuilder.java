@@ -1,6 +1,9 @@
 package android.support.v4.app;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
+import android.util.Log;
 import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -18,198 +21,121 @@ import android.support.v4.content.IntentCompat;
 
 
 public class TaskStackBuilder implements Iterable<Intent> {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.724 -0400", hash_original_field = "A18F378A1546FFE00B0A7F55021D9E9D", hash_generated_field = "FC01997BAF44874B9D67B78786DC6A66")
 
-    private final ArrayList<Intent> mIntents = new ArrayList<Intent>();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.724 -0400", hash_original_field = "EF160B1DFAE223EAE2323321493918B2", hash_generated_field = "F1E42593D394BEE701B8AB827039C816")
-
-    private Context mSourceContext;
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.725 -0400", hash_original_method = "D42A6E80ABDCC8C3AC78797ED9ABE957", hash_generated_method = "970E403029151A4E9DDC271056142D70")
-    private  TaskStackBuilder(Context a) {
-        mSourceContext = a;
-        // ---------- Original Method ----------
-        //mSourceContext = a;
-    }
-
-    
+    /**
+     * Return a new TaskStackBuilder for launching a fresh task stack consisting
+     * of a series of activities.
+     *
+     * @param context The context that will launch the new task stack or generate a PendingIntent
+     * @return A new TaskStackBuilder
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:39.009 -0500", hash_original_method = "5EAF1521C2FC3C641AB01A25ACC0D7FA", hash_generated_method = "36A24C7AA9DCA73D5B16B5D135D6E551")
     public static TaskStackBuilder from(Context context) {
         return new TaskStackBuilder(context);
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:39.000 -0500", hash_original_field = "9615892597CF6575F5AE338E32612C25", hash_generated_field = "F3040376D9C30112F08DC96CCA3958FF")
 
-    
-        @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.727 -0400", hash_original_method = "511DF8C4B67F5D7A80704A12F82C5852", hash_generated_method = "EA13594C539E5B4F8AF0AD65883B0556")
-    public TaskStackBuilder addNextIntent(Intent nextIntent) {
-        addTaint(nextIntent.getTaint());
-        mIntents.add(nextIntent);
-TaskStackBuilder var72A74007B2BE62B849F475C7BDA4658B_1520308198 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_1520308198.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_1520308198;
-        // ---------- Original Method ----------
-        //mIntents.add(nextIntent);
-        //return this;
+    private static final String TAG = "TaskStackBuilder";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:39.006 -0500", hash_original_field = "DD3D72FB3D8C9697701A72C43B04CE74", hash_generated_field = "8F241A3DA7B9032F5DEC6E91DB25C831")
+
+
+    private static  TaskStackBuilderImpl IMPL;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:39.007 -0500", hash_original_field = "8770BD76093914B97223896100B825B8", hash_generated_field = "FC01997BAF44874B9D67B78786DC6A66")
+
+
+    private final ArrayList<Intent> mIntents = new ArrayList<Intent>();
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:39.007 -0500", hash_original_field = "6422EBFFB4888C62FCF44F316AAE5124", hash_generated_field = "F1E42593D394BEE701B8AB827039C816")
+
+    private  Context mSourceContext;
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:39.008 -0500", hash_original_method = "D42A6E80ABDCC8C3AC78797ED9ABE957", hash_generated_method = "960C1FC90ECAD12565878A27908BE5B4")
+    private TaskStackBuilder(Context a) {
+        mSourceContext = a;
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.728 -0400", hash_original_method = "64FAA2AF3C5B6BB5695479EAC432B8AF", hash_generated_method = "85E5A3DBB6A1B19A122A8E317A971683")
+    /**
+     * Add a new Intent to the task stack. The most recently added Intent will invoke
+     * the Activity at the top of the final task stack.
+     *
+     * @param nextIntent Intent for the next Activity in the synthesized task stack
+     * @return This TaskStackBuilder for method chaining
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:39.010 -0500", hash_original_method = "511DF8C4B67F5D7A80704A12F82C5852", hash_generated_method = "7EFB3181C895615DF3364C75B837554F")
+    public TaskStackBuilder addNextIntent(Intent nextIntent) {
+        mIntents.add(nextIntent);
+        return this;
+    }
+
+    /**
+     * Add the activity parent chain as specified by manifest &lt;meta-data&gt; elements
+     * to the task stack builder.
+     *
+     * @param sourceActivity All parents of this activity will be added
+     * @return This TaskStackBuilder for method chaining
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:39.011 -0500", hash_original_method = "64FAA2AF3C5B6BB5695479EAC432B8AF", hash_generated_method = "0D04145620BE8C8A034B4162ADCAA24C")
     public TaskStackBuilder addParentStack(Activity sourceActivity) {
-        addTaint(sourceActivity.getTaint());
         final int insertAt = mIntents.size();
         Intent parent = NavUtils.getParentActivityIntent(sourceActivity);
-        while
-(parent != null)        
-        {
+        while (parent != null) {
             mIntents.add(insertAt, parent);
-            try 
-            {
+            try {
                 parent = NavUtils.getParentActivityIntent(sourceActivity, parent.getComponent());
-            } //End block
-            catch (NameNotFoundException e)
-            {
-                IllegalArgumentException varB5003C51895A632D49EB91E1ECEE1438_498364767 = new IllegalArgumentException(e);
-                varB5003C51895A632D49EB91E1ECEE1438_498364767.addTaint(taint);
-                throw varB5003C51895A632D49EB91E1ECEE1438_498364767;
-            } //End block
-        } //End block
-TaskStackBuilder var72A74007B2BE62B849F475C7BDA4658B_421680371 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_421680371.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_421680371;
-        // ---------- Original Method ----------
-        //final int insertAt = mIntents.size();
-        //Intent parent = NavUtils.getParentActivityIntent(sourceActivity);
-        //while (parent != null) {
-            //mIntents.add(insertAt, parent);
-            //try {
-                //parent = NavUtils.getParentActivityIntent(sourceActivity, parent.getComponent());
-            //} catch (NameNotFoundException e) {
-                //Log.e(TAG, "Bad ComponentName while traversing activity parent metadata");
-                //throw new IllegalArgumentException(e);
-            //}
-        //}
-        //return this;
+            } catch (NameNotFoundException e) {
+                Log.e(TAG, "Bad ComponentName while traversing activity parent metadata");
+                throw new IllegalArgumentException(e);
+            }
+        }
+        return this;
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.730 -0400", hash_original_method = "EC72BBC34AEA953E53BF47B67135BE6B", hash_generated_method = "765902822F55B29B20530E85183E70E5")
+    /**
+     * Add the activity parent chain as specified by manifest &lt;meta-data&gt; elements
+     * to the task stack builder.
+     *
+     * @param sourceActivityClass All parents of this activity will be added
+     * @return This TaskStackBuilder for method chaining
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:39.012 -0500", hash_original_method = "EC72BBC34AEA953E53BF47B67135BE6B", hash_generated_method = "3D9D64FA8CC90E2F6236386BAC7EF930")
     public TaskStackBuilder addParentStack(Class<?> sourceActivityClass) {
-        addTaint(sourceActivityClass.getTaint());
         final int insertAt = mIntents.size();
-        try 
-        {
+        try {
             Intent parent = NavUtils.getParentActivityIntent(mSourceContext, sourceActivityClass);
-            while
-(parent != null)            
-            {
+            while (parent != null) {
                 mIntents.add(insertAt, parent);
                 parent = NavUtils.getParentActivityIntent(mSourceContext, parent.getComponent());
-            } //End block
-        } //End block
-        catch (NameNotFoundException e)
-        {
-            IllegalArgumentException varB5003C51895A632D49EB91E1ECEE1438_127352888 = new IllegalArgumentException(e);
-            varB5003C51895A632D49EB91E1ECEE1438_127352888.addTaint(taint);
-            throw varB5003C51895A632D49EB91E1ECEE1438_127352888;
-        } //End block
-TaskStackBuilder var72A74007B2BE62B849F475C7BDA4658B_585343183 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_585343183.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_585343183;
-        // ---------- Original Method ----------
-        //final int insertAt = mIntents.size();
-        //try {
-            //Intent parent = NavUtils.getParentActivityIntent(mSourceContext, sourceActivityClass);
-            //while (parent != null) {
-                //mIntents.add(insertAt, parent);
-                //parent = NavUtils.getParentActivityIntent(mSourceContext, parent.getComponent());
-            //}
-        //} catch (NameNotFoundException e) {
-            //Log.e(TAG, "Bad ComponentName while traversing activity parent metadata");
-            //throw new IllegalArgumentException(e);
-        //}
-        //return this;
+            }
+        } catch (NameNotFoundException e) {
+            Log.e(TAG, "Bad ComponentName while traversing activity parent metadata");
+            throw new IllegalArgumentException(e);
+        }
+        return this;
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.731 -0400", hash_original_method = "660350E20C571F188D04D8C6E9BF83E3", hash_generated_method = "3A31320E1822EF11BB7813A98F000FC7")
+    /**
+     * @return the number of intents added so far.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:39.013 -0500", hash_original_method = "660350E20C571F188D04D8C6E9BF83E3", hash_generated_method = "59920B258A3BE41E352CF57B001DE9A4")
     public int getIntentCount() {
-        int varE259DDE2EAFE48E5D8266C32CA0C5CC8_596358320 = (mIntents.size());
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_678521379 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_678521379;
-        // ---------- Original Method ----------
-        //return mIntents.size();
+        return mIntents.size();
     }
 
-    
-        @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.731 -0400", hash_original_method = "59669D711935F600119486724ABE92DB", hash_generated_method = "B48C72B7E993A1D7F58727C96D395AD5")
+    /**
+     * Get the intent at the specified index.
+     * Useful if you need to modify the flags or extras of an intent that was previously added,
+     * for example with {@link #addParentStack(Activity)}.
+     *
+     * @param index Index from 0-getIntentCount()
+     * @return the intent at position index
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:39.014 -0500", hash_original_method = "59669D711935F600119486724ABE92DB", hash_generated_method = "93B676100E0B8CBB65C29ADC2D4AC91D")
     public Intent getIntent(int index) {
-        addTaint(index);
-Intent varB61F6019BB592036C72F58753E1878A1_1286399808 =         mIntents.get(index);
-        varB61F6019BB592036C72F58753E1878A1_1286399808.addTaint(taint);
-        return varB61F6019BB592036C72F58753E1878A1_1286399808;
-        // ---------- Original Method ----------
-        //return mIntents.get(index);
+        return mIntents.get(index);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.731 -0400", hash_original_method = "B488DB0CFE3181CA27664FEB9997F729", hash_generated_method = "D8F6EA01B1E20AFB63AD610896FA76DD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:39.014 -0500", hash_original_method = "B488DB0CFE3181CA27664FEB9997F729", hash_generated_method = "5B2219A8B58FC839EDD4448194BA2428")
     public Iterator<Intent> iterator() {
-Iterator<Intent> varDCE3F2C6DE8648EB944C31405F1E2F2B_1022652251 =         mIntents.iterator();
-        varDCE3F2C6DE8648EB944C31405F1E2F2B_1022652251.addTaint(taint);
-        return varDCE3F2C6DE8648EB944C31405F1E2F2B_1022652251;
-        // ---------- Original Method ----------
-        //return mIntents.iterator();
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.732 -0400", hash_original_method = "D781CF9790C14CBB070409FBBD053F79", hash_generated_method = "E0AB00BC9C782A766E1B36EAAF6FAD28")
-    public void startActivities() {
-        if(mIntents.isEmpty())        
-        {
-            IllegalStateException var025A81657BDAAD1A92F07EE376428737_995679621 = new IllegalStateException(
-                    "No intents added to TaskStackBuilder; cannot startActivities");
-            var025A81657BDAAD1A92F07EE376428737_995679621.addTaint(taint);
-            throw var025A81657BDAAD1A92F07EE376428737_995679621;
-        } //End block
-        Intent[] intents = mIntents.toArray(new Intent[mIntents.size()]);
-        intents[0].addFlags(Intent.FLAG_ACTIVITY_NEW_TASK |
-                IntentCompat.FLAG_ACTIVITY_CLEAR_TASK |
-                IntentCompat.FLAG_ACTIVITY_TASK_ON_HOME);
-        if(!ActivityCompat.startActivities((Activity) mSourceContext, intents))        
-        {
-            Intent topIntent = intents[intents.length - 1];
-            topIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            mSourceContext.startActivity(topIntent);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mIntents.isEmpty()) {
-            //throw new IllegalStateException(
-                    //"No intents added to TaskStackBuilder; cannot startActivities");
-        //}
-        //Intent[] intents = mIntents.toArray(new Intent[mIntents.size()]);
-        //intents[0].addFlags(Intent.FLAG_ACTIVITY_NEW_TASK |
-                //IntentCompat.FLAG_ACTIVITY_CLEAR_TASK |
-                //IntentCompat.FLAG_ACTIVITY_TASK_ON_HOME);
-        //if (!ActivityCompat.startActivities((Activity) mSourceContext, intents)) {
-            //Intent topIntent = intents[intents.length - 1];
-            //topIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            //mSourceContext.startActivity(topIntent);
-        //}
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.732 -0400", hash_original_method = "FE33C851237F987FCB25B803437FFC5D", hash_generated_method = "11B8D7501CB00877C66897B71417922E")
-    public PendingIntent getPendingIntent(int requestCode, int flags) {
-        addTaint(flags);
-        addTaint(requestCode);
-        Intent[] intents = mIntents.toArray(new Intent[mIntents.size()]);
-PendingIntent var8C66BCFAD345254529DBEC59C73D54DE_2056895776 =         IMPL.getPendingIntent(mSourceContext, intents, requestCode, flags);
-        var8C66BCFAD345254529DBEC59C73D54DE_2056895776.addTaint(taint);
-        return var8C66BCFAD345254529DBEC59C73D54DE_2056895776;
-        // ---------- Original Method ----------
-        //Intent[] intents = mIntents.toArray(new Intent[mIntents.size()]);
-        //return IMPL.getPendingIntent(mSourceContext, intents, requestCode, flags);
+        return mIntents.iterator();
     }
 
     
@@ -221,24 +147,12 @@ PendingIntent var8C66BCFAD345254529DBEC59C73D54DE_2056895776 =         IMPL.getP
         {
             //Synthesized constructor
         }
-
-
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.733 -0400", hash_original_method = "B2FA3A9517A56BFC6E40B46435E79D4C", hash_generated_method = "912289609A198AE4D9AFB118C3F6B67A")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:39.002 -0500", hash_original_method = "B2FA3A9517A56BFC6E40B46435E79D4C", hash_generated_method = "874E90D0C9C2D02902A78244B2E8BEDB")
         public PendingIntent getPendingIntent(Context context, Intent[] intents, int requestCode,
                 int flags) {
-            addTaint(flags);
-            addTaint(requestCode);
-            addTaint(intents[0].getTaint());
-            addTaint(context.getTaint());
             Intent topIntent = intents[intents.length - 1];
             topIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-PendingIntent var78B913836D3EA934C43638960253A32F_216802101 =             PendingIntent.getActivity(context, requestCode, topIntent, flags);
-            var78B913836D3EA934C43638960253A32F_216802101.addTaint(taint);
-            return var78B913836D3EA934C43638960253A32F_216802101;
-            // ---------- Original Method ----------
-            //Intent topIntent = intents[intents.length - 1];
-            //topIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            //return PendingIntent.getActivity(context, requestCode, topIntent, flags);
+            return PendingIntent.getActivity(context, requestCode, topIntent, flags);
         }
 
         
@@ -254,26 +168,13 @@ PendingIntent var78B913836D3EA934C43638960253A32F_216802101 =             Pendin
         {
             //Synthesized constructor
         }
-
-
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.733 -0400", hash_original_method = "E15EFF6820AC92E3F921DC4152866184", hash_generated_method = "AFCD67DE1F8A7798824A12945404DB5C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:39.004 -0500", hash_original_method = "E15EFF6820AC92E3F921DC4152866184", hash_generated_method = "68399BF5A5B57AB10155A7571AF4A28D")
         public PendingIntent getPendingIntent(Context context, Intent[] intents, int requestCode,
                 int flags) {
-            addTaint(flags);
-            addTaint(requestCode);
-            addTaint(intents[0].getTaint());
-            addTaint(context.getTaint());
             intents[0].addFlags(Intent.FLAG_ACTIVITY_NEW_TASK |
                     IntentCompat.FLAG_ACTIVITY_CLEAR_TASK);
-PendingIntent var2C930E320285304BFF0164FE1FA117C9_1183159211 =             TaskStackBuilderHoneycomb.getActivitiesPendingIntent(context, requestCode,
+            return TaskStackBuilderHoneycomb.getActivitiesPendingIntent(context, requestCode,
                     intents, flags);
-            var2C930E320285304BFF0164FE1FA117C9_1183159211.addTaint(taint);
-            return var2C930E320285304BFF0164FE1FA117C9_1183159211;
-            // ---------- Original Method ----------
-            //intents[0].addFlags(Intent.FLAG_ACTIVITY_NEW_TASK |
-                    //IntentCompat.FLAG_ACTIVITY_CLEAR_TASK);
-            //return TaskStackBuilderHoneycomb.getActivitiesPendingIntent(context, requestCode,
-                    //intents, flags);
         }
 
         
@@ -285,13 +186,49 @@ PendingIntent var2C930E320285304BFF0164FE1FA117C9_1183159211 =             TaskS
         PendingIntent getPendingIntent(Context context, Intent[] intents, int requestCode,
                 int flags);
     }
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.734 -0400", hash_original_field = "56ADC477100606C28EFD00360944C008", hash_generated_field = "F3040376D9C30112F08DC96CCA3958FF")
 
-    private static final String TAG = "TaskStackBuilder";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.734 -0400", hash_original_field = "27A9F92549363F04EF46148FE9E87EEE", hash_generated_field = "8F241A3DA7B9032F5DEC6E91DB25C831")
+    /**
+     * Start the task stack constructed by this builder. The Context used to obtain
+     * this builder must be an Activity.
+     *
+     * <p>On devices that do not support API level 11 or higher the topmost activity
+     * will be started as a new task. On devices that do support API level 11 or higher
+     * the new task stack will be created in its entirety.</p>
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:39.015 -0500", hash_original_method = "D781CF9790C14CBB070409FBBD053F79", hash_generated_method = "39528DB0780F73BB5F6CE9BFC8F4A9CB")
+    public void startActivities() {
+        if (mIntents.isEmpty()) {
+            throw new IllegalStateException(
+                    "No intents added to TaskStackBuilder; cannot startActivities");
+        }
 
-    private static TaskStackBuilderImpl IMPL;
+        Intent[] intents = mIntents.toArray(new Intent[mIntents.size()]);
+        intents[0].addFlags(Intent.FLAG_ACTIVITY_NEW_TASK |
+                IntentCompat.FLAG_ACTIVITY_CLEAR_TASK |
+                IntentCompat.FLAG_ACTIVITY_TASK_ON_HOME);
+        if (!ActivityCompat.startActivities((Activity) mSourceContext, intents)) {
+            Intent topIntent = intents[intents.length - 1];
+            topIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            mSourceContext.startActivity(topIntent);
+        }
+    }
+
+    /**
+     * Obtain a {@link PendingIntent} for launching the task constructed by this builder so far.
+     *
+     * @param requestCode Private request code for the sender
+     * @param flags May be {@link PendingIntent#FLAG_ONE_SHOT},
+     *              {@link PendingIntent#FLAG_NO_CREATE}, {@link PendingIntent#FLAG_CANCEL_CURRENT},
+     *              {@link PendingIntent#FLAG_UPDATE_CURRENT}, or any of the flags supported by
+     *              {@link Intent#fillIn(Intent, int)} to control which unspecified parts of the
+     *              intent that can be supplied when the actual send happens.
+     * @return The obtained PendingIntent
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:39.016 -0500", hash_original_method = "FE33C851237F987FCB25B803437FFC5D", hash_generated_method = "0A082087623AB090B12B8EB856C90EF0")
+    public PendingIntent getPendingIntent(int requestCode, int flags) {
+        Intent[] intents = mIntents.toArray(new Intent[mIntents.size()]);
+        return IMPL.getPendingIntent(mSourceContext, intents, requestCode, flags);
+    }
     static {
         if (Build.VERSION.SDK_INT >= 11) {
             IMPL = new TaskStackBuilderImplHoneycomb();

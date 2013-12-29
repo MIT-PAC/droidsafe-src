@@ -1,6 +1,8 @@
 package org.bouncycastle.asn1;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 import java.util.Enumeration;
@@ -10,105 +12,102 @@ import java.util.Enumeration;
 
 
 public class BERTaggedObject extends DERTaggedObject {
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.009 -0400", hash_original_method = "C31FB64F3B4373F22983AB0E8A924F45", hash_generated_method = "1BDFE6029FA7A9657F1B649820F56AC9")
-    public  BERTaggedObject(
+    /**
+     * @param tagNo the tag number for this object.
+     * @param obj the tagged object.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:55.509 -0500", hash_original_method = "C31FB64F3B4373F22983AB0E8A924F45", hash_generated_method = "231C96219E146238CAC8F275EC80286F")
+    public BERTaggedObject(
         int             tagNo,
-        DEREncodable    obj) {
+        DEREncodable    obj)
+    {
         super(tagNo, obj);
-        addTaint(obj.getTaint());
-        addTaint(tagNo);
-        // ---------- Original Method ----------
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.010 -0400", hash_original_method = "F5B7A80AD1A003D34ED6FD9BD184C1A3", hash_generated_method = "3CD1D05A7C82A6562BE1FCDE27C07862")
-    public  BERTaggedObject(
+    /**
+     * @param explicit true if an explicitly tagged object.
+     * @param tagNo the tag number for this object.
+     * @param obj the tagged object.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:55.510 -0500", hash_original_method = "F5B7A80AD1A003D34ED6FD9BD184C1A3", hash_generated_method = "741EF45117E7DB0D8CC373BD84C73EB0")
+    public BERTaggedObject(
         boolean         explicit,
         int             tagNo,
-        DEREncodable    obj) {
+        DEREncodable    obj)
+    {
         super(explicit, tagNo, obj);
-        addTaint(obj.getTaint());
-        addTaint(tagNo);
-        addTaint(explicit);
-        // ---------- Original Method ----------
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.010 -0400", hash_original_method = "6F574A26D6DB1C59B77D339A09CC5651", hash_generated_method = "EADAE545A6D448B2C6F1DC545BE8A8F7")
-    public  BERTaggedObject(
-        int             tagNo) {
+    /**
+     * create an implicitly tagged object that contains a zero
+     * length sequence.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:55.511 -0500", hash_original_method = "6F574A26D6DB1C59B77D339A09CC5651", hash_generated_method = "6E8D1564353F1F57F1DB4C1958DE215F")
+    public BERTaggedObject(
+        int             tagNo)
+    {
         super(false, tagNo, new BERSequence());
-        addTaint(tagNo);
-        // ---------- Original Method ----------
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.011 -0400", hash_original_method = "7D1415DBFEACA82B062C25744BEBEEC4", hash_generated_method = "A1F939B19639226DE058E590C3BE5148")
-     void encode(
-        DEROutputStream  out) throws IOException {
-        addTaint(out.getTaint());
-        if(out instanceof ASN1OutputStream || out instanceof BEROutputStream)        
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:55.512 -0500", hash_original_method = "7D1415DBFEACA82B062C25744BEBEEC4", hash_generated_method = "7D1415DBFEACA82B062C25744BEBEEC4")
+    void encode(
+        DEROutputStream  out)
+        throws IOException
+    {
+        if (out instanceof ASN1OutputStream || out instanceof BEROutputStream)
         {
             out.writeTag(CONSTRUCTED | TAGGED, tagNo);
             out.write(0x80);
-            if(!empty)            
+
+            if (!empty)
             {
-                if(!explicit)                
+                if (!explicit)
                 {
                     Enumeration e;
-                    if(obj instanceof ASN1OctetString)                    
+                    if (obj instanceof ASN1OctetString)
                     {
-                        if(obj instanceof BERConstructedOctetString)                        
+                        if (obj instanceof BERConstructedOctetString)
                         {
                             e = ((BERConstructedOctetString)obj).getObjects();
-                        } //End block
+                        }
                         else
                         {
-                            ASN1OctetString octs = (ASN1OctetString)obj;
-                            BERConstructedOctetString berO = new BERConstructedOctetString(octs.getOctets());
+                            ASN1OctetString             octs = (ASN1OctetString)obj;
+                            BERConstructedOctetString   berO = new BERConstructedOctetString(octs.getOctets());
                             e = berO.getObjects();
-                        } //End block
-                    } //End block
-                    else
-                    if(obj instanceof ASN1Sequence)                    
+                        }
+                    }
+                    else if (obj instanceof ASN1Sequence)
                     {
                         e = ((ASN1Sequence)obj).getObjects();
-                    } //End block
-                    else
-                    if(obj instanceof ASN1Set)                    
+                    }
+                    else if (obj instanceof ASN1Set)
                     {
                         e = ((ASN1Set)obj).getObjects();
-                    } //End block
+                    }
                     else
                     {
-                        RuntimeException var41BDC878CD450F8A941BC74FE9A368FD_1348884982 = new RuntimeException("not implemented: " + obj.getClass().getName());
-                        var41BDC878CD450F8A941BC74FE9A368FD_1348884982.addTaint(taint);
-                        throw var41BDC878CD450F8A941BC74FE9A368FD_1348884982;
-                    } //End block
-                    while
-(e.hasMoreElements())                    
+                        throw new RuntimeException("not implemented: " + obj.getClass().getName());
+                    }
+
+                    while (e.hasMoreElements())
                     {
                         out.writeObject(e.nextElement());
-                    } //End block
-                } //End block
+                    }
+                }
                 else
                 {
                     out.writeObject(obj);
-                } //End block
-            } //End block
+                }
+            }
+
             out.write(0x00);
             out.write(0x00);
-        } //End block
+        }
         else
         {
             super.encode(out);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        }
     }
 
     

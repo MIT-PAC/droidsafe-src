@@ -1,6 +1,8 @@
 package java.lang.ref;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
@@ -8,100 +10,93 @@ import droidsafe.annotations.*;
 
 
 public abstract class Reference<T> {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.777 -0400", hash_original_field = "D29936919A71C251BD3FFBF26B715559", hash_generated_field = "4AAE9C6A17BDEC3E1C4355B9D19EC64B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:27.483 -0500", hash_original_field = "4318A9541E288C0C1A2D1D7206659018", hash_generated_field = "4AAE9C6A17BDEC3E1C4355B9D19EC64B")
 
     volatile T referent;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.777 -0400", hash_original_field = "A9D1CBF71942327E98B40CF5EF38A960", hash_generated_field = "876EC5DE34F64F2FFD05BC63B899180C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:27.484 -0500", hash_original_field = "370473892E310BF90FE5C14926BBF212", hash_generated_field = "876EC5DE34F64F2FFD05BC63B899180C")
 
-    @SuppressWarnings("unchecked") volatile ReferenceQueue queue;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.777 -0400", hash_original_field = "4A527065891FEB6DF6B1C1D4B0722F5F", hash_generated_field = "E273209CA38C7634EA6E996A3D36090C")
+    @SuppressWarnings("unchecked")
+    volatile ReferenceQueue queue;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:27.485 -0500", hash_original_field = "7BA8922350D76294BFB21B8077C96609", hash_generated_field = "E273209CA38C7634EA6E996A3D36090C")
 
-    @SuppressWarnings("unchecked") volatile Reference queueNext;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.777 -0400", hash_original_field = "971222A4F4BF8E8C713B591BCDF16DAE", hash_generated_field = "4121E324E0F64E4E4F86F1B320B39449")
+    @SuppressWarnings("unchecked")
+    volatile Reference queueNext;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:27.486 -0500", hash_original_field = "50D6C3D8C4144911DEB3BC16FECCEB6E", hash_generated_field = "4121E324E0F64E4E4F86F1B320B39449")
 
     public volatile Reference<?> pendingNext;
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.777 -0400", hash_original_method = "6CD3D0843AA30F3B07C5B27C93AA8456", hash_generated_method = "D75FE998C2119926819E778AB344D99C")
-      Reference() {
-        // ---------- Original Method ----------
+
+    /**
+     * Constructs a new instance of this class.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:27.487 -0500", hash_original_method = "6CD3D0843AA30F3B07C5B27C93AA8456", hash_generated_method = "6CD3D0843AA30F3B07C5B27C93AA8456")
+    Reference() {
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.779 -0400", hash_original_method = "12DB2A62AB24EF0D8394447093A7278F", hash_generated_method = "1F8171BFBFE8E9A824D0014AFDF25AFB")
-        @DSModeled(DSC.SAFE)
-      Reference(T r, ReferenceQueue q) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:27.487 -0500", hash_original_method = "12DB2A62AB24EF0D8394447093A7278F", hash_generated_method = "12DB2A62AB24EF0D8394447093A7278F")
+    Reference(T r, ReferenceQueue q) {
         referent = r;
         queue = q;
-        // ---------- Original Method ----------
-        //referent = r;
-        //queue = q;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.780 -0400", hash_original_method = "0AFD16A0602732B7092274BEFFE68A69", hash_generated_method = "3CA142A05BF69F5A64895A936ECBE10C")
+    /**
+     * Makes the referent {@code null}. This does not force the reference
+     * object to be enqueued.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:27.488 -0500", hash_original_method = "0AFD16A0602732B7092274BEFFE68A69", hash_generated_method = "D22A9D70012ADAB162F6F2808D9E0BAF")
     public void clear() {
         referent = null;
-        // ---------- Original Method ----------
-        //referent = null;
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.781 -0400", hash_original_method = "26440EC338F5668042D20BF591B8B96C", hash_generated_method = "FF108BB461017778A89E95EC17F820D6")
+    /**
+     * Adds an object to its reference queue.
+     *
+     * @return {@code true} if this call has caused the {@code Reference} to
+     * become enqueued, or {@code false} otherwise
+     *
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:27.489 -0500", hash_original_method = "26440EC338F5668042D20BF591B8B96C", hash_generated_method = "2111DDCBAFE3A72FEA0F6335CF132654")
     public final synchronized boolean enqueueInternal() {
-        if(queue != null && queueNext == null)        
-        {
+        if (queue != null && queueNext == null) {
             queue.enqueue(this);
             queue = null;
-            boolean varB326B5062B2F0E69046810717534CB09_1266023674 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2058409777 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_2058409777;
-        } //End block
-        boolean var68934A3E9455FA72420237EB05902327_1356690884 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1117642752 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1117642752;
-        // ---------- Original Method ----------
-        //if (queue != null && queueNext == null) {
-            //queue.enqueue(this);
-            //queue = null;
-            //return true;
-        //}
-        //return false;
+            return true;
+        }
+        return false;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.782 -0400", hash_original_method = "D897CF322202613DC6CC465308B391E4", hash_generated_method = "E8F9295CF575329A276788B08C2D4579")
+    /**
+     * Forces the reference object to be enqueued if it has been associated with
+     * a queue.
+     *
+     * @return {@code true} if this call has caused the {@code Reference} to
+     * become enqueued, or {@code false} otherwise
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:27.490 -0500", hash_original_method = "D897CF322202613DC6CC465308B391E4", hash_generated_method = "5EF8DAFECFDD103332E8F810D33909CE")
     public boolean enqueue() {
-        boolean var2A596B0A93E26B39C6F48A0231BE12D9_211413213 = (enqueueInternal());
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2025085276 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2025085276;
-        // ---------- Original Method ----------
-        //return enqueueInternal();
+        return enqueueInternal();
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.782 -0400", hash_original_method = "3B05713F718010AF3C5E0D5C54D10077", hash_generated_method = "95C3BF0193C4A411074E298608C23A71")
-        @DSModeled(DSC.SAFE)
+    /**
+     * Returns the referent of the reference object.
+     *
+     * @return the referent to which reference refers, or {@code null} if the
+     *         object has been cleared.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:27.491 -0500", hash_original_method = "3B05713F718010AF3C5E0D5C54D10077", hash_generated_method = "4AFFE090F7B2D69F816896DB6BEE599A")
     public T get() {
-T var759DD485E78D2D3BF7BBC0941CAE41CB_325456527 =         referent;
-        var759DD485E78D2D3BF7BBC0941CAE41CB_325456527.addTaint(taint);
-        return var759DD485E78D2D3BF7BBC0941CAE41CB_325456527;
-        // ---------- Original Method ----------
-        //return referent;
+        return referent;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.783 -0400", hash_original_method = "22F3CCC310074C277F932626BFB7DCB6", hash_generated_method = "0D885B9726DB905E385F0EFC714382C0")
+    /**
+     * Checks whether the reference object has been enqueued.
+     *
+     * @return {@code true} if the {@code Reference} has been enqueued, {@code
+     *         false} otherwise
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:27.492 -0500", hash_original_method = "22F3CCC310074C277F932626BFB7DCB6", hash_generated_method = "FB8F80D156FCF2C6768C48826119B1E7")
     public boolean isEnqueued() {
-        boolean varF8F380FE3C977ED15D3C774688222A9E_1078774783 = (queueNext != null);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_533218263 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_533218263;
-        // ---------- Original Method ----------
-        //return queueNext != null;
+        return queueNext != null;
     }
 
     

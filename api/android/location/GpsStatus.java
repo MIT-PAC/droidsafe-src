@@ -1,6 +1,8 @@
 package android.location;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
@@ -11,10 +13,25 @@ import java.util.NoSuchElementException;
 
 
 public final class GpsStatus {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.139 -0400", hash_original_field = "FCBDFF9CD61B42CBD11DCD3DF89F6516", hash_generated_field = "78EE48E2F626F172C233CA900DAE1C08")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.291 -0500", hash_original_field = "49232C74E6665CFDA35F271FDDD12289", hash_generated_field = "9525E23D06AB56F41AB5F5DADBC87DF3")
+
+    private static final int NUM_SATELLITES = 255;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.302 -0500", hash_original_field = "B2BD451854A858ECA6BB0CB129DBC04D", hash_generated_field = "0ACD894DFE78BC1B9FEB64A231971868")
+
+    public static final int GPS_EVENT_STARTED = 1;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.303 -0500", hash_original_field = "DD1CE9CB6FF1321365DC21D47E2BDF38", hash_generated_field = "77513145C112B8A862D695A1610CD109")
+
+    public static final int GPS_EVENT_STOPPED = 2;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.304 -0500", hash_original_field = "861BEC2B37F211805F39E70431188772", hash_generated_field = "1FE0287016FA42F3CFE36BF2509A2AA6")
+
+    public static final int GPS_EVENT_FIRST_FIX = 3;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.305 -0500", hash_original_field = "F8E9C8527BCFA98F791FDF66D2E4C0E2", hash_generated_field = "39BADCF7553465D00B65E2D6552B3AC0")
+
+    public static final int GPS_EVENT_SATELLITE_STATUS = 4;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.292 -0500", hash_original_field = "4C0225BCBFE77DADB4ACC763901DBC6E", hash_generated_field = "78EE48E2F626F172C233CA900DAE1C08")
 
     private int mTimeToFirstFix;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.139 -0400", hash_original_field = "A2BCA55A95F3D934F880D67C8D810BFE", hash_generated_field = "EDAAB9E07CB6E2788A4305484F8C91B2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.293 -0500", hash_original_field = "9A8D2F3082A54EB138A2BB032DB781D7", hash_generated_field = "EDAAB9E07CB6E2788A4305484F8C91B2")
 
     private GpsSatellite mSatellites[] = new GpsSatellite[NUM_SATELLITES];
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.273 -0400", hash_original_field = "2DF85302EF31B22A6E1E6CB995BF0173", hash_generated_field = "4E2BE773D59F171305B1D8BC86C6191A")
@@ -33,45 +50,35 @@ public final class GpsStatus {
 
         
 };
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.139 -0400", hash_original_method = "8CEA7166A5DE76C7A3B19C2918198865", hash_generated_method = "22DF5116963BA369B5154DD021E43B3F")
-      GpsStatus() {
-for(int i = 0;i < mSatellites.length;i++)
-        {
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.307 -0500", hash_original_method = "8CEA7166A5DE76C7A3B19C2918198865", hash_generated_method = "8CEA7166A5DE76C7A3B19C2918198865")
+    GpsStatus() {
+        for (int i = 0; i < mSatellites.length; i++) {
             mSatellites[i] = new GpsSatellite(i + 1);
-        } //End block
-        // ---------- Original Method ----------
-        //for (int i = 0; i < mSatellites.length; i++) {
-            //mSatellites[i] = new GpsSatellite(i + 1);
-        //}
+        }
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.142 -0400", hash_original_method = "4D31391A39726BDC955321B1E3DBD71C", hash_generated_method = "A28F53ECC274DFA52ECD3C33E343ED71")
+    /**
+     * Used internally within {@link LocationManager} to copy GPS status
+     * data from the Location Manager Service to its cached GpsStatus instance.
+     * Is synchronized to ensure that GPS status updates are atomic.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.308 -0500", hash_original_method = "4D31391A39726BDC955321B1E3DBD71C", hash_generated_method = "939345E9FE09508EB9CD8225B2B6722A")
     synchronized void setStatus(int svCount, int[] prns, float[] snrs,
             float[] elevations, float[] azimuths, int ephemerisMask,
             int almanacMask, int usedInFixMask) {
-        addTaint(usedInFixMask);
-        addTaint(almanacMask);
-        addTaint(ephemerisMask);
-        addTaint(azimuths[0]);
-        addTaint(elevations[0]);
-        addTaint(snrs[0]);
-        addTaint(prns[0]);
-        addTaint(svCount);
         int i;
-for(i = 0;i < mSatellites.length;i++)
-        {
+
+        for (i = 0; i < mSatellites.length; i++) {
             mSatellites[i].mValid = false;
-        } //End block
-for(i = 0;i < svCount;i++)
-        {
+        }
+        
+        for (i = 0; i < svCount; i++) {
             int prn = prns[i] - 1;
             int prnShift = (1 << prn);
-            if(prn >= 0 && prn < mSatellites.length)            
-            {
+            if (prn >= 0 && prn < mSatellites.length) {
                 GpsSatellite satellite = mSatellites[prn];
+    
                 satellite.mValid = true;
                 satellite.mSnr = snrs[i];
                 satellite.mElevation = elevations[i];
@@ -79,165 +86,49 @@ for(i = 0;i < svCount;i++)
                 satellite.mHasEphemeris = ((ephemerisMask & prnShift) != 0);
                 satellite.mHasAlmanac = ((almanacMask & prnShift) != 0);
                 satellite.mUsedInFix = ((usedInFixMask & prnShift) != 0);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //int i;
-        //for (i = 0; i < mSatellites.length; i++) {
-            //mSatellites[i].mValid = false;
-        //}
-        //for (i = 0; i < svCount; i++) {
-            //int prn = prns[i] - 1;
-            //int prnShift = (1 << prn);
-            //if (prn >= 0 && prn < mSatellites.length) {
-                //GpsSatellite satellite = mSatellites[prn];
-                //satellite.mValid = true;
-                //satellite.mSnr = snrs[i];
-                //satellite.mElevation = elevations[i];
-                //satellite.mAzimuth = azimuths[i];
-                //satellite.mHasEphemeris = ((ephemerisMask & prnShift) != 0);
-                //satellite.mHasAlmanac = ((almanacMask & prnShift) != 0);
-                //satellite.mUsedInFix = ((usedInFixMask & prnShift) != 0);
-            //}
-        //}
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.143 -0400", hash_original_method = "C95E5E3E266CC24D44E0C8A907AC47BF", hash_generated_method = "215377E14F11A9BF427F6FF70BAF10D6")
-     void setStatus(GpsStatus status) {
-        mTimeToFirstFix = status.getTimeToFirstFix();
-for(int i = 0;i < mSatellites.length;i++)
-        {
-            mSatellites[i].setStatus(status.mSatellites[i]);
-        } //End block
-        // ---------- Original Method ----------
-        //mTimeToFirstFix = status.getTimeToFirstFix();
-        //for (int i = 0; i < mSatellites.length; i++) {
-            //mSatellites[i].setStatus(status.mSatellites[i]);
-        //}
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.144 -0400", hash_original_method = "DB9D2F6104F17C34589316947F2A601E", hash_generated_method = "67EFC13BBD63DDF4ED5824FCE6033C6E")
-     void setTimeToFirstFix(int ttff) {
-        mTimeToFirstFix = ttff;
-        // ---------- Original Method ----------
-        //mTimeToFirstFix = ttff;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.145 -0400", hash_original_method = "75FBD0BC51265BCFA2480910110E8F36", hash_generated_method = "83A9A11FE7E64F2B81B1FB2E8664977F")
-    public int getTimeToFirstFix() {
-        int varFCBDFF9CD61B42CBD11DCD3DF89F6516_279394931 = (mTimeToFirstFix);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_400137868 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_400137868;
-        // ---------- Original Method ----------
-        //return mTimeToFirstFix;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.145 -0400", hash_original_method = "8623867703A7BB23EDE8EB2AB29E2B88", hash_generated_method = "8894DDB6A8736A3475E4044E6EB183B5")
-    public Iterable<GpsSatellite> getSatellites() {
-Iterable<GpsSatellite> varE7F4188585FE55A58108466B6F8F81B3_1596348753 =         mSatelliteList;
-        varE7F4188585FE55A58108466B6F8F81B3_1596348753.addTaint(taint);
-        return varE7F4188585FE55A58108466B6F8F81B3_1596348753;
-        // ---------- Original Method ----------
-        //return mSatelliteList;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.146 -0400", hash_original_method = "30B567DEF49ED207BED02E25B8D7701A", hash_generated_method = "6531A05D8C87FE32D172910D5BE453B2")
-    public int getMaxSatellites() {
-        int varE993D75990E944E225140A81B1DBF272_247134050 = (NUM_SATELLITES);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1894938944 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1894938944;
-        // ---------- Original Method ----------
-        //return NUM_SATELLITES;
+            }
+        }
     }
 
     
     private final class SatelliteIterator implements Iterator<GpsSatellite> {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.146 -0400", hash_original_field = "88C97CD32989A16088F0DB4AC1E50574", hash_generated_field = "A2118CDC10EB9E5F1F9C0A975C1188EF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.294 -0500", hash_original_field = "6B49F34EB8B8F48FA910BB6FA923837E", hash_generated_field = "A2118CDC10EB9E5F1F9C0A975C1188EF")
+
 
         private GpsSatellite[] mSatellites;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.146 -0400", hash_original_field = "7DCDB6E9F0938C4952C91E77FC09D32F", hash_generated_field = "53702B6348E11EAA55A0AB4A37AFE1D9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.294 -0500", hash_original_field = "53702B6348E11EAA55A0AB4A37AFE1D9", hash_generated_field = "53702B6348E11EAA55A0AB4A37AFE1D9")
 
         int mIndex = 0;
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.146 -0400", hash_original_method = "AEF39F6B14389CFD613D955A0F70C3EF", hash_generated_method = "28BB9F681E40E1A19CFE5F015D2B2BB4")
-          SatelliteIterator(GpsSatellite[] satellites) {
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.296 -0500", hash_original_method = "AEF39F6B14389CFD613D955A0F70C3EF", hash_generated_method = "AEF39F6B14389CFD613D955A0F70C3EF")
+        SatelliteIterator(GpsSatellite[] satellites) {
             mSatellites = satellites;
-            // ---------- Original Method ----------
-            //mSatellites = satellites;
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.148 -0400", hash_original_method = "280A0F6C9C24DB057056B6AC4648E027", hash_generated_method = "DDFDB7794779DFEA8ABBFB14BD36EEB3")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.297 -0500", hash_original_method = "280A0F6C9C24DB057056B6AC4648E027", hash_generated_method = "811B00FC3009841CCEA0A6635DB73856")
         public boolean hasNext() {
-for(int i = mIndex;i < mSatellites.length;i++)
-            {
-                if(mSatellites[i].mValid)                
-                {
-                    boolean varB326B5062B2F0E69046810717534CB09_1658654105 = (true);
-                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1523772193 = getTaintBoolean();
-                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_1523772193;
-                } //End block
-            } //End block
-            boolean var68934A3E9455FA72420237EB05902327_1183072871 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_659918271 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_659918271;
-            // ---------- Original Method ----------
-            //for (int i = mIndex; i < mSatellites.length; i++) {
-                //if (mSatellites[i].mValid) {
-                    //return true;
-                //}
-            //}
-            //return false;
+            for (int i = mIndex; i < mSatellites.length; i++) {
+                if (mSatellites[i].mValid) {
+                    return true;
+                }
+            }
+            return false;
         }
 
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.150 -0400", hash_original_method = "2172205C4F18481DAEA9224F778B255B", hash_generated_method = "CE86E1477FE66DEAEB111AABD1FDFAD7")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.298 -0500", hash_original_method = "2172205C4F18481DAEA9224F778B255B", hash_generated_method = "2C1DF6EA0F9B5DEC0C764AC4E9064B18")
         public GpsSatellite next() {
-            while
-(mIndex < mSatellites.length)            
-            {
+            while (mIndex < mSatellites.length) {
                 GpsSatellite satellite = mSatellites[mIndex++];
-                if(satellite.mValid)                
-                {
-GpsSatellite var8CA29B14779F45CBE6C9A07E84A36A9D_112372875 =                     satellite;
-                    var8CA29B14779F45CBE6C9A07E84A36A9D_112372875.addTaint(taint);
-                    return var8CA29B14779F45CBE6C9A07E84A36A9D_112372875;
-                } //End block
-            } //End block
-            NoSuchElementException var28D00AB599969908D71F102AF992D49A_991324612 = new NoSuchElementException();
-            var28D00AB599969908D71F102AF992D49A_991324612.addTaint(taint);
-            throw var28D00AB599969908D71F102AF992D49A_991324612;
-            // ---------- Original Method ----------
-            //while (mIndex < mSatellites.length) {
-                //GpsSatellite satellite = mSatellites[mIndex++];
-                //if (satellite.mValid) {
-                    //return satellite;
-                //}
-            //}
-            //throw new NoSuchElementException();
+                if (satellite.mValid) {
+                    return satellite;
+                }
+            }
+            throw new NoSuchElementException();
         }
 
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.151 -0400", hash_original_method = "89C642158183FED064530A14F092CD81", hash_generated_method = "CA5F1F4803F67020FF6133F9DACD5199")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.299 -0500", hash_original_method = "89C642158183FED064530A14F092CD81", hash_generated_method = "5B2A4852FF2684177E07742561C615C2")
         public void remove() {
-            UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_2000569704 = new UnsupportedOperationException();
-            var81FA7E299EEE7F062EBFBEEF08B0464D_2000569704.addTaint(taint);
-            throw var81FA7E299EEE7F062EBFBEEF08B0464D_2000569704;
-            // ---------- Original Method ----------
-            //throw new UnsupportedOperationException();
+            throw new UnsupportedOperationException();
         }
 
         
@@ -253,21 +144,58 @@ GpsSatellite var8CA29B14779F45CBE6C9A07E84A36A9D_112372875 =                    
     public interface NmeaListener {
         void onNmeaReceived(long timestamp, String nmea);
     }
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.151 -0400", hash_original_field = "2E8AA964AF15D6665ED20B4D67DC09A9", hash_generated_field = "9525E23D06AB56F41AB5F5DADBC87DF3")
 
-    private static final int NUM_SATELLITES = 255;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.151 -0400", hash_original_field = "6383B07DD1A466DFDCEDBAB8793344CA", hash_generated_field = "0ACD894DFE78BC1B9FEB64A231971868")
+    /**
+     * Used by {@link LocationManager#getGpsStatus} to copy LocationManager's
+     * cached GpsStatus instance to the client's copy.
+     * Since this method is only used within {@link LocationManager#getGpsStatus},
+     * it does not need to be synchronized.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.309 -0500", hash_original_method = "C95E5E3E266CC24D44E0C8A907AC47BF", hash_generated_method = "C95E5E3E266CC24D44E0C8A907AC47BF")
+    void setStatus(GpsStatus status) {
+        mTimeToFirstFix = status.getTimeToFirstFix();
 
-    public static final int GPS_EVENT_STARTED = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.151 -0400", hash_original_field = "5D412DB8B861E276B1B98F2FA20F9062", hash_generated_field = "77513145C112B8A862D695A1610CD109")
+        for (int i = 0; i < mSatellites.length; i++) {
+            mSatellites[i].setStatus(status.mSatellites[i]);
+        } 
+    }
 
-    public static final int GPS_EVENT_STOPPED = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.151 -0400", hash_original_field = "7E53017A9B3BE35D871DD5C1A55A397E", hash_generated_field = "1FE0287016FA42F3CFE36BF2509A2AA6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.310 -0500", hash_original_method = "DB9D2F6104F17C34589316947F2A601E", hash_generated_method = "DB9D2F6104F17C34589316947F2A601E")
+    void setTimeToFirstFix(int ttff) {
+        mTimeToFirstFix = ttff;
+    }
 
-    public static final int GPS_EVENT_FIRST_FIX = 3;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.152 -0400", hash_original_field = "5434F9B2BF87B95481BF5BC0BF04790B", hash_generated_field = "39BADCF7553465D00B65E2D6552B3AC0")
+    /**
+     * Returns the time required to receive the first fix since the most recent 
+     * restart of the GPS engine.
+     *
+     * @return time to first fix in milliseconds
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.311 -0500", hash_original_method = "75FBD0BC51265BCFA2480910110E8F36", hash_generated_method = "30B430B55C77B02A9FBB5B23D6213947")
+    public int getTimeToFirstFix() {
+        return mTimeToFirstFix;
+    }
 
-    public static final int GPS_EVENT_SATELLITE_STATUS = 4;
+    /**
+     * Returns an array of {@link GpsSatellite} objects, which represent the
+     * current state of the GPS engine.
+     *
+     * @return the list of satellites
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.311 -0500", hash_original_method = "8623867703A7BB23EDE8EB2AB29E2B88", hash_generated_method = "C088CB919884494187C652A2575B61CC")
+    public Iterable<GpsSatellite> getSatellites() {
+        return mSatelliteList;
+    }
+
+    /**
+     * Returns the maximum number of satellites that can be in the satellite
+     * list that can be returned by {@link #getSatellites()}.
+     *
+     * @return the maximum number of satellites
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.312 -0500", hash_original_method = "30B567DEF49ED207BED02E25B8D7701A", hash_generated_method = "0F1BF08BACC5EBC7335C7957322E860B")
+    public int getMaxSatellites() {
+        return NUM_SATELLITES;
+    }
 }
 

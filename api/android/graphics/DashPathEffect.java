@@ -1,6 +1,8 @@
 package android.graphics;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
@@ -8,29 +10,32 @@ import droidsafe.annotations.*;
 import droidsafe.helpers.DSUtils;
 
 public class DashPathEffect extends PathEffect {
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.198 -0400", hash_original_method = "302355CEB1EDA8CF763D5137DB0E93A1", hash_generated_method = "CF8DD8A22C8DC0BFD29E11C5C35E224C")
-    public  DashPathEffect(float intervals[], float phase) {
-        addTaint(phase);
-        addTaint(intervals[0]);
-        if(intervals.length < 2)        
-        {
-            ArrayIndexOutOfBoundsException var37DB57B1FEB1C9FBA644A093BFA8B678_1232739038 = new ArrayIndexOutOfBoundsException();
-            var37DB57B1FEB1C9FBA644A093BFA8B678_1232739038.addTaint(taint);
-            throw var37DB57B1FEB1C9FBA644A093BFA8B678_1232739038;
-        } //End block
-        native_instance = nativeCreate(intervals, phase);
-        // ---------- Original Method ----------
-        //if (intervals.length < 2) {
-            //throw new ArrayIndexOutOfBoundsException();
-        //}
-        //native_instance = nativeCreate(intervals, phase);
-    }
 
     
     @DSModeled(DSC.SPEC)
     private static int nativeCreate(float intervals[], float phase) {
         return DSUtils.UNKNOWN_INT;
+    }
+
+    /**
+     * The intervals array must contain an even number of entries (>=2), with
+     * the even indices specifying the "on" intervals, and the odd indices
+     * specifying the "off" intervals. phase is an offset into the intervals
+     * array (mod the sum of all of the intervals). The intervals array
+     * controls the length of the dashes. The paint's strokeWidth controls the
+     * thickness of the dashes.
+     * Note: this patheffect only affects drawing with the paint's style is set
+     * to STROKE or STROKE_AND_FILL. It is ignored if the drawing is done with
+     * style == FILL.
+     * @param intervals array of ON and OFF distances
+     * @param phase offset into the intervals array
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:49.463 -0500", hash_original_method = "302355CEB1EDA8CF763D5137DB0E93A1", hash_generated_method = "3D66E37A69227B620BE1EC89EE565D3E")
+    public DashPathEffect(float intervals[], float phase) {
+        if (intervals.length < 2) {
+            throw new ArrayIndexOutOfBoundsException();
+        }
+        native_instance = nativeCreate(intervals, phase);
     }
 
     

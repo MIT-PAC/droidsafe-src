@@ -1,6 +1,8 @@
 package android.media;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
@@ -9,18 +11,8 @@ import droidsafe.annotations.*;
 import droidsafe.helpers.DSUtils;
 
 public class AudioSystem {
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.078 -0400", hash_original_method = "54895CB2BF1D5A08CFD79D31582209F6", hash_generated_method = "54895CB2BF1D5A08CFD79D31582209F6")
-    public AudioSystem ()
-    {
-        //Synthesized constructor
-    }
-
-
-    @DSModeled(DSC.BAN)
-    public static final int getNumStreamTypes() {
-        return NUM_STREAM_TYPES;
-    }
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.370 -0500", hash_original_method = "2786D5971392BD395FA0BE76E8A7A088", hash_generated_method = "1E0EA87DE076318BBA62FD552AF198AF")
+    public static final int getNumStreamTypes() { return NUM_STREAM_TYPES; }
 
     
     @DSModeled(DSC.SAFE)
@@ -56,17 +48,26 @@ public class AudioSystem {
     	return new String();
     }
 
-    
-    public static void setErrorCallback(ErrorCallback cb) {
+    /*
+     * Registers a callback to be invoked when an error occurs.
+     * @param cb the callback to run
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.395 -0500", hash_original_method = "E189F7630680D99C2D21D38897424B6B", hash_generated_method = "6D9186B1DF2B6D27035DF19CE1A4D285")
+    public static void setErrorCallback(ErrorCallback cb)
+    {
         synchronized (AudioSystem.class) {
             mErrorCallback = cb;
         }
+        // Calling a method on AudioFlinger here makes sure that we bind to IAudioFlinger
+        // binder interface death. Not doing that would result in not being notified of
+        // media_server process death if no other method is called on AudioSystem that reaches
+        // to AudioFlinger.
         isMicrophoneMuted();
     }
 
-    
-    @DSModeled(DSC.BAN)
-    private static void errorCallbackFromNative(int error) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.396 -0500", hash_original_method = "973BE0015415252B34DA0228955CD5FD", hash_generated_method = "FDAAE420C8896F6DDF7FA17E9F3B29FD")
+    private static void errorCallbackFromNative(int error)
+    {
         ErrorCallback errorCallback = null;
         synchronized (AudioSystem.class) {
             if (mErrorCallback != null) {
@@ -147,6 +148,14 @@ public class AudioSystem {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_65095384 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_65095384;
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:33:21.086 -0500", hash_original_field = "A6B9CAE819C8928B0B4F12E0E2A67209", hash_generated_field = "510AC64E3D8878D1E4E4A84AF2CB48F5")
+
+    /*
+     * If these are modified, please also update Settings.System.VOLUME_SETTINGS
+     * and attrs.xml and AudioManager.java.
+     */
+    /* The audio stream for phone calls */
+    public static final int STREAM_VOICE_CALL = 0;
 
     
     public interface ErrorCallback
@@ -154,234 +163,241 @@ public class AudioSystem {
         
         void onError(int error);
     }
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.080 -0400", hash_original_field = "20E6A513D498351194B1625ED7B6BF0A", hash_generated_field = "C711B92ACD8ED25A60574B5621E8FA1F")
-
-    public static final int STREAM_VOICE_CALL = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.080 -0400", hash_original_field = "1DBBF074DE7E28716842E0B41A087200", hash_generated_field = "CF5F7FF83468A22B18D53E798BDAD312")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.360 -0500", hash_original_field = "6311951090DC1223C48D9C5DB55C8FFD", hash_generated_field = "CF5F7FF83468A22B18D53E798BDAD312")
 
     public static final int STREAM_SYSTEM = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.080 -0400", hash_original_field = "2AC4F49FE4AEB812DF4E272F5CB22197", hash_generated_field = "4F486983B65A65E525B7A932F8DF9CC0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.361 -0500", hash_original_field = "66A484CD0EA55F726655E1629B5C3EA7", hash_generated_field = "4F486983B65A65E525B7A932F8DF9CC0")
 
     public static final int STREAM_RING = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.080 -0400", hash_original_field = "24374D1611CDFE009B319C80160A8BF4", hash_generated_field = "69F4A368501E64D6CAD9F12A3845AD27")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.362 -0500", hash_original_field = "8A37DA3E4E40BCD980849A7B950B6EF6", hash_generated_field = "69F4A368501E64D6CAD9F12A3845AD27")
 
     public static final int STREAM_MUSIC = 3;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.080 -0400", hash_original_field = "E75BF42E3ED726CB5A530DD7C4E6D107", hash_generated_field = "7E7D6F55FF3EF182D4BDE09F3A251DAD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.363 -0500", hash_original_field = "26D1528B9A9C081F09666AC97B46C939", hash_generated_field = "7E7D6F55FF3EF182D4BDE09F3A251DAD")
 
     public static final int STREAM_ALARM = 4;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.080 -0400", hash_original_field = "08311EBB93566B11B953690C209299C0", hash_generated_field = "C46A8EB1C212D9F7873518917272CA27")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.364 -0500", hash_original_field = "541BC752E680A49E80E58AB343C92AAA", hash_generated_field = "C46A8EB1C212D9F7873518917272CA27")
 
     public static final int STREAM_NOTIFICATION = 5;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.080 -0400", hash_original_field = "81C74AF89BC8AE5B5DC9A75045B4961A", hash_generated_field = "13C7B8943EE135FAF6DEA536DD992F3E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.365 -0500", hash_original_field = "717331D94737B7D37B056BBFEEF116F8", hash_generated_field = "13C7B8943EE135FAF6DEA536DD992F3E")
 
     public static final int STREAM_BLUETOOTH_SCO = 6;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.080 -0400", hash_original_field = "F807973E45D9613A7B59D197A4310E21", hash_generated_field = "9D8D93FACA8D7E05C8360BB2BE26342C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.366 -0500", hash_original_field = "39894F86231C1193EFA87C236D3ED3CC", hash_generated_field = "9D8D93FACA8D7E05C8360BB2BE26342C")
 
     public static final int STREAM_SYSTEM_ENFORCED = 7;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.080 -0400", hash_original_field = "1455C86426A205B10DD26D245D013C6A", hash_generated_field = "97A3B968F12F88051CD79CD800292953")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.367 -0500", hash_original_field = "104CBA10B0E4D6772D29B644555B04FA", hash_generated_field = "97A3B968F12F88051CD79CD800292953")
 
     public static final int STREAM_DTMF = 8;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.080 -0400", hash_original_field = "2FF3C9C30371F58BE5DD9D706D822FA7", hash_generated_field = "F9B2A6886F769385637216CF80DF08B2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.368 -0500", hash_original_field = "BBEBD5ED2FA39C29EEFA896444E8706F", hash_generated_field = "F9B2A6886F769385637216CF80DF08B2")
 
     public static final int STREAM_TTS = 9;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.080 -0400", hash_original_field = "1B2504C154D3AA15109BC6DCF4533924", hash_generated_field = "A9324FF4B2DECA628AE162ED36D5EF46")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.368 -0500", hash_original_field = "8494C3521F9EDE0A7B570D8C17895A02", hash_generated_field = "A9324FF4B2DECA628AE162ED36D5EF46")
 
     public static final int NUM_STREAMS = 5;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.080 -0400", hash_original_field = "F839AAAE8BAEF7F14075D4BE2001630B", hash_generated_field = "8F386D54707ED4C650141F8C123BDAEB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.369 -0500", hash_original_field = "B0FC1BFF5F2FC6B50982F73473F964FE", hash_generated_field = "8F386D54707ED4C650141F8C123BDAEB")
 
     private static final int NUM_STREAM_TYPES = 10;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.080 -0400", hash_original_field = "6421090994C51E127E9DAA63D907A21B", hash_generated_field = "CB067CE0D78DA21EC3ABE4A682836FE3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.374 -0500", hash_original_field = "04DD491B7A0EB1D0D633FA69AFF9D9D0", hash_generated_field = "CB067CE0D78DA21EC3ABE4A682836FE3")
 
     public static final int MODE_INVALID            = -2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.080 -0400", hash_original_field = "8182ED3B5E6DADE429D9F305A4CEF968", hash_generated_field = "D41F10CDEE8C2D10D2C446365D07A27B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.374 -0500", hash_original_field = "C698C851E3A2D5D82F900FE75BE06F47", hash_generated_field = "D41F10CDEE8C2D10D2C446365D07A27B")
 
     public static final int MODE_CURRENT            = -1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.080 -0400", hash_original_field = "E418210C7EF9D38349B407A10538481B", hash_generated_field = "3DEED3F3E236ECDEF49ABC73C5FEF55B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.375 -0500", hash_original_field = "A65A69A2ACF32E03502670189C23328B", hash_generated_field = "3DEED3F3E236ECDEF49ABC73C5FEF55B")
 
     public static final int MODE_NORMAL             = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.080 -0400", hash_original_field = "6B9BFFAEBF333BBCED03B7DEB399F6B1", hash_generated_field = "9985A2DD579C49F7C4B3A0AD7B9DBD3B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.376 -0500", hash_original_field = "73A3C665634B11C310E8F92DB1AC30B3", hash_generated_field = "9985A2DD579C49F7C4B3A0AD7B9DBD3B")
 
     public static final int MODE_RINGTONE           = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.080 -0400", hash_original_field = "833280C5205ECE3E44B45719371EA388", hash_generated_field = "C2828592B3FF5DD54A87BF70C5A4C46F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.377 -0500", hash_original_field = "30406B8C4E8BCC3CE5FE0805308D0D29", hash_generated_field = "C2828592B3FF5DD54A87BF70C5A4C46F")
 
     public static final int MODE_IN_CALL            = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.080 -0400", hash_original_field = "F35B09D4E77F70BAFE6D3496FBEBCDEA", hash_generated_field = "ECF0DB42CAA5DAF63E9DFA4CBAC7614E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.378 -0500", hash_original_field = "1004ACE4A444735AB5DF1B3ACF217669", hash_generated_field = "ECF0DB42CAA5DAF63E9DFA4CBAC7614E")
 
     public static final int MODE_IN_COMMUNICATION   = 3;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.080 -0400", hash_original_field = "DE244EACAC3BF0609947360AFFB7E0D7", hash_generated_field = "E43E869A6DF34F8030C98810E0594860")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.379 -0500", hash_original_field = "A416BE7061C70F02D4CACE24895DE8CF", hash_generated_field = "E43E869A6DF34F8030C98810E0594860")
 
     public static final int NUM_MODES               = 4;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.080 -0400", hash_original_field = "21182D75CAEA416BBDB65E028EF3A213", hash_generated_field = "6CD4EAA0583022B5698209C850009A94")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:33:21.109 -0500", hash_original_field = "29C9942B131694ED48379FCECB0218AB", hash_generated_field = "CFBC07A8F47B8971AFB8CA6CF232C62B")
 
+    /** @deprecated */
     @Deprecated public static final int ROUTE_EARPIECE          = (1 << 0);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.080 -0400", hash_original_field = "4B22F2DDCEB9905D956883980A9A17F6", hash_generated_field = "81D76342551CC40C5088F0176B2EFFC3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.381 -0500", hash_original_field = "1E2CE710DD1F493C9FDC68618BD2E4FD", hash_generated_field = "81D76342551CC40C5088F0176B2EFFC3")
 
     @Deprecated public static final int ROUTE_SPEAKER           = (1 << 1);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.080 -0400", hash_original_field = "C5696A719F6DB8761D5BB9C3131933EC", hash_generated_field = "92640DFBB885F024C9E35666F8ACBF77")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.382 -0500", hash_original_field = "5D7F761BACFF2D0C5DB88BF0FBC9FF02", hash_generated_field = "92640DFBB885F024C9E35666F8ACBF77")
 
     @Deprecated public static final int ROUTE_BLUETOOTH = (1 << 2);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.081 -0400", hash_original_field = "8904D2796ED4D6D15F705C8EE2AA5CAF", hash_generated_field = "E17B661970D4FCF610648776E3AEBA2F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.383 -0500", hash_original_field = "BB730BFBE5D93D83976ACFF9F3D00B9B", hash_generated_field = "E17B661970D4FCF610648776E3AEBA2F")
 
     @Deprecated public static final int ROUTE_BLUETOOTH_SCO     = (1 << 2);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.081 -0400", hash_original_field = "EA2FBAAB435BCF472C7DDB418404BE78", hash_generated_field = "FE7E21C259F1770DBA90F9A18273644B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.384 -0500", hash_original_field = "58986152F1132A6A091681824D5A3495", hash_generated_field = "FE7E21C259F1770DBA90F9A18273644B")
 
     @Deprecated public static final int ROUTE_HEADSET           = (1 << 3);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.081 -0400", hash_original_field = "4D1931926E9A64C8FC464865B2318668", hash_generated_field = "D221147BDF20A36B0E8E24EC704288D5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.385 -0500", hash_original_field = "F034942BEABF0F98EE70860EE38B9243", hash_generated_field = "D221147BDF20A36B0E8E24EC704288D5")
 
     @Deprecated public static final int ROUTE_BLUETOOTH_A2DP    = (1 << 4);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.081 -0400", hash_original_field = "ED92FB12BFE48C4E0DEF30B0543C0A84", hash_generated_field = "567C69A932118D9385BAE9BE40E086BB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.386 -0500", hash_original_field = "5FF5ADA052864312ACC7FF0C16600434", hash_generated_field = "567C69A932118D9385BAE9BE40E086BB")
 
     @Deprecated public static final int ROUTE_ALL               = 0xFFFFFFFF;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.081 -0400", hash_original_field = "ABABC028949D290817D875308615351E", hash_generated_field = "B7FF6BB9C04E295CB9607152748C7CBA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:33:21.121 -0500", hash_original_field = "58FAB259E264A705B466940DFC46B12D", hash_generated_field = "0C60638DF987DFC7DCECB7935D5EA670")
 
+    /* Command sucessful or Media server restarted. see ErrorCallback */
     public static final int AUDIO_STATUS_OK = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.081 -0400", hash_original_field = "83286BCDEBA7C1BC2842A5B052FD9E3E", hash_generated_field = "35F626CEB9314977E8710CFB84BFD4B5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.392 -0500", hash_original_field = "5A2AC413F63E11B4B03A5E47CE55D4E7", hash_generated_field = "35F626CEB9314977E8710CFB84BFD4B5")
 
     public static final int AUDIO_STATUS_ERROR = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.081 -0400", hash_original_field = "63BAFD47938207B1DBBE2A13FE8A8105", hash_generated_field = "0D41C5B466D312262C33677695C84BA0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.393 -0500", hash_original_field = "897251ECAC3B01991B8FE2D29B8AEC55", hash_generated_field = "0D41C5B466D312262C33677695C84BA0")
 
     public static final int AUDIO_STATUS_SERVER_DIED = 100;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.081 -0400", hash_original_field = "A2AED1B3A262AF1E8391B7FFF1C1D98F", hash_generated_field = "04DD76D9C83EA526A955FFA1C319E553")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.394 -0500", hash_original_field = "9675E0D45065C18F07BE6D8299914033", hash_generated_field = "04DD76D9C83EA526A955FFA1C319E553")
+
 
     private static ErrorCallback mErrorCallback;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.081 -0400", hash_original_field = "7DBE621C6107D26D49A3C6FE2395B8AA", hash_generated_field = "1B8F566B60147010408A519FE67400EA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:33:21.128 -0500", hash_original_field = "4FD03E87EEEA3D4DBD058586B9BF6D6E", hash_generated_field = "B6FA6F190527A2F2163A5841A5D7B7D7")
 
+
+    // output devices, be sure to update AudioManager.java also
     public static final int DEVICE_OUT_EARPIECE = 0x1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.081 -0400", hash_original_field = "8C163C40E8166AB7B26D4BA514EEA5C4", hash_generated_field = "602BF6A217C2AC374E46AA49B69405E6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.398 -0500", hash_original_field = "83F41FF1D3542DFEA93FCC8026D9E5A8", hash_generated_field = "602BF6A217C2AC374E46AA49B69405E6")
 
     public static final int DEVICE_OUT_SPEAKER = 0x2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.081 -0400", hash_original_field = "FE5FFE45C4081342F800FF6F28BD059D", hash_generated_field = "D108C8BC9B89E652415C25D2F3AE3F8F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.399 -0500", hash_original_field = "1A217E35537B444ADB465A6FF60C67E8", hash_generated_field = "D108C8BC9B89E652415C25D2F3AE3F8F")
 
     public static final int DEVICE_OUT_WIRED_HEADSET = 0x4;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.081 -0400", hash_original_field = "25CCFFADB0D31377CBEDB9B9DD390BC0", hash_generated_field = "92D223E861BA34AC143DFA9E62078F64")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.400 -0500", hash_original_field = "20FE30E136458B73D28E989CD36566F7", hash_generated_field = "92D223E861BA34AC143DFA9E62078F64")
 
     public static final int DEVICE_OUT_WIRED_HEADPHONE = 0x8;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.081 -0400", hash_original_field = "6C76474F372E8B01DD50C7536590E432", hash_generated_field = "9A4781E37B6CA711D096783B2D5D8463")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.401 -0500", hash_original_field = "95F740F3C80857E769B3C61150356F66", hash_generated_field = "9A4781E37B6CA711D096783B2D5D8463")
 
     public static final int DEVICE_OUT_BLUETOOTH_SCO = 0x10;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.081 -0400", hash_original_field = "99ADEBDBDFCF66CAC651A4BD0D079525", hash_generated_field = "44038CB306252BFE489FB68E5EF51672")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.402 -0500", hash_original_field = "E3C36A46E26F02CD21FB67E7FA3C9B78", hash_generated_field = "44038CB306252BFE489FB68E5EF51672")
 
     public static final int DEVICE_OUT_BLUETOOTH_SCO_HEADSET = 0x20;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.081 -0400", hash_original_field = "3B8D0D3CC099D404E5B98AB7E8ECC448", hash_generated_field = "1FACA09D0D15E7285102C700DC03EF01")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.403 -0500", hash_original_field = "B8A701F09C0F757E5C7BDBE04F0D2059", hash_generated_field = "1FACA09D0D15E7285102C700DC03EF01")
 
     public static final int DEVICE_OUT_BLUETOOTH_SCO_CARKIT = 0x40;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.081 -0400", hash_original_field = "208614F8463D76C178F9F3F13B09E8AE", hash_generated_field = "5F42FA860C916E35D2F3D438DA599BB6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.404 -0500", hash_original_field = "941EE47EAAC9699C2D41FC48F78FBC13", hash_generated_field = "5F42FA860C916E35D2F3D438DA599BB6")
 
     public static final int DEVICE_OUT_BLUETOOTH_A2DP = 0x80;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.081 -0400", hash_original_field = "BC2FE6BFD0675D261A3688CD35056FB6", hash_generated_field = "AB6FC4D9DCD428893F6BCE5AC0F52D89")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.404 -0500", hash_original_field = "E34966C9EC931A3987CAE6163CDE7871", hash_generated_field = "AB6FC4D9DCD428893F6BCE5AC0F52D89")
 
     public static final int DEVICE_OUT_BLUETOOTH_A2DP_HEADPHONES = 0x100;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.081 -0400", hash_original_field = "D7906CAB3AA1B3D5BE6BE3197C01E0C7", hash_generated_field = "74D5CDD223D3A30695075C661328A2D6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.405 -0500", hash_original_field = "1627E8535B7882EB3BC032C1D7DDDBA8", hash_generated_field = "74D5CDD223D3A30695075C661328A2D6")
 
     public static final int DEVICE_OUT_BLUETOOTH_A2DP_SPEAKER = 0x200;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.081 -0400", hash_original_field = "8FDC24855D6600B1B2255CBBA8631CD7", hash_generated_field = "73A5CE5D98CB439231D28B9C184E2E61")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.406 -0500", hash_original_field = "D48EE158E3572CE78901E5FC98649670", hash_generated_field = "73A5CE5D98CB439231D28B9C184E2E61")
 
     public static final int DEVICE_OUT_AUX_DIGITAL = 0x400;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.081 -0400", hash_original_field = "9E47F71EE054FE612CBB1FC7F42706F1", hash_generated_field = "86D6F477BF51FC7E965AF69A073AA970")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.407 -0500", hash_original_field = "FAE022ECB8807263054DD758B46C9A39", hash_generated_field = "86D6F477BF51FC7E965AF69A073AA970")
 
     public static final int DEVICE_OUT_ANLG_DOCK_HEADSET = 0x800;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.081 -0400", hash_original_field = "8FB99842D751456D4F631D871B096734", hash_generated_field = "C651F4CC2E182B5F0FFCF1A59D364A1E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.408 -0500", hash_original_field = "1C68260D5079322D8FA2F7BC20DD7C2C", hash_generated_field = "C651F4CC2E182B5F0FFCF1A59D364A1E")
 
     public static final int DEVICE_OUT_DGTL_DOCK_HEADSET = 0x1000;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.081 -0400", hash_original_field = "45737FF64A0349F3A777854A7DFF7885", hash_generated_field = "FBFCB0898D89EE6E9317CE4456B28CA7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.409 -0500", hash_original_field = "D3C70922A0F18E6115BDAA9723949234", hash_generated_field = "FBFCB0898D89EE6E9317CE4456B28CA7")
 
     public static final int DEVICE_OUT_DEFAULT = 0x8000;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.081 -0400", hash_original_field = "D973D7DCF0A6821141D2EEA46F13CDED", hash_generated_field = "955EBAE4BB6B7F9D2A0F84FD96A3BF7F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.410 -0500", hash_original_field = "CC8D1D68B01A53A81CD2518D21572D7B", hash_generated_field = "955EBAE4BB6B7F9D2A0F84FD96A3BF7F")
 
     public static final int DEVICE_IN_COMMUNICATION = 0x10000;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.081 -0400", hash_original_field = "F206899F6E958C905EF9DB3A04CA88A1", hash_generated_field = "6C36AD2F7E7100700BFD7F9EA5EED8AD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.411 -0500", hash_original_field = "8B8481B7DDBA3EB696F11C46ECFE3CB6", hash_generated_field = "6C36AD2F7E7100700BFD7F9EA5EED8AD")
 
     public static final int DEVICE_IN_AMBIENT = 0x20000;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.082 -0400", hash_original_field = "A6569243C1793539CB1DF45877D956F4", hash_generated_field = "8DF3B47481AA2AF62C4314C7D85927E7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.412 -0500", hash_original_field = "1127CB2E7FD26A663B766E32E4D97F64", hash_generated_field = "8DF3B47481AA2AF62C4314C7D85927E7")
 
     public static final int DEVICE_IN_BUILTIN_MIC1 = 0x40000;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.082 -0400", hash_original_field = "97A56ED00609A9998E831B1FB2F45E6F", hash_generated_field = "8163D159BF9D50661681D090D82A722A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.412 -0500", hash_original_field = "84AFC62B3EE6BEF51FCA614BF6218EA3", hash_generated_field = "8163D159BF9D50661681D090D82A722A")
 
     public static final int DEVICE_IN_BUILTIN_MIC2 = 0x80000;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.082 -0400", hash_original_field = "1718B0EE69120D71C0DF12AF7483DF79", hash_generated_field = "AF85D1256B5058722A9C3C4B06088813")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.413 -0500", hash_original_field = "A96C807AEB778433CEAA6C23743C8C70", hash_generated_field = "AF85D1256B5058722A9C3C4B06088813")
 
     public static final int DEVICE_IN_MIC_ARRAY = 0x100000;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.082 -0400", hash_original_field = "4BBC660CCEC48E626D5253984C7FA868", hash_generated_field = "E0A48656C9582B9C00F04DD718C8798B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.414 -0500", hash_original_field = "58A100416C195D403E843578660F0467", hash_generated_field = "E0A48656C9582B9C00F04DD718C8798B")
 
     public static final int DEVICE_IN_BLUETOOTH_SCO_HEADSET = 0x200000;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.082 -0400", hash_original_field = "CEC818A58E29FAE326619F9F9B87D1E3", hash_generated_field = "594FA7E65BA2FBDC53CCE3D97AE77D64")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.415 -0500", hash_original_field = "0C0428087A86257CA757A4932E546BBA", hash_generated_field = "594FA7E65BA2FBDC53CCE3D97AE77D64")
 
     public static final int DEVICE_IN_WIRED_HEADSET = 0x400000;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.082 -0400", hash_original_field = "855E7F2AF43271DC9213BA8062DEC4B2", hash_generated_field = "4ED16C2332BDF59B6028C66860A84E54")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.416 -0500", hash_original_field = "C12937086B65A4BDD24900E8CF2FE686", hash_generated_field = "4ED16C2332BDF59B6028C66860A84E54")
 
     public static final int DEVICE_IN_AUX_DIGITAL = 0x800000;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.082 -0400", hash_original_field = "41CBBE45E89F17D0351376D303A48495", hash_generated_field = "08B385A486E1873BE5B13E7000661022")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.416 -0500", hash_original_field = "D9A96018B4F5718F49F6262D7784E6C2", hash_generated_field = "08B385A486E1873BE5B13E7000661022")
 
     public static final int DEVICE_IN_DEFAULT = 0x80000000;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.082 -0400", hash_original_field = "44C04D3E63A95A15414141449928E042", hash_generated_field = "9343FA98254A683896C06332332B2D3D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.417 -0500", hash_original_field = "282500C2402507B9DC1294A711CEE85D", hash_generated_field = "9343FA98254A683896C06332332B2D3D")
 
     public static final int DEVICE_STATE_UNAVAILABLE = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.082 -0400", hash_original_field = "339B1D44F54FFF0171F38C1D12A7E576", hash_generated_field = "FE8B3E6A860FBB7B6ACCE2C9B575AD18")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.418 -0500", hash_original_field = "7EFFE212DCD48BF54281D6EEE75C8870", hash_generated_field = "FE8B3E6A860FBB7B6ACCE2C9B575AD18")
 
     public static final int DEVICE_STATE_AVAILABLE = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.082 -0400", hash_original_field = "B8124ED939CDDBCC53CB16F4FECD1283", hash_generated_field = "0D1EAFE3CEB3AE0DB528655DC4E7C181")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.419 -0500", hash_original_field = "7580BD711D7CB52B8FF74BAE50597B6D", hash_generated_field = "0D1EAFE3CEB3AE0DB528655DC4E7C181")
 
     private static final int NUM_DEVICE_STATES = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.082 -0400", hash_original_field = "4C1851915D89139AED8E22901F08B6DB", hash_generated_field = "7168029A72B8A9744C8483ED3C29CC48")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.420 -0500", hash_original_field = "9251BE95BB3CAED8E1E48BA18757453A", hash_generated_field = "7168029A72B8A9744C8483ED3C29CC48")
 
     public static final int PHONE_STATE_OFFCALL = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.082 -0400", hash_original_field = "64A0B36008A2A08292C6CBAA004498C2", hash_generated_field = "6235238C44FC957C417ACAD3F42800D5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.420 -0500", hash_original_field = "8D8740FBABCCE23C341F58717A7FAAB2", hash_generated_field = "6235238C44FC957C417ACAD3F42800D5")
 
     public static final int PHONE_STATE_RINGING = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.082 -0400", hash_original_field = "E0DF9F5EE3AB867EEDC61F3A28FF3F06", hash_generated_field = "0B4914FB5279AE8A7BFC9BBC4849C2FA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.421 -0500", hash_original_field = "9C1E2BE9317400ABB986C9C059F292F3", hash_generated_field = "0B4914FB5279AE8A7BFC9BBC4849C2FA")
 
     public static final int PHONE_STATE_INCALL = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.082 -0400", hash_original_field = "BACF10511C3687CB5028CF55616633E7", hash_generated_field = "854B22AE7A5861F66679C9C265020AB1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.422 -0500", hash_original_field = "8529E6AF99B9C22F3C3C17759CA4FEA7", hash_generated_field = "854B22AE7A5861F66679C9C265020AB1")
 
     public static final int FORCE_NONE = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.082 -0400", hash_original_field = "8C12F9E58976A897B01A26378F3C47BF", hash_generated_field = "2B26C8C5E6AAF11428F73F835800944D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.423 -0500", hash_original_field = "14D1181A566CDAF4D2219F68B39ECB25", hash_generated_field = "2B26C8C5E6AAF11428F73F835800944D")
 
     public static final int FORCE_SPEAKER = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.082 -0400", hash_original_field = "4F5718DBBF82480E113ABF35D0DFE254", hash_generated_field = "6675A3D8E680E1119A3CDD38313D0695")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.424 -0500", hash_original_field = "01F28909FDDCA9E8A30049D3B51BF812", hash_generated_field = "6675A3D8E680E1119A3CDD38313D0695")
 
     public static final int FORCE_HEADPHONES = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.082 -0400", hash_original_field = "31CCF4C33502C6CDF3739029A9EA7422", hash_generated_field = "473683EA00DA68601F1DE1012FAB98AE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.425 -0500", hash_original_field = "B05C901BD52E268264C81068CB4611E6", hash_generated_field = "473683EA00DA68601F1DE1012FAB98AE")
 
     public static final int FORCE_BT_SCO = 3;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.082 -0400", hash_original_field = "650831D5662B005A2C5090E0122CE9AE", hash_generated_field = "4EE32669A42A8152690BEC11A1504E51")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.426 -0500", hash_original_field = "CDFD41E161C9F586C9CF7B06A19E7731", hash_generated_field = "4EE32669A42A8152690BEC11A1504E51")
 
     public static final int FORCE_BT_A2DP = 4;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.082 -0400", hash_original_field = "E974DD091F775736EA96D939EDCF7227", hash_generated_field = "BC298A70C15613152A65C199C40BF5F6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.427 -0500", hash_original_field = "AF9E6A9893DF28C6AB9DC08E20E9528E", hash_generated_field = "BC298A70C15613152A65C199C40BF5F6")
 
     public static final int FORCE_WIRED_ACCESSORY = 5;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.082 -0400", hash_original_field = "D3F6144EEA4020EB4E8413982CE8C685", hash_generated_field = "2196F336876B0F842E77F8C94AE309C6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.428 -0500", hash_original_field = "1D2A17651982EECC33246244EF287ED3", hash_generated_field = "2196F336876B0F842E77F8C94AE309C6")
 
     public static final int FORCE_BT_CAR_DOCK = 6;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.082 -0400", hash_original_field = "6895BE2BC2C7169B6890951931C4674C", hash_generated_field = "7768E6EB3B1462B19502F2BF3489A13D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.429 -0500", hash_original_field = "5FC201FC52A1264A8F454CC4A1414F35", hash_generated_field = "7768E6EB3B1462B19502F2BF3489A13D")
 
     public static final int FORCE_BT_DESK_DOCK = 7;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.082 -0400", hash_original_field = "94952E17F98479DCD1C7E57E73F45799", hash_generated_field = "0AB4DD390152688A0AA7EBD5F6E992D2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.430 -0500", hash_original_field = "E3D16BF7AF3D3C9B2B4CB87B8D9D6EB7", hash_generated_field = "0AB4DD390152688A0AA7EBD5F6E992D2")
 
     public static final int FORCE_ANALOG_DOCK = 8;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.082 -0400", hash_original_field = "A71BE23342B518AE0E29AD7EA0BC55C1", hash_generated_field = "A80B1C27254EF0E3B8CFA096BB4AD8B5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.431 -0500", hash_original_field = "6F47C7820299DEE4CCF6AD1BDBC1CDDE", hash_generated_field = "A80B1C27254EF0E3B8CFA096BB4AD8B5")
 
     public static final int FORCE_DIGITAL_DOCK = 9;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.082 -0400", hash_original_field = "12799A79898FA3F357579F10E9EF5E49", hash_generated_field = "14ED48452B3F831D3D57413E301F7F2B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.431 -0500", hash_original_field = "9E0F9C7B93C351B080B3611EEA4A40BD", hash_generated_field = "14ED48452B3F831D3D57413E301F7F2B")
 
     private static final int NUM_FORCE_CONFIG = 10;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.082 -0400", hash_original_field = "75C4D5D0DF6BC4E14B746F2EC1A42EF5", hash_generated_field = "B9832F568281A57229EFDE3CBE82FFD4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.432 -0500", hash_original_field = "571D55788AE77A68895C799151F1450C", hash_generated_field = "B9832F568281A57229EFDE3CBE82FFD4")
 
     public static final int FORCE_DEFAULT = FORCE_NONE;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.083 -0400", hash_original_field = "DBC86D3E4A3A08D64EC6373B6800AA98", hash_generated_field = "66A1B811ACBD73880C3AB14B7AABE4F9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.433 -0500", hash_original_field = "DDDBF7704D110F18692A63EA8D16815F", hash_generated_field = "66A1B811ACBD73880C3AB14B7AABE4F9")
 
     public static final int FOR_COMMUNICATION = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.083 -0400", hash_original_field = "37C72165BB2AB7C0D6E060DD36854CEE", hash_generated_field = "841AD0B48CD7E0BA128F4F4A33A31807")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.434 -0500", hash_original_field = "D8A260F77D101E5E232AF4396111F542", hash_generated_field = "841AD0B48CD7E0BA128F4F4A33A31807")
 
     public static final int FOR_MEDIA = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.083 -0400", hash_original_field = "4C6CEF448DFA1F06E8A2E1DA462C9918", hash_generated_field = "A9CFD7A15BD4CBA65EAD531B2B8450CC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.435 -0500", hash_original_field = "6A8A722B89A16448ABF3AE92D6675986", hash_generated_field = "A9CFD7A15BD4CBA65EAD531B2B8450CC")
 
     public static final int FOR_RECORD = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.083 -0400", hash_original_field = "80769A4CC8F4BD906D35B778103ACDE7", hash_generated_field = "EA8F8CC7B133D4AED4341CEDFBE01874")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.436 -0500", hash_original_field = "265649C9608947AB142319166E536307", hash_generated_field = "EA8F8CC7B133D4AED4341CEDFBE01874")
 
     public static final int FOR_DOCK = 3;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.083 -0400", hash_original_field = "395367294DFB4F4F47C5B7856B59D6DA", hash_generated_field = "A9C4B6ECB431CC0BA4B1FB582D61742C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:59.436 -0500", hash_original_field = "81E75FF9A0AAC1DC0CF06B1C359DE48D", hash_generated_field = "A9C4B6ECB431CC0BA4B1FB582D61742C")
 
     private static final int NUM_FORCE_USE = 4;
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.078 -0400", hash_original_method = "54895CB2BF1D5A08CFD79D31582209F6", hash_generated_method = "54895CB2BF1D5A08CFD79D31582209F6")
+    public AudioSystem ()
+    {
+        //Synthesized constructor
+    }
 }
 

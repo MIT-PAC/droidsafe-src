@@ -1,6 +1,8 @@
 package java.net;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.FileDescriptor;
 import java.io.IOException;
@@ -12,132 +14,273 @@ import libcore.io.IoBridge;
 
 
 public abstract class DatagramSocketImpl implements SocketOptions {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.431 -0400", hash_original_field = "36EBA1E1E343279857EA7F69A597324E", hash_generated_field = "22B1DDEE70BE0A6499271C452045F538")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:07.058 -0500", hash_original_field = "DC35B29CA7114A0CAB311A30B93CBE5F", hash_generated_field = "22B1DDEE70BE0A6499271C452045F538")
 
     protected FileDescriptor fd;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.431 -0400", hash_original_field = "55FC25CF376E1B7BFFBC2D46F357C231", hash_generated_field = "835B3BA626C36002B6BEC677A2C9AE47")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:07.059 -0500", hash_original_field = "B2492D7ECB702A5F09554B8EDF522849", hash_generated_field = "835B3BA626C36002B6BEC677A2C9AE47")
 
     protected int localPort;
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.431 -0400", hash_original_method = "36741B3348F3C30E5BB773EA210AEA7B", hash_generated_method = "BE9AB5AB91B36FA3C83AE715C819627B")
-    public  DatagramSocketImpl() {
+
+    /**
+     * Constructs an unbound datagram socket implementation.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:07.061 -0500", hash_original_method = "36741B3348F3C30E5BB773EA210AEA7B", hash_generated_method = "E9785178B93C83BC1AE083F584295263")
+    public DatagramSocketImpl() {
         localPort = -1;
-        // ---------- Original Method ----------
-        //localPort = -1;
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Binds the datagram socket to the given localhost/port. Sockets must be
+     * bound prior to attempting to send or receive data.
+     *
+     * @param port
+     *            the port on the localhost to bind.
+     * @param addr
+     *            the address on the multihomed localhost to bind.
+     * @throws SocketException
+     *                if an error occurs while binding, for example, if the port
+     *                has been already bound.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:07.062 -0500", hash_original_method = "FE8A8A46ED8B7BEC1B130BF00E626B2B", hash_generated_method = "2F9EF19973F199459087B88664C54EB0")
     protected abstract void bind(int port, InetAddress addr) throws SocketException;
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Closes this socket.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:07.062 -0500", hash_original_method = "D50D7BA65C2BEB3EB436584B5735F108", hash_generated_method = "0C36956994211212E0CDECE52E62CAEA")
     protected abstract void close();
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * This method allocates the socket descriptor in the underlying operating
+     * system.
+     *
+     * @throws SocketException
+     *             if an error occurs while creating the socket.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:07.063 -0500", hash_original_method = "63069B639E58D5DBC601400937E19710", hash_generated_method = "B3C6E7E8045EE58F1AFB4B797B649F31")
     protected abstract void create() throws SocketException;
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.432 -0400", hash_original_method = "C1B4172ED9A628993584DE4384B8AF55", hash_generated_method = "F5E6B10A05B0882D88E9659DBECBA5BD")
+    /**
+     * Gets the {@code FileDescriptor} of this datagram socket, which is invalid
+     * if the socket is closed or not bound.
+     *
+     * @return the current file descriptor of this socket.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:07.064 -0500", hash_original_method = "C1B4172ED9A628993584DE4384B8AF55", hash_generated_method = "C8664C638E6E7676776FC905B50F6CA8")
     protected FileDescriptor getFileDescriptor() {
-FileDescriptor var020F72FC5D1BB0511CAD11CC0AA674A0_228543589 =         fd;
-        var020F72FC5D1BB0511CAD11CC0AA674A0_228543589.addTaint(taint);
-        return var020F72FC5D1BB0511CAD11CC0AA674A0_228543589;
-        // ---------- Original Method ----------
-        //return fd;
+        return fd;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.432 -0400", hash_original_method = "0E5E291FF84E111D5E99E4DCFA7BD180", hash_generated_method = "D68762299C74F88E0BC310B8448B5F07")
-     InetAddress getLocalAddress() {
-InetAddress var5B04D0CA841642814A75D4CAB88C3763_1954534540 =         IoBridge.getSocketLocalAddress(fd);
-        var5B04D0CA841642814A75D4CAB88C3763_1954534540.addTaint(taint);
-        return var5B04D0CA841642814A75D4CAB88C3763_1954534540;
-        // ---------- Original Method ----------
-        //return IoBridge.getSocketLocalAddress(fd);
+    /**
+     * Returns the local address to which the socket is bound.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:07.065 -0500", hash_original_method = "0E5E291FF84E111D5E99E4DCFA7BD180", hash_generated_method = "0E5E291FF84E111D5E99E4DCFA7BD180")
+    InetAddress getLocalAddress() {
+        return IoBridge.getSocketLocalAddress(fd);
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.432 -0400", hash_original_method = "85505F9FF32DDEB1685867EF44676F61", hash_generated_method = "87802B4F6DEDC10693673796AE49A65E")
+    /**
+     * Returns the local port to which this socket is bound.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:07.066 -0500", hash_original_method = "85505F9FF32DDEB1685867EF44676F61", hash_generated_method = "EF05AE2861ED9232B1E064D4A2DDDDC5")
     protected int getLocalPort() {
-        int var55FC25CF376E1B7BFFBC2D46F357C231_2091409105 = (localPort);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_25306481 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_25306481;
-        // ---------- Original Method ----------
-        //return localPort;
+        return localPort;
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Gets the time-to-live (TTL) for multicast packets sent on this socket.
+     *
+     * @return the time-to-live option as a byte value.
+     * @throws IOException
+     *             if an error occurs while getting the time-to-live option
+     *             value.
+     * @deprecated Replaced by {@link #getTimeToLive}
+     * @see #getTimeToLive()
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:07.066 -0500", hash_original_method = "F099E1C41B694EAD2D2039587A594DBF", hash_generated_method = "05CCBE891AA15F5247EDEA7226433FB1")
     @Deprecated
 protected abstract byte getTTL() throws IOException;
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Gets the time-to-live (TTL) for multicast packets sent on this socket.
+     * The TTL option defines how many routers a packet may be pass before it is
+     * discarded.
+     *
+     * @return the time-to-live option as an integer value.
+     * @throws IOException
+     *             if an error occurs while getting the time-to-live option
+     *             value.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:07.067 -0500", hash_original_method = "D9719A430A5F54FDD1789960993CC8AC", hash_generated_method = "74D63A31CD8C74B09397ED867E75EA4E")
     protected abstract int getTimeToLive() throws IOException;
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Adds this socket to the multicast group {@code addr}. A socket must join
+     * a group before being able to receive data. Further, a socket may be a
+     * member of multiple groups but may join any group only once.
+     *
+     * @param addr
+     *            the multicast group to which this socket has to be joined.
+     * @throws IOException
+     *             if an error occurs while joining the specified multicast
+     *             group.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:07.068 -0500", hash_original_method = "D49A72B7415DDB957EDFD1E887D2BCA0", hash_generated_method = "FF94A7086BC1F6746454B09A014789DC")
     protected abstract void join(InetAddress addr) throws IOException;
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Adds this socket to the multicast group {@code addr}. A socket must join
+     * a group before being able to receive data. Further, a socket may be a
+     * member of multiple groups but may join any group only once.
+     *
+     * @param addr
+     *            the multicast group to which this socket has to be joined.
+     * @param netInterface
+     *            the local network interface which will receive the multicast
+     *            datagram packets.
+     * @throws IOException
+     *             if an error occurs while joining the specified multicast
+     *             group.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:07.069 -0500", hash_original_method = "0BC9B33A0D584BD63DDC3207428282C3", hash_generated_method = "486DDFC097C510374AAF67B009FA4689")
     protected abstract void joinGroup(SocketAddress addr,
             NetworkInterface netInterface) throws IOException;
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Removes this socket from the multicast group {@code addr}.
+     *
+     * @param addr
+     *            the multicast group to be left.
+     * @throws IOException
+     *             if an error occurs while leaving the group or no multicast
+     *             address was assigned.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:07.070 -0500", hash_original_method = "9C63FA57009863F9BFCF40E2B8324C1A", hash_generated_method = "0B7ED6E08760E2C4B92DB2004904349D")
     protected abstract void leave(InetAddress addr) throws IOException;
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Removes this socket from the multicast group {@code addr}.
+     *
+     * @param addr
+     *            the multicast group to be left.
+     * @param netInterface
+     *            the local network interface on which this socket has to be
+     *            removed.
+     * @throws IOException
+     *             if an error occurs while leaving the group.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:07.071 -0500", hash_original_method = "15FC74D8F1A71B68A2456B26D31E60F3", hash_generated_method = "BB3826376034144E4FE74668420A851A")
     protected abstract void leaveGroup(SocketAddress addr,
             NetworkInterface netInterface) throws IOException;
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Peeks at the incoming packet to this socket and returns the address of
+     * the {@code sender}. The method will block until a packet is received or
+     * timeout expires.
+     *
+     * @param sender
+     *            the origin address of a packet.
+     * @return the address of {@code sender} as an integer value.
+     * @throws IOException
+     *                if an error or a timeout occurs while reading the address.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:07.071 -0500", hash_original_method = "0A55381DC5E8B9E18B2AFA6C4336B550", hash_generated_method = "5DD8A45C640AE6E22F25B85CF2FC2D6D")
     protected abstract int peek(InetAddress sender) throws IOException;
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Receives data and stores it in the supplied datagram packet {@code pack}.
+     * This call will block until either data has been received or, if a timeout
+     * is set, the timeout has expired. If the timeout expires an {@code
+     * InterruptedIOException} is thrown.
+     *
+     * @param pack
+     *            the datagram packet container to fill in the received data.
+     * @throws IOException
+     *                if an error or timeout occurs while receiving data.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:07.072 -0500", hash_original_method = "7464E8A609D19003F435E467D9EE656D", hash_generated_method = "2FA9C6D18740487C4CBA6B9940169D32")
     protected abstract void receive(DatagramPacket pack) throws IOException;
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Sends the given datagram packet {@code pack}. The packet contains the
+     * data and the address and port information of the target host as well.
+     *
+     * @param pack
+     *            the datagram packet to be sent.
+     * @throws IOException
+     *                if an error occurs while sending the packet.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:07.073 -0500", hash_original_method = "7039A6C69598C650829CBCEB48F7A5DF", hash_generated_method = "90D16BAE394684C1F39DA571F332F072")
     protected abstract void send(DatagramPacket pack) throws IOException;
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Sets the time-to-live (TTL) option for multicast packets sent on this
+     * socket.
+     *
+     * @param ttl
+     *            the time-to-live option value. Valid values are 0 &lt; ttl
+     *            &lt;= 255.
+     * @throws IOException
+     *             if an error occurs while setting the option.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:07.074 -0500", hash_original_method = "FA7BA60D9C75190FDFDD090C2715CA20", hash_generated_method = "44405459E0F685CDE6998C289101CAEA")
     protected abstract void setTimeToLive(int ttl) throws IOException;
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Sets the time-to-live (TTL) option for multicast packets sent on this
+     * socket.
+     *
+     * @param ttl
+     *            the time-to-live option value. Valid values are 0 &lt; ttl
+     *            &lt;= 255.
+     * @throws IOException
+     *             if an error occurs while setting the option.
+     * @deprecated Replaced by {@link #setTimeToLive}
+     * @see #setTimeToLive(int)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:07.075 -0500", hash_original_method = "6ADCF6BDAA2EE2F71E55365E5ADD6372", hash_generated_method = "3A9F8E7E78880716E3155881FE1F84E4")
     @Deprecated
 protected abstract void setTTL(byte ttl) throws IOException;
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.433 -0400", hash_original_method = "4B57C399BF813581E92D5F53070EA8D4", hash_generated_method = "4E0325303BB17DD186D37C1B3AE1E6B2")
-    protected void connect(InetAddress inetAddr, int port) throws SocketException {
-        addTaint(port);
-        addTaint(inetAddr.getTaint());
-        // ---------- Original Method ----------
+    /**
+     * Connects this socket to the specified remote address and port.
+     *
+     * @param inetAddr
+     *            the address of the target host which has to be connected.
+     * @param port
+     *            the port on the target host which has to be connected.
+     * @throws SocketException
+     *                if the datagram socket cannot be connected to the
+     *                specified remote address and port.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:07.076 -0500", hash_original_method = "4B57C399BF813581E92D5F53070EA8D4", hash_generated_method = "027F2A2FF6ED7C8BFA4D89927F1A9178")
+    protected void connect(InetAddress inetAddr, int port)
+            throws SocketException {
+        // do nothing
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.433 -0400", hash_original_method = "E948DE2D4A723F3312DB782756156847", hash_generated_method = "CD37B12F2AD777DD5DE0335AE279D597")
+    /**
+     * Disconnects this socket from the remote host.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:07.076 -0500", hash_original_method = "E948DE2D4A723F3312DB782756156847", hash_generated_method = "8D27A2F900F32936703B722740D16091")
     protected void disconnect() {
-        // ---------- Original Method ----------
+        // do nothing
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Receives data into the supplied datagram packet by peeking. The data is
+     * not removed from socket buffer and can be received again by another
+     * {@code peekData()} or {@code receive()} call. This call blocks until
+     * either data has been received or, if a timeout is set, the timeout has
+     * been expired.
+     *
+     * @param pack
+     *            the datagram packet used to store the data.
+     * @return the port the packet was received from.
+     * @throws IOException
+     *                if an error occurs while peeking at the data.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:07.077 -0500", hash_original_method = "71AE8210735110F7C36210F87AF8E6BB", hash_generated_method = "29AEA3957A65597E5C2CC5DB836535F8")
     protected abstract int peekData(DatagramPacket pack) throws IOException;
 
     

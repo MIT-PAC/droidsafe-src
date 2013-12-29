@@ -1,6 +1,8 @@
 package android.content;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.ArrayList;
 
@@ -13,12 +15,37 @@ import android.os.ServiceManager;
 
 
 public class ClipboardManager extends android.text.ClipboardManager {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.624 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
 
-    private Context mContext;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.624 -0400", hash_original_field = "C4FB4E35010BD7489930A3D26DDC0ADA", hash_generated_field = "E56DE56B7E953844281AFE87E0843DAB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:00.743 -0500", hash_original_method = "B823D91CB0BDECA7B94A432D3169CF0F", hash_generated_method = "E46EEAD91E5B0F8A4FFB94615D67E32E")
+    static private IClipboard getService() {
+        synchronized (sStaticLock) {
+            if (sService != null) {
+                return sService;
+            }
+            IBinder b = ServiceManager.getService("clipboard");
+            sService = IClipboard.Stub.asInterface(b);
+            return sService;
+        }
+    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:00.734 -0500", hash_original_field = "70A71BD16E05A887B72D59F04116381D", hash_generated_field = "F842219FC69FE9ACCBA41EF52147C0D4")
 
-    private final ArrayList<OnPrimaryClipChangedListener> mPrimaryClipChangedListeners = new ArrayList<OnPrimaryClipChangedListener>();
+    private final static Object sStaticLock = new Object();
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:00.735 -0500", hash_original_field = "1EF768EB48A307001D0C0E9180D2C792", hash_generated_field = "7DAD8437C868C87DD2CEB4861B4C57D1")
+
+    private static IClipboard sService;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:00.739 -0500", hash_original_field = "1C8819E0457C61ABDAA5E1E45DE2C427", hash_generated_field = "3C04989ED0EDFEE643DF5780498583F4")
+
+
+    static final int MSG_REPORT_PRIMARY_CLIP_CHANGED = 1;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:00.736 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
+
+
+    private  Context mContext;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:00.736 -0500", hash_original_field = "69431F5030A8CFD222EF228DFCC7DF2C", hash_generated_field = "E56DE56B7E953844281AFE87E0843DAB")
+
+
+    private final ArrayList<OnPrimaryClipChangedListener> mPrimaryClipChangedListeners
+             = new ArrayList<OnPrimaryClipChangedListener>();
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.140 -0400", hash_original_field = "6A00B923E2A779854F5FF695F32BEBAA", hash_generated_field = "C158487F60C521ACB68D79E0E9BC0FB8")
 
     private final IOnPrimaryClipChangedListener.Stub mPrimaryClipChangedServiceListener = new IOnPrimaryClipChangedListener.Stub() {        
@@ -67,267 +94,140 @@ public class ClipboardManager extends android.text.ClipboardManager {
         //mContext = context;
     }
 
-    
-    @DSModeled(DSC.BAN)
-    static private IClipboard getService() {
-        synchronized (sStaticLock) {
-            if (sService != null) {
-                return sService;
-            }
-            IBinder b = ServiceManager.getService("clipboard");
-            sService = IClipboard.Stub.asInterface(b);
-            return sService;
+    /**
+     * Sets the current primary clip on the clipboard.  This is the clip that
+     * is involved in normal cut and paste operations.
+     *
+     * @param clip The clipped data item to set.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:00.744 -0500", hash_original_method = "9758ADBACC2D859F954394BF2EAF123A", hash_generated_method = "7679C6F41286656564D6FD1432FC95FC")
+    public void setPrimaryClip(ClipData clip) {
+        try {
+            getService().setPrimaryClip(clip);
+        } catch (RemoteException e) {
         }
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.626 -0400", hash_original_method = "9758ADBACC2D859F954394BF2EAF123A", hash_generated_method = "C077EDAF3AC2928AD4E7AFB596B32944")
-    public void setPrimaryClip(ClipData clip) {
-        addTaint(clip.getTaint());
-        try 
-        {
-            getService().setPrimaryClip(clip);
-        } //End block
-        catch (RemoteException e)
-        {
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //getService().setPrimaryClip(clip);
-        //} catch (RemoteException e) {
-        //}
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.626 -0400", hash_original_method = "50B348CB23C6EF42B3CBE9B194465F2B", hash_generated_method = "24220148FE65856C592F74ED73BA6506")
+    /**
+     * Returns the current primary clip on the clipboard.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:00.745 -0500", hash_original_method = "50B348CB23C6EF42B3CBE9B194465F2B", hash_generated_method = "7DDDA0056751537DC044752D3DE1A34C")
     public ClipData getPrimaryClip() {
-        try 
-        {
-ClipData varEA460A7A81D36BB15FF7AEC2DAF2CE12_171279541 =             getService().getPrimaryClip(mContext.getPackageName());
-            varEA460A7A81D36BB15FF7AEC2DAF2CE12_171279541.addTaint(taint);
-            return varEA460A7A81D36BB15FF7AEC2DAF2CE12_171279541;
-        } //End block
-        catch (RemoteException e)
-        {
-ClipData var540C13E9E156B687226421B24F2DF178_545734480 =             null;
-            var540C13E9E156B687226421B24F2DF178_545734480.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_545734480;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return getService().getPrimaryClip(mContext.getPackageName());
-        //} catch (RemoteException e) {
-            //return null;
-        //}
+        try {
+            return getService().getPrimaryClip(mContext.getPackageName());
+        } catch (RemoteException e) {
+            return null;
+        }
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.627 -0400", hash_original_method = "678ECBBFE5F09A43CDAAF81F6FD5AC97", hash_generated_method = "704FF651ED764C9525F0ED440D21720B")
+    /**
+     * Returns a description of the current primary clip on the clipboard
+     * but not a copy of its data.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:00.746 -0500", hash_original_method = "678ECBBFE5F09A43CDAAF81F6FD5AC97", hash_generated_method = "CA11E7B1CBE4EC33585AD3095A9223D3")
     public ClipDescription getPrimaryClipDescription() {
-        try 
-        {
-ClipDescription var44B2C124A428D0DD59ED267CFD8E15D8_425307479 =             getService().getPrimaryClipDescription();
-            var44B2C124A428D0DD59ED267CFD8E15D8_425307479.addTaint(taint);
-            return var44B2C124A428D0DD59ED267CFD8E15D8_425307479;
-        } //End block
-        catch (RemoteException e)
-        {
-ClipDescription var540C13E9E156B687226421B24F2DF178_1435410999 =             null;
-            var540C13E9E156B687226421B24F2DF178_1435410999.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_1435410999;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return getService().getPrimaryClipDescription();
-        //} catch (RemoteException e) {
-            //return null;
-        //}
+        try {
+            return getService().getPrimaryClipDescription();
+        } catch (RemoteException e) {
+            return null;
+        }
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.627 -0400", hash_original_method = "CBBCF938F0063A19991B3E7A8193FD4F", hash_generated_method = "1375A678BBEED1A85DEB94E8E862EDEB")
+    /**
+     * Returns true if there is currently a primary clip on the clipboard.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:00.747 -0500", hash_original_method = "CBBCF938F0063A19991B3E7A8193FD4F", hash_generated_method = "6F09A619FDA4D3D0D01D1806C7987F21")
     public boolean hasPrimaryClip() {
-        try 
-        {
-            boolean var5B2E53189D3D8689EE1BFBF67B84E4B5_84439701 = (getService().hasPrimaryClip());
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_683102368 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_683102368;
-        } //End block
-        catch (RemoteException e)
-        {
-            boolean var68934A3E9455FA72420237EB05902327_1095926709 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_403260613 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_403260613;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return getService().hasPrimaryClip();
-        //} catch (RemoteException e) {
-            //return false;
-        //}
+        try {
+            return getService().hasPrimaryClip();
+        } catch (RemoteException e) {
+            return false;
+        }
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.628 -0400", hash_original_method = "E5044C03AB4AD3DC9569B565F2008B98", hash_generated_method = "819B78AB9B22DA84A62C55B5ED2112B6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:00.748 -0500", hash_original_method = "E5044C03AB4AD3DC9569B565F2008B98", hash_generated_method = "F8652FD64D22F64F108BE481EA8913D3")
     public void addPrimaryClipChangedListener(OnPrimaryClipChangedListener what) {
-        addTaint(what.getTaint());
-        synchronized
-(mPrimaryClipChangedListeners)        {
-            if(mPrimaryClipChangedListeners.size() == 0)            
-            {
-                try 
-                {
+        synchronized (mPrimaryClipChangedListeners) {
+            if (mPrimaryClipChangedListeners.size() == 0) {
+                try {
                     getService().addPrimaryClipChangedListener(
                             mPrimaryClipChangedServiceListener);
-                } //End block
-                catch (RemoteException e)
-                {
-                } //End block
-            } //End block
+                } catch (RemoteException e) {
+                }
+            }
             mPrimaryClipChangedListeners.add(what);
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mPrimaryClipChangedListeners) {
-            //if (mPrimaryClipChangedListeners.size() == 0) {
-                //try {
-                    //getService().addPrimaryClipChangedListener(
-                            //mPrimaryClipChangedServiceListener);
-                //} catch (RemoteException e) {
-                //}
-            //}
-            //mPrimaryClipChangedListeners.add(what);
-        //}
+        }
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.629 -0400", hash_original_method = "7128B19124A44EC27CC4C323B8513057", hash_generated_method = "51F1EB6BAFC7BCAF35B59826C1946785")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:00.749 -0500", hash_original_method = "7128B19124A44EC27CC4C323B8513057", hash_generated_method = "8BF6DFFBDB7DA5514BD9806E613C1054")
     public void removePrimaryClipChangedListener(OnPrimaryClipChangedListener what) {
-        addTaint(what.getTaint());
-        synchronized
-(mPrimaryClipChangedListeners)        {
+        synchronized (mPrimaryClipChangedListeners) {
             mPrimaryClipChangedListeners.remove(what);
-            if(mPrimaryClipChangedListeners.size() == 0)            
-            {
-                try 
-                {
+            if (mPrimaryClipChangedListeners.size() == 0) {
+                try {
                     getService().removePrimaryClipChangedListener(
                             mPrimaryClipChangedServiceListener);
-                } //End block
-                catch (RemoteException e)
-                {
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mPrimaryClipChangedListeners) {
-            //mPrimaryClipChangedListeners.remove(what);
-            //if (mPrimaryClipChangedListeners.size() == 0) {
-                //try {
-                    //getService().removePrimaryClipChangedListener(
-                            //mPrimaryClipChangedServiceListener);
-                //} catch (RemoteException e) {
-                //}
-            //}
-        //}
+                } catch (RemoteException e) {
+                }
+            }
+        }
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.630 -0400", hash_original_method = "D9D561BF0732BC43D4A46DB226A10D9C", hash_generated_method = "44E0A88568964D30A7D02B36B8DAB8F9")
+    /**
+     * @deprecated Use {@link #getPrimaryClip()} instead.  This retrieves
+     * the primary clip and tries to coerce it to a string.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:00.749 -0500", hash_original_method = "D9D561BF0732BC43D4A46DB226A10D9C", hash_generated_method = "15ABA5238E08C544D4AF67B8DC71CA77")
     public CharSequence getText() {
         ClipData clip = getPrimaryClip();
-        if(clip != null && clip.getItemCount() > 0)        
-        {
-CharSequence varEC8188868AFABB27F958E34809640CFA_512205563 =             clip.getItemAt(0).coerceToText(mContext);
-            varEC8188868AFABB27F958E34809640CFA_512205563.addTaint(taint);
-            return varEC8188868AFABB27F958E34809640CFA_512205563;
-        } //End block
-CharSequence var540C13E9E156B687226421B24F2DF178_1275150104 =         null;
-        var540C13E9E156B687226421B24F2DF178_1275150104.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_1275150104;
-        // ---------- Original Method ----------
-        //ClipData clip = getPrimaryClip();
-        //if (clip != null && clip.getItemCount() > 0) {
-            //return clip.getItemAt(0).coerceToText(mContext);
-        //}
-        //return null;
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.631 -0400", hash_original_method = "31E7EB6BE33A923560F7B9C2B2D8F3DA", hash_generated_method = "C96AC0747FF8EFA657ED007F391D47D9")
-    public void setText(CharSequence text) {
-        addTaint(text.getTaint());
-        setPrimaryClip(ClipData.newPlainText(null, text));
-        // ---------- Original Method ----------
-        //setPrimaryClip(ClipData.newPlainText(null, text));
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.631 -0400", hash_original_method = "9F22D463FB706DEB91BA1565CF5CF48D", hash_generated_method = "6A820A34513066EC8AF7FC23B1968216")
-    public boolean hasText() {
-        try 
-        {
-            boolean var81667AFC854212260A8335B5C89C7E10_109749694 = (getService().hasClipboardText());
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_295373327 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_295373327;
-        } //End block
-        catch (RemoteException e)
-        {
-            boolean var68934A3E9455FA72420237EB05902327_1234005393 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_659167610 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_659167610;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return getService().hasClipboardText();
-        //} catch (RemoteException e) {
-            //return false;
-        //}
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.632 -0400", hash_original_method = "0985A14308F67055EBA5FC0B7343D794", hash_generated_method = "7EDD6759F2C02959CCE3BB1729937FBB")
-     void reportPrimaryClipChanged() {
-        Object[] listeners;
-        synchronized
-(mPrimaryClipChangedListeners)        {
-            final int N = mPrimaryClipChangedListeners.size();
-            if(N <= 0)            
-            {
-                return;
-            } //End block
-            listeners = mPrimaryClipChangedListeners.toArray();
-        } //End block
-for(int i=0;i<listeners.length;i++)
-        {
-            ((OnPrimaryClipChangedListener)listeners[i]).onPrimaryClipChanged();
-        } //End block
-        // ---------- Original Method ----------
-        //Object[] listeners;
-        //synchronized (mPrimaryClipChangedListeners) {
-            //final int N = mPrimaryClipChangedListeners.size();
-            //if (N <= 0) {
-                //return;
-            //}
-            //listeners = mPrimaryClipChangedListeners.toArray();
-        //}
-        //for (int i=0; i<listeners.length; i++) {
-            //((OnPrimaryClipChangedListener)listeners[i]).onPrimaryClipChanged();
-        //}
+        if (clip != null && clip.getItemCount() > 0) {
+            return clip.getItemAt(0).coerceToText(mContext);
+        }
+        return null;
     }
 
     
     public interface OnPrimaryClipChangedListener {
         void onPrimaryClipChanged();
     }
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.633 -0400", hash_original_field = "6F01FC6BDB2E7BC12F6360B41E8B2316", hash_generated_field = "F842219FC69FE9ACCBA41EF52147C0D4")
 
-    private final static Object sStaticLock = new Object();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.633 -0400", hash_original_field = "5B4BCAAF27A7649717520CAA43216111", hash_generated_field = "7DAD8437C868C87DD2CEB4861B4C57D1")
+    /**
+     * @deprecated Use {@link #setPrimaryClip(ClipData)} instead.  This
+     * creates a ClippedItem holding the given text and sets it as the
+     * primary clip.  It has no label or icon.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:00.750 -0500", hash_original_method = "31E7EB6BE33A923560F7B9C2B2D8F3DA", hash_generated_method = "8F6424DC11A3E95CAE183109CBA05CFE")
+    public void setText(CharSequence text) {
+        setPrimaryClip(ClipData.newPlainText(null, text));
+    }
 
-    private static IClipboard sService;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.633 -0400", hash_original_field = "0EDC3B36A8AD58E17D93760B7667D1D3", hash_generated_field = "3C04989ED0EDFEE643DF5780498583F4")
+    /**
+     * @deprecated Use {@link #hasPrimaryClip()} instead.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:00.751 -0500", hash_original_method = "9F22D463FB706DEB91BA1565CF5CF48D", hash_generated_method = "9424FF4D96A4EC78AF9234EE6BCB8E85")
+    public boolean hasText() {
+        try {
+            return getService().hasClipboardText();
+        } catch (RemoteException e) {
+            return false;
+        }
+    }
 
-    static final int MSG_REPORT_PRIMARY_CLIP_CHANGED = 1;
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:00.752 -0500", hash_original_method = "0985A14308F67055EBA5FC0B7343D794", hash_generated_method = "0985A14308F67055EBA5FC0B7343D794")
+    void reportPrimaryClipChanged() {
+        Object[] listeners;
+
+        synchronized (mPrimaryClipChangedListeners) {
+            final int N = mPrimaryClipChangedListeners.size();
+            if (N <= 0) {
+                return;
+            }
+            listeners = mPrimaryClipChangedListeners.toArray();
+        }
+
+        for (int i=0; i<listeners.length; i++) {
+            ((OnPrimaryClipChangedListener)listeners[i]).onPrimaryClipChanged();
+        }
+    }
 }
 

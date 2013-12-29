@@ -1,6 +1,8 @@
 package android.test;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Random;
 
@@ -16,272 +18,276 @@ import android.test.mock.MockApplication;
 
 
 public abstract class ServiceTestCase<T extends Service> extends AndroidTestCase {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.871 -0400", hash_original_field = "ABE707345597563360502B5433C70932", hash_generated_field = "637B9F6ABC3AC96EB3EB7681C795A33D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.057 -0500", hash_original_field = "637B9F6ABC3AC96EB3EB7681C795A33D", hash_generated_field = "637B9F6ABC3AC96EB3EB7681C795A33D")
+
 
     Class<T> mServiceClass;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.871 -0400", hash_original_field = "A0F03383C9D11CB5B436FDD418A9C4FE", hash_generated_field = "F1477828250C5BEBE602BC5EA1713A2E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.058 -0500", hash_original_field = "A498D7B6B951074CC260EAF09122A9CD", hash_generated_field = "F1477828250C5BEBE602BC5EA1713A2E")
+
 
     private Context mSystemContext;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.871 -0400", hash_original_field = "6B35E9B21496C1A77A324DB1577A6395", hash_generated_field = "53FA3553B85F7414D1C5F2C302FDEBF9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.059 -0500", hash_original_field = "218A10E2C368F2E85F83EE2065C292CD", hash_generated_field = "53FA3553B85F7414D1C5F2C302FDEBF9")
 
     private Application mApplication;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.872 -0400", hash_original_field = "D96EB21FC1A83B484FAE33A12B05D9CB", hash_generated_field = "F3295512C5A15A7E1E4BE8A38300F691")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.061 -0500", hash_original_field = "D5DD3370A40719D6C8921E040B521347", hash_generated_field = "F3295512C5A15A7E1E4BE8A38300F691")
+
 
     private T mService;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.872 -0400", hash_original_field = "00340BEB7C5E3B4E822B30E801E29ABB", hash_generated_field = "BDC91FBBED9ED66C312CB510184D92A5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.062 -0500", hash_original_field = "1AAEAF813350788F55F485D0196E29B9", hash_generated_field = "BDC91FBBED9ED66C312CB510184D92A5")
 
     private boolean mServiceAttached = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.872 -0400", hash_original_field = "2A83F589A0EB8FE1589DEC446A463CE2", hash_generated_field = "F0F3484542642FB72C170742CF175167")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.062 -0500", hash_original_field = "71B93BCFC2F9BB624E0DA713D6B31FD1", hash_generated_field = "F0F3484542642FB72C170742CF175167")
 
     private boolean mServiceCreated = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.872 -0400", hash_original_field = "F535E359764397C8365B2A00171D1DB2", hash_generated_field = "6B66D148B1E37EBE59F99F9D0E5A992C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.063 -0500", hash_original_field = "34817A7D2152C87472A77F06846AFCA5", hash_generated_field = "6B66D148B1E37EBE59F99F9D0E5A992C")
 
     private boolean mServiceStarted = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.872 -0400", hash_original_field = "9E4511323F8DCE82F58F6089D1655613", hash_generated_field = "912B0BEA2990419429548895171B2F0A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.064 -0500", hash_original_field = "C80AF23627BF972C19DB697F2D1ACDAC", hash_generated_field = "912B0BEA2990419429548895171B2F0A")
 
     private boolean mServiceBound = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.872 -0400", hash_original_field = "10B1014B326606E09E39CA12F4E9358B", hash_generated_field = "05A1A5A41A6AA7DC7317478E19978B0B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.064 -0500", hash_original_field = "2B79ADB4AEA0A332867DAEC28EC65830", hash_generated_field = "05A1A5A41A6AA7DC7317478E19978B0B")
 
     private Intent mServiceIntent = null;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.872 -0400", hash_original_field = "E5AC35A5BD46D7D9458034CDAA0AA902", hash_generated_field = "A4722B4D674B9B46CA8EAF04E1307521")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.065 -0500", hash_original_field = "D402B19E1F66ACD65561917C597DE874", hash_generated_field = "A4722B4D674B9B46CA8EAF04E1307521")
 
     private int mServiceId;
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.872 -0400", hash_original_method = "1F3B37EA8E1B8B1054B69DFECCE45A51", hash_generated_method = "85D06AB636C51DA0CBB69DAD45C7DC56")
-    public  ServiceTestCase(Class<T> serviceClass) {
+
+    /**
+     * Constructor
+     * @param serviceClass The type of the service under test.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.060 -0500", hash_original_method = "1F3B37EA8E1B8B1054B69DFECCE45A51", hash_generated_method = "0292640FE4A888F14DF5A3C2F07067F7")
+    public ServiceTestCase(Class<T> serviceClass) {
         mServiceClass = serviceClass;
-        // ---------- Original Method ----------
-        //mServiceClass = serviceClass;
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.873 -0400", hash_original_method = "E1B67BA0E23B118C6146D406450E84BD", hash_generated_method = "176CC76FEF76413721C2C6514E668491")
+    /**
+     * @return An instance of the service under test. This instance is created automatically when
+     * a test calls {@link #startService} or {@link #bindService}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.066 -0500", hash_original_method = "E1B67BA0E23B118C6146D406450E84BD", hash_generated_method = "D2BE854C197539A382A491CCD9CB443B")
     public T getService() {
-T var72B03849F9527CD4AC8A54AA9B97A48C_905540191 =         mService;
-        var72B03849F9527CD4AC8A54AA9B97A48C_905540191.addTaint(taint);
-        return var72B03849F9527CD4AC8A54AA9B97A48C_905540191;
-        // ---------- Original Method ----------
-        //return mService;
+        return mService;
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.873 -0400", hash_original_method = "268090C8258F440561CAD8495BE839CE", hash_generated_method = "0B1DFFD09D79A0B8CCFEFA7B01A3D28A")
+    /**
+     * Gets the current system context and stores it.
+     *
+     * Extend this method to do your own test initialization. If you do so, you
+     * must call <code>super.setUp()</code> as the first statement in your override. The method is
+     * called before each test method is executed.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.067 -0500", hash_original_method = "268090C8258F440561CAD8495BE839CE", hash_generated_method = "6D0C77DF5834722E9A6B7123388BBBB7")
     @Override
-    protected void setUp() throws Exception {
+protected void setUp() throws Exception {
         super.setUp();
+
+        // get the real context, before the individual tests have a chance to muck with it
         mSystemContext = getContext();
-        // ---------- Original Method ----------
-        //super.setUp();
-        //mSystemContext = getContext();
+
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.875 -0400", hash_original_method = "896172C51C066B5F037A8F2C24487B23", hash_generated_method = "3A3FFDB8C7966FAF0BC7DD0D8F96D9C3")
+    /**
+     * Creates the service under test and attaches all injected dependencies
+     * (Context, Application) to it.  This is called automatically by {@link #startService} or
+     * by {@link #bindService}.
+     * If you need to call {@link AndroidTestCase#setContext(Context) setContext()} or
+     * {@link #setApplication setApplication()}, do so before calling this method.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.068 -0500", hash_original_method = "896172C51C066B5F037A8F2C24487B23", hash_generated_method = "9BB432343D030E0D556118988BEB204F")
     protected void setupService() {
         mService = null;
-        try 
-        {
+        try {
             mService = mServiceClass.newInstance();
-        } //End block
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             assertNotNull(mService);
-        } //End block
-        if(getApplication() == null)        
-        {
+        }
+        if (getApplication() == null) {
             setApplication(new MockApplication());
-        } //End block
+        }
         mService.attach(
                 getContext(),
-                null,               
+                null,               // ActivityThread not actually used in Service
                 mServiceClass.getName(),
-                null,               
+                null,               // token not needed when not talking with the activity manager
                 getApplication(),
-                null                
+                null                // mocked services don't talk with the activity manager
                 );
+
         assertNotNull(mService);
+
         mServiceId = new Random().nextInt();
         mServiceAttached = true;
-        // ---------- Original Method ----------
-        //mService = null;
-        //try {
-            //mService = mServiceClass.newInstance();
-        //} catch (Exception e) {
-            //assertNotNull(mService);
-        //}
-        //if (getApplication() == null) {
-            //setApplication(new MockApplication());
-        //}
-        //mService.attach(
-                //getContext(),
-                //null,               
-                //mServiceClass.getName(),
-                //null,               
-                //getApplication(),
-                //null                
-                //);
-        //assertNotNull(mService);
-        //mServiceId = new Random().nextInt();
-        //mServiceAttached = true;
     }
 
-    
-        @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.876 -0400", hash_original_method = "21E4CB4FCD74533F799D23D47E90F5B7", hash_generated_method = "5A760F06291C41012D1BBC881FFEC8B6")
+    /**
+     * Starts the service under test, in the same way as if it were started by
+     * {@link android.content.Context#startService(Intent) Context.startService(Intent)} with
+     * an {@link android.content.Intent} that identifies a service.
+     * If you use this method to start the service, it is automatically stopped by
+     * {@link #tearDown}.
+     *
+     * @param intent An Intent that identifies a service, of the same form as the Intent passed to
+     * {@link android.content.Context#startService(Intent) Context.startService(Intent)}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.068 -0500", hash_original_method = "21E4CB4FCD74533F799D23D47E90F5B7", hash_generated_method = "8217A23948FCB7AE9E6211E346B434AD")
     protected void startService(Intent intent) {
-        addTaint(intent.getTaint());
-        if(!mServiceAttached)        
-        {
+        if (!mServiceAttached) {
             setupService();
-        } //End block
+        }
         assertNotNull(mService);
-        if(!mServiceCreated)        
-        {
+
+        if (!mServiceCreated) {
             mService.onCreate();
             mServiceCreated = true;
-        } //End block
+        }
         mService.onStartCommand(intent, 0, mServiceId);
+
         mServiceStarted = true;
-        // ---------- Original Method ----------
-        //if (!mServiceAttached) {
-            //setupService();
-        //}
-        //assertNotNull(mService);
-        //if (!mServiceCreated) {
-            //mService.onCreate();
-            //mServiceCreated = true;
-        //}
-        //mService.onStartCommand(intent, 0, mServiceId);
-        //mServiceStarted = true;
     }
 
-    
-        @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.877 -0400", hash_original_method = "9243E940E5DBFB4305A53445C0DB5EAA", hash_generated_method = "926D922E77C563BA323DD662C3095FBD")
+    /**
+     * <p>
+     *      Starts the service under test, in the same way as if it were started by
+     *      {@link android.content.Context#bindService(Intent, ServiceConnection, int)
+     *      Context.bindService(Intent, ServiceConnection, flags)} with an
+     *      {@link android.content.Intent} that identifies a service.
+     * </p>
+     * <p>
+     *      Notice that the parameters are different. You do not provide a
+     *      {@link android.content.ServiceConnection} object or the flags parameter. Instead,
+     *      you only provide the Intent. The method returns an object whose type is a
+     *      subclass of {@link android.os.IBinder}, or null if the method fails. An IBinder
+     *      object refers to a communication channel between the application and
+     *      the service. The flag is assumed to be {@link android.content.Context#BIND_AUTO_CREATE}.
+     * </p>
+     * <p>
+     *      See <a href="{@docRoot}guide/developing/tools/aidl.html">Designing a Remote Interface
+     *      Using AIDL</a> for more information about the communication channel object returned
+     *      by this method.
+     * </p>
+     * Note:  To be able to use bindService in a test, the service must implement getService()
+     * method. An example of this is in the ApiDemos sample application, in the
+     * LocalService demo.
+     *
+     * @param intent An Intent object of the form expected by
+     * {@link android.content.Context#bindService}.
+     *
+     * @return An object whose type is a subclass of IBinder, for making further calls into
+     * the service.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.069 -0500", hash_original_method = "9243E940E5DBFB4305A53445C0DB5EAA", hash_generated_method = "A60C0B913FB7CC29AD6CCCB238C387D8")
     protected IBinder bindService(Intent intent) {
-        if(!mServiceAttached)        
-        {
+        if (!mServiceAttached) {
             setupService();
-        } //End block
+        }
         assertNotNull(mService);
-        if(!mServiceCreated)        
-        {
+
+        if (!mServiceCreated) {
             mService.onCreate();
             mServiceCreated = true;
-        } //End block
+        }
+        // no extras are expected by unbind
         mServiceIntent = intent.cloneFilter();
         IBinder result = mService.onBind(intent);
+
         mServiceBound = true;
-IBinder varDC838461EE2FA0CA4C9BBB70A15456B0_1209587087 =         result;
-        varDC838461EE2FA0CA4C9BBB70A15456B0_1209587087.addTaint(taint);
-        return varDC838461EE2FA0CA4C9BBB70A15456B0_1209587087;
-        // ---------- Original Method ----------
-        //if (!mServiceAttached) {
-            //setupService();
-        //}
-        //assertNotNull(mService);
-        //if (!mServiceCreated) {
-            //mService.onCreate();
-            //mServiceCreated = true;
-        //}
-        //mServiceIntent = intent.cloneFilter();
-        //IBinder result = mService.onBind(intent);
-        //mServiceBound = true;
-        //return result;
+        return result;
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.878 -0400", hash_original_method = "7A2B90C413225D42DADFD4030FEDB024", hash_generated_method = "FE7C79667A2B4983986594DE8F221D5F")
+    /**
+     * Makes the necessary calls to stop (or unbind) the service under test, and
+     * calls onDestroy().  Ordinarily this is called automatically (by {@link #tearDown}, but
+     * you can call it directly from your test in order to check for proper shutdown behavior.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.070 -0500", hash_original_method = "7A2B90C413225D42DADFD4030FEDB024", hash_generated_method = "BF624E7A4C800DFA5052B7CB78E42026")
     protected void shutdownService() {
-        if(mServiceStarted)        
-        {
+        if (mServiceStarted) {
             mService.stopSelf();
             mServiceStarted = false;
-        } //End block
-        else
-        if(mServiceBound)        
-        {
+        } else if (mServiceBound) {
             mService.onUnbind(mServiceIntent);
             mServiceBound = false;
-        } //End block
-        if(mServiceCreated)        
-        {
+        }
+        if (mServiceCreated) {
             mService.onDestroy();
-        } //End block
-        // ---------- Original Method ----------
-        //if (mServiceStarted) {
-            //mService.stopSelf();
-            //mServiceStarted = false;
-        //} else if (mServiceBound) {
-            //mService.onUnbind(mServiceIntent);
-            //mServiceBound = false;
-        //}
-        //if (mServiceCreated) {
-            //mService.onDestroy();
-        //}
+        }
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.879 -0400", hash_original_method = "87D1D2444773B04D6FA2D1565794C0F5", hash_generated_method = "40ECAA34A3B22375EB9D9CA4239B98D3")
+    /**
+     * <p>
+     *      Shuts down the service under test.  Ensures all resources are cleaned up and
+     *      garbage collected before moving on to the next test. This method is called after each
+     *      test method.
+     * </p>
+     * <p>
+     *      Subclasses that override this method must call <code>super.tearDown()</code> as their
+     *      last statement.
+     * </p>
+     *
+     * @throws Exception
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.071 -0500", hash_original_method = "87D1D2444773B04D6FA2D1565794C0F5", hash_generated_method = "2B5FD71D725A8C7BA746FC6FE649BBBD")
     @Override
-    protected void tearDown() throws Exception {
+protected void tearDown() throws Exception {
         shutdownService();
         mService = null;
+
+        // Scrub out members - protects against memory leaks in the case where someone
+        // creates a non-static inner class (thus referencing the test case) and gives it to
+        // someone else to hold onto
         scrubClass(ServiceTestCase.class);
+
         super.tearDown();
-        // ---------- Original Method ----------
-        //shutdownService();
-        //mService = null;
-        //scrubClass(ServiceTestCase.class);
-        //super.tearDown();
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.879 -0400", hash_original_method = "3567B69292EF80C03794348A9036011F", hash_generated_method = "4107DD9EC38CBD3CCF4928F6835C3F78")
+    /**
+     * Sets the application that is used during the test.  If you do not call this method,
+     * a new {@link android.test.mock.MockApplication MockApplication} object is used.
+     *
+     * @param application The Application object that is used by the service under test.
+     *
+     * @see #getApplication()
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.072 -0500", hash_original_method = "3567B69292EF80C03794348A9036011F", hash_generated_method = "64B4492B599B80D70C5BD23FB18CE2CA")
     public void setApplication(Application application) {
         mApplication = application;
-        // ---------- Original Method ----------
-        //mApplication = application;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.880 -0400", hash_original_method = "510D23D8CF054FDAE1D1426C6A1A1500", hash_generated_method = "CB7648B59E6FA5743ED2749B077D1AE6")
+    /**
+     * Returns the Application object in use by the service under test.
+     *
+     * @return The application object.
+     *
+     * @see #setApplication
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.072 -0500", hash_original_method = "510D23D8CF054FDAE1D1426C6A1A1500", hash_generated_method = "AA8B5B758D7C79A3ABAA1916A3765C04")
     public Application getApplication() {
-Application varF254F0ADF054F0318B65674CA3670A5E_1028824635 =         mApplication;
-        varF254F0ADF054F0318B65674CA3670A5E_1028824635.addTaint(taint);
-        return varF254F0ADF054F0318B65674CA3670A5E_1028824635;
-        // ---------- Original Method ----------
-        //return mApplication;
+        return mApplication;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.880 -0400", hash_original_method = "20F2DC85F18376CDF1A7B2B9DA0C85A8", hash_generated_method = "8863F19988018313A6EF51B701568D3E")
+    /**
+     * Returns the real system context that is saved by {@link #setUp()}. Use it to create
+     * mock or other types of context objects for the service under test.
+     *
+     * @return A normal system context.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.073 -0500", hash_original_method = "20F2DC85F18376CDF1A7B2B9DA0C85A8", hash_generated_method = "EDE6FE1DA7D7647283DD2EFD3401C1D3")
     public Context getSystemContext() {
-Context var8C7F00BBFA5D714A8F742FB231BABCE9_328050644 =         mSystemContext;
-        var8C7F00BBFA5D714A8F742FB231BABCE9_328050644.addTaint(taint);
-        return var8C7F00BBFA5D714A8F742FB231BABCE9_328050644;
-        // ---------- Original Method ----------
-        //return mSystemContext;
+        return mSystemContext;
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.881 -0400", hash_original_method = "109B8E506FBC3D7FBEA1E1B742558961", hash_generated_method = "9C1732A8190F999B54BCFE6180E9C491")
+    /**
+     * Tests that {@link #setupService()} runs correctly and issues an
+     * {@link junit.framework.Assert#assertNotNull(String, Object)} if it does.
+     * You can override this test method if you wish.
+     *
+     * @throws Exception
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:43.074 -0500", hash_original_method = "109B8E506FBC3D7FBEA1E1B742558961", hash_generated_method = "038CE595F8A5B99AF8DF5423ED353DE8")
     public void testServiceTestCaseSetUpProperly() throws Exception {
         setupService();
         assertNotNull("service should be launched successfully", mService);
-        // ---------- Original Method ----------
-        //setupService();
-        //assertNotNull("service should be launched successfully", mService);
     }
 
     

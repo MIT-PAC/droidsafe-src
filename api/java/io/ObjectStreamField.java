@@ -1,6 +1,8 @@
 package java.io;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.lang.ref.WeakReference;
 
@@ -10,524 +12,357 @@ import java.lang.ref.WeakReference;
 
 
 public class ObjectStreamField implements Comparable<Object> {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.026 -0400", hash_original_field = "B068931CC450442B63F5B3D276EA4297", hash_generated_field = "531F96E2AEBFB44CD229EC4CB1F012B0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.022 -0500", hash_original_field = "BF45F7481B8091DE3CBF80E94F7F940B", hash_generated_field = "531F96E2AEBFB44CD229EC4CB1F012B0")
 
     private String name;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.027 -0400", hash_original_field = "599DCCE2998A6B40B1E38E8C6006CB0A", hash_generated_field = "E8909FCC8837B5FE7A3CBA40C0098CCB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.023 -0500", hash_original_field = "5C9CBF7A7CBB34C043F2F273AD90299D", hash_generated_field = "E8909FCC8837B5FE7A3CBA40C0098CCB")
 
     private Object type;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.027 -0400", hash_original_field = "7A86C157EE9713C34FBD7A1EE40F0C5A", hash_generated_field = "B7E810BF01B52122CB927525A0CA4721")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.024 -0500", hash_original_field = "B7E810BF01B52122CB927525A0CA4721", hash_generated_field = "B7E810BF01B52122CB927525A0CA4721")
 
     int offset;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.027 -0400", hash_original_field = "EB43610BFF4BF58AA2AF0BA56299D57A", hash_generated_field = "A6469B3C05A6E61AD188C77E4C87AFA0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.024 -0500", hash_original_field = "0FC3A976B5B86B3C6BD383EC1B291C83", hash_generated_field = "A6469B3C05A6E61AD188C77E4C87AFA0")
 
     private String typeString;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.027 -0400", hash_original_field = "962FA027E49514EF42DADB2095E8C618", hash_generated_field = "1925D0B4ADBD655AA714AC16DE1F0973")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.025 -0500", hash_original_field = "2148EF25429F0A769B21F87169D2187F", hash_generated_field = "1925D0B4ADBD655AA714AC16DE1F0973")
+
 
     private boolean unshared;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.027 -0400", hash_original_field = "08F60B1F77A7ECFDC92540AF3E6C2887", hash_generated_field = "B10B376FF3C60E9314732C46A8CA6340")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.026 -0500", hash_original_field = "919B3BD1453766B88BBD276CC2C58C43", hash_generated_field = "B10B376FF3C60E9314732C46A8CA6340")
+
 
     private boolean isDeserialized;
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.029 -0400", hash_original_method = "0D657EDEC08CB18117CF62EC578D6020", hash_generated_method = "B5082F638F28D4801D71017A6576F64D")
-    @DSModeled(DSC.SAFE)
-    public  ObjectStreamField(String name, Class<?> cl) {
-        if(name == null || cl == null)        
-        {
-            NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_1073190857 = new NullPointerException();
-            var7338BC9F48D81FE0BBD6183F4014DCC4_1073190857.addTaint(taint);
-            throw var7338BC9F48D81FE0BBD6183F4014DCC4_1073190857;
-        } //End block
+
+    /**
+     * Constructs an ObjectStreamField with the specified name and type.
+     *
+     * @param name
+     *            the name of the field.
+     * @param cl
+     *            the type of the field.
+     * @throws NullPointerException
+     *             if {@code name} or {@code cl} is {@code null}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.027 -0500", hash_original_method = "0D657EDEC08CB18117CF62EC578D6020", hash_generated_method = "94D5650B1B5A26667C8140497A0F1482")
+    public ObjectStreamField(String name, Class<?> cl) {
+        if (name == null || cl == null) {
+            throw new NullPointerException();
+        }
         this.name = name;
         this.type = new WeakReference<Class<?>>(cl);
-        // ---------- Original Method ----------
-        //if (name == null || cl == null) {
-            //throw new NullPointerException();
-        //}
-        //this.name = name;
-        //this.type = new WeakReference<Class<?>>(cl);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.031 -0400", hash_original_method = "B329D182B18083287B5598787B9BCF42", hash_generated_method = "16D648D0910B0887A64330CF1D6956C5")
-    @DSModeled(DSC.SAFE)
-    public  ObjectStreamField(String name, Class<?> cl, boolean unshared) {
-        if(name == null || cl == null)        
-        {
-            NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_1810436038 = new NullPointerException();
-            var7338BC9F48D81FE0BBD6183F4014DCC4_1810436038.addTaint(taint);
-            throw var7338BC9F48D81FE0BBD6183F4014DCC4_1810436038;
-        } //End block
+    /**
+     * Constructs an ObjectStreamField with the specified name, type and the
+     * indication if it is unshared.
+     *
+     * @param name
+     *            the name of the field.
+     * @param cl
+     *            the type of the field.
+     * @param unshared
+     *            {@code true} if the field is written and read unshared;
+     *            {@code false} otherwise.
+     * @throws NullPointerException
+     *             if {@code name} or {@code cl} is {@code null}.
+     * @see ObjectOutputStream#writeUnshared(Object)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.028 -0500", hash_original_method = "B329D182B18083287B5598787B9BCF42", hash_generated_method = "A7F986AAFF1A023FCBE2AE3AEBD1EFF0")
+    public ObjectStreamField(String name, Class<?> cl, boolean unshared) {
+        if (name == null || cl == null) {
+            throw new NullPointerException();
+        }
         this.name = name;
         this.type = (cl.getClassLoader() == null) ? cl : new WeakReference<Class<?>>(cl);
         this.unshared = unshared;
-        // ---------- Original Method ----------
-        //if (name == null || cl == null) {
-            //throw new NullPointerException();
-        //}
-        //this.name = name;
-        //this.type = (cl.getClassLoader() == null) ? cl : new WeakReference<Class<?>>(cl);
-        //this.unshared = unshared;
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.033 -0400", hash_original_method = "7045B1DBF21073AA43E994CE221E4094", hash_generated_method = "B0D15FC28A0BC93EBA154D9D9D7E9977")
-    @DSModeled(DSC.SAFE)
-      ObjectStreamField(String signature, String name) {
-        if(name == null)        
-        {
-            NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_997128325 = new NullPointerException();
-            var7338BC9F48D81FE0BBD6183F4014DCC4_997128325.addTaint(taint);
-            throw var7338BC9F48D81FE0BBD6183F4014DCC4_997128325;
-        } //End block
+    /**
+     * Constructs an ObjectStreamField with the given name and the given type.
+     * The type may be null.
+     *
+     * @param signature
+     *            A String representing the type of the field
+     * @param name
+     *            a String, the name of the field, or null
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.029 -0500", hash_original_method = "7045B1DBF21073AA43E994CE221E4094", hash_generated_method = "7045B1DBF21073AA43E994CE221E4094")
+    ObjectStreamField(String signature, String name) {
+        if (name == null) {
+            throw new NullPointerException();
+        }
         this.name = name;
         this.typeString = signature.replace('.', '/').intern();
         defaultResolve();
         this.isDeserialized = true;
-        // ---------- Original Method ----------
-        //if (name == null) {
-            //throw new NullPointerException();
-        //}
-        //this.name = name;
-        //this.typeString = signature.replace('.', '/').intern();
-        //defaultResolve();
-        //this.isDeserialized = true;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.034 -0400", hash_original_method = "11ADA6ED2A991966CB49663045730556", hash_generated_method = "5B2A842235861802FFF76D448FA31C6A")
+    /**
+     * Compares this field descriptor to the specified one. Checks first if one
+     * of the compared fields has a primitive type and the other one not. If so,
+     * the field with the primitive type is considered to be "smaller". If both
+     * fields are equal, their names are compared.
+     *
+     * @param o
+     *            the object to compare with.
+     * @return -1 if this field is "smaller" than field {@code o}, 0 if both
+     *         fields are equal; 1 if this field is "greater" than field {@code
+     *         o}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.030 -0500", hash_original_method = "11ADA6ED2A991966CB49663045730556", hash_generated_method = "8EE1CF0F7DD5C3FC6C7691B1A914AA34")
     public int compareTo(Object o) {
-        addTaint(o.getTaint());
         ObjectStreamField f = (ObjectStreamField) o;
         boolean thisPrimitive = this.isPrimitive();
         boolean fPrimitive = f.isPrimitive();
-        if(thisPrimitive != fPrimitive)        
-        {
-            int varDAB1FF22EBF07ADC6E4F9CF0E5A2D91D_2094624898 = (thisPrimitive ? -1 : 1);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_844031943 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_844031943;
-        } //End block
-        int var26898C4A1F7593B62E9891383065F061_378566847 = (this.getName().compareTo(f.getName()));
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1650813353 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1650813353;
-        // ---------- Original Method ----------
-        //ObjectStreamField f = (ObjectStreamField) o;
-        //boolean thisPrimitive = this.isPrimitive();
-        //boolean fPrimitive = f.isPrimitive();
-        //if (thisPrimitive != fPrimitive) {
-            //return thisPrimitive ? -1 : 1;
-        //}
-        //return this.getName().compareTo(f.getName());
+
+        // If one is primitive and the other isn't, we have enough info to
+        // compare
+        if (thisPrimitive != fPrimitive) {
+            return thisPrimitive ? -1 : 1;
+        }
+
+        // Either both primitives or both not primitives. Compare based on name.
+        return this.getName().compareTo(f.getName());
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.035 -0400", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "CB679EE71C7C00C20C3550E26037057B")
+    /**
+     * Gets the name of this field.
+     *
+     * @return the field's name.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.031 -0500", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "50860709F8CC9FE19B604881E59FBA54")
     public String getName() {
-String varB017984728AC60AD1F0BF8734F33F15C_847600741 =         name;
-        varB017984728AC60AD1F0BF8734F33F15C_847600741.addTaint(taint);
-        return varB017984728AC60AD1F0BF8734F33F15C_847600741;
-        // ---------- Original Method ----------
-        //return name;
+        return name;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.036 -0400", hash_original_method = "ACEB13DAA855070296BA592FB1ADADA1", hash_generated_method = "DB3BF23749316841F110D00396ADE685")
+    /**
+     * Gets the offset of this field in the object.
+     *
+     * @return this field's offset.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.032 -0500", hash_original_method = "ACEB13DAA855070296BA592FB1ADADA1", hash_generated_method = "270B62274502DD6D664C5F8775886061")
     public int getOffset() {
-        int var7A86C157EE9713C34FBD7A1EE40F0C5A_352597172 = (offset);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_739649758 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_739649758;
-        // ---------- Original Method ----------
-        //return offset;
+        return offset;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.036 -0400", hash_original_method = "FF08482EB56AA685DDAE41A39E334998", hash_generated_method = "C9F675B7C0DC46D14033611BF61255CA")
-     Class<?> getTypeInternal() {
-        if(type instanceof WeakReference)        
-        {
-Class<?> var20EC7C7A75D568B19BB2D841DD2CBD17_658134568 =             (Class<?>) ((WeakReference<?>) type).get();
-            var20EC7C7A75D568B19BB2D841DD2CBD17_658134568.addTaint(taint);
-            return var20EC7C7A75D568B19BB2D841DD2CBD17_658134568;
-        } //End block
-Class<?> var4585A728AFBCEE57D35F6001ECD82EAF_387279886 =         (Class<?>) type;
-        var4585A728AFBCEE57D35F6001ECD82EAF_387279886.addTaint(taint);
-        return var4585A728AFBCEE57D35F6001ECD82EAF_387279886;
-        // ---------- Original Method ----------
-        //if (type instanceof WeakReference) {
-            //return (Class<?>) ((WeakReference<?>) type).get();
-        //}
-        //return (Class<?>) type;
+    /**
+     * Return the type of the field the receiver represents, this is an internal
+     * method
+     *
+     * @return A Class object representing the type of the field
+     */
+    // Changed from private to default visibility for usage in ObjectStreamClass
+    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.032 -0500", hash_original_method = "FF08482EB56AA685DDAE41A39E334998", hash_generated_method = "FF08482EB56AA685DDAE41A39E334998")
+    Class<?> getTypeInternal() {
+        if (type instanceof WeakReference) {
+            return (Class<?>) ((WeakReference<?>) type).get();
+        }
+        return (Class<?>) type;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.037 -0400", hash_original_method = "9634509EF2A12286AE62950CEFC0E304", hash_generated_method = "8C2C3C0868982E2E2CC3E4CDF5F21CEC")
+    /**
+     * Gets the type of this field.
+     *
+     * @return a {@code Class} object representing the type of the field.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.033 -0500", hash_original_method = "9634509EF2A12286AE62950CEFC0E304", hash_generated_method = "82D243212D47306A7AC7BAAF5532CDBE")
     public Class<?> getType() {
         Class<?> cl = getTypeInternal();
-        if(isDeserialized && !cl.isPrimitive())        
-        {
-Class<?> var3D4686B2FADA55BD47A8E0853700CA45_612848129 =             Object.class;
-            var3D4686B2FADA55BD47A8E0853700CA45_612848129.addTaint(taint);
-            return var3D4686B2FADA55BD47A8E0853700CA45_612848129;
-        } //End block
-Class<?> var8C6A66A89969D061B1ECE468EDE00B0A_604514584 =         cl;
-        var8C6A66A89969D061B1ECE468EDE00B0A_604514584.addTaint(taint);
-        return var8C6A66A89969D061B1ECE468EDE00B0A_604514584;
-        // ---------- Original Method ----------
-        //Class<?> cl = getTypeInternal();
-        //if (isDeserialized && !cl.isPrimitive()) {
-            //return Object.class;
-        //}
-        //return cl;
+        if (isDeserialized && !cl.isPrimitive()) {
+            return Object.class;
+        }
+        return cl;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.038 -0400", hash_original_method = "6C03FA17A8A9EDC07915A4F462B31BC8", hash_generated_method = "101A2152B9D54559C66966B83B91EA2E")
+    /**
+     * Gets a character code for the type of this field. The following codes are
+     * used:
+     *
+     * <pre>
+     * B     byte
+     * C     char
+     * D     double
+     * F     float
+     * I     int
+     * J     long
+     * L     class or interface
+     * S     short
+     * Z     boolean
+     * [     array
+     * </pre>
+     *
+     * @return the field's type code.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.034 -0500", hash_original_method = "6C03FA17A8A9EDC07915A4F462B31BC8", hash_generated_method = "79EF9B37AC1424BDB4A7FB22D5F396BA")
     public char getTypeCode() {
-        char var43EFEAF95577F8DDC10B9CD1AB86DD46_1683848314 = (typeCodeOf(getTypeInternal()));
-                char varA87DEB01C5F539E6BDA34829C8EF2368_885224120 = getTaintChar();
-        return varA87DEB01C5F539E6BDA34829C8EF2368_885224120;
-        // ---------- Original Method ----------
-        //return typeCodeOf(getTypeInternal());
+        return typeCodeOf(getTypeInternal());
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.039 -0400", hash_original_method = "1261A37E9B201158D41DADA58D3D498E", hash_generated_method = "E387E4BFC1F9BB28A1A022B9229436AB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.035 -0500", hash_original_method = "1261A37E9B201158D41DADA58D3D498E", hash_generated_method = "9AE235E0A3E2AA8A3A48ED009224B75D")
     private char typeCodeOf(Class<?> type) {
-        addTaint(type.getTaint());
-        if(type == int.class)        
-        {
-            char var3F823ADCFD48AD4956FF832E927AE9D8_1592329233 = ('I');
-                        char varA87DEB01C5F539E6BDA34829C8EF2368_1207193371 = getTaintChar();
-            return varA87DEB01C5F539E6BDA34829C8EF2368_1207193371;
-        } //End block
-        else
-        if(type == byte.class)        
-        {
-            char varAE87D173F10578174F8EC1A3EB2EFDD4_1747779624 = ('B');
-                        char varA87DEB01C5F539E6BDA34829C8EF2368_755074987 = getTaintChar();
-            return varA87DEB01C5F539E6BDA34829C8EF2368_755074987;
-        } //End block
-        else
-        if(type == char.class)        
-        {
-            char var4E8F5B084D1D2D0DBB92E85D8098FC1F_727418170 = ('C');
-                        char varA87DEB01C5F539E6BDA34829C8EF2368_846849242 = getTaintChar();
-            return varA87DEB01C5F539E6BDA34829C8EF2368_846849242;
-        } //End block
-        else
-        if(type == short.class)        
-        {
-            char var21B05C586D183CDACD570B1765EA75F2_264855759 = ('S');
-                        char varA87DEB01C5F539E6BDA34829C8EF2368_318720588 = getTaintChar();
-            return varA87DEB01C5F539E6BDA34829C8EF2368_318720588;
-        } //End block
-        else
-        if(type == boolean.class)        
-        {
-            char var3472269E25D3B2573CD87D44EBA875D9_616275293 = ('Z');
-                        char varA87DEB01C5F539E6BDA34829C8EF2368_212876216 = getTaintChar();
-            return varA87DEB01C5F539E6BDA34829C8EF2368_212876216;
-        } //End block
-        else
-        if(type == long.class)        
-        {
-            char var1D71EF54F324EB9089AFB895C47C382F_3208263 = ('J');
-                        char varA87DEB01C5F539E6BDA34829C8EF2368_1860607969 = getTaintChar();
-            return varA87DEB01C5F539E6BDA34829C8EF2368_1860607969;
-        } //End block
-        else
-        if(type == float.class)        
-        {
-            char varCA2BFEC9449E8D4AFE6AB5497D6B4144_1751243685 = ('F');
-                        char varA87DEB01C5F539E6BDA34829C8EF2368_1716917405 = getTaintChar();
-            return varA87DEB01C5F539E6BDA34829C8EF2368_1716917405;
-        } //End block
-        else
-        if(type == double.class)        
-        {
-            char var943CFAB3F15FA8B743A942EBDD8CBF49_972039913 = ('D');
-                        char varA87DEB01C5F539E6BDA34829C8EF2368_1117832651 = getTaintChar();
-            return varA87DEB01C5F539E6BDA34829C8EF2368_1117832651;
-        } //End block
-        else
-        if(type.isArray())        
-        {
-            char varAC425FCC80C8FDC2F15CB0BCE227ABB0_571168959 = ('[');
-                        char varA87DEB01C5F539E6BDA34829C8EF2368_1670761587 = getTaintChar();
-            return varA87DEB01C5F539E6BDA34829C8EF2368_1670761587;
-        } //End block
-        else
-        {
-            char var90914D7B476BD5CC07F17FD4CF48E49C_1997987497 = ('L');
-                        char varA87DEB01C5F539E6BDA34829C8EF2368_1098081319 = getTaintChar();
-            return varA87DEB01C5F539E6BDA34829C8EF2368_1098081319;
-        } //End block
-        // ---------- Original Method ----------
-        //if (type == int.class) {
-            //return 'I';
-        //} else if (type == byte.class) {
-            //return 'B';
-        //} else if (type == char.class) {
-            //return 'C';
-        //} else if (type == short.class) {
-            //return 'S';
-        //} else if (type == boolean.class) {
-            //return 'Z';
-        //} else if (type == long.class) {
-            //return 'J';
-        //} else if (type == float.class) {
-            //return 'F';
-        //} else if (type == double.class) {
-            //return 'D';
-        //} else if (type.isArray()) {
-            //return '[';
-        //} else {
-            //return 'L';
-        //}
+        if (type == int.class) {
+            return 'I';
+        } else if (type == byte.class) {
+            return 'B';
+        } else if (type == char.class) {
+            return 'C';
+        } else if (type == short.class) {
+            return 'S';
+        } else if (type == boolean.class) {
+            return 'Z';
+        } else if (type == long.class) {
+            return 'J';
+        } else if (type == float.class) {
+            return 'F';
+        } else if (type == double.class) {
+            return 'D';
+        } else if (type.isArray()) {
+            return '[';
+        } else {
+            return 'L';
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.042 -0400", hash_original_method = "AF834EA72E67DF4239AA5209B5DE5F81", hash_generated_method = "DED98FD3B8F3FC13CFA6E80649196C4E")
+    /**
+     * Gets the type signature used by the VM to represent the type of this
+     * field.
+     *
+     * @return the signature of this field's class or {@code null} if this
+     *         field's type is primitive.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.036 -0500", hash_original_method = "AF834EA72E67DF4239AA5209B5DE5F81", hash_generated_method = "1C6D01020ED07C1AF4E4BDBCF0B8E26B")
     public String getTypeString() {
-        if(isPrimitive())        
-        {
-String var540C13E9E156B687226421B24F2DF178_559114191 =             null;
-            var540C13E9E156B687226421B24F2DF178_559114191.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_559114191;
-        } //End block
-        if(typeString == null)        
-        {
+        if (isPrimitive()) {
+            return null;
+        }
+        if (typeString == null) {
             Class<?> t = getTypeInternal();
             String typeName = t.getName().replace('.', '/');
             String str = (t.isArray()) ? typeName : ("L" + typeName + ';');
             typeString = str.intern();
-        } //End block
-String var7A85238CD32275F0BFF675D89BABBB30_1936400749 =         typeString;
-        var7A85238CD32275F0BFF675D89BABBB30_1936400749.addTaint(taint);
-        return var7A85238CD32275F0BFF675D89BABBB30_1936400749;
-        // ---------- Original Method ----------
-        //if (isPrimitive()) {
-            //return null;
-        //}
-        //if (typeString == null) {
-            //Class<?> t = getTypeInternal();
-            //String typeName = t.getName().replace('.', '/');
-            //String str = (t.isArray()) ? typeName : ("L" + typeName + ';');
-            //typeString = str.intern();
-        //}
-        //return typeString;
+        }
+        return typeString;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.042 -0400", hash_original_method = "109BC8E5B51BF330504215C17ADD6478", hash_generated_method = "894F03AB582E7C9C23F3EF8D11181464")
+    /**
+     * Indicates whether this field's type is a primitive type.
+     *
+     * @return {@code true} if this field's type is primitive; {@code false} if
+     *         the type of this field is a regular class.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.037 -0500", hash_original_method = "109BC8E5B51BF330504215C17ADD6478", hash_generated_method = "5F7CEF0AAF5A05130189ED26FA7DD2B8")
     public boolean isPrimitive() {
         Class<?> t = getTypeInternal();
-        boolean var6BE37865E76F958F60A690B6B4337DD8_564034193 = (t != null && t.isPrimitive());
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_58666092 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_58666092;
-        // ---------- Original Method ----------
-        //Class<?> t = getTypeInternal();
-        //return t != null && t.isPrimitive();
+        return t != null && t.isPrimitive();
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.043 -0400", hash_original_method = "6EE925571D11CA9854483CD43D60AA5F", hash_generated_method = "6CE2C3D76D54545430252DA43CEBBD9D")
-     boolean writeField(DataOutputStream out) throws IOException {
-        addTaint(out.getTaint());
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.038 -0500", hash_original_method = "6EE925571D11CA9854483CD43D60AA5F", hash_generated_method = "6EE925571D11CA9854483CD43D60AA5F")
+    boolean writeField(DataOutputStream out) throws IOException {
         Class<?> t = getTypeInternal();
         out.writeByte(typeCodeOf(t));
         out.writeUTF(name);
-        boolean var62582580B8D28C6B494EDCFB63E1761A_1969614575 = ((t != null && t.isPrimitive()));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1808715152 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1808715152;
-        // ---------- Original Method ----------
-        //Class<?> t = getTypeInternal();
-        //out.writeByte(typeCodeOf(t));
-        //out.writeUTF(name);
-        //return (t != null && t.isPrimitive());
+        return (t != null && t.isPrimitive());
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.044 -0400", hash_original_method = "7A66A074CFBB1A834E24DFB5B3A643D5", hash_generated_method = "4305F7EB15B8D74A66017D2CC764F457")
+    /**
+     * Sets this field's offset in the object.
+     *
+     * @param newValue
+     *            the field's new offset.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.038 -0500", hash_original_method = "7A66A074CFBB1A834E24DFB5B3A643D5", hash_generated_method = "4CB62E90C2E26EF894F00B8F47C664A8")
     protected void setOffset(int newValue) {
         this.offset = newValue;
-        // ---------- Original Method ----------
-        //this.offset = newValue;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.044 -0400", hash_original_method = "ABFAE4540EC552EECBD4679559074925", hash_generated_method = "729452E04410EF1341705206AEFB0C8E")
+    /**
+     * Returns a string containing a concise, human-readable description of this
+     * field descriptor.
+     *
+     * @return a printable representation of this descriptor.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.039 -0500", hash_original_method = "ABFAE4540EC552EECBD4679559074925", hash_generated_method = "EC935FFC09D2ED871BD2D5B3E5767FE7")
     @Override
-    public String toString() {
-String var1C1258DA98EFE38BC9C2501509B2FF42_1396833457 =         this.getClass().getName() + '(' + getName() + ':' + getTypeInternal() + ')';
-        var1C1258DA98EFE38BC9C2501509B2FF42_1396833457.addTaint(taint);
-        return var1C1258DA98EFE38BC9C2501509B2FF42_1396833457;
-        // ---------- Original Method ----------
-        //return this.getClass().getName() + '(' + getName() + ':' + getTypeInternal() + ')';
+public String toString() {
+        return this.getClass().getName() + '(' + getName() + ':' + getTypeInternal() + ')';
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.046 -0400", hash_original_method = "48E3281BF72BF66E5E96F9E4056E97FC", hash_generated_method = "32D00F1C806E34AAC93FBAF8E3FC5E7F")
-     void resolve(ClassLoader loader) {
-        addTaint(loader.getTaint());
-        if(typeString == null && isPrimitive())        
-        {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.040 -0500", hash_original_method = "48E3281BF72BF66E5E96F9E4056E97FC", hash_generated_method = "C3A4214F218453FC713B9A09D068FA34")
+    void resolve(ClassLoader loader) {
+        if (typeString == null && isPrimitive()) {
+            // primitive type declared in a serializable class
             typeString = String.valueOf(getTypeCode());
-        } //End block
-        if(typeString.length() == 1)        
-        {
-            if(defaultResolve())            
-            {
+        }
+
+        if (typeString.length() == 1) {
+            if (defaultResolve()) {
                 return;
-            } //End block
-        } //End block
+            }
+        }
+
         String className = typeString.replace('/', '.');
-        if(className.charAt(0) == 'L')        
-        {
+        if (className.charAt(0) == 'L') {
+            // remove L and ;
             className = className.substring(1, className.length() - 1);
-        } //End block
-        try 
-        {
+        }
+        try {
             Class<?> cl = Class.forName(className, false, loader);
             type = (cl.getClassLoader() == null) ? cl : new WeakReference<Class<?>>(cl);
-        } //End block
-        catch (ClassNotFoundException e)
-        {
-        } //End block
-        // ---------- Original Method ----------
-        //if (typeString == null && isPrimitive()) {
-            //typeString = String.valueOf(getTypeCode());
-        //}
-        //if (typeString.length() == 1) {
-            //if (defaultResolve()) {
-                //return;
-            //}
-        //}
-        //String className = typeString.replace('/', '.');
-        //if (className.charAt(0) == 'L') {
-            //className = className.substring(1, className.length() - 1);
-        //}
-        //try {
-            //Class<?> cl = Class.forName(className, false, loader);
-            //type = (cl.getClassLoader() == null) ? cl : new WeakReference<Class<?>>(cl);
-        //} catch (ClassNotFoundException e) {
-        //}
+        } catch (ClassNotFoundException e) {
+            // Ignored
+        }
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.047 -0400", hash_original_method = "F21E97E0131CF96F90294027D325F2F1", hash_generated_method = "6DA2C0FF951973794F45AFA8E80CEDDC")
+    /**
+     * Indicates whether this field is unshared.
+     *
+     * @return {@code true} if this field is unshared, {@code false} otherwise.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.041 -0500", hash_original_method = "F21E97E0131CF96F90294027D325F2F1", hash_generated_method = "6C0974834F4ED5E3334D2C54E96A4062")
     public boolean isUnshared() {
-        boolean var962FA027E49514EF42DADB2095E8C618_386544896 = (unshared);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1344498443 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1344498443;
-        // ---------- Original Method ----------
-        //return unshared;
+        return unshared;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.047 -0400", hash_original_method = "68701E3ED15FAA74732CE575E0F04E5E", hash_generated_method = "78989AD0A169EB11A9E371D43CF1C2E1")
-     void setUnshared(boolean unshared) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.042 -0500", hash_original_method = "68701E3ED15FAA74732CE575E0F04E5E", hash_generated_method = "68701E3ED15FAA74732CE575E0F04E5E")
+    void setUnshared(boolean unshared) {
         this.unshared = unshared;
-        // ---------- Original Method ----------
-        //this.unshared = unshared;
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.050 -0400", hash_original_method = "E1E63B3BD3E5801BD481EB78C5FBD93C", hash_generated_method = "C57749E9582E90DD8B6D271668D58018")
+    /**
+     * Resolves typeString into type. Returns true if the type is primitive
+     * and false otherwise.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.043 -0500", hash_original_method = "E1E63B3BD3E5801BD481EB78C5FBD93C", hash_generated_method = "4CC7DBA3774EC020B36C17E82CD9EC8C")
     private boolean defaultResolve() {
-switch(typeString.charAt(0)){
+        switch (typeString.charAt(0)) {
         case 'I':
-        type = int.class;
-        boolean varB326B5062B2F0E69046810717534CB09_1094709424 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_411584689 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_411584689;
+            type = int.class;
+            return true;
         case 'B':
-        type = byte.class;
-        boolean varB326B5062B2F0E69046810717534CB09_1642332233 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_639173556 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_639173556;
+            type = byte.class;
+            return true;
         case 'C':
-        type = char.class;
-        boolean varB326B5062B2F0E69046810717534CB09_1287463850 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1634682813 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1634682813;
+            type = char.class;
+            return true;
         case 'S':
-        type = short.class;
-        boolean varB326B5062B2F0E69046810717534CB09_1353557721 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_775583694 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_775583694;
+            type = short.class;
+            return true;
         case 'Z':
-        type = boolean.class;
-        boolean varB326B5062B2F0E69046810717534CB09_563534339 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_583711792 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_583711792;
+            type = boolean.class;
+            return true;
         case 'J':
-        type = long.class;
-        boolean varB326B5062B2F0E69046810717534CB09_995839560 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1351133663 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1351133663;
+            type = long.class;
+            return true;
         case 'F':
-        type = float.class;
-        boolean varB326B5062B2F0E69046810717534CB09_1071091712 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1238173039 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1238173039;
+            type = float.class;
+            return true;
         case 'D':
-        type = double.class;
-        boolean varB326B5062B2F0E69046810717534CB09_1260689732 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_664471474 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_664471474;
+            type = double.class;
+            return true;
         default:
-        type = Object.class;
-        boolean var68934A3E9455FA72420237EB05902327_677843738 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_411032868 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_411032868;
-}
-        // ---------- Original Method ----------
-        //switch (typeString.charAt(0)) {
-        //case 'I':
-            //type = int.class;
-            //return true;
-        //case 'B':
-            //type = byte.class;
-            //return true;
-        //case 'C':
-            //type = char.class;
-            //return true;
-        //case 'S':
-            //type = short.class;
-            //return true;
-        //case 'Z':
-            //type = boolean.class;
-            //return true;
-        //case 'J':
-            //type = long.class;
-            //return true;
-        //case 'F':
-            //type = float.class;
-            //return true;
-        //case 'D':
-            //type = double.class;
-            //return true;
-        //default:
-            //type = Object.class;
-            //return false;
-        //}
+            type = Object.class;
+            return false;
+        }
     }
 
     

@@ -1,6 +1,8 @@
 package com.android.internal.os;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.HashMap;
 import java.util.Map;
@@ -13,142 +15,88 @@ import android.os.Parcelable;
 
 
 public class PkgUsageStats implements Parcelable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.618 -0400", hash_original_field = "387F1FA6FC99B8AE187C010A06120611", hash_generated_field = "AEA3D3739F492530AF8FD6582FAACBD9")
-
-    public String packageName;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.618 -0400", hash_original_field = "3A4579DD5A75D9BC0DEC11BAFC438A94", hash_generated_field = "21C854B78D53D6B68A5B48894136FE57")
-
-    public int launchCount;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.618 -0400", hash_original_field = "E08E32FB1F41649AE793251F1549D37B", hash_generated_field = "BFFCAFFF5EF37FB71EBEED00E2451831")
-
-    public long usageTime;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.618 -0400", hash_original_field = "FD867455D142EC9EB6FD4534D136FBD7", hash_generated_field = "DD071BE2371A95289920DCB4558946CA")
-
-    public Map<String, Long> componentResumeTimes;
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.619 -0400", hash_original_method = "EF5295BC011C50A8405086A4DA12DD9D", hash_generated_method = "15308FF3E0EA4BA885D7C451911F544E")
-    public  PkgUsageStats(String pkgName, int count, long time, Map<String, Long> lastResumeTimes) {
-        packageName = pkgName;
-        launchCount = count;
-        usageTime = time;
-        componentResumeTimes = new HashMap<String, Long>(lastResumeTimes);
-        // ---------- Original Method ----------
-        //packageName = pkgName;
-        //launchCount = count;
-        //usageTime = time;
-        //componentResumeTimes = new HashMap<String, Long>(lastResumeTimes);
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.620 -0400", hash_original_method = "977D0617B4C179661ACE3B4403E55D28", hash_generated_method = "47AEC8CFEB8707E21A850DA7B4D29545")
-    public  PkgUsageStats(Parcel source) {
-        packageName = source.readString();
-        launchCount = source.readInt();
-        usageTime = source.readLong();
-        final int N = source.readInt();
-        componentResumeTimes = new HashMap<String, Long>(N);
-for(int i = 0;i < N;i++)
-        {
-            String component = source.readString();
-            long lastResumeTime = source.readLong();
-            componentResumeTimes.put(component, lastResumeTime);
-        } //End block
-        // ---------- Original Method ----------
-        //packageName = source.readString();
-        //launchCount = source.readInt();
-        //usageTime = source.readLong();
-        //final int N = source.readInt();
-        //componentResumeTimes = new HashMap<String, Long>(N);
-        //for (int i = 0; i < N; i++) {
-            //String component = source.readString();
-            //long lastResumeTime = source.readLong();
-            //componentResumeTimes.put(component, lastResumeTime);
-        //}
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.621 -0400", hash_original_method = "9D74B058D8C14276F2F5A28106414DA9", hash_generated_method = "63D83B0D430410C4CCE030F330A1E270")
-    public  PkgUsageStats(PkgUsageStats pStats) {
-        packageName = pStats.packageName;
-        launchCount = pStats.launchCount;
-        usageTime = pStats.usageTime;
-        componentResumeTimes = new HashMap<String, Long>(pStats.componentResumeTimes);
-        // ---------- Original Method ----------
-        //packageName = pStats.packageName;
-        //launchCount = pStats.launchCount;
-        //usageTime = pStats.usageTime;
-        //componentResumeTimes = new HashMap<String, Long>(pStats.componentResumeTimes);
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.622 -0400", hash_original_method = "5A8FDC802D15BADB218E7B9A38048A4B", hash_generated_method = "AD1B9FBA930F1C5158B74B25F150ECD0")
-    public String toString() {
-String varCA61EE736776B3A103C8DC641DCDABF4_1811340162 =         "PkgUsageStats{"
-        + Integer.toHexString(System.identityHashCode(this))
-        + " " + packageName + "}";
-        varCA61EE736776B3A103C8DC641DCDABF4_1811340162.addTaint(taint);
-        return varCA61EE736776B3A103C8DC641DCDABF4_1811340162;
-        // ---------- Original Method ----------
-        //return "PkgUsageStats{"
-        //+ Integer.toHexString(System.identityHashCode(this))
-        //+ " " + packageName + "}";
-    }
-
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.622 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "AC2710970159FBD84F053535CC9D8F3C")
-    public int describeContents() {
-        int varCFCD208495D565EF66E7DFF9F98764DA_59550663 = (0);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2115377678 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2115377678;
-        // ---------- Original Method ----------
-        //return 0;
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.622 -0400", hash_original_method = "65B01222074C1BC4168423427126F9FB", hash_generated_method = "CC7E9C1A95A742DF3FEB26C9544B80AF")
-    public void writeToParcel(Parcel dest, int parcelableFlags) {
-        addTaint(parcelableFlags);
-        addTaint(dest.getTaint());
-        dest.writeString(packageName);
-        dest.writeInt(launchCount);
-        dest.writeLong(usageTime);
-        dest.writeInt(componentResumeTimes.size());
-for(Map.Entry<String, Long> ent : componentResumeTimes.entrySet())
-        {
-            dest.writeString(ent.getKey());
-            dest.writeLong(ent.getValue());
-        } //End block
-        // ---------- Original Method ----------
-        //dest.writeString(packageName);
-        //dest.writeInt(launchCount);
-        //dest.writeLong(usageTime);
-        //dest.writeInt(componentResumeTimes.size());
-        //for (Map.Entry<String, Long> ent : componentResumeTimes.entrySet()) {
-            //dest.writeString(ent.getKey());
-            //dest.writeLong(ent.getValue());
-        //}
-    }
 
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.623 -0400", hash_original_field = "A6B7AD8516005FC7EA17662B9B408CF5", hash_generated_field = "65B1A44C53F3FF61EDA70C7F983455D7")
 
     public static final Parcelable.Creator<PkgUsageStats> CREATOR
     = new Parcelable.Creator<PkgUsageStats>() {
-        @DSModeled(DSC.BAN)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.001 -0500", hash_original_method = "9DA264EB5F24BD17A24D60210BE6F57D", hash_generated_method = "9365278431C65FB576B7576BBF93445D")
         public PkgUsageStats createFromParcel(Parcel in) {
             return new PkgUsageStats(in);
         }
 
-        @DSModeled(DSC.BAN)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.002 -0500", hash_original_method = "726ADDD2E7F991C21D06EB8BB5034839", hash_generated_method = "F5848ED5FB63FA36621700C81F40CCA0")
         public PkgUsageStats[] newArray(int size) {
             return new PkgUsageStats[size];
         }
     };
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:41.997 -0500", hash_original_field = "6F92EE1B3BCDC0C4179CF5FD998BE046", hash_generated_field = "AEA3D3739F492530AF8FD6582FAACBD9")
+
+    public String packageName;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:41.998 -0500", hash_original_field = "847BD8001EAA339AA9EC54B67BDF0731", hash_generated_field = "21C854B78D53D6B68A5B48894136FE57")
+
+    public int launchCount;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:41.999 -0500", hash_original_field = "3178567983019C37A2DA633D216D658D", hash_generated_field = "BFFCAFFF5EF37FB71EBEED00E2451831")
+
+    public long usageTime;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.000 -0500", hash_original_field = "6642E70FC5A4820F06CCFC64E0090BCE", hash_generated_field = "DD071BE2371A95289920DCB4558946CA")
+
+    public Map<String, Long> componentResumeTimes;
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.004 -0500", hash_original_method = "EF5295BC011C50A8405086A4DA12DD9D", hash_generated_method = "65AC61007C843743336F84E5C57542B5")
+    public PkgUsageStats(String pkgName, int count, long time, Map<String, Long> lastResumeTimes) {
+        packageName = pkgName;
+        launchCount = count;
+        usageTime = time;
+        componentResumeTimes = new HashMap<String, Long>(lastResumeTimes);
+    }
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.005 -0500", hash_original_method = "977D0617B4C179661ACE3B4403E55D28", hash_generated_method = "94C4A350321CBDB0123361695E6F08CC")
+    public PkgUsageStats(Parcel source) {
+        packageName = source.readString();
+        launchCount = source.readInt();
+        usageTime = source.readLong();
+        final int N = source.readInt();
+        componentResumeTimes = new HashMap<String, Long>(N);
+        for (int i = 0; i < N; i++) {
+            String component = source.readString();
+            long lastResumeTime = source.readLong();
+            componentResumeTimes.put(component, lastResumeTime);
+        }
+    }
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.006 -0500", hash_original_method = "9D74B058D8C14276F2F5A28106414DA9", hash_generated_method = "6DC9CA45885B49CE4EA8D39A370F4C21")
+    public PkgUsageStats(PkgUsageStats pStats) {
+        packageName = pStats.packageName;
+        launchCount = pStats.launchCount;
+        usageTime = pStats.usageTime;
+        componentResumeTimes = new HashMap<String, Long>(pStats.componentResumeTimes);
+    }
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.003 -0500", hash_original_method = "5A8FDC802D15BADB218E7B9A38048A4B", hash_generated_method = "A59216B1FA5FC6E108B22AE23CA9977A")
+    public String toString() {
+        return "PkgUsageStats{"
+        + Integer.toHexString(System.identityHashCode(this))
+        + " " + packageName + "}";
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.007 -0500", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "D90463461B2A94FF94D13FDF69BB80C9")
+    public int describeContents() {
+        return 0;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:42.008 -0500", hash_original_method = "65B01222074C1BC4168423427126F9FB", hash_generated_method = "296141E1B9BCF038DD997FEB9D49CDCF")
+    public void writeToParcel(Parcel dest, int parcelableFlags) {
+        dest.writeString(packageName);
+        dest.writeInt(launchCount);
+        dest.writeLong(usageTime);
+        dest.writeInt(componentResumeTimes.size());
+        for (Map.Entry<String, Long> ent : componentResumeTimes.entrySet()) {
+            dest.writeString(ent.getKey());
+            dest.writeLong(ent.getValue());
+        }
+    }
     // orphaned legacy method
     public PkgUsageStats createFromParcel(Parcel in) {
             return new PkgUsageStats(in);

@@ -1,6 +1,8 @@
 package gov.nist.javax.sip.address;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
@@ -8,221 +10,153 @@ import droidsafe.annotations.*;
 
 
 public final class UserInfo extends NetObject {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:32.327 -0400", hash_original_field = "EE11CBB19052E40B07AAC0CA060C23EE", hash_generated_field = "2E8D8BE8172FDAA496B4216DD847F959")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:04.799 -0500", hash_original_field = "9304317C14889A351A8EA0D9F9C6C8E9", hash_generated_field = "E4DBADE234AE16A77F53FEF34BDC568F")
 
-    protected String user;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:32.327 -0400", hash_original_field = "5F4DCC3B5AA765D61D8327DEB882CF99", hash_generated_field = "24B4D2B0B8A23D8C0FAB238006B574DA")
 
-    protected String password;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:32.327 -0400", hash_original_field = "3D88FCBAA3581C4957147EF9AD47EC5E", hash_generated_field = "A84E54971210FD20E9F93C9D58D4FA09")
-
-    protected int userType;
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:32.327 -0400", hash_original_method = "F45B016F8E384DB218E594119B9CAF8C", hash_generated_method = "B84D01599B6AD9928E5FE27573600BA5")
-    public  UserInfo() {
-        super();
-        // ---------- Original Method ----------
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:32.328 -0400", hash_original_method = "A09C3D32ACE02300A3630780DF7DA73F", hash_generated_method = "D3343DA5BDD0D27E48EE752E5C6983A1")
-    public boolean equals(Object obj) {
-        addTaint(obj.getTaint());
-        if(getClass() != obj.getClass())        
-        {
-            boolean var68934A3E9455FA72420237EB05902327_1680354373 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1303292281 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1303292281;
-        } //End block
-        UserInfo other = (UserInfo) obj;
-        if(this.userType != other.userType)        
-        {
-            boolean var68934A3E9455FA72420237EB05902327_2020580391 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1543696552 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1543696552;
-        } //End block
-        if(!this.user.equalsIgnoreCase(other.user))        
-        {
-            boolean var68934A3E9455FA72420237EB05902327_317584980 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1562018998 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1562018998;
-        } //End block
-        if(this.password != null && other.password == null)        
-        {
-        boolean var68934A3E9455FA72420237EB05902327_924225651 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_543141320 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_543141320;
-        }
-        if(other.password != null && this.password == null)        
-        {
-        boolean var68934A3E9455FA72420237EB05902327_867411033 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_172550756 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_172550756;
-        }
-        if(this.password == other.password)        
-        {
-        boolean varB326B5062B2F0E69046810717534CB09_1294946937 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1641612616 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1641612616;
-        }
-        boolean varDBE1820E03E80EFC11DF64D2A92A059A_1075963515 = ((this.password.equals(other.password)));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_674691993 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_674691993;
-        // ---------- Original Method ----------
-        //if (getClass() != obj.getClass()) {
-            //return false;
-        //}
-        //UserInfo other = (UserInfo) obj;
-        //if (this.userType != other.userType) {
-            //return false;
-        //}
-        //if (!this.user.equalsIgnoreCase(other.user)) {
-            //return false;
-        //}
-        //if (this.password != null && other.password == null)
-            //return false;
-        //if (other.password != null && this.password == null)
-            //return false;
-        //if (this.password == other.password)
-            //return true;
-        //return (this.password.equals(other.password));
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:32.329 -0400", hash_original_method = "A36333A6F745F23182438BFF478F971C", hash_generated_method = "E99DC83EF086C05AFBA4F80EB66F03F0")
-    public String encode() {
-String var678B6FE61D54E5BD4E109D01C318C133_176035621 =         encode(new StringBuffer()).toString();
-        var678B6FE61D54E5BD4E109D01C318C133_176035621.addTaint(taint);
-        return var678B6FE61D54E5BD4E109D01C318C133_176035621;
-        // ---------- Original Method ----------
-        //return encode(new StringBuffer()).toString();
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:32.329 -0400", hash_original_method = "7AE7B8A415769E92878FFEC035C52AE0", hash_generated_method = "AE44B9D609CE1559E93856B93D018FCD")
-    public StringBuffer encode(StringBuffer buffer) {
-        addTaint(buffer.getTaint());
-        if(password != null)        
-        buffer.append(user).append(COLON).append(password);
-        else
-        buffer.append(user);
-StringBuffer varE75BCB56CC6A0BCEED51BE38E1BB3F38_1814685025 =         buffer;
-        varE75BCB56CC6A0BCEED51BE38E1BB3F38_1814685025.addTaint(taint);
-        return varE75BCB56CC6A0BCEED51BE38E1BB3F38_1814685025;
-        // ---------- Original Method ----------
-        //if (password != null)
-            //buffer.append(user).append(COLON).append(password);
-        //else
-            //buffer.append(user);
-        //return buffer;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:32.329 -0400", hash_original_method = "B45A9D19151CAED15569D78F83AD2095", hash_generated_method = "C8505DC09422B6CFF865611C6AB8A6C3")
-    public void clearPassword() {
-        this.password = null;
-        // ---------- Original Method ----------
-        //this.password = null;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:32.330 -0400", hash_original_method = "0304D4B17F9026D87C6633B5EFA54170", hash_generated_method = "D6F4730CBAD04844D5006C9057975F55")
-    public int getUserType() {
-        int var3D88FCBAA3581C4957147EF9AD47EC5E_33940391 = (userType);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1483062473 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1483062473;
-        // ---------- Original Method ----------
-        //return userType;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:32.330 -0400", hash_original_method = "067A1216625EE4AD320B5B1536FC853E", hash_generated_method = "3C88B020FB73DE43571E6758123171B7")
-    public String getUser() {
-String var1ABA5703084F105A1CF02655AEDE82C9_1416220112 =         user;
-        var1ABA5703084F105A1CF02655AEDE82C9_1416220112.addTaint(taint);
-        return var1ABA5703084F105A1CF02655AEDE82C9_1416220112;
-        // ---------- Original Method ----------
-        //return user;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:32.330 -0400", hash_original_method = "9DBD0BEF507048073F2256BD69D03A45", hash_generated_method = "BE0F3B18AE9F0E751928D801392DF4E4")
-    public String getPassword() {
-String var8371B008E722D01F0CA3A116DA23853F_1318815884 =         password;
-        var8371B008E722D01F0CA3A116DA23853F_1318815884.addTaint(taint);
-        return var8371B008E722D01F0CA3A116DA23853F_1318815884;
-        // ---------- Original Method ----------
-        //return password;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:32.331 -0400", hash_original_method = "3D02333C0789FC569CF57CEE9E3D36D7", hash_generated_method = "ABA2B06BD258D22F296622B437D308ED")
-    public void setUser(String user) {
-        this.user = user;
-        if(user != null
-            && (user.indexOf(POUND) >= 0 || user.indexOf(SEMICOLON) >= 0))        
-        {
-            setUserType(TELEPHONE_SUBSCRIBER);
-        } //End block
-        else
-        {
-            setUserType(USER);
-        } //End block
-        // ---------- Original Method ----------
-        //this.user = user;
-        //if (user != null
-            //&& (user.indexOf(POUND) >= 0 || user.indexOf(SEMICOLON) >= 0)) {
-            //setUserType(TELEPHONE_SUBSCRIBER);
-        //} else {
-            //setUserType(USER);
-        //}
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:32.331 -0400", hash_original_method = "914969AC5F0FD02943850406A5ADB2DF", hash_generated_method = "F4C8503980BC4D291DEAF6570BD57166")
-    public void setPassword(String p) {
-        password = p;
-        // ---------- Original Method ----------
-        //password = p;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:32.332 -0400", hash_original_method = "D88C19BFECDFF9E40F4106FE0C0D9444", hash_generated_method = "22F9384CEC9A46C309195322B30D91BD")
-    public void setUserType(int type) throws IllegalArgumentException {
-        if(type != TELEPHONE_SUBSCRIBER && type != USER)        
-        {
-            IllegalArgumentException var08F7568D6B78264D943D1F314BFD0791_1793882854 = new IllegalArgumentException("Parameter not in range");
-            var08F7568D6B78264D943D1F314BFD0791_1793882854.addTaint(taint);
-            throw var08F7568D6B78264D943D1F314BFD0791_1793882854;
-        } //End block
-        userType = type;
-        // ---------- Original Method ----------
-        //if (type != TELEPHONE_SUBSCRIBER && type != USER) {
-            //throw new IllegalArgumentException("Parameter not in range");
-        //}
-        //userType = type;
-    }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:32.332 -0400", hash_original_field = "43231819C48FB9A06188A2B06AFC5E10", hash_generated_field = "E4DBADE234AE16A77F53FEF34BDC568F")
 
     private static final long serialVersionUID = 7268593273924256144L;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:32.332 -0400", hash_original_field = "E16DFB7AE7E6A4B6889DA697A63EA8FD", hash_generated_field = "2961967C21DF0AFF555C9722B216BAA2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:04.803 -0500", hash_original_field = "EE92A15F686F0E035A7FE1AC53752059", hash_generated_field = "2961967C21DF0AFF555C9722B216BAA2")
 
     public final static int TELEPHONE_SUBSCRIBER = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:32.332 -0400", hash_original_field = "20409D8B07DC11D8EACCABC83145D39D", hash_generated_field = "10FB0621E7A7DF7F148CB5C5899EF9ED")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:04.804 -0500", hash_original_field = "2BE2A1E4642EAD0EAA09F9464A665F69", hash_generated_field = "10FB0621E7A7DF7F148CB5C5899EF9ED")
 
     public final static int USER = 2;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:04.800 -0500", hash_original_field = "B37EB1ED61432756B8E994D3D7BA4599", hash_generated_field = "2E8D8BE8172FDAA496B4216DD847F959")
+
+    protected String user;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:04.801 -0500", hash_original_field = "2AFEDC818D0EF3384B2D2537704E6E21", hash_generated_field = "24B4D2B0B8A23D8C0FAB238006B574DA")
+
+    protected String password;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:04.802 -0500", hash_original_field = "F58DEF50E41D3023AE1765826940EF9B", hash_generated_field = "A84E54971210FD20E9F93C9D58D4FA09")
+
+    protected int userType;
+
+    /** Default constructor
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:04.805 -0500", hash_original_method = "F45B016F8E384DB218E594119B9CAF8C", hash_generated_method = "D72E2E8D97932CF9D212F26545BD45ED")
+    public UserInfo() {
+        super();
+    }
+
+    /**
+     * Compare for equality.
+     * @param obj Object to set
+     * @return true if the two headers are equals, false otherwise.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:04.806 -0500", hash_original_method = "A09C3D32ACE02300A3630780DF7DA73F", hash_generated_method = "32F0C96A3AE6D3E038F875614DB6300C")
+    public boolean equals(Object obj) {
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        UserInfo other = (UserInfo) obj;
+        if (this.userType != other.userType) {
+            return false;
+        }
+        if (!this.user.equalsIgnoreCase(other.user)) {
+            return false;
+        }
+        if (this.password != null && other.password == null)
+            return false;
+
+        if (other.password != null && this.password == null)
+            return false;
+
+        if (this.password == other.password)
+            return true;
+
+        return (this.password.equals(other.password));
+    }
+
+    /**
+     * Encode the user information as a string.
+     * @return String
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:04.807 -0500", hash_original_method = "A36333A6F745F23182438BFF478F971C", hash_generated_method = "3E83C3693072E036EE6283AD07E42258")
+    public String encode() {
+        return encode(new StringBuffer()).toString();
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:04.808 -0500", hash_original_method = "7AE7B8A415769E92878FFEC035C52AE0", hash_generated_method = "9749A0E07E8665468D2B31D3CA6E6F46")
+    public StringBuffer encode(StringBuffer buffer) {
+        if (password != null)
+            buffer.append(user).append(COLON).append(password);
+        else
+            buffer.append(user);
+
+        return buffer;
+    }
+
+    /** Clear the password field.
+    */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:04.810 -0500", hash_original_method = "B45A9D19151CAED15569D78F83AD2095", hash_generated_method = "643ADB5C95A2E9CDD4F158DFE1BAB0C5")
+    public void clearPassword() {
+        this.password = null;
+    }
+
+    /**
+     * Gets the user type (which can be set to TELEPHONE_SUBSCRIBER or USER)
+     * @return the type of user.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:04.811 -0500", hash_original_method = "0304D4B17F9026D87C6633B5EFA54170", hash_generated_method = "43C35D644C6F5C43F0C728653BB5D839")
+    public int getUserType() {
+        return userType;
+    }
+
+    /** get the user field.
+     * @return String
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:04.811 -0500", hash_original_method = "067A1216625EE4AD320B5B1536FC853E", hash_generated_method = "768A7D1D5D0FCDDB7735C26A1B322FA4")
+    public String getUser() {
+        return user;
+    }
+
+    /** get the password field.
+     * @return String
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:04.812 -0500", hash_original_method = "9DBD0BEF507048073F2256BD69D03A45", hash_generated_method = "3422D16EB2EB2FA3C8F125F717D7CA7E")
+    public String getPassword() {
+        return password;
+    }
+
+    /**
+     * Set the user member
+     * @param user String to set
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:04.813 -0500", hash_original_method = "3D02333C0789FC569CF57CEE9E3D36D7", hash_generated_method = "4FE3B74B78D0A7A0C8FEC349451EBE6B")
+    public void setUser(String user) {
+        this.user = user;
+        // BUG Fix submitted by Lamine Brahimi
+        // add this (taken form sip_messageParser)
+        // otherwise comparison of two SipUrl will fail because this
+        // parameter is not set (whereas it is set in sip_messageParser).
+        if (user != null
+            && (user.indexOf(POUND) >= 0 || user.indexOf(SEMICOLON) >= 0)) {
+            setUserType(TELEPHONE_SUBSCRIBER);
+        } else {
+            setUserType(USER);
+        }
+    }
+
+    /**
+     * Set the password member
+     * @param p String to set
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:04.814 -0500", hash_original_method = "914969AC5F0FD02943850406A5ADB2DF", hash_generated_method = "EE5E537AE6B60E03E627F9FD987393B5")
+    public void setPassword(String p) {
+        password = p;
+    }
+
+    /**
+     * Set the user type (to TELEPHONE_SUBSCRIBER or USER).
+     * @param type int to set
+     * @throws IllegalArgumentException if type is not in range.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:04.815 -0500", hash_original_method = "D88C19BFECDFF9E40F4106FE0C0D9444", hash_generated_method = "5FD668171013FE716D566DA2525DF335")
+    public void setUserType(int type) throws IllegalArgumentException {
+        if (type != TELEPHONE_SUBSCRIBER && type != USER) {
+            throw new IllegalArgumentException("Parameter not in range");
+        }
+        userType = type;
+    }
 }
 

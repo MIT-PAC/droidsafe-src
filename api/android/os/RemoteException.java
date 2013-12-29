@@ -1,26 +1,21 @@
 package android.os;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.util.AndroidException;
 
 
 public class RemoteException extends AndroidException {
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.513 -0400", hash_original_method = "5634FE974275AC57C23528565D1940A5", hash_generated_method = "466007FF5A418054331F795B68538629")
-    public  RemoteException() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:42.009 -0500", hash_original_method = "5634FE974275AC57C23528565D1940A5", hash_generated_method = "3C58C92B1E8C14BB2A72ACFE9CAC413F")
+    public RemoteException() {
         super();
-        // ---------- Original Method ----------
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.513 -0400", hash_original_method = "DEE27A1F58443ED534CF6DB1DEBB024B", hash_generated_method = "39A434E7824C2E9104D6F7F92AADF3C0")
-    public  RemoteException(String message) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:42.010 -0500", hash_original_method = "DEE27A1F58443ED534CF6DB1DEBB024B", hash_generated_method = "2A817191D7257B6020578B2FF6544476")
+    public RemoteException(String message) {
         super(message);
-        addTaint(message.getTaint());
-        // ---------- Original Method ----------
     }
 
     

@@ -1,6 +1,8 @@
 package org.apache.harmony.xnet.provider.jsse;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.nio.ByteBuffer;
 
@@ -12,82 +14,70 @@ import javax.net.ssl.SSLException;
 
 
 public class SSLEngineAppData implements org.apache.harmony.xnet.provider.jsse.Appendable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.095 -0400", hash_original_field = "7F2DB423A49B305459147332FB01CF87", hash_generated_field = "3923F3F9F9ECABE8D28493E863FC2CD8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.316 -0500", hash_original_field = "3923F3F9F9ECABE8D28493E863FC2CD8", hash_generated_field = "3923F3F9F9ECABE8D28493E863FC2CD8")
 
     byte[] buffer;
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.095 -0400", hash_original_method = "06EACE6E653645104AEC16265D727782", hash_generated_method = "A265DEAC1EBA95E175EB1A0A29A2449C")
-    protected  SSLEngineAppData() {
-        // ---------- Original Method ----------
-    }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.096 -0400", hash_original_method = "452DC75F155E1CC98FB8D0CBD4BB0B6D", hash_generated_method = "BAD3D6354232E5FFAD1B005B9D9C45A2")
+    /**
+     * Constructor
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.317 -0500", hash_original_method = "06EACE6E653645104AEC16265D727782", hash_generated_method = "1BA161F1DDD021955650564C16242D36")
+    protected SSLEngineAppData() {}
+
+    /**
+     * Stores received data. The source data is not cloned,
+     * just the array reference is remembered into the buffer field.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.318 -0500", hash_original_method = "452DC75F155E1CC98FB8D0CBD4BB0B6D", hash_generated_method = "4E7BB90CD6FCB70AE2C45964E3FC6C49")
     public void append(byte[] src) {
-        if(buffer != null)        
-        {
-            AlertException var065FFEBD459357CED59A74C4E3B5A523_1123759510 = new AlertException(
+        if (buffer != null) {
+            throw new AlertException(
                 AlertProtocol.INTERNAL_ERROR,
                 new SSLException("Attempt to override the data"));
-            var065FFEBD459357CED59A74C4E3B5A523_1123759510.addTaint(taint);
-            throw var065FFEBD459357CED59A74C4E3B5A523_1123759510;
-        } //End block
+        }
         buffer = src;
-        // ---------- Original Method ----------
-        //if (buffer != null) {
-            //throw new AlertException(
-                //AlertProtocol.INTERNAL_ERROR,
-                //new SSLException("Attempt to override the data"));
-        //}
-        //buffer = src;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.098 -0400", hash_original_method = "26A62B68A47AD8599D541EA0EB845FD0", hash_generated_method = "E9B2AC25E881594444FEB405CBC9D9B0")
+    /**
+     * Places the data from the buffer into the array of destination
+     * ByteBuffer objects.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.319 -0500", hash_original_method = "26A62B68A47AD8599D541EA0EB845FD0", hash_generated_method = "4002D46B7AD683EE775D89C25FEC1BD4")
     protected int placeTo(ByteBuffer[] dsts, int offset, int length) {
-        addTaint(length);
-        addTaint(offset);
-        addTaint(dsts[0].getTaint());
-        if(buffer == null)        
-        {
-            int varCFCD208495D565EF66E7DFF9F98764DA_422813265 = (0);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_463652763 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_463652763;
-        } //End block
+        if (buffer == null) {
+            return 0;
+        }
         int pos = 0;
         int len = buffer.length;
         int rem;
-for(int i=offset;i<offset+length;i++)
-        {
+        // write data to the buffers
+        for (int i=offset; i<offset+length; i++) {
             rem = dsts[i].remaining();
-            if(len - pos < rem)            
-            {
+            // TODO: optimization work - use hasArray, array(), arraycopy
+            if (len - pos < rem) {
+                // can fully write remaining data into buffer
                 dsts[i].put(buffer, pos, len - pos);
                 pos = len;
+                // data was written, exit
                 break;
-            } //End block
+            }
+            // write chunk of data
             dsts[i].put(buffer, pos, rem);
             pos += rem;
-        } //End block
-        if(pos != len)        
-        {
-            AlertException var9D1E8B54783623D66E9493E73F95A168_2092265481 = new AlertException(
+        }
+        if (pos != len) {
+            // The data did not feet into the buffers,
+            // it should not happen, because the destination buffers
+            // had been checked for the space before record unwrapping.
+            // But if it so, we should allert about internal error.
+            throw new AlertException(
                 AlertProtocol.INTERNAL_ERROR,
                 new SSLException(
                     "The received application data could not be fully written"
                     + "into the destination buffers"));
-            var9D1E8B54783623D66E9493E73F95A168_2092265481.addTaint(taint);
-            throw var9D1E8B54783623D66E9493E73F95A168_2092265481;
-        } //End block
+        }
         buffer = null;
-        int varF5A8E923F8CD24B56B3BAB32358CC58A_1987107746 = (len);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1062458035 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1062458035;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        return len;
     }
 
     

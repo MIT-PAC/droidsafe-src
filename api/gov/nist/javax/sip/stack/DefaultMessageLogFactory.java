@@ -1,6 +1,8 @@
 package gov.nist.javax.sip.stack;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import gov.nist.javax.sip.LogRecord;
 import gov.nist.javax.sip.LogRecordFactory;
@@ -16,52 +18,20 @@ public class DefaultMessageLogFactory implements LogRecordFactory {
         //Synthesized constructor
     }
 
-
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.200 -0400", hash_original_method = "1FCBD43A9010493D751AC2489A6EFE82", hash_generated_method = "B79169CE394EF50EA39ADDAE71B9AE2C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:02.648 -0500", hash_original_method = "1FCBD43A9010493D751AC2489A6EFE82", hash_generated_method = "272CA8F622A89C30CFA79DA55B5D6EEA")
     public LogRecord createLogRecord(String message, String source,
             String destination, String timeStamp, boolean isSender,
             String firstLine, String tid, String callId, long tsHeaderValue) {
-        addTaint(tsHeaderValue);
-        addTaint(callId.getTaint());
-        addTaint(tid.getTaint());
-        addTaint(firstLine.getTaint());
-        addTaint(isSender);
-        addTaint(timeStamp.getTaint());
-        addTaint(destination.getTaint());
-        addTaint(source.getTaint());
-        addTaint(message.getTaint());
-LogRecord var78D95E71B445F3D0B3A5C204500A3C42_1669954734 =         new MessageLog(message, source, destination, timeStamp,
+        return new MessageLog(message, source, destination, timeStamp,
                 isSender, firstLine, tid, callId, tsHeaderValue);
-        var78D95E71B445F3D0B3A5C204500A3C42_1669954734.addTaint(taint);
-        return var78D95E71B445F3D0B3A5C204500A3C42_1669954734;
-        // ---------- Original Method ----------
-        //return new MessageLog(message, source, destination, timeStamp,
-                //isSender, firstLine, tid, callId, tsHeaderValue);
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.200 -0400", hash_original_method = "6DD4174F440258B3C35BB449B3066E66", hash_generated_method = "1C4DBF0991F60DF4DEDB055FFFB6E246")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:02.649 -0500", hash_original_method = "6DD4174F440258B3C35BB449B3066E66", hash_generated_method = "99ED78F536BF141BEA59A733DBBB95EF")
     public LogRecord createLogRecord(String message, String source,
             String destination, long timeStamp, boolean isSender,
             String firstLine, String tid, String callId, long timestampVal) {
-        addTaint(timestampVal);
-        addTaint(callId.getTaint());
-        addTaint(tid.getTaint());
-        addTaint(firstLine.getTaint());
-        addTaint(isSender);
-        addTaint(timeStamp);
-        addTaint(destination.getTaint());
-        addTaint(source.getTaint());
-        addTaint(message.getTaint());
-LogRecord var85CE2421DBC16C4BEEA23E275AA06A8A_1523261343 =         new MessageLog(message, source, destination, timeStamp,
+        return new MessageLog(message, source, destination, timeStamp,
                 isSender, firstLine, tid, callId, timestampVal);
-        var85CE2421DBC16C4BEEA23E275AA06A8A_1523261343.addTaint(taint);
-        return var85CE2421DBC16C4BEEA23E275AA06A8A_1523261343;
-        // ---------- Original Method ----------
-        //return new MessageLog(message, source, destination, timeStamp,
-                //isSender, firstLine, tid, callId, timestampVal);
     }
 
     

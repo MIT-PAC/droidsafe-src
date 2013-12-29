@@ -1,6 +1,8 @@
 package java.util.concurrent;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -43,27 +45,16 @@ RunnableFuture<T> varBEF434F9B24D8E8523500F630F54EF1C_34807659 =         new Fut
         //return new FutureTask<T>(callable);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.222 -0400", hash_original_method = "049AFBF6C6F134F34D289DFB97D38727", hash_generated_method = "261129CF0ACC808D8792D46B248F7973")
+    /**
+     * @throws RejectedExecutionException {@inheritDoc}
+     * @throws NullPointerException       {@inheritDoc}
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:45.479 -0500", hash_original_method = "049AFBF6C6F134F34D289DFB97D38727", hash_generated_method = "D79DC49478D56E7E26C565781312A0F8")
     public Future<?> submit(Runnable task) {
-        addTaint(task.getTaint());
-        if(task == null)        
-        {
-        NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_1661038787 = new NullPointerException();
-        var7338BC9F48D81FE0BBD6183F4014DCC4_1661038787.addTaint(taint);
-        throw var7338BC9F48D81FE0BBD6183F4014DCC4_1661038787;
-        }
+        if (task == null) throw new NullPointerException();
         RunnableFuture<Void> ftask = newTaskFor(task, null);
         execute(ftask);
-Future<?> var1A47BEF10A35E08D71A10703CE70AAF7_832493973 =         ftask;
-        var1A47BEF10A35E08D71A10703CE70AAF7_832493973.addTaint(taint);
-        return var1A47BEF10A35E08D71A10703CE70AAF7_832493973;
-        // ---------- Original Method ----------
-        //if (task == null) throw new NullPointerException();
-        //RunnableFuture<Void> ftask = newTaskFor(task, null);
-        //execute(ftask);
-        //return ftask;
+        return ftask;
     }
 
     

@@ -1,6 +1,8 @@
 package java.security;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.nio.ByteBuffer;
 import java.security.cert.Certificate;
@@ -17,27 +19,23 @@ import org.apache.harmony.security.fortress.Engine;
 
 
 public abstract class Signature extends SignatureSpi {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.495 -0400", hash_original_field = "9E9F3D70BD8C8957627EADA96D967706", hash_generated_field = "2D84320E029EBF537A8555BC820086EF")
 
-    private Provider provider;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.495 -0400", hash_original_field = "ED469618898D75B149E5C7C4B6A1C415", hash_generated_field = "40E4722A302366B2A43F1CD6C99E2454")
-
-    private String algorithm;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.495 -0400", hash_original_field = "9C233C6B104734A34A36247701B5D158", hash_generated_field = "CDF6660334629CDE27FDB0FE309B0222")
-
-    protected int state = UNINITIALIZED;
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.495 -0400", hash_original_method = "007DE01FB6A8AC35B06025EDE803711E", hash_generated_method = "64FBEE7041AF14FFB5E58DA4CDF89A1A")
-    protected  Signature(String algorithm) {
-        this.algorithm = algorithm;
-        // ---------- Original Method ----------
-        //this.algorithm = algorithm;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    public static Signature getInstance(String algorithm) throws NoSuchAlgorithmException {
+    /**
+     * Returns a new instance of {@code Signature} that utilizes the specified
+     * algorithm.
+     *
+     * @param algorithm
+     *            the name of the algorithm to use.
+     * @return a new instance of {@code Signature} that utilizes the specified
+     *         algorithm.
+     * @throws NoSuchAlgorithmException
+     *             if the specified algorithm is not available.
+     * @throws NullPointerException
+     *             if {@code algorithm} is {@code null}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.941 -0500", hash_original_method = "4B1132236EA3658AFDF6AAF777F4DB3E", hash_generated_method = "0BC0646CA979D25936278C85621B3FDE")
+    public static Signature getInstance(String algorithm)
+            throws NoSuchAlgorithmException {
         if (algorithm == null) {
             throw new NullPointerException();
         }
@@ -53,9 +51,27 @@ public abstract class Signature extends SignatureSpi {
         return new SignatureImpl((SignatureSpi) spi, provider, algorithm);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    public static Signature getInstance(String algorithm, String provider) throws NoSuchAlgorithmException, NoSuchProviderException {
+    /**
+     * Returns a new instance of {@code Signature} that utilizes the specified
+     * algorithm from the specified provider.
+     *
+     * @param algorithm
+     *            the name of the algorithm to use.
+     * @param provider
+     *            the name of the provider.
+     * @return a new instance of {@code Signature} that utilizes the specified
+     *         algorithm from the specified provider.
+     * @throws NoSuchAlgorithmException
+     *             if the specified algorithm is not available.
+     * @throws NoSuchProviderException
+     *             if the specified provider is not available.
+     * @throws NullPointerException
+     *             if {@code algorithm} is {@code null}.
+     * @throws IllegalArgumentException if {@code provider == null || provider.isEmpty()}
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.942 -0500", hash_original_method = "38CF846AD141DABFC78B3F3A9BECF440", hash_generated_method = "84FE1D613CEABBA801933A3986010912")
+    public static Signature getInstance(String algorithm, String provider)
+            throws NoSuchAlgorithmException, NoSuchProviderException {
         if (algorithm == null) {
             throw new NullPointerException();
         }
@@ -69,9 +85,25 @@ public abstract class Signature extends SignatureSpi {
         return getSignatureInstance(algorithm, p);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    public static Signature getInstance(String algorithm, Provider provider) throws NoSuchAlgorithmException {
+    /**
+     * Returns a new instance of {@code Signature} that utilizes the specified
+     * algorithm from the specified provider.
+     *
+     * @param algorithm
+     *            the name of the algorithm to use.
+     * @param provider
+     *            the security provider.
+     * @return a new instance of {@code Signature} that utilizes the specified
+     *         algorithm from the specified provider.
+     * @throws NoSuchAlgorithmException
+     *             if the specified algorithm is not available.
+     * @throws NullPointerException
+     *             if {@code algorithm} is {@code null}.
+     * @throws IllegalArgumentException if {@code provider == null}
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.943 -0500", hash_original_method = "BCEC0D04DA2EAAA5A150C425DE98380C", hash_generated_method = "C0DADB9B24DDAB04166766EA961722A3")
+    public static Signature getInstance(String algorithm, Provider provider)
+            throws NoSuchAlgorithmException {
         if (algorithm == null) {
             throw new NullPointerException();
         }
@@ -81,8 +113,7 @@ public abstract class Signature extends SignatureSpi {
         return getSignatureInstance(algorithm, provider);
     }
 
-    
-    @DSModeled(DSC.BAN)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.944 -0500", hash_original_method = "1D4C76885795B6AE74A499923A41E610", hash_generated_method = "409E8726C515B71C7C1FC023C7B197B5")
     private static Signature getSignatureInstance(String algorithm,
             Provider provider) throws NoSuchAlgorithmException {
         Object spi = ENGINE.getInstance(algorithm, provider, null);
@@ -94,570 +125,550 @@ public abstract class Signature extends SignatureSpi {
         }
         return new SignatureImpl((SignatureSpi) spi, provider, algorithm);
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.932 -0500", hash_original_field = "AE2DD7C30E170D2FAF1E55B5FBA5DB96", hash_generated_field = "F153FC2145A140C7EE9C30DF2197BDF3")
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.497 -0400", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "CCD2EE2C7649486BF9FE714F63F6CE49")
+    private static final String SERVICE = "Signature";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.933 -0500", hash_original_field = "17F86B5CB94419D7D346BC8D1B101EA5", hash_generated_field = "82D6520D3C45D5046B0A4FDCEDAFF880")
+
+    private static Engine ENGINE = new Engine(SERVICE);
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.936 -0500", hash_original_field = "A7EA8A5BB4DF5F5290D3958FFC1145F9", hash_generated_field = "5981180EC86BD86C5A973C24E0F5F941")
+
+    protected static final int UNINITIALIZED = 0;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.937 -0500", hash_original_field = "B2A3B569FD2B3940CF848521334D6275", hash_generated_field = "9C254CF368BDF48B3D83BAA2B82A1195")
+
+    protected static final int SIGN = 2;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.938 -0500", hash_original_field = "8BD2A876B5C5C94D878ECDFF2419A1FA", hash_generated_field = "8738159158F0C7B8305EEDB4018256AD")
+
+    protected static final int VERIFY = 3;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.934 -0500", hash_original_field = "70389BF55D92237F4948951640719A18", hash_generated_field = "2D84320E029EBF537A8555BC820086EF")
+
+    private Provider provider;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.935 -0500", hash_original_field = "1DDAED4286CC7F9A2BC49502885440CE", hash_generated_field = "40E4722A302366B2A43F1CD6C99E2454")
+
+    private String algorithm;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.939 -0500", hash_original_field = "1BA21414CA8B9AEA2A430DA00A3074D6", hash_generated_field = "CDF6660334629CDE27FDB0FE309B0222")
+
+    protected int state = UNINITIALIZED;
+
+    /**
+     * Constructs a new instance of {@code Signature} with the name of
+     * the algorithm to use.
+     *
+     * @param algorithm
+     *            the name of algorithm to use.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.940 -0500", hash_original_method = "007DE01FB6A8AC35B06025EDE803711E", hash_generated_method = "ACEB7926671FDF408988DCE197C33435")
+    protected Signature(String algorithm) {
+        this.algorithm = algorithm;
+    }
+
+    /**
+     * Returns the provider associated with this {@code Signature}.
+     *
+     * @return the provider associated with this {@code Signature}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.945 -0500", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "443000CF13C77ABCABFC8B67E2DE556F")
     public final Provider getProvider() {
-Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_921464364 =         provider;
-        varC1EB7B12CCABB27D431E5B91E5FF9ECB_921464364.addTaint(taint);
-        return varC1EB7B12CCABB27D431E5B91E5FF9ECB_921464364;
-        // ---------- Original Method ----------
-        //return provider;
+        return provider;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.498 -0400", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "3284202BA13FEB65B57F586A5880B0B5")
+    /**
+     * Returns the name of the algorithm of this {@code Signature}.
+     *
+     * @return the name of the algorithm of this {@code Signature}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.946 -0500", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "8A7AA6162519FFB2228039F3D6331CE9")
     public final String getAlgorithm() {
-String var44A46B4003FC81ACB0223385BA1FA818_2138983321 =         algorithm;
-        var44A46B4003FC81ACB0223385BA1FA818_2138983321.addTaint(taint);
-        return var44A46B4003FC81ACB0223385BA1FA818_2138983321;
-        // ---------- Original Method ----------
-        //return algorithm;
+        return algorithm;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.498 -0400", hash_original_method = "6F44917D7B2EA34B37DC316438211882", hash_generated_method = "DD5A0D573738A0D0584918D82BEC350D")
-    public final void initVerify(PublicKey publicKey) throws InvalidKeyException {
-        addTaint(publicKey.getTaint());
+    /**
+     * Initializes this {@code Signature} instance for signature verification,
+     * using the public key of the identity whose signature is going to be
+     * verified.
+     *
+     * @param publicKey
+     *            the public key.
+     * @throws InvalidKeyException
+     *             if {@code publicKey} is not valid.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.947 -0500", hash_original_method = "6F44917D7B2EA34B37DC316438211882", hash_generated_method = "7AC2C6D9E95974CE38D91A7C3E434C24")
+    public final void initVerify(PublicKey publicKey)
+            throws InvalidKeyException {
         engineInitVerify(publicKey);
         state = VERIFY;
-        // ---------- Original Method ----------
-        //engineInitVerify(publicKey);
-        //state = VERIFY;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.500 -0400", hash_original_method = "D5B41FE621F8332C2172FC7A18EF69C6", hash_generated_method = "C2185580E25F6CE572CCD1D613FD6AD9")
-    public final void initVerify(Certificate certificate) throws InvalidKeyException {
-        addTaint(certificate.getTaint());
-        if(certificate instanceof X509Certificate)        
-        {
+    /**
+     * Initializes this {@code Signature} instance for signature verification,
+     * using the certificate of the identity whose signature is going to be
+     * verified.
+     * <p>
+     * If the given certificate is an instance of {@link X509Certificate} and
+     * has a key usage parameter that indicates, that this certificate is not to
+     * be used for signing, an {@code InvalidKeyException} is thrown.
+     *
+     * @param certificate
+     *            the certificate used to verify a signature.
+     * @throws InvalidKeyException
+     *             if the publicKey in the certificate is not valid or not to be
+     *             used for signing.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.948 -0500", hash_original_method = "D5B41FE621F8332C2172FC7A18EF69C6", hash_generated_method = "DDF556FC8F0D194FA3654C15665AEE50")
+    public final void initVerify(Certificate certificate)
+            throws InvalidKeyException {
+        if (certificate instanceof X509Certificate) {
             Set ce = ((X509Certificate) certificate).getCriticalExtensionOIDs();
             boolean critical = false;
-            if(ce != null && !ce.isEmpty())            
-            {
-for(Iterator i = ce.iterator();i.hasNext();)
-                {
-                    if("2.5.29.15".equals(i.next()))                    
-                    {
+            if (ce != null && !ce.isEmpty()) {
+                for (Iterator i = ce.iterator(); i.hasNext();) {
+                    if ("2.5.29.15".equals(i.next())) {
+                        //KeyUsage OID = 2.5.29.15
                         critical = true;
                         break;
-                    } //End block
-                } //End block
-                if(critical)                
-                {
+                    }
+                }
+                if (critical) {
                     boolean[] keyUsage = ((X509Certificate) certificate)
                             .getKeyUsage();
-                    if((keyUsage != null) && (!keyUsage[0]))                    
-                    {
-                        InvalidKeyException var3C6FA66A427D89D7B509F5F9D450448C_686300685 = new InvalidKeyException("The public key in the certificate cannot be used for digital signature purposes");
-                        var3C6FA66A427D89D7B509F5F9D450448C_686300685.addTaint(taint);
-                        throw var3C6FA66A427D89D7B509F5F9D450448C_686300685;
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
+                    // As specified in RFC 3280 -
+                    // Internet X.509 Public Key Infrastructure
+                    // Certificate and Certificate Revocation List (CRL) Profile.
+                    // (http://www.ietf.org/rfc/rfc3280.txt)
+                    //
+                    // KeyUsage ::= BIT STRING { digitalSignature (0), <skipped> }
+                    if ((keyUsage != null) && (!keyUsage[0])) { // digitalSignature
+                        throw new InvalidKeyException("The public key in the certificate cannot be used for digital signature purposes");
+                    }
+                }
+            }
+        }
         engineInitVerify(certificate.getPublicKey());
         state = VERIFY;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.501 -0400", hash_original_method = "B6C8D7AE33737E5AFF4E8BA0A220ACB3", hash_generated_method = "9EC332E0A351CFBE5A325E9A51C98470")
-    public final void initSign(PrivateKey privateKey) throws InvalidKeyException {
-        addTaint(privateKey.getTaint());
+    /**
+     * Initializes this {@code Signature} instance for signing, using the
+     * private key of the identity whose signature is going to be generated.
+     *
+     * @param privateKey
+     *            the private key.
+     * @throws InvalidKeyException
+     *             if {@code privateKey} is not valid.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.949 -0500", hash_original_method = "B6C8D7AE33737E5AFF4E8BA0A220ACB3", hash_generated_method = "3D65D2EBE6315842C68943EE4644E80D")
+    public final void initSign(PrivateKey privateKey)
+            throws InvalidKeyException {
         engineInitSign(privateKey);
         state = SIGN;
-        // ---------- Original Method ----------
-        //engineInitSign(privateKey);
-        //state = SIGN;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.502 -0400", hash_original_method = "94B0D7FD7FB8599FDCD6F4025918B2A9", hash_generated_method = "0BFEDA386B7448BD514F0BA3D12AC034")
-    public final void initSign(PrivateKey privateKey, SecureRandom random) throws InvalidKeyException {
-        addTaint(random.getTaint());
-        addTaint(privateKey.getTaint());
+    /**
+     * Initializes this {@code Signature} instance for signing, using the
+     * private key of the identity whose signature is going to be generated and
+     * the specified source of randomness.
+     *
+     * @param privateKey
+     *            the private key.
+     * @param random
+     *            the {@code SecureRandom} to use.
+     * @throws InvalidKeyException
+     *             if {@code privateKey} is not valid.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.950 -0500", hash_original_method = "94B0D7FD7FB8599FDCD6F4025918B2A9", hash_generated_method = "449474DDB7FA3B6EFC721186B6B8AC32")
+    public final void initSign(PrivateKey privateKey, SecureRandom random)
+            throws InvalidKeyException {
         engineInitSign(privateKey, random);
         state = SIGN;
-        // ---------- Original Method ----------
-        //engineInitSign(privateKey, random);
-        //state = SIGN;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.503 -0400", hash_original_method = "1CBD4CB00E49A2B9C590273D2FD8D112", hash_generated_method = "533ED43C6EDE9D5BB0B36A386A790744")
+    /**
+     * Generates and returns the signature of all updated data.
+     * <p>
+     * This {@code Signature} instance is reset to the state of its last
+     * initialization for signing and thus can be used for another signature
+     * from the same identity.
+     *
+     * @return the signature of all updated data.
+     * @throws SignatureException
+     *             if this {@code Signature} instance is not initialized
+     *             properly.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.951 -0500", hash_original_method = "1CBD4CB00E49A2B9C590273D2FD8D112", hash_generated_method = "F648DBF6812B9BBA3F208A1D567B6006")
     public final byte[] sign() throws SignatureException {
-        if(state != SIGN)        
-        {
-            SignatureException var125661CE8E1441B5F396C624407C3274_1170400123 = new SignatureException("Signature object is not initialized properly");
-            var125661CE8E1441B5F396C624407C3274_1170400123.addTaint(taint);
-            throw var125661CE8E1441B5F396C624407C3274_1170400123;
-        } //End block
-        byte[] var2C28DE2A22EF8329373C917F693CF6C7_1366149983 = (engineSign());
-                byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1656019977 = {getTaintByte()};
-        return var2F9C81BC6E497382285CD6B7A7E33DE1_1656019977;
-        // ---------- Original Method ----------
-        //if (state != SIGN) {
-            //throw new SignatureException("Signature object is not initialized properly");
-        //}
-        //return engineSign();
+        if (state != SIGN) {
+            throw new SignatureException("Signature object is not initialized properly");
+        }
+        return engineSign();
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.504 -0400", hash_original_method = "82A870C6C8965CC8E79085F7D8A960EB", hash_generated_method = "CF3AED19BDC8BF1FD855E43D757145A2")
-    public final int sign(byte[] outbuf, int offset, int len) throws SignatureException {
-        addTaint(len);
-        addTaint(offset);
-        addTaint(outbuf[0]);
-        if(outbuf == null || offset < 0 || len < 0 ||
-                offset + len > outbuf.length)        
-        {
-            IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_2142118935 = new IllegalArgumentException();
-            var5783EF97022AA508B74A1E3EA38534AF_2142118935.addTaint(taint);
-            throw var5783EF97022AA508B74A1E3EA38534AF_2142118935;
-        } //End block
-        if(state != SIGN)        
-        {
-            SignatureException var125661CE8E1441B5F396C624407C3274_1245949267 = new SignatureException("Signature object is not initialized properly");
-            var125661CE8E1441B5F396C624407C3274_1245949267.addTaint(taint);
-            throw var125661CE8E1441B5F396C624407C3274_1245949267;
-        } //End block
-        int var763D82640E86A4C5F7903F8DDFF5815F_1953176834 = (engineSign(outbuf, offset, len));
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_505305478 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_505305478;
-        // ---------- Original Method ----------
-        //if (outbuf == null || offset < 0 || len < 0 ||
-                //offset + len > outbuf.length) {
-            //throw new IllegalArgumentException();
-        //}
-        //if (state != SIGN) {
-            //throw new SignatureException("Signature object is not initialized properly");
-        //}
-        //return engineSign(outbuf, offset, len);
+    /**
+     * Generates and stores the signature of all updated data in the provided
+     * {@code byte[]} at the specified position with the specified length.
+     * <p>
+     * This {@code Signature} instance is reset to the state of its last
+     * initialization for signing and thus can be used for another signature
+     * from the same identity.
+     *
+     * @param outbuf
+     *            the buffer to store the signature.
+     * @param offset
+     *            the index of the first byte in {@code outbuf} to store.
+     * @param len
+     *            the number of bytes allocated for the signature.
+     * @return the number of bytes stored in {@code outbuf}.
+     * @throws SignatureException
+     *             if this {@code Signature} instance is not initialized
+     *             properly.
+     * @throws IllegalArgumentException
+     *             if {@code offset} or {@code len} are not valid in respect to
+     *             {@code outbuf}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.952 -0500", hash_original_method = "82A870C6C8965CC8E79085F7D8A960EB", hash_generated_method = "0CF31797DBD70D9DCC65BF115CC93754")
+    public final int sign(byte[] outbuf, int offset, int len)
+            throws SignatureException {
+        if (outbuf == null || offset < 0 || len < 0 ||
+                offset + len > outbuf.length) {
+            throw new IllegalArgumentException();
+        }
+        if (state != SIGN) {
+            throw new SignatureException("Signature object is not initialized properly");
+        }
+        return engineSign(outbuf, offset, len);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.505 -0400", hash_original_method = "C9B26283C94B06BB8BE60C57C40A18DF", hash_generated_method = "D87C88D33BC96097B1F8E1BB78267FEC")
+    /**
+     * Indicates whether the given {@code signature} can be verified using the
+     * public key or a certificate of the signer.
+     * <p>
+     * This {@code Signature} instance is reset to the state of its last
+     * initialization for verifying and thus can be used to verify another
+     * signature of the same signer.
+     *
+     * @param signature
+     *            the signature to verify.
+     * @return {@code true} if the signature was verified, {@code false}
+     *         otherwise.
+     * @throws SignatureException
+     *             if this {@code Signature} instance is not initialized
+     *             properly.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.953 -0500", hash_original_method = "C9B26283C94B06BB8BE60C57C40A18DF", hash_generated_method = "C6178168B9E534E03C2854300238FFED")
     public final boolean verify(byte[] signature) throws SignatureException {
-        addTaint(signature[0]);
-        if(state != VERIFY)        
-        {
-            SignatureException var125661CE8E1441B5F396C624407C3274_772236165 = new SignatureException("Signature object is not initialized properly");
-            var125661CE8E1441B5F396C624407C3274_772236165.addTaint(taint);
-            throw var125661CE8E1441B5F396C624407C3274_772236165;
-        } //End block
-        boolean varB6F9D942D920F26A694FF0FC6AC65A47_361770705 = (engineVerify(signature));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_835253123 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_835253123;
-        // ---------- Original Method ----------
-        //if (state != VERIFY) {
-            //throw new SignatureException("Signature object is not initialized properly");
-        //}
-        //return engineVerify(signature);
+        if (state != VERIFY) {
+            throw new SignatureException("Signature object is not initialized properly");
+        }
+        return engineVerify(signature);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.506 -0400", hash_original_method = "59329C8B89ACE0AC6C4DAAF18DA3F3C5", hash_generated_method = "F39E793EC31FCD04AB8250C0373A10B8")
-    public final boolean verify(byte[] signature, int offset, int length) throws SignatureException {
-        addTaint(length);
-        addTaint(offset);
-        addTaint(signature[0]);
-        if(state != VERIFY)        
-        {
-            SignatureException var125661CE8E1441B5F396C624407C3274_1206594013 = new SignatureException("Signature object is not initialized properly");
-            var125661CE8E1441B5F396C624407C3274_1206594013.addTaint(taint);
-            throw var125661CE8E1441B5F396C624407C3274_1206594013;
-        } //End block
-        if(signature == null || offset < 0 || length < 0 ||
-                offset + length > signature.length)        
-        {
-            IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_1239105845 = new IllegalArgumentException();
-            var5783EF97022AA508B74A1E3EA38534AF_1239105845.addTaint(taint);
-            throw var5783EF97022AA508B74A1E3EA38534AF_1239105845;
-        } //End block
-        boolean varBAB0C0AC7EE46744B853605AEBD2E2DC_1447033554 = (engineVerify(signature, offset, length));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1973904795 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1973904795;
-        // ---------- Original Method ----------
-        //if (state != VERIFY) {
-            //throw new SignatureException("Signature object is not initialized properly");
-        //}
-        //if (signature == null || offset < 0 || length < 0 ||
-                //offset + length > signature.length) {
-            //throw new IllegalArgumentException();
-        //}
-        //return engineVerify(signature, offset, length);
+    /**
+     * Indicates whether the given {@code signature} starting at index {@code
+     * offset} with {@code length} bytes can be verified using the public key or
+     * a certificate of the signer.
+     * <p>
+     * This {@code Signature} instance is reset to the state of its last
+     * initialization for verifying and thus can be used to verify another
+     * signature of the same signer.
+     *
+     * @param signature
+     *            the {@code byte[]} containing the signature to verify.
+     * @param offset
+     *            the start index in {@code signature} of the signature.
+     * @param length
+     *            the number of bytes allocated for the signature.
+     * @return {@code true} if the signature was verified, {@code false}
+     *         otherwise.
+     * @throws SignatureException
+     *             if this {@code Signature} instance is not initialized
+     *             properly.
+     * @throws IllegalArgumentException
+     *             if {@code offset} or {@code length} are not valid in respect
+     *             to {@code signature}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.954 -0500", hash_original_method = "59329C8B89ACE0AC6C4DAAF18DA3F3C5", hash_generated_method = "511FF8E21388EE59F7680784D9254081")
+    public final boolean verify(byte[] signature, int offset, int length)
+            throws SignatureException {
+        if (state != VERIFY) {
+            throw new SignatureException("Signature object is not initialized properly");
+        }
+        if (signature == null || offset < 0 || length < 0 ||
+                offset + length > signature.length) {
+            throw new IllegalArgumentException();
+        }
+        return engineVerify(signature, offset, length);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.507 -0400", hash_original_method = "79EA6E53B3D29CDFCD3B6E1380EAFC50", hash_generated_method = "B3A63D51E8263654EA4A47F0F7F29E86")
+    /**
+     * Updates the data to be verified or to be signed, using the specified
+     * {@code byte}.
+     *
+     * @param b
+     *            the byte to update with.
+     * @throws SignatureException
+     *             if this {@code Signature} instance is not initialized
+     *             properly.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.955 -0500", hash_original_method = "79EA6E53B3D29CDFCD3B6E1380EAFC50", hash_generated_method = "68F9AA849CDC5FD1651DFF62727C6D16")
     public final void update(byte b) throws SignatureException {
-        addTaint(b);
-        if(state == UNINITIALIZED)        
-        {
-            SignatureException var125661CE8E1441B5F396C624407C3274_1056959427 = new SignatureException("Signature object is not initialized properly");
-            var125661CE8E1441B5F396C624407C3274_1056959427.addTaint(taint);
-            throw var125661CE8E1441B5F396C624407C3274_1056959427;
-        } //End block
+        if (state == UNINITIALIZED) {
+            throw new SignatureException("Signature object is not initialized properly");
+        }
         engineUpdate(b);
-        // ---------- Original Method ----------
-        //if (state == UNINITIALIZED) {
-            //throw new SignatureException("Signature object is not initialized properly");
-        //}
-        //engineUpdate(b);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.508 -0400", hash_original_method = "7FDD4CB7D645E432F89E836C71DCF871", hash_generated_method = "0884B528B2CEBD5AEDB8028EBF0072D1")
+    /**
+     * Updates the data to be verified or to be signed, using the specified
+     * {@code byte[]}.
+     *
+     * @param data
+     *            the byte array to update with.
+     * @throws SignatureException
+     *             if this {@code Signature} instance is not initialized
+     *             properly.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.956 -0500", hash_original_method = "7FDD4CB7D645E432F89E836C71DCF871", hash_generated_method = "E7518FC75DA191FDACF66EBCFB860ABF")
     public final void update(byte[] data) throws SignatureException {
-        addTaint(data[0]);
-        if(state == UNINITIALIZED)        
-        {
-            SignatureException var125661CE8E1441B5F396C624407C3274_1227466799 = new SignatureException("Signature object is not initialized properly");
-            var125661CE8E1441B5F396C624407C3274_1227466799.addTaint(taint);
-            throw var125661CE8E1441B5F396C624407C3274_1227466799;
-        } //End block
+        if (state == UNINITIALIZED) {
+            throw new SignatureException("Signature object is not initialized properly");
+        }
         engineUpdate(data, 0, data.length);
-        // ---------- Original Method ----------
-        //if (state == UNINITIALIZED) {
-            //throw new SignatureException("Signature object is not initialized properly");
-        //}
-        //engineUpdate(data, 0, data.length);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.508 -0400", hash_original_method = "935040FEA1E890342F7B1ED90DB7090F", hash_generated_method = "A4C797A4841B439C1C8FAECF56FE944D")
-    public final void update(byte[] data, int off, int len) throws SignatureException {
-        addTaint(len);
-        addTaint(off);
-        addTaint(data[0]);
-        if(state == UNINITIALIZED)        
-        {
-            SignatureException var125661CE8E1441B5F396C624407C3274_2133801238 = new SignatureException("Signature object is not initialized properly");
-            var125661CE8E1441B5F396C624407C3274_2133801238.addTaint(taint);
-            throw var125661CE8E1441B5F396C624407C3274_2133801238;
-        } //End block
-        if(data == null || off < 0 || len < 0 ||
-                off + len > data.length)        
-        {
-            IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_1321583892 = new IllegalArgumentException();
-            var5783EF97022AA508B74A1E3EA38534AF_1321583892.addTaint(taint);
-            throw var5783EF97022AA508B74A1E3EA38534AF_1321583892;
-        } //End block
+    /**
+     * Updates the data to be verified or to be signed, using the given {@code
+     * byte[]}, starting form the specified index for the specified length.
+     *
+     * @param data
+     *            the byte array to update with.
+     * @param off
+     *            the start index in {@code data} of the data.
+     * @param len
+     *            the number of bytes to use.
+     * @throws SignatureException
+     *             if this {@code Signature} instance is not initialized
+     *             properly.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.957 -0500", hash_original_method = "935040FEA1E890342F7B1ED90DB7090F", hash_generated_method = "60BEE513AA8FF5BD2E3C2D1289042F40")
+    public final void update(byte[] data, int off, int len)
+            throws SignatureException {
+        if (state == UNINITIALIZED) {
+            throw new SignatureException("Signature object is not initialized properly");
+        }
+        if (data == null || off < 0 || len < 0 ||
+                off + len > data.length) {
+            throw new IllegalArgumentException();
+        }
         engineUpdate(data, off, len);
-        // ---------- Original Method ----------
-        //if (state == UNINITIALIZED) {
-            //throw new SignatureException("Signature object is not initialized properly");
-        //}
-        //if (data == null || off < 0 || len < 0 ||
-                //off + len > data.length) {
-            //throw new IllegalArgumentException();
-        //}
-        //engineUpdate(data, off, len);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.508 -0400", hash_original_method = "4D212376BB0D0E0EE1EF0BE20DC8A649", hash_generated_method = "0A43787CFEF67A94F46275A8CFA1C18A")
+    /**
+     * Updates the data to be verified or to be signed, using the specified
+     * {@code ByteBuffer}.
+     *
+     * @param data
+     *            the {@code ByteBuffer} to update with.
+     * @throws SignatureException
+     *             if this {@code Signature} instance is not initialized
+     *             properly.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.958 -0500", hash_original_method = "4D212376BB0D0E0EE1EF0BE20DC8A649", hash_generated_method = "99E561088C80DE19CDBA8295BF4EA8D5")
     public final void update(ByteBuffer data) throws SignatureException {
-        addTaint(data.getTaint());
-        if(state == UNINITIALIZED)        
-        {
-            SignatureException var125661CE8E1441B5F396C624407C3274_2138744214 = new SignatureException("Signature object is not initialized properly");
-            var125661CE8E1441B5F396C624407C3274_2138744214.addTaint(taint);
-            throw var125661CE8E1441B5F396C624407C3274_2138744214;
-        } //End block
+        if (state == UNINITIALIZED) {
+            throw new SignatureException("Signature object is not initialized properly");
+        }
         engineUpdate(data);
-        // ---------- Original Method ----------
-        //if (state == UNINITIALIZED) {
-            //throw new SignatureException("Signature object is not initialized properly");
-        //}
-        //engineUpdate(data);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.509 -0400", hash_original_method = "300ADD63628A84B0D8F725B1BA1E9A8E", hash_generated_method = "55880624F4C8733CB6F97A79EF7D7DFC")
+    /**
+     * Returns a string containing a concise, human-readable description of this
+     * {@code Signature} including its algorithm and its state.
+     *
+     * @return a printable representation for this {@code Signature}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.959 -0500", hash_original_method = "300ADD63628A84B0D8F725B1BA1E9A8E", hash_generated_method = "71DB550FD17BA8B81224C927B01BF247")
     @Override
-    public String toString() {
-String var77ECA046F6C5DB9243992DFD1F17C516_12711862 =         "SIGNATURE " + algorithm + " state: " + stateToString(state);
-        var77ECA046F6C5DB9243992DFD1F17C516_12711862.addTaint(taint);
-        return var77ECA046F6C5DB9243992DFD1F17C516_12711862;
-        // ---------- Original Method ----------
-        //return "SIGNATURE " + algorithm + " state: " + stateToString(state);
+public String toString() {
+        return "SIGNATURE " + algorithm + " state: " + stateToString(state);
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.509 -0400", hash_original_method = "C1A460A3B710FBA1ED28C52AC5BBE911", hash_generated_method = "92CFCC557D9FFBC58078B35C239F6094")
+    // Convert state to string
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.960 -0500", hash_original_method = "C1A460A3B710FBA1ED28C52AC5BBE911", hash_generated_method = "98E9662541F0D0D1B3A552EA457578E0")
     private String stateToString(int state) {
-        addTaint(state);
-switch(state){
+        switch (state) {
         case UNINITIALIZED:
-String var0DEA4415B2A1B8E47EFF8497DEECF3D8_1638749269 =         "UNINITIALIZED";
-        var0DEA4415B2A1B8E47EFF8497DEECF3D8_1638749269.addTaint(taint);
-        return var0DEA4415B2A1B8E47EFF8497DEECF3D8_1638749269;
+            return "UNINITIALIZED";
         case SIGN:
-String varEBE7E885F018E5F8485ABEA4ECFE0F97_1506737549 =         "SIGN";
-        varEBE7E885F018E5F8485ABEA4ECFE0F97_1506737549.addTaint(taint);
-        return varEBE7E885F018E5F8485ABEA4ECFE0F97_1506737549;
+            return "SIGN";
         case VERIFY:
-String varEBB636C9F64873CED41DB540B2211CD7_338548844 =         "VERIFY";
-        varEBB636C9F64873CED41DB540B2211CD7_338548844.addTaint(taint);
-        return varEBB636C9F64873CED41DB540B2211CD7_338548844;
+            return "VERIFY";
         default:
-String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1454035905 =         "";
-        var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1454035905.addTaint(taint);
-        return var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1454035905;
-}
-        // ---------- Original Method ----------
-        //switch (state) {
-        //case UNINITIALIZED:
-            //return "UNINITIALIZED";
-        //case SIGN:
-            //return "SIGN";
-        //case VERIFY:
-            //return "VERIFY";
-        //default:
-            //return "";
-        //}
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.509 -0400", hash_original_method = "D52E00AF44B32CEF42E7B7F3CD02413C", hash_generated_method = "37D481D51E183D8D9990C88466483BAF")
-    @Deprecated
-    public final void setParameter(String param, Object value) throws InvalidParameterException {
-        addTaint(value.getTaint());
-        addTaint(param.getTaint());
-        engineSetParameter(param, value);
-        // ---------- Original Method ----------
-        //engineSetParameter(param, value);
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.510 -0400", hash_original_method = "723DAA3D9E86E61831D60007CF8F8BBA", hash_generated_method = "74522E307F3F14D563012F94B2A5F555")
-    public final void setParameter(AlgorithmParameterSpec params) throws InvalidAlgorithmParameterException {
-        addTaint(params.getTaint());
-        engineSetParameter(params);
-        // ---------- Original Method ----------
-        //engineSetParameter(params);
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.510 -0400", hash_original_method = "8EDBC3AD900BE7B10A8F191CA049C5A8", hash_generated_method = "0E3F924FD9B3A94A23989C95E44FE74C")
-    public final AlgorithmParameters getParameters() {
-AlgorithmParameters var143868FBE13878C430B11AC612630761_726180465 =         engineGetParameters();
-        var143868FBE13878C430B11AC612630761_726180465.addTaint(taint);
-        return var143868FBE13878C430B11AC612630761_726180465;
-        // ---------- Original Method ----------
-        //return engineGetParameters();
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.511 -0400", hash_original_method = "3218EA86DC018EF694546DAFA3BC417D", hash_generated_method = "A52F3E68015303744A5417DDEBE7B81A")
-    @Deprecated
-    public final Object getParameter(String param) throws InvalidParameterException {
-        addTaint(param.getTaint());
-Object var940C682D170C73A367318C1A4CB6F451_1312532968 =         engineGetParameter(param);
-        var940C682D170C73A367318C1A4CB6F451_1312532968.addTaint(taint);
-        return var940C682D170C73A367318C1A4CB6F451_1312532968;
-        // ---------- Original Method ----------
-        //return engineGetParameter(param);
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.511 -0400", hash_original_method = "31D01322C9910F836DA03F7FCF4D6261", hash_generated_method = "277347EA4E1913EC2538C26C16C21947")
-    @Override
-    public Object clone() throws CloneNotSupportedException {
-        if(this instanceof Cloneable)        
-        {
-Object var46F3A0D86742C1D6E099C2B166941A33_1979423098 =             super.clone();
-            var46F3A0D86742C1D6E099C2B166941A33_1979423098.addTaint(taint);
-            return var46F3A0D86742C1D6E099C2B166941A33_1979423098;
-        } //End block
-        CloneNotSupportedException var1615C718FF05C0D800F9FFF876AD8603_1714377729 = new CloneNotSupportedException();
-        var1615C718FF05C0D800F9FFF876AD8603_1714377729.addTaint(taint);
-        throw var1615C718FF05C0D800F9FFF876AD8603_1714377729;
-        // ---------- Original Method ----------
-        //if (this instanceof Cloneable) {
-            //return super.clone();
-        //}
-        //throw new CloneNotSupportedException();
+            return "";
+        }
     }
 
     
     private static class SignatureImpl extends Signature {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.512 -0400", hash_original_field = "96FF779E0BE718F2D29D8C56320393D2", hash_generated_field = "B117D5F80D09F234127E3A3393EBC255")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.966 -0500", hash_original_field = "0B9B4E0CF62C2D7B28F9A6A164E87098", hash_generated_field = "B117D5F80D09F234127E3A3393EBC255")
+
 
         private SignatureSpi spiImpl;
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.512 -0400", hash_original_method = "3E4D7926596EAD873E22E30BA201B1D4", hash_generated_method = "8E14C27863E796A688E1E4917E3C061E")
-        public  SignatureImpl(SignatureSpi signatureSpi, Provider provider,
+
+        // Constructor
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.967 -0500", hash_original_method = "3E4D7926596EAD873E22E30BA201B1D4", hash_generated_method = "59DCB4F9472E04862ED0A8DD200767FE")
+        public SignatureImpl(SignatureSpi signatureSpi, Provider provider,
                 String algorithm) {
             super(algorithm);
-            addTaint(algorithm.getTaint());
-            addTaint(provider.getTaint());
             super.provider = provider;
             spiImpl = signatureSpi;
-            // ---------- Original Method ----------
-            //super.provider = provider;
-            //spiImpl = signatureSpi;
         }
 
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.513 -0400", hash_original_method = "FFC69249636133C4828AD78F0F12AF56", hash_generated_method = "F11D728DB740A9BA2544100AA3C45389")
+        // engineSign() implementation
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.968 -0500", hash_original_method = "FFC69249636133C4828AD78F0F12AF56", hash_generated_method = "1273A7C32F2094A7E4A551B15E066CF5")
         @Override
-        protected byte[] engineSign() throws SignatureException {
-            byte[] varFDB3A8246D1A33F9AE44AE591143B543_1887180698 = (spiImpl.engineSign());
-                        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1196923229 = {getTaintByte()};
-            return var2F9C81BC6E497382285CD6B7A7E33DE1_1196923229;
-            // ---------- Original Method ----------
-            //return spiImpl.engineSign();
+protected byte[] engineSign() throws SignatureException {
+            return spiImpl.engineSign();
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.513 -0400", hash_original_method = "5E472B7CE8DF4677B6CD62A0BE3E6E55", hash_generated_method = "87FDD17A6B5EBAAFB8BBEFB2950D05BF")
+        //  engineUpdate() implementation
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.969 -0500", hash_original_method = "5E472B7CE8DF4677B6CD62A0BE3E6E55", hash_generated_method = "8C43A13C9884D74E5A20FA39B82A8CD8")
         @Override
-        protected void engineUpdate(byte arg0) throws SignatureException {
-            addTaint(arg0);
+protected void engineUpdate(byte arg0) throws SignatureException {
             spiImpl.engineUpdate(arg0);
-            // ---------- Original Method ----------
-            //spiImpl.engineUpdate(arg0);
         }
 
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.513 -0400", hash_original_method = "5B50F80B75147450A8AE91D93998317F", hash_generated_method = "24DBA10696E248972E75102C3FECE445")
+        // engineVerify() implementation
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.970 -0500", hash_original_method = "5B50F80B75147450A8AE91D93998317F", hash_generated_method = "2134169A54F1472C1DD9AD9D7ECE7DD0")
         @Override
-        protected boolean engineVerify(byte[] arg0) throws SignatureException {
-            addTaint(arg0[0]);
-            boolean var0B72A81BE2B4644062350C16BC8CB81B_1862978070 = (spiImpl.engineVerify(arg0));
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1075367596 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1075367596;
-            // ---------- Original Method ----------
-            //return spiImpl.engineVerify(arg0);
+protected boolean engineVerify(byte[] arg0) throws SignatureException {
+            return spiImpl.engineVerify(arg0);
         }
 
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.514 -0400", hash_original_method = "8E9D74168176A196545DE618D70F0045", hash_generated_method = "C243C3F4805D525D41637A1698367089")
+        // engineUpdate() implementation
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.970 -0500", hash_original_method = "8E9D74168176A196545DE618D70F0045", hash_generated_method = "ACD48FF9A843BFC7A2FDA5299DFA443A")
         @Override
-        protected void engineUpdate(byte[] arg0, int arg1, int arg2) throws SignatureException {
-            addTaint(arg2);
-            addTaint(arg1);
-            addTaint(arg0[0]);
+protected void engineUpdate(byte[] arg0, int arg1, int arg2)
+                throws SignatureException {
             spiImpl.engineUpdate(arg0, arg1, arg2);
-            // ---------- Original Method ----------
-            //spiImpl.engineUpdate(arg0, arg1, arg2);
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.514 -0400", hash_original_method = "8D0AD1B347F88E648DA57C6C188D8255", hash_generated_method = "39A8B6FF5830D73DF44103525DD97607")
+        // engineInitSign() implementation
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.971 -0500", hash_original_method = "8D0AD1B347F88E648DA57C6C188D8255", hash_generated_method = "1D6DBB83DE0A4A2A82C3A6D6A857A704")
         @Override
-        protected void engineInitSign(PrivateKey arg0) throws InvalidKeyException {
-            addTaint(arg0.getTaint());
+protected void engineInitSign(PrivateKey arg0)
+                throws InvalidKeyException {
             spiImpl.engineInitSign(arg0);
-            // ---------- Original Method ----------
-            //spiImpl.engineInitSign(arg0);
         }
 
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.514 -0400", hash_original_method = "C51005CD648E9A95CA7D0B48071C4D8E", hash_generated_method = "2FA8EB08FB2AC527A2D109B341094316")
+        // engineInitVerify() implementation
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.972 -0500", hash_original_method = "C51005CD648E9A95CA7D0B48071C4D8E", hash_generated_method = "0926251A0A5CA054F1E480CC81D24609")
         @Override
-        protected void engineInitVerify(PublicKey arg0) throws InvalidKeyException {
-            addTaint(arg0.getTaint());
+protected void engineInitVerify(PublicKey arg0)
+                throws InvalidKeyException {
             spiImpl.engineInitVerify(arg0);
-            // ---------- Original Method ----------
-            //spiImpl.engineInitVerify(arg0);
         }
 
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.515 -0400", hash_original_method = "BC25730F2F2C84CFB445E50D8EAB3A12", hash_generated_method = "931468FE039AC479BDA8D6445CD9C6AA")
+        // engineGetParameter() implementation
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.973 -0500", hash_original_method = "BC25730F2F2C84CFB445E50D8EAB3A12", hash_generated_method = "3DF757F82A6F6831B502B2C7B2AC9CB8")
         @Override
-        protected Object engineGetParameter(String arg0) throws InvalidParameterException {
-            addTaint(arg0.getTaint());
-Object varCE32E83F946A002A5075AB939035A337_1274199962 =             spiImpl.engineGetParameter(arg0);
-            varCE32E83F946A002A5075AB939035A337_1274199962.addTaint(taint);
-            return varCE32E83F946A002A5075AB939035A337_1274199962;
-            // ---------- Original Method ----------
-            //return spiImpl.engineGetParameter(arg0);
+protected Object engineGetParameter(String arg0)
+                throws InvalidParameterException {
+            return spiImpl.engineGetParameter(arg0);
         }
 
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.515 -0400", hash_original_method = "2EB6574DEFEEC579E00AC6D7C846FB9A", hash_generated_method = "A0620734AA6FF876354C66E0F38DFF65")
+        // engineSetParameter() implementation
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.974 -0500", hash_original_method = "2EB6574DEFEEC579E00AC6D7C846FB9A", hash_generated_method = "36EEC423DCCB820DDB6229EB3986CB6F")
         @Override
-        protected void engineSetParameter(String arg0, Object arg1) throws InvalidParameterException {
-            addTaint(arg1.getTaint());
-            addTaint(arg0.getTaint());
+protected void engineSetParameter(String arg0, Object arg1)
+                throws InvalidParameterException {
             spiImpl.engineSetParameter(arg0, arg1);
-            // ---------- Original Method ----------
-            //spiImpl.engineSetParameter(arg0, arg1);
         }
 
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.515 -0400", hash_original_method = "E18D3A064C93BFFE53C93A44BEF059CB", hash_generated_method = "AB123B0AFF83376682BA420FD0BCB18B")
+        // Returns a clone if the spiImpl is cloneable
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.976 -0500", hash_original_method = "E18D3A064C93BFFE53C93A44BEF059CB", hash_generated_method = "BC96F9787D1935B44EA995B57271FA47")
         @Override
-        public Object clone() throws CloneNotSupportedException {
-            if(spiImpl instanceof Cloneable)            
-            {
+public Object clone() throws CloneNotSupportedException {
+            if (spiImpl instanceof Cloneable) {
                 SignatureSpi spi = (SignatureSpi) spiImpl.clone();
-Object var6B61508400A6F12DA4F46A73D534C975_703978186 =                 new SignatureImpl(spi, getProvider(), getAlgorithm());
-                var6B61508400A6F12DA4F46A73D534C975_703978186.addTaint(taint);
-                return var6B61508400A6F12DA4F46A73D534C975_703978186;
-            } //End block
-            CloneNotSupportedException var1615C718FF05C0D800F9FFF876AD8603_44949674 = new CloneNotSupportedException();
-            var1615C718FF05C0D800F9FFF876AD8603_44949674.addTaint(taint);
-            throw var1615C718FF05C0D800F9FFF876AD8603_44949674;
-            // ---------- Original Method ----------
-            //if (spiImpl instanceof Cloneable) {
-                //SignatureSpi spi = (SignatureSpi) spiImpl.clone();
-                //return new SignatureImpl(spi, getProvider(), getAlgorithm());
-            //}
-            //throw new CloneNotSupportedException();
+                return new SignatureImpl(spi, getProvider(), getAlgorithm());
+            }
+            throw new CloneNotSupportedException();
         }
 
         
     }
 
+    /**
+     * Sets the specified parameter to the given value.
+     *
+     * @param param
+     *            the name of the parameter.
+     * @param value
+     *            the parameter value.
+     * @throws InvalidParameterException
+     *             if the parameter is invalid, already set or is not allowed to
+     *             be changed.
+     * @deprecated Use {@link #setParameter(AlgorithmParameterSpec)}
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.961 -0500", hash_original_method = "D52E00AF44B32CEF42E7B7F3CD02413C", hash_generated_method = "0B3D5C6F93B131A73FF182C690F84E67")
+    @Deprecated
+public final void setParameter(String param, Object value)
+            throws InvalidParameterException {
+        engineSetParameter(param, value);
+    }
 
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.516 -0400", hash_original_field = "A295D45862B91D430A865A6C93B9F575", hash_generated_field = "F153FC2145A140C7EE9C30DF2197BDF3")
+    /**
+     * Sets the specified {@code AlgorithmParameterSpec}.
+     *
+     * @param params
+     *            the parameter to set.
+     * @throws InvalidAlgorithmParameterException
+     *             if the parameter is invalid, already set or is not allowed to
+     *             be changed.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.962 -0500", hash_original_method = "723DAA3D9E86E61831D60007CF8F8BBA", hash_generated_method = "727D2E23C68C6E1538A7B45ECBE467E9")
+    public final void setParameter(AlgorithmParameterSpec params)
+            throws InvalidAlgorithmParameterException {
+        engineSetParameter(params);
+    }
 
-    private static final String SERVICE = "Signature";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.516 -0400", hash_original_field = "48254CA5EA2459783D1EB8D6358A6F88", hash_generated_field = "82D6520D3C45D5046B0A4FDCEDAFF880")
+    /**
+     * Returns the {@code AlgorithmParameters} of this {@link Signature}
+     * instance.
+     *
+     * @return the {@code AlgorithmParameters} of this {@link Signature}
+     *         instance, maybe {@code null}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.963 -0500", hash_original_method = "8EDBC3AD900BE7B10A8F191CA049C5A8", hash_generated_method = "9ACC24FEBBF30B1B2321C458AD29DB35")
+    public final AlgorithmParameters getParameters() {
+        return engineGetParameters();
+    }
 
-    private static Engine ENGINE = new Engine(SERVICE);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.516 -0400", hash_original_field = "7829D7E12A8615805E93FA4D71B48E33", hash_generated_field = "5981180EC86BD86C5A973C24E0F5F941")
+    /**
+     * Returns the value of the parameter with the specified name.
+     *
+     * @param param
+     *            the name of the requested parameter value
+     * @return the value of the parameter with the specified name, maybe {@code
+     *         null}.
+     * @throws InvalidParameterException
+     *             if {@code param} is not a valid parameter for this {@code
+     *             Signature} or an other error occures.
+     * @deprecated There is no generally accepted parameter naming convention.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.964 -0500", hash_original_method = "3218EA86DC018EF694546DAFA3BC417D", hash_generated_method = "46BBC64E66C514E5E3B588FA2E97D22F")
+    @Deprecated
+public final Object getParameter(String param)
+            throws InvalidParameterException {
+        return engineGetParameter(param);
+    }
 
-    protected static final int UNINITIALIZED = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.516 -0400", hash_original_field = "AD0C3134958983CF0EFFDE205ED3D704", hash_generated_field = "9C254CF368BDF48B3D83BAA2B82A1195")
-
-    protected static final int SIGN = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.516 -0400", hash_original_field = "871D2CAC53DED1F4A79E8557E740F34B", hash_generated_field = "8738159158F0C7B8305EEDB4018256AD")
-
-    protected static final int VERIFY = 3;
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:13.965 -0500", hash_original_method = "31D01322C9910F836DA03F7FCF4D6261", hash_generated_method = "3129F61A1AC4738DC9444626172FE7E6")
+    @Override
+public Object clone() throws CloneNotSupportedException {
+        if (this instanceof Cloneable) {
+            return super.clone();
+        }
+        throw new CloneNotSupportedException();
+    }
 }
 

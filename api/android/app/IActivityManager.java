@@ -1,6 +1,8 @@
 package android.app;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.List;
 
@@ -342,21 +344,48 @@ public interface IActivityManager extends IInterface {
     
     
     public static class ContentProviderHolder implements Parcelable {
-        public final ProviderInfo info;
+
+        public static final Parcelable.Creator<ContentProviderHolder> CREATOR
+                = new Parcelable.Creator<ContentProviderHolder>() {
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.682 -0500", hash_original_method = "7B438CD16C21D53CFB945704DA961322", hash_generated_method = "7A0CFFF317A891F2F12E1C6ED753DCFF")
+            public ContentProviderHolder createFromParcel(Parcel source) {
+                return new ContentProviderHolder(source);
+            }
+
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.683 -0500", hash_original_method = "04C99A8C30494BEDF960ED7C159321BD", hash_generated_method = "A487B8CA651502ADDEABF5FCE422216B")
+            public ContentProviderHolder[] newArray(int size) {
+                return new ContentProviderHolder[size];
+            }
+        };
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.676 -0500", hash_original_field = "5CDA2FBF2554178EE653F2BC5EB08EC7", hash_generated_field = "BF776B364C73D31E6B3B31185D6DF955")
+
+        public  ProviderInfo info;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.677 -0500", hash_original_field = "D5DCCD8B4C676366ACECEBB76481C371", hash_generated_field = "C730DD69C93F6644B226FED7D6567496")
+
         public IContentProvider provider;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.678 -0500", hash_original_field = "E32B00087CF60143581345FE49DA2D82", hash_generated_field = "B2A5CB4DC49A221CCDDDA6FC23BB36ED")
+
         public boolean noReleaseNeeded;
 
-        @DSModeled(DSC.BAN)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.679 -0500", hash_original_method = "F5938A2BCBFD23A0DD108791F4C585A4", hash_generated_method = "96782B3634F91CEBE3FF9748BECECB01")
         public ContentProviderHolder(ProviderInfo _info) {
             info = _info;
         }
 
-        @DSModeled(DSC.BAN)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.684 -0500", hash_original_method = "DE66B2AAADEB005E6177C82649ADED33", hash_generated_method = "04794E4865E5B5E19D9358C6E4FF1C9C")
+        private ContentProviderHolder(Parcel source) {
+            info = ProviderInfo.CREATOR.createFromParcel(source);
+            provider = ContentProviderNative.asInterface(
+                source.readStrongBinder());
+            noReleaseNeeded = source.readInt() != 0;
+        }
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.680 -0500", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "D90463461B2A94FF94D13FDF69BB80C9")
         public int describeContents() {
             return 0;
         }
 
-        @DSModeled(DSC.BAN)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.681 -0500", hash_original_method = "055D811374FBB4701F1DF02FE6919DFE", hash_generated_method = "E9AA09AA7C5B9119AB2904A18446C7D3")
         public void writeToParcel(Parcel dest, int flags) {
             info.writeToParcel(dest, 0);
             if (provider != null) {
@@ -366,74 +395,64 @@ public interface IActivityManager extends IInterface {
             }
             dest.writeInt(noReleaseNeeded ? 1:0);
         }
-
-        public static final Parcelable.Creator<ContentProviderHolder> CREATOR
-                = new Parcelable.Creator<ContentProviderHolder>() {
-            @DSModeled(DSC.BAN)
-            public ContentProviderHolder createFromParcel(Parcel source) {
-                return new ContentProviderHolder(source);
-            }
-
-            @DSModeled(DSC.SAFE)
-            public ContentProviderHolder[] newArray(int size) {
-                return new ContentProviderHolder[size];
-            }
-        };
-
-        @DSModeled(DSC.BAN)
-        private ContentProviderHolder(Parcel source) {
-            info = ProviderInfo.CREATOR.createFromParcel(source);
-            provider = ContentProviderNative.asInterface(
-                source.readStrongBinder());
-            noReleaseNeeded = source.readInt() != 0;
-        }
     };
 
     
     public static class WaitResult implements Parcelable {
-        public int result;
-        public boolean timeout;
-        public ComponentName who;
-        public long thisTime;
-        public long totalTime;
-
-        @DSModeled(DSC.BAN)
-        public WaitResult() {
-        }
-
-        @DSModeled(DSC.BAN)
-        public int describeContents() {
-            return 0;
-        }
-
-        @DSModeled(DSC.BAN)
-        public void writeToParcel(Parcel dest, int flags) {
-            dest.writeInt(result);
-            dest.writeInt(timeout ? 1 : 0);
-            ComponentName.writeToParcel(who, dest);
-            dest.writeLong(thisTime);
-            dest.writeLong(totalTime);
-        }
 
         public static final Parcelable.Creator<WaitResult> CREATOR
                 = new Parcelable.Creator<WaitResult>() {
-            @DSModeled(DSC.BAN)
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.693 -0500", hash_original_method = "3791D8DCE3F9483BA1FB831A79748235", hash_generated_method = "E99C5DE349F9FA358314270B7C013CCD")
             public WaitResult createFromParcel(Parcel source) {
                 return new WaitResult(source);
             }
 
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.694 -0500", hash_original_method = "9975751ADB34BF2689797DB91A56FFF8", hash_generated_method = "A378AED0501FF1DD812C1CB868992929")
             public WaitResult[] newArray(int size) {
                 return new WaitResult[size];
             }
         };
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.686 -0500", hash_original_field = "E9D38E2A3EEFF7911169FBB093D12F3A", hash_generated_field = "B9125D4ED8E66B0A5D0623BA280F0CE7")
 
-        @DSModeled(DSC.BAN)
+        public int result;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.686 -0500", hash_original_field = "A5132F630FF6BF15BC2FBFE1DACCC85C", hash_generated_field = "F35A7A719F41EAB8F03A95F6324562CD")
+
+        public boolean timeout;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.687 -0500", hash_original_field = "EF253B65B43741136160C6D8FA69DAEC", hash_generated_field = "34F69357015AF9E37B71518212033D55")
+
+        public ComponentName who;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.688 -0500", hash_original_field = "18677B7CB052383E8FC94DCA82BB8A44", hash_generated_field = "089B393DE7C7F08169929A5DB0EE1529")
+
+        public long thisTime;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.689 -0500", hash_original_field = "0CD8C11C9ED123934179CDC4B03E8D05", hash_generated_field = "5C07FCDAD586DD12989107906EED34BC")
+
+        public long totalTime;
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.690 -0500", hash_original_method = "0256A6E035D799D49434166180403C08", hash_generated_method = "575CB7D449B562FE7AF359F5ABF3EE99")
+        public WaitResult() {
+        }
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.696 -0500", hash_original_method = "18012A8A4C21626C6284E5F43299A78B", hash_generated_method = "1E1C7D5A3A2869E5CA31188CCC5E8F56")
         private WaitResult(Parcel source) {
             result = source.readInt();
             timeout = source.readInt() != 0;
             who = ComponentName.readFromParcel(source);
             thisTime = source.readLong();
             totalTime = source.readLong();
+        }
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.691 -0500", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "D90463461B2A94FF94D13FDF69BB80C9")
+        public int describeContents() {
+            return 0;
+        }
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:25.692 -0500", hash_original_method = "059F0DB3E5849A4C215FC265F792E051", hash_generated_method = "02A382C8D808C11880F61CB350332938")
+        public void writeToParcel(Parcel dest, int flags) {
+            dest.writeInt(result);
+            dest.writeInt(timeout ? 1 : 0);
+            ComponentName.writeToParcel(who, dest);
+            dest.writeLong(thisTime);
+            dest.writeLong(totalTime);
         }
     };
 

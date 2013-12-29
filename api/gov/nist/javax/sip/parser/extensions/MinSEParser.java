@@ -1,6 +1,8 @@
 package gov.nist.javax.sip.parser.extensions;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import gov.nist.javax.sip.header.SIPHeader;
 import gov.nist.javax.sip.header.extensions.MinSE;
@@ -15,91 +17,14 @@ import javax.sip.InvalidArgumentException;
 
 
 public class MinSEParser extends ParametersParser {
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.734 -0400", hash_original_method = "4E326F54C0BC2C416F3292ADC3B64C39", hash_generated_method = "2A074247CD48DBE45FB5E6C0EEF6E56E")
-    public  MinSEParser(String text) {
-        super(text);
-        addTaint(text.getTaint());
-        // ---------- Original Method ----------
-    }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.735 -0400", hash_original_method = "B8B8CA8DFA565E816EE248A435214726", hash_generated_method = "C6A16FD6432DA865B85A7B65721542F7")
-    protected  MinSEParser(Lexer lexer) {
-        super(lexer);
-        addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.754 -0400", hash_original_method = "528678E8CA90A52E25DB45830845A36C", hash_generated_method = "CEA5F129CA828EF26F6AC3876C928EB6")
-    public SIPHeader parse() throws ParseException {
-        MinSE minse = new MinSE();
-        if(debug)        
-        dbg_enter("parse");
-        try 
-        {
-            headerName(TokenTypes.MINSE_TO);
-            String nextId = lexer.getNextId();
-            try 
-            {
-                int delta = Integer.parseInt(nextId);
-                minse.setExpires(delta);
-            } //End block
-            catch (NumberFormatException ex)
-            {
-                java.text.ParseException var5FB99FE9B64E519E79EC6426B25925EC_1316769831 = createParseException("bad integer format");
-                var5FB99FE9B64E519E79EC6426B25925EC_1316769831.addTaint(taint);
-                throw var5FB99FE9B64E519E79EC6426B25925EC_1316769831;
-            } //End block
-            catch (InvalidArgumentException ex)
-            {
-                java.text.ParseException varB8C80F72F95BF6A850D07F4EC5726C09_916870105 = createParseException(ex.getMessage());
-                varB8C80F72F95BF6A850D07F4EC5726C09_916870105.addTaint(taint);
-                throw varB8C80F72F95BF6A850D07F4EC5726C09_916870105;
-            } //End block
-            this.lexer.SPorHT();
-            super.parse(minse);
-SIPHeader varF3CC1D7F771FF7BA71AED1439CF6D47D_158728804 =             minse;
-            varF3CC1D7F771FF7BA71AED1439CF6D47D_158728804.addTaint(taint);
-            return varF3CC1D7F771FF7BA71AED1439CF6D47D_158728804;
-        } //End block
-        finally 
-        {
-            if(debug)            
-            dbg_leave("parse");
-        } //End block
-        // ---------- Original Method ----------
-        //MinSE minse = new MinSE();
-        //if (debug)
-            //dbg_enter("parse");
-        //try {
-            //headerName(TokenTypes.MINSE_TO);
-            //String nextId = lexer.getNextId();
-            //try {
-                //int delta = Integer.parseInt(nextId);
-                //minse.setExpires(delta);
-            //} catch (NumberFormatException ex) {
-                //throw createParseException("bad integer format");
-            //} catch (InvalidArgumentException ex) {
-                //throw createParseException(ex.getMessage());
-            //}
-            //this.lexer.SPorHT();
-            //super.parse(minse);
-            //return minse;
-        //} finally {
-            //if (debug)
-                //dbg_leave("parse");
-        //}
-    }
-
-    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:10.612 -0500", hash_original_method = "E86AEAD7B8387926D56101FBEC7503CC", hash_generated_method = "B34AA48A5669AD803EF9C175D6C00B3F")
     public static void main(String args[]) throws ParseException {
         String to[] =
             {   "Min-SE: 30\n",
                 "Min-SE: 45;some-param=somevalue\n",
             };
+
         for (int i = 0; i < to.length; i++) {
             MinSEParser tp = new MinSEParser(to[i]);
             MinSE t = (MinSE) tp.parse();
@@ -107,7 +32,57 @@ SIPHeader varF3CC1D7F771FF7BA71AED1439CF6D47D_158728804 =             minse;
             System.out.println("\ntime=" + t.getExpires() );
             if ( t.getParameter("some-param") != null)
                 System.out.println("some-param=" + t.getParameter("some-param") );
+
         }
+    }
+
+    /**
+     * protected constructor.
+     * @param text is the text of the header to parse
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:10.609 -0500", hash_original_method = "4E326F54C0BC2C416F3292ADC3B64C39", hash_generated_method = "128FBADAA8C8D7A254214D2F18043CEA")
+    public MinSEParser(String text) {
+        super(text);
+    }
+
+    /**
+     * constructor.
+     * @param lexer is the lexer passed in from the enclosing parser.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:10.610 -0500", hash_original_method = "B8B8CA8DFA565E816EE248A435214726", hash_generated_method = "6B38DB421A09124EF569232382ED930E")
+    protected MinSEParser(Lexer lexer) {
+        super(lexer);
+    }
+
+    /**
+     * Parse the header.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:10.611 -0500", hash_original_method = "528678E8CA90A52E25DB45830845A36C", hash_generated_method = "E5C8943AA23C175AD9456952BB0A5717")
+    public SIPHeader parse() throws ParseException {
+        MinSE minse = new MinSE();
+        if (debug)
+            dbg_enter("parse");
+        try {
+            headerName(TokenTypes.MINSE_TO);
+
+            String nextId = lexer.getNextId();
+            try {
+                int delta = Integer.parseInt(nextId);
+                minse.setExpires(delta);
+            } catch (NumberFormatException ex) {
+                throw createParseException("bad integer format");
+            } catch (InvalidArgumentException ex) {
+                throw createParseException(ex.getMessage());
+            }
+            this.lexer.SPorHT();
+            super.parse(minse);
+            return minse;
+
+        } finally {
+            if (debug)
+                dbg_leave("parse");
+        }
+
     }
 
     

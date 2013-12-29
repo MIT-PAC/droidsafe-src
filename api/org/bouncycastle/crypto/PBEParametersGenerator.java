@@ -1,6 +1,8 @@
 package org.bouncycastle.crypto;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import org.bouncycastle.util.Strings;
 
@@ -10,121 +12,172 @@ import org.bouncycastle.util.Strings;
 
 
 public abstract class PBEParametersGenerator {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.474 -0400", hash_original_field = "5F4DCC3B5AA765D61D8327DEB882CF99", hash_generated_field = "0D7984138564A3D3CFA67A8682828033")
 
-    protected byte[] password;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.474 -0400", hash_original_field = "CEB20772E0C9D240C75EB26B0E37ABEE", hash_generated_field = "6FFE86D5F61D563FB2584E26D096D036")
-
-    protected byte[] salt;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.474 -0400", hash_original_field = "40E092B298D076325C38C773B2D9BBAA", hash_generated_field = "34A0857BA933BFA60BC0532B6CFA4FA1")
-
-    protected int iterationCount;
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.475 -0400", hash_original_method = "1EFCFCAED54D10FE929FE2EAEA704D32", hash_generated_method = "3C2B98B5AB2577359A7BA81A6CF7EC83")
-    protected  PBEParametersGenerator() {
-        // ---------- Original Method ----------
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.476 -0400", hash_original_method = "456931D8AD64BF8B12B053CDCE877455", hash_generated_method = "01B1CD85345AB39CEDE2B8C2C414A255")
-    public void init(
-        byte[]  password,
-        byte[]  salt,
-        int     iterationCount) {
-        this.password = password;
-        this.salt = salt;
-        this.iterationCount = iterationCount;
-        // ---------- Original Method ----------
-        //this.password = password;
-        //this.salt = salt;
-        //this.iterationCount = iterationCount;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.477 -0400", hash_original_method = "FF883C507377D40DD9B6A3EE36BF823C", hash_generated_method = "57EE414393080EA0DB0335B28F8BBB1D")
-    public byte[] getPassword() {
-        byte[] var5F4DCC3B5AA765D61D8327DEB882CF99_1357014760 = (password);
-                byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1902637332 = {getTaintByte()};
-        return var2F9C81BC6E497382285CD6B7A7E33DE1_1902637332;
-        // ---------- Original Method ----------
-        //return password;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.477 -0400", hash_original_method = "440AD26E5D605624C1EF028F9AB658FA", hash_generated_method = "A2F1DA398C57CF87D9DB7AFEA0D32417")
-    public byte[] getSalt() {
-        byte[] varCEB20772E0C9D240C75EB26B0E37ABEE_24781643 = (salt);
-                byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1905743011 = {getTaintByte()};
-        return var2F9C81BC6E497382285CD6B7A7E33DE1_1905743011;
-        // ---------- Original Method ----------
-        //return salt;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.478 -0400", hash_original_method = "3E24EA64DC831AAEDCCD9EAD88FFC369", hash_generated_method = "A05AECA7B1D62D0766A378B90F75D7B3")
-    public int getIterationCount() {
-        int var40E092B298D076325C38C773B2D9BBAA_665569899 = (iterationCount);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_561063352 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_561063352;
-        // ---------- Original Method ----------
-        //return iterationCount;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    public abstract CipherParameters generateDerivedParameters(int keySize);
-
-    
-    @DSModeled(DSC.SAFE)
-    public abstract CipherParameters generateDerivedParameters(int keySize, int ivSize);
-
-    
-    @DSModeled(DSC.SAFE)
-    public abstract CipherParameters generateDerivedMacParameters(int keySize);
-
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * converts a password to a byte array according to the scheme in
+     * PKCS5 (ascii, no padding)
+     *
+     * @param password a character array reqpresenting the password.
+     * @return a byte array representing the password.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:56.077 -0500", hash_original_method = "F35BDD5F2AA3CB24D9C789703DBAD11E", hash_generated_method = "7DA78B8441E4158B5A95EE867CFDD247")
     public static byte[] PKCS5PasswordToBytes(
-        char[]  password) {
+        char[]  password)
+    {
         byte[]  bytes = new byte[password.length];
+
         for (int i = 0; i != bytes.length; i++)
         {
             bytes[i] = (byte)password[i];
         }
+
         return bytes;
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * converts a password to a byte array according to the scheme in
+     * PKCS5 (UTF-8, no padding)
+     *
+     * @param password a character array reqpresenting the password.
+     * @return a byte array representing the password.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:56.077 -0500", hash_original_method = "D233EA90DA0DA35A7E0DBA98505948D1", hash_generated_method = "FA4F10D2F11F090A94B97C334051F997")
     public static byte[] PKCS5PasswordToUTF8Bytes(
-        char[]  password) {
+        char[]  password)
+    {
         return Strings.toUTF8ByteArray(password);
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * converts a password to a byte array according to the scheme in
+     * PKCS12 (unicode, big endian, 2 zero pad bytes at the end).
+     *
+     * @param password a character array representing the password.
+     * @return a byte array representing the password.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:56.078 -0500", hash_original_method = "4A19C79E835AD7BD71DAD7DDD0B3C922", hash_generated_method = "C7A95EF7EC659C952E854B1385BE1448")
     public static byte[] PKCS12PasswordToBytes(
-        char[]  password) {
+        char[]  password)
+    {
+        // BEGIN android-changed
         if (password != null && password.length > 0)
         {
+                                       // +1 for extra 2 pad bytes.
             byte[]  bytes = new byte[(password.length + 1) * 2];
+
             for (int i = 0; i != password.length; i ++)
             {
                 bytes[i * 2] = (byte)(password[i] >>> 8);
                 bytes[i * 2 + 1] = (byte)password[i];
             }
+
             return bytes;
         }
         else
         {
             return new byte[0];
         }
+        // END android-changed
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:56.067 -0500", hash_original_field = "1ED93C07871790F1B05979F9657B13A2", hash_generated_field = "0D7984138564A3D3CFA67A8682828033")
+
+    protected byte[]  password;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:56.068 -0500", hash_original_field = "E37DC2BC2509FBBDB9429277FE4D77AB", hash_generated_field = "6FFE86D5F61D563FB2584E26D096D036")
+
+    protected byte[]  salt;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:56.069 -0500", hash_original_field = "63985F5D8355AAA3166FE055813432C8", hash_generated_field = "34A0857BA933BFA60BC0532B6CFA4FA1")
+
+    protected int     iterationCount;
+
+    /**
+     * base constructor.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:56.070 -0500", hash_original_method = "1EFCFCAED54D10FE929FE2EAEA704D32", hash_generated_method = "B033747BF6995BE8502732A0A8B762BD")
+    protected PBEParametersGenerator()
+    {
+    }
+
+    /**
+     * initialise the PBE generator.
+     *
+     * @param password the password converted into bytes (see below).
+     * @param salt the salt to be mixed with the password.
+     * @param iterationCount the number of iterations the "mixing" function
+     * is to be applied for.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:56.071 -0500", hash_original_method = "456931D8AD64BF8B12B053CDCE877455", hash_generated_method = "1D83E435073CFEC20178BCE846AE4ADC")
+    public void init(
+        byte[]  password,
+        byte[]  salt,
+        int     iterationCount)
+    {
+        this.password = password;
+        this.salt = salt;
+        this.iterationCount = iterationCount;
+    }
+
+    /**
+     * return the password byte array.
+     *
+     * @return the password byte array.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:56.071 -0500", hash_original_method = "FF883C507377D40DD9B6A3EE36BF823C", hash_generated_method = "D81DB6C102923420AE887D9E26854CCE")
+    public byte[] getPassword()
+    {
+        return password;
+    }
+
+    /**
+     * return the salt byte array.
+     *
+     * @return the salt byte array.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:56.073 -0500", hash_original_method = "440AD26E5D605624C1EF028F9AB658FA", hash_generated_method = "32E27350E6D2911C021287061F1DF7F4")
+    public byte[] getSalt()
+    {
+        return salt;
+    }
+
+    /**
+     * return the iteration count.
+     *
+     * @return the iteration count.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:56.073 -0500", hash_original_method = "3E24EA64DC831AAEDCCD9EAD88FFC369", hash_generated_method = "583EA89A4A01F3B828D69488C83B2B0E")
+    public int getIterationCount()
+    {
+        return iterationCount;
+    }
+
+    /**
+     * generate derived parameters for a key of length keySize.
+     *
+     * @param keySize the length, in bits, of the key required.
+     * @return a parameters object representing a key.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:56.074 -0500", hash_original_method = "98AFD8ECF9A0E600D41962C41C0FE43D", hash_generated_method = "8623FF622A8064A58FB3420841479B24")
+    public abstract CipherParameters generateDerivedParameters(int keySize);
+
+    /**
+     * generate derived parameters for a key of length keySize, and
+     * an initialisation vector (IV) of length ivSize.
+     *
+     * @param keySize the length, in bits, of the key required.
+     * @param ivSize the length, in bits, of the iv required.
+     * @return a parameters object representing a key and an IV.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:56.075 -0500", hash_original_method = "9AFA4045D657BD87EACCE4FFD29B371E", hash_generated_method = "86FDA5F7A1A2AEF243E83937CCD85578")
+    public abstract CipherParameters generateDerivedParameters(int keySize, int ivSize);
+
+    /**
+     * generate derived parameters for a key of length keySize, specifically
+     * for use with a MAC.
+     *
+     * @param keySize the length, in bits, of the key required.
+     * @return a parameters object representing a key.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:56.076 -0500", hash_original_method = "4AC18EA0058B282F1B402876553ECFFB", hash_generated_method = "B3BAE818D4444A17AE5EF402720447EE")
+    public abstract CipherParameters generateDerivedMacParameters(int keySize);
 
     
 }

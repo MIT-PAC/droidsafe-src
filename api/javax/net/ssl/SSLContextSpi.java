@@ -1,6 +1,8 @@
 package javax.net.ssl;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 import java.security.KeyManagementException;
@@ -11,101 +13,152 @@ import java.security.SecureRandom;
 
 
 public abstract class SSLContextSpi {
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.676 -0400", hash_original_method = "C071A8DB81BAA2AB9BA30E20CDF7E4D3", hash_generated_method = "540369CB178536FB780D6C1CC0EB32F7")
-    public  SSLContextSpi() {
-        // ---------- Original Method ----------
+
+    /**
+     * Creates a new {@code SSLContextSpi} instance.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:29.269 -0500", hash_original_method = "C071A8DB81BAA2AB9BA30E20CDF7E4D3", hash_generated_method = "C7069F93AA2E00C38D14556562CFA0A9")
+    public SSLContextSpi() {
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Initializes this {@code SSLContext} instance. All of the arguments are
+     * optional, and the security providers will be searched for the required
+     * implementations of the needed algorithms.
+     *
+     * @param km
+     *            the key sources or {@code null}.
+     * @param tm
+     *            the trust decision sources or {@code null}.
+     * @param sr
+     *            the randomness source or {@code null.}
+     * @throws KeyManagementException
+     *             if initializing this instance fails.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:29.269 -0500", hash_original_method = "245D0F04D06FF5102BFAAD599C6F8184", hash_generated_method = "CCC513EC7732E4B2172CB0AA95F1970B")
     protected abstract void engineInit(KeyManager[] km, TrustManager[] tm, SecureRandom sr)
             throws KeyManagementException;
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Returns a socket factory for this instance.
+     *
+     * @return a socket factory for this instance.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:29.270 -0500", hash_original_method = "39786C3A44B2F55622E1413C0A3046A6", hash_generated_method = "0711AE2C6939557ACD8EC063ADEEE744")
     protected abstract SSLSocketFactory engineGetSocketFactory();
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Returns a server socket factory for this instance.
+     *
+     * @return a server socket factory for this instance.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:29.271 -0500", hash_original_method = "48EAB4B5184298F54D0CA50CF9CD0C32", hash_generated_method = "FA53224652D9161260CA952891E267FC")
     protected abstract SSLServerSocketFactory engineGetServerSocketFactory();
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Creates an {@code SSLEngine} instance from this context with the
+     * specified hostname and port.
+     *
+     * @param host
+     *            the name of the host
+     * @param port
+     *            the port
+     * @return an {@code SSLEngine} instance from this context.
+     * @throws UnsupportedOperationException
+     *             if the provider does not support the operation.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:29.272 -0500", hash_original_method = "723A4AE0790C4C8818CA14B5260F23B9", hash_generated_method = "A89C09CEAF6AE7B8AD529CA1BF1E82B0")
     protected abstract SSLEngine engineCreateSSLEngine(String host, int port);
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Creates an {@code SSLEngine} instance from this context.
+     *
+     * @return an {@code SSLEngine} instance from this context.
+     * @throws UnsupportedOperationException
+     *             if the provider does not support the operation.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:29.273 -0500", hash_original_method = "3C3670A71F62C061AC866CDADB563DA8", hash_generated_method = "B6E7A1B9FDF8F09F2D5759D4C8B62113")
     protected abstract SSLEngine engineCreateSSLEngine();
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Returns the SSL session context that encapsulates the set of SSL sessions
+     * that can be used for the server side of the SSL handshake.
+     *
+     * @return the SSL server session context for this context or {@code null}
+     *         if the underlying provider does not provide an implementation of
+     *         the {@code SSLSessionContext} interface.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:29.273 -0500", hash_original_method = "A84D19BBBD892F761878CF9E4ED14018", hash_generated_method = "ED189869B6C29133BABCC4115647C5FB")
     protected abstract SSLSessionContext engineGetServerSessionContext();
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Returns the SSL session context that encapsulates the set of SSL sessions
+     * that can be used for the client side of the SSL handshake.
+     *
+     * @return the SSL client session context for this context or {@code null}
+     *         if the underlying provider does not provide an implementation of
+     *         the {@code SSLSessionContext} interface.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:29.274 -0500", hash_original_method = "DCB31B04B4F8E364C2142249E76829A7", hash_generated_method = "FD0BB50D604EB0AF4BF937EF0E20E052")
     protected abstract SSLSessionContext engineGetClientSessionContext();
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.678 -0400", hash_original_method = "38369B007DD3DFBC2F17B36F6861DA09", hash_generated_method = "4B1320EE5532E7833AAA253CD56F0C28")
+
+    /**
+     * Returns a new SSLParameters instance that includes the default
+     * SSL handshake parameters values including cipher suites,
+     * protocols, and client authentication.
+     *
+     * <p>The default implementation returns an SSLParameters with values
+     * based an SSLSocket created from this instances SocketFactory.
+     *
+     * @since 1.6
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:29.275 -0500", hash_original_method = "38369B007DD3DFBC2F17B36F6861DA09", hash_generated_method = "19B85BDCFFFD7283752B67100B24DF80")
     protected javax.net.ssl.SSLParameters engineGetDefaultSSLParameters() {
-javax.net.ssl.SSLParameters var0D24C82A180A38AA13BFD398679AE174_468131076 =         createSSLParameters(false);
-        var0D24C82A180A38AA13BFD398679AE174_468131076.addTaint(taint);
-        return var0D24C82A180A38AA13BFD398679AE174_468131076;
-        // ---------- Original Method ----------
-        //return createSSLParameters(false);
+        return createSSLParameters(false);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.678 -0400", hash_original_method = "86210C07C6F5D2D352BAF9AB53AE79CE", hash_generated_method = "3ACD0A776DDE06BAF90B1ACB72137489")
+    /**
+     * Returns a new SSLParameters instance that includes all
+     * supported cipher suites and protocols.
+     *
+     * <p>The default implementation returns an SSLParameters with values
+     * based an SSLSocket created from this instances SocketFactory.
+     *
+     * @since 1.6
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:29.276 -0500", hash_original_method = "86210C07C6F5D2D352BAF9AB53AE79CE", hash_generated_method = "43B4830D41E80F841649FB50919541A4")
     protected javax.net.ssl.SSLParameters engineGetSupportedSSLParameters() {
-javax.net.ssl.SSLParameters varFE76CDC4E3DE17434647E2DDA62A2469_1739572272 =         createSSLParameters(true);
-        varFE76CDC4E3DE17434647E2DDA62A2469_1739572272.addTaint(taint);
-        return varFE76CDC4E3DE17434647E2DDA62A2469_1739572272;
-        // ---------- Original Method ----------
-        //return createSSLParameters(true);
+        return createSSLParameters(true);
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.679 -0400", hash_original_method = "511D5113A1843E08B751FF4FDB4F02E4", hash_generated_method = "E8E626D7AA884C3764AAAF0B3C5E2EFE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:29.277 -0500", hash_original_method = "511D5113A1843E08B751FF4FDB4F02E4", hash_generated_method = "C3279A7AEB32CC8F8E8680CAC4936037")
     private javax.net.ssl.SSLParameters createSSLParameters(boolean supported) {
-        addTaint(supported);
-        try 
-        {
+        try {
             SSLSocket s = (SSLSocket) engineGetSocketFactory().createSocket();
             javax.net.ssl.SSLParameters p = new javax.net.ssl.SSLParameters();
             String[] cipherSuites;
             String[] protocols;
-            if(supported)            
-            {
+            if (supported) {
                 cipherSuites = s.getSupportedCipherSuites();
                 protocols = s.getSupportedProtocols();
-            } //End block
-            else
-            {
+            } else {
                 cipherSuites = s.getEnabledCipherSuites();
                 protocols = s.getEnabledProtocols();
-            } //End block
+            }
             p.setCipherSuites(cipherSuites);
             p.setProtocols(protocols);
             p.setNeedClientAuth(s.getNeedClientAuth());
             p.setWantClientAuth(s.getWantClientAuth());
-javax.net.ssl.SSLParameters var74E4690D9F2A026504928C017944E149_987211852 =             p;
-            var74E4690D9F2A026504928C017944E149_987211852.addTaint(taint);
-            return var74E4690D9F2A026504928C017944E149_987211852;
-        } //End block
-        catch (IOException e)
-        {
-            UnsupportedOperationException varE5FD55B20B4036F962796E854825EB0C_763853301 = new UnsupportedOperationException("Could not access supported SSL parameters");
-            varE5FD55B20B4036F962796E854825EB0C_763853301.addTaint(taint);
-            throw varE5FD55B20B4036F962796E854825EB0C_763853301;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            return p;
+        } catch (IOException e) {
+            /*
+             * SSLContext.getDefaultSSLParameters specifies to throw
+             * UnsupportedOperationException if there is a problem getting the
+             * parameters
+             */
+            throw new UnsupportedOperationException("Could not access supported SSL parameters");
+        }
     }
 
     

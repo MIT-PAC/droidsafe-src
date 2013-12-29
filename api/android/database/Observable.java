@@ -1,6 +1,8 @@
 package android.database;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.ArrayList;
 
@@ -8,7 +10,7 @@ import java.util.ArrayList;
 
 
 public abstract class Observable<T> {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.061 -0400", hash_original_field = "4568676A708AC893FC758A70E573C153", hash_generated_field = "68FF9C8CE88B8AC7C5CD64388A1A318D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:03.230 -0500", hash_original_field = "111F340D3667EAAF312D756E4DC51E42", hash_generated_field = "68FF9C8CE88B8AC7C5CD64388A1A318D")
 
     protected final ArrayList<T> mObservers = new ArrayList<T>();
     
@@ -19,84 +21,55 @@ public abstract class Observable<T> {
         //Synthesized constructor
     }
 
-
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.062 -0400", hash_original_method = "E1D85670162EF30644779B34B74FE79F", hash_generated_method = "93350A3BDE2AEA6CC90AEE96BD60457F")
+    /**
+     * Adds an observer to the list. The observer cannot be null and it must not already
+     * be registered.
+     * @param observer the observer to register
+     * @throws IllegalArgumentException the observer is null
+     * @throws IllegalStateException the observer is already registered
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:03.231 -0500", hash_original_method = "E1D85670162EF30644779B34B74FE79F", hash_generated_method = "64961E9417B447273F7D503CADBD57C5")
     public void registerObserver(T observer) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
-        addTaint(observer.getTaint());
-        if(observer == null)        
-        {
-            IllegalArgumentException varD8549322C6300CBB2674A7924C5E257A_55799633 = new IllegalArgumentException("The observer is null.");
-            varD8549322C6300CBB2674A7924C5E257A_55799633.addTaint(taint);
-            throw varD8549322C6300CBB2674A7924C5E257A_55799633;
-        } //End block
-        synchronized
-(mObservers)        {
-            if(mObservers.contains(observer))            
-            {
-                IllegalStateException var4ED84C89C8DE99719769468B984ED60A_800323588 = new IllegalStateException("Observer " + observer + " is already registered.");
-                var4ED84C89C8DE99719769468B984ED60A_800323588.addTaint(taint);
-                throw var4ED84C89C8DE99719769468B984ED60A_800323588;
-            } //End block
+        if (observer == null) {
+            throw new IllegalArgumentException("The observer is null.");
+        }
+        synchronized(mObservers) {
+            if (mObservers.contains(observer)) {
+                throw new IllegalStateException("Observer " + observer + " is already registered.");
+            }
             mObservers.add(observer);
-        } //End block
-        // ---------- Original Method ----------
-        //if (observer == null) {
-            //throw new IllegalArgumentException("The observer is null.");
-        //}
-        //synchronized(mObservers) {
-            //if (mObservers.contains(observer)) {
-                //throw new IllegalStateException("Observer " + observer + " is already registered.");
-            //}
-            //mObservers.add(observer);
-        //}
+        }
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.063 -0400", hash_original_method = "5FAF0F37EA51171D6350539680C2708B", hash_generated_method = "9E3FFCEB67532844D81206E0DD72DB8F")
+    /**
+     * Removes a previously registered observer. The observer must not be null and it
+     * must already have been registered.
+     * @param observer the observer to unregister
+     * @throws IllegalArgumentException the observer is null
+     * @throws IllegalStateException the observer is not yet registered
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:03.232 -0500", hash_original_method = "5FAF0F37EA51171D6350539680C2708B", hash_generated_method = "110CF4BDE569CD145CF9EAC2D3053CD0")
     public void unregisterObserver(T observer) {
-        addTaint(observer.getTaint());
-        if(observer == null)        
-        {
-            IllegalArgumentException varD8549322C6300CBB2674A7924C5E257A_1713780066 = new IllegalArgumentException("The observer is null.");
-            varD8549322C6300CBB2674A7924C5E257A_1713780066.addTaint(taint);
-            throw varD8549322C6300CBB2674A7924C5E257A_1713780066;
-        } //End block
-        synchronized
-(mObservers)        {
+        if (observer == null) {
+            throw new IllegalArgumentException("The observer is null.");
+        }
+        synchronized(mObservers) {
             int index = mObservers.indexOf(observer);
-            if(index == -1)            
-            {
-                IllegalStateException varFA0CC1A3FD1B549CF302ACCE9A2F3D78_312255618 = new IllegalStateException("Observer " + observer + " was not registered.");
-                varFA0CC1A3FD1B549CF302ACCE9A2F3D78_312255618.addTaint(taint);
-                throw varFA0CC1A3FD1B549CF302ACCE9A2F3D78_312255618;
-            } //End block
+            if (index == -1) {
+                throw new IllegalStateException("Observer " + observer + " was not registered.");
+            }
             mObservers.remove(index);
-        } //End block
-        // ---------- Original Method ----------
-        //if (observer == null) {
-            //throw new IllegalArgumentException("The observer is null.");
-        //}
-        //synchronized(mObservers) {
-            //int index = mObservers.indexOf(observer);
-            //if (index == -1) {
-                //throw new IllegalStateException("Observer " + observer + " was not registered.");
-            //}
-            //mObservers.remove(index);
-        //}
+        }
     }
-
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.064 -0400", hash_original_method = "68DB825828DE5D87C3617DBC5932D86C", hash_generated_method = "EECAF37010A355E20626A6752F3C7F31")
+    /**
+     * Remove all registered observer
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:03.233 -0500", hash_original_method = "68DB825828DE5D87C3617DBC5932D86C", hash_generated_method = "FD3C3179A18A690F4B8C089C764C35E4")
     public void unregisterAll() {
-        synchronized
-(mObservers)        {
+        synchronized(mObservers) {
             mObservers.clear();
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized(mObservers) {
-            //mObservers.clear();
-        //}
+        }        
     }
 
     

@@ -1,6 +1,8 @@
 package java.io;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Arrays;
 
@@ -10,199 +12,222 @@ import java.util.Arrays;
 
 
 public class StringWriter extends Writer {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.769 -0400", hash_original_field = "CB7E52B21171FB9A53B498202607F0BD", hash_generated_field = "EB9E5A2DAF0C9C70707F8B833E05E535")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:33.384 -0500", hash_original_field = "AE723DBE63A0A007DD0888E4AE2CF636", hash_generated_field = "EB9E5A2DAF0C9C70707F8B833E05E535")
+
 
     private StringBuffer buf;
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.770 -0400", hash_original_method = "70E0091DAD5CA0CE69DCEADFA1D1533C", hash_generated_method = "63358526500471A61BCE1FB30E5618B4")
-    public  StringWriter() {
+
+    /**
+     * Constructs a new {@code StringWriter} which has a {@link StringBuffer}
+     * allocated with the default size of 16 characters. The {@code
+     * StringBuffer} is also the {@code lock} used to synchronize access to this
+     * writer.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:33.386 -0500", hash_original_method = "70E0091DAD5CA0CE69DCEADFA1D1533C", hash_generated_method = "7E2C64E64DC268AFCDD2C66951952544")
+    public StringWriter() {
         buf = new StringBuffer(16);
         lock = buf;
-        // ---------- Original Method ----------
-        //buf = new StringBuffer(16);
-        //lock = buf;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.770 -0400", hash_original_method = "9AACBAF662EC7E043DE68391EFC0EC82", hash_generated_method = "2DE8CF66A9C473D805DF037081FD1CB9")
-    public  StringWriter(int initialSize) {
-        if(initialSize < 0)        
-        {
-            IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_2028166911 = new IllegalArgumentException();
-            var5783EF97022AA508B74A1E3EA38534AF_2028166911.addTaint(taint);
-            throw var5783EF97022AA508B74A1E3EA38534AF_2028166911;
-        } //End block
+    /**
+     * Constructs a new {@code StringWriter} which has a {@link StringBuffer}
+     * allocated with a size of {@code initialSize} characters. The {@code
+     * StringBuffer} is also the {@code lock} used to synchronize access to this
+     * writer.
+     *
+     * @param initialSize
+     *            the intial size of the target string buffer.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:33.387 -0500", hash_original_method = "9AACBAF662EC7E043DE68391EFC0EC82", hash_generated_method = "C2FFDDB811278DE495C1C31F5BEAB90C")
+    public StringWriter(int initialSize) {
+        if (initialSize < 0) {
+            throw new IllegalArgumentException();
+        }
         buf = new StringBuffer(initialSize);
         lock = buf;
-        // ---------- Original Method ----------
-        //if (initialSize < 0) {
-            //throw new IllegalArgumentException();
-        //}
-        //buf = new StringBuffer(initialSize);
-        //lock = buf;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.771 -0400", hash_original_method = "403A1214A00C2300123B494982A31042", hash_generated_method = "6B4749673D8A7A62B822BE7109DA1BE7")
+    /**
+     * Calling this method has no effect. In contrast to most {@code Writer} subclasses,
+     * the other methods in {@code StringWriter} do not throw an {@code IOException} if
+     * {@code close()} has been called.
+     *
+     * @throws IOException
+     *             if an error occurs while closing this writer.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:33.388 -0500", hash_original_method = "403A1214A00C2300123B494982A31042", hash_generated_method = "18141BA36FD6959CD13F78BAD6F7E786")
     @Override
-    public void close() throws IOException {
-        // ---------- Original Method ----------
+public void close() throws IOException {
+        /* empty */
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.771 -0400", hash_original_method = "336EB9AA03C5B902D3CE726BD69F433F", hash_generated_method = "4A4713C8ADAF7778CF4E4BBDA39355C2")
+    /**
+     * Calling this method has no effect.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:33.389 -0500", hash_original_method = "336EB9AA03C5B902D3CE726BD69F433F", hash_generated_method = "0687F2D6ADC2467547D72E32B4897227")
     @Override
-    public void flush() {
-        // ---------- Original Method ----------
+public void flush() {
+        /* empty */
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.771 -0400", hash_original_method = "A7A377F1952FAEFB7BC2FB8A1C51454F", hash_generated_method = "016A806D5A8AD007B3D8D0AE3A9CD185")
+    /**
+     * Gets a reference to this writer's internal {@link StringBuffer}. Any
+     * changes made to the returned buffer are reflected in this writer.
+     *
+     * @return a reference to this writer's internal {@code StringBuffer}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:33.390 -0500", hash_original_method = "A7A377F1952FAEFB7BC2FB8A1C51454F", hash_generated_method = "9DACA42F3BBA428D705F71B19D733A93")
     public StringBuffer getBuffer() {
-StringBuffer var0D8E466677B8F245666E1A4B1E0924E6_286612027 =         buf;
-        var0D8E466677B8F245666E1A4B1E0924E6_286612027.addTaint(taint);
-        return var0D8E466677B8F245666E1A4B1E0924E6_286612027;
-        // ---------- Original Method ----------
-        //return buf;
+        return buf;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.772 -0400", hash_original_method = "B210C316A5935A34586C62D959011891", hash_generated_method = "E82DBF37E523942DC6B1029616EA4FD3")
+    /**
+     * Gets a copy of the contents of this writer as a string.
+     *
+     * @return this writer's contents as a string.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:33.391 -0500", hash_original_method = "B210C316A5935A34586C62D959011891", hash_generated_method = "1774137BABF77D6332E3E77ADE4EE85A")
     @Override
-    public String toString() {
-String var4FC680801218E6372BC708D6FA44AE60_42704342 =         buf.toString();
-        var4FC680801218E6372BC708D6FA44AE60_42704342.addTaint(taint);
-        return var4FC680801218E6372BC708D6FA44AE60_42704342;
-        // ---------- Original Method ----------
-        //return buf.toString();
+public String toString() {
+        return buf.toString();
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.772 -0400", hash_original_method = "B574F1A893A28468E9B79E59C4419CC6", hash_generated_method = "8B30BF7F12B571949DA372C9347EACE5")
+    /**
+     * Writes {@code count} characters starting at {@code offset} in {@code buf}
+     * to this writer's {@code StringBuffer}.
+     *
+     * @param chars
+     *            the non-null character array to write.
+     * @param offset
+     *            the index of the first character in {@code chars} to write.
+     * @param count
+     *            the maximum number of characters to write.
+     * @throws IndexOutOfBoundsException
+     *             if {@code offset < 0} or {@code count < 0}, or if {@code
+     *             offset + count} is greater than the size of {@code buf}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:33.391 -0500", hash_original_method = "B574F1A893A28468E9B79E59C4419CC6", hash_generated_method = "9CDF0FF8BCA96E90FC2C10775DCA5372")
     @Override
-    public void write(char[] chars, int offset, int count) {
-        addTaint(count);
-        addTaint(offset);
-        addTaint(chars[0]);
+public void write(char[] chars, int offset, int count) {
         Arrays.checkOffsetAndCount(chars.length, offset, count);
-        if(count == 0)        
-        {
+        if (count == 0) {
             return;
-        } //End block
+        }
         buf.append(chars, offset, count);
-        // ---------- Original Method ----------
-        //Arrays.checkOffsetAndCount(chars.length, offset, count);
-        //if (count == 0) {
-            //return;
-        //}
-        //buf.append(chars, offset, count);
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.774 -0400", hash_original_method = "9E74599A1E38039394CB519CF0982BB0", hash_generated_method = "01E91D957E82637CFC3C47E10D1867C5")
+    /**
+     * Writes one character to this writer's {@code StringBuffer}. Only the two
+     * least significant bytes of the integer {@code oneChar} are written.
+     *
+     * @param oneChar
+     *            the character to write to this writer's {@code StringBuffer}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:33.392 -0500", hash_original_method = "9E74599A1E38039394CB519CF0982BB0", hash_generated_method = "C5C3795F9028875601BFA514394360DA")
     @Override
-    public void write(int oneChar) {
-        addTaint(oneChar);
+public void write(int oneChar) {
         buf.append((char) oneChar);
-        // ---------- Original Method ----------
-        //buf.append((char) oneChar);
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.775 -0400", hash_original_method = "C709310F14478B827E3F0AC974DDA1E9", hash_generated_method = "B35CF84D879E60368FE32761B2308CB2")
+    /**
+     * Writes the characters from the specified string to this writer's {@code
+     * StringBuffer}.
+     *
+     * @param str
+     *            the non-null string containing the characters to write.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:33.393 -0500", hash_original_method = "C709310F14478B827E3F0AC974DDA1E9", hash_generated_method = "B9E6C838B077F39FFE8F290B8FE54952")
     @Override
-    public void write(String str) {
-        addTaint(str.getTaint());
+public void write(String str) {
         buf.append(str);
-        // ---------- Original Method ----------
-        //buf.append(str);
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.775 -0400", hash_original_method = "944E85902A11A60E741C7A4261619164", hash_generated_method = "13A75375C9F789E104808755450CF2D4")
+    /**
+     * Writes {@code count} characters from {@code str} starting at {@code
+     * offset} to this writer's {@code StringBuffer}.
+     *
+     * @param str
+     *            the non-null string containing the characters to write.
+     * @param offset
+     *            the index of the first character in {@code str} to write.
+     * @param count
+     *            the number of characters from {@code str} to write.
+     * @throws StringIndexOutOfBoundsException
+     *             if {@code offset < 0} or {@code count < 0}, or if {@code
+     *             offset + count} is greater than the length of {@code str}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:33.394 -0500", hash_original_method = "944E85902A11A60E741C7A4261619164", hash_generated_method = "A8BBB0A5273822517081196A431752C3")
     @Override
-    public void write(String str, int offset, int count) {
-        addTaint(count);
-        addTaint(offset);
-        addTaint(str.getTaint());
+public void write(String str, int offset, int count) {
         String sub = str.substring(offset, offset + count);
         buf.append(sub);
-        // ---------- Original Method ----------
-        //String sub = str.substring(offset, offset + count);
-        //buf.append(sub);
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.775 -0400", hash_original_method = "15F384D8A1FFEEB0786C49990EC18DEC", hash_generated_method = "E6B521AF5648386784F031DF6462395D")
+    /**
+     * Appends the character {@code c} to this writer's {@code StringBuffer}.
+     * This method works the same way as {@link #write(int)}.
+     *
+     * @param c
+     *            the character to append to the target stream.
+     * @return this writer.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:33.395 -0500", hash_original_method = "15F384D8A1FFEEB0786C49990EC18DEC", hash_generated_method = "245948B56E5876E69D845B1347DB8EB8")
     @Override
-    public StringWriter append(char c) {
-        addTaint(c);
+public StringWriter append(char c) {
         write(c);
-StringWriter var72A74007B2BE62B849F475C7BDA4658B_956205892 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_956205892.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_956205892;
-        // ---------- Original Method ----------
-        //write(c);
-        //return this;
+        return this;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.776 -0400", hash_original_method = "4F8B551F847F79C820191D7A1919C8D2", hash_generated_method = "03A0420806DCAF4B19C45E7E116BCAF6")
+    /**
+     * Appends the character sequence {@code csq} to this writer's {@code
+     * StringBuffer}. This method works the same way as {@code
+     * StringWriter.write(csq.toString())}. If {@code csq} is {@code null}, then
+     * the string "null" is written to the target stream.
+     *
+     * @param csq
+     *            the character sequence appended to the target.
+     * @return this writer.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:33.396 -0500", hash_original_method = "4F8B551F847F79C820191D7A1919C8D2", hash_generated_method = "B284D98AD1C78CD17BCF774DB4E26F37")
     @Override
-    public StringWriter append(CharSequence csq) {
-        addTaint(csq.getTaint());
-        if(csq == null)        
-        {
+public StringWriter append(CharSequence csq) {
+        if (csq == null) {
             csq = "null";
-        } //End block
+        }
         write(csq.toString());
-StringWriter var72A74007B2BE62B849F475C7BDA4658B_473046218 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_473046218.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_473046218;
-        // ---------- Original Method ----------
-        //if (csq == null) {
-            //csq = "null";
-        //}
-        //write(csq.toString());
-        //return this;
+        return this;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.776 -0400", hash_original_method = "D18F40A53A7260972FC6506FD741C13E", hash_generated_method = "EB97611AE7833AED61E533A9399CAE0A")
+    /**
+     * Appends a subsequence of the character sequence {@code csq} to this
+     * writer's {@code StringBuffer}. This method works the same way as {@code
+     * StringWriter.writer(csq.subsequence(start, end).toString())}. If {@code
+     * csq} is {@code null}, then the specified subsequence of the string "null"
+     * will be written to the target.
+     *
+     * @param csq
+     *            the character sequence appended to the target.
+     * @param start
+     *            the index of the first char in the character sequence appended
+     *            to the target.
+     * @param end
+     *            the index of the character following the last character of the
+     *            subsequence appended to the target.
+     * @return this writer.
+     * @throws IndexOutOfBoundsException
+     *             if {@code start > end}, {@code start < 0}, {@code end < 0} or
+     *             either {@code start} or {@code end} are greater or equal than
+     *             the length of {@code csq}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:33.397 -0500", hash_original_method = "D18F40A53A7260972FC6506FD741C13E", hash_generated_method = "A23470303E65CCE10FA1B68E37099E96")
     @Override
-    public StringWriter append(CharSequence csq, int start, int end) {
-        addTaint(end);
-        addTaint(start);
-        addTaint(csq.getTaint());
-        if(csq == null)        
-        {
+public StringWriter append(CharSequence csq, int start, int end) {
+        if (csq == null) {
             csq = "null";
-        } //End block
+        }
         String output = csq.subSequence(start, end).toString();
         write(output, 0, output.length());
-StringWriter var72A74007B2BE62B849F475C7BDA4658B_947504147 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_947504147.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_947504147;
-        // ---------- Original Method ----------
-        //if (csq == null) {
-            //csq = "null";
-        //}
-        //String output = csq.subSequence(start, end).toString();
-        //write(output, 0, output.length());
-        //return this;
+        return this;
     }
 
     

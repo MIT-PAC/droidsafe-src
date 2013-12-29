@@ -1,6 +1,9 @@
 package android.net.http;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
+import android.util.Log;
 import droidsafe.annotations.*;
 
 
@@ -14,157 +17,76 @@ public class LoggingEventHandler implements EventHandler {
         //Synthesized constructor
     }
 
-
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.285 -0400", hash_original_method = "9B877FF9BFB9C4944F8A279E52B62988", hash_generated_method = "10CA008D5591C89B89CC76B17D80A76F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.317 -0500", hash_original_method = "9B877FF9BFB9C4944F8A279E52B62988", hash_generated_method = "C2368157723D43AE11E06F4A9E5EF67E")
     public void requestSent() {
         HttpLog.v("LoggingEventHandler:requestSent()");
-        // ---------- Original Method ----------
-        //HttpLog.v("LoggingEventHandler:requestSent()");
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.285 -0400", hash_original_method = "9562CED72C3720167E8BBE6FC0F15333", hash_generated_method = "C3779ABC45335DE423896BD63F1FE945")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.318 -0500", hash_original_method = "9562CED72C3720167E8BBE6FC0F15333", hash_generated_method = "C7546D895DB238094E72032F92937856")
     public void status(int major_version,
                        int minor_version,
-                       int code, 
+                       int code, /* Status-Code value */
                        String reason_phrase) {
-        addTaint(reason_phrase.getTaint());
-        addTaint(code);
-        addTaint(minor_version);
-        addTaint(major_version);
-        if(HttpLog.LOGV)        
-        {
+        if (HttpLog.LOGV) {
             HttpLog.v("LoggingEventHandler:status() major: " + major_version +
                   " minor: " + minor_version +
                   " code: " + code +
                   " reason: " + reason_phrase);
-        } //End block
-        // ---------- Original Method ----------
-        //if (HttpLog.LOGV) {
-            //HttpLog.v("LoggingEventHandler:status() major: " + major_version +
-                  //" minor: " + minor_version +
-                  //" code: " + code +
-                  //" reason: " + reason_phrase);
-        //}
+        }
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.286 -0400", hash_original_method = "8FE512AEA8F51EE9A35C32314D5687AD", hash_generated_method = "5BFA388A3D4CAC446E6E00E10DF2AACE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.319 -0500", hash_original_method = "8FE512AEA8F51EE9A35C32314D5687AD", hash_generated_method = "95B835D40052ABB897CB4F4C62AD414D")
     public void headers(Headers headers) {
-        addTaint(headers.getTaint());
-        if(HttpLog.LOGV)        
-        {
+        if (HttpLog.LOGV) {
             HttpLog.v("LoggingEventHandler:headers()");
             HttpLog.v(headers.toString());
-        } //End block
-        // ---------- Original Method ----------
-        //if (HttpLog.LOGV) {
-            //HttpLog.v("LoggingEventHandler:headers()");
-            //HttpLog.v(headers.toString());
-        //}
+        }
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.286 -0400", hash_original_method = "A8D5EBFAB0280455A32A6C5CDBC44C4C", hash_generated_method = "B33DFDF379FE8FCD5229C3BEEF46B22F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.319 -0500", hash_original_method = "A8D5EBFAB0280455A32A6C5CDBC44C4C", hash_generated_method = "CF633CF45BE056C07C069243B3958B03")
     public void locationChanged(String newLocation, boolean permanent) {
-        addTaint(permanent);
-        addTaint(newLocation.getTaint());
-        if(HttpLog.LOGV)        
-        {
+        if (HttpLog.LOGV) {
             HttpLog.v("LoggingEventHandler: locationChanged() " + newLocation +
                       " permanent " + permanent);
-        } //End block
-        // ---------- Original Method ----------
-        //if (HttpLog.LOGV) {
-            //HttpLog.v("LoggingEventHandler: locationChanged() " + newLocation +
-                      //" permanent " + permanent);
-        //}
+        }
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.287 -0400", hash_original_method = "15D1AFABE65539E471DAB9FAA56FDCBD", hash_generated_method = "A3635CFB244374AE799188D5B81A1818")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.320 -0500", hash_original_method = "15D1AFABE65539E471DAB9FAA56FDCBD", hash_generated_method = "472B32E5182EDC3E70D38CD87168DA99")
     public void data(byte[] data, int len) {
-        addTaint(len);
-        addTaint(data[0]);
-        if(HttpLog.LOGV)        
-        {
+        if (HttpLog.LOGV) {
             HttpLog.v("LoggingEventHandler: data() " + len + " bytes");
-        } //End block
-        // ---------- Original Method ----------
-        //if (HttpLog.LOGV) {
-            //HttpLog.v("LoggingEventHandler: data() " + len + " bytes");
-        //}
+        }
+        // HttpLog.v(new String(data, 0, len));
     }
-
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.288 -0400", hash_original_method = "1307000636F79B402F6C65745EBC0C33", hash_generated_method = "81706297E037DF2B8DB97D2D9DA05629")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.321 -0500", hash_original_method = "1307000636F79B402F6C65745EBC0C33", hash_generated_method = "4855777B379BBEED0B38AA94EFD45B64")
     public void endData() {
-        if(HttpLog.LOGV)        
-        {
+        if (HttpLog.LOGV) {
             HttpLog.v("LoggingEventHandler: endData() called");
-        } //End block
-        // ---------- Original Method ----------
-        //if (HttpLog.LOGV) {
-            //HttpLog.v("LoggingEventHandler: endData() called");
-        //}
+        }
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.288 -0400", hash_original_method = "C33D898F8FAE31F96E6631A9B3801603", hash_generated_method = "30B1D0432C5107E2D0EED276CF964190")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.322 -0500", hash_original_method = "C33D898F8FAE31F96E6631A9B3801603", hash_generated_method = "33355BA04497C8007D074118A17E2FA4")
     public void certificate(SslCertificate certificate) {
-        addTaint(certificate.getTaint());
-        if(HttpLog.LOGV)        
-        {
-            HttpLog.v("LoggingEventHandler: certificate(): " + certificate);
-        } //End block
-        // ---------- Original Method ----------
-        //if (HttpLog.LOGV) {
-             //HttpLog.v("LoggingEventHandler: certificate(): " + certificate);
-         //}
+         if (HttpLog.LOGV) {
+             HttpLog.v("LoggingEventHandler: certificate(): " + certificate);
+         }
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.289 -0400", hash_original_method = "EC9B7F9D07093F1D17DE76D8B4CD0C3B", hash_generated_method = "F3843303AAFFFC49EE5087DB4B3535E3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.323 -0500", hash_original_method = "EC9B7F9D07093F1D17DE76D8B4CD0C3B", hash_generated_method = "43D1960EF773A7E5C3C97C1703B8134E")
     public void error(int id, String description) {
-        addTaint(description.getTaint());
-        addTaint(id);
-        if(HttpLog.LOGV)        
-        {
+        if (HttpLog.LOGV) {
             HttpLog.v("LoggingEventHandler: error() called Id:" + id +
                       " description " + description);
-        } //End block
-        // ---------- Original Method ----------
-        //if (HttpLog.LOGV) {
-            //HttpLog.v("LoggingEventHandler: error() called Id:" + id +
-                      //" description " + description);
-        //}
+        }
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.290 -0400", hash_original_method = "B335D5CE3F683FCF0CB8DE97E41DDFFF", hash_generated_method = "F75F03F730BF964B4908EB0C5D915696")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:33.323 -0500", hash_original_method = "B335D5CE3F683FCF0CB8DE97E41DDFFF", hash_generated_method = "90BA52AF0ED51C3B13FFFDB1333F1177")
     public boolean handleSslErrorRequest(SslError error) {
-        addTaint(error.getTaint());
-        if(HttpLog.LOGV)        
-        {
+        if (HttpLog.LOGV) {
             HttpLog.v("LoggingEventHandler: handleSslErrorRequest():" + error);
-        } //End block
-        boolean var68934A3E9455FA72420237EB05902327_1589356921 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1119295739 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1119295739;
-        // ---------- Original Method ----------
-        //if (HttpLog.LOGV) {
-            //HttpLog.v("LoggingEventHandler: handleSslErrorRequest():" + error);
-        //}
-        //return false;
+        }
+        // return false so that the caller thread won't wait forever
+        return false;
     }
 
     

@@ -1,6 +1,8 @@
 package org.bouncycastle.asn1;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Vector;
 
@@ -8,49 +10,37 @@ import java.util.Vector;
 
 
 public class DEREncodableVector {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.168 -0400", hash_original_field = "7333F09B91C7F702C0D4E47815B90759", hash_generated_field = "A7A9A9F7A17391F6E585D35448FF7802")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:55.384 -0500", hash_original_field = "A7A9A9F7A17391F6E585D35448FF7802", hash_generated_field = "A7A9A9F7A17391F6E585D35448FF7802")
 
     Vector v = new Vector();
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.168 -0400", hash_original_method = "4B1458BF3C50FB4227938042BB3B78D8", hash_generated_method = "1DD20547FCD1109D010042A3252F39EC")
-    public  DEREncodableVector() {
-        // ---------- Original Method ----------
-    }
 
+    /**
+     * @deprecated use ASN1EncodableVector instead.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:55.385 -0500", hash_original_method = "4B1458BF3C50FB4227938042BB3B78D8", hash_generated_method = "4DFB1B6B60EA995D6120F4C94D3E7A09")
+    public DEREncodableVector()
+    {
+
+    }
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.168 -0400", hash_original_method = "D2631DDAF2947787DEB94C0E4C39923E", hash_generated_method = "C07A46466B2C3107C1E9219F21752B31")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:55.385 -0500", hash_original_method = "D2631DDAF2947787DEB94C0E4C39923E", hash_generated_method = "48317AC83DE284FEAB21BF24DC99B0C2")
     public void add(
-        DEREncodable   obj) {
-        addTaint(obj.getTaint());
+        DEREncodable   obj)
+    {
         v.addElement(obj);
-        // ---------- Original Method ----------
-        //v.addElement(obj);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.169 -0400", hash_original_method = "B314138255529409821E04A292C38866", hash_generated_method = "FB56AB608D137DD7266B6373036FD8C7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:55.386 -0500", hash_original_method = "B314138255529409821E04A292C38866", hash_generated_method = "41F69DCE6FBBE0D8D974E08E716C3A3F")
     public DEREncodable get(
-        int i) {
-        addTaint(i);
-DEREncodable var8191964E2FCEE7188EFAEBD767F0FDB4_372246353 =         (DEREncodable)v.elementAt(i);
-        var8191964E2FCEE7188EFAEBD767F0FDB4_372246353.addTaint(taint);
-        return var8191964E2FCEE7188EFAEBD767F0FDB4_372246353;
-        // ---------- Original Method ----------
-        //return (DEREncodable)v.elementAt(i);
+        int i)
+    {
+        return (DEREncodable)v.elementAt(i);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.169 -0400", hash_original_method = "F82248B1BB6EFF1F27955CBD5C3A97B0", hash_generated_method = "08FBD9B0CE225AE4E1F09919178CE294")
-    public int size() {
-        int var51AE616C0259F34AABC75BA09943E804_549983705 = (v.size());
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1553279208 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1553279208;
-        // ---------- Original Method ----------
-        //return v.size();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:55.387 -0500", hash_original_method = "F82248B1BB6EFF1F27955CBD5C3A97B0", hash_generated_method = "EB8E5EC84569D43FF91B328ACD5AFC64")
+    public int size()
+    {
+        return v.size();
     }
 
     

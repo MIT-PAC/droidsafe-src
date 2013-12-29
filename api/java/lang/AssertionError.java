@@ -1,6 +1,8 @@
 package java.lang;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
@@ -8,90 +10,114 @@ import droidsafe.annotations.*;
 
 
 public class AssertionError extends Error {
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.168 -0400", hash_original_method = "632C9A91920500ECFBFF7CDB1241885E", hash_generated_method = "8BB24CECD8503B4A4EB9C799C7E7073F")
-    public  AssertionError() {
-        // ---------- Original Method ----------
-    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:21.243 -0500", hash_original_field = "23DC8363492CC647937818C0E00407BE", hash_generated_field = "A3497D23B93DF9E4AA64EF083CEEBD5B")
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.180 -0400", hash_original_method = "DB301E384A0E7AC0DA0AB52BDA1439A9", hash_generated_method = "E251B81B3D4ADAB6EC7D3460AEF90AB0")
-    public  AssertionError(String detailMessage, Throwable cause) {
-        super(detailMessage, cause);
-        addTaint(cause.getTaint());
-        addTaint(detailMessage.getTaint());
-        // ---------- Original Method ----------
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.180 -0400", hash_original_method = "CD7903E922C4B27895502309BFA5EB07", hash_generated_method = "93F781A4BE394C9AD6445470A714B9AE")
-    public  AssertionError(Object detailMessage) {
-        super(String.valueOf(detailMessage),
-                (detailMessage instanceof Throwable ? (Throwable) detailMessage : null));
-        addTaint(detailMessage.getTaint());
-        // ---------- Original Method ----------
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.180 -0400", hash_original_method = "BB55778BC77D5B95187F495DBBF45981", hash_generated_method = "C1E7297D9408A56B99BB21E80127806E")
-    public  AssertionError(boolean detailMessage) {
-        this(String.valueOf(detailMessage));
-        addTaint(detailMessage);
-        // ---------- Original Method ----------
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.180 -0400", hash_original_method = "0919D94AF324C3859333ED19301CBB4C", hash_generated_method = "5E706F1FE2C06D19CC3B7D6EF3518A65")
-    public  AssertionError(char detailMessage) {
-        this(String.valueOf(detailMessage));
-        addTaint(detailMessage);
-        // ---------- Original Method ----------
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.180 -0400", hash_original_method = "462DB8F5A907CF4FAF9D9C058DE243DA", hash_generated_method = "E08BACE49551A8970A62DB8792DDE201")
-    public  AssertionError(int detailMessage) {
-        this(Integer.toString(detailMessage));
-        addTaint(detailMessage);
-        // ---------- Original Method ----------
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.180 -0400", hash_original_method = "0B1F386E30482F841F5BBFF8DA2D4AD5", hash_generated_method = "F3D057B8A460BE8AE984F4339C106278")
-    public  AssertionError(long detailMessage) {
-        this(Long.toString(detailMessage));
-        addTaint(detailMessage);
-        // ---------- Original Method ----------
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.180 -0400", hash_original_method = "00A378BEF68E5943BA88BAF8271D8A43", hash_generated_method = "1DB3FE8F2F4FE4951776E3B7C74E1CB0")
-    public  AssertionError(float detailMessage) {
-        this(Float.toString(detailMessage));
-        addTaint(detailMessage);
-        // ---------- Original Method ----------
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.181 -0400", hash_original_method = "7A2F5DA0FAF43875CE47806BEFC9388A", hash_generated_method = "0C4059270EA33285C1BF8CD3EBA17BBC")
-    public  AssertionError(double detailMessage) {
-        this(Double.toString(detailMessage));
-        addTaint(detailMessage);
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.181 -0400", hash_original_field = "4D2F709F14AE1603369D414531DBDCB7", hash_generated_field = "A3497D23B93DF9E4AA64EF083CEEBD5B")
 
     private static final long serialVersionUID = -5013299493970297370L;
+
+    /**
+     * Constructs a new {@code AssertionError} with no message.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:21.244 -0500", hash_original_method = "632C9A91920500ECFBFF7CDB1241885E", hash_generated_method = "693B1D496B276CC308C2F45C99B919C6")
+    public AssertionError() {
+    }
+
+    /**
+     * Constructs a new {@code AssertionError} with the given detail message and cause.
+     * @since 1.7
+     * @hide 1.7
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:21.245 -0500", hash_original_method = "DB301E384A0E7AC0DA0AB52BDA1439A9", hash_generated_method = "B9E7AA1AB9CA3AD315D55ED90AFD873D")
+    public AssertionError(String detailMessage, Throwable cause) {
+        super(detailMessage, cause);
+    }
+
+    /**
+     * Constructs a new {@code AssertionError} with a message based on calling
+     * {@link String#valueOf(Object)} with the specified object. If the object
+     * is an instance of {@link Throwable}, then it also becomes the cause of
+     * this error.
+     *
+     * @param detailMessage
+     *            the object to be converted into the detail message and
+     *            optionally the cause.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:21.246 -0500", hash_original_method = "CD7903E922C4B27895502309BFA5EB07", hash_generated_method = "49E2E05E2EBA3C339CD09977A491E7B5")
+    public AssertionError(Object detailMessage) {
+        super(String.valueOf(detailMessage),
+                (detailMessage instanceof Throwable ? (Throwable) detailMessage : null));
+    }
+
+    /**
+     * Constructs a new {@code AssertionError} with a message based on calling
+     * {@link String#valueOf(boolean)} with the specified boolean value.
+     *
+     * @param detailMessage
+     *            the value to be converted into the message.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:21.247 -0500", hash_original_method = "BB55778BC77D5B95187F495DBBF45981", hash_generated_method = "C8DA077409E395566E29DC6A26A1E37F")
+    public AssertionError(boolean detailMessage) {
+        this(String.valueOf(detailMessage));
+    }
+
+    /**
+     * Constructs a new {@code AssertionError} with a message based on calling
+     * {@link String#valueOf(char)} with the specified character value.
+     *
+     * @param detailMessage
+     *            the value to be converted into the message.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:21.248 -0500", hash_original_method = "0919D94AF324C3859333ED19301CBB4C", hash_generated_method = "18C13D659F8973297BF4C562E3FC882E")
+    public AssertionError(char detailMessage) {
+        this(String.valueOf(detailMessage));
+    }
+
+    /**
+     * Constructs a new {@code AssertionError} with a message based on calling
+     * {@link String#valueOf(int)} with the specified integer value.
+     *
+     * @param detailMessage
+     *            the value to be converted into the message.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:21.249 -0500", hash_original_method = "462DB8F5A907CF4FAF9D9C058DE243DA", hash_generated_method = "9AE20776A7A65CA7C2AC898C0A3214B1")
+    public AssertionError(int detailMessage) {
+        this(Integer.toString(detailMessage));
+    }
+
+    /**
+     * Constructs a new {@code AssertionError} with a message based on calling
+     * {@link String#valueOf(long)} with the specified long value.
+     *
+     * @param detailMessage
+     *            the value to be converted into the message.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:21.250 -0500", hash_original_method = "0B1F386E30482F841F5BBFF8DA2D4AD5", hash_generated_method = "618EDECF1CBBE73F265F3B66065DBD82")
+    public AssertionError(long detailMessage) {
+        this(Long.toString(detailMessage));
+    }
+
+    /**
+     * Constructs a new {@code AssertionError} with a message based on calling
+     * {@link String#valueOf(float)} with the specified float value.
+     *
+     * @param detailMessage
+     *            the value to be converted into the message.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:21.251 -0500", hash_original_method = "00A378BEF68E5943BA88BAF8271D8A43", hash_generated_method = "204F3F53B1C828C3E14D2ECBE635FA94")
+    public AssertionError(float detailMessage) {
+        this(Float.toString(detailMessage));
+    }
+
+    /**
+     * Constructs a new {@code AssertionError} with a message based on calling
+     * {@link String#valueOf(double)} with the specified double value.
+     *
+     * @param detailMessage
+     *            the value to be converted into the message.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:21.252 -0500", hash_original_method = "7A2F5DA0FAF43875CE47806BEFC9388A", hash_generated_method = "D8DCE6824D8F179358E48109F73CA8D6")
+    public AssertionError(double detailMessage) {
+        this(Double.toString(detailMessage));
+    }
 }
 

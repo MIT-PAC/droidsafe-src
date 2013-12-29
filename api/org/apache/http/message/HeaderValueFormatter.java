@@ -1,6 +1,8 @@
 package org.apache.http.message;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import org.apache.http.HeaderElement;
 import org.apache.http.NameValuePair;

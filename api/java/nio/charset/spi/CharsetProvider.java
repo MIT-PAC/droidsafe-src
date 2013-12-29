@@ -1,6 +1,8 @@
 package java.nio.charset.spi;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.nio.charset.Charset;
 import java.util.Iterator;
@@ -10,18 +12,32 @@ import java.util.Iterator;
 
 
 public abstract class CharsetProvider {
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.711 -0400", hash_original_method = "71B9A0846B394A5E85543A853F8CC262", hash_generated_method = "E9423E783CD0299C830EA4AD9E2C58C1")
-    protected  CharsetProvider() {
-        // ---------- Original Method ----------
+    /**
+     * Constructor for subclassing with concrete types.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:37.429 -0500", hash_original_method = "71B9A0846B394A5E85543A853F8CC262", hash_generated_method = "59DF855CF64856033BCC1CA3D13C2C92")
+    protected CharsetProvider() {
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Returns an iterator over all the available charsets.
+     *
+     * @return the iterator.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:37.430 -0500", hash_original_method = "709EC9B16996CA6DF02EC1EFC9088A58", hash_generated_method = "94B3EF507179C12F4E718B1D8C107E28")
     public abstract Iterator<Charset> charsets();
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Returns the named charset.
+     * <p>
+     * If the charset is unavailable the method returns <code>null</code>.
+     * </p>
+     *
+     * @param charsetName
+     *            the canonical or alias name of a character set.
+     * @return the charset, or <code>null</code> if unavailable.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:37.431 -0500", hash_original_method = "BA31824ED4CC04936E987AEF123C88CF", hash_generated_method = "7483DA9550BEF926E3779E9C676D05E8")
     public abstract Charset charsetForName(String charsetName);
 
     

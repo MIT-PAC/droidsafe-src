@@ -1,6 +1,8 @@
 package android.widget;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.List;
 import java.util.Map;
@@ -15,63 +17,129 @@ import android.view.ViewGroup;
 
 
 public class SimpleExpandableListAdapter extends BaseExpandableListAdapter {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.047 -0400", hash_original_field = "035E16F29CDA719D867DE29B4F5284B7", hash_generated_field = "611E54FE69D6A51734B23ACE9D45487D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:56.989 -0500", hash_original_field = "DCC83A353D601CD0A4E94CC77E93FD9D", hash_generated_field = "611E54FE69D6A51734B23ACE9D45487D")
 
     private List<? extends Map<String, ?>> mGroupData;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.047 -0400", hash_original_field = "2D803F6321FFBA140DEDC790B00841EB", hash_generated_field = "29232D89B007E5845ED651666E71F7E5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:56.990 -0500", hash_original_field = "B0557CF6416849E3BBC146CBD32EE0B4", hash_generated_field = "29232D89B007E5845ED651666E71F7E5")
 
     private int mExpandedGroupLayout;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.048 -0400", hash_original_field = "19F065E9F4502FD8BD4E0774A53B8ECA", hash_generated_field = "4ACE38296ABE9FF8B0D8B5F1CA7AAC83")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:56.991 -0500", hash_original_field = "7764B05EBCD36D219F9EAE45C01B8096", hash_generated_field = "4ACE38296ABE9FF8B0D8B5F1CA7AAC83")
 
     private int mCollapsedGroupLayout;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.048 -0400", hash_original_field = "3A6224430427F43CC581E224B913CDA3", hash_generated_field = "7657AAC628E0AED66031A87720EE14BF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:56.991 -0500", hash_original_field = "B240F86D3AF6236264DEA56DD98767D3", hash_generated_field = "7657AAC628E0AED66031A87720EE14BF")
 
     private String[] mGroupFrom;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.048 -0400", hash_original_field = "42FE03D924A915724B2AAD0E159514A0", hash_generated_field = "D29802DAAD0CD96400697E0FA27386FC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:56.992 -0500", hash_original_field = "E7DCF32FB3F8894F4B7C1A4DC20258C4", hash_generated_field = "D29802DAAD0CD96400697E0FA27386FC")
 
     private int[] mGroupTo;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.048 -0400", hash_original_field = "C1D2A81F373586752A4EDFF571BAFFAC", hash_generated_field = "CA27BAF20820F25F83F483D671CEEFD5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:56.993 -0500", hash_original_field = "D2624B5EE8EA5B76409574C61FCD5715", hash_generated_field = "CA27BAF20820F25F83F483D671CEEFD5")
 
+    
     private List<? extends List<? extends Map<String, ?>>> mChildData;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.048 -0400", hash_original_field = "C5E5DFAFB181975D75B0A925D11B002C", hash_generated_field = "3B28367C61855DFAB7FD9BAF80DDA1B4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:56.994 -0500", hash_original_field = "E411898B9199DF6F8B109F615D9759C4", hash_generated_field = "3B28367C61855DFAB7FD9BAF80DDA1B4")
 
     private int mChildLayout;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.048 -0400", hash_original_field = "0FF92EBE59A30A2A0A1D2F7E41F03768", hash_generated_field = "7A84288CA4669530FB7C66A4F2F4784B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:56.994 -0500", hash_original_field = "F149F0167E8532D200025C337161E23F", hash_generated_field = "7A84288CA4669530FB7C66A4F2F4784B")
 
     private int mLastChildLayout;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.048 -0400", hash_original_field = "8D0DCAE0DED6772202030EA5F3F3ACC7", hash_generated_field = "12E8B31CE0B217A1E808E5C36374BDCF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:56.996 -0500", hash_original_field = "E97422B08B6D6A8BDB33D1EAFB05B36D", hash_generated_field = "12E8B31CE0B217A1E808E5C36374BDCF")
 
     private String[] mChildFrom;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.048 -0400", hash_original_field = "B51973EFD935C9A20D5C9774B58D2F03", hash_generated_field = "19640240BA0FE32753085D0DC0ABE6AF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:56.996 -0500", hash_original_field = "D35DFDA2183C443B0E181E6730756AA7", hash_generated_field = "19640240BA0FE32753085D0DC0ABE6AF")
 
     private int[] mChildTo;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.048 -0400", hash_original_field = "D03597FDEDE23F3823480E0520822BB2", hash_generated_field = "CBB0EE0A851756643DA52E1D33B6B161")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:56.997 -0500", hash_original_field = "B03B4DAE3F576B7166425BEE37B96C5E", hash_generated_field = "CBB0EE0A851756643DA52E1D33B6B161")
 
+    
     private LayoutInflater mInflater;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.049 -0400", hash_original_method = "1707053CE8BCCF89B8DA20E3B0C31E90", hash_generated_method = "22595569D61D7B392039F05EB3E563D7")
-    public  SimpleExpandableListAdapter(Context context,
+    /**
+     * Constructor
+     * 
+     * @param context The context where the {@link ExpandableListView}
+     *            associated with this {@link SimpleExpandableListAdapter} is
+     *            running
+     * @param groupData A List of Maps. Each entry in the List corresponds to
+     *            one group in the list. The Maps contain the data for each
+     *            group, and should include all the entries specified in
+     *            "groupFrom"
+     * @param groupFrom A list of keys that will be fetched from the Map
+     *            associated with each group.
+     * @param groupTo The group views that should display column in the
+     *            "groupFrom" parameter. These should all be TextViews. The
+     *            first N views in this list are given the values of the first N
+     *            columns in the groupFrom parameter.
+     * @param groupLayout resource identifier of a view layout that defines the
+     *            views for a group. The layout file should include at least
+     *            those named views defined in "groupTo"
+     * @param childData A List of List of Maps. Each entry in the outer List
+     *            corresponds to a group (index by group position), each entry
+     *            in the inner List corresponds to a child within the group
+     *            (index by child position), and the Map corresponds to the data
+     *            for a child (index by values in the childFrom array). The Map
+     *            contains the data for each child, and should include all the
+     *            entries specified in "childFrom"
+     * @param childFrom A list of keys that will be fetched from the Map
+     *            associated with each child.
+     * @param childTo The child views that should display column in the
+     *            "childFrom" parameter. These should all be TextViews. The
+     *            first N views in this list are given the values of the first N
+     *            columns in the childFrom parameter.
+     * @param childLayout resource identifier of a view layout that defines the
+     *            views for a child. The layout file should include at least
+     *            those named views defined in "childTo"
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:56.998 -0500", hash_original_method = "1707053CE8BCCF89B8DA20E3B0C31E90", hash_generated_method = "F5BD05065AC0BBA492D8CB8CE1A07961")
+    public SimpleExpandableListAdapter(Context context,
             List<? extends Map<String, ?>> groupData, int groupLayout,
             String[] groupFrom, int[] groupTo,
             List<? extends List<? extends Map<String, ?>>> childData,
             int childLayout, String[] childFrom, int[] childTo) {
         this(context, groupData, groupLayout, groupLayout, groupFrom, groupTo, childData,
                 childLayout, childLayout, childFrom, childTo);
-        addTaint(childTo[0]);
-        addTaint(childFrom[0].getTaint());
-        addTaint(childLayout);
-        addTaint(childData.getTaint());
-        addTaint(groupTo[0]);
-        addTaint(groupFrom[0].getTaint());
-        addTaint(groupLayout);
-        addTaint(groupData.getTaint());
-        addTaint(context.getTaint());
-        // ---------- Original Method ----------
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.050 -0400", hash_original_method = "34D445F41C1AC47E0D3B438B48C7B750", hash_generated_method = "B4925E7384717EF9D03149D74C376F4E")
-    public  SimpleExpandableListAdapter(Context context,
+    /**
+     * Constructor
+     * 
+     * @param context The context where the {@link ExpandableListView}
+     *            associated with this {@link SimpleExpandableListAdapter} is
+     *            running
+     * @param groupData A List of Maps. Each entry in the List corresponds to
+     *            one group in the list. The Maps contain the data for each
+     *            group, and should include all the entries specified in
+     *            "groupFrom"
+     * @param groupFrom A list of keys that will be fetched from the Map
+     *            associated with each group.
+     * @param groupTo The group views that should display column in the
+     *            "groupFrom" parameter. These should all be TextViews. The
+     *            first N views in this list are given the values of the first N
+     *            columns in the groupFrom parameter.
+     * @param expandedGroupLayout resource identifier of a view layout that
+     *            defines the views for an expanded group. The layout file
+     *            should include at least those named views defined in "groupTo"
+     * @param collapsedGroupLayout resource identifier of a view layout that
+     *            defines the views for a collapsed group. The layout file
+     *            should include at least those named views defined in "groupTo"
+     * @param childData A List of List of Maps. Each entry in the outer List
+     *            corresponds to a group (index by group position), each entry
+     *            in the inner List corresponds to a child within the group
+     *            (index by child position), and the Map corresponds to the data
+     *            for a child (index by values in the childFrom array). The Map
+     *            contains the data for each child, and should include all the
+     *            entries specified in "childFrom"
+     * @param childFrom A list of keys that will be fetched from the Map
+     *            associated with each child.
+     * @param childTo The child views that should display column in the
+     *            "childFrom" parameter. These should all be TextViews. The
+     *            first N views in this list are given the values of the first N
+     *            columns in the childFrom parameter.
+     * @param childLayout resource identifier of a view layout that defines the
+     *            views for a child. The layout file should include at least
+     *            those named views defined in "childTo"
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:56.999 -0500", hash_original_method = "34D445F41C1AC47E0D3B438B48C7B750", hash_generated_method = "484914171DB2365F2D71E1F28E6561BE")
+    public SimpleExpandableListAdapter(Context context,
             List<? extends Map<String, ?>> groupData, int expandedGroupLayout,
             int collapsedGroupLayout, String[] groupFrom, int[] groupTo,
             List<? extends List<? extends Map<String, ?>>> childData,
@@ -79,22 +147,54 @@ public class SimpleExpandableListAdapter extends BaseExpandableListAdapter {
         this(context, groupData, expandedGroupLayout, collapsedGroupLayout,
                 groupFrom, groupTo, childData, childLayout, childLayout,
                 childFrom, childTo);
-        addTaint(childTo[0]);
-        addTaint(childFrom[0].getTaint());
-        addTaint(childLayout);
-        addTaint(childData.getTaint());
-        addTaint(groupTo[0]);
-        addTaint(groupFrom[0].getTaint());
-        addTaint(collapsedGroupLayout);
-        addTaint(expandedGroupLayout);
-        addTaint(groupData.getTaint());
-        addTaint(context.getTaint());
-        // ---------- Original Method ----------
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.053 -0400", hash_original_method = "9B08A7CAFAE37727B01A163820667DFA", hash_generated_method = "96A969F5AD111940FF62A045AB9CE1BB")
-    public  SimpleExpandableListAdapter(Context context,
+    /**
+     * Constructor
+     * 
+     * @param context The context where the {@link ExpandableListView}
+     *            associated with this {@link SimpleExpandableListAdapter} is
+     *            running
+     * @param groupData A List of Maps. Each entry in the List corresponds to
+     *            one group in the list. The Maps contain the data for each
+     *            group, and should include all the entries specified in
+     *            "groupFrom"
+     * @param groupFrom A list of keys that will be fetched from the Map
+     *            associated with each group.
+     * @param groupTo The group views that should display column in the
+     *            "groupFrom" parameter. These should all be TextViews. The
+     *            first N views in this list are given the values of the first N
+     *            columns in the groupFrom parameter.
+     * @param expandedGroupLayout resource identifier of a view layout that
+     *            defines the views for an expanded group. The layout file
+     *            should include at least those named views defined in "groupTo"
+     * @param collapsedGroupLayout resource identifier of a view layout that
+     *            defines the views for a collapsed group. The layout file
+     *            should include at least those named views defined in "groupTo"
+     * @param childData A List of List of Maps. Each entry in the outer List
+     *            corresponds to a group (index by group position), each entry
+     *            in the inner List corresponds to a child within the group
+     *            (index by child position), and the Map corresponds to the data
+     *            for a child (index by values in the childFrom array). The Map
+     *            contains the data for each child, and should include all the
+     *            entries specified in "childFrom"
+     * @param childFrom A list of keys that will be fetched from the Map
+     *            associated with each child.
+     * @param childTo The child views that should display column in the
+     *            "childFrom" parameter. These should all be TextViews. The
+     *            first N views in this list are given the values of the first N
+     *            columns in the childFrom parameter.
+     * @param childLayout resource identifier of a view layout that defines the
+     *            views for a child (unless it is the last child within a group,
+     *            in which case the lastChildLayout is used). The layout file
+     *            should include at least those named views defined in "childTo"
+     * @param lastChildLayout resource identifier of a view layout that defines
+     *            the views for the last child within each group. The layout
+     *            file should include at least those named views defined in
+     *            "childTo"
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.000 -0500", hash_original_method = "9B08A7CAFAE37727B01A163820667DFA", hash_generated_method = "D51DF074DCB296EAC99B3541E490DDE7")
+    public SimpleExpandableListAdapter(Context context,
             List<? extends Map<String, ?>> groupData, int expandedGroupLayout,
             int collapsedGroupLayout, String[] groupFrom, int[] groupTo,
             List<? extends List<? extends Map<String, ?>>> childData,
@@ -105,243 +205,115 @@ public class SimpleExpandableListAdapter extends BaseExpandableListAdapter {
         mCollapsedGroupLayout = collapsedGroupLayout;
         mGroupFrom = groupFrom;
         mGroupTo = groupTo;
+        
         mChildData = childData;
         mChildLayout = childLayout;
         mLastChildLayout = lastChildLayout;
         mChildFrom = childFrom;
         mChildTo = childTo;
+        
         mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        // ---------- Original Method ----------
-        //mGroupData = groupData;
-        //mExpandedGroupLayout = expandedGroupLayout;
-        //mCollapsedGroupLayout = collapsedGroupLayout;
-        //mGroupFrom = groupFrom;
-        //mGroupTo = groupTo;
-        //mChildData = childData;
-        //mChildLayout = childLayout;
-        //mLastChildLayout = lastChildLayout;
-        //mChildFrom = childFrom;
-        //mChildTo = childTo;
-        //mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
-
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.053 -0400", hash_original_method = "3B29A9946FDE7DB2BC2B7FECDB06C302", hash_generated_method = "128CF617C790F52CB4755EEB123924AE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.001 -0500", hash_original_method = "3B29A9946FDE7DB2BC2B7FECDB06C302", hash_generated_method = "63EFEA7A0C0040A127AA8D1303DEECA8")
     public Object getChild(int groupPosition, int childPosition) {
-        addTaint(childPosition);
-        addTaint(groupPosition);
-Object varF4E472F530EEA6342931FA947EA4E3DB_223049974 =         mChildData.get(groupPosition).get(childPosition);
-        varF4E472F530EEA6342931FA947EA4E3DB_223049974.addTaint(taint);
-        return varF4E472F530EEA6342931FA947EA4E3DB_223049974;
-        // ---------- Original Method ----------
-        //return mChildData.get(groupPosition).get(childPosition);
+        return mChildData.get(groupPosition).get(childPosition);
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.054 -0400", hash_original_method = "D97177086C567E768212D7EB3B556195", hash_generated_method = "A9CAA7C73B26DEC57BCF8DEEA8C600D7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.002 -0500", hash_original_method = "D97177086C567E768212D7EB3B556195", hash_generated_method = "370D335910A4246E725D3CB93CC19FB9")
     public long getChildId(int groupPosition, int childPosition) {
-        addTaint(childPosition);
-        addTaint(groupPosition);
-        long var84D3B89E96B7ED6301A311E22EC81097_684086505 = (childPosition);
-                long var0F5264038205EDFB1AC05FBB0E8C5E94_681461334 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_681461334;
-        // ---------- Original Method ----------
-        //return childPosition;
+        return childPosition;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.054 -0400", hash_original_method = "B5BC721CBE3E6381873586BBD7303E85", hash_generated_method = "A676D0D93D0FE431DA52FD92B3767DF0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.002 -0500", hash_original_method = "B5BC721CBE3E6381873586BBD7303E85", hash_generated_method = "4F3428878C329078BC674C39C436746C")
     public View getChildView(int groupPosition, int childPosition, boolean isLastChild,
             View convertView, ViewGroup parent) {
-        addTaint(parent.getTaint());
-        addTaint(convertView.getTaint());
-        addTaint(isLastChild);
-        addTaint(childPosition);
-        addTaint(groupPosition);
         View v;
-        if(convertView == null)        
-        {
+        if (convertView == null) {
             v = newChildView(isLastChild, parent);
-        } //End block
-        else
-        {
+        } else {
             v = convertView;
-        } //End block
+        }
         bindView(v, mChildData.get(groupPosition).get(childPosition), mChildFrom, mChildTo);
-View var6DC76BC51820DD65E8396280E884AA78_2053192594 =         v;
-        var6DC76BC51820DD65E8396280E884AA78_2053192594.addTaint(taint);
-        return var6DC76BC51820DD65E8396280E884AA78_2053192594;
-        // ---------- Original Method ----------
-        //View v;
-        //if (convertView == null) {
-            //v = newChildView(isLastChild, parent);
-        //} else {
-            //v = convertView;
-        //}
-        //bindView(v, mChildData.get(groupPosition).get(childPosition), mChildFrom, mChildTo);
-        //return v;
+        return v;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.055 -0400", hash_original_method = "2B94AAD68C0284CF5F35BA4F8A812DF1", hash_generated_method = "4E59E3CF4E22AC25A8AE2F71609FD5E6")
+    /**
+     * Instantiates a new View for a child.
+     * @param isLastChild Whether the child is the last child within its group.
+     * @param parent The eventual parent of this new View.
+     * @return A new child View
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.003 -0500", hash_original_method = "2B94AAD68C0284CF5F35BA4F8A812DF1", hash_generated_method = "9D308F535A65D6BE0D71D35DFF425D99")
     public View newChildView(boolean isLastChild, ViewGroup parent) {
-        addTaint(parent.getTaint());
-        addTaint(isLastChild);
-View varE89DA9D9E61A89C376400D709F3C6A62_1740522209 =         mInflater.inflate((isLastChild) ? mLastChildLayout : mChildLayout, parent, false);
-        varE89DA9D9E61A89C376400D709F3C6A62_1740522209.addTaint(taint);
-        return varE89DA9D9E61A89C376400D709F3C6A62_1740522209;
-        // ---------- Original Method ----------
-        //return mInflater.inflate((isLastChild) ? mLastChildLayout : mChildLayout, parent, false);
+        return mInflater.inflate((isLastChild) ? mLastChildLayout : mChildLayout, parent, false);
     }
-
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.055 -0400", hash_original_method = "8C1FB274099C6E014BD8D472B7606CCC", hash_generated_method = "35157A1CF793A1EDF5DDB9E3DB4D07CA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.004 -0500", hash_original_method = "8C1FB274099C6E014BD8D472B7606CCC", hash_generated_method = "816AD0505AAE681738E5FF7413C939CA")
     private void bindView(View view, Map<String, ?> data, String[] from, int[] to) {
-        addTaint(to[0]);
-        addTaint(from[0].getTaint());
-        addTaint(data.getTaint());
-        addTaint(view.getTaint());
         int len = to.length;
-for(int i = 0;i < len;i++)
-        {
+
+        for (int i = 0; i < len; i++) {
             TextView v = (TextView)view.findViewById(to[i]);
-            if(v != null)            
-            {
+            if (v != null) {
                 v.setText((String)data.get(from[i]));
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //int len = to.length;
-        //for (int i = 0; i < len; i++) {
-            //TextView v = (TextView)view.findViewById(to[i]);
-            //if (v != null) {
-                //v.setText((String)data.get(from[i]));
-            //}
-        //}
+            }
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.056 -0400", hash_original_method = "DB60A6F52FD4A812349DCBFAC6A2EF69", hash_generated_method = "E4A75937720EE481F7EEA91ED31CF6D3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.005 -0500", hash_original_method = "DB60A6F52FD4A812349DCBFAC6A2EF69", hash_generated_method = "B3D6FA935961B507260E8F3955036BDE")
     public int getChildrenCount(int groupPosition) {
-        addTaint(groupPosition);
-        int varBC42FEB3B9BBFFF4B151382DA91DDCB5_587890445 = (mChildData.get(groupPosition).size());
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_707086858 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_707086858;
-        // ---------- Original Method ----------
-        //return mChildData.get(groupPosition).size();
+        return mChildData.get(groupPosition).size();
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.056 -0400", hash_original_method = "5B52A8158602AE20A4F579EAAE50F913", hash_generated_method = "B140571B56EA3808ACD001829C21C40A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.005 -0500", hash_original_method = "5B52A8158602AE20A4F579EAAE50F913", hash_generated_method = "D30975035A71F8DDC97B69D1F96D1362")
     public Object getGroup(int groupPosition) {
-        addTaint(groupPosition);
-Object varFB97261B2587C339E611EC0290582245_1879576933 =         mGroupData.get(groupPosition);
-        varFB97261B2587C339E611EC0290582245_1879576933.addTaint(taint);
-        return varFB97261B2587C339E611EC0290582245_1879576933;
-        // ---------- Original Method ----------
-        //return mGroupData.get(groupPosition);
+        return mGroupData.get(groupPosition);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.056 -0400", hash_original_method = "03F06DE167267E877853E48CD36FB25E", hash_generated_method = "EFDF877E308CCABD8A835DDD27DAB2B6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.006 -0500", hash_original_method = "03F06DE167267E877853E48CD36FB25E", hash_generated_method = "F208CB620028F535E603D8C5C8B1FCC9")
     public int getGroupCount() {
-        int varC6B62FA0B1852F78AF644C60F1A00840_370029180 = (mGroupData.size());
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_969465412 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_969465412;
-        // ---------- Original Method ----------
-        //return mGroupData.size();
+        return mGroupData.size();
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.056 -0400", hash_original_method = "F50F0A33E6E1377DC0B6921910BA68AA", hash_generated_method = "B692930B69CA33B47237B44D79CBDA80")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.007 -0500", hash_original_method = "F50F0A33E6E1377DC0B6921910BA68AA", hash_generated_method = "4FC615C8A10079EEE6BE289703B0123E")
     public long getGroupId(int groupPosition) {
-        addTaint(groupPosition);
-        long var9C6117705CE34CB15E85C3B060C9B3C1_550228958 = (groupPosition);
-                long var0F5264038205EDFB1AC05FBB0E8C5E94_90522725 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_90522725;
-        // ---------- Original Method ----------
-        //return groupPosition;
+        return groupPosition;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.057 -0400", hash_original_method = "5DB7DDAF22073EDDFB746FC51BE4BAAE", hash_generated_method = "6B6346C0649A4B9ECCBF92D405DC5F39")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.008 -0500", hash_original_method = "5DB7DDAF22073EDDFB746FC51BE4BAAE", hash_generated_method = "37B70F54DA1E3092B3F7FFC7B3023E98")
     public View getGroupView(int groupPosition, boolean isExpanded, View convertView,
             ViewGroup parent) {
-        addTaint(parent.getTaint());
-        addTaint(convertView.getTaint());
-        addTaint(isExpanded);
-        addTaint(groupPosition);
         View v;
-        if(convertView == null)        
-        {
+        if (convertView == null) {
             v = newGroupView(isExpanded, parent);
-        } //End block
-        else
-        {
+        } else {
             v = convertView;
-        } //End block
+        }
         bindView(v, mGroupData.get(groupPosition), mGroupFrom, mGroupTo);
-View var6DC76BC51820DD65E8396280E884AA78_1071972254 =         v;
-        var6DC76BC51820DD65E8396280E884AA78_1071972254.addTaint(taint);
-        return var6DC76BC51820DD65E8396280E884AA78_1071972254;
-        // ---------- Original Method ----------
-        //View v;
-        //if (convertView == null) {
-            //v = newGroupView(isExpanded, parent);
-        //} else {
-            //v = convertView;
-        //}
-        //bindView(v, mGroupData.get(groupPosition), mGroupFrom, mGroupTo);
-        //return v;
+        return v;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.057 -0400", hash_original_method = "F1834FC5D553230B29FB844FEC56B83F", hash_generated_method = "FE802ED651496E504AAB53C98849853F")
+    /**
+     * Instantiates a new View for a group.
+     * @param isExpanded Whether the group is currently expanded.
+     * @param parent The eventual parent of this new View.
+     * @return A new group View
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.008 -0500", hash_original_method = "F1834FC5D553230B29FB844FEC56B83F", hash_generated_method = "7F757EFF2EA2D46B47A3E605693E0E2C")
     public View newGroupView(boolean isExpanded, ViewGroup parent) {
-        addTaint(parent.getTaint());
-        addTaint(isExpanded);
-View varF23ED6A15665B35A3ACCEE938622D385_1349866865 =         mInflater.inflate((isExpanded) ? mExpandedGroupLayout : mCollapsedGroupLayout,
+        return mInflater.inflate((isExpanded) ? mExpandedGroupLayout : mCollapsedGroupLayout,
                 parent, false);
-        varF23ED6A15665B35A3ACCEE938622D385_1349866865.addTaint(taint);
-        return varF23ED6A15665B35A3ACCEE938622D385_1349866865;
-        // ---------- Original Method ----------
-        //return mInflater.inflate((isExpanded) ? mExpandedGroupLayout : mCollapsedGroupLayout,
-                //parent, false);
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.058 -0400", hash_original_method = "03906FE5F79D1C16D6358EAB518B811D", hash_generated_method = "8DFAA9884E23B26CD8CDCA13B1336A56")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.009 -0500", hash_original_method = "03906FE5F79D1C16D6358EAB518B811D", hash_generated_method = "E03DD5A22614C8BAB41B35BB562B596E")
     public boolean isChildSelectable(int groupPosition, int childPosition) {
-        addTaint(childPosition);
-        addTaint(groupPosition);
-        boolean varB326B5062B2F0E69046810717534CB09_605890267 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_932632111 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_932632111;
-        // ---------- Original Method ----------
-        //return true;
+        return true;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.058 -0400", hash_original_method = "047E07C1992C7400A48E08BF432AD584", hash_generated_method = "A0974848B870EC7CE02E99232133FDE1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:57.010 -0500", hash_original_method = "047E07C1992C7400A48E08BF432AD584", hash_generated_method = "E79C5A78A2EF753B72A06AEDBA4B0AA3")
     public boolean hasStableIds() {
-        boolean varB326B5062B2F0E69046810717534CB09_762022867 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1007704016 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1007704016;
-        // ---------- Original Method ----------
-        //return true;
+        return true;
     }
 
     

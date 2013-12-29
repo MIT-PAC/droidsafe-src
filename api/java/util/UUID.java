@@ -1,6 +1,8 @@
 package java.util;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -17,82 +19,18 @@ import libcore.io.Memory;
 
 
 public final class UUID implements Serializable, Comparable<UUID> {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.653 -0400", hash_original_field = "6D865F6ED4C841DE5F4163617E9ED5E0", hash_generated_field = "E05311E58F38272D7C9B90EC864288E6")
 
-    private long mostSigBits;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.653 -0400", hash_original_field = "9DE6B31C686396DBA9E6DF04BA663491", hash_generated_field = "76D70F6EAB49CBC32F6DF9DF520746D2")
-
-    private long leastSigBits;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.653 -0400", hash_original_field = "AA7AC8CD5E0A6993A177746279CC00D2", hash_generated_field = "ED6112CF1FA2DA1876E57F9A6D2E2836")
-
-    private transient int variant;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.653 -0400", hash_original_field = "2AF72F100C356273D46284F6FD1DFC08", hash_generated_field = "BAD42B86A408081FE78996E122739899")
-
-    private transient int version;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.654 -0400", hash_original_field = "D7E6D55BA379A13D08C25D15FAF2A23B", hash_generated_field = "C23704E529A178DBBDAFF49586FA6DE5")
-
-    private transient long timestamp;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.654 -0400", hash_original_field = "E508CBF4FB96E4F7675B06F84B12443F", hash_generated_field = "40191C6E13CEA31DB65CE03BDD6C6CBD")
-
-    private transient int clockSequence;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.654 -0400", hash_original_field = "36C4536996CA5615DCF9911F068786DC", hash_generated_field = "65A72028038C4267F57DA36CF8BC58D6")
-
-    private transient long node;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.654 -0400", hash_original_field = "0800FC577294C34E0B28AD2839435945", hash_generated_field = "0316D82713F1CE4A6BE9BC97E8C831C1")
-
-    private transient int hash;
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.654 -0400", hash_original_method = "ED635EB76A78F00DCB10AED73CFEDC4B", hash_generated_method = "02EBCE8ECE4A121E0D4A5FC929F94543")
-    public  UUID(long mostSigBits, long leastSigBits) {
-        this.mostSigBits = mostSigBits;
-        this.leastSigBits = leastSigBits;
-        init();
-        // ---------- Original Method ----------
-        //this.mostSigBits = mostSigBits;
-        //this.leastSigBits = leastSigBits;
-        //init();
-    }
-
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.656 -0400", hash_original_method = "F8E8987A89D640EB2120FADDC9242C3F", hash_generated_method = "4165E6205ECBE08F0A147C73A4BC69BE")
-    private void init() {
-        int msbHash = (int) (mostSigBits ^ (mostSigBits >>> 32));
-        int lsbHash = (int) (leastSigBits ^ (leastSigBits >>> 32));
-        hash = msbHash ^ lsbHash;
-        if((leastSigBits & 0x8000000000000000L) == 0)        
-        {
-            variant = 0;
-        } //End block
-        else
-        if((leastSigBits & 0x4000000000000000L) != 0)        
-        {
-            variant = (int) ((leastSigBits & 0xE000000000000000L) >>> 61);
-        } //End block
-        else
-        {
-            variant = 2;
-        } //End block
-        version = (int) ((mostSigBits & 0x000000000000F000) >>> 12);
-        if(variant != 2 && version != 1)        
-        {
-            return;
-        } //End block
-        long timeLow = (mostSigBits & 0xFFFFFFFF00000000L) >>> 32;
-        long timeMid = (mostSigBits & 0x00000000FFFF0000L) << 16;
-        long timeHigh = (mostSigBits & 0x0000000000000FFFL) << 48;
-        timestamp = timeLow | timeMid | timeHigh;
-        clockSequence = (int) ((leastSigBits & 0x3FFF000000000000L) >>> 48);
-        node = (leastSigBits & 0x0000FFFFFFFFFFFFL);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
-
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * <p>
+     * Generates a variant 2, version 4 (randomly generated number) UUID as per
+     * <a href="http://www.ietf.org/rfc/rfc4122.txt">RFC 4122</a>.
+     *
+     * @return an UUID instance.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:51.016 -0500", hash_original_method = "062E55715164230436BF863A3994A273", hash_generated_method = "29D0A8B9D260A09CC32C49AB2CD937C9")
     public static UUID randomUUID() {
         byte[] data = new byte[16];
+        // lock on the class to protect lazy init
         synchronized (UUID.class) {
             if (rng == null) {
                 rng = new SecureRandom();
@@ -102,8 +40,16 @@ public final class UUID implements Serializable, Comparable<UUID> {
         return makeUuid(data, 4);
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * <p>
+     * Generates a variant 2, version 3 (name-based, MD5-hashed) UUID as per <a
+     * href="http://www.ietf.org/rfc/rfc4122.txt">RFC 4122</a>.
+     *
+     * @param name
+     *            the name used as byte array to create an UUID.
+     * @return an UUID instance.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:51.017 -0500", hash_original_method = "ADE744546D5EDC5F1118EE072B40943A", hash_generated_method = "F912BC9FD1D619B64EE1F4B0C6A632F3")
     public static UUID nameUUIDFromBytes(byte[] name) {
         if (name == null) {
             throw new NullPointerException();
@@ -116,324 +62,419 @@ public final class UUID implements Serializable, Comparable<UUID> {
         }
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:51.017 -0500", hash_original_method = "9E98E00BE8824DAD14A3C091F30213C3", hash_generated_method = "AD54A954ABC3BE59A4B71DACEFCE0467")
     private static UUID makeUuid(byte[] hash, int version) {
         long msb = Memory.peekLong(hash, 0, ByteOrder.BIG_ENDIAN);
         long lsb = Memory.peekLong(hash, 8, ByteOrder.BIG_ENDIAN);
+        // Set the version field.
         msb &= ~(0xfL << 12);
         msb |= ((long) version) << 12;
+        // Set the variant field to 2. Note that the variant field is variable-width,
+        // so supporting other variants is not just a matter of changing the constant 2 below!
         lsb &= ~(0x3L << 62);
         lsb |= 2L << 62;
         return new UUID(msb, lsb);
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * <p>
+     * Parses a UUID string with the format defined by {@link #toString()}.
+     *
+     * @param uuid
+     *            the UUID string to parse.
+     * @return an UUID instance.
+     * @throws NullPointerException
+     *             if {@code uuid} is {@code null}.
+     * @throws IllegalArgumentException
+     *             if {@code uuid} is not formatted correctly.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:51.019 -0500", hash_original_method = "91976DDD0DF6E7445909995B535A77C8", hash_generated_method = "A51362772C45D6E1A99F12EB4EFB1AE6")
     public static UUID fromString(String uuid) {
         if (uuid == null) {
             throw new NullPointerException();
         }
+
         int[] position = new int[5];
         int lastPosition = 1;
         int startPosition = 0;
+
         int i = 0;
         for (; i < position.length && lastPosition > 0; i++) {
             position[i] = uuid.indexOf("-", startPosition);
             lastPosition = position[i];
             startPosition = position[i] + 1;
         }
+
+        // should have and only can have four "-" in UUID
         if (i != position.length || lastPosition != -1) {
             throw new IllegalArgumentException("Invalid UUID: " + uuid);
         }
+
         long m1 = Long.parseLong(uuid.substring(0, position[0]), 16);
         long m2 = Long.parseLong(uuid.substring(position[0] + 1, position[1]), 16);
         long m3 = Long.parseLong(uuid.substring(position[1] + 1, position[2]), 16);
+
         long lsb1 = Long.parseLong(uuid.substring(position[2] + 1, position[3]), 16);
         long lsb2 = Long.parseLong(uuid.substring(position[3] + 1), 16);
+
         long msb = (m1 << 32) | (m2 << 16) | m3;
         long lsb = (lsb1 << 48) | lsb2;
+
         return new UUID(msb, lsb);
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:51.005 -0500", hash_original_field = "5CDDBC3B8FA8D7F612FD471D9CFE74D5", hash_generated_field = "091C22832E79DC74DEA4ADB3F391327C")
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.657 -0400", hash_original_method = "A0E7F1AB7FAB66E1A72A040241F18680", hash_generated_method = "30963A7B027B2EA42B7169F865906E20")
+
+    private static final long serialVersionUID = -4856846361193249489L;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:51.006 -0500", hash_original_field = "21F405F8CC9F93FAD1F4753A00726900", hash_generated_field = "A9867F7F1BA5EDFF98FD827A1CEF8FD3")
+
+
+    private static SecureRandom rng;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:51.006 -0500", hash_original_field = "0F762932F80AC8DAB307969FF1CE2B08", hash_generated_field = "E05311E58F38272D7C9B90EC864288E6")
+
+
+    private long mostSigBits;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:51.007 -0500", hash_original_field = "0835F98F890E38C6CF15225FB4DA9AC1", hash_generated_field = "76D70F6EAB49CBC32F6DF9DF520746D2")
+
+    private long leastSigBits;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:51.008 -0500", hash_original_field = "47DF7A5E2AD811615D5B7885C50AD7F1", hash_generated_field = "ED6112CF1FA2DA1876E57F9A6D2E2836")
+
+
+    private transient int variant;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:51.009 -0500", hash_original_field = "971D53A5DDB5A515B8A18CE48C276387", hash_generated_field = "BAD42B86A408081FE78996E122739899")
+
+    private transient int version;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:51.009 -0500", hash_original_field = "145039C09D0281F07AE1DE322AF921C0", hash_generated_field = "C23704E529A178DBBDAFF49586FA6DE5")
+
+    private transient long timestamp;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:51.011 -0500", hash_original_field = "ED9A37752C0A5C555F392E9F85BEE67E", hash_generated_field = "40191C6E13CEA31DB65CE03BDD6C6CBD")
+
+    private transient int clockSequence;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:51.012 -0500", hash_original_field = "42F97C738A85E2B80817A0D2AE02511D", hash_generated_field = "65A72028038C4267F57DA36CF8BC58D6")
+
+    private transient long node;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:51.013 -0500", hash_original_field = "5ED776CD81502BA181156D7F28EBC9C8", hash_generated_field = "0316D82713F1CE4A6BE9BC97E8C831C1")
+
+    private transient int hash;
+
+    /**
+     * <p>
+     * Constructs an instance with the specified bits.
+     *
+     * @param mostSigBits
+     *            The 64 most significant bits of the UUID.
+     * @param leastSigBits
+     *            The 64 least significant bits of the UUID.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:51.014 -0500", hash_original_method = "ED635EB76A78F00DCB10AED73CFEDC4B", hash_generated_method = "11D84901F7C11F43D6F6B0A18CF21732")
+    public UUID(long mostSigBits, long leastSigBits) {
+        this.mostSigBits = mostSigBits;
+        this.leastSigBits = leastSigBits;
+        init();
+    }
+
+    /**
+     * <p>
+     * Sets up the transient fields of this instance based on the current values
+     * of the {@code mostSigBits} and {@code leastSigBits} fields.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:51.015 -0500", hash_original_method = "F8E8987A89D640EB2120FADDC9242C3F", hash_generated_method = "06EC0B1949340F2A3EB7AF13AF6BBD5C")
+    private void init() {
+        // setup hash field
+        int msbHash = (int) (mostSigBits ^ (mostSigBits >>> 32));
+        int lsbHash = (int) (leastSigBits ^ (leastSigBits >>> 32));
+        hash = msbHash ^ lsbHash;
+
+        // setup variant field
+        if ((leastSigBits & 0x8000000000000000L) == 0) {
+            // MSB0 not set, NCS backwards compatibility variant
+            variant = 0;
+        } else if ((leastSigBits & 0x4000000000000000L) != 0) {
+            // MSB1 set, either MS reserved or future reserved
+            variant = (int) ((leastSigBits & 0xE000000000000000L) >>> 61);
+        } else {
+            // MSB1 not set, RFC 4122 variant
+            variant = 2;
+        }
+
+        // setup version field
+        version = (int) ((mostSigBits & 0x000000000000F000) >>> 12);
+
+        if (variant != 2 && version != 1) {
+            return;
+        }
+
+        // setup timestamp field
+        long timeLow = (mostSigBits & 0xFFFFFFFF00000000L) >>> 32;
+        long timeMid = (mostSigBits & 0x00000000FFFF0000L) << 16;
+        long timeHigh = (mostSigBits & 0x0000000000000FFFL) << 48;
+        timestamp = timeLow | timeMid | timeHigh;
+
+        // setup clock sequence field
+        clockSequence = (int) ((leastSigBits & 0x3FFF000000000000L) >>> 48);
+
+        // setup node field
+        node = (leastSigBits & 0x0000FFFFFFFFFFFFL);
+    }
+
+    /**
+     * <p>
+     * The 64 least significant bits of the UUID.
+     *
+     * @return the 64 least significant bits.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:51.019 -0500", hash_original_method = "A0E7F1AB7FAB66E1A72A040241F18680", hash_generated_method = "0F5FC44ACDB839899508AF1E5C082750")
     public long getLeastSignificantBits() {
-        long var9DE6B31C686396DBA9E6DF04BA663491_584442794 = (leastSigBits);
-                long var0F5264038205EDFB1AC05FBB0E8C5E94_1065504857 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_1065504857;
-        // ---------- Original Method ----------
-        //return leastSigBits;
+        return leastSigBits;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.657 -0400", hash_original_method = "6EF0A7C64F608CC6275528428E67572B", hash_generated_method = "AE8E654E8E9BCDB873CDB07F02D7BA73")
+    /**
+     * <p>
+     * The 64 most significant bits of the UUID.
+     *
+     * @return the 64 most significant bits.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:51.020 -0500", hash_original_method = "6EF0A7C64F608CC6275528428E67572B", hash_generated_method = "4BCCED70E8636580E4C52D6A665113BF")
     public long getMostSignificantBits() {
-        long var6D865F6ED4C841DE5F4163617E9ED5E0_597107031 = (mostSigBits);
-                long var0F5264038205EDFB1AC05FBB0E8C5E94_1072404075 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_1072404075;
-        // ---------- Original Method ----------
-        //return mostSigBits;
+        return mostSigBits;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.658 -0400", hash_original_method = "33CA23C03592D558650D6881FB39BD17", hash_generated_method = "8A39326626DA035F3C68543590B662EE")
+    /**
+     * <p>
+     * The version of the variant 2 UUID as per <a
+     * href="http://www.ietf.org/rfc/rfc4122.txt">RFC 4122</a>. If the variant
+     * is not 2, then the version will be 0.
+     * <ul>
+     * <li>1 - Time-based UUID</li>
+     * <li>2 - DCE Security UUID</li>
+     * <li>3 - Name-based with MD5 hashing UUID ({@link #nameUUIDFromBytes(byte[])})</li>
+     * <li>4 - Randomly generated UUID ({@link #randomUUID()})</li>
+     * <li>5 - Name-based with SHA-1 hashing UUID</li>
+     * </ul>
+     *
+     * @return an {@code int} value.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:51.021 -0500", hash_original_method = "33CA23C03592D558650D6881FB39BD17", hash_generated_method = "A9B36DF3A23FE7A3AEE1DADC87E725DC")
     public int version() {
-        int var2AF72F100C356273D46284F6FD1DFC08_723061142 = (version);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_172187864 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_172187864;
-        // ---------- Original Method ----------
-        //return version;
+        return version;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.658 -0400", hash_original_method = "F3E55A7ADD1B924C0020F2B2D27D2CBA", hash_generated_method = "7D982EAD6A793EB681869CAD6BF679B8")
+    /**
+     * <p>
+     * The variant of the UUID as per <a
+     * href="http://www.ietf.org/rfc/rfc4122.txt">RFC 4122</a>.
+     * <ul>
+     * <li>0 - Reserved for NCS compatibility</li>
+     * <li>2 - RFC 4122/Leach-Salz</li>
+     * <li>6 - Reserved for Microsoft Corporation compatibility</li>
+     * <li>7 - Reserved for future use</li>
+     * </ul>
+     *
+     * @return an {@code int} value.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:51.022 -0500", hash_original_method = "F3E55A7ADD1B924C0020F2B2D27D2CBA", hash_generated_method = "31413DCEDDB1BC04FDF5FC122CF638E7")
     public int variant() {
-        int varAA7AC8CD5E0A6993A177746279CC00D2_181620638 = (variant);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1655872260 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1655872260;
-        // ---------- Original Method ----------
-        //return variant;
+        return variant;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.658 -0400", hash_original_method = "BC9161978762C6E74741C357EC2A66B7", hash_generated_method = "7AC90A90786A50DBBD3A4F20DCFD4A61")
+    /**
+     * <p>
+     * The timestamp value of the version 1, variant 2 UUID as per <a
+     * href="http://www.ietf.org/rfc/rfc4122.txt">RFC 4122</a>.
+     *
+     * @return a {@code long} value.
+     * @throws UnsupportedOperationException
+     *             if {@link #version()} is not 1.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:51.023 -0500", hash_original_method = "BC9161978762C6E74741C357EC2A66B7", hash_generated_method = "02CF73D626607FB8E47E0621DEB845B1")
     public long timestamp() {
-        if(version != 1)        
-        {
-            UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1905305442 = new UnsupportedOperationException();
-            var81FA7E299EEE7F062EBFBEEF08B0464D_1905305442.addTaint(taint);
-            throw var81FA7E299EEE7F062EBFBEEF08B0464D_1905305442;
-        } //End block
-        long varD7E6D55BA379A13D08C25D15FAF2A23B_1666930919 = (timestamp);
-                long var0F5264038205EDFB1AC05FBB0E8C5E94_1153868959 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_1153868959;
-        // ---------- Original Method ----------
-        //if (version != 1) {
-            //throw new UnsupportedOperationException();
-        //}
-        //return timestamp;
+        if (version != 1) {
+            throw new UnsupportedOperationException();
+        }
+        return timestamp;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.659 -0400", hash_original_method = "22D2FA35D30B9562E8F9B8FBAC9604FC", hash_generated_method = "2F26C6E7104945F0F68256E48621D7AF")
+    /**
+     * <p>
+     * The clock sequence value of the version 1, variant 2 UUID as per <a
+     * href="http://www.ietf.org/rfc/rfc4122.txt">RFC 4122</a>.
+     *
+     * @return a {@code long} value.
+     * @throws UnsupportedOperationException
+     *             if {@link #version()} is not 1.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:51.023 -0500", hash_original_method = "22D2FA35D30B9562E8F9B8FBAC9604FC", hash_generated_method = "88D563792C86D28CDA44D828651551F6")
     public int clockSequence() {
-        if(version != 1)        
-        {
-            UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_95215574 = new UnsupportedOperationException();
-            var81FA7E299EEE7F062EBFBEEF08B0464D_95215574.addTaint(taint);
-            throw var81FA7E299EEE7F062EBFBEEF08B0464D_95215574;
-        } //End block
-        int varE508CBF4FB96E4F7675B06F84B12443F_705559167 = (clockSequence);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_162079196 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_162079196;
-        // ---------- Original Method ----------
-        //if (version != 1) {
-            //throw new UnsupportedOperationException();
-        //}
-        //return clockSequence;
+        if (version != 1) {
+            throw new UnsupportedOperationException();
+        }
+        return clockSequence;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.659 -0400", hash_original_method = "F570F6113919571E2190BC663D44A8A0", hash_generated_method = "7D7D3314D503A0714D19EB7D669C88E0")
+    /**
+     * <p>
+     * The node value of the version 1, variant 2 UUID as per <a
+     * href="http://www.ietf.org/rfc/rfc4122.txt">RFC 4122</a>.
+     *
+     * @return a {@code long} value.
+     * @throws UnsupportedOperationException
+     *             if {@link #version()} is not 1.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:51.024 -0500", hash_original_method = "F570F6113919571E2190BC663D44A8A0", hash_generated_method = "FE36934490D31E4E3A8AB2A433A505F0")
     public long node() {
-        if(version != 1)        
-        {
-            UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1276055433 = new UnsupportedOperationException();
-            var81FA7E299EEE7F062EBFBEEF08B0464D_1276055433.addTaint(taint);
-            throw var81FA7E299EEE7F062EBFBEEF08B0464D_1276055433;
-        } //End block
-        long var36C4536996CA5615DCF9911F068786DC_616110561 = (node);
-                long var0F5264038205EDFB1AC05FBB0E8C5E94_1502205876 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_1502205876;
-        // ---------- Original Method ----------
-        //if (version != 1) {
-            //throw new UnsupportedOperationException();
-        //}
-        //return node;
+        if (version != 1) {
+            throw new UnsupportedOperationException();
+        }
+        return node;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.659 -0400", hash_original_method = "BF37BBD9CA2A2DE01ED617F2C2EA69AA", hash_generated_method = "E2217DEFA80E0D6483E193B21815082A")
+    /**
+     * <p>
+     * Compares this UUID to the specified UUID. The natural ordering of UUIDs
+     * is based upon the value of the bits from most significant to least
+     * significant.
+     *
+     * @param uuid
+     *            the UUID to compare to.
+     * @return a value of -1, 0 or 1 if this UUID is less than, equal to or
+     *         greater than {@code uuid}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:51.025 -0500", hash_original_method = "BF37BBD9CA2A2DE01ED617F2C2EA69AA", hash_generated_method = "3B0CFEE9CA9904EF17EDFCD35393AA9C")
     public int compareTo(UUID uuid) {
-        addTaint(uuid.getTaint());
-        if(uuid == this)        
-        {
-            int varCFCD208495D565EF66E7DFF9F98764DA_1998908277 = (0);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_569625329 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_569625329;
-        } //End block
-        if(this.mostSigBits != uuid.mostSigBits)        
-        {
-            int var67C1EDA559C3C798D6B4F77A7FC9F3D4_1360452789 = (this.mostSigBits < uuid.mostSigBits ? -1 : 1);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1350968485 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1350968485;
-        } //End block
-        if(this.leastSigBits != uuid.leastSigBits)        
-        {
-            int var7EEEA79B384FDCBA52EA20EC524A0202_1408062975 = (this.leastSigBits < uuid.leastSigBits ? -1 : 1);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1734977143 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1734977143;
-        } //End block
-        int varCFCD208495D565EF66E7DFF9F98764DA_1408799338 = (0);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_15850819 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_15850819;
-        // ---------- Original Method ----------
-        //if (uuid == this) {
-            //return 0;
-        //}
-        //if (this.mostSigBits != uuid.mostSigBits) {
-            //return this.mostSigBits < uuid.mostSigBits ? -1 : 1;
-        //}
-        //assert this.mostSigBits == uuid.mostSigBits;
-        //if (this.leastSigBits != uuid.leastSigBits) {
-            //return this.leastSigBits < uuid.leastSigBits ? -1 : 1;
-        //}
-        //assert this.leastSigBits == uuid.leastSigBits;
-        //return 0;
+        if (uuid == this) {
+            return 0;
+        }
+
+        if (this.mostSigBits != uuid.mostSigBits) {
+            return this.mostSigBits < uuid.mostSigBits ? -1 : 1;
+        }
+
+        assert this.mostSigBits == uuid.mostSigBits;
+
+        if (this.leastSigBits != uuid.leastSigBits) {
+            return this.leastSigBits < uuid.leastSigBits ? -1 : 1;
+        }
+
+        assert this.leastSigBits == uuid.leastSigBits;
+
+        return 0;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.660 -0400", hash_original_method = "A38435ECE2C3D40D1AE6B3B8E9BB77AD", hash_generated_method = "83918628C1BCF9D06537C5CAC6CB7A81")
+    /**
+     * <p>
+     * Compares this UUID to another object for equality. If {@code object}
+     * is not {@code null}, is a UUID instance, and all bits are equal, then
+     * {@code true} is returned.
+     *
+     * @param object
+     *            the {@code Object} to compare to.
+     * @return {@code true} if this UUID is equal to {@code object}
+     *         or {@code false} if not.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:51.026 -0500", hash_original_method = "A38435ECE2C3D40D1AE6B3B8E9BB77AD", hash_generated_method = "DAC5BFD454F218AA43C5BFBD266BFE3D")
     @Override
-    public boolean equals(Object object) {
-        addTaint(object.getTaint());
-        if(object == null)        
-        {
-            boolean var68934A3E9455FA72420237EB05902327_477028726 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1052594331 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1052594331;
-        } //End block
-        if(this == object)        
-        {
-            boolean varB326B5062B2F0E69046810717534CB09_1213722891 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_443876941 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_443876941;
-        } //End block
-        if(!(object instanceof UUID))        
-        {
-            boolean var68934A3E9455FA72420237EB05902327_1367937593 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1394296699 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1394296699;
-        } //End block
+public boolean equals(Object object) {
+        if (object == null) {
+            return false;
+        }
+
+        if (this == object) {
+            return true;
+        }
+
+        if (!(object instanceof UUID)) {
+            return false;
+        }
+
         UUID that = (UUID) object;
-        boolean varCFCF99E6670BE96D85DBF729A89A73B4_1114725834 = ((this.leastSigBits == that.leastSigBits)
-                && (this.mostSigBits == that.mostSigBits));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1444643126 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1444643126;
-        // ---------- Original Method ----------
-        //if (object == null) {
-            //return false;
-        //}
-        //if (this == object) {
-            //return true;
-        //}
-        //if (!(object instanceof UUID)) {
-            //return false;
-        //}
-        //UUID that = (UUID) object;
-        //return (this.leastSigBits == that.leastSigBits)
-                //&& (this.mostSigBits == that.mostSigBits);
+
+        return (this.leastSigBits == that.leastSigBits)
+                && (this.mostSigBits == that.mostSigBits);
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.660 -0400", hash_original_method = "2C05F06EE2A592A2D5972AF8C500920F", hash_generated_method = "DF5F9FF3B19EBAEA420E99FC5D0EFE70")
+    /**
+     * <p>
+     * Returns a hash value for this UUID that is consistent with the
+     * {@link #equals(Object)} method.
+     *
+     * @return an {@code int} value.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:51.027 -0500", hash_original_method = "2C05F06EE2A592A2D5972AF8C500920F", hash_generated_method = "42F78C5D38BF7B44D96FA3AD3E18463A")
     @Override
-    public int hashCode() {
-        int var0800FC577294C34E0B28AD2839435945_940497639 = (hash);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1810900025 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1810900025;
-        // ---------- Original Method ----------
-        //return hash;
+public int hashCode() {
+        return hash;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.660 -0400", hash_original_method = "2C7CA3FB1758723F3B30AD693E280579", hash_generated_method = "AC6162C8C4441D55E1BCE3BD7C298C4C")
+    /**
+     * <p>
+     * Returns a string representation of this UUID in the following format, as
+     * per <a href="http://www.ietf.org/rfc/rfc4122.txt">RFC 4122</a>.
+     *
+     * <pre>
+     *            UUID                   = time-low &quot;-&quot; time-mid &quot;-&quot;
+     *                                     time-high-and-version &quot;-&quot;
+     *                                     clock-seq-and-reserved
+     *                                     clock-seq-low &quot;-&quot; node
+     *            time-low               = 4hexOctet
+     *            time-mid               = 2hexOctet
+     *            time-high-and-version  = 2hexOctet
+     *            clock-seq-and-reserved = hexOctet
+     *            clock-seq-low          = hexOctet
+     *            node                   = 6hexOctet
+     *            hexOctet               = hexDigit hexDigit
+     *            hexDigit =
+     *                &quot;0&quot; / &quot;1&quot; / &quot;2&quot; / &quot;3&quot; / &quot;4&quot; / &quot;5&quot; / &quot;6&quot; / &quot;7&quot; / &quot;8&quot; / &quot;9&quot; /
+     *                &quot;a&quot; / &quot;b&quot; / &quot;c&quot; / &quot;d&quot; / &quot;e&quot; / &quot;f&quot; /
+     *                &quot;A&quot; / &quot;B&quot; / &quot;C&quot; / &quot;D&quot; / &quot;E&quot; / &quot;F&quot;
+     * </pre>
+     *
+     * @return a String instance.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:51.028 -0500", hash_original_method = "2C7CA3FB1758723F3B30AD693E280579", hash_generated_method = "279F062792C198058C3199DAE4C411FA")
     @Override
-    public String toString() {
+public String toString() {
         StringBuilder builder = new StringBuilder(36);
         String msbStr = Long.toHexString(mostSigBits);
-        if(msbStr.length() < 16)        
-        {
+        if (msbStr.length() < 16) {
             int diff = 16 - msbStr.length();
-for(int i = 0;i < diff;i++)
-            {
+            for (int i = 0; i < diff; i++) {
                 builder.append('0');
-            } //End block
-        } //End block
+            }
+        }
         builder.append(msbStr);
         builder.insert(8, '-');
         builder.insert(13, '-');
         builder.append('-');
         String lsbStr = Long.toHexString(leastSigBits);
-        if(lsbStr.length() < 16)        
-        {
+        if (lsbStr.length() < 16) {
             int diff = 16 - lsbStr.length();
-for(int i = 0;i < diff;i++)
-            {
+            for (int i = 0; i < diff; i++) {
                 builder.append('0');
-            } //End block
-        } //End block
+            }
+        }
         builder.append(lsbStr);
         builder.insert(23, '-');
-String varF4CF030572656354ACFDF83FEE21D7A6_1985289829 =         builder.toString();
-        varF4CF030572656354ACFDF83FEE21D7A6_1985289829.addTaint(taint);
-        return varF4CF030572656354ACFDF83FEE21D7A6_1985289829;
-        // ---------- Original Method ----------
-        //StringBuilder builder = new StringBuilder(36);
-        //String msbStr = Long.toHexString(mostSigBits);
-        //if (msbStr.length() < 16) {
-            //int diff = 16 - msbStr.length();
-            //for (int i = 0; i < diff; i++) {
-                //builder.append('0');
-            //}
-        //}
-        //builder.append(msbStr);
-        //builder.insert(8, '-');
-        //builder.insert(13, '-');
-        //builder.append('-');
-        //String lsbStr = Long.toHexString(leastSigBits);
-        //if (lsbStr.length() < 16) {
-            //int diff = 16 - lsbStr.length();
-            //for (int i = 0; i < diff; i++) {
-                //builder.append('0');
-            //}
-        //}
-        //builder.append(lsbStr);
-        //builder.insert(23, '-');
-        //return builder.toString();
+        return builder.toString();
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.661 -0400", hash_original_method = "2009CB8B2416921986707AD76596B398", hash_generated_method = "9B727D193306F40CE5A6C46DD735C1D4")
+    /**
+     * <p>
+     * Resets the transient fields to match the behavior of the constructor.
+     *
+     * @param in
+     *            the {@code InputStream} to read from.
+     * @throws IOException
+     *             if {@code in} throws it.
+     * @throws ClassNotFoundException
+     *             if {@code in} throws it.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:51.029 -0500", hash_original_method = "2009CB8B2416921986707AD76596B398", hash_generated_method = "AE005D9470B3BE63E266195D5DB3C857")
     private void readObject(ObjectInputStream in) throws IOException,
             ClassNotFoundException {
-        addTaint(in.getTaint());
+        // read in non-transient fields
         in.defaultReadObject();
+        // setup transient fields
         init();
-        // ---------- Original Method ----------
-        //in.defaultReadObject();
-        //init();
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.661 -0400", hash_original_field = "ABCAC3ACFDD1F84ED574C5FF928C04D7", hash_generated_field = "091C22832E79DC74DEA4ADB3F391327C")
-
-    private static final long serialVersionUID = -4856846361193249489L;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.661 -0400", hash_original_field = "D2D9CE665F66AE49556B47436A514C0F", hash_generated_field = "A9867F7F1BA5EDFF98FD827A1CEF8FD3")
-
-    private static SecureRandom rng;
 }
 

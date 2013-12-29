@@ -1,6 +1,8 @@
 package org.apache.harmony.security.asn1;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 import java.nio.charset.Charsets;
@@ -13,90 +15,79 @@ import java.util.TimeZone;
 
 
 public final class ASN1UTCTime extends ASN1Time {
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.485 -0400", hash_original_method = "26950815C4CFBBF28A3CFECAD840C50B", hash_generated_method = "EF7C489E04E77EFC692BF121C27E795F")
-    public  ASN1UTCTime() {
-        super(TAG_UTCTIME);
-        // ---------- Original Method ----------
-    }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Returns ASN.1 UTCTime type default implementation
+     *
+     * The default implementation works with encoding
+     * that is represented as Date object.
+     *
+     * @return ASN.1 UTCTime type default implementation
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.995 -0500", hash_original_method = "88789DA35EC0F29C4ECE5348C3C6879B", hash_generated_method = "92C7BBDA37B2445AD79175E4A83E872F")
     public static ASN1UTCTime getInstance() {
         return ASN1;
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.989 -0500", hash_original_field = "4069917F415747540D93692073627B5C", hash_generated_field = "C99E1AA1FD0B98FDECC7113FF17AD5A9")
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.486 -0400", hash_original_method = "A91CD5C6AC359830199B04A7EA591A03", hash_generated_method = "86430797F4773D5E5F3D85837CBA97FF")
+    public static final int UTC_HM = 11;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.989 -0500", hash_original_field = "7F62C7537716F28B81458DD1DE0C1566", hash_generated_field = "43229A41614441B305939A18D625BBBF")
+
+    public static final int UTC_HMS = 13;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.991 -0500", hash_original_field = "2D059F5FE28011BAB077416B02341751", hash_generated_field = "E277939BD96AECE8361F57CC38430D51")
+
+    public static final int UTC_LOCAL_HM = 15;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.992 -0500", hash_original_field = "5D318A9688FB154490AB8D79FC9959C6", hash_generated_field = "F6B17A8829ED2792E001CCEF650A209D")
+
+    public static final int UTC_LOCAL_HMS = 17;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.993 -0500", hash_original_field = "ACA52E9A89A23523716FB9DDDEA34915", hash_generated_field = "AFEE81C8342C509C7B7E0180DFF588E9")
+
+    private static final ASN1UTCTime ASN1 = new ASN1UTCTime();
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.997 -0500", hash_original_field = "36C4C98028F9132A2F0BF6CFA8C36767", hash_generated_field = "53E6E0ED45D4C94E454C5041DA00475B")
+
+    //
+    // According to X.680 coordinated universal time format:
+    // two digit year, seconds always presented,
+    // no fractional-seconds elements, 'Z' at the end
+    private static final String UTC_PATTERN = "yyMMddHHmmss'Z'";
+
+    /**
+     * Constructs ASN.1 UTCTime type
+     *
+     * The constructor is provided for inheritance purposes
+     * when there is a need to create a custom ASN.1 UTCTime type.
+     * To get a default implementation it is recommended to use
+     * getInstance() method.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.994 -0500", hash_original_method = "26950815C4CFBBF28A3CFECAD840C50B", hash_generated_method = "86C9598356A193D1F9A9F222507B558C")
+    public ASN1UTCTime() {
+        super(TAG_UTCTIME);
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.995 -0500", hash_original_method = "A91CD5C6AC359830199B04A7EA591A03", hash_generated_method = "889F4D8B0F38B0D01608B563191B2465")
     @Override
-    public Object decode(BerInputStream in) throws IOException {
-        addTaint(in.getTaint());
+public Object decode(BerInputStream in) throws IOException {
         in.readUTCTime();
-        if(in.isVerify)        
-        {
-Object var540C13E9E156B687226421B24F2DF178_822113552 =             null;
-            var540C13E9E156B687226421B24F2DF178_822113552.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_822113552;
-        } //End block
-Object var6AD043AF0280111F31D0D60A6CD70863_1414953363 =         getDecodedObject(in);
-        var6AD043AF0280111F31D0D60A6CD70863_1414953363.addTaint(taint);
-        return var6AD043AF0280111F31D0D60A6CD70863_1414953363;
-        // ---------- Original Method ----------
-        //in.readUTCTime();
-        //if (in.isVerify) {
-            //return null;
-        //}
-        //return getDecodedObject(in);
+
+        if (in.isVerify) {
+            return null;
+        }
+        return getDecodedObject(in);
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.487 -0400", hash_original_method = "7E6261B78AC933A3E78C661A729AB3E3", hash_generated_method = "4C214FEABCFF713A2B54435D0092B026")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.996 -0500", hash_original_method = "7E6261B78AC933A3E78C661A729AB3E3", hash_generated_method = "A5B5E54D7B1D4255E6C88F87902E66E6")
     @Override
-    public void encodeContent(BerOutputStream out) {
-        addTaint(out.getTaint());
+public void encodeContent(BerOutputStream out) {
         out.encodeUTCTime();
-        // ---------- Original Method ----------
-        //out.encodeUTCTime();
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.489 -0400", hash_original_method = "DF1F65526ADDCB7D66CE158126525DF9", hash_generated_method = "CBDD5E7C00CCC5231BF41A0D847EC972")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.998 -0500", hash_original_method = "DF1F65526ADDCB7D66CE158126525DF9", hash_generated_method = "788569727504E38F0D5DDEE9ADB4A6E3")
     @Override
-    public void setEncodingContent(BerOutputStream out) {
-        addTaint(out.getTaint());
+public void setEncodingContent(BerOutputStream out) {
         SimpleDateFormat sdf = new SimpleDateFormat(UTC_PATTERN);
         sdf.setTimeZone(TimeZone.getTimeZone("UTC"));
         out.content = sdf.format(out.content).getBytes(Charsets.UTF_8);
         out.length = ((byte[]) out.content).length;
-        // ---------- Original Method ----------
-        //SimpleDateFormat sdf = new SimpleDateFormat(UTC_PATTERN);
-        //sdf.setTimeZone(TimeZone.getTimeZone("UTC"));
-        //out.content = sdf.format(out.content).getBytes(Charsets.UTF_8);
-        //out.length = ((byte[]) out.content).length;
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.489 -0400", hash_original_field = "F1F2D4C39AFC8AE3E7F6253989C0ADB6", hash_generated_field = "C99E1AA1FD0B98FDECC7113FF17AD5A9")
-
-    public static final int UTC_HM = 11;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.489 -0400", hash_original_field = "CCBB64A379059E99A0D937177F7D4EF0", hash_generated_field = "43229A41614441B305939A18D625BBBF")
-
-    public static final int UTC_HMS = 13;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.489 -0400", hash_original_field = "27A9B83F51675132884C5B589ACCE162", hash_generated_field = "E277939BD96AECE8361F57CC38430D51")
-
-    public static final int UTC_LOCAL_HM = 15;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.489 -0400", hash_original_field = "0BCD2285E6C67B719C7A541E991D8CCC", hash_generated_field = "F6B17A8829ED2792E001CCEF650A209D")
-
-    public static final int UTC_LOCAL_HMS = 17;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.490 -0400", hash_original_field = "28A0E6F38A9728A9D6D7786A7C55593D", hash_generated_field = "AFEE81C8342C509C7B7E0180DFF588E9")
-
-    private static final ASN1UTCTime ASN1 = new ASN1UTCTime();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.490 -0400", hash_original_field = "01918BC1C6E78250FDDC1427D79B58C3", hash_generated_field = "6ED62DF4770F45A536F2E83BC13131A7")
-
-    private static final String UTC_PATTERN = "yyMMddHHmmss'Z'";
 }
 

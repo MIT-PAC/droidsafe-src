@@ -1,6 +1,8 @@
 package java.security;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.Serializable;
 
@@ -9,49 +11,19 @@ import java.io.Serializable;
 
 
 public abstract class BasicPermission extends Permission implements Serializable {
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.793 -0400", hash_original_method = "D7C15085897CB0E8D87B48429476636B", hash_generated_method = "EBDBEF6EF7CE8B0F1566EF95CE070D5E")
-    public  BasicPermission(String name) {
-        super("");
-        addTaint(name.getTaint());
-        // ---------- Original Method ----------
-    }
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:15.385 -0500", hash_original_method = "D7C15085897CB0E8D87B48429476636B", hash_generated_method = "B21B962C1FCC4638F2D3202B0E26235B")
+    public BasicPermission(String name) { super(""); }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.794 -0400", hash_original_method = "70983AE2C4FC471A8D797105AE850E32", hash_generated_method = "892449386B6D940740DFA727AE8EEB57")
-    public  BasicPermission(String name, String action) {
-        super("");
-        addTaint(action.getTaint());
-        addTaint(name.getTaint());
-        // ---------- Original Method ----------
-    }
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:15.387 -0500", hash_original_method = "70983AE2C4FC471A8D797105AE850E32", hash_generated_method = "55B99EBF9CF747962FC132D212F7D7E7")
+    public BasicPermission(String name, String action) { super(""); }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.795 -0400", hash_original_method = "1D3A92DE09AD9A3275C68C126C1F0E4E", hash_generated_method = "816CABF593B051A626392D0633D38618")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:15.387 -0500", hash_original_method = "1D3A92DE09AD9A3275C68C126C1F0E4E", hash_generated_method = "3D225D3CE47DA77C079F578AAAC6007E")
     @Override
-    public String getActions() {
-String var540C13E9E156B687226421B24F2DF178_654989228 =         null;
-        var540C13E9E156B687226421B24F2DF178_654989228.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_654989228;
-        // ---------- Original Method ----------
-        //return null;
-    }
+public String getActions() { return null; }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.795 -0400", hash_original_method = "15107D2478EB5CA607140B3E4F96BD4D", hash_generated_method = "DEE7C4337D2843514D65DAA1462E3BB6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:15.388 -0500", hash_original_method = "15107D2478EB5CA607140B3E4F96BD4D", hash_generated_method = "7028504695C2B07EE227E4A73DB8D42F")
     @Override
-    public boolean implies(Permission permission) {
-        addTaint(permission.getTaint());
-        boolean varB326B5062B2F0E69046810717534CB09_1146983126 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_948859396 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_948859396;
-        // ---------- Original Method ----------
-        //return true;
-    }
+public boolean implies(Permission permission) { return true; }
 
     
 }

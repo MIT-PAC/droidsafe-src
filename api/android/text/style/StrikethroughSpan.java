@@ -1,6 +1,8 @@
 package android.text.style;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.text.ParcelableSpan;
@@ -11,62 +13,33 @@ import android.text.TextUtils;
 
 
 public class StrikethroughSpan extends CharacterStyle implements UpdateAppearance, ParcelableSpan {
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.107 -0400", hash_original_method = "70702F8DA78154CC84DD659B0C371894", hash_generated_method = "DE2AFB86A0D61FBD8C253D51FF49314A")
-    public  StrikethroughSpan() {
-        // ---------- Original Method ----------
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:52.455 -0500", hash_original_method = "70702F8DA78154CC84DD659B0C371894", hash_generated_method = "C977F971DFA9B70EA5AE0BAB05208620")
+    public StrikethroughSpan() {
     }
-
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.107 -0400", hash_original_method = "D18CB35A7B1E8FEC4B878F7114956CE8", hash_generated_method = "A661FA7F8A41B3C8F80242BB82FF70AB")
-    public  StrikethroughSpan(Parcel src) {
-        addTaint(src.getTaint());
-        // ---------- Original Method ----------
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:52.456 -0500", hash_original_method = "D18CB35A7B1E8FEC4B878F7114956CE8", hash_generated_method = "4FF3ABA785993BB43021A3C3C0C3C367")
+    public StrikethroughSpan(Parcel src) {
     }
-
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.107 -0400", hash_original_method = "4F4EC815E74FCC73E9106D709A5A342D", hash_generated_method = "2435CC4D0B0335BCE3AEF8C35154A575")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:52.457 -0500", hash_original_method = "4F4EC815E74FCC73E9106D709A5A342D", hash_generated_method = "42C80CB323A7987661535D10FF2135FA")
     public int getSpanTypeId() {
-        int var25086A53E0202AD1490D4409D58EA8CF_396158338 = (TextUtils.STRIKETHROUGH_SPAN);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1577722011 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1577722011;
-        // ---------- Original Method ----------
-        //return TextUtils.STRIKETHROUGH_SPAN;
+        return TextUtils.STRIKETHROUGH_SPAN;
     }
-
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.107 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "EEDC91CFE3C3C21215EE48AD4A7FDF97")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:52.458 -0500", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "D90463461B2A94FF94D13FDF69BB80C9")
     public int describeContents() {
-        int varCFCD208495D565EF66E7DFF9F98764DA_861431947 = (0);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_19856764 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_19856764;
-        // ---------- Original Method ----------
-        //return 0;
+        return 0;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.108 -0400", hash_original_method = "36081754C4A09732AEC95BB21FA0BDE7", hash_generated_method = "D6F5FAEE7A649F263C37D62D8A41EDFC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:52.458 -0500", hash_original_method = "36081754C4A09732AEC95BB21FA0BDE7", hash_generated_method = "ED3C20853EE283140D61863E7CC05F99")
     public void writeToParcel(Parcel dest, int flags) {
-        addTaint(flags);
-        addTaint(dest.getTaint());
-        // ---------- Original Method ----------
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.108 -0400", hash_original_method = "405DAF545E7B8CA376105971B6D6FF49", hash_generated_method = "89A7F8E9C41ADDAF22957A85A1E63438")
+	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:52.459 -0500", hash_original_method = "405DAF545E7B8CA376105971B6D6FF49", hash_generated_method = "77F7E6ED05F8E6341B9B2085553A748D")
     @Override
-    public void updateDrawState(TextPaint ds) {
-        addTaint(ds.getTaint());
-        ds.setStrikeThruText(true);
-        // ---------- Original Method ----------
-        //ds.setStrikeThruText(true);
-    }
+public void updateDrawState(TextPaint ds) {
+		ds.setStrikeThruText(true);
+	}
 
     
 }

@@ -1,6 +1,8 @@
 package java.nio;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import libcore.io.SizeOf;
 
@@ -9,64 +11,43 @@ import libcore.io.SizeOf;
 
 
 final class CharToByteBufferAdapter extends CharBuffer {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.397 -0400", hash_original_field = "73D79CD15754C8F39826976EB3E77012", hash_generated_field = "34B9235D8E87AE2A76AC711395EEC0EB")
 
-    private ByteBuffer byteBuffer;
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.398 -0400", hash_original_method = "20CC34DEF3812E72CBA72992E239D17C", hash_generated_method = "7B64404964C0A8F96913AC03401200AD")
-    private  CharToByteBufferAdapter(ByteBuffer byteBuffer) {
-        super(byteBuffer.capacity() / SizeOf.CHAR);
-        this.byteBuffer = byteBuffer;
-        this.byteBuffer.clear();
-        this.effectiveDirectAddress = byteBuffer.effectiveDirectAddress;
-        // ---------- Original Method ----------
-        //this.byteBuffer = byteBuffer;
-        //this.byteBuffer.clear();
-        //this.effectiveDirectAddress = byteBuffer.effectiveDirectAddress;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:38.657 -0500", hash_original_method = "55E919F08D15D3984C4AEDF51E3F7B76", hash_generated_method = "F265B11CF4A6BA9EFE4614F4F4C01CB9")
     static CharBuffer asCharBuffer(ByteBuffer byteBuffer) {
         ByteBuffer slice = byteBuffer.slice();
         slice.order(byteBuffer.order());
         return new CharToByteBufferAdapter(slice);
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:38.656 -0500", hash_original_field = "1550DCB87D4D50D3727BEA306C5BDDD3", hash_generated_field = "34B9235D8E87AE2A76AC711395EEC0EB")
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.399 -0400", hash_original_method = "38E7AC500E9C1BA37DDE4BE628E69019", hash_generated_method = "BD8DDA3FE01B4B163206ECBFC26A1461")
+
+    private  ByteBuffer byteBuffer;
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:38.658 -0500", hash_original_method = "20CC34DEF3812E72CBA72992E239D17C", hash_generated_method = "80120F0E3C39B69C1C2D92F7FDD2CC43")
+    private CharToByteBufferAdapter(ByteBuffer byteBuffer) {
+        super(byteBuffer.capacity() / SizeOf.CHAR);
+        this.byteBuffer = byteBuffer;
+        this.byteBuffer.clear();
+        this.effectiveDirectAddress = byteBuffer.effectiveDirectAddress;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:38.659 -0500", hash_original_method = "38E7AC500E9C1BA37DDE4BE628E69019", hash_generated_method = "571DAB2C65A319AF90F92BA6971A7A07")
     @Override
-    public CharBuffer asReadOnlyBuffer() {
+public CharBuffer asReadOnlyBuffer() {
         CharToByteBufferAdapter buf = new CharToByteBufferAdapter(byteBuffer.asReadOnlyBuffer());
         buf.limit = limit;
         buf.position = position;
         buf.mark = mark;
         buf.byteBuffer.order = byteBuffer.order;
-CharBuffer var0D8E466677B8F245666E1A4B1E0924E6_415431484 =         buf;
-        var0D8E466677B8F245666E1A4B1E0924E6_415431484.addTaint(taint);
-        return var0D8E466677B8F245666E1A4B1E0924E6_415431484;
-        // ---------- Original Method ----------
-        //CharToByteBufferAdapter buf = new CharToByteBufferAdapter(byteBuffer.asReadOnlyBuffer());
-        //buf.limit = limit;
-        //buf.position = position;
-        //buf.mark = mark;
-        //buf.byteBuffer.order = byteBuffer.order;
-        //return buf;
+        return buf;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.400 -0400", hash_original_method = "2B216932B774F9FB3B903B024B1F44DD", hash_generated_method = "9283B466EF0131BA0557892D587F5FB9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:38.660 -0500", hash_original_method = "2B216932B774F9FB3B903B024B1F44DD", hash_generated_method = "F14AAE8FCBE23930C4615524B071B64B")
     @Override
-    public CharBuffer compact() {
-        if(byteBuffer.isReadOnly())        
-        {
-            ReadOnlyBufferException varA14F16C43B102D90B34008C8FF8087F8_353626564 = new ReadOnlyBufferException();
-            varA14F16C43B102D90B34008C8FF8087F8_353626564.addTaint(taint);
-            throw varA14F16C43B102D90B34008C8FF8087F8_353626564;
-        } //End block
+public CharBuffer compact() {
+        if (byteBuffer.isReadOnly()) {
+            throw new ReadOnlyBufferException();
+        }
         byteBuffer.limit(limit * SizeOf.CHAR);
         byteBuffer.position(position * SizeOf.CHAR);
         byteBuffer.compact();
@@ -74,305 +55,137 @@ CharBuffer var0D8E466677B8F245666E1A4B1E0924E6_415431484 =         buf;
         position = limit - position;
         limit = capacity;
         mark = UNSET_MARK;
-CharBuffer var72A74007B2BE62B849F475C7BDA4658B_601529645 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_601529645.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_601529645;
-        // ---------- Original Method ----------
-        //if (byteBuffer.isReadOnly()) {
-            //throw new ReadOnlyBufferException();
-        //}
-        //byteBuffer.limit(limit * SizeOf.CHAR);
-        //byteBuffer.position(position * SizeOf.CHAR);
-        //byteBuffer.compact();
-        //byteBuffer.clear();
-        //position = limit - position;
-        //limit = capacity;
-        //mark = UNSET_MARK;
-        //return this;
+        return this;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.401 -0400", hash_original_method = "D6132370D2375183CB2B2E07203B0DEF", hash_generated_method = "22DDCB9A53610F2F8AF5D28F35056B3A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:38.661 -0500", hash_original_method = "D6132370D2375183CB2B2E07203B0DEF", hash_generated_method = "DEC2CB77E80EA3205832F1C1F2C5D8BA")
     @Override
-    public CharBuffer duplicate() {
+public CharBuffer duplicate() {
         ByteBuffer bb = byteBuffer.duplicate().order(byteBuffer.order());
         CharToByteBufferAdapter buf = new CharToByteBufferAdapter(bb);
         buf.limit = limit;
         buf.position = position;
         buf.mark = mark;
-CharBuffer var0D8E466677B8F245666E1A4B1E0924E6_1205376736 =         buf;
-        var0D8E466677B8F245666E1A4B1E0924E6_1205376736.addTaint(taint);
-        return var0D8E466677B8F245666E1A4B1E0924E6_1205376736;
-        // ---------- Original Method ----------
-        //ByteBuffer bb = byteBuffer.duplicate().order(byteBuffer.order());
-        //CharToByteBufferAdapter buf = new CharToByteBufferAdapter(bb);
-        //buf.limit = limit;
-        //buf.position = position;
-        //buf.mark = mark;
-        //return buf;
+        return buf;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.401 -0400", hash_original_method = "E3B7C628ECBF1BA157CEBCB59E54138B", hash_generated_method = "1B41B34471BD428A840F1C26FF81E284")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:38.661 -0500", hash_original_method = "E3B7C628ECBF1BA157CEBCB59E54138B", hash_generated_method = "FFACC0788C10DF37BEAB726CF2101594")
     @Override
-    public char get() {
-        if(position == limit)        
-        {
-            BufferUnderflowException var77B0EAE3DCF68E57AAEF834AFBC7D762_1620814491 = new BufferUnderflowException();
-            var77B0EAE3DCF68E57AAEF834AFBC7D762_1620814491.addTaint(taint);
-            throw var77B0EAE3DCF68E57AAEF834AFBC7D762_1620814491;
-        } //End block
-        char var0C7531E888F788E7ED252F876B176246_1803698852 = (byteBuffer.getChar(position++ * SizeOf.CHAR));
-                char varA87DEB01C5F539E6BDA34829C8EF2368_761292905 = getTaintChar();
-        return varA87DEB01C5F539E6BDA34829C8EF2368_761292905;
-        // ---------- Original Method ----------
-        //if (position == limit) {
-            //throw new BufferUnderflowException();
-        //}
-        //return byteBuffer.getChar(position++ * SizeOf.CHAR);
+public char get() {
+        if (position == limit) {
+            throw new BufferUnderflowException();
+        }
+        return byteBuffer.getChar(position++ * SizeOf.CHAR);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.401 -0400", hash_original_method = "2E9BB5D57AAEB3C216C710BA88C55EF9", hash_generated_method = "D59889BA2C55DEA13EAC9C853697B3DB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:38.662 -0500", hash_original_method = "2E9BB5D57AAEB3C216C710BA88C55EF9", hash_generated_method = "065EFE2C922136B5CAB51E31C8E365A1")
     @Override
-    public char get(int index) {
-        addTaint(index);
+public char get(int index) {
         checkIndex(index);
-        char varDB86469F4E5E54A3CC257A3876C8E811_289746161 = (byteBuffer.getChar(index * SizeOf.CHAR));
-                char varA87DEB01C5F539E6BDA34829C8EF2368_1688202945 = getTaintChar();
-        return varA87DEB01C5F539E6BDA34829C8EF2368_1688202945;
-        // ---------- Original Method ----------
-        //checkIndex(index);
-        //return byteBuffer.getChar(index * SizeOf.CHAR);
+        return byteBuffer.getChar(index * SizeOf.CHAR);
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.402 -0400", hash_original_method = "CD7E402824D81A34C6B45148A4A0EA7C", hash_generated_method = "16FE6E5E47EDA1873DDBAE79EF0C18CA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:38.663 -0500", hash_original_method = "CD7E402824D81A34C6B45148A4A0EA7C", hash_generated_method = "DA3518F2FF20A01D76B0A31A1C41F0B1")
     @Override
-    public CharBuffer get(char[] dst, int dstOffset, int charCount) {
-        addTaint(charCount);
-        addTaint(dstOffset);
-        addTaint(dst[0]);
+public CharBuffer get(char[] dst, int dstOffset, int charCount) {
         byteBuffer.limit(limit * SizeOf.CHAR);
         byteBuffer.position(position * SizeOf.CHAR);
-        if(byteBuffer instanceof DirectByteBuffer)        
-        {
+        if (byteBuffer instanceof DirectByteBuffer) {
             ((DirectByteBuffer) byteBuffer).get(dst, dstOffset, charCount);
-        } //End block
-        else
-        {
+        } else {
             ((HeapByteBuffer) byteBuffer).get(dst, dstOffset, charCount);
-        } //End block
+        }
         this.position += charCount;
-CharBuffer var72A74007B2BE62B849F475C7BDA4658B_635653630 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_635653630.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_635653630;
-        // ---------- Original Method ----------
-        //byteBuffer.limit(limit * SizeOf.CHAR);
-        //byteBuffer.position(position * SizeOf.CHAR);
-        //if (byteBuffer instanceof DirectByteBuffer) {
-            //((DirectByteBuffer) byteBuffer).get(dst, dstOffset, charCount);
-        //} else {
-            //((HeapByteBuffer) byteBuffer).get(dst, dstOffset, charCount);
-        //}
-        //this.position += charCount;
-        //return this;
+        return this;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.403 -0400", hash_original_method = "78E98F36E3D964482B56C152BAA7846E", hash_generated_method = "50F130686B12338284445E51C7D276C8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:38.664 -0500", hash_original_method = "78E98F36E3D964482B56C152BAA7846E", hash_generated_method = "009663403DDC37C5A9CC05093822324F")
     @Override
-    public boolean isDirect() {
-        boolean var418C9026FB66B06011A0A6A75660D0BA_1762239822 = (byteBuffer.isDirect());
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_97971165 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_97971165;
-        // ---------- Original Method ----------
-        //return byteBuffer.isDirect();
+public boolean isDirect() {
+        return byteBuffer.isDirect();
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.403 -0400", hash_original_method = "A5873C4C7FD9475A7CC3E2D0E938541A", hash_generated_method = "A73AD2BEE2E41A4E059B6DDBB97BF208")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:38.666 -0500", hash_original_method = "A5873C4C7FD9475A7CC3E2D0E938541A", hash_generated_method = "C9CF4EA86C1E45319D8243CAB871AD82")
     @Override
-    public boolean isReadOnly() {
-        boolean varD09365DD25410F8B7D3D50C2BC7CE0DE_250718949 = (byteBuffer.isReadOnly());
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1073790130 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1073790130;
-        // ---------- Original Method ----------
-        //return byteBuffer.isReadOnly();
+public boolean isReadOnly() {
+        return byteBuffer.isReadOnly();
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.403 -0400", hash_original_method = "DBC83B570884A1A98A3F46EF314D6E4A", hash_generated_method = "D3C6BA286AD49A17A8DFD6CD4C1DC8DB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:38.666 -0500", hash_original_method = "DBC83B570884A1A98A3F46EF314D6E4A", hash_generated_method = "72A628D0C0DB04E7966F3ACE077688CC")
     @Override
-    public ByteOrder order() {
-ByteOrder var8FE5BB77B415046634F1C7025935FA68_1110972308 =         byteBuffer.order();
-        var8FE5BB77B415046634F1C7025935FA68_1110972308.addTaint(taint);
-        return var8FE5BB77B415046634F1C7025935FA68_1110972308;
-        // ---------- Original Method ----------
-        //return byteBuffer.order();
+public ByteOrder order() {
+        return byteBuffer.order();
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.404 -0400", hash_original_method = "5163488AC40767F8F030E728692C8A7E", hash_generated_method = "ECCEA0BF4A87FAFD3A6808EA8B655030")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:38.667 -0500", hash_original_method = "5163488AC40767F8F030E728692C8A7E", hash_generated_method = "A5273F2C6BE04EE0F772333FB1D75282")
     @Override
-    protected char[] protectedArray() {
-        UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_2098688119 = new UnsupportedOperationException();
-        var81FA7E299EEE7F062EBFBEEF08B0464D_2098688119.addTaint(taint);
-        throw var81FA7E299EEE7F062EBFBEEF08B0464D_2098688119;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+protected char[] protectedArray() {
+        throw new UnsupportedOperationException();
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.404 -0400", hash_original_method = "11D0A2FFE917F2CC89FA6C9EBE3FCE7F", hash_generated_method = "7180EBDCB6CF833DFE72DF9B82B84F97")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:38.668 -0500", hash_original_method = "11D0A2FFE917F2CC89FA6C9EBE3FCE7F", hash_generated_method = "06D077D8B128869B8EAFBB3C6DF9114F")
     @Override
-    protected int protectedArrayOffset() {
-        UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1707775843 = new UnsupportedOperationException();
-        var81FA7E299EEE7F062EBFBEEF08B0464D_1707775843.addTaint(taint);
-        throw var81FA7E299EEE7F062EBFBEEF08B0464D_1707775843;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+protected int protectedArrayOffset() {
+        throw new UnsupportedOperationException();
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.404 -0400", hash_original_method = "22273AD75DCD1D369E6F6089E4C15AAA", hash_generated_method = "3417FB6B843FFB4BDFF2F9674E07B2FF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:38.669 -0500", hash_original_method = "22273AD75DCD1D369E6F6089E4C15AAA", hash_generated_method = "4DE1ADBFC1C0BCD2FC8429D8307DD9AC")
     @Override
-    protected boolean protectedHasArray() {
-        boolean var68934A3E9455FA72420237EB05902327_1873676299 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_961256726 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_961256726;
-        // ---------- Original Method ----------
-        //return false;
+protected boolean protectedHasArray() {
+        return false;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.405 -0400", hash_original_method = "A46BC55FC455B05EF747C70552AAC069", hash_generated_method = "56D0E0F3AB0ACA5D8CA92F4E23BCC1D9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:38.670 -0500", hash_original_method = "A46BC55FC455B05EF747C70552AAC069", hash_generated_method = "61ABEA2ADBAFAAE509189A5135E81F35")
     @Override
-    public CharBuffer put(char c) {
-        addTaint(c);
-        if(position == limit)        
-        {
-            BufferOverflowException var773478A23217201B18B531915D367F31_1316846329 = new BufferOverflowException();
-            var773478A23217201B18B531915D367F31_1316846329.addTaint(taint);
-            throw var773478A23217201B18B531915D367F31_1316846329;
-        } //End block
+public CharBuffer put(char c) {
+        if (position == limit) {
+            throw new BufferOverflowException();
+        }
         byteBuffer.putChar(position++ * SizeOf.CHAR, c);
-CharBuffer var72A74007B2BE62B849F475C7BDA4658B_2116646922 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_2116646922.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_2116646922;
-        // ---------- Original Method ----------
-        //if (position == limit) {
-            //throw new BufferOverflowException();
-        //}
-        //byteBuffer.putChar(position++ * SizeOf.CHAR, c);
-        //return this;
+        return this;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.405 -0400", hash_original_method = "3E41BE4D2E49CC352D854BBBF4557ADA", hash_generated_method = "E6CC86279E7D7FA7F540B96EDA121F8D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:38.671 -0500", hash_original_method = "3E41BE4D2E49CC352D854BBBF4557ADA", hash_generated_method = "B7F140A54ADA2C555F037218CEC98DBB")
     @Override
-    public CharBuffer put(int index, char c) {
-        addTaint(c);
-        addTaint(index);
+public CharBuffer put(int index, char c) {
         checkIndex(index);
         byteBuffer.putChar(index * SizeOf.CHAR, c);
-CharBuffer var72A74007B2BE62B849F475C7BDA4658B_72068449 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_72068449.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_72068449;
-        // ---------- Original Method ----------
-        //checkIndex(index);
-        //byteBuffer.putChar(index * SizeOf.CHAR, c);
-        //return this;
+        return this;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.406 -0400", hash_original_method = "25F0118CCA8CBA4D22EEA9D027B39A5B", hash_generated_method = "94C385CBB7305D0F5CCC7F5546D26C64")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:38.672 -0500", hash_original_method = "25F0118CCA8CBA4D22EEA9D027B39A5B", hash_generated_method = "CB93FE1B612B8A613A36157C7308B38A")
     @Override
-    public CharBuffer put(char[] src, int srcOffset, int charCount) {
-        addTaint(charCount);
-        addTaint(srcOffset);
-        addTaint(src[0]);
+public CharBuffer put(char[] src, int srcOffset, int charCount) {
         byteBuffer.limit(limit * SizeOf.CHAR);
         byteBuffer.position(position * SizeOf.CHAR);
-        if(byteBuffer instanceof ReadWriteDirectByteBuffer)        
-        {
+        if (byteBuffer instanceof ReadWriteDirectByteBuffer) {
             ((ReadWriteDirectByteBuffer) byteBuffer).put(src, srcOffset, charCount);
-        } //End block
-        else
-        {
+        } else {
             ((ReadWriteHeapByteBuffer) byteBuffer).put(src, srcOffset, charCount);
-        } //End block
+        }
         this.position += charCount;
-CharBuffer var72A74007B2BE62B849F475C7BDA4658B_445692416 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_445692416.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_445692416;
-        // ---------- Original Method ----------
-        //byteBuffer.limit(limit * SizeOf.CHAR);
-        //byteBuffer.position(position * SizeOf.CHAR);
-        //if (byteBuffer instanceof ReadWriteDirectByteBuffer) {
-            //((ReadWriteDirectByteBuffer) byteBuffer).put(src, srcOffset, charCount);
-        //} else {
-            //((ReadWriteHeapByteBuffer) byteBuffer).put(src, srcOffset, charCount);
-        //}
-        //this.position += charCount;
-        //return this;
+        return this;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.406 -0400", hash_original_method = "990BBC721EFE340A5DC5CE5D5661B284", hash_generated_method = "A6C80C042555527D5C3C14909E2414CA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:38.672 -0500", hash_original_method = "990BBC721EFE340A5DC5CE5D5661B284", hash_generated_method = "A1FA75FF3A8448C47A2A7DC9DA329BE4")
     @Override
-    public CharBuffer slice() {
+public CharBuffer slice() {
         byteBuffer.limit(limit * SizeOf.CHAR);
         byteBuffer.position(position * SizeOf.CHAR);
         ByteBuffer bb = byteBuffer.slice().order(byteBuffer.order());
         CharBuffer result = new CharToByteBufferAdapter(bb);
         byteBuffer.clear();
-CharBuffer varDC838461EE2FA0CA4C9BBB70A15456B0_1863632839 =         result;
-        varDC838461EE2FA0CA4C9BBB70A15456B0_1863632839.addTaint(taint);
-        return varDC838461EE2FA0CA4C9BBB70A15456B0_1863632839;
-        // ---------- Original Method ----------
-        //byteBuffer.limit(limit * SizeOf.CHAR);
-        //byteBuffer.position(position * SizeOf.CHAR);
-        //ByteBuffer bb = byteBuffer.slice().order(byteBuffer.order());
-        //CharBuffer result = new CharToByteBufferAdapter(bb);
-        //byteBuffer.clear();
-        //return result;
+        return result;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.407 -0400", hash_original_method = "4B1929E0A98D3F3896D7290A74598BEB", hash_generated_method = "3A9B8135E9D0DFE4F37CF12D4295FD34")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:38.673 -0500", hash_original_method = "4B1929E0A98D3F3896D7290A74598BEB", hash_generated_method = "507C558B5C25C4F63DFF63A7E6F61806")
     @Override
-    public CharSequence subSequence(int start, int end) {
-        addTaint(end);
-        addTaint(start);
+public CharSequence subSequence(int start, int end) {
         checkStartEndRemaining(start, end);
         CharBuffer result = duplicate();
         result.limit(position + end);
         result.position(position + start);
-CharSequence varDC838461EE2FA0CA4C9BBB70A15456B0_221828439 =         result;
-        varDC838461EE2FA0CA4C9BBB70A15456B0_221828439.addTaint(taint);
-        return varDC838461EE2FA0CA4C9BBB70A15456B0_221828439;
-        // ---------- Original Method ----------
-        //checkStartEndRemaining(start, end);
-        //CharBuffer result = duplicate();
-        //result.limit(position + end);
-        //result.position(position + start);
-        //return result;
+        return result;
     }
 
     

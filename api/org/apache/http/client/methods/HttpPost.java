@@ -9,22 +9,20 @@ import droidsafe.runtime.*;
 import java.net.URI;
 
 public class HttpPost extends HttpEntityEnclosingRequestBase {
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:02.230 -0400", hash_original_method = "034A352FF9B05AAB848E440712ABE34B", hash_generated_method = "C6A37AF96414D210988FC17BEF563259")
-    public  HttpPost() {
-        super();
-        // ---------- Original Method ----------
-    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.238 -0500", hash_original_field = "C6D1332D7E2FBBF1CFD284F30D60129A", hash_generated_field = "93D97E8CFD3DD4E05FB1997B1AF38224")
 
+
+    public final static String METHOD_NAME = "POST";
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:02.231 -0400", hash_original_method = "160A4A8C6AAC5C78A2F503FA797FE66F", hash_generated_method = "A8B986D251D55D73FE046BB884E3CBB5")
-    public  HttpPost(final URI uri) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.239 -0500", hash_original_method = "034A352FF9B05AAB848E440712ABE34B", hash_generated_method = "8731034ED4B7D7C5F2C0F73BBAB5A4A9")
+    public HttpPost() {
         super();
-        addTaint(uri.getTaint());
+    }
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.240 -0500", hash_original_method = "160A4A8C6AAC5C78A2F503FA797FE66F", hash_generated_method = "B46316C1B560DDE61F4B685238FCB29F")
+    public HttpPost(final URI uri) {
+        super();
         setURI(uri);
-        // ---------- Original Method ----------
-        //setURI(uri);
     }
 
     
@@ -39,21 +37,10 @@ public class HttpPost extends HttpEntityEnclosingRequestBase {
         addTaint(uri.getTaint());
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:02.232 -0400", hash_original_method = "E4A43B2F65721A683997A037549396C3", hash_generated_method = "020122F04CB94F2FDB3CF24BDD629B5F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.241 -0500", hash_original_method = "E4A43B2F65721A683997A037549396C3", hash_generated_method = "5FCF2FB47A767785DCEA247A24F7E8BC")
     @Override
-    public String getMethod() {
-String varADA0547DEAD34D39E77CF79940AB756D_1023403035 =         METHOD_NAME;
-        varADA0547DEAD34D39E77CF79940AB756D_1023403035.addTaint(taint);
-        return varADA0547DEAD34D39E77CF79940AB756D_1023403035;
-        // ---------- Original Method ----------
-        //return METHOD_NAME;
+public String getMethod() {
+        return METHOD_NAME;
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:02.233 -0400", hash_original_field = "E95841742F765A744B2C09D4A4229248", hash_generated_field = "93D97E8CFD3DD4E05FB1997B1AF38224")
-
-    public final static String METHOD_NAME = "POST";
 }
 

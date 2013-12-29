@@ -1,6 +1,8 @@
 package gov.nist.javax.sip.parser;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import gov.nist.javax.sip.header.Contact;
 import gov.nist.javax.sip.header.ContactList;
@@ -13,76 +15,48 @@ import java.text.ParseException;
 
 
 public class ContactParser extends AddressParametersParser {
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:36.998 -0400", hash_original_method = "259D82B4FB0F930288D81B3FF39234D9", hash_generated_method = "62E82C69DA52DF4188E2B413B56E0050")
-    public  ContactParser(String contact) {
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:07.819 -0500", hash_original_method = "259D82B4FB0F930288D81B3FF39234D9", hash_generated_method = "6C2338917ADBD9862616BB6F9F7CCFD0")
+    public ContactParser(String contact) {
         super(contact);
-        addTaint(contact.getTaint());
-        // ---------- Original Method ----------
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:37.000 -0400", hash_original_method = "9392FB11C199E27843D6B36D0194676C", hash_generated_method = "8DED6447CE407CBF72C510D04FB98BF7")
-    protected  ContactParser(Lexer lexer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:07.820 -0500", hash_original_method = "9392FB11C199E27843D6B36D0194676C", hash_generated_method = "1A92A3DD89FBD6056B534A01EEB952EE")
+    protected ContactParser(Lexer lexer) {
         super(lexer);
-        addTaint(lexer.getTaint());
         this.lexer = lexer;
-        // ---------- Original Method ----------
-        //this.lexer = lexer;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:37.029 -0400", hash_original_method = "BF729EDB4B0BCD2BE7D180520FE998E8", hash_generated_method = "5788053FED6764E185A19D4D98CBD189")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:07.822 -0500", hash_original_method = "BF729EDB4B0BCD2BE7D180520FE998E8", hash_generated_method = "1DFECB54643C6C64A61087679BA4EDFE")
     public SIPHeader parse() throws ParseException {
+        // past the header name and the colon.
         headerName(TokenTypes.CONTACT);
         ContactList retval = new ContactList();
-        while
-(true)        
-        {
+        while (true) {
             Contact contact = new Contact();
-            if(lexer.lookAhead(0) == '*')            
-            {
+            if (lexer.lookAhead(0) == '*') {
                 final char next = lexer.lookAhead(1);
-                if(next == ' ' || next == '\t' || next == '\r' || next == '\n')                
-                {
+                if (next == ' ' || next == '\t' || next == '\r' || next == '\n') {
                     this.lexer.match('*');
                     contact.setWildCardFlag(true);
-                } //End block
-                else
-                {
+                } else {
                     super.parse(contact);
-                } //End block
-            } //End block
-            else
-            {
+                }
+            } else {
                 super.parse(contact);
-            } //End block
+            }
             retval.add(contact);
             this.lexer.SPorHT();
             char la = lexer.lookAhead(0);
-            if(la == ',')            
-            {
+            if (la == ',') {
                 this.lexer.match(',');
                 this.lexer.SPorHT();
-            } //End block
+            } else if (la == '\n' || la == '\0')
+                break;
             else
-            if(la == '\n' || la == '\0')            
-            break;
-            else
-            {
-            java.text.ParseException var7805DD1445672D84C07E56FCC19D9765_1855768501 = createParseException("unexpected char");
-            var7805DD1445672D84C07E56FCC19D9765_1855768501.addTaint(taint);
-            throw var7805DD1445672D84C07E56FCC19D9765_1855768501;
-            }
-        } //End block
-SIPHeader varF9E19AD6135C970F387F77C6F3DE4477_793656613 =         retval;
-        varF9E19AD6135C970F387F77C6F3DE4477_793656613.addTaint(taint);
-        return varF9E19AD6135C970F387F77C6F3DE4477_793656613;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                throw createParseException("unexpected char");
+        }
+        return retval;
     }
 
     

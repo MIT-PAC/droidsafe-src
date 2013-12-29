@@ -74,10 +74,13 @@ public class DroidSafeAndroidRuntime {
         activity.onSearchRequested();
         activity.onUserInteraction();
 
-        //TODO: DOES THIS MAKE SENSE?
+        //TODO: DOES THIS MAKE SENSE? 
+        //We should not change method's visiblity
+        /*
         activity.onCreateDialog(0);
         activity.onCreateDialog(0, new Bundle());
         activity.onPrepareDialog(0, new Dialog(context));
+        */
         
         
         //TODO: WHAT ABOUT A REAL MENU?

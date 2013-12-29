@@ -1,6 +1,8 @@
 package org.apache.http.message;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import org.apache.http.FormattedHeader;
 import org.apache.http.HeaderElement;
@@ -13,147 +15,89 @@ import org.apache.http.util.CharArrayBuffer;
 
 
 public class BufferedHeader implements FormattedHeader, Cloneable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.095 -0400", hash_original_field = "B068931CC450442B63F5B3D276EA4297", hash_generated_field = "531F96E2AEBFB44CD229EC4CB1F012B0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:24.682 -0500", hash_original_field = "BF45F7481B8091DE3CBF80E94F7F940B", hash_generated_field = "531F96E2AEBFB44CD229EC4CB1F012B0")
 
-    private String name;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.095 -0400", hash_original_field = "7F2DB423A49B305459147332FB01CF87", hash_generated_field = "2D6B54E04F26AA35A63824F1627650C8")
+    private  String name;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:24.683 -0500", hash_original_field = "350F4DBD74AB8DD54F1F983317E69056", hash_generated_field = "2D6B54E04F26AA35A63824F1627650C8")
 
-    private CharArrayBuffer buffer;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.095 -0400", hash_original_field = "682F56B9CD0D5A5A03591E08BD284CF2", hash_generated_field = "55229766EB15D64D0053C4D4C7254583")
+    private  CharArrayBuffer buffer;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:24.684 -0500", hash_original_field = "35C020B0B5335A1F298DED9AA26A8549", hash_generated_field = "55229766EB15D64D0053C4D4C7254583")
 
-    private int valuePos;
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.095 -0400", hash_original_method = "49FE93A821CCACEE6FBD2E0E30BEDB29", hash_generated_method = "6A350FCE5C7875C30EE170695FCC4D1D")
-    public  BufferedHeader(final CharArrayBuffer buffer) throws ParseException {
+    private  int valuePos;
+
+
+    /**
+     * Creates a new header from a buffer.
+     * The name of the header will be parsed immediately,
+     * the value only if it is accessed.
+     *
+     * @param buffer    the buffer containing the header to represent
+     *
+     * @throws ParseException   in case of a parse error
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:24.685 -0500", hash_original_method = "49FE93A821CCACEE6FBD2E0E30BEDB29", hash_generated_method = "070F2E5A32E76C90B92C01E8D3F9080E")
+    public BufferedHeader(final CharArrayBuffer buffer)
+        throws ParseException {
+
         super();
-        if(buffer == null)        
-        {
-            IllegalArgumentException var11B13FD12A76A3F0F811AB9F5E5EE296_1331404517 = new IllegalArgumentException
+        if (buffer == null) {
+            throw new IllegalArgumentException
                 ("Char array buffer may not be null");
-            var11B13FD12A76A3F0F811AB9F5E5EE296_1331404517.addTaint(taint);
-            throw var11B13FD12A76A3F0F811AB9F5E5EE296_1331404517;
-        } //End block
+        }
         int colon = buffer.indexOf(':');
-        if(colon == -1)        
-        {
-            ParseException var6CD3B9FDB67218CCBB140415D6E38E41_1805955619 = new ParseException
+        if (colon == -1) {
+            throw new ParseException
                 ("Invalid header: " + buffer.toString());
-            var6CD3B9FDB67218CCBB140415D6E38E41_1805955619.addTaint(taint);
-            throw var6CD3B9FDB67218CCBB140415D6E38E41_1805955619;
-        } //End block
+        }
         String s = buffer.substringTrimmed(0, colon);
-        if(s.length() == 0)        
-        {
-            ParseException var6CD3B9FDB67218CCBB140415D6E38E41_1691975904 = new ParseException
+        if (s.length() == 0) {
+            throw new ParseException
                 ("Invalid header: " + buffer.toString());
-            var6CD3B9FDB67218CCBB140415D6E38E41_1691975904.addTaint(taint);
-            throw var6CD3B9FDB67218CCBB140415D6E38E41_1691975904;
-        } //End block
+        }
         this.buffer = buffer;
         this.name = s;
         this.valuePos = colon + 1;
-        // ---------- Original Method ----------
-        //if (buffer == null) {
-            //throw new IllegalArgumentException
-                //("Char array buffer may not be null");
-        //}
-        //int colon = buffer.indexOf(':');
-        //if (colon == -1) {
-            //throw new ParseException
-                //("Invalid header: " + buffer.toString());
-        //}
-        //String s = buffer.substringTrimmed(0, colon);
-        //if (s.length() == 0) {
-            //throw new ParseException
-                //("Invalid header: " + buffer.toString());
-        //}
-        //this.buffer = buffer;
-        //this.name = s;
-        //this.valuePos = colon + 1;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.096 -0400", hash_original_method = "6F5A80252F54E883F3837DA0C6833E69", hash_generated_method = "C396E46D0D0A50AB93D574F9414DF202")
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:24.686 -0500", hash_original_method = "6F5A80252F54E883F3837DA0C6833E69", hash_generated_method = "10AFD575EA26BE807F18801FAC02C531")
     public String getName() {
-String varDC708CD29829AA84C3F2D9B68CF84B0D_524032773 =         this.name;
-        varDC708CD29829AA84C3F2D9B68CF84B0D_524032773.addTaint(taint);
-        return varDC708CD29829AA84C3F2D9B68CF84B0D_524032773;
-        // ---------- Original Method ----------
-        //return this.name;
+        return this.name;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.096 -0400", hash_original_method = "832891E6742DCF403246DBD5D871CA11", hash_generated_method = "6BD286C01D654F5AEEAF73B454FA46A4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:24.687 -0500", hash_original_method = "832891E6742DCF403246DBD5D871CA11", hash_generated_method = "3AE95B711B81DE1E8553892FEC0B797E")
     public String getValue() {
-String varCDE153C7C83987B368C3E568152249DB_777592144 =         this.buffer.substringTrimmed(this.valuePos, this.buffer.length());
-        varCDE153C7C83987B368C3E568152249DB_777592144.addTaint(taint);
-        return varCDE153C7C83987B368C3E568152249DB_777592144;
-        // ---------- Original Method ----------
-        //return this.buffer.substringTrimmed(this.valuePos, this.buffer.length());
+        return this.buffer.substringTrimmed(this.valuePos, this.buffer.length());
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.096 -0400", hash_original_method = "5721C7259C8939164D56A25B24055244", hash_generated_method = "1D70F8A323E411CE81792E0857E6F11C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:24.688 -0500", hash_original_method = "5721C7259C8939164D56A25B24055244", hash_generated_method = "311F114A5E3879BBFFD0B2658B1FDD59")
     public HeaderElement[] getElements() throws ParseException {
         ParserCursor cursor = new ParserCursor(0, this.buffer.length());
         cursor.updatePos(this.valuePos);
-HeaderElement[] varA090F3687291CDA6DAF632EEA41ADCCE_970496266 =         BasicHeaderValueParser.DEFAULT
+        return BasicHeaderValueParser.DEFAULT
             .parseElements(this.buffer, cursor);
-        varA090F3687291CDA6DAF632EEA41ADCCE_970496266.addTaint(taint);
-        return varA090F3687291CDA6DAF632EEA41ADCCE_970496266;
-        // ---------- Original Method ----------
-        //ParserCursor cursor = new ParserCursor(0, this.buffer.length());
-        //cursor.updatePos(this.valuePos);
-        //return BasicHeaderValueParser.DEFAULT
-            //.parseElements(this.buffer, cursor);
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.097 -0400", hash_original_method = "E7695A6E14F12AF4805392BEA2D5CE64", hash_generated_method = "26B3C36E8D4F33BBD1D3F9F1DF07F7B6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:24.689 -0500", hash_original_method = "E7695A6E14F12AF4805392BEA2D5CE64", hash_generated_method = "D852ADD5F30A81C22AA5F5985D655818")
     public int getValuePos() {
-        int var1747919CF5DB41B03F9FEE684F69A6A5_1607402909 = (this.valuePos);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1889473820 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1889473820;
-        // ---------- Original Method ----------
-        //return this.valuePos;
+        return this.valuePos;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.097 -0400", hash_original_method = "E316E251CD3E3ED3EEAF4AEFCAA1831D", hash_generated_method = "B97A7BDCABC10EAA8641E6B074F83CBF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:24.689 -0500", hash_original_method = "E316E251CD3E3ED3EEAF4AEFCAA1831D", hash_generated_method = "9ED308ADFA5DFDD662AC2CC89157B2E5")
     public CharArrayBuffer getBuffer() {
-CharArrayBuffer var45A7A4931E21905A5463F27B77E1344A_2060802129 =         this.buffer;
-        var45A7A4931E21905A5463F27B77E1344A_2060802129.addTaint(taint);
-        return var45A7A4931E21905A5463F27B77E1344A_2060802129;
-        // ---------- Original Method ----------
-        //return this.buffer;
+        return this.buffer;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.097 -0400", hash_original_method = "45FB39B4E67563C5A568E25DDBF414D1", hash_generated_method = "A3BACDDDAF86C37D0FD3A31487328290")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:24.690 -0500", hash_original_method = "45FB39B4E67563C5A568E25DDBF414D1", hash_generated_method = "78CB532AFE764110A4E51A23C38737C5")
     public String toString() {
-String var7B8BB72F06E6A8EB72498BA3268BFE1C_1475666670 =         this.buffer.toString();
-        var7B8BB72F06E6A8EB72498BA3268BFE1C_1475666670.addTaint(taint);
-        return var7B8BB72F06E6A8EB72498BA3268BFE1C_1475666670;
-        // ---------- Original Method ----------
-        //return this.buffer.toString();
+        return this.buffer.toString();
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.097 -0400", hash_original_method = "66DEBDF0D0405CDDBB7BD5DED76064DF", hash_generated_method = "B71423223B7F48B4B03AD492B6D06C6D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:24.691 -0500", hash_original_method = "66DEBDF0D0405CDDBB7BD5DED76064DF", hash_generated_method = "0BDC98250A04BDDF2ACC480AFE3C4193")
     public Object clone() throws CloneNotSupportedException {
-Object var46F3A0D86742C1D6E099C2B166941A33_812798915 =         super.clone();
-        var46F3A0D86742C1D6E099C2B166941A33_812798915.addTaint(taint);
-        return var46F3A0D86742C1D6E099C2B166941A33_812798915;
-        // ---------- Original Method ----------
-        //return super.clone();
+        // buffer is considered immutable
+        // no need to make a copy of it
+        return super.clone();
     }
 
     

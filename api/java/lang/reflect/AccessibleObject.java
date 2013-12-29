@@ -1,6 +1,8 @@
 package java.lang.reflect;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.lang.annotation.Annotation;
 import java.util.Hashtable;
@@ -13,18 +15,21 @@ import org.apache.harmony.kernel.vm.StringUtils;
 
 
 public class AccessibleObject implements AnnotatedElement {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.851 -0400", hash_original_field = "04B8D6DC602542C7D84E76F57842A90E", hash_generated_field = "D3CD6765000979577B5DA559E9F23C55")
 
-    boolean flag = false;
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.852 -0400", hash_original_method = "79E776845C9774BB9614D2D0955EABCF", hash_generated_method = "846450B6CD756FC6E1311C471B3C4B56")
-    protected  AccessibleObject() {
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Attempts to set the value of the accessible flag for all the objects in
+     * the array provided. Setting this
+     * flag to {@code false} will enable access checks, setting to {@code true}
+     * will disable them.
+     *
+     * @param objects
+     *            the accessible objects
+     * @param flag
+     *            the new value for the accessible flag
+     *
+     * @see #setAccessible(boolean)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.344 -0500", hash_original_method = "670F990BF0D6A92A8F1AA8AC7F02D156", hash_generated_method = "68DE20ABD356D6F8D1ADEEEC1DD849F0")
     public static void setAccessible(AccessibleObject[] objects, boolean flag) {
         synchronized(AccessibleObject.class) {
             for (AccessibleObject object : objects) {
@@ -33,58 +38,84 @@ public class AccessibleObject implements AnnotatedElement {
         }
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.853 -0400", hash_original_method = "66D52F3844786BE4BB43647AC248F3A6", hash_generated_method = "A431CEDB75725BFD4C637410E97E17BA")
-    public boolean isAccessible() {
-        boolean var327A6C4304AD5938EAF0EFB6CC3E53DC_261453950 = (flag);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2127618920 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2127618920;
-        // ---------- Original Method ----------
-        //return flag;
+    /**
+     * Retrieve the signature attribute from an arbitrary class.  This is
+     * the same as Class.getSignatureAttribute(), but it can be used from
+     * the java.lang.reflect package.
+     */
+    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.353 -0500", hash_original_method = "0EA85850CAF8D26BF10D52C824A0CA19", hash_generated_method = "48B4ABE2E7323E428D11CA7F6309669D")
+    static String getClassSignatureAttribute(Class clazz) {
+        Object[] annotation = getClassSignatureAnnotation(clazz);
+
+        if (annotation == null) {
+            return null;
+        }
+
+        return StringUtils.combineStrings(annotation);
     }
 
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.853 -0400", hash_original_method = "1000999C704703264C7A249C905DEAE6", hash_generated_method = "D0859DDEC273DE0EC754854BC0CB46EB")
+    @DSModeled(DSC.SAFE)
+    private static Object[] getClassSignatureAnnotation(Class clazz) {
+		Object[] ret = new Object[0];
+		ret[0].addTaint(clazz.taint);
+		return ret;
+	}
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.343 -0500", hash_original_field = "73EA6AEBBE448C5C33ED9F0E5E3F055A", hash_generated_field = "F7E345322C5DA8049D7465C5406D9B9D")
+
+    static Hashtable<String, String> trans;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.342 -0500", hash_original_field = "D3CD6765000979577B5DA559E9F23C55", hash_generated_field = "D3CD6765000979577B5DA559E9F23C55")
+
+    boolean flag = false;
+
+    /**
+     * Constructs a new {@code AccessibleObject} instance. {@code
+     * AccessibleObject} instances can only be constructed by the virtual
+     * machine.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.345 -0500", hash_original_method = "79E776845C9774BB9614D2D0955EABCF", hash_generated_method = "07D69BA5ABE497283D1B6DE52B581BA9")
+    protected AccessibleObject() {
+    }
+
+    /**
+     * Indicates whether this object is accessible without access checks being
+     * performed. Returns the accessible flag.
+     *
+     * @return {@code true} if this object is accessible without access
+     *         checks, {@code false} otherwise
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.345 -0500", hash_original_method = "66D52F3844786BE4BB43647AC248F3A6", hash_generated_method = "F758FA2BFE5D48F8DCF99731C758F154")
+    public boolean isAccessible() {
+        return flag;
+    }
+
+    /**
+     * Attempts to set the value of the accessible flag. Setting this flag to
+     * {@code false} will enable access checks, setting to {@code true} will
+     * disable them.
+     *
+     * @param flag
+     *            the new value for the accessible flag
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.346 -0500", hash_original_method = "1000999C704703264C7A249C905DEAE6", hash_generated_method = "BB58AE5FEDFFFA08CEBC07B09269E4D5")
     public void setAccessible(boolean flag) {
         this.flag = flag;
-        // ---------- Original Method ----------
-        //this.flag = flag;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.854 -0400", hash_original_method = "8CC5FFC4D6878043D8F48CA01CEE9F83", hash_generated_method = "1600934FB3C06B4EFCA75CF6D9ABC18E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.347 -0500", hash_original_method = "8CC5FFC4D6878043D8F48CA01CEE9F83", hash_generated_method = "A0EBDBBF334272F87ED8B448C40859E4")
     public boolean isAnnotationPresent(Class<? extends Annotation> annotationType) {
-        addTaint(annotationType.getTaint());
-        UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1221689440 = new UnsupportedOperationException();
-        var81FA7E299EEE7F062EBFBEEF08B0464D_1221689440.addTaint(taint);
-        throw var81FA7E299EEE7F062EBFBEEF08B0464D_1221689440;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.854 -0400", hash_original_method = "0B7DCEEC0F2643B54E5B168F87B9CE3A", hash_generated_method = "866C21F9DC66E2705DDD59B9AC495F42")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.348 -0500", hash_original_method = "0B7DCEEC0F2643B54E5B168F87B9CE3A", hash_generated_method = "3681CD33362442788F51F5CB97E8F924")
     public Annotation[] getDeclaredAnnotations() {
-        UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_110590247 = new UnsupportedOperationException();
-        var81FA7E299EEE7F062EBFBEEF08B0464D_110590247.addTaint(taint);
-        throw var81FA7E299EEE7F062EBFBEEF08B0464D_110590247;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.854 -0400", hash_original_method = "CDE5472758ACF6CE75A2FF7BF6EF0F38", hash_generated_method = "8DA0542F1FD48E720A95190061CB7FD4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.348 -0500", hash_original_method = "CDE5472758ACF6CE75A2FF7BF6EF0F38", hash_generated_method = "2BE97EAB30C93D24E30DEBAEA5394C7F")
     public Annotation[] getAnnotations() {
-Annotation[] var47CFE6C4A705F42D2CD6EF6EAC843F8E_396237079 =         getDeclaredAnnotations();
-        var47CFE6C4A705F42D2CD6EF6EAC843F8E_396237079.addTaint(taint);
-        return var47CFE6C4A705F42D2CD6EF6EAC843F8E_396237079;
-        // ---------- Original Method ----------
-        //return getDeclaredAnnotations();
+        // for all but Class, getAnnotations == getDeclaredAnnotations
+        return getDeclaredAnnotations();
     }
 
     
@@ -99,240 +130,167 @@ Annotation[] var47CFE6C4A705F42D2CD6EF6EAC843F8E_396237079 =         getDeclared
         //throw new UnsupportedOperationException();
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.855 -0400", hash_original_method = "AFCD123A6E616CB6E7A6F8CAEE33C533", hash_generated_method = "63C21D3D052350C47BBA0A6CEC6D7662")
-     String getSignature(Class<?> clazz) {
-        addTaint(clazz.getTaint());
+    /**
+     * Returns the signature for a class. This is the kind of signature used
+     * internally by the JVM, with one-character codes representing the basic
+     * types. It is not suitable for printing.
+     *
+     * @param clazz
+     *            the class for which a signature is required
+     *
+     * @return The signature as a string
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.350 -0500", hash_original_method = "AFCD123A6E616CB6E7A6F8CAEE33C533", hash_generated_method = "AFCD123A6E616CB6E7A6F8CAEE33C533")
+    String getSignature(Class<?> clazz) {
         String result = "";
         String nextType = clazz.getName();
-        if(trans.containsKey(nextType))        
-        {
+
+        if(trans.containsKey(nextType)) {
             result = trans.get(nextType);
-        } //End block
-        else
-        {
-            if(clazz.isArray())            
-            {
+        } else {
+            if(clazz.isArray()) {
                 result = "[" + getSignature(clazz.getComponentType());
-            } //End block
-            else
-            {
+            } else {
                 result = "L" + nextType + ";";
-            } //End block
-        } //End block
-String varDC838461EE2FA0CA4C9BBB70A15456B0_1779165241 =         result;
-        varDC838461EE2FA0CA4C9BBB70A15456B0_1779165241.addTaint(taint);
-        return varDC838461EE2FA0CA4C9BBB70A15456B0_1779165241;
-        // ---------- Original Method ----------
-        //String result = "";
-        //String nextType = clazz.getName();
-        //if(trans.containsKey(nextType)) {
-            //result = trans.get(nextType);
-        //} else {
-            //if(clazz.isArray()) {
-                //result = "[" + getSignature(clazz.getComponentType());
-            //} else {
-                //result = "L" + nextType + ";";
-            //}
-        //}
-        //return result;
+            }
+        }
+        return result;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.857 -0400", hash_original_method = "538B7B8EC3794D6F6E22215297E953DA", hash_generated_method = "D597D722AC3B7DB64B48427AEBF037C0")
-     String toString(Class<?>[] types) {
-        addTaint(types[0].getTaint());
+    /**
+     * Returns a printable String consisting of the canonical names of the
+     * classes contained in an array. The form is that used in parameter and
+     * exception lists, that is, the class or type names are separated by
+     * commas.
+     *
+     * @param types
+     *            the array of classes
+     *
+     * @return The String of names
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.351 -0500", hash_original_method = "538B7B8EC3794D6F6E22215297E953DA", hash_generated_method = "538B7B8EC3794D6F6E22215297E953DA")
+    String toString(Class<?>[] types) {
         StringBuilder result = new StringBuilder();
-        if(types.length != 0)        
-        {
+
+        if (types.length != 0) {
             result.append(types[0].getName());
-for(int i = 1;i < types.length;i++)
-            {
+            for (int i = 1; i < types.length; i++) {
                 result.append(',');
                 result.append(types[i].getName());
-            } //End block
-        } //End block
-String varE65B3A02759122992CB82C0E651AD408_764910252 =         result.toString();
-        varE65B3A02759122992CB82C0E651AD408_764910252.addTaint(taint);
-        return varE65B3A02759122992CB82C0E651AD408_764910252;
-        // ---------- Original Method ----------
-        //StringBuilder result = new StringBuilder();
-        //if (types.length != 0) {
-            //result.append(types[0].getName());
-            //for (int i = 1; i < types.length; i++) {
-                //result.append(',');
-                //result.append(types[i].getName());
-            //}
-        //}
-        //return result.toString();
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.858 -0400", hash_original_method = "595C9CE9F234EEA7E3334962F2566B38", hash_generated_method = "7B004C4FD903D6DE09EEABB79285DA58")
-     String getSignatureAttribute() {
-        UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_455306643 = new UnsupportedOperationException();
-        var81FA7E299EEE7F062EBFBEEF08B0464D_455306643.addTaint(taint);
-        throw var81FA7E299EEE7F062EBFBEEF08B0464D_455306643;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
-    }
-
-    
-    static String getClassSignatureAttribute(Class clazz) {
-        Object[] annotation = getClassSignatureAnnotation(clazz);
-        if (annotation == null) {
-            return null;
+            }
         }
-        return StringUtils.combineStrings(annotation);
+
+        return result.toString();
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    private static Object[] getClassSignatureAnnotation(Class clazz) {
-		Object[] ret = new Object[0];
-		ret[0].addTaint(clazz.taint);
-		return ret;
-	}
+    /**
+     * Gets the Signature attribute for this instance. Returns {@code null}
+     * if not found.
+     */
+    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.352 -0500", hash_original_method = "595C9CE9F234EEA7E3334962F2566B38", hash_generated_method = "F0B9CD63B24B94657C1ECA3D3E5E02CA")
+    String getSignatureAttribute() {
+        /*
+         * Note: This method would have been declared abstract, but the
+         * standard API lists this class as concrete.
+         */
+        throw new UnsupportedOperationException();
+    }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.859 -0400", hash_original_method = "96346F5FDCAEE775233825443F323528", hash_generated_method = "EE7D264E102222A929FE18E054D1837D")
-     void appendArrayType(StringBuilder sb, Class<?> obj) {
-        addTaint(obj.getTaint());
-        addTaint(sb.getTaint());
+    /**
+     * Appends the specified class name to the buffer. The class may represent
+     * a simple type, a reference type or an array type.
+     *
+     * @param sb buffer
+     * @param obj the class which name should be appended to the buffer
+     *
+     * @throws NullPointerException if any of the arguments is null
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.355 -0500", hash_original_method = "96346F5FDCAEE775233825443F323528", hash_generated_method = "96346F5FDCAEE775233825443F323528")
+    void appendArrayType(StringBuilder sb, Class<?> obj) {
         int dimensions = 0;
-        while
-(obj.isArray())        
-        {
+        while (obj.isArray()) {
             obj = obj.getComponentType();
             dimensions++;
-        } //End block
+        }
         sb.append(obj.getName());
-for(int d = 0;d < dimensions;d++)
-        {
+        for (int d = 0; d < dimensions; d++) {
             sb.append("[]");
-        } //End block
-        // ---------- Original Method ----------
-        //int dimensions = 0;
-        //while (obj.isArray()) {
-            //obj = obj.getComponentType();
-            //dimensions++;
-        //}
-        //sb.append(obj.getName());
-        //for (int d = 0; d < dimensions; d++) {
-            //sb.append("[]");
-        //}
+        }
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.860 -0400", hash_original_method = "4331049DB20FE3D320265414E1BB6DD1", hash_generated_method = "DFA6C26E0F406FC1680B7B1A2B75D9CB")
-     void appendArrayGenericType(StringBuilder sb, Type[] types) {
-        addTaint(types[0].getTaint());
-        addTaint(sb.getTaint());
-        if(types.length > 0)        
-        {
+    /**
+     * Appends names of the specified array classes to the buffer. The array
+     * elements may represent a simple type, a reference type or an array type.
+     * Output format: java.lang.Object[], java.io.File, void
+     *
+     * @param types array of classes to print the names
+     * @throws NullPointerException if any of the arguments is null
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.356 -0500", hash_original_method = "4331049DB20FE3D320265414E1BB6DD1", hash_generated_method = "4331049DB20FE3D320265414E1BB6DD1")
+    void appendArrayGenericType(StringBuilder sb, Type[] types) {
+        if (types.length > 0) {
             appendGenericType(sb, types[0]);
-for(int i = 1;i < types.length;i++)
-            {
+            for (int i = 1; i < types.length; i++) {
                 sb.append(',');
                 appendGenericType(sb, types[i]);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (types.length > 0) {
-            //appendGenericType(sb, types[0]);
-            //for (int i = 1; i < types.length; i++) {
-                //sb.append(',');
-                //appendGenericType(sb, types[i]);
-            //}
-        //}
+            }
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.861 -0400", hash_original_method = "8E82FAA48BB361A9859A3C64A69CEBFA", hash_generated_method = "3702F5CF2AAC15B2E8B7485A23159E53")
-     void appendGenericType(StringBuilder sb, Type obj) {
-        addTaint(obj.getTaint());
-        addTaint(sb.getTaint());
-        if(obj instanceof TypeVariable)        
-        {
+    /**
+     * Appends the generic type representation to the buffer.
+     *
+     * @param sb buffer
+     * @param obj the generic type which representation should be appended to the buffer
+     *
+     * @throws NullPointerException if any of the arguments is null
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.357 -0500", hash_original_method = "8E82FAA48BB361A9859A3C64A69CEBFA", hash_generated_method = "639986077F4F64C49F9CD8BE0AAAE4A8")
+    void appendGenericType(StringBuilder sb, Type obj) {
+        if (obj instanceof TypeVariable) {
             sb.append(((TypeVariable)obj).getName());
-        } //End block
-        else
-        if(obj instanceof ParameterizedType)        
-        {
+        } else if (obj instanceof ParameterizedType) {
             sb.append(obj.toString());
-        } //End block
-        else
-        if(obj instanceof GenericArrayType)        
-        {
+        } else if (obj instanceof GenericArrayType) { //XXX: is it a working branch?
             Type simplified = ((GenericArrayType)obj).getGenericComponentType();
             appendGenericType(sb, simplified);
             sb.append("[]");
-        } //End block
-        else
-        if(obj instanceof Class)        
-        {
+        } else if (obj instanceof Class) {
             Class c = ((Class<?>)obj);
-            if(c.isArray())            
-            {
+            if (c.isArray()){
                 String as[] = c.getName().split("\\[");
                 int len = as.length-1;
-                if(as[len].length() > 1)                
-                {
+                if (as[len].length() > 1){
                     sb.append(as[len].substring(1, as[len].length()-1));
-                } //End block
-                else
-                {
+                } else {
                     char ch = as[len].charAt(0);
-                    if(ch == 'I')                    
-                    sb.append("int");
-                    else
-                    if(ch == 'B')                    
-                    sb.append("byte");
-                    else
-                    if(ch == 'J')                    
-                    sb.append("long");
-                    else
-                    if(ch == 'F')                    
-                    sb.append("float");
-                    else
-                    if(ch == 'D')                    
-                    sb.append("double");
-                    else
-                    if(ch == 'S')                    
-                    sb.append("short");
-                    else
-                    if(ch == 'C')                    
-                    sb.append("char");
-                    else
-                    if(ch == 'Z')                    
-                    sb.append("boolean");
-                    else
-                    if(ch == 'V')                    
-                    sb.append("void");
-                } //End block
-for(int i = 0;i < len;i++)
-                {
+                    if (ch == 'I')
+                        sb.append("int");
+                    else if (ch == 'B')
+                        sb.append("byte");
+                    else if (ch == 'J')
+                        sb.append("long");
+                    else if (ch == 'F')
+                        sb.append("float");
+                    else if (ch == 'D')
+                        sb.append("double");
+                    else if (ch == 'S')
+                        sb.append("short");
+                    else if (ch == 'C')
+                        sb.append("char");
+                    else if (ch == 'Z')
+                        sb.append("boolean");
+                    else if (ch == 'V') //XXX: is it a working branch?
+                        sb.append("void");
+                }
+                for (int i = 0; i < len; i++){
                     sb.append("[]");
-                } //End block
-            } //End block
-            else
-            {
+                }
+            } else {
                 sb.append(c.getName());
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            }
+        }
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.862 -0400", hash_original_field = "4738019EF434F24099319565CD5185E5", hash_generated_field = "F7E345322C5DA8049D7465C5406D9B9D")
-
-    static Hashtable<String, String> trans;
     static {
         trans = new Hashtable<String, String>(9);
         trans.put("byte", "B");

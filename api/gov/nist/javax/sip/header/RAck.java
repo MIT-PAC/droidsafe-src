@@ -1,6 +1,8 @@
 package gov.nist.javax.sip.header;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.text.ParseException;
 
@@ -12,168 +14,134 @@ import javax.sip.InvalidArgumentException;
 
 
 public class RAck extends SIPHeader implements javax.sip.header.RAckHeader {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.785 -0400", hash_original_field = "E9A77CB6D532BAD6B3C1F9AFF8D3456A", hash_generated_field = "90A1DBDECBC94B16131E7EAFCA83250F")
-
-    protected long cSeqNumber;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.785 -0400", hash_original_field = "9165AF4FCD38054297A85E5DFD02DC76", hash_generated_field = "0BFA342B8453938DE41E6CA4A7186CA9")
-
-    protected long rSeqNumber;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.785 -0400", hash_original_field = "EA9F6ACA279138C58F705C8D4CB4B8CE", hash_generated_field = "7A7B3881B98B4FAF9D2BB4D0900875E7")
-
-    protected String method;
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.785 -0400", hash_original_method = "7C5933C28B73D77B67311599A1BD6348", hash_generated_method = "B9F10F92D666D06433633A2E45A818B7")
-    public  RAck() {
-        super(NAME);
-        // ---------- Original Method ----------
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.786 -0400", hash_original_method = "31F6FBF38938A8E830748EA5A3D758B3", hash_generated_method = "08E7DB6F65E9976C961BEA385C8A6429")
-    protected String encodeBody() {
-String varC978D6217C568332ACACC40C43306966_138633978 =         new StringBuffer().append(rSeqNumber).append(SP).append(
-                cSeqNumber).append(SP).append(method).toString();
-        varC978D6217C568332ACACC40C43306966_138633978.addTaint(taint);
-        return varC978D6217C568332ACACC40C43306966_138633978;
-        // ---------- Original Method ----------
-        //return new StringBuffer().append(rSeqNumber).append(SP).append(
-                //cSeqNumber).append(SP).append(method).toString();
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.786 -0400", hash_original_method = "717B64217AB1BDBD09BA8111F0B019A1", hash_generated_method = "E64CE7E6CE63E4A9A828847DC19DA781")
-    public int getCSeqNumber() {
-        int varB14D0F2A81E62BA4D649F660B1FC34D4_2102879174 = ((int) cSeqNumber);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_571400049 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_571400049;
-        // ---------- Original Method ----------
-        //return (int) cSeqNumber;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.786 -0400", hash_original_method = "718B34DE34C00921F3D0FF08E153D08E", hash_generated_method = "C04FEB19137E8BC09D0FA3DF4B8709D9")
-    public long getCSeqNumberLong() {
-        long varE9A77CB6D532BAD6B3C1F9AFF8D3456A_897579296 = (cSeqNumber);
-                long var0F5264038205EDFB1AC05FBB0E8C5E94_157314372 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_157314372;
-        // ---------- Original Method ----------
-        //return cSeqNumber;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.787 -0400", hash_original_method = "691C5451C67574E660997BC2056A5F23", hash_generated_method = "C147B12A822F75C205654866579DC5B6")
-    public String getMethod() {
-String varB88046C53AB584448F89DD952FF416E1_1369126673 =         this.method;
-        varB88046C53AB584448F89DD952FF416E1_1369126673.addTaint(taint);
-        return varB88046C53AB584448F89DD952FF416E1_1369126673;
-        // ---------- Original Method ----------
-        //return this.method;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.787 -0400", hash_original_method = "F18C054E96BBFC72C2FB4D9E194B171A", hash_generated_method = "DB6B853AD5B7AFB213B615F614C5327F")
-    public int getRSeqNumber() {
-        int varFCAEE8E77F7DC510E4E9F77ADC66603E_256941202 = ((int) rSeqNumber);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_748134609 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_748134609;
-        // ---------- Original Method ----------
-        //return (int) rSeqNumber;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.787 -0400", hash_original_method = "C47555692F5984E7397D2D721232A447", hash_generated_method = "7F4E30DD7BEF01A19576F95BC45604C9")
-    public void setCSeqNumber(int cSeqNumber) throws InvalidArgumentException {
-        addTaint(cSeqNumber);
-        this.setCSequenceNumber(cSeqNumber);
-        // ---------- Original Method ----------
-        //this.setCSequenceNumber(cSeqNumber);
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.788 -0400", hash_original_method = "417A86B1B77116D6C3275A494BFCD4D5", hash_generated_method = "E85DCEE65E2288E3D9797383EC01CCC2")
-    public void setMethod(String method) throws ParseException {
-        this.method = method;
-        // ---------- Original Method ----------
-        //this.method = method;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.788 -0400", hash_original_method = "BF53D6931E1144BDB37994BD814B2F3D", hash_generated_method = "C9B955BA0AA140700FB6E009D043D7D2")
-    public long getCSequenceNumber() {
-        long varE516DBD268B2684D4A918F5F3E547EFB_429398775 = (this.cSeqNumber);
-                long var0F5264038205EDFB1AC05FBB0E8C5E94_610993258 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_610993258;
-        // ---------- Original Method ----------
-        //return this.cSeqNumber;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.788 -0400", hash_original_method = "5B686B97AD60967CB1F8F2531F7AE87D", hash_generated_method = "655B51FC2687B7736DEDE14A62B71D75")
-    public long getRSequenceNumber() {
-        long varA42CE60384320A53D767299FB99CE752_1232008826 = (this.rSeqNumber);
-                long var0F5264038205EDFB1AC05FBB0E8C5E94_1731090753 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_1731090753;
-        // ---------- Original Method ----------
-        //return this.rSeqNumber;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.789 -0400", hash_original_method = "61A1EA2F1C73324A7B71E464128A3BB2", hash_generated_method = "7B5F1610F13183FCA3C5FF1179EAB1A9")
-    public void setCSequenceNumber(long cSeqNumber) throws InvalidArgumentException {
-        if(cSeqNumber <= 0 || cSeqNumber > ((long) 1) << 32 - 1)        
-        {
-        InvalidArgumentException var0176257641E7B5982458D40099B78D3F_1350955079 = new InvalidArgumentException("Bad CSeq # " + cSeqNumber);
-        var0176257641E7B5982458D40099B78D3F_1350955079.addTaint(taint);
-        throw var0176257641E7B5982458D40099B78D3F_1350955079;
-        }
-        this.cSeqNumber = cSeqNumber;
-        // ---------- Original Method ----------
-        //if (cSeqNumber <= 0 || cSeqNumber > ((long) 1) << 32 - 1)
-            //throw new InvalidArgumentException("Bad CSeq # " + cSeqNumber);
-        //this.cSeqNumber = cSeqNumber;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.789 -0400", hash_original_method = "CBE5EB0602C16E16F46451A7279E3ED5", hash_generated_method = "888B4C5A623E4EBD3999ECF80436EF6E")
-    public void setRSeqNumber(int rSeqNumber) throws InvalidArgumentException {
-        addTaint(rSeqNumber);
-        this.setRSequenceNumber(rSeqNumber);
-        // ---------- Original Method ----------
-        //this.setRSequenceNumber(rSeqNumber);
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.789 -0400", hash_original_method = "31F5BB280EB4BE3CAFCEE8170222695A", hash_generated_method = "51609A0284747471FB680D8B4BF67C11")
-    public void setRSequenceNumber(long rSeqNumber) throws InvalidArgumentException {
-        if(rSeqNumber <= 0 || cSeqNumber > ((long) 1) << 32 - 1)        
-        {
-        InvalidArgumentException varFE1CF409D0ED647618C511042A9660CE_1711500663 = new InvalidArgumentException("Bad rSeq # " + rSeqNumber);
-        varFE1CF409D0ED647618C511042A9660CE_1711500663.addTaint(taint);
-        throw varFE1CF409D0ED647618C511042A9660CE_1711500663;
-        }
-        this.rSeqNumber = rSeqNumber;
-        // ---------- Original Method ----------
-        //if (rSeqNumber <= 0 || cSeqNumber > ((long) 1) << 32 - 1)
-            //throw new InvalidArgumentException("Bad rSeq # " + rSeqNumber);
-        //this.rSeqNumber = rSeqNumber;
-    }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.789 -0400", hash_original_field = "708D86A2FAF0568BD7A5DF39F0E29E9A", hash_generated_field = "7D32B1C47FED303719E2DC0EBD9FC96B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.219 -0500", hash_original_field = "21224DB2CEFA4FDB2588A5AB9FA52719", hash_generated_field = "7D32B1C47FED303719E2DC0EBD9FC96B")
 
     private static final long serialVersionUID = 743999286077404118L;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.220 -0500", hash_original_field = "8D723CA62ACF0900470804DB2E8B3A1B", hash_generated_field = "90A1DBDECBC94B16131E7EAFCA83250F")
+
+
+    protected long cSeqNumber;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.221 -0500", hash_original_field = "3501CEA861DDA8807A9A2CC4BD51D6A6", hash_generated_field = "0BFA342B8453938DE41E6CA4A7186CA9")
+
+
+    protected long rSeqNumber;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.222 -0500", hash_original_field = "842C170402669AC7A74293BBBFD3BC5D", hash_generated_field = "7A7B3881B98B4FAF9D2BB4D0900875E7")
+
+
+    protected String method;
+
+    /** Creates a new instance of RAck */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.223 -0500", hash_original_method = "7C5933C28B73D77B67311599A1BD6348", hash_generated_method = "CDB735DF58562B10FB6D23459A5ACA7C")
+    public RAck() {
+        super(NAME);
+    }
+
+    /**
+     * Encode the body of this header (the stuff that follows headerName). A.K.A
+     * headerValue.
+     *
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.224 -0500", hash_original_method = "31F6FBF38938A8E830748EA5A3D758B3", hash_generated_method = "54E3F8853B4F0637E7B3F1BC87878747")
+    protected String encodeBody() {
+        // Bug reported by Bruno Konik - was encoded in
+        // the wrong order.
+        return new StringBuffer().append(rSeqNumber).append(SP).append(
+                cSeqNumber).append(SP).append(method).toString();
+
+    }
+
+    /**
+     * Gets the CSeq sequence number of this RAckHeader.
+     *
+     * @deprecated
+     * @return the integer value of the cSeq number of the RAckHeader
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.225 -0500", hash_original_method = "717B64217AB1BDBD09BA8111F0B019A1", hash_generated_method = "CB776960DFF39BBEB9C58CD15DEDF34C")
+    public int getCSeqNumber() {
+        return (int) cSeqNumber;
+    }
+
+    /**
+     * Gets the CSeq sequence number of this RAckHeader.
+     *
+     * @return the integer value of the cSeq number of the RAckHeader
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.226 -0500", hash_original_method = "718B34DE34C00921F3D0FF08E153D08E", hash_generated_method = "913FDE8A56429D9E6964F9B28CE36D63")
+    public long getCSeqNumberLong() {
+        return cSeqNumber;
+    }
+
+    /**
+     * Gets the method of RAckHeader
+     *
+     * @return method of RAckHeader
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.227 -0500", hash_original_method = "691C5451C67574E660997BC2056A5F23", hash_generated_method = "7472B5026828D1D5EB47237766CBDA14")
+    public String getMethod() {
+        return this.method;
+    }
+
+    /**
+     * Gets the RSeq sequence number of this RAckHeader.
+     *
+     * @deprecated
+     * @return the integer value of the RSeq number of the RAckHeader
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.228 -0500", hash_original_method = "F18C054E96BBFC72C2FB4D9E194B171A", hash_generated_method = "39322FB794AAC42317FD41F3205BFECD")
+    public int getRSeqNumber() {
+        return (int) rSeqNumber;
+    }
+
+    /**
+     * @deprecated
+     * @see javax.sip.header.RAckHeader#setCSeqNumber(int)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.229 -0500", hash_original_method = "C47555692F5984E7397D2D721232A447", hash_generated_method = "27C70ABF257DD14AF80C3700BAD9D706")
+    public void setCSeqNumber(int cSeqNumber) throws InvalidArgumentException {
+        this.setCSequenceNumber(cSeqNumber);
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.231 -0500", hash_original_method = "417A86B1B77116D6C3275A494BFCD4D5", hash_generated_method = "E32A085D9A4E61586BE15FA8ED348AC2")
+    public void setMethod(String method) throws ParseException {
+        this.method = method;
+    }
+
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.232 -0500", hash_original_method = "BF53D6931E1144BDB37994BD814B2F3D", hash_generated_method = "937408AF82E736FDDC8219757C0C3EEE")
+    public long getCSequenceNumber() {
+        return this.cSeqNumber;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.233 -0500", hash_original_method = "5B686B97AD60967CB1F8F2531F7AE87D", hash_generated_method = "D3CB01A69CDF260BF92C8A70EC14267D")
+    public long getRSequenceNumber() {
+        return this.rSeqNumber;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.234 -0500", hash_original_method = "61A1EA2F1C73324A7B71E464128A3BB2", hash_generated_method = "3B11BB8868318D78DE35A8C099A48298")
+    public void setCSequenceNumber(long cSeqNumber)
+            throws InvalidArgumentException {
+        if (cSeqNumber <= 0 || cSeqNumber > ((long) 1) << 32 - 1)
+            throw new InvalidArgumentException("Bad CSeq # " + cSeqNumber);
+        this.cSeqNumber = cSeqNumber;
+
+    }
+
+    /**
+     *@deprecated
+     * @see javax.sip.header.RAckHeader#setRSeqNumber(int)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.236 -0500", hash_original_method = "CBE5EB0602C16E16F46451A7279E3ED5", hash_generated_method = "8154CF7C849DD1D5F768861BB73E3795")
+    public void setRSeqNumber(int rSeqNumber) throws InvalidArgumentException {
+        this.setRSequenceNumber(rSeqNumber);
+    }
+
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.237 -0500", hash_original_method = "31F5BB280EB4BE3CAFCEE8170222695A", hash_generated_method = "FB3601C864F6E96416230F46B1ADB83B")
+    public void setRSequenceNumber(long rSeqNumber)
+            throws InvalidArgumentException {
+        if (rSeqNumber <= 0 || cSeqNumber > ((long) 1) << 32 - 1)
+            throw new InvalidArgumentException("Bad rSeq # " + rSeqNumber);
+        this.rSeqNumber = rSeqNumber;
+    }
 }
 

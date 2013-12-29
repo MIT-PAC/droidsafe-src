@@ -1,6 +1,8 @@
 package android.animation;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
@@ -8,16 +10,118 @@ import droidsafe.annotations.*;
 
 
 public abstract class Keyframe implements Cloneable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.757 -0400", hash_original_field = "8F2259335A204727B633197C1255E450", hash_generated_field = "F9B3CD45EBBDFA29E8A724A34A590B87")
+
+    /**
+     * Constructs a Keyframe object with the given time and value. The time defines the
+     * time, as a proportion of an overall animation's duration, at which the value will hold true
+     * for the animation. The value for the animation between keyframes will be calculated as
+     * an interpolation between the values at those keyframes.
+     *
+     * @param fraction The time, expressed as a value between 0 and 1, representing the fraction
+     * of time elapsed of the overall animation duration.
+     * @param value The value that the object will animate to as the animation time approaches
+     * the time in this keyframe, and the the value animated from as the time passes the time in
+     * this keyframe.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:39.600 -0500", hash_original_method = "84D5DEA8FB185DFF017D7EA9B9159938", hash_generated_method = "D35378904CC6AD422C27A00EB6868E80")
+    public static Keyframe ofInt(float fraction, int value) {
+        return new IntKeyframe(fraction, value);
+    }
+
+    /**
+     * Constructs a Keyframe object with the given time. The value at this time will be derived
+     * from the target object when the animation first starts (note that this implies that keyframes
+     * with no initial value must be used as part of an {@link ObjectAnimator}).
+     * The time defines the
+     * time, as a proportion of an overall animation's duration, at which the value will hold true
+     * for the animation. The value for the animation between keyframes will be calculated as
+     * an interpolation between the values at those keyframes.
+     *
+     * @param fraction The time, expressed as a value between 0 and 1, representing the fraction
+     * of time elapsed of the overall animation duration.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:39.600 -0500", hash_original_method = "61707A62E34CB44E1A0B394219C39C2A", hash_generated_method = "8670BE3EA82AFC4547EACDD02556E194")
+    public static Keyframe ofInt(float fraction) {
+        return new IntKeyframe(fraction);
+    }
+
+    /**
+     * Constructs a Keyframe object with the given time and value. The time defines the
+     * time, as a proportion of an overall animation's duration, at which the value will hold true
+     * for the animation. The value for the animation between keyframes will be calculated as
+     * an interpolation between the values at those keyframes.
+     *
+     * @param fraction The time, expressed as a value between 0 and 1, representing the fraction
+     * of time elapsed of the overall animation duration.
+     * @param value The value that the object will animate to as the animation time approaches
+     * the time in this keyframe, and the the value animated from as the time passes the time in
+     * this keyframe.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:39.601 -0500", hash_original_method = "058E9168611C529131E49EDF0FE1203B", hash_generated_method = "2D587086D1376F3EC9B2D890E77FEE14")
+    public static Keyframe ofFloat(float fraction, float value) {
+        return new FloatKeyframe(fraction, value);
+    }
+
+    /**
+     * Constructs a Keyframe object with the given time. The value at this time will be derived
+     * from the target object when the animation first starts (note that this implies that keyframes
+     * with no initial value must be used as part of an {@link ObjectAnimator}).
+     * The time defines the
+     * time, as a proportion of an overall animation's duration, at which the value will hold true
+     * for the animation. The value for the animation between keyframes will be calculated as
+     * an interpolation between the values at those keyframes.
+     *
+     * @param fraction The time, expressed as a value between 0 and 1, representing the fraction
+     * of time elapsed of the overall animation duration.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:39.602 -0500", hash_original_method = "4433897A1157942B92CBF16B43C059FC", hash_generated_method = "6FAB493FD4694CDF44DF043BB338A4E9")
+    public static Keyframe ofFloat(float fraction) {
+        return new FloatKeyframe(fraction);
+    }
+
+    /**
+     * Constructs a Keyframe object with the given time and value. The time defines the
+     * time, as a proportion of an overall animation's duration, at which the value will hold true
+     * for the animation. The value for the animation between keyframes will be calculated as
+     * an interpolation between the values at those keyframes.
+     *
+     * @param fraction The time, expressed as a value between 0 and 1, representing the fraction
+     * of time elapsed of the overall animation duration.
+     * @param value The value that the object will animate to as the animation time approaches
+     * the time in this keyframe, and the the value animated from as the time passes the time in
+     * this keyframe.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:39.603 -0500", hash_original_method = "9D932806C99A7FAC12536ABC4A06EEEF", hash_generated_method = "A40BC04F07586763B95E87E319D81B3A")
+    public static Keyframe ofObject(float fraction, Object value) {
+        return new ObjectKeyframe(fraction, value);
+    }
+
+    /**
+     * Constructs a Keyframe object with the given time. The value at this time will be derived
+     * from the target object when the animation first starts (note that this implies that keyframes
+     * with no initial value must be used as part of an {@link ObjectAnimator}).
+     * The time defines the
+     * time, as a proportion of an overall animation's duration, at which the value will hold true
+     * for the animation. The value for the animation between keyframes will be calculated as
+     * an interpolation between the values at those keyframes.
+     *
+     * @param fraction The time, expressed as a value between 0 and 1, representing the fraction
+     * of time elapsed of the overall animation duration.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:39.604 -0500", hash_original_method = "2EA7149C937F77B1CA3FA652EAC27470", hash_generated_method = "CA4E4F7ECFD9EDB04F222584AEA4194E")
+    public static Keyframe ofObject(float fraction) {
+        return new ObjectKeyframe(fraction, null);
+    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:39.596 -0500", hash_original_field = "F9B3CD45EBBDFA29E8A724A34A590B87", hash_generated_field = "F9B3CD45EBBDFA29E8A724A34A590B87")
 
     float mFraction;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.758 -0400", hash_original_field = "98DE3BF49406C5ACB6938D9BD7C43E69", hash_generated_field = "28819529602B8605503B4054C761CC6C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:39.597 -0500", hash_original_field = "28819529602B8605503B4054C761CC6C", hash_generated_field = "28819529602B8605503B4054C761CC6C")
 
     Class mValueType;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.759 -0400", hash_original_field = "155E7AEE84F40EF345E533B402141672", hash_generated_field = "D386D0EA78AAE2D770304D273EDA0A38")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:39.598 -0500", hash_original_field = "B6D84463A85A6E2662575158FDB86460", hash_generated_field = "D386D0EA78AAE2D770304D273EDA0A38")
 
     private TimeInterpolator mInterpolator = null;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.759 -0400", hash_original_field = "9582B1A85C4A02CE687C1D3131009947", hash_generated_field = "9025E6183B41BD7E7E45DA7F2620D0DA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:39.599 -0500", hash_original_field = "9025E6183B41BD7E7E45DA7F2620D0DA", hash_generated_field = "9025E6183B41BD7E7E45DA7F2620D0DA")
 
     boolean mHasValue = false;
     
@@ -28,173 +132,125 @@ public abstract class Keyframe implements Cloneable {
         //Synthesized constructor
     }
 
-
-    @DSModeled(DSC.SAFE)
-    public static Keyframe ofInt(float fraction, int value) {
-        return new IntKeyframe(fraction, value);
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    public static Keyframe ofInt(float fraction) {
-        return new IntKeyframe(fraction);
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    public static Keyframe ofFloat(float fraction, float value) {
-        return new FloatKeyframe(fraction, value);
-    }
-
-    @DSModeled(DSC.SAFE)
-    public static Keyframe ofFloat(float fraction) {
-        return new FloatKeyframe(fraction);
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    public static Keyframe ofObject(float fraction, Object value) {
-        return new ObjectKeyframe(fraction, value);
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    public static Keyframe ofObject(float fraction) {
-        return new ObjectKeyframe(fraction, null);
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.768 -0400", hash_original_method = "6BBC2B3892833CAF7F05465AB80866BD", hash_generated_method = "DD197230C86C717856DE89B441168C89")
+    /**
+     * Indicates whether this keyframe has a valid value. This method is called internally when
+     * an {@link ObjectAnimator} first starts; keyframes without values are assigned values at
+     * that time by deriving the value for the property from the target object.
+     *
+     * @return boolean Whether this object has a value assigned.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:39.605 -0500", hash_original_method = "6BBC2B3892833CAF7F05465AB80866BD", hash_generated_method = "5D04B803BC66E9D8BE02824FFB2602E4")
     public boolean hasValue() {
-        boolean var976B418A652F6F5885E6187F73F4BE48_1825824534 = (mHasValue);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1482254446 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1482254446;
-        // ---------- Original Method ----------
-        //return mHasValue;
+        return mHasValue;
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Gets the value for this Keyframe.
+     *
+     * @return The value for this Keyframe.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:39.605 -0500", hash_original_method = "2BAF52093DF90C012CD98E75F6017DB6", hash_generated_method = "0BBDF3917B1F70E411088037046C99F8")
     public abstract Object getValue();
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Sets the value for this Keyframe.
+     *
+     * @param value value for this Keyframe.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:39.606 -0500", hash_original_method = "0331A921E67C9DBFCFD1B97103D5AA96", hash_generated_method = "FD3EE2B12CCD0465A5CF86CA5F089295")
     public abstract void setValue(Object value);
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.773 -0400", hash_original_method = "35C097CFF55F90D1886F0C54195244F1", hash_generated_method = "0F337A4D4AAA0B05799FC688749D67C0")
+    /**
+     * Gets the time for this keyframe, as a fraction of the overall animation duration.
+     *
+     * @return The time associated with this keyframe, as a fraction of the overall animation
+     * duration. This should be a value between 0 and 1.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:39.607 -0500", hash_original_method = "35C097CFF55F90D1886F0C54195244F1", hash_generated_method = "6C02CABAE06C246455B369035F54D142")
     public float getFraction() {
-        float var8F2259335A204727B633197C1255E450_664748949 = (mFraction);
-                float var546ADE640B6EDFBC8A086EF31347E768_1658140496 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_1658140496;
-        // ---------- Original Method ----------
-        //return mFraction;
+        return mFraction;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.775 -0400", hash_original_method = "D865B000D8DE764D2EF6EBC1ED2A153F", hash_generated_method = "B828439CB960C667E31928238589D41F")
+    /**
+     * Sets the time for this keyframe, as a fraction of the overall animation duration.
+     *
+     * @param fraction time associated with this keyframe, as a fraction of the overall animation
+     * duration. This should be a value between 0 and 1.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:39.608 -0500", hash_original_method = "D865B000D8DE764D2EF6EBC1ED2A153F", hash_generated_method = "D2006EDBA807B27186ED793BDB862B2F")
     public void setFraction(float fraction) {
         mFraction = fraction;
-        // ---------- Original Method ----------
-        //mFraction = fraction;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.778 -0400", hash_original_method = "69CBD09EBE4A4B5ECD6AD8540DB7CFD0", hash_generated_method = "10BBD34F1247283D26FBC76AEB037D59")
+    /**
+     * Gets the optional interpolator for this Keyframe. A value of <code>null</code> indicates
+     * that there is no interpolation, which is the same as linear interpolation.
+     *
+     * @return The optional interpolator for this Keyframe.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:39.608 -0500", hash_original_method = "69CBD09EBE4A4B5ECD6AD8540DB7CFD0", hash_generated_method = "3B07035547B797301E020DE6A117B867")
     public TimeInterpolator getInterpolator() {
-TimeInterpolator var9FA301F6AF154FEBBB2C7439D021F894_1889241193 =         mInterpolator;
-        var9FA301F6AF154FEBBB2C7439D021F894_1889241193.addTaint(taint);
-        return var9FA301F6AF154FEBBB2C7439D021F894_1889241193;
-        // ---------- Original Method ----------
-        //return mInterpolator;
+        return mInterpolator;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.781 -0400", hash_original_method = "DFEEC0662B39CED0069D1B2AE05648AB", hash_generated_method = "47F1226E1202976956E07A77F6CEA7FC")
+    /**
+     * Sets the optional interpolator for this Keyframe. A value of <code>null</code> indicates
+     * that there is no interpolation, which is the same as linear interpolation.
+     *
+     * @return The optional interpolator for this Keyframe.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:39.609 -0500", hash_original_method = "DFEEC0662B39CED0069D1B2AE05648AB", hash_generated_method = "426C84FD7C8731373CAE4B41C945E81D")
     public void setInterpolator(TimeInterpolator interpolator) {
         mInterpolator = interpolator;
-        // ---------- Original Method ----------
-        //mInterpolator = interpolator;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.782 -0400", hash_original_method = "464D9B25E7EBB7EEA5039E323C745893", hash_generated_method = "863DFE864FAF977123E6726ABC869FA8")
+    /**
+     * Gets the type of keyframe. This information is used by ValueAnimator to determine the type of
+     * {@link TypeEvaluator} to use when calculating values between keyframes. The type is based
+     * on the type of Keyframe created.
+     *
+     * @return The type of the value stored in the Keyframe.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:39.610 -0500", hash_original_method = "464D9B25E7EBB7EEA5039E323C745893", hash_generated_method = "373EA3C72E808356806B34A002DB0968")
     public Class getType() {
-Class varEB4C76CBDB3A6E5E3E03E299B7E6BC66_724169297 =         mValueType;
-        varEB4C76CBDB3A6E5E3E03E299B7E6BC66_724169297.addTaint(taint);
-        return varEB4C76CBDB3A6E5E3E03E299B7E6BC66_724169297;
-        // ---------- Original Method ----------
-        //return mValueType;
+        return mValueType;
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:39.611 -0500", hash_original_method = "195CDEEBE964F431C4EC3BA6D3E40199", hash_generated_method = "2E6D16650854665C10782A699DC48FF5")
     @Override
 public abstract Keyframe clone();
 
     
     static class ObjectKeyframe extends Keyframe {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.784 -0400", hash_original_field = "CBAFE11E7BAE23358D70D54D132C3064", hash_generated_field = "10C88B3F201F56410DE7B0BF9A3CF880")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:39.612 -0500", hash_original_field = "10C88B3F201F56410DE7B0BF9A3CF880", hash_generated_field = "10C88B3F201F56410DE7B0BF9A3CF880")
 
         Object mValue;
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.789 -0400", hash_original_method = "203797AF2B16BA31CF618ABFC3881151", hash_generated_method = "EF6D837C95C2537A7E649A182C3D153B")
-          ObjectKeyframe(float fraction, Object value) {
-            addTaint(fraction);
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:39.613 -0500", hash_original_method = "203797AF2B16BA31CF618ABFC3881151", hash_generated_method = "203797AF2B16BA31CF618ABFC3881151")
+        ObjectKeyframe(float fraction, Object value) {
             mFraction = fraction;
             mValue = value;
             mHasValue = (value != null);
             mValueType = mHasValue ? value.getClass() : Object.class;
-            // ---------- Original Method ----------
-            //mFraction = fraction;
-            //mValue = value;
-            //mHasValue = (value != null);
-            //mValueType = mHasValue ? value.getClass() : Object.class;
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.791 -0400", hash_original_method = "8110BFED38B99D4A69F8125D4CA46C20", hash_generated_method = "3FA6F20CBEB2706CDA02FA9A554CDC4C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:39.614 -0500", hash_original_method = "8110BFED38B99D4A69F8125D4CA46C20", hash_generated_method = "53C1D4B1B03560E5A7007A4513F340A4")
         public Object getValue() {
-Object varD1FEA3F5EE4618A9C3646312F018E4AC_935454600 =             mValue;
-            varD1FEA3F5EE4618A9C3646312F018E4AC_935454600.addTaint(taint);
-            return varD1FEA3F5EE4618A9C3646312F018E4AC_935454600;
-            // ---------- Original Method ----------
-            //return mValue;
+            return mValue;
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.794 -0400", hash_original_method = "A57ED313A37784FB1DA17FC9F39344A7", hash_generated_method = "BCD44A16AB81E639720244E80BED9701")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:39.614 -0500", hash_original_method = "A57ED313A37784FB1DA17FC9F39344A7", hash_generated_method = "4804638E8130EAA067BB5C83062DE91A")
         public void setValue(Object value) {
             mValue = value;
             mHasValue = (value != null);
-            // ---------- Original Method ----------
-            //mValue = value;
-            //mHasValue = (value != null);
         }
 
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.796 -0400", hash_original_method = "D24C77D2B6663612F515281C3853AB21", hash_generated_method = "E1F1B556F25E6B045FB8EBA03855F804")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:39.615 -0500", hash_original_method = "D24C77D2B6663612F515281C3853AB21", hash_generated_method = "CA5A13BF158BB63C489C8D1F8BC75A27")
         @Override
-        public ObjectKeyframe clone() {
+public ObjectKeyframe clone() {
             ObjectKeyframe kfClone = new ObjectKeyframe(getFraction(), mValue);
             kfClone.setInterpolator(getInterpolator());
-ObjectKeyframe varA9EDFBA5634D9136F6D4A7121F574350_47187565 =             kfClone;
-            varA9EDFBA5634D9136F6D4A7121F574350_47187565.addTaint(taint);
-            return varA9EDFBA5634D9136F6D4A7121F574350_47187565;
-            // ---------- Original Method ----------
-            //ObjectKeyframe kfClone = new ObjectKeyframe(getFraction(), mValue);
-            //kfClone.setInterpolator(getInterpolator());
-            //return kfClone;
+            return kfClone;
         }
 
         
@@ -203,89 +259,48 @@ ObjectKeyframe varA9EDFBA5634D9136F6D4A7121F574350_47187565 =             kfClon
 
     
     static class IntKeyframe extends Keyframe {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.799 -0400", hash_original_field = "CBAFE11E7BAE23358D70D54D132C3064", hash_generated_field = "177FAFFA7A38FCF6D55DEE4AFF0E6CEC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:39.617 -0500", hash_original_field = "177FAFFA7A38FCF6D55DEE4AFF0E6CEC", hash_generated_field = "177FAFFA7A38FCF6D55DEE4AFF0E6CEC")
 
         int mValue;
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.806 -0400", hash_original_method = "EEAB8C81F88FA2F655356211D4887153", hash_generated_method = "FAC6295CEF7D71B247A193CEC6A7ED67")
-    @DSModeled(DSC.SAFE)
-          IntKeyframe(float fraction, int value) {
-            addTaint(fraction);
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:39.617 -0500", hash_original_method = "EEAB8C81F88FA2F655356211D4887153", hash_generated_method = "EEAB8C81F88FA2F655356211D4887153")
+        IntKeyframe(float fraction, int value) {
             mFraction = fraction;
             mValue = value;
             mValueType = int.class;
             mHasValue = true;
-            // ---------- Original Method ----------
-            //mFraction = fraction;
-            //mValue = value;
-            //mValueType = int.class;
-            //mHasValue = true;
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.812 -0400", hash_original_method = "361D7315F9884E2CC45B77F9DFFA5D0B", hash_generated_method = "3C19D511DDD09AC510004D7A49BDDD9D")
-    @DSModeled(DSC.SAFE)
-          IntKeyframe(float fraction) {
-            addTaint(fraction);
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:39.618 -0500", hash_original_method = "361D7315F9884E2CC45B77F9DFFA5D0B", hash_generated_method = "361D7315F9884E2CC45B77F9DFFA5D0B")
+        IntKeyframe(float fraction) {
             mFraction = fraction;
             mValueType = int.class;
-            // ---------- Original Method ----------
-            //mFraction = fraction;
-            //mValueType = int.class;
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.824 -0400", hash_original_method = "7D27B9B7622273E5F87FD5AC6ACFC5AE", hash_generated_method = "31B46FDEDE3A48FE8FB14A47EBB365F9")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:39.619 -0500", hash_original_method = "7D27B9B7622273E5F87FD5AC6ACFC5AE", hash_generated_method = "F99D4F40655E264044BA01C8E4BDD2A0")
         public int getIntValue() {
-            int varCBAFE11E7BAE23358D70D54D132C3064_1174715168 = (mValue);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1740741621 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1740741621;
-            // ---------- Original Method ----------
-            //return mValue;
+            return mValue;
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.827 -0400", hash_original_method = "8110BFED38B99D4A69F8125D4CA46C20", hash_generated_method = "B6EBD9F709D822E62AB24EBAF7D1220E")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:39.620 -0500", hash_original_method = "8110BFED38B99D4A69F8125D4CA46C20", hash_generated_method = "53C1D4B1B03560E5A7007A4513F340A4")
         public Object getValue() {
-Object varD1FEA3F5EE4618A9C3646312F018E4AC_83057489 =             mValue;
-            varD1FEA3F5EE4618A9C3646312F018E4AC_83057489.addTaint(taint);
-            return varD1FEA3F5EE4618A9C3646312F018E4AC_83057489;
-            // ---------- Original Method ----------
-            //return mValue;
+            return mValue;
         }
 
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.830 -0400", hash_original_method = "C5497A399E3F74A58085B920F39E31DE", hash_generated_method = "CE7D06261F31E5BAE4199A125B4DD615")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:39.621 -0500", hash_original_method = "C5497A399E3F74A58085B920F39E31DE", hash_generated_method = "7D6918691B5CEA30D90D66FE632B55E6")
         public void setValue(Object value) {
-            if(value != null && value.getClass() == Integer.class)            
-            {
+            if (value != null && value.getClass() == Integer.class) {
                 mValue = ((Integer)value).intValue();
                 mHasValue = true;
-            } //End block
-            // ---------- Original Method ----------
-            //if (value != null && value.getClass() == Integer.class) {
-                //mValue = ((Integer)value).intValue();
-                //mHasValue = true;
-            //}
+            }
         }
 
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.833 -0400", hash_original_method = "25DF873BDC1EC275AA64D474732FCE13", hash_generated_method = "C3B806D14CF38FD8EEB900BB1C2D17A6")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:39.622 -0500", hash_original_method = "25DF873BDC1EC275AA64D474732FCE13", hash_generated_method = "A703EFF1C1B6D7F9BFB3B4DE8884D8E5")
         @Override
-        public IntKeyframe clone() {
+public IntKeyframe clone() {
             IntKeyframe kfClone = new IntKeyframe(getFraction(), mValue);
             kfClone.setInterpolator(getInterpolator());
-IntKeyframe varA9EDFBA5634D9136F6D4A7121F574350_1942622977 =             kfClone;
-            varA9EDFBA5634D9136F6D4A7121F574350_1942622977.addTaint(taint);
-            return varA9EDFBA5634D9136F6D4A7121F574350_1942622977;
-            // ---------- Original Method ----------
-            //IntKeyframe kfClone = new IntKeyframe(getFraction(), mValue);
-            //kfClone.setInterpolator(getInterpolator());
-            //return kfClone;
+            return kfClone;
         }
 
         
@@ -294,89 +309,48 @@ IntKeyframe varA9EDFBA5634D9136F6D4A7121F574350_1942622977 =             kfClone
 
     
     static class FloatKeyframe extends Keyframe {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.835 -0400", hash_original_field = "CBAFE11E7BAE23358D70D54D132C3064", hash_generated_field = "61B2557CF01F8FBFCA3655F32AFF6E67")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:39.630 -0500", hash_original_field = "61B2557CF01F8FBFCA3655F32AFF6E67", hash_generated_field = "61B2557CF01F8FBFCA3655F32AFF6E67")
 
         float mValue;
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.837 -0400", hash_original_method = "12EFD0F6FC013537F5F7DD4B7E13C7C3", hash_generated_method = "608D5AC62F83C0500F69F52B00DCF78F")
-    @DSModeled(DSC.SAFE)
-          FloatKeyframe(float fraction, float value) {
-            addTaint(fraction);
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:39.631 -0500", hash_original_method = "12EFD0F6FC013537F5F7DD4B7E13C7C3", hash_generated_method = "12EFD0F6FC013537F5F7DD4B7E13C7C3")
+        FloatKeyframe(float fraction, float value) {
             mFraction = fraction;
             mValue = value;
             mValueType = float.class;
             mHasValue = true;
-            // ---------- Original Method ----------
-            //mFraction = fraction;
-            //mValue = value;
-            //mValueType = float.class;
-            //mHasValue = true;
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.839 -0400", hash_original_method = "68E29C538F7AE79A8714A7F41CC12063", hash_generated_method = "F6B9DF35CC5E88889F76E0E2AD32E921")
-    @DSModeled(DSC.SAFE)
-          FloatKeyframe(float fraction) {
-            addTaint(fraction);
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:39.632 -0500", hash_original_method = "68E29C538F7AE79A8714A7F41CC12063", hash_generated_method = "68E29C538F7AE79A8714A7F41CC12063")
+        FloatKeyframe(float fraction) {
             mFraction = fraction;
             mValueType = float.class;
-            // ---------- Original Method ----------
-            //mFraction = fraction;
-            //mValueType = float.class;
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.841 -0400", hash_original_method = "4878123D1CBF5008E7E0955AB5FB61F2", hash_generated_method = "37104690B957624C2494E6C2AB39752C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:39.633 -0500", hash_original_method = "4878123D1CBF5008E7E0955AB5FB61F2", hash_generated_method = "4BFAE8FB3F325F4DCE35DCA9CEF1E776")
         public float getFloatValue() {
-            float varCBAFE11E7BAE23358D70D54D132C3064_1846915941 = (mValue);
-                        float var546ADE640B6EDFBC8A086EF31347E768_303503451 = getTaintFloat();
-            return var546ADE640B6EDFBC8A086EF31347E768_303503451;
-            // ---------- Original Method ----------
-            //return mValue;
+            return mValue;
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.844 -0400", hash_original_method = "8110BFED38B99D4A69F8125D4CA46C20", hash_generated_method = "88AE94A027B15A207393411E64D9A565")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:39.634 -0500", hash_original_method = "8110BFED38B99D4A69F8125D4CA46C20", hash_generated_method = "53C1D4B1B03560E5A7007A4513F340A4")
         public Object getValue() {
-Object varD1FEA3F5EE4618A9C3646312F018E4AC_213966022 =             mValue;
-            varD1FEA3F5EE4618A9C3646312F018E4AC_213966022.addTaint(taint);
-            return varD1FEA3F5EE4618A9C3646312F018E4AC_213966022;
-            // ---------- Original Method ----------
-            //return mValue;
+            return mValue;
         }
 
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.847 -0400", hash_original_method = "7C5BB3EB4CAFBCF934453BA7EC3D20EB", hash_generated_method = "2A46FFBA3E0452D20D17B75256AAFD5A")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:39.635 -0500", hash_original_method = "7C5BB3EB4CAFBCF934453BA7EC3D20EB", hash_generated_method = "CC841C193FE3627422758784B6643796")
         public void setValue(Object value) {
-            if(value != null && value.getClass() == Float.class)            
-            {
+            if (value != null && value.getClass() == Float.class) {
                 mValue = ((Float)value).floatValue();
                 mHasValue = true;
-            } //End block
-            // ---------- Original Method ----------
-            //if (value != null && value.getClass() == Float.class) {
-                //mValue = ((Float)value).floatValue();
-                //mHasValue = true;
-            //}
+            }
         }
 
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.852 -0400", hash_original_method = "5FDA2B31FC1B703F745BE5BB0395A79D", hash_generated_method = "A1F4B9A06BB68C8A9262A839678EF0C1")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:39.636 -0500", hash_original_method = "5FDA2B31FC1B703F745BE5BB0395A79D", hash_generated_method = "0027F4FD0C2ACEC3A7A2EE154479D45F")
         @Override
-        public FloatKeyframe clone() {
+public FloatKeyframe clone() {
             FloatKeyframe kfClone = new FloatKeyframe(getFraction(), mValue);
             kfClone.setInterpolator(getInterpolator());
-FloatKeyframe varA9EDFBA5634D9136F6D4A7121F574350_1851767575 =             kfClone;
-            varA9EDFBA5634D9136F6D4A7121F574350_1851767575.addTaint(taint);
-            return varA9EDFBA5634D9136F6D4A7121F574350_1851767575;
-            // ---------- Original Method ----------
-            //FloatKeyframe kfClone = new FloatKeyframe(getFraction(), mValue);
-            //kfClone.setInterpolator(getInterpolator());
-            //return kfClone;
+            return kfClone;
         }
 
         

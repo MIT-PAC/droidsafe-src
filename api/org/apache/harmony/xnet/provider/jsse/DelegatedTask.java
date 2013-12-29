@@ -1,51 +1,37 @@
 package org.apache.harmony.xnet.provider.jsse;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
 
 public class DelegatedTask implements Runnable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.439 -0400", hash_original_field = "06E10442A1A36DF6850A26E24CCFCDA0", hash_generated_field = "1E40A8F04D6C87AD06430CB770B50920")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:12.920 -0500", hash_original_field = "2FAEBA4E6DD79DB48FD81B0F04E000FA", hash_generated_field = "1E40A8F04D6C87AD06430CB770B50920")
 
-    private HandshakeProtocol handshaker;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.439 -0400", hash_original_field = "418C5509E2171D55B0AEE5C2EA4442B5", hash_generated_field = "95D8B8F79B2D276990C93DE7E8E59CF0")
 
-    private Runnable action;
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.440 -0400", hash_original_method = "E66EF7E710B4ECD724343E3A45657AE3", hash_generated_method = "C6ABFC00EC20811487B396BC56BE59FB")
-    public  DelegatedTask(Runnable action, HandshakeProtocol handshaker) {
+    private  HandshakeProtocol handshaker;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:12.920 -0500", hash_original_field = "6E604B84976ABCF0C30A63D2F996D309", hash_generated_field = "95D8B8F79B2D276990C93DE7E8E59CF0")
+
+    private  Runnable action;
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:12.921 -0500", hash_original_method = "E66EF7E710B4ECD724343E3A45657AE3", hash_generated_method = "DAD7BC05C721AF9B9941C1CD1ED4078B")
+    public DelegatedTask(Runnable action, HandshakeProtocol handshaker) {
         this.action = action;
         this.handshaker = handshaker;
-        // ---------- Original Method ----------
-        //this.action = action;
-        //this.handshaker = handshaker;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.440 -0400", hash_original_method = "BC92620C95DC261FCD2ED821B8965098", hash_generated_method = "AD56B8ACB7D488EFD6FCC505AFCBECDD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:12.922 -0500", hash_original_method = "BC92620C95DC261FCD2ED821B8965098", hash_generated_method = "DDB79F5778145D07CB17CA4544EE8544")
     public void run() {
-        synchronized
-(handshaker)        {
-            try 
-            {
+        synchronized (handshaker) {
+            try {
                 action.run();
-            } //End block
-            catch (RuntimeException e)
-            {
+            } catch (RuntimeException e) {
+                // pass exception to HandshakeProtocol
                 handshaker.delegatedTaskErr = e;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (handshaker) {
-            //try {
-                //action.run();
-            //} catch (RuntimeException e) {
-                //handshaker.delegatedTaskErr = e;
-            //}
-        //}
+            }
+        }
     }
 
     

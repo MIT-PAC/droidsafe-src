@@ -1,6 +1,8 @@
 package gov.nist.javax.sip.header;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import gov.nist.javax.sip.header.ims.WWWAuthenticateHeaderIms;
 
@@ -13,36 +15,38 @@ import javax.sip.header.WWWAuthenticateHeader;
 
 
 public class WWWAuthenticate extends AuthenticationHeader implements WWWAuthenticateHeader, WWWAuthenticateHeaderIms {
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.740 -0400", hash_original_method = "C9FB367FC796E0822ABA8EEBFAE5F2CF", hash_generated_method = "D5FB95D4E398FA874E7C2C8799EFCDB6")
-    public  WWWAuthenticate() {
-        super(NAME);
-        // ---------- Original Method ----------
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.741 -0400", hash_original_method = "415F36F94D5D5AF0B0B417563353646C", hash_generated_method = "D7A21B7A7B4C8CF8289281BB00192979")
-    public URI getURI() {
-URI var540C13E9E156B687226421B24F2DF178_2130335811 =         null;
-        var540C13E9E156B687226421B24F2DF178_2130335811.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_2130335811;
-        // ---------- Original Method ----------
-        //return null;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.741 -0400", hash_original_method = "4B2EBAFE6DAB8E15456CC1135D4262EB", hash_generated_method = "EFB37CFD85A05AB0A4932DBCB802E4F4")
-    public void setURI(URI uri) {
-        addTaint(uri.getTaint());
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.741 -0400", hash_original_field = "9144D43B36A4813BC6116E6DA4A3CB4A", hash_generated_field = "DB4C47D141CA98A5189ECDA08C3E0BC7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:56.851 -0500", hash_original_field = "6F5A2526EE94A9827536BD8029A62CE8", hash_generated_field = "DB4C47D141CA98A5189ECDA08C3E0BC7")
 
     private static final long serialVersionUID = 115378648697363486L;
+
+    /**
+     * Default Constructor.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:56.852 -0500", hash_original_method = "C9FB367FC796E0822ABA8EEBFAE5F2CF", hash_generated_method = "057E821B1D76403A27A40A2FEAB47EEB")
+    public WWWAuthenticate() {
+        super(NAME);
+    }
+
+    /* (non-Javadoc)
+     * @see gov.nist.javax.sip.header.AuthenticationHeader#getURI()
+     *
+     * @since 1.2 this method is deprecated, uri is not a valid paramter for this header
+     * Fail silently for backwards compatibility
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:56.853 -0500", hash_original_method = "415F36F94D5D5AF0B0B417563353646C", hash_generated_method = "9CD9E8CBB3E8DE9C3106F82ACE4168F0")
+    public URI getURI() {
+        return null;
+    }
+
+    /* (non-Javadoc)
+     * @see gov.nist.javax.sip.header.AuthenticationHeader#setURI(javax.sip.address.URI)
+     *
+     * @since 1.2 this method is deprecated, uri is not a valid paramter for this header
+     * Fail silently for backwards compatibility
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:56.854 -0500", hash_original_method = "4B2EBAFE6DAB8E15456CC1135D4262EB", hash_generated_method = "A689FA9B74FE57B530103C2D77990F19")
+    public void setURI(URI uri) {
+        // empty, fail silently
+    }
 }
 

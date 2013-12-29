@@ -1,6 +1,8 @@
 package android.text.method;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.text.InputType;
 
@@ -9,6 +11,25 @@ import android.text.InputType;
 
 
 public class DateTimeKeyListener extends NumberKeyListener {
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.482 -0500", hash_original_method = "274B4DE16BC594B6FC9A8F011B07B7B9", hash_generated_method = "EB46540C8FA44FCAF90CACA2D50FEE90")
+    public static DateTimeKeyListener getInstance() {
+        if (sInstance != null)
+            return sInstance;
+
+        sInstance = new DateTimeKeyListener();
+        return sInstance;
+    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.483 -0500", hash_original_field = "AEE06D5C4B0CBCE22E86B827DE14AF21", hash_generated_field = "CC28C7351EEFBCCFD2A5481C9E11D592")
+
+    public static final char[] CHARACTERS = new char[] {
+            '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'm',
+            'p', ':', '/', '-', ' '
+        };
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.483 -0500", hash_original_field = "0EDF1E1565F5BEBAA68AD63ED254B7CF", hash_generated_field = "A08939C26C7FAC41D21C88327D28A913")
+
+
+    private static DateTimeKeyListener sInstance;
     
     @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.188 -0400", hash_original_method = "A2664B73E6BC35FEDCFE12F8374A7DD3", hash_generated_method = "A2664B73E6BC35FEDCFE12F8374A7DD3")
@@ -16,50 +37,17 @@ public class DateTimeKeyListener extends NumberKeyListener {
     {
         //Synthesized constructor
     }
-
-
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.188 -0400", hash_original_method = "25727FE9AFE9AFBCFB0652DF45BFCF89", hash_generated_method = "B1164289316386EB8C7BCC6D5093A946")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.480 -0500", hash_original_method = "25727FE9AFE9AFBCFB0652DF45BFCF89", hash_generated_method = "0C9757E64671FB1F5E78A0BC602D4F57")
     public int getInputType() {
-        int varA329F8A6663354FA4ADE4A33C0BDC051_1334000847 = (InputType.TYPE_CLASS_DATETIME
-                | InputType.TYPE_DATETIME_VARIATION_NORMAL);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1930027830 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1930027830;
-        // ---------- Original Method ----------
-        //return InputType.TYPE_CLASS_DATETIME
-                //| InputType.TYPE_DATETIME_VARIATION_NORMAL;
+        return InputType.TYPE_CLASS_DATETIME
+                | InputType.TYPE_DATETIME_VARIATION_NORMAL;
     }
-
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.189 -0400", hash_original_method = "EEC77EA89700D9A449D9FC8461D61396", hash_generated_method = "DC2855547957DD9E0D8229F664A50520")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.481 -0500", hash_original_method = "EEC77EA89700D9A449D9FC8461D61396", hash_generated_method = "C8829E311180669DC917FA428AC766DB")
     @Override
-    protected char[] getAcceptedChars() {
-        char[] varDC0FB426D37848B5E7EB694843212E7A_233159960 = (CHARACTERS);
-                char[] var50607924ABD4C17119BAF3A1CE41C0EC_543024551 = {getTaintChar()};
-        return var50607924ABD4C17119BAF3A1CE41C0EC_543024551;
-        // ---------- Original Method ----------
-        //return CHARACTERS;
+protected char[] getAcceptedChars()
+    {
+        return CHARACTERS;
     }
-
-    
-    @DSModeled(DSC.SAFE)
-    public static DateTimeKeyListener getInstance() {
-        if (sInstance != null)
-            return sInstance;
-        sInstance = new DateTimeKeyListener();
-        return sInstance;
-    }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.189 -0400", hash_original_field = "0CDC8D5B282A7B731F0F316B9C3CD5D4", hash_generated_field = "CC28C7351EEFBCCFD2A5481C9E11D592")
-
-    public static final char[] CHARACTERS = new char[] {
-            '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'm',
-            'p', ':', '/', '-', ' '
-        };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.190 -0400", hash_original_field = "06E23A628CBDEAB09E91C69789BB1974", hash_generated_field = "A08939C26C7FAC41D21C88327D28A913")
-
-    private static DateTimeKeyListener sInstance;
 }
 

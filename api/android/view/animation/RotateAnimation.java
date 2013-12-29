@@ -1,6 +1,8 @@
 package android.view.animation;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -8,161 +10,162 @@ import android.util.AttributeSet;
 
 
 public class RotateAnimation extends Animation {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.067 -0400", hash_original_field = "A15722F5083687A94AEBECFD3C44711E", hash_generated_field = "F09C4FDC9F6C8A1D9CB749F5F6E5EB01")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.258 -0500", hash_original_field = "179D120EA21717CC6A9EB6675A09E18B", hash_generated_field = "F09C4FDC9F6C8A1D9CB749F5F6E5EB01")
 
     private float mFromDegrees;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.067 -0400", hash_original_field = "F12DDB33947BE4AD8AACC9EB5D42D418", hash_generated_field = "A38FA34A09FF84CE5329199DB304846C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.259 -0500", hash_original_field = "D04BBDA5B46FF274C82326C147187C72", hash_generated_field = "A38FA34A09FF84CE5329199DB304846C")
 
     private float mToDegrees;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.067 -0400", hash_original_field = "4B9436C45F4B7D7C4C9D04B918C8A0DD", hash_generated_field = "EC74AC06B5691B47A1AD5BBF6B15ECE3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.260 -0500", hash_original_field = "35319F0004C491BB80D5F1742219F20C", hash_generated_field = "EC74AC06B5691B47A1AD5BBF6B15ECE3")
+
 
     private int mPivotXType = ABSOLUTE;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.067 -0400", hash_original_field = "3F1C9FB4BA67D4E05339F28A943BFC6E", hash_generated_field = "C9A99ED0A354C0C74E5E29006BD9ED31")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.260 -0500", hash_original_field = "15AA19B564953B2E92DF57FC0E988FB4", hash_generated_field = "C9A99ED0A354C0C74E5E29006BD9ED31")
 
     private int mPivotYType = ABSOLUTE;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.067 -0400", hash_original_field = "8D8BFEB1DA7B8A0B2979A96EE34F4D2C", hash_generated_field = "AF755B8408C979E36D20FBC0A81E876D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.261 -0500", hash_original_field = "DAF37BA52463794A2FC8056AA3E095AA", hash_generated_field = "AF755B8408C979E36D20FBC0A81E876D")
 
     private float mPivotXValue = 0.0f;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.067 -0400", hash_original_field = "A1F855333DF1E4EF5B69460F3BFFF0D1", hash_generated_field = "E9B533B02C8C2E2321EBFE6D7C3F6C50")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.262 -0500", hash_original_field = "53742362BBA0945C7FD67A0E0C9C324E", hash_generated_field = "E9B533B02C8C2E2321EBFE6D7C3F6C50")
 
     private float mPivotYValue = 0.0f;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.067 -0400", hash_original_field = "D66A9F2EFD98D68E75A6EA9E5E5D83DE", hash_generated_field = "D5598B4EF8A215EC3A51B2F400B272F3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.263 -0500", hash_original_field = "5936761CCB9106C6D82A6436A57EC343", hash_generated_field = "D5598B4EF8A215EC3A51B2F400B272F3")
+
 
     private float mPivotX;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.067 -0400", hash_original_field = "0AD24014D3E582A643E83C27A45B1B51", hash_generated_field = "0971400EDE5A41D2136C532E521A2E57")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.264 -0500", hash_original_field = "6CE864DEEFD86BFE91AA6D818A7F55C0", hash_generated_field = "0971400EDE5A41D2136C532E521A2E57")
 
     private float mPivotY;
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.069 -0400", hash_original_method = "B7950BF16E5DA5C93A26B94851E70CDD", hash_generated_method = "6710F3E1A38977FDA17C23E2AC15D2DC")
-    public  RotateAnimation(Context context, AttributeSet attrs) {
+
+    /**
+     * Constructor used when a RotateAnimation is loaded from a resource.
+     * 
+     * @param context Application context to use
+     * @param attrs Attribute set from which to read values
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.265 -0500", hash_original_method = "B7950BF16E5DA5C93A26B94851E70CDD", hash_generated_method = "52EEDE385CFC08A689EFB3013B63E7DC")
+    public RotateAnimation(Context context, AttributeSet attrs) {
         super(context, attrs);
-        addTaint(attrs.getTaint());
-        addTaint(context.getTaint());
+
         TypedArray a = context.obtainStyledAttributes(attrs,
                 com.android.internal.R.styleable.RotateAnimation);
+
         mFromDegrees = a.getFloat(
                 com.android.internal.R.styleable.RotateAnimation_fromDegrees, 0.0f);
         mToDegrees = a.getFloat(com.android.internal.R.styleable.RotateAnimation_toDegrees, 0.0f);
+
         Description d = Description.parseValue(a.peekValue(
             com.android.internal.R.styleable.RotateAnimation_pivotX));
         mPivotXType = d.type;
         mPivotXValue = d.value;
+
         d = Description.parseValue(a.peekValue(
             com.android.internal.R.styleable.RotateAnimation_pivotY));
         mPivotYType = d.type;
         mPivotYValue = d.value;
+
         a.recycle();
-        // ---------- Original Method ----------
-        //TypedArray a = context.obtainStyledAttributes(attrs,
-                //com.android.internal.R.styleable.RotateAnimation);
-        //mFromDegrees = a.getFloat(
-                //com.android.internal.R.styleable.RotateAnimation_fromDegrees, 0.0f);
-        //mToDegrees = a.getFloat(com.android.internal.R.styleable.RotateAnimation_toDegrees, 0.0f);
-        //Description d = Description.parseValue(a.peekValue(
-            //com.android.internal.R.styleable.RotateAnimation_pivotX));
-        //mPivotXType = d.type;
-        //mPivotXValue = d.value;
-        //d = Description.parseValue(a.peekValue(
-            //com.android.internal.R.styleable.RotateAnimation_pivotY));
-        //mPivotYType = d.type;
-        //mPivotYValue = d.value;
-        //a.recycle();
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.070 -0400", hash_original_method = "F93E828358C80C590EEB448A5EA60EF3", hash_generated_method = "C676D9303416F964F963833EFA0F7DEE")
-    public  RotateAnimation(float fromDegrees, float toDegrees) {
+    /**
+     * Constructor to use when building a RotateAnimation from code.
+     * Default pivotX/pivotY point is (0,0).
+     * 
+     * @param fromDegrees Rotation offset to apply at the start of the
+     *        animation.
+     * 
+     * @param toDegrees Rotation offset to apply at the end of the animation.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.266 -0500", hash_original_method = "F93E828358C80C590EEB448A5EA60EF3", hash_generated_method = "0AE8262F364252F9E65D18B2EE829D77")
+    public RotateAnimation(float fromDegrees, float toDegrees) {
         mFromDegrees = fromDegrees;
         mToDegrees = toDegrees;
         mPivotX = 0.0f;
         mPivotY = 0.0f;
-        // ---------- Original Method ----------
-        //mFromDegrees = fromDegrees;
-        //mToDegrees = toDegrees;
-        //mPivotX = 0.0f;
-        //mPivotY = 0.0f;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.071 -0400", hash_original_method = "19A86326052CAD17DE162EF74120BA6A", hash_generated_method = "EFE11A3109A54F1122A453C75C28FC74")
-    public  RotateAnimation(float fromDegrees, float toDegrees, float pivotX, float pivotY) {
+    /**
+     * Constructor to use when building a RotateAnimation from code
+     * 
+     * @param fromDegrees Rotation offset to apply at the start of the
+     *        animation.
+     * 
+     * @param toDegrees Rotation offset to apply at the end of the animation.
+     * 
+     * @param pivotX The X coordinate of the point about which the object is
+     *        being rotated, specified as an absolute number where 0 is the left
+     *        edge.
+     * @param pivotY The Y coordinate of the point about which the object is
+     *        being rotated, specified as an absolute number where 0 is the top
+     *        edge.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.267 -0500", hash_original_method = "19A86326052CAD17DE162EF74120BA6A", hash_generated_method = "96FE3A541D2FC01403C17BE4E0AA0B1D")
+    public RotateAnimation(float fromDegrees, float toDegrees, float pivotX, float pivotY) {
         mFromDegrees = fromDegrees;
         mToDegrees = toDegrees;
+
         mPivotXType = ABSOLUTE;
         mPivotYType = ABSOLUTE;
         mPivotXValue = pivotX;
         mPivotYValue = pivotY;
-        // ---------- Original Method ----------
-        //mFromDegrees = fromDegrees;
-        //mToDegrees = toDegrees;
-        //mPivotXType = ABSOLUTE;
-        //mPivotYType = ABSOLUTE;
-        //mPivotXValue = pivotX;
-        //mPivotYValue = pivotY;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.072 -0400", hash_original_method = "72ECE06422A744A3901DF4DB74918F78", hash_generated_method = "895C542E1008EB5525AB8D4C914CF5A2")
-    public  RotateAnimation(float fromDegrees, float toDegrees, int pivotXType, float pivotXValue,
+    /**
+     * Constructor to use when building a RotateAnimation from code
+     * 
+     * @param fromDegrees Rotation offset to apply at the start of the
+     *        animation.
+     * 
+     * @param toDegrees Rotation offset to apply at the end of the animation.
+     * 
+     * @param pivotXType Specifies how pivotXValue should be interpreted. One of
+     *        Animation.ABSOLUTE, Animation.RELATIVE_TO_SELF, or
+     *        Animation.RELATIVE_TO_PARENT.
+     * @param pivotXValue The X coordinate of the point about which the object
+     *        is being rotated, specified as an absolute number where 0 is the
+     *        left edge. This value can either be an absolute number if
+     *        pivotXType is ABSOLUTE, or a percentage (where 1.0 is 100%)
+     *        otherwise.
+     * @param pivotYType Specifies how pivotYValue should be interpreted. One of
+     *        Animation.ABSOLUTE, Animation.RELATIVE_TO_SELF, or
+     *        Animation.RELATIVE_TO_PARENT.
+     * @param pivotYValue The Y coordinate of the point about which the object
+     *        is being rotated, specified as an absolute number where 0 is the
+     *        top edge. This value can either be an absolute number if
+     *        pivotYType is ABSOLUTE, or a percentage (where 1.0 is 100%)
+     *        otherwise.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.268 -0500", hash_original_method = "72ECE06422A744A3901DF4DB74918F78", hash_generated_method = "2253DE5FC74E79DEE25AE7A01044CE79")
+    public RotateAnimation(float fromDegrees, float toDegrees, int pivotXType, float pivotXValue,
             int pivotYType, float pivotYValue) {
         mFromDegrees = fromDegrees;
         mToDegrees = toDegrees;
+
         mPivotXValue = pivotXValue;
         mPivotXType = pivotXType;
         mPivotYValue = pivotYValue;
         mPivotYType = pivotYType;
-        // ---------- Original Method ----------
-        //mFromDegrees = fromDegrees;
-        //mToDegrees = toDegrees;
-        //mPivotXValue = pivotXValue;
-        //mPivotXType = pivotXType;
-        //mPivotYValue = pivotYValue;
-        //mPivotYType = pivotYType;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.073 -0400", hash_original_method = "194AFADB87C10F3B1916BACFE93A5B2C", hash_generated_method = "DC9217BB35C7E656A933D57EF603F811")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.268 -0500", hash_original_method = "194AFADB87C10F3B1916BACFE93A5B2C", hash_generated_method = "33504093F3FEBC967B213DA69D033CEB")
     @Override
-    protected void applyTransformation(float interpolatedTime, Transformation t) {
-        addTaint(t.getTaint());
-        addTaint(interpolatedTime);
+protected void applyTransformation(float interpolatedTime, Transformation t) {
         float degrees = mFromDegrees + ((mToDegrees - mFromDegrees) * interpolatedTime);
         float scale = getScaleFactor();
-        if(mPivotX == 0.0f && mPivotY == 0.0f)        
-        {
+        
+        if (mPivotX == 0.0f && mPivotY == 0.0f) {
             t.getMatrix().setRotate(degrees);
-        } //End block
-        else
-        {
+        } else {
             t.getMatrix().setRotate(degrees, mPivotX * scale, mPivotY * scale);
-        } //End block
-        // ---------- Original Method ----------
-        //float degrees = mFromDegrees + ((mToDegrees - mFromDegrees) * interpolatedTime);
-        //float scale = getScaleFactor();
-        //if (mPivotX == 0.0f && mPivotY == 0.0f) {
-            //t.getMatrix().setRotate(degrees);
-        //} else {
-            //t.getMatrix().setRotate(degrees, mPivotX * scale, mPivotY * scale);
-        //}
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.074 -0400", hash_original_method = "45493CF0F005891678EBD20A791168F1", hash_generated_method = "53783E9B1C23799F49072FEC34253244")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.269 -0500", hash_original_method = "45493CF0F005891678EBD20A791168F1", hash_generated_method = "AAE094287E8A90269C5F776FD3311007")
     @Override
-    public void initialize(int width, int height, int parentWidth, int parentHeight) {
+public void initialize(int width, int height, int parentWidth, int parentHeight) {
         super.initialize(width, height, parentWidth, parentHeight);
         mPivotX = resolveSize(mPivotXType, mPivotXValue, width, parentWidth);
         mPivotY = resolveSize(mPivotYType, mPivotYValue, height, parentHeight);
-        // ---------- Original Method ----------
-        //super.initialize(width, height, parentWidth, parentHeight);
-        //mPivotX = resolveSize(mPivotXType, mPivotXValue, width, parentWidth);
-        //mPivotY = resolveSize(mPivotYType, mPivotYValue, height, parentHeight);
     }
 
     

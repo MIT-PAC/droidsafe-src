@@ -1,6 +1,8 @@
 package java.net;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.Charset;
@@ -11,22 +13,22 @@ import libcore.net.UriCodec;
 
 
 public class URLEncoder {
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.087 -0400", hash_original_method = "B41CBCC9C76AA809E0DC45FDBBA0D268", hash_generated_method = "A6F2D9E84EF75199314CB290B61AC175")
-    private  URLEncoder() {
-        // ---------- Original Method ----------
-    }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Equivalent to {@code encode(s, "UTF-8")}.
+     *
+     * @deprecated use {@link #encode(String, String)} instead.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:05.637 -0500", hash_original_method = "F3C1C4CFF9BE8725C4E7F6E8F952E701", hash_generated_method = "1A209DE22072754E840116F302F6A63F")
     @Deprecated
-    public static String encode(String s) {
+public static String encode(String s) {
         return ENCODER.encode(s, Charsets.UTF_8);
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Encodes {@code s} using the {@link Charset} named by {@code charsetName}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:05.638 -0500", hash_original_method = "D7709200003A991BD062A99EB5CFA293", hash_generated_method = "3CD8462111730A87D2D8B52FAAF90629")
     public static String encode(String s, String charsetName) throws UnsupportedEncodingException {
         return ENCODER.encode(s, Charset.forName(charsetName));
     }
@@ -49,5 +51,7 @@ public class URLEncoder {
 
         
 };
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:05.634 -0500", hash_original_method = "B41CBCC9C76AA809E0DC45FDBBA0D268", hash_generated_method = "6546CA37BB594848B3235CCF30367527")
+    private URLEncoder() {}
 }
 

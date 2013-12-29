@@ -1,6 +1,8 @@
 package android.graphics.drawable.shapes;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -11,66 +13,42 @@ import android.graphics.RectF;
 
 
 public class RectShape extends Shape {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.809 -0400", hash_original_field = "995C0FB7B00A0A1E82DD4C30778697FC", hash_generated_field = "E080B89EC7A364FFC5B71FB812B38393")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.490 -0500", hash_original_field = "499D59727FC656C05DFD3E86493F2A86", hash_generated_field = "E080B89EC7A364FFC5B71FB812B38393")
 
     private RectF mRect = new RectF();
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.809 -0400", hash_original_method = "86D7394A029CE4FDE438585868C447F4", hash_generated_method = "296628B3E8AE7C2CA6ACF988628F6E64")
-    public  RectShape() {
-        // ---------- Original Method ----------
-    }
-
+    /**
+     * RectShape constructor.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.491 -0500", hash_original_method = "86D7394A029CE4FDE438585868C447F4", hash_generated_method = "EC5781DC7AC5EFDE946C3D218DF4DE25")
+    public RectShape() {}
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.810 -0400", hash_original_method = "6BDD25C71E92DEE23AC033397583FF85", hash_generated_method = "F42A2E1D82E1E835634E2FB3B371471C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.492 -0500", hash_original_method = "6BDD25C71E92DEE23AC033397583FF85", hash_generated_method = "D491C0BAAE13D6ABD26109B94459C615")
     @Override
-    public void draw(Canvas canvas, Paint paint) {
-        addTaint(paint.getTaint());
-        addTaint(canvas.getTaint());
+public void draw(Canvas canvas, Paint paint) {
         canvas.drawRect(mRect, paint);
-        // ---------- Original Method ----------
-        //canvas.drawRect(mRect, paint);
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.810 -0400", hash_original_method = "62B0D2225FCA5D4099BD1D1E514DF479", hash_generated_method = "9CB3A42F067008BE08F833A4D48BAF78")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.493 -0500", hash_original_method = "62B0D2225FCA5D4099BD1D1E514DF479", hash_generated_method = "0E0257AB5295FC7A2707F3B86C8F57BE")
     @Override
-    protected void onResize(float width, float height) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(height);
-        addTaint(width);
+protected void onResize(float width, float height) {
         mRect.set(0, 0, width, height);
-        // ---------- Original Method ----------
-        //mRect.set(0, 0, width, height);
     }
-
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.811 -0400", hash_original_method = "B472369E445B34AFDD84E5B389A9601D", hash_generated_method = "55A97005DF57FAE45C1D373FCC0BC040")
+    /**
+     * Returns the RectF that defines this rectangle's bounds.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.494 -0500", hash_original_method = "B472369E445B34AFDD84E5B389A9601D", hash_generated_method = "7E96FE508A65015DCC33416C426C9ABB")
     protected final RectF rect() {
-RectF var23E085E00370717E44C5AC6A506C1823_902565364 =         mRect;
-        var23E085E00370717E44C5AC6A506C1823_902565364.addTaint(taint);
-        return var23E085E00370717E44C5AC6A506C1823_902565364;
-        // ---------- Original Method ----------
-        //return mRect;
+        return mRect;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.811 -0400", hash_original_method = "F35F96D345FDD22204E61750D42DDCE2", hash_generated_method = "860A8D26812784255DD95E2EAF11917D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.494 -0500", hash_original_method = "F35F96D345FDD22204E61750D42DDCE2", hash_generated_method = "9A677C1BB30000268489CBC29CF67DCC")
     @Override
-    public RectShape clone() throws CloneNotSupportedException {
+public RectShape clone() throws CloneNotSupportedException {
         final RectShape shape = (RectShape) super.clone();
         shape.mRect = new RectF(mRect);
-RectShape var1E03F90B1057A29F071E0E1A1AD4365B_1085467840 =         shape;
-        var1E03F90B1057A29F071E0E1A1AD4365B_1085467840.addTaint(taint);
-        return var1E03F90B1057A29F071E0E1A1AD4365B_1085467840;
-        // ---------- Original Method ----------
-        //final RectShape shape = (RectShape) super.clone();
-        //shape.mRect = new RectF(mRect);
-        //return shape;
+        return shape;
     }
 
     

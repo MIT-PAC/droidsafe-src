@@ -1,6 +1,8 @@
 package java.util;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.Closeable;
 import java.io.File;
@@ -30,1926 +32,1812 @@ import libcore.io.IoUtils;
 
 
 public final class Scanner implements Iterator<String> {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.833 -0400", hash_original_field = "A43C1B0AA53A0C908810C06AB1FF3967", hash_generated_field = "E0D52F97F351E69EECDE3C383EA70269")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.876 -0500", hash_original_field = "B47F8D0CFB8B0A8E74ACEF69EFAAF7CA", hash_generated_field = "198E8DC61E6EE6260DD0FD67EC1BE70A")
+
+    private static final Pattern DEFAULT_DELIMITER = Pattern
+            .compile("\\p{javaWhitespace}+");
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.877 -0500", hash_original_field = "E6072ECAB98B788CF6574D4C97D8D133", hash_generated_field = "A53C7CC23A0CC495ADEF2FAB7B5DCB77")
+
+    private static final Pattern BOOLEAN_PATTERN = Pattern.compile(
+            "true|false", Pattern.CASE_INSENSITIVE);
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.877 -0500", hash_original_field = "0BF1909410F4A29EC6B6ABDEDC782911", hash_generated_field = "34D957310674ACDBDEF2BA84C8EFAF52")
+
+    private static  Pattern LINE_TERMINATOR;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.878 -0500", hash_original_field = "CF20E0E1E14B42FCBC3774DAA78CE133", hash_generated_field = "6C40428A55C17D2895C0B094BEB1F611")
+
+    private static  Pattern MULTI_LINE_TERMINATOR;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.879 -0500", hash_original_field = "A71AF44F8C916A62639225A5929D8710", hash_generated_field = "3C4C83BD4BB2A832CA90E27F9C78BAE2")
+
+    private static  Pattern LINE_PATTERN;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.880 -0500", hash_original_field = "078F02C6E7267763693DC0BE3C6B9AC7", hash_generated_field = "D845CBECA21831ED0A78D9A752686AC5")
+
+    private static final Pattern ANY_PATTERN = Pattern.compile("(?s).*");
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.881 -0500", hash_original_field = "0ABE4119F73D0DFB83A02A15D725E728", hash_generated_field = "3BA97B4331D762E18310C69487A4537F")
+
+
+    private static final int DIPLOID = 2;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.882 -0500", hash_original_field = "EB97D6C44BD18C424D4E82265283D91D", hash_generated_field = "6AD996F6F0E1D10B17B6B57671BFAA93")
+
+    private static final int DEFAULT_RADIX = 10;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.883 -0500", hash_original_field = "28E0DBF2907BB09A2F5C21AB717FC9F5", hash_generated_field = "943912C72E8350CCD8E69B9D60A0C886")
+
+
+    private static final int DEFAULT_TRUNK_SIZE = 1024;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.884 -0500", hash_original_field = "65616AC57FB84BDA6BF682056C572304", hash_generated_field = "E0D52F97F351E69EECDE3C383EA70269")
 
     private Readable input;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.833 -0400", hash_original_field = "7F2DB423A49B305459147332FB01CF87", hash_generated_field = "D260AE04E52CF23D72C8A3D8295E450B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.884 -0500", hash_original_field = "89091A77A3F40B97932F1F5BA644968C", hash_generated_field = "D260AE04E52CF23D72C8A3D8295E450B")
+
 
     private CharBuffer buffer;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.833 -0400", hash_original_field = "B8E0CA1AFB60AD862E8369C4D5F39FEA", hash_generated_field = "7320765086863239DD8B2CE732355E5C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.885 -0500", hash_original_field = "817851E00C2E34D79720AD08AAA6BADB", hash_generated_field = "7320765086863239DD8B2CE732355E5C")
+
 
     private Pattern delimiter = DEFAULT_DELIMITER;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.833 -0400", hash_original_field = "FDB7D6BFCC3EFCF7BA578D70678C9F4B", hash_generated_field = "B6C086223608E4F54F76DF9A158EFEB4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.886 -0500", hash_original_field = "C7324B9A1B7E5BCAD3D2B1A512AC9CEE", hash_generated_field = "B6C086223608E4F54F76DF9A158EFEB4")
+
 
     private Matcher matcher;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.833 -0400", hash_original_field = "FA9861E386E410DF8EB9AD9D2561E649", hash_generated_field = "C3DABC3C885E91F4BEBE65D18A5D41DF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.887 -0500", hash_original_field = "EB84341BC05B1803B3A35E00097AB259", hash_generated_field = "C3DABC3C885E91F4BEBE65D18A5D41DF")
+
 
     private int integerRadix = DEFAULT_RADIX;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.833 -0400", hash_original_field = "C1406C33C5F41CED8E9C966043746C79", hash_generated_field = "E93B6DD8D2B917BF94B1E13ADC86BBF9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.887 -0500", hash_original_field = "8B296BE1494CF2FB637267DFD6EEFC9C", hash_generated_field = "E93B6DD8D2B917BF94B1E13ADC86BBF9")
+
 
     private Locale locale = Locale.getDefault();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.833 -0400", hash_original_field = "CA1A63C6156AD6EA04F7B3D6A296C793", hash_generated_field = "08240EC224E7D1F658B6C3E2B561656E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.888 -0500", hash_original_field = "D8305FA40AEB30D5626E8AD10AD16362", hash_generated_field = "08240EC224E7D1F658B6C3E2B561656E")
 
     private int findStartIndex = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.833 -0400", hash_original_field = "85E47497E5075EC4FAD041D1AC3E7907", hash_generated_field = "6421FE0EA4BD2B6775B9AA3004FC3126")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.889 -0500", hash_original_field = "8583C5362BF485A0C6C00658F881BB2D", hash_generated_field = "6421FE0EA4BD2B6775B9AA3004FC3126")
 
     private int preStartIndex = findStartIndex;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.833 -0400", hash_original_field = "F4B7711D92CBAB86DA3D6B89D16B006B", hash_generated_field = "C005C413DDA0AFEE3D457FA4BFDF129F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.890 -0500", hash_original_field = "D56A6B35B888DDB27932ABF7650D0DD1", hash_generated_field = "C005C413DDA0AFEE3D457FA4BFDF129F")
 
     private int bufferLength = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.833 -0400", hash_original_field = "1E79543A888DE7BB0ADBB289A8F4251D", hash_generated_field = "AA98B16E301073717D23E903C6D6286D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.891 -0500", hash_original_field = "3AA5C7F0C9D40E3C1B48B8404423A098", hash_generated_field = "C3C8C0E68189514A1B9B3B296C0A3F2A")
 
+    // is closed.
     private boolean closed = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.833 -0400", hash_original_field = "460DFB1105EAD6E581494BC8EB7172AC", hash_generated_field = "94160D1F6EC5CF5867F2CCE7946E9FCB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.891 -0500", hash_original_field = "2D64161965ACCFD5E6EAFC7F1C573898", hash_generated_field = "94160D1F6EC5CF5867F2CCE7946E9FCB")
+
 
     private IOException lastIOException;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.833 -0400", hash_original_field = "4B9929219B077CB687C4CDA9B01D2231", hash_generated_field = "FB51DEF3DC08BBEC5FA219733A95DF92")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.892 -0500", hash_original_field = "1C6D1D477DD6E2911B78F6585589561F", hash_generated_field = "FB51DEF3DC08BBEC5FA219733A95DF92")
+
 
     private boolean matchSuccessful = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.833 -0400", hash_original_field = "DBECB303151001B254CD458C962BFA06", hash_generated_field = "5CD50592C114680F0C3429A3015DD789")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.893 -0500", hash_original_field = "B59EEAA341F75708242A9E3221E821BD", hash_generated_field = "5CD50592C114680F0C3429A3015DD789")
+
 
     private DecimalFormat decimalFormat;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.833 -0400", hash_original_field = "A0533E79DCA29CE143919C4A4025A07C", hash_generated_field = "835E9638D88C3871B5D667F83042A305")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.894 -0500", hash_original_field = "12665679D2CAFF8C4A053D9B20D5EF70", hash_generated_field = "835E9638D88C3871B5D667F83042A305")
 
     private boolean inputExhausted = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.833 -0400", hash_original_field = "C1D78FE4623EB325FEA6F819E294DAD7", hash_generated_field = "16846571F2386772C11DF4DB11C6F290")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.894 -0500", hash_original_field = "A51D0ECC63E18EDB9ADABF3293B68917", hash_generated_field = "16846571F2386772C11DF4DB11C6F290")
+
 
     private Object cacheHasNextValue = null;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.833 -0400", hash_original_field = "34E465836A10E49DF126E5F70F0785FC", hash_generated_field = "890CB8D9E7ACCC8E639BDCEBE76016CB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.895 -0500", hash_original_field = "A4D950C48A6DDF26C40A5B63963E74FC", hash_generated_field = "890CB8D9E7ACCC8E639BDCEBE76016CB")
+
 
     private int cachehasNextIndex = -1;
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.834 -0400", hash_original_method = "B810C33BB807151E40D15163250E5E02", hash_generated_method = "321539E3B9BA845EF9F76541A8DBF8C3")
-    public  Scanner(File src) throws FileNotFoundException {
+
+    /**
+     * Creates a {@code Scanner} with the specified {@code File} as input. The default charset
+     * is applied when reading the file.
+     *
+     * @param src
+     *            the file to be scanned.
+     * @throws FileNotFoundException
+     *             if the specified file does not exist.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.897 -0500", hash_original_method = "B810C33BB807151E40D15163250E5E02", hash_generated_method = "D26577CCB9043AF802260E163F23AE5F")
+    public Scanner(File src) throws FileNotFoundException {
         this(src, Charset.defaultCharset().name());
-        addTaint(src.getTaint());
-        // ---------- Original Method ----------
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.834 -0400", hash_original_method = "CF25217F399E81A22DEECAEA7B649FFD", hash_generated_method = "1D38418B6DEF1ADA4A02CC51A3CE8249")
-    public  Scanner(File src, String charsetName) throws FileNotFoundException {
-        addTaint(src.getTaint());
-        if(src == null)        
-        {
-            NullPointerException var2D07B1D654A343534339A4B66E26F519_414583134 = new NullPointerException("src == null");
-            var2D07B1D654A343534339A4B66E26F519_414583134.addTaint(taint);
-            throw var2D07B1D654A343534339A4B66E26F519_414583134;
-        } //End block
+    /**
+     * Creates a {@code Scanner} with the specified {@code File} as input. The specified charset
+     * is applied when reading the file.
+     *
+     * @param src
+     *            the file to be scanned.
+     * @param charsetName
+     *            the name of the encoding type of the file.
+     * @throws FileNotFoundException
+     *             if the specified file does not exist.
+     * @throws IllegalArgumentException
+     *             if the specified coding does not exist.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.898 -0500", hash_original_method = "CF25217F399E81A22DEECAEA7B649FFD", hash_generated_method = "BCC05EBF9F99943E48C097803F5E86A7")
+    public Scanner(File src, String charsetName) throws FileNotFoundException {
+        if (src == null) {
+            throw new NullPointerException("src == null");
+        }
         FileInputStream fis = new FileInputStream(src);
-        if(charsetName == null)        
-        {
-            IllegalArgumentException varFF9DC8EEABA015CA50BA498EA11F36E9_726113321 = new IllegalArgumentException("charsetName == null");
-            varFF9DC8EEABA015CA50BA498EA11F36E9_726113321.addTaint(taint);
-            throw varFF9DC8EEABA015CA50BA498EA11F36E9_726113321;
-        } //End block
-        try 
-        {
+        if (charsetName == null) {
+            throw new IllegalArgumentException("charsetName == null");
+        }
+        try {
             input = new InputStreamReader(fis, charsetName);
-        } //End block
-        catch (UnsupportedEncodingException e)
-        {
+        } catch (UnsupportedEncodingException e) {
             IoUtils.closeQuietly(fis);
-            IllegalArgumentException var50C16F62C7E45E44DBD26FE32DDFD217_416607715 = new IllegalArgumentException(e.getMessage());
-            var50C16F62C7E45E44DBD26FE32DDFD217_416607715.addTaint(taint);
-            throw var50C16F62C7E45E44DBD26FE32DDFD217_416607715;
-        } //End block
+            throw new IllegalArgumentException(e.getMessage());
+        }
         initialization();
-        // ---------- Original Method ----------
-        //if (src == null) {
-            //throw new NullPointerException("src == null");
-        //}
-        //FileInputStream fis = new FileInputStream(src);
-        //if (charsetName == null) {
-            //throw new IllegalArgumentException("charsetName == null");
-        //}
-        //try {
-            //input = new InputStreamReader(fis, charsetName);
-        //} catch (UnsupportedEncodingException e) {
-            //IoUtils.closeQuietly(fis);
-            //throw new IllegalArgumentException(e.getMessage());
-        //}
-        //initialization();
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.835 -0400", hash_original_method = "4332C70F225A92CAAA372FEA2EE20E90", hash_generated_method = "B648128C94F00F07C9AB0502C3851792")
-    public  Scanner(String src) {
+    /**
+     * Creates a {@code Scanner} on the specified string.
+     *
+     * @param src
+     *            the string to be scanned.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.899 -0500", hash_original_method = "4332C70F225A92CAAA372FEA2EE20E90", hash_generated_method = "9A8745855040CE72758452F40B97FD65")
+    public Scanner(String src) {
         input = new StringReader(src);
         initialization();
-        // ---------- Original Method ----------
-        //input = new StringReader(src);
-        //initialization();
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.835 -0400", hash_original_method = "C892D51D9056C33835D132934536F6A9", hash_generated_method = "29915AE179E011A2C0282BFECF6B6B0F")
-    public  Scanner(InputStream src) {
+    /**
+     * Creates a {@code Scanner} on the specified {@code InputStream}. The default charset is
+     * applied when decoding the input.
+     *
+     * @param src
+     *            the {@code InputStream} to be scanned.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.900 -0500", hash_original_method = "C892D51D9056C33835D132934536F6A9", hash_generated_method = "1871A8297329316346417FC0FD505506")
+    public Scanner(InputStream src) {
         this(src, Charset.defaultCharset().name());
-        addTaint(src.getTaint());
-        // ---------- Original Method ----------
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.836 -0400", hash_original_method = "BF515108409EAD1D2D6060053F2B8EDA", hash_generated_method = "1E1A188EAB5DD4935817DE520CE2A738")
-    public  Scanner(InputStream src, String charsetName) {
-        if(src == null)        
-        {
-            NullPointerException var2D07B1D654A343534339A4B66E26F519_2036551117 = new NullPointerException("src == null");
-            var2D07B1D654A343534339A4B66E26F519_2036551117.addTaint(taint);
-            throw var2D07B1D654A343534339A4B66E26F519_2036551117;
-        } //End block
-        try 
-        {
+    /**
+     * Creates a {@code Scanner} on the specified {@code InputStream}. The specified charset is
+     * applied when decoding the input.
+     *
+     * @param src
+     *            the {@code InputStream} to be scanned.
+     * @param charsetName
+     *            the encoding type of the {@code InputStream}.
+     * @throws IllegalArgumentException
+     *             if the specified character set is not found.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.901 -0500", hash_original_method = "BF515108409EAD1D2D6060053F2B8EDA", hash_generated_method = "F01C1A51850B7F9FA80CC88D51BB9A3D")
+    public Scanner(InputStream src, String charsetName) {
+        if (src == null) {
+            throw new NullPointerException("src == null");
+        }
+        try {
             input = new InputStreamReader(src, charsetName);
-        } //End block
-        catch (UnsupportedEncodingException e)
-        {
-            IllegalArgumentException var50C16F62C7E45E44DBD26FE32DDFD217_1821347555 = new IllegalArgumentException(e.getMessage());
-            var50C16F62C7E45E44DBD26FE32DDFD217_1821347555.addTaint(taint);
-            throw var50C16F62C7E45E44DBD26FE32DDFD217_1821347555;
-        } //End block
+        } catch (UnsupportedEncodingException e) {
+            throw new IllegalArgumentException(e.getMessage());
+        }
         initialization();
-        // ---------- Original Method ----------
-        //if (src == null) {
-            //throw new NullPointerException("src == null");
-        //}
-        //try {
-            //input = new InputStreamReader(src, charsetName);
-        //} catch (UnsupportedEncodingException e) {
-            //throw new IllegalArgumentException(e.getMessage());
-        //}
-        //initialization();
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.836 -0400", hash_original_method = "E0E6972A58007CF9E26777BD359FD5D7", hash_generated_method = "16443E84C4B4DB750727F865DDC98818")
-    public  Scanner(Readable src) {
-        if(src == null)        
-        {
-            NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_1305877408 = new NullPointerException();
-            var7338BC9F48D81FE0BBD6183F4014DCC4_1305877408.addTaint(taint);
-            throw var7338BC9F48D81FE0BBD6183F4014DCC4_1305877408;
-        } //End block
+    /**
+     * Creates a {@code Scanner} with the specified {@code Readable} as input.
+     *
+     * @param src
+     *            the {@code Readable} to be scanned.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.902 -0500", hash_original_method = "E0E6972A58007CF9E26777BD359FD5D7", hash_generated_method = "2A8F26655E138D46B6E3613B4BE01534")
+    public Scanner(Readable src) {
+        if (src == null) {
+            throw new NullPointerException();
+        }
         input = src;
         initialization();
-        // ---------- Original Method ----------
-        //if (src == null) {
-            //throw new NullPointerException();
-        //}
-        //input = src;
-        //initialization();
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.837 -0400", hash_original_method = "246C896BCE9403BE34073893721DED9F", hash_generated_method = "24C2F70730EE9356054D047DBB43A0CE")
-    public  Scanner(ReadableByteChannel src) {
+    /**
+     * Creates a {@code Scanner} with the specified {@code ReadableByteChannel} as
+     * input. The default charset is applied when decoding the input.
+     *
+     * @param src
+     *            the {@code ReadableByteChannel} to be scanned.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.903 -0500", hash_original_method = "246C896BCE9403BE34073893721DED9F", hash_generated_method = "069714EF3DCA6F62A8E3A391D2BFABFE")
+    public Scanner(ReadableByteChannel src) {
         this(src, Charset.defaultCharset().name());
-        addTaint(src.getTaint());
-        // ---------- Original Method ----------
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.837 -0400", hash_original_method = "88C5EB3CF5CA9A4257014ADC8E6F132C", hash_generated_method = "438C4E6125CA1F475748CB735071D3CE")
-    public  Scanner(ReadableByteChannel src, String charsetName) {
-        if(src == null)        
-        {
-            NullPointerException var2D07B1D654A343534339A4B66E26F519_463019690 = new NullPointerException("src == null");
-            var2D07B1D654A343534339A4B66E26F519_463019690.addTaint(taint);
-            throw var2D07B1D654A343534339A4B66E26F519_463019690;
-        } //End block
-        if(charsetName == null)        
-        {
-            IllegalArgumentException varFF9DC8EEABA015CA50BA498EA11F36E9_1682662973 = new IllegalArgumentException("charsetName == null");
-            varFF9DC8EEABA015CA50BA498EA11F36E9_1682662973.addTaint(taint);
-            throw varFF9DC8EEABA015CA50BA498EA11F36E9_1682662973;
-        } //End block
+    /**
+     * Creates a {@code Scanner} with the specified {@code ReadableByteChannel} as
+     * input. The specified charset is applied when decoding the input.
+     *
+     * @param src
+     *            the {@code ReadableByteChannel} to be scanned.
+     * @param charsetName
+     *            the encoding type of the content.
+     * @throws IllegalArgumentException
+     *             if the specified character set is not found.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.904 -0500", hash_original_method = "88C5EB3CF5CA9A4257014ADC8E6F132C", hash_generated_method = "F52F3CC8E84801B31B8691294881609F")
+    public Scanner(ReadableByteChannel src, String charsetName) {
+        if (src == null) {
+            throw new NullPointerException("src == null");
+        }
+        if (charsetName == null) {
+            throw new IllegalArgumentException("charsetName == null");
+        }
         input = Channels.newReader(src, charsetName);
         initialization();
-        // ---------- Original Method ----------
-        //if (src == null) {
-            //throw new NullPointerException("src == null");
-        //}
-        //if (charsetName == null) {
-            //throw new IllegalArgumentException("charsetName == null");
-        //}
-        //input = Channels.newReader(src, charsetName);
-        //initialization();
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.838 -0400", hash_original_method = "BE0E5A82355C52347C0C57A7BA02C4C5", hash_generated_method = "FD966E343C742ADB54E79FDF754C3866")
+    /**
+     * Closes this {@code Scanner} and the underlying input if the input implements
+     * {@code Closeable}. If the {@code Scanner} has been closed, this method will have
+     * no effect. Any scanning operation called after calling this method will throw
+     * an {@code IllegalStateException}.
+     *
+     * @see Closeable
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.905 -0500", hash_original_method = "BE0E5A82355C52347C0C57A7BA02C4C5", hash_generated_method = "4981E93226D3D642ADB0B81DB0C8464D")
     public void close() {
-        if(closed)        
-        {
+        if (closed) {
             return;
-        } //End block
-        if(input instanceof Closeable)        
-        {
-            try 
-            {
+        }
+        if (input instanceof Closeable) {
+            try {
                 ((Closeable) input).close();
-            } //End block
-            catch (IOException e)
-            {
+            } catch (IOException e) {
                 lastIOException = e;
-            } //End block
-        } //End block
+            }
+        }
         closed = true;
-        // ---------- Original Method ----------
-        //if (closed) {
-            //return;
-        //}
-        //if (input instanceof Closeable) {
-            //try {
-                //((Closeable) input).close();
-            //} catch (IOException e) {
-                //lastIOException = e;
-            //}
-        //}
-        //closed = true;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.838 -0400", hash_original_method = "E452C40637B7AD54EC03E79C646861D9", hash_generated_method = "3EF60877DBCD100957A46AAE7817E70D")
+    /**
+     * Returns the delimiter {@code Pattern} in use by this {@code Scanner}.
+     *
+     * @return the delimiter {@code Pattern} in use by this {@code Scanner}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.905 -0500", hash_original_method = "E452C40637B7AD54EC03E79C646861D9", hash_generated_method = "DFF982F44BD23684A397DA7C52C5E9C6")
     public Pattern delimiter() {
-Pattern var77605B888C3EF78D6C12E459BDBBB2B6_1863838779 =         delimiter;
-        var77605B888C3EF78D6C12E459BDBBB2B6_1863838779.addTaint(taint);
-        return var77605B888C3EF78D6C12E459BDBBB2B6_1863838779;
-        // ---------- Original Method ----------
-        //return delimiter;
+        return delimiter;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.840 -0400", hash_original_method = "8312FC53E313435440A1A7306CBE2B24", hash_generated_method = "194F09A3410260900199F8C7BA41CD42")
+    /**
+     * Tries to find the pattern in the input. Delimiters are ignored. If the
+     * pattern is found before line terminator, the matched string will be
+     * returned, and the {@code Scanner} will advance to the end of the matched string.
+     * Otherwise, {@code null} will be returned and the {@code Scanner} will not advance.
+     * When waiting for input, the {@code Scanner} may be blocked. All the
+     * input may be cached if no line terminator exists in the buffer.
+     *
+     * @param pattern
+     *            the pattern to find in the input.
+     * @return the matched string or {@code null} if the pattern is not found
+     *         before the next line terminator.
+     * @throws IllegalStateException
+     *             if the {@code Scanner} is closed.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.907 -0500", hash_original_method = "8312FC53E313435440A1A7306CBE2B24", hash_generated_method = "0665BC44FDAB5AFF5C5B8A4F09E9EA4A")
     public String findInLine(Pattern pattern) {
-        addTaint(pattern.getTaint());
         checkClosed();
         checkNull(pattern);
         int horizonLineSeparator = 0;
+
         matcher.usePattern(MULTI_LINE_TERMINATOR);
         matcher.region(findStartIndex, bufferLength);
+
         boolean findComplete = false;
         int terminatorLength = 0;
-        while
-(!findComplete)        
-        {
-            if(matcher.find())            
-            {
+        while (!findComplete) {
+            if (matcher.find()) {
                 horizonLineSeparator = matcher.start();
                 terminatorLength = matcher.end() - matcher.start();
                 findComplete = true;
-            } //End block
-            else
-            {
-                if(!inputExhausted)                
-                {
+            } else {
+                if (!inputExhausted) {
                     readMore();
                     resetMatcher();
-                } //End block
-                else
-                {
+                } else {
                     horizonLineSeparator = bufferLength;
                     findComplete = true;
-                } //End block
-            } //End block
-        } //End block
+                }
+            }
+        }
+
         matcher.usePattern(pattern);
+
+        /*
+         * TODO The following 2 statements are used to deal with regex's bug.
+         * java.util.regex.Matcher.region(int start, int end) implementation
+         * does not have any effects when called. They will be removed once the
+         * bug is fixed.
+         */
         int oldLimit = buffer.limit();
+        // Considering the look ahead feature, the line terminator should be involved as RI
         buffer.limit(horizonLineSeparator + terminatorLength);
+        // ========== To deal with regex bug ====================
+
+        // Considering the look ahead feature, the line terminator should be involved as RI
         matcher.region(findStartIndex, horizonLineSeparator + terminatorLength);
-        if(matcher.find())        
-        {
+        if (matcher.find()) {
+            // The scanner advances past the input that matched
             findStartIndex = matcher.end();
-            if(horizonLineSeparator == matcher.end())            
-            {
+            // If the matched pattern is immediately followed by line
+            // terminator.
+            if (horizonLineSeparator == matcher.end()) {
                 findStartIndex += terminatorLength;
-            } //End block
-            if(horizonLineSeparator != bufferLength
+            }
+            // the line terminator itself should not be a part of
+            // the match result according to the Spec
+            if (horizonLineSeparator != bufferLength
                     && (horizonLineSeparator + terminatorLength == matcher
-                            .end()))            
-            {
+                            .end())) {
+                // ========== To deal with regex bug ====================
                 buffer.limit(oldLimit);
+                // ========== To deal with regex bug ====================
+
                 matchSuccessful = false;
-String var540C13E9E156B687226421B24F2DF178_1753045887 =                 null;
-                var540C13E9E156B687226421B24F2DF178_1753045887.addTaint(taint);
-                return var540C13E9E156B687226421B24F2DF178_1753045887;
-            } //End block
+                return null;
+            }
             matchSuccessful = true;
+
+            // ========== To deal with regex bug ====================
             buffer.limit(oldLimit);
-String varB5AAE48376C24FBB3ED941DE034F616C_157423692 =             matcher.group();
-            varB5AAE48376C24FBB3ED941DE034F616C_157423692.addTaint(taint);
-            return varB5AAE48376C24FBB3ED941DE034F616C_157423692;
-        } //End block
+            // ========== To deal with regex bug ====================
+
+            return matcher.group();
+        }
+
+        // ========== To deal with regex bug ====================
         buffer.limit(oldLimit);
+        // ========== To deal with regex bug ====================
+
         matchSuccessful = false;
-String var540C13E9E156B687226421B24F2DF178_725935731 =         null;
-        var540C13E9E156B687226421B24F2DF178_725935731.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_725935731;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        return null;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.841 -0400", hash_original_method = "D8B205142F30EEA5F1FA557732B63716", hash_generated_method = "3A03204E83379A89AF3E6F17F09943A0")
+    /**
+     * Compiles the pattern string and tries to find a substing matching it in the input data. The
+     * delimiter will be ignored. This is the same as invoking
+     * {@code findInLine(Pattern.compile(pattern))}.
+     *
+     * @param pattern
+     *            a string used to construct a pattern which is in turn used to
+     *            match a substring of the input data.
+     * @return the matched string or {@code null} if the pattern is not found
+     *         before the next line terminator.
+     * @throws IllegalStateException
+     *             if the {@code Scanner} is closed.
+     * @see #findInLine(Pattern)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.908 -0500", hash_original_method = "D8B205142F30EEA5F1FA557732B63716", hash_generated_method = "BC32758F998B73A2DB17BCD342A1D048")
     public String findInLine(String pattern) {
-        addTaint(pattern.getTaint());
-String var20EEC46E915BD4AF22F9D0C811864F43_1522685178 =         findInLine(Pattern.compile(pattern));
-        var20EEC46E915BD4AF22F9D0C811864F43_1522685178.addTaint(taint);
-        return var20EEC46E915BD4AF22F9D0C811864F43_1522685178;
-        // ---------- Original Method ----------
-        //return findInLine(Pattern.compile(pattern));
+        return findInLine(Pattern.compile(pattern));
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.842 -0400", hash_original_method = "9C32C72D7AABC6AF4F26B68B84901E99", hash_generated_method = "05C91C1E506449356FEF1E51AE230DCD")
+    /**
+     * Tries to find the pattern in the input between the current position and the specified
+     * horizon. Delimiters are ignored. If the pattern is found, the matched
+     * string will be returned, and the {@code Scanner} will advance to the end of the
+     * matched string. Otherwise, null will be returned and {@code Scanner} will not
+     * advance. When waiting for input, the {@code Scanner} may be blocked.
+     * <p>
+     * The {@code Scanner}'s search will never go more than {@code horizon} code points from current
+     * position. The position of {@code horizon} does have an effect on the result of the
+     * match. For example, when the input is "123" and current position is at zero,
+     * <code>findWithinHorizon(Pattern.compile("\\p{Digit}{3}"), 2)</code>
+     * will return {@code null}, while
+     * <code>findWithinHorizon(Pattern.compile("\\p{Digit}{3}"), 3)</code>
+     * will return {@code "123"}. {@code horizon} is treated as a transparent,
+     * non-anchoring bound. (refer to
+     * {@link Matcher#useTransparentBounds(boolean)} and
+     * {@link Matcher#useAnchoringBounds(boolean)})
+     * <p>
+     * A {@code horizon} whose value is zero will be ignored and the whole input will be
+     * used for search. In this situation, all the input may be cached.
+     *
+     * @param pattern
+     *            the pattern used to scan.
+     * @param horizon
+     *            the search limit.
+     * @return the matched string or {@code null} if the pattern is not found
+     *         within the specified {@code horizon}.
+     * @throws IllegalStateException
+     *             if the {@code Scanner} is closed.
+     * @throws IllegalArgumentException
+     *             if {@code horizon} is less than zero.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.909 -0500", hash_original_method = "9C32C72D7AABC6AF4F26B68B84901E99", hash_generated_method = "A2989CF0C81C88E8B5DCC98A1B678232")
     public String findWithinHorizon(Pattern pattern, int horizon) {
-        addTaint(horizon);
-        addTaint(pattern.getTaint());
         checkClosed();
         checkNull(pattern);
-        if(horizon < 0)        
-        {
-            IllegalArgumentException var6B71F6AB3C11E05471F7D7A2ADAE7B0E_223670941 = new IllegalArgumentException("horizon < 0");
-            var6B71F6AB3C11E05471F7D7A2ADAE7B0E_223670941.addTaint(taint);
-            throw var6B71F6AB3C11E05471F7D7A2ADAE7B0E_223670941;
-        } //End block
+        if (horizon < 0) {
+            throw new IllegalArgumentException("horizon < 0");
+        }
         matcher.usePattern(pattern);
+
         String result = null;
         int findEndIndex = 0;
         int horizonEndIndex = 0;
-        if(horizon == 0)        
-        {
+        if (horizon == 0) {
             horizonEndIndex = Integer.MAX_VALUE;
-        } //End block
-        else
-        {
+        } else {
             horizonEndIndex = findStartIndex + horizon;
-        } //End block
-        while
-(true)        
-        {
+        }
+        while (true) {
             findEndIndex = bufferLength;
+
+            // If horizon > 0, then search up to
+            // min( bufferLength, findStartIndex + horizon).
+            // Otherwise search until readable is exhausted.
             findEndIndex = Math.min(horizonEndIndex, bufferLength);
+            // If horizon == 0, consider horizon as always outside buffer.
             boolean isHorizonInBuffer = (horizonEndIndex <= bufferLength);
+            // First, try to find pattern within buffer. If pattern can not be
+            // found in buffer, then expand the buffer and try again,
+            // util horizonEndIndex is exceeded or no more input left.
             matcher.region(findStartIndex, findEndIndex);
-            if(matcher.find())            
-            {
-                if(isHorizonInBuffer || inputExhausted)                
-                {
+            if (matcher.find()) {
+                if (isHorizonInBuffer || inputExhausted) {
                     result = matcher.group();
                     break;
-                } //End block
-            } //End block
-            else
-            {
-                if(isHorizonInBuffer || inputExhausted)                
-                {
+                }
+            } else {
+                // Pattern is not found in buffer while horizonEndIndex is
+                // within buffer, or input is exhausted. Under this situation,
+                // it can be judged that find fails.
+                if (isHorizonInBuffer || inputExhausted) {
                     break;
-                } //End block
-            } //End block
-            if(!inputExhausted)            
-            {
+                }
+            }
+
+            // Expand buffer and reset matcher if needed.
+            if (!inputExhausted) {
                 readMore();
                 resetMatcher();
-            } //End block
-        } //End block
-        if(result != null)        
-        {
+            }
+        }
+        if (result != null) {
             findStartIndex = matcher.end();
             matchSuccessful = true;
-        } //End block
-        else
-        {
+        } else {
             matchSuccessful = false;
-        } //End block
-String varDC838461EE2FA0CA4C9BBB70A15456B0_873167628 =         result;
-        varDC838461EE2FA0CA4C9BBB70A15456B0_873167628.addTaint(taint);
-        return varDC838461EE2FA0CA4C9BBB70A15456B0_873167628;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        }
+        return result;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.842 -0400", hash_original_method = "A3C55B99475A85AD2BF4742E957D07D7", hash_generated_method = "C671B16F97C5A716629F46029038C63C")
+    /**
+     * Tries to find the pattern in the input between the current position and the specified
+     * {@code horizon}. Delimiters are ignored. This call is the same as invoking
+     * {@code findWithinHorizon(Pattern.compile(pattern))}.
+     *
+     * @param pattern
+     *            the pattern used to scan.
+     * @param horizon
+     *            the search limit.
+     * @return the matched string, or {@code null} if the pattern is not found
+     *         within the specified horizon.
+     * @throws IllegalStateException
+     *             if the {@code Scanner} is closed.
+     * @throws IllegalArgumentException
+     *             if {@code horizon} is less than zero.
+     * @see #findWithinHorizon(Pattern, int)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.909 -0500", hash_original_method = "A3C55B99475A85AD2BF4742E957D07D7", hash_generated_method = "8B42006EAC7EE929F9A09B522FEFB34E")
     public String findWithinHorizon(String pattern, int horizon) {
-        addTaint(horizon);
-        addTaint(pattern.getTaint());
-String var625811C6FEA063078499B45918DC71F9_1019739099 =         findWithinHorizon(Pattern.compile(pattern), horizon);
-        var625811C6FEA063078499B45918DC71F9_1019739099.addTaint(taint);
-        return var625811C6FEA063078499B45918DC71F9_1019739099;
-        // ---------- Original Method ----------
-        //return findWithinHorizon(Pattern.compile(pattern), horizon);
+        return findWithinHorizon(Pattern.compile(pattern), horizon);
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.842 -0400", hash_original_method = "A3E9F8A3E3BBCA86A059EA14ECB05A95", hash_generated_method = "CA8F33E70F8932680986853E23DD4467")
+    /**
+     * Returns whether this {@code Scanner} has one or more tokens remaining to parse.
+     * This method will block if the data is still being read.
+     *
+     * @return {@code true} if this {@code Scanner} has one or more tokens remaining,
+     *         otherwise {@code false}.
+     * @throws IllegalStateException
+     *             if the {@code Scanner} has been closed.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.910 -0500", hash_original_method = "A3E9F8A3E3BBCA86A059EA14ECB05A95", hash_generated_method = "8ACF5D97C09012CFC95287039A2EEAF0")
     public boolean hasNext() {
-        boolean var4BD81B08EA815004EBDAA22E0DD0D90F_1553555818 = (hasNext(ANY_PATTERN));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_464126637 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_464126637;
-        // ---------- Original Method ----------
-        //return hasNext(ANY_PATTERN);
+        return hasNext(ANY_PATTERN);
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.843 -0400", hash_original_method = "31E7CF1F7239BC857AE7CC1A1F63EEFE", hash_generated_method = "B60DB34C7BC66D0862C803849A63AAB5")
+    /**
+     * Returns whether this {@code Scanner} has one or more tokens remaining to parse
+     * and the next token matches the given pattern. This method will block if the data is
+     * still being read.
+     *
+     * @param pattern
+     *            the pattern to check for.
+     * @return {@code true} if this {@code Scanner} has more tokens and the next token
+     *         matches the pattern, {@code false} otherwise.
+     * @throws IllegalStateException
+     *             if the {@code Scanner} has been closed.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.911 -0500", hash_original_method = "31E7CF1F7239BC857AE7CC1A1F63EEFE", hash_generated_method = "91000FE766A7F566C442F9715F92DD46")
     public boolean hasNext(Pattern pattern) {
-        addTaint(pattern.getTaint());
         checkClosed();
         checkNull(pattern);
         matchSuccessful = false;
         saveCurrentStatus();
-        if(!setTokenRegion())        
-        {
+        // if the next token exists, set the match region, otherwise return
+        // false
+        if (!setTokenRegion()) {
             recoverPreviousStatus();
-            boolean var68934A3E9455FA72420237EB05902327_276758392 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1237552297 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1237552297;
-        } //End block
+            return false;
+        }
         matcher.usePattern(pattern);
         boolean hasNext = false;
-        if(matcher.matches())        
-        {
+        // check whether next token matches the specified pattern
+        if (matcher.matches()) {
             cachehasNextIndex = findStartIndex;
             matchSuccessful = true;
             hasNext = true;
-        } //End block
+        }
         recoverPreviousStatus();
-        boolean varD9CA95405A2301707BEA3F2942FAB48B_1045116059 = (hasNext);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_213384239 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_213384239;
-        // ---------- Original Method ----------
-        //checkClosed();
-        //checkNull(pattern);
-        //matchSuccessful = false;
-        //saveCurrentStatus();
-        //if (!setTokenRegion()) {
-            //recoverPreviousStatus();
-            //return false;
-        //}
-        //matcher.usePattern(pattern);
-        //boolean hasNext = false;
-        //if (matcher.matches()) {
-            //cachehasNextIndex = findStartIndex;
-            //matchSuccessful = true;
-            //hasNext = true;
-        //}
-        //recoverPreviousStatus();
-        //return hasNext;
+        return hasNext;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.843 -0400", hash_original_method = "9958A7260053054A7CE88A67057D0BAF", hash_generated_method = "B12133F8C8E7AF5CD8F673CF64C9C5D5")
+    /**
+     * Returns {@code true} if this {@code Scanner} has one or more tokens remaining to parse
+     * and the next token matches a pattern compiled from the given string. This method will
+     * block if the data is still being read. This call is equivalent to
+     * {@code hasNext(Pattern.compile(pattern))}.
+     *
+     * @param pattern
+     *            the string specifying the pattern to scan for
+     * @return {@code true} if the specified pattern matches this {@code Scanner}'s
+     *         next token, {@code false} otherwise.
+     * @throws IllegalStateException
+     *             if the {@code Scanner} has been closed.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.912 -0500", hash_original_method = "9958A7260053054A7CE88A67057D0BAF", hash_generated_method = "3CAEEBC9983F9DD4125ABDBE34B87EB3")
     public boolean hasNext(String pattern) {
-        addTaint(pattern.getTaint());
-        boolean var89EF6F604CD6F3E6CBD980D731FFE7BE_170434295 = (hasNext(Pattern.compile(pattern)));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1770332135 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1770332135;
-        // ---------- Original Method ----------
-        //return hasNext(Pattern.compile(pattern));
+        return hasNext(Pattern.compile(pattern));
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.844 -0400", hash_original_method = "725531718FDC15B509CB20755672217B", hash_generated_method = "1862AF1BCC4DE41C200BDC0928F2E7D7")
+    /**
+     * Returns whether the next token can be translated into a valid
+     * {@code BigDecimal}.
+     *
+     * @return {@code true} if the next token can be translated into a valid
+     *         {@code BigDecimal}, otherwise {@code false.}
+     * @throws IllegalStateException
+     *             if the {@code Scanner} has been closed.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.913 -0500", hash_original_method = "725531718FDC15B509CB20755672217B", hash_generated_method = "F3CE9986D9718C8BA2EC07532D1859BA")
     public boolean hasNextBigDecimal() {
         Pattern floatPattern = getFloatPattern();
         boolean isBigDecimalValue = false;
-        if(hasNext(floatPattern))        
-        {
+        if (hasNext(floatPattern)) {
             String floatString = matcher.group();
             floatString = removeLocaleInfoFromFloat(floatString);
-            try 
-            {
+            try {
                 cacheHasNextValue = new BigDecimal(floatString);
                 isBigDecimalValue = true;
-            } //End block
-            catch (NumberFormatException e)
-            {
+            } catch (NumberFormatException e) {
                 matchSuccessful = false;
-            } //End block
-        } //End block
-        boolean var1FD60F90C8EF781F71C419DDA1546C50_494934750 = (isBigDecimalValue);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1737876801 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1737876801;
-        // ---------- Original Method ----------
-        //Pattern floatPattern = getFloatPattern();
-        //boolean isBigDecimalValue = false;
-        //if (hasNext(floatPattern)) {
-            //String floatString = matcher.group();
-            //floatString = removeLocaleInfoFromFloat(floatString);
-            //try {
-                //cacheHasNextValue = new BigDecimal(floatString);
-                //isBigDecimalValue = true;
-            //} catch (NumberFormatException e) {
-                //matchSuccessful = false;
-            //}
-        //}
-        //return isBigDecimalValue;
+            }
+        }
+        return isBigDecimalValue;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.844 -0400", hash_original_method = "E4D3C235D8E1DAFC304BAA9FB6E2754B", hash_generated_method = "502CFB30CC4D44AD0E92EF5970971851")
+    /**
+     * Returns whether the next token can be translated into a valid
+     * {@code BigInteger} in the default radix.
+     *
+     * @return {@code true} if the next token can be translated into a valid
+     *         {@code BigInteger}, otherwise {@code false}.
+     * @throws IllegalStateException
+     *             if the {@code Scanner} has been closed.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.914 -0500", hash_original_method = "E4D3C235D8E1DAFC304BAA9FB6E2754B", hash_generated_method = "7EE56A2CED0FB3287ABEDB164A2C2507")
     public boolean hasNextBigInteger() {
-        boolean var64635BE6E974D8063B7B707E1DCB64A7_1172757389 = (hasNextBigInteger(integerRadix));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_757173453 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_757173453;
-        // ---------- Original Method ----------
-        //return hasNextBigInteger(integerRadix);
+        return hasNextBigInteger(integerRadix);
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.845 -0400", hash_original_method = "C25E77B6A38D1DC9BA3B0FA0BBEC50D5", hash_generated_method = "EAF794743541C7F8D705B6A9BF8E2044")
+    /**
+     * Returns whether the next token can be translated into a valid
+     * {@code BigInteger} in the specified radix.
+     *
+     * @param radix
+     *            the radix used to translate the token into a
+     *            {@code BigInteger}.
+     * @return {@code true} if the next token can be translated into a valid
+     *         {@code BigInteger}, otherwise {@code false}.
+     * @throws IllegalStateException
+     *             if the {@code Scanner} has been closed.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.916 -0500", hash_original_method = "C25E77B6A38D1DC9BA3B0FA0BBEC50D5", hash_generated_method = "CEF42E54E0D157534F17D4FDF6FD2AAE")
     public boolean hasNextBigInteger(int radix) {
         Pattern integerPattern = getIntegerPattern(radix);
         boolean isBigIntegerValue = false;
-        if(hasNext(integerPattern))        
-        {
+        if (hasNext(integerPattern)) {
             String intString = matcher.group();
             intString = removeLocaleInfo(intString, DataType.INT);
-            try 
-            {
+            try {
                 cacheHasNextValue = new BigInteger(intString, radix);
                 isBigIntegerValue = true;
-            } //End block
-            catch (NumberFormatException e)
-            {
+            } catch (NumberFormatException e) {
                 matchSuccessful = false;
-            } //End block
-        } //End block
-        boolean varD3BFD38C6AF5CCDF65C670000ACADAFD_1280614664 = (isBigIntegerValue);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1886888747 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1886888747;
-        // ---------- Original Method ----------
-        //Pattern integerPattern = getIntegerPattern(radix);
-        //boolean isBigIntegerValue = false;
-        //if (hasNext(integerPattern)) {
-            //String intString = matcher.group();
-            //intString = removeLocaleInfo(intString, DataType.INT);
-            //try {
-                //cacheHasNextValue = new BigInteger(intString, radix);
-                //isBigIntegerValue = true;
-            //} catch (NumberFormatException e) {
-                //matchSuccessful = false;
-            //}
-        //}
-        //return isBigIntegerValue;
+            }
+        }
+        return isBigIntegerValue;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.846 -0400", hash_original_method = "EB649DF4AB30251C023B5B81F2B2B0E4", hash_generated_method = "655A6894570FDC968E1AE3CFDB96DAD0")
+    /**
+     * Returns whether the next token can be translated into a valid
+     * {@code boolean} value.
+     *
+     * @return {@code true} if the next token can be translated into a valid
+     *         {@code boolean} value, otherwise {@code false}.
+     * @throws IllegalStateException
+     *             if the {@code Scanner} has been closed.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.917 -0500", hash_original_method = "EB649DF4AB30251C023B5B81F2B2B0E4", hash_generated_method = "5E2F13790BE01AB548A4A994457B6D74")
     public boolean hasNextBoolean() {
-        boolean var88D8FF71BAD823DCB5880318F817F6FE_2024101497 = (hasNext(BOOLEAN_PATTERN));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1369108935 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1369108935;
-        // ---------- Original Method ----------
-        //return hasNext(BOOLEAN_PATTERN);
+        return hasNext(BOOLEAN_PATTERN);
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.846 -0400", hash_original_method = "58199F8244631FBA465F06EC32762D29", hash_generated_method = "8577B31E336AED0AEC0C9943F8F6ED21")
+    /**
+     * Returns whether the next token can be translated into a valid
+     * {@code byte} value in the default radix.
+     *
+     * @return {@code true} if the next token can be translated into a valid
+     *         {@code byte} value, otherwise {@code false}.
+     * @throws IllegalStateException
+     *             if the {@code Scanner} has been closed.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.917 -0500", hash_original_method = "58199F8244631FBA465F06EC32762D29", hash_generated_method = "66103AC50E2D34E655900B44943C3E44")
     public boolean hasNextByte() {
-        boolean varA0C7366AA38E52F442867E2AD3C6DDA9_22631182 = (hasNextByte(integerRadix));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1420172743 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1420172743;
-        // ---------- Original Method ----------
-        //return hasNextByte(integerRadix);
+        return hasNextByte(integerRadix);
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.847 -0400", hash_original_method = "A5B80B22ED065BD547115A7BB2F2B96D", hash_generated_method = "B7303C76510DA3EA9094DC7750D74523")
+    /**
+     * Returns whether the next token can be translated into a valid
+     * {@code byte} value in the specified radix.
+     *
+     * @param radix
+     *            the radix used to translate the token into a {@code byte}
+     *            value
+     * @return {@code true} if the next token can be translated into a valid
+     *         {@code byte} value, otherwise {@code false}.
+     * @throws IllegalStateException
+     *             if the {@code Scanner} has been closed.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.918 -0500", hash_original_method = "A5B80B22ED065BD547115A7BB2F2B96D", hash_generated_method = "765DA349C498F3E2D333DCF93C4154AC")
     public boolean hasNextByte(int radix) {
         Pattern integerPattern = getIntegerPattern(radix);
         boolean isByteValue = false;
-        if(hasNext(integerPattern))        
-        {
+        if (hasNext(integerPattern)) {
             String intString = matcher.group();
             intString = removeLocaleInfo(intString, DataType.INT);
-            try 
-            {
+            try {
                 cacheHasNextValue = Byte.valueOf(intString, radix);
                 isByteValue = true;
-            } //End block
-            catch (NumberFormatException e)
-            {
+            } catch (NumberFormatException e) {
                 matchSuccessful = false;
-            } //End block
-        } //End block
-        boolean var4213881AAAE63C68013F8DF22809449C_1136097769 = (isByteValue);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_768426794 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_768426794;
-        // ---------- Original Method ----------
-        //Pattern integerPattern = getIntegerPattern(radix);
-        //boolean isByteValue = false;
-        //if (hasNext(integerPattern)) {
-            //String intString = matcher.group();
-            //intString = removeLocaleInfo(intString, DataType.INT);
-            //try {
-                //cacheHasNextValue = Byte.valueOf(intString, radix);
-                //isByteValue = true;
-            //} catch (NumberFormatException e) {
-                //matchSuccessful = false;
-            //}
-        //}
-        //return isByteValue;
+            }
+        }
+        return isByteValue;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.847 -0400", hash_original_method = "66A96A75B245956604135FA693CF46B1", hash_generated_method = "8A4EA46B27B3D84CC6B710C6D81BAF71")
+    /**
+     * Returns whether the next token translated into a valid {@code double}
+     * value.
+     *
+     * @return {@code true} if the next token can be translated into a valid
+     *         {@code double} value, otherwise {@code false}.
+     * @throws IllegalStateException
+     *             if the {@code Scanner} has been closed.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.919 -0500", hash_original_method = "66A96A75B245956604135FA693CF46B1", hash_generated_method = "F8B531C62063230A6EE1A40D271FC11A")
     public boolean hasNextDouble() {
         Pattern floatPattern = getFloatPattern();
         boolean isDoubleValue = false;
-        if(hasNext(floatPattern))        
-        {
+        if (hasNext(floatPattern)) {
             String floatString = matcher.group();
             floatString = removeLocaleInfoFromFloat(floatString);
-            try 
-            {
+            try {
                 cacheHasNextValue = Double.valueOf(floatString);
                 isDoubleValue = true;
-            } //End block
-            catch (NumberFormatException e)
-            {
+            } catch (NumberFormatException e) {
                 matchSuccessful = false;
-            } //End block
-        } //End block
-        boolean varD731A081554B83E47296D9D098114250_250283203 = (isDoubleValue);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1264144795 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1264144795;
-        // ---------- Original Method ----------
-        //Pattern floatPattern = getFloatPattern();
-        //boolean isDoubleValue = false;
-        //if (hasNext(floatPattern)) {
-            //String floatString = matcher.group();
-            //floatString = removeLocaleInfoFromFloat(floatString);
-            //try {
-                //cacheHasNextValue = Double.valueOf(floatString);
-                //isDoubleValue = true;
-            //} catch (NumberFormatException e) {
-                //matchSuccessful = false;
-            //}
-        //}
-        //return isDoubleValue;
+            }
+        }
+        return isDoubleValue;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.848 -0400", hash_original_method = "FBD2AAA8FD71EC1957BF71E495BA575B", hash_generated_method = "90A8919E73AE3027D5ED03063E97FC8C")
+    /**
+     * Returns whether the next token can be translated into a valid
+     * {@code float} value.
+     *
+     * @return {@code true} if the next token can be translated into a valid
+     *         {@code float} value, otherwise {@code false}.
+     * @throws IllegalStateException
+     *             if the {@code Scanner} has been closed.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.920 -0500", hash_original_method = "FBD2AAA8FD71EC1957BF71E495BA575B", hash_generated_method = "8F6A1E1F5F736C31E893878B03609D18")
     public boolean hasNextFloat() {
         Pattern floatPattern = getFloatPattern();
         boolean isFloatValue = false;
-        if(hasNext(floatPattern))        
-        {
+        if (hasNext(floatPattern)) {
             String floatString = matcher.group();
             floatString = removeLocaleInfoFromFloat(floatString);
-            try 
-            {
+            try {
                 cacheHasNextValue = Float.valueOf(floatString);
                 isFloatValue = true;
-            } //End block
-            catch (NumberFormatException e)
-            {
+            } catch (NumberFormatException e) {
                 matchSuccessful = false;
-            } //End block
-        } //End block
-        boolean var19965B41D93D790584DCB9157A13FB48_1285535089 = (isFloatValue);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_822159022 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_822159022;
-        // ---------- Original Method ----------
-        //Pattern floatPattern = getFloatPattern();
-        //boolean isFloatValue = false;
-        //if (hasNext(floatPattern)) {
-            //String floatString = matcher.group();
-            //floatString = removeLocaleInfoFromFloat(floatString);
-            //try {
-                //cacheHasNextValue = Float.valueOf(floatString);
-                //isFloatValue = true;
-            //} catch (NumberFormatException e) {
-                //matchSuccessful = false;
-            //}
-        //}
-        //return isFloatValue;
+            }
+        }
+        return isFloatValue;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.848 -0400", hash_original_method = "5C4A5382507FD210B704AB0FDDE676B5", hash_generated_method = "D7E2873D2A88AC024EAA89DAEE676480")
+    /**
+     * Returns whether the next token can be translated into a valid {@code int}
+     * value in the default radix.
+     *
+     * @return {@code true} if the next token can be translated into a valid
+     *         {@code int} value, otherwise {@code false}.
+     * @throws IllegalStateException
+     *             if the {@code Scanner} has been closed,
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.921 -0500", hash_original_method = "5C4A5382507FD210B704AB0FDDE676B5", hash_generated_method = "607A88F24BF4021BB120DA8DCA567014")
     public boolean hasNextInt() {
-        boolean var1910A7ED0656EF08A1FAE0A07C6CCBF0_99450396 = (hasNextInt(integerRadix));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2117081326 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2117081326;
-        // ---------- Original Method ----------
-        //return hasNextInt(integerRadix);
+        return hasNextInt(integerRadix);
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.848 -0400", hash_original_method = "98DA0996AE9A85FE2EB4C6BCBC334600", hash_generated_method = "40FD13A50298B8667AF4CD4A622E288C")
+    /**
+     * Returns whether the next token can be translated into a valid {@code int}
+     * value in the specified radix.
+     *
+     * @param radix
+     *            the radix used to translate the token into an {@code int}
+     *            value.
+     * @return {@code true} if the next token in this {@code Scanner}'s input can be
+     *         translated into a valid {@code int} value, otherwise
+     *         {@code false}.
+     * @throws IllegalStateException
+     *             if the {@code Scanner} has been closed.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.922 -0500", hash_original_method = "98DA0996AE9A85FE2EB4C6BCBC334600", hash_generated_method = "69B1860955268A674911C0D4299B3B4C")
     public boolean hasNextInt(int radix) {
         Pattern integerPattern = getIntegerPattern(radix);
         boolean isIntValue = false;
-        if(hasNext(integerPattern))        
-        {
+        if (hasNext(integerPattern)) {
             String intString = matcher.group();
             intString = removeLocaleInfo(intString, DataType.INT);
-            try 
-            {
+            try {
                 cacheHasNextValue = Integer.valueOf(intString, radix);
                 isIntValue = true;
-            } //End block
-            catch (NumberFormatException e)
-            {
+            } catch (NumberFormatException e) {
                 matchSuccessful = false;
-            } //End block
-        } //End block
-        boolean varA9FDA0B07783271A921FD1E8AB9EBF67_1673784702 = (isIntValue);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_511417314 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_511417314;
-        // ---------- Original Method ----------
-        //Pattern integerPattern = getIntegerPattern(radix);
-        //boolean isIntValue = false;
-        //if (hasNext(integerPattern)) {
-            //String intString = matcher.group();
-            //intString = removeLocaleInfo(intString, DataType.INT);
-            //try {
-                //cacheHasNextValue = Integer.valueOf(intString, radix);
-                //isIntValue = true;
-            //} catch (NumberFormatException e) {
-                //matchSuccessful = false;
-            //}
-        //}
-        //return isIntValue;
+            }
+        }
+        return isIntValue;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.849 -0400", hash_original_method = "F85B53817DDA0DC627A3FD344338966A", hash_generated_method = "798557BAE11D18302354BEC329501B20")
+    /**
+     * Returns whether there is a line terminator in the input.
+     * This method may block.
+     *
+     * @return {@code true} if there is a line terminator in the input,
+     *         otherwise, {@code false}.
+     * @throws IllegalStateException
+     *             if the {@code Scanner} is closed.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.923 -0500", hash_original_method = "F85B53817DDA0DC627A3FD344338966A", hash_generated_method = "E1AA38C47583B8A7FD0F5013C7785A12")
     public boolean hasNextLine() {
         checkClosed();
         matcher.usePattern(LINE_PATTERN);
         matcher.region(findStartIndex, bufferLength);
+
         boolean hasNextLine = false;
-        while
-(true)        
-        {
-            if(matcher.find())            
-            {
-                if(inputExhausted || matcher.end() != bufferLength)                
-                {
+        while (true) {
+            if (matcher.find()) {
+                if (inputExhausted || matcher.end() != bufferLength) {
                     matchSuccessful = true;
                     hasNextLine = true;
                     break;
-                } //End block
-            } //End block
-            else
-            {
-                if(inputExhausted)                
-                {
+                }
+            } else {
+                if (inputExhausted) {
                     matchSuccessful = false;
                     break;
-                } //End block
-            } //End block
-            if(!inputExhausted)            
-            {
+                }
+            }
+            if (!inputExhausted) {
                 readMore();
                 resetMatcher();
-            } //End block
-        } //End block
-        boolean var03BBB060FB832609545C9DBCC7D85A3E_40865532 = (hasNextLine);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_602705077 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_602705077;
-        // ---------- Original Method ----------
-        //checkClosed();
-        //matcher.usePattern(LINE_PATTERN);
-        //matcher.region(findStartIndex, bufferLength);
-        //boolean hasNextLine = false;
-        //while (true) {
-            //if (matcher.find()) {
-                //if (inputExhausted || matcher.end() != bufferLength) {
-                    //matchSuccessful = true;
-                    //hasNextLine = true;
-                    //break;
-                //}
-            //} else {
-                //if (inputExhausted) {
-                    //matchSuccessful = false;
-                    //break;
-                //}
-            //}
-            //if (!inputExhausted) {
-                //readMore();
-                //resetMatcher();
-            //}
-        //}
-        //return hasNextLine;
+            }
+        }
+        return hasNextLine;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.849 -0400", hash_original_method = "4E2EF7109AFFFF700ACDD8E154A60B95", hash_generated_method = "6408DBA47125E5A6AD522468FA8B0FC6")
+    /**
+     * Returns whether the next token can be translated into a valid
+     * {@code long} value in the default radix.
+     *
+     * @return {@code true} if the next token can be translated into a valid
+     *         {@code long} value, otherwise {@code false}.
+     * @throws IllegalStateException
+     *             if the {@code Scanner} has been closed.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.924 -0500", hash_original_method = "4E2EF7109AFFFF700ACDD8E154A60B95", hash_generated_method = "E1BC5DC88D8FA8113CEC2DA7D72F6A33")
     public boolean hasNextLong() {
-        boolean varF9D0037E413797F6A095CCA459619085_1074520179 = (hasNextLong(integerRadix));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_506073742 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_506073742;
-        // ---------- Original Method ----------
-        //return hasNextLong(integerRadix);
+        return hasNextLong(integerRadix);
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.850 -0400", hash_original_method = "9F7A3D072C1FB851C44AA1EFB73ED70A", hash_generated_method = "34BCB2F1BD1543AE5D70B0523FCE5240")
+    /**
+     * Returns whether the next token can be translated into a valid
+     * {@code long} value in the specified radix.
+     *
+     * @param radix
+     *            the radix used to translate the token into a {@code long}
+     *            value.
+     * @return {@code true} if the next token can be translated into a valid
+     *         {@code long} value, otherwise {@code false}.
+     * @throws IllegalStateException
+     *             if the {@code Scanner} has been closed.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.924 -0500", hash_original_method = "9F7A3D072C1FB851C44AA1EFB73ED70A", hash_generated_method = "3488429AADF56C1BF642DD376DE24243")
     public boolean hasNextLong(int radix) {
         Pattern integerPattern = getIntegerPattern(radix);
         boolean isLongValue = false;
-        if(hasNext(integerPattern))        
-        {
+        if (hasNext(integerPattern)) {
             String intString = matcher.group();
             intString = removeLocaleInfo(intString, DataType.INT);
-            try 
-            {
+            try {
                 cacheHasNextValue = Long.valueOf(intString, radix);
                 isLongValue = true;
-            } //End block
-            catch (NumberFormatException e)
-            {
+            } catch (NumberFormatException e) {
                 matchSuccessful = false;
-            } //End block
-        } //End block
-        boolean var08C85966FB366E8026585C4A85619558_588323451 = (isLongValue);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_742285561 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_742285561;
-        // ---------- Original Method ----------
-        //Pattern integerPattern = getIntegerPattern(radix);
-        //boolean isLongValue = false;
-        //if (hasNext(integerPattern)) {
-            //String intString = matcher.group();
-            //intString = removeLocaleInfo(intString, DataType.INT);
-            //try {
-                //cacheHasNextValue = Long.valueOf(intString, radix);
-                //isLongValue = true;
-            //} catch (NumberFormatException e) {
-                //matchSuccessful = false;
-            //}
-        //}
-        //return isLongValue;
+            }
+        }
+        return isLongValue;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.850 -0400", hash_original_method = "68819BFDCF6E57EBBFC27075215E0009", hash_generated_method = "2B8F8788AAB6B0F90439E8C250FDB519")
+    /**
+     * Returns whether the next token can be translated into a valid
+     * {@code short} value in the default radix.
+     *
+     * @return {@code true} if the next token can be translated into a valid
+     *         {@code short} value, otherwise {@code false}.
+     * @throws IllegalStateException
+     *             if the {@code Scanner} has been closed.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.925 -0500", hash_original_method = "68819BFDCF6E57EBBFC27075215E0009", hash_generated_method = "8DC980CE9BECAAB756362F4C52E78435")
     public boolean hasNextShort() {
-        boolean var0AF113868AE522EC65C1F85AB7F0CDD0_876755215 = (hasNextShort(integerRadix));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_56418707 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_56418707;
-        // ---------- Original Method ----------
-        //return hasNextShort(integerRadix);
+        return hasNextShort(integerRadix);
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.851 -0400", hash_original_method = "BC1837EAC21D315C1A66DDC5582DCF81", hash_generated_method = "A7424D0F8D888E339BF4DE80403A3219")
+    /**
+     * Returns whether the next token can be translated into a valid
+     * {@code short} value in the specified radix.
+     *
+     * @param radix
+     *            the radix used to translate the token into a {@code short}
+     *            value.
+     * @return {@code true} if the next token can be translated into a valid
+     *         {@code short} value, otherwise {@code false}.
+     * @throws IllegalStateException
+     *             if the {@code Scanner} has been closed.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.926 -0500", hash_original_method = "BC1837EAC21D315C1A66DDC5582DCF81", hash_generated_method = "325B69F645497A2CDF3612F30CB4DFD3")
     public boolean hasNextShort(int radix) {
         Pattern integerPattern = getIntegerPattern(radix);
         boolean isShortValue = false;
-        if(hasNext(integerPattern))        
-        {
+        if (hasNext(integerPattern)) {
             String intString = matcher.group();
             intString = removeLocaleInfo(intString, DataType.INT);
-            try 
-            {
+            try {
                 cacheHasNextValue = Short.valueOf(intString, radix);
                 isShortValue = true;
-            } //End block
-            catch (NumberFormatException e)
-            {
+            } catch (NumberFormatException e) {
                 matchSuccessful = false;
-            } //End block
-        } //End block
-        boolean var5BE8894813CD19E2AE260B1FDBC8003C_982549214 = (isShortValue);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1736194354 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1736194354;
-        // ---------- Original Method ----------
-        //Pattern integerPattern = getIntegerPattern(radix);
-        //boolean isShortValue = false;
-        //if (hasNext(integerPattern)) {
-            //String intString = matcher.group();
-            //intString = removeLocaleInfo(intString, DataType.INT);
-            //try {
-                //cacheHasNextValue = Short.valueOf(intString, radix);
-                //isShortValue = true;
-            //} catch (NumberFormatException e) {
-                //matchSuccessful = false;
-            //}
-        //}
-        //return isShortValue;
+            }
+        }
+        return isShortValue;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.851 -0400", hash_original_method = "AF5FE6AF92A07FF4E461FEC03ECD4D84", hash_generated_method = "3B75DEB441A548A61FDFCE765A0A4C11")
+    /**
+     * Returns the last {@code IOException} that was raised while reading from the underlying
+     * input.
+     *
+     * @return the last thrown {@code IOException}, or {@code null} if none was thrown.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.927 -0500", hash_original_method = "AF5FE6AF92A07FF4E461FEC03ECD4D84", hash_generated_method = "9021EA20032F11132D2B9F300EA6476A")
     public IOException ioException() {
-IOException var1C9C3579611AFFB9BDE735EED6EBCBD7_948069359 =         lastIOException;
-        var1C9C3579611AFFB9BDE735EED6EBCBD7_948069359.addTaint(taint);
-        return var1C9C3579611AFFB9BDE735EED6EBCBD7_948069359;
-        // ---------- Original Method ----------
-        //return lastIOException;
+        return lastIOException;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.851 -0400", hash_original_method = "21C822C4BC15A6F74D874095878E5501", hash_generated_method = "D03D903B271618488F2F657FEE76912B")
+    /**
+     * Return the {@code Locale} of this {@code Scanner}.
+     *
+     * @return the {@code Locale} of this {@code Scanner}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.928 -0500", hash_original_method = "21C822C4BC15A6F74D874095878E5501", hash_generated_method = "844FD25BD3EAACE05B7B47916D0B681B")
     public Locale locale() {
-Locale varB14E682FEAD06D8198D8ADBCBD62DEDB_164287832 =         locale;
-        varB14E682FEAD06D8198D8ADBCBD62DEDB_164287832.addTaint(taint);
-        return varB14E682FEAD06D8198D8ADBCBD62DEDB_164287832;
-        // ---------- Original Method ----------
-        //return locale;
+        return locale;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.851 -0400", hash_original_method = "2D94F093F10F1A8356EDEC86FADDCA70", hash_generated_method = "19DD61F5F9F925805DE8991DA09439A6")
+    /**
+     * Returns the result of the last matching operation.
+     * <p>
+     * The next* and find* methods return the match result in the case of a
+     * successful match.
+     *
+     * @return the match result of the last successful match operation
+     * @throws IllegalStateException
+     *             if the match result is not available, of if the last match
+     *             was not successful.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.928 -0500", hash_original_method = "2D94F093F10F1A8356EDEC86FADDCA70", hash_generated_method = "5641FECC4850BFBA421BE67B82DBDED5")
     public MatchResult match() {
-        if(!matchSuccessful)        
-        {
-            IllegalStateException varC311A989A119B96A6232C22ABFE87C25_330337713 = new IllegalStateException();
-            varC311A989A119B96A6232C22ABFE87C25_330337713.addTaint(taint);
-            throw varC311A989A119B96A6232C22ABFE87C25_330337713;
-        } //End block
-MatchResult var21E7CF64DE21F9FE27E7A15788408EBF_1003168905 =         matcher.toMatchResult();
-        var21E7CF64DE21F9FE27E7A15788408EBF_1003168905.addTaint(taint);
-        return var21E7CF64DE21F9FE27E7A15788408EBF_1003168905;
-        // ---------- Original Method ----------
-        //if (!matchSuccessful) {
-            //throw new IllegalStateException();
-        //}
-        //return matcher.toMatchResult();
+        if (!matchSuccessful) {
+            throw new IllegalStateException();
+        }
+        return matcher.toMatchResult();
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.851 -0400", hash_original_method = "A473F9C9E320CD6CEDCE3CE271E08C07", hash_generated_method = "23733F973624AB9EF6FC27565644876B")
+    /**
+     * Returns the next token. The token will be both prefixed and postfixed by
+     * the delimiter that is currently being used (or a string that matches the
+     * delimiter pattern). This method will block if input is being read.
+     *
+     * @return the next complete token.
+     * @throws IllegalStateException
+     *             if this {@code Scanner} has been closed.
+     * @throws NoSuchElementException
+     *             if input has been exhausted.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.929 -0500", hash_original_method = "A473F9C9E320CD6CEDCE3CE271E08C07", hash_generated_method = "5AD096FC9C61E6884323F08CF48B6FE0")
     public String next() {
-String var5793CCCF246E3B39A8BF32047CAA536F_1628232550 =         next(ANY_PATTERN);
-        var5793CCCF246E3B39A8BF32047CAA536F_1628232550.addTaint(taint);
-        return var5793CCCF246E3B39A8BF32047CAA536F_1628232550;
-        // ---------- Original Method ----------
-        //return next(ANY_PATTERN);
+        return next(ANY_PATTERN);
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.854 -0400", hash_original_method = "064C5502A668BA6541E1986AFB8ECCE1", hash_generated_method = "D737CBFB4748A82810492277837FE09F")
+    /**
+     * Returns the next token if it matches the specified pattern. The token
+     * will be both prefixed and postfixed by the delimiter that is currently
+     * being used (or a string that matches the delimiter pattern). This method will block
+     * if input is being read.
+     *
+     * @param pattern
+     *            the specified pattern to scan.
+     * @return the next token.
+     * @throws IllegalStateException
+     *             if this {@code Scanner} has been closed.
+     * @throws NoSuchElementException
+     *             if input has been exhausted.
+     * @throws InputMismatchException
+     *             if the next token does not match the pattern given.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.930 -0500", hash_original_method = "064C5502A668BA6541E1986AFB8ECCE1", hash_generated_method = "3B0A40E136CAEE9ADB002BDD01A8DD39")
     public String next(Pattern pattern) {
-        addTaint(pattern.getTaint());
         checkClosed();
         checkNull(pattern);
         matchSuccessful = false;
         saveCurrentStatus();
-        if(!setTokenRegion())        
-        {
+        if (!setTokenRegion()) {
             recoverPreviousStatus();
-            NoSuchElementException var28D00AB599969908D71F102AF992D49A_617310487 = new NoSuchElementException();
-            var28D00AB599969908D71F102AF992D49A_617310487.addTaint(taint);
-            throw var28D00AB599969908D71F102AF992D49A_617310487;
-        } //End block
+            // if setting match region fails
+            throw new NoSuchElementException();
+        }
         matcher.usePattern(pattern);
-        if(!matcher.matches())        
-        {
+        if (!matcher.matches()) {
             recoverPreviousStatus();
-            InputMismatchException varCFB23610718B4049192DFAAC13B0BE66_1895774417 = new InputMismatchException();
-            varCFB23610718B4049192DFAAC13B0BE66_1895774417.addTaint(taint);
-            throw varCFB23610718B4049192DFAAC13B0BE66_1895774417;
-        } //End block
+            throw new InputMismatchException();
+
+        }
         matchSuccessful = true;
-String varB5AAE48376C24FBB3ED941DE034F616C_1396829741 =         matcher.group();
-        varB5AAE48376C24FBB3ED941DE034F616C_1396829741.addTaint(taint);
-        return varB5AAE48376C24FBB3ED941DE034F616C_1396829741;
-        // ---------- Original Method ----------
-        //checkClosed();
-        //checkNull(pattern);
-        //matchSuccessful = false;
-        //saveCurrentStatus();
-        //if (!setTokenRegion()) {
-            //recoverPreviousStatus();
-            //throw new NoSuchElementException();
-        //}
-        //matcher.usePattern(pattern);
-        //if (!matcher.matches()) {
-            //recoverPreviousStatus();
-            //throw new InputMismatchException();
-        //}
-        //matchSuccessful = true;
-        //return matcher.group();
+        return matcher.group();
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.854 -0400", hash_original_method = "4894718ADE2D067062D34204C5088110", hash_generated_method = "4DF333B94C44FC6410378B4F2A47761C")
+    /**
+     * Returns the next token if it matches the specified pattern. The token
+     * will be both prefixed and postfixed by the delimiter that is currently
+     * being used (or a string that matches the delimiter pattern). This method will block
+     * if input is being read. Calling this method is equivalent to
+     * {@code next(Pattern.compile(pattern))}.
+     *
+     * @param pattern
+     *            the string specifying the pattern to scan for.
+     * @return the next token.
+     * @throws IllegalStateException
+     *             if this {@code Scanner} has been closed.
+     * @throws NoSuchElementException
+     *             if input has been exhausted.
+     * @throws InputMismatchException
+     *             if the next token does not match the pattern given.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.931 -0500", hash_original_method = "4894718ADE2D067062D34204C5088110", hash_generated_method = "6A7C61792D0E39B4E38E7DBC1DC510B8")
     public String next(String pattern) {
-        addTaint(pattern.getTaint());
-String var421A1E4D0FC47575EF77486A7FB08DAB_1736034238 =         next(Pattern.compile(pattern));
-        var421A1E4D0FC47575EF77486A7FB08DAB_1736034238.addTaint(taint);
-        return var421A1E4D0FC47575EF77486A7FB08DAB_1736034238;
-        // ---------- Original Method ----------
-        //return next(Pattern.compile(pattern));
+        return next(Pattern.compile(pattern));
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.855 -0400", hash_original_method = "E9A644C72A3309EE871164344474A07C", hash_generated_method = "A6B213324F24833E4451314965EAB064")
+    /**
+     * Returns the next token as a {@code BigDecimal}. This method will block if input is
+     * being read. If the next token can be translated into a {@code BigDecimal}
+     * the following is done: All {@code Locale}-specific prefixes, group separators,
+     * and {@code Locale}-specific suffixes are removed. Then non-ASCII digits are
+     * mapped into ASCII digits via {@link Character#digit(char, int)}, and a
+     * negative sign (-) is added if the {@code Locale}-specific negative prefix or
+     * suffix was present. Finally the resulting string is passed to
+     * {@code BigDecimal(String) }.
+     *
+     * @return the next token as a {@code BigDecimal}.
+     * @throws IllegalStateException
+     *             if this {@code Scanner} has been closed.
+     * @throws NoSuchElementException
+     *             if input has been exhausted.
+     * @throws InputMismatchException
+     *             if the next token can not be translated into a valid
+     *             {@code BigDecimal}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.932 -0500", hash_original_method = "E9A644C72A3309EE871164344474A07C", hash_generated_method = "A6FC10D084F11C0FD29AA7D7677E5B62")
     public BigDecimal nextBigDecimal() {
         checkClosed();
         Object obj = cacheHasNextValue;
         cacheHasNextValue = null;
-        if(obj instanceof BigDecimal)        
-        {
+        if (obj instanceof BigDecimal) {
             findStartIndex = cachehasNextIndex;
-BigDecimal var37C70D4B47C4AEFD43AD4A6492977AAF_1019676362 =             (BigDecimal) obj;
-            var37C70D4B47C4AEFD43AD4A6492977AAF_1019676362.addTaint(taint);
-            return var37C70D4B47C4AEFD43AD4A6492977AAF_1019676362;
-        } //End block
+            return (BigDecimal) obj;
+        }
         Pattern floatPattern = getFloatPattern();
         String floatString = next(floatPattern);
         floatString = removeLocaleInfoFromFloat(floatString);
         BigDecimal bigDecimalValue;
-        try 
-        {
+        try {
             bigDecimalValue = new BigDecimal(floatString);
-        } //End block
-        catch (NumberFormatException e)
-        {
+        } catch (NumberFormatException e) {
             matchSuccessful = false;
             recoverPreviousStatus();
-            InputMismatchException varCFB23610718B4049192DFAAC13B0BE66_1671469876 = new InputMismatchException();
-            varCFB23610718B4049192DFAAC13B0BE66_1671469876.addTaint(taint);
-            throw varCFB23610718B4049192DFAAC13B0BE66_1671469876;
-        } //End block
-BigDecimal var44A3084B13A7A676F46780F49B2AB84F_1981000333 =         bigDecimalValue;
-        var44A3084B13A7A676F46780F49B2AB84F_1981000333.addTaint(taint);
-        return var44A3084B13A7A676F46780F49B2AB84F_1981000333;
-        // ---------- Original Method ----------
-        //checkClosed();
-        //Object obj = cacheHasNextValue;
-        //cacheHasNextValue = null;
-        //if (obj instanceof BigDecimal) {
-            //findStartIndex = cachehasNextIndex;
-            //return (BigDecimal) obj;
-        //}
-        //Pattern floatPattern = getFloatPattern();
-        //String floatString = next(floatPattern);
-        //floatString = removeLocaleInfoFromFloat(floatString);
-        //BigDecimal bigDecimalValue;
-        //try {
-            //bigDecimalValue = new BigDecimal(floatString);
-        //} catch (NumberFormatException e) {
-            //matchSuccessful = false;
-            //recoverPreviousStatus();
-            //throw new InputMismatchException();
-        //}
-        //return bigDecimalValue;
+            throw new InputMismatchException();
+        }
+        return bigDecimalValue;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.855 -0400", hash_original_method = "144A2EEE9BFD199E176BF785D76B1260", hash_generated_method = "8F934860169B8C718023D62CAD035DA3")
+    /**
+     * Returns the next token as a {@code BigInteger}. This method will block if input is
+     * being read. Equivalent to {@code nextBigInteger(DEFAULT_RADIX)}.
+     *
+     * @return the next token as {@code BigInteger}.
+     * @throws IllegalStateException
+     *             if this {@code Scanner} has been closed.
+     * @throws NoSuchElementException
+     *             if input has been exhausted.
+     * @throws InputMismatchException
+     *             if the next token can not be translated into a valid
+     *             {@code BigInteger}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.933 -0500", hash_original_method = "144A2EEE9BFD199E176BF785D76B1260", hash_generated_method = "5B039D66EE6ED1F670308D7D32127FB6")
     public BigInteger nextBigInteger() {
-BigInteger varCA4C1AB9C133629FF9E9A3A74F789A07_1696774652 =         nextBigInteger(integerRadix);
-        varCA4C1AB9C133629FF9E9A3A74F789A07_1696774652.addTaint(taint);
-        return varCA4C1AB9C133629FF9E9A3A74F789A07_1696774652;
-        // ---------- Original Method ----------
-        //return nextBigInteger(integerRadix);
+        return nextBigInteger(integerRadix);
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.855 -0400", hash_original_method = "A32F88E5530C257A4D62223BBE0A1F90", hash_generated_method = "A565835885BCC08B648BDD9198FF08B9")
+    /**
+     * Returns the next token as a {@code BigInteger} with the specified radix.
+     * This method will block if input is being read. If the next token can be translated
+     * into a {@code BigInteger} the following is done: All {@code Locale}-specific
+     * prefixes, group separators, and {@code Locale}-specific suffixes are removed.
+     * Then non-ASCII digits are mapped into ASCII digits via
+     * {@link Character#digit(char, int)}, and a negative sign (-) is added if the
+     * {@code Locale}-specific negative prefix or suffix was present. Finally the
+     * resulting String is passed to {@link BigInteger#BigInteger(String, int)}}
+     * with the specified radix.
+     *
+     * @param radix
+     *            the radix used to translate the token into a
+     *            {@code BigInteger}.
+     * @return the next token as a {@code BigInteger}
+     * @throws IllegalStateException
+     *             if this {@code Scanner} has been closed.
+     * @throws NoSuchElementException
+     *             if input has been exhausted.
+     * @throws InputMismatchException
+     *             if the next token can not be translated into a valid
+     *             {@code BigInteger}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.934 -0500", hash_original_method = "A32F88E5530C257A4D62223BBE0A1F90", hash_generated_method = "6F0D66E3D4C02FAC893009D665798369")
     public BigInteger nextBigInteger(int radix) {
-        addTaint(radix);
         checkClosed();
         Object obj = cacheHasNextValue;
         cacheHasNextValue = null;
-        if(obj instanceof BigInteger)        
-        {
+        if (obj instanceof BigInteger) {
             findStartIndex = cachehasNextIndex;
-BigInteger var8BC401377AE0097F920B30F4FA719BB6_1610482409 =             (BigInteger) obj;
-            var8BC401377AE0097F920B30F4FA719BB6_1610482409.addTaint(taint);
-            return var8BC401377AE0097F920B30F4FA719BB6_1610482409;
-        } //End block
+            return (BigInteger) obj;
+        }
         Pattern integerPattern = getIntegerPattern(radix);
         String intString = next(integerPattern);
         intString = removeLocaleInfo(intString, DataType.INT);
         BigInteger bigIntegerValue;
-        try 
-        {
+        try {
             bigIntegerValue = new BigInteger(intString, radix);
-        } //End block
-        catch (NumberFormatException e)
-        {
+        } catch (NumberFormatException e) {
             matchSuccessful = false;
             recoverPreviousStatus();
-            InputMismatchException varCFB23610718B4049192DFAAC13B0BE66_368207147 = new InputMismatchException();
-            varCFB23610718B4049192DFAAC13B0BE66_368207147.addTaint(taint);
-            throw varCFB23610718B4049192DFAAC13B0BE66_368207147;
-        } //End block
-BigInteger var8AF16930E5451512123E8827D73E0424_153730615 =         bigIntegerValue;
-        var8AF16930E5451512123E8827D73E0424_153730615.addTaint(taint);
-        return var8AF16930E5451512123E8827D73E0424_153730615;
-        // ---------- Original Method ----------
-        //checkClosed();
-        //Object obj = cacheHasNextValue;
-        //cacheHasNextValue = null;
-        //if (obj instanceof BigInteger) {
-            //findStartIndex = cachehasNextIndex;
-            //return (BigInteger) obj;
-        //}
-        //Pattern integerPattern = getIntegerPattern(radix);
-        //String intString = next(integerPattern);
-        //intString = removeLocaleInfo(intString, DataType.INT);
-        //BigInteger bigIntegerValue;
-        //try {
-            //bigIntegerValue = new BigInteger(intString, radix);
-        //} catch (NumberFormatException e) {
-            //matchSuccessful = false;
-            //recoverPreviousStatus();
-            //throw new InputMismatchException();
-        //}
-        //return bigIntegerValue;
+            throw new InputMismatchException();
+        }
+        return bigIntegerValue;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.855 -0400", hash_original_method = "D0E4DE4C67E1DCF9B9C54027B3E1E21D", hash_generated_method = "CCF86E5EA5B899DFD7375E5E12F07A7C")
+    /**
+     * Returns the next token as a {@code boolean}. This method will block if input is
+     * being read.
+     *
+     * @return the next token as a {@code boolean}.
+     * @throws IllegalStateException
+     *             if this {@code Scanner} has been closed.
+     * @throws NoSuchElementException
+     *             if input has been exhausted.
+     * @throws InputMismatchException
+     *             if the next token can not be translated into a valid
+     *             {@code boolean} value.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.935 -0500", hash_original_method = "D0E4DE4C67E1DCF9B9C54027B3E1E21D", hash_generated_method = "EB909912857FD197A194F38FBA4A9EA8")
     public boolean nextBoolean() {
-        boolean var41FAC9845DB48FC67D8312E1605941EC_264900776 = (Boolean.parseBoolean(next(BOOLEAN_PATTERN)));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1570390255 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1570390255;
-        // ---------- Original Method ----------
-        //return Boolean.parseBoolean(next(BOOLEAN_PATTERN));
+        return Boolean.parseBoolean(next(BOOLEAN_PATTERN));
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.855 -0400", hash_original_method = "7CE1C60D76B7F2532B9BC1651A113CEF", hash_generated_method = "5A08BD147A6AABDAB5582CA80F74C729")
+    /**
+     * Returns the next token as a {@code byte}. This method will block if input is being
+     * read. Equivalent to {@code nextByte(DEFAULT_RADIX)}.
+     *
+     * @return the next token as a {@code byte}.
+     * @throws IllegalStateException
+     *             if this {@code Scanner} has been closed.
+     * @throws NoSuchElementException
+     *             if input has been exhausted.
+     * @throws InputMismatchException
+     *             if the next token can not be translated into a valid
+     *             {@code byte} value.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.935 -0500", hash_original_method = "7CE1C60D76B7F2532B9BC1651A113CEF", hash_generated_method = "C642C25DB42477C1DD6ABDC20CB0DB38")
     public byte nextByte() {
-        byte varA0694E0B3F92169FA57116F2A3C1B51E_231502359 = (nextByte(integerRadix));
-                byte var40EA57D3EE3C07BF1C102B466E1C3091_932720466 = getTaintByte();
-        return var40EA57D3EE3C07BF1C102B466E1C3091_932720466;
-        // ---------- Original Method ----------
-        //return nextByte(integerRadix);
+        return nextByte(integerRadix);
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.856 -0400", hash_original_method = "9181863BF854F96D8E1FF1A461B82F5F", hash_generated_method = "1D07B7CA76F344ADC44A8D4C282AD522")
+    /**
+     * Returns the next token as a {@code byte} with the specified radix. Will
+     * block if input is being read. If the next token can be translated into a
+     * {@code byte} the following is done: All {@code Locale}-specific prefixes, group
+     * separators, and {@code Locale}-specific suffixes are removed. Then non-ASCII
+     * digits are mapped into ASCII digits via
+     * {@link Character#digit(char, int)}, and a negative sign (-) is added if the
+     * {@code Locale}-specific negative prefix or suffix was present. Finally the
+     * resulting String is passed to {@link Byte#parseByte(String, int)}} with
+     * the specified radix.
+     *
+     * @param radix
+     *            the radix used to translate the token into {@code byte} value.
+     * @return the next token as a {@code byte}.
+     * @throws IllegalStateException
+     *             if this {@code Scanner} has been closed.
+     * @throws NoSuchElementException
+     *             if input has been exhausted.
+     * @throws InputMismatchException
+     *             if the next token can not be translated into a valid
+     *             {@code byte} value.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.936 -0500", hash_original_method = "9181863BF854F96D8E1FF1A461B82F5F", hash_generated_method = "EF247ECD09C24698B239C83C3A87996D")
     @SuppressWarnings("boxing")
-    public byte nextByte(int radix) {
-        addTaint(radix);
+public byte nextByte(int radix) {
         checkClosed();
         Object obj = cacheHasNextValue;
         cacheHasNextValue = null;
-        if(obj instanceof Byte)        
-        {
+        if (obj instanceof Byte) {
             findStartIndex = cachehasNextIndex;
-            byte var08C4D4744DCBDCE86395B60EF1209ED9_1697263233 = ((Byte) obj);
-                        byte var40EA57D3EE3C07BF1C102B466E1C3091_1967376600 = getTaintByte();
-            return var40EA57D3EE3C07BF1C102B466E1C3091_1967376600;
-        } //End block
+            return (Byte) obj;
+        }
         Pattern integerPattern = getIntegerPattern(radix);
         String intString = next(integerPattern);
         intString = removeLocaleInfo(intString, DataType.INT);
         byte byteValue = 0;
-        try 
-        {
+        try {
             byteValue = Byte.parseByte(intString, radix);
-        } //End block
-        catch (NumberFormatException e)
-        {
+        } catch (NumberFormatException e) {
             matchSuccessful = false;
             recoverPreviousStatus();
-            InputMismatchException varCFB23610718B4049192DFAAC13B0BE66_458242902 = new InputMismatchException();
-            varCFB23610718B4049192DFAAC13B0BE66_458242902.addTaint(taint);
-            throw varCFB23610718B4049192DFAAC13B0BE66_458242902;
-        } //End block
-        byte varB06DCFA642C28EAD8A57F682A6525BCB_544749844 = (byteValue);
-                byte var40EA57D3EE3C07BF1C102B466E1C3091_527502883 = getTaintByte();
-        return var40EA57D3EE3C07BF1C102B466E1C3091_527502883;
-        // ---------- Original Method ----------
-        //checkClosed();
-        //Object obj = cacheHasNextValue;
-        //cacheHasNextValue = null;
-        //if (obj instanceof Byte) {
-            //findStartIndex = cachehasNextIndex;
-            //return (Byte) obj;
-        //}
-        //Pattern integerPattern = getIntegerPattern(radix);
-        //String intString = next(integerPattern);
-        //intString = removeLocaleInfo(intString, DataType.INT);
-        //byte byteValue = 0;
-        //try {
-            //byteValue = Byte.parseByte(intString, radix);
-        //} catch (NumberFormatException e) {
-            //matchSuccessful = false;
-            //recoverPreviousStatus();
-            //throw new InputMismatchException();
-        //}
-        //return byteValue;
+            throw new InputMismatchException();
+        }
+        return byteValue;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.856 -0400", hash_original_method = "59ED3F69878B10BC787D8DCCAB5B2B3E", hash_generated_method = "1F7F9B4F5545DD9111EAED0F19906C24")
+    /**
+     * Returns the next token as a {@code double}. This method will block if input is being
+     * read. If the next token can be translated into a {@code double} the
+     * following is done: All {@code Locale}-specific prefixes, group separators, and
+     * {@code Locale}-specific suffixes are removed. Then non-ASCII digits are mapped
+     * into ASCII digits via {@link Character#digit(char, int)}, and a negative
+     * sign (-) is added if the {@code Locale}-specific negative prefix or suffix was
+     * present. Finally the resulting String is passed to
+     * {@link Double#parseDouble(String)}}. If the token matches the localized
+     * NaN or infinity strings, it is also passed to
+     * {@link Double#parseDouble(String)}}.
+     *
+     * @return the next token as a {@code double}.
+     * @throws IllegalStateException
+     *             if this {@code Scanner} has been closed.
+     * @throws NoSuchElementException
+     *             if input has been exhausted.
+     * @throws InputMismatchException
+     *             if the next token can not be translated into a valid
+     *             {@code double} value.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.937 -0500", hash_original_method = "59ED3F69878B10BC787D8DCCAB5B2B3E", hash_generated_method = "5E03FA7352C1C59BCA9729DCDDF2A859")
     @SuppressWarnings("boxing")
-    public double nextDouble() {
+public double nextDouble() {
         checkClosed();
         Object obj = cacheHasNextValue;
         cacheHasNextValue = null;
-        if(obj instanceof Double)        
-        {
+        if (obj instanceof Double) {
             findStartIndex = cachehasNextIndex;
-            double varB4480C628311720259FACA195A47CE89_120319866 = ((Double) obj);
-                        double varE8CD7DA078A86726031AD64F35F5A6C0_967372389 = getTaintDouble();
-            return varE8CD7DA078A86726031AD64F35F5A6C0_967372389;
-        } //End block
+            return (Double) obj;
+        }
         Pattern floatPattern = getFloatPattern();
         String floatString = next(floatPattern);
         floatString = removeLocaleInfoFromFloat(floatString);
         double doubleValue = 0;
-        try 
-        {
+        try {
             doubleValue = Double.parseDouble(floatString);
-        } //End block
-        catch (NumberFormatException e)
-        {
+        } catch (NumberFormatException e) {
             matchSuccessful = false;
             recoverPreviousStatus();
-            InputMismatchException varCFB23610718B4049192DFAAC13B0BE66_1270394554 = new InputMismatchException();
-            varCFB23610718B4049192DFAAC13B0BE66_1270394554.addTaint(taint);
-            throw varCFB23610718B4049192DFAAC13B0BE66_1270394554;
-        } //End block
-        double varD3673895FFF90A031E58F7DF70D852B3_1103444456 = (doubleValue);
-                double varE8CD7DA078A86726031AD64F35F5A6C0_126148820 = getTaintDouble();
-        return varE8CD7DA078A86726031AD64F35F5A6C0_126148820;
-        // ---------- Original Method ----------
-        //checkClosed();
-        //Object obj = cacheHasNextValue;
-        //cacheHasNextValue = null;
-        //if (obj instanceof Double) {
-            //findStartIndex = cachehasNextIndex;
-            //return (Double) obj;
-        //}
-        //Pattern floatPattern = getFloatPattern();
-        //String floatString = next(floatPattern);
-        //floatString = removeLocaleInfoFromFloat(floatString);
-        //double doubleValue = 0;
-        //try {
-            //doubleValue = Double.parseDouble(floatString);
-        //} catch (NumberFormatException e) {
-            //matchSuccessful = false;
-            //recoverPreviousStatus();
-            //throw new InputMismatchException();
-        //}
-        //return doubleValue;
+            throw new InputMismatchException();
+        }
+        return doubleValue;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.857 -0400", hash_original_method = "465894BBFB87D2894D77A1BB6EACCD0F", hash_generated_method = "F139E752169999F3238B8A6F447F9DB8")
+    /**
+     * Returns the next token as a {@code float}. This method will block if input is being
+     * read. If the next token can be translated into a {@code float} the
+     * following is done: All {@code Locale}-specific prefixes, group separators, and
+     * {@code Locale}-specific suffixes are removed. Then non-ASCII digits are mapped
+     * into ASCII digits via {@link Character#digit(char, int)}, and a negative
+     * sign (-) is added if the {@code Locale}-specific negative prefix or suffix was
+     * present. Finally the resulting String is passed to
+     * {@link Float#parseFloat(String)}}.If the token matches the localized NaN
+     * or infinity strings, it is also passed to
+     * {@link Float#parseFloat(String)}}.
+     *
+     * @return the next token as a {@code float}.
+     * @throws IllegalStateException
+     *             if this {@code Scanner} has been closed.
+     * @throws NoSuchElementException
+     *             if input has been exhausted.
+     * @throws InputMismatchException
+     *             if the next token can not be translated into a valid
+     *             {@code float} value.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.938 -0500", hash_original_method = "465894BBFB87D2894D77A1BB6EACCD0F", hash_generated_method = "960CA18B06981941274FE4D936B5B297")
     @SuppressWarnings("boxing")
-    public float nextFloat() {
+public float nextFloat() {
         checkClosed();
         Object obj = cacheHasNextValue;
         cacheHasNextValue = null;
-        if(obj instanceof Float)        
-        {
+        if (obj instanceof Float) {
             findStartIndex = cachehasNextIndex;
-            float var2AB21CCE0789952BAACEFA4F243C7D75_351441333 = ((Float) obj);
-                        float var546ADE640B6EDFBC8A086EF31347E768_289020824 = getTaintFloat();
-            return var546ADE640B6EDFBC8A086EF31347E768_289020824;
-        } //End block
+            return (Float) obj;
+        }
         Pattern floatPattern = getFloatPattern();
         String floatString = next(floatPattern);
         floatString = removeLocaleInfoFromFloat(floatString);
         float floatValue = 0;
-        try 
-        {
+        try {
             floatValue = Float.parseFloat(floatString);
-        } //End block
-        catch (NumberFormatException e)
-        {
+        } catch (NumberFormatException e) {
             matchSuccessful = false;
             recoverPreviousStatus();
-            InputMismatchException varCFB23610718B4049192DFAAC13B0BE66_795955587 = new InputMismatchException();
-            varCFB23610718B4049192DFAAC13B0BE66_795955587.addTaint(taint);
-            throw varCFB23610718B4049192DFAAC13B0BE66_795955587;
-        } //End block
-        float var9EC90E82509332A2D6E51DE04DBBE788_555825622 = (floatValue);
-                float var546ADE640B6EDFBC8A086EF31347E768_1121188494 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_1121188494;
-        // ---------- Original Method ----------
-        //checkClosed();
-        //Object obj = cacheHasNextValue;
-        //cacheHasNextValue = null;
-        //if (obj instanceof Float) {
-            //findStartIndex = cachehasNextIndex;
-            //return (Float) obj;
-        //}
-        //Pattern floatPattern = getFloatPattern();
-        //String floatString = next(floatPattern);
-        //floatString = removeLocaleInfoFromFloat(floatString);
-        //float floatValue = 0;
-        //try {
-            //floatValue = Float.parseFloat(floatString);
-        //} catch (NumberFormatException e) {
-            //matchSuccessful = false;
-            //recoverPreviousStatus();
-            //throw new InputMismatchException();
-        //}
-        //return floatValue;
+            throw new InputMismatchException();
+        }
+        return floatValue;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.857 -0400", hash_original_method = "5185135F499E2963894A73963B55B971", hash_generated_method = "755C218A19CC7F2308781F1BA65EFD2E")
+    /**
+     * Returns the next token as an {@code int}. This method will block if input is being
+     * read. Equivalent to {@code nextInt(DEFAULT_RADIX)}.
+     *
+     * @return the next token as an {@code int}
+     * @throws IllegalStateException
+     *             if this {@code Scanner} has been closed.
+     * @throws NoSuchElementException
+     *             if input has been exhausted.
+     * @throws InputMismatchException
+     *             if the next token can not be translated into a valid
+     *             {@code int} value.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.939 -0500", hash_original_method = "5185135F499E2963894A73963B55B971", hash_generated_method = "4D7E86235A8A3FDAE9C860E44B38B8E5")
     public int nextInt() {
-        int varBFC2D72ECA7B1E55D02D8081F60A5869_1624552139 = (nextInt(integerRadix));
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_400305628 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_400305628;
-        // ---------- Original Method ----------
-        //return nextInt(integerRadix);
+        return nextInt(integerRadix);
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.857 -0400", hash_original_method = "B06EC911E3305341017BDCE4EADE227D", hash_generated_method = "171D33839DADDFC0E0A68C6814826543")
+    /**
+     * Returns the next token as an {@code int} with the specified radix. This method will
+     * block if input is being read. If the next token can be translated into an
+     * {@code int} the following is done: All {@code Locale}-specific prefixes, group
+     * separators, and {@code Locale}-specific suffixes are removed. Then non-ASCII
+     * digits are mapped into ASCII digits via
+     * {@link Character#digit(char, int)}, and a negative sign (-) is added if the
+     * {@code Locale}-specific negative prefix or suffix was present. Finally the
+     * resulting String is passed to {@link Integer#parseInt(String, int)} with
+     * the specified radix.
+     *
+     * @param radix
+     *            the radix used to translate the token into an {@code int}
+     *            value.
+     * @return the next token as an {@code int}.
+     * @throws IllegalStateException
+     *             if this {@code Scanner} has been closed.
+     * @throws NoSuchElementException
+     *             if input has been exhausted.
+     * @throws InputMismatchException
+     *             if the next token can not be translated into a valid
+     *             {@code int} value.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.940 -0500", hash_original_method = "B06EC911E3305341017BDCE4EADE227D", hash_generated_method = "83B58D6B235A69C4D91062F3D70D49DD")
     @SuppressWarnings("boxing")
-    public int nextInt(int radix) {
-        addTaint(radix);
+public int nextInt(int radix) {
         checkClosed();
         Object obj = cacheHasNextValue;
         cacheHasNextValue = null;
-        if(obj instanceof Integer)        
-        {
+        if (obj instanceof Integer) {
             findStartIndex = cachehasNextIndex;
-            int var1BA191DDA4CB90317D2A3D8CEAF830EE_2064112084 = ((Integer) obj);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_806036679 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_806036679;
-        } //End block
+            return (Integer) obj;
+        }
         Pattern integerPattern = getIntegerPattern(radix);
         String intString = next(integerPattern);
         intString = removeLocaleInfo(intString, DataType.INT);
         int intValue = 0;
-        try 
-        {
+        try {
             intValue = Integer.parseInt(intString, radix);
-        } //End block
-        catch (NumberFormatException e)
-        {
+        } catch (NumberFormatException e) {
             matchSuccessful = false;
             recoverPreviousStatus();
-            InputMismatchException varCFB23610718B4049192DFAAC13B0BE66_1013327457 = new InputMismatchException();
-            varCFB23610718B4049192DFAAC13B0BE66_1013327457.addTaint(taint);
-            throw varCFB23610718B4049192DFAAC13B0BE66_1013327457;
-        } //End block
-        int var481F44389B52D587646C4A792551B4DC_1678486291 = (intValue);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1792802042 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1792802042;
-        // ---------- Original Method ----------
-        //checkClosed();
-        //Object obj = cacheHasNextValue;
-        //cacheHasNextValue = null;
-        //if (obj instanceof Integer) {
-            //findStartIndex = cachehasNextIndex;
-            //return (Integer) obj;
-        //}
-        //Pattern integerPattern = getIntegerPattern(radix);
-        //String intString = next(integerPattern);
-        //intString = removeLocaleInfo(intString, DataType.INT);
-        //int intValue = 0;
-        //try {
-            //intValue = Integer.parseInt(intString, radix);
-        //} catch (NumberFormatException e) {
-            //matchSuccessful = false;
-            //recoverPreviousStatus();
-            //throw new InputMismatchException();
-        //}
-        //return intValue;
+            throw new InputMismatchException();
+        }
+        return intValue;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.858 -0400", hash_original_method = "3D66719B22D4824A272B09AB38D3D0FA", hash_generated_method = "A943DC0FF6BA3850D56CCB82CB90388C")
+    /**
+     * Returns the skipped input and advances the {@code Scanner} to the beginning of
+     * the next line. The returned result will exclude any line terminator. When
+     * searching, if no line terminator is found, then a large amount of input
+     * will be cached. If no line at all can be found, a {@code NoSuchElementException}
+     * will be thrown.
+     *
+     * @return the skipped line.
+     * @throws IllegalStateException
+     *             if the {@code Scanner} is closed.
+     * @throws NoSuchElementException
+     *             if no line can be found, e.g. when input is an empty string.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.941 -0500", hash_original_method = "3D66719B22D4824A272B09AB38D3D0FA", hash_generated_method = "A67F991174304DC7835FDA74A6F7E641")
     public String nextLine() {
         checkClosed();
+
         matcher.usePattern(LINE_PATTERN);
         matcher.region(findStartIndex, bufferLength);
         String result = null;
-        while
-(true)        
-        {
-            if(matcher.find())            
-            {
-                if(inputExhausted || matcher.end() != bufferLength
-                        || bufferLength < buffer.capacity())                
-                {
+        while (true) {
+            if (matcher.find()) {
+                if (inputExhausted || matcher.end() != bufferLength
+                        || bufferLength < buffer.capacity()) {
                     matchSuccessful = true;
                     findStartIndex = matcher.end();
                     result = matcher.group();
                     break;
-                } //End block
-            } //End block
-            else
-            {
-                if(inputExhausted)                
-                {
+                }
+            } else {
+                if (inputExhausted) {
                     matchSuccessful = false;
-                    NoSuchElementException var28D00AB599969908D71F102AF992D49A_1506791791 = new NoSuchElementException();
-                    var28D00AB599969908D71F102AF992D49A_1506791791.addTaint(taint);
-                    throw var28D00AB599969908D71F102AF992D49A_1506791791;
-                } //End block
-            } //End block
-            if(!inputExhausted)            
-            {
+                    throw new NoSuchElementException();
+                }
+            }
+            if (!inputExhausted) {
                 readMore();
                 resetMatcher();
-            } //End block
-        } //End block
-        if(result != null)        
-        {
+            }
+        }
+        // Find text without line terminator here.
+        if (result != null) {
             Matcher terminatorMatcher = LINE_TERMINATOR.matcher(result);
-            if(terminatorMatcher.find())            
-            {
+            if (terminatorMatcher.find()) {
                 result = result.substring(0, terminatorMatcher.start());
-            } //End block
-        } //End block
-String varDC838461EE2FA0CA4C9BBB70A15456B0_146371632 =         result;
-        varDC838461EE2FA0CA4C9BBB70A15456B0_146371632.addTaint(taint);
-        return varDC838461EE2FA0CA4C9BBB70A15456B0_146371632;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            }
+        }
+        return result;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.858 -0400", hash_original_method = "6374462D33C9F89E6E50C3F6D20F5373", hash_generated_method = "5BDD96E1876894C54AFEA6204198BE40")
+    /**
+     * Returns the next token as a {@code long}. This method will block if input is being
+     * read. Equivalent to {@code nextLong(DEFAULT_RADIX)}.
+     *
+     * @return the next token as a {@code long}.
+     * @throws IllegalStateException
+     *             if this {@code Scanner} has been closed.
+     * @throws NoSuchElementException
+     *             if input has been exhausted.
+     * @throws InputMismatchException
+     *             if the next token can not be translated into a valid
+     *             {@code long} value.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.942 -0500", hash_original_method = "6374462D33C9F89E6E50C3F6D20F5373", hash_generated_method = "3BBB9A10635ED766175135AD0EBB0FE7")
     public long nextLong() {
-        long varD6D6B71A50E59822E14D1E2C3F1455A0_1127953450 = (nextLong(integerRadix));
-                long var0F5264038205EDFB1AC05FBB0E8C5E94_1399268391 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_1399268391;
-        // ---------- Original Method ----------
-        //return nextLong(integerRadix);
+        return nextLong(integerRadix);
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.858 -0400", hash_original_method = "36B6D1B74C7A404A698E79C7D45F2371", hash_generated_method = "8BDA2AF3E9A43B954EECA4AB781D8199")
+    /**
+     * Returns the next token as a {@code long} with the specified radix. This method will
+     * block if input is being read. If the next token can be translated into a
+     * {@code long} the following is done: All {@code Locale}-specific prefixes, group
+     * separators, and {@code Locale}-specific suffixes are removed. Then non-ASCII
+     * digits are mapped into ASCII digits via
+     * {@link Character#digit(char, int)}, and a negative sign (-) is added if the
+     * {@code Locale}-specific negative prefix or suffix was present. Finally the
+     * resulting String is passed to {@link Long#parseLong(String, int)}} with
+     * the specified radix.
+     *
+     * @param radix
+     *            the radix used to translate the token into a {@code long}
+     *            value.
+     * @return the next token as a {@code long}.
+     * @throws IllegalStateException
+     *             if this {@code Scanner} has been closed.
+     * @throws NoSuchElementException
+     *             if input has been exhausted.
+     * @throws InputMismatchException
+     *             if the next token can not be translated into a valid
+     *             {@code long} value.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.943 -0500", hash_original_method = "36B6D1B74C7A404A698E79C7D45F2371", hash_generated_method = "9963EDFD210EE22DE7D5B9BFF4A29C45")
     @SuppressWarnings("boxing")
-    public long nextLong(int radix) {
-        addTaint(radix);
+public long nextLong(int radix) {
         checkClosed();
         Object obj = cacheHasNextValue;
         cacheHasNextValue = null;
-        if(obj instanceof Long)        
-        {
+        if (obj instanceof Long) {
             findStartIndex = cachehasNextIndex;
-            long var5D04E6DA14E86CE2BB630E29180F7F42_1918534996 = ((Long) obj);
-                        long var0F5264038205EDFB1AC05FBB0E8C5E94_1079826515 = getTaintLong();
-            return var0F5264038205EDFB1AC05FBB0E8C5E94_1079826515;
-        } //End block
+            return (Long) obj;
+        }
         Pattern integerPattern = getIntegerPattern(radix);
         String intString = next(integerPattern);
         intString = removeLocaleInfo(intString, DataType.INT);
         long longValue = 0;
-        try 
-        {
+        try {
             longValue = Long.parseLong(intString, radix);
-        } //End block
-        catch (NumberFormatException e)
-        {
+        } catch (NumberFormatException e) {
             matchSuccessful = false;
             recoverPreviousStatus();
-            InputMismatchException varCFB23610718B4049192DFAAC13B0BE66_1571204883 = new InputMismatchException();
-            varCFB23610718B4049192DFAAC13B0BE66_1571204883.addTaint(taint);
-            throw varCFB23610718B4049192DFAAC13B0BE66_1571204883;
-        } //End block
-        long var4173301EF4A1E942CF554B17124A6E9A_710046016 = (longValue);
-                long var0F5264038205EDFB1AC05FBB0E8C5E94_787154318 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_787154318;
-        // ---------- Original Method ----------
-        //checkClosed();
-        //Object obj = cacheHasNextValue;
-        //cacheHasNextValue = null;
-        //if (obj instanceof Long) {
-            //findStartIndex = cachehasNextIndex;
-            //return (Long) obj;
-        //}
-        //Pattern integerPattern = getIntegerPattern(radix);
-        //String intString = next(integerPattern);
-        //intString = removeLocaleInfo(intString, DataType.INT);
-        //long longValue = 0;
-        //try {
-            //longValue = Long.parseLong(intString, radix);
-        //} catch (NumberFormatException e) {
-            //matchSuccessful = false;
-            //recoverPreviousStatus();
-            //throw new InputMismatchException();
-        //}
-        //return longValue;
+            throw new InputMismatchException();
+        }
+        return longValue;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.858 -0400", hash_original_method = "D33600E854DF5F367D7728611F6ACBC6", hash_generated_method = "4F701C2268DE82BD3C0C0C95907D19E4")
+    /**
+     * Returns the next token as a {@code short}. This method will block if input is being
+     * read. Equivalent to {@code nextShort(DEFAULT_RADIX)}.
+     *
+     * @return the next token as a {@code short}.
+     * @throws IllegalStateException
+     *             if this {@code Scanner} has been closed.
+     * @throws NoSuchElementException
+     *             if input has been exhausted.
+     * @throws InputMismatchException
+     *             if the next token can not be translated into a valid
+     *             {@code short} value.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.944 -0500", hash_original_method = "D33600E854DF5F367D7728611F6ACBC6", hash_generated_method = "8EF6F9187C3D1ADACA2CC8597573C8A8")
     public short nextShort() {
-        short var6CCB068CB6539DBE60A2A715F690B762_1602456246 = (nextShort(integerRadix));
-                short var4F09DAA9D95BCB166A302407A0E0BABE_913508016 = getTaintShort();
-        return var4F09DAA9D95BCB166A302407A0E0BABE_913508016;
-        // ---------- Original Method ----------
-        //return nextShort(integerRadix);
+        return nextShort(integerRadix);
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.859 -0400", hash_original_method = "74041A63415BC5E03BF2BCCD0D0C92EB", hash_generated_method = "E27F7612BE10AFB3FE2CCB074A2E9585")
+    /**
+     * Returns the next token as a {@code short} with the specified radix. This method will
+     * block if input is being read. If the next token can be translated into a
+     * {@code short} the following is done: All {@code Locale}-specific prefixes, group
+     * separators, and {@code Locale}-specific suffixes are removed. Then non-ASCII
+     * digits are mapped into ASCII digits via
+     * {@link Character#digit(char, int)}, and a negative sign (-) is added if the
+     * {@code Locale}-specific negative prefix or suffix was present. Finally the
+     * resulting String is passed to {@link Short#parseShort(String, int)}}
+     * with the specified radix.
+     *
+     * @param radix
+     *            the radix used to translate the token into {@code short}
+     *            value.
+     * @return the next token as a {@code short}.
+     * @throws IllegalStateException
+     *             if this {@code Scanner} has been closed.
+     * @throws NoSuchElementException
+     *             if input has been exhausted.
+     * @throws InputMismatchException
+     *             if the next token can not be translated into a valid
+     *             {@code short} value.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.945 -0500", hash_original_method = "74041A63415BC5E03BF2BCCD0D0C92EB", hash_generated_method = "519B225D4032AF6626D88746299F7E18")
     @SuppressWarnings("boxing")
-    public short nextShort(int radix) {
-        addTaint(radix);
+public short nextShort(int radix) {
         checkClosed();
         Object obj = cacheHasNextValue;
         cacheHasNextValue = null;
-        if(obj instanceof Short)        
-        {
+        if (obj instanceof Short) {
             findStartIndex = cachehasNextIndex;
-            short var55B7E8BB82CE85C01506802A0BB34BF9_245528069 = ((Short) obj);
-                        short var4F09DAA9D95BCB166A302407A0E0BABE_1140909927 = getTaintShort();
-            return var4F09DAA9D95BCB166A302407A0E0BABE_1140909927;
-        } //End block
+            return (Short) obj;
+        }
         Pattern integerPattern = getIntegerPattern(radix);
         String intString = next(integerPattern);
         intString = removeLocaleInfo(intString, DataType.INT);
         short shortValue = 0;
-        try 
-        {
+        try {
             shortValue = Short.parseShort(intString, radix);
-        } //End block
-        catch (NumberFormatException e)
-        {
+        } catch (NumberFormatException e) {
             matchSuccessful = false;
             recoverPreviousStatus();
-            InputMismatchException varCFB23610718B4049192DFAAC13B0BE66_1242311237 = new InputMismatchException();
-            varCFB23610718B4049192DFAAC13B0BE66_1242311237.addTaint(taint);
-            throw varCFB23610718B4049192DFAAC13B0BE66_1242311237;
-        } //End block
-        short var543D44E474334B1F6826F78585803C78_163042914 = (shortValue);
-                short var4F09DAA9D95BCB166A302407A0E0BABE_788343547 = getTaintShort();
-        return var4F09DAA9D95BCB166A302407A0E0BABE_788343547;
-        // ---------- Original Method ----------
-        //checkClosed();
-        //Object obj = cacheHasNextValue;
-        //cacheHasNextValue = null;
-        //if (obj instanceof Short) {
-            //findStartIndex = cachehasNextIndex;
-            //return (Short) obj;
-        //}
-        //Pattern integerPattern = getIntegerPattern(radix);
-        //String intString = next(integerPattern);
-        //intString = removeLocaleInfo(intString, DataType.INT);
-        //short shortValue = 0;
-        //try {
-            //shortValue = Short.parseShort(intString, radix);
-        //} catch (NumberFormatException e) {
-            //matchSuccessful = false;
-            //recoverPreviousStatus();
-            //throw new InputMismatchException();
-        //}
-        //return shortValue;
+            throw new InputMismatchException();
+        }
+        return shortValue;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.859 -0400", hash_original_method = "108FFB02BFAD84F212F542E44C9F6CE4", hash_generated_method = "24DD7AD2E6BFFC26A03C6ABE9D315CF2")
+    /**
+     * Return the radix of this {@code Scanner}.
+     *
+     * @return the radix of this {@code Scanner}
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.946 -0500", hash_original_method = "108FFB02BFAD84F212F542E44C9F6CE4", hash_generated_method = "60B2C488923915D138DB59CA6F833796")
     public int radix() {
-        int var46F37B0D5E779097F7E5B659DF66B491_600039043 = (integerRadix);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1110037041 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1110037041;
-        // ---------- Original Method ----------
-        //return integerRadix;
+        return integerRadix;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.859 -0400", hash_original_method = "EA8E10FC12D1B40BE210D235F143A214", hash_generated_method = "1E1C1F886391144CBBD11149C42BBC9B")
+    /**
+     * Tries to use specified pattern to match input starting from the current position.
+     * The delimiter will be ignored. If a match is found, the matched input will be
+     * skipped. If an anchored match of the specified pattern succeeds, the corresponding input
+     * will also be skipped. Otherwise, a {@code NoSuchElementException} will be thrown.
+     * Patterns that can match a lot of input may cause the {@code Scanner} to read
+     * in a large amount of input.
+     *
+     * @param pattern
+     *            used to skip over input.
+     * @return the {@code Scanner} itself.
+     * @throws IllegalStateException
+     *             if the {@code Scanner} is closed.
+     * @throws NoSuchElementException
+     *             if the specified pattern match fails.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.947 -0500", hash_original_method = "EA8E10FC12D1B40BE210D235F143A214", hash_generated_method = "D687E245D884C1A05D43A7AA64DF9E41")
     public Scanner skip(Pattern pattern) {
-        addTaint(pattern.getTaint());
         checkClosed();
         checkNull(pattern);
         matcher.usePattern(pattern);
         matcher.region(findStartIndex, bufferLength);
-        while
-(true)        
-        {
-            if(matcher.lookingAt())            
-            {
+        while (true) {
+            if (matcher.lookingAt()) {
                 boolean matchInBuffer = matcher.end() < bufferLength
                         || (matcher.end() == bufferLength && inputExhausted);
-                if(matchInBuffer)                
-                {
+                if (matchInBuffer) {
                     matchSuccessful = true;
                     findStartIndex = matcher.end();
                     break;
-                } //End block
-            } //End block
-            else
-            {
-                if(inputExhausted)                
-                {
+                }
+            } else {
+                if (inputExhausted) {
                     matchSuccessful = false;
-                    NoSuchElementException var28D00AB599969908D71F102AF992D49A_1802708747 = new NoSuchElementException();
-                    var28D00AB599969908D71F102AF992D49A_1802708747.addTaint(taint);
-                    throw var28D00AB599969908D71F102AF992D49A_1802708747;
-                } //End block
-            } //End block
-            if(!inputExhausted)            
-            {
+                    throw new NoSuchElementException();
+                }
+            }
+            if (!inputExhausted) {
                 readMore();
                 resetMatcher();
-            } //End block
-        } //End block
-Scanner var72A74007B2BE62B849F475C7BDA4658B_1703730024 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_1703730024.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_1703730024;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            }
+        }
+        return this;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.859 -0400", hash_original_method = "B5629C8DC277AD4A72B913564449A4A1", hash_generated_method = "AB6B38E7961684A081436CECCC041068")
+    /**
+     * Tries to use the specified string to construct a pattern and then uses
+     * the constructed pattern to match input starting from the current position. The
+     * delimiter will be ignored. This call is the same as invoke
+     * {@code skip(Pattern.compile(pattern))}.
+     *
+     * @param pattern
+     *            the string used to construct a pattern which in turn is used to
+     *            match input.
+     * @return the {@code Scanner} itself.
+     * @throws IllegalStateException
+     *             if the {@code Scanner} is closed.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.948 -0500", hash_original_method = "B5629C8DC277AD4A72B913564449A4A1", hash_generated_method = "EE099B8A0CB9887603937DAD664F147E")
     public Scanner skip(String pattern) {
-        addTaint(pattern.getTaint());
-Scanner var0F453C43516595ADDE753671394A49C8_451392199 =         skip(Pattern.compile(pattern));
-        var0F453C43516595ADDE753671394A49C8_451392199.addTaint(taint);
-        return var0F453C43516595ADDE753671394A49C8_451392199;
-        // ---------- Original Method ----------
-        //return skip(Pattern.compile(pattern));
+        return skip(Pattern.compile(pattern));
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.859 -0400", hash_original_method = "13B9E1963603D8F8D017FAED70E76372", hash_generated_method = "64BB48538E6D6D4DF36F0599EF835FCD")
+    /**
+     * Returns a string representation of this {@code Scanner}. The information
+     * returned may be helpful for debugging. The format of the string is unspecified.
+     *
+     * @return a string representation of this {@code Scanner}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.949 -0500", hash_original_method = "13B9E1963603D8F8D017FAED70E76372", hash_generated_method = "3C2663A8A94A2D3F1590CC05F9225C3F")
     @Override
-    public String toString() {
-String var7B6A43F99D6C02EB18851785F3FE3C71_1234130921 =         getClass().getName() +
+public String toString() {
+        return getClass().getName() +
                 "[delimiter=" + delimiter +
                 ",findStartIndex=" + findStartIndex +
                 ",matchSuccessful=" + matchSuccessful +
                 ",closed=" + closed +
                 "]";
-        var7B6A43F99D6C02EB18851785F3FE3C71_1234130921.addTaint(taint);
-        return var7B6A43F99D6C02EB18851785F3FE3C71_1234130921;
-        // ---------- Original Method ----------
-        //return getClass().getName() +
-                //"[delimiter=" + delimiter +
-                //",findStartIndex=" + findStartIndex +
-                //",matchSuccessful=" + matchSuccessful +
-                //",closed=" + closed +
-                //"]";
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.860 -0400", hash_original_method = "E89CBE82FDB8B0CDDF4705672288D942", hash_generated_method = "4CEF898A533D6A683CD0B8CA7AC236EE")
+    /**
+     * Sets the delimiting pattern of this {@code Scanner}.
+     *
+     * @param pattern
+     *            the delimiting pattern to use.
+     * @return this {@code Scanner}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.949 -0500", hash_original_method = "E89CBE82FDB8B0CDDF4705672288D942", hash_generated_method = "4D64D29F69F9DEBA174C001EE6A817A9")
     public Scanner useDelimiter(Pattern pattern) {
         delimiter = pattern;
-Scanner var72A74007B2BE62B849F475C7BDA4658B_1706806579 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_1706806579.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_1706806579;
-        // ---------- Original Method ----------
-        //delimiter = pattern;
-        //return this;
+        return this;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.860 -0400", hash_original_method = "353C3ED30BA7FF969DF17D7F091BC9CC", hash_generated_method = "BDFD7FB892366BB8DAE0C34D4EA390C5")
+    /**
+     * Sets the delimiting pattern of this {@code Scanner} with a pattern compiled from
+     * the supplied string value.
+     *
+     * @param pattern
+     *            a string from which a {@code Pattern} can be compiled.
+     * @return this {@code Scanner}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.950 -0500", hash_original_method = "353C3ED30BA7FF969DF17D7F091BC9CC", hash_generated_method = "1D64DC9B54D27C13E0181D72A1A4168B")
     public Scanner useDelimiter(String pattern) {
-        addTaint(pattern.getTaint());
-Scanner var6F17C59D1EEAE47DFF057C9063BC6022_1128573225 =         useDelimiter(Pattern.compile(pattern));
-        var6F17C59D1EEAE47DFF057C9063BC6022_1128573225.addTaint(taint);
-        return var6F17C59D1EEAE47DFF057C9063BC6022_1128573225;
-        // ---------- Original Method ----------
-        //return useDelimiter(Pattern.compile(pattern));
+        return useDelimiter(Pattern.compile(pattern));
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.860 -0400", hash_original_method = "A3D9C7BB7710DA92E291534F4EEE6EBE", hash_generated_method = "EECD5844B59B401606324B0A8E8ED315")
+    /**
+     * Sets the {@code Locale} of this {@code Scanner} to a specified {@code Locale}.
+     *
+     * @param l
+     *            the specified {@code Locale} to use.
+     * @return this {@code Scanner}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.951 -0500", hash_original_method = "A3D9C7BB7710DA92E291534F4EEE6EBE", hash_generated_method = "7890CDABECF8145D5EFFB94664E6F13E")
     public Scanner useLocale(Locale l) {
-        if(l == null)        
-        {
-            NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_1207649868 = new NullPointerException();
-            var7338BC9F48D81FE0BBD6183F4014DCC4_1207649868.addTaint(taint);
-            throw var7338BC9F48D81FE0BBD6183F4014DCC4_1207649868;
-        } //End block
+        if (l == null) {
+            throw new NullPointerException();
+        }
         this.locale = l;
-Scanner var72A74007B2BE62B849F475C7BDA4658B_712375022 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_712375022.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_712375022;
-        // ---------- Original Method ----------
-        //if (l == null) {
-            //throw new NullPointerException();
-        //}
-        //this.locale = l;
-        //return this;
+        return this;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.860 -0400", hash_original_method = "345B5E07834B16EBD69B375363EEC767", hash_generated_method = "B17E7DC8BA4B0C7A8BBA0BB33DE92D9E")
+    /**
+     * Sets the radix of this {@code Scanner} to the specified radix.
+     *
+     * @param radix
+     *            the specified radix to use.
+     * @return this {@code Scanner}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.952 -0500", hash_original_method = "345B5E07834B16EBD69B375363EEC767", hash_generated_method = "BD3246A81CFD23034FE57C1950675DF1")
     public Scanner useRadix(int radix) {
         checkRadix(radix);
         this.integerRadix = radix;
-Scanner var72A74007B2BE62B849F475C7BDA4658B_163244178 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_163244178.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_163244178;
-        // ---------- Original Method ----------
-        //checkRadix(radix);
-        //this.integerRadix = radix;
-        //return this;
+        return this;
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.860 -0400", hash_original_method = "A1030C8BAA30073CC5ACF726BB676E36", hash_generated_method = "1A747ECCBC2DAC5CB89BC61996A673A6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.952 -0500", hash_original_method = "A1030C8BAA30073CC5ACF726BB676E36", hash_generated_method = "9679C0000F24C0D7305319F9A71B6D9B")
     private void checkRadix(int radix) {
-        addTaint(radix);
-        if(radix < Character.MIN_RADIX || radix > Character.MAX_RADIX)        
-        {
-            IllegalArgumentException var68431E8A8F645EA6C390811716BE4783_2138266155 = new IllegalArgumentException("Invalid radix: " + radix);
-            var68431E8A8F645EA6C390811716BE4783_2138266155.addTaint(taint);
-            throw var68431E8A8F645EA6C390811716BE4783_2138266155;
-        } //End block
-        // ---------- Original Method ----------
-        //if (radix < Character.MIN_RADIX || radix > Character.MAX_RADIX) {
-            //throw new IllegalArgumentException("Invalid radix: " + radix);
-        //}
+        if (radix < Character.MIN_RADIX || radix > Character.MAX_RADIX) {
+            throw new IllegalArgumentException("Invalid radix: " + radix);
+        }
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.860 -0400", hash_original_method = "89C642158183FED064530A14F092CD81", hash_generated_method = "1EFD6CC588AC2AE95DDCA6DEF5863931")
+    /**
+     * Remove is not a supported operation on {@code Scanner}.
+     *
+     * @throws UnsupportedOperationException
+     *             if this method is invoked.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.953 -0500", hash_original_method = "89C642158183FED064530A14F092CD81", hash_generated_method = "5B2A4852FF2684177E07742561C615C2")
     public void remove() {
-        UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1894841983 = new UnsupportedOperationException();
-        var81FA7E299EEE7F062EBFBEEF08B0464D_1894841983.addTaint(taint);
-        throw var81FA7E299EEE7F062EBFBEEF08B0464D_1894841983;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.860 -0400", hash_original_method = "406043B74DF8E969B61AA0BA511B152F", hash_generated_method = "C3800FC0AB14E78A4E511D811768D6B9")
+    /*
+     * Initialize some components.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.954 -0500", hash_original_method = "406043B74DF8E969B61AA0BA511B152F", hash_generated_method = "79289E1E750749625EC821690D670138")
     private void initialization() {
         buffer = CharBuffer.allocate(DEFAULT_TRUNK_SIZE);
         buffer.limit(0);
         matcher = delimiter.matcher(buffer);
-        // ---------- Original Method ----------
-        //buffer = CharBuffer.allocate(DEFAULT_TRUNK_SIZE);
-        //buffer.limit(0);
-        //matcher = delimiter.matcher(buffer);
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.860 -0400", hash_original_method = "B30B600A81B32166D215C68FA4624658", hash_generated_method = "66ED938C216743445977F1E5738CA7C7")
+    /*
+     * Check the {@code Scanner}'s state, if it is closed, IllegalStateException will be
+     * thrown.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.955 -0500", hash_original_method = "B30B600A81B32166D215C68FA4624658", hash_generated_method = "04B3916192B420CA2BBD922CB53A10AE")
     private void checkClosed() {
-        if(closed)        
-        {
-            IllegalStateException varC311A989A119B96A6232C22ABFE87C25_1797765143 = new IllegalStateException();
-            varC311A989A119B96A6232C22ABFE87C25_1797765143.addTaint(taint);
-            throw varC311A989A119B96A6232C22ABFE87C25_1797765143;
-        } //End block
-        // ---------- Original Method ----------
-        //if (closed) {
-            //throw new IllegalStateException();
-        //}
+        if (closed) {
+            throw new IllegalStateException();
+        }
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.860 -0400", hash_original_method = "36E7BDE51D05E7575D4F9253BA0F7A7F", hash_generated_method = "59F4E2631AB5727C17CAD188BA7244FD")
+    /*
+     * Check the inputed pattern. If it is null, then a NullPointerException
+     * will be thrown out.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.955 -0500", hash_original_method = "36E7BDE51D05E7575D4F9253BA0F7A7F", hash_generated_method = "373C3C3F2BF4F3BDAB51AE9E5AD728B3")
     private void checkNull(Pattern pattern) {
-        addTaint(pattern.getTaint());
-        if(pattern == null)        
-        {
-            NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_1752571278 = new NullPointerException();
-            var7338BC9F48D81FE0BBD6183F4014DCC4_1752571278.addTaint(taint);
-            throw var7338BC9F48D81FE0BBD6183F4014DCC4_1752571278;
-        } //End block
-        // ---------- Original Method ----------
-        //if (pattern == null) {
-            //throw new NullPointerException();
-        //}
+        if (pattern == null) {
+            throw new NullPointerException();
+        }
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.861 -0400", hash_original_method = "EB8AF45030CFA93895E22043F16AA91D", hash_generated_method = "4FFF894F621D168A9267F3900484EF7F")
+    /*
+     * Change the matcher's string after reading input
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.956 -0500", hash_original_method = "EB8AF45030CFA93895E22043F16AA91D", hash_generated_method = "04067805E7449EAF64C1FAE30FAB4D55")
     private void resetMatcher() {
-        if(matcher == null)        
-        {
+        if (matcher == null) {
             matcher = delimiter.matcher(buffer);
-        } //End block
-        else
-        {
+        } else {
             matcher.reset(buffer);
-        } //End block
+        }
         matcher.region(findStartIndex, bufferLength);
-        // ---------- Original Method ----------
-        //if (matcher == null) {
-            //matcher = delimiter.matcher(buffer);
-        //} else {
-            //matcher.reset(buffer);
-        //}
-        //matcher.region(findStartIndex, bufferLength);
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.861 -0400", hash_original_method = "8767C8E3B92497CDD5E1C8E3E9AF12A5", hash_generated_method = "246DF741A54CA564E3597B59F5BC86C1")
+    /*
+     * Save the matcher's last find position
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.957 -0500", hash_original_method = "8767C8E3B92497CDD5E1C8E3E9AF12A5", hash_generated_method = "F033BB3D8F2D204583029D755746C95A")
     private void saveCurrentStatus() {
         preStartIndex = findStartIndex;
-        // ---------- Original Method ----------
-        //preStartIndex = findStartIndex;
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.861 -0400", hash_original_method = "C4EDF4CCA1B99C808834619656C45D45", hash_generated_method = "25DC76BF381C9B535A67870FCCE6C2E3")
+    /*
+     * Change the matcher's status to last find position
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.958 -0500", hash_original_method = "C4EDF4CCA1B99C808834619656C45D45", hash_generated_method = "E3DB46B8A8AF36053DB62D7867AB1516")
     private void recoverPreviousStatus() {
         findStartIndex = preStartIndex;
-        // ---------- Original Method ----------
-        //findStartIndex = preStartIndex;
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.861 -0400", hash_original_method = "B97F3D0429BBD1DC99EF41C42DDF373F", hash_generated_method = "481A1ADA4D800C86B146052CA624B02B")
+    /*
+     * Get integer's pattern
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.959 -0500", hash_original_method = "B97F3D0429BBD1DC99EF41C42DDF373F", hash_generated_method = "799570D06D0C4023ECB1B158D31696DB")
     private Pattern getIntegerPattern(int radix) {
-        addTaint(radix);
         checkRadix(radix);
         decimalFormat = (DecimalFormat) NumberFormat.getInstance(locale);
+
         String allAvailableDigits = "0123456789abcdefghijklmnopqrstuvwxyz";
         String ASCIIDigit = allAvailableDigits.substring(0, radix);
         String nonZeroASCIIDigit = allAvailableDigits.substring(1, radix);
+
         StringBuilder digit = new StringBuilder("((?i)[").append(ASCIIDigit)
                 .append("]|\\p{javaDigit})");
         StringBuilder nonZeroDigit = new StringBuilder("((?i)[").append(
                 nonZeroASCIIDigit).append("]|([\\p{javaDigit}&&[^0]]))");
         StringBuilder numeral = getNumeral(digit, nonZeroDigit);
+
         StringBuilder integer = new StringBuilder("(([-+]?(").append(numeral)
                 .append(")))|(").append(addPositiveSign(numeral)).append(")|(")
                 .append(addNegativeSign(numeral)).append(")");
+
         Pattern integerPattern = Pattern.compile(integer.toString());
-Pattern var2A2E87AC25F15D6F5D194B4ED9121FE2_1126892142 =         integerPattern;
-        var2A2E87AC25F15D6F5D194B4ED9121FE2_1126892142.addTaint(taint);
-        return var2A2E87AC25F15D6F5D194B4ED9121FE2_1126892142;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        return integerPattern;
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.861 -0400", hash_original_method = "C0E115C785C5444E26611E86ADCD9532", hash_generated_method = "975CCDF1E2EFF74985DF637A483E2368")
+    /*
+     * Get pattern of float
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.960 -0500", hash_original_method = "C0E115C785C5444E26611E86ADCD9532", hash_generated_method = "E2F50B51F92C15F431F41B593BEE77F8")
     private Pattern getFloatPattern() {
         decimalFormat = (DecimalFormat) NumberFormat.getInstance(locale);
+
         StringBuilder digit = new StringBuilder("([0-9]|(\\p{javaDigit}))");
         StringBuilder nonZeroDigit = new StringBuilder("[\\p{javaDigit}&&[^0]]");
         StringBuilder numeral = getNumeral(digit, nonZeroDigit);
+
         String decimalSeparator = "\\" + decimalFormat.getDecimalFormatSymbols()
                         .getDecimalSeparator();
         StringBuilder decimalNumeral = new StringBuilder("(").append(numeral)
@@ -1958,12 +1846,14 @@ Pattern var2A2E87AC25F15D6F5D194B4ED9121FE2_1126892142 =         integerPattern;
                         decimalSeparator).append(digit).append("++)");
         StringBuilder exponent = new StringBuilder("([eE][+-]?").append(digit)
                 .append("+)?");
+
         StringBuilder decimal = new StringBuilder("(([-+]?").append(
                 decimalNumeral).append("(").append(exponent).append("?)")
                 .append(")|(").append(addPositiveSign(decimalNumeral)).append(
                         "(").append(exponent).append("?)").append(")|(")
                 .append(addNegativeSign(decimalNumeral)).append("(").append(
                         exponent).append("?)").append("))");
+
         StringBuilder hexFloat = new StringBuilder("([-+]?0[xX][0-9a-fA-F]*")
                 .append("\\.").append(
                         "[0-9a-fA-F]+([pP][-+]?[0-9]+)?)");
@@ -1975,23 +1865,16 @@ Pattern var2A2E87AC25F15D6F5D194B4ED9121FE2_1126892142 =         integerPattern;
         StringBuilder singedNonNumber = new StringBuilder("((([-+]?(").append(
                 nonNumber).append(")))|(").append(addPositiveSign(nonNumber))
                 .append(")|(").append(addNegativeSign(nonNumber)).append("))");
+
         StringBuilder floatString = new StringBuilder().append(decimal).append(
                 "|").append(hexFloat).append("|").append(singedNonNumber);
         Pattern floatPattern = Pattern.compile(floatString.toString());
-Pattern var4CE604A5A135179962E148B45FDEEC34_1494452270 =         floatPattern;
-        var4CE604A5A135179962E148B45FDEEC34_1494452270.addTaint(taint);
-        return var4CE604A5A135179962E148B45FDEEC34_1494452270;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        return floatPattern;
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.862 -0400", hash_original_method = "F633057156584A1CC211DF943CEE8B2E", hash_generated_method = "2CBECF25774C8D5D98E400BE0A244002")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.961 -0500", hash_original_method = "F633057156584A1CC211DF943CEE8B2E", hash_generated_method = "73748FC15FE66879BF1AE7A44A42B0EA")
     private StringBuilder getNumeral(StringBuilder digit,
             StringBuilder nonZeroDigit) {
-        addTaint(nonZeroDigit.getTaint());
-        addTaint(digit.getTaint());
         String groupSeparator = "\\"
                 + decimalFormat.getDecimalFormatSymbols()
                         .getGroupingSeparator();
@@ -2001,541 +1884,356 @@ Pattern var4CE604A5A135179962E148B45FDEEC34_1494452270 =         floatPattern;
                 .append(digit).append(")+)");
         StringBuilder numeral = new StringBuilder("((").append(digit).append(
                 "++)|").append(groupedNumeral).append(")");
-StringBuilder var8C779BAD5A11BFE86DA55B97DBDE41A1_1707767623 =         numeral;
-        var8C779BAD5A11BFE86DA55B97DBDE41A1_1707767623.addTaint(taint);
-        return var8C779BAD5A11BFE86DA55B97DBDE41A1_1707767623;
-        // ---------- Original Method ----------
-        //String groupSeparator = "\\"
-                //+ decimalFormat.getDecimalFormatSymbols()
-                        //.getGroupingSeparator();
-        //StringBuilder groupedNumeral = new StringBuilder("(").append(
-                //nonZeroDigit).append(digit).append("?").append(digit).append(
-                //"?(").append(groupSeparator).append(digit).append(digit)
-                //.append(digit).append(")+)");
-        //StringBuilder numeral = new StringBuilder("((").append(digit).append(
-                //"++)|").append(groupedNumeral).append(")");
-        //return numeral;
+        return numeral;
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.862 -0400", hash_original_method = "F4802B299CEDF4B393BE453F4FA35C1C", hash_generated_method = "D1175710C052E42FB23C8CBE8B5BE61E")
+    /*
+     * Add the locale specific positive prefixes and suffixes to the pattern
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.962 -0500", hash_original_method = "F4802B299CEDF4B393BE453F4FA35C1C", hash_generated_method = "7D85113D4BF0815A0B463659BDFF04AE")
     private StringBuilder addPositiveSign(StringBuilder unSignNumeral) {
-        addTaint(unSignNumeral.getTaint());
         String positivePrefix = "";
         String positiveSuffix = "";
-        if(!decimalFormat.getPositivePrefix().isEmpty())        
-        {
+        if (!decimalFormat.getPositivePrefix().isEmpty()) {
             positivePrefix = "\\Q" + decimalFormat.getPositivePrefix() + "\\E";
-        } //End block
-        if(!decimalFormat.getPositiveSuffix().isEmpty())        
-        {
+        }
+        if (!decimalFormat.getPositiveSuffix().isEmpty()) {
             positiveSuffix = "\\Q" + decimalFormat.getPositiveSuffix() + "\\E";
-        } //End block
+        }
         StringBuilder signedNumeral = new StringBuilder()
                 .append(positivePrefix).append(unSignNumeral).append(
                         positiveSuffix);
-StringBuilder var8B886972C0E558CFE8922B5938E4BC99_709544763 =         signedNumeral;
-        var8B886972C0E558CFE8922B5938E4BC99_709544763.addTaint(taint);
-        return var8B886972C0E558CFE8922B5938E4BC99_709544763;
-        // ---------- Original Method ----------
-        //String positivePrefix = "";
-        //String positiveSuffix = "";
-        //if (!decimalFormat.getPositivePrefix().isEmpty()) {
-            //positivePrefix = "\\Q" + decimalFormat.getPositivePrefix() + "\\E";
-        //}
-        //if (!decimalFormat.getPositiveSuffix().isEmpty()) {
-            //positiveSuffix = "\\Q" + decimalFormat.getPositiveSuffix() + "\\E";
-        //}
-        //StringBuilder signedNumeral = new StringBuilder()
-                //.append(positivePrefix).append(unSignNumeral).append(
-                        //positiveSuffix);
-        //return signedNumeral;
+        return signedNumeral;
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.862 -0400", hash_original_method = "52EA29890EB11047B6BC838B1D351A19", hash_generated_method = "461F25E68AC90FCD18024ED637C09622")
+    /*
+     * Add the locale specific negative prefixes and suffixes to the pattern
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.963 -0500", hash_original_method = "52EA29890EB11047B6BC838B1D351A19", hash_generated_method = "1CA5D0203C2E79AAAF9425ADD7E5B1AE")
     private StringBuilder addNegativeSign(StringBuilder unSignNumeral) {
-        addTaint(unSignNumeral.getTaint());
         String negativePrefix = "";
         String negativeSuffix = "";
-        if(!decimalFormat.getNegativePrefix().isEmpty())        
-        {
+        if (!decimalFormat.getNegativePrefix().isEmpty()) {
             negativePrefix = "\\Q" + decimalFormat.getNegativePrefix() + "\\E";
-        } //End block
-        if(!decimalFormat.getNegativeSuffix().isEmpty())        
-        {
+        }
+        if (!decimalFormat.getNegativeSuffix().isEmpty()) {
             negativeSuffix = "\\Q" + decimalFormat.getNegativeSuffix() + "\\E";
-        } //End block
+        }
         StringBuilder signedNumeral = new StringBuilder()
                 .append(negativePrefix).append(unSignNumeral).append(
                         negativeSuffix);
-StringBuilder var8B886972C0E558CFE8922B5938E4BC99_492268130 =         signedNumeral;
-        var8B886972C0E558CFE8922B5938E4BC99_492268130.addTaint(taint);
-        return var8B886972C0E558CFE8922B5938E4BC99_492268130;
-        // ---------- Original Method ----------
-        //String negativePrefix = "";
-        //String negativeSuffix = "";
-        //if (!decimalFormat.getNegativePrefix().isEmpty()) {
-            //negativePrefix = "\\Q" + decimalFormat.getNegativePrefix() + "\\E";
-        //}
-        //if (!decimalFormat.getNegativeSuffix().isEmpty()) {
-            //negativeSuffix = "\\Q" + decimalFormat.getNegativeSuffix() + "\\E";
-        //}
-        //StringBuilder signedNumeral = new StringBuilder()
-                //.append(negativePrefix).append(unSignNumeral).append(
-                        //negativeSuffix);
-        //return signedNumeral;
+        return signedNumeral;
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.863 -0400", hash_original_method = "E9627567024197FCA7EA352F1F4FD73F", hash_generated_method = "5D7F5F381EE2AEB247209017C25A7779")
+    /*
+     * Remove locale related information from float String
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.964 -0500", hash_original_method = "E9627567024197FCA7EA352F1F4FD73F", hash_generated_method = "AF6FFAAA17BE7962B31E3F8E8F3E2D0A")
     private String removeLocaleInfoFromFloat(String floatString) {
-        addTaint(floatString.getTaint());
-        if(-1 != floatString.indexOf('x') || -1 != floatString.indexOf('X'))        
-        {
-String varF28E6248FB79B5DCF6FBDCEC99C9362E_566871650 =             floatString;
-            varF28E6248FB79B5DCF6FBDCEC99C9362E_566871650.addTaint(taint);
-            return varF28E6248FB79B5DCF6FBDCEC99C9362E_566871650;
-        } //End block
+        // If the token is HexFloat
+        if (-1 != floatString.indexOf('x') || -1 != floatString.indexOf('X')) {
+            return floatString;
+        }
+
         int exponentIndex;
         String decimalNumeralString;
         String exponentString;
-        if(-1 != (exponentIndex = floatString.indexOf('e'))
-                || -1 != (exponentIndex = floatString.indexOf('E')))        
-        {
+        // If the token is scientific notation
+        if (-1 != (exponentIndex = floatString.indexOf('e'))
+                || -1 != (exponentIndex = floatString.indexOf('E'))) {
             decimalNumeralString = floatString.substring(0, exponentIndex);
             exponentString = floatString.substring(exponentIndex + 1,
                     floatString.length());
             decimalNumeralString = removeLocaleInfo(decimalNumeralString,
                     DataType.FLOAT);
-String var0C1ED84DE87A49C83C852B7F3E8C7DA2_1051830132 =             decimalNumeralString + "e" + exponentString;
-            var0C1ED84DE87A49C83C852B7F3E8C7DA2_1051830132.addTaint(taint);
-            return var0C1ED84DE87A49C83C852B7F3E8C7DA2_1051830132;
-        } //End block
-String varD4B2483B666E8926B66EBAD49483F4A9_1732131020 =         removeLocaleInfo(floatString, DataType.FLOAT);
-        varD4B2483B666E8926B66EBAD49483F4A9_1732131020.addTaint(taint);
-        return varD4B2483B666E8926B66EBAD49483F4A9_1732131020;
-        // ---------- Original Method ----------
-        //if (-1 != floatString.indexOf('x') || -1 != floatString.indexOf('X')) {
-            //return floatString;
-        //}
-        //int exponentIndex;
-        //String decimalNumeralString;
-        //String exponentString;
-        //if (-1 != (exponentIndex = floatString.indexOf('e'))
-                //|| -1 != (exponentIndex = floatString.indexOf('E'))) {
-            //decimalNumeralString = floatString.substring(0, exponentIndex);
-            //exponentString = floatString.substring(exponentIndex + 1,
-                    //floatString.length());
-            //decimalNumeralString = removeLocaleInfo(decimalNumeralString,
-                    //DataType.FLOAT);
-            //return decimalNumeralString + "e" + exponentString;
-        //}
-        //return removeLocaleInfo(floatString, DataType.FLOAT);
+            return decimalNumeralString + "e" + exponentString;
+        }
+        return removeLocaleInfo(floatString, DataType.FLOAT);
     }
 
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.863 -0400", hash_original_method = "E0679D6E03D5A7C0D246B9231F9BA005", hash_generated_method = "B8B0A81B8DBD72719D5185DD0B58F3B9")
+    private enum DataType {
+        INT,
+        FLOAT;
+    }
+
+    /*
+     * Remove the locale specific prefixes, group separators, and locale
+     * specific suffixes from input string
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.966 -0500", hash_original_method = "E0679D6E03D5A7C0D246B9231F9BA005", hash_generated_method = "DF8CE1CE2A873757BB46E37CCE99B79D")
     private String removeLocaleInfo(String token, DataType type) {
-        addTaint(type.getTaint());
-        addTaint(token.getTaint());
         StringBuilder tokenBuilder = new StringBuilder(token);
         boolean negative = removeLocaleSign(tokenBuilder);
+        // Remove group separator
         String groupSeparator = String.valueOf(decimalFormat
                 .getDecimalFormatSymbols().getGroupingSeparator());
         int separatorIndex = -1;
-        while
-(-1 != (separatorIndex = tokenBuilder.indexOf(groupSeparator)))        
-        {
+        while (-1 != (separatorIndex = tokenBuilder.indexOf(groupSeparator))) {
             tokenBuilder.delete(separatorIndex, separatorIndex + 1);
-        } //End block
+        }
+        // Remove decimal separator
         String decimalSeparator = String.valueOf(decimalFormat
                 .getDecimalFormatSymbols().getDecimalSeparator());
         separatorIndex = tokenBuilder.indexOf(decimalSeparator);
         StringBuilder result = new StringBuilder("");
-        if(DataType.INT == type)        
-        {
-for(int i = 0;i < tokenBuilder.length();i++)
-            {
-                if(-1 != Character.digit(tokenBuilder.charAt(i),
-                        Character.MAX_RADIX))                
-                {
+        if (DataType.INT == type) {
+            for (int i = 0; i < tokenBuilder.length(); i++) {
+                if (-1 != Character.digit(tokenBuilder.charAt(i),
+                        Character.MAX_RADIX)) {
                     result.append(tokenBuilder.charAt(i));
-                } //End block
-            } //End block
-        } //End block
-        if(DataType.FLOAT == type)        
-        {
-            if(tokenBuilder.toString().equals(
-                    decimalFormat.getDecimalFormatSymbols().getNaN()))            
-            {
+                }
+            }
+        }
+        if (DataType.FLOAT == type) {
+            if (tokenBuilder.toString().equals(
+                    decimalFormat.getDecimalFormatSymbols().getNaN())) {
                 result.append("NaN");
-            } //End block
-            else
-            if(tokenBuilder.toString().equals(
-                    decimalFormat.getDecimalFormatSymbols().getInfinity()))            
-            {
+            } else if (tokenBuilder.toString().equals(
+                    decimalFormat.getDecimalFormatSymbols().getInfinity())) {
                 result.append("Infinity");
-            } //End block
-            else
-            {
-for(int i = 0;i < tokenBuilder.length();i++)
-                {
-                    if(-1 != Character.digit(tokenBuilder.charAt(i), 10))                    
-                    {
+            } else {
+                for (int i = 0; i < tokenBuilder.length(); i++) {
+                    if (-1 != Character.digit(tokenBuilder.charAt(i), 10)) {
                         result.append(Character.digit(tokenBuilder.charAt(i),
                                 10));
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
-        if(result.length() == 0)        
-        {
+                    }
+                }
+            }
+        }
+        // Token is NaN or Infinity
+        if (result.length() == 0) {
             result = tokenBuilder;
-        } //End block
-        if(-1 != separatorIndex)        
-        {
+        }
+        if (-1 != separatorIndex) {
             result.insert(separatorIndex, ".");
-        } //End block
-        if(negative)        
-        {
+        }
+        // If input is negative
+        if (negative) {
             result.insert(0, '-');
-        } //End block
-String varE65B3A02759122992CB82C0E651AD408_118501975 =         result.toString();
-        varE65B3A02759122992CB82C0E651AD408_118501975.addTaint(taint);
-        return varE65B3A02759122992CB82C0E651AD408_118501975;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        }
+        return result.toString();
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.864 -0400", hash_original_method = "78E2FFE43DDA019FB87A76C655422357", hash_generated_method = "8ADB3867561F782D9836DC4362504537")
+    /*
+     * Remove positive and negative sign from the parameter stringBuilder, and
+     * return whether the input string is negative
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.967 -0500", hash_original_method = "78E2FFE43DDA019FB87A76C655422357", hash_generated_method = "547428C328765DB155CB245C2CAA68E0")
     private boolean removeLocaleSign(StringBuilder tokenBuilder) {
-        addTaint(tokenBuilder.getTaint());
         String positivePrefix = decimalFormat.getPositivePrefix();
         String positiveSuffix = decimalFormat.getPositiveSuffix();
         String negativePrefix = decimalFormat.getNegativePrefix();
         String negativeSuffix = decimalFormat.getNegativeSuffix();
-        if(tokenBuilder.indexOf("+") == 0)        
-        {
+
+        if (tokenBuilder.indexOf("+") == 0) {
             tokenBuilder.delete(0, 1);
-        } //End block
-        if(!positivePrefix.isEmpty() && tokenBuilder.indexOf(positivePrefix) == 0)        
-        {
+        }
+        if (!positivePrefix.isEmpty() && tokenBuilder.indexOf(positivePrefix) == 0) {
             tokenBuilder.delete(0, positivePrefix.length());
-        } //End block
-        if(!positiveSuffix.isEmpty()
-                && -1 != tokenBuilder.indexOf(positiveSuffix))        
-        {
+        }
+        if (!positiveSuffix.isEmpty()
+                && -1 != tokenBuilder.indexOf(positiveSuffix)) {
             tokenBuilder.delete(
                     tokenBuilder.length() - positiveSuffix.length(),
                     tokenBuilder.length());
-        } //End block
+        }
         boolean negative = false;
-        if(tokenBuilder.indexOf("-") == 0)        
-        {
+        if (tokenBuilder.indexOf("-") == 0) {
             tokenBuilder.delete(0, 1);
             negative = true;
-        } //End block
-        if(!negativePrefix.isEmpty() && tokenBuilder.indexOf(negativePrefix) == 0)        
-        {
+        }
+        if (!negativePrefix.isEmpty() && tokenBuilder.indexOf(negativePrefix) == 0) {
             tokenBuilder.delete(0, negativePrefix.length());
             negative = true;
-        } //End block
-        if(!negativeSuffix.isEmpty()
-                && -1 != tokenBuilder.indexOf(negativeSuffix))        
-        {
+        }
+        if (!negativeSuffix.isEmpty()
+                && -1 != tokenBuilder.indexOf(negativeSuffix)) {
             tokenBuilder.delete(
                     tokenBuilder.length() - negativeSuffix.length(),
                     tokenBuilder.length());
             negative = true;
-        } //End block
-        boolean var228D6A97A9838DC800E58B3C74BA7B11_983098790 = (negative);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1630597665 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1630597665;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        }
+        return negative;
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.865 -0400", hash_original_method = "F9C3F510E83B834D3EF4AA01E6CFE4F9", hash_generated_method = "DDE067D3253B4F6B7CC10DB3E7AFC056")
+    /*
+     * Find the prefixed delimiter and posefixed delimiter in the input resource
+     * and set the start index and end index of Matcher region. If postfixed
+     * delimiter does not exist, the end index is set to be end of input.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.968 -0500", hash_original_method = "F9C3F510E83B834D3EF4AA01E6CFE4F9", hash_generated_method = "68AB05A16E0FE35AF872C4C2509251D2")
     private boolean setTokenRegion() {
+        // The position where token begins
         int tokenStartIndex = 0;
+        // The position where token ends
         int tokenEndIndex = 0;
+        // Use delimiter pattern
         matcher.usePattern(delimiter);
         matcher.region(findStartIndex, bufferLength);
+
         tokenStartIndex = findPreDelimiter();
-        if(setHeadTokenRegion(tokenStartIndex))        
-        {
-            boolean varB326B5062B2F0E69046810717534CB09_1945990793 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1629904364 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1629904364;
-        } //End block
+        if (setHeadTokenRegion(tokenStartIndex)) {
+            return true;
+        }
         tokenEndIndex = findPostDelimiter();
-        if(-1 == tokenEndIndex)        
-        {
-            if(findStartIndex == bufferLength)            
-            {
-                boolean var68934A3E9455FA72420237EB05902327_1907482997 = (false);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1321830809 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1321830809;
-            } //End block
+        // If the second delimiter is not found
+        if (-1 == tokenEndIndex) {
+            // Just first Delimiter Exists
+            if (findStartIndex == bufferLength) {
+                return false;
+            }
             tokenEndIndex = bufferLength;
             findStartIndex = bufferLength;
-        } //End block
+        }
+
         matcher.region(tokenStartIndex, tokenEndIndex);
-        boolean varB326B5062B2F0E69046810717534CB09_1585241831 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_58168101 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_58168101;
-        // ---------- Original Method ----------
-        //int tokenStartIndex = 0;
-        //int tokenEndIndex = 0;
-        //matcher.usePattern(delimiter);
-        //matcher.region(findStartIndex, bufferLength);
-        //tokenStartIndex = findPreDelimiter();
-        //if (setHeadTokenRegion(tokenStartIndex)) {
-            //return true;
-        //}
-        //tokenEndIndex = findPostDelimiter();
-        //if (-1 == tokenEndIndex) {
-            //if (findStartIndex == bufferLength) {
-                //return false;
-            //}
-            //tokenEndIndex = bufferLength;
-            //findStartIndex = bufferLength;
-        //}
-        //matcher.region(tokenStartIndex, tokenEndIndex);
-        //return true;
+        return true;
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.865 -0400", hash_original_method = "C22FCAE783E3B780837C6EC57B7427D4", hash_generated_method = "E7021980098F5AAFB71DFDEB5F6D089A")
+    /*
+     * Find prefix delimiter
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.969 -0500", hash_original_method = "C22FCAE783E3B780837C6EC57B7427D4", hash_generated_method = "74D02CA3B586F483486C4941572061CE")
     private int findPreDelimiter() {
         int tokenStartIndex;
         boolean findComplete = false;
-        while
-(!findComplete)        
-        {
-            if(matcher.find())            
-            {
+        while (!findComplete) {
+            if (matcher.find()) {
                 findComplete = true;
-                if(matcher.start() == findStartIndex
-                        && matcher.end() == bufferLength)                
-                {
-                    if(!inputExhausted)                    
-                    {
+                // If just delimiter remains
+                if (matcher.start() == findStartIndex
+                        && matcher.end() == bufferLength) {
+                    // If more input resource exists
+                    if (!inputExhausted) {
                         readMore();
                         resetMatcher();
                         findComplete = false;
-                    } //End block
-                } //End block
-            } //End block
-            else
-            {
-                if(!inputExhausted)                
-                {
+                    }
+                }
+            } else {
+                if (!inputExhausted) {
                     readMore();
                     resetMatcher();
-                } //End block
-                else
-                {
-                    int var6BB61E3B7BCE0931DA574D19D1D82C88_814518549 = (-1);
-                                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1225278386 = getTaintInt();
-                    return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1225278386;
-                } //End block
-            } //End block
-        } //End block
+                } else {
+                    return -1;
+                }
+            }
+        }
         tokenStartIndex = matcher.end();
         findStartIndex = matcher.end();
-        int var47FDAFC64F7DDB0A9381135F88CE37B1_881873071 = (tokenStartIndex);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1555630480 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1555630480;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        return tokenStartIndex;
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.866 -0400", hash_original_method = "CDCEB3053237613D9179B8FF1482F233", hash_generated_method = "30E5552C4DAF84D3A676001BFD0FBA2B")
+    /*
+     * Handle some special cases
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.970 -0500", hash_original_method = "CDCEB3053237613D9179B8FF1482F233", hash_generated_method = "1F02923AA39AAEEAD799B42A8247F79B")
     private boolean setHeadTokenRegion(int findIndex) {
-        addTaint(findIndex);
         int tokenStartIndex;
         int tokenEndIndex;
         boolean setSuccess = false;
-        if(-1 == findIndex && preStartIndex != bufferLength)        
-        {
+        // If no delimiter exists, but something exites in this scanner
+        if (-1 == findIndex && preStartIndex != bufferLength) {
             tokenStartIndex = preStartIndex;
             tokenEndIndex = bufferLength;
             findStartIndex = bufferLength;
             matcher.region(tokenStartIndex, tokenEndIndex);
             setSuccess = true;
-        } //End block
-        if(-1 != findIndex && preStartIndex != matcher.start())        
-        {
+        }
+        // If the first delimiter of scanner is not at the find start position
+        if (-1 != findIndex && preStartIndex != matcher.start()) {
             tokenStartIndex = preStartIndex;
             tokenEndIndex = matcher.start();
             findStartIndex = matcher.start();
+            // set match region and return
             matcher.region(tokenStartIndex, tokenEndIndex);
             setSuccess = true;
-        } //End block
-        boolean varE25887E46B0D29950156F350013B7359_1141363781 = (setSuccess);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_487160148 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_487160148;
-        // ---------- Original Method ----------
-        //int tokenStartIndex;
-        //int tokenEndIndex;
-        //boolean setSuccess = false;
-        //if (-1 == findIndex && preStartIndex != bufferLength) {
-            //tokenStartIndex = preStartIndex;
-            //tokenEndIndex = bufferLength;
-            //findStartIndex = bufferLength;
-            //matcher.region(tokenStartIndex, tokenEndIndex);
-            //setSuccess = true;
-        //}
-        //if (-1 != findIndex && preStartIndex != matcher.start()) {
-            //tokenStartIndex = preStartIndex;
-            //tokenEndIndex = matcher.start();
-            //findStartIndex = matcher.start();
-            //matcher.region(tokenStartIndex, tokenEndIndex);
-            //setSuccess = true;
-        //}
-        //return setSuccess;
+        }
+        return setSuccess;
+    }
+    static {
+        String NL = "\n|\r\n|\r|\u0085|\u2028|\u2029";
+        LINE_TERMINATOR = Pattern.compile(NL);
+        MULTI_LINE_TERMINATOR = Pattern.compile("(" + NL + ")+");
+        LINE_PATTERN = Pattern.compile(".*(" + NL + ")|.+(" + NL + ")?");
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.867 -0400", hash_original_method = "2DA8EAAAB20ACFBF7221E1B39889C369", hash_generated_method = "1268C3AAF4AB7D9B49BAE4DEF265FFFF")
+    /*
+     * Find postfix delimiter
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.971 -0500", hash_original_method = "2DA8EAAAB20ACFBF7221E1B39889C369", hash_generated_method = "D3203076C152DC16E53D674D548AA877")
     private int findPostDelimiter() {
         int tokenEndIndex = 0;
         boolean findComplete = false;
-        while
-(!findComplete)        
-        {
-            if(matcher.find())            
-            {
+        while (!findComplete) {
+            if (matcher.find()) {
                 findComplete = true;
-                if(matcher.start() == findStartIndex
-                        && matcher.start() == matcher.end())                
-                {
+                if (matcher.start() == findStartIndex
+                        && matcher.start() == matcher.end()) {
                     findComplete = false;
-                } //End block
-            } //End block
-            else
-            {
-                if(!inputExhausted)                
-                {
+                }
+            } else {
+                if (!inputExhausted) {
                     readMore();
                     resetMatcher();
-                } //End block
-                else
-                {
-                    int var6BB61E3B7BCE0931DA574D19D1D82C88_1158008564 = (-1);
-                                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1634927385 = getTaintInt();
-                    return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1634927385;
-                } //End block
-            } //End block
-        } //End block
+                } else {
+                    return -1;
+                }
+            }
+        }
         tokenEndIndex = matcher.start();
         findStartIndex = matcher.start();
-        int var115976B362F1C9A69857E6A84ED3F715_1092335514 = (tokenEndIndex);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2113293212 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2113293212;
-        // ---------- Original Method ----------
-        //int tokenEndIndex = 0;
-        //boolean findComplete = false;
-        //while (!findComplete) {
-            //if (matcher.find()) {
-                //findComplete = true;
-                //if (matcher.start() == findStartIndex
-                        //&& matcher.start() == matcher.end()) {
-                    //findComplete = false;
-                //}
-            //} else {
-                //if (!inputExhausted) {
-                    //readMore();
-                    //resetMatcher();
-                //} else {
-                    //return -1;
-                //}
-            //}
-        //}
-        //tokenEndIndex = matcher.start();
-        //findStartIndex = matcher.start();
-        //return tokenEndIndex;
+        return tokenEndIndex;
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.867 -0400", hash_original_method = "71E256A499C0BF5FC1327A59408A7116", hash_generated_method = "1DF49024B4CB53215818AAA178CE5F89")
+    /*
+     * Read more data from underlying Readable. If nothing is available or I/O
+     * operation fails, global boolean variable inputExhausted will be set to
+     * true, otherwise set to false.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.972 -0500", hash_original_method = "71E256A499C0BF5FC1327A59408A7116", hash_generated_method = "6E64D940A09BB57189208F09D6ED3FA6")
     private void readMore() {
         int oldPosition = buffer.position();
         int oldBufferLength = bufferLength;
-        if(bufferLength >= buffer.capacity())        
-        {
+        // Increase capacity if empty space is not enough
+        if (bufferLength >= buffer.capacity()) {
             expandBuffer();
-        } //End block
+        }
+
+        // Read input resource
         int readCount = 0;
-        try 
-        {
+        try {
             buffer.limit(buffer.capacity());
             buffer.position(oldBufferLength);
-            while
-((readCount = input.read(buffer)) == 0)            
-            {
-            } //End block
-        } //End block
-        catch (IOException e)
-        {
+            while ((readCount = input.read(buffer)) == 0) {
+                // nothing to do here
+            }
+        } catch (IOException e) {
+            // Consider the scenario: readable puts 4 chars into
+            // buffer and then an IOException is thrown out. In this case,
+            // buffer is
+            // actually grown, but readable.read() will never return.
             bufferLength = buffer.position();
+            /*
+             * Uses -1 to record IOException occurring, and no more input can be
+             * read.
+             */
             readCount = -1;
             lastIOException = e;
-        } //End block
+        }
+
         buffer.flip();
         buffer.position(oldPosition);
-        if(-1 == readCount)        
-        {
+        if (-1 == readCount) {
             inputExhausted = true;
-        } //End block
-        else
-        {
+        } else {
             bufferLength = readCount + bufferLength;
-        } //End block
-        // ---------- Original Method ----------
-        //int oldPosition = buffer.position();
-        //int oldBufferLength = bufferLength;
-        //if (bufferLength >= buffer.capacity()) {
-            //expandBuffer();
-        //}
-        //int readCount = 0;
-        //try {
-            //buffer.limit(buffer.capacity());
-            //buffer.position(oldBufferLength);
-            //while ((readCount = input.read(buffer)) == 0) {
-            //}
-        //} catch (IOException e) {
-            //bufferLength = buffer.position();
-            //readCount = -1;
-            //lastIOException = e;
-        //}
-        //buffer.flip();
-        //buffer.position(oldPosition);
-        //if (-1 == readCount) {
-            //inputExhausted = true;
-        //} else {
-            //bufferLength = readCount + bufferLength;
-        //}
+        }
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.871 -0400", hash_original_method = "333CE5605A5055092BA8AAF7729359CC", hash_generated_method = "1561AD8539375CEBEE6C435C8A290497")
+    // Expand the size of internal buffer.
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.973 -0500", hash_original_method = "333CE5605A5055092BA8AAF7729359CC", hash_generated_method = "1F8C96133D01F88B888A13E0AA6E5864")
     private void expandBuffer() {
         int oldPosition = buffer.position();
         int oldCapacity = buffer.capacity();
@@ -2546,77 +2244,20 @@ String varE65B3A02759122992CB82C0E651AD408_118501975 =         result.toString()
         buffer = CharBuffer.wrap(newBuffer, 0, newCapacity);
         buffer.position(oldPosition);
         buffer.limit(oldLimit);
-        // ---------- Original Method ----------
-        //int oldPosition = buffer.position();
-        //int oldCapacity = buffer.capacity();
-        //int oldLimit = buffer.limit();
-        //int newCapacity = oldCapacity * DIPLOID;
-        //char[] newBuffer = new char[newCapacity];
-        //System.arraycopy(buffer.array(), 0, newBuffer, 0, oldLimit);
-        //buffer = CharBuffer.wrap(newBuffer, 0, newCapacity);
-        //buffer.position(oldPosition);
-        //buffer.limit(oldLimit);
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.871 -0400", hash_original_method = "6E6895DF0C38F7FD4A1856B0BE65A90D", hash_generated_method = "F768206C4699E1554A5ADB8749B61BEE")
+    /**
+     * Resets this scanner's delimiter, locale, and radix.
+     *
+     * @return this scanner
+     * @since 1.6
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:46.973 -0500", hash_original_method = "6E6895DF0C38F7FD4A1856B0BE65A90D", hash_generated_method = "853C9A1985467115793F13C6AA0E5867")
     public Scanner reset() {
         delimiter = DEFAULT_DELIMITER;
         locale = Locale.getDefault();
         integerRadix = 10;
-Scanner var72A74007B2BE62B849F475C7BDA4658B_1503445069 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_1503445069.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_1503445069;
-        // ---------- Original Method ----------
-        //delimiter = DEFAULT_DELIMITER;
-        //locale = Locale.getDefault();
-        //integerRadix = 10;
-        //return this;
+        return this;
     }
-
-    
-    private enum DataType {
-        INT,
-        FLOAT;
-    }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.871 -0400", hash_original_field = "BC972EB0D22A6A007EA49964499CB869", hash_generated_field = "198E8DC61E6EE6260DD0FD67EC1BE70A")
-
-    private static final Pattern DEFAULT_DELIMITER = Pattern
-            .compile("\\p{javaWhitespace}+");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.871 -0400", hash_original_field = "51B36C22E2A7867914CF920A2F4D5E26", hash_generated_field = "A53C7CC23A0CC495ADEF2FAB7B5DCB77")
-
-    private static final Pattern BOOLEAN_PATTERN = Pattern.compile(
-            "true|false", Pattern.CASE_INSENSITIVE);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.871 -0400", hash_original_field = "54CA59FF6F5876977BA085227CBE9E03", hash_generated_field = "34D957310674ACDBDEF2BA84C8EFAF52")
-
-    private static Pattern LINE_TERMINATOR;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.871 -0400", hash_original_field = "C5F111F5DE06ACB0CA2CF2B54D5B52E6", hash_generated_field = "6C40428A55C17D2895C0B094BEB1F611")
-
-    private static Pattern MULTI_LINE_TERMINATOR;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.871 -0400", hash_original_field = "AA77B9850811932532F09996BDC43803", hash_generated_field = "3C4C83BD4BB2A832CA90E27F9C78BAE2")
-
-    private static Pattern LINE_PATTERN;
-    static {
-        String NL = "\n|\r\n|\r|\u0085|\u2028|\u2029";
-        LINE_TERMINATOR = Pattern.compile(NL);
-        MULTI_LINE_TERMINATOR = Pattern.compile("(" + NL + ")+");
-        LINE_PATTERN = Pattern.compile(".*(" + NL + ")|.+(" + NL + ")?");
-    }
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.872 -0400", hash_original_field = "AE2E9958C069FE6F38E5DC9ADAB45571", hash_generated_field = "D845CBECA21831ED0A78D9A752686AC5")
-
-    private static final Pattern ANY_PATTERN = Pattern.compile("(?s).*");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.872 -0400", hash_original_field = "6DCC85CA6D691683EE954E4E0F50E8C6", hash_generated_field = "3BA97B4331D762E18310C69487A4537F")
-
-    private static final int DIPLOID = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.872 -0400", hash_original_field = "F5158802C5AD653FFB1072819F8D7B16", hash_generated_field = "6AD996F6F0E1D10B17B6B57671BFAA93")
-
-    private static final int DEFAULT_RADIX = 10;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.872 -0400", hash_original_field = "3D936557EB560A417CDF2BC916B4B530", hash_generated_field = "943912C72E8350CCD8E69B9D60A0C886")
-
-    private static final int DEFAULT_TRUNK_SIZE = 1024;
 }
 

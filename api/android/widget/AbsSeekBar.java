@@ -1,6 +1,8 @@
 package android.widget;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -17,657 +19,472 @@ import android.view.ViewConfiguration;
 
 
 public abstract class AbsSeekBar extends ProgressBar {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.769 -0400", hash_original_field = "4C52B1548343B5F67E71ABAB98CDCE25", hash_generated_field = "A9FD89A9EA0824250F9B9C034928CB8F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:59.637 -0500", hash_original_field = "F40A65A0161E245EB9410D7A796FE9B3", hash_generated_field = "0FC0F1E74EFFD499D7E9EC90666C1A5B")
+
+    
+    private static final int NO_ALPHA = 0xFF;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:59.632 -0500", hash_original_field = "FD62B894F97CF0695B853F1F96D29A26", hash_generated_field = "A9FD89A9EA0824250F9B9C034928CB8F")
 
     private Drawable mThumb;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.770 -0400", hash_original_field = "A28BD1DCDFDB076ED8B0128D800E7517", hash_generated_field = "EDEA4E873C327B12CA4083E0E57BEE64")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:59.633 -0500", hash_original_field = "F00844383D5CEE5E798D45B7C877A065", hash_generated_field = "EDEA4E873C327B12CA4083E0E57BEE64")
 
     private int mThumbOffset;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.770 -0400", hash_original_field = "55F071D4796DEB743D84809F3A8DC6D5", hash_generated_field = "E221719242D0437E0E0816E9049A3A6E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:59.633 -0500", hash_original_field = "E221719242D0437E0E0816E9049A3A6E", hash_generated_field = "E221719242D0437E0E0816E9049A3A6E")
 
     float mTouchProgressOffset;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.770 -0400", hash_original_field = "281E125C1BC7343D2104EB0DF2965583", hash_generated_field = "267BD1149348204124B40DB8937D82FB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:59.634 -0500", hash_original_field = "267BD1149348204124B40DB8937D82FB", hash_generated_field = "267BD1149348204124B40DB8937D82FB")
 
     boolean mIsUserSeekable = true;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.770 -0400", hash_original_field = "D09059F0BDE48E485EF2977038ECC6B6", hash_generated_field = "DA3EB023D2AE87BC493256844DF4F8FC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:59.636 -0500", hash_original_field = "662F70DA59E7A41884406B4F6627CC0C", hash_generated_field = "DA3EB023D2AE87BC493256844DF4F8FC")
 
     private int mKeyProgressIncrement = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.770 -0400", hash_original_field = "442F8731C67AF26E1E29D47472A461BF", hash_generated_field = "BE45430B4E582ECC76FDAE96B324FF18")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:59.637 -0500", hash_original_field = "C7A330BE7142327056539F5ED284903D", hash_generated_field = "BE45430B4E582ECC76FDAE96B324FF18")
 
     private float mDisabledAlpha;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.770 -0400", hash_original_field = "007A72391FE679B54C8CDBD6A79A1E3F", hash_generated_field = "A6018E4F8C21D3EE961380A6D74CC7E0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:59.638 -0500", hash_original_field = "BDDA105C43BD9D84A4C5E84D10C957AD", hash_generated_field = "A6018E4F8C21D3EE961380A6D74CC7E0")
 
+    
     private int mScaledTouchSlop;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.770 -0400", hash_original_field = "82594ABA40C2D7123512A711436C704D", hash_generated_field = "A48801BD53279BF93DEF5A0855023B3F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:59.639 -0500", hash_original_field = "736B8C13D43D5513EA82C61CE573A2F9", hash_generated_field = "A48801BD53279BF93DEF5A0855023B3F")
 
     private float mTouchDownX;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.770 -0400", hash_original_field = "88529674006503CAD340B538C44A2C88", hash_generated_field = "71A2FEF14E89166E5A8A859417B1663A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:59.640 -0500", hash_original_field = "3A568D5A24E6042844823649C40BC486", hash_generated_field = "71A2FEF14E89166E5A8A859417B1663A")
 
     private boolean mIsDragging;
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.770 -0400", hash_original_method = "559FDCE349858758D50BC2905EE88B67", hash_generated_method = "FDA7C2EB8B5296D46FCCA250BF0143BC")
-    public  AbsSeekBar(Context context) {
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:59.641 -0500", hash_original_method = "559FDCE349858758D50BC2905EE88B67", hash_generated_method = "C46FBF546DF5E71B0BE095D871862D47")
+    public AbsSeekBar(Context context) {
         super(context);
-        addTaint(context.getTaint());
-        // ---------- Original Method ----------
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.771 -0400", hash_original_method = "9B53DFB86DC24D620F7DF1D33C461438", hash_generated_method = "0E2064C65DFD6A1F4F14468BF35A30CF")
-    public  AbsSeekBar(Context context, AttributeSet attrs) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:59.641 -0500", hash_original_method = "9B53DFB86DC24D620F7DF1D33C461438", hash_generated_method = "F87231B1B13D3C212440C6199DF2E606")
+    public AbsSeekBar(Context context, AttributeSet attrs) {
         super(context, attrs);
-        addTaint(attrs.getTaint());
-        addTaint(context.getTaint());
-        // ---------- Original Method ----------
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.773 -0400", hash_original_method = "1A34D5E8CF032B0AA6AD65EE16F7EFF6", hash_generated_method = "D5A625CF0D79AD9940C01434BE68DF7F")
-    public  AbsSeekBar(Context context, AttributeSet attrs, int defStyle) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:59.643 -0500", hash_original_method = "1A34D5E8CF032B0AA6AD65EE16F7EFF6", hash_generated_method = "48447701C2F88AB3D5BB3C56A26D5D74")
+    public AbsSeekBar(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-        addTaint(defStyle);
-        addTaint(attrs.getTaint());
+
         TypedArray a = context.obtainStyledAttributes(attrs,
                 com.android.internal.R.styleable.SeekBar, defStyle, 0);
         Drawable thumb = a.getDrawable(com.android.internal.R.styleable.SeekBar_thumb);
-        setThumb(thumb);
+        setThumb(thumb); // will guess mThumbOffset if thumb != null...
+        // ...but allow layout to override this
         int thumbOffset = a.getDimensionPixelOffset(
                 com.android.internal.R.styleable.SeekBar_thumbOffset, getThumbOffset());
         setThumbOffset(thumbOffset);
         a.recycle();
+
         a = context.obtainStyledAttributes(attrs,
                 com.android.internal.R.styleable.Theme, 0, 0);
         mDisabledAlpha = a.getFloat(com.android.internal.R.styleable.Theme_disabledAlpha, 0.5f);
         a.recycle();
+
         mScaledTouchSlop = ViewConfiguration.get(context).getScaledTouchSlop();
-        // ---------- Original Method ----------
-        //TypedArray a = context.obtainStyledAttributes(attrs,
-                //com.android.internal.R.styleable.SeekBar, defStyle, 0);
-        //Drawable thumb = a.getDrawable(com.android.internal.R.styleable.SeekBar_thumb);
-        //setThumb(thumb);
-        //int thumbOffset = a.getDimensionPixelOffset(
-                //com.android.internal.R.styleable.SeekBar_thumbOffset, getThumbOffset());
-        //setThumbOffset(thumbOffset);
-        //a.recycle();
-        //a = context.obtainStyledAttributes(attrs,
-                //com.android.internal.R.styleable.Theme, 0, 0);
-        //mDisabledAlpha = a.getFloat(com.android.internal.R.styleable.Theme_disabledAlpha, 0.5f);
-        //a.recycle();
-        //mScaledTouchSlop = ViewConfiguration.get(context).getScaledTouchSlop();
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.774 -0400", hash_original_method = "998F0AEDC4C83C00C5B5C0950AA82FAF", hash_generated_method = "EEB40915095E404D71B3A50C9D033C27")
+    /**
+     * Sets the thumb that will be drawn at the end of the progress meter within the SeekBar.
+     * <p>
+     * If the thumb is a valid drawable (i.e. not null), half its width will be
+     * used as the new thumb offset (@see #setThumbOffset(int)).
+     * 
+     * @param thumb Drawable representing the thumb
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:59.644 -0500", hash_original_method = "998F0AEDC4C83C00C5B5C0950AA82FAF", hash_generated_method = "41C55E3CB0B790AF3F0B45527A049B51")
     public void setThumb(Drawable thumb) {
         boolean needUpdate;
-        if(mThumb != null && thumb != mThumb)        
-        {
+        // This way, calling setThumb again with the same bitmap will result in
+        // it recalcuating mThumbOffset (if for example it the bounds of the
+        // drawable changed)
+        if (mThumb != null && thumb != mThumb) {
             mThumb.setCallback(null);
             needUpdate = true;
-        } //End block
-        else
-        {
+        } else {
             needUpdate = false;
-        } //End block
-        if(thumb != null)        
-        {
+        }
+        if (thumb != null) {
             thumb.setCallback(this);
+
+            // Assuming the thumb drawable is symmetric, set the thumb offset
+            // such that the thumb will hang halfway off either edge of the
+            // progress bar.
             mThumbOffset = thumb.getIntrinsicWidth() / 2;
-            if(needUpdate &&
+
+            // If we're updating get the new states
+            if (needUpdate &&
                     (thumb.getIntrinsicWidth() != mThumb.getIntrinsicWidth()
-                        || thumb.getIntrinsicHeight() != mThumb.getIntrinsicHeight()))            
-            {
+                        || thumb.getIntrinsicHeight() != mThumb.getIntrinsicHeight())) {
                 requestLayout();
-            } //End block
-        } //End block
+            }
+        }
         mThumb = thumb;
         invalidate();
-        if(needUpdate)        
-        {
+        if (needUpdate) {
             updateThumbPos(getWidth(), getHeight());
-            if(thumb.isStateful())            
-            {
+            if (thumb.isStateful()) {
+                // Note that if the states are different this won't work.
+                // For now, let's consider that an app bug.
                 int[] state = getDrawableState();
                 thumb.setState(state);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            }
+        }
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.775 -0400", hash_original_method = "55BCE64F6AB8A7FA94D80EC71DE6965C", hash_generated_method = "5FCDE5AEA7750C042784C9341AEDE477")
+    /**
+     * @see #setThumbOffset(int)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:59.645 -0500", hash_original_method = "55BCE64F6AB8A7FA94D80EC71DE6965C", hash_generated_method = "F79543ECA2A92AB64764C5A2B1FACA32")
     public int getThumbOffset() {
-        int varA28BD1DCDFDB076ED8B0128D800E7517_222677256 = (mThumbOffset);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_306698109 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_306698109;
-        // ---------- Original Method ----------
-        //return mThumbOffset;
+        return mThumbOffset;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.775 -0400", hash_original_method = "19F18537D3EF5D294C0A19C19876A9D3", hash_generated_method = "C1AE1170153E1358AA343297EAC9437B")
+    /**
+     * Sets the thumb offset that allows the thumb to extend out of the range of
+     * the track.
+     * 
+     * @param thumbOffset The offset amount in pixels.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:59.646 -0500", hash_original_method = "19F18537D3EF5D294C0A19C19876A9D3", hash_generated_method = "D77A319057FF6F3ED8417DF0C6540BD0")
     public void setThumbOffset(int thumbOffset) {
         mThumbOffset = thumbOffset;
         invalidate();
-        // ---------- Original Method ----------
-        //mThumbOffset = thumbOffset;
-        //invalidate();
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.776 -0400", hash_original_method = "47EA7303B3E1A2D7511BD2240E8B9AF2", hash_generated_method = "23FC38C564F6AB4BEDBEB8AF8AF33262")
+    /**
+     * Sets the amount of progress changed via the arrow keys.
+     * 
+     * @param increment The amount to increment or decrement when the user
+     *            presses the arrow keys.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:59.646 -0500", hash_original_method = "47EA7303B3E1A2D7511BD2240E8B9AF2", hash_generated_method = "A209AB66D0BC1B042527F3A4A6F5077A")
     public void setKeyProgressIncrement(int increment) {
         mKeyProgressIncrement = increment < 0 ? -increment : increment;
-        // ---------- Original Method ----------
-        //mKeyProgressIncrement = increment < 0 ? -increment : increment;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.776 -0400", hash_original_method = "1305A27F8447A6D05AC7D82E2D035BB9", hash_generated_method = "3E7DF6260727BAB87F50CD21B6849E7A")
+    /**
+     * Returns the amount of progress changed via the arrow keys.
+     * <p>
+     * By default, this will be a value that is derived from the max progress.
+     * 
+     * @return The amount to increment or decrement when the user presses the
+     *         arrow keys. This will be positive.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:59.647 -0500", hash_original_method = "1305A27F8447A6D05AC7D82E2D035BB9", hash_generated_method = "77282FCD0571741C2B935EB5C9168980")
     public int getKeyProgressIncrement() {
-        int varC55911B792B2D1356C2FA646B234CAEE_1466801821 = (mKeyProgressIncrement);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2118835040 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2118835040;
-        // ---------- Original Method ----------
-        //return mKeyProgressIncrement;
+        return mKeyProgressIncrement;
     }
-
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.777 -0400", hash_original_method = "B86F9FD250EB4E355A6234A6154554E5", hash_generated_method = "2DD959F4E12E1D1F80F3D4224FD42B7A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:59.648 -0500", hash_original_method = "B86F9FD250EB4E355A6234A6154554E5", hash_generated_method = "CA2AA6C75D79CE639A6D579C54BBA41C")
     @Override
-    public synchronized void setMax(int max) {
-        addTaint(max);
+public synchronized void setMax(int max) {
         super.setMax(max);
-        if((mKeyProgressIncrement == 0) || (getMax() / mKeyProgressIncrement > 20))        
-        {
+
+        if ((mKeyProgressIncrement == 0) || (getMax() / mKeyProgressIncrement > 20)) {
+            // It will take the user too long to change this via keys, change it
+            // to something more reasonable
             setKeyProgressIncrement(Math.max(1, Math.round((float) getMax() / 20)));
-        } //End block
-        // ---------- Original Method ----------
-        //super.setMax(max);
-        //if ((mKeyProgressIncrement == 0) || (getMax() / mKeyProgressIncrement > 20)) {
-            //setKeyProgressIncrement(Math.max(1, Math.round((float) getMax() / 20)));
-        //}
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.777 -0400", hash_original_method = "9C2A9BDC8A382BBBC0B52ACD6BB3E808", hash_generated_method = "9EADE4DC390397E4A11AB220ACEFFC60")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:59.649 -0500", hash_original_method = "9C2A9BDC8A382BBBC0B52ACD6BB3E808", hash_generated_method = "CD88B145328FDFD5D46FE47A595B26EF")
     @Override
-    protected boolean verifyDrawable(Drawable who) {
-        addTaint(who.getTaint());
-        boolean var40C93E378C8931BB1A1E215663973346_581140525 = (who == mThumb || super.verifyDrawable(who));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1134318815 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1134318815;
-        // ---------- Original Method ----------
-        //return who == mThumb || super.verifyDrawable(who);
+protected boolean verifyDrawable(Drawable who) {
+        return who == mThumb || super.verifyDrawable(who);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.777 -0400", hash_original_method = "A2BEB9099595ED17C9F72C657E221F4D", hash_generated_method = "1649235F7AE89E25D54050B6CE9EC8AF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:59.650 -0500", hash_original_method = "A2BEB9099595ED17C9F72C657E221F4D", hash_generated_method = "4D7F0A10FE0CD79695DE44900B208795")
     @Override
-    public void jumpDrawablesToCurrentState() {
+public void jumpDrawablesToCurrentState() {
         super.jumpDrawablesToCurrentState();
-        if(mThumb != null)        
-        mThumb.jumpToCurrentState();
-        // ---------- Original Method ----------
-        //super.jumpDrawablesToCurrentState();
-        //if (mThumb != null) mThumb.jumpToCurrentState();
+        if (mThumb != null) mThumb.jumpToCurrentState();
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.777 -0400", hash_original_method = "18D3C014C29EEACE1B64A99674108866", hash_generated_method = "26C849F776D29648E3856D4193A00387")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:59.651 -0500", hash_original_method = "18D3C014C29EEACE1B64A99674108866", hash_generated_method = "FAF6A29E2A27C45E9DC5EF38CDBAFF4C")
     @Override
-    protected void drawableStateChanged() {
+protected void drawableStateChanged() {
         super.drawableStateChanged();
+        
         Drawable progressDrawable = getProgressDrawable();
-        if(progressDrawable != null)        
-        {
+        if (progressDrawable != null) {
             progressDrawable.setAlpha(isEnabled() ? NO_ALPHA : (int) (NO_ALPHA * mDisabledAlpha));
-        } //End block
-        if(mThumb != null && mThumb.isStateful())        
-        {
+        }
+        
+        if (mThumb != null && mThumb.isStateful()) {
             int[] state = getDrawableState();
             mThumb.setState(state);
-        } //End block
-        // ---------- Original Method ----------
-        //super.drawableStateChanged();
-        //Drawable progressDrawable = getProgressDrawable();
-        //if (progressDrawable != null) {
-            //progressDrawable.setAlpha(isEnabled() ? NO_ALPHA : (int) (NO_ALPHA * mDisabledAlpha));
-        //}
-        //if (mThumb != null && mThumb.isStateful()) {
-            //int[] state = getDrawableState();
-            //mThumb.setState(state);
-        //}
+        }
     }
-
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.778 -0400", hash_original_method = "BD33A56797AEA3D6F712418E2C1B11B9", hash_generated_method = "861AD8C3EC20310D05FAC1B6B274FD8B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:59.651 -0500", hash_original_method = "BD33A56797AEA3D6F712418E2C1B11B9", hash_generated_method = "D297D1781696209F89E9F026CF903A01")
     @Override
-     void onProgressRefresh(float scale, boolean fromUser) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(fromUser);
-        addTaint(scale);
+void onProgressRefresh(float scale, boolean fromUser) {
         super.onProgressRefresh(scale, fromUser);
         Drawable thumb = mThumb;
-        if(thumb != null)        
-        {
+        if (thumb != null) {
             setThumbPos(getWidth(), thumb, scale, Integer.MIN_VALUE);
+            /*
+             * Since we draw translated, the drawable's bounds that it signals
+             * for invalidation won't be the actual bounds we want invalidated,
+             * so just invalidate this whole view.
+             */
             invalidate();
-        } //End block
-        // ---------- Original Method ----------
-        //super.onProgressRefresh(scale, fromUser);
-        //Drawable thumb = mThumb;
-        //if (thumb != null) {
-            //setThumbPos(getWidth(), thumb, scale, Integer.MIN_VALUE);
-            //invalidate();
-        //}
+        }
     }
-
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.779 -0400", hash_original_method = "A1D4A37B8CF40CBB929E8D311A74C166", hash_generated_method = "09A146E0599528F7EF1BF28C7B631032")
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:59.652 -0500", hash_original_method = "A1D4A37B8CF40CBB929E8D311A74C166", hash_generated_method = "12D73892C6F9EC6E45F16411E16C2432")
     @Override
-    protected void onSizeChanged(int w, int h, int oldw, int oldh) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(oldh);
-        addTaint(oldw);
-        addTaint(h);
-        addTaint(w);
+protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         updateThumbPos(w, h);
-        // ---------- Original Method ----------
-        //updateThumbPos(w, h);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.779 -0400", hash_original_method = "EBB195A6F6AE70942CBBB72014D4E630", hash_generated_method = "EEBA0758A06700BC917CD7B6307F35F7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:59.653 -0500", hash_original_method = "EBB195A6F6AE70942CBBB72014D4E630", hash_generated_method = "2CD59655C19BBBF172D87FF48B30C6E2")
     private void updateThumbPos(int w, int h) {
-        addTaint(h);
-        addTaint(w);
         Drawable d = getCurrentDrawable();
         Drawable thumb = mThumb;
         int thumbHeight = thumb == null ? 0 : thumb.getIntrinsicHeight();
+        // The max height does not incorporate padding, whereas the height
+        // parameter does
         int trackHeight = Math.min(mMaxHeight, h - mPaddingTop - mPaddingBottom);
+        
         int max = getMax();
         float scale = max > 0 ? (float) getProgress() / (float) max : 0;
-        if(thumbHeight > trackHeight)        
-        {
-            if(thumb != null)            
-            {
+        
+        if (thumbHeight > trackHeight) {
+            if (thumb != null) {
                 setThumbPos(w, thumb, scale, 0);
-            } //End block
+            }
             int gapForCenteringTrack = (thumbHeight - trackHeight) / 2;
-            if(d != null)            
-            {
+            if (d != null) {
+                // Canvas will be translated by the padding, so 0,0 is where we start drawing
                 d.setBounds(0, gapForCenteringTrack, 
                         w - mPaddingRight - mPaddingLeft, h - mPaddingBottom - gapForCenteringTrack
                         - mPaddingTop);
-            } //End block
-        } //End block
-        else
-        {
-            if(d != null)            
-            {
+            }
+        } else {
+            if (d != null) {
+                // Canvas will be translated by the padding, so 0,0 is where we start drawing
                 d.setBounds(0, 0, w - mPaddingRight - mPaddingLeft, h - mPaddingBottom
                         - mPaddingTop);
-            } //End block
+            }
             int gap = (trackHeight - thumbHeight) / 2;
-            if(thumb != null)            
-            {
+            if (thumb != null) {
                 setThumbPos(w, thumb, scale, gap);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            }
+        }
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.780 -0400", hash_original_method = "CA4C19C8B40982548F0C235E2E1E696B", hash_generated_method = "F30533D5251F0D11C8B4CFD2FF36B697")
+    /**
+     * @param gap If set to {@link Integer#MIN_VALUE}, this will be ignored and
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:59.654 -0500", hash_original_method = "CA4C19C8B40982548F0C235E2E1E696B", hash_generated_method = "78D4F43E8B8447727A62D2774621AC09")
     private void setThumbPos(int w, Drawable thumb, float scale, int gap) {
-        addTaint(gap);
-        addTaint(scale);
-        addTaint(thumb.getTaint());
-        addTaint(w);
         int available = w - mPaddingLeft - mPaddingRight;
         int thumbWidth = thumb.getIntrinsicWidth();
         int thumbHeight = thumb.getIntrinsicHeight();
         available -= thumbWidth;
+
+        // The extra space for the thumb to move on the track
         available += mThumbOffset * 2;
+
         int thumbPos = (int) (scale * available);
-        int topBound;
-        int bottomBound;
-        if(gap == Integer.MIN_VALUE)        
-        {
+
+        int topBound, bottomBound;
+        if (gap == Integer.MIN_VALUE) {
             Rect oldBounds = thumb.getBounds();
             topBound = oldBounds.top;
             bottomBound = oldBounds.bottom;
-        } //End block
-        else
-        {
+        } else {
             topBound = gap;
             bottomBound = gap + thumbHeight;
-        } //End block
+        }
+        
+        // Canvas will be translated, so 0,0 is where we start drawing
         thumb.setBounds(thumbPos, topBound, thumbPos + thumbWidth, bottomBound);
-        // ---------- Original Method ----------
-        //int available = w - mPaddingLeft - mPaddingRight;
-        //int thumbWidth = thumb.getIntrinsicWidth();
-        //int thumbHeight = thumb.getIntrinsicHeight();
-        //available -= thumbWidth;
-        //available += mThumbOffset * 2;
-        //int thumbPos = (int) (scale * available);
-        //int topBound, bottomBound;
-        //if (gap == Integer.MIN_VALUE) {
-            //Rect oldBounds = thumb.getBounds();
-            //topBound = oldBounds.top;
-            //bottomBound = oldBounds.bottom;
-        //} else {
-            //topBound = gap;
-            //bottomBound = gap + thumbHeight;
-        //}
-        //thumb.setBounds(thumbPos, topBound, thumbPos + thumbWidth, bottomBound);
     }
-
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.781 -0400", hash_original_method = "317EB63F41EF20BCBD26EC2C5FF1A8E2", hash_generated_method = "D6E8D0DB70D229BCB2C29DCB85266734")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:59.655 -0500", hash_original_method = "317EB63F41EF20BCBD26EC2C5FF1A8E2", hash_generated_method = "16DB17B8D7608C5FF448B8EA63343F43")
     @Override
-    protected synchronized void onDraw(Canvas canvas) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(canvas.getTaint());
+protected synchronized void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        if(mThumb != null)        
-        {
+        if (mThumb != null) {
             canvas.save();
+            // Translate the padding. For the x, we need to allow the thumb to
+            // draw in its extra space
             canvas.translate(mPaddingLeft - mThumbOffset, mPaddingTop);
             mThumb.draw(canvas);
             canvas.restore();
-        } //End block
-        // ---------- Original Method ----------
-        //super.onDraw(canvas);
-        //if (mThumb != null) {
-            //canvas.save();
-            //canvas.translate(mPaddingLeft - mThumbOffset, mPaddingTop);
-            //mThumb.draw(canvas);
-            //canvas.restore();
-        //}
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.781 -0400", hash_original_method = "6FE23FC5494DD28976118E3A2B4F8E1A", hash_generated_method = "A3D058C3B4CEA7DF4969518711C4F2C6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:59.656 -0500", hash_original_method = "6FE23FC5494DD28976118E3A2B4F8E1A", hash_generated_method = "1109593018B12D4B6F6E8B418FAD1A15")
     @Override
-    protected synchronized void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(heightMeasureSpec);
-        addTaint(widthMeasureSpec);
+protected synchronized void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         Drawable d = getCurrentDrawable();
+
         int thumbHeight = mThumb == null ? 0 : mThumb.getIntrinsicHeight();
         int dw = 0;
         int dh = 0;
-        if(d != null)        
-        {
+        if (d != null) {
             dw = Math.max(mMinWidth, Math.min(mMaxWidth, d.getIntrinsicWidth()));
             dh = Math.max(mMinHeight, Math.min(mMaxHeight, d.getIntrinsicHeight()));
             dh = Math.max(thumbHeight, dh);
-        } //End block
+        }
         dw += mPaddingLeft + mPaddingRight;
         dh += mPaddingTop + mPaddingBottom;
+        
         setMeasuredDimension(resolveSizeAndState(dw, widthMeasureSpec, 0),
                 resolveSizeAndState(dh, heightMeasureSpec, 0));
-        // ---------- Original Method ----------
-        //Drawable d = getCurrentDrawable();
-        //int thumbHeight = mThumb == null ? 0 : mThumb.getIntrinsicHeight();
-        //int dw = 0;
-        //int dh = 0;
-        //if (d != null) {
-            //dw = Math.max(mMinWidth, Math.min(mMaxWidth, d.getIntrinsicWidth()));
-            //dh = Math.max(mMinHeight, Math.min(mMaxHeight, d.getIntrinsicHeight()));
-            //dh = Math.max(thumbHeight, dh);
-        //}
-        //dw += mPaddingLeft + mPaddingRight;
-        //dh += mPaddingTop + mPaddingBottom;
-        //setMeasuredDimension(resolveSizeAndState(dw, widthMeasureSpec, 0),
-                //resolveSizeAndState(dh, heightMeasureSpec, 0));
     }
-
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.782 -0400", hash_original_method = "E10F6AB7670DC24DEEA2309682812EC7", hash_generated_method = "A568C8EB58211948FE8BB9891CB7851C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:59.657 -0500", hash_original_method = "E10F6AB7670DC24DEEA2309682812EC7", hash_generated_method = "4AB12CB6D519D45D8BF3CCDE9EE80395")
     @Override
-    public boolean onTouchEvent(MotionEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        if(!mIsUserSeekable || !isEnabled())        
-        {
-            boolean var68934A3E9455FA72420237EB05902327_1697943104 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2039787500 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_2039787500;
-        } //End block
-switch(event.getAction()){
-        case MotionEvent.ACTION_DOWN:
-        if(isInScrollingContainer())        
-        {
-            mTouchDownX = event.getX();
-        } //End block
-        else
-        {
-            setPressed(true);
-            if(mThumb != null)            
-            {
-                invalidate(mThumb.getBounds());
-            } //End block
-            onStartTrackingTouch();
-            trackTouchEvent(event);
-            attemptClaimDrag();
-        } //End block
-        break;
-        case MotionEvent.ACTION_MOVE:
-        if(mIsDragging)        
-        {
-            trackTouchEvent(event);
-        } //End block
-        else
-        {
-            final float x = event.getX();
-            if(Math.abs(x - mTouchDownX) > mScaledTouchSlop)            
-            {
-                setPressed(true);
-                if(mThumb != null)                
-                {
-                    invalidate(mThumb.getBounds());
-                } //End block
-                onStartTrackingTouch();
-                trackTouchEvent(event);
-                attemptClaimDrag();
-            } //End block
-        } //End block
-        break;
-        case MotionEvent.ACTION_UP:
-        if(mIsDragging)        
-        {
-            trackTouchEvent(event);
-            onStopTrackingTouch();
-            setPressed(false);
-        } //End block
-        else
-        {
-            onStartTrackingTouch();
-            trackTouchEvent(event);
-            onStopTrackingTouch();
-        } //End block
-        invalidate();
-        break;
-        case MotionEvent.ACTION_CANCEL:
-        if(mIsDragging)        
-        {
-            onStopTrackingTouch();
-            setPressed(false);
-        } //End block
-        invalidate();
-        break;
-}        boolean varB326B5062B2F0E69046810717534CB09_947643489 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1343056878 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1343056878;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+public boolean onTouchEvent(MotionEvent event) {
+        if (!mIsUserSeekable || !isEnabled()) {
+            return false;
+        }
+        
+        switch (event.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                if (isInScrollingContainer()) {
+                    mTouchDownX = event.getX();
+                } else {
+                    setPressed(true);
+                    if (mThumb != null) {
+                        invalidate(mThumb.getBounds()); // This may be within the padding region
+                    }
+                    onStartTrackingTouch();
+                    trackTouchEvent(event);
+                    attemptClaimDrag();
+                }
+                break;
+                
+            case MotionEvent.ACTION_MOVE:
+                if (mIsDragging) {
+                    trackTouchEvent(event);
+                } else {
+                    final float x = event.getX();
+                    if (Math.abs(x - mTouchDownX) > mScaledTouchSlop) {
+                        setPressed(true);
+                        if (mThumb != null) {
+                            invalidate(mThumb.getBounds()); // This may be within the padding region
+                        }
+                        onStartTrackingTouch();
+                        trackTouchEvent(event);
+                        attemptClaimDrag();
+                    }
+                }
+                break;
+                
+            case MotionEvent.ACTION_UP:
+                if (mIsDragging) {
+                    trackTouchEvent(event);
+                    onStopTrackingTouch();
+                    setPressed(false);
+                } else {
+                    // Touch up when we never crossed the touch slop threshold should
+                    // be interpreted as a tap-seek to that location.
+                    onStartTrackingTouch();
+                    trackTouchEvent(event);
+                    onStopTrackingTouch();
+                }
+                // ProgressBar doesn't know to repaint the thumb drawable
+                // in its inactive state when the touch stops (because the
+                // value has not apparently changed)
+                invalidate();
+                break;
+                
+            case MotionEvent.ACTION_CANCEL:
+                if (mIsDragging) {
+                    onStopTrackingTouch();
+                    setPressed(false);
+                }
+                invalidate(); // see above explanation
+                break;
+        }
+        return true;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.783 -0400", hash_original_method = "B852C5F326259FF2E0714D28C9BE0803", hash_generated_method = "F2D8B3C76143D4B3CDE1BEDEB49AFE66")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:59.658 -0500", hash_original_method = "B852C5F326259FF2E0714D28C9BE0803", hash_generated_method = "174F3F06879596C6E7370B53A22AABF9")
     private void trackTouchEvent(MotionEvent event) {
-        addTaint(event.getTaint());
         final int width = getWidth();
         final int available = width - mPaddingLeft - mPaddingRight;
         int x = (int)event.getX();
         float scale;
         float progress = 0;
-        if(x < mPaddingLeft)        
-        {
+        if (x < mPaddingLeft) {
             scale = 0.0f;
-        } //End block
-        else
-        if(x > width - mPaddingRight)        
-        {
+        } else if (x > width - mPaddingRight) {
             scale = 1.0f;
-        } //End block
-        else
-        {
+        } else {
             scale = (float)(x - mPaddingLeft) / (float)available;
             progress = mTouchProgressOffset;
-        } //End block
+        }
+        
         final int max = getMax();
         progress += scale * max;
+        
         setProgress((int) progress, true);
-        // ---------- Original Method ----------
-        //final int width = getWidth();
-        //final int available = width - mPaddingLeft - mPaddingRight;
-        //int x = (int)event.getX();
-        //float scale;
-        //float progress = 0;
-        //if (x < mPaddingLeft) {
-            //scale = 0.0f;
-        //} else if (x > width - mPaddingRight) {
-            //scale = 1.0f;
-        //} else {
-            //scale = (float)(x - mPaddingLeft) / (float)available;
-            //progress = mTouchProgressOffset;
-        //}
-        //final int max = getMax();
-        //progress += scale * max;
-        //setProgress((int) progress, true);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.784 -0400", hash_original_method = "EE6806E5D0C523D5F375E4021A29EB50", hash_generated_method = "8A968C4896AB12821206CFEA1423C0BB")
+    /**
+     * Tries to claim the user's drag motion, and requests disallowing any
+     * ancestors from stealing events in the drag.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:59.659 -0500", hash_original_method = "EE6806E5D0C523D5F375E4021A29EB50", hash_generated_method = "4A38C155913606B908C0A2B83E84F323")
     private void attemptClaimDrag() {
-        if(mParent != null)        
-        {
+        if (mParent != null) {
             mParent.requestDisallowInterceptTouchEvent(true);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mParent != null) {
-            //mParent.requestDisallowInterceptTouchEvent(true);
-        //}
+        }
     }
-
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.784 -0400", hash_original_method = "81C3D3C536033DCEF00354E775EF2F98", hash_generated_method = "7CAEA821CD5CFD558839E482944A4FF3")
-     void onStartTrackingTouch() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+    /**
+     * This is called when the user has started touching this widget.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:59.660 -0500", hash_original_method = "81C3D3C536033DCEF00354E775EF2F98", hash_generated_method = "81C3D3C536033DCEF00354E775EF2F98")
+    void onStartTrackingTouch() {
         mIsDragging = true;
-        // ---------- Original Method ----------
-        //mIsDragging = true;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.784 -0400", hash_original_method = "E756AFD9567E2119FB96458DFE00C6A9", hash_generated_method = "28194EE71D53A1717F5B76FA4AF6B1F3")
-     void onStopTrackingTouch() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+    /**
+     * This is called when the user either releases his touch or the touch is
+     * canceled.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:59.661 -0500", hash_original_method = "E756AFD9567E2119FB96458DFE00C6A9", hash_generated_method = "E756AFD9567E2119FB96458DFE00C6A9")
+    void onStopTrackingTouch() {
         mIsDragging = false;
-        // ---------- Original Method ----------
-        //mIsDragging = false;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.785 -0400", hash_original_method = "F04551903C4B751B14DE46074D4BB62C", hash_generated_method = "335DF8C256CE085A3A9253CFE15462AB")
-     void onKeyChange() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        // ---------- Original Method ----------
+    /**
+     * Called when the user changes the seekbar's progress by using a key event.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:59.661 -0500", hash_original_method = "F04551903C4B751B14DE46074D4BB62C", hash_generated_method = "F04551903C4B751B14DE46074D4BB62C")
+    void onKeyChange() {
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.785 -0400", hash_original_method = "E4D4B44B4B0BF8B3ACFCDB808BF98F5B", hash_generated_method = "FC2F6F23E8CB18ED15D9DD28CECA24A3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:59.662 -0500", hash_original_method = "E4D4B44B4B0BF8B3ACFCDB808BF98F5B", hash_generated_method = "8320667AC9767154144F7EC414ED3C97")
     @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(event.getTaint());
-        addTaint(keyCode);
-        if(isEnabled())        
-        {
+public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (isEnabled()) {
             int progress = getProgress();
-switch(keyCode){
-            case KeyEvent.KEYCODE_DPAD_LEFT:
-            if(progress <= 0)            
-            break;
-            setProgress(progress - mKeyProgressIncrement, true);
-            onKeyChange();
-            boolean varB326B5062B2F0E69046810717534CB09_1274644172 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_547431573 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_547431573;
-            case KeyEvent.KEYCODE_DPAD_RIGHT:
-            if(progress >= getMax())            
-            break;
-            setProgress(progress + mKeyProgressIncrement, true);
-            onKeyChange();
-            boolean varB326B5062B2F0E69046810717534CB09_128231597 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_675737322 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_675737322;
-}
-        } //End block
-        boolean var947F0C250323B9F4475E02588E9A9740_457577536 = (super.onKeyDown(keyCode, event));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_898968913 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_898968913;
-        // ---------- Original Method ----------
-        //if (isEnabled()) {
-            //int progress = getProgress();
-            //switch (keyCode) {
-                //case KeyEvent.KEYCODE_DPAD_LEFT:
-                    //if (progress <= 0) break;
-                    //setProgress(progress - mKeyProgressIncrement, true);
-                    //onKeyChange();
-                    //return true;
-                //case KeyEvent.KEYCODE_DPAD_RIGHT:
-                    //if (progress >= getMax()) break;
-                    //setProgress(progress + mKeyProgressIncrement, true);
-                    //onKeyChange();
-                    //return true;
-            //}
-        //}
-        //return super.onKeyDown(keyCode, event);
+            switch (keyCode) {
+                case KeyEvent.KEYCODE_DPAD_LEFT:
+                    if (progress <= 0) break;
+                    setProgress(progress - mKeyProgressIncrement, true);
+                    onKeyChange();
+                    return true;
+            
+                case KeyEvent.KEYCODE_DPAD_RIGHT:
+                    if (progress >= getMax()) break;
+                    setProgress(progress + mKeyProgressIncrement, true);
+                    onKeyChange();
+                    return true;
+            }
+        }
+
+        return super.onKeyDown(keyCode, event);
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.785 -0400", hash_original_field = "B56B6FA624E764C4691175252EBD6A92", hash_generated_field = "0FC0F1E74EFFD499D7E9EC90666C1A5B")
-
-    private static final int NO_ALPHA = 0xFF;
 }
 

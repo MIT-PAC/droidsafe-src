@@ -1,6 +1,8 @@
 package android.test;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.HashMap;
 import java.util.Map;
@@ -8,7 +10,7 @@ import java.util.Map;
 
 
 abstract class SimpleCache<K, V> {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.888 -0400", hash_original_field = "B7CC7FBA0DFED4BBCE4A900CC4FB9C3E", hash_generated_field = "F44EFF3B1199C5E87D4423C4F1F5A40F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:42.600 -0500", hash_original_field = "E2EBCB9E510A68D89235063BE410BEB8", hash_generated_field = "F44EFF3B1199C5E87D4423C4F1F5A40F")
 
     private Map<K, V> map = new HashMap<K, V>();
     
@@ -18,33 +20,17 @@ abstract class SimpleCache<K, V> {
         //Synthesized constructor
     }
 
-
-    @DSModeled(DSC.BAN)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:42.600 -0500", hash_original_method = "409928FA1E32C1F645716709A9C29ECC", hash_generated_method = "D1758DFC1BD4F8CD915B5594B48E2926")
     protected abstract V load(K key);
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.889 -0400", hash_original_method = "74016580A84D30BA8D414209F3F20310", hash_generated_method = "C245CE592C72237A77BD8C506E54301F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:42.601 -0500", hash_original_method = "74016580A84D30BA8D414209F3F20310", hash_generated_method = "D35E0FFD7869C6117E72DAEA89786D50")
     final V get(K key) {
-        addTaint(key.getTaint());
-        if(map.containsKey(key))        
-        {
-V var97156AACD411ADC83FECC30C065B5B0C_507151743 =             map.get(key);
-            var97156AACD411ADC83FECC30C065B5B0C_507151743.addTaint(taint);
-            return var97156AACD411ADC83FECC30C065B5B0C_507151743;
-        } //End block
+        if (map.containsKey(key)) {
+            return map.get(key);
+        }
         V value = load(key);
         map.put(key, value);
-V varAF280DA2BC37D8BE783D8499160168DE_1996749646 =         value;
-        varAF280DA2BC37D8BE783D8499160168DE_1996749646.addTaint(taint);
-        return varAF280DA2BC37D8BE783D8499160168DE_1996749646;
-        // ---------- Original Method ----------
-        //if (map.containsKey(key)) {
-            //return map.get(key);
-        //}
-        //V value = load(key);
-        //map.put(key, value);
-        //return value;
+        return value;
     }
 
     

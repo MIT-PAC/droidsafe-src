@@ -1,6 +1,8 @@
 package android.widget;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.content.Context;
 import android.util.AttributeSet;
@@ -11,59 +13,30 @@ import com.android.internal.R;
 
 
 public class CheckBox extends CompoundButton {
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.932 -0400", hash_original_method = "07A60C33F591AF3364367476C757E191", hash_generated_method = "57493A5C7895739BD4734FFF00FA922D")
-    public  CheckBox(Context context) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:07.125 -0500", hash_original_method = "07A60C33F591AF3364367476C757E191", hash_generated_method = "E6771C4C8CFC6F5CDC28750B50C2D1E4")
+    public CheckBox(Context context) {
         this(context, null);
-        addTaint(context.getTaint());
-        // ---------- Original Method ----------
     }
-
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.933 -0400", hash_original_method = "8805AB2AC1AEC0E9A85C20D3125221E0", hash_generated_method = "DACE10FF5A2974B3ED9E683BE919A59F")
-    public  CheckBox(Context context, AttributeSet attrs) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:07.126 -0500", hash_original_method = "8805AB2AC1AEC0E9A85C20D3125221E0", hash_generated_method = "71BC6DBDC707861A63C3CDC0797C5E15")
+    public CheckBox(Context context, AttributeSet attrs) {
         this(context, attrs, com.android.internal.R.attr.checkboxStyle);
-        addTaint(attrs.getTaint());
-        addTaint(context.getTaint());
-        // ---------- Original Method ----------
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.933 -0400", hash_original_method = "DC2D9AD560E05B0AD2F1F269CCCF9F57", hash_generated_method = "F127D2D7B82FE520F6469CE003365D91")
-    public  CheckBox(Context context, AttributeSet attrs, int defStyle) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:07.127 -0500", hash_original_method = "DC2D9AD560E05B0AD2F1F269CCCF9F57", hash_generated_method = "AD2FD894859AA2FF10ABD4A010F667B5")
+    public CheckBox(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-        addTaint(defStyle);
-        addTaint(attrs.getTaint());
-        addTaint(context.getTaint());
-        // ---------- Original Method ----------
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.934 -0400", hash_original_method = "270C42284D505CD6CA182328DD88ED30", hash_generated_method = "33B1C9AD6A033C3BD2091B162CBC8505")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:07.128 -0500", hash_original_method = "270C42284D505CD6CA182328DD88ED30", hash_generated_method = "0AE7313901D0A224234DCDCF680EB599")
     @Override
-    public void onPopulateAccessibilityEvent(AccessibilityEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(event.getTaint());
+public void onPopulateAccessibilityEvent(AccessibilityEvent event) {
         super.onPopulateAccessibilityEvent(event);
-        if(isChecked())        
-        {
+        if (isChecked()) {
             event.getText().add(mContext.getString(R.string.checkbox_checked));
-        } //End block
-        else
-        {
+        } else {
             event.getText().add(mContext.getString(R.string.checkbox_not_checked));
-        } //End block
-        // ---------- Original Method ----------
-        //super.onPopulateAccessibilityEvent(event);
-        //if (isChecked()) {
-            //event.getText().add(mContext.getString(R.string.checkbox_checked));
-        //} else {
-            //event.getText().add(mContext.getString(R.string.checkbox_not_checked));
-        //}
+        }
     }
 
     

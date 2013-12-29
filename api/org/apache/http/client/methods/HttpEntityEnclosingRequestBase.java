@@ -16,23 +16,22 @@ import org.apache.http.conn.ConnectionReleaseTrigger;
 import org.apache.http.protocol.HTTP;
 
 public abstract class HttpEntityEnclosingRequestBase extends HttpRequestBase implements HttpEntityEnclosingRequest {
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.220 -0500", hash_original_field = "84BEE3610D6DA557FD534AD24775E93F", hash_generated_field = "1845537B516494D16BEEE561F2E771CF")
+
+    
     private HttpEntity entity;
     
-    @DSModeled(DSC.SAFE)
-	public HttpEntityEnclosingRequestBase() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.221 -0500", hash_original_method = "FDC19D27FDED1DCD2631F7F72C949E70", hash_generated_method = "6CA530C95A7C12D5ADD7AB7D0E86ECFD")
+    public HttpEntityEnclosingRequestBase() {
         super();
     }
 
-    
-    @DSModeled(DSC.SAFE)
-	@Override
-	   public HttpEntity getEntity() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.222 -0500", hash_original_method = "FCFC1A07171F7DE920C85D2DD77008FA", hash_generated_method = "F26E442D152B9CF496C6F072484628AD")
+    public HttpEntity getEntity() {
         return this.entity;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-	@Override
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.222 -0500", hash_original_method = "ACC3C31B4104E926438E24B159B6E3A2", hash_generated_method = "79AAFF6E92B5322E414271D0A9826A70")
     public void setEntity(final HttpEntity entity) {
         this.entity = entity;
     }
@@ -45,26 +44,15 @@ public abstract class HttpEntityEnclosingRequestBase extends HttpRequestBase imp
 		return false;
 	}
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:02.168 -0400", hash_original_method = "E7A680A098600990FE1B80B7489E8A9A", hash_generated_method = "D815820FCC8EF4C0A6C9694194C550BC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.224 -0500", hash_original_method = "E7A680A098600990FE1B80B7489E8A9A", hash_generated_method = "A02B4AE2B32DDDCA85245A69D05B6DB7")
     @Override
-    public Object clone() throws CloneNotSupportedException {
-        HttpEntityEnclosingRequestBase clone = (HttpEntityEnclosingRequestBase) super.clone();
-        if(this.entity != null)        
-        {
+public Object clone() throws CloneNotSupportedException {
+        HttpEntityEnclosingRequestBase clone = 
+            (HttpEntityEnclosingRequestBase) super.clone();
+        if (this.entity != null) {
             clone.entity = (HttpEntity) CloneUtils.clone(this.entity);
-        } //End block
-Object var3DE52045BFD3C1BF3742F994ED6139AD_777496266 =         clone;
-        var3DE52045BFD3C1BF3742F994ED6139AD_777496266.addTaint(taint);
-        return var3DE52045BFD3C1BF3742F994ED6139AD_777496266;
-        // ---------- Original Method ----------
-        //HttpEntityEnclosingRequestBase clone = 
-            //(HttpEntityEnclosingRequestBase) super.clone();
-        //if (this.entity != null) {
-            //clone.entity = (HttpEntity) CloneUtils.clone(this.entity);
-        //}
-        //return clone;
+        }
+        return clone;
     }
 }
 

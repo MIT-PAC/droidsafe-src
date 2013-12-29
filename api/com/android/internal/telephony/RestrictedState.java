@@ -1,6 +1,8 @@
 package com.android.internal.telephony;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
@@ -8,175 +10,110 @@ import droidsafe.annotations.*;
 
 
 public class RestrictedState {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:18.589 -0400", hash_original_field = "E6EDFC97A0AE32BF9220522E6C2D33E3", hash_generated_field = "DFF46A4E704B5BD370FD8E12EB30BC1D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.227 -0500", hash_original_field = "EBCF5A218343A6E650E6B0B7F607421E", hash_generated_field = "DFF46A4E704B5BD370FD8E12EB30BC1D")
 
     private boolean mPsRestricted;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:18.589 -0400", hash_original_field = "206918EB9802AE8B21DCEEE45F88820C", hash_generated_field = "27C327B1BC2163DCA045557BBFF3A8D9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.228 -0500", hash_original_field = "1AE8FA720E2F920C25B87E6EA76EFAC8", hash_generated_field = "27C327B1BC2163DCA045557BBFF3A8D9")
 
     private boolean mCsNormalRestricted;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:18.589 -0400", hash_original_field = "F56C0A1580A1114D148F661D84EB9701", hash_generated_field = "583F06FC6145F09444B6E74F1AB437A2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.229 -0500", hash_original_field = "5E12DB35406872DEC6087EB4239EF97D", hash_generated_field = "583F06FC6145F09444B6E74F1AB437A2")
 
     private boolean mCsEmergencyRestricted;
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:18.589 -0400", hash_original_method = "F727392B3D49E2225FED35B348D7580F", hash_generated_method = "A8B4A6FFAF3230A9E88A369FA2BA6744")
-    public  RestrictedState() {
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.229 -0500", hash_original_method = "F727392B3D49E2225FED35B348D7580F", hash_generated_method = "CD3C8AED478562F9B2580B8D9C0AB7E4")
+    public RestrictedState() {
         setPsRestricted(false);
         setCsNormalRestricted(false);
         setCsEmergencyRestricted(false);
-        // ---------- Original Method ----------
-        //setPsRestricted(false);
-        //setCsNormalRestricted(false);
-        //setCsEmergencyRestricted(false);
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:18.589 -0400", hash_original_method = "27DE2A90C603578F7F1B28DAC20D7FD4", hash_generated_method = "5EDC4446D159F9F100BFF111EDE92E39")
+    /**
+     * @param csEmergencyRestricted the csEmergencyRestricted to set
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.230 -0500", hash_original_method = "27DE2A90C603578F7F1B28DAC20D7FD4", hash_generated_method = "D21351B46981F2D8CE4C51C73B8A635B")
     public void setCsEmergencyRestricted(boolean csEmergencyRestricted) {
         mCsEmergencyRestricted = csEmergencyRestricted;
-        // ---------- Original Method ----------
-        //mCsEmergencyRestricted = csEmergencyRestricted;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:18.590 -0400", hash_original_method = "E70F2CED961B3AE42815150E2A56A25A", hash_generated_method = "6C782BABE8CC3426E5D0DCD6C56F3E2B")
+    /**
+     * @return the csEmergencyRestricted
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.231 -0500", hash_original_method = "E70F2CED961B3AE42815150E2A56A25A", hash_generated_method = "45311176E433587585D515C7090452B9")
     public boolean isCsEmergencyRestricted() {
-        boolean varF56C0A1580A1114D148F661D84EB9701_1535508061 = (mCsEmergencyRestricted);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2099943450 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2099943450;
-        // ---------- Original Method ----------
-        //return mCsEmergencyRestricted;
+        return mCsEmergencyRestricted;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:18.590 -0400", hash_original_method = "ED07CBE0923251FA30E92E9584BA6081", hash_generated_method = "5F169B3D65E3795B3F157B4F56AFCEB2")
+    /**
+     * @param csNormalRestricted the csNormalRestricted to set
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.232 -0500", hash_original_method = "ED07CBE0923251FA30E92E9584BA6081", hash_generated_method = "DC9A14E6A85E1FC2588620E3384F80F5")
     public void setCsNormalRestricted(boolean csNormalRestricted) {
         mCsNormalRestricted = csNormalRestricted;
-        // ---------- Original Method ----------
-        //mCsNormalRestricted = csNormalRestricted;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:18.591 -0400", hash_original_method = "7084FFBE63D8E09FA65D7F421E8A0E5B", hash_generated_method = "38B19A5A5E242DCA0D1134692C8C446D")
+    /**
+     * @return the csNormalRestricted
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.233 -0500", hash_original_method = "7084FFBE63D8E09FA65D7F421E8A0E5B", hash_generated_method = "ED40086829CA1FFE1841C511F17B35D2")
     public boolean isCsNormalRestricted() {
-        boolean var206918EB9802AE8B21DCEEE45F88820C_1926211526 = (mCsNormalRestricted);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1991255720 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1991255720;
-        // ---------- Original Method ----------
-        //return mCsNormalRestricted;
+        return mCsNormalRestricted;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:18.592 -0400", hash_original_method = "B4DDDAAC651436E7B51C408529D49F83", hash_generated_method = "B2F8AA07C1EB864385C4B23E12FD8407")
+    /**
+     * @param psRestricted the psRestricted to set
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.233 -0500", hash_original_method = "B4DDDAAC651436E7B51C408529D49F83", hash_generated_method = "71F305C7557525FD5F9AE29F3C05FBEE")
     public void setPsRestricted(boolean psRestricted) {
         mPsRestricted = psRestricted;
-        // ---------- Original Method ----------
-        //mPsRestricted = psRestricted;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:18.592 -0400", hash_original_method = "D79EC17B35D08659B1A4F8082F3FAB11", hash_generated_method = "849FD7175D2305D0BB4FDAB8ABEA61C2")
+    /**
+     * @return the psRestricted
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.234 -0500", hash_original_method = "D79EC17B35D08659B1A4F8082F3FAB11", hash_generated_method = "04995E61EA8BDE8FDF242D1C20C39C07")
     public boolean isPsRestricted() {
-        boolean varE6EDFC97A0AE32BF9220522E6C2D33E3_481398806 = (mPsRestricted);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1178704646 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1178704646;
-        // ---------- Original Method ----------
-        //return mPsRestricted;
+        return mPsRestricted;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:18.592 -0400", hash_original_method = "4F1D7B7A2DBB2113F9985BF8231B2F2E", hash_generated_method = "12768E0377086B4734A83B3BFFDC106F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.235 -0500", hash_original_method = "4F1D7B7A2DBB2113F9985BF8231B2F2E", hash_generated_method = "BCD4B326A2FCF0CD84BD84018D58B1A0")
     public boolean isCsRestricted() {
-        boolean var5D53AE8838241AD53D888A398FF4ED65_943255413 = (mCsNormalRestricted && mCsEmergencyRestricted);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_355848234 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_355848234;
-        // ---------- Original Method ----------
-        //return mCsNormalRestricted && mCsEmergencyRestricted;
+        return mCsNormalRestricted && mCsEmergencyRestricted;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:18.593 -0400", hash_original_method = "782C42F453BEB7FFF6E7C3BB3C51E5DF", hash_generated_method = "42B602FB8339536B2C4A7A127B9BEF3B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.236 -0500", hash_original_method = "782C42F453BEB7FFF6E7C3BB3C51E5DF", hash_generated_method = "6C14735EBD9731D0BF0F9232BE8DCB3A")
     @Override
-    public boolean equals(Object o) {
-        addTaint(o.getTaint());
+public boolean equals (Object o) {
         RestrictedState s;
-        try 
-        {
+
+        try {
             s = (RestrictedState) o;
-        } //End block
-        catch (ClassCastException ex)
-        {
-            boolean var68934A3E9455FA72420237EB05902327_1229932939 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_581951159 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_581951159;
-        } //End block
-        if(o == null)        
-        {
-            boolean var68934A3E9455FA72420237EB05902327_1867044032 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1881229571 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1881229571;
-        } //End block
-        boolean varD797C1077A25703804A895BD53177A37_374338200 = (mPsRestricted == s.mPsRestricted
+        } catch (ClassCastException ex) {
+            return false;
+        }
+
+        if (o == null) {
+            return false;
+        }
+
+        return mPsRestricted == s.mPsRestricted
         && mCsNormalRestricted == s.mCsNormalRestricted
-        && mCsEmergencyRestricted == s.mCsEmergencyRestricted);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1479613224 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1479613224;
-        // ---------- Original Method ----------
-        //RestrictedState s;
-        //try {
-            //s = (RestrictedState) o;
-        //} catch (ClassCastException ex) {
-            //return false;
-        //}
-        //if (o == null) {
-            //return false;
-        //}
-        //return mPsRestricted == s.mPsRestricted
-        //&& mCsNormalRestricted == s.mCsNormalRestricted
-        //&& mCsEmergencyRestricted == s.mCsEmergencyRestricted;
+        && mCsEmergencyRestricted == s.mCsEmergencyRestricted;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:18.594 -0400", hash_original_method = "845D0E6369A38FB89C7B9C67406A7898", hash_generated_method = "4AEA3B61FD0870DF94E6B44B8F3263EC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:28.237 -0500", hash_original_method = "845D0E6369A38FB89C7B9C67406A7898", hash_generated_method = "11081E9454E6AB52E292A7C378A60628")
     @Override
-    public String toString() {
+public String toString() {
         String csString = "none";
-        if(mCsEmergencyRestricted && mCsNormalRestricted)        
-        {
+
+        if (mCsEmergencyRestricted && mCsNormalRestricted) {
             csString = "all";
-        } //End block
-        else
-        if(mCsEmergencyRestricted && !mCsNormalRestricted)        
-        {
+        } else if (mCsEmergencyRestricted && !mCsNormalRestricted) {
             csString = "emergency";
-        } //End block
-        else
-        if(!mCsEmergencyRestricted && mCsNormalRestricted)        
-        {
+        } else if (!mCsEmergencyRestricted && mCsNormalRestricted) {
             csString = "normal call";
-        } //End block
-String var20EEAEA0C159354130FC98EE1D1D0548_805509009 =         "Restricted State CS: " + csString + " PS:" + mPsRestricted;
-        var20EEAEA0C159354130FC98EE1D1D0548_805509009.addTaint(taint);
-        return var20EEAEA0C159354130FC98EE1D1D0548_805509009;
-        // ---------- Original Method ----------
-        //String csString = "none";
-        //if (mCsEmergencyRestricted && mCsNormalRestricted) {
-            //csString = "all";
-        //} else if (mCsEmergencyRestricted && !mCsNormalRestricted) {
-            //csString = "emergency";
-        //} else if (!mCsEmergencyRestricted && mCsNormalRestricted) {
-            //csString = "normal call";
-        //}
-        //return  "Restricted State CS: " + csString + " PS:" + mPsRestricted;
+        }
+
+        return  "Restricted State CS: " + csString + " PS:" + mPsRestricted;
     }
 
     

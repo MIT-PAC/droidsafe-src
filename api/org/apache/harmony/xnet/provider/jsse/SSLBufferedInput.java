@@ -1,6 +1,8 @@
 package org.apache.harmony.xnet.provider.jsse;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 import java.nio.ByteBuffer;
@@ -11,70 +13,59 @@ import java.nio.ByteBuffer;
 
 
 public class SSLBufferedInput extends SSLInputStream {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.059 -0400", hash_original_field = "13B5BFE96F3E2FE411C9F66F4A582ADF", hash_generated_field = "3B141A9D4793286CCC8107F666C9770C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.001 -0500", hash_original_field = "1A56AB50090D28A02F47C32C2668C7FD", hash_generated_field = "3B141A9D4793286CCC8107F666C9770C")
+
 
     private ByteBuffer in;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.059 -0400", hash_original_field = "4176DD63A8A7706071A277D22BE6F13B", hash_generated_field = "57C57C6B5A44D0B945AC629B5C8D3802")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.002 -0500", hash_original_field = "532D7488A927B1D867DA636C071D1BB6", hash_generated_field = "57C57C6B5A44D0B945AC629B5C8D3802")
 
     private int bytik;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.059 -0400", hash_original_field = "5A6C74F3D8043A986B1E04513B7293B7", hash_generated_field = "58E74C0831CBD382581EE5956FDD5009")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.003 -0500", hash_original_field = "63AB233FA6EF1285AEB9654E5C7266F1", hash_generated_field = "58E74C0831CBD382581EE5956FDD5009")
 
     private int consumed = 0;
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.059 -0400", hash_original_method = "0FA622847329CF4AC911569EF96C37AF", hash_generated_method = "207C02C0F42AD27E2901C37C4EA4E064")
-    protected  SSLBufferedInput() {
-        // ---------- Original Method ----------
-    }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.060 -0400", hash_original_method = "4BA9811A4EA68D06D9EBAD32A862938E", hash_generated_method = "E2127C5D16644089261CEF9729751A03")
+    /**
+     * Constructor
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.004 -0500", hash_original_method = "0FA622847329CF4AC911569EF96C37AF", hash_generated_method = "C8B59A0FF5C0D8A4086B76B2389A8D68")
+    protected SSLBufferedInput() {}
+
+    /**
+     * Sets the buffer as a data source
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.004 -0500", hash_original_method = "4BA9811A4EA68D06D9EBAD32A862938E", hash_generated_method = "6762055C18D7E7AF428C9CFC87D123B1")
     protected void setSourceBuffer(ByteBuffer in) {
         consumed = 0;
         this.in = in;
-        // ---------- Original Method ----------
-        //consumed = 0;
-        //this.in = in;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.060 -0400", hash_original_method = "BB38BB904E493CEE8626853626B4B1AC", hash_generated_method = "7D9FCE9AAD712BC558D44A1DF015C60A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.005 -0500", hash_original_method = "BB38BB904E493CEE8626853626B4B1AC", hash_generated_method = "AA73DAF788F8E3B9B23B91AC6E385275")
     @Override
-    public int available() throws IOException {
-        int var3598FDB044C87D9B470895827229EFD7_857454992 = (in.remaining());
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2123897122 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2123897122;
-        // ---------- Original Method ----------
-        //return in.remaining();
+public int available() throws IOException {
+        // in assumption that the buffer has been set
+        return in.remaining();
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.061 -0400", hash_original_method = "7DD74A3F0F5CC57B45BB73D025A428F5", hash_generated_method = "1B3D2B324A605EFF835DFA9672330B5C")
+    /**
+     * Returns the number of consumed bytes.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.006 -0500", hash_original_method = "7DD74A3F0F5CC57B45BB73D025A428F5", hash_generated_method = "4A45CAF2AB4D7575A1E95B4998505638")
     protected int consumed() {
-        int var48FE8558CE14C4C865198444C538ECC5_1732099435 = (consumed);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_459260879 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_459260879;
-        // ---------- Original Method ----------
-        //return consumed;
+        return consumed;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.061 -0400", hash_original_method = "575079C176E4EB6FD7A12CD67A6942A7", hash_generated_method = "09801FFCB68C87278C5E50367F4B7153")
+    /**
+     * Reads the following byte value. If there are no bytes in the source
+     * buffer, method throws java.nio.BufferUnderflowException.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:10.007 -0500", hash_original_method = "575079C176E4EB6FD7A12CD67A6942A7", hash_generated_method = "4A008A76C11FDFEC076499B05D184DCF")
     @Override
-    public int read() throws IOException {
+public int read() throws IOException {
+        // TODO: implement optimized read(int)
+        // and read(byte[], int, int) methods
         bytik = in.get() & 0x00FF;
         consumed ++;
-        int var4176DD63A8A7706071A277D22BE6F13B_295898039 = (bytik);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_341659798 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_341659798;
-        // ---------- Original Method ----------
-        //bytik = in.get() & 0x00FF;
-        //consumed ++;
-        //return bytik;
+        return bytik;
     }
 
     

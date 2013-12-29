@@ -1,6 +1,8 @@
 package gov.nist.javax.sip.header;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import gov.nist.core.Host;
 import gov.nist.core.HostPort;
@@ -20,748 +22,538 @@ import javax.sip.header.ViaHeader;
 
 
 public class Via extends ParametersHeader implements javax.sip.header.ViaHeader, ViaHeaderExt {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.707 -0400", hash_original_field = "610A766B3E0567396106CE73CA862AB1", hash_generated_field = "5B51F01BA670CB6A7B4E1A02DEB8A619")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.371 -0500", hash_original_field = "677EAF6CDCAE295B23459F626BCF0C3F", hash_generated_field = "44E58998010CA4EBABA566C0FB985DB3")
+
+    private static final long serialVersionUID = 5281728373401351378L;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.372 -0500", hash_original_field = "1973AC16448B079042B7B0461DD2437E", hash_generated_field = "22327A98EDD3D141225105CEAD3ABB13")
+
+    public static final String BRANCH = ParameterNames.BRANCH;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.373 -0500", hash_original_field = "6C068330D64C312F8A54CB52624C50C5", hash_generated_field = "4D8C5F2DB4C0964744FED89BE27D1A75")
+
+    public static final String RECEIVED = ParameterNames.RECEIVED;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.375 -0500", hash_original_field = "9AD56A0DA974A4CC0B255A28D584B762", hash_generated_field = "4AA8F81F93B467DE58E70654B3136851")
+
+    public static final String MADDR = ParameterNames.MADDR;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.376 -0500", hash_original_field = "292A9A085259A8A30E6CFF414A138BC5", hash_generated_field = "EAB3FB3A2E323EFD5528878B03366C28")
+
+    public static final String TTL = ParameterNames.TTL;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.377 -0500", hash_original_field = "7FC8BC0E49FF893140497EF8D2B9C6AC", hash_generated_field = "180F648B89D676D4D5F0240DFDFE1D7D")
+
+    public static final String RPORT = ParameterNames.RPORT;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.378 -0500", hash_original_field = "13161F95E23706340DC2167873BBF563", hash_generated_field = "5B51F01BA670CB6A7B4E1A02DEB8A619")
 
     protected Protocol sentProtocol;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.707 -0400", hash_original_field = "93843F38363D24DFE376CC298A9F7B78", hash_generated_field = "0B1CBB926459AD49C5AAB0F0CD26CCCF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.379 -0500", hash_original_field = "B831EA091B905EC502B89CC3BC49A84A", hash_generated_field = "0B1CBB926459AD49C5AAB0F0CD26CCCF")
 
     protected HostPort sentBy;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.707 -0400", hash_original_field = "06D4CD63BDE972FC66A0AED41D2F5C51", hash_generated_field = "F67D9B9E386FB326EF97E9813CA35FC6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.381 -0500", hash_original_field = "6C9FE4127C88B2FD28EFE861CA65A713", hash_generated_field = "F67D9B9E386FB326EF97E9813CA35FC6")
 
     protected String comment;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.707 -0400", hash_original_field = "53C8339148B638BBC1C40E3CA26CBA08", hash_generated_field = "2352712DCFC5BA30D0234B4D1AC22071")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.382 -0500", hash_original_field = "A8DC08CD30DA636AE03D9B76ABCE0FC4", hash_generated_field = "2352712DCFC5BA30D0234B4D1AC22071")
+
 
     private boolean rPortFlag = false;
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.707 -0400", hash_original_method = "7D07E05C0BEE96603D98F8B1E7A2E317", hash_generated_method = "05BCC6515CD84F16CEE1E054ED6F0504")
-    public  Via() {
+
+    /** Default constructor
+    */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.383 -0500", hash_original_method = "7D07E05C0BEE96603D98F8B1E7A2E317", hash_generated_method = "CF253407FBFFE348FD46E59E622DDD53")
+    public Via() {
         super(NAME);
         sentProtocol = new Protocol();
-        // ---------- Original Method ----------
-        //sentProtocol = new Protocol();
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.708 -0400", hash_original_method = "6B6D36FD3A79EE403682FF6F25A822A5", hash_generated_method = "61EC1B9F576E7646802E6AE2D574FFE9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.384 -0500", hash_original_method = "6B6D36FD3A79EE403682FF6F25A822A5", hash_generated_method = "D50701C5313B523D2AFCDD2A382184CA")
     public boolean equals(Object other) {
-        addTaint(other.getTaint());
-        if(other==this)        
-        {
-        boolean varB326B5062B2F0E69046810717534CB09_891049167 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1895370504 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1895370504;
-        }
-        if(other instanceof ViaHeader)        
-        {
+
+        if (other==this) return true;
+
+        if (other instanceof ViaHeader) {
             final ViaHeader o = (ViaHeader) other;
-            boolean var0CA2D156F16A33AF97CFF7D9D8988B5B_831379510 = (getProtocol().equalsIgnoreCase( o.getProtocol() )
+            return getProtocol().equalsIgnoreCase( o.getProtocol() )
                 && getTransport().equalsIgnoreCase( o.getTransport() )
                 && getHost().equalsIgnoreCase( o.getHost() )
                 && getPort() == o.getPort()
-                && equalParameters( o ));
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_68697157 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_68697157;
-        } //End block
-        boolean var68934A3E9455FA72420237EB05902327_577532653 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_273372162 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_273372162;
-        // ---------- Original Method ----------
-        //if (other==this) return true;
-        //if (other instanceof ViaHeader) {
-            //final ViaHeader o = (ViaHeader) other;
-            //return getProtocol().equalsIgnoreCase( o.getProtocol() )
-                //&& getTransport().equalsIgnoreCase( o.getTransport() )
-                //&& getHost().equalsIgnoreCase( o.getHost() )
-                //&& getPort() == o.getPort()
-                //&& equalParameters( o );
-        //}
-        //return false;
+                && equalParameters( o );
+        }
+        return false;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.708 -0400", hash_original_method = "F03A2761E3B9AF6DF371EC359829DB1F", hash_generated_method = "6843CDBFFF69CA0F8B181BD5AAE33481")
+
+    /** get the Protocol Version
+     * @return String
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.385 -0500", hash_original_method = "F03A2761E3B9AF6DF371EC359829DB1F", hash_generated_method = "32895BC1C079DC20DE78B350609DB20B")
     public String getProtocolVersion() {
-        if(sentProtocol == null)        
-        {
-String var540C13E9E156B687226421B24F2DF178_1039911866 =         null;
-        var540C13E9E156B687226421B24F2DF178_1039911866.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_1039911866;
-        }
+        if (sentProtocol == null)
+            return null;
         else
-        {
-String var505B13876BB7CD8660BEDE49C5EB5211_638429992 =         sentProtocol.getProtocolVersion();
-        var505B13876BB7CD8660BEDE49C5EB5211_638429992.addTaint(taint);
-        return var505B13876BB7CD8660BEDE49C5EB5211_638429992;
-        }
-        // ---------- Original Method ----------
-        //if (sentProtocol == null)
-            //return null;
-        //else
-            //return sentProtocol.getProtocolVersion();
+            return sentProtocol.getProtocolVersion();
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.708 -0400", hash_original_method = "07C91BB13E357235D0646F9B1302A813", hash_generated_method = "6AB3D9814D80D8F1512D86D32BF7C692")
+    /**
+     * Accessor for the sentProtocol field.
+     * @return Protocol field
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.387 -0500", hash_original_method = "07C91BB13E357235D0646F9B1302A813", hash_generated_method = "3A0F2EC46C83142EFE37885BF3789ABB")
     public Protocol getSentProtocol() {
-Protocol var9D4561C36AE0432AEB20F790E858EE37_1462068297 =         sentProtocol;
-        var9D4561C36AE0432AEB20F790E858EE37_1462068297.addTaint(taint);
-        return var9D4561C36AE0432AEB20F790E858EE37_1462068297;
-        // ---------- Original Method ----------
-        //return sentProtocol;
+
+        return sentProtocol;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.709 -0400", hash_original_method = "834E4BBD7298D05AE3719FD543779099", hash_generated_method = "FF461C076EAF1F83F2B716A09789FC15")
+    /**
+     * Accessor for the sentBy field
+     *@return SentBy field
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.388 -0500", hash_original_method = "834E4BBD7298D05AE3719FD543779099", hash_generated_method = "7E9F36EDB6B8F7DEC4550BD2B30D1B4B")
     public HostPort getSentBy() {
-HostPort var35EEFCD5058EE5760A269A485D13D2CB_1792476717 =         sentBy;
-        var35EEFCD5058EE5760A269A485D13D2CB_1792476717.addTaint(taint);
-        return var35EEFCD5058EE5760A269A485D13D2CB_1792476717;
-        // ---------- Original Method ----------
-        //return sentBy;
+        return sentBy;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.709 -0400", hash_original_method = "D671032CD8E13BB36667C287933AFA1D", hash_generated_method = "0CE0AF310E16335C62C1E7514B0B3155")
+    /**
+     * Get the host, port and transport as a Hop. This is
+     * useful for the stack to avoid duplication of code.
+     *
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.389 -0500", hash_original_method = "D671032CD8E13BB36667C287933AFA1D", hash_generated_method = "63F29EFA98759442F1A8B24A62C4F969")
     public Hop getHop() {
         HopImpl hop = new HopImpl(sentBy.getHost().getHostname(),
                 sentBy.getPort(),sentProtocol.getTransport());
-Hop varCF598A87F121766CA237EE82036D5763_2130355892 =         hop;
-        varCF598A87F121766CA237EE82036D5763_2130355892.addTaint(taint);
-        return varCF598A87F121766CA237EE82036D5763_2130355892;
-        // ---------- Original Method ----------
-        //HopImpl hop = new HopImpl(sentBy.getHost().getHostname(),
-                //sentBy.getPort(),sentProtocol.getTransport());
-        //return hop;
+        return hop;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.709 -0400", hash_original_method = "50080B5B5AC1614DCB7B006B51F53E3F", hash_generated_method = "A195E37F024D00B10A0CFB9EB65FED24")
+    /**
+     * Accessor for the parameters field
+     * @return parameters field
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.390 -0500", hash_original_method = "50080B5B5AC1614DCB7B006B51F53E3F", hash_generated_method = "DFE8C46845B2BF694E1F9DF7A36DD65A")
     public NameValueList getViaParms() {
-NameValueList var3CB0A38B794BDEDADB1F50256E0AE35B_421076445 =         parameters;
-        var3CB0A38B794BDEDADB1F50256E0AE35B_421076445.addTaint(taint);
-        return var3CB0A38B794BDEDADB1F50256E0AE35B_421076445;
-        // ---------- Original Method ----------
-        //return parameters;
+        return parameters;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.710 -0400", hash_original_method = "D7C1F8AAD3D2F40DD04B72C74A7D0B69", hash_generated_method = "C2391567A7A4BF977C68BD03E419BD4B")
+    /**
+     * Accessor for the comment field.
+     * @return comment field.
+     * @deprecated RFC 2543 support feature.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.391 -0500", hash_original_method = "D7C1F8AAD3D2F40DD04B72C74A7D0B69", hash_generated_method = "E40F10878D62F1009133973700BC0B5C")
     public String getComment() {
-String var20FC6A677850B0D1A8135B6A0BB12A1F_1483217096 =         comment;
-        var20FC6A677850B0D1A8135B6A0BB12A1F_1483217096.addTaint(taint);
-        return var20FC6A677850B0D1A8135B6A0BB12A1F_1483217096;
-        // ---------- Original Method ----------
-        //return comment;
+        return comment;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.710 -0400", hash_original_method = "60E8CE9FCECD3622E03D9910A9625801", hash_generated_method = "8EEA699C4014FAA7473D6E7CB2D50740")
+
+
+    /** port of the Via Header.
+     * @return true if Port exists.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.392 -0500", hash_original_method = "60E8CE9FCECD3622E03D9910A9625801", hash_generated_method = "C77D2550DD3D2C9672729BA276F9DDD6")
     public boolean hasPort() {
-        boolean var31A6535678119DC18E99965FEF9FF16B_552874945 = ((getSentBy()).hasPort());
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1253084626 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1253084626;
-        // ---------- Original Method ----------
-        //return (getSentBy()).hasPort();
+        return (getSentBy()).hasPort();
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.710 -0400", hash_original_method = "B8E38931A483485D5D42DADC8F66AFA1", hash_generated_method = "1A674EEAB8E934973A70644E7856D115")
+    /** comment of the Via Header.
+     *
+     * @return false if comment does not exist and true otherwise.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.393 -0500", hash_original_method = "B8E38931A483485D5D42DADC8F66AFA1", hash_generated_method = "4AECA1BA2AB25600F1AD63164D2ACAC2")
     public boolean hasComment() {
-        boolean varE97A402AF2F516ADC47A295F69DB4C37_114027717 = (comment != null);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_990720443 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_990720443;
-        // ---------- Original Method ----------
-        //return comment != null;
+        return comment != null;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.711 -0400", hash_original_method = "944AB7146038DECB09A155E81BB22663", hash_generated_method = "79CD3AAB4B019027F3580A1A1672D020")
+    /** remove the port.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.394 -0500", hash_original_method = "944AB7146038DECB09A155E81BB22663", hash_generated_method = "126306B8785401B8C74EB7916AA2C2C9")
     public void removePort() {
         sentBy.removePort();
-        // ---------- Original Method ----------
-        //sentBy.removePort();
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.711 -0400", hash_original_method = "2FDA3671927B417EA64F28FFDD680773", hash_generated_method = "61BD4B46829E380C1561798A83B14603")
+    /** remove the comment field.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.396 -0500", hash_original_method = "2FDA3671927B417EA64F28FFDD680773", hash_generated_method = "4C5598F3753C2A0079DD4D0DD691D05A")
     public void removeComment() {
         comment = null;
-        // ---------- Original Method ----------
-        //comment = null;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.712 -0400", hash_original_method = "EAF98E914AE1C4A3745B20F70C227AC7", hash_generated_method = "0FC961F517088BD610BF32CCCF197355")
+    /** set the Protocol Version
+     * @param protocolVersion String to set
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.397 -0500", hash_original_method = "EAF98E914AE1C4A3745B20F70C227AC7", hash_generated_method = "FAC026355BED919F9D525B451C4230F5")
     public void setProtocolVersion(String protocolVersion) {
-        addTaint(protocolVersion.getTaint());
-        if(sentProtocol == null)        
-        sentProtocol = new Protocol();
+        if (sentProtocol == null)
+            sentProtocol = new Protocol();
         sentProtocol.setProtocolVersion(protocolVersion);
-        // ---------- Original Method ----------
-        //if (sentProtocol == null)
-            //sentProtocol = new Protocol();
-        //sentProtocol.setProtocolVersion(protocolVersion);
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.712 -0400", hash_original_method = "DC556AA065BEAF9D4C2B976D57E39DA8", hash_generated_method = "3D94784F5EBA63D6281DF1412C27AA50")
+    /** set the Host of the Via Header
+         * @param host String to set
+         */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.398 -0500", hash_original_method = "DC556AA065BEAF9D4C2B976D57E39DA8", hash_generated_method = "6C40B83EF6C0E6452AD2399FE668FCB3")
     public void setHost(Host host) {
-        addTaint(host.getTaint());
-        if(sentBy == null)        
-        {
+        if (sentBy == null) {
             sentBy = new HostPort();
-        } //End block
+        }
         sentBy.setHost(host);
-        // ---------- Original Method ----------
-        //if (sentBy == null) {
-            //sentBy = new HostPort();
-        //}
-        //sentBy.setHost(host);
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.713 -0400", hash_original_method = "F4FB101A445D5E49EE8B10DCE47E32FC", hash_generated_method = "5256462B357CC08BC06E273F7E8B63C4")
+    /**
+     * Set the sentProtocol member
+     * @param s Protocol to set.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.400 -0500", hash_original_method = "F4FB101A445D5E49EE8B10DCE47E32FC", hash_generated_method = "A60980380F089206E40A3F100A70EF48")
     public void setSentProtocol(Protocol s) {
         sentProtocol = s;
-        // ---------- Original Method ----------
-        //sentProtocol = s;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.713 -0400", hash_original_method = "543B4EA18E4F8858630BB59B262697DA", hash_generated_method = "63DB9B02D21F6151DDBE43BA55FA92E9")
+    /**
+     * Set the sentBy member
+     * @param s HostPort to set.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.401 -0500", hash_original_method = "543B4EA18E4F8858630BB59B262697DA", hash_generated_method = "F9C60CEE52C59A696D28208B7034EF56")
     public void setSentBy(HostPort s) {
         sentBy = s;
-        // ---------- Original Method ----------
-        //sentBy = s;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.714 -0400", hash_original_method = "DE8908B9CA5447E854A0D06D0B1B9195", hash_generated_method = "23ECBD58C40560F298AA32A25976DB82")
+    /**
+     * Set the comment member
+     * @param c String to set.
+     * @deprecated This is an RFC 2543 feature.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.402 -0500", hash_original_method = "DE8908B9CA5447E854A0D06D0B1B9195", hash_generated_method = "0B9E5F7573C266EFFB88E1DE14EE2B1E")
     public void setComment(String c) {
         comment = c;
-        // ---------- Original Method ----------
-        //comment = c;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.714 -0400", hash_original_method = "E7A2FB4AC135D29D78CE09D5448C290F", hash_generated_method = "9C290EC5FF9C837A7060C1F53E78DE5C")
+    /** Encode the body of this header (the stuff that follows headerName).
+     * A.K.A headerValue.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.403 -0500", hash_original_method = "E7A2FB4AC135D29D78CE09D5448C290F", hash_generated_method = "BBFCFD2AD6BD270AD38D8FE87FD0572B")
     protected String encodeBody() {
-String varB9AAF3B320DC07C68A40DABE06BFAFD1_1721264620 =         encodeBody(new StringBuffer()).toString();
-        varB9AAF3B320DC07C68A40DABE06BFAFD1_1721264620.addTaint(taint);
-        return varB9AAF3B320DC07C68A40DABE06BFAFD1_1721264620;
-        // ---------- Original Method ----------
-        //return encodeBody(new StringBuffer()).toString();
+        return encodeBody(new StringBuffer()).toString();
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.714 -0400", hash_original_method = "C937D3FA4F8C32F6B76B74CD5C9B4805", hash_generated_method = "B4319510F48826561EB1B8E00685C5BD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.404 -0500", hash_original_method = "C937D3FA4F8C32F6B76B74CD5C9B4805", hash_generated_method = "2588D424856079864764717D30534A88")
     protected StringBuffer encodeBody(StringBuffer buffer) {
-        addTaint(buffer.getTaint());
         sentProtocol.encode(buffer);
         buffer.append(SP);
         sentBy.encode(buffer);
-        if(!parameters.isEmpty())        
-        {
+        if (!parameters.isEmpty()) {
             buffer.append(SEMICOLON);
             parameters.encode(buffer);
-        } //End block
-        if(comment != null)        
-        {
+        }
+        if (comment != null) {
             buffer.append(SP).append(LPAREN).append(comment).append(RPAREN);
-        } //End block
-        if(rPortFlag)        
-        buffer.append(";rport");
-StringBuffer varE75BCB56CC6A0BCEED51BE38E1BB3F38_1089844601 =         buffer;
-        varE75BCB56CC6A0BCEED51BE38E1BB3F38_1089844601.addTaint(taint);
-        return varE75BCB56CC6A0BCEED51BE38E1BB3F38_1089844601;
-        // ---------- Original Method ----------
-        //sentProtocol.encode(buffer);
-        //buffer.append(SP);
-        //sentBy.encode(buffer);
-        //if (!parameters.isEmpty()) {
-            //buffer.append(SEMICOLON);
-            //parameters.encode(buffer);
-        //}
-        //if (comment != null) {
-            //buffer.append(SP).append(LPAREN).append(comment).append(RPAREN);
-        //}
-        //if (rPortFlag) buffer.append(";rport");
-        //return buffer;
+        }
+        if (rPortFlag) buffer.append(";rport");
+        return buffer;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.715 -0400", hash_original_method = "A6610C3C674AD8475435D641E21474E9", hash_generated_method = "4231C1F794A80FAF31355B3D04F10D9C")
+    /**
+     * Set the host part of this ViaHeader to the newly supplied <code>host</code>
+     * parameter.
+     *
+     * @throws ParseException which signals that an error has been reached
+     * unexpectedly while parsing the host value.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.406 -0500", hash_original_method = "A6610C3C674AD8475435D641E21474E9", hash_generated_method = "CD939FA926D042953639AC7BDFD55E52")
     public void setHost(String host) throws ParseException {
-        addTaint(host.getTaint());
-        if(sentBy == null)        
-        sentBy = new HostPort();
-        try 
-        {
+        if (sentBy == null)
+            sentBy = new HostPort();
+        try {
             Host h = new Host(host);
             sentBy.setHost(h);
-        } //End block
-        catch (Exception e)
-        {
-            NullPointerException var4DBB13729867D2C42BC1B31136201C3C_1332978608 = new NullPointerException(" host parameter is null");
-            var4DBB13729867D2C42BC1B31136201C3C_1332978608.addTaint(taint);
-            throw var4DBB13729867D2C42BC1B31136201C3C_1332978608;
-        } //End block
-        // ---------- Original Method ----------
-        //if (sentBy == null)
-            //sentBy = new HostPort();
-        //try {
-            //Host h = new Host(host);
-            //sentBy.setHost(h);
-        //} catch (Exception e) {
-            //throw new NullPointerException(" host parameter is null");
-        //}
+        } catch (Exception e) {
+            throw new NullPointerException(" host parameter is null");
+        }
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.715 -0400", hash_original_method = "C40590C8092ADD61F2FE2F813826D182", hash_generated_method = "A830C5F61C9997F676140518D20C6434")
+    /**
+    * Returns the host part of this ViaHeader.
+    *
+    * @return  the string value of the host
+    */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.407 -0500", hash_original_method = "C40590C8092ADD61F2FE2F813826D182", hash_generated_method = "D2C361D4C23F32BB17AC6E8CCEE36372")
     public String getHost() {
-        if(sentBy == null)        
-        {
-String var540C13E9E156B687226421B24F2DF178_663729608 =         null;
-        var540C13E9E156B687226421B24F2DF178_663729608.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_663729608;
-        }
-        else
-        {
+        if (sentBy == null)
+            return null;
+        else {
             Host host = sentBy.getHost();
-            if(host == null)            
-            {
-String var540C13E9E156B687226421B24F2DF178_1857302518 =             null;
-            var540C13E9E156B687226421B24F2DF178_1857302518.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_1857302518;
-            }
+            if (host == null)
+                return null;
             else
-            {
-String varD7AF899F7490F0961E1F5ED19DF8B6A4_1668719108 =             host.getHostname();
-            varD7AF899F7490F0961E1F5ED19DF8B6A4_1668719108.addTaint(taint);
-            return varD7AF899F7490F0961E1F5ED19DF8B6A4_1668719108;
-            }
-        } //End block
-        // ---------- Original Method ----------
-        //if (sentBy == null)
-            //return null;
-        //else {
-            //Host host = sentBy.getHost();
-            //if (host == null)
-                //return null;
-            //else
-                //return host.getHostname();
-        //}
+                return host.getHostname();
+        }
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.716 -0400", hash_original_method = "3BFDF83597585B440A29B8E314A4320F", hash_generated_method = "AF826F1939B28ED94D1FC6FE3902C7EB")
+    /**
+     * Set the port part of this ViaHeader to the newly supplied <code>port</code>
+     * parameter.
+     *
+     * @param port - the Integer.valueOf value of the port of this ViaHeader
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.408 -0500", hash_original_method = "3BFDF83597585B440A29B8E314A4320F", hash_generated_method = "6B58981524053DA5CEBD218FA31BFE68")
     public void setPort(int port) throws InvalidArgumentException {
-        addTaint(port);
-        if(port!=-1 && (port<1 || port>65535))        
-        {
-            InvalidArgumentException varCA98E02F78AB6EAD4CAA625E2F17A7B6_1376341551 = new InvalidArgumentException( "Port value out of range -1, [1..65535]" );
-            varCA98E02F78AB6EAD4CAA625E2F17A7B6_1376341551.addTaint(taint);
-            throw varCA98E02F78AB6EAD4CAA625E2F17A7B6_1376341551;
-        } //End block
-        if(sentBy == null)        
-        sentBy = new HostPort();
+
+        if ( port!=-1 && (port<1 || port>65535)) {
+            throw new InvalidArgumentException( "Port value out of range -1, [1..65535]" );
+        }
+
+        if (sentBy == null)
+            sentBy = new HostPort();
         sentBy.setPort(port);
-        // ---------- Original Method ----------
-        //if ( port!=-1 && (port<1 || port>65535)) {
-            //throw new InvalidArgumentException( "Port value out of range -1, [1..65535]" );
-        //}
-        //if (sentBy == null)
-            //sentBy = new HostPort();
-        //sentBy.setPort(port);
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.716 -0400", hash_original_method = "524778E64DA2B969E2ED4D2BD7E92B55", hash_generated_method = "7B6A17B05EF5967791C55E81D8F72366")
-    public void setRPort() {
+    /**
+     * Set the RPort flag parameter
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.409 -0500", hash_original_method = "524778E64DA2B969E2ED4D2BD7E92B55", hash_generated_method = "0B9EAA87CFF53228B28F2E4B2141D3A0")
+    public void setRPort(){
         rPortFlag = true;
-        // ---------- Original Method ----------
-        //rPortFlag = true;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.716 -0400", hash_original_method = "E4A7E9B0C37CC00BF245A9AEF6038FD8", hash_generated_method = "F1316D43DAE99EEB4E499421EC868CD9")
+    /**
+     * Returns the port part of this ViaHeader.
+     *
+     * @return the integer value of the port
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.410 -0500", hash_original_method = "E4A7E9B0C37CC00BF245A9AEF6038FD8", hash_generated_method = "906A1F3A5691CFDC4DDC6C1A571AB8A3")
     public int getPort() {
-        if(sentBy == null)        
-        {
-        int var6BB61E3B7BCE0931DA574D19D1D82C88_705194086 = (-1);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1437044447 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1437044447;
-        }
-        int var6D909B34FB85D9F6DF01F203656B84DF_971120885 = (sentBy.getPort());
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_58213733 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_58213733;
-        // ---------- Original Method ----------
-        //if (sentBy == null)
-            //return -1;
-        //return sentBy.getPort();
+        if (sentBy == null)
+            return -1;
+        return sentBy.getPort();
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.717 -0400", hash_original_method = "8F51D2BD996E5077EFE382EF5CCB28F7", hash_generated_method = "33D263C98B069293D12E2D3842C16B94")
+
+    /**
+    * Return the rport parameter.
+    *
+    *@return the rport parameter or -1.
+    */
+       @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.411 -0500", hash_original_method = "8F51D2BD996E5077EFE382EF5CCB28F7", hash_generated_method = "3511351E0D0FE8826264B6C3334B3AAF")
     public int getRPort() {
-        String strRport = getParameter(ParameterNames.RPORT);
-        if(strRport != null && ! strRport.equals(""))        
-        {
-        int var5A4A7AA3BF3B61AA5D7CE9DB89244879_369722552 = (Integer.valueOf(strRport).intValue());
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_171864867 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_171864867;
-        }
-        else
-        {
-        int var6BB61E3B7BCE0931DA574D19D1D82C88_1951757929 = (-1);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_194816 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_194816;
-        }
-        // ---------- Original Method ----------
-        //String strRport = getParameter(ParameterNames.RPORT);
-        //if (strRport != null && ! strRport.equals(""))
-            //return Integer.valueOf(strRport).intValue();
-         //else
-            //return -1;
-    }
+         String strRport = getParameter(ParameterNames.RPORT);
+         if (strRport != null && ! strRport.equals(""))
+            return Integer.valueOf(strRport).intValue();
+         else
+            return -1;
+         }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.717 -0400", hash_original_method = "2C7D6CB162F307BBDEA3C529EA37600B", hash_generated_method = "63CA5524ACC56D3EA7AEF650D272E7E5")
+
+    /**
+     * Returns the value of the transport parameter.
+     *
+     * @return the string value of the transport paramter of the ViaHeader
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.413 -0500", hash_original_method = "2C7D6CB162F307BBDEA3C529EA37600B", hash_generated_method = "278AEA19B837E1396BDED40458AA0DF4")
     public String getTransport() {
-        if(sentProtocol == null)        
-        {
-String var540C13E9E156B687226421B24F2DF178_526129530 =         null;
-        var540C13E9E156B687226421B24F2DF178_526129530.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_526129530;
-        }
-String var672CCB2CF5D1564832066A1D15319102_862386682 =         sentProtocol.getTransport();
-        var672CCB2CF5D1564832066A1D15319102_862386682.addTaint(taint);
-        return var672CCB2CF5D1564832066A1D15319102_862386682;
-        // ---------- Original Method ----------
-        //if (sentProtocol == null)
-            //return null;
-        //return sentProtocol.getTransport();
+        if (sentProtocol == null)
+            return null;
+        return sentProtocol.getTransport();
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.717 -0400", hash_original_method = "DA10FBD3B27193627F0BF00A97E141AB", hash_generated_method = "26B85B92E9C7E109A87DB307E824C20F")
+    /**
+     * Sets the value of the transport. This parameter specifies
+     * which transport protocol to use for sending requests and responses to
+     * this entity. The following values are defined: "udp", "tcp", "sctp",
+     * "tls", but other values may be used also.
+     *
+     * @param transport - new value for the transport parameter
+     * @throws ParseException which signals that an error has been reached
+     * unexpectedly while parsing the transport value.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.414 -0500", hash_original_method = "DA10FBD3B27193627F0BF00A97E141AB", hash_generated_method = "70EFF33C755FC93B2D9F1AE6A3D3C60B")
     public void setTransport(String transport) throws ParseException {
-        addTaint(transport.getTaint());
-        if(transport == null)        
-        {
-        NullPointerException var84370065E6F91547A22B7704824C9F52_818885151 = new NullPointerException(
+        if (transport == null)
+            throw new NullPointerException(
                 "JAIN-SIP Exception, "
                     + "Via, setTransport(), the transport parameter is null.");
-        var84370065E6F91547A22B7704824C9F52_818885151.addTaint(taint);
-        throw var84370065E6F91547A22B7704824C9F52_818885151;
-        }
-        if(sentProtocol == null)        
-        sentProtocol = new Protocol();
+        if (sentProtocol == null)
+            sentProtocol = new Protocol();
         sentProtocol.setTransport(transport);
-        // ---------- Original Method ----------
-        //if (transport == null)
-            //throw new NullPointerException(
-                //"JAIN-SIP Exception, "
-                    //+ "Via, setTransport(), the transport parameter is null.");
-        //if (sentProtocol == null)
-            //sentProtocol = new Protocol();
-        //sentProtocol.setTransport(transport);
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.718 -0400", hash_original_method = "076253ECD4074E0CF94E6CAE84ACD031", hash_generated_method = "E909154AEBD2C64A468CE9D3E2ABC705")
+    /**
+     * Returns the value of the protocol used.
+     *
+     * @return the string value of the protocol paramter of the ViaHeader
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.415 -0500", hash_original_method = "076253ECD4074E0CF94E6CAE84ACD031", hash_generated_method = "AE3F914C1F385E80EBD7FC351D7FF964")
     public String getProtocol() {
-        if(sentProtocol == null)        
-        {
-String var540C13E9E156B687226421B24F2DF178_1207999487 =         null;
-        var540C13E9E156B687226421B24F2DF178_1207999487.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_1207999487;
-        }
-String var4FF5522CA14AB124C62113BDA3B2D3C5_1802291086 =         sentProtocol.getProtocol();
-        var4FF5522CA14AB124C62113BDA3B2D3C5_1802291086.addTaint(taint);
-        return var4FF5522CA14AB124C62113BDA3B2D3C5_1802291086;
-        // ---------- Original Method ----------
-        //if (sentProtocol == null)
-            //return null;
-        //return sentProtocol.getProtocol();
+        if (sentProtocol == null)
+            return null;
+        return sentProtocol.getProtocol();// JvB: Return name ~and~ version
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.719 -0400", hash_original_method = "983A1DB4807CBA4F5F74F526664C05F9", hash_generated_method = "9A5C5504DBA25C0E8DA35A3B1DE729C9")
+    /**
+     * Sets the value of the protocol parameter. This parameter specifies
+     * which protocol is used, for example "SIP/2.0".
+     *
+     * @param protocol - new value for the protocol parameter
+     * @throws ParseException which signals that an error has been reached
+     * unexpectedly while parsing the protocol value.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.416 -0500", hash_original_method = "983A1DB4807CBA4F5F74F526664C05F9", hash_generated_method = "9FB96C9A6B3B83D3DC2242FDB012BD1E")
     public void setProtocol(String protocol) throws ParseException {
-        addTaint(protocol.getTaint());
-        if(protocol == null)        
-        {
-        NullPointerException var9F319EB84991D5C07B35E89300368299_1086308651 = new NullPointerException(
+        if (protocol == null)
+            throw new NullPointerException(
                 "JAIN-SIP Exception, "
                     + "Via, setProtocol(), the protocol parameter is null.");
-        var9F319EB84991D5C07B35E89300368299_1086308651.addTaint(taint);
-        throw var9F319EB84991D5C07B35E89300368299_1086308651;
-        }
-        if(sentProtocol == null)        
-        sentProtocol = new Protocol();
+
+        if (sentProtocol == null)
+            sentProtocol = new Protocol();
+
         sentProtocol.setProtocol(protocol);
-        // ---------- Original Method ----------
-        //if (protocol == null)
-            //throw new NullPointerException(
-                //"JAIN-SIP Exception, "
-                    //+ "Via, setProtocol(), the protocol parameter is null.");
-        //if (sentProtocol == null)
-            //sentProtocol = new Protocol();
-        //sentProtocol.setProtocol(protocol);
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.719 -0400", hash_original_method = "AB2BF7863E6929FA549276BF1FCB8F41", hash_generated_method = "845D77D3753C2EF0C69FE233D98387CC")
+    /**
+     * Returns the value of the ttl parameter, or -1 if this is not set.
+     *
+     * @return the integer value of the <code>ttl</code> parameter
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.417 -0500", hash_original_method = "AB2BF7863E6929FA549276BF1FCB8F41", hash_generated_method = "FC6220DDEB7B2F642A5C176519D4A5FD")
     public int getTTL() {
         int ttl = getParameterAsInt(ParameterNames.TTL);
-        int varC431A4425BC56080C868435C8D910F83_1074490490 = (ttl);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_895966219 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_895966219;
-        // ---------- Original Method ----------
-        //int ttl = getParameterAsInt(ParameterNames.TTL);
-        //return ttl;
+        return ttl;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.720 -0400", hash_original_method = "275C0FDDD82C74D9D06FF2EBDF31F802", hash_generated_method = "4BF24E766AA51F991D5867213F18D871")
+    /**
+     * Sets the value of the ttl parameter. The ttl parameter specifies the
+     * time-to-live value when packets are sent using UDP multicast.
+     *
+     * @param ttl - new value of the ttl parameter
+     * @throws InvalidArgumentException if supplied value is less than zero or
+     * greater than 255, excluding -1 the default not set value.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.418 -0500", hash_original_method = "275C0FDDD82C74D9D06FF2EBDF31F802", hash_generated_method = "68E4131A7FBF1C99BF6026D77E50DE97")
     public void setTTL(int ttl) throws InvalidArgumentException {
-        addTaint(ttl);
-        if(ttl < 0 && ttl != -1)        
-        {
-        InvalidArgumentException var94583BA7443F2DDBCC0B8D389D3941B7_1100807884 = new InvalidArgumentException(
+        if (ttl < 0 && ttl != -1)
+            throw new InvalidArgumentException(
                 "JAIN-SIP Exception"
                     + ", Via, setTTL(), the ttl parameter is < 0");
-        var94583BA7443F2DDBCC0B8D389D3941B7_1100807884.addTaint(taint);
-        throw var94583BA7443F2DDBCC0B8D389D3941B7_1100807884;
-        }
         setParameter(new NameValue(ParameterNames.TTL, Integer.valueOf(ttl)));
-        // ---------- Original Method ----------
-        //if (ttl < 0 && ttl != -1)
-            //throw new InvalidArgumentException(
-                //"JAIN-SIP Exception"
-                    //+ ", Via, setTTL(), the ttl parameter is < 0");
-        //setParameter(new NameValue(ParameterNames.TTL, Integer.valueOf(ttl)));
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.720 -0400", hash_original_method = "BA8497BF19C86E6498457C19F33C2BB1", hash_generated_method = "96CA03A77832AA672232A771497C4F41")
+    /**
+     * Returns the value of the <code>maddr</code> parameter, or null if this
+     * is not set.
+     *
+     * @return the string value of the maddr parameter
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.420 -0500", hash_original_method = "BA8497BF19C86E6498457C19F33C2BB1", hash_generated_method = "1F148048371B6A738FC40E49494DF6D1")
     public String getMAddr() {
-String var263683D8C54210DA6F9BEB369F769CD4_770530500 =         getParameter(ParameterNames.MADDR);
-        var263683D8C54210DA6F9BEB369F769CD4_770530500.addTaint(taint);
-        return var263683D8C54210DA6F9BEB369F769CD4_770530500;
-        // ---------- Original Method ----------
-        //return getParameter(ParameterNames.MADDR);
+        return getParameter(ParameterNames.MADDR);
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.720 -0400", hash_original_method = "6AB0C98EE8B2466C821195A9A73846A0", hash_generated_method = "69AA736E23BF33367F22747C9988BD91")
+    /**
+     * Sets the value of the <code>maddr</code> parameter of this ViaHeader. The
+     * maddr parameter indicates the server address to be contacted for this
+     * user, overriding any address derived from the host field.
+     *
+     * @param  mAddr new value of the <code>maddr</code> parameter
+     * @throws ParseException which signals that an error has been reached
+     * unexpectedly while parsing the mAddr value.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.421 -0500", hash_original_method = "6AB0C98EE8B2466C821195A9A73846A0", hash_generated_method = "85B938EA502BF43FCC37B7396603824F")
     public void setMAddr(String mAddr) throws ParseException {
-        addTaint(mAddr.getTaint());
-        if(mAddr == null)        
-        {
-        NullPointerException var4223FF9A4395D661CCBB3A80191E742A_1873705239 = new NullPointerException(
+        if (mAddr == null)
+            throw new NullPointerException(
                 "JAIN-SIP Exception, "
                     + "Via, setMAddr(), the mAddr parameter is null.");
-        var4223FF9A4395D661CCBB3A80191E742A_1873705239.addTaint(taint);
-        throw var4223FF9A4395D661CCBB3A80191E742A_1873705239;
-        }
+
         Host host = new Host();
         host.setAddress(mAddr);
         NameValue nameValue = new NameValue(ParameterNames.MADDR, host);
         setParameter(nameValue);
-        // ---------- Original Method ----------
-        //if (mAddr == null)
-            //throw new NullPointerException(
-                //"JAIN-SIP Exception, "
-                    //+ "Via, setMAddr(), the mAddr parameter is null.");
-        //Host host = new Host();
-        //host.setAddress(mAddr);
-        //NameValue nameValue = new NameValue(ParameterNames.MADDR, host);
-        //setParameter(nameValue);
+
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.721 -0400", hash_original_method = "25AF7C33721E5D780684174C5845DEAD", hash_generated_method = "8BC7F1C8A2BD59BDE7A61600B4ADC763")
+    /**
+     * Gets the received paramater of the ViaHeader. Returns null if received
+     * does not exist.
+     *
+     * @return the string received value of ViaHeader
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.422 -0500", hash_original_method = "25AF7C33721E5D780684174C5845DEAD", hash_generated_method = "4E8FCF5656D0BCA0C0FBDE4F491C238B")
     public String getReceived() {
-String varC5797504D66622D5091EB38348E03560_1206421412 =         getParameter(ParameterNames.RECEIVED);
-        varC5797504D66622D5091EB38348E03560_1206421412.addTaint(taint);
-        return varC5797504D66622D5091EB38348E03560_1206421412;
-        // ---------- Original Method ----------
-        //return getParameter(ParameterNames.RECEIVED);
+        return getParameter(ParameterNames.RECEIVED);
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.721 -0400", hash_original_method = "F727BD69B2536BBCBA80253D70F95056", hash_generated_method = "2B0F6829354F0CBB8BD2BF5B76FCC15F")
+    /**
+     * Sets the received parameter of ViaHeader.
+     *
+     * @param received - the newly supplied received parameter.
+     * @throws ParseException which signals that an error has been reached
+     * unexpectedly while parsing the received value.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.423 -0500", hash_original_method = "F727BD69B2536BBCBA80253D70F95056", hash_generated_method = "DC81FC96D12EC8236D2B8780E9141741")
     public void setReceived(String received) throws ParseException {
-        addTaint(received.getTaint());
-        if(received == null)        
-        {
-        NullPointerException var53F2F644A510B43A9F45AF762C4C2ECC_1305979060 = new NullPointerException(
+        if (received == null)
+            throw new NullPointerException(
                 "JAIN-SIP Exception, "
                     + "Via, setReceived(), the received parameter is null.");
-        var53F2F644A510B43A9F45AF762C4C2ECC_1305979060.addTaint(taint);
-        throw var53F2F644A510B43A9F45AF762C4C2ECC_1305979060;
-        }
+
         setParameter(ParameterNames.RECEIVED, received);
-        // ---------- Original Method ----------
-        //if (received == null)
-            //throw new NullPointerException(
-                //"JAIN-SIP Exception, "
-                    //+ "Via, setReceived(), the received parameter is null.");
-        //setParameter(ParameterNames.RECEIVED, received);
+
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.721 -0400", hash_original_method = "9A958EF7B290CF5A27A4EB96F15158F0", hash_generated_method = "46A5F8223475BDC176DD7F5AC9EEF7C4")
+    /**
+     * Gets the branch paramater of the ViaHeader. Returns null if branch
+     * does not exist.
+     *
+     * @return the string branch value of ViaHeader
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.424 -0500", hash_original_method = "9A958EF7B290CF5A27A4EB96F15158F0", hash_generated_method = "0018E0512B32E4AA454DEB730D48FE1D")
     public String getBranch() {
-String var5A4516AB3A9CF1E9689C3940D299FD8B_1077352685 =         getParameter(ParameterNames.BRANCH);
-        var5A4516AB3A9CF1E9689C3940D299FD8B_1077352685.addTaint(taint);
-        return var5A4516AB3A9CF1E9689C3940D299FD8B_1077352685;
-        // ---------- Original Method ----------
-        //return getParameter(ParameterNames.BRANCH);
+        return getParameter(ParameterNames.BRANCH);
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.722 -0400", hash_original_method = "5A56F4FACEB17A95A8FCAD93BB83EA63", hash_generated_method = "ECF5F3324F0CAA3AFBA76E4489850335")
+    /**
+     * Sets the branch parameter of the ViaHeader to the newly supplied
+     * branch value.
+     *
+     * @param branch - the new string branch parmameter of the ViaHeader.
+     * @throws ParseException which signals that an error has been reached
+     * unexpectedly while parsing the branch value.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.426 -0500", hash_original_method = "5A56F4FACEB17A95A8FCAD93BB83EA63", hash_generated_method = "340F253F2A8F99F6D632137DDBBA9D59")
     public void setBranch(String branch) throws ParseException {
-        addTaint(branch.getTaint());
-        if(branch == null || branch.length()==0)        
-        {
-        NullPointerException var58473D87EA66098D648F42AF2E5719EE_735961926 = new NullPointerException(
+        if (branch == null || branch.length()==0)
+            throw new NullPointerException(
                 "JAIN-SIP Exception, "
                     + "Via, setBranch(), the branch parameter is null or length 0.");
-        var58473D87EA66098D648F42AF2E5719EE_735961926.addTaint(taint);
-        throw var58473D87EA66098D648F42AF2E5719EE_735961926;
-        }
+
         setParameter(ParameterNames.BRANCH, branch);
-        // ---------- Original Method ----------
-        //if (branch == null || branch.length()==0)
-            //throw new NullPointerException(
-                //"JAIN-SIP Exception, "
-                    //+ "Via, setBranch(), the branch parameter is null or length 0.");
-        //setParameter(ParameterNames.BRANCH, branch);
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.722 -0400", hash_original_method = "252C53006150044E4EBAAC8A002E65B1", hash_generated_method = "10E93184D507EBC376E9C56B36EE31BD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.427 -0500", hash_original_method = "252C53006150044E4EBAAC8A002E65B1", hash_generated_method = "D075F094A4B37AF199BF12E2E17F1587")
     public Object clone() {
         Via retval = (Via) super.clone();
-        if(this.sentProtocol != null)        
-        retval.sentProtocol = (Protocol) this.sentProtocol.clone();
-        if(this.sentBy != null)        
-        retval.sentBy = (HostPort) this.sentBy.clone();
-        if(this.getRPort() != -1)        
-        retval.setParameter(RPORT,this.getRPort());
-Object varF9E19AD6135C970F387F77C6F3DE4477_427529073 =         retval;
-        varF9E19AD6135C970F387F77C6F3DE4477_427529073.addTaint(taint);
-        return varF9E19AD6135C970F387F77C6F3DE4477_427529073;
-        // ---------- Original Method ----------
-        //Via retval = (Via) super.clone();
-        //if (this.sentProtocol != null)
-            //retval.sentProtocol = (Protocol) this.sentProtocol.clone();
-        //if (this.sentBy != null)
-            //retval.sentBy = (HostPort) this.sentBy.clone();
-        //if ( this.getRPort() != -1)
-            //retval.setParameter(RPORT,this.getRPort());
-        //return retval;
+        if (this.sentProtocol != null)
+            retval.sentProtocol = (Protocol) this.sentProtocol.clone();
+        if (this.sentBy != null)
+            retval.sentBy = (HostPort) this.sentBy.clone();
+        if ( this.getRPort() != -1)
+            retval.setParameter(RPORT,this.getRPort());
+        return retval;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.723 -0400", hash_original_method = "5347FDDA2C7AAC95D7D1D2F666800B71", hash_generated_method = "6936916C1C880D49FC58FA9A52C4A60C")
+    /*
+     * (non-Javadoc)
+     * @see gov.nist.javax.sip.header.ViaHeaderExt#getSentByField()
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.428 -0500", hash_original_method = "5347FDDA2C7AAC95D7D1D2F666800B71", hash_generated_method = "7741DB56E64F64615C969A6462982567")
     public String getSentByField() {
-        if(sentBy != null)        
-        {
-String varA2FDAF9052AB8A0DE7E94E7BF9E7ECBD_859629084 =         sentBy.encode();
-        varA2FDAF9052AB8A0DE7E94E7BF9E7ECBD_859629084.addTaint(taint);
-        return varA2FDAF9052AB8A0DE7E94E7BF9E7ECBD_859629084;
-        }
-String var540C13E9E156B687226421B24F2DF178_1856932712 =         null;
-        var540C13E9E156B687226421B24F2DF178_1856932712.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_1856932712;
-        // ---------- Original Method ----------
-        //if(sentBy != null)
-            //return sentBy.encode();
-        //return null;
+        if(sentBy != null)
+            return sentBy.encode();
+        return null;
     }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.723 -0400", hash_original_method = "128FFEF5D307451BA5388B5193A6BF26", hash_generated_method = "7F35690BB9054D9DF8D948DC79BE0C00")
+    /*
+     * (non-Javadoc)
+     * @see gov.nist.javax.sip.header.ViaHeaderExt#getSentProtocolField()
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.429 -0500", hash_original_method = "128FFEF5D307451BA5388B5193A6BF26", hash_generated_method = "58427536C6610BFA4C3467698B755DC0")
     public String getSentProtocolField() {
-        if(sentProtocol != null)        
-        {
-String varBB876D047D1B0E4E74198E1FAA58122F_799392771 =         sentProtocol.encode();
-        varBB876D047D1B0E4E74198E1FAA58122F_799392771.addTaint(taint);
-        return varBB876D047D1B0E4E74198E1FAA58122F_799392771;
-        }
-String var540C13E9E156B687226421B24F2DF178_1246772201 =         null;
-        var540C13E9E156B687226421B24F2DF178_1246772201.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_1246772201;
-        // ---------- Original Method ----------
-        //if(sentProtocol != null)
-            //return sentProtocol.encode();
-        //return null;
+        if(sentProtocol != null)
+            return sentProtocol.encode();
+        return null;
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.723 -0400", hash_original_field = "0179E78CAC3DA14C2FFC9A7D61106327", hash_generated_field = "44E58998010CA4EBABA566C0FB985DB3")
-
-    private static final long serialVersionUID = 5281728373401351378L;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.723 -0400", hash_original_field = "EEAA4D02BE43B89B52AFD8DC453B4BFD", hash_generated_field = "22327A98EDD3D141225105CEAD3ABB13")
-
-    public static final String BRANCH = ParameterNames.BRANCH;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.723 -0400", hash_original_field = "9B0F9FB69328D59E52F3C0D780928331", hash_generated_field = "4D8C5F2DB4C0964744FED89BE27D1A75")
-
-    public static final String RECEIVED = ParameterNames.RECEIVED;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.723 -0400", hash_original_field = "0C3EC7D99BD0916DCE7C7A2913106895", hash_generated_field = "4AA8F81F93B467DE58E70654B3136851")
-
-    public static final String MADDR = ParameterNames.MADDR;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.723 -0400", hash_original_field = "A27202196DCCEEDEB9F7293943B39842", hash_generated_field = "EAB3FB3A2E323EFD5528878B03366C28")
-
-    public static final String TTL = ParameterNames.TTL;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.723 -0400", hash_original_field = "B1E3516AD1F9BEC949E47B776969F649", hash_generated_field = "180F648B89D676D4D5F0240DFDFE1D7D")
-
-    public static final String RPORT = ParameterNames.RPORT;
 }
 

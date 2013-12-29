@@ -1,6 +1,8 @@
 package org.apache.http.impl.cookie;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Locale;
 
@@ -14,208 +16,153 @@ import org.apache.http.cookie.SetCookie;
 
 
 public class RFC2965DomainAttributeHandler implements CookieAttributeHandler {
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.174 -0400", hash_original_method = "5C926F9EE1EA6288872238281D019BE6", hash_generated_method = "BE8662EA5C80130298C7E15C8F61CFD7")
-    public  RFC2965DomainAttributeHandler() {
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:20.679 -0500", hash_original_method = "5C926F9EE1EA6288872238281D019BE6", hash_generated_method = "CF3A76679EF46895931226F828AC53C7")
+    public RFC2965DomainAttributeHandler() {
         super();
-        // ---------- Original Method ----------
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.175 -0400", hash_original_method = "CA7EEF802D39DD35821E8C5DF292BB9E", hash_generated_method = "4A5417982C6B6B7D5DDBEBD20BED8A34")
-    public void parse(final SetCookie cookie, String domain) throws MalformedCookieException {
-        addTaint(domain.getTaint());
-        addTaint(cookie.getTaint());
-        if(cookie == null)        
-        {
-            IllegalArgumentException varFBA11BCFA12F6CB336E0E79489ED6755_625447556 = new IllegalArgumentException("Cookie may not be null");
-            varFBA11BCFA12F6CB336E0E79489ED6755_625447556.addTaint(taint);
-            throw varFBA11BCFA12F6CB336E0E79489ED6755_625447556;
-        } //End block
-        if(domain == null)        
-        {
-            MalformedCookieException var0F112B9FC8E3827692FDE0884407A29E_1798673473 = new MalformedCookieException(
+    /**
+     * Parse cookie domain attribute.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:20.680 -0500", hash_original_method = "CA7EEF802D39DD35821E8C5DF292BB9E", hash_generated_method = "920F6FBF2CA4E75ED27B7EB38BB24898")
+    public void parse(final SetCookie cookie, String domain)
+            throws MalformedCookieException {
+        if (cookie == null) {
+            throw new IllegalArgumentException("Cookie may not be null");
+        }
+        if (domain == null) {
+            throw new MalformedCookieException(
                     "Missing value for domain attribute");
-            var0F112B9FC8E3827692FDE0884407A29E_1798673473.addTaint(taint);
-            throw var0F112B9FC8E3827692FDE0884407A29E_1798673473;
-        } //End block
-        if(domain.trim().length() == 0)        
-        {
-            MalformedCookieException var07BAB46695E7C8E84A0A4107E34A960E_1574688689 = new MalformedCookieException(
+        }
+        if (domain.trim().length() == 0) {
+            throw new MalformedCookieException(
                     "Blank value for domain attribute");
-            var07BAB46695E7C8E84A0A4107E34A960E_1574688689.addTaint(taint);
-            throw var07BAB46695E7C8E84A0A4107E34A960E_1574688689;
-        } //End block
+        }
         domain = domain.toLowerCase(Locale.ENGLISH);
-        if(!domain.startsWith("."))        
-        {
+        if (!domain.startsWith(".")) {
+            // Per RFC 2965 section 3.2.2
+            // "... If an explicitly specified value does not start with
+            // a dot, the user agent supplies a leading dot ..."
+            // That effectively implies that the domain attribute 
+            // MAY NOT be an IP address of a host name
             domain = '.' + domain;
-        } //End block
+        }
         cookie.setDomain(domain);
-        // ---------- Original Method ----------
-        //if (cookie == null) {
-            //throw new IllegalArgumentException("Cookie may not be null");
-        //}
-        //if (domain == null) {
-            //throw new MalformedCookieException(
-                    //"Missing value for domain attribute");
-        //}
-        //if (domain.trim().length() == 0) {
-            //throw new MalformedCookieException(
-                    //"Blank value for domain attribute");
-        //}
-        //domain = domain.toLowerCase(Locale.ENGLISH);
-        //if (!domain.startsWith(".")) {
-            //domain = '.' + domain;
-        //}
-        //cookie.setDomain(domain);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.176 -0400", hash_original_method = "63286152494B19CF26590FA425B39B18", hash_generated_method = "9AA48875946B4335B858092FD57F7EE3")
+    /**
+     * Performs domain-match as defined by the RFC2965.
+     * <p>
+     * Host A's name domain-matches host B's if
+     * <ol>
+     *   <ul>their host name strings string-compare equal; or</ul>
+     *   <ul>A is a HDN string and has the form NB, where N is a non-empty
+     *       name string, B has the form .B', and B' is a HDN string.  (So,
+     *       x.y.com domain-matches .Y.com but not Y.com.)</ul>
+     * </ol>
+     *
+     * @param host host name where cookie is received from or being sent to.
+     * @param domain The cookie domain attribute.
+     * @return true if the specified host matches the given domain.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:20.681 -0500", hash_original_method = "63286152494B19CF26590FA425B39B18", hash_generated_method = "F9C67CEB7FC05B284B157EA7E1FC8FFF")
     public boolean domainMatch(String host, String domain) {
-        addTaint(domain.getTaint());
-        addTaint(host.getTaint());
         boolean match = host.equals(domain)
                         || (domain.startsWith(".") && host.endsWith(domain));
-        boolean varE3CC92C14A5E6DD1A7D94B6FF634D7FC_1856940659 = (match);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1962972394 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1962972394;
-        // ---------- Original Method ----------
-        //boolean match = host.equals(domain)
-                        //|| (domain.startsWith(".") && host.endsWith(domain));
-        //return match;
+
+        return match;
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.177 -0400", hash_original_method = "CABE0CDEFEE66B5261D13BB72FC54CFF", hash_generated_method = "400A1F52C6F0E7C2D532744D28F4FABF")
-    public void validate(final Cookie cookie, final CookieOrigin origin) throws MalformedCookieException {
-        addTaint(origin.getTaint());
-        addTaint(cookie.getTaint());
-        if(cookie == null)        
-        {
-            IllegalArgumentException varFBA11BCFA12F6CB336E0E79489ED6755_670463209 = new IllegalArgumentException("Cookie may not be null");
-            varFBA11BCFA12F6CB336E0E79489ED6755_670463209.addTaint(taint);
-            throw varFBA11BCFA12F6CB336E0E79489ED6755_670463209;
-        } //End block
-        if(origin == null)        
-        {
-            IllegalArgumentException var4264914F0057BA70A0B3E6621821A095_1793528905 = new IllegalArgumentException("Cookie origin may not be null");
-            var4264914F0057BA70A0B3E6621821A095_1793528905.addTaint(taint);
-            throw var4264914F0057BA70A0B3E6621821A095_1793528905;
-        } //End block
+    /**
+     * Validate cookie domain attribute.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:20.682 -0500", hash_original_method = "CABE0CDEFEE66B5261D13BB72FC54CFF", hash_generated_method = "175B4AFDAB0348B0677E41D1C24635BB")
+    public void validate(final Cookie cookie, final CookieOrigin origin)
+            throws MalformedCookieException {
+        if (cookie == null) {
+            throw new IllegalArgumentException("Cookie may not be null");
+        }
+        if (origin == null) {
+            throw new IllegalArgumentException("Cookie origin may not be null");
+        }
         String host = origin.getHost().toLowerCase(Locale.ENGLISH);
-        if(cookie.getDomain() == null)        
-        {
-            MalformedCookieException varE7A1CE881B90FFD10CF86403BFBEA1D1_1184915618 = new MalformedCookieException("Invalid cookie state: " +
+        if (cookie.getDomain() == null) {
+            throw new MalformedCookieException("Invalid cookie state: " +
                                                "domain not specified");
-            varE7A1CE881B90FFD10CF86403BFBEA1D1_1184915618.addTaint(taint);
-            throw varE7A1CE881B90FFD10CF86403BFBEA1D1_1184915618;
-        } //End block
+        }
         String cookieDomain = cookie.getDomain().toLowerCase(Locale.ENGLISH);
-        if(cookie instanceof ClientCookie 
-                && ((ClientCookie) cookie).containsAttribute(ClientCookie.DOMAIN_ATTR))        
-        {
-            if(!cookieDomain.startsWith("."))            
-            {
-                MalformedCookieException var158124422C5B21946CBA28C46427092A_381340864 = new MalformedCookieException("Domain attribute \"" +
+
+        if (cookie instanceof ClientCookie 
+                && ((ClientCookie) cookie).containsAttribute(ClientCookie.DOMAIN_ATTR)) {
+            // Domain attribute must start with a dot
+            if (!cookieDomain.startsWith(".")) {
+                throw new MalformedCookieException("Domain attribute \"" +
                     cookie.getDomain() + "\" violates RFC 2109: domain must start with a dot");
-                var158124422C5B21946CBA28C46427092A_381340864.addTaint(taint);
-                throw var158124422C5B21946CBA28C46427092A_381340864;
-            } //End block
+            }
+
+            // Domain attribute must contain at least one embedded dot,
+            // or the value must be equal to .local.
             int dotIndex = cookieDomain.indexOf('.', 1);
-            if(((dotIndex < 0) || (dotIndex == cookieDomain.length() - 1))
-                && (!cookieDomain.equals(".local")))            
-            {
-                MalformedCookieException var2F0E525CDE9A036E2CE5A450F3D2E59A_895365053 = new MalformedCookieException(
+            if (((dotIndex < 0) || (dotIndex == cookieDomain.length() - 1))
+                && (!cookieDomain.equals(".local"))) {
+                throw new MalformedCookieException(
                         "Domain attribute \"" + cookie.getDomain()
                         + "\" violates RFC 2965: the value contains no embedded dots "
                         + "and the value is not .local");
-                var2F0E525CDE9A036E2CE5A450F3D2E59A_895365053.addTaint(taint);
-                throw var2F0E525CDE9A036E2CE5A450F3D2E59A_895365053;
-            } //End block
-            if(!domainMatch(host, cookieDomain))            
-            {
-                MalformedCookieException var936265A4A6E9BD5921537B50F5A27FB3_449302500 = new MalformedCookieException(
+            }
+
+            // The effective host name must domain-match domain attribute.
+            if (!domainMatch(host, cookieDomain)) {
+                throw new MalformedCookieException(
                         "Domain attribute \"" + cookie.getDomain()
                         + "\" violates RFC 2965: effective host name does not "
                         + "domain-match domain attribute.");
-                var936265A4A6E9BD5921537B50F5A27FB3_449302500.addTaint(taint);
-                throw var936265A4A6E9BD5921537B50F5A27FB3_449302500;
-            } //End block
+            }
+
+            // effective host name minus domain must not contain any dots
             String effectiveHostWithoutDomain = host.substring(
                     0, host.length() - cookieDomain.length());
-            if(effectiveHostWithoutDomain.indexOf('.') != -1)            
-            {
-                MalformedCookieException var7D3A4E534B922D4C19B2A641DFCF74CD_1328792067 = new MalformedCookieException("Domain attribute \""
+            if (effectiveHostWithoutDomain.indexOf('.') != -1) {
+                throw new MalformedCookieException("Domain attribute \""
                                                    + cookie.getDomain() + "\" violates RFC 2965: "
                                                    + "effective host minus domain may not contain any dots");
-                var7D3A4E534B922D4C19B2A641DFCF74CD_1328792067.addTaint(taint);
-                throw var7D3A4E534B922D4C19B2A641DFCF74CD_1328792067;
-            } //End block
-        } //End block
-        else
-        {
-            if(!cookie.getDomain().equals(host))            
-            {
-                MalformedCookieException var3CCBF05B26D87EAF3DBA7BB5F48C1078_253857548 = new MalformedCookieException("Illegal domain attribute: \""
+            }
+        } else {
+            // Domain was not specified in header. In this case, domain must
+            // string match request host (case-insensitive).
+            if (!cookie.getDomain().equals(host)) {
+                throw new MalformedCookieException("Illegal domain attribute: \""
                                                    + cookie.getDomain() + "\"."
                                                    + "Domain of origin: \""
                                                    + host + "\"");
-                var3CCBF05B26D87EAF3DBA7BB5F48C1078_253857548.addTaint(taint);
-                throw var3CCBF05B26D87EAF3DBA7BB5F48C1078_253857548;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            }
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.178 -0400", hash_original_method = "C7211512AD90131E871DA498CB7C5AD4", hash_generated_method = "D073FDDFD7FBF12C555FC951ED779510")
+    /**
+     * Match cookie domain attribute.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:20.683 -0500", hash_original_method = "C7211512AD90131E871DA498CB7C5AD4", hash_generated_method = "DA584F5F25762FF40F97F84C56ADD308")
     public boolean match(final Cookie cookie, final CookieOrigin origin) {
-        addTaint(origin.getTaint());
-        addTaint(cookie.getTaint());
-        if(cookie == null)        
-        {
-            IllegalArgumentException varFBA11BCFA12F6CB336E0E79489ED6755_1819792702 = new IllegalArgumentException("Cookie may not be null");
-            varFBA11BCFA12F6CB336E0E79489ED6755_1819792702.addTaint(taint);
-            throw varFBA11BCFA12F6CB336E0E79489ED6755_1819792702;
-        } //End block
-        if(origin == null)        
-        {
-            IllegalArgumentException var4264914F0057BA70A0B3E6621821A095_1965718708 = new IllegalArgumentException("Cookie origin may not be null");
-            var4264914F0057BA70A0B3E6621821A095_1965718708.addTaint(taint);
-            throw var4264914F0057BA70A0B3E6621821A095_1965718708;
-        } //End block
+        if (cookie == null) {
+            throw new IllegalArgumentException("Cookie may not be null");
+        }
+        if (origin == null) {
+            throw new IllegalArgumentException("Cookie origin may not be null");
+        }
         String host = origin.getHost().toLowerCase(Locale.ENGLISH);
         String cookieDomain = cookie.getDomain();
-        if(!domainMatch(host, cookieDomain))        
-        {
-            boolean var68934A3E9455FA72420237EB05902327_1448799962 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_345073018 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_345073018;
-        } //End block
+
+        // The effective host name MUST domain-match the Domain
+        // attribute of the cookie.
+        if (!domainMatch(host, cookieDomain)) {
+            return false;
+        }
+        // effective host name minus domain must not contain any dots
         String effectiveHostWithoutDomain = host.substring(
                 0, host.length() - cookieDomain.length());
-        boolean var5FF3295C6ADEE0E2D54C2A459817174D_1745292865 = (effectiveHostWithoutDomain.indexOf('.') == -1);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1652992215 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1652992215;
-        // ---------- Original Method ----------
-        //if (cookie == null) {
-            //throw new IllegalArgumentException("Cookie may not be null");
-        //}
-        //if (origin == null) {
-            //throw new IllegalArgumentException("Cookie origin may not be null");
-        //}
-        //String host = origin.getHost().toLowerCase(Locale.ENGLISH);
-        //String cookieDomain = cookie.getDomain();
-        //if (!domainMatch(host, cookieDomain)) {
-            //return false;
-        //}
-        //String effectiveHostWithoutDomain = host.substring(
-                //0, host.length() - cookieDomain.length());
-        //return effectiveHostWithoutDomain.indexOf('.') == -1;
+        return effectiveHostWithoutDomain.indexOf('.') == -1;
     }
 
     

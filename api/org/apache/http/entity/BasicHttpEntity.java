@@ -1,6 +1,8 @@
 package org.apache.http.entity;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.InputStream;
@@ -12,152 +14,117 @@ import java.io.OutputStream;
 
 
 public class BasicHttpEntity extends AbstractHttpEntity {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.211 -0400", hash_original_field = "9A0364B9E99BB480DD25E1F0284C8555", hash_generated_field = "E10265C22C3282384A3FF9B20A322BFE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.567 -0500", hash_original_field = "843941CC0104424A71E5291E659CC007", hash_generated_field = "E10265C22C3282384A3FF9B20A322BFE")
+
 
     private InputStream content;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.212 -0400", hash_original_field = "516B89C2901255DCB4FAEF46CBC2D6CE", hash_generated_field = "F83D62FF33880A5C9450BAF66AEC5A3C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.568 -0500", hash_original_field = "119C40B1C90EE8408989DFB3E8902B9E", hash_generated_field = "F83D62FF33880A5C9450BAF66AEC5A3C")
 
     private boolean contentObtained;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.212 -0400", hash_original_field = "2FA47F7C65FEC19CC163B195725E3844", hash_generated_field = "C62D106264E132930C7955708C9A9CDD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.569 -0500", hash_original_field = "D634AAE75ADF86F4EAAC1CC85A8379F4", hash_generated_field = "C62D106264E132930C7955708C9A9CDD")
 
     private long length;
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.212 -0400", hash_original_method = "6C56C11F8A570F150FD118B6F4CE07D0", hash_generated_method = "422F155C0F38937E2C1FE41DC8DFE07C")
-    public  BasicHttpEntity() {
+
+    /**
+     * Creates a new basic entity.
+     * The content is initially missing, the content length
+     * is set to a negative number.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.570 -0500", hash_original_method = "6C56C11F8A570F150FD118B6F4CE07D0", hash_generated_method = "BAC7665F566F0E3CFE16276162A7B9FB")
+    public BasicHttpEntity() {
         super();
         this.length = -1;
-        // ---------- Original Method ----------
-        //this.length = -1;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.213 -0400", hash_original_method = "120309BFFDD6935F8B30886147626A04", hash_generated_method = "27FBF73D0A425974E9305A980EB7AF5D")
+    // non-javadoc, see interface HttpEntity
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.570 -0500", hash_original_method = "120309BFFDD6935F8B30886147626A04", hash_generated_method = "9233A3153FC331D80C5DADB9AF36C94A")
     public long getContentLength() {
-        long varB9E8DC303FCECCA10418D2C0EA295E0F_1313012765 = (this.length);
-                long var0F5264038205EDFB1AC05FBB0E8C5E94_1051295442 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_1051295442;
-        // ---------- Original Method ----------
-        //return this.length;
+        return this.length;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.214 -0400", hash_original_method = "DD43DF1BE34625633489098C75403E56", hash_generated_method = "12D8D80225BA20429A74E10B41551D26")
-    public InputStream getContent() throws IllegalStateException {
-        if(this.content == null)        
-        {
-            IllegalStateException varEB19220DAA75124884B5A5F0A5B1358C_251401274 = new IllegalStateException("Content has not been provided");
-            varEB19220DAA75124884B5A5F0A5B1358C_251401274.addTaint(taint);
-            throw varEB19220DAA75124884B5A5F0A5B1358C_251401274;
-        } //End block
-        if(this.contentObtained)        
-        {
-            IllegalStateException var55F452EC1C6805B1D6D5FE9B207E920E_1951382377 = new IllegalStateException("Content has been consumed");
-            var55F452EC1C6805B1D6D5FE9B207E920E_1951382377.addTaint(taint);
-            throw var55F452EC1C6805B1D6D5FE9B207E920E_1951382377;
-        } //End block
+    /**
+     * Obtains the content, once only.
+     *
+     * @return  the content, if this is the first call to this method
+     *          since {@link #setContent setContent} has been called
+     *
+     * @throws IllegalStateException
+     *          if the content has been obtained before, or
+     *          has not yet been provided
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.571 -0500", hash_original_method = "DD43DF1BE34625633489098C75403E56", hash_generated_method = "7699A858A6F34F95A95A5ED2ACB23D2A")
+    public InputStream getContent()
+        throws IllegalStateException {
+        if (this.content == null) {
+            throw new IllegalStateException("Content has not been provided");
+        }
+        if (this.contentObtained) {
+            throw new IllegalStateException("Content has been consumed");
+        }
         this.contentObtained = true;
-InputStream var5B4E22E160A1A738CCEDC8C85B064397_108912998 =         this.content;
-        var5B4E22E160A1A738CCEDC8C85B064397_108912998.addTaint(taint);
-        return var5B4E22E160A1A738CCEDC8C85B064397_108912998;
-        // ---------- Original Method ----------
-        //if (this.content == null) {
-            //throw new IllegalStateException("Content has not been provided");
-        //}
-        //if (this.contentObtained) {
-            //throw new IllegalStateException("Content has been consumed");
-        //}
-        //this.contentObtained = true;
-        //return this.content;
-    }
+        return this.content;
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.215 -0400", hash_original_method = "731D88F5D8865617BA362DCED4C30896", hash_generated_method = "68D0E7879B03AD49C80B4B64BD4597ED")
+    } // getContent
+
+    /**
+     * Tells that this entity is not repeatable.
+     *
+     * @return <code>false</code>
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.572 -0500", hash_original_method = "731D88F5D8865617BA362DCED4C30896", hash_generated_method = "ED09A364E94A90F3E23A91DCC44E26ED")
     public boolean isRepeatable() {
-        boolean var68934A3E9455FA72420237EB05902327_1954725328 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_223029963 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_223029963;
-        // ---------- Original Method ----------
-        //return false;
+        return false;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.216 -0400", hash_original_method = "7EB1D34B8B79AC60227ACAB040078324", hash_generated_method = "727B385E1B6CC2143FAFA858B4B3D854")
+    /**
+     * Specifies the length of the content.
+     *
+     * @param len       the number of bytes in the content, or
+     *                  a negative number to indicate an unknown length
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.573 -0500", hash_original_method = "7EB1D34B8B79AC60227ACAB040078324", hash_generated_method = "3D5AD3090F1BED846E401D03345506C8")
     public void setContentLength(long len) {
         this.length = len;
-        // ---------- Original Method ----------
-        //this.length = len;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.218 -0400", hash_original_method = "9243F298C9B144B2EDE1C1ED14CD424D", hash_generated_method = "5E27285ED6D5A57AA981DC542F0CB0AA")
+    /**
+     * Specifies the content.
+     *
+     * @param instream          the stream to return with the next call to
+     *                          {@link #getContent getContent}
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.574 -0500", hash_original_method = "9243F298C9B144B2EDE1C1ED14CD424D", hash_generated_method = "0D95F348D6A917F106467B43DB8F66AF")
     public void setContent(final InputStream instream) {
         this.content = instream;
-        this.contentObtained = false;
-        // ---------- Original Method ----------
-        //this.content = instream;
-        //this.contentObtained = false;
+        this.contentObtained = false; 
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.219 -0400", hash_original_method = "4D2C7455ACC84C8F2AC9220CC460CB0C", hash_generated_method = "38DEA44FDD7AADB0ADBAC42C8E64E3E2")
+    // non-javadoc, see interface HttpEntity
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.575 -0500", hash_original_method = "4D2C7455ACC84C8F2AC9220CC460CB0C", hash_generated_method = "B209F48EC677326409BDAA732C0F6E8F")
     public void writeTo(final OutputStream outstream) throws IOException {
-        addTaint(outstream.getTaint());
-        if(outstream == null)        
-        {
-            IllegalArgumentException var8C9256F172D6E7DD26CC6F974ABC4716_306105825 = new IllegalArgumentException("Output stream may not be null");
-            var8C9256F172D6E7DD26CC6F974ABC4716_306105825.addTaint(taint);
-            throw var8C9256F172D6E7DD26CC6F974ABC4716_306105825;
-        } //End block
+        if (outstream == null) {
+            throw new IllegalArgumentException("Output stream may not be null");
+        }
         InputStream instream = getContent();
         int l;
         byte[] tmp = new byte[2048];
-        while
-((l = instream.read(tmp)) != -1)        
-        {
+        while ((l = instream.read(tmp)) != -1) {
             outstream.write(tmp, 0, l);
-        } //End block
-        // ---------- Original Method ----------
-        //if (outstream == null) {
-            //throw new IllegalArgumentException("Output stream may not be null");
-        //}
-        //InputStream instream = getContent();
-        //int l;
-        //byte[] tmp = new byte[2048];
-        //while ((l = instream.read(tmp)) != -1) {
-            //outstream.write(tmp, 0, l);
-        //}
+        }
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.220 -0400", hash_original_method = "12B60AB15F5876110075CCE154554A33", hash_generated_method = "585352E6141CCFE6ADE5FB8E059AA47D")
+    // non-javadoc, see interface HttpEntity
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.576 -0500", hash_original_method = "12B60AB15F5876110075CCE154554A33", hash_generated_method = "62D6BCD73FD07EE361228FB277D73AFB")
     public boolean isStreaming() {
-        boolean varB5BC9C92D105767A96B2D82FEBEBBB3B_2124171490 = (!this.contentObtained && this.content != null);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1156344756 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1156344756;
-        // ---------- Original Method ----------
-        //return !this.contentObtained && this.content != null;
+        return !this.contentObtained && this.content != null;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.221 -0400", hash_original_method = "DCFF80E870BC55BBCCB28CB7928D312B", hash_generated_method = "5478524E96912DE3DA4F0CACC6449FE5")
+    // non-javadoc, see interface HttpEntity
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.577 -0500", hash_original_method = "DCFF80E870BC55BBCCB28CB7928D312B", hash_generated_method = "163C0982C54CF0B305B40E6C89151E83")
     public void consumeContent() throws IOException {
-        if(content != null)        
-        {
-            content.close();
-        } //End block
-        // ---------- Original Method ----------
-        //if (content != null) {
-            //content.close(); 
-        //}
+        if (content != null) {
+            content.close(); // reads to the end of the entity
+        }
     }
 
     

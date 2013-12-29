@@ -1,6 +1,8 @@
 package android.view.animation;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.content.Context;
 import android.util.AttributeSet;
@@ -9,67 +11,33 @@ import android.util.AttributeSet;
 
 
 public class BounceInterpolator implements Interpolator {
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.886 -0400", hash_original_method = "D77038D4E75CFBDE4153E26F51FE597B", hash_generated_method = "BCAE75B7B1877E5388B55FDFCF96BAFF")
-    @DSModeled(DSC.SAFE)
-    public  BounceInterpolator() {
-        // ---------- Original Method ----------
-    }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.886 -0400", hash_original_method = "9DB8C06C387D34AE8BE8067DF59B6EF4", hash_generated_method = "367E2A2CCA9D6836860359C23DC3276A")
-    @SuppressWarnings({"UnusedDeclaration"})
-    @DSModeled(DSC.SAFE)
-    public  BounceInterpolator(Context context, AttributeSet attrs) {
-        addTaint(attrs.getTaint());
-        addTaint(context.getTaint());
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSModeled(DSC.BAN)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.234 -0500", hash_original_method = "CF1B738C3C29A998D09201CEFD64B6C7", hash_generated_method = "D71225CF7859E1919935DA421FBB23A0")
     private static float bounce(float t) {
         return t * t * 8.0f;
     }
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.232 -0500", hash_original_method = "D77038D4E75CFBDE4153E26F51FE597B", hash_generated_method = "6C70A431107080396FEEE77824D013BB")
+    public BounceInterpolator() {
+    }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.887 -0400", hash_original_method = "41D2E1F4122985CE507D75E33078C1B7", hash_generated_method = "B539C272E37B3D15228B1B3273E82AA9")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.233 -0500", hash_original_method = "9DB8C06C387D34AE8BE8067DF59B6EF4", hash_generated_method = "F33E65D7C53CE9B32D7FB02B3016CDA6")
+    @SuppressWarnings({"UnusedDeclaration"})
+public BounceInterpolator(Context context, AttributeSet attrs) {
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:27.235 -0500", hash_original_method = "41D2E1F4122985CE507D75E33078C1B7", hash_generated_method = "90ED175F687447FA6DACA97109F45F44")
     public float getInterpolation(float t) {
-        addTaint(t);
+        // _b(t) = t * t * 8
+        // bs(t) = _b(t) for t < 0.3535
+        // bs(t) = _b(t - 0.54719) + 0.7 for t < 0.7408
+        // bs(t) = _b(t - 0.8526) + 0.9 for t < 0.9644
+        // bs(t) = _b(t - 1.0435) + 0.95 for t <= 1.0
+        // b(t) = bs(t * 1.1226)
         t *= 1.1226f;
-        if(t < 0.3535f)        
-        {
-        float var69B7F5DCE725939B9EF4B0DC9CBDA765_1280548708 = (bounce(t));
-                float var546ADE640B6EDFBC8A086EF31347E768_1620158725 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_1620158725;
-        }
-        else
-        if(t < 0.7408f)        
-        {
-        float var836793277504BE03007E73B9A2D7A278_491485759 = (bounce(t - 0.54719f) + 0.7f);
-                float var546ADE640B6EDFBC8A086EF31347E768_726333903 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_726333903;
-        }
-        else
-        if(t < 0.9644f)        
-        {
-        float var6233C0D320F4F3C000E77EB15F66B744_54284139 = (bounce(t - 0.8526f) + 0.9f);
-                float var546ADE640B6EDFBC8A086EF31347E768_1042384618 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_1042384618;
-        }
-        else
-        {
-        float var8641DFECEBCA7BCD9A4E0AD768D5677E_1257795006 = (bounce(t - 1.0435f) + 0.95f);
-                float var546ADE640B6EDFBC8A086EF31347E768_207771630 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_207771630;
-        }
-        // ---------- Original Method ----------
-        //t *= 1.1226f;
-        //if (t < 0.3535f) return bounce(t);
-        //else if (t < 0.7408f) return bounce(t - 0.54719f) + 0.7f;
-        //else if (t < 0.9644f) return bounce(t - 0.8526f) + 0.9f;
-        //else return bounce(t - 1.0435f) + 0.95f;
+        if (t < 0.3535f) return bounce(t);
+        else if (t < 0.7408f) return bounce(t - 0.54719f) + 0.7f;
+        else if (t < 0.9644f) return bounce(t - 0.8526f) + 0.9f;
+        else return bounce(t - 1.0435f) + 0.95f;
     }
 
     

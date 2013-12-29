@@ -1,6 +1,8 @@
 package org.apache.harmony.security.provider.crypto;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -16,437 +18,526 @@ import libcore.util.EmptyArray;
 
 
 public class SHA1PRNG_SecureRandomImpl extends SecureRandomSpi implements Serializable, SHA1_Data {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.338 -0400", hash_original_field = "FE4C0F30AA359C41D9F9A5F69C8C4192", hash_generated_field = "B094937ADDF13116DE9FAD14BAA3CD5D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:08.957 -0500", hash_original_field = "6F03A5AC2EC741E6E21992044EC9E20A", hash_generated_field = "0572D6ADF8B4E59E97C497432F887795")
 
+
+    private static final long serialVersionUID = 283736797212159675L;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:08.958 -0500", hash_original_field = "60A82CC01099C7BAF874DAE854BC3873", hash_generated_field = "0F1C325B708C29F28B9D69D7577CC406")
+
+    // END_FLAGS - final bytes in words to append to message;
+    //             see "ch.5.1 Padding the Message, FIPS 180-2"
+    // RIGHT1    - shifts to right for left half of long
+    // RIGHT2    - shifts to right for right half of long
+    // LEFT      - shifts to left for bytes
+    // MASK      - mask to select counter's bytes after shift to right
+
+    private static final int[] END_FLAGS = { 0x80000000, 0x800000, 0x8000, 0x80 };
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:08.959 -0500", hash_original_field = "A3597CAB9F9B70F78CB01E1E962409FE", hash_generated_field = "5C807BEE19CE765B4317F673B97DF948")
+
+
+    private static final int[] RIGHT1 = { 0, 40, 48, 56 };
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:08.959 -0500", hash_original_field = "B5DF17BA81F90ACA0C2CCF658BE65002", hash_generated_field = "EAE2B62B1EF3A743512A0964184AADD2")
+
+
+    private static final int[] RIGHT2 = { 0, 8, 16, 24 };
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:08.960 -0500", hash_original_field = "B6787AC593801E247278B20C503DAC3A", hash_generated_field = "B0E4A4E8E92603834DE04BB669F210A3")
+
+
+    private static final int[] LEFT = { 0, 24, 16, 8 };
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:08.961 -0500", hash_original_field = "4BA2F89887BE125CE4FDA3872EB2FB82", hash_generated_field = "5ED2E9AA85783BAD621E242DDC93B094")
+
+
+    private static final int[] MASK = { 0xFFFFFFFF, 0x00FFFFFF, 0x0000FFFF,
+            0x000000FF };
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:08.962 -0500", hash_original_field = "C7AD854AF7070C51A14A14E85D47CF39", hash_generated_field = "DE929ED7A1883F2A024A60E49078ACF1")
+
+    // to use to form byte array returning by the "nextBytes(byte[])" method
+    // Note, that this implementation uses more bytes than it is defined
+    // in the above specification.
+    private static final int HASHBYTES_TO_USE = 20;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:08.963 -0500", hash_original_field = "6B29BD59424A4F1C1A2F836F9DBF6862", hash_generated_field = "7E064B495B5339B29C44E33FD9B2BEB9")
+
+    private static final int FRAME_LENGTH = 16;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:08.964 -0500", hash_original_field = "66BFF3251C2507D6E7BB7AB2E27CF8C0", hash_generated_field = "F9A61A72C3D0AC9C2EB4D43A646C66D3")
+
+    // COUNTER_BASE - initial value to set to "counter" before computing "nextBytes(..)";
+    //                note, that the exact value is not defined in STANDARD
+    // HASHCOPY_OFFSET   - offset for copy of current hash in "copies" array
+    // EXTRAFRAME_OFFSET - offset for extra frame in "copies" array;
+    //                     as the extra frame follows the current hash frame,
+    //                     EXTRAFRAME_OFFSET is equal to length of current hash frame
+    // FRAME_OFFSET      - offset for frame in "copies" array
+    // MAX_BYTES - maximum # of seed bytes processing which doesn't require extra frame
+    //             see (1) comments on usage of "seed" array below and
+    //             (2) comments in "engineNextBytes(byte[])" method
+    //
+    // UNDEFINED  - three states of engine; initially its state is "UNDEFINED"
+    // SET_SEED     call to "engineSetSeed"  sets up "SET_SEED" state,
+    // NEXT_BYTES   call to "engineNextByte" sets up "NEXT_BYTES" state
+
+    private static final int COUNTER_BASE = 0;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:08.965 -0500", hash_original_field = "D91CE7754FB2AAD93BB2ED44153EDD46", hash_generated_field = "FC08696CCFA3EE206632295D5608E52A")
+
+
+    private static final int HASHCOPY_OFFSET = 0;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:08.966 -0500", hash_original_field = "50763DBF508EAE5AC2FA012522F30F0E", hash_generated_field = "BDC895B0D82A3B69363AB3B21E484915")
+
+
+    private static final int EXTRAFRAME_OFFSET = 5;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:08.966 -0500", hash_original_field = "CE1D88E6ACC97EF54DFCB7F7C36E5635", hash_generated_field = "D124EA7B91A1E166C74CB5971C4654D2")
+
+
+    private static final int FRAME_OFFSET = 21;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:08.967 -0500", hash_original_field = "C5089646A7A1EABB39E57DED21CF5BE3", hash_generated_field = "16F5CCEF9F3F7B3A8F222B597A35CCA0")
+
+
+    private static final int MAX_BYTES = 48;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:08.968 -0500", hash_original_field = "76543FBD60BDE03E72033EDE3CFE4116", hash_generated_field = "0DF11F4AAB291BF53347A9E765D366AE")
+
+
+    private static final int UNDEFINED = 0;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:08.969 -0500", hash_original_field = "1CE9ED40DD56F00D2B174CD7ADC11648", hash_generated_field = "70F1EFD63BAB99FD438DDC5003389359")
+
+
+    private static final int SET_SEED = 1;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:08.970 -0500", hash_original_field = "2C5DE8B3C43DC2FBE7D337554C2BEC79", hash_generated_field = "C7803B16145BE4E5D1B39E398B4A7566")
+
+
+    private static final int NEXT_BYTES = 2;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:08.971 -0500", hash_original_field = "5B4AC7C3AA889606B4A9C7B25C35A4FF", hash_generated_field = "8D0E7E89B95D023E9161984B3CF40ACF")
+
+
+    private static SHA1PRNG_SecureRandomImpl myRandom;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:08.972 -0500", hash_original_field = "3900C177E5826B2C8E23E54E341EEF94", hash_generated_field = "3A8DBD8D358FE4BE848C2D6E312D8C3C")
+
+    // -  0-79 - words for computing hash
+    // - 80    - unused
+    // - 81    - # of seed bytes in current seed frame
+    // - 82-86 - 5 words, current seed hash
     private transient int[] seed;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.338 -0400", hash_original_field = "CE211E4030A8C050B5CC31371D5C80BC", hash_generated_field = "83E016BC8F9F281AEFFD444105646AA9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:08.972 -0500", hash_original_field = "FAC6A0DA8B0258B2B15A534742CE3D6A", hash_generated_field = "83E016BC8F9F281AEFFD444105646AA9")
 
     private transient long seedLength;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.338 -0400", hash_original_field = "BD0B3E6E8D0A4CF50D9E38ED509F257C", hash_generated_field = "78593073E9936326F6808A5236681E64")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:08.973 -0500", hash_original_field = "A81CEEC5472639ECC84F1FA5C2337026", hash_generated_field = "E24484E69995031206F55EC230493B85")
 
+    // -  0-4  - 5 words, copy of current seed hash
+    // -  5-20 - extra 16 words frame;
+    //           is used if  padding exceeds 512-bit length
+    // - 21-36 - 16 word frame to store a copy of remaining bytes
     private transient int[] copies;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.338 -0400", hash_original_field = "9263E454B590D054967AC20F8B4CEA0B", hash_generated_field = "0965AA7A7376EC05762FAF3451426E68")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:08.974 -0500", hash_original_field = "7F0303B8B69315B79F1443224FFA24C1", hash_generated_field = "0965AA7A7376EC05762FAF3451426E68")
 
     private transient byte[] nextBytes;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.338 -0400", hash_original_field = "6DD1000EFE672064A34C31FB5DA56EDA", hash_generated_field = "E17BB00B83C020C7021F5FEF67FD5BB0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:08.975 -0500", hash_original_field = "A29F62382E3D6283344824E4B617CE0D", hash_generated_field = "E17BB00B83C020C7021F5FEF67FD5BB0")
 
     private transient int nextBIndex;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.338 -0400", hash_original_field = "886BB73B3156B0AA24AAC99D2DE0B238", hash_generated_field = "AD2EEEFD65883FBF954D83EC27AF4609")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:08.976 -0500", hash_original_field = "D55B002A6A8F37CC045F356950CAB689", hash_generated_field = "AD2EEEFD65883FBF954D83EC27AF4609")
 
     private transient long counter;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.339 -0400", hash_original_field = "9ED39E2EA931586B6A985A6942EF573E", hash_generated_field = "83BF4AAE59CAAA48C8661EF5F4399BE3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:08.977 -0500", hash_original_field = "962E680994F097CBCF73193974918C63", hash_generated_field = "83BF4AAE59CAAA48C8661EF5F4399BE3")
 
     private transient int state;
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.340 -0400", hash_original_method = "D644E56206842370DC4588BE79799AE3", hash_generated_method = "7CC69FE4B2EBF55A1C1DCB7DE02B3CF2")
-    public  SHA1PRNG_SecureRandomImpl() {
+
+    // The "seed" array is used to compute both "current seed hash" and "next bytes".
+    //
+    // As the "SHA1" algorithm computes a hash of entire seed by splitting it into
+    // a number of the 512-bit length frames (512 bits = 64 bytes = 16 words),
+    // "current seed hash" is a hash (5 words, 20 bytes) for all previous full frames;
+    // remaining bytes are stored in the 0-15 word frame of the "seed" array.
+    //
+    // As for calculating "next bytes",
+    // both remaining bytes and "current seed hash" are used,
+    // to preserve the latter for following "setSeed(..)" commands,
+    // the following technique is used:
+    // - upon getting "nextBytes(byte[])" invoked, single or first in row,
+    //   which requires computing new hash, that is,
+    //   there is no more bytes remaining from previous "next bytes" computation,
+    //   remaining bytes are copied into the 21-36 word frame of the "copies" array;
+    // - upon getting "setSeed(byte[])" invoked, single or first in row,
+    //   remaining bytes are copied back.
+
+    /**
+     *  Creates object and sets implementation variables to their initial values
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:08.978 -0500", hash_original_method = "D644E56206842370DC4588BE79799AE3", hash_generated_method = "DF9C009961D95E0DC22956E98C1707F5")
+    public SHA1PRNG_SecureRandomImpl() {
+
         seed = new int[HASH_OFFSET + EXTRAFRAME_OFFSET];
         seed[HASH_OFFSET] = H0;
         seed[HASH_OFFSET + 1] = H1;
         seed[HASH_OFFSET + 2] = H2;
         seed[HASH_OFFSET + 3] = H3;
         seed[HASH_OFFSET + 4] = H4;
+
         seedLength = 0;
         copies = new int[2 * FRAME_LENGTH + EXTRAFRAME_OFFSET];
         nextBytes = new byte[DIGEST_LENGTH];
         nextBIndex = HASHBYTES_TO_USE;
         counter = COUNTER_BASE;
         state = UNDEFINED;
-        // ---------- Original Method ----------
-        //seed = new int[HASH_OFFSET + EXTRAFRAME_OFFSET];
-        //seed[HASH_OFFSET] = H0;
-        //seed[HASH_OFFSET + 1] = H1;
-        //seed[HASH_OFFSET + 2] = H2;
-        //seed[HASH_OFFSET + 3] = H3;
-        //seed[HASH_OFFSET + 4] = H4;
-        //seedLength = 0;
-        //copies = new int[2 * FRAME_LENGTH + EXTRAFRAME_OFFSET];
-        //nextBytes = new byte[DIGEST_LENGTH];
-        //nextBIndex = HASHBYTES_TO_USE;
-        //counter = COUNTER_BASE;
-        //state = UNDEFINED;
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.341 -0400", hash_original_method = "71D119B7F725F786DBF6F5411B9162C3", hash_generated_method = "9A1FE8C53E30A0D9CF70D743789E86B0")
+    /*
+     * The method invokes the SHA1Impl's "updateHash(..)" method
+     * to update current seed frame and
+     * to compute new intermediate hash value if the frame is full.
+     *
+     * After that it computes a length of whole seed.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:08.979 -0500", hash_original_method = "71D119B7F725F786DBF6F5411B9162C3", hash_generated_method = "4A1195A2F6F98D960D738679187CC73C")
     private void updateSeed(byte[] bytes) {
+
+        // on call:   "seed" contains current bytes and current hash;
+        // on return: "seed" contains new current bytes and possibly new current hash
+        //            if after adding, seed bytes overfill its buffer
         SHA1Impl.updateHash(seed, bytes, 0, bytes.length - 1);
+
         seedLength += bytes.length;
-        // ---------- Original Method ----------
-        //SHA1Impl.updateHash(seed, bytes, 0, bytes.length - 1);
-        //seedLength += bytes.length;
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.341 -0400", hash_original_method = "D3CE71F13CE971E436333BDFEF7BBD46", hash_generated_method = "FD585A63D380F9C2C22B0A82308A4C40")
+    /**
+     * Changes current seed by supplementing a seed argument to the current seed,
+     * if this already set;
+     * the argument is used as first seed otherwise. <BR>
+     *
+     * The method overrides "engineSetSeed(byte[])" in class SecureRandomSpi.
+     *
+     * @param
+     *       seed - byte array
+     * @throws
+     *       NullPointerException - if null is passed to the "seed" argument
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:08.980 -0500", hash_original_method = "D3CE71F13CE971E436333BDFEF7BBD46", hash_generated_method = "A6D87286F5C72C2CE859A3AB5D36EB41")
     protected synchronized void engineSetSeed(byte[] seed) {
-        addTaint(seed[0]);
-        if(seed == null)        
-        {
-            NullPointerException var91E2D027EF6F7455354513F6F22E96DB_567389489 = new NullPointerException("seed == null");
-            var91E2D027EF6F7455354513F6F22E96DB_567389489.addTaint(taint);
-            throw var91E2D027EF6F7455354513F6F22E96DB_567389489;
-        } //End block
-        if(state == NEXT_BYTES)        
-        {
+
+        if (seed == null) {
+            throw new NullPointerException("seed == null");
+        }
+
+        if (state == NEXT_BYTES) { // first setSeed after NextBytes; restoring hash
             System.arraycopy(copies, HASHCOPY_OFFSET, this.seed, HASH_OFFSET,
                     EXTRAFRAME_OFFSET);
-        } //End block
+        }
         state = SET_SEED;
-        if(seed.length != 0)        
-        {
+
+        if (seed.length != 0) {
             updateSeed(seed);
-        } //End block
-        // ---------- Original Method ----------
-        //if (seed == null) {
-            //throw new NullPointerException("seed == null");
-        //}
-        //if (state == NEXT_BYTES) { 
-            //System.arraycopy(copies, HASHCOPY_OFFSET, this.seed, HASH_OFFSET,
-                    //EXTRAFRAME_OFFSET);
-        //}
-        //state = SET_SEED;
-        //if (seed.length != 0) {
-            //updateSeed(seed);
-        //}
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.342 -0400", hash_original_method = "DD8EBB0EDF44ABE263687E4C98AB74A0", hash_generated_method = "A1EBF634C212D15A1285D3C24532FAFB")
+    /**
+     * Returns a required number of random bytes. <BR>
+     *
+     * The method overrides "engineGenerateSeed (int)" in class SecureRandomSpi. <BR>
+     *
+     * @param
+     *       numBytes - number of bytes to return; should be >= 0.
+     * @return
+     *       byte array containing bits in order from left to right
+     * @throws
+     *       InvalidParameterException - if numBytes < 0
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:08.981 -0500", hash_original_method = "DD8EBB0EDF44ABE263687E4C98AB74A0", hash_generated_method = "DF02DED43394811F487DC203A1224014")
     protected synchronized byte[] engineGenerateSeed(int numBytes) {
-        addTaint(numBytes);
-        byte[] myBytes;
-        if(numBytes < 0)        
-        {
-            NegativeArraySizeException var25A5802857ABADBB4CC662EF60F6DB0F_73995072 = new NegativeArraySizeException(Integer.toString(numBytes));
-            var25A5802857ABADBB4CC662EF60F6DB0F_73995072.addTaint(taint);
-            throw var25A5802857ABADBB4CC662EF60F6DB0F_73995072;
-        } //End block
-        if(numBytes == 0)        
-        {
-            byte[] varA5FACF7093451CD76BBFDE3F1270A007_1153738746 = (EmptyArray.BYTE);
-                        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1863348029 = {getTaintByte()};
-            return var2F9C81BC6E497382285CD6B7A7E33DE1_1863348029;
-        } //End block
-        if(myRandom == null)        
-        {
+
+        byte[] myBytes; // byte[] for bytes returned by "nextBytes()"
+
+        if (numBytes < 0) {
+            throw new NegativeArraySizeException(Integer.toString(numBytes));
+        }
+        if (numBytes == 0) {
+            return EmptyArray.BYTE;
+        }
+
+        if (myRandom == null) {
             myRandom = new SHA1PRNG_SecureRandomImpl();
             myRandom.engineSetSeed(RandomBitsSupplier.getRandomBits(DIGEST_LENGTH));
-        } //End block
+        }
+
         myBytes = new byte[numBytes];
         myRandom.engineNextBytes(myBytes);
-        byte[] var2C2E26CFEF0DBC60A75850CFEAF26170_2078396928 = (myBytes);
-                byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1147844999 = {getTaintByte()};
-        return var2F9C81BC6E497382285CD6B7A7E33DE1_1147844999;
-        // ---------- Original Method ----------
-        //byte[] myBytes;
-        //if (numBytes < 0) {
-            //throw new NegativeArraySizeException(Integer.toString(numBytes));
-        //}
-        //if (numBytes == 0) {
-            //return EmptyArray.BYTE;
-        //}
-        //if (myRandom == null) {
-            //myRandom = new SHA1PRNG_SecureRandomImpl();
-            //myRandom.engineSetSeed(RandomBitsSupplier.getRandomBits(DIGEST_LENGTH));
-        //}
-        //myBytes = new byte[numBytes];
-        //myRandom.engineNextBytes(myBytes);
-        //return myBytes;
+
+        return myBytes;
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.348 -0400", hash_original_method = "788172F4432069DD19F6D1F4ED0FDE85", hash_generated_method = "FA7979DAAD41EF15D23BDD1F28156A50")
+    /**
+     * Writes random bytes into an array supplied.
+     * Bits in a byte are from left to right. <BR>
+     *
+     * To generate random bytes, the "expansion of source bits" method is used,
+     * that is,
+     * the current seed with a 64-bit counter appended is used to compute new bits.
+     * The counter is incremented by 1 for each 20-byte output. <BR>
+     *
+     * The method overrides engineNextBytes in class SecureRandomSpi.
+     *
+     * @param
+     *       bytes - byte array to be filled in with bytes
+     * @throws
+     *       NullPointerException - if null is passed to the "bytes" argument
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:08.983 -0500", hash_original_method = "788172F4432069DD19F6D1F4ED0FDE85", hash_generated_method = "B16D1BB8705D157654A596714DBB3827")
     protected synchronized void engineNextBytes(byte[] bytes) {
-        addTaint(bytes[0]);
-        int i;
-        int n;
-        long bits;
-        int nextByteToReturn;
-        int lastWord;
-        final int extrabytes = 7;
-        if(bytes == null)        
-        {
-            NullPointerException var6B6BA83D30F7A6E7B52CC4D5AE8D2254_387529600 = new NullPointerException("bytes == null");
-            var6B6BA83D30F7A6E7B52CC4D5AE8D2254_387529600.addTaint(taint);
-            throw var6B6BA83D30F7A6E7B52CC4D5AE8D2254_387529600;
-        } //End block
+
+        int i, n;
+
+        long bits; // number of bits required by Secure Hash Standard
+        int nextByteToReturn; // index of ready bytes in "bytes" array
+        int lastWord; // index of last word in frame containing bytes
+        final int extrabytes = 7;// # of bytes to add in order to computer # of 8 byte words
+
+        if (bytes == null) {
+            throw new NullPointerException("bytes == null");
+        }
+
         lastWord = seed[BYTES_OFFSET] == 0 ? 0
                 : (seed[BYTES_OFFSET] + extrabytes) >> 3 - 1;
-        if(state == UNDEFINED)        
-        {
+
+        if (state == UNDEFINED) {
+
+            // no seed supplied by user, hence it is generated thus randomizing internal state
             updateSeed(RandomBitsSupplier.getRandomBits(DIGEST_LENGTH));
             nextBIndex = HASHBYTES_TO_USE;
-        } //End block
-        else
-        if(state == SET_SEED)        
-        {
+
+        } else if (state == SET_SEED) {
+
             System.arraycopy(seed, HASH_OFFSET, copies, HASHCOPY_OFFSET,
                     EXTRAFRAME_OFFSET);
-for(i = lastWord + 3;i < FRAME_LENGTH + 2;i++)
-            {
+
+            // possible cases for 64-byte frame:
+            //
+            // seed bytes < 48      - remaining bytes are enough for all, 8 counter bytes,
+            //                        0x80, and 8 seedLength bytes; no extra frame required
+            // 48 < seed bytes < 56 - remaining 9 bytes are for 0x80 and 8 counter bytes
+            //                        extra frame contains only seedLength value at the end
+            // seed bytes > 55      - extra frame contains both counter's bytes
+            //                        at the beginning and seedLength value at the end;
+            //                        note, that beginning extra bytes are not more than 8,
+            //                        that is, only 2 extra words may be used
+
+            // no need to set to "0" 3 words after "lastWord" and
+            // more than two words behind frame
+            for (i = lastWord + 3; i < FRAME_LENGTH + 2; i++) {
                 seed[i] = 0;
-            } //End block
-            bits = (seedLength << 3) + 64;
-            if(seed[BYTES_OFFSET] < MAX_BYTES)            
-            {
+            }
+
+            bits = (seedLength << 3) + 64; // transforming # of bytes into # of bits
+
+            // putting # of bits into two last words (14,15) of 16 word frame in
+            // seed or copies array depending on total length after padding
+            if (seed[BYTES_OFFSET] < MAX_BYTES) {
                 seed[14] = (int) (bits >>> 32);
                 seed[15] = (int) (bits & 0xFFFFFFFF);
-            } //End block
-            else
-            {
+            } else {
                 copies[EXTRAFRAME_OFFSET + 14] = (int) (bits >>> 32);
                 copies[EXTRAFRAME_OFFSET + 15] = (int) (bits & 0xFFFFFFFF);
-            } //End block
-            nextBIndex = HASHBYTES_TO_USE;
-        } //End block
+            }
+
+            nextBIndex = HASHBYTES_TO_USE; // skipping remaining random bits
+        }
         state = NEXT_BYTES;
-        if(bytes.length == 0)        
-        {
+
+        if (bytes.length == 0) {
             return;
-        } //End block
+        }
+
         nextByteToReturn = 0;
+
+        // possibly not all of HASHBYTES_TO_USE bytes were used previous time
         n = (HASHBYTES_TO_USE - nextBIndex) < (bytes.length - nextByteToReturn) ? HASHBYTES_TO_USE
                 - nextBIndex
                 : bytes.length - nextByteToReturn;
-        if(n > 0)        
-        {
+        if (n > 0) {
             System.arraycopy(nextBytes, nextBIndex, bytes, nextByteToReturn, n);
             nextBIndex += n;
             nextByteToReturn += n;
-        } //End block
-        if(nextByteToReturn >= bytes.length)        
-        {
-            return;
-        } //End block
+        }
+
+        if (nextByteToReturn >= bytes.length) {
+            return; // return because "bytes[]" are filled in
+        }
+
         n = seed[BYTES_OFFSET] & 0x03;
-for(;;)
-        {
-            if(n == 0)            
-            {
+        for (;;) {
+            if (n == 0) {
+
                 seed[lastWord] = (int) (counter >>> 32);
                 seed[lastWord + 1] = (int) (counter & 0xFFFFFFFF);
                 seed[lastWord + 2] = END_FLAGS[0];
-            } //End block
-            else
-            {
+
+            } else {
+
                 seed[lastWord] |= (int) ((counter >>> RIGHT1[n]) & MASK[n]);
                 seed[lastWord + 1] = (int) ((counter >>> RIGHT2[n]) & 0xFFFFFFFF);
                 seed[lastWord + 2] = (int) ((counter << LEFT[n]) | END_FLAGS[n]);
-            } //End block
-            if(seed[BYTES_OFFSET] > MAX_BYTES)            
-            {
+            }
+            if (seed[BYTES_OFFSET] > MAX_BYTES) {
                 copies[EXTRAFRAME_OFFSET] = seed[FRAME_LENGTH];
                 copies[EXTRAFRAME_OFFSET + 1] = seed[FRAME_LENGTH + 1];
-            } //End block
+            }
+
             SHA1Impl.computeHash(seed);
-            if(seed[BYTES_OFFSET] > MAX_BYTES)            
-            {
+
+            if (seed[BYTES_OFFSET] > MAX_BYTES) {
+
                 System.arraycopy(seed, 0, copies, FRAME_OFFSET, FRAME_LENGTH);
                 System.arraycopy(copies, EXTRAFRAME_OFFSET, seed, 0,
                         FRAME_LENGTH);
+
                 SHA1Impl.computeHash(seed);
                 System.arraycopy(copies, FRAME_OFFSET, seed, 0, FRAME_LENGTH);
-            } //End block
+            }
             counter++;
+
             int j = 0;
-for(i = 0;i < EXTRAFRAME_OFFSET;i++)
-            {
+            for (i = 0; i < EXTRAFRAME_OFFSET; i++) {
                 int k = seed[HASH_OFFSET + i];
-                nextBytes[j] = (byte) (k >>> 24);
-                nextBytes[j + 1] = (byte) (k >>> 16);
-                nextBytes[j + 2] = (byte) (k >>> 8);
-                nextBytes[j + 3] = (byte) (k);
+                nextBytes[j] = (byte) (k >>> 24); // getting first  byte from left
+                nextBytes[j + 1] = (byte) (k >>> 16); // getting second byte from left
+                nextBytes[j + 2] = (byte) (k >>> 8); // getting third  byte from left
+                nextBytes[j + 3] = (byte) (k); // getting fourth byte from left
                 j += 4;
-            } //End block
+            }
+
             nextBIndex = 0;
             j = HASHBYTES_TO_USE < (bytes.length - nextByteToReturn) ? HASHBYTES_TO_USE
                     : bytes.length - nextByteToReturn;
-            if(j > 0)            
-            {
+
+            if (j > 0) {
                 System.arraycopy(nextBytes, 0, bytes, nextByteToReturn, j);
                 nextByteToReturn += j;
                 nextBIndex += j;
-            } //End block
-            if(nextByteToReturn >= bytes.length)            
-            {
+            }
+
+            if (nextByteToReturn >= bytes.length) {
                 break;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            }
+        }
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.350 -0400", hash_original_method = "716FAD60FA2495E9DABF23B35E588917", hash_generated_method = "2DDF7CB572157DED6BEED9C43D74D1AB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:08.984 -0500", hash_original_method = "716FAD60FA2495E9DABF23B35E588917", hash_generated_method = "D69CBD4AB153720E4ABBC92D1EB7AAC4")
     private void writeObject(ObjectOutputStream oos) throws IOException {
-        addTaint(oos.getTaint());
+
         int[] intData = null;
+
         final int only_hash = EXTRAFRAME_OFFSET;
         final int hashes_and_frame = EXTRAFRAME_OFFSET * 2 + FRAME_LENGTH;
         final int hashes_and_frame_extra = EXTRAFRAME_OFFSET * 2 + FRAME_LENGTH
                 * 2;
+
         oos.writeLong(seedLength);
         oos.writeLong(counter);
         oos.writeInt(state);
         oos.writeInt(seed[BYTES_OFFSET]);
-        int nRemaining = (seed[BYTES_OFFSET] + 3) >> 2;
-        if(state != NEXT_BYTES)        
-        {
+
+        int nRemaining = (seed[BYTES_OFFSET] + 3) >> 2; // converting bytes in words
+        // result may be 0
+        if (state != NEXT_BYTES) {
+
+            // either the state is UNDEFINED or previous method was "setSeed(..)"
+            // so in "seed[]" to serialize are remaining bytes (seed[0-nRemaining]) and
+            // current hash (seed[82-86])
+
             intData = new int[only_hash + nRemaining];
+
             System.arraycopy(seed, 0, intData, 0, nRemaining);
             System.arraycopy(seed, HASH_OFFSET, intData, nRemaining,
                     EXTRAFRAME_OFFSET);
-        } //End block
-        else
-        {
+
+        } else {
+            // previous method was "nextBytes(..)"
+            // so, data to serialize are all the above (two first are in "copies" array)
+            // and current words in both frame and extra frame (as if)
+
             int offset = 0;
-            if(seed[BYTES_OFFSET] < MAX_BYTES)            
-            {
+            if (seed[BYTES_OFFSET] < MAX_BYTES) { // no extra frame
+
                 intData = new int[hashes_and_frame + nRemaining];
-            } //End block
-            else
-            {
+
+            } else { // extra frame is used
+
                 intData = new int[hashes_and_frame_extra + nRemaining];
+
                 intData[offset] = seed[FRAME_LENGTH];
                 intData[offset + 1] = seed[FRAME_LENGTH + 1];
                 intData[offset + 2] = seed[FRAME_LENGTH + 14];
                 intData[offset + 3] = seed[FRAME_LENGTH + 15];
                 offset += 4;
-            } //End block
+            }
+
             System.arraycopy(seed, 0, intData, offset, FRAME_LENGTH);
             offset += FRAME_LENGTH;
+
             System.arraycopy(copies, FRAME_LENGTH + EXTRAFRAME_OFFSET, intData,
                     offset, nRemaining);
             offset += nRemaining;
+
             System.arraycopy(copies, 0, intData, offset, EXTRAFRAME_OFFSET);
             offset += EXTRAFRAME_OFFSET;
+
             System.arraycopy(seed, HASH_OFFSET, intData, offset,
                     EXTRAFRAME_OFFSET);
-        } //End block
-for(int i = 0;i < intData.length;i++)
-        {
+        }
+        for (int i = 0; i < intData.length; i++) {
             oos.writeInt(intData[i]);
-        } //End block
+        }
+
         oos.writeInt(nextBIndex);
         oos.write(nextBytes, nextBIndex, HASHBYTES_TO_USE - nextBIndex);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.352 -0400", hash_original_method = "87BDC97ACB5596298F61FE4642318DFC", hash_generated_method = "B0128A4480AD61AAE9CBFF0A5FEAB7C9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:08.985 -0500", hash_original_method = "87BDC97ACB5596298F61FE4642318DFC", hash_generated_method = "590F04898F9D59A6A9E462377985AEC6")
     private void readObject(ObjectInputStream ois) throws IOException,
             ClassNotFoundException {
+
         seed = new int[HASH_OFFSET + EXTRAFRAME_OFFSET];
         copies = new int[2 * FRAME_LENGTH + EXTRAFRAME_OFFSET];
         nextBytes = new byte[DIGEST_LENGTH];
+
         seedLength = ois.readLong();
         counter = ois.readLong();
         state = ois.readInt();
         seed[BYTES_OFFSET] = ois.readInt();
-        int nRemaining = (seed[BYTES_OFFSET] + 3) >> 2;
-        if(state != NEXT_BYTES)        
-        {
-for(int i = 0;i < nRemaining;i++)
-            {
+
+        int nRemaining = (seed[BYTES_OFFSET] + 3) >> 2; // converting bytes in words
+
+        if (state != NEXT_BYTES) {
+
+            for (int i = 0; i < nRemaining; i++) {
                 seed[i] = ois.readInt();
-            } //End block
-for(int i = 0;i < EXTRAFRAME_OFFSET;i++)
-            {
+            }
+            for (int i = 0; i < EXTRAFRAME_OFFSET; i++) {
                 seed[HASH_OFFSET + i] = ois.readInt();
-            } //End block
-        } //End block
-        else
-        {
-            if(seed[BYTES_OFFSET] >= MAX_BYTES)            
-            {
+            }
+        } else {
+            if (seed[BYTES_OFFSET] >= MAX_BYTES) {
+
+                // reading next bytes in seed extra frame
                 seed[FRAME_LENGTH] = ois.readInt();
                 seed[FRAME_LENGTH + 1] = ois.readInt();
                 seed[FRAME_LENGTH + 14] = ois.readInt();
                 seed[FRAME_LENGTH + 15] = ois.readInt();
-            } //End block
-for(int i = 0;i < FRAME_LENGTH;i++)
-            {
+            }
+            // reading next bytes in seed frame
+            for (int i = 0; i < FRAME_LENGTH; i++) {
                 seed[i] = ois.readInt();
-            } //End block
-for(int i = 0;i < nRemaining;i++)
-            {
+            }
+            // reading remaining seed bytes
+            for (int i = 0; i < nRemaining; i++) {
                 copies[FRAME_LENGTH + EXTRAFRAME_OFFSET + i] = ois.readInt();
-            } //End block
-for(int i = 0;i < EXTRAFRAME_OFFSET;i++)
-            {
+            }
+            // reading copy of current hash
+            for (int i = 0; i < EXTRAFRAME_OFFSET; i++) {
                 copies[i] = ois.readInt();
-            } //End block
-for(int i = 0;i < EXTRAFRAME_OFFSET;i++)
-            {
+            }
+            // reading current hash
+            for (int i = 0; i < EXTRAFRAME_OFFSET; i++) {
                 seed[HASH_OFFSET + i] = ois.readInt();
-            } //End block
-        } //End block
+            }
+        }
+
         nextBIndex = ois.readInt();
         Streams.readFully(ois, nextBytes, nextBIndex, HASHBYTES_TO_USE - nextBIndex);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.353 -0400", hash_original_field = "A8EA9F4B39AB0BD01CB0A5F451A09DA2", hash_generated_field = "0572D6ADF8B4E59E97C497432F887795")
-
-    private static final long serialVersionUID = 283736797212159675L;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.353 -0400", hash_original_field = "688E178635EBA2754C476239F377C034", hash_generated_field = "ADA3965BFBB7E9649B91549104A70E5A")
-
-    private static final int[] END_FLAGS = { 0x80000000, 0x800000, 0x8000, 0x80 };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.353 -0400", hash_original_field = "7D84B7231C31338A3A5FDC6CF51747BD", hash_generated_field = "5C807BEE19CE765B4317F673B97DF948")
-
-    private static final int[] RIGHT1 = { 0, 40, 48, 56 };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.353 -0400", hash_original_field = "4D3A3265B305F0BE8079BF4670A33FD8", hash_generated_field = "EAE2B62B1EF3A743512A0964184AADD2")
-
-    private static final int[] RIGHT2 = { 0, 8, 16, 24 };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.353 -0400", hash_original_field = "228FF23FE8EE564235B29EB58558397E", hash_generated_field = "B0E4A4E8E92603834DE04BB669F210A3")
-
-    private static final int[] LEFT = { 0, 24, 16, 8 };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.354 -0400", hash_original_field = "0C56FDB1D1DC1B856CCD247698D5F9EB", hash_generated_field = "5ED2E9AA85783BAD621E242DDC93B094")
-
-    private static final int[] MASK = { 0xFFFFFFFF, 0x00FFFFFF, 0x0000FFFF,
-            0x000000FF };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.354 -0400", hash_original_field = "EA3DA587F0A5417FC02EB99734378DD0", hash_generated_field = "83224B487E823FD3948A81BA23781528")
-
-    private static final int HASHBYTES_TO_USE = 20;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.354 -0400", hash_original_field = "19D7356328F09D2E9E20F61CC1A8EE49", hash_generated_field = "7E064B495B5339B29C44E33FD9B2BEB9")
-
-    private static final int FRAME_LENGTH = 16;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.354 -0400", hash_original_field = "5D67AB41EC717370F39FB8E3E5B6D590", hash_generated_field = "2915A8CABBBBCA005AECE0558DF33A42")
-
-    private static final int COUNTER_BASE = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.354 -0400", hash_original_field = "B4FFC65D11F6A3C5D531616DECFAAEDB", hash_generated_field = "FC08696CCFA3EE206632295D5608E52A")
-
-    private static final int HASHCOPY_OFFSET = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.354 -0400", hash_original_field = "7E3DDA1C9321D991F6DBCAEA75EE87B1", hash_generated_field = "BDC895B0D82A3B69363AB3B21E484915")
-
-    private static final int EXTRAFRAME_OFFSET = 5;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.354 -0400", hash_original_field = "3B83F276D0B6A4C810F3102DEEE5D8F5", hash_generated_field = "D124EA7B91A1E166C74CB5971C4654D2")
-
-    private static final int FRAME_OFFSET = 21;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.354 -0400", hash_original_field = "AE01E9CB52924DB8F1F451AA07335370", hash_generated_field = "16F5CCEF9F3F7B3A8F222B597A35CCA0")
-
-    private static final int MAX_BYTES = 48;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.354 -0400", hash_original_field = "65F6F32C0BA954738A0F3455B17A977F", hash_generated_field = "0DF11F4AAB291BF53347A9E765D366AE")
-
-    private static final int UNDEFINED = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.354 -0400", hash_original_field = "032C0F6071BBD65DCABF007145E60CEE", hash_generated_field = "70F1EFD63BAB99FD438DDC5003389359")
-
-    private static final int SET_SEED = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.354 -0400", hash_original_field = "27B93F02F19E49DE8D63D5C3EB8F61C0", hash_generated_field = "C7803B16145BE4E5D1B39E398B4A7566")
-
-    private static final int NEXT_BYTES = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.354 -0400", hash_original_field = "65ACB974B2A6E383FFD41E6EAA0CF2FA", hash_generated_field = "8D0E7E89B95D023E9161984B3CF40ACF")
-
-    private static SHA1PRNG_SecureRandomImpl myRandom;
 }
 

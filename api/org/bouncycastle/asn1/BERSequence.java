@@ -1,6 +1,8 @@
 package org.bouncycastle.asn1;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 import java.util.Enumeration;
@@ -8,73 +10,59 @@ import java.util.Enumeration;
 
 
 public class BERSequence extends DERSequence {
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.956 -0400", hash_original_method = "0D9B441EA6B4B8E8347B85C87EDD1299", hash_generated_method = "38F8802BC4E63A6F40E9106AA50F9EE8")
-    public  BERSequence() {
-        // ---------- Original Method ----------
+    /**
+     * create an empty sequence
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:55.597 -0500", hash_original_method = "0D9B441EA6B4B8E8347B85C87EDD1299", hash_generated_method = "134B791CD0D6796A7817E9FBE2672519")
+    public BERSequence()
+    {
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.957 -0400", hash_original_method = "F58B9D9CAFA6022E13B23B504AFBA49E", hash_generated_method = "803A1FB234C8055199B4B5FAA7E4F404")
-    public  BERSequence(
-        DEREncodable    obj) {
+    /**
+     * create a sequence containing one object
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:55.598 -0500", hash_original_method = "F58B9D9CAFA6022E13B23B504AFBA49E", hash_generated_method = "EF9BF655595B6F8D8A6427E5F24F9CCD")
+    public BERSequence(
+        DEREncodable    obj)
+    {
         super(obj);
-        addTaint(obj.getTaint());
-        // ---------- Original Method ----------
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.958 -0400", hash_original_method = "77CDCB3AD1301C069F2E513DC8F21CC0", hash_generated_method = "A03269D753C89CA227C1BD314125E29E")
-    public  BERSequence(
-        ASN1EncodableVector   v) {
+    /**
+     * create a sequence containing a vector of objects.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:55.599 -0500", hash_original_method = "77CDCB3AD1301C069F2E513DC8F21CC0", hash_generated_method = "F3E389E8A04049A10986837EC4E60A62")
+    public BERSequence(
+        ASN1EncodableVector   v)
+    {
         super(v);
-        addTaint(v.getTaint());
-        // ---------- Original Method ----------
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.959 -0400", hash_original_method = "02357BA9FDB8523F9B8A86E245A5D94B", hash_generated_method = "0D06B814DD9B73B21F34A7B3DBE8471D")
-     void encode(
-        DEROutputStream out) throws IOException {
-        addTaint(out.getTaint());
-        if(out instanceof ASN1OutputStream || out instanceof BEROutputStream)        
+    /*
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:55.600 -0500", hash_original_method = "02357BA9FDB8523F9B8A86E245A5D94B", hash_generated_method = "02357BA9FDB8523F9B8A86E245A5D94B")
+    void encode(
+        DEROutputStream out)
+        throws IOException
+    {
+        if (out instanceof ASN1OutputStream || out instanceof BEROutputStream)
         {
             out.write(SEQUENCE | CONSTRUCTED);
             out.write(0x80);
+            
             Enumeration e = getObjects();
-            while
-(e.hasMoreElements())            
+            while (e.hasMoreElements())
             {
                 out.writeObject(e.nextElement());
-            } //End block
+            }
+        
             out.write(0x00);
             out.write(0x00);
-        } //End block
+        }
         else
         {
             super.encode(out);
-        } //End block
-        // ---------- Original Method ----------
-        //if (out instanceof ASN1OutputStream || out instanceof BEROutputStream)
-        //{
-            //out.write(SEQUENCE | CONSTRUCTED);
-            //out.write(0x80);
-            //Enumeration e = getObjects();
-            //while (e.hasMoreElements())
-            //{
-                //out.writeObject(e.nextElement());
-            //}
-            //out.write(0x00);
-            //out.write(0x00);
-        //}
-        //else
-        //{
-            //super.encode(out);
-        //}
+        }
     }
 
     

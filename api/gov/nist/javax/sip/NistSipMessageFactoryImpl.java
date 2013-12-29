@@ -1,6 +1,8 @@
 package gov.nist.javax.sip;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import gov.nist.javax.sip.message.SIPRequest;
 import gov.nist.javax.sip.message.SIPResponse;
@@ -19,106 +21,104 @@ import javax.sip.TransactionState;
 
 
 class NistSipMessageFactoryImpl implements StackMessageFactory {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:31.482 -0400", hash_original_field = "37460D4BF2BA47A13FF9D922C4B14B2E", hash_generated_field = "B028268F85C87F49A0E45B93954BF938")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:05.224 -0500", hash_original_field = "03821C4D777C0A4AB8577E0C5F2371D6", hash_generated_field = "B028268F85C87F49A0E45B93954BF938")
+
 
     private SipStackImpl sipStack;
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:31.483 -0400", hash_original_method = "B4A348E139EC58BD28DD0F3A69B45AAD", hash_generated_method = "9205204DA58BEC015C262841C10BC546")
-    public  NistSipMessageFactoryImpl(SipStackImpl sipStackImpl) {
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:05.227 -0500", hash_original_method = "B4A348E139EC58BD28DD0F3A69B45AAD", hash_generated_method = "6F8E186CA749499C408261B2123CEEE7")
+    public NistSipMessageFactoryImpl(SipStackImpl sipStackImpl) {
         this.sipStack = sipStackImpl;
-        // ---------- Original Method ----------
-        //this.sipStack = sipStackImpl;
+
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:31.483 -0400", hash_original_method = "05D11288A97D40A10A9E1FF4BB412446", hash_generated_method = "CA25179D9A7E946E6C33E18426F70307")
+    /**
+     * Construct a new SIP Server Request.
+     * 
+     * @param sipRequest
+     *            is the SIPRequest from which the SIPServerRequest is to be
+     *            constructed.
+     * @param messageChannel
+     *            is the MessageChannel abstraction for this SIPServerRequest.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:05.225 -0500", hash_original_method = "05D11288A97D40A10A9E1FF4BB412446", hash_generated_method = "E7183459344DDC1F8F41F20C87AC3E8F")
     public ServerRequestInterface newSIPServerRequest(SIPRequest sipRequest,
             MessageChannel messageChannel) {
-        addTaint(messageChannel.getTaint());
-        addTaint(sipRequest.getTaint());
-        if(messageChannel == null || sipRequest == null)        
-        {
-            IllegalArgumentException var98C918EACA170B9EBA9AB97F4457C25B_468709072 = new IllegalArgumentException("Null Arg!");
-            var98C918EACA170B9EBA9AB97F4457C25B_468709072.addTaint(taint);
-            throw var98C918EACA170B9EBA9AB97F4457C25B_468709072;
-        } //End block
+
+        if (messageChannel == null || sipRequest == null) {
+            throw new IllegalArgumentException("Null Arg!");
+        }
+
         SipStackImpl theStack = (SipStackImpl) messageChannel.getSIPStack();
         DialogFilter retval = new DialogFilter(
                 theStack);
-        if(messageChannel instanceof SIPTransaction)        
-        {
+        if (messageChannel instanceof SIPTransaction) {
+            // If the transaction has already been created
+            // then set the transaction channel.
             retval.transactionChannel = (SIPTransaction) messageChannel;
-        } //End block
+        }
         retval.listeningPoint = messageChannel.getMessageProcessor()
                 .getListeningPoint();
-        if(retval.listeningPoint == null)        
-        {
-ServerRequestInterface var540C13E9E156B687226421B24F2DF178_1680116403 =         null;
-        var540C13E9E156B687226421B24F2DF178_1680116403.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_1680116403;
-        }
-        if(sipStack.isLoggingEnabled())        
-        sipStack.getStackLogger().logDebug(
+        if (retval.listeningPoint == null)
+            return null;
+        if (sipStack.isLoggingEnabled())
+            sipStack.getStackLogger().logDebug(
                     "Returning request interface for "
                             + sipRequest.getFirstLine() + " " + retval
                             + " messageChannel = " + messageChannel);
-ServerRequestInterface varF9E19AD6135C970F387F77C6F3DE4477_1792467797 =         retval;
-        varF9E19AD6135C970F387F77C6F3DE4477_1792467797.addTaint(taint);
-        return varF9E19AD6135C970F387F77C6F3DE4477_1792467797;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        return retval;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:31.485 -0400", hash_original_method = "683DE9908ACD912FB40AB2EA7112FC1F", hash_generated_method = "59AA0E7CDA8720F02A07654DEB6BF544")
+    /**
+     * Generate a new server response for the stack.
+     * 
+     * @param sipResponse
+     *            is the SIPRequest from which the SIPServerRequest is to be
+     *            constructed.
+     * @param messageChannel
+     *            is the MessageChannel abstraction for this SIPServerResponse
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:05.226 -0500", hash_original_method = "683DE9908ACD912FB40AB2EA7112FC1F", hash_generated_method = "5F837B5EEEF568F0D8B6971471D8B2EC")
     public ServerResponseInterface newSIPServerResponse(
             SIPResponse sipResponse, MessageChannel messageChannel) {
-        addTaint(messageChannel.getTaint());
-        addTaint(sipResponse.getTaint());
         SIPTransactionStack theStack = (SIPTransactionStack) messageChannel
                 .getSIPStack();
+        // Tr is null if a transaction is not mapped.
         SIPTransaction tr = (SIPTransaction) ((SIPTransactionStack) theStack)
                 .findTransaction(sipResponse, false);
-        if(sipStack.isLoggingEnabled())        
-        sipStack.getStackLogger().logDebug(
+        if (sipStack.isLoggingEnabled())
+            sipStack.getStackLogger().logDebug(
                     "Found Transaction " + tr + " for " + sipResponse);
-        if(tr != null)        
-        {
-            if(tr.getState() == null)            
-            {
-                if(sipStack.isLoggingEnabled())                
-                sipStack.getStackLogger().logDebug(
+
+        if (tr != null) {
+            // Prune unhealthy responses early if handling statefully.
+            // If the state has not yet been assigned then this is a
+            // spurious response. This was moved up from the transaction
+            // layer for efficiency.
+            if (tr.getState() == null) {
+                if (sipStack.isLoggingEnabled())
+                    sipStack.getStackLogger().logDebug(
                             "Dropping response - null transaction state");
-ServerResponseInterface var540C13E9E156B687226421B24F2DF178_21942601 =                 null;
-                var540C13E9E156B687226421B24F2DF178_21942601.addTaint(taint);
-                return var540C13E9E156B687226421B24F2DF178_21942601;
-            } //End block
-            else
-            if(TransactionState.COMPLETED == tr.getState()
-                    && sipResponse.getStatusCode() / 100 == 1)            
-            {
-                if(sipStack.isLoggingEnabled())                
-                sipStack.getStackLogger().logDebug(
+                return null;
+                // Ignore 1xx
+            } else if (TransactionState.COMPLETED == tr.getState()
+                    && sipResponse.getStatusCode() / 100 == 1) {
+                if (sipStack.isLoggingEnabled())
+                    sipStack.getStackLogger().logDebug(
                             "Dropping response - late arriving "
                                     + sipResponse.getStatusCode());
-ServerResponseInterface var540C13E9E156B687226421B24F2DF178_1451813882 =                 null;
-                var540C13E9E156B687226421B24F2DF178_1451813882.addTaint(taint);
-                return var540C13E9E156B687226421B24F2DF178_1451813882;
-            } //End block
-        } //End block
+                return null;
+            }
+        }
+
         DialogFilter retval = new DialogFilter(
                 sipStack);
+
         retval.transactionChannel = tr;
+
         retval.listeningPoint = messageChannel.getMessageProcessor()
                 .getListeningPoint();
-ServerResponseInterface varF9E19AD6135C970F387F77C6F3DE4477_1862187409 =         retval;
-        varF9E19AD6135C970F387F77C6F3DE4477_1862187409.addTaint(taint);
-        return varF9E19AD6135C970F387F77C6F3DE4477_1862187409;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        return retval;
     }
 
     

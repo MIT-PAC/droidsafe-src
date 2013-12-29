@@ -1,6 +1,8 @@
 package java.util;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.InvalidObjectException;
@@ -16,6 +18,59 @@ import libcore.util.Objects;
 
 
 public class HashMap<K, V> extends AbstractMap<K, V> implements Cloneable, Serializable {
+
+    /**
+     * Applies a supplemental hash function to a given hashCode, which defends
+     * against poor quality hash functions. This is critical because HashMap
+     * uses power-of-two length hash tables, that otherwise encounter collisions
+     * for hashCodes that do not differ in lower or upper bits.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:48.373 -0500", hash_original_method = "EB10FD63A8403F00F4E59BED9E510DF9", hash_generated_method = "2C4F8F4C8B306CD83B3F5D269A2D4EFC")
+    private static int secondaryHash(int h) {
+        // Doug Lea's supplemental hash function
+        h ^= (h >>> 20) ^ (h >>> 12);
+        return h ^ (h >>> 7) ^ (h >>> 4);
+    }
+
+    /**
+     * Returns the smallest power of two >= its argument, with several caveats:
+     * If the argument is negative but not Integer.MIN_VALUE, the method returns
+     * zero. If the argument is > 2^30 or equal to Integer.MIN_VALUE, the method
+     * returns Integer.MIN_VALUE. If the argument is zero, the method returns
+     * zero.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:48.374 -0500", hash_original_method = "2E3FAB2711A493998A5CD02CF97D3862", hash_generated_method = "88D47F1314328668F8579B4CB5297971")
+    private static int roundUpToPowerOfTwo(int i) {
+        i--; // If input is a power of two, shift its high-order bit right
+
+        // "Smear" the high-order bit all the way to the right
+        i |= i >>>  1;
+        i |= i >>>  2;
+        i |= i >>>  4;
+        i |= i >>>  8;
+        i |= i >>> 16;
+
+        return i + 1;
+    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:48.289 -0500", hash_original_field = "9C9C52C3044A64A1683A2865C14D4656", hash_generated_field = "2D66E915A2C4A5FBF28A99892F20B1AF")
+
+    private static final int MINIMUM_CAPACITY = 4;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:48.290 -0500", hash_original_field = "8450B9285BE1BB97BF823A8DA56CC45D", hash_generated_field = "C94813E6F46C48A83BBFCFA3C9862983")
+
+    private static final int MAXIMUM_CAPACITY = 1 << 30;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:48.292 -0500", hash_original_field = "69E9667A37D40729A72B55AC0A75E1FE", hash_generated_field = "8B66B6321C50459F7579C610CEA9040E")
+
+    static final float DEFAULT_LOAD_FACTOR = .75F;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:48.374 -0500", hash_original_field = "3C5C22C8B3537F79B4DEBD590294808C", hash_generated_field = "895D2EFED015878DCDE59CE17F2ED051")
+
+
+    private static final long serialVersionUID = 362498820763181265L;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:48.375 -0500", hash_original_field = "EAD386E5C87BDA4672992408FDD8CECE", hash_generated_field = "07BD8E29CA88435F65E9AD35F51067E8")
+
+
+    private static final ObjectStreamField[] serialPersistentFields = {
+        new ObjectStreamField("loadFactor", float.class)
+    };
 
     
         @DSModeled(DSC.SAFE)
@@ -59,23 +114,31 @@ public class HashMap<K, V> extends AbstractMap<K, V> implements Cloneable, Seria
         //makeTable(capacity);
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.971 -0400", hash_original_method = "ED265422F07438826BD7CEB727CA13DA", hash_generated_method = "47E72622CE8AEA9D8C4C87DE9ACF34E7")
-    public  HashMap(int capacity, float loadFactor) {
+    /**
+     * Constructs a new {@code HashMap} instance with the specified capacity and
+     * load factor.
+     *
+     * @param capacity
+     *            the initial capacity of this hash map.
+     * @param loadFactor
+     *            the initial load factor.
+     * @throws IllegalArgumentException
+     *                when the capacity is less than zero or the load factor is
+     *                less or equal to zero or NaN.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:48.301 -0500", hash_original_method = "ED265422F07438826BD7CEB727CA13DA", hash_generated_method = "3099B2A9FB1DB95A61DD56E531C7FD7C")
+    public HashMap(int capacity, float loadFactor) {
         this(capacity);
-        addTaint(loadFactor);
-        addTaint(capacity);
-        if(loadFactor <= 0 || Float.isNaN(loadFactor))        
-        {
-            IllegalArgumentException var5B3332F9036D49CF8BF1BBF51FC6B72E_2053821357 = new IllegalArgumentException("Load factor: " + loadFactor);
-            var5B3332F9036D49CF8BF1BBF51FC6B72E_2053821357.addTaint(taint);
-            throw var5B3332F9036D49CF8BF1BBF51FC6B72E_2053821357;
-        } //End block
-        // ---------- Original Method ----------
-        //if (loadFactor <= 0 || Float.isNaN(loadFactor)) {
-            //throw new IllegalArgumentException("Load factor: " + loadFactor);
-        //}
+
+        if (loadFactor <= 0 || Float.isNaN(loadFactor)) {
+            throw new IllegalArgumentException("Load factor: " + loadFactor);
+        }
+
+        /*
+         * Note that this implementation ignores loadFactor; it always uses
+         * a load factor of 3/4. This simplifies the code and generally
+         * improves performance.
+         */
     }
 
     
@@ -127,12 +190,16 @@ Object varDC838461EE2FA0CA4C9BBB70A15456B0_649335864 =         result;
         //return result;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.971 -0400", hash_original_method = "417EF77086319CE91314CCF850ADA61E", hash_generated_method = "2067003B6622767497B839D408201FF1")
-     void init() {
-        // ---------- Original Method ----------
-    }
+    /**
+     * This method is called from the pseudo-constructors (clone and readObject)
+     * prior to invoking constructorPut/constructorPutAll, which invoke the
+     * overridden constructorNewEntry method. Normally it is a VERY bad idea to
+     * invoke an overridden method from a pseudo-constructor (Effective Java
+     * Item 17). In this case it is unavoidable, and the init method provides a
+     * workaround.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:48.305 -0500", hash_original_method = "417EF77086319CE91314CCF850ADA61E", hash_generated_method = "417EF77086319CE91314CCF850ADA61E")
+    void init() { }
 
     @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.977 -0400", hash_original_method = "54875E203703AD755476CBDF0B4AFC75", hash_generated_method = "8823E12553CEF9F29146B21A2A664B17")
@@ -162,25 +229,6 @@ Object varDC838461EE2FA0CA4C9BBB70A15456B0_649335864 =         result;
             //}
         //}
         //return false;
-    }
-
-   
-    @DSModeled(DSC.BAN)
-    private static int secondaryHash(int h) {
-        h ^= (h >>> 20) ^ (h >>> 12);
-        return h ^ (h >>> 7) ^ (h >>> 4);
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    private static int roundUpToPowerOfTwo(int i) {
-        i--;
-        i |= i >>>  1;
-        i |= i >>>  2;
-        i |= i >>>  4;
-        i |= i >>>  8;
-        i |= i >>> 16;
-        return i + 1;
     }
 
     
@@ -242,25 +290,5 @@ for(Entry<K, V> e : entrySet())
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
-
-    
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.984 -0400", hash_original_field = "74773297EBE9767DD8F1E8A0F109042B", hash_generated_field = "2D66E915A2C4A5FBF28A99892F20B1AF")
-    private static final int MINIMUM_CAPACITY = 4;
-
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.984 -0400", hash_original_field = "3644613F5550D368EA9636CD57F0B359", hash_generated_field = "C94813E6F46C48A83BBFCFA3C9862983")
-
-    private static final int MAXIMUM_CAPACITY = 1 << 30;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.984 -0400", hash_original_field = "2457D6689D4C035FB0208C51E3216836", hash_generated_field = "8B66B6321C50459F7579C610CEA9040E")
-
-    static final float DEFAULT_LOAD_FACTOR = .75F;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.984 -0400", hash_original_field = "B9B0D4CAFA519E3022BDB211EDB6108F", hash_generated_field = "895D2EFED015878DCDE59CE17F2ED051")
-
-    private static final long serialVersionUID = 362498820763181265L;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.984 -0400", hash_original_field = "6B5047BD80649C86F20ACE5466546B8B", hash_generated_field = "07BD8E29CA88435F65E9AD35F51067E8")
-
-    private static final ObjectStreamField[] serialPersistentFields = {
-        new ObjectStreamField("loadFactor", float.class)
-    };
 }
 

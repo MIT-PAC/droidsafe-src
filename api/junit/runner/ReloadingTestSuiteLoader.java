@@ -1,6 +1,8 @@
 package junit.runner;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
@@ -13,41 +15,21 @@ public class ReloadingTestSuiteLoader implements TestSuiteLoader {
     {
         //Synthesized constructor
     }
-
-
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.403 -0400", hash_original_method = "13C1DA2A7A06C5AA5CC7BC929B5B4B4D", hash_generated_method = "E94031855450D5E25D8115AD6C226F90")
+	
+	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:45.240 -0500", hash_original_method = "13C1DA2A7A06C5AA5CC7BC929B5B4B4D", hash_generated_method = "92FA93F7647A8A4CA9498B1346C9E6AE")
     public Class load(String suiteClassName) throws ClassNotFoundException {
-        addTaint(suiteClassName.getTaint());
-Class var89AC116B9B9FC8B936DF2FD910E07E90_1802463982 =         createLoader().loadClass(suiteClassName, true);
-        var89AC116B9B9FC8B936DF2FD910E07E90_1802463982.addTaint(taint);
-        return var89AC116B9B9FC8B936DF2FD910E07E90_1802463982;
-        // ---------- Original Method ----------
-        //return createLoader().loadClass(suiteClassName, true);
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.403 -0400", hash_original_method = "89B315CCC74BC2AD3DF0F1D261AE00FD", hash_generated_method = "A1644F894AE2187ABDB8F1818DA8DE34")
+		return createLoader().loadClass(suiteClassName, true);
+	}
+	
+	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:45.241 -0500", hash_original_method = "89B315CCC74BC2AD3DF0F1D261AE00FD", hash_generated_method = "8188C918C9C269D8115A4E1AFF5D9CFF")
     public Class reload(Class aClass) throws ClassNotFoundException {
-        addTaint(aClass.getTaint());
-Class var94ED448C605A0DF1C953E6DD05247BFA_1241090962 =         createLoader().loadClass(aClass.getName(), true);
-        var94ED448C605A0DF1C953E6DD05247BFA_1241090962.addTaint(taint);
-        return var94ED448C605A0DF1C953E6DD05247BFA_1241090962;
-        // ---------- Original Method ----------
-        //return createLoader().loadClass(aClass.getName(), true);
-    }
-
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.404 -0400", hash_original_method = "C0CD1B730267B48F98209346AB7074D3", hash_generated_method = "0F97AC6287781E5207C33BF33084BD8A")
+		return createLoader().loadClass(aClass.getName(), true);
+	}
+	
+	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:45.242 -0500", hash_original_method = "C0CD1B730267B48F98209346AB7074D3", hash_generated_method = "B8A41C4FD4A2109647EFA2F6A14A2EE0")
     protected TestCaseClassLoader createLoader() {
-TestCaseClassLoader var9FDAA0A7F10327187F6F54690C1C504D_846544899 =         new TestCaseClassLoader();
-        var9FDAA0A7F10327187F6F54690C1C504D_846544899.addTaint(taint);
-        return var9FDAA0A7F10327187F6F54690C1C504D_846544899;
-        // ---------- Original Method ----------
-        //return new TestCaseClassLoader();
-    }
+		return new TestCaseClassLoader();
+	}
 
     
 }

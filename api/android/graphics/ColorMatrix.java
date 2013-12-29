@@ -1,6 +1,8 @@
 package android.graphics;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.util.FloatMath;
 
@@ -9,341 +11,226 @@ import android.util.FloatMath;
 
 
 public class ColorMatrix {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.124 -0400", hash_original_field = "715644611DDEB8B9E5B07CF83EAF2601", hash_generated_field = "EB497EE5AD03BD0F08D38D6437611B86")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:50.581 -0500", hash_original_field = "1B9AE67EA9C44659A4D1BB6336966CD5", hash_generated_field = "EB497EE5AD03BD0F08D38D6437611B86")
+
 
     private final float[] mArray = new float[20];
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.124 -0400", hash_original_method = "7C280C0D6BD3CA85A908B9065390FD08", hash_generated_method = "6DEF39A3008ED08D4A1B025A428FE1FD")
-    public  ColorMatrix() {
+
+    /**
+     * Create a new colormatrix initialized to identity (as if reset() had
+     * been called).
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:50.582 -0500", hash_original_method = "7C280C0D6BD3CA85A908B9065390FD08", hash_generated_method = "DB971D5BC54B5A31AD0846AFF0400420")
+    public ColorMatrix() {
         reset();
-        // ---------- Original Method ----------
-        //reset();
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.124 -0400", hash_original_method = "E88FC6AE9EAD423F2D43BC5A2B86150F", hash_generated_method = "7E4012C738026800C49D63F2B3F72F99")
-    public  ColorMatrix(float[] src) {
-        addTaint(src[0]);
+    /**
+        * Create a new colormatrix initialized with the specified array of values.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:50.583 -0500", hash_original_method = "E88FC6AE9EAD423F2D43BC5A2B86150F", hash_generated_method = "FBF9F55517D84B6FDEDD50858A77D8DD")
+    public ColorMatrix(float[] src) {
         System.arraycopy(src, 0, mArray, 0, 20);
-        // ---------- Original Method ----------
-        //System.arraycopy(src, 0, mArray, 0, 20);
     }
-
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.125 -0400", hash_original_method = "668D89CF48F3ADC6BE7AF94D782DA652", hash_generated_method = "616C3AD70D489E51A138B69F12C5E978")
-    public  ColorMatrix(ColorMatrix src) {
-        addTaint(src.getTaint());
+    /**
+     * Create a new colormatrix initialized with the specified colormatrix.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:50.584 -0500", hash_original_method = "668D89CF48F3ADC6BE7AF94D782DA652", hash_generated_method = "2ABA277C680FC2569DEF64D5B0C8092B")
+    public ColorMatrix(ColorMatrix src) {
         System.arraycopy(src.mArray, 0, mArray, 0, 20);
-        // ---------- Original Method ----------
-        //System.arraycopy(src.mArray, 0, mArray, 0, 20);
     }
-
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.125 -0400", hash_original_method = "C51050FB528280ED78B19148B7D68B9E", hash_generated_method = "14388CEC64EDF5FBF4BD4F2F61506FB5")
-    public final float[] getArray() {
-        float[] var982501881A3C318D6605E92D3AB0ADBA_508493859 = (mArray);
-                float[] varB2C245003BAB9224CFB496218F7DAFE0_614480594 = {getTaintFloat()};
-        return varB2C245003BAB9224CFB496218F7DAFE0_614480594;
-        // ---------- Original Method ----------
-        //return mArray;
-    }
-
+    /**
+     * Return the array of floats representing this colormatrix.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:50.585 -0500", hash_original_method = "C51050FB528280ED78B19148B7D68B9E", hash_generated_method = "63C6B2BBD63D99F1D2FEFB03B9401E16")
+    public final float[] getArray() { return mArray; }
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.126 -0400", hash_original_method = "651EAEC497B28FBE14AC71396739DF99", hash_generated_method = "C9802DD4B14A25277F01312014A8FD63")
+    /**
+     * Set this colormatrix to identity:
+     * [ 1 0 0 0 0   - red vector
+     *   0 1 0 0 0   - green vector
+     *   0 0 1 0 0   - blue vector
+     *   0 0 0 1 0 ] - alpha vector
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:50.585 -0500", hash_original_method = "651EAEC497B28FBE14AC71396739DF99", hash_generated_method = "CB1C5A4BEAEEF5DC9F4C010C3A76075B")
     public void reset() {
         final float[] a = mArray;
-for(int i = 19;i > 0;--i)
-        {
+        
+        for (int i = 19; i > 0; --i) {
             a[i] = 0;
-        } //End block
+        }
         a[0] = a[6] = a[12] = a[18] = 1;
-        // ---------- Original Method ----------
-        //final float[] a = mArray;
-        //for (int i = 19; i > 0; --i) {
-            //a[i] = 0;
-        //}
-        //a[0] = a[6] = a[12] = a[18] = 1;
     }
-
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.126 -0400", hash_original_method = "9919D3B45BE014B7359BBBE4E1EE27A7", hash_generated_method = "065A1847BB1E5D640A8807F6DE1383E5")
+    /**
+     * Assign the src colormatrix into this matrix, copying all of its values.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:50.586 -0500", hash_original_method = "9919D3B45BE014B7359BBBE4E1EE27A7", hash_generated_method = "1D3FAA46DE81B1D61BD927E059A5DBCD")
     public void set(ColorMatrix src) {
-        addTaint(src.getTaint());
         System.arraycopy(src.mArray, 0, mArray, 0, 20);
-        // ---------- Original Method ----------
-        //System.arraycopy(src.mArray, 0, mArray, 0, 20);
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.127 -0400", hash_original_method = "1B16B7E11AFFA7F8CD6600BA7D48EFFB", hash_generated_method = "D838F37399C99E8E26F096B5AF24E813")
+    /**
+     * Assign the array of floats into this matrix, copying all of its values.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:50.587 -0500", hash_original_method = "1B16B7E11AFFA7F8CD6600BA7D48EFFB", hash_generated_method = "0BB84B094E6971328C21B16B46E9F34A")
     public void set(float[] src) {
-        addTaint(src[0]);
         System.arraycopy(src, 0, mArray, 0, 20);
-        // ---------- Original Method ----------
-        //System.arraycopy(src, 0, mArray, 0, 20);
     }
-
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.129 -0400", hash_original_method = "0974414711261BF80A4D723D743AAB06", hash_generated_method = "0253D4D01530EF96653929C114A0FF57")
+    /**
+     * Set this colormatrix to scale by the specified values.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:50.588 -0500", hash_original_method = "0974414711261BF80A4D723D743AAB06", hash_generated_method = "BE8F1B9FD3D4F59B4EE52CC2CAD72E8F")
     public void setScale(float rScale, float gScale, float bScale,
                          float aScale) {
-        addTaint(aScale);
-        addTaint(bScale);
-        addTaint(gScale);
-        addTaint(rScale);
         final float[] a = mArray;
-for(int i = 19;i > 0;--i)
-        {
+
+        for (int i = 19; i > 0; --i) {
             a[i] = 0;
-        } //End block
+        }
         a[0] = rScale;
         a[6] = gScale;
         a[12] = bScale;
         a[18] = aScale;
-        // ---------- Original Method ----------
-        //final float[] a = mArray;
-        //for (int i = 19; i > 0; --i) {
-            //a[i] = 0;
-        //}
-        //a[0] = rScale;
-        //a[6] = gScale;
-        //a[12] = bScale;
-        //a[18] = aScale;
     }
-
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.131 -0400", hash_original_method = "F365836E7CADE057885AC91CF063AD58", hash_generated_method = "3EBAC50AA80103AC6A883BE714C01D25")
+    /**
+     * Set the rotation on a color axis by the specified values.
+     * axis=0 correspond to a rotation around the RED color
+     * axis=1 correspond to a rotation around the GREEN color
+     * axis=2 correspond to a rotation around the BLUE color
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:50.588 -0500", hash_original_method = "F365836E7CADE057885AC91CF063AD58", hash_generated_method = "612FFBFFC9FED1E8E244AA6DB7FD59A1")
     public void setRotate(int axis, float degrees) {
-        addTaint(degrees);
-        addTaint(axis);
         reset();
         float radians = degrees * (float)Math.PI / 180;
         float cosine = FloatMath.cos(radians);
         float sine = FloatMath.sin(radians);
-switch(axis){
+        switch (axis) {
+        // Rotation around the red color
         case 0:
-        mArray[6] = mArray[12] = cosine;
-        mArray[7] = sine;
-        mArray[11] = -sine;
-        break;
+            mArray[6] = mArray[12] = cosine;
+            mArray[7] = sine;
+            mArray[11] = -sine;
+            break;
+        // Rotation around the green color
         case 1:
-        mArray[0] = mArray[12] = cosine;
-        mArray[2] = -sine;
-        mArray[10] = sine;
-        break;
+            mArray[0] = mArray[12] = cosine;
+            mArray[2] = -sine;
+            mArray[10] = sine;
+            break;
+        // Rotation around the blue color
         case 2:
-        mArray[0] = mArray[6] = cosine;
-        mArray[1] = sine;
-        mArray[5] = -sine;
-        break;
+            mArray[0] = mArray[6] = cosine;
+            mArray[1] = sine;
+            mArray[5] = -sine;
+            break;
         default:
-        RuntimeException varF1484B21EF4EE84F790184975238945B_597399618 = new RuntimeException();
-        varF1484B21EF4EE84F790184975238945B_597399618.addTaint(taint);
-        throw varF1484B21EF4EE84F790184975238945B_597399618;
-}
-        // ---------- Original Method ----------
-        //reset();
-        //float radians = degrees * (float)Math.PI / 180;
-        //float cosine = FloatMath.cos(radians);
-        //float sine = FloatMath.sin(radians);
-        //switch (axis) {
-        //case 0:
-            //mArray[6] = mArray[12] = cosine;
-            //mArray[7] = sine;
-            //mArray[11] = -sine;
-            //break;
-        //case 1:
-            //mArray[0] = mArray[12] = cosine;
-            //mArray[2] = -sine;
-            //mArray[10] = sine;
-            //break;
-        //case 2:
-            //mArray[0] = mArray[6] = cosine;
-            //mArray[1] = sine;
-            //mArray[5] = -sine;
-            //break;
-        //default:
-            //throw new RuntimeException();
-        //}
+            throw new RuntimeException();
+        }
     }
-
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.133 -0400", hash_original_method = "843BB575BEC1DC3153103BA70AD6226C", hash_generated_method = "072AF0A4277C4BB9FFEFE9C149E03E1B")
+    /**
+     * Set this colormatrix to the concatenation of the two specified
+     * colormatrices, such that the resulting colormatrix has the same effect
+     * as applying matB and then applying matA. It is legal for either matA or
+     * matB to be the same colormatrix as this.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:50.590 -0500", hash_original_method = "843BB575BEC1DC3153103BA70AD6226C", hash_generated_method = "E3DA8F9DABD88AC3112E4758BB05B6BC")
     public void setConcat(ColorMatrix matA, ColorMatrix matB) {
-        addTaint(matB.getTaint());
-        addTaint(matA.getTaint());
         float[] tmp = null;
-        if(matA == this || matB == this)        
-        {
+        
+        if (matA == this || matB == this) {
             tmp = new float[20];
-        } //End block
-        else
-        {
+        }
+        else {
             tmp = mArray;
-        } //End block
+        }
+        
         final float[] a = matA.mArray;
         final float[] b = matB.mArray;
         int index = 0;
-for(int j = 0;j < 20;j += 5)
-        {
-for(int i = 0;i < 4;i++)
-            {
+        for (int j = 0; j < 20; j += 5) {
+            for (int i = 0; i < 4; i++) {
                 tmp[index++] = a[j + 0] * b[i + 0] +  a[j + 1] * b[i + 5] +
                                a[j + 2] * b[i + 10] + a[j + 3] * b[i + 15];
-            } //End block
+            }
             tmp[index++] = a[j + 0] * b[4] +  a[j + 1] * b[9] +
                            a[j + 2] * b[14] + a[j + 3] * b[19] +
                            a[j + 4];
-        } //End block
-        if(tmp != mArray)        
-        {
+        }
+        
+        if (tmp != mArray) {
             System.arraycopy(tmp, 0, mArray, 0, 20);
-        } //End block
-        // ---------- Original Method ----------
-        //float[] tmp = null;
-        //if (matA == this || matB == this) {
-            //tmp = new float[20];
-        //}
-        //else {
-            //tmp = mArray;
-        //}
-        //final float[] a = matA.mArray;
-        //final float[] b = matB.mArray;
-        //int index = 0;
-        //for (int j = 0; j < 20; j += 5) {
-            //for (int i = 0; i < 4; i++) {
-                //tmp[index++] = a[j + 0] * b[i + 0] +  a[j + 1] * b[i + 5] +
-                               //a[j + 2] * b[i + 10] + a[j + 3] * b[i + 15];
-            //}
-            //tmp[index++] = a[j + 0] * b[4] +  a[j + 1] * b[9] +
-                           //a[j + 2] * b[14] + a[j + 3] * b[19] +
-                           //a[j + 4];
-        //}
-        //if (tmp != mArray) {
-            //System.arraycopy(tmp, 0, mArray, 0, 20);
-        //}
+        }
     }
-
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.134 -0400", hash_original_method = "776A0D16BAF4033F49AFC0802778097D", hash_generated_method = "A7EFF7AEE3A93F17165BB609E2CC0CCB")
+    /**
+     * Concat this colormatrix with the specified prematrix. This is logically
+     * the same as calling setConcat(this, prematrix);
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:50.591 -0500", hash_original_method = "776A0D16BAF4033F49AFC0802778097D", hash_generated_method = "1683E660BF0434876FDF5F0660A38086")
     public void preConcat(ColorMatrix prematrix) {
-        addTaint(prematrix.getTaint());
         setConcat(this, prematrix);
-        // ---------- Original Method ----------
-        //setConcat(this, prematrix);
     }
-
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.134 -0400", hash_original_method = "B5BC76A876DDBB43CC54F09A33784608", hash_generated_method = "476C3F81C017F71CA6BAD2C39A2F2008")
+    /**
+     * Concat this colormatrix with the specified postmatrix. This is logically
+     * the same as calling setConcat(postmatrix, this);
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:50.592 -0500", hash_original_method = "B5BC76A876DDBB43CC54F09A33784608", hash_generated_method = "6904ABE9DB46F0850CCC8E3D457C571E")
     public void postConcat(ColorMatrix postmatrix) {
-        addTaint(postmatrix.getTaint());
         setConcat(postmatrix, this);
-        // ---------- Original Method ----------
-        //setConcat(postmatrix, this);
     }
-
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.136 -0400", hash_original_method = "4B5CDCAEBB0220A2068E2CB6AD49DF79", hash_generated_method = "A855F60439B30805C3687CDA6BCC8AC3")
+    ///////////////////////////////////////////////////////////////////////////
+    
+    /**
+     * Set the matrix to affect the saturation of colors. A value of 0 maps the
+     * color to gray-scale. 1 is identity.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:50.593 -0500", hash_original_method = "4B5CDCAEBB0220A2068E2CB6AD49DF79", hash_generated_method = "7DDADE0AF9C68CC685E7E9244C5D45A3")
     public void setSaturation(float sat) {
-        addTaint(sat);
         reset();
         float[] m = mArray;
+        
         final float invSat = 1 - sat;
         final float R = 0.213f * invSat;
         final float G = 0.715f * invSat;
         final float B = 0.072f * invSat;
-        m[0] = R + sat;
-        m[1] = G;
-        m[2] = B;
-        m[5] = R;
-        m[6] = G + sat;
-        m[7] = B;
-        m[10] = R;
-        m[11] = G;
-        m[12] = B + sat;
-        // ---------- Original Method ----------
-        //reset();
-        //float[] m = mArray;
-        //final float invSat = 1 - sat;
-        //final float R = 0.213f * invSat;
-        //final float G = 0.715f * invSat;
-        //final float B = 0.072f * invSat;
-        //m[0] = R + sat;
-        //m[1] = G;
-        //m[2] = B;
-        //m[5] = R;
-        //m[6] = G + sat;
-        //m[7] = B;
-        //m[10] = R;
-        //m[11] = G;
-        //m[12] = B + sat;
-    }
 
+        m[0] = R + sat; m[1] = G;       m[2] = B;
+        m[5] = R;       m[6] = G + sat; m[7] = B;
+        m[10] = R;      m[11] = G;      m[12] = B + sat;
+    }
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.138 -0400", hash_original_method = "5B1F12450A5CDB7BE7A8B64628B4B21E", hash_generated_method = "D8F83239DB90C7E2742FBA6002BDF7AD")
+    /**
+     * Set the matrix to convert RGB to YUV
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:50.594 -0500", hash_original_method = "5B1F12450A5CDB7BE7A8B64628B4B21E", hash_generated_method = "7190FA541C0D10FAB02D0B7E3C36D680")
     public void setRGB2YUV() {
         reset();
         float[] m = mArray;
-        m[0]  = 0.299f;
-        m[1]  = 0.587f;
-        m[2]  = 0.114f;
-        m[5]  = -0.16874f;
-        m[6]  = -0.33126f;
-        m[7]  = 0.5f;
-        m[10] = 0.5f;
-        m[11] = -0.41869f;
-        m[12] = -0.08131f;
-        // ---------- Original Method ----------
-        //reset();
-        //float[] m = mArray;
-        //m[0]  = 0.299f;
-        //m[1]  = 0.587f;
-        //m[2]  = 0.114f;
-        //m[5]  = -0.16874f;
-        //m[6]  = -0.33126f;
-        //m[7]  = 0.5f;
-        //m[10] = 0.5f;
-        //m[11] = -0.41869f;
-        //m[12] = -0.08131f;
+        // these coefficients match those in libjpeg
+        m[0]  = 0.299f;    m[1]  = 0.587f;    m[2]  = 0.114f;
+        m[5]  = -0.16874f; m[6]  = -0.33126f; m[7]  = 0.5f;
+        m[10] = 0.5f;      m[11] = -0.41869f; m[12] = -0.08131f;
     }
-
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.140 -0400", hash_original_method = "6D15755F0D0866427FC697B26AFE845E", hash_generated_method = "FB420D06D4A45C38C49748F9158E62E7")
+    /**
+     * Set the matrix to convert from YUV to RGB
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:50.594 -0500", hash_original_method = "6D15755F0D0866427FC697B26AFE845E", hash_generated_method = "258D8DD3FEC39237791A587CEA196BEB")
     public void setYUV2RGB() {
         reset();
         float[] m = mArray;
-        m[2] = 1.402f;
-        m[5] = 1;
-        m[6] = -0.34414f;
-        m[7] = -0.71414f;
-        m[10] = 1;
-        m[11] = 1.772f;
-        m[12] = 0;
-        // ---------- Original Method ----------
-        //reset();
-        //float[] m = mArray;
-        //m[2] = 1.402f;
-        //m[5] = 1;
-        //m[6] = -0.34414f;
-        //m[7] = -0.71414f;
-        //m[10] = 1;
-        //m[11] = 1.772f;
-        //m[12] = 0;
+        // these coefficients match those in libjpeg
+                                        m[2] = 1.402f;
+        m[5] = 1;   m[6] = -0.34414f;   m[7] = -0.71414f;
+        m[10] = 1;  m[11] = 1.772f;     m[12] = 0;
     }
 
     

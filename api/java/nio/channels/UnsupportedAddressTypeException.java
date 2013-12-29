@@ -1,21 +1,23 @@
 package java.nio.channels;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
 
 public class UnsupportedAddressTypeException extends IllegalArgumentException {
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.310 -0400", hash_original_method = "BEA2635FD89D2F30543F23AA8536EBB6", hash_generated_method = "8166549E54A4122D51148A1ADA7B87D3")
-    public  UnsupportedAddressTypeException() {
-        // ---------- Original Method ----------
-    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.768 -0500", hash_original_field = "3E1353043256E2234845A04A5713DDFE", hash_generated_field = "DE86BE4D6C4075BBBD8279C4C7FB8D40")
 
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.310 -0400", hash_original_field = "1D3673A359D522038AC6088B8F0FA04E", hash_generated_field = "DE86BE4D6C4075BBBD8279C4C7FB8D40")
 
     private static final long serialVersionUID = -2964323842829700493L;
+
+    /**
+     * Constructs an {@code UnsupportedAddressTypeException}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.768 -0500", hash_original_method = "BEA2635FD89D2F30543F23AA8536EBB6", hash_generated_method = "5D536C90E5DF6FB1F6A8973EB205B8DF")
+    public UnsupportedAddressTypeException() {
+    }
 }
 

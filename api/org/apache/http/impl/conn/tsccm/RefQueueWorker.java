@@ -1,6 +1,8 @@
 package org.apache.http.impl.conn.tsccm;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.lang.ref.Reference;
 import java.lang.ref.ReferenceQueue;
@@ -12,113 +14,93 @@ import org.apache.commons.logging.LogFactory;
 
 
 public class RefQueueWorker implements Runnable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.421 -0400", hash_original_field = "0B7469F2850D918A96D1C36E99B23F5C", hash_generated_field = "3FCE5BFF671FE7B3BB3E2D744C5E5D2C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.731 -0500", hash_original_field = "0DA7E40E862C937570CA6B0D96D2555A", hash_generated_field = "3FCE5BFF671FE7B3BB3E2D744C5E5D2C")
+
 
     private final Log log = LogFactory.getLog(getClass());
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.421 -0400", hash_original_field = "B82FB46AF129A517A66F7204F172DDA9", hash_generated_field = "40049CCA20E99139643BCB7890F78F90")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.732 -0500", hash_original_field = "AF3F1BF62DD67A6204D4B99C3928DDE7", hash_generated_field = "40049CCA20E99139643BCB7890F78F90")
 
-    protected ReferenceQueue<?> refQueue;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.421 -0400", hash_original_field = "EC3D083E9EB758561E8C0FEFA6782F05", hash_generated_field = "7ABFD2CF4B63269B45DD287A5590324B")
+    protected  ReferenceQueue<?> refQueue;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.733 -0500", hash_original_field = "C4D17D8E20F898203F5288742532355E", hash_generated_field = "7ABFD2CF4B63269B45DD287A5590324B")
 
-    protected RefQueueHandler refHandler;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.421 -0400", hash_original_field = "34A11ABDA68ED9AF26BEFBF2D01C2C93", hash_generated_field = "AD9424F71A9D950798ECA942D1D55E60")
+    protected  RefQueueHandler refHandler;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.734 -0500", hash_original_field = "E9FF103FC0FAC4762B85597770D9D323", hash_generated_field = "AD9424F71A9D950798ECA942D1D55E60")
 
     protected volatile Thread workerThread;
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.422 -0400", hash_original_method = "7CE59BC66C958C608E20B1EEC430162A", hash_generated_method = "01EFCABA3ABC5AAE24CD200EDFA1D16B")
-    public  RefQueueWorker(ReferenceQueue<?> queue, RefQueueHandler handler) {
-        if(queue == null)        
-        {
-            IllegalArgumentException var92597C0BB4D3D87F2ECE27274D53EE76_614373096 = new IllegalArgumentException("Queue must not be null.");
-            var92597C0BB4D3D87F2ECE27274D53EE76_614373096.addTaint(taint);
-            throw var92597C0BB4D3D87F2ECE27274D53EE76_614373096;
-        } //End block
-        if(handler == null)        
-        {
-            IllegalArgumentException varBECFD90EE60267CC6E41D35E31D56037_739041531 = new IllegalArgumentException("Handler must not be null.");
-            varBECFD90EE60267CC6E41D35E31D56037_739041531.addTaint(taint);
-            throw varBECFD90EE60267CC6E41D35E31D56037_739041531;
-        } //End block
+
+
+    /**
+     * Instantiates a new worker to listen for lost connections.
+     *
+     * @param queue     the queue on which to wait for references
+     * @param handler   the handler to pass the references to
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.735 -0500", hash_original_method = "7CE59BC66C958C608E20B1EEC430162A", hash_generated_method = "CA85AE20212AFCDAED1E94900A261A2A")
+    public RefQueueWorker(ReferenceQueue<?> queue, RefQueueHandler handler) {
+        if (queue == null) {
+            throw new IllegalArgumentException("Queue must not be null.");
+        }
+        if (handler == null) {
+            throw new IllegalArgumentException("Handler must not be null.");
+        }
+
         refQueue   = queue;
         refHandler = handler;
-        // ---------- Original Method ----------
-        //if (queue == null) {
-            //throw new IllegalArgumentException("Queue must not be null.");
-        //}
-        //if (handler == null) {
-            //throw new IllegalArgumentException("Handler must not be null.");
-        //}
-        //refQueue   = queue;
-        //refHandler = handler;
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.423 -0400", hash_original_method = "068901515EDCF67E719CCEED21C02CEA", hash_generated_method = "CE5EE7A85CCFB98120CDD87D88B7EBAF")
+
+    /**
+     * The main loop of this worker.
+     * If initialization succeeds, this method will only return
+     * after {@link #shutdown shutdown()}. Only one thread can
+     * execute the main loop at any time.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.736 -0500", hash_original_method = "068901515EDCF67E719CCEED21C02CEA", hash_generated_method = "3D8D6E0C0D5DD7B4890A87101CA0C31F")
     public void run() {
-        if(this.workerThread == null)        
-        {
+
+        if (this.workerThread == null) {
             this.workerThread = Thread.currentThread();
-        } //End block
-        while
-(this.workerThread == Thread.currentThread())        
-        {
-            try 
-            {
+        }
+
+        while (this.workerThread == Thread.currentThread()) {
+            try {
+                // remove the next reference and process it
                 Reference<?> ref = refQueue.remove();
                 refHandler.handleReference(ref);
-            } //End block
-            catch (InterruptedException e)
-            {
-                if(log.isDebugEnabled())                
-                {
+            } catch (InterruptedException e) {
+                //@@@ is logging really necessary? this here is the
+                //@@@ only reason for having a log in this class
+                if (log.isDebugEnabled()) {
                     log.debug(this.toString() + " interrupted", e);
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (this.workerThread == null) {
-            //this.workerThread = Thread.currentThread();
-        //}
-        //while (this.workerThread == Thread.currentThread()) {
-            //try {
-                //Reference<?> ref = refQueue.remove();
-                //refHandler.handleReference(ref);
-            //} catch (InterruptedException e) {
-                //if (log.isDebugEnabled()) {
-                    //log.debug(this.toString() + " interrupted", e);
-                //}
-            //}
-        //}
+                }
+            }
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.424 -0400", hash_original_method = "4BBB4A6394E78355577BCA1899518AA3", hash_generated_method = "744BF52BC6D7A2884848DEF85B1B3249")
+
+    /**
+     * Shuts down this worker.
+     * It can be re-started afterwards by another call to {@link #run run()}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.737 -0500", hash_original_method = "4BBB4A6394E78355577BCA1899518AA3", hash_generated_method = "6CE48C3E51E997E0D335B5113DBA95F1")
     public void shutdown() {
         Thread wt = this.workerThread;
-        if(wt != null)        
-        {
-            this.workerThread = null;
+        if (wt != null) {
+            this.workerThread = null; // indicate shutdown
             wt.interrupt();
-        } //End block
-        // ---------- Original Method ----------
-        //Thread wt = this.workerThread;
-        //if (wt != null) {
-            //this.workerThread = null; 
-            //wt.interrupt();
-        //}
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.424 -0400", hash_original_method = "7EB957F4647F2E9AB09EE1A296B7BEEF", hash_generated_method = "32A0C35C5A827075E0BED2F078302335")
+
+    /**
+     * Obtains a description of this worker.
+     *
+     * @return  a descriptive string for this worker
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:19.737 -0500", hash_original_method = "7EB957F4647F2E9AB09EE1A296B7BEEF", hash_generated_method = "4C820E660A2767B76BC387A5AB9B43EE")
     @Override
-    public String toString() {
-String varF97D1EB4E7BB2414B750B467C6942FFE_623497443 =         "RefQueueWorker::" + this.workerThread;
-        varF97D1EB4E7BB2414B750B467C6942FFE_623497443.addTaint(taint);
-        return varF97D1EB4E7BB2414B750B467C6942FFE_623497443;
-        // ---------- Original Method ----------
-        //return "RefQueueWorker::" + this.workerThread;
+public String toString() {
+        return "RefQueueWorker::" + this.workerThread;
     }
 
     

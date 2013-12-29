@@ -1,6 +1,8 @@
 package org.apache.http.client;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import org.apache.http.ProtocolException;
 
@@ -8,25 +10,27 @@ import org.apache.http.ProtocolException;
 
 
 public class NonRepeatableRequestException extends ProtocolException {
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.375 -0400", hash_original_method = "14DECFA9FD444F48F1267DE5834D3279", hash_generated_method = "4508DC95E498ADBE80B4E49F391FDFA0")
-    public  NonRepeatableRequestException() {
-        super();
-        // ---------- Original Method ----------
-    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.107 -0500", hash_original_field = "AFFA6C6BD215171C8C2709B4F0002176", hash_generated_field = "CBAF5D482FD12BECD83779ACC6D0F5A0")
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.376 -0400", hash_original_method = "4B87CBDD18691A2F7063A9BFE6EBFE62", hash_generated_method = "CE5DF3FDD87E08FE883176C2ECCDCABC")
-    public  NonRepeatableRequestException(String message) {
-        super(message);
-        addTaint(message.getTaint());
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.376 -0400", hash_original_field = "08871C21719A2A068B1F0EA6FEDB39BA", hash_generated_field = "CBAF5D482FD12BECD83779ACC6D0F5A0")
 
     private static final long serialVersionUID = 82685265288806048L;
+
+    /**
+     * Creates a new NonRepeatableEntityException with a <tt>null</tt> detail message. 
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.108 -0500", hash_original_method = "14DECFA9FD444F48F1267DE5834D3279", hash_generated_method = "507046DDE19EC846305CEFA119CDCD0F")
+    public NonRepeatableRequestException() {
+        super();
+    }
+
+    /**
+     * Creates a new NonRepeatableEntityException with the specified detail message.
+     * 
+     * @param message The exception detail message
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.109 -0500", hash_original_method = "4B87CBDD18691A2F7063A9BFE6EBFE62", hash_generated_method = "F45DEE8C578CC0C333B599092F37CC4F")
+    public NonRepeatableRequestException(String message) {
+        super(message);
+    }
 }
 

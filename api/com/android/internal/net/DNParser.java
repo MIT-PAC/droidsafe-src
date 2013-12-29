@@ -1,6 +1,9 @@
 package com.android.internal.net;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
+import android.util.Log;
 import droidsafe.annotations.*;
 import java.io.IOException;
 
@@ -9,12 +12,18 @@ import javax.security.auth.x500.X500Principal;
 
 
 public final class DNParser {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.322 -0400", hash_original_field = "567C996739EDFA1CDBAD4C55A80580DF", hash_generated_field = "3D2CB8429158C4900E9EA4B3985C38C4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:45.091 -0500", hash_original_field = "EA1B57D73AF22D42FFBE3F9C03A150D5", hash_generated_field = "8755658AF290FD110892EDFB73434ADB")
 
-    private String dn;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.322 -0400", hash_original_field = "2FA47F7C65FEC19CC163B195725E3844", hash_generated_field = "C7D2E1B1F4403418CA216FC250689056")
+    private static final String TAG = "DNParser";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:45.096 -0500", hash_original_field = "AC5649507EA15733DFCCC1FBFEB5DC6A", hash_generated_field = "F6565CB51CDFFE700B2DBF94ED832F63")
 
-    private int length;
+    private static final String ERROR_PARSE_ERROR = "Failed to parse DN";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:45.092 -0500", hash_original_field = "74A77BA6BAB71A1CFF838B8FBBD6D72C", hash_generated_field = "3D2CB8429158C4900E9EA4B3985C38C4")
+
+    private  String dn;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:45.093 -0500", hash_original_field = "136C4DD872F8065EECD33F6CD4E7556E", hash_generated_field = "C7D2E1B1F4403418CA216FC250689056")
+
+    private  int length;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.322 -0400", hash_original_field = "5E0BDCBDDCCCA4D66D74BA8C1CEE1A68", hash_generated_field = "74B29150B9CA7F1725D53FF286BFBC4B")
 
     private int pos;
@@ -24,260 +33,230 @@ public final class DNParser {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.322 -0400", hash_original_field = "7F021A1415B86F2D013B2618FB31AE53", hash_generated_field = "BDD622074D0B9CD7867B17F38BB0017C")
 
     private int end;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.322 -0400", hash_original_field = "B5FDDF1EF601E74DB01C1425561A38CB", hash_generated_field = "574083FEFFA006A1773B42DB36035D30")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:45.094 -0500", hash_original_field = "2F4877CE6BA21232C2B8D66924B60128", hash_generated_field = "574083FEFFA006A1773B42DB36035D30")
 
     private int cur;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.322 -0400", hash_original_field = "B69D9BC635CCD79AD2C64BC862ABE3B4", hash_generated_field = "8CFCF0E96717F68959883591D279E158")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:45.095 -0500", hash_original_field = "BABA8C00F9965D74411919B77DB127E3", hash_generated_field = "8CFCF0E96717F68959883591D279E158")
 
     private char[] chars;
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.322 -0400", hash_original_method = "3E2925D928731F8540EF17AB0FA8675E", hash_generated_method = "11360DB6ACF8FCF3E98B2CD56253A240")
-    public  DNParser(X500Principal principal) {
+
+    /**
+     * Constructor.
+     *
+     * @param principal - {@link X500Principal} to be parsed
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:45.097 -0500", hash_original_method = "3E2925D928731F8540EF17AB0FA8675E", hash_generated_method = "515592831E5B57905D11A2F212070F53")
+    public DNParser(X500Principal principal) {
         this.dn = principal.getName(X500Principal.RFC2253);
         this.length = dn.length();
-        // ---------- Original Method ----------
-        //this.dn = principal.getName(X500Principal.RFC2253);
-        //this.length = dn.length();
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.323 -0400", hash_original_method = "FF4BEB2C3B52F01ACB9FD25F4CE8A230", hash_generated_method = "F3EBC385B48599B08CDCB7EF93136A83")
+    // gets next attribute type: (ALPHA 1*keychar) / oid
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:45.098 -0500", hash_original_method = "FF4BEB2C3B52F01ACB9FD25F4CE8A230", hash_generated_method = "F0D0BF57D4C2BD93F75155F728BA4DC0")
     private String nextAT() throws IOException {
-for(;pos < length && chars[pos] == ' ';pos++)
-        {
-        } //End block
-        if(pos == length)        
-        {
-String var540C13E9E156B687226421B24F2DF178_1939972726 =             null;
-            var540C13E9E156B687226421B24F2DF178_1939972726.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_1939972726;
-        } //End block
+
+        // skip preceding space chars, they can present after
+        // comma or semicolon (compatibility with RFC 1779)
+        for (; pos < length && chars[pos] == ' '; pos++) {
+        }
+        if (pos == length) {
+            return null; // reached the end of DN
+        }
+
+        // mark the beginning of attribute type
         beg = pos;
+
+        // attribute type chars
         pos++;
-for(;pos < length && chars[pos] != '=' && chars[pos] != ' ';pos++)
-        {
-        } //End block
-        if(pos >= length)        
-        {
-            IOException var3C5391EA77D4408E3684E0C5A2602AD4_1259103412 = new IOException(ERROR_PARSE_ERROR);
-            var3C5391EA77D4408E3684E0C5A2602AD4_1259103412.addTaint(taint);
-            throw var3C5391EA77D4408E3684E0C5A2602AD4_1259103412;
-        } //End block
+        for (; pos < length && chars[pos] != '=' && chars[pos] != ' '; pos++) {
+            // we don't follow exact BNF syntax here:
+            // accept any char except space and '='
+        }
+        if (pos >= length) {
+            // unexpected end of DN
+            throw new IOException(ERROR_PARSE_ERROR);
+        }
+
+        // mark the end of attribute type
         end = pos;
-        if(chars[pos] == ' ')        
-        {
-for(;pos < length && chars[pos] != '=' && chars[pos] == ' ';pos++)
-            {
-            } //End block
-            if(chars[pos] != '=' || pos == length)            
-            {
-                IOException var3C5391EA77D4408E3684E0C5A2602AD4_1321790648 = new IOException(ERROR_PARSE_ERROR);
-                var3C5391EA77D4408E3684E0C5A2602AD4_1321790648.addTaint(taint);
-                throw var3C5391EA77D4408E3684E0C5A2602AD4_1321790648;
-            } //End block
-        } //End block
-        pos++;
-for(;pos < length && chars[pos] == ' ';pos++)
-        {
-        } //End block
-        if((end - beg > 4) && (chars[beg + 3] == '.')
+
+        // skip trailing space chars between attribute type and '='
+        // (compatibility with RFC 1779)
+        if (chars[pos] == ' ') {
+            for (; pos < length && chars[pos] != '=' && chars[pos] == ' '; pos++) {
+            }
+
+            if (chars[pos] != '=' || pos == length) {
+                // unexpected end of DN
+                throw new IOException(ERROR_PARSE_ERROR);
+            }
+        }
+
+        pos++; //skip '=' char
+
+        // skip space chars between '=' and attribute value
+        // (compatibility with RFC 1779)
+        for (; pos < length && chars[pos] == ' '; pos++) {
+        }
+
+        // in case of oid attribute type skip its prefix: "oid." or "OID."
+        // (compatibility with RFC 1779)
+        if ((end - beg > 4) && (chars[beg + 3] == '.')
                 && (chars[beg] == 'O' || chars[beg] == 'o')
                 && (chars[beg + 1] == 'I' || chars[beg + 1] == 'i')
-                && (chars[beg + 2] == 'D' || chars[beg + 2] == 'd'))        
-        {
+                && (chars[beg + 2] == 'D' || chars[beg + 2] == 'd')) {
             beg += 4;
-        } //End block
-String varA88CD4E826BB74E12B252BCF2CEC4945_614648331 =         new String(chars, beg, end - beg);
-        varA88CD4E826BB74E12B252BCF2CEC4945_614648331.addTaint(taint);
-        return varA88CD4E826BB74E12B252BCF2CEC4945_614648331;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        }
+
+        return new String(chars, beg, end - beg);
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.325 -0400", hash_original_method = "6CE0A226336916B0D0BD29FA44800404", hash_generated_method = "9E7CE86C5A0AA00709051B3A0C5348A6")
+    // gets quoted attribute value: QUOTATION *( quotechar / pair ) QUOTATION
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:45.099 -0500", hash_original_method = "6CE0A226336916B0D0BD29FA44800404", hash_generated_method = "C8479615C8221D0B73A1DA6D2665FBAB")
     private String quotedAV() throws IOException {
+
         pos++;
         beg = pos;
         end = beg;
-        while
-(true)        
-        {
-            if(pos == length)            
-            {
-                IOException var3C5391EA77D4408E3684E0C5A2602AD4_25000182 = new IOException(ERROR_PARSE_ERROR);
-                var3C5391EA77D4408E3684E0C5A2602AD4_25000182.addTaint(taint);
-                throw var3C5391EA77D4408E3684E0C5A2602AD4_25000182;
-            } //End block
-            if(chars[pos] == '"')            
-            {
+        while (true) {
+
+            if (pos == length) {
+                // unexpected end of DN
+                throw new IOException(ERROR_PARSE_ERROR);
+            }
+
+            if (chars[pos] == '"') {
+                // enclosing quotation was found
                 pos++;
                 break;
-            } //End block
-            else
-            if(chars[pos] == '\\')            
-            {
+            } else if (chars[pos] == '\\') {
                 chars[end] = getEscaped();
-            } //End block
-            else
-            {
+            } else {
+                // shift char: required for string with escaped chars
                 chars[end] = chars[pos];
-            } //End block
+            }
             pos++;
             end++;
-        } //End block
-for(;pos < length && chars[pos] == ' ';pos++)
-        {
-        } //End block
-String varA88CD4E826BB74E12B252BCF2CEC4945_926636910 =         new String(chars, beg, end - beg);
-        varA88CD4E826BB74E12B252BCF2CEC4945_926636910.addTaint(taint);
-        return varA88CD4E826BB74E12B252BCF2CEC4945_926636910;
-        // ---------- Original Method ----------
-        //pos++;
-        //beg = pos;
-        //end = beg;
-        //while (true) {
-            //if (pos == length) {
-                //throw new IOException(ERROR_PARSE_ERROR);
-            //}
-            //if (chars[pos] == '"') {
-                //pos++;
-                //break;
-            //} else if (chars[pos] == '\\') {
-                //chars[end] = getEscaped();
-            //} else {
-                //chars[end] = chars[pos];
-            //}
-            //pos++;
-            //end++;
-        //}
-        //for (; pos < length && chars[pos] == ' '; pos++) {
-        //}
-        //return new String(chars, beg, end - beg);
+        }
+
+        // skip trailing space chars before comma or semicolon.
+        // (compatibility with RFC 1779)
+        for (; pos < length && chars[pos] == ' '; pos++) {
+        }
+
+        return new String(chars, beg, end - beg);
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.328 -0400", hash_original_method = "F2971F3EEE8ADD1AC7CDED4BAC19B062", hash_generated_method = "160F595A50FD8061C60965D385BD15BD")
+    // gets hex string attribute value: "#" hexstring
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:45.100 -0500", hash_original_method = "F2971F3EEE8ADD1AC7CDED4BAC19B062", hash_generated_method = "F1094E0759D42A95372AF458E2BC086C")
     private String hexAV() throws IOException {
-        if(pos + 4 >= length)        
-        {
-            IOException var3C5391EA77D4408E3684E0C5A2602AD4_780827597 = new IOException(ERROR_PARSE_ERROR);
-            var3C5391EA77D4408E3684E0C5A2602AD4_780827597.addTaint(taint);
-            throw var3C5391EA77D4408E3684E0C5A2602AD4_780827597;
-        } //End block
-        beg = pos;
+
+        if (pos + 4 >= length) {
+            // encoded byte array  must be not less then 4 c
+            throw new IOException(ERROR_PARSE_ERROR);
+        }
+
+        beg = pos; // store '#' position
         pos++;
-        while
-(true)        
-        {
-            if(pos == length || chars[pos] == '+' || chars[pos] == ','
-                    || chars[pos] == ';')            
-            {
+        while (true) {
+
+            // check for end of attribute value
+            // looks for space and component separators
+            if (pos == length || chars[pos] == '+' || chars[pos] == ','
+                    || chars[pos] == ';') {
                 end = pos;
                 break;
-            } //End block
-            if(chars[pos] == ' ')            
-            {
+            }
+
+            if (chars[pos] == ' ') {
                 end = pos;
                 pos++;
-for(;pos < length && chars[pos] == ' ';pos++)
-                {
-                } //End block
+                // skip trailing space chars before comma or semicolon.
+                // (compatibility with RFC 1779)
+                for (; pos < length && chars[pos] == ' '; pos++) {
+                }
                 break;
-            } //End block
-            else
-            if(chars[pos] >= 'A' && chars[pos] <= 'F')            
-            {
-                chars[pos] += 32;
-            } //End block
+            } else if (chars[pos] >= 'A' && chars[pos] <= 'F') {
+                chars[pos] += 32; //to low case
+            }
+
             pos++;
-        } //End block
-        int hexLen = end - beg;
-        if(hexLen < 5 || (hexLen & 1) == 0)        
-        {
-            IOException var3C5391EA77D4408E3684E0C5A2602AD4_1984918506 = new IOException(ERROR_PARSE_ERROR);
-            var3C5391EA77D4408E3684E0C5A2602AD4_1984918506.addTaint(taint);
-            throw var3C5391EA77D4408E3684E0C5A2602AD4_1984918506;
-        } //End block
+        }
+
+        // verify length of hex string
+        // encoded byte array  must be not less then 4 and must be even number
+        int hexLen = end - beg; // skip first '#' char
+        if (hexLen < 5 || (hexLen & 1) == 0) {
+            throw new IOException(ERROR_PARSE_ERROR);
+        }
+
+        // get byte encoding from string representation
         byte[] encoded = new byte[hexLen / 2];
-for(int i = 0, p = beg + 1;i < encoded.length;p += 2,i++)
-        {
+        for (int i = 0, p = beg + 1; i < encoded.length; p += 2, i++) {
             encoded[i] = (byte) getByte(p);
-        } //End block
-String varCC1247AAA5590D16A647B2E2A6BA7DE8_2049899936 =         new String(chars, beg, hexLen);
-        varCC1247AAA5590D16A647B2E2A6BA7DE8_2049899936.addTaint(taint);
-        return varCC1247AAA5590D16A647B2E2A6BA7DE8_2049899936;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        }
+
+        return new String(chars, beg, hexLen);
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.329 -0400", hash_original_method = "4DC639394A31828D7BD68247B83FBA07", hash_generated_method = "BD964D364D878C20E0656291530D6632")
+    // gets string attribute value: *( stringchar / pair )
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:45.101 -0500", hash_original_method = "4DC639394A31828D7BD68247B83FBA07", hash_generated_method = "FA340660B1DC19FDC8860502F86C8A8C")
     private String escapedAV() throws IOException {
+
         beg = pos;
         end = pos;
-        while
-(true)        
-        {
-            if(pos >= length)            
-            {
-String varA88CD4E826BB74E12B252BCF2CEC4945_1423485660 =                 new String(chars, beg, end - beg);
-                varA88CD4E826BB74E12B252BCF2CEC4945_1423485660.addTaint(taint);
-                return varA88CD4E826BB74E12B252BCF2CEC4945_1423485660;
-            } //End block
-switch(chars[pos]){
+        while (true) {
+
+            if (pos >= length) {
+                // the end of DN has been found
+                return new String(chars, beg, end - beg);
+            }
+
+            switch (chars[pos]) {
             case '+':
             case ',':
             case ';':
-String varA88CD4E826BB74E12B252BCF2CEC4945_330149234 =             new String(chars, beg, end - beg);
-            varA88CD4E826BB74E12B252BCF2CEC4945_330149234.addTaint(taint);
-            return varA88CD4E826BB74E12B252BCF2CEC4945_330149234;
+                // separator char has beed found
+                return new String(chars, beg, end - beg);
             case '\\':
-            chars[end++] = getEscaped();
-            pos++;
-            break;
+                // escaped char
+                chars[end++] = getEscaped();
+                pos++;
+                break;
             case ' ':
-            cur = end;
-            pos++;
-            chars[end++] = ' ';
-for(;pos < length && chars[pos] == ' ';pos++)
-            {
+                // need to figure out whether space defines
+                // the end of attribute value or not
+                cur = end;
+
+                pos++;
                 chars[end++] = ' ';
-            } //End block
-            if(pos == length || chars[pos] == ',' || chars[pos] == '+'
-                        || chars[pos] == ';')            
-            {
-String varF4AE4525652FA624971421628D52D24A_1196079737 =                 new String(chars, beg, cur - beg);
-                varF4AE4525652FA624971421628D52D24A_1196079737.addTaint(taint);
-                return varF4AE4525652FA624971421628D52D24A_1196079737;
-            } //End block
-            break;
+
+                for (; pos < length && chars[pos] == ' '; pos++) {
+                    chars[end++] = ' ';
+                }
+                if (pos == length || chars[pos] == ',' || chars[pos] == '+'
+                        || chars[pos] == ';') {
+                    // separator char or the end of DN has beed found
+                    return new String(chars, beg, cur - beg);
+                }
+                break;
             default:
-            chars[end++] = chars[pos];
-            pos++;
-}
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                chars[end++] = chars[pos];
+                pos++;
+            }
+        }
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.330 -0400", hash_original_method = "53196F6413879CFC1842AAE874B37E3B", hash_generated_method = "630A0AECE49A022CD3949C5608C33A55")
+    // returns escaped char
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:45.102 -0500", hash_original_method = "53196F6413879CFC1842AAE874B37E3B", hash_generated_method = "C460509F8FDC988A9540230C9CA971BE")
     private char getEscaped() throws IOException {
+
         pos++;
-        if(pos == length)        
-        {
-            IOException var3C5391EA77D4408E3684E0C5A2602AD4_712038411 = new IOException(ERROR_PARSE_ERROR);
-            var3C5391EA77D4408E3684E0C5A2602AD4_712038411.addTaint(taint);
-            throw var3C5391EA77D4408E3684E0C5A2602AD4_712038411;
-        } //End block
-switch(chars[pos]){
+        if (pos == length) {
+            throw new IOException(ERROR_PARSE_ERROR);
+        }
+
+        switch (chars[pos]) {
         case '"':
         case '\\':
         case ',':
@@ -291,282 +270,170 @@ switch(chars[pos]){
         case '*':
         case '%':
         case '_':
-        char var8BA167260B3B4A0A1E5DDCB657F950D1_1525531968 = (chars[pos]);
-                char varA87DEB01C5F539E6BDA34829C8EF2368_1825735886 = getTaintChar();
-        return varA87DEB01C5F539E6BDA34829C8EF2368_1825735886;
+            //FIXME: escaping is allowed only for leading or trailing space char
+            return chars[pos];
         default:
-        char var2E5C957BB5E9D2FF9D2B4FF469959575_1339228788 = (getUTF8());
-                char varA87DEB01C5F539E6BDA34829C8EF2368_172871040 = getTaintChar();
-        return varA87DEB01C5F539E6BDA34829C8EF2368_172871040;
-}
-        // ---------- Original Method ----------
-        //pos++;
-        //if (pos == length) {
-            //throw new IOException(ERROR_PARSE_ERROR);
-        //}
-        //switch (chars[pos]) {
-        //case '"':
-        //case '\\':
-        //case ',':
-        //case '=':
-        //case '+':
-        //case '<':
-        //case '>':
-        //case '#':
-        //case ';':
-        //case ' ':
-        //case '*':
-        //case '%':
-        //case '_':
-            //return chars[pos];
-        //default:
-            //return getUTF8();
-        //}
+            // RFC doesn't explicitly say that escaped hex pair is
+            // interpreted as UTF-8 char. It only contains an example of such DN.
+            return getUTF8();
+        }
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.332 -0400", hash_original_method = "1AF4B344FDDD447575D7BAE99B8C4CD1", hash_generated_method = "707D02B7DED8252617A20964E54F4936")
+    // decodes UTF-8 char
+    // see http://www.unicode.org for UTF-8 bit distribution table
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:45.103 -0500", hash_original_method = "1AF4B344FDDD447575D7BAE99B8C4CD1", hash_generated_method = "05008221DC4D81DCF8CC27935EE71897")
     private char getUTF8() throws IOException {
+
         int res = getByte(pos);
-        pos++;
-        if(res < 128)        
-        {
-            char var7C6A3B9F9EDA80A67C698BA55955EB3A_1197111684 = ((char) res);
-                        char varA87DEB01C5F539E6BDA34829C8EF2368_138904186 = getTaintChar();
-            return varA87DEB01C5F539E6BDA34829C8EF2368_138904186;
-        } //End block
-        else
-        if(res >= 192 && res <= 247)        
-        {
+        pos++; //FIXME tmp
+
+        if (res < 128) { // one byte: 0-7F
+            return (char) res;
+        } else if (res >= 192 && res <= 247) {
+
             int count;
-            if(res <= 223)            
-            {
+            if (res <= 223) { // two bytes: C0-DF
                 count = 1;
                 res = res & 0x1F;
-            } //End block
-            else
-            if(res <= 239)            
-            {
+            } else if (res <= 239) { // three bytes: E0-EF
                 count = 2;
                 res = res & 0x0F;
-            } //End block
-            else
-            {
+            } else { // four bytes: F0-F7
                 count = 3;
                 res = res & 0x07;
-            } //End block
+            }
+
             int b;
-for(int i = 0;i < count;i++)
-            {
+            for (int i = 0; i < count; i++) {
                 pos++;
-                if(pos == length || chars[pos] != '\\')                
-                {
-                    char var422322C3A3E199EB41D9E4FF6219421D_285427424 = (0x3F);
-                                        char varA87DEB01C5F539E6BDA34829C8EF2368_1502500156 = getTaintChar();
-                    return varA87DEB01C5F539E6BDA34829C8EF2368_1502500156;
-                } //End block
+                if (pos == length || chars[pos] != '\\') {
+                    return 0x3F; //FIXME failed to decode UTF-8 char - return '?'
+                }
                 pos++;
+
                 b = getByte(pos);
-                pos++;
-                if((b & 0xC0) != 0x80)                
-                {
-                    char var422322C3A3E199EB41D9E4FF6219421D_1304937524 = (0x3F);
-                                        char varA87DEB01C5F539E6BDA34829C8EF2368_879856748 = getTaintChar();
-                    return varA87DEB01C5F539E6BDA34829C8EF2368_879856748;
-                } //End block
+                pos++; //FIXME tmp
+                if ((b & 0xC0) != 0x80) {
+                    return 0x3F; //FIXME failed to decode UTF-8 char - return '?'
+                }
+
                 res = (res << 6) + (b & 0x3F);
-            } //End block
-            char var7C6A3B9F9EDA80A67C698BA55955EB3A_1838650226 = ((char) res);
-                        char varA87DEB01C5F539E6BDA34829C8EF2368_856047771 = getTaintChar();
-            return varA87DEB01C5F539E6BDA34829C8EF2368_856047771;
-        } //End block
-        else
-        {
-            char var422322C3A3E199EB41D9E4FF6219421D_1199911825 = (0x3F);
-                        char varA87DEB01C5F539E6BDA34829C8EF2368_209384682 = getTaintChar();
-            return varA87DEB01C5F539E6BDA34829C8EF2368_209384682;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            }
+            return (char) res;
+        } else {
+            return 0x3F; //FIXME failed to decode UTF-8 char - return '?'
+        }
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.335 -0400", hash_original_method = "2374C761E42CEC3E752725D6A1CCC05C", hash_generated_method = "17BE8BB590AEBC9E18257D6E3E8C0E3C")
+    // Returns byte representation of a char pair
+    // The char pair is composed of DN char in
+    // specified 'position' and the next char
+    // According to BNF syntax:
+    // hexchar    = DIGIT / "A" / "B" / "C" / "D" / "E" / "F"
+    //                    / "a" / "b" / "c" / "d" / "e" / "f"
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:45.104 -0500", hash_original_method = "2374C761E42CEC3E752725D6A1CCC05C", hash_generated_method = "91DA66F05902E6D47D3876FBD601DB01")
     private int getByte(int position) throws IOException {
-        addTaint(position);
-        if((position + 1) >= length)        
-        {
-            IOException var3C5391EA77D4408E3684E0C5A2602AD4_200563680 = new IOException(ERROR_PARSE_ERROR);
-            var3C5391EA77D4408E3684E0C5A2602AD4_200563680.addTaint(taint);
-            throw var3C5391EA77D4408E3684E0C5A2602AD4_200563680;
-        } //End block
-        int b1;
-        int b2;
+
+        if ((position + 1) >= length) {
+            // to avoid ArrayIndexOutOfBoundsException
+            throw new IOException(ERROR_PARSE_ERROR);
+        }
+
+        int b1, b2;
+
         b1 = chars[position];
-        if(b1 >= '0' && b1 <= '9')        
-        {
+        if (b1 >= '0' && b1 <= '9') {
             b1 = b1 - '0';
-        } //End block
-        else
-        if(b1 >= 'a' && b1 <= 'f')        
-        {
-            b1 = b1 - 87;
-        } //End block
-        else
-        if(b1 >= 'A' && b1 <= 'F')        
-        {
-            b1 = b1 - 55;
-        } //End block
-        else
-        {
-            IOException var3C5391EA77D4408E3684E0C5A2602AD4_967042490 = new IOException(ERROR_PARSE_ERROR);
-            var3C5391EA77D4408E3684E0C5A2602AD4_967042490.addTaint(taint);
-            throw var3C5391EA77D4408E3684E0C5A2602AD4_967042490;
-        } //End block
+        } else if (b1 >= 'a' && b1 <= 'f') {
+            b1 = b1 - 87; // 87 = 'a' - 10
+        } else if (b1 >= 'A' && b1 <= 'F') {
+            b1 = b1 - 55; // 55 = 'A' - 10
+        } else {
+            throw new IOException(ERROR_PARSE_ERROR);
+        }
+
         b2 = chars[position + 1];
-        if(b2 >= '0' && b2 <= '9')        
-        {
+        if (b2 >= '0' && b2 <= '9') {
             b2 = b2 - '0';
-        } //End block
-        else
-        if(b2 >= 'a' && b2 <= 'f')        
-        {
-            b2 = b2 - 87;
-        } //End block
-        else
-        if(b2 >= 'A' && b2 <= 'F')        
-        {
-            b2 = b2 - 55;
-        } //End block
-        else
-        {
-            IOException var3C5391EA77D4408E3684E0C5A2602AD4_2110590604 = new IOException(ERROR_PARSE_ERROR);
-            var3C5391EA77D4408E3684E0C5A2602AD4_2110590604.addTaint(taint);
-            throw var3C5391EA77D4408E3684E0C5A2602AD4_2110590604;
-        } //End block
-        int var91352548C1A77C8ADCB3277772A6897D_1360640776 = ((b1 << 4) + b2);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1334852940 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1334852940;
-        // ---------- Original Method ----------
-        //if ((position + 1) >= length) {
-            //throw new IOException(ERROR_PARSE_ERROR);
-        //}
-        //int b1, b2;
-        //b1 = chars[position];
-        //if (b1 >= '0' && b1 <= '9') {
-            //b1 = b1 - '0';
-        //} else if (b1 >= 'a' && b1 <= 'f') {
-            //b1 = b1 - 87; 
-        //} else if (b1 >= 'A' && b1 <= 'F') {
-            //b1 = b1 - 55; 
-        //} else {
-            //throw new IOException(ERROR_PARSE_ERROR);
-        //}
-        //b2 = chars[position + 1];
-        //if (b2 >= '0' && b2 <= '9') {
-            //b2 = b2 - '0';
-        //} else if (b2 >= 'a' && b2 <= 'f') {
-            //b2 = b2 - 87; 
-        //} else if (b2 >= 'A' && b2 <= 'F') {
-            //b2 = b2 - 55; 
-        //} else {
-            //throw new IOException(ERROR_PARSE_ERROR);
-        //}
-        //return (b1 << 4) + b2;
+        } else if (b2 >= 'a' && b2 <= 'f') {
+            b2 = b2 - 87; // 87 = 'a' - 10
+        } else if (b2 >= 'A' && b2 <= 'F') {
+            b2 = b2 - 55; // 55 = 'A' - 10
+        } else {
+            throw new IOException(ERROR_PARSE_ERROR);
+        }
+
+        return (b1 << 4) + b2;
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.339 -0400", hash_original_method = "35FC8516F494B2993CB4F015ABFC8107", hash_generated_method = "20C03CE3477E2DD2EA51E082349B263B")
+    /**
+     * Parses the DN and returns the attribute value for an attribute type.
+     *
+     * @param attributeType attribute type to look for (e.g. "ca")
+     * @return value of the attribute that first found, or null if none found
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:45.105 -0500", hash_original_method = "35FC8516F494B2993CB4F015ABFC8107", hash_generated_method = "797FCFBAD15E51E156BF4478A85641DF")
     public String find(String attributeType) {
-        addTaint(attributeType.getTaint());
-        try 
-        {
+        try {
+            // Initialize internal state.
             pos = 0;
             beg = 0;
             end = 0;
             cur = 0;
             chars = dn.toCharArray();
+
             String attType = nextAT();
-            if(attType == null)            
-            {
-String var540C13E9E156B687226421B24F2DF178_1908732459 =                 null;
-                var540C13E9E156B687226421B24F2DF178_1908732459.addTaint(taint);
-                return var540C13E9E156B687226421B24F2DF178_1908732459;
-            } //End block
-            while
-(true)            
-            {
+            if (attType == null) {
+                return null;
+            }
+            while (true) {
                 String attValue = "";
-                if(pos == length)                
-                {
-String var540C13E9E156B687226421B24F2DF178_2004545815 =                     null;
-                    var540C13E9E156B687226421B24F2DF178_2004545815.addTaint(taint);
-                    return var540C13E9E156B687226421B24F2DF178_2004545815;
-                } //End block
-switch(chars[pos]){
+
+                if (pos == length) {
+                    return null;
+                }
+
+                switch (chars[pos]) {
                 case '"':
-                attValue = quotedAV();
-                break;
+                    attValue = quotedAV();
+                    break;
                 case '#':
-                attValue = hexAV();
-                break;
+                    attValue = hexAV();
+                    break;
                 case '+':
                 case ',':
-                case ';':
-                break;
+                case ';': // compatibility with RFC 1779: semicolon can separate RDNs
+                    //empty attribute value
+                    break;
                 default:
-                attValue = escapedAV();
-}                if(attributeType.equalsIgnoreCase(attType))                
-                {
-String var808198ACDCDD83074E5A5E92A96CF11C_1353245415 =                     attValue;
-                    var808198ACDCDD83074E5A5E92A96CF11C_1353245415.addTaint(taint);
-                    return var808198ACDCDD83074E5A5E92A96CF11C_1353245415;
-                } //End block
-                if(pos >= length)                
-                {
-String var540C13E9E156B687226421B24F2DF178_1590055071 =                     null;
-                    var540C13E9E156B687226421B24F2DF178_1590055071.addTaint(taint);
-                    return var540C13E9E156B687226421B24F2DF178_1590055071;
-                } //End block
-                if(chars[pos] == ',' || chars[pos] == ';')                
-                {
-                } //End block
-                else
-                if(chars[pos] != '+')                
-                {
-                    IOException var3C5391EA77D4408E3684E0C5A2602AD4_584676604 = new IOException(ERROR_PARSE_ERROR);
-                    var3C5391EA77D4408E3684E0C5A2602AD4_584676604.addTaint(taint);
-                    throw var3C5391EA77D4408E3684E0C5A2602AD4_584676604;
-                } //End block
+                    attValue = escapedAV();
+                }
+
+                if (attributeType.equalsIgnoreCase(attType)) {
+                    return attValue;
+                }
+
+                if (pos >= length) {
+                    return null;
+                }
+
+                if (chars[pos] == ',' || chars[pos] == ';') {
+                } else if (chars[pos] != '+') {
+                    throw new IOException(ERROR_PARSE_ERROR);
+                }
+
                 pos++;
                 attType = nextAT();
-                if(attType == null)                
-                {
-                    IOException var3C5391EA77D4408E3684E0C5A2602AD4_1931111815 = new IOException(ERROR_PARSE_ERROR);
-                    var3C5391EA77D4408E3684E0C5A2602AD4_1931111815.addTaint(taint);
-                    throw var3C5391EA77D4408E3684E0C5A2602AD4_1931111815;
-                } //End block
-            } //End block
-        } //End block
-        catch (IOException e)
-        {
-String var540C13E9E156B687226421B24F2DF178_751759823 =             null;
-            var540C13E9E156B687226421B24F2DF178_751759823.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_751759823;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                if (attType == null) {
+                    throw new IOException(ERROR_PARSE_ERROR);
+                }
+            }
+        } catch (IOException e) {
+            // Parse error shouldn't happen, because we only handle DNs that
+            // X500Principal.getName() returns, which shouldn't be malformed.
+            Log.e(TAG, "Failed to parse DN: " + dn);
+            return null;
+        }
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.340 -0400", hash_original_field = "6DAE49A6EC00A4949FEB1C9846028845", hash_generated_field = "8755658AF290FD110892EDFB73434ADB")
-
-    private static final String TAG = "DNParser";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.340 -0400", hash_original_field = "88D1EAA420327EA474AE9B433B9E526C", hash_generated_field = "F6565CB51CDFFE700B2DBF94ED832F63")
-
-    private static final String ERROR_PARSE_ERROR = "Failed to parse DN";
 }
 

@@ -1,6 +1,8 @@
 package javax.crypto;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.nio.ByteBuffer;
 import java.security.InvalidAlgorithmParameterException;
@@ -13,92 +15,127 @@ import java.security.spec.AlgorithmParameterSpec;
 
 
 public abstract class MacSpi {
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.283 -0400", hash_original_method = "EEBADA04ED7B15342A993162A4F56017", hash_generated_method = "8D6409E06ABF820FA39D434786DC17A2")
-    public  MacSpi() {
-        // ---------- Original Method ----------
+
+    /**
+     * Creates a new {@code MacSpi} instance.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.636 -0500", hash_original_method = "EEBADA04ED7B15342A993162A4F56017", hash_generated_method = "132FD63D4BAF7B3BF5EECA165BAC8542")
+    public MacSpi() {
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Returns the length of this MAC (in bytes).
+     *
+     * @return the length of this MAC (in bytes).
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.637 -0500", hash_original_method = "E5EE4E3D529200DA127E29694CDB8928", hash_generated_method = "171056A01B3A57938A6452A54EFDEE0C")
     protected abstract int engineGetMacLength();
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Initializes this {@code MacSpi} instance with the specified key and
+     * algorithm parameters.
+     *
+     * @param key
+     *            the key to initialize this algorithm.
+     * @param params
+     *            the parameters for this algorithm.
+     * @throws InvalidKeyException
+     *             if the specified key cannot be used to initialize this
+     *             algorithm, or it is {@code null}.
+     * @throws InvalidAlgorithmParameterException
+     *             if the specified parameters cannot be used to initialize this
+     *             algorithm.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.638 -0500", hash_original_method = "A22BD27EF5C096BDC4200799D5CB43E0", hash_generated_method = "5E2EEEB85E1EBAC9690FDF147512AE55")
     protected abstract void engineInit(Key key, AlgorithmParameterSpec params)
             throws InvalidKeyException, InvalidAlgorithmParameterException;
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Updates this {@code MacSpi} instance with the specified byte.
+     *
+     * @param input
+     *            the byte.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.638 -0500", hash_original_method = "EE7CB55D816CEA85C7F30A7FB4116D00", hash_generated_method = "666D34AAE8FBE723D1C8C6942DC9E06A")
     protected abstract void engineUpdate(byte input);
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Updates this {@code MacSpi} instance with the data from the specified
+     * buffer {@code input} from the specified {@code offset} and length {@code
+     * len}.
+     *
+     * @param input
+     *            the buffer.
+     * @param offset
+     *            the offset in the buffer.
+     * @param len
+     *            the length of the data in the buffer.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.639 -0500", hash_original_method = "FB6A24CDBE91E42610788BB9B481679E", hash_generated_method = "31553A0D775F703B278C127F92BB5A74")
     protected abstract void engineUpdate(byte[] input, int offset, int len);
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.285 -0400", hash_original_method = "7BFE449B7BFB03ADBCFF5433860FD67B", hash_generated_method = "63823689C67BEE238B041BFC33C14571")
+    /**
+     * Updates this {@code MacSpi} instance with the data from the specified
+     * buffer, starting at {@link ByteBuffer#position()}, including the next
+     * {@link ByteBuffer#remaining()} bytes.
+     *
+     * @param input
+     *            the buffer.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.640 -0500", hash_original_method = "7BFE449B7BFB03ADBCFF5433860FD67B", hash_generated_method = "57BA6652D441251A1BE9A47D69952297")
     protected void engineUpdate(ByteBuffer input) {
-        addTaint(input.getTaint());
-        if(!input.hasRemaining())        
-        {
+        if (!input.hasRemaining()) {
             return;
-        } //End block
+        }
         byte[] bInput;
-        if(input.hasArray())        
-        {
+        if (input.hasArray()) {
             bInput = input.array();
             int offset = input.arrayOffset();
             int position = input.position();
             int limit = input.limit();
             engineUpdate(bInput, offset + position, limit - position);
             input.position(limit);
-        } //End block
-        else
-        {
+        } else {
             bInput = new byte[input.limit() - input.position()];
             input.get(bInput);
             engineUpdate(bInput, 0, bInput.length);
-        } //End block
-        // ---------- Original Method ----------
-        //if (!input.hasRemaining()) {
-            //return;
-        //}
-        //byte[] bInput;
-        //if (input.hasArray()) {
-            //bInput = input.array();
-            //int offset = input.arrayOffset();
-            //int position = input.position();
-            //int limit = input.limit();
-            //engineUpdate(bInput, offset + position, limit - position);
-            //input.position(limit);
-        //} else {
-            //bInput = new byte[input.limit() - input.position()];
-            //input.get(bInput);
-            //engineUpdate(bInput, 0, bInput.length);
-        //}
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Computes the digest of this MAC based on the data previously specified in
+     * {@link #engineUpdate} calls.
+     * <p>
+     * This {@code MacSpi} instance is reverted to its initial state and
+     * can be used to start the next MAC computation with the same parameters or
+     * initialized with different parameters.
+     *
+     * @return the generated digest.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.641 -0500", hash_original_method = "28E98DE89A8C2A2C7FA6A0C5403AC9E0", hash_generated_method = "DD49CF0D72F140D2D0B5399BA8032066")
     protected abstract byte[] engineDoFinal();
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Resets this {@code MacSpi} instance to its initial state.
+     * <p>
+     * This {@code MacSpi} instance is reverted to its initial state and can be
+     * used to start the next MAC computation with the same parameters or
+     * initialized with different parameters.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.641 -0500", hash_original_method = "2CE2783EC20BF3FC5EB60024C206E82E", hash_generated_method = "9AB089269F09C306053CFC686CB22F51")
     protected abstract void engineReset();
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.286 -0400", hash_original_method = "66DEBDF0D0405CDDBB7BD5DED76064DF", hash_generated_method = "1B56C580261B81C02F36E011988759AE")
+    /**
+     * Clones this {@code MacSpi} instance.
+     *
+     * @return the cloned instance.
+     * @throws CloneNotSupportedException
+     *             if cloning is not supported.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:26.642 -0500", hash_original_method = "66DEBDF0D0405CDDBB7BD5DED76064DF", hash_generated_method = "49055EB107CA2B05DED5ACBCE67DF575")
     @Override
-    public Object clone() throws CloneNotSupportedException {
-Object var46F3A0D86742C1D6E099C2B166941A33_1942797026 =         super.clone();
-        var46F3A0D86742C1D6E099C2B166941A33_1942797026.addTaint(taint);
-        return var46F3A0D86742C1D6E099C2B166941A33_1942797026;
-        // ---------- Original Method ----------
-        //return super.clone();
+public Object clone() throws CloneNotSupportedException {
+        return super.clone();
     }
 
     

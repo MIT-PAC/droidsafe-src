@@ -1,6 +1,8 @@
 package android.view;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.app.AppGlobals;
 import android.content.Context;
@@ -16,59 +18,444 @@ import android.util.SparseArray;
 
 
 public class ViewConfiguration {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.783 -0400", hash_original_field = "7572292F9A0C0E3DA861F35B2F9EB690", hash_generated_field = "28AD0F459ECA25E08B8AF100A990B431")
 
-    private int mEdgeSlop;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.783 -0400", hash_original_field = "827A52B85CF8A98C1BAE5458C6B4B4F5", hash_generated_field = "BDC56F2B5F3D2AC25089A5150086EC5F")
+    /**
+     * Returns a configuration for the specified context. The configuration depends on
+     * various parameters of the context, like the dimension of the display or the
+     * density of the display.
+     *
+     * @param context The application context used to initialize the view configuration.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.750 -0500", hash_original_method = "EAB98871E057FCDFFF813B18E6EC4641", hash_generated_method = "65D047D00C018AF4F4B8E7987373C246")
+    public static ViewConfiguration get(Context context) {
+        final DisplayMetrics metrics = context.getResources().getDisplayMetrics();
+        final int density = (int) (100.0f * metrics.density);
 
-    private int mFadingEdgeLength;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.784 -0400", hash_original_field = "950A8222B535BF5159B013E5329A56C7", hash_generated_field = "19DF3CA9C4A086C5604F6C8FC7721322")
+        ViewConfiguration configuration = sConfigurations.get(density);
+        if (configuration == null) {
+            configuration = new ViewConfiguration(context);
+            sConfigurations.put(density, configuration);
+        }
 
-    private int mMinimumFlingVelocity;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.784 -0400", hash_original_field = "8ED13B950D5803064219CE68BB8F2695", hash_generated_field = "7F5E59D933F0155E107640D32355B310")
+        return configuration;
+    }
 
-    private int mMaximumFlingVelocity;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.784 -0400", hash_original_field = "E8596193B8D43C34B40311F87AB4FCD6", hash_generated_field = "5F6809D206F835FAE286C3238D869AC7")
+    /**
+     * @return The width of the horizontal scrollbar and the height of the vertical
+     *         scrollbar in pixels
+     *
+     * @deprecated Use {@link #getScaledScrollBarSize()} instead.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.750 -0500", hash_original_method = "0A2417CF394B936A6105A27E128EFF04", hash_generated_method = "1DE964CC2B413D99F6C6AAADB5B01F9C")
+    @Deprecated
+public static int getScrollBarSize() {
+        return SCROLL_BAR_SIZE;
+    }
 
-    private int mScrollbarSize;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.784 -0400", hash_original_field = "3DFFFAD10926598D18EEC50D61DE79CA", hash_generated_field = "3B323323DD6A6BF972666D993592C670")
+    /**
+     * @return Duration of the fade when scrollbars fade away in milliseconds
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.752 -0500", hash_original_method = "E421242C09568631C50949743537018E", hash_generated_method = "0299A692E41855E9E03F6A872BF18F19")
+    public static int getScrollBarFadeDuration() {
+        return SCROLL_BAR_FADE_DURATION;
+    }
 
-    private int mTouchSlop;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.784 -0400", hash_original_field = "D601D279C05E34D2E9921B35CB90BAB6", hash_generated_field = "D1E477DC8F276E48EC9C9AAEB9FC42A1")
+    /**
+     * @return Default delay before the scrollbars fade in milliseconds
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.753 -0500", hash_original_method = "EE4CEAB6942F44112E7DC4BE20D131BC", hash_generated_method = "F67C562244575945C8A8615AD4819D70")
+    public static int getScrollDefaultDelay() {
+        return SCROLL_BAR_DEFAULT_DELAY;
+    }
+    
+    /**
+     * @return the length of the fading edges in pixels
+     *
+     * @deprecated Use {@link #getScaledFadingEdgeLength()} instead.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.754 -0500", hash_original_method = "8C64B9F8A7003C13690A959F566BECFE", hash_generated_method = "18196CB12B81238D19D1C78AB9B072E4")
+    @Deprecated
+public static int getFadingEdgeLength() {
+        return FADING_EDGE_LENGTH;
+    }
 
-    private int mPagingTouchSlop;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.784 -0400", hash_original_field = "F450F850864B9ECCFF82FE2087B59917", hash_generated_field = "E3F200D7EF3C7FA6B9D85E756BD947D5")
+    /**
+     * @return the duration in milliseconds of the pressed state in child
+     * components.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.756 -0500", hash_original_method = "986F5CD389833E1A3B848F5DFC09AF7E", hash_generated_method = "88D4DB715B5E66C35FDF33DA6308CA9F")
+    public static int getPressedStateDuration() {
+        return PRESSED_STATE_DURATION;
+    }
 
-    private int mDoubleTapSlop;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.784 -0400", hash_original_field = "65E37DD557E6D0E9D40F0750A85C869B", hash_generated_field = "F1E4C8B8C10EED258C69F3270B427286")
+    /**
+     * @return the duration in milliseconds before a press turns into
+     * a long press
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.756 -0500", hash_original_method = "4FEA2532A879AC8499A02B1497AE3156", hash_generated_method = "5BDFE3F6B4823EA868E8FC12A1E27412")
+    public static int getLongPressTimeout() {
+        return AppGlobals.getIntCoreSetting(Settings.Secure.LONG_PRESS_TIMEOUT,
+                DEFAULT_LONG_PRESS_TIMEOUT);
+    }
 
-    private int mScaledTouchExplorationTapSlop;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.784 -0400", hash_original_field = "2A69574802589D7DE45CCCB3649B1790", hash_generated_field = "7AAF281D4CF32CCE4AFDDFD12AA22E61")
+    /**
+     * @return the time before the first key repeat in milliseconds.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.757 -0500", hash_original_method = "56C3332D841CB845ED684C3342A8EF80", hash_generated_method = "6A8AFDD302B5F0B5F5471E434824883E")
+    public static int getKeyRepeatTimeout() {
+        return getLongPressTimeout();
+    }
 
-    private int mWindowTouchSlop;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.784 -0400", hash_original_field = "3BDF1FAEEAA948FC1D6E05137A75FC00", hash_generated_field = "496A8039FEB96FF34A34BAD3DDBFCA0A")
+    /**
+     * @return the time between successive key repeats in milliseconds.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.758 -0500", hash_original_method = "952410958896B72F9892DD38AA0BACAC", hash_generated_method = "304F4022BE61A4A795ECF5CEF744DB12")
+    public static int getKeyRepeatDelay() {
+        return KEY_REPEAT_DELAY;
+    }
 
-    private int mMaximumDrawingCacheSize;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.784 -0400", hash_original_field = "7A5B6F76BA72A8D6AFCFCEA14B8C2556", hash_generated_field = "7B0107E1CAE9FFC281D766335539D7C4")
+    /**
+     * @return the duration in milliseconds we will wait to see if a touch event
+     * is a tap or a scroll. If the user does not move within this interval, it is
+     * considered to be a tap. 
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.759 -0500", hash_original_method = "2054B3BE796FC76059006CC8B92F3425", hash_generated_method = "5AD9BFA0A5FAC59C26025C95AC442E44")
+    public static int getTapTimeout() {
+        return TAP_TIMEOUT;
+    }
 
-    private int mOverscrollDistance;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.784 -0400", hash_original_field = "755491871A4FCE3E01181030F8FEB178", hash_generated_field = "06022A8A798B4C892D35D0FFB16D2FDF")
+    /**
+     * @return the duration in milliseconds we will wait to see if a touch event
+     * is a jump tap. If the user does not move within this interval, it is
+     * considered to be a tap. 
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.760 -0500", hash_original_method = "712BEBBA15DDE6D9B5BA141CEBD73697", hash_generated_method = "324F7B30BF1EA0EB5F37DD6924F78453")
+    public static int getJumpTapTimeout() {
+        return JUMP_TAP_TIMEOUT;
+    }
+    
+    /**
+     * @return the duration in milliseconds between the first tap's up event and
+     * the second tap's down event for an interaction to be considered a
+     * double-tap.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.760 -0500", hash_original_method = "C6977CF707F5347B0F237AB856D16490", hash_generated_method = "2CBE85464FBF2DA33E26EE594A400A04")
+    public static int getDoubleTapTimeout() {
+        return DOUBLE_TAP_TIMEOUT;
+    }
 
-    private int mOverflingDistance;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.784 -0400", hash_original_field = "B38C8D561AB27D8D243BC403028E7F56", hash_generated_field = "249C70833B7AE5BEEF7C58B3181D1CF0")
+    /**
+     * @return the maximum duration in milliseconds between a touch pad
+     * touch and release for a given touch to be considered a tap (click) as
+     * opposed to a hover movement gesture.
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.761 -0500", hash_original_method = "285032CB4BAC3764E315512D2B9D5FFB", hash_generated_method = "FB8D1F641C08E03888A12A63F453578C")
+    public static int getHoverTapTimeout() {
+        return HOVER_TAP_TIMEOUT;
+    }
 
-    private boolean mFadingMarqueeEnabled;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.784 -0400", hash_original_field = "C1DDB0579B2A8CD16E731E3F7E518AD4", hash_generated_field = "F0C5D2873D8EDEF272362A711C85BDB5")
+    /**
+     * @return the maximum distance in pixels that a touch pad touch can move
+     * before being released for it to be considered a tap (click) as opposed
+     * to a hover movement gesture.
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.762 -0500", hash_original_method = "B475AFBEADA30C05164C37D5565D4F02", hash_generated_method = "CEF9D27BD30BC4765AB0199F95597FAC")
+    public static int getHoverTapSlop() {
+        return HOVER_TAP_SLOP;
+    }
+
+    /**
+     * @return Inset in pixels to look for touchable content when the user touches the edge of the
+     *         screen
+     *
+     * @deprecated Use {@link #getScaledEdgeSlop()} instead.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.763 -0500", hash_original_method = "0D971D69CF54747E28FD325D51504DA1", hash_generated_method = "C1B49118EDD5BD4713CFADB8DE2B32D8")
+    @Deprecated
+public static int getEdgeSlop() {
+        return EDGE_SLOP;
+    }
+
+    /**
+     * @return Distance a touch can wander before we think the user is scrolling in pixels
+     *
+     * @deprecated Use {@link #getScaledTouchSlop()} instead.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.764 -0500", hash_original_method = "B61AC12A34EFA6AB10E7C5F3FBA1C69E", hash_generated_method = "FF1EC43C2C2F4503BA634627B550A9DB")
+    @Deprecated
+public static int getTouchSlop() {
+        return TOUCH_SLOP;
+    }
+
+    /**
+     * @return Distance between the first touch and second touch to still be
+     *         considered a double tap
+     * @deprecated Use {@link #getScaledDoubleTapSlop()} instead.
+     * @hide The only client of this should be GestureDetector, which needs this
+     *       for clients that still use its deprecated constructor.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.766 -0500", hash_original_method = "B21C34C9A7C650B71FC2E1314F2C1946", hash_generated_method = "DF88559979C7BF644876949C3111B086")
+    @Deprecated
+public static int getDoubleTapSlop() {
+        return DOUBLE_TAP_SLOP;
+    }
+
+    /**
+     * Interval for dispatching a recurring accessibility event in milliseconds.
+     * This interval guarantees that a recurring event will be send at most once
+     * during the {@link #getSendRecurringAccessibilityEventsInterval()} time frame.
+     *
+     * @return The delay in milliseconds.
+     *
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.769 -0500", hash_original_method = "41F28C9DB7B309BD1951DBE065F93772", hash_generated_method = "96FC8E748105E1AA0A906BA11C4ECA53")
+    public static long getSendRecurringAccessibilityEventsInterval() {
+        return SEND_RECURRING_ACCESSIBILITY_EVENTS_INTERVAL_MILLIS;
+    }
+
+    /**
+     * @return Distance a touch must be outside the bounds of a window for it
+     * to be counted as outside the window for purposes of dismissing that
+     * window.
+     *
+     * @deprecated Use {@link #getScaledWindowTouchSlop()} instead.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.770 -0500", hash_original_method = "C4429676118726C50723506C01DBC891", hash_generated_method = "12B3ABDAF6B1DD4FC59AA5EF6A467D5B")
+    @Deprecated
+public static int getWindowTouchSlop() {
+        return WINDOW_TOUCH_SLOP;
+    }
+    
+    /**
+     * @return Minimum velocity to initiate a fling, as measured in pixels per second.
+     *
+     * @deprecated Use {@link #getScaledMinimumFlingVelocity()} instead.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.772 -0500", hash_original_method = "546B6EB3FB7821963DFBB7988B40EAE1", hash_generated_method = "47EC8BFCFE253501827EF425964422BE")
+    @Deprecated
+public static int getMinimumFlingVelocity() {
+        return MINIMUM_FLING_VELOCITY;
+    }
+
+    /**
+     * @return Maximum velocity to initiate a fling, as measured in pixels per second.
+     *
+     * @deprecated Use {@link #getScaledMaximumFlingVelocity()} instead.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.773 -0500", hash_original_method = "B6BA12BC9FC63D5E48FA275CC038AC53", hash_generated_method = "5913DEFCBF0FB56BD450B397A23625CD")
+    @Deprecated
+public static int getMaximumFlingVelocity() {
+        return MAXIMUM_FLING_VELOCITY;
+    }
+    
+    /**
+     * The maximum drawing cache size expressed in bytes.
+     *
+     * @return the maximum size of View's drawing cache expressed in bytes
+     *
+     * @deprecated Use {@link #getScaledMaximumDrawingCacheSize()} instead.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.775 -0500", hash_original_method = "75E98CDAD9F30C5A8AB1E3F56D4A9D35", hash_generated_method = "8141C2C73CD1435566C615C41005EBF8")
+    @Deprecated
+public static int getMaximumDrawingCacheSize() {
+        //noinspection deprecation
+        return MAXIMUM_DRAWING_CACHE_SIZE;
+    }
+
+    /**
+     * The amount of time that the zoom controls should be
+     * displayed on the screen expressed in milliseconds.
+     * 
+     * @return the time the zoom controls should be visible expressed
+     * in milliseconds.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.778 -0500", hash_original_method = "5E4968614D1816EAF1E214BAA3A99C49", hash_generated_method = "F13D58897F350F38BD659664B6311E5C")
+    public static long getZoomControlsTimeout() {
+        return ZOOM_CONTROLS_TIMEOUT;
+    }
+
+    /**
+     * The amount of time a user needs to press the relevant key to bring up
+     * the global actions dialog.
+     *
+     * @return how long a user needs to press the relevant key to bring up
+     *   the global actions dialog.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.779 -0500", hash_original_method = "8D8BF00437B1A756760393177D6EECAF", hash_generated_method = "5CB17041FF4493D07E9A4B41C3507088")
+    public static long getGlobalActionKeyTimeout() {
+        return GLOBAL_ACTIONS_KEY_TIMEOUT;
+    }
+
+    /**
+     * The amount of friction applied to scrolls and flings.
+     * 
+     * @return A scalar dimensionless value representing the coefficient of
+     *         friction.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.780 -0500", hash_original_method = "91748064AA7D196E0821A0CDB0FFFE72", hash_generated_method = "0793C6AAAD831A0F9B0498382432C7C6")
+    public static float getScrollFriction() {
+        return SCROLL_FRICTION;
+    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.706 -0500", hash_original_field = "47D836A660014D5B80D968A7366BE708", hash_generated_field = "9747DCAA618DB198D5B9A1CE115BFF97")
+
+    public static final float PANEL_BIT_DEPTH = 24;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.707 -0500", hash_original_field = "22CB8F46B591EDE55CD4FA6B441EF972", hash_generated_field = "A32F9F21F286F09C5FFE13705521F9D3")
+
+    public static final float ALPHA_THRESHOLD = 0.5f / PANEL_BIT_DEPTH;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.707 -0500", hash_original_field = "96E94F8EDBC874E2FD85219D1C8036CE", hash_generated_field = "35907D06006F393F45FB2B825ED40F7E")
+
+    public static final float ALPHA_THRESHOLD_INT = 0x7f / PANEL_BIT_DEPTH;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.708 -0500", hash_original_field = "FE10F6E4591AFEDA229721599ABE0EE3", hash_generated_field = "3C1AEDD67D3CBB2346030240E15975B8")
+
+    private static final int SCROLL_BAR_SIZE = 10;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.709 -0500", hash_original_field = "1195C0BD8C1E681B340B1C36DE8590DB", hash_generated_field = "69F1E09B4DFF23ED0400BB441B773E33")
+
+    private static final int SCROLL_BAR_FADE_DURATION = 250;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.710 -0500", hash_original_field = "C83D9D4E08F718D00E9171F2B4BFE8E4", hash_generated_field = "19E2096CA52B8B5AB2F0EAD8007373AA")
+
+    private static final int SCROLL_BAR_DEFAULT_DELAY = 300;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.711 -0500", hash_original_field = "9E8E163C2455D8E80E25D8F40FACCECE", hash_generated_field = "768D465CF398D0FEDC762F453F3623FE")
+
+    private static final int FADING_EDGE_LENGTH = 12;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.712 -0500", hash_original_field = "C0F9C63E56BF472EA111A0646B0EB264", hash_generated_field = "31F150ED1E5B1E3235C847EC46AC2706")
+
+    private static final int PRESSED_STATE_DURATION = 125;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.713 -0500", hash_original_field = "D33F69DDA569D60A4106DA4AC807FB3A", hash_generated_field = "C5A105FE1289431C0CEFF3BB7FF405DA")
+
+    private static final int DEFAULT_LONG_PRESS_TIMEOUT = 500;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.714 -0500", hash_original_field = "5F27EBD2FC714BC9D3386585BC9A6C6A", hash_generated_field = "3D836E3388C779C8690BE80FA4A6F639")
+
+    private static final int KEY_REPEAT_DELAY = 50;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.715 -0500", hash_original_field = "6BDAAF022F25CE10223356C3E0959661", hash_generated_field = "43F76CA836CE9CF3A61450B7AEB8F1C4")
+
+    private static final int GLOBAL_ACTIONS_KEY_TIMEOUT = 500;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.715 -0500", hash_original_field = "3EC08BE219B1E8973CFC2BD8AE1C3727", hash_generated_field = "3B1ECBEFF4C233CD9096673DB2F61155")
+
+    private static final int TAP_TIMEOUT = 180;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.716 -0500", hash_original_field = "B6E884A5E466642020BFD773FDC960A5", hash_generated_field = "B908F38E70932BF1EFBA4B20FA1600BC")
+
+    private static final int JUMP_TAP_TIMEOUT = 500;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.718 -0500", hash_original_field = "66464FB45CC419A4389F3C42B373CE8F", hash_generated_field = "B64EC6E883DFD581B5107E3F1C037D53")
+
+    private static final int DOUBLE_TAP_TIMEOUT = 300;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.719 -0500", hash_original_field = "DDEAA31DB1078BFA8CAD69E301E026E3", hash_generated_field = "1D5315E446DB64B1CC0113AAC2F20BB3")
+
+    private static final int HOVER_TAP_TIMEOUT = 150;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.720 -0500", hash_original_field = "CD62A944236B136FBE1B70ED2A5052E1", hash_generated_field = "826505813607467A967020234193803D")
+
+    private static final int HOVER_TAP_SLOP = 20;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.720 -0500", hash_original_field = "EEAD655B8FEA60903B146C21764618EA", hash_generated_field = "7D5B0868A3F0CD926510FAE9036FE33E")
+
+    private static final int ZOOM_CONTROLS_TIMEOUT = 3000;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.721 -0500", hash_original_field = "A3C379742A4F9EDFF0A70804C19F68DE", hash_generated_field = "767C6F21B4C4A54A1D58C8845A829D24")
+
+    private static final int EDGE_SLOP = 12;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.722 -0500", hash_original_field = "A54DB198367C890D7818E0748D91CEF8", hash_generated_field = "F9B41BB7FB919140842B55419F14CC34")
+
+    private static final int TOUCH_SLOP = 8;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.723 -0500", hash_original_field = "A77592D4A4631E246163834C88C972E6", hash_generated_field = "C45984564C2B2B383F066672D6ECDA36")
+
+    private static final int PAGING_TOUCH_SLOP = TOUCH_SLOP * 2;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.724 -0500", hash_original_field = "C5DC0B55884AAB2A0EC6203B38E44CBB", hash_generated_field = "05521582705C7F65706759CD1CD8CECE")
+
+    private static final int DOUBLE_TAP_SLOP = 100;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.725 -0500", hash_original_field = "FAE6AE5DE939D866F8C6139FF0DE0353", hash_generated_field = "0A7EC28EE18866A9A9040E60DC4AC97B")
+
+    private static final int WINDOW_TOUCH_SLOP = 16;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.726 -0500", hash_original_field = "2734BB9B43475F48F61B09A800CE0875", hash_generated_field = "590039E7A300DBFA22B66BABAA6920B7")
+
+    private static final int MINIMUM_FLING_VELOCITY = 50;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.727 -0500", hash_original_field = "8EFB64CD915FC8024DF73BB42D6CD45F", hash_generated_field = "C16FA29D3B701C0D89C79F0F0AD1AFBD")
+
+    private static final int MAXIMUM_FLING_VELOCITY = 8000;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.728 -0500", hash_original_field = "E7EF4739A2B16DE7CE51F82621D9B937", hash_generated_field = "EFD34AF3F488A3C760252D09EC59545A")
+
+    private static final int TOUCH_EXPLORATION_TAP_SLOP = 80;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.729 -0500", hash_original_field = "6204EC10654B0931635D82577469B819", hash_generated_field = "F01671ACC3F6966DA3CE6C8E1BE7CEB3")
+
+    private static final long SEND_RECURRING_ACCESSIBILITY_EVENTS_INTERVAL_MILLIS = 400;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.729 -0500", hash_original_field = "BC720E6C90342F86D40B7D946654546E", hash_generated_field = "F8FD2906DEF15086D200C8CDD2D0C403")
+
+    @Deprecated
+    private static final int MAXIMUM_DRAWING_CACHE_SIZE = 480 * 800 * 4;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:33:52.985 -0500", hash_original_field = "41073FC9BE7B3EF6B14D1C22DA366D4D", hash_generated_field = "ACF2C9F1C4DCC334B940273666CBC879")
+
+
+    /**
+     * The coefficient of friction applied to flings/scrolls.
+     */
+    private static final float SCROLL_FRICTION = 0.015f;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.731 -0500", hash_original_field = "850977B924814773A10F26DF22D6B08C", hash_generated_field = "A04E9AC91D01157C378DC4613C063B24")
+
+    private static final int OVERSCROLL_DISTANCE = 0;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.732 -0500", hash_original_field = "76AA66231644A854AB3BA2469EBF8672", hash_generated_field = "DA2D178DBF8807F9A6080C62905A485A")
+
+    private static final int OVERFLING_DISTANCE = 6;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.746 -0500", hash_original_field = "D513F44D45A1B462B46A4F046199DF99", hash_generated_field = "EEDF2561C792A30151768943796E598A")
+
+
+    static final SparseArray<ViewConfiguration> sConfigurations =
+            new SparseArray<ViewConfiguration>(2);
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.733 -0500", hash_original_field = "935208C22F528795DA4A6D0F0A9B1E0C", hash_generated_field = "28AD0F459ECA25E08B8AF100A990B431")
+
+
+    private  int mEdgeSlop;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.734 -0500", hash_original_field = "038B36D4D8587CE53F588774BF59DC97", hash_generated_field = "BDC56F2B5F3D2AC25089A5150086EC5F")
+
+    private  int mFadingEdgeLength;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.735 -0500", hash_original_field = "5030B66C4E6C852287D391072C8046A5", hash_generated_field = "19DF3CA9C4A086C5604F6C8FC7721322")
+
+    private  int mMinimumFlingVelocity;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.736 -0500", hash_original_field = "3B70336BAB0F826E0E6552B2A74F553D", hash_generated_field = "7F5E59D933F0155E107640D32355B310")
+
+    private  int mMaximumFlingVelocity;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.736 -0500", hash_original_field = "E53FD3541B2ED4D31217BC629EDD3AFA", hash_generated_field = "5F6809D206F835FAE286C3238D869AC7")
+
+    private  int mScrollbarSize;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.737 -0500", hash_original_field = "D11C33EFD56B37B918E01A200C446C59", hash_generated_field = "3B323323DD6A6BF972666D993592C670")
+
+    private  int mTouchSlop;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.738 -0500", hash_original_field = "E3196A9DCAB8AAFEB802DE568A88A1E7", hash_generated_field = "D1E477DC8F276E48EC9C9AAEB9FC42A1")
+
+    private  int mPagingTouchSlop;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.739 -0500", hash_original_field = "C26E914F9A1490FD480D68DF2FAF551A", hash_generated_field = "E3F200D7EF3C7FA6B9D85E756BD947D5")
+
+    private  int mDoubleTapSlop;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.740 -0500", hash_original_field = "71C3DBF09235F6273D63669106649D07", hash_generated_field = "F1E4C8B8C10EED258C69F3270B427286")
+
+    private  int mScaledTouchExplorationTapSlop;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.741 -0500", hash_original_field = "9FF1945D70582050F9452BEFD73F30D7", hash_generated_field = "7AAF281D4CF32CCE4AFDDFD12AA22E61")
+
+    private  int mWindowTouchSlop;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.741 -0500", hash_original_field = "7EB92C03D6FAE092D819250AF33E8DF9", hash_generated_field = "496A8039FEB96FF34A34BAD3DDBFCA0A")
+
+    private  int mMaximumDrawingCacheSize;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.742 -0500", hash_original_field = "3140A319F32CA873045621864B655537", hash_generated_field = "7B0107E1CAE9FFC281D766335539D7C4")
+
+    private  int mOverscrollDistance;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.743 -0500", hash_original_field = "F239C82AEB45C28104273F86A78E6F04", hash_generated_field = "06022A8A798B4C892D35D0FFB16D2FDF")
+
+    private  int mOverflingDistance;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.744 -0500", hash_original_field = "59B606441FF4DB15F4578C7B1F2487D2", hash_generated_field = "249C70833B7AE5BEEF7C58B3181D1CF0")
+
+    private  boolean mFadingMarqueeEnabled;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.745 -0500", hash_original_field = "647AFA978A4333C46FD536BA1614EE90", hash_generated_field = "F0C5D2873D8EDEF272362A711C85BDB5")
+
 
     private boolean sHasPermanentMenuKey;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.784 -0400", hash_original_field = "4C1941B70435CBE95D950CE674590BD2", hash_generated_field = "885609D211F3B6965A8D53C92F40BA67")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.745 -0500", hash_original_field = "518B090DAB896C2DEF68B77A1EA56B05", hash_generated_field = "885609D211F3B6965A8D53C92F40BA67")
 
     private boolean sHasPermanentMenuKeySet;
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.786 -0400", hash_original_method = "24918D20351FE8A86EAEEE2EEBA5EB08", hash_generated_method = "7CA80E922DDAD3CE631F67B3475B9CFA")
+
+    /**
+     * @deprecated Use {@link android.view.ViewConfiguration#get(android.content.Context)} instead.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.747 -0500", hash_original_method = "24918D20351FE8A86EAEEE2EEBA5EB08", hash_generated_method = "9E19C6DE73B3C14DD0E2FF28C2CCBCDA")
     @Deprecated
-    public  ViewConfiguration() {
+public ViewConfiguration() {
         mEdgeSlop = EDGE_SLOP;
         mFadingEdgeLength = FADING_EDGE_LENGTH;
         mMinimumFlingVelocity = MINIMUM_FLING_VELOCITY;
@@ -79,45 +466,36 @@ public class ViewConfiguration {
         mDoubleTapSlop = DOUBLE_TAP_SLOP;
         mScaledTouchExplorationTapSlop = TOUCH_EXPLORATION_TAP_SLOP;
         mWindowTouchSlop = WINDOW_TOUCH_SLOP;
+        //noinspection deprecation
         mMaximumDrawingCacheSize = MAXIMUM_DRAWING_CACHE_SIZE;
         mOverscrollDistance = OVERSCROLL_DISTANCE;
         mOverflingDistance = OVERFLING_DISTANCE;
         mFadingMarqueeEnabled = true;
-        // ---------- Original Method ----------
-        //mEdgeSlop = EDGE_SLOP;
-        //mFadingEdgeLength = FADING_EDGE_LENGTH;
-        //mMinimumFlingVelocity = MINIMUM_FLING_VELOCITY;
-        //mMaximumFlingVelocity = MAXIMUM_FLING_VELOCITY;
-        //mScrollbarSize = SCROLL_BAR_SIZE;
-        //mTouchSlop = TOUCH_SLOP;
-        //mPagingTouchSlop = PAGING_TOUCH_SLOP;
-        //mDoubleTapSlop = DOUBLE_TAP_SLOP;
-        //mScaledTouchExplorationTapSlop = TOUCH_EXPLORATION_TAP_SLOP;
-        //mWindowTouchSlop = WINDOW_TOUCH_SLOP;
-        //mMaximumDrawingCacheSize = MAXIMUM_DRAWING_CACHE_SIZE;
-        //mOverscrollDistance = OVERSCROLL_DISTANCE;
-        //mOverflingDistance = OVERFLING_DISTANCE;
-        //mFadingMarqueeEnabled = true;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.790 -0400", hash_original_method = "815441BD896E00C6B865EAF3CE23B912", hash_generated_method = "741E1AEA6E1447EBEF97500CA42EEC3A")
-    private  ViewConfiguration(Context context) {
-        addTaint(context.getTaint());
+    /**
+     * Creates a new configuration for the specified context. The configuration depends on
+     * various parameters of the context, like the dimension of the display or the density
+     * of the display.
+     *
+     * @param context The application context used to initialize this view configuration.
+     *
+     * @see #get(android.content.Context) 
+     * @see android.util.DisplayMetrics
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.749 -0500", hash_original_method = "815441BD896E00C6B865EAF3CE23B912", hash_generated_method = "46434ADDCFE39D65CA30D116EE67ED55")
+    private ViewConfiguration(Context context) {
         final Resources res = context.getResources();
         final DisplayMetrics metrics = res.getDisplayMetrics();
         final Configuration config = res.getConfiguration();
         final float density = metrics.density;
-        float sizeAndDensity;
-        if(config.isLayoutSizeAtLeast(Configuration.SCREENLAYOUT_SIZE_XLARGE))        
-        {
+        final float sizeAndDensity;
+        if (config.isLayoutSizeAtLeast(Configuration.SCREENLAYOUT_SIZE_XLARGE)) {
             sizeAndDensity = density * 1.5f;
-        } //End block
-        else
-        {
+        } else {
             sizeAndDensity = density;
-        } //End block
+        }
+
         mEdgeSlop = (int) (sizeAndDensity * EDGE_SLOP + 0.5f);
         mFadingEdgeLength = (int) (sizeAndDensity * FADING_EDGE_LENGTH + 0.5f);
         mMinimumFlingVelocity = (int) (density * MINIMUM_FLING_VELOCITY + 0.5f);
@@ -126,456 +504,170 @@ public class ViewConfiguration {
         mDoubleTapSlop = (int) (sizeAndDensity * DOUBLE_TAP_SLOP + 0.5f);
         mScaledTouchExplorationTapSlop = (int) (density * TOUCH_EXPLORATION_TAP_SLOP + 0.5f);
         mWindowTouchSlop = (int) (sizeAndDensity * WINDOW_TOUCH_SLOP + 0.5f);
+
+        // Size of the screen in bytes, in ARGB_8888 format
         mMaximumDrawingCacheSize = 4 * metrics.widthPixels * metrics.heightPixels;
+
         mOverscrollDistance = (int) (sizeAndDensity * OVERSCROLL_DISTANCE + 0.5f);
         mOverflingDistance = (int) (sizeAndDensity * OVERFLING_DISTANCE + 0.5f);
-        if(!sHasPermanentMenuKeySet)        
-        {
+
+        if (!sHasPermanentMenuKeySet) {
             IWindowManager wm = Display.getWindowManager();
-            try 
-            {
+            try {
                 sHasPermanentMenuKey = wm.canStatusBarHide() && !wm.hasNavigationBar();
                 sHasPermanentMenuKeySet = true;
-            } //End block
-            catch (RemoteException ex)
-            {
+            } catch (RemoteException ex) {
                 sHasPermanentMenuKey = false;
-            } //End block
-        } //End block
+            }
+        }
+
         mFadingMarqueeEnabled = res.getBoolean(
                 com.android.internal.R.bool.config_ui_enableFadingMarquee);
         mTouchSlop = res.getDimensionPixelSize(
                 com.android.internal.R.dimen.config_viewConfigurationTouchSlop);
         mPagingTouchSlop = mTouchSlop * 2;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    public static ViewConfiguration get(Context context) {
-        final DisplayMetrics metrics = context.getResources().getDisplayMetrics();
-        final int density = (int) (100.0f * metrics.density);
-        ViewConfiguration configuration = sConfigurations.get(density);
-        if (configuration == null) {
-            configuration = new ViewConfiguration(context);
-            sConfigurations.put(density, configuration);
-        }
-        return configuration;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @Deprecated
-    public static int getScrollBarSize() {
-        return SCROLL_BAR_SIZE;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.791 -0400", hash_original_method = "64B2CB77402813F2D85B7730CCF96AEF", hash_generated_method = "2EB5F9093B5606B50FD548C8A4718A6A")
+    /**
+     * @return The width of the horizontal scrollbar and the height of the vertical
+     *         scrollbar in pixels
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.751 -0500", hash_original_method = "64B2CB77402813F2D85B7730CCF96AEF", hash_generated_method = "C9AFBA96DE4004D718B97E1E95C3F724")
     public int getScaledScrollBarSize() {
-        int varE8596193B8D43C34B40311F87AB4FCD6_1522865909 = (mScrollbarSize);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1168551290 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1168551290;
-        // ---------- Original Method ----------
-        //return mScrollbarSize;
+        return mScrollbarSize;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    public static int getScrollBarFadeDuration() {
-        return SCROLL_BAR_FADE_DURATION;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    public static int getScrollDefaultDelay() {
-        return SCROLL_BAR_DEFAULT_DELAY;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @Deprecated
-    public static int getFadingEdgeLength() {
-        return FADING_EDGE_LENGTH;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.792 -0400", hash_original_method = "DBA79B5462EB99E7DC2C8AF68ED4F8B2", hash_generated_method = "B85E6720E632504B5F0EEDF24E62CF08")
+    /**
+     * @return the length of the fading edges in pixels
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.754 -0500", hash_original_method = "DBA79B5462EB99E7DC2C8AF68ED4F8B2", hash_generated_method = "73C1D1F3892CC6BF705AA4DAD5B69D69")
     public int getScaledFadingEdgeLength() {
-        int var827A52B85CF8A98C1BAE5458C6B4B4F5_119316809 = (mFadingEdgeLength);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1322589443 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1322589443;
-        // ---------- Original Method ----------
-        //return mFadingEdgeLength;
+        return mFadingEdgeLength;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    public static int getPressedStateDuration() {
-        return PRESSED_STATE_DURATION;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    public static int getLongPressTimeout() {
-        return AppGlobals.getIntCoreSetting(Settings.Secure.LONG_PRESS_TIMEOUT,
-                DEFAULT_LONG_PRESS_TIMEOUT);
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    public static int getKeyRepeatTimeout() {
-        return getLongPressTimeout();
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    public static int getKeyRepeatDelay() {
-        return KEY_REPEAT_DELAY;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    public static int getTapTimeout() {
-        return TAP_TIMEOUT;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    public static int getJumpTapTimeout() {
-        return JUMP_TAP_TIMEOUT;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    public static int getDoubleTapTimeout() {
-        return DOUBLE_TAP_TIMEOUT;
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    public static int getHoverTapTimeout() {
-        return HOVER_TAP_TIMEOUT;
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    public static int getHoverTapSlop() {
-        return HOVER_TAP_SLOP;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @Deprecated
-    public static int getEdgeSlop() {
-        return EDGE_SLOP;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.795 -0400", hash_original_method = "26568609E943FB4B92788BE90A3C6865", hash_generated_method = "344D812A1E02E0A8BD8F0B72EAECFB67")
+    /**
+     * @return Inset in pixels to look for touchable content when the user touches the edge of the
+     *         screen
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.763 -0500", hash_original_method = "26568609E943FB4B92788BE90A3C6865", hash_generated_method = "3BEDBBCF3580D310683AFAF9C62430F5")
     public int getScaledEdgeSlop() {
-        int var7572292F9A0C0E3DA861F35B2F9EB690_145580303 = (mEdgeSlop);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_311038449 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_311038449;
-        // ---------- Original Method ----------
-        //return mEdgeSlop;
+        return mEdgeSlop;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @Deprecated
-    public static int getTouchSlop() {
-        return TOUCH_SLOP;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.795 -0400", hash_original_method = "60BD37725F7CBB3A1C18E0C12D7EC92F", hash_generated_method = "AC3B251A883498111426CEB2836E69D3")
+    /**
+     * @return Distance a touch can wander before we think the user is scrolling in pixels
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.765 -0500", hash_original_method = "60BD37725F7CBB3A1C18E0C12D7EC92F", hash_generated_method = "E802D556E6ABBEE6F96FBE3BE1B8413A")
     public int getScaledTouchSlop() {
-        int var3DFFFAD10926598D18EEC50D61DE79CA_1255914769 = (mTouchSlop);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_19475350 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_19475350;
-        // ---------- Original Method ----------
-        //return mTouchSlop;
+        return mTouchSlop;
     }
-
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.795 -0400", hash_original_method = "4AE776F4126E41D66D9D9E5C3DD06CAD", hash_generated_method = "F7526E66D4FCA3C95B26CED9B2230D26")
+    /**
+     * @return Distance a touch can wander before we think the user is scrolling a full page
+     *         in dips
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.766 -0500", hash_original_method = "4AE776F4126E41D66D9D9E5C3DD06CAD", hash_generated_method = "9E7AEC3E9084B4301C8E6EFAB2887388")
     public int getScaledPagingTouchSlop() {
-        int varD601D279C05E34D2E9921B35CB90BAB6_1656990941 = (mPagingTouchSlop);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1832376446 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1832376446;
-        // ---------- Original Method ----------
-        //return mPagingTouchSlop;
+        return mPagingTouchSlop;
     }
-
     
-    @DSModeled(DSC.BAN)
-    @Deprecated
-    public static int getDoubleTapSlop() {
-        return DOUBLE_TAP_SLOP;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.795 -0400", hash_original_method = "6B30BD1A6859DBFC35C31996D22D0A66", hash_generated_method = "6F6975BC092CF3BE6327747A5CD896FD")
+    /**
+     * @return Distance between the first touch and second touch to still be
+     *         considered a double tap
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.767 -0500", hash_original_method = "6B30BD1A6859DBFC35C31996D22D0A66", hash_generated_method = "1B58B94371B51D3B39CAAF7010CA5769")
     public int getScaledDoubleTapSlop() {
-        int varF450F850864B9ECCFF82FE2087B59917_609961423 = (mDoubleTapSlop);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1997920788 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1997920788;
-        // ---------- Original Method ----------
-        //return mDoubleTapSlop;
+        return mDoubleTapSlop;
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.795 -0400", hash_original_method = "B7560D2EBF5FE44925FF9E0F817886D6", hash_generated_method = "99C92AF975E8BDDBFCF6E94117420471")
+    /**
+     * @return Distance between a touch up event denoting the end of a touch exploration
+     * gesture and the touch up event of a subsequent tap for the latter tap to be
+     * considered as a tap i.e. to perform a click.
+     *
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.768 -0500", hash_original_method = "B7560D2EBF5FE44925FF9E0F817886D6", hash_generated_method = "2C344D67371A3909E3B569EDC0D37E19")
     public int getScaledTouchExplorationTapSlop() {
-        int var65E37DD557E6D0E9D40F0750A85C869B_781233794 = (mScaledTouchExplorationTapSlop);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1637385558 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1637385558;
-        // ---------- Original Method ----------
-        //return mScaledTouchExplorationTapSlop;
+        return mScaledTouchExplorationTapSlop;
     }
 
-    
-    @DSModeled(DSC.BAN)
-    public static long getSendRecurringAccessibilityEventsInterval() {
-        return SEND_RECURRING_ACCESSIBILITY_EVENTS_INTERVAL_MILLIS;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @Deprecated
-    public static int getWindowTouchSlop() {
-        return WINDOW_TOUCH_SLOP;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.795 -0400", hash_original_method = "C43D675F470050DADBFF4CBA809EB35A", hash_generated_method = "B937ACD3BFA53A542EA5516CB77A1CE8")
+    /**
+     * @return Distance a touch must be outside the bounds of a window for it
+     * to be counted as outside the window for purposes of dismissing that
+     * window.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.771 -0500", hash_original_method = "C43D675F470050DADBFF4CBA809EB35A", hash_generated_method = "B7635E8EE7E00FFEA7708B5AB9EA898C")
     public int getScaledWindowTouchSlop() {
-        int var2A69574802589D7DE45CCCB3649B1790_554975216 = (mWindowTouchSlop);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_301992063 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_301992063;
-        // ---------- Original Method ----------
-        //return mWindowTouchSlop;
+        return mWindowTouchSlop;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @Deprecated
-    public static int getMinimumFlingVelocity() {
-        return MINIMUM_FLING_VELOCITY;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.796 -0400", hash_original_method = "0486ED6F0D874BB9D1C234D99788A23A", hash_generated_method = "3AAA0043C9699CAF92C79C56DB6B14DB")
+    /**
+     * @return Minimum velocity to initiate a fling, as measured in pixels per second.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.773 -0500", hash_original_method = "0486ED6F0D874BB9D1C234D99788A23A", hash_generated_method = "1F4D3A154C5ECE9F6A3AA812BF168D34")
     public int getScaledMinimumFlingVelocity() {
-        int var950A8222B535BF5159B013E5329A56C7_482559736 = (mMinimumFlingVelocity);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_235780028 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_235780028;
-        // ---------- Original Method ----------
-        //return mMinimumFlingVelocity;
+        return mMinimumFlingVelocity;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @Deprecated
-    public static int getMaximumFlingVelocity() {
-        return MAXIMUM_FLING_VELOCITY;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.796 -0400", hash_original_method = "FB70B19A53E289FD25C6D1F0C8994CAD", hash_generated_method = "C723865601EBC885CCA9E3EEEAE4F0A3")
+    /**
+     * @return Maximum velocity to initiate a fling, as measured in pixels per second.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.774 -0500", hash_original_method = "FB70B19A53E289FD25C6D1F0C8994CAD", hash_generated_method = "5D95E56454A0B57E4EA671E692E22083")
     public int getScaledMaximumFlingVelocity() {
-        int var8ED13B950D5803064219CE68BB8F2695_516941983 = (mMaximumFlingVelocity);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2081718715 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2081718715;
-        // ---------- Original Method ----------
-        //return mMaximumFlingVelocity;
+        return mMaximumFlingVelocity;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @Deprecated
-    public static int getMaximumDrawingCacheSize() {
-        return MAXIMUM_DRAWING_CACHE_SIZE;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.796 -0400", hash_original_method = "C4F1814F49D0F58AC601C99A9F6FDB3F", hash_generated_method = "46BA75210F268BC4BA608C4F00C87270")
+    /**
+     * The maximum drawing cache size expressed in bytes.
+     *
+     * @return the maximum size of View's drawing cache expressed in bytes
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.776 -0500", hash_original_method = "C4F1814F49D0F58AC601C99A9F6FDB3F", hash_generated_method = "1E6AF0B128AE26797C68E9283466C723")
     public int getScaledMaximumDrawingCacheSize() {
-        int var3BDF1FAEEAA948FC1D6E05137A75FC00_1878233872 = (mMaximumDrawingCacheSize);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_349430841 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_349430841;
-        // ---------- Original Method ----------
-        //return mMaximumDrawingCacheSize;
+        return mMaximumDrawingCacheSize;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.796 -0400", hash_original_method = "36377B5ABE3B6C0802B86BCCF5BB67A1", hash_generated_method = "887A9AC0F40DEF4259C645B424068202")
+    /**
+     * @return The maximum distance a View should overscroll by when showing edge effects.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.777 -0500", hash_original_method = "36377B5ABE3B6C0802B86BCCF5BB67A1", hash_generated_method = "D03E6D6068982638E728538D607E7860")
     public int getScaledOverscrollDistance() {
-        int var7A5B6F76BA72A8D6AFCFCEA14B8C2556_792117250 = (mOverscrollDistance);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1075713508 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1075713508;
-        // ---------- Original Method ----------
-        //return mOverscrollDistance;
+        return mOverscrollDistance;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.796 -0400", hash_original_method = "1172E195811EBBA2C8358246D6F16FAF", hash_generated_method = "F9665D4BD1057348F8480874AD51148E")
+    /**
+     * @return The maximum distance a View should overfling by when showing edge effects.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.777 -0500", hash_original_method = "1172E195811EBBA2C8358246D6F16FAF", hash_generated_method = "C49764C1C709AD1AAAFC819D624E1DA3")
     public int getScaledOverflingDistance() {
-        int var755491871A4FCE3E01181030F8FEB178_938906671 = (mOverflingDistance);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_975211884 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_975211884;
-        // ---------- Original Method ----------
-        //return mOverflingDistance;
+        return mOverflingDistance;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    public static long getZoomControlsTimeout() {
-        return ZOOM_CONTROLS_TIMEOUT;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    public static long getGlobalActionKeyTimeout() {
-        return GLOBAL_ACTIONS_KEY_TIMEOUT;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    public static float getScrollFriction() {
-        return SCROLL_FRICTION;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.797 -0400", hash_original_method = "545A02CAD62F49742EF9C21476AFC78D", hash_generated_method = "41C263B94A8E1870B4FF3430C9BB8011")
+    /**
+     * Report if the device has a permanent menu key available to the user.
+     *
+     * <p>As of Android 3.0, devices may not have a permanent menu key available.
+     * Apps should use the action bar to present menu options to users.
+     * However, there are some apps where the action bar is inappropriate
+     * or undesirable. This method may be used to detect if a menu key is present.
+     * If not, applications should provide another on-screen affordance to access
+     * functionality.
+     *
+     * @return true if a permanent menu key is present, false otherwise.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.780 -0500", hash_original_method = "545A02CAD62F49742EF9C21476AFC78D", hash_generated_method = "6C956466F8F18FEFA6F27CCAA6695F8A")
     public boolean hasPermanentMenuKey() {
-        boolean varC1DDB0579B2A8CD16E731E3F7E518AD4_1564984286 = (sHasPermanentMenuKey);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1650351423 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1650351423;
-        // ---------- Original Method ----------
-        //return sHasPermanentMenuKey;
+        return sHasPermanentMenuKey;
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.797 -0400", hash_original_method = "B98AC48BC285AD77A873792B80842BAD", hash_generated_method = "832F7AF46202397A5D8C824E18838301")
+    /**
+     * @hide
+     * @return Whether or not marquee should use fading edges.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:26.781 -0500", hash_original_method = "B98AC48BC285AD77A873792B80842BAD", hash_generated_method = "A7A0096CE0399516CA71E4997951327E")
     public boolean isFadingMarqueeEnabled() {
-        boolean varB38C8D561AB27D8D243BC403028E7F56_1491373823 = (mFadingMarqueeEnabled);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1056776869 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1056776869;
-        // ---------- Original Method ----------
-        //return mFadingMarqueeEnabled;
+        return mFadingMarqueeEnabled;
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.797 -0400", hash_original_field = "C5D3E6034709A7AC9EA5746A1E428B65", hash_generated_field = "9747DCAA618DB198D5B9A1CE115BFF97")
-
-    public static final float PANEL_BIT_DEPTH = 24;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.797 -0400", hash_original_field = "C7C9161BEFFCFA080361179B9B90102C", hash_generated_field = "A32F9F21F286F09C5FFE13705521F9D3")
-
-    public static final float ALPHA_THRESHOLD = 0.5f / PANEL_BIT_DEPTH;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.797 -0400", hash_original_field = "4A07BC36D98D16479A7F0D959FAC265F", hash_generated_field = "35907D06006F393F45FB2B825ED40F7E")
-
-    public static final float ALPHA_THRESHOLD_INT = 0x7f / PANEL_BIT_DEPTH;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.797 -0400", hash_original_field = "7DA8DA005633606C8EC301E81AC0706C", hash_generated_field = "3C1AEDD67D3CBB2346030240E15975B8")
-
-    private static final int SCROLL_BAR_SIZE = 10;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.797 -0400", hash_original_field = "5DAA48AB55E95A75FD6230B6AAE73202", hash_generated_field = "69F1E09B4DFF23ED0400BB441B773E33")
-
-    private static final int SCROLL_BAR_FADE_DURATION = 250;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.797 -0400", hash_original_field = "49EF42C37EB6583AD8088BF82E3D9FF6", hash_generated_field = "19E2096CA52B8B5AB2F0EAD8007373AA")
-
-    private static final int SCROLL_BAR_DEFAULT_DELAY = 300;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.797 -0400", hash_original_field = "D15BAAEB5629F7A5E42A512ADA91E546", hash_generated_field = "768D465CF398D0FEDC762F453F3623FE")
-
-    private static final int FADING_EDGE_LENGTH = 12;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.797 -0400", hash_original_field = "F0C6303FDAA7182C046310D15CA8B43F", hash_generated_field = "31F150ED1E5B1E3235C847EC46AC2706")
-
-    private static final int PRESSED_STATE_DURATION = 125;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.797 -0400", hash_original_field = "6533AC81E1D3C14BD5D33A430C012688", hash_generated_field = "C5A105FE1289431C0CEFF3BB7FF405DA")
-
-    private static final int DEFAULT_LONG_PRESS_TIMEOUT = 500;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.797 -0400", hash_original_field = "6F6FFD67B1B03BF6F154E9602385D163", hash_generated_field = "3D836E3388C779C8690BE80FA4A6F639")
-
-    private static final int KEY_REPEAT_DELAY = 50;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.797 -0400", hash_original_field = "3359170353C3B1017DBA134B76DACAC9", hash_generated_field = "43F76CA836CE9CF3A61450B7AEB8F1C4")
-
-    private static final int GLOBAL_ACTIONS_KEY_TIMEOUT = 500;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.797 -0400", hash_original_field = "6BBB2B018D722753A6AB3587DC275DF2", hash_generated_field = "3B1ECBEFF4C233CD9096673DB2F61155")
-
-    private static final int TAP_TIMEOUT = 180;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.797 -0400", hash_original_field = "2A11B0B6D4B75535BC16B103A48AEBF3", hash_generated_field = "B908F38E70932BF1EFBA4B20FA1600BC")
-
-    private static final int JUMP_TAP_TIMEOUT = 500;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.797 -0400", hash_original_field = "058FDEC0A28A5E37490EE0802607EC87", hash_generated_field = "B64EC6E883DFD581B5107E3F1C037D53")
-
-    private static final int DOUBLE_TAP_TIMEOUT = 300;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.797 -0400", hash_original_field = "59F4065BD6221308690552320B5B3FE5", hash_generated_field = "1D5315E446DB64B1CC0113AAC2F20BB3")
-
-    private static final int HOVER_TAP_TIMEOUT = 150;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.797 -0400", hash_original_field = "B03EF1CD2E4C4060AA68AE5FC127023D", hash_generated_field = "826505813607467A967020234193803D")
-
-    private static final int HOVER_TAP_SLOP = 20;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.797 -0400", hash_original_field = "727E21F177BE2563E9C9A027DF3C3A06", hash_generated_field = "7D5B0868A3F0CD926510FAE9036FE33E")
-
-    private static final int ZOOM_CONTROLS_TIMEOUT = 3000;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.797 -0400", hash_original_field = "EEF54F2080DB01A6DC145F165C6D4B78", hash_generated_field = "767C6F21B4C4A54A1D58C8845A829D24")
-
-    private static final int EDGE_SLOP = 12;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.797 -0400", hash_original_field = "67F5949D3FBBF47C0A276DE0414FE53B", hash_generated_field = "F9B41BB7FB919140842B55419F14CC34")
-
-    private static final int TOUCH_SLOP = 8;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.797 -0400", hash_original_field = "F460B07A1BFF27B4A98FB0D1F018EB78", hash_generated_field = "C45984564C2B2B383F066672D6ECDA36")
-
-    private static final int PAGING_TOUCH_SLOP = TOUCH_SLOP * 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.797 -0400", hash_original_field = "71F1B1F80B85617768DB798637BD9CD3", hash_generated_field = "05521582705C7F65706759CD1CD8CECE")
-
-    private static final int DOUBLE_TAP_SLOP = 100;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.797 -0400", hash_original_field = "625846D6DA3F36ED198DE41F67E15100", hash_generated_field = "0A7EC28EE18866A9A9040E60DC4AC97B")
-
-    private static final int WINDOW_TOUCH_SLOP = 16;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.797 -0400", hash_original_field = "4D92C82BC8F2420AB114BEB62CD7ED87", hash_generated_field = "590039E7A300DBFA22B66BABAA6920B7")
-
-    private static final int MINIMUM_FLING_VELOCITY = 50;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.797 -0400", hash_original_field = "A0CB4C2BC155C75831C0EB8121DAC42C", hash_generated_field = "C16FA29D3B701C0D89C79F0F0AD1AFBD")
-
-    private static final int MAXIMUM_FLING_VELOCITY = 8000;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.798 -0400", hash_original_field = "5EF308B3B293B88F7EE2697177AF6212", hash_generated_field = "EFD34AF3F488A3C760252D09EC59545A")
-
-    private static final int TOUCH_EXPLORATION_TAP_SLOP = 80;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.798 -0400", hash_original_field = "CC00C275BB38C0FDF966C67CDAAB27F8", hash_generated_field = "F01671ACC3F6966DA3CE6C8E1BE7CEB3")
-
-    private static final long SEND_RECURRING_ACCESSIBILITY_EVENTS_INTERVAL_MILLIS = 400;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.798 -0400", hash_original_field = "9F6846B5205BEE47C7C2E206B5046E88", hash_generated_field = "F8FD2906DEF15086D200C8CDD2D0C403")
-
-    @Deprecated private static final int MAXIMUM_DRAWING_CACHE_SIZE = 480 * 800 * 4;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.798 -0400", hash_original_field = "59623B47C79647B0179EB90EFDFF2E84", hash_generated_field = "2CE696167C09B1199A3DDBBEA5A4BE43")
-
-    private static final float SCROLL_FRICTION = 0.015f;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.798 -0400", hash_original_field = "F622317E035BF413F10B223376292C35", hash_generated_field = "A04E9AC91D01157C378DC4613C063B24")
-
-    private static final int OVERSCROLL_DISTANCE = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.798 -0400", hash_original_field = "0BAFCFD5BDC060F85A993533F48576E7", hash_generated_field = "DA2D178DBF8807F9A6080C62905A485A")
-
-    private static final int OVERFLING_DISTANCE = 6;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.798 -0400", hash_original_field = "380143A01B9C2E733DA63B7F7A7593FD", hash_generated_field = "EEDF2561C792A30151768943796E598A")
-
-    static final SparseArray<ViewConfiguration> sConfigurations = new SparseArray<ViewConfiguration>(2);
 }
 

@@ -1,6 +1,8 @@
 package org.apache.harmony.security.asn1;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 
@@ -10,118 +12,91 @@ import java.io.IOException;
 
 
 public final class ASN1Any extends ASN1Type {
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.159 -0400", hash_original_method = "DC9940F4B091FD322F1F3A80DE5DA9F7", hash_generated_method = "4BC9F36E0DA8D5C47FBAC49DEA0BD42A")
-    public  ASN1Any() {
-        super(TAG_ANY);
-        // ---------- Original Method ----------
-    }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Returns ASN.1 ANY type default implementation
+     *
+     * The default implementation works with full encoding
+     * that is represented as raw byte array.
+     *
+     * @return ASN.1 ANY type default implementation
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.498 -0500", hash_original_method = "72EDD098C295AB4E95999AD610D0BDCD", hash_generated_method = "BFB854D83DA446B398DD7AAA04879B61")
     public static ASN1Any getInstance() {
         return ASN1;
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.496 -0500", hash_original_field = "EDEB995B616AD39AD8C36D4BEDE2A577", hash_generated_field = "C58706DC2D33CE9466BC907D05FF43CF")
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.159 -0400", hash_original_method = "0A9787140DA63C802B73071FD0FF80EC", hash_generated_method = "213EB9AE69913113877FA2808F8B687C")
+    private static final ASN1Any ASN1= new ASN1Any();
+
+    /**
+     * Constructs ASN.1 ANY type
+     *
+     * The constructor is provided for inheritance purposes
+     * when there is a need to create a custom ASN.1 ANY type.
+     * To get a default implementation it is recommended to use
+     * getInstance() method.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.497 -0500", hash_original_method = "DC9940F4B091FD322F1F3A80DE5DA9F7", hash_generated_method = "DB9067BFFCD040D7590D1C209BF6EF7C")
+    public ASN1Any() {
+        super(TAG_ANY); // has not tag number
+    }
+
+    /**
+     * Tests provided identifier.
+     *
+     * @param identifier - identifier to be verified
+     * @return - true
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.499 -0500", hash_original_method = "0A9787140DA63C802B73071FD0FF80EC", hash_generated_method = "849DA9BB92119DAC4BE7B4C2E0D80925")
     public final boolean checkTag(int identifier) {
-        addTaint(identifier);
-        boolean varB326B5062B2F0E69046810717534CB09_1434399458 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_126304386 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_126304386;
-        // ---------- Original Method ----------
-        //return true;
+        return true; //all tags are OK
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.160 -0400", hash_original_method = "F8B6556748DA568C4BCDCD3BC4853721", hash_generated_method = "188C5495DD5D5D09EABE55F0A8B5AA39")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.500 -0500", hash_original_method = "F8B6556748DA568C4BCDCD3BC4853721", hash_generated_method = "D3F7EC2EAF01CD33AEB1A20AEACF2B3D")
     public Object decode(BerInputStream in) throws IOException {
-        addTaint(in.getTaint());
+        // only read content, doesn't check it
         in.readContent();
-        if(in.isVerify)        
-        {
-Object var540C13E9E156B687226421B24F2DF178_1973267755 =             null;
-            var540C13E9E156B687226421B24F2DF178_1973267755.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_1973267755;
-        } //End block
-Object var6AD043AF0280111F31D0D60A6CD70863_1431694785 =         getDecodedObject(in);
-        var6AD043AF0280111F31D0D60A6CD70863_1431694785.addTaint(taint);
-        return var6AD043AF0280111F31D0D60A6CD70863_1431694785;
-        // ---------- Original Method ----------
-        //in.readContent();
-        //if (in.isVerify) {
-            //return null;
-        //}
-        //return getDecodedObject(in);
+
+        if (in.isVerify) {
+            return null;
+        }
+        return getDecodedObject(in);
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.160 -0400", hash_original_method = "7A8EAE0B0D15C25D8FE798817C72F0C1", hash_generated_method = "2FC4AEE65EF83D8E34249D853F20E23A")
+    /**
+     * Extracts array of bytes that represents full encoding from BER input
+     * stream.
+     *
+     * @param in BER input stream
+     * @return array of bytes
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.500 -0500", hash_original_method = "7A8EAE0B0D15C25D8FE798817C72F0C1", hash_generated_method = "4CC008AE1262E230724FFD12B09E1197")
     public Object getDecodedObject(BerInputStream in) throws IOException {
-        addTaint(in.getTaint());
         byte[] bytesEncoded = new byte[in.offset - in.tagOffset];
         System.arraycopy(in.buffer, in.tagOffset, bytesEncoded, 0,
                 bytesEncoded.length);
-Object varE123E70E73254F8B84526419D168A7C8_1669735155 =         bytesEncoded;
-        varE123E70E73254F8B84526419D168A7C8_1669735155.addTaint(taint);
-        return varE123E70E73254F8B84526419D168A7C8_1669735155;
-        // ---------- Original Method ----------
-        //byte[] bytesEncoded = new byte[in.offset - in.tagOffset];
-        //System.arraycopy(in.buffer, in.tagOffset, bytesEncoded, 0,
-                //bytesEncoded.length);
-        //return bytesEncoded;
+        return bytesEncoded;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.160 -0400", hash_original_method = "7511C9B0E36E939B1775FC9EA0F02F20", hash_generated_method = "7AA877D0BC5E134FD6F8182E63D2D768")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.501 -0500", hash_original_method = "7511C9B0E36E939B1775FC9EA0F02F20", hash_generated_method = "8890A5AF8EB7CD856712E5560958DC84")
     public void encodeASN(BerOutputStream out) {
-        addTaint(out.getTaint());
         out.encodeANY();
-        // ---------- Original Method ----------
-        //out.encodeANY();
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.160 -0400", hash_original_method = "E4481BCA62553D7934DD52F370937ED4", hash_generated_method = "F15B1202ECDA9F7A7EF12645667039EF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.502 -0500", hash_original_method = "E4481BCA62553D7934DD52F370937ED4", hash_generated_method = "897B4C3279A668EB3A6A4D2B661AB65B")
     public void encodeContent(BerOutputStream out) {
-        addTaint(out.getTaint());
         out.encodeANY();
-        // ---------- Original Method ----------
-        //out.encodeANY();
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.161 -0400", hash_original_method = "9FE1E04620BBFE07A0C8F71EADD10582", hash_generated_method = "CF6C0D89125D265A070FAEF45137B38D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.502 -0500", hash_original_method = "9FE1E04620BBFE07A0C8F71EADD10582", hash_generated_method = "74427AC68000019C393865D49DAE53B9")
     public void setEncodingContent(BerOutputStream out) {
-        addTaint(out.getTaint());
         out.length = ((byte[]) out.content).length;
-        // ---------- Original Method ----------
-        //out.length = ((byte[]) out.content).length;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.161 -0400", hash_original_method = "4E35D9A00930BDC0DD7D3944E7329986", hash_generated_method = "CBE5DAA8DAB0A80124611CCA5B5136E8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:04.503 -0500", hash_original_method = "4E35D9A00930BDC0DD7D3944E7329986", hash_generated_method = "9E073544271BA4933CFD9922B4805DB6")
     public int getEncodedLength(BerOutputStream out) {
-        addTaint(out.getTaint());
-        int var495E17F7A475D066F64F81410EECEEB8_1705566015 = (out.length);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_816577687 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_816577687;
-        // ---------- Original Method ----------
-        //return out.length;
+        return out.length;
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.161 -0400", hash_original_field = "0236CB100B50FFA118DD93153CCD6AB1", hash_generated_field = "C58706DC2D33CE9466BC907D05FF43CF")
-
-    private static final ASN1Any ASN1 = new ASN1Any();
 }
 

@@ -12,90 +12,16 @@ import java.io.IOException;
 import android.os.Bundle;
 import android.content.res.Resources;
 public class Sampler extends BaseObj {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:07:13.881 -0400", hash_original_field = "5226ADEF3F3B32783B4143237DC7F62E", hash_generated_field = "78D865F0F8FE6DB954DFD52729EF4192")
 
-    Value mMin;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:07:13.883 -0400", hash_original_field = "210F9BBF5408C37014270E8DF48F9E17", hash_generated_field = "F56E0D8DE09D3E0C2674A9D00D532766")
-
-    Value mMag;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:07:13.885 -0400", hash_original_field = "5BA8ABA2342564D629E12B6A64A7F17F", hash_generated_field = "90F3A7E00ED85B2D7BA8F6C92BD170FC")
-
-    Value mWrapS;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:07:13.886 -0400", hash_original_field = "5A732EDCDFB06DC237F07B906261E783", hash_generated_field = "498111A7138D0C815612F8AAEF8D34F6")
-
-    Value mWrapT;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:07:13.888 -0400", hash_original_field = "3010B31BB60398F10CC966198DDF430A", hash_generated_field = "B4553276C00EFD86FCB9FC4901287DB9")
-
-    Value mWrapR;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:07:13.896 -0400", hash_original_field = "483621F6DC8C41E8F480E4713E953C9C", hash_generated_field = "F34163C1972E48C6E60A65002E2CF0FF")
-
-    float mAniso;
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:07:13.903 -0400", hash_original_method = "F269E274655B2D076A18F19151EF2AC2", hash_generated_method = "784618DCEBFEC31EA6FCF3626F644C2E")
-      Sampler(int id, RenderScript rs) {
-        super(id, rs);
-        addTaint(rs.getTaint());
-        addTaint(id);
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:07:13.908 -0400", hash_original_method = "D317EF4B4114590296947059ADFB19C8", hash_generated_method = "A1D05334DCB708D329C634803B1E16E3")
-    public Value getMinification() {
-Value varFF498CE7DB7B276D58AE6690DD82E33E_973097555 =         mMin;
-        varFF498CE7DB7B276D58AE6690DD82E33E_973097555.addTaint(taint);
-        return varFF498CE7DB7B276D58AE6690DD82E33E_973097555;
-        // ---------- Original Method ----------
-        //return mMin;
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:07:13.914 -0400", hash_original_method = "A7082274978B491E47306F0E360F75DB", hash_generated_method = "27F8053ED5DB58BA6527B177A872DD7C")
-    public Value getMagnification() {
-Value varAFB30445E4361E4E22E5CD3ABF37224B_1309446871 =         mMag;
-        varAFB30445E4361E4E22E5CD3ABF37224B_1309446871.addTaint(taint);
-        return varAFB30445E4361E4E22E5CD3ABF37224B_1309446871;
-        // ---------- Original Method ----------
-        //return mMag;
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:07:13.922 -0400", hash_original_method = "E48146B3F5D0EC1AF0EEEDA8DCF8E9C5", hash_generated_method = "2E3D65BE34F5EE6A7A23BC5D01075796")
-    public Value getWrapS() {
-Value varA9560538D1FF66AD771BC97DC7B4576C_134584045 =         mWrapS;
-        varA9560538D1FF66AD771BC97DC7B4576C_134584045.addTaint(taint);
-        return varA9560538D1FF66AD771BC97DC7B4576C_134584045;
-        // ---------- Original Method ----------
-        //return mWrapS;
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:07:13.927 -0400", hash_original_method = "BF16B6A54AB7A7E067EFC876E596B184", hash_generated_method = "8E8B0D6CD8A6647EB13BD29D2CC2BE32")
-    public Value getWrapT() {
-Value varDC4A95D5695DF800C9E328EE00707FF9_612453423 =         mWrapT;
-        varDC4A95D5695DF800C9E328EE00707FF9_612453423.addTaint(taint);
-        return varDC4A95D5695DF800C9E328EE00707FF9_612453423;
-        // ---------- Original Method ----------
-        //return mWrapT;
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:07:13.931 -0400", hash_original_method = "93EB2299B93AC8C5EEC3466170C1832C", hash_generated_method = "230A5E9075498480E3105DD95BF644DF")
-    public float getAnisotropy() {
-        float var483621F6DC8C41E8F480E4713E953C9C_1417420389 = (mAniso);
-                float var546ADE640B6EDFBC8A086EF31347E768_1130983963 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_1130983963;
-        // ---------- Original Method ----------
-        //return mAniso;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
+    /**
+     * Retrieve a sampler with min and mag set to nearest and wrap modes set to
+     * clamp.
+     *
+     * @param rs Context to which the sampler will belong.
+     *
+     * @return Sampler
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.741 -0500", hash_original_method = "D53B73924CE25BA79BE5C682EDA80315", hash_generated_method = "76103A06C46A7D3BD84888DC632CF17F")
     public static Sampler CLAMP_NEAREST(RenderScript rs) {
         if(rs.mSampler_CLAMP_NEAREST == null) {
             Builder b = new Builder(rs);
@@ -108,8 +34,16 @@ Value varDC4A95D5695DF800C9E328EE00707FF9_612453423 =         mWrapT;
         return rs.mSampler_CLAMP_NEAREST;
     }
 
-    
-        public static Sampler CLAMP_LINEAR(RenderScript rs) {
+    /**
+     * Retrieve a sampler with min and mag set to linear and wrap modes set to
+     * clamp.
+     *
+     * @param rs Context to which the sampler will belong.
+     *
+     * @return Sampler
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.742 -0500", hash_original_method = "C819E485025B8F435117CF721B89C30B", hash_generated_method = "98BEB9A19A26BBF97D7E138E50A9E89E")
+    public static Sampler CLAMP_LINEAR(RenderScript rs) {
         if(rs.mSampler_CLAMP_LINEAR == null) {
             Builder b = new Builder(rs);
             b.setMinification(Value.LINEAR);
@@ -121,8 +55,16 @@ Value varDC4A95D5695DF800C9E328EE00707FF9_612453423 =         mWrapT;
         return rs.mSampler_CLAMP_LINEAR;
     }
 
-    
-        public static Sampler CLAMP_LINEAR_MIP_LINEAR(RenderScript rs) {
+    /**
+     * Retrieve a sampler with ag set to linear, min linear mipmap linear, and
+     * to and wrap modes set to clamp.
+     *
+     * @param rs Context to which the sampler will belong.
+     *
+     * @return Sampler
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.743 -0500", hash_original_method = "1C5F08F4E69D3052E8B04C996B666B5E", hash_generated_method = "C1C798952A0B97CFA2CC1D52833092D6")
+    public static Sampler CLAMP_LINEAR_MIP_LINEAR(RenderScript rs) {
         if(rs.mSampler_CLAMP_LINEAR_MIP_LINEAR == null) {
             Builder b = new Builder(rs);
             b.setMinification(Value.LINEAR_MIP_LINEAR);
@@ -134,8 +76,15 @@ Value varDC4A95D5695DF800C9E328EE00707FF9_612453423 =         mWrapT;
         return rs.mSampler_CLAMP_LINEAR_MIP_LINEAR;
     }
 
-    
-        @DSModeled(DSC.SAFE)
+    /**
+     * Retrieve a sampler with min and mag set to nearest and wrap modes set to
+     * wrap.
+     *
+     * @param rs Context to which the sampler will belong.
+     *
+     * @return Sampler
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.744 -0500", hash_original_method = "60B916CF0A3D5B965BF0342DD7963DCA", hash_generated_method = "FE2C555887A498F2F13E19B35C08CDC4")
     public static Sampler WRAP_NEAREST(RenderScript rs) {
         if(rs.mSampler_WRAP_NEAREST == null) {
             Builder b = new Builder(rs);
@@ -148,8 +97,16 @@ Value varDC4A95D5695DF800C9E328EE00707FF9_612453423 =         mWrapT;
         return rs.mSampler_WRAP_NEAREST;
     }
 
-    
-        public static Sampler WRAP_LINEAR(RenderScript rs) {
+    /**
+     * Retrieve a sampler with min and mag set to nearest and wrap modes set to
+     * wrap.
+     *
+     * @param rs Context to which the sampler will belong.
+     *
+     * @return Sampler
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.745 -0500", hash_original_method = "ACD81E1C335918B4D3E2AA9EB254701A", hash_generated_method = "67ECC52E4669912A58872E8365B7F8B6")
+    public static Sampler WRAP_LINEAR(RenderScript rs) {
         if(rs.mSampler_WRAP_LINEAR == null) {
             Builder b = new Builder(rs);
             b.setMinification(Value.LINEAR);
@@ -161,8 +118,16 @@ Value varDC4A95D5695DF800C9E328EE00707FF9_612453423 =         mWrapT;
         return rs.mSampler_WRAP_LINEAR;
     }
 
-    
-        public static Sampler WRAP_LINEAR_MIP_LINEAR(RenderScript rs) {
+    /**
+     * Retrieve a sampler with ag set to linear, min linear mipmap linear, and
+     * to and wrap modes set to wrap.
+     *
+     * @param rs Context to which the sampler will belong.
+     *
+     * @return Sampler
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.745 -0500", hash_original_method = "F0F69185D92A35C507C6F9D582B32E71", hash_generated_method = "09BDFB2D812B6667ABA6764C2FE121E8")
+    public static Sampler WRAP_LINEAR_MIP_LINEAR(RenderScript rs) {
         if(rs.mSampler_WRAP_LINEAR_MIP_LINEAR == null) {
             Builder b = new Builder(rs);
             b.setMinification(Value.LINEAR_MIP_LINEAR);
@@ -173,6 +138,75 @@ Value varDC4A95D5695DF800C9E328EE00707FF9_612453423 =         mWrapT;
         }
         return rs.mSampler_WRAP_LINEAR_MIP_LINEAR;
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.731 -0500", hash_original_field = "78D865F0F8FE6DB954DFD52729EF4192", hash_generated_field = "78D865F0F8FE6DB954DFD52729EF4192")
+
+
+    Value mMin;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.732 -0500", hash_original_field = "F56E0D8DE09D3E0C2674A9D00D532766", hash_generated_field = "F56E0D8DE09D3E0C2674A9D00D532766")
+
+    Value mMag;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.733 -0500", hash_original_field = "90F3A7E00ED85B2D7BA8F6C92BD170FC", hash_generated_field = "90F3A7E00ED85B2D7BA8F6C92BD170FC")
+
+    Value mWrapS;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.734 -0500", hash_original_field = "498111A7138D0C815612F8AAEF8D34F6", hash_generated_field = "498111A7138D0C815612F8AAEF8D34F6")
+
+    Value mWrapT;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.735 -0500", hash_original_field = "B4553276C00EFD86FCB9FC4901287DB9", hash_generated_field = "B4553276C00EFD86FCB9FC4901287DB9")
+
+    Value mWrapR;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.735 -0500", hash_original_field = "F34163C1972E48C6E60A65002E2CF0FF", hash_generated_field = "F34163C1972E48C6E60A65002E2CF0FF")
+
+    float mAniso;
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.736 -0500", hash_original_method = "F269E274655B2D076A18F19151EF2AC2", hash_generated_method = "F269E274655B2D076A18F19151EF2AC2")
+    Sampler(int id, RenderScript rs) {
+        super(id, rs);
+    }
+
+    /**
+     * @hide
+     * @return minification setting for the sampler
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.737 -0500", hash_original_method = "D317EF4B4114590296947059ADFB19C8", hash_generated_method = "95467702F443275602CE6D40B8E84E80")
+    public Value getMinification() {
+        return mMin;
+    }
+
+    /**
+     * @hide
+     * @return magnification setting for the sampler
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.738 -0500", hash_original_method = "A7082274978B491E47306F0E360F75DB", hash_generated_method = "CF86DA7376D60B3ABB20FA13488132B3")
+    public Value getMagnification() {
+        return mMag;
+    }
+
+    /**
+     * @hide
+     * @return S wrapping mode for the sampler
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.738 -0500", hash_original_method = "E48146B3F5D0EC1AF0EEEDA8DCF8E9C5", hash_generated_method = "33CA2460636D71C2FC02AC84D197168B")
+    public Value getWrapS() {
+        return mWrapS;
+    }
+
+    /**
+     * @hide
+     * @return T wrapping mode for the sampler
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.739 -0500", hash_original_method = "BF16B6A54AB7A7E067EFC876E596B184", hash_generated_method = "23AFA45FA8AD5C86B2087339E6E3FF10")
+    public Value getWrapT() {
+        return mWrapT;
+    }
+
+    /**
+     * @hide
+     * @return anisotropy setting for the sampler
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.740 -0500", hash_original_method = "93EB2299B93AC8C5EEC3466170C1832C", hash_generated_method = "BB82B63AF00CC0AB82F2B014F71CD9D8")
+    public float getAnisotropy() {
+        return mAniso;
+    }
 
     
     public enum Value {
@@ -182,40 +216,42 @@ Value varDC4A95D5695DF800C9E328EE00707FF9_612453423 =         mWrapT;
         LINEAR_MIP_NEAREST (5),
         WRAP (3),
         CLAMP (4);
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.729 -0500", hash_original_field = "0B53E374282B34FB268F3024A1E73BA5", hash_generated_field = "0B53E374282B34FB268F3024A1E73BA5")
+
+
         int mID;
-        @DSModeled(DSC.BAN)
-        Value(int id) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.730 -0500", hash_original_method = "D95229092961F4EF9A4C0D9F3629FAB8", hash_generated_method = "D95229092961F4EF9A4C0D9F3629FAB8")
+            Value(int id) {
             mID = id;
         }
     }
 
     
     public static class Builder {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:07:13.958 -0400", hash_original_field = "15EADDEB24354180E81F0ADC804C4CED", hash_generated_field = "AD6E2452AD39DF3B497ED4B7E83C4E0C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.746 -0500", hash_original_field = "AD6E2452AD39DF3B497ED4B7E83C4E0C", hash_generated_field = "AD6E2452AD39DF3B497ED4B7E83C4E0C")
 
         RenderScript mRS;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:07:13.959 -0400", hash_original_field = "5226ADEF3F3B32783B4143237DC7F62E", hash_generated_field = "78D865F0F8FE6DB954DFD52729EF4192")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.747 -0500", hash_original_field = "78D865F0F8FE6DB954DFD52729EF4192", hash_generated_field = "78D865F0F8FE6DB954DFD52729EF4192")
 
         Value mMin;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:07:13.961 -0400", hash_original_field = "210F9BBF5408C37014270E8DF48F9E17", hash_generated_field = "F56E0D8DE09D3E0C2674A9D00D532766")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.748 -0500", hash_original_field = "F56E0D8DE09D3E0C2674A9D00D532766", hash_generated_field = "F56E0D8DE09D3E0C2674A9D00D532766")
 
         Value mMag;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:07:13.962 -0400", hash_original_field = "5BA8ABA2342564D629E12B6A64A7F17F", hash_generated_field = "90F3A7E00ED85B2D7BA8F6C92BD170FC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.749 -0500", hash_original_field = "90F3A7E00ED85B2D7BA8F6C92BD170FC", hash_generated_field = "90F3A7E00ED85B2D7BA8F6C92BD170FC")
 
         Value mWrapS;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:07:13.964 -0400", hash_original_field = "5A732EDCDFB06DC237F07B906261E783", hash_generated_field = "498111A7138D0C815612F8AAEF8D34F6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.749 -0500", hash_original_field = "498111A7138D0C815612F8AAEF8D34F6", hash_generated_field = "498111A7138D0C815612F8AAEF8D34F6")
 
         Value mWrapT;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:07:13.965 -0400", hash_original_field = "3010B31BB60398F10CC966198DDF430A", hash_generated_field = "B4553276C00EFD86FCB9FC4901287DB9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.750 -0500", hash_original_field = "B4553276C00EFD86FCB9FC4901287DB9", hash_generated_field = "B4553276C00EFD86FCB9FC4901287DB9")
 
         Value mWrapR;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:07:13.969 -0400", hash_original_field = "483621F6DC8C41E8F480E4713E953C9C", hash_generated_field = "F34163C1972E48C6E60A65002E2CF0FF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.751 -0500", hash_original_field = "F34163C1972E48C6E60A65002E2CF0FF", hash_generated_field = "F34163C1972E48C6E60A65002E2CF0FF")
 
         float mAniso;
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:07:13.982 -0400", hash_original_method = "8BA530FE069759F6E1F3228F8706F91B", hash_generated_method = "B5ED360C392A371B9D60BB58F49A31FC")
-        public  Builder(RenderScript rs) {
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.752 -0500", hash_original_method = "8BA530FE069759F6E1F3228F8706F91B", hash_generated_method = "916B444238250B8356F90E549102C517")
+        public Builder(RenderScript rs) {
             mRS = rs;
             mMin = Value.NEAREST;
             mMag = Value.NEAREST;
@@ -223,131 +259,57 @@ Value varDC4A95D5695DF800C9E328EE00707FF9_612453423 =         mWrapT;
             mWrapT = Value.WRAP;
             mWrapR = Value.WRAP;
             mAniso = 1.0f;
-            // ---------- Original Method ----------
-            //mRS = rs;
-            //mMin = Value.NEAREST;
-            //mMag = Value.NEAREST;
-            //mWrapS = Value.WRAP;
-            //mWrapT = Value.WRAP;
-            //mWrapR = Value.WRAP;
-            //mAniso = 1.0f;
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:07:13.993 -0400", hash_original_method = "E6EEB5BC9FE9E0F7EDF9E87ACAA2AA20", hash_generated_method = "CE2F461EC1CBEB81474F7EE74BE3864A")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.753 -0500", hash_original_method = "E6EEB5BC9FE9E0F7EDF9E87ACAA2AA20", hash_generated_method = "6E1407F8854E787DC1E4E500B172C4AB")
         public void setMinification(Value v) {
-            if(v == Value.NEAREST ||
+            if (v == Value.NEAREST ||
                 v == Value.LINEAR ||
                 v == Value.LINEAR_MIP_LINEAR ||
-                v == Value.LINEAR_MIP_NEAREST)            
-            {
+                v == Value.LINEAR_MIP_NEAREST) {
                 mMin = v;
-            } //End block
-            else
-            {
-                IllegalArgumentException varDCE3009E74EF7CB3FA988AA230E54A6C_1886485410 = new IllegalArgumentException("Invalid value");
-                varDCE3009E74EF7CB3FA988AA230E54A6C_1886485410.addTaint(taint);
-                throw varDCE3009E74EF7CB3FA988AA230E54A6C_1886485410;
-            } //End block
-            // ---------- Original Method ----------
-            //if (v == Value.NEAREST ||
-                //v == Value.LINEAR ||
-                //v == Value.LINEAR_MIP_LINEAR ||
-                //v == Value.LINEAR_MIP_NEAREST) {
-                //mMin = v;
-            //} else {
-                //throw new IllegalArgumentException("Invalid value");
-            //}
+            } else {
+                throw new IllegalArgumentException("Invalid value");
+            }
         }
 
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:07:14.003 -0400", hash_original_method = "774B9CE0D926CB6E3A04802F250BB893", hash_generated_method = "939E6F812D10B14C27137B43C9895B57")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.754 -0500", hash_original_method = "774B9CE0D926CB6E3A04802F250BB893", hash_generated_method = "D668E8629556C2A518FA10F196052308")
         public void setMagnification(Value v) {
-            if(v == Value.NEAREST || v == Value.LINEAR)            
-            {
+            if (v == Value.NEAREST || v == Value.LINEAR) {
                 mMag = v;
-            } //End block
-            else
-            {
-                IllegalArgumentException varDCE3009E74EF7CB3FA988AA230E54A6C_1499428341 = new IllegalArgumentException("Invalid value");
-                varDCE3009E74EF7CB3FA988AA230E54A6C_1499428341.addTaint(taint);
-                throw varDCE3009E74EF7CB3FA988AA230E54A6C_1499428341;
-            } //End block
-            // ---------- Original Method ----------
-            //if (v == Value.NEAREST || v == Value.LINEAR) {
-                //mMag = v;
-            //} else {
-                //throw new IllegalArgumentException("Invalid value");
-            //}
+            } else {
+                throw new IllegalArgumentException("Invalid value");
+            }
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:07:14.008 -0400", hash_original_method = "4FC89E5F96ED39EA76E7D1E07F2197E0", hash_generated_method = "CDDCF253725179AEE602C379BADA4336")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.754 -0500", hash_original_method = "4FC89E5F96ED39EA76E7D1E07F2197E0", hash_generated_method = "730B63FF9CA0F6F5863111E0B8F32275")
         public void setWrapS(Value v) {
-            if(v == Value.WRAP || v == Value.CLAMP)            
-            {
+            if (v == Value.WRAP || v == Value.CLAMP) {
                 mWrapS = v;
-            } //End block
-            else
-            {
-                IllegalArgumentException varDCE3009E74EF7CB3FA988AA230E54A6C_871041811 = new IllegalArgumentException("Invalid value");
-                varDCE3009E74EF7CB3FA988AA230E54A6C_871041811.addTaint(taint);
-                throw varDCE3009E74EF7CB3FA988AA230E54A6C_871041811;
-            } //End block
-            // ---------- Original Method ----------
-            //if (v == Value.WRAP || v == Value.CLAMP) {
-                //mWrapS = v;
-            //} else {
-                //throw new IllegalArgumentException("Invalid value");
-            //}
+            } else {
+                throw new IllegalArgumentException("Invalid value");
+            }
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:07:14.016 -0400", hash_original_method = "7B3108DA158EAC18DF94BBDEDE7C0E3C", hash_generated_method = "D179A30C4078EF0BECAD30D612969BE7")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.755 -0500", hash_original_method = "7B3108DA158EAC18DF94BBDEDE7C0E3C", hash_generated_method = "499D18527CC4447C8EECCA9EF0ADEC00")
         public void setWrapT(Value v) {
-            if(v == Value.WRAP || v == Value.CLAMP)            
-            {
+            if (v == Value.WRAP || v == Value.CLAMP) {
                 mWrapT = v;
-            } //End block
-            else
-            {
-                IllegalArgumentException varDCE3009E74EF7CB3FA988AA230E54A6C_2055565412 = new IllegalArgumentException("Invalid value");
-                varDCE3009E74EF7CB3FA988AA230E54A6C_2055565412.addTaint(taint);
-                throw varDCE3009E74EF7CB3FA988AA230E54A6C_2055565412;
-            } //End block
-            // ---------- Original Method ----------
-            //if (v == Value.WRAP || v == Value.CLAMP) {
-                //mWrapT = v;
-            //} else {
-                //throw new IllegalArgumentException("Invalid value");
-            //}
+            } else {
+                throw new IllegalArgumentException("Invalid value");
+            }
         }
 
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:07:14.025 -0400", hash_original_method = "73597F570366B374FBC9D389A92F8786", hash_generated_method = "D5F960071708BD2640344B4882397F43")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.756 -0500", hash_original_method = "73597F570366B374FBC9D389A92F8786", hash_generated_method = "EE68B381EE52BDB37C6ED9482ED81ABA")
         public void setAnisotropy(float v) {
-            if(v >= 0.0f)            
-            {
+            if(v >= 0.0f) {
                 mAniso = v;
-            } //End block
-            else
-            {
-                IllegalArgumentException varDCE3009E74EF7CB3FA988AA230E54A6C_1222898414 = new IllegalArgumentException("Invalid value");
-                varDCE3009E74EF7CB3FA988AA230E54A6C_1222898414.addTaint(taint);
-                throw varDCE3009E74EF7CB3FA988AA230E54A6C_1222898414;
-            } //End block
-            // ---------- Original Method ----------
-            //if(v >= 0.0f) {
-                //mAniso = v;
-            //} else {
-                //throw new IllegalArgumentException("Invalid value");
-            //}
+            } else {
+                throw new IllegalArgumentException("Invalid value");
+            }
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:07:14.039 -0400", hash_original_method = "937B9F9B0444A5D4D5880C1D9F742F25", hash_generated_method = "D3A230A384EF685A1814C2C460A0F0B3")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.757 -0500", hash_original_method = "937B9F9B0444A5D4D5880C1D9F742F25", hash_generated_method = "011D288F6905ADFE5465CF39531B9AD3")
         public Sampler create() {
             mRS.validate();
             int id = mRS.nSamplerCreate(mMag.mID, mMin.mID, 
@@ -359,21 +321,7 @@ Value varDC4A95D5695DF800C9E328EE00707FF9_612453423 =         mWrapT;
             sampler.mWrapT = mWrapT;
             sampler.mWrapR = mWrapR;
             sampler.mAniso = mAniso;
-Sampler varB936E14BFEC697AFCDD993C7D4967DB8_439385558 =             sampler;
-            varB936E14BFEC697AFCDD993C7D4967DB8_439385558.addTaint(taint);
-            return varB936E14BFEC697AFCDD993C7D4967DB8_439385558;
-            // ---------- Original Method ----------
-            //mRS.validate();
-            //int id = mRS.nSamplerCreate(mMag.mID, mMin.mID, 
-                                        //mWrapS.mID, mWrapT.mID, mWrapR.mID, mAniso);
-            //Sampler sampler = new Sampler(id, mRS);
-            //sampler.mMin = mMin;
-            //sampler.mMag = mMag;
-            //sampler.mWrapS = mWrapS;
-            //sampler.mWrapT = mWrapT;
-            //sampler.mWrapR = mWrapR;
-            //sampler.mAniso = mAniso;
-            //return sampler;
+            return sampler;
         }
 
         

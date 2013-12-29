@@ -1,6 +1,8 @@
 package org.bouncycastle.asn1;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.EOFException;
 import java.io.IOException;
@@ -12,177 +14,119 @@ import java.io.InputStream;
 
 
 class IndefiniteLengthInputStream extends LimitedInputStream {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.745 -0400", hash_original_field = "738F8790AC12386096EC5731A3B156E1", hash_generated_field = "EED902105BB6C063F6B373DB3476C8FB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:55.355 -0500", hash_original_field = "2E6688B071EBDE694CC6A067296A4CA2", hash_generated_field = "EED902105BB6C063F6B373DB3476C8FB")
 
     private int _b1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.745 -0400", hash_original_field = "99A4E251D5322495475ED45AE733ED8B", hash_generated_field = "426DDC02F906D649216E5B1E08F10CEF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:55.356 -0500", hash_original_field = "63039838C3CD2AC9E717D32B1AE9C4D6", hash_generated_field = "426DDC02F906D649216E5B1E08F10CEF")
 
     private int _b2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.745 -0400", hash_original_field = "F5A6449C443427402A6E590E62AF27E0", hash_generated_field = "4B4EC70DC676150A8948D59857F39D79")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:55.356 -0500", hash_original_field = "224C2B22C3FD85FF5594F9AB4725A184", hash_generated_field = "4B4EC70DC676150A8948D59857F39D79")
 
     private boolean _eofReached = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.746 -0400", hash_original_field = "AF75841A76ABAAC2806DF9D839AFFA68", hash_generated_field = "3020A059BACD857B3764B343B2F5D363")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:55.357 -0500", hash_original_field = "CF8E93947D844EE1F970E96872E0F56A", hash_generated_field = "3020A059BACD857B3764B343B2F5D363")
 
     private boolean _eofOn00 = true;
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.747 -0400", hash_original_method = "2A5952809765D349E8595E91B1C3BF8F", hash_generated_method = "DB3C698568A78496CE7DEA264FDEA342")
-      IndefiniteLengthInputStream(
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:55.358 -0500", hash_original_method = "2A5952809765D349E8595E91B1C3BF8F", hash_generated_method = "BB11001A280430E08429D05DDAE9F44E")
+    IndefiniteLengthInputStream(
         InputStream in,
-        int         limit) throws IOException {
+        int         limit)
+        throws IOException
+    {
         super(in, limit);
-        addTaint(limit);
+
         _b1 = in.read();
         _b2 = in.read();
-        if(_b2 < 0)        
+
+        if (_b2 < 0)
         {
-            EOFException var0239D63DB748BB20D119EB36D6D1C384_366830528 = new EOFException();
-            var0239D63DB748BB20D119EB36D6D1C384_366830528.addTaint(taint);
-            throw var0239D63DB748BB20D119EB36D6D1C384_366830528;
-        } //End block
+            // Corrupted stream
+            throw new EOFException();
+        }
+
         checkForEof();
-        // ---------- Original Method ----------
-        //_b1 = in.read();
-        //_b2 = in.read();
-        //if (_b2 < 0)
-        //{
-            //throw new EOFException();
-        //}
-        //checkForEof();
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.747 -0400", hash_original_method = "32A1BF96E83BDB9D0A76804DE17B7296", hash_generated_method = "DA25567DD9B76875DA00C799349624F3")
-     void setEofOn00(
-        boolean eofOn00) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:55.359 -0500", hash_original_method = "32A1BF96E83BDB9D0A76804DE17B7296", hash_generated_method = "32A1BF96E83BDB9D0A76804DE17B7296")
+    void setEofOn00(
+        boolean eofOn00)
+    {
         _eofOn00 = eofOn00;
         checkForEof();
-        // ---------- Original Method ----------
-        //_eofOn00 = eofOn00;
-        //checkForEof();
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.748 -0400", hash_original_method = "4FDE0FC0A80FB708AB4FF6F00CAD13DD", hash_generated_method = "EA36548D77A184A803AA0E0A8445EA01")
-    private boolean checkForEof() {
-        if(!_eofReached && _eofOn00 && (_b1 == 0x00 && _b2 == 0x00))        
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:55.360 -0500", hash_original_method = "4FDE0FC0A80FB708AB4FF6F00CAD13DD", hash_generated_method = "23B32280FDDF1D96959AB222F428D32F")
+    private boolean checkForEof()
+    {
+        if (!_eofReached && _eofOn00 && (_b1 == 0x00 && _b2 == 0x00))
         {
             _eofReached = true;
             setParentEofDetect(true);
-        } //End block
-        boolean var218B6DABB70AD67737B64B3B25E2287A_1988377430 = (_eofReached);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1848511786 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1848511786;
-        // ---------- Original Method ----------
-        //if (!_eofReached && _eofOn00 && (_b1 == 0x00 && _b2 == 0x00))
-        //{
-            //_eofReached = true;
-            //setParentEofDetect(true);
-        //}
-        //return _eofReached;
+        }
+        return _eofReached;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.749 -0400", hash_original_method = "5E4C46F83EA6D4798D78ECC8F00428E0", hash_generated_method = "49BBEAB3370D2935A59DF6D1717FD311")
-    public int read(byte[] b, int off, int len) throws IOException {
-        addTaint(len);
-        addTaint(off);
-        addTaint(b[0]);
-        if(_eofOn00 || len < 3)        
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:55.361 -0500", hash_original_method = "5E4C46F83EA6D4798D78ECC8F00428E0", hash_generated_method = "A9CCE6A1BB4F56629983BCB0CADD6D12")
+    public int read(byte[] b, int off, int len)
+        throws IOException
+    {
+        // Only use this optimisation if we aren't checking for 00
+        if (_eofOn00 || len < 3)
         {
-            int var48B3EFAF438A7AA7380C0F5886A076AA_506820774 = (super.read(b, off, len));
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2010194943 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2010194943;
-        } //End block
-        if(_eofReached)        
+            return super.read(b, off, len);
+        }
+
+        if (_eofReached)
         {
-            int var6BB61E3B7BCE0931DA574D19D1D82C88_1529866929 = (-1);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_297722052 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_297722052;
-        } //End block
+            return -1;
+        }
+
         int numRead = _in.read(b, off + 2, len - 2);
-        if(numRead < 0)        
+
+        if (numRead < 0)
         {
-            EOFException var0239D63DB748BB20D119EB36D6D1C384_448285020 = new EOFException();
-            var0239D63DB748BB20D119EB36D6D1C384_448285020.addTaint(taint);
-            throw var0239D63DB748BB20D119EB36D6D1C384_448285020;
-        } //End block
+            // Corrupted stream
+            throw new EOFException();
+        }
+
         b[off] = (byte)_b1;
         b[off + 1] = (byte)_b2;
+
         _b1 = _in.read();
         _b2 = _in.read();
-        if(_b2 < 0)        
+
+        if (_b2 < 0)
         {
-            EOFException var0239D63DB748BB20D119EB36D6D1C384_1258247861 = new EOFException();
-            var0239D63DB748BB20D119EB36D6D1C384_1258247861.addTaint(taint);
-            throw var0239D63DB748BB20D119EB36D6D1C384_1258247861;
-        } //End block
-        int varC3453D8ED018A27EE5F4A01D4B45E766_2137543116 = (numRead + 2);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_233921916 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_233921916;
-        // ---------- Original Method ----------
-        //if (_eofOn00 || len < 3)
-        //{
-            //return super.read(b, off, len);
-        //}
-        //if (_eofReached)
-        //{
-            //return -1;
-        //}
-        //int numRead = _in.read(b, off + 2, len - 2);
-        //if (numRead < 0)
-        //{
-            //throw new EOFException();
-        //}
-        //b[off] = (byte)_b1;
-        //b[off + 1] = (byte)_b2;
-        //_b1 = _in.read();
-        //_b2 = _in.read();
-        //if (_b2 < 0)
-        //{
-            //throw new EOFException();
-        //}
-        //return numRead + 2;
+            // Corrupted stream
+            throw new EOFException();
+        }
+
+        return numRead + 2;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.750 -0400", hash_original_method = "2ACBDCB4D97DF4112755C3E9E6B4B6A1", hash_generated_method = "80D882C62A6738CCF2A7523FB1B082AA")
-    public int read() throws IOException {
-        if(checkForEof())        
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:55.362 -0500", hash_original_method = "2ACBDCB4D97DF4112755C3E9E6B4B6A1", hash_generated_method = "1DAFA9B84AE28F0440025C14E1CACA7F")
+    public int read()
+        throws IOException
+    {
+        if (checkForEof())
         {
-            int var6BB61E3B7BCE0931DA574D19D1D82C88_1927722204 = (-1);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_29155078 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_29155078;
-        } //End block
+            return -1;
+        }
+
         int b = _in.read();
-        if(b < 0)        
+
+        if (b < 0)
         {
-            EOFException var0239D63DB748BB20D119EB36D6D1C384_1042900188 = new EOFException();
-            var0239D63DB748BB20D119EB36D6D1C384_1042900188.addTaint(taint);
-            throw var0239D63DB748BB20D119EB36D6D1C384_1042900188;
-        } //End block
+            // Corrupted stream
+            throw new EOFException();
+        }
+
         int v = _b1;
+
         _b1 = _b2;
         _b2 = b;
-        int var9E3669D19B675BD57058FD4664205D2A_1041561664 = (v);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2132229889 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2132229889;
-        // ---------- Original Method ----------
-        //if (checkForEof())
-        //{
-            //return -1;
-        //}
-        //int b = _in.read();
-        //if (b < 0)
-        //{
-            //throw new EOFException();
-        //}
-        //int v = _b1;
-        //_b1 = _b2;
-        //_b2 = b;
-        //return v;
+
+        return v;
     }
 
     

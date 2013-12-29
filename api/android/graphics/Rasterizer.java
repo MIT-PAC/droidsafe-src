@@ -1,6 +1,8 @@
 package android.graphics;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
@@ -8,7 +10,13 @@ import droidsafe.annotations.*;
 
 
 public class Rasterizer {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.687 -0400", hash_original_field = "7E2E7BFEC42581BDE25254C4BB512478", hash_generated_field = "1353DF0D3FEF59358BA81F3F4AC59875")
+
+    
+    @DSModeled(DSC.SAFE)
+    private static void finalizer(int native_instance) {
+    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:50.326 -0500", hash_original_field = "1353DF0D3FEF59358BA81F3F4AC59875", hash_generated_field = "1353DF0D3FEF59358BA81F3F4AC59875")
+
 
     int native_instance;
     
@@ -19,18 +27,9 @@ public class Rasterizer {
         //Synthesized constructor
     }
 
-
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.688 -0400", hash_original_method = "29B0241D689448242FFD9C9D7DE21563", hash_generated_method = "15CC57087C95B7D9B74DEAC06F3C409E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:50.324 -0500", hash_original_method = "29B0241D689448242FFD9C9D7DE21563", hash_generated_method = "C0A78266AD759FFF43807B6414D6FF75")
     protected void finalize() throws Throwable {
         finalizer(native_instance);
-        // ---------- Original Method ----------
-        //finalizer(native_instance);
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    private static void finalizer(int native_instance) {
     }
 
     

@@ -1,6 +1,8 @@
 package gov.nist.javax.sip.parser;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import gov.nist.core.InternalErrorHandler;
 import gov.nist.javax.sip.header.SIPHeaderNamesCache;
@@ -111,20 +113,18 @@ import javax.sip.header.WarningHeader;
 
 
 public class ParserFactory {
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.217 -0400", hash_original_method = "402FA7B6FCFC84B93C7F2F3C6D2A34EC", hash_generated_method = "402FA7B6FCFC84B93C7F2F3C6D2A34EC")
-    public ParserFactory ()
-    {
-        //Synthesized constructor
-    }
 
-
-    @DSModeled(DSC.SAFE)
-    public static HeaderParser createParser(String line) throws ParseException {
+    /**
+     * create a parser for a header. This is the parser factory.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:09.964 -0500", hash_original_method = "6AFE9CBA6B56E35C594D2C594C957D14", hash_generated_method = "EBE6484005C937078EB2F255949EA23A")
+    public static HeaderParser createParser(String line)
+        throws ParseException {
         String headerName = Lexer.getHeaderName(line);
         String headerValue = Lexer.getHeaderValue(line);
         if (headerName == null || headerValue == null)
             throw new ParseException("The header name or value is null", 0);
+
         Class parserClass = (Class) parserTable.get(SIPHeaderNamesCache.toLowerCase(headerName));
         if (parserClass != null) {
             try {
@@ -137,25 +137,34 @@ public class ParserFactory {
                 args[0] = line;
                 HeaderParser retval = (HeaderParser) cons.newInstance(args);
                 return retval;
+
             } catch (Exception ex) {
                 InternalErrorHandler.handleException(ex);
-                return null; 
+                return null; // to placate the compiler.
             }
+
         } else {
+            // Just generate a generic SIPHeader. We define
+            // parsers only for the above.
             return new HeaderParser(line);
         }
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:09.961 -0500", hash_original_field = "EDA93F77CCF1F9B25EBF295EE61751F5", hash_generated_field = "0A3C66CA4CD5AF69A34601C4EB5A6186")
 
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.217 -0400", hash_original_field = "A204131F65AC451FEF76680B6546BBD2", hash_generated_field = "0A3C66CA4CD5AF69A34601C4EB5A6186")
 
     private static Hashtable<String,Class<? extends HeaderParser>> parserTable;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.217 -0400", hash_original_field = "C8F73AA9D5B2B8D2288DBE7416221D5D", hash_generated_field = "AA78F4096AC7D2050F7D84F484AF823F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:09.962 -0500", hash_original_field = "7321F45FBFF47190C0E578923D62E147", hash_generated_field = "AA78F4096AC7D2050F7D84F484AF823F")
 
     private static Class[] constructorArgs;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.217 -0400", hash_original_field = "BDC958E88250938150F7CF03A26186B5", hash_generated_field = "DDE7A2912B25508540047823ADE279C8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:09.963 -0500", hash_original_field = "FA6A81A9B7C9791632C1CB31B7466221", hash_generated_field = "DDE7A2912B25508540047823ADE279C8")
 
     private static Hashtable parserConstructorCache;
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.217 -0400", hash_original_method = "402FA7B6FCFC84B93C7F2F3C6D2A34EC", hash_generated_method = "402FA7B6FCFC84B93C7F2F3C6D2A34EC")
+    public ParserFactory ()
+    {
+        //Synthesized constructor
+    }
     static {
         parserTable = new Hashtable<String,Class<? extends HeaderParser>>();
         parserConstructorCache = new Hashtable();

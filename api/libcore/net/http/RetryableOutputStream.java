@@ -1,6 +1,8 @@
 package libcore.net.http;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -11,109 +13,59 @@ import java.util.Arrays;
 
 
 final class RetryableOutputStream extends AbstractHttpOutputStream {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.120 -0400", hash_original_field = "AA9F73EEA60A006820D0F8768BC8A3FC", hash_generated_field = "D8A77E2E2DC8CA16CE4A344FA1118F72")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:43.163 -0500", hash_original_field = "136FDC88CA742E83C109AD31983DA2BF", hash_generated_field = "D8A77E2E2DC8CA16CE4A344FA1118F72")
 
-    private int limit;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.120 -0400", hash_original_field = "9A0364B9E99BB480DD25E1F0284C8555", hash_generated_field = "311998AF11DA0C9AD3FE931CF69A5C33")
+    private  int limit;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:43.164 -0500", hash_original_field = "5B891CF437E7C28CDACFA0315335EFAA", hash_generated_field = "311998AF11DA0C9AD3FE931CF69A5C33")
 
-    private ByteArrayOutputStream content;
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.121 -0400", hash_original_method = "A832DB079A79DDBD6BA954E86DE3CFE0", hash_generated_method = "1352F636065EC36AE68B9261382DE447")
-    public  RetryableOutputStream(int limit) {
+    private  ByteArrayOutputStream content;
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:43.165 -0500", hash_original_method = "A832DB079A79DDBD6BA954E86DE3CFE0", hash_generated_method = "C160383339CD23C2EB800543D7FEB927")
+    public RetryableOutputStream(int limit) {
         this.limit = limit;
         this.content = new ByteArrayOutputStream(limit);
-        // ---------- Original Method ----------
-        //this.limit = limit;
-        //this.content = new ByteArrayOutputStream(limit);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.121 -0400", hash_original_method = "ACF7E60D1B2648BBC92003365E201CCA", hash_generated_method = "A24CA35E6EF5C5C312D9E235C2290F0F")
-    public  RetryableOutputStream() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:43.166 -0500", hash_original_method = "ACF7E60D1B2648BBC92003365E201CCA", hash_generated_method = "1F009154985A291FDCB976FF76C38E99")
+    public RetryableOutputStream() {
         this.limit = -1;
         this.content = new ByteArrayOutputStream();
-        // ---------- Original Method ----------
-        //this.limit = -1;
-        //this.content = new ByteArrayOutputStream();
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.122 -0400", hash_original_method = "01295B07B18E8DACBE5B67B8ED73AB45", hash_generated_method = "70D9D034AAFBB872207AAB3483569F26")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:43.167 -0500", hash_original_method = "01295B07B18E8DACBE5B67B8ED73AB45", hash_generated_method = "CAA57D29E89B67611D095D7DF9C3D773")
     @Override
-    public synchronized void close() throws IOException {
-        if(closed)        
-        {
+public synchronized void close() throws IOException {
+        if (closed) {
             return;
-        } //End block
+        }
         closed = true;
-        if(content.size() < limit)        
-        {
-            IOException var1DD03DF22ED4590BAB4F1A82055BB925_2021765426 = new IOException("content-length promised "
+        if (content.size() < limit) {
+            throw new IOException("content-length promised "
                     + limit + " bytes, but received " + content.size());
-            var1DD03DF22ED4590BAB4F1A82055BB925_2021765426.addTaint(taint);
-            throw var1DD03DF22ED4590BAB4F1A82055BB925_2021765426;
-        } //End block
-        // ---------- Original Method ----------
-        //if (closed) {
-            //return;
-        //}
-        //closed = true;
-        //if (content.size() < limit) {
-            //throw new IOException("content-length promised "
-                    //+ limit + " bytes, but received " + content.size());
-        //}
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.123 -0400", hash_original_method = "E1F3BEFD89D2B57927FA9AF72B0F2441", hash_generated_method = "DDBE29D8D10A855B144ACB000D83A488")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:43.168 -0500", hash_original_method = "E1F3BEFD89D2B57927FA9AF72B0F2441", hash_generated_method = "1CB3ED1636ECEADDD866DBB78357D3E2")
     @Override
-    public synchronized void write(byte[] buffer, int offset, int count) throws IOException {
-        addTaint(count);
-        addTaint(offset);
-        addTaint(buffer[0]);
+public synchronized void write(byte[] buffer, int offset, int count)
+            throws IOException {
         checkNotClosed();
         Arrays.checkOffsetAndCount(buffer.length, offset, count);
-        if(limit != -1 && content.size() > limit - count)        
-        {
-            IOException varC980F46BCED66653895B5BC599061556_7692108 = new IOException("exceeded content-length limit of " + limit + " bytes");
-            varC980F46BCED66653895B5BC599061556_7692108.addTaint(taint);
-            throw varC980F46BCED66653895B5BC599061556_7692108;
-        } //End block
+        if (limit != -1 && content.size() > limit - count) {
+            throw new IOException("exceeded content-length limit of " + limit + " bytes");
+        }
         content.write(buffer, offset, count);
-        // ---------- Original Method ----------
-        //checkNotClosed();
-        //Arrays.checkOffsetAndCount(buffer.length, offset, count);
-        //if (limit != -1 && content.size() > limit - count) {
-            //throw new IOException("exceeded content-length limit of " + limit + " bytes");
-        //}
-        //content.write(buffer, offset, count);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.123 -0400", hash_original_method = "D6DA405C75C9B4A91F36F560BEF2D916", hash_generated_method = "274E790BCBF5B245F0AE26B0AD0B93A8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:43.169 -0500", hash_original_method = "D6DA405C75C9B4A91F36F560BEF2D916", hash_generated_method = "FE91EA0708A0A997565867A1304F2EBA")
     public synchronized int contentLength() throws IOException {
         close();
-        int var072C841044B1A97A268EBCE85E0EDA06_529394950 = (content.size());
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1833990589 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1833990589;
-        // ---------- Original Method ----------
-        //close();
-        //return content.size();
+        return content.size();
     }
 
-    
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.123 -0400", hash_original_method = "13EC0747B327446249F03815D15BF368", hash_generated_method = "A3693C2F57555438C4510076BEEA99F4")
-    public void writeToSocket(OutputStream socketOut) throws IOException {
-        addTaint(socketOut.getTaint());
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:43.170 -0500", hash_original_method = "13EC0747B327446249F03815D15BF368", hash_generated_method = "E60703C4EBDB22BBCBC5BC9258CE5D1D")
+    public void writeToSocket(OutputStream socketOut) throws IOException  {
         content.writeTo(socketOut);
-        // ---------- Original Method ----------
-        //content.writeTo(socketOut);
     }
 
     

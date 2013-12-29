@@ -1,6 +1,8 @@
 package android.location;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -16,43 +18,14 @@ import android.util.Log;
 
 
 public final class Geocoder {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.056 -0400", hash_original_field = "18200E5D7C3839693F00E5A4D3DAD0B6", hash_generated_field = "CA3AB959F12DEEA21A35F58EC638730B")
 
-    private GeocoderParams mParams;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.056 -0400", hash_original_field = "D96EB21FC1A83B484FAE33A12B05D9CB", hash_generated_field = "172E00EA90AE9807366F5CA34B42799B")
-
-    private ILocationManager mService;
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.057 -0400", hash_original_method = "14E84A4B1974BF851ED8726736E80E86", hash_generated_method = "595D2306ADD17A55F02C614F7038997A")
-    public  Geocoder(Context context, Locale locale) {
-        if(locale == null)        
-        {
-            NullPointerException var3F3F6EF29B25D30496E9F54071267749_1823121663 = new NullPointerException("locale == null");
-            var3F3F6EF29B25D30496E9F54071267749_1823121663.addTaint(taint);
-            throw var3F3F6EF29B25D30496E9F54071267749_1823121663;
-        } //End block
-        mParams = new GeocoderParams(context, locale);
-        IBinder b = ServiceManager.getService(Context.LOCATION_SERVICE);
-        mService = ILocationManager.Stub.asInterface(b);
-        // ---------- Original Method ----------
-        //if (locale == null) {
-            //throw new NullPointerException("locale == null");
-        //}
-        //mParams = new GeocoderParams(context, locale);
-        //IBinder b = ServiceManager.getService(Context.LOCATION_SERVICE);
-        //mService = ILocationManager.Stub.asInterface(b);
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.058 -0400", hash_original_method = "EADDD88BF54CFB72F79FF8220981CC0D", hash_generated_method = "759C4625FD3041193E6A238A72B8718E")
-    public  Geocoder(Context context) {
-        this(context, Locale.getDefault());
-        addTaint(context.getTaint());
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Returns true if the Geocoder methods getFromLocation and
+     * getFromLocationName are implemented.  Lack of network
+     * connectivity may still cause these methods to return null or
+     * empty lists.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.048 -0500", hash_original_method = "C5EE9D72EF131FEA950520687E6D432D", hash_generated_method = "4D141F4B433F72F4C5A0AF9C4C4E06BB")
     public static boolean isPresent() {
         IBinder b = ServiceManager.getService(Context.LOCATION_SERVICE);
         ILocationManager lm = ILocationManager.Stub.asInterface(b);
@@ -63,204 +36,211 @@ public final class Geocoder {
             return false;
         }
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.045 -0500", hash_original_field = "072F1A4A3EFACF2B6A18C72A3A81468A", hash_generated_field = "B31A436DE52E80FF02F1461C2CF60861")
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.060 -0400", hash_original_method = "284E75C67527B2849F40BED710ED6A66", hash_generated_method = "67EF42A6AA9A22C6E39C5C688B8B0330")
-    public List<Address> getFromLocation(double latitude, double longitude, int maxResults) throws IOException {
-        addTaint(maxResults);
-        addTaint(longitude);
-        addTaint(latitude);
-        if(latitude < -90.0 || latitude > 90.0)        
-        {
-            IllegalArgumentException var5CDB5E8BE2780A449DF91F3598B8F033_439945493 = new IllegalArgumentException("latitude == " + latitude);
-            var5CDB5E8BE2780A449DF91F3598B8F033_439945493.addTaint(taint);
-            throw var5CDB5E8BE2780A449DF91F3598B8F033_439945493;
-        } //End block
-        if(longitude < -180.0 || longitude > 180.0)        
-        {
-            IllegalArgumentException var7C246BAC6A5717BCB23B4212A47C4761_1719278974 = new IllegalArgumentException("longitude == " + longitude);
-            var7C246BAC6A5717BCB23B4212A47C4761_1719278974.addTaint(taint);
-            throw var7C246BAC6A5717BCB23B4212A47C4761_1719278974;
-        } //End block
-        try 
-        {
-            List<Address> results = new ArrayList<Address>();
-            String ex = mService.getFromLocation(latitude, longitude, maxResults,
-                mParams, results);
-            if(ex != null)            
-            {
-                IOException var8B943AA6A4D3283BFEECC199C0F539AA_1439231136 = new IOException(ex);
-                var8B943AA6A4D3283BFEECC199C0F539AA_1439231136.addTaint(taint);
-                throw var8B943AA6A4D3283BFEECC199C0F539AA_1439231136;
-            } //End block
-            else
-            {
-List<Address> var238ECCC9872FFCA0B3C3DB83598FF044_1875665973 =                 results;
-                var238ECCC9872FFCA0B3C3DB83598FF044_1875665973.addTaint(taint);
-                return var238ECCC9872FFCA0B3C3DB83598FF044_1875665973;
-            } //End block
-        } //End block
-        catch (RemoteException e)
-        {
-List<Address> var540C13E9E156B687226421B24F2DF178_1432694146 =             null;
-            var540C13E9E156B687226421B24F2DF178_1432694146.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_1432694146;
-        } //End block
-        // ---------- Original Method ----------
-        //if (latitude < -90.0 || latitude > 90.0) {
-            //throw new IllegalArgumentException("latitude == " + latitude);
-        //}
-        //if (longitude < -180.0 || longitude > 180.0) {
-            //throw new IllegalArgumentException("longitude == " + longitude);
-        //}
-        //try {
-            //List<Address> results = new ArrayList<Address>();
-            //String ex =  mService.getFromLocation(latitude, longitude, maxResults,
-                //mParams, results);
-            //if (ex != null) {
-                //throw new IOException(ex);
-            //} else {
-                //return results;
-            //}
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "getFromLocation: got RemoteException", e);
-            //return null;
-        //}
+    private static final String TAG = "Geocoder";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.046 -0500", hash_original_field = "B22824C6E906376A8FECCCCBCF30506F", hash_generated_field = "CA3AB959F12DEEA21A35F58EC638730B")
+
+
+    private GeocoderParams mParams;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.047 -0500", hash_original_field = "50ECBA7D5C5287025A532B86729D1152", hash_generated_field = "172E00EA90AE9807366F5CA34B42799B")
+
+    private ILocationManager mService;
+
+    /**
+     * Constructs a Geocoder whose responses will be localized for the
+     * given Locale.
+     *
+     * @param context the Context of the calling Activity
+     * @param locale the desired Locale for the query results
+     *
+     * @throws NullPointerException if Locale is null
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.049 -0500", hash_original_method = "14E84A4B1974BF851ED8726736E80E86", hash_generated_method = "1C36BBE9907E4DB6EC9677D2355EAD8B")
+    public Geocoder(Context context, Locale locale) {
+        if (locale == null) {
+            throw new NullPointerException("locale == null");
+        }
+        mParams = new GeocoderParams(context, locale);
+        IBinder b = ServiceManager.getService(Context.LOCATION_SERVICE);
+        mService = ILocationManager.Stub.asInterface(b);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.062 -0400", hash_original_method = "29488D3CE065C208A897F66C86CADF17", hash_generated_method = "A387DFB00094824D5AADBDFD4B780914")
+    /**
+     * Constructs a Geocoder whose responses will be localized for the
+     * default system Locale.
+     *
+     * @param context the Context of the calling Activity
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.050 -0500", hash_original_method = "EADDD88BF54CFB72F79FF8220981CC0D", hash_generated_method = "28778F0E116D3FCD4F6F5F892496788F")
+    public Geocoder(Context context) {
+        this(context, Locale.getDefault());
+    }
+
+    /**
+     * Returns an array of Addresses that are known to describe the
+     * area immediately surrounding the given latitude and longitude.
+     * The returned addresses will be localized for the locale
+     * provided to this class's constructor.
+     *
+     * <p> The returned values may be obtained by means of a network lookup.
+     * The results are a best guess and are not guaranteed to be meaningful or
+     * correct. It may be useful to call this method from a thread separate from your
+     * primary UI thread.
+     *
+     * @param latitude the latitude a point for the search
+     * @param longitude the longitude a point for the search
+     * @param maxResults max number of addresses to return. Smaller numbers (1 to 5) are recommended
+     *
+     * @return a list of Address objects. Returns null or empty list if no matches were
+     * found or there is no backend service available.
+     *
+     * @throws IllegalArgumentException if latitude is
+     * less than -90 or greater than 90
+     * @throws IllegalArgumentException if longitude is
+     * less than -180 or greater than 180
+     * @throws IOException if the network is unavailable or any other
+     * I/O problem occurs
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.051 -0500", hash_original_method = "284E75C67527B2849F40BED710ED6A66", hash_generated_method = "457A8E4836C67CBA625FDDB93C2539DD")
+    public List<Address> getFromLocation(double latitude, double longitude, int maxResults)
+        throws IOException {
+        if (latitude < -90.0 || latitude > 90.0) {
+            throw new IllegalArgumentException("latitude == " + latitude);
+        }
+        if (longitude < -180.0 || longitude > 180.0) {
+            throw new IllegalArgumentException("longitude == " + longitude);
+        }
+        try {
+            List<Address> results = new ArrayList<Address>();
+            String ex =  mService.getFromLocation(latitude, longitude, maxResults,
+                mParams, results);
+            if (ex != null) {
+                throw new IOException(ex);
+            } else {
+                return results;
+            }
+        } catch (RemoteException e) {
+            Log.e(TAG, "getFromLocation: got RemoteException", e);
+            return null;
+        }
+    }
+
+    /**
+     * Returns an array of Addresses that are known to describe the
+     * named location, which may be a place name such as "Dalvik,
+     * Iceland", an address such as "1600 Amphitheatre Parkway,
+     * Mountain View, CA", an airport code such as "SFO", etc..  The
+     * returned addresses will be localized for the locale provided to
+     * this class's constructor.
+     *
+     * <p> The query will block and returned values will be obtained by means of a network lookup.
+     * The results are a best guess and are not guaranteed to be meaningful or
+     * correct. It may be useful to call this method from a thread separate from your
+     * primary UI thread.
+     *
+     * @param locationName a user-supplied description of a location
+     * @param maxResults max number of results to return. Smaller numbers (1 to 5) are recommended
+     *
+     * @return a list of Address objects. Returns null or empty list if no matches were
+     * found or there is no backend service available.
+     *
+     * @throws IllegalArgumentException if locationName is null
+     * @throws IOException if the network is unavailable or any other
+     * I/O problem occurs
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.052 -0500", hash_original_method = "29488D3CE065C208A897F66C86CADF17", hash_generated_method = "6C17B046873F8D38E071B5695D8A1BD9")
     public List<Address> getFromLocationName(String locationName, int maxResults) throws IOException {
-        addTaint(maxResults);
-        addTaint(locationName.getTaint());
-        if(locationName == null)        
-        {
-            IllegalArgumentException var798B9480099C940248D3D5C9994F9EF0_975726732 = new IllegalArgumentException("locationName == null");
-            var798B9480099C940248D3D5C9994F9EF0_975726732.addTaint(taint);
-            throw var798B9480099C940248D3D5C9994F9EF0_975726732;
-        } //End block
-        try 
-        {
+        if (locationName == null) {
+            throw new IllegalArgumentException("locationName == null");
+        }
+        try {
             List<Address> results = new ArrayList<Address>();
             String ex = mService.getFromLocationName(locationName,
                 0, 0, 0, 0, maxResults, mParams, results);
-            if(ex != null)            
-            {
-                IOException var8B943AA6A4D3283BFEECC199C0F539AA_2051576379 = new IOException(ex);
-                var8B943AA6A4D3283BFEECC199C0F539AA_2051576379.addTaint(taint);
-                throw var8B943AA6A4D3283BFEECC199C0F539AA_2051576379;
-            } //End block
-            else
-            {
-List<Address> var238ECCC9872FFCA0B3C3DB83598FF044_952457131 =                 results;
-                var238ECCC9872FFCA0B3C3DB83598FF044_952457131.addTaint(taint);
-                return var238ECCC9872FFCA0B3C3DB83598FF044_952457131;
-            } //End block
-        } //End block
-        catch (RemoteException e)
-        {
-List<Address> var540C13E9E156B687226421B24F2DF178_776208618 =             null;
-            var540C13E9E156B687226421B24F2DF178_776208618.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_776208618;
-        } //End block
-        // ---------- Original Method ----------
-        //if (locationName == null) {
-            //throw new IllegalArgumentException("locationName == null");
-        //}
-        //try {
-            //List<Address> results = new ArrayList<Address>();
-            //String ex = mService.getFromLocationName(locationName,
-                //0, 0, 0, 0, maxResults, mParams, results);
-            //if (ex != null) {
-                //throw new IOException(ex);
-            //} else {
-                //return results;
-            //}
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "getFromLocationName: got RemoteException", e);
-            //return null;
-        //}
+            if (ex != null) {
+                throw new IOException(ex);
+            } else {
+                return results;
+            }
+        } catch (RemoteException e) {
+            Log.e(TAG, "getFromLocationName: got RemoteException", e);
+            return null;
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.064 -0400", hash_original_method = "13307F87291B7F7130BBF7F095A5BF05", hash_generated_method = "04151684FCE729209FBC514D198263B0")
+    /**
+     * Returns an array of Addresses that are known to describe the
+     * named location, which may be a place name such as "Dalvik,
+     * Iceland", an address such as "1600 Amphitheatre Parkway,
+     * Mountain View, CA", an airport code such as "SFO", etc..  The
+     * returned addresses will be localized for the locale provided to
+     * this class's constructor.
+     *
+     * <p> You may specify a bounding box for the search results by including
+     * the Latitude and Longitude of the Lower Left point and Upper Right
+     * point of the box.
+     *
+     * <p> The query will block and returned values will be obtained by means of a network lookup.
+     * The results are a best guess and are not guaranteed to be meaningful or
+     * correct. It may be useful to call this method from a thread separate from your
+     * primary UI thread.
+     *
+     * @param locationName a user-supplied description of a location
+     * @param maxResults max number of addresses to return. Smaller numbers (1 to 5) are recommended
+     * @param lowerLeftLatitude the latitude of the lower left corner of the bounding box
+     * @param lowerLeftLongitude the longitude of the lower left corner of the bounding box
+     * @param upperRightLatitude the latitude of the upper right corner of the bounding box
+     * @param upperRightLongitude the longitude of the upper right corner of the bounding box
+     *
+     * @return a list of Address objects. Returns null or empty list if no matches were
+     * found or there is no backend service available.
+     *
+     * @throws IllegalArgumentException if locationName is null
+     * @throws IllegalArgumentException if any latitude is
+     * less than -90 or greater than 90
+     * @throws IllegalArgumentException if any longitude is
+     * less than -180 or greater than 180
+     * @throws IOException if the network is unavailable or any other
+     * I/O problem occurs
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:48.053 -0500", hash_original_method = "13307F87291B7F7130BBF7F095A5BF05", hash_generated_method = "0B1DBFCDA45AB3795CE5CC65B4E634BC")
     public List<Address> getFromLocationName(String locationName, int maxResults,
         double lowerLeftLatitude, double lowerLeftLongitude,
         double upperRightLatitude, double upperRightLongitude) throws IOException {
-        addTaint(upperRightLongitude);
-        addTaint(upperRightLatitude);
-        addTaint(lowerLeftLongitude);
-        addTaint(lowerLeftLatitude);
-        addTaint(maxResults);
-        addTaint(locationName.getTaint());
-        if(locationName == null)        
-        {
-            IllegalArgumentException var798B9480099C940248D3D5C9994F9EF0_233270229 = new IllegalArgumentException("locationName == null");
-            var798B9480099C940248D3D5C9994F9EF0_233270229.addTaint(taint);
-            throw var798B9480099C940248D3D5C9994F9EF0_233270229;
-        } //End block
-        if(lowerLeftLatitude < -90.0 || lowerLeftLatitude > 90.0)        
-        {
-            IllegalArgumentException varDC5BD51928E1A02BC95178BCDAB3A8A9_1832076309 = new IllegalArgumentException("lowerLeftLatitude == "
+        if (locationName == null) {
+            throw new IllegalArgumentException("locationName == null");
+        }
+        if (lowerLeftLatitude < -90.0 || lowerLeftLatitude > 90.0) {
+            throw new IllegalArgumentException("lowerLeftLatitude == "
                 + lowerLeftLatitude);
-            varDC5BD51928E1A02BC95178BCDAB3A8A9_1832076309.addTaint(taint);
-            throw varDC5BD51928E1A02BC95178BCDAB3A8A9_1832076309;
-        } //End block
-        if(lowerLeftLongitude < -180.0 || lowerLeftLongitude > 180.0)        
-        {
-            IllegalArgumentException var53D4CADC41B8EE441D510B1810C29475_2130491073 = new IllegalArgumentException("lowerLeftLongitude == "
+        }
+        if (lowerLeftLongitude < -180.0 || lowerLeftLongitude > 180.0) {
+            throw new IllegalArgumentException("lowerLeftLongitude == "
                 + lowerLeftLongitude);
-            var53D4CADC41B8EE441D510B1810C29475_2130491073.addTaint(taint);
-            throw var53D4CADC41B8EE441D510B1810C29475_2130491073;
-        } //End block
-        if(upperRightLatitude < -90.0 || upperRightLatitude > 90.0)        
-        {
-            IllegalArgumentException varC4B8A31C00CEFDBFF48C811CEE2B644F_413010481 = new IllegalArgumentException("upperRightLatitude == "
+        }
+        if (upperRightLatitude < -90.0 || upperRightLatitude > 90.0) {
+            throw new IllegalArgumentException("upperRightLatitude == "
                 + upperRightLatitude);
-            varC4B8A31C00CEFDBFF48C811CEE2B644F_413010481.addTaint(taint);
-            throw varC4B8A31C00CEFDBFF48C811CEE2B644F_413010481;
-        } //End block
-        if(upperRightLongitude < -180.0 || upperRightLongitude > 180.0)        
-        {
-            IllegalArgumentException var5FAB725CCE17B470073F2D50AE0545C8_1443990658 = new IllegalArgumentException("upperRightLongitude == "
+        }
+        if (upperRightLongitude < -180.0 || upperRightLongitude > 180.0) {
+            throw new IllegalArgumentException("upperRightLongitude == "
                 + upperRightLongitude);
-            var5FAB725CCE17B470073F2D50AE0545C8_1443990658.addTaint(taint);
-            throw var5FAB725CCE17B470073F2D50AE0545C8_1443990658;
-        } //End block
-        try 
-        {
+        }
+        try {
             ArrayList<Address> result = new ArrayList<Address>();
-            String ex = mService.getFromLocationName(locationName,
+            String ex =  mService.getFromLocationName(locationName,
                 lowerLeftLatitude, lowerLeftLongitude, upperRightLatitude, upperRightLongitude,
                 maxResults, mParams, result);
-            if(ex != null)            
-            {
-                IOException var8B943AA6A4D3283BFEECC199C0F539AA_778756387 = new IOException(ex);
-                var8B943AA6A4D3283BFEECC199C0F539AA_778756387.addTaint(taint);
-                throw var8B943AA6A4D3283BFEECC199C0F539AA_778756387;
-            } //End block
-            else
-            {
-List<Address> varDC838461EE2FA0CA4C9BBB70A15456B0_659596615 =                 result;
-                varDC838461EE2FA0CA4C9BBB70A15456B0_659596615.addTaint(taint);
-                return varDC838461EE2FA0CA4C9BBB70A15456B0_659596615;
-            } //End block
-        } //End block
-        catch (RemoteException e)
-        {
-List<Address> var540C13E9E156B687226421B24F2DF178_1690231918 =             null;
-            var540C13E9E156B687226421B24F2DF178_1690231918.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_1690231918;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            if (ex != null) {
+                throw new IOException(ex);
+            } else {
+                return result;
+            }
+        } catch (RemoteException e) {
+            Log.e(TAG, "getFromLocationName: got RemoteException", e);
+            return null;
+        }
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.064 -0400", hash_original_field = "2F13D28EF33AD881D6EF6A469D590D1B", hash_generated_field = "B31A436DE52E80FF02F1461C2CF60861")
-
-    private static final String TAG = "Geocoder";
 }
 

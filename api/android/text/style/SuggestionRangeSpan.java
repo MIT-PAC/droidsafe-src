@@ -1,6 +1,8 @@
 package android.text.style;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.text.ParcelableSpan;
@@ -12,81 +14,48 @@ import android.text.TextUtils;
 
 
 public class SuggestionRangeSpan extends CharacterStyle implements ParcelableSpan {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.151 -0400", hash_original_field = "F28F2DF30FA0A384EA442393DFFC03BB", hash_generated_field = "CC64588E1E08B8E0993874A8A69D251D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:52.473 -0500", hash_original_field = "9413B7CAD54A5CFB690F08E0547B483E", hash_generated_field = "CC64588E1E08B8E0993874A8A69D251D")
 
     private int mBackgroundColor;
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.151 -0400", hash_original_method = "BE3451A654F6E9FD9B583E5F598309FD", hash_generated_method = "3DDFC0E11D5F7709FC0BC9167F9698B2")
-    public  SuggestionRangeSpan() {
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:52.474 -0500", hash_original_method = "BE3451A654F6E9FD9B583E5F598309FD", hash_generated_method = "B973EA819EA16286EAAE8A0719DFF0FB")
+    public SuggestionRangeSpan() {
+        // 0 is a fully transparent black. Has to be set using #setBackgroundColor
         mBackgroundColor = 0;
-        // ---------- Original Method ----------
-        //mBackgroundColor = 0;
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.152 -0400", hash_original_method = "C19BD23169B457337D3E2C544633849E", hash_generated_method = "4C2C2E3ED2D787E1EE455D3C2928ACB7")
-    public  SuggestionRangeSpan(Parcel src) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:52.474 -0500", hash_original_method = "C19BD23169B457337D3E2C544633849E", hash_generated_method = "A6A3F3C10F6A654F90CA212F2F376F73")
+    public SuggestionRangeSpan(Parcel src) {
         mBackgroundColor = src.readInt();
-        // ---------- Original Method ----------
-        //mBackgroundColor = src.readInt();
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.152 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "55FDC437DC5A444C27125533E93E4950")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:52.475 -0500", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "8188008AC9C80E87937FE73DCA905200")
     @Override
-    public int describeContents() {
-        int varCFCD208495D565EF66E7DFF9F98764DA_40455986 = (0);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2008057051 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2008057051;
-        // ---------- Original Method ----------
-        //return 0;
+public int describeContents() {
+        return 0;
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.152 -0400", hash_original_method = "2D196358A51E993023DA9656E12C24CE", hash_generated_method = "94932DE2D690D0DD467BEBF42724FEBC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:52.476 -0500", hash_original_method = "2D196358A51E993023DA9656E12C24CE", hash_generated_method = "D610F7570041B4E85AB5A37A072B8B2D")
     @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        addTaint(flags);
-        addTaint(dest.getTaint());
+public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(mBackgroundColor);
-        // ---------- Original Method ----------
-        //dest.writeInt(mBackgroundColor);
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.153 -0400", hash_original_method = "C317BC4F0E850D3D8EACD128701AD14B", hash_generated_method = "268977E963FC1DE91B3D5D2311337BF7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:52.477 -0500", hash_original_method = "C317BC4F0E850D3D8EACD128701AD14B", hash_generated_method = "30B28F1C3E21EAB670C42B16DFC6F4C0")
     @Override
-    public int getSpanTypeId() {
-        int var957E460B1AD03C6B97E81D65008028EF_1722945599 = (TextUtils.SUGGESTION_RANGE_SPAN);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1635117469 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1635117469;
-        // ---------- Original Method ----------
-        //return TextUtils.SUGGESTION_RANGE_SPAN;
+public int getSpanTypeId() {
+        return TextUtils.SUGGESTION_RANGE_SPAN;
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.153 -0400", hash_original_method = "E6A11EC9B3E2DA21777E259CEAE43825", hash_generated_method = "C1EDFD39139B52FAB44D8473BFF01E1A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:52.478 -0500", hash_original_method = "E6A11EC9B3E2DA21777E259CEAE43825", hash_generated_method = "93F908A8FEA2FE61395CD9C1531DD807")
     public void setBackgroundColor(int backgroundColor) {
         mBackgroundColor = backgroundColor;
-        // ---------- Original Method ----------
-        //mBackgroundColor = backgroundColor;
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.153 -0400", hash_original_method = "DC157379F92590C2B130D316844D8B74", hash_generated_method = "D9B2C529838BFD3E2CD1211E4608BF4D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:52.479 -0500", hash_original_method = "DC157379F92590C2B130D316844D8B74", hash_generated_method = "C76719BC0F422DE732DDF03D89FF82BB")
     @Override
-    public void updateDrawState(TextPaint tp) {
-        addTaint(tp.getTaint());
+public void updateDrawState(TextPaint tp) {
         tp.bgColor = mBackgroundColor;
-        // ---------- Original Method ----------
-        //tp.bgColor = mBackgroundColor;
     }
 
     

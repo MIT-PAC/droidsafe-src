@@ -1,6 +1,8 @@
 package java.lang.reflect;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
@@ -8,119 +10,240 @@ import droidsafe.annotations.*;
 
 
 public class Modifier {
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.139 -0400", hash_original_method = "E43AF8EB2B9E0BF3650B46095E57E1B5", hash_generated_method = "5DB3FAFCCB5E5D8BE953CABAA657E0F9")
-    public  Modifier() {
-        // ---------- Original Method ----------
-    }
 
-    
-    @DSModeled(DSC.BAN)
+    /**
+     * Returns a mask of all the modifiers that may be applied to classes.
+     * @since 1.7
+     * @hide 1.7
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.432 -0500", hash_original_method = "9A1D75666406C8990BC1AA416CDF9558", hash_generated_method = "F777E5D4D97E11C071201352C1E45DFB")
     public static int classModifiers() {
         return PUBLIC | PROTECTED | PRIVATE | ABSTRACT | STATIC | FINAL | STRICT;
     }
 
-    
-    @DSModeled(DSC.BAN)
+    /**
+     * Returns a mask of all the modifiers that may be applied to constructors.
+     * @since 1.7
+     * @hide 1.7
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.433 -0500", hash_original_method = "079A7BE4CCCC6D24274EBBE71E4E293F", hash_generated_method = "C4BC556D8102AA6F2CEA0D7D33598DDD")
     public static int constructorModifiers() {
         return PUBLIC | PROTECTED | PRIVATE;
     }
 
-    
-    @DSModeled(DSC.BAN)
+    /**
+     * Returns a mask of all the modifiers that may be applied to fields.
+     * @since 1.7
+     * @hide 1.7
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.434 -0500", hash_original_method = "1F172CA874B907B93E2E0AF285D5B96B", hash_generated_method = "BB1B8FA31CDDD250DF4D1FA38CFBDE2B")
     public static int fieldModifiers() {
         return PUBLIC | PROTECTED | PRIVATE | STATIC | FINAL | TRANSIENT | VOLATILE;
     }
 
-    
-    @DSModeled(DSC.BAN)
+    /**
+     * Returns a mask of all the modifiers that may be applied to interfaces.
+     * @since 1.7
+     * @hide 1.7
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.435 -0500", hash_original_method = "BDF3AD667A71B37AE55F3E2E0F794D61", hash_generated_method = "B0634B256FEDF3B0793C38EB1552F5F9")
     public static int interfaceModifiers() {
         return PUBLIC | PROTECTED | PRIVATE | ABSTRACT | STATIC | STRICT;
     }
 
-    
-    @DSModeled(DSC.BAN)
+    /**
+     * Returns a mask of all the modifiers that may be applied to methods.
+     * @since 1.7
+     * @hide 1.7
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.436 -0500", hash_original_method = "D6937D25AC81F70361EFC7EFF460134D", hash_generated_method = "8C79D4DC8FD24AF9B584EBCBB601BCB5")
     public static int methodModifiers() {
         return PUBLIC | PROTECTED | PRIVATE | ABSTRACT | STATIC | FINAL | SYNCHRONIZED | NATIVE | STRICT;
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Indicates whether or not the specified modifiers contain the {@code
+     * abstract} modifier.
+     *
+     * @param modifiers
+     *            the modifiers to test
+     * @return {@code true} if the specified modifiers contain the {@code
+     *         abstract} modifier, {@code false} otherwise
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.437 -0500", hash_original_method = "4393F5C84F1A6C20484EB804711F0AF9", hash_generated_method = "3CF1C591AE7F3113A85B2A4E0D9D09C9")
     public static boolean isAbstract(int modifiers) {
         return ((modifiers & ABSTRACT) != 0);
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Indicates whether or not the specified modifiers contain the {@code
+     * final} modifier.
+     *
+     * @param modifiers
+     *            the modifiers to test
+     * @return {@code true} if the specified modifiers contain the {@code
+     *         final} modifier, {@code false} otherwise
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.437 -0500", hash_original_method = "CBF7AC275E896CAF05907BF83162C1F9", hash_generated_method = "2F28EE34F8D175F67B3F0E2B79741BE8")
     public static boolean isFinal(int modifiers) {
         return ((modifiers & FINAL) != 0);
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Indicates whether or not the specified modifiers contain the {@code
+     * interface} modifier.
+     *
+     * @param modifiers
+     *            the modifiers to test
+     * @return {@code true} if the specified modifiers contain the {@code
+     *         interface} modifier, {@code false} otherwise
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.438 -0500", hash_original_method = "6989910559795EB48195A46B3188D519", hash_generated_method = "8B5865805C5F5F9CA6531F51EA172A4C")
     public static boolean isInterface(int modifiers) {
         return ((modifiers & INTERFACE) != 0);
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Indicates whether or not the specified modifiers contain the {@code
+     * native} modifier.
+     *
+     * @param modifiers
+     *            the modifiers to test
+     * @return {@code true} if the specified modifiers contain the {@code
+     *         native} modifier, {@code false} otherwise
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.439 -0500", hash_original_method = "DA6BEE0F153DB8F35550AFD9CB07FE76", hash_generated_method = "B21F0FD66FA20515D3A05AAD7CB0A45C")
     public static boolean isNative(int modifiers) {
         return ((modifiers & NATIVE) != 0);
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Indicates whether or not the specified modifiers contain the {@code
+     * private} modifier.
+     *
+     * @param modifiers
+     *            the modifiers to test
+     * @return {@code true} if the specified modifiers contain the {@code
+     *         private} modifier, {@code false} otherwise
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.440 -0500", hash_original_method = "C23CD0C026CEBAE83AF0F37DEB3B9BE7", hash_generated_method = "66C3354DF6123C83C6A6B80B6AFD7803")
     public static boolean isPrivate(int modifiers) {
         return ((modifiers & PRIVATE) != 0);
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Indicates whether or not the specified modifiers contain the {@code
+     * protected} modifier.
+     *
+     * @param modifiers
+     *            the modifiers to test
+     * @return {@code true} if the specified modifiers contain the {@code
+     *         protected} modifier, {@code false} otherwise
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.441 -0500", hash_original_method = "34F3755D4F3C080FEB39C242B465057F", hash_generated_method = "4AD66D8FB2A0CB5DE3FB088B823E1A30")
     public static boolean isProtected(int modifiers) {
         return ((modifiers & PROTECTED) != 0);
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Indicates whether or not the specified modifiers contain the {@code
+     * public} modifier.
+     *
+     * @param modifiers
+     *            the modifiers to test
+     * @return {@code true} if the specified modifiers contain the {@code
+     *         public} modifier, {@code false} otherwise
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.442 -0500", hash_original_method = "F32A5C6A60F6D3AE4E2798FB3C917182", hash_generated_method = "17A09D042FE469EEA8A7D832BFCD0E80")
     public static boolean isPublic(int modifiers) {
         return ((modifiers & PUBLIC) != 0);
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Indicates whether or not the specified modifiers contain the {@code
+     * static} modifier.
+     *
+     * @param modifiers
+     *            the modifiers to test
+     * @return {@code true} if the specified modifiers contain the {@code
+     *         static} modifier, {@code false} otherwise
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.443 -0500", hash_original_method = "F73282A82DE53F4E8602A983F3FBD929", hash_generated_method = "4F839491C85D91B0C9553754D6711D11")
     public static boolean isStatic(int modifiers) {
         return ((modifiers & STATIC) != 0);
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Indicates whether or not the specified modifiers contain the {@code
+     * strict} modifier.
+     *
+     * @param modifiers
+     *            the modifiers to test
+     * @return {@code true} if the specified modifiers contain the {@code
+     *         strict} modifier, {@code false} otherwise
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.444 -0500", hash_original_method = "69B63C272419F112013D47037EF5FF0C", hash_generated_method = "DEAEEA89B99839FC0BF1C8CB2C51928A")
     public static boolean isStrict(int modifiers) {
         return ((modifiers & STRICT) != 0);
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Indicates whether or not the specified modifiers contain the {@code
+     * synchronized} modifier.
+     *
+     * @param modifiers
+     *            the modifiers to test
+     * @return {@code true} if the specified modifiers contain the {@code
+     *         synchronized} modifier, {@code false} otherwise
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.445 -0500", hash_original_method = "49E2E5B1428F9F4298859885B6785735", hash_generated_method = "4D461F8AB64D65327C584ABB44CC0B52")
     public static boolean isSynchronized(int modifiers) {
         return ((modifiers & SYNCHRONIZED) != 0);
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Indicates whether or not the specified modifiers contain the {@code
+     * transient} modifier.
+     *
+     * @param modifiers
+     *            the modifiers to test
+     * @return {@code true} if the specified modifiers contain the {@code
+     *         transient} modifier, {@code false} otherwise
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.446 -0500", hash_original_method = "57209F613683B2F4AD04C6D317C5C05F", hash_generated_method = "43B1846810DDC077F366CAA38168D506")
     public static boolean isTransient(int modifiers) {
         return ((modifiers & TRANSIENT) != 0);
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Indicates whether or not the specified modifiers contain the {@code
+     * volatile} modifier.
+     *
+     * @param modifiers
+     *            the modifiers to test
+     * @return {@code true} if the specified modifiers contain the {@code
+     *         volatile} modifier, {@code false} otherwise
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.447 -0500", hash_original_method = "B0E5F2B6D36D4B1865726F3E3779D240", hash_generated_method = "7A46AE2CCC9985861E307F94713AFCE5")
     public static boolean isVolatile(int modifiers) {
         return ((modifiers & VOLATILE) != 0);
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Returns a string containing the string representation of all modifiers
+     * present in the specified modifiers. Modifiers appear in the order
+     * specified by the Java Language Specification:
+     *
+     * {@code public private protected abstract static final transient volatile native synchronized interface strict}
+     *
+     * @param modifiers
+     *            the modifiers to print
+     * @return a printable representation of the modifiers
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.448 -0500", hash_original_method = "86B8B01EEA81FA63F3947FFBD2326404", hash_generated_method = "E7DBA0DB8CF57DD44BBBDDD71B32A7BA")
     public static java.lang.String toString(int modifiers) {
         StringBuilder buf = new StringBuilder();
+
         if (isPublic(modifiers)) {
             buf.append("public ");
         }
@@ -163,58 +286,67 @@ public class Modifier {
         buf.setLength(buf.length() - 1);
         return buf.toString();
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.143 -0400", hash_original_field = "BED3AD36020DFC957BC2F21FBAAB9F45", hash_generated_field = "4E113119E95225010757D80E6712B6AF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.415 -0500", hash_original_field = "57C9C66ECE17B3AA350365878DDB3F8A", hash_generated_field = "4E113119E95225010757D80E6712B6AF")
 
     public static final int PUBLIC = 0x1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.143 -0400", hash_original_field = "C061FAEF73F4F642844CE0FAEBC4513E", hash_generated_field = "3FB12B7F650E2C8217C3C961A0CC4708")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.416 -0500", hash_original_field = "005D948A149930A7C8564A58527A2303", hash_generated_field = "3FB12B7F650E2C8217C3C961A0CC4708")
 
     public static final int PRIVATE = 0x2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.143 -0400", hash_original_field = "6682D8A6CFE992F47E0FF9CFF4FF04DA", hash_generated_field = "F883B39C82B5CE479BCFC431FF6580EA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.416 -0500", hash_original_field = "1C759BF114DBB3579D6E973771D7CB51", hash_generated_field = "F883B39C82B5CE479BCFC431FF6580EA")
 
     public static final int PROTECTED = 0x4;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.143 -0400", hash_original_field = "384727F960460065A81B5167B54E6DEA", hash_generated_field = "7C54A1759B1B118FBD9534DED08E0232")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.417 -0500", hash_original_field = "F0B88129C4C6116B20D8457E6C107BF9", hash_generated_field = "7C54A1759B1B118FBD9534DED08E0232")
 
     public static final int STATIC = 0x8;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.143 -0400", hash_original_field = "DEACD48B8A8D29E55403CB37734384A2", hash_generated_field = "4130814883E587EF948CBF3F5B1A0D5F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.418 -0500", hash_original_field = "A87113BA933FFA4CCFFE27E4704B399D", hash_generated_field = "4130814883E587EF948CBF3F5B1A0D5F")
 
     public static final int FINAL = 0x10;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.144 -0400", hash_original_field = "6703209CE93B6522F48C4F82E1C3C5CD", hash_generated_field = "C002D7F6BE91545B3ADDD289A4B580A6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.419 -0500", hash_original_field = "79230C389EAB9F86B9EB553B32D281B2", hash_generated_field = "C002D7F6BE91545B3ADDD289A4B580A6")
 
     public static final int SYNCHRONIZED = 0x20;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.144 -0400", hash_original_field = "484591D9BBF59FF07243DF155983AEA9", hash_generated_field = "2D3E3BDF8D69CC8F32E16218F6CB2591")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.420 -0500", hash_original_field = "A96974705DA2C55C82F916841AEC5366", hash_generated_field = "2D3E3BDF8D69CC8F32E16218F6CB2591")
 
     public static final int VOLATILE = 0x40;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.144 -0400", hash_original_field = "713057DA0EBFBFCA1D3827C769DC25BB", hash_generated_field = "A566A44B499800E310E5871EDAFD61C4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.421 -0500", hash_original_field = "A8173F929954FCEA52C38577996326AF", hash_generated_field = "A566A44B499800E310E5871EDAFD61C4")
 
     public static final int TRANSIENT = 0x80;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.144 -0400", hash_original_field = "FED40E09ADEEDA210D8C9423F34AF572", hash_generated_field = "9003BF3387ED11A1151FFE2D4F2389A3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.422 -0500", hash_original_field = "18B8A4D228E64D95FDE0AF3E85B3C614", hash_generated_field = "9003BF3387ED11A1151FFE2D4F2389A3")
 
     public static final int NATIVE = 0x100;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.144 -0400", hash_original_field = "9A6BF5B9089C5389C978E07FBE170981", hash_generated_field = "DB1EB3828A926E56B96E77FCB680C947")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.423 -0500", hash_original_field = "66F94E0287642B4B4BE45FC873B2CBD1", hash_generated_field = "DB1EB3828A926E56B96E77FCB680C947")
 
     public static final int INTERFACE = 0x200;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.144 -0400", hash_original_field = "7BC111CB72A9AB99C089AB09AC8EC3E7", hash_generated_field = "569F06DF1E8C8BD44740957D205789AE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.424 -0500", hash_original_field = "5B2A1AA513B16AE27D9D62B523A7732D", hash_generated_field = "569F06DF1E8C8BD44740957D205789AE")
 
     public static final int ABSTRACT = 0x400;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.144 -0400", hash_original_field = "65A1AD456CD8A912343DE83480919182", hash_generated_field = "54018FE4222A09AC5434054484AAA55A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.426 -0500", hash_original_field = "38CDFB3C52F2C5FF588C0A0294D22E9E", hash_generated_field = "54018FE4222A09AC5434054484AAA55A")
 
     public static final int STRICT = 0x800;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.144 -0400", hash_original_field = "BC96106AF9C1B04426B8892917624BA6", hash_generated_field = "7E271FB22FEE4DCDD6ADC0948CE1AF2F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.427 -0500", hash_original_field = "716AE60EB86EEE3DFF32D6A83E24DA8A", hash_generated_field = "7E271FB22FEE4DCDD6ADC0948CE1AF2F")
 
     static final int BRIDGE = 0x40;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.144 -0400", hash_original_field = "2D541EF687F73B1E2DE1986D77BAC51D", hash_generated_field = "6D6FEFEBFBA3A07606D9A0FE2D3164F4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.428 -0500", hash_original_field = "9B810AD6F12FF86CC24642D5BDEDE96E", hash_generated_field = "6D6FEFEBFBA3A07606D9A0FE2D3164F4")
+
 
     static final int VARARGS = 0x80;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.144 -0400", hash_original_field = "31659C22843B02D3DC1970561A2D9172", hash_generated_field = "38828713573E11AB3F4DEBAF0823E500")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.428 -0500", hash_original_field = "F1FF292D2C8E0F83E85874578AF0CB71", hash_generated_field = "38828713573E11AB3F4DEBAF0823E500")
+
 
     static final int SYNTHETIC = 0x1000;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.144 -0400", hash_original_field = "EF8DBF8C2A1BE69E3B38D50E25C937E7", hash_generated_field = "20555738D31EC19F3DFAE3E6C8C1F355")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.429 -0500", hash_original_field = "D76A26FE61302C8C86A0C69E0C2CB435", hash_generated_field = "20555738D31EC19F3DFAE3E6C8C1F355")
+
 
     static final int ANNOTATION = 0x2000;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.144 -0400", hash_original_field = "D1A1D40B706A1840938C6422DA065D5B", hash_generated_field = "BB2F637D890B852567DDEF14CF0D700C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.430 -0500", hash_original_field = "0864BD8018E11B4EB27219D562A94ECF", hash_generated_field = "BB2F637D890B852567DDEF14CF0D700C")
+
 
     static final int ENUM = 0x4000;
+
+    /**
+     * Constructs a new {@code Modifier} instance.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:20.431 -0500", hash_original_method = "E43AF8EB2B9E0BF3650B46095E57E1B5", hash_generated_method = "67486C5FCC0D9F62E4BC64BD644C1963")
+    public Modifier() {
+    }
 }
 

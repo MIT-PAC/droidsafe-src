@@ -1,48 +1,61 @@
 package java.security.cert;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
 
 public class CertificateEncodingException extends CertificateException {
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.720 -0400", hash_original_method = "7001A7B06C3C6F6A9AA79A4DDBDE06C1", hash_generated_method = "9AF12C7C6EFC4619DBB2BD1EE3112CE5")
-    public  CertificateEncodingException(String msg) {
-        super(msg);
-        addTaint(msg.getTaint());
-        // ---------- Original Method ----------
-    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:15.670 -0500", hash_original_field = "B9B4CD01134336AA96560290A6E0D00B", hash_generated_field = "283D9FEE55079801531E0A45A4848707")
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.720 -0400", hash_original_method = "4937F69C7A48975DF1EBD7F32A366CEE", hash_generated_method = "C2D35BC07014BC3018532FA9B69AF7DE")
-    public  CertificateEncodingException() {
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.720 -0400", hash_original_method = "E243161DE39D22E4790DBE91A7D0CBA3", hash_generated_method = "687FB782969E389F6B0EE746BDD3B673")
-    public  CertificateEncodingException(String message, Throwable cause) {
-        super(message, cause);
-        addTaint(cause.getTaint());
-        addTaint(message.getTaint());
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.720 -0400", hash_original_method = "A32D2B579DCEB6262CC5C2D0257C91FD", hash_generated_method = "FD7FB8602AB4B9B3545A4CE0F11FB9B6")
-    public  CertificateEncodingException(Throwable cause) {
-        super(cause);
-        addTaint(cause.getTaint());
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.720 -0400", hash_original_field = "B846568D7F1C86CA2EEF25853C392457", hash_generated_field = "283D9FEE55079801531E0A45A4848707")
 
     private static final long serialVersionUID = 6219492851589449162L;
+
+    /**
+     * Creates a new {@code CertificateEncodingException} with the specified
+     * message.
+     *
+     * @param msg
+     *            The detail message for the exception.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:15.671 -0500", hash_original_method = "7001A7B06C3C6F6A9AA79A4DDBDE06C1", hash_generated_method = "596B3FCDB77705DCD01C5AEC0CB7CE12")
+    public CertificateEncodingException(String msg) {
+        super(msg);
+    }
+
+    /**
+     * Creates a new {@code CertificateEncodingException}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:15.672 -0500", hash_original_method = "4937F69C7A48975DF1EBD7F32A366CEE", hash_generated_method = "1FEEFACAAD9DCE3EF3F4C9F5BD996270")
+    public CertificateEncodingException() {
+    }
+
+    /**
+     * Creates a new {@code CertificateEncodingException} with the specified
+     * message and cause.
+     *
+     * @param message
+     *            the detail message for the exception.
+     * @param cause
+     *            the cause.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:15.673 -0500", hash_original_method = "E243161DE39D22E4790DBE91A7D0CBA3", hash_generated_method = "F1FEAF5A8E5F82B35E5765927094CA87")
+    public CertificateEncodingException(String message, Throwable cause) {
+        super(message, cause);
+    }
+
+    /**
+     * Creates a new {@code CertificateEncodingException} with the specified
+     * cause.
+     *
+     * @param cause
+     *            the cause.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:15.674 -0500", hash_original_method = "A32D2B579DCEB6262CC5C2D0257C91FD", hash_generated_method = "2117EE1C144FF7029E651AFF0AE8F365")
+    public CertificateEncodingException(Throwable cause) {
+        super(cause);
+    }
 }
 

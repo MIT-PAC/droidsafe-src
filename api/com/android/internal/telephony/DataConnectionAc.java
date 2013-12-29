@@ -1,6 +1,9 @@
 package com.android.internal.telephony;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
+import android.util.Log;
 import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -21,737 +24,227 @@ import com.android.internal.util.Protocol;
 
 
 public class DataConnectionAc extends AsyncChannel {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.997 -0400", hash_original_field = "503F6607C959C61B036C1484733875DB", hash_generated_field = "59F9615F1046A159253328ABFF9EBAC4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.545 -0500", hash_original_field = "B2601CA7445F6BA19FA7884763D82281", hash_generated_field = "1A61763F9CABC9206BB5AE6E570AB8AE")
+
+    private static final boolean DBG = false;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.548 -0500", hash_original_field = "D31676FE673D1865F5666E81617F1FF5", hash_generated_field = "6BCB0AA355104F156D0A2B3A91BB070E")
+
+
+    public static final int BASE = Protocol.BASE_DATA_CONNECTION_AC;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.549 -0500", hash_original_field = "1700B4348A7ED5B60D6517535BE794D2", hash_generated_field = "1475D2F355264F68EEAD5DE0DC64E4C1")
+
+
+    public static final int REQ_IS_INACTIVE = BASE + 0;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.550 -0500", hash_original_field = "26AAA288AF99CD263D38F405C783E26C", hash_generated_field = "4EF0EE195500EDBC396F404FB857CFCE")
+
+    public static final int RSP_IS_INACTIVE = BASE + 1;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.550 -0500", hash_original_field = "1383E5283886D0BC9DE3CD544957A335", hash_generated_field = "100ADE81533B5A145526EE17F8BCF7F6")
+
+
+    public static final int REQ_GET_CID = BASE + 2;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.551 -0500", hash_original_field = "E05F7B841877276FA2EDD6C7301D7B89", hash_generated_field = "4AADBE311B5CBD53B22C258FD0BC5894")
+
+    public static final int RSP_GET_CID = BASE + 3;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.552 -0500", hash_original_field = "7F3BEECA97CAEE5D62F2FD2124DEAAC9", hash_generated_field = "4556E2B1BBE8565148BB1897F4F1FFF2")
+
+
+    public static final int REQ_GET_APNSETTING = BASE + 4;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.553 -0500", hash_original_field = "4931E5115CCBF0DD6FB4074AAD2A8E1E", hash_generated_field = "075D97CF7AE01BA14B82937FAB85E17C")
+
+    public static final int RSP_GET_APNSETTING = BASE + 5;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.554 -0500", hash_original_field = "63321D058EBFEC84A0CA8AEE55AEA493", hash_generated_field = "6B2177B63C14A3D8C4A0465DF7EDA57B")
+
+
+    public static final int REQ_GET_LINK_PROPERTIES = BASE + 6;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.555 -0500", hash_original_field = "5462F0C5952138C701356C42D1A993D9", hash_generated_field = "B073222C67C8387DA84D52E09C649C5B")
+
+    public static final int RSP_GET_LINK_PROPERTIES = BASE + 7;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.556 -0500", hash_original_field = "06A43CF922D828804D9B33274427735A", hash_generated_field = "AA7EDD6DEA7FBE6E6DEDC341AE2566AA")
+
+
+    public static final int REQ_SET_LINK_PROPERTIES_HTTP_PROXY = BASE + 8;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.556 -0500", hash_original_field = "5FE5402C1087F7C581B0E62C08F1B5A7", hash_generated_field = "2BD71056213661FD69459E151EB320F2")
+
+    public static final int RSP_SET_LINK_PROPERTIES_HTTP_PROXY = BASE + 9;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.557 -0500", hash_original_field = "AEABFAFB2C90D2D9286557D2457F5850", hash_generated_field = "42BC94DC23936D5550B2F12E94B801F3")
+
+
+    public static final int REQ_GET_LINK_CAPABILITIES = BASE + 10;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.558 -0500", hash_original_field = "5B6E86890023216E8DD573CA0C0C3E87", hash_generated_field = "7C871C282AED07B5AFD51BB60DC58B87")
+
+    public static final int RSP_GET_LINK_CAPABILITIES = BASE + 11;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.559 -0500", hash_original_field = "82B8D198F883A0F4AD6604E501823CCC", hash_generated_field = "410DC65F191E667E05E1C26996344ED6")
+
+
+    public static final int REQ_UPDATE_LINK_PROPERTIES_DATA_CALL_STATE = BASE + 12;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.560 -0500", hash_original_field = "3F3690029483CC32E7B4E0090D52A2A4", hash_generated_field = "EABD1A19ECDA7C315E74E3BB10C8AA34")
+
+    public static final int RSP_UPDATE_LINK_PROPERTIES_DATA_CALL_STATE = BASE + 13;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.561 -0500", hash_original_field = "4B0ABB76CDCC45AFD2ED74F48231D4F1", hash_generated_field = "FA6D9E30AD45F04695E898045922860A")
+
+
+    public static final int REQ_RESET = BASE + 14;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.561 -0500", hash_original_field = "F81F8CB703087E008BC355FA53614617", hash_generated_field = "669F769EC139E98CB3AFB220D6A1C9FE")
+
+    public static final int RSP_RESET = BASE + 15;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.562 -0500", hash_original_field = "34A19474B7CB3D1DC82A4D73A31ADFD5", hash_generated_field = "76D19A23EEE2DE297833D58F70073A84")
+
+
+    public static final int REQ_GET_REFCOUNT = BASE + 16;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.563 -0500", hash_original_field = "0F28FF5E756876BBBB5A77EF5408C996", hash_generated_field = "BD8C38909076EDBB350F0534D3158B5A")
+
+    public static final int RSP_GET_REFCOUNT = BASE + 17;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.564 -0500", hash_original_field = "DCBBD47A8604015D0BE0A4B4F4D7842C", hash_generated_field = "8F3EC990CEC19BF924C0C83E473DF703")
+
+
+    public static final int REQ_ADD_APNCONTEXT = BASE + 18;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.565 -0500", hash_original_field = "6078F599BF45E794D68B34E1FCC8C2CC", hash_generated_field = "D05330977465F7AF4E384E150213096A")
+
+    public static final int RSP_ADD_APNCONTEXT = BASE + 19;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.566 -0500", hash_original_field = "6AC512B87ABE61987F54F2AAB70D3619", hash_generated_field = "FC2140507E1C1E4A862E984C6536D33F")
+
+
+    public static final int REQ_REMOVE_APNCONTEXT = BASE + 20;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.567 -0500", hash_original_field = "0D26313506058C52001F8E3DC26A4D5B", hash_generated_field = "F6C5D6966EFACD969BB347661AD8098A")
+
+    public static final int RSP_REMOVE_APNCONTEXT = BASE + 21;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.568 -0500", hash_original_field = "FEBFD1CAE3F0913E35DCB066204AA33B", hash_generated_field = "7CADBAFCB6C4D553E00439A92A77399A")
+
+
+    public static final int REQ_GET_APNCONTEXT_LIST = BASE + 22;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.569 -0500", hash_original_field = "3BF712C1870C6CB1C802B1350AA6F31F", hash_generated_field = "08CEE76E523CBFA9615E63AE42E97282")
+
+    public static final int RSP_GET_APNCONTEXT_LIST = BASE + 23;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.569 -0500", hash_original_field = "9F6A93F261CB5989F2E28F2D395D4C92", hash_generated_field = "AEDC94BDC63CFCBD1EE247E113E0B2BD")
+
+
+    public static final int REQ_SET_RECONNECT_INTENT = BASE + 24;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.570 -0500", hash_original_field = "0210A72B483C5D5172C09EA9B02CB0CD", hash_generated_field = "50977DA17634FA6287626111506AF1F5")
+
+    public static final int RSP_SET_RECONNECT_INTENT = BASE + 25;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.571 -0500", hash_original_field = "7FC85EF22C48D4FFF5FBC50B081F79CD", hash_generated_field = "E050F9150348EB87E92AA17BEF7AA6F1")
+
+
+    public static final int REQ_GET_RECONNECT_INTENT = BASE + 26;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.572 -0500", hash_original_field = "3C1FE5EAB0B817661803531EC738C5A6", hash_generated_field = "B47C4AB7C8CEFA3E66A64CE4AF15F148")
+
+    public static final int RSP_GET_RECONNECT_INTENT = BASE + 27;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.546 -0500", hash_original_field = "18BDC329C18DD371A79CC5D2B91C72D1", hash_generated_field = "59F9615F1046A159253328ABFF9EBAC4")
 
     private String mLogTag;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.997 -0400", hash_original_field = "720D2EF97C9F7A0E2C3E644C6885F670", hash_generated_field = "4C14AF3C02F6F482DB5C38C18F17056F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.547 -0500", hash_original_field = "2BA7EB3E16C6C8284C07A8382AC85F57", hash_generated_field = "4C14AF3C02F6F482DB5C38C18F17056F")
+
 
     public DataConnection dataConnection;
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.997 -0400", hash_original_method = "F4260E5BFAF2E10088BF39CBA8BFFFD2", hash_generated_method = "5A9866AB81164D05ED976FFB69238A22")
-    public  DataConnectionAc(DataConnection dc, String logTag) {
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.574 -0500", hash_original_method = "F4260E5BFAF2E10088BF39CBA8BFFFD2", hash_generated_method = "56BB3F3D1263742125AFBDB1059AFA1F")
+    public DataConnectionAc(DataConnection dc, String logTag) {
         dataConnection = dc;
         mLogTag = logTag;
-        // ---------- Original Method ----------
-        //dataConnection = dc;
-        //mLogTag = logTag;
     }
 
-    
-        @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.998 -0400", hash_original_method = "7AA2FA115BEA9C5CC0101E6522D85688", hash_generated_method = "9CBF6DC31CA306C429284D02147725A9")
+    /**
+     * Request if the state machine is in the inactive state.
+     * Response {@link #rspIsInactive}
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.575 -0500", hash_original_method = "7AA2FA115BEA9C5CC0101E6522D85688", hash_generated_method = "38DB8D35EF0923B57A265C6B655A9A31")
     public void reqIsInactive() {
         sendMessage(REQ_IS_INACTIVE);
-        if(DBG)        
-        log("reqIsInactive");
-        // ---------- Original Method ----------
-        //sendMessage(REQ_IS_INACTIVE);
-        //if (DBG) log("reqIsInactive");
+        if (DBG) log("reqIsInactive");
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.998 -0400", hash_original_method = "D508FA29014931CB6CD29F8DFC756262", hash_generated_method = "A9C68BD4DF0E0D84AE297D80587AC96F")
+    /**
+     * Evaluate RSP_IS_INACTIVE.
+     *
+     * @return true if the state machine is in the inactive state.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.576 -0500", hash_original_method = "D508FA29014931CB6CD29F8DFC756262", hash_generated_method = "82DEBC56EC102C62B4D2895CE19E9638")
     public boolean rspIsInactive(Message response) {
-        addTaint(response.getTaint());
         boolean retVal = response.arg1 == 1;
-        if(DBG)        
-        log("rspIsInactive=" + retVal);
-        boolean var1E6151782509B2C92750CFF962B742CD_633031978 = (retVal);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1124262426 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1124262426;
-        // ---------- Original Method ----------
-        //boolean retVal = response.arg1 == 1;
-        //if (DBG) log("rspIsInactive=" + retVal);
-        //return retVal;
+        if (DBG) log("rspIsInactive=" + retVal);
+        return retVal;
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.998 -0400", hash_original_method = "5AFFFE1437681DAB31C247AD1B67F124", hash_generated_method = "381553A3ADA805BA1027DD2C47848F39")
+    /**
+     * @return true if the state machine is in the inactive state.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.577 -0500", hash_original_method = "5AFFFE1437681DAB31C247AD1B67F124", hash_generated_method = "D76830E99B405D23AE139B272238C1CF")
     public boolean isInactiveSync() {
         Message response = sendMessageSynchronously(REQ_IS_INACTIVE);
-        if((response != null) && (response.what == RSP_IS_INACTIVE))        
-        {
-            boolean varE4A24757A4A7005E41244B3A91788C69_1267646942 = (rspIsInactive(response));
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_601043637 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_601043637;
-        } //End block
-        else
-        {
+        if ((response != null) && (response.what == RSP_IS_INACTIVE)) {
+            return rspIsInactive(response);
+        } else {
             log("rspIsInactive error response=" + response);
-            boolean var68934A3E9455FA72420237EB05902327_72129805 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_653973974 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_653973974;
-        } //End block
-        // ---------- Original Method ----------
-        //Message response = sendMessageSynchronously(REQ_IS_INACTIVE);
-        //if ((response != null) && (response.what == RSP_IS_INACTIVE)) {
-            //return rspIsInactive(response);
-        //} else {
-            //log("rspIsInactive error response=" + response);
-            //return false;
-        //}
+            return false;
+        }
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.999 -0400", hash_original_method = "E08DB9A60755AA94EB60896D4764AF5C", hash_generated_method = "4726F544E23D26445A691CA09822A118")
+    /**
+     * Request the Connection ID.
+     * Response {@link #rspCid}
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.577 -0500", hash_original_method = "E08DB9A60755AA94EB60896D4764AF5C", hash_generated_method = "02E4743960A4F4FD909E92AB66F9402C")
     public void reqCid() {
         sendMessage(REQ_GET_CID);
-        if(DBG)        
-        log("reqCid");
-        // ---------- Original Method ----------
-        //sendMessage(REQ_GET_CID);
-        //if (DBG) log("reqCid");
+        if (DBG) log("reqCid");
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.999 -0400", hash_original_method = "FF57B3B0C583923138679674F4E2FE25", hash_generated_method = "89054D1786CB0DE716D37BD0CA019588")
+    /**
+     * Evaluate a RSP_GET_CID message and return the cid.
+     *
+     * @param response Message
+     * @return connection id or -1 if an error
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.578 -0500", hash_original_method = "FF57B3B0C583923138679674F4E2FE25", hash_generated_method = "4D7D32FD10AEDBFD723DC815365E48EE")
     public int rspCid(Message response) {
-        addTaint(response.getTaint());
         int retVal = response.arg1;
-        if(DBG)        
-        log("rspCid=" + retVal);
-        int var1E6151782509B2C92750CFF962B742CD_2055884015 = (retVal);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_520535250 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_520535250;
-        // ---------- Original Method ----------
-        //int retVal = response.arg1;
-        //if (DBG) log("rspCid=" + retVal);
-        //return retVal;
+        if (DBG) log("rspCid=" + retVal);
+        return retVal;
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.999 -0400", hash_original_method = "88FA920EA2D54F9DC82F8A70E10A6416", hash_generated_method = "EE0172C751A499FFA6524813101FCC1B")
+    /**
+     * @return connection id or -1 if an error
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.579 -0500", hash_original_method = "88FA920EA2D54F9DC82F8A70E10A6416", hash_generated_method = "B672B987749AA82984557368333C8C0A")
     public int getCidSync() {
         Message response = sendMessageSynchronously(REQ_GET_CID);
-        if((response != null) && (response.what == RSP_GET_CID))        
-        {
-            int varE7C4DF071847317C1DC5B0F326E8B307_1035700505 = (rspCid(response));
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1113543052 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1113543052;
-        } //End block
-        else
-        {
+        if ((response != null) && (response.what == RSP_GET_CID)) {
+            return rspCid(response);
+        } else {
             log("rspCid error response=" + response);
-            int var6BB61E3B7BCE0931DA574D19D1D82C88_710438707 = (-1);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_925329716 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_925329716;
-        } //End block
-        // ---------- Original Method ----------
-        //Message response = sendMessageSynchronously(REQ_GET_CID);
-        //if ((response != null) && (response.what == RSP_GET_CID)) {
-            //return rspCid(response);
-        //} else {
-            //log("rspCid error response=" + response);
-            //return -1;
-        //}
+            return -1;
+        }
     }
 
-    
-        @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.000 -0400", hash_original_method = "5DBEE0C11260D4E2748BF847AE297C4B", hash_generated_method = "431F0B148F157282F6A4DF25F323D8FD")
+    /**
+     * Request the Reference Count.
+     * Response {@link #rspRefCount}
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.580 -0500", hash_original_method = "5DBEE0C11260D4E2748BF847AE297C4B", hash_generated_method = "D2715532CE659B26F87B12259BDAE9D5")
     public void reqRefCount() {
         sendMessage(REQ_GET_REFCOUNT);
-        if(DBG)        
-        log("reqRefCount");
-        // ---------- Original Method ----------
-        //sendMessage(REQ_GET_REFCOUNT);
-        //if (DBG) log("reqRefCount");
+        if (DBG) log("reqRefCount");
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.000 -0400", hash_original_method = "AFE421B2404E9D3449EC1EC9B786EEAC", hash_generated_method = "029458A23C4499712FF5F2E8EDB4EF32")
+    /**
+     * Evaluate a RSP_GET_REFCOUNT message and return the refCount.
+     *
+     * @param response Message
+     * @return ref count or -1 if an error
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.581 -0500", hash_original_method = "AFE421B2404E9D3449EC1EC9B786EEAC", hash_generated_method = "651144D5A2067F7374D2A7B2A2228594")
     public int rspRefCount(Message response) {
-        addTaint(response.getTaint());
         int retVal = response.arg1;
-        if(DBG)        
-        log("rspRefCount=" + retVal);
-        int var1E6151782509B2C92750CFF962B742CD_1148714645 = (retVal);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1127855722 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1127855722;
-        // ---------- Original Method ----------
-        //int retVal = response.arg1;
-        //if (DBG) log("rspRefCount=" + retVal);
-        //return retVal;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.001 -0400", hash_original_method = "82303217C6F0F47E549DB7B210318471", hash_generated_method = "60533E49A2385C5AA24187639CD75F48")
-    public int getRefCountSync() {
-        Message response = sendMessageSynchronously(REQ_GET_REFCOUNT);
-        if((response != null) && (response.what == RSP_GET_REFCOUNT))        
-        {
-            int varDC92A1137FCE5F23CA78CFB1DF576BEF_1894620406 = (rspRefCount(response));
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_6867324 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_6867324;
-        } //End block
-        else
-        {
-            log("rspRefCount error response=" + response);
-            int var6BB61E3B7BCE0931DA574D19D1D82C88_436256653 = (-1);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2021962929 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2021962929;
-        } //End block
-        // ---------- Original Method ----------
-        //Message response = sendMessageSynchronously(REQ_GET_REFCOUNT);
-        //if ((response != null) && (response.what == RSP_GET_REFCOUNT)) {
-            //return rspRefCount(response);
-        //} else {
-            //log("rspRefCount error response=" + response);
-            //return -1;
-        //}
-    }
-
-    
-        @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.001 -0400", hash_original_method = "C0AE060C8D213182996CE9AFC0358CCA", hash_generated_method = "254C0843325875257689B17192621249")
-    public void reqApnSetting() {
-        sendMessage(REQ_GET_APNSETTING);
-        if(DBG)        
-        log("reqApnSetting");
-        // ---------- Original Method ----------
-        //sendMessage(REQ_GET_APNSETTING);
-        //if (DBG) log("reqApnSetting");
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.001 -0400", hash_original_method = "95D7FBD84C6C38BA2D84311C3C9BEF51", hash_generated_method = "911573CA87C6A917BB01180A3BCCFA87")
-    public ApnSetting rspApnSetting(Message response) {
-        addTaint(response.getTaint());
-        ApnSetting retVal = (ApnSetting) response.obj;
-        if(DBG)        
-        log("rspApnSetting=" + retVal);
-ApnSetting var906583DF257E5B26DD99AC8582D137B0_131171674 =         retVal;
-        var906583DF257E5B26DD99AC8582D137B0_131171674.addTaint(taint);
-        return var906583DF257E5B26DD99AC8582D137B0_131171674;
-        // ---------- Original Method ----------
-        //ApnSetting retVal = (ApnSetting) response.obj;
-        //if (DBG) log("rspApnSetting=" + retVal);
-        //return retVal;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.002 -0400", hash_original_method = "DD32FEB19DC77901F346EA49C4C70BF1", hash_generated_method = "78A7F7BEC4A899DD6F88B4436297FA21")
-    public ApnSetting getApnSettingSync() {
-        Message response = sendMessageSynchronously(REQ_GET_APNSETTING);
-        if((response != null) && (response.what == RSP_GET_APNSETTING))        
-        {
-ApnSetting var68363292812822BB3936049C42BCC748_1638314608 =             rspApnSetting(response);
-            var68363292812822BB3936049C42BCC748_1638314608.addTaint(taint);
-            return var68363292812822BB3936049C42BCC748_1638314608;
-        } //End block
-        else
-        {
-            log("getApnSetting error response=" + response);
-ApnSetting var540C13E9E156B687226421B24F2DF178_1864847856 =             null;
-            var540C13E9E156B687226421B24F2DF178_1864847856.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_1864847856;
-        } //End block
-        // ---------- Original Method ----------
-        //Message response = sendMessageSynchronously(REQ_GET_APNSETTING);
-        //if ((response != null) && (response.what == RSP_GET_APNSETTING)) {
-            //return rspApnSetting(response);
-        //} else {
-            //log("getApnSetting error response=" + response);
-            //return null;
-        //}
-    }
-
-    
-        @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.002 -0400", hash_original_method = "5D3EF8F8C1412EBC1BE098FA3C540E84", hash_generated_method = "10D2B27469209AAAB47BB68B4987AF29")
-    public void reqLinkProperties() {
-        sendMessage(REQ_GET_LINK_PROPERTIES);
-        if(DBG)        
-        log("reqLinkProperties");
-        // ---------- Original Method ----------
-        //sendMessage(REQ_GET_LINK_PROPERTIES);
-        //if (DBG) log("reqLinkProperties");
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.002 -0400", hash_original_method = "61AC833B412EB853D23C85E2B80FFC12", hash_generated_method = "CC391F51E967EF0A8C9D790469F3CAE7")
-    public LinkProperties rspLinkProperties(Message response) {
-        addTaint(response.getTaint());
-        LinkProperties retVal = (LinkProperties) response.obj;
-        if(DBG)        
-        log("rspLinkProperties=" + retVal);
-LinkProperties var906583DF257E5B26DD99AC8582D137B0_1967674381 =         retVal;
-        var906583DF257E5B26DD99AC8582D137B0_1967674381.addTaint(taint);
-        return var906583DF257E5B26DD99AC8582D137B0_1967674381;
-        // ---------- Original Method ----------
-        //LinkProperties retVal = (LinkProperties) response.obj;
-        //if (DBG) log("rspLinkProperties=" + retVal);
-        //return retVal;
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.004 -0400", hash_original_method = "3F7712F482B5EE0C4EC3A4DBA0BA8D32", hash_generated_method = "AC80687521F842E0D4CE2D3FDEE467D2")
-    public LinkProperties getLinkPropertiesSync() {
-        Message response = sendMessageSynchronously(REQ_GET_LINK_PROPERTIES);
-        if((response != null) && (response.what == RSP_GET_LINK_PROPERTIES))        
-        {
-LinkProperties varAF8C4A11AC5A212E634D72BCA7FACB23_1463682112 =             rspLinkProperties(response);
-            varAF8C4A11AC5A212E634D72BCA7FACB23_1463682112.addTaint(taint);
-            return varAF8C4A11AC5A212E634D72BCA7FACB23_1463682112;
-        } //End block
-        else
-        {
-            log("getLinkProperties error response=" + response);
-LinkProperties var540C13E9E156B687226421B24F2DF178_1360951992 =             null;
-            var540C13E9E156B687226421B24F2DF178_1360951992.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_1360951992;
-        } //End block
-        // ---------- Original Method ----------
-        //Message response = sendMessageSynchronously(REQ_GET_LINK_PROPERTIES);
-        //if ((response != null) && (response.what == RSP_GET_LINK_PROPERTIES)) {
-            //return rspLinkProperties(response);
-        //} else {
-            //log("getLinkProperties error response=" + response);
-            //return null;
-        //}
-    }
-
-    
-        @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.009 -0400", hash_original_method = "52664ABA5522CB5FFA9E0304A7C81F50", hash_generated_method = "0FD2E382BDDD9AE407A7694F720C2109")
-    public void reqSetLinkPropertiesHttpProxy(ProxyProperties proxy) {
-        addTaint(proxy.getTaint());
-        sendMessage(REQ_SET_LINK_PROPERTIES_HTTP_PROXY, proxy);
-        if(DBG)        
-        log("reqSetLinkPropertiesHttpProxy proxy=" + proxy);
-        // ---------- Original Method ----------
-        //sendMessage(REQ_SET_LINK_PROPERTIES_HTTP_PROXY, proxy);
-        //if (DBG) log("reqSetLinkPropertiesHttpProxy proxy=" + proxy);
-    }
-
-    
-        @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.009 -0400", hash_original_method = "71F35538546E3DD45C021DEA145F6AFD", hash_generated_method = "2938BD44633207DF741AA7490C5F4336")
-    public void setLinkPropertiesHttpProxySync(ProxyProperties proxy) {
-        addTaint(proxy.getTaint());
-        Message response = sendMessageSynchronously(REQ_SET_LINK_PROPERTIES_HTTP_PROXY, proxy);
-        if((response != null) && (response.what == RSP_SET_LINK_PROPERTIES_HTTP_PROXY))        
-        {
-            if(DBG)            
-            log("setLinkPropertiesHttpPoxy ok");
-        } //End block
-        else
-        {
-            log("setLinkPropertiesHttpPoxy error response=" + response);
-        } //End block
-        // ---------- Original Method ----------
-        //Message response =
-            //sendMessageSynchronously(REQ_SET_LINK_PROPERTIES_HTTP_PROXY, proxy);
-        //if ((response != null) && (response.what == RSP_SET_LINK_PROPERTIES_HTTP_PROXY)) {
-            //if (DBG) log("setLinkPropertiesHttpPoxy ok");
-        //} else {
-            //log("setLinkPropertiesHttpPoxy error response=" + response);
-        //}
-    }
-
-    
-        @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.009 -0400", hash_original_method = "1137FFCD79265DC595F1B5AA40674EF5", hash_generated_method = "CC425A18F7232BAB6867ADBFD4E18DED")
-    public void reqUpdateLinkPropertiesDataCallState(DataCallState newState) {
-        addTaint(newState.getTaint());
-        sendMessage(REQ_UPDATE_LINK_PROPERTIES_DATA_CALL_STATE, newState);
-        if(DBG)        
-        log("reqUpdateLinkPropertiesDataCallState");
-        // ---------- Original Method ----------
-        //sendMessage(REQ_UPDATE_LINK_PROPERTIES_DATA_CALL_STATE, newState);
-        //if (DBG) log("reqUpdateLinkPropertiesDataCallState");
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.010 -0400", hash_original_method = "FF09E9AE970C8576F47A284FF7FFCA6D", hash_generated_method = "04ACEEA234C4D7649B8D18D5CE26C50F")
-    public UpdateLinkPropertyResult rspUpdateLinkPropertiesDataCallState(Message response) {
-        addTaint(response.getTaint());
-        UpdateLinkPropertyResult retVal = (UpdateLinkPropertyResult)response.obj;
-        if(DBG)        
-        log("rspUpdateLinkPropertiesState: retVal=" + retVal);
-UpdateLinkPropertyResult var906583DF257E5B26DD99AC8582D137B0_877118545 =         retVal;
-        var906583DF257E5B26DD99AC8582D137B0_877118545.addTaint(taint);
-        return var906583DF257E5B26DD99AC8582D137B0_877118545;
-        // ---------- Original Method ----------
-        //UpdateLinkPropertyResult retVal = (UpdateLinkPropertyResult)response.obj;
-        //if (DBG) log("rspUpdateLinkPropertiesState: retVal=" + retVal);
-        //return retVal;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.010 -0400", hash_original_method = "98F59EFFB83342DD2236B59D91A5E4B5", hash_generated_method = "9F0A34FEB048F7A236FBC9BEDEF6239F")
-    public UpdateLinkPropertyResult updateLinkPropertiesDataCallStateSync(DataCallState newState) {
-        addTaint(newState.getTaint());
-        Message response = sendMessageSynchronously(REQ_UPDATE_LINK_PROPERTIES_DATA_CALL_STATE, newState);
-        if((response != null) &&
-            (response.what == RSP_UPDATE_LINK_PROPERTIES_DATA_CALL_STATE))        
-        {
-UpdateLinkPropertyResult varA641E5C6710D96B5E3E6998AB7728A22_143480946 =             rspUpdateLinkPropertiesDataCallState(response);
-            varA641E5C6710D96B5E3E6998AB7728A22_143480946.addTaint(taint);
-            return varA641E5C6710D96B5E3E6998AB7728A22_143480946;
-        } //End block
-        else
-        {
-            log("getLinkProperties error response=" + response);
-UpdateLinkPropertyResult var705B5710E3C3DA3E1BF96D2C3612E3E7_930353467 =             new UpdateLinkPropertyResult(new LinkProperties());
-            var705B5710E3C3DA3E1BF96D2C3612E3E7_930353467.addTaint(taint);
-            return var705B5710E3C3DA3E1BF96D2C3612E3E7_930353467;
-        } //End block
-        // ---------- Original Method ----------
-        //Message response =
-            //sendMessageSynchronously(REQ_UPDATE_LINK_PROPERTIES_DATA_CALL_STATE, newState);
-        //if ((response != null) &&
-            //(response.what == RSP_UPDATE_LINK_PROPERTIES_DATA_CALL_STATE)) {
-            //return rspUpdateLinkPropertiesDataCallState(response);
-        //} else {
-            //log("getLinkProperties error response=" + response);
-            //return new UpdateLinkPropertyResult(new LinkProperties());
-        //}
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.010 -0400", hash_original_method = "30D60C86BD34D11FA73E7C7E67CFC7AA", hash_generated_method = "D4F531D4955CFF6D8770B0B4B5F6FCF5")
-    public void reqLinkCapabilities() {
-        sendMessage(REQ_GET_LINK_CAPABILITIES);
-        if(DBG)        
-        log("reqLinkCapabilities");
-        // ---------- Original Method ----------
-        //sendMessage(REQ_GET_LINK_CAPABILITIES);
-        //if (DBG) log("reqLinkCapabilities");
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.010 -0400", hash_original_method = "F187911F3801DAE69287AC09EDB743FA", hash_generated_method = "1C09E231FA2C23BE961841CEE7E6537B")
-    public LinkCapabilities rspLinkCapabilities(Message response) {
-        addTaint(response.getTaint());
-        LinkCapabilities retVal = (LinkCapabilities) response.obj;
-        if(DBG)        
-        log("rspLinkCapabilities=" + retVal);
-LinkCapabilities var906583DF257E5B26DD99AC8582D137B0_716022791 =         retVal;
-        var906583DF257E5B26DD99AC8582D137B0_716022791.addTaint(taint);
-        return var906583DF257E5B26DD99AC8582D137B0_716022791;
-        // ---------- Original Method ----------
-        //LinkCapabilities retVal = (LinkCapabilities) response.obj;
-        //if (DBG) log("rspLinkCapabilities=" + retVal);
-        //return retVal;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.010 -0400", hash_original_method = "C1F7B964512DA39EF105AA8C4B5198E6", hash_generated_method = "A4315CC19831AD5EBA3C1294188B9D16")
-    public LinkCapabilities getLinkCapabilitiesSync() {
-        Message response = sendMessageSynchronously(REQ_GET_LINK_CAPABILITIES);
-        if((response != null) && (response.what == RSP_GET_LINK_CAPABILITIES))        
-        {
-LinkCapabilities var8FD28919A2834F86012562434B04C052_2035242567 =             rspLinkCapabilities(response);
-            var8FD28919A2834F86012562434B04C052_2035242567.addTaint(taint);
-            return var8FD28919A2834F86012562434B04C052_2035242567;
-        } //End block
-        else
-        {
-            log("getLinkCapabilities error response=" + response);
-LinkCapabilities var540C13E9E156B687226421B24F2DF178_968087282 =             null;
-            var540C13E9E156B687226421B24F2DF178_968087282.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_968087282;
-        } //End block
-        // ---------- Original Method ----------
-        //Message response = sendMessageSynchronously(REQ_GET_LINK_CAPABILITIES);
-        //if ((response != null) && (response.what == RSP_GET_LINK_CAPABILITIES)) {
-            //return rspLinkCapabilities(response);
-        //} else {
-            //log("getLinkCapabilities error response=" + response);
-            //return null;
-        //}
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.010 -0400", hash_original_method = "9EFFE3DDD73E4A7AC997D7CA04936F41", hash_generated_method = "965E6733CE5021911266CF7CA6477732")
-    public void reqReset() {
-        sendMessage(REQ_RESET);
-        if(DBG)        
-        log("reqReset");
-        // ---------- Original Method ----------
-        //sendMessage(REQ_RESET);
-        //if (DBG) log("reqReset");
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.010 -0400", hash_original_method = "C179D3525D5003A50B8C9C0361938568", hash_generated_method = "746688ABF6FF04EB844E4EFF378A08D1")
-    public void resetSync() {
-        Message response = sendMessageSynchronously(REQ_RESET);
-        if((response != null) && (response.what == RSP_RESET))        
-        {
-            if(DBG)            
-            log("restSync ok");
-        } //End block
-        else
-        {
-            log("restSync error response=" + response);
-        } //End block
-        // ---------- Original Method ----------
-        //Message response = sendMessageSynchronously(REQ_RESET);
-        //if ((response != null) && (response.what == RSP_RESET)) {
-            //if (DBG) log("restSync ok");
-        //} else {
-            //log("restSync error response=" + response);
-        //}
-    }
-
-    
-        @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.011 -0400", hash_original_method = "F3233E69134CF9902E31FB14516EC03E", hash_generated_method = "93772BCF4BFB3B144A5006936E3AC304")
-    public void reqAddApnContext(ApnContext apnContext) {
-        addTaint(apnContext.getTaint());
-        Message response = sendMessageSynchronously(REQ_ADD_APNCONTEXT, apnContext);
-        if(DBG)        
-        log("reqAddApnContext");
-        // ---------- Original Method ----------
-        //Message response = sendMessageSynchronously(REQ_ADD_APNCONTEXT, apnContext);
-        //if (DBG) log("reqAddApnContext");
-    }
-
-    
-        @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.011 -0400", hash_original_method = "29B8FEA7830E2BBE9C7BBFD69E48646E", hash_generated_method = "24EEA55381AF2B10370FB7DCEC97B02B")
-    public void addApnContextSync(ApnContext apnContext) {
-        addTaint(apnContext.getTaint());
-        Message response = sendMessageSynchronously(REQ_ADD_APNCONTEXT, apnContext);
-        if((response != null) && (response.what == RSP_ADD_APNCONTEXT))        
-        {
-            if(DBG)            
-            log("addApnContext ok");
-        } //End block
-        else
-        {
-            log("addApnContext error response=" + response);
-        } //End block
-        // ---------- Original Method ----------
-        //Message response = sendMessageSynchronously(REQ_ADD_APNCONTEXT, apnContext);
-        //if ((response != null) && (response.what == RSP_ADD_APNCONTEXT)) {
-            //if (DBG) log("addApnContext ok");
-        //} else {
-            //log("addApnContext error response=" + response);
-        //}
-    }
-
-    
-        @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.011 -0400", hash_original_method = "51B2CCF2735E77C63E82DEC17109A5B1", hash_generated_method = "621DB6C5909D4C54DB183B82ACDFB535")
-    public void reqRemomveApnContext(ApnContext apnContext) {
-        addTaint(apnContext.getTaint());
-        Message response = sendMessageSynchronously(REQ_REMOVE_APNCONTEXT, apnContext);
-        if(DBG)        
-        log("reqRemomveApnContext");
-        // ---------- Original Method ----------
-        //Message response = sendMessageSynchronously(REQ_REMOVE_APNCONTEXT, apnContext);
-        //if (DBG) log("reqRemomveApnContext");
-    }
-
-    
-        @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.022 -0400", hash_original_method = "62E31991C2E3FEB9590AC2302F444FDA", hash_generated_method = "875456AD58B5281A2CA5066A5B655E71")
-    public void removeApnContextSync(ApnContext apnContext) {
-        addTaint(apnContext.getTaint());
-        Message response = sendMessageSynchronously(REQ_REMOVE_APNCONTEXT, apnContext);
-        if((response != null) && (response.what == RSP_REMOVE_APNCONTEXT))        
-        {
-            if(DBG)            
-            log("removeApnContext ok");
-        } //End block
-        else
-        {
-            log("removeApnContext error response=" + response);
-        } //End block
-        // ---------- Original Method ----------
-        //Message response = sendMessageSynchronously(REQ_REMOVE_APNCONTEXT, apnContext);
-        //if ((response != null) && (response.what == RSP_REMOVE_APNCONTEXT)) {
-            //if (DBG) log("removeApnContext ok");
-        //} else {
-            //log("removeApnContext error response=" + response);
-        //}
-    }
-
-    
-        @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.022 -0400", hash_original_method = "AAD200E4835E6912540E5A2C7F9552F9", hash_generated_method = "4504103463BE740F8BE6643EF4557CCB")
-    public void reqGetApnList(ApnContext apnContext) {
-        addTaint(apnContext.getTaint());
-        Message response = sendMessageSynchronously(REQ_GET_APNCONTEXT_LIST);
-        if(DBG)        
-        log("reqGetApnList");
-        // ---------- Original Method ----------
-        //Message response = sendMessageSynchronously(REQ_GET_APNCONTEXT_LIST);
-        //if (DBG) log("reqGetApnList");
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.023 -0400", hash_original_method = "48ABE9510A7CA4042FB5B96D41BACEB8", hash_generated_method = "14A6CDA272A988C13673C18A68ED9FBB")
-    public Collection<ApnContext> rspApnList(Message response) {
-        addTaint(response.getTaint());
-        Collection<ApnContext> retVal = (Collection<ApnContext>)response.obj;
-        if(retVal == null)        
-        retVal = new ArrayList<ApnContext>();
-Collection<ApnContext> var906583DF257E5B26DD99AC8582D137B0_13160037 =         retVal;
-        var906583DF257E5B26DD99AC8582D137B0_13160037.addTaint(taint);
-        return var906583DF257E5B26DD99AC8582D137B0_13160037;
-        // ---------- Original Method ----------
-        //Collection<ApnContext> retVal = (Collection<ApnContext>)response.obj;
-        //if (retVal == null) retVal = new ArrayList<ApnContext>();
-        //return retVal;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.023 -0400", hash_original_method = "498EAD8B319A2A3996C6AC846ACD4BE2", hash_generated_method = "41A34C77D6F294EF57DEE7248C0ECF5B")
-    public Collection<ApnContext> getApnListSync() {
-        Message response = sendMessageSynchronously(REQ_GET_APNCONTEXT_LIST);
-        if((response != null) && (response.what == RSP_GET_APNCONTEXT_LIST))        
-        {
-            if(DBG)            
-            log("getApnList ok");
-Collection<ApnContext> var276E16B39246B293D010CA134207AE5E_44198469 =             rspApnList(response);
-            var276E16B39246B293D010CA134207AE5E_44198469.addTaint(taint);
-            return var276E16B39246B293D010CA134207AE5E_44198469;
-        } //End block
-        else
-        {
-            log("getApnList error response=" + response);
-Collection<ApnContext> var1AAB482EE4DBE9E61066979E07ECDC94_1298124724 =             new ArrayList<ApnContext>();
-            var1AAB482EE4DBE9E61066979E07ECDC94_1298124724.addTaint(taint);
-            return var1AAB482EE4DBE9E61066979E07ECDC94_1298124724;
-        } //End block
-        // ---------- Original Method ----------
-        //Message response = sendMessageSynchronously(REQ_GET_APNCONTEXT_LIST);
-        //if ((response != null) && (response.what == RSP_GET_APNCONTEXT_LIST)) {
-            //if (DBG) log("getApnList ok");
-            //return rspApnList(response);
-        //} else {
-            //log("getApnList error response=" + response);
-            //return new ArrayList<ApnContext>();
-        //}
-    }
-
-    
-        @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.023 -0400", hash_original_method = "408D11B7A3DFC98C0728A70ED62F0EEA", hash_generated_method = "7331C6C43628B2DEFE0F489940CBE958")
-    public void reqSetReconnectIntent(PendingIntent intent) {
-        addTaint(intent.getTaint());
-        Message response = sendMessageSynchronously(REQ_SET_RECONNECT_INTENT, intent);
-        if(DBG)        
-        log("reqSetReconnectIntent");
-        // ---------- Original Method ----------
-        //Message response = sendMessageSynchronously(REQ_SET_RECONNECT_INTENT, intent);
-        //if (DBG) log("reqSetReconnectIntent");
-    }
-
-    
-        @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.023 -0400", hash_original_method = "D99BC1BEF330D90F2BC64CDBA6E6105B", hash_generated_method = "28BA9FE14A123BA0D5A32158994B7644")
-    public void setReconnectIntentSync(PendingIntent intent) {
-        addTaint(intent.getTaint());
-        Message response = sendMessageSynchronously(REQ_SET_RECONNECT_INTENT, intent);
-        if((response != null) && (response.what == RSP_SET_RECONNECT_INTENT))        
-        {
-            if(DBG)            
-            log("setReconnectIntent ok");
-        } //End block
-        else
-        {
-            log("setReconnectIntent error response=" + response);
-        } //End block
-        // ---------- Original Method ----------
-        //Message response = sendMessageSynchronously(REQ_SET_RECONNECT_INTENT, intent);
-        //if ((response != null) && (response.what == RSP_SET_RECONNECT_INTENT)) {
-            //if (DBG) log("setReconnectIntent ok");
-        //} else {
-            //log("setReconnectIntent error response=" + response);
-        //}
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.023 -0400", hash_original_method = "3F955D64051D380D89135CF7B70C1F05", hash_generated_method = "55CD94C30D42F73DB678447F20978650")
-    public void reqGetReconnectIntent() {
-        Message response = sendMessageSynchronously(REQ_GET_RECONNECT_INTENT);
-        if(DBG)        
-        log("reqGetReconnectIntent");
-        // ---------- Original Method ----------
-        //Message response = sendMessageSynchronously(REQ_GET_RECONNECT_INTENT);
-        //if (DBG) log("reqGetReconnectIntent");
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.023 -0400", hash_original_method = "9555B3D0DB27D43CC0B0BA451DA1A9D5", hash_generated_method = "A9E097D9D8280959E0D298907AFBD930")
-    public PendingIntent rspReconnectIntent(Message response) {
-        addTaint(response.getTaint());
-        PendingIntent retVal = (PendingIntent) response.obj;
-PendingIntent var906583DF257E5B26DD99AC8582D137B0_767997135 =         retVal;
-        var906583DF257E5B26DD99AC8582D137B0_767997135.addTaint(taint);
-        return var906583DF257E5B26DD99AC8582D137B0_767997135;
-        // ---------- Original Method ----------
-        //PendingIntent retVal = (PendingIntent) response.obj;
-        //return retVal;
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.023 -0400", hash_original_method = "D70777E4A1678D0EF0C2B7C3D53ADD58", hash_generated_method = "4272621B63605E840A34B9629BC62654")
-    public PendingIntent getReconnectIntentSync() {
-        Message response = sendMessageSynchronously(REQ_GET_RECONNECT_INTENT);
-        if((response != null) && (response.what == RSP_GET_RECONNECT_INTENT))        
-        {
-            if(DBG)            
-            log("getReconnectIntent ok");
-PendingIntent var27338765CFC102E229AB027D2CF8ABE9_419540903 =             rspReconnectIntent(response);
-            var27338765CFC102E229AB027D2CF8ABE9_419540903.addTaint(taint);
-            return var27338765CFC102E229AB027D2CF8ABE9_419540903;
-        } //End block
-        else
-        {
-            log("getReconnectIntent error response=" + response);
-PendingIntent var540C13E9E156B687226421B24F2DF178_1211111534 =             null;
-            var540C13E9E156B687226421B24F2DF178_1211111534.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_1211111534;
-        } //End block
-        // ---------- Original Method ----------
-        //Message response = sendMessageSynchronously(REQ_GET_RECONNECT_INTENT);
-        //if ((response != null) && (response.what == RSP_GET_RECONNECT_INTENT)) {
-            //if (DBG) log("getReconnectIntent ok");
-            //return rspReconnectIntent(response);
-        //} else {
-            //log("getReconnectIntent error response=" + response);
-            //return null;
-        //}
-    }
-
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.023 -0400", hash_original_method = "3340C70610FFA5D9D28FC6E77DE7CB0F", hash_generated_method = "03146726C72A54D3150569648E131B16")
-    private void log(String s) {
-        addTaint(s.getTaint());
-        android.util.Log.d(mLogTag, "DataConnectionAc " + s);
-        // ---------- Original Method ----------
-        //android.util.Log.d(mLogTag, "DataConnectionAc " + s);
+        if (DBG) log("rspRefCount=" + retVal);
+        return retVal;
     }
 
     
     public enum LinkPropertyChangeAction {
         NONE, CHANGED, RESET;
-        public static LinkPropertyChangeAction fromInt(int value) {
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.573 -0500", hash_original_method = "ECD4DBE81D7EB8EBF15AF2859E88776B", hash_generated_method = "3D464F1EB79AACBC49FC878B1763A942")
+            public static LinkPropertyChangeAction fromInt(int value) {
             if (value == NONE.ordinal()) {
                 return NONE;
             } else if (value == CHANGED.ordinal()) {
@@ -764,96 +257,378 @@ PendingIntent var540C13E9E156B687226421B24F2DF178_1211111534 =             null;
         }
     }
 
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.024 -0400", hash_original_field = "0F6F0EB642B3F46DE2B2DF48DA4427EF", hash_generated_field = "1A61763F9CABC9206BB5AE6E570AB8AE")
+    /**
+     * @return connection id or -1 if an error
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.582 -0500", hash_original_method = "82303217C6F0F47E549DB7B210318471", hash_generated_method = "6355F190B7933E0AAAE4C30E4F407F7B")
+    public int getRefCountSync() {
+        Message response = sendMessageSynchronously(REQ_GET_REFCOUNT);
+        if ((response != null) && (response.what == RSP_GET_REFCOUNT)) {
+            return rspRefCount(response);
+        } else {
+            log("rspRefCount error response=" + response);
+            return -1;
+        }
+    }
 
-    private static final boolean DBG = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.024 -0400", hash_original_field = "06E844B888ED9045894B2B8636373495", hash_generated_field = "6BCB0AA355104F156D0A2B3A91BB070E")
+    /**
+     * Request the connections ApnSetting.
+     * Response {@link #rspApnSetting}
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.582 -0500", hash_original_method = "C0AE060C8D213182996CE9AFC0358CCA", hash_generated_method = "5FA52A6E5C768380AF521C134C6FB1A2")
+    public void reqApnSetting() {
+        sendMessage(REQ_GET_APNSETTING);
+        if (DBG) log("reqApnSetting");
+    }
 
-    public static final int BASE = Protocol.BASE_DATA_CONNECTION_AC;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.024 -0400", hash_original_field = "EADBD9ECE62C98E1D8E918128B3CA096", hash_generated_field = "1475D2F355264F68EEAD5DE0DC64E4C1")
+    /**
+     * Evaluate a RSP_APN_SETTING message and return the ApnSetting.
+     *
+     * @param response Message
+     * @return ApnSetting, maybe null
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.583 -0500", hash_original_method = "95D7FBD84C6C38BA2D84311C3C9BEF51", hash_generated_method = "B8E9354FF2CC6187E51B7768F0C1932A")
+    public ApnSetting rspApnSetting(Message response) {
+        ApnSetting retVal = (ApnSetting) response.obj;
+        if (DBG) log("rspApnSetting=" + retVal);
+        return retVal;
+    }
 
-    public static final int REQ_IS_INACTIVE = BASE + 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.024 -0400", hash_original_field = "1B158D124EED34F8B028A91607C881D2", hash_generated_field = "4EF0EE195500EDBC396F404FB857CFCE")
+    /**
+     * Get the connections ApnSetting.
+     *
+     * @return ApnSetting or null if an error
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.584 -0500", hash_original_method = "DD32FEB19DC77901F346EA49C4C70BF1", hash_generated_method = "26FCD65C22B3708A586C438DCE030E63")
+    public ApnSetting getApnSettingSync() {
+        Message response = sendMessageSynchronously(REQ_GET_APNSETTING);
+        if ((response != null) && (response.what == RSP_GET_APNSETTING)) {
+            return rspApnSetting(response);
+        } else {
+            log("getApnSetting error response=" + response);
+            return null;
+        }
+    }
 
-    public static final int RSP_IS_INACTIVE = BASE + 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.024 -0400", hash_original_field = "D8F3245683A6ECB00974E58E4A8A6249", hash_generated_field = "100ADE81533B5A145526EE17F8BCF7F6")
+    /**
+     * Request the connections LinkProperties.
+     * Response {@link #rspLinkProperties}
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.585 -0500", hash_original_method = "5D3EF8F8C1412EBC1BE098FA3C540E84", hash_generated_method = "4686AD3871B3FBDFBB22E37A2AF61F31")
+    public void reqLinkProperties() {
+        sendMessage(REQ_GET_LINK_PROPERTIES);
+        if (DBG) log("reqLinkProperties");
+    }
 
-    public static final int REQ_GET_CID = BASE + 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.024 -0400", hash_original_field = "F6D68F5B120AFF550917C4B5568E2EAB", hash_generated_field = "4AADBE311B5CBD53B22C258FD0BC5894")
+    /**
+     * Evaluate RSP_GET_LINK_PROPERTIES
+     *
+     * @param response
+     * @return LinkProperties, maybe null.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.586 -0500", hash_original_method = "61AC833B412EB853D23C85E2B80FFC12", hash_generated_method = "D48D459DC0052CF8C262EB9FE6AB3011")
+    public LinkProperties rspLinkProperties(Message response) {
+        LinkProperties retVal = (LinkProperties) response.obj;
+        if (DBG) log("rspLinkProperties=" + retVal);
+        return retVal;
+    }
 
-    public static final int RSP_GET_CID = BASE + 3;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.024 -0400", hash_original_field = "451E9EC325AB2136FBF344263AC13FB4", hash_generated_field = "4556E2B1BBE8565148BB1897F4F1FFF2")
+    /**
+     * Get the connections LinkProperties.
+     *
+     * @return LinkProperties or null if an error
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.587 -0500", hash_original_method = "3F7712F482B5EE0C4EC3A4DBA0BA8D32", hash_generated_method = "FF79B0AD65617CB5A1186B97CD35A7DF")
+    public LinkProperties getLinkPropertiesSync() {
+        Message response = sendMessageSynchronously(REQ_GET_LINK_PROPERTIES);
+        if ((response != null) && (response.what == RSP_GET_LINK_PROPERTIES)) {
+            return rspLinkProperties(response);
+        } else {
+            log("getLinkProperties error response=" + response);
+            return null;
+        }
+    }
 
-    public static final int REQ_GET_APNSETTING = BASE + 4;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.024 -0400", hash_original_field = "67C1D26E2877CD8726F9AC202269D341", hash_generated_field = "075D97CF7AE01BA14B82937FAB85E17C")
+    /**
+     * Request setting the connections LinkProperties.HttpProxy.
+     * Response RSP_SET_LINK_PROPERTIES when complete.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.587 -0500", hash_original_method = "52664ABA5522CB5FFA9E0304A7C81F50", hash_generated_method = "220CCCBBDAD09D90895077D5898F7F38")
+    public void reqSetLinkPropertiesHttpProxy(ProxyProperties proxy) {
+        sendMessage(REQ_SET_LINK_PROPERTIES_HTTP_PROXY, proxy);
+        if (DBG) log("reqSetLinkPropertiesHttpProxy proxy=" + proxy);
+    }
 
-    public static final int RSP_GET_APNSETTING = BASE + 5;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.024 -0400", hash_original_field = "44E8E021E38F9F4957C80CC8005AF125", hash_generated_field = "6B2177B63C14A3D8C4A0465DF7EDA57B")
+    /**
+     * Set the connections LinkProperties.HttpProxy
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.588 -0500", hash_original_method = "71F35538546E3DD45C021DEA145F6AFD", hash_generated_method = "048577F0A15DAE88F58A3B40BBA571E1")
+    public void setLinkPropertiesHttpProxySync(ProxyProperties proxy) {
+        Message response =
+            sendMessageSynchronously(REQ_SET_LINK_PROPERTIES_HTTP_PROXY, proxy);
+        if ((response != null) && (response.what == RSP_SET_LINK_PROPERTIES_HTTP_PROXY)) {
+            if (DBG) log("setLinkPropertiesHttpPoxy ok");
+        } else {
+            log("setLinkPropertiesHttpPoxy error response=" + response);
+        }
+    }
 
-    public static final int REQ_GET_LINK_PROPERTIES = BASE + 6;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.024 -0400", hash_original_field = "500C1AC91FB838581568984E44550968", hash_generated_field = "B073222C67C8387DA84D52E09C649C5B")
+    /**
+     * Request update LinkProperties from DataCallState
+     * Response {@link #rspUpdateLinkPropertiesDataCallState}
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.589 -0500", hash_original_method = "1137FFCD79265DC595F1B5AA40674EF5", hash_generated_method = "1BA3EAC15E6072C7645043939C73FD4C")
+    public void reqUpdateLinkPropertiesDataCallState(DataCallState newState) {
+        sendMessage(REQ_UPDATE_LINK_PROPERTIES_DATA_CALL_STATE, newState);
+        if (DBG) log("reqUpdateLinkPropertiesDataCallState");
+    }
 
-    public static final int RSP_GET_LINK_PROPERTIES = BASE + 7;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.024 -0400", hash_original_field = "2BF1A9BBA19C9A658F6D0B42DAED1E41", hash_generated_field = "AA7EDD6DEA7FBE6E6DEDC341AE2566AA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.590 -0500", hash_original_method = "FF09E9AE970C8576F47A284FF7FFCA6D", hash_generated_method = "615EB136521D13B130890EFEB29D16AD")
+    public UpdateLinkPropertyResult rspUpdateLinkPropertiesDataCallState(Message response) {
+        UpdateLinkPropertyResult retVal = (UpdateLinkPropertyResult)response.obj;
+        if (DBG) log("rspUpdateLinkPropertiesState: retVal=" + retVal);
+        return retVal;
+    }
 
-    public static final int REQ_SET_LINK_PROPERTIES_HTTP_PROXY = BASE + 8;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.024 -0400", hash_original_field = "9DFC37643183DE61DD9F1BC7337883B3", hash_generated_field = "2BD71056213661FD69459E151EB320F2")
+    /**
+     * Update link properties in the data connection
+     *
+     * @return the removed and added addresses.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.591 -0500", hash_original_method = "98F59EFFB83342DD2236B59D91A5E4B5", hash_generated_method = "BC0D2AE19D2DC7555F63320B9322EFB5")
+    public UpdateLinkPropertyResult updateLinkPropertiesDataCallStateSync(DataCallState newState) {
+        Message response =
+            sendMessageSynchronously(REQ_UPDATE_LINK_PROPERTIES_DATA_CALL_STATE, newState);
+        if ((response != null) &&
+            (response.what == RSP_UPDATE_LINK_PROPERTIES_DATA_CALL_STATE)) {
+            return rspUpdateLinkPropertiesDataCallState(response);
+        } else {
+            log("getLinkProperties error response=" + response);
+            return new UpdateLinkPropertyResult(new LinkProperties());
+        }
+    }
 
-    public static final int RSP_SET_LINK_PROPERTIES_HTTP_PROXY = BASE + 9;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.024 -0400", hash_original_field = "065018769EB6CC7F7373CA6BED8F7643", hash_generated_field = "42BC94DC23936D5550B2F12E94B801F3")
+    /**
+     * Request the connections LinkCapabilities.
+     * Response {@link #rspLinkCapabilities}
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.592 -0500", hash_original_method = "30D60C86BD34D11FA73E7C7E67CFC7AA", hash_generated_method = "7CE67C75D4ED29C9B107DF79347452DE")
+    public void reqLinkCapabilities() {
+        sendMessage(REQ_GET_LINK_CAPABILITIES);
+        if (DBG) log("reqLinkCapabilities");
+    }
 
-    public static final int REQ_GET_LINK_CAPABILITIES = BASE + 10;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.024 -0400", hash_original_field = "9F9D88D4A8B28546FEE157032AC8B70A", hash_generated_field = "7C871C282AED07B5AFD51BB60DC58B87")
+    /**
+     * Evaluate RSP_GET_LINK_CAPABILITIES
+     *
+     * @param response
+     * @return LinkCapabilites, maybe null.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.593 -0500", hash_original_method = "F187911F3801DAE69287AC09EDB743FA", hash_generated_method = "C99150D9B74C6E2E6A13C966A9BD4ACD")
+    public LinkCapabilities rspLinkCapabilities(Message response) {
+        LinkCapabilities retVal = (LinkCapabilities) response.obj;
+        if (DBG) log("rspLinkCapabilities=" + retVal);
+        return retVal;
+    }
 
-    public static final int RSP_GET_LINK_CAPABILITIES = BASE + 11;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.024 -0400", hash_original_field = "16010B85948823BF66211764D7B5283B", hash_generated_field = "410DC65F191E667E05E1C26996344ED6")
+    /**
+     * Get the connections LinkCapabilities.
+     *
+     * @return LinkCapabilities or null if an error
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.594 -0500", hash_original_method = "C1F7B964512DA39EF105AA8C4B5198E6", hash_generated_method = "1F458C9E78F24005EDFA86A34F295F62")
+    public LinkCapabilities getLinkCapabilitiesSync() {
+        Message response = sendMessageSynchronously(REQ_GET_LINK_CAPABILITIES);
+        if ((response != null) && (response.what == RSP_GET_LINK_CAPABILITIES)) {
+            return rspLinkCapabilities(response);
+        } else {
+            log("getLinkCapabilities error response=" + response);
+            return null;
+        }
+    }
 
-    public static final int REQ_UPDATE_LINK_PROPERTIES_DATA_CALL_STATE = BASE + 12;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.024 -0400", hash_original_field = "3DD80A27FF8D61C2D2E8816651BAC0E4", hash_generated_field = "EABD1A19ECDA7C315E74E3BB10C8AA34")
+    /**
+     * Request the connections LinkCapabilities.
+     * Response RSP_RESET when complete
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.595 -0500", hash_original_method = "9EFFE3DDD73E4A7AC997D7CA04936F41", hash_generated_method = "4468C8BD7B27D8F1A187A01662EC1BFC")
+    public void reqReset() {
+        sendMessage(REQ_RESET);
+        if (DBG) log("reqReset");
+    }
 
-    public static final int RSP_UPDATE_LINK_PROPERTIES_DATA_CALL_STATE = BASE + 13;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.024 -0400", hash_original_field = "F6491F3C8DCD8733232690FB3896BF47", hash_generated_field = "FA6D9E30AD45F04695E898045922860A")
+    /**
+     * Reset the connection and wait for it to complete.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.596 -0500", hash_original_method = "C179D3525D5003A50B8C9C0361938568", hash_generated_method = "E0441F7BCCFA454A6F9B18F539E83028")
+    public void resetSync() {
+        Message response = sendMessageSynchronously(REQ_RESET);
+        if ((response != null) && (response.what == RSP_RESET)) {
+            if (DBG) log("restSync ok");
+        } else {
+            log("restSync error response=" + response);
+        }
+    }
 
-    public static final int REQ_RESET = BASE + 14;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.024 -0400", hash_original_field = "CF1337BD01D40550D657AF71D5457B15", hash_generated_field = "669F769EC139E98CB3AFB220D6A1C9FE")
+    /**
+     * Request to add ApnContext association.
+     * Response RSP_ADD_APNCONTEXT when complete.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.596 -0500", hash_original_method = "F3233E69134CF9902E31FB14516EC03E", hash_generated_method = "3BDA4F3791893CE28474E7EF4881A9B8")
+    public void reqAddApnContext(ApnContext apnContext) {
+        Message response = sendMessageSynchronously(REQ_ADD_APNCONTEXT, apnContext);
+        if (DBG) log("reqAddApnContext");
+    }
 
-    public static final int RSP_RESET = BASE + 15;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.024 -0400", hash_original_field = "C3E5268DDA9CBD4AD8CA1F06BAC6941B", hash_generated_field = "76D19A23EEE2DE297833D58F70073A84")
+    /**
+     * Add ApnContext association synchronoulsy.
+     *
+     * @param ApnContext to associate
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.597 -0500", hash_original_method = "29B8FEA7830E2BBE9C7BBFD69E48646E", hash_generated_method = "34B3C845585366C8DB83B5DC6D722767")
+    public void addApnContextSync(ApnContext apnContext) {
+        Message response = sendMessageSynchronously(REQ_ADD_APNCONTEXT, apnContext);
+        if ((response != null) && (response.what == RSP_ADD_APNCONTEXT)) {
+            if (DBG) log("addApnContext ok");
+        } else {
+            log("addApnContext error response=" + response);
+        }
+    }
 
-    public static final int REQ_GET_REFCOUNT = BASE + 16;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.024 -0400", hash_original_field = "E6E62475054FEEC765CEF64603D3A70D", hash_generated_field = "BD8C38909076EDBB350F0534D3158B5A")
+    /**
+     * Request to remove ApnContext association.
+     * Response RSP_REMOVE_APNCONTEXT when complete.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.598 -0500", hash_original_method = "51B2CCF2735E77C63E82DEC17109A5B1", hash_generated_method = "00D5E1A38930FCC8E9B47A738DBEB5B5")
+    public void reqRemomveApnContext(ApnContext apnContext) {
+        Message response = sendMessageSynchronously(REQ_REMOVE_APNCONTEXT, apnContext);
+        if (DBG) log("reqRemomveApnContext");
+    }
 
-    public static final int RSP_GET_REFCOUNT = BASE + 17;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.024 -0400", hash_original_field = "2E82E5CB120F76BE1E9AABB7166660B5", hash_generated_field = "8F3EC990CEC19BF924C0C83E473DF703")
+    /**
+     * Remove ApnContext associateion.
+     *
+     * @param ApnContext to dissociate
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.599 -0500", hash_original_method = "62E31991C2E3FEB9590AC2302F444FDA", hash_generated_method = "06B122E6D993D7E683ED8C9B5FC895A8")
+    public void removeApnContextSync(ApnContext apnContext) {
+        Message response = sendMessageSynchronously(REQ_REMOVE_APNCONTEXT, apnContext);
+        if ((response != null) && (response.what == RSP_REMOVE_APNCONTEXT)) {
+            if (DBG) log("removeApnContext ok");
+        } else {
+            log("removeApnContext error response=" + response);
+        }
+    }
 
-    public static final int REQ_ADD_APNCONTEXT = BASE + 18;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.024 -0400", hash_original_field = "5FFC50DC4F0DF7544490909AD3D8DB3D", hash_generated_field = "D05330977465F7AF4E384E150213096A")
+    /**
+     * Request to retrive ApnContext List associated with DC.
+     * Response RSP_GET_APNCONTEXT_LIST when complete.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.600 -0500", hash_original_method = "AAD200E4835E6912540E5A2C7F9552F9", hash_generated_method = "9901A624D879B442C50B5CD979A1224F")
+    public void reqGetApnList(ApnContext apnContext) {
+        Message response = sendMessageSynchronously(REQ_GET_APNCONTEXT_LIST);
+        if (DBG) log("reqGetApnList");
+    }
 
-    public static final int RSP_ADD_APNCONTEXT = BASE + 19;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.024 -0400", hash_original_field = "86AFFBEDA03B70DE11F7AFE2EE19B988", hash_generated_field = "FC2140507E1C1E4A862E984C6536D33F")
+    /**
+     * Retrieve Collection of ApnContext from the response message.
+     *
+     * @param Message sent from DC in response to REQ_GET_APNCONTEXT_LIST.
+     * @return Collection of ApnContext
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.600 -0500", hash_original_method = "48ABE9510A7CA4042FB5B96D41BACEB8", hash_generated_method = "DF078C4F845878968FF429F8740C3228")
+    public Collection<ApnContext> rspApnList(Message response) {
+        Collection<ApnContext> retVal = (Collection<ApnContext>)response.obj;
+        if (retVal == null) retVal = new ArrayList<ApnContext>();
+        return retVal;
+    }
 
-    public static final int REQ_REMOVE_APNCONTEXT = BASE + 20;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.024 -0400", hash_original_field = "452A4337B6E6F3036095C684213134BF", hash_generated_field = "F6C5D6966EFACD969BB347661AD8098A")
+    /**
+     * Retrieve collection of ApnContext currently associated with
+     * the DataConnectionA synchronously.
+     *
+     * @return Collection of ApnContext
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.601 -0500", hash_original_method = "498EAD8B319A2A3996C6AC846ACD4BE2", hash_generated_method = "502F83993D3FC6EE0D18D20C357FD78D")
+    public Collection<ApnContext> getApnListSync() {
+        Message response = sendMessageSynchronously(REQ_GET_APNCONTEXT_LIST);
+        if ((response != null) && (response.what == RSP_GET_APNCONTEXT_LIST)) {
+            if (DBG) log("getApnList ok");
+            return rspApnList(response);
+        } else {
+            log("getApnList error response=" + response);
+            // return dummy list with no entry
+            return new ArrayList<ApnContext>();
+        }
+    }
 
-    public static final int RSP_REMOVE_APNCONTEXT = BASE + 21;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.024 -0400", hash_original_field = "842D49F350462A667AD2590CE93489B0", hash_generated_field = "7CADBAFCB6C4D553E00439A92A77399A")
+    /**
+     * Request to set Pending ReconnectIntent to DC.
+     * Response RSP_SET_RECONNECT_INTENT when complete.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.602 -0500", hash_original_method = "408D11B7A3DFC98C0728A70ED62F0EEA", hash_generated_method = "B88DF5F3CAE8626407681D6E71BCC297")
+    public void reqSetReconnectIntent(PendingIntent intent) {
+        Message response = sendMessageSynchronously(REQ_SET_RECONNECT_INTENT, intent);
+        if (DBG) log("reqSetReconnectIntent");
+    }
 
-    public static final int REQ_GET_APNCONTEXT_LIST = BASE + 22;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.024 -0400", hash_original_field = "63393ADC62ADB8086F1A9106D4DA73F7", hash_generated_field = "08CEE76E523CBFA9615E63AE42E97282")
+    /**
+     * Set pending reconnect intent to DC synchronously.
+     *
+     * @param PendingIntent to set.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.603 -0500", hash_original_method = "D99BC1BEF330D90F2BC64CDBA6E6105B", hash_generated_method = "AD6B542286D1442E604FB85C79D02B3B")
+    public void setReconnectIntentSync(PendingIntent intent) {
+        Message response = sendMessageSynchronously(REQ_SET_RECONNECT_INTENT, intent);
+        if ((response != null) && (response.what == RSP_SET_RECONNECT_INTENT)) {
+            if (DBG) log("setReconnectIntent ok");
+        } else {
+            log("setReconnectIntent error response=" + response);
+        }
+    }
 
-    public static final int RSP_GET_APNCONTEXT_LIST = BASE + 23;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.024 -0400", hash_original_field = "F83139694F8C75C29041CAD82805FBC0", hash_generated_field = "AEDC94BDC63CFCBD1EE247E113E0B2BD")
+    /**
+     * Request to get Pending ReconnectIntent to DC.
+     * Response RSP_GET_RECONNECT_INTENT when complete.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.604 -0500", hash_original_method = "3F955D64051D380D89135CF7B70C1F05", hash_generated_method = "0EC25BC15D68F1E59DA0282A4EDDD537")
+    public void reqGetReconnectIntent() {
+        Message response = sendMessageSynchronously(REQ_GET_RECONNECT_INTENT);
+        if (DBG) log("reqGetReconnectIntent");
+    }
 
-    public static final int REQ_SET_RECONNECT_INTENT = BASE + 24;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.024 -0400", hash_original_field = "1A21029CD633D0CA53EB46E887F9DCE0", hash_generated_field = "50977DA17634FA6287626111506AF1F5")
+    /**
+     * Retrieve reconnect intent from response message from DC.
+     *
+     * @param Message which contains the reconnect intent.
+     * @return PendingIntent from the response.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.605 -0500", hash_original_method = "9555B3D0DB27D43CC0B0BA451DA1A9D5", hash_generated_method = "25B7A8A174AB1484FCBADD07D4D57006")
+    public PendingIntent rspReconnectIntent(Message response) {
+        PendingIntent retVal = (PendingIntent) response.obj;
+        return retVal;
+    }
 
-    public static final int RSP_SET_RECONNECT_INTENT = BASE + 25;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.024 -0400", hash_original_field = "E9DEE9E0E0EB4253C7E41D3E57891BB2", hash_generated_field = "E050F9150348EB87E92AA17BEF7AA6F1")
+    /**
+     * Retrieve reconnect intent currently set in DC synchronously.
+     *
+     * @return PendingIntent reconnect intent current ly set in DC
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.605 -0500", hash_original_method = "D70777E4A1678D0EF0C2B7C3D53ADD58", hash_generated_method = "DFC029D22F6A96D11B2F13A4E1E1A35B")
+    public PendingIntent getReconnectIntentSync() {
+        Message response = sendMessageSynchronously(REQ_GET_RECONNECT_INTENT);
+        if ((response != null) && (response.what == RSP_GET_RECONNECT_INTENT)) {
+            if (DBG) log("getReconnectIntent ok");
+            return rspReconnectIntent(response);
+        } else {
+            log("getReconnectIntent error response=" + response);
+            return null;
+        }
+    }
 
-    public static final int REQ_GET_RECONNECT_INTENT = BASE + 26;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.024 -0400", hash_original_field = "9440C9722A4FB872C7E1976D00F575DE", hash_generated_field = "B47C4AB7C8CEFA3E66A64CE4AF15F148")
-
-    public static final int RSP_GET_RECONNECT_INTENT = BASE + 27;
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:33.606 -0500", hash_original_method = "3340C70610FFA5D9D28FC6E77DE7CB0F", hash_generated_method = "53EF0579E11A699B6468ECD12F78E1EC")
+    private void log(String s) {
+        android.util.Log.d(mLogTag, "DataConnectionAc " + s);
+    }
 }
 

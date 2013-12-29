@@ -1,6 +1,8 @@
 package android.telephony;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.text.Editable;
 
@@ -9,16 +11,12 @@ import android.text.Editable;
 
 
 class JapanesePhoneNumberFormatter {
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.094 -0400", hash_original_method = "8633AFAAB867BB1617201EF2E839378D", hash_generated_method = "8633AFAAB867BB1617201EF2E839378D")
-    public JapanesePhoneNumberFormatter ()
-    {
-        //Synthesized constructor
-    }
 
-
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:46.759 -0500", hash_original_method = "45AAE50F2C13E8232A931CE1D4B77E29", hash_generated_method = "16CB798AD9EDD6C0FEAD1F9310F1D7EA")
     public static void format(Editable text) {
+        // Here, "root" means the position of "'":
+        // 0'3, 0'90, and +81'-90
+        // (dash will be deleted soon, so it is actually +81'90).
         int rootIndex = 1;
         int length = text.length();
         if (length > 3
@@ -27,7 +25,10 @@ class JapanesePhoneNumberFormatter {
         } else if (length < 1 || text.charAt(0) != '0') {
             return;
         }
+
         CharSequence saved = text.subSequence(0, length);
+
+        // Strip the dashes first, as we're going to add them back
         int i = 0;
         while (i < text.length()) {
             if (text.charAt(i) == '-') {
@@ -36,8 +37,10 @@ class JapanesePhoneNumberFormatter {
                 i++;
             }
         }
+
         length = text.length();
         int dashposition;
+
         i = rootIndex;
         int base = 0;
         while (i < length) {
@@ -66,13 +69,12 @@ class JapanesePhoneNumberFormatter {
                 i++;
             }
         }
+
         if (length > 3 && rootIndex == 3) {
             text.insert(rootIndex, "-");
         }
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.097 -0400", hash_original_field = "A7EC13753EC06139DD5665DC71016EA3", hash_generated_field = "A41ED4450E04BDA3A5345586D1E8DE2E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:46.758 -0500", hash_original_field = "A718B0EA0BB26C2544F499EBA8B47E4F", hash_generated_field = "A41ED4450E04BDA3A5345586D1E8DE2E")
 
     private static short FORMAT_MAP[] = {
     -100, 10, 220, -15, 410, 530, 1200, 670, 780, 1060,
@@ -196,5 +198,11 @@ class JapanesePhoneNumberFormatter {
     -25, -35, -35, -35, -35, -35, -35, -25, -25, -35,
     -35, -35, -35, -35, -35, -35, -35, -35, -35, -45,
     -26, -15, -15, -15, -15, -15, -15, -15, -15, -15};
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.094 -0400", hash_original_method = "8633AFAAB867BB1617201EF2E839378D", hash_generated_method = "8633AFAAB867BB1617201EF2E839378D")
+    public JapanesePhoneNumberFormatter ()
+    {
+        //Synthesized constructor
+    }
 }
 

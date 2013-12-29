@@ -1,6 +1,8 @@
 package java.util;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.DroidSafeAndroidRuntime;
 
@@ -15,13 +17,30 @@ import java.lang.reflect.Array;
 
 
 public class Vector<E> extends AbstractList<E> implements List<E>, RandomAccess, Cloneable, Serializable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.767 -0400", hash_original_field = "BC8C6DCF12CE09E50A98BB57ADFCADD9", hash_generated_field = "499A2D73243CED99A42E214D64505A6C")
+
+    /**
+     * This method was extracted to encourage VM to inline callers.
+     * TODO: when we have a VM that can actually inline, move the test in here too!
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:55.737 -0500", hash_original_method = "9B7D3F2F980E3EB6087A253589224152", hash_generated_method = "241DB74A7C1A3F403B28B3142CB5207F")
+    private static ArrayIndexOutOfBoundsException arrayIndexOutOfBoundsException(int index, int size) {
+        throw new ArrayIndexOutOfBoundsException(size, index);
+    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:55.690 -0500", hash_original_field = "5935DD24AA8693898A933569EC7C6CB5", hash_generated_field = "39DE62F55D74BDCEA57CB029AC7D9C53")
+
+
+    private static final long serialVersionUID = -2767605614048989439L;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:55.694 -0500", hash_original_field = "6C149789F0A7E32E47B3C38C0FFD610C", hash_generated_field = "F9EDE767CC2D62732638F03DE92C8707")
+
+
+    private static final int DEFAULT_SIZE = 10;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:55.691 -0500", hash_original_field = "BF84735BCD9327FC2D1CC927ED35945D", hash_generated_field = "499A2D73243CED99A42E214D64505A6C")
 
     protected int elementCount;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.768 -0400", hash_original_field = "8D395F1876FF8AE01BE52A9C4C2ED552", hash_generated_field = "0B3F426A5758654DA42168DCEAA2747C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:55.692 -0500", hash_original_field = "67BBD4B95E990052FBB9600D15E343A4", hash_generated_field = "0B3F426A5758654DA42168DCEAA2747C")
 
     protected Object[] elementData;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.768 -0400", hash_original_field = "7D8D485EB9C5EE294297FC18663D46D8", hash_generated_field = "C57732C85DED3048B8128B9506ED7293")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:55.693 -0500", hash_original_field = "889865FA0F0C3F87B19387BF7C2B7B95", hash_generated_field = "C57732C85DED3048B8128B9506ED7293")
 
     protected int capacityIncrement;
     
@@ -230,29 +249,23 @@ public class Vector<E> extends AbstractList<E> implements List<E>, RandomAccess,
         //}
         //throw new NoSuchElementException();
     }
-   
-   
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.804 -0400", hash_original_method = "20A64E7812064C08C37EDD86F8A561DF", hash_generated_method = "D3BA7DA16F2EBD1CCD1302E2BC904439")
+
+    /**
+     * Returns an integer hash code for the receiver. Objects which are equal
+     * return the same value for this method.
+     *
+     * @return the receiver's hash.
+     * @see #equals
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:55.720 -0500", hash_original_method = "20A64E7812064C08C37EDD86F8A561DF", hash_generated_method = "E03AFB35E1AB6EEEE84CD19F72F0EB38")
     @Override
-    public synchronized int hashCode() {
+public synchronized int hashCode() {
         int result = 1;
-for(int i = 0;i < elementCount;i++)
-        {
+        for (int i = 0; i < elementCount; i++) {
             result = (31 * result)
                     + (elementData[i] == null ? 0 : elementData[i].hashCode());
-        } //End block
-        int varB4A88417B3D0170D754C647C30B7216A_1945214544 = (result);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_80958529 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_80958529;
-        // ---------- Original Method ----------
-        //int result = 1;
-        //for (int i = 0; i < elementCount; i++) {
-            //result = (31 * result)
-                    //+ (elementData[i] == null ? 0 : elementData[i].hashCode());
-        //}
-        //return result;
+        }
+        return result;
     }
 
         @DSModeled(DSC.SAFE)
@@ -391,29 +404,25 @@ for(int i = 0;i < elementCount;i++)
         //return true;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.839 -0400", hash_original_method = "3D3F7D0269EE9A4A0E6B970CD7AB0599", hash_generated_method = "8170F1AD4F47B779A8BA92E76EEF169E")
+    /**
+     * Removes all objects from this vector that are not contained in the
+     * specified collection.
+     *
+     * @param collection
+     *            the collection of objects to retain.
+     * @return {@code true} if this vector is modified, {@code false} otherwise.
+     * @see #remove(Object)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:55.733 -0500", hash_original_method = "3D3F7D0269EE9A4A0E6B970CD7AB0599", hash_generated_method = "50571D3BC1ED74E3C9E79E72C232E208")
     @Override
-    public synchronized boolean retainAll(Collection<?> collection) {
-        addTaint(collection.getTaint());
-        boolean var503FF497CC541185965B7F24CCB51DB8_621346309 = (super.retainAll(collection));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1035375438 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1035375438;
-        // ---------- Original Method ----------
-        //return super.retainAll(collection);
+public synchronized boolean retainAll(Collection<?> collection) {
+        return super.retainAll(collection);
     }
 
     @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.004 -0400", hash_original_method = "BE9BD0132B3B62E633B4EDB307CB7290", hash_generated_method = "EB4FEAFEFF2F9B8F2670ED49875A91C2")
     public synchronized void setElementAt(E object, int location) {
         super.setElementAt(location, object);
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    private static ArrayIndexOutOfBoundsException arrayIndexOutOfBoundsException(int index, int size) {
-        throw new ArrayIndexOutOfBoundsException(size, index);
     }
 
         @DSModeled(DSC.SAFE)
@@ -514,22 +523,11 @@ String varD03843288D33B9E1D3062E25339ECF6D_693101289 =         buffer.toString()
         //}
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.853 -0400", hash_original_method = "93271132EFBEDC29196C798673AC5EE7", hash_generated_method = "17A96E89DBC8BDB21D3336A9C484CCA6")
-    private synchronized void writeObject(ObjectOutputStream stream) throws IOException {
-        addTaint(stream.getTaint());
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:55.744 -0500", hash_original_method = "93271132EFBEDC29196C798673AC5EE7", hash_generated_method = "D143AA14F535C1E7B75B98ADCA9EA642")
+    private synchronized void writeObject(ObjectOutputStream stream)
+            throws IOException {
         stream.defaultWriteObject();
-        // ---------- Original Method ----------
-        //stream.defaultWriteObject();
     }
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.853 -0400", hash_original_field = "63388E0D41356F5B13E53DDDE229677C", hash_generated_field = "39DE62F55D74BDCEA57CB029AC7D9C53")
-
-    private static final long serialVersionUID = -2767605614048989439L;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.853 -0400", hash_original_field = "F94234FC21E5DB8AB303ACA6C6E18129", hash_generated_field = "F9EDE767CC2D62732638F03DE92C8707")
-
-    private static final int DEFAULT_SIZE = 10;
 
     @Override
     @DSModeled(DSC.SAFE)

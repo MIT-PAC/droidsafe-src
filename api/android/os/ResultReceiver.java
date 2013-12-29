@@ -1,6 +1,8 @@
 package android.os;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import com.android.internal.os.IResultReceiver;
 
@@ -10,148 +12,111 @@ import com.android.internal.os.IResultReceiver;
 
 
 public class ResultReceiver implements Parcelable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.522 -0400", hash_original_field = "C9B888E88FFB6944F562FB3344471686", hash_generated_field = "0415A6A03CA0C2158681D2FE07F934C8")
 
-    boolean mLocal;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.522 -0400", hash_original_field = "C78BEDFC523DB73DF63EFB071AF1C35B", hash_generated_field = "A163099B522120C606A3CA562F90E927")
 
-    Handler mHandler;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.522 -0400", hash_original_field = "572851143F58D86B2089A8B56ED682F4", hash_generated_field = "D7B90760A7F6237C1A31E420E3CA0A2C")
+    
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.530 -0400", hash_original_field = "1616AC5A23A35716E8AC81C303077CDC", hash_generated_field = "7C3C665B8D40A2CCD87F8A835E2FE4A9")
 
+    public static final Parcelable.Creator<ResultReceiver> CREATOR
+            = new Parcelable.Creator<ResultReceiver>() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:41.099 -0500", hash_original_method = "90D8D656578FFDEDED0B312BAABC9891", hash_generated_method = "498C30F1A4DD7912BEB39B6F963CC566")
+        public ResultReceiver createFromParcel(Parcel in) {
+            return new ResultReceiver(in);
+        }
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:41.099 -0500", hash_original_method = "9A50003BF7D81A82F5D7809D6B7D611A", hash_generated_method = "684217CB1724BD34053119CB56A9F700")
+        public ResultReceiver[] newArray(int size) {
+            return new ResultReceiver[size];
+        }
+    };
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:41.085 -0500", hash_original_field = "0415A6A03CA0C2158681D2FE07F934C8", hash_generated_field = "0415A6A03CA0C2158681D2FE07F934C8")
+
+     boolean mLocal;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:41.086 -0500", hash_original_field = "A163099B522120C606A3CA562F90E927", hash_generated_field = "A163099B522120C606A3CA562F90E927")
+
+     Handler mHandler;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:41.087 -0500", hash_original_field = "D7B90760A7F6237C1A31E420E3CA0A2C", hash_generated_field = "D7B90760A7F6237C1A31E420E3CA0A2C")
+
+    
     IResultReceiver mReceiver;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.523 -0400", hash_original_method = "F6B889D041061686778698E3127A426F", hash_generated_method = "9EC98A0FD32D2D22D47B3302A864F62A")
-    public  ResultReceiver(Handler handler) {
+    /**
+     * Create a new ResultReceive to receive results.  Your
+     * {@link #onReceiveResult} method will be called from the thread running
+     * <var>handler</var> if given, or from an arbitrary thread if null.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:41.093 -0500", hash_original_method = "F6B889D041061686778698E3127A426F", hash_generated_method = "687E9477B129D47D7715CEB8FA2DD56A")
+    public ResultReceiver(Handler handler) {
         mLocal = true;
         mHandler = handler;
-        // ---------- Original Method ----------
-        //mLocal = true;
-        //mHandler = handler;
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.523 -0400", hash_original_method = "3121A8D4339499004112052A7E531E42", hash_generated_method = "239099E3C61F4A2E3E14A5749C655A8D")
-      ResultReceiver(Parcel in) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:41.097 -0500", hash_original_method = "3121A8D4339499004112052A7E531E42", hash_generated_method = "3121A8D4339499004112052A7E531E42")
+    ResultReceiver(Parcel in) {
         mLocal = false;
         mHandler = null;
         mReceiver = IResultReceiver.Stub.asInterface(in.readStrongBinder());
-        // ---------- Original Method ----------
-        //mLocal = false;
-        //mHandler = null;
-        //mReceiver = IResultReceiver.Stub.asInterface(in.readStrongBinder());
     }
-
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.524 -0400", hash_original_method = "09F6E48395AF4822069195CE0B4A582F", hash_generated_method = "9DB4068C3F5796D66EDF05D91648A2ED")
+    /**
+     * Deliver a result to this receiver.  Will call {@link #onReceiveResult},
+     * always asynchronously if the receiver has supplied a Handler in which
+     * to dispatch the result.
+     * @param resultCode Arbitrary result code to deliver, as defined by you.
+     * @param resultData Any additional data provided by you.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:41.094 -0500", hash_original_method = "09F6E48395AF4822069195CE0B4A582F", hash_generated_method = "A333E88D55493381E6E2689B194132B6")
     public void send(int resultCode, Bundle resultData) {
-        addTaint(resultData.getTaint());
-        addTaint(resultCode);
-        if(mLocal)        
-        {
-            if(mHandler != null)            
-            {
+        if (mLocal) {
+            if (mHandler != null) {
                 mHandler.post(new MyRunnable(resultCode, resultData));
-            } //End block
-            else
-            {
+            } else {
                 onReceiveResult(resultCode, resultData);
-            } //End block
+            }
             return;
-        } //End block
-        if(mReceiver != null)        
-        {
-            try 
-            {
+        }
+        
+        if (mReceiver != null) {
+            try {
                 mReceiver.send(resultCode, resultData);
-            } //End block
-            catch (RemoteException e)
-            {
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (mLocal) {
-            //if (mHandler != null) {
-                //mHandler.post(new MyRunnable(resultCode, resultData));
-            //} else {
-                //onReceiveResult(resultCode, resultData);
-            //}
-            //return;
-        //}
-        //if (mReceiver != null) {
-            //try {
-                //mReceiver.send(resultCode, resultData);
-            //} catch (RemoteException e) {
-            //}
-        //}
+            } catch (RemoteException e) {
+            }
+        }
     }
-
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.524 -0400", hash_original_method = "BDE6DE984C100A6F17C2FEFAD669078A", hash_generated_method = "D0C901DD2478013571E63246BE50F411")
+    /**
+     * Override to receive results delivered to this object.
+     * 
+     * @param resultCode Arbitrary result code delivered by the sender, as
+     * defined by the sender.
+     * @param resultData Any additional data provided by the sender.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:41.095 -0500", hash_original_method = "BDE6DE984C100A6F17C2FEFAD669078A", hash_generated_method = "3A7CFAD59FE93F9154FF15BC28A864B1")
     protected void onReceiveResult(int resultCode, Bundle resultData) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(resultData.getTaint());
-        addTaint(resultCode);
-        // ---------- Original Method ----------
     }
-
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.525 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "CACB5A443538E074C2CF8A4DAD878592")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:41.096 -0500", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "D90463461B2A94FF94D13FDF69BB80C9")
     public int describeContents() {
-        int varCFCD208495D565EF66E7DFF9F98764DA_1857697685 = (0);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_718943680 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_718943680;
-        // ---------- Original Method ----------
-        //return 0;
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.526 -0400", hash_original_method = "E9FDB79317602314EF1A33B246E828FD", hash_generated_method = "AFDE62C4166E8A134177249C99FD6FC6")
-    public void writeToParcel(Parcel out, int flags) {
-        addTaint(flags);
-        addTaint(out.getTaint());
-        synchronized
-(this)        {
-            if(mReceiver == null)            
-            {
-                mReceiver = new MyResultReceiver();
-            } //End block
-            out.writeStrongBinder(mReceiver.asBinder());
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //if (mReceiver == null) {
-                //mReceiver = new MyResultReceiver();
-            //}
-            //out.writeStrongBinder(mReceiver.asBinder());
-        //}
+        return 0;
     }
 
     
     class MyRunnable implements Runnable {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.527 -0400", hash_original_field = "E5CED19E692744D577EC9F38B767773F", hash_generated_field = "457E6BFD9A88F809DF3F4A88B9B7B893")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:41.088 -0500", hash_original_field = "457E6BFD9A88F809DF3F4A88B9B7B893", hash_generated_field = "457E6BFD9A88F809DF3F4A88B9B7B893")
 
-        int mResultCode;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.527 -0400", hash_original_field = "3EAEFB392DB2F84FAED87A71E79A1093", hash_generated_field = "08871BAB4B6098F90F767BAD821733ED")
+         int mResultCode;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:41.088 -0500", hash_original_field = "08871BAB4B6098F90F767BAD821733ED", hash_generated_field = "08871BAB4B6098F90F767BAD821733ED")
 
-        Bundle mResultData;
+         Bundle mResultData;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.528 -0400", hash_original_method = "B34498DE61E9C5C61C7671D4F0FD5B9A", hash_generated_method = "61C9E11FE1C79EE24D194073B7E05D28")
-          MyRunnable(int resultCode, Bundle resultData) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:41.089 -0500", hash_original_method = "B34498DE61E9C5C61C7671D4F0FD5B9A", hash_generated_method = "B34498DE61E9C5C61C7671D4F0FD5B9A")
+        MyRunnable(int resultCode, Bundle resultData) {
             mResultCode = resultCode;
             mResultData = resultData;
-            // ---------- Original Method ----------
-            //mResultCode = resultCode;
-            //mResultData = resultData;
         }
-
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.528 -0400", hash_original_method = "B2EEF2B3DE60D5C6AF2898B6D426B2C7", hash_generated_method = "CE9FA5919F14757E6813C53A6BF42E89")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:41.090 -0500", hash_original_method = "B2EEF2B3DE60D5C6AF2898B6D426B2C7", hash_generated_method = "6E53CBE876D163AADF4FBFF07A5EA5E1")
         public void run() {
             onReceiveResult(mResultCode, mResultData);
-            // ---------- Original Method ----------
-            //onReceiveResult(mResultCode, mResultData);
         }
 
         
@@ -166,46 +131,27 @@ public class ResultReceiver implements Parcelable {
         {
             //Synthesized constructor
         }
-
-
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.529 -0400", hash_original_method = "B49F987C1CD0318792118745999D9DB4", hash_generated_method = "7B4AF64CFDC473A632C427B00E087E18")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:41.092 -0500", hash_original_method = "B49F987C1CD0318792118745999D9DB4", hash_generated_method = "EFA6E027AB4269A27354DDE7D386BD63")
         public void send(int resultCode, Bundle resultData) {
-            addTaint(resultData.getTaint());
-            addTaint(resultCode);
-            if(mHandler != null)            
-            {
+            if (mHandler != null) {
                 mHandler.post(new MyRunnable(resultCode, resultData));
-            } //End block
-            else
-            {
+            } else {
                 onReceiveResult(resultCode, resultData);
-            } //End block
-            // ---------- Original Method ----------
-            //if (mHandler != null) {
-                //mHandler.post(new MyRunnable(resultCode, resultData));
-            //} else {
-                //onReceiveResult(resultCode, resultData);
-            //}
+            }
         }
 
         
     }
 
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.530 -0400", hash_original_field = "1616AC5A23A35716E8AC81C303077CDC", hash_generated_field = "7C3C665B8D40A2CCD87F8A835E2FE4A9")
-
-    public static final Parcelable.Creator<ResultReceiver> CREATOR
-            = new Parcelable.Creator<ResultReceiver>() {
-        @DSModeled(DSC.SAFE)
-        public ResultReceiver createFromParcel(Parcel in) {
-            return new ResultReceiver(in);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:41.097 -0500", hash_original_method = "E9FDB79317602314EF1A33B246E828FD", hash_generated_method = "E1AC36E729C5B6E254B828EDEB9DC17E")
+    public void writeToParcel(Parcel out, int flags) {
+        synchronized (this) {
+            if (mReceiver == null) {
+                mReceiver = new MyResultReceiver();
+            }
+            out.writeStrongBinder(mReceiver.asBinder());
         }
-        @DSModeled(DSC.SAFE)
-        public ResultReceiver[] newArray(int size) {
-            return new ResultReceiver[size];
-        }
-    };
+    }
     // orphaned legacy method
     public ResultReceiver createFromParcel(Parcel in) {
             return new ResultReceiver(in);

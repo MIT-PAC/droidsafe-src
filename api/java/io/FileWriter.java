@@ -1,55 +1,82 @@
 package java.io;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
 public class FileWriter extends OutputStreamWriter {
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.973 -0400", hash_original_method = "B243913791A4955722C7446949980DA0", hash_generated_method = "5D4D46EFA53E8F28CC5F5E95CC8BCF0D")
-    public  FileWriter(File file) throws IOException {
+
+    /**
+     * Creates a FileWriter using the File {@code file}.
+     *
+     * @param file
+     *            the non-null File to write bytes to.
+     * @throws IOException
+     *             if {@code file} cannot be opened for writing.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.872 -0500", hash_original_method = "B243913791A4955722C7446949980DA0", hash_generated_method = "D6DAF213F6D3B38533FFD8AF2E1BB16E")
+    public FileWriter(File file) throws IOException {
         super(new FileOutputStream(file));
-        addTaint(file.getTaint());
-        // ---------- Original Method ----------
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.973 -0400", hash_original_method = "79860F10C9F09BC3FC3374E75EC2439D", hash_generated_method = "4738AF70786DD2FD1F62C8315A1A0D5D")
-    public  FileWriter(File file, boolean append) throws IOException {
+    /**
+     * Creates a FileWriter using the File {@code file}. The parameter
+     * {@code append} determines whether or not the file is opened and appended
+     * to or just opened and overwritten.
+     *
+     * @param file
+     *            the non-null File to write bytes to.
+     * @param append
+     *            indicates whether or not to append to an existing file.
+     * @throws IOException
+     *             if the {@code file} cannot be opened for writing.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.873 -0500", hash_original_method = "79860F10C9F09BC3FC3374E75EC2439D", hash_generated_method = "7EFD327773EA8ABA2873A2E9933FED3A")
+    public FileWriter(File file, boolean append) throws IOException {
         super(new FileOutputStream(file, append));
-        addTaint(append);
-        addTaint(file.getTaint());
-        // ---------- Original Method ----------
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.974 -0400", hash_original_method = "83907072F4E4E17B7331DF75EE7AA617", hash_generated_method = "50D1C76FC466FB770B374EED9727EA88")
-    public  FileWriter(FileDescriptor fd) {
+    /**
+     * Creates a FileWriter using the existing FileDescriptor {@code fd}.
+     *
+     * @param fd
+     *            the non-null FileDescriptor to write bytes to.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.874 -0500", hash_original_method = "83907072F4E4E17B7331DF75EE7AA617", hash_generated_method = "67AC3D6EBB5AD77899C2BAC092758EA4")
+    public FileWriter(FileDescriptor fd) {
         super(new FileOutputStream(fd));
-        addTaint(fd.getTaint());
-        // ---------- Original Method ----------
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.974 -0400", hash_original_method = "7A60608F9C8A66E68FB25FC3BD2DB01D", hash_generated_method = "0F92FC2994F73FEE5081DE3B38725F95")
-    public  FileWriter(String filename) throws IOException {
+    /**
+     * Creates a FileWriter using the platform dependent {@code filename}.
+     *
+     * @param filename
+     *            the non-null name of the file to write bytes to.
+     * @throws IOException
+     *             if the file cannot be opened for writing.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.875 -0500", hash_original_method = "7A60608F9C8A66E68FB25FC3BD2DB01D", hash_generated_method = "2434875F8167778129CD26B8C797A068")
+    public FileWriter(String filename) throws IOException {
         super(new FileOutputStream(new File(filename)));
-        addTaint(filename.getTaint());
-        // ---------- Original Method ----------
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.974 -0400", hash_original_method = "754E5DA17049F1720720C66817C48E5C", hash_generated_method = "678E38A273450234BB73D178C8BC8C9F")
-    public  FileWriter(String filename, boolean append) throws IOException {
+    /**
+     * Creates a FileWriter using the platform dependent {@code filename}. The
+     * parameter {@code append} determines whether or not the file is opened and
+     * appended to or just opened and overwritten.
+     *
+     * @param filename
+     *            the non-null name of the file to write bytes to.
+     * @param append
+     *            indicates whether or not to append to an existing file.
+     * @throws IOException
+     *             if the {@code file} cannot be opened for writing.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:30.876 -0500", hash_original_method = "754E5DA17049F1720720C66817C48E5C", hash_generated_method = "A8E2C54EB46A112F5B8B861711B5F8D6")
+    public FileWriter(String filename, boolean append) throws IOException {
         super(new FileOutputStream(filename, append));
-        addTaint(append);
-        addTaint(filename.getTaint());
-        // ---------- Original Method ----------
     }
 
     

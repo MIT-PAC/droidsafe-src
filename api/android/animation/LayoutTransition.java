@@ -1,6 +1,8 @@
 package android.animation;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -20,90 +22,127 @@ import android.view.animation.DecelerateInterpolator;
 
 
 public class LayoutTransition {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.111 -0400", hash_original_field = "39AB1186E068767124693950E5241B0C", hash_generated_field = "75E407E7333EB2D59F0ED20EAD88E34E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.270 -0500", hash_original_field = "4C19ABB566B055A3E37A924670A808DA", hash_generated_field = "E63A0521AAA8C6DC4279BA44E098FD23")
+
+    public static final int CHANGE_APPEARING = 0;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.271 -0500", hash_original_field = "AF12ADCFA393E8E86815AE4F98E3D85F", hash_generated_field = "A5E247EB4D6439D9A98E49F907931252")
+
+    public static final int CHANGE_DISAPPEARING = 1;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.272 -0500", hash_original_field = "617D8D451E869F839F4CBB2D7759B943", hash_generated_field = "F22B7CC5AA7D7298C87C59E48B6986CB")
+
+    public static final int APPEARING = 2;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.273 -0500", hash_original_field = "8DC6C4F5080BEB5EF1670D11AEEC341A", hash_generated_field = "2B4B660177B7589D2F5A7A330CB80759")
+
+    public static final int DISAPPEARING = 3;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.276 -0500", hash_original_field = "18DE96D777456C523D7D3BB6A1CE5F81", hash_generated_field = "F23425A4D82261A0713821E518F1C782")
+
+    private static ObjectAnimator defaultChangeIn;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.277 -0500", hash_original_field = "4A1E3DEEEB5BB2C11B59AD401D564741", hash_generated_field = "383D2DB6CC8BE4F70A8FC6AE24EF0892")
+
+    private static ObjectAnimator defaultChangeOut;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.278 -0500", hash_original_field = "86FB6FBD261F12D7DB91CCD29E2C1D72", hash_generated_field = "9FE642298321DB1BFB3B90AC8C413400")
+
+    private static ObjectAnimator defaultFadeIn;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.279 -0500", hash_original_field = "F3BAD51C6DD8E4FA21C315D29C704485", hash_generated_field = "25D149E4F7D04D3FBA535A38951E6CA0")
+
+    private static ObjectAnimator defaultFadeOut;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.279 -0500", hash_original_field = "D654CBBF7E1044E4E025795BDBB6A0A2", hash_generated_field = "B0EA698E636B3BDA7398DDB39E975802")
+
+    private static long DEFAULT_DURATION = 300;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.273 -0500", hash_original_field = "207532A5D14CD4FA8F863FE1CCF3410B", hash_generated_field = "75E407E7333EB2D59F0ED20EAD88E34E")
 
     private Animator mDisappearingAnim = null;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.112 -0400", hash_original_field = "898C2D1A5742BD7C3E8E82A9D2E0437F", hash_generated_field = "F269A266B00229E5734E5B06B519CF4D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.274 -0500", hash_original_field = "941DD54D732E4B02C6E3F02ADB6F7821", hash_generated_field = "F269A266B00229E5734E5B06B519CF4D")
 
     private Animator mAppearingAnim = null;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.113 -0400", hash_original_field = "1F332D66976C447496CA1B80691E0B10", hash_generated_field = "8569DC611F2B171274327A8DFA6BA137")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.275 -0500", hash_original_field = "AF86CCA2DE57A65ADCD1D91B87079796", hash_generated_field = "8569DC611F2B171274327A8DFA6BA137")
 
     private Animator mChangingAppearingAnim = null;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.113 -0400", hash_original_field = "765E4DC7F9110BDE36ADFF990E8FCAEC", hash_generated_field = "295E17A6E98CD794E342CB0517EC6D87")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.275 -0500", hash_original_field = "741BA5E69D672EE008AD28409FF430FB", hash_generated_field = "295E17A6E98CD794E342CB0517EC6D87")
 
     private Animator mChangingDisappearingAnim = null;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.114 -0400", hash_original_field = "42A198EE1914D883D37C3ED3B1135670", hash_generated_field = "A5577F39C2927B8AF67AB98D2B541767")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.280 -0500", hash_original_field = "401DCA7348BFB495967F8B16D52F83DE", hash_generated_field = "A5577F39C2927B8AF67AB98D2B541767")
 
     private long mChangingAppearingDuration = DEFAULT_DURATION;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.116 -0400", hash_original_field = "218EB6559CA33E7E919115954C4DB0D9", hash_generated_field = "463C58461ED789E13A8EEFA59D868711")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.281 -0500", hash_original_field = "489F97FD6457AAE7C534761F9CC86F23", hash_generated_field = "463C58461ED789E13A8EEFA59D868711")
 
     private long mChangingDisappearingDuration = DEFAULT_DURATION;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.117 -0400", hash_original_field = "80A25498D18A6710708CD4BFB8EF24DA", hash_generated_field = "B1A031389441AED70DA8674A9CDD4213")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.281 -0500", hash_original_field = "45E72D08C240CEC0A63E06EBBA6786FB", hash_generated_field = "B1A031389441AED70DA8674A9CDD4213")
 
     private long mAppearingDuration = DEFAULT_DURATION;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.119 -0400", hash_original_field = "5ECCF0345DF5DEDAB0F5A39516048905", hash_generated_field = "83E0F49BD50CEA25C451F339C8D938A9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.282 -0500", hash_original_field = "3140CFC0064E3A5DB10F873D0180C094", hash_generated_field = "83E0F49BD50CEA25C451F339C8D938A9")
 
     private long mDisappearingDuration = DEFAULT_DURATION;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.120 -0400", hash_original_field = "91B6925F9416CAE38F44C8180EE00D62", hash_generated_field = "6B89F75DB8D18324FDA519C3D6E9C3E1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.283 -0500", hash_original_field = "15AA9320328EF848673755BF1E9570A5", hash_generated_field = "6B89F75DB8D18324FDA519C3D6E9C3E1")
 
     private long mAppearingDelay = DEFAULT_DURATION;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.121 -0400", hash_original_field = "A22E36387E60BA8EEB738DFDB9781A6E", hash_generated_field = "EE2346FE7169B9AB19EA56A1B913BA60")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.284 -0500", hash_original_field = "EB600507D5DC4B177A7595EBC05176D1", hash_generated_field = "EE2346FE7169B9AB19EA56A1B913BA60")
 
     private long mDisappearingDelay = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.123 -0400", hash_original_field = "AD69818355B6F5E9EB967A4A202385FA", hash_generated_field = "B72CDDC89FC836C2633888FAF590185E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.285 -0500", hash_original_field = "F6B70F97A0BBBC294C0483CD74D07531", hash_generated_field = "B72CDDC89FC836C2633888FAF590185E")
 
     private long mChangingAppearingDelay = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.124 -0400", hash_original_field = "51E19A1306CC67939DEB066B90A6AA30", hash_generated_field = "A8B24D136EA5EC6890818CC10AD17C05")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.286 -0500", hash_original_field = "6870591B4CF9194694FB70D98FE7173F", hash_generated_field = "A8B24D136EA5EC6890818CC10AD17C05")
 
     private long mChangingDisappearingDelay = DEFAULT_DURATION;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.125 -0400", hash_original_field = "D4E1B66EF88324ED6FA8088CEB4CBE14", hash_generated_field = "715370DF92240EF0021A1CA25FFC6060")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.286 -0500", hash_original_field = "C69E40C26ABC3CD2EE37272CE52B66A8", hash_generated_field = "715370DF92240EF0021A1CA25FFC6060")
 
     private long mChangingAppearingStagger = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.126 -0400", hash_original_field = "C9AB7CA6788BC42432306ED5D9FA4751", hash_generated_field = "95B0E8048A3A312DC3734A9E265C8176")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.287 -0500", hash_original_field = "1C9A58E46D3413ECE51DD1780CDEA3FD", hash_generated_field = "95B0E8048A3A312DC3734A9E265C8176")
 
     private long mChangingDisappearingStagger = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.127 -0400", hash_original_field = "E83595FF742C9B6EB99D19F9305ABBA8", hash_generated_field = "3164C261F18E7FCC582837BE79E7E946")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.288 -0500", hash_original_field = "53D30455682B73128BC0B4EED743B79D", hash_generated_field = "3164C261F18E7FCC582837BE79E7E946")
 
     private TimeInterpolator mAppearingInterpolator = new AccelerateDecelerateInterpolator();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.127 -0400", hash_original_field = "D1BFED2C966B3C158EF425A93E73D95C", hash_generated_field = "44480B19C903085EE0CD5A188A9C0404")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.289 -0500", hash_original_field = "8F3AD636B706F6BCE0C73EE23C1B7106", hash_generated_field = "44480B19C903085EE0CD5A188A9C0404")
 
     private TimeInterpolator mDisappearingInterpolator = new AccelerateDecelerateInterpolator();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.130 -0400", hash_original_field = "9BB07EDE1DBE6A1B275E097543CFA633", hash_generated_field = "6AD343EAC627700E45ADD7F9BC2E498E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.290 -0500", hash_original_field = "A2AE8B29E642071A7FAF0789443B0A30", hash_generated_field = "6AD343EAC627700E45ADD7F9BC2E498E")
 
     private TimeInterpolator mChangingAppearingInterpolator = new DecelerateInterpolator();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.132 -0400", hash_original_field = "AB42CFE8B0A8C2974D7F84A32756AC89", hash_generated_field = "002DBF51FA8D471B18C74A9B6E24123D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.290 -0500", hash_original_field = "6AB96FAA09712C3951FA8522CF378B86", hash_generated_field = "002DBF51FA8D471B18C74A9B6E24123D")
 
     private TimeInterpolator mChangingDisappearingInterpolator = new DecelerateInterpolator();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.134 -0400", hash_original_field = "833A7AADDF3C4472D3F75449099C7417", hash_generated_field = "E1CDEDB0BCFDEF2A4DF3C7DEFC5DB240")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.291 -0500", hash_original_field = "E1330B8A29F59AE7629A4826050E9280", hash_generated_field = "E1CDEDB0BCFDEF2A4DF3C7DEFC5DB240")
 
-    private final HashMap<View, Animator> pendingAnimations = new HashMap<View, Animator>();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.135 -0400", hash_original_field = "1A6E910FE59BBBBACA171B049921002A", hash_generated_field = "8713B14FF07C44A33F515A732D4D8076")
+    private final HashMap<View, Animator> pendingAnimations =
+            new HashMap<View, Animator>();
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.292 -0500", hash_original_field = "AE55086C2A1AB873E001356F4B577B15", hash_generated_field = "8713B14FF07C44A33F515A732D4D8076")
 
-    private final LinkedHashMap<View, Animator> currentChangingAnimations = new LinkedHashMap<View, Animator>();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.137 -0400", hash_original_field = "54075758A22D2683EE0C4649851E0018", hash_generated_field = "755F172D8CEDE1F2AF3C01713E92C67E")
+    private final LinkedHashMap<View, Animator> currentChangingAnimations =
+            new LinkedHashMap<View, Animator>();
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.293 -0500", hash_original_field = "40EB9361456D86D2BE4E109759C65FA3", hash_generated_field = "755F172D8CEDE1F2AF3C01713E92C67E")
 
-    private final LinkedHashMap<View, Animator> currentAppearingAnimations = new LinkedHashMap<View, Animator>();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.138 -0400", hash_original_field = "0F0C1A65AE21602FD367A69818E8A1E7", hash_generated_field = "81FCC6D3A7C9183D354AEB95CEBC1072")
+    private final LinkedHashMap<View, Animator> currentAppearingAnimations =
+            new LinkedHashMap<View, Animator>();
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.294 -0500", hash_original_field = "66F4D0544BDC0696F122543A3C831417", hash_generated_field = "81FCC6D3A7C9183D354AEB95CEBC1072")
 
-    private final LinkedHashMap<View, Animator> currentDisappearingAnimations = new LinkedHashMap<View, Animator>();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.139 -0400", hash_original_field = "1FEEE2ED7992F5B46B7D29EC9654E64D", hash_generated_field = "41A143D43A4B7FD3193B7EDB883D2AE9")
+    private final LinkedHashMap<View, Animator> currentDisappearingAnimations =
+            new LinkedHashMap<View, Animator>();
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.295 -0500", hash_original_field = "DBFEBE51CE6DFDCC1EDE6A540F6971E5", hash_generated_field = "41A143D43A4B7FD3193B7EDB883D2AE9")
 
-    private final HashMap<View, View.OnLayoutChangeListener> layoutChangeListenerMap = new HashMap<View, View.OnLayoutChangeListener>();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.140 -0400", hash_original_field = "6210BD7488CCE5FE8B740760087A30E6", hash_generated_field = "62799693C20798E5E433F1B0AF6A3DC5")
+    private final HashMap<View, View.OnLayoutChangeListener> layoutChangeListenerMap =
+            new HashMap<View, View.OnLayoutChangeListener>();
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.296 -0500", hash_original_field = "B59E57CCDC399C3D4E1E24DC89EEB19F", hash_generated_field = "62799693C20798E5E433F1B0AF6A3DC5")
 
     private long staggerDelay;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.142 -0400", hash_original_field = "2F2828353527044AFD6820F84A8A1FAB", hash_generated_field = "F165C7B3902835B1E7EE6F9F45B1EBD6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.297 -0500", hash_original_field = "8CC3982710C523CBC6F66C910948FFD6", hash_generated_field = "F165C7B3902835B1E7EE6F9F45B1EBD6")
 
     private ArrayList<TransitionListener> mListeners;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.143 -0400", hash_original_field = "57CB5A16236BA625AFCBA400CC996A11", hash_generated_field = "E61C51FC893874C4BB912FEBE4441512")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.298 -0500", hash_original_field = "C20731C8230F3770F75D2E852F726EE8", hash_generated_field = "E61C51FC893874C4BB912FEBE4441512")
 
     private boolean mAnimateParentHierarchy = true;
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.167 -0400", hash_original_method = "52DB630B34835349C84181A9ADA45542", hash_generated_method = "721A91E17F464E0314ADCE06D2B5B6F4")
-    public  LayoutTransition() {
-        if(defaultChangeIn == null)        
-        {
+
+
+    /**
+     * Constructs a LayoutTransition object. By default, the object will listen to layout
+     * events on any ViewGroup that it is set on and will run default animations for each
+     * type of layout event.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.299 -0500", hash_original_method = "52DB630B34835349C84181A9ADA45542", hash_generated_method = "D6FD60071C2464339504599926CC4579")
+    public LayoutTransition() {
+        if (defaultChangeIn == null) {
+            // "left" is just a placeholder; we'll put real properties/values in when needed
             PropertyValuesHolder pvhLeft = PropertyValuesHolder.ofInt("left", 0, 1);
             PropertyValuesHolder pvhTop = PropertyValuesHolder.ofInt("top", 0, 1);
             PropertyValuesHolder pvhRight = PropertyValuesHolder.ofInt("right", 0, 1);
@@ -118,6 +157,7 @@ public class LayoutTransition {
             defaultChangeOut = defaultChangeIn.clone();
             defaultChangeOut.setStartDelay(mChangingDisappearingDelay);
             defaultChangeOut.setInterpolator(mChangingDisappearingInterpolator);
+
             defaultFadeIn = ObjectAnimator.ofFloat(null, "alpha", 0f, 1f);
             defaultFadeIn.setDuration(DEFAULT_DURATION);
             defaultFadeIn.setStartDelay(mAppearingDelay);
@@ -126,519 +166,470 @@ public class LayoutTransition {
             defaultFadeOut.setDuration(DEFAULT_DURATION);
             defaultFadeOut.setStartDelay(mDisappearingDelay);
             defaultFadeOut.setInterpolator(mDisappearingInterpolator);
-        } //End block
+        }
         mChangingAppearingAnim = defaultChangeIn;
         mChangingDisappearingAnim = defaultChangeOut;
         mAppearingAnim = defaultFadeIn;
         mDisappearingAnim = defaultFadeOut;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.172 -0400", hash_original_method = "24394BA80BA94B39DCA5B438DC3EBDB1", hash_generated_method = "CF9B4395D785358863CAB9605D225CA9")
+    /**
+     * Sets the duration to be used by all animations of this transition object. If you want to
+     * set the duration of just one of the animations in particular, use the
+     * {@link #setDuration(int, long)} method.
+     *
+     * @param duration The length of time, in milliseconds, that the transition animations
+     * should last.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.300 -0500", hash_original_method = "24394BA80BA94B39DCA5B438DC3EBDB1", hash_generated_method = "139CBBC6BDE68B4B096EC42CE56154C3")
     public void setDuration(long duration) {
         mChangingAppearingDuration = duration;
         mChangingDisappearingDuration = duration;
         mAppearingDuration = duration;
         mDisappearingDuration = duration;
-        // ---------- Original Method ----------
-        //mChangingAppearingDuration = duration;
-        //mChangingDisappearingDuration = duration;
-        //mAppearingDuration = duration;
-        //mDisappearingDuration = duration;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.179 -0400", hash_original_method = "939FBD8B4C5590BFCAA9E14AEC15ED50", hash_generated_method = "A5FB537129437D22F2C6F067E57B2516")
+    /**
+     * Sets the start delay on one of the animation objects used by this transition. The
+     * <code>transitionType</code> parameter determines the animation whose start delay
+     * is being set.
+     *
+     * @param transitionType one of {@link #CHANGE_APPEARING}, {@link #CHANGE_DISAPPEARING},
+     * {@link #APPEARING}, or {@link #DISAPPEARING}, which determines the animation whose start
+     * delay is being set.
+     * @param delay The length of time, in milliseconds, to delay before starting the animation.
+     * @see Animator#setStartDelay(long)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.301 -0500", hash_original_method = "939FBD8B4C5590BFCAA9E14AEC15ED50", hash_generated_method = "0B2404D63C14F2FDF7CDF15FACE94E31")
     public void setStartDelay(int transitionType, long delay) {
-        addTaint(transitionType);
-switch(transitionType){
-        case CHANGE_APPEARING:
-        mChangingAppearingDelay = delay;
-        break;
-        case CHANGE_DISAPPEARING:
-        mChangingDisappearingDelay = delay;
-        break;
-        case APPEARING:
-        mAppearingDelay = delay;
-        break;
-        case DISAPPEARING:
-        mDisappearingDelay = delay;
-        break;
-}
-        // ---------- Original Method ----------
-        //switch (transitionType) {
-            //case CHANGE_APPEARING:
-                //mChangingAppearingDelay = delay;
-                //break;
-            //case CHANGE_DISAPPEARING:
-                //mChangingDisappearingDelay = delay;
-                //break;
-            //case APPEARING:
-                //mAppearingDelay = delay;
-                //break;
-            //case DISAPPEARING:
-                //mDisappearingDelay = delay;
-                //break;
-        //}
+        switch (transitionType) {
+            case CHANGE_APPEARING:
+                mChangingAppearingDelay = delay;
+                break;
+            case CHANGE_DISAPPEARING:
+                mChangingDisappearingDelay = delay;
+                break;
+            case APPEARING:
+                mAppearingDelay = delay;
+                break;
+            case DISAPPEARING:
+                mDisappearingDelay = delay;
+                break;
+        }
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.183 -0400", hash_original_method = "3F88CD33B6864BEBC3B576EB6504FB35", hash_generated_method = "A0F496CFC716432A471B8ED7D1278C20")
+    /**
+     * Gets the start delay on one of the animation objects used by this transition. The
+     * <code>transitionType</code> parameter determines the animation whose start delay
+     * is returned.
+     *
+     * @param transitionType one of {@link #CHANGE_APPEARING}, {@link #CHANGE_DISAPPEARING},
+     * {@link #APPEARING}, or {@link #DISAPPEARING}, which determines the animation whose start
+     * delay is returned.
+     * @return long The start delay of the specified animation.
+     * @see Animator#getStartDelay()
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.301 -0500", hash_original_method = "3F88CD33B6864BEBC3B576EB6504FB35", hash_generated_method = "8508466D282632DE4A1219D3A48B67BA")
     public long getStartDelay(int transitionType) {
-        addTaint(transitionType);
-switch(transitionType){
-        case CHANGE_APPEARING:
-        long var360F5CC70C78CF56662480A12D3AC783_2037508800 = (mChangingAppearingDuration);
-                long var0F5264038205EDFB1AC05FBB0E8C5E94_538506490 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_538506490;
-        case CHANGE_DISAPPEARING:
-        long var56AF8CD96606A75F6C069B0B40215186_1510334871 = (mChangingDisappearingDuration);
-                long var0F5264038205EDFB1AC05FBB0E8C5E94_265934947 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_265934947;
-        case APPEARING:
-        long var0F6CE604EBA8EF8E890C00A18FB1602E_2036884726 = (mAppearingDuration);
-                long var0F5264038205EDFB1AC05FBB0E8C5E94_1395788865 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_1395788865;
-        case DISAPPEARING:
-        long var8D74CD052B3BED431DA78EAD1063B31D_870889812 = (mDisappearingDuration);
-                long var0F5264038205EDFB1AC05FBB0E8C5E94_1658876568 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_1658876568;
-}        long varCFCD208495D565EF66E7DFF9F98764DA_900074581 = (0);
-                long var0F5264038205EDFB1AC05FBB0E8C5E94_306113137 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_306113137;
-        // ---------- Original Method ----------
-        //switch (transitionType) {
-            //case CHANGE_APPEARING:
-                //return mChangingAppearingDuration;
-            //case CHANGE_DISAPPEARING:
-                //return mChangingDisappearingDuration;
-            //case APPEARING:
-                //return mAppearingDuration;
-            //case DISAPPEARING:
-                //return mDisappearingDuration;
-        //}
-        //return 0;
+        switch (transitionType) {
+            case CHANGE_APPEARING:
+                return mChangingAppearingDuration;
+            case CHANGE_DISAPPEARING:
+                return mChangingDisappearingDuration;
+            case APPEARING:
+                return mAppearingDuration;
+            case DISAPPEARING:
+                return mDisappearingDuration;
+        }
+        // shouldn't reach here
+        return 0;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.188 -0400", hash_original_method = "2851CBF3AA331995F771441E9F6D0AAD", hash_generated_method = "7657A96A3B56109E70AF47B61010EB14")
+    /**
+     * Sets the duration on one of the animation objects used by this transition. The
+     * <code>transitionType</code> parameter determines the animation whose duration
+     * is being set.
+     *
+     * @param transitionType one of {@link #CHANGE_APPEARING}, {@link #CHANGE_DISAPPEARING},
+     * {@link #APPEARING}, or {@link #DISAPPEARING}, which determines the animation whose
+     * duration is being set.
+     * @param duration The length of time, in milliseconds, that the specified animation should run.
+     * @see Animator#setDuration(long)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.302 -0500", hash_original_method = "2851CBF3AA331995F771441E9F6D0AAD", hash_generated_method = "AF0CF4855990622955D2C8F2DA3126B4")
     public void setDuration(int transitionType, long duration) {
-        addTaint(transitionType);
-switch(transitionType){
-        case CHANGE_APPEARING:
-        mChangingAppearingDuration = duration;
-        break;
-        case CHANGE_DISAPPEARING:
-        mChangingDisappearingDuration = duration;
-        break;
-        case APPEARING:
-        mAppearingDuration = duration;
-        break;
-        case DISAPPEARING:
-        mDisappearingDuration = duration;
-        break;
-}
-        // ---------- Original Method ----------
-        //switch (transitionType) {
-            //case CHANGE_APPEARING:
-                //mChangingAppearingDuration = duration;
-                //break;
-            //case CHANGE_DISAPPEARING:
-                //mChangingDisappearingDuration = duration;
-                //break;
-            //case APPEARING:
-                //mAppearingDuration = duration;
-                //break;
-            //case DISAPPEARING:
-                //mDisappearingDuration = duration;
-                //break;
-        //}
+        switch (transitionType) {
+            case CHANGE_APPEARING:
+                mChangingAppearingDuration = duration;
+                break;
+            case CHANGE_DISAPPEARING:
+                mChangingDisappearingDuration = duration;
+                break;
+            case APPEARING:
+                mAppearingDuration = duration;
+                break;
+            case DISAPPEARING:
+                mDisappearingDuration = duration;
+                break;
+        }
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.194 -0400", hash_original_method = "F259A86CD3BB3A6D515EAAF2335DC6DD", hash_generated_method = "37445EC8F7D962F7E80E025825BBA6FF")
+    /**
+     * Gets the duration on one of the animation objects used by this transition. The
+     * <code>transitionType</code> parameter determines the animation whose duration
+     * is returned.
+     *
+     * @param transitionType one of {@link #CHANGE_APPEARING}, {@link #CHANGE_DISAPPEARING},
+     * {@link #APPEARING}, or {@link #DISAPPEARING}, which determines the animation whose
+     * duration is returned.
+     * @return long The duration of the specified animation.
+     * @see Animator#getDuration()
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.303 -0500", hash_original_method = "F259A86CD3BB3A6D515EAAF2335DC6DD", hash_generated_method = "BCEE60D56F7309AF485DEAE31950E1F5")
     public long getDuration(int transitionType) {
-        addTaint(transitionType);
-switch(transitionType){
-        case CHANGE_APPEARING:
-        long var360F5CC70C78CF56662480A12D3AC783_1277539234 = (mChangingAppearingDuration);
-                long var0F5264038205EDFB1AC05FBB0E8C5E94_685415596 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_685415596;
-        case CHANGE_DISAPPEARING:
-        long var56AF8CD96606A75F6C069B0B40215186_1909375370 = (mChangingDisappearingDuration);
-                long var0F5264038205EDFB1AC05FBB0E8C5E94_204741253 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_204741253;
-        case APPEARING:
-        long var0F6CE604EBA8EF8E890C00A18FB1602E_675412117 = (mAppearingDuration);
-                long var0F5264038205EDFB1AC05FBB0E8C5E94_1453830540 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_1453830540;
-        case DISAPPEARING:
-        long var8D74CD052B3BED431DA78EAD1063B31D_1410041036 = (mDisappearingDuration);
-                long var0F5264038205EDFB1AC05FBB0E8C5E94_1454214977 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_1454214977;
-}        long varCFCD208495D565EF66E7DFF9F98764DA_2133727531 = (0);
-                long var0F5264038205EDFB1AC05FBB0E8C5E94_2142937527 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_2142937527;
-        // ---------- Original Method ----------
-        //switch (transitionType) {
-            //case CHANGE_APPEARING:
-                //return mChangingAppearingDuration;
-            //case CHANGE_DISAPPEARING:
-                //return mChangingDisappearingDuration;
-            //case APPEARING:
-                //return mAppearingDuration;
-            //case DISAPPEARING:
-                //return mDisappearingDuration;
-        //}
-        //return 0;
+        switch (transitionType) {
+            case CHANGE_APPEARING:
+                return mChangingAppearingDuration;
+            case CHANGE_DISAPPEARING:
+                return mChangingDisappearingDuration;
+            case APPEARING:
+                return mAppearingDuration;
+            case DISAPPEARING:
+                return mDisappearingDuration;
+        }
+        // shouldn't reach here
+        return 0;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.198 -0400", hash_original_method = "DB3710D74B2FBFD7C44693C4FBA40808", hash_generated_method = "0F08A1C25BA5B8F0A6C96E94A8EBA372")
+    /**
+     * Sets the length of time to delay between starting each animation during one of the
+     * CHANGE animations.
+     *
+     * @param transitionType A value of {@link #CHANGE_APPEARING} or @link #CHANGE_DISAPPEARING}.
+     * @param duration The length of time, in milliseconds, to delay before launching the next
+     * animation in the sequence.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.304 -0500", hash_original_method = "DB3710D74B2FBFD7C44693C4FBA40808", hash_generated_method = "111B1870A075A175A5AEEA478B5AB237")
     public void setStagger(int transitionType, long duration) {
-        addTaint(transitionType);
-switch(transitionType){
-        case CHANGE_APPEARING:
-        mChangingAppearingStagger = duration;
-        break;
-        case CHANGE_DISAPPEARING:
-        mChangingDisappearingStagger = duration;
-        break;
-}
-        // ---------- Original Method ----------
-        //switch (transitionType) {
-            //case CHANGE_APPEARING:
-                //mChangingAppearingStagger = duration;
-                //break;
-            //case CHANGE_DISAPPEARING:
-                //mChangingDisappearingStagger = duration;
-                //break;
-        //}
+        switch (transitionType) {
+            case CHANGE_APPEARING:
+                mChangingAppearingStagger = duration;
+                break;
+            case CHANGE_DISAPPEARING:
+                mChangingDisappearingStagger = duration;
+                break;
+            // noop other cases
+        }
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.203 -0400", hash_original_method = "70FCFF77D9C405B5FA9E6B4579BF3D8B", hash_generated_method = "737DDC8C24E4E78815285B308144A94A")
+    /**
+     * Tets the length of time to delay between starting each animation during one of the
+     * CHANGE animations.
+     *
+     * @param transitionType A value of {@link #CHANGE_APPEARING} or @link #CHANGE_DISAPPEARING}.
+     * @return long The length of time, in milliseconds, to delay before launching the next
+     * animation in the sequence.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.305 -0500", hash_original_method = "70FCFF77D9C405B5FA9E6B4579BF3D8B", hash_generated_method = "6D42613D172E51766B0C3C2E27283690")
     public long getStagger(int transitionType) {
-        addTaint(transitionType);
-switch(transitionType){
-        case CHANGE_APPEARING:
-        long varB2B60FEA57CF92DB5EA1A0DECA4E600C_413843824 = (mChangingAppearingStagger);
-                long var0F5264038205EDFB1AC05FBB0E8C5E94_690618866 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_690618866;
-        case CHANGE_DISAPPEARING:
-        long varDB85923B2CE152F34B29DE18C7525580_1637832676 = (mChangingDisappearingStagger);
-                long var0F5264038205EDFB1AC05FBB0E8C5E94_1302255406 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_1302255406;
-}        long varCFCD208495D565EF66E7DFF9F98764DA_1941232809 = (0);
-                long var0F5264038205EDFB1AC05FBB0E8C5E94_179598440 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_179598440;
-        // ---------- Original Method ----------
-        //switch (transitionType) {
-            //case CHANGE_APPEARING:
-                //return mChangingAppearingStagger;
-            //case CHANGE_DISAPPEARING:
-                //return mChangingDisappearingStagger;
-        //}
-        //return 0;
+        switch (transitionType) {
+            case CHANGE_APPEARING:
+                return mChangingAppearingStagger;
+            case CHANGE_DISAPPEARING:
+                return mChangingDisappearingStagger;
+        }
+        // shouldn't reach here
+        return 0;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.208 -0400", hash_original_method = "2AD5234EB4F80ED9C0D5C1F0BD7735E5", hash_generated_method = "E83B3F47CAEB350521F19BC35F2C70CF")
+    /**
+     * Sets the interpolator on one of the animation objects used by this transition. The
+     * <code>transitionType</code> parameter determines the animation whose interpolator
+     * is being set.
+     *
+     * @param transitionType one of {@link #CHANGE_APPEARING}, {@link #CHANGE_DISAPPEARING},
+     * {@link #APPEARING}, or {@link #DISAPPEARING}, which determines the animation whose
+     * duration is being set.
+     * @param interpolator The interpolator that the specified animation should use.
+     * @see Animator#setInterpolator(TimeInterpolator)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.306 -0500", hash_original_method = "2AD5234EB4F80ED9C0D5C1F0BD7735E5", hash_generated_method = "2269DBFCD5437FCA81DA4790A143D0DE")
     public void setInterpolator(int transitionType, TimeInterpolator interpolator) {
-        addTaint(transitionType);
-switch(transitionType){
-        case CHANGE_APPEARING:
-        mChangingAppearingInterpolator = interpolator;
-        break;
-        case CHANGE_DISAPPEARING:
-        mChangingDisappearingInterpolator = interpolator;
-        break;
-        case APPEARING:
-        mAppearingInterpolator = interpolator;
-        break;
-        case DISAPPEARING:
-        mDisappearingInterpolator = interpolator;
-        break;
-}
-        // ---------- Original Method ----------
-        //switch (transitionType) {
-            //case CHANGE_APPEARING:
-                //mChangingAppearingInterpolator = interpolator;
-                //break;
-            //case CHANGE_DISAPPEARING:
-                //mChangingDisappearingInterpolator = interpolator;
-                //break;
-            //case APPEARING:
-                //mAppearingInterpolator = interpolator;
-                //break;
-            //case DISAPPEARING:
-                //mDisappearingInterpolator = interpolator;
-                //break;
-        //}
+        switch (transitionType) {
+            case CHANGE_APPEARING:
+                mChangingAppearingInterpolator = interpolator;
+                break;
+            case CHANGE_DISAPPEARING:
+                mChangingDisappearingInterpolator = interpolator;
+                break;
+            case APPEARING:
+                mAppearingInterpolator = interpolator;
+                break;
+            case DISAPPEARING:
+                mDisappearingInterpolator = interpolator;
+                break;
+        }
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.213 -0400", hash_original_method = "11C2A17826922B819D4ABA31B32AF7FD", hash_generated_method = "B208513DBB7FF6D82771CC5557F2A42E")
+    /**
+     * Gets the interpolator on one of the animation objects used by this transition. The
+     * <code>transitionType</code> parameter determines the animation whose interpolator
+     * is returned.
+     *
+     * @param transitionType one of {@link #CHANGE_APPEARING}, {@link #CHANGE_DISAPPEARING},
+     * {@link #APPEARING}, or {@link #DISAPPEARING}, which determines the animation whose
+     * duration is being set.
+     * @return TimeInterpolator The interpolator that the specified animation uses.
+     * @see Animator#setInterpolator(TimeInterpolator)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.307 -0500", hash_original_method = "11C2A17826922B819D4ABA31B32AF7FD", hash_generated_method = "6097A50CFE1AAE0F3F7BC0B8D1D65D63")
     public TimeInterpolator getInterpolator(int transitionType) {
-        addTaint(transitionType);
-switch(transitionType){
-        case CHANGE_APPEARING:
-TimeInterpolator var331568037575099CFB8611C266B374C3_860760157 =         mChangingAppearingInterpolator;
-        var331568037575099CFB8611C266B374C3_860760157.addTaint(taint);
-        return var331568037575099CFB8611C266B374C3_860760157;
-        case CHANGE_DISAPPEARING:
-TimeInterpolator varAA6D111352CA2F502EF88A0438C0A64B_297465758 =         mChangingDisappearingInterpolator;
-        varAA6D111352CA2F502EF88A0438C0A64B_297465758.addTaint(taint);
-        return varAA6D111352CA2F502EF88A0438C0A64B_297465758;
-        case APPEARING:
-TimeInterpolator var03E8E061C6EE0F96761AF54D0B031A0D_837631806 =         mAppearingInterpolator;
-        var03E8E061C6EE0F96761AF54D0B031A0D_837631806.addTaint(taint);
-        return var03E8E061C6EE0F96761AF54D0B031A0D_837631806;
-        case DISAPPEARING:
-TimeInterpolator varCFF24B6F2E2CCEBC82FB2CBB95DACE21_1691539927 =         mDisappearingInterpolator;
-        varCFF24B6F2E2CCEBC82FB2CBB95DACE21_1691539927.addTaint(taint);
-        return varCFF24B6F2E2CCEBC82FB2CBB95DACE21_1691539927;
-}TimeInterpolator var540C13E9E156B687226421B24F2DF178_762291024 =         null;
-        var540C13E9E156B687226421B24F2DF178_762291024.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_762291024;
-        // ---------- Original Method ----------
-        //switch (transitionType) {
-            //case CHANGE_APPEARING:
-                //return mChangingAppearingInterpolator;
-            //case CHANGE_DISAPPEARING:
-                //return mChangingDisappearingInterpolator;
-            //case APPEARING:
-                //return mAppearingInterpolator;
-            //case DISAPPEARING:
-                //return mDisappearingInterpolator;
-        //}
-        //return null;
+        switch (transitionType) {
+            case CHANGE_APPEARING:
+                return mChangingAppearingInterpolator;
+            case CHANGE_DISAPPEARING:
+                return mChangingDisappearingInterpolator;
+            case APPEARING:
+                return mAppearingInterpolator;
+            case DISAPPEARING:
+                return mDisappearingInterpolator;
+        }
+        // shouldn't reach here
+        return null;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.217 -0400", hash_original_method = "1CE02B172FBE4A7CE10D1F87669E47EA", hash_generated_method = "23274A8F6E7DE274B00CDBF4AEE41ED6")
+    /**
+     * Sets the animation used during one of the transition types that may run. Any
+     * Animator object can be used, but to be most useful in the context of layout
+     * transitions, the animation should either be a ObjectAnimator or a AnimatorSet
+     * of animations including PropertyAnimators. Also, these ObjectAnimator objects
+     * should be able to get and set values on their target objects automatically. For
+     * example, a ObjectAnimator that animates the property "left" is able to set and get the
+     * <code>left</code> property from the View objects being animated by the layout
+     * transition. The transition works by setting target objects and properties
+     * dynamically, according to the pre- and post-layoout values of those objects, so
+     * having animations that can handle those properties appropriately will work best
+     * for custom animation. The dynamic setting of values is only the case for the
+     * CHANGE animations; the APPEARING and DISAPPEARING animations are simply run with
+     * the values they have.
+     *
+     * <p>It is also worth noting that any and all animations (and their underlying
+     * PropertyValuesHolder objects) will have their start and end values set according
+     * to the pre- and post-layout values. So, for example, a custom animation on "alpha"
+     * as the CHANGE_APPEARING animation will inherit the real value of alpha on the target
+     * object (presumably 1) as its starting and ending value when the animation begins.
+     * Animations which need to use values at the beginning and end that may not match the
+     * values queried when the transition begins may need to use a different mechanism
+     * than a standard ObjectAnimator object.</p>
+     *
+     * @param transitionType one of {@link #CHANGE_APPEARING}, {@link #CHANGE_DISAPPEARING},
+     * {@link #APPEARING}, or {@link #DISAPPEARING}, which determines the animation whose
+     * duration is being set.
+     * @param animator The animation being assigned. A value of <code>null</code> means that no
+     * animation will be run for the specified transitionType.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.307 -0500", hash_original_method = "1CE02B172FBE4A7CE10D1F87669E47EA", hash_generated_method = "4C4074951E5B1E4F9398D7CFF83A1884")
     public void setAnimator(int transitionType, Animator animator) {
-        addTaint(transitionType);
-switch(transitionType){
-        case CHANGE_APPEARING:
-        mChangingAppearingAnim = animator;
-        break;
-        case CHANGE_DISAPPEARING:
-        mChangingDisappearingAnim = animator;
-        break;
-        case APPEARING:
-        mAppearingAnim = animator;
-        break;
-        case DISAPPEARING:
-        mDisappearingAnim = animator;
-        break;
-}
-        // ---------- Original Method ----------
-        //switch (transitionType) {
-            //case CHANGE_APPEARING:
-                //mChangingAppearingAnim = animator;
-                //break;
-            //case CHANGE_DISAPPEARING:
-                //mChangingDisappearingAnim = animator;
-                //break;
-            //case APPEARING:
-                //mAppearingAnim = animator;
-                //break;
-            //case DISAPPEARING:
-                //mDisappearingAnim = animator;
-                //break;
-        //}
+        switch (transitionType) {
+            case CHANGE_APPEARING:
+                mChangingAppearingAnim = animator;
+                break;
+            case CHANGE_DISAPPEARING:
+                mChangingDisappearingAnim = animator;
+                break;
+            case APPEARING:
+                mAppearingAnim = animator;
+                break;
+            case DISAPPEARING:
+                mDisappearingAnim = animator;
+                break;
+        }
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.222 -0400", hash_original_method = "FF737FAA09DE0C7945DD1E6E302C4C89", hash_generated_method = "F39A23AC97E85CC1BD14512DED068754")
+    /**
+     * Gets the animation used during one of the transition types that may run.
+     *
+     * @param transitionType one of {@link #CHANGE_APPEARING}, {@link #CHANGE_DISAPPEARING},
+     * {@link #APPEARING}, or {@link #DISAPPEARING}, which determines the animation whose
+     * duration is being set.
+     * @return Animator The animation being used for the given transition type.
+     * @see #setAnimator(int, Animator)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.308 -0500", hash_original_method = "FF737FAA09DE0C7945DD1E6E302C4C89", hash_generated_method = "C51A0AF56F6A393099373922DBD79008")
     public Animator getAnimator(int transitionType) {
-        addTaint(transitionType);
-switch(transitionType){
-        case CHANGE_APPEARING:
-Animator var0D29585A57B5CDCFCA43902220DCF7B0_264952135 =         mChangingAppearingAnim;
-        var0D29585A57B5CDCFCA43902220DCF7B0_264952135.addTaint(taint);
-        return var0D29585A57B5CDCFCA43902220DCF7B0_264952135;
-        case CHANGE_DISAPPEARING:
-Animator varF4E0372C7A803D49F0494F21921B1DA0_328456836 =         mChangingDisappearingAnim;
-        varF4E0372C7A803D49F0494F21921B1DA0_328456836.addTaint(taint);
-        return varF4E0372C7A803D49F0494F21921B1DA0_328456836;
-        case APPEARING:
-Animator varABE09B1369CBE743F2029BB63821B780_1079355844 =         mAppearingAnim;
-        varABE09B1369CBE743F2029BB63821B780_1079355844.addTaint(taint);
-        return varABE09B1369CBE743F2029BB63821B780_1079355844;
-        case DISAPPEARING:
-Animator var91452894FB20F2545760279496A05CEA_2073711516 =         mDisappearingAnim;
-        var91452894FB20F2545760279496A05CEA_2073711516.addTaint(taint);
-        return var91452894FB20F2545760279496A05CEA_2073711516;
-}Animator var540C13E9E156B687226421B24F2DF178_772102281 =         null;
-        var540C13E9E156B687226421B24F2DF178_772102281.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_772102281;
-        // ---------- Original Method ----------
-        //switch (transitionType) {
-            //case CHANGE_APPEARING:
-                //return mChangingAppearingAnim;
-            //case CHANGE_DISAPPEARING:
-                //return mChangingDisappearingAnim;
-            //case APPEARING:
-                //return mAppearingAnim;
-            //case DISAPPEARING:
-                //return mDisappearingAnim;
-        //}
-        //return null;
+        switch (transitionType) {
+            case CHANGE_APPEARING:
+                return mChangingAppearingAnim;
+            case CHANGE_DISAPPEARING:
+                return mChangingDisappearingAnim;
+            case APPEARING:
+                return mAppearingAnim;
+            case DISAPPEARING:
+                return mDisappearingAnim;
+        }
+        // shouldn't reach here
+        return null;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.236 -0400", hash_original_method = "388160589FFEE2126FAAE5CBAFC89998", hash_generated_method = "2ADDC9DE884A03C7753B4EE0C2CD35FA")
+    /**
+     * This function sets up animations on all of the views that change during layout.
+     * For every child in the parent, we create a change animation of the appropriate
+     * type (appearing or disappearing) and ask it to populate its start values from its
+     * target view. We add layout listeners to all child views and listen for changes. For
+     * those views that change, we populate the end values for those animations and start them.
+     * Animations are not run on unchanging views.
+     *
+     * @param parent The container which is undergoing an appearing or disappearing change.
+     * @param newView The view being added to or removed from the parent.
+     * @param changeReason A value of APPEARING or DISAPPEARING, indicating whether the
+     * transition is occuring because an item is being added to or removed from the parent.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.311 -0500", hash_original_method = "388160589FFEE2126FAAE5CBAFC89998", hash_generated_method = "620CC03CF597F8CBF6D5987D96E996A8")
     private void runChangeTransition(final ViewGroup parent, View newView, final int changeReason) {
-        addTaint(changeReason);
-        addTaint(newView.getTaint());
-        addTaint(parent.getTaint());
+
         Animator baseAnimator = (changeReason == APPEARING) ?
                 mChangingAppearingAnim : mChangingDisappearingAnim;
-        if(baseAnimator == null)        
-        {
+        // If the animation is null, there's nothing to do
+        if (baseAnimator == null) {
             return;
-        } //End block
+        }
+
+        // reset the inter-animation delay, in case we use it later
         staggerDelay = 0;
         final long duration = (changeReason == APPEARING) ?
                 mChangingAppearingDuration : mChangingDisappearingDuration;
-        final ViewTreeObserver observer = parent.getViewTreeObserver();
-        if(!observer.isAlive())        
-        {
+
+        final ViewTreeObserver observer = parent.getViewTreeObserver(); // used for later cleanup
+        if (!observer.isAlive()) {
+            // If the observer's not in a good state, skip the transition
             return;
-        } //End block
+        }
         int numChildren = parent.getChildCount();
-for(int i = 0;i < numChildren;++i)
-        {
+
+        for (int i = 0; i < numChildren; ++i) {
             final View child = parent.getChildAt(i);
-            if(child != newView)            
-            {
+
+            // only animate the views not being added or removed
+            if (child != newView) {
                 setupChangeAnimation(parent, changeReason, baseAnimator, duration, child);
-            } //End block
-        } //End block
-        if(mAnimateParentHierarchy)        
-        {
+            }
+        }
+        if (mAnimateParentHierarchy) {
             Animator parentAnimator = (changeReason == APPEARING) ?
                     defaultChangeIn : defaultChangeOut;
             ViewGroup tempParent = parent;
-            while
-(tempParent != null)            
-            {
+            while (tempParent != null) {
                 ViewParent parentParent = tempParent.getParent();
-                if(parentParent instanceof ViewGroup)                
-                {
+                if (parentParent instanceof ViewGroup) {
                     setupChangeAnimation((ViewGroup)parentParent, changeReason, parentAnimator,
                             duration, tempParent);
                     tempParent = (ViewGroup) parentParent;
-                } //End block
-                else
-                {
+                } else {
                     tempParent = null;
-                } //End block
-            } //End block
-        } //End block
-        observer.addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.233 -0400", hash_original_method = "6C01974BA3CD333428484527C9FBE54F", hash_generated_method = "01769087564C95B034D56395F1991CE7")
-        public boolean onPreDraw() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
-            parent.getViewTreeObserver().removeOnPreDrawListener(this);
-            int count = layoutChangeListenerMap.size();
-            if(count > 0)            
-            {
-                Collection<View> views = layoutChangeListenerMap.keySet();
-for(View view : views)
-                {
-                    View.OnLayoutChangeListener listener = layoutChangeListenerMap.get(view);
-                    view.removeOnLayoutChangeListener(listener);
-                } //End block
-            } //End block
-            layoutChangeListenerMap.clear();
-            boolean varB326B5062B2F0E69046810717534CB09_1965856518 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_142584321 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_142584321;
-            // ---------- Original Method ----------
-            //parent.getViewTreeObserver().removeOnPreDrawListener(this);
-            //int count = layoutChangeListenerMap.size();
-            //if (count > 0) {
-                    //Collection<View> views = layoutChangeListenerMap.keySet();
-                    //for (View view : views) {
-                        //View.OnLayoutChangeListener listener = layoutChangeListenerMap.get(view);
-                        //view.removeOnLayoutChangeListener(listener);
-                    //}
-                //}
-            //layoutChangeListenerMap.clear();
-            //return true;
+                }
+
+            }
         }
-});
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+
+        // This is the cleanup step. When we get this rendering event, we know that all of
+        // the appropriate animations have been set up and run. Now we can clear out the
+        // layout listeners.
+        observer.addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
+            public boolean onPreDraw() {
+                parent.getViewTreeObserver().removeOnPreDrawListener(this);
+                int count = layoutChangeListenerMap.size();
+                if (count > 0) {
+                    Collection<View> views = layoutChangeListenerMap.keySet();
+                    for (View view : views) {
+                        View.OnLayoutChangeListener listener = layoutChangeListenerMap.get(view);
+                        view.removeOnLayoutChangeListener(listener);
+                    }
+                }
+                layoutChangeListenerMap.clear();
+                return true;
+            }
+        });
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.239 -0400", hash_original_method = "5ECFD2D430BE870F40C042D01FD8A2D6", hash_generated_method = "CEE41014B49B701489653EF4BEF3638A")
+    /**
+     * This flag controls whether CHANGE_APPEARING or CHANGE_DISAPPEARING animations will
+     * cause the default changing animation to be run on the parent hierarchy as well. This allows
+     * containers of transitioning views to also transition, which may be necessary in situations
+     * where the containers bounds change between the before/after states and may clip their
+     * children during the transition animations. For example, layouts with wrap_content will
+     * adjust their bounds according to the dimensions of their children.
+     *
+     * <p>The default changing transitions animate the bounds and scroll positions of the
+     * target views. These are the animations that will run on the parent hierarchy, not
+     * the custom animations that happen to be set on the transition. This allows custom
+     * behavior for the children of the transitioning container, but uses standard behavior
+     * of resizing/rescrolling on any changing parents.
+     *
+     * @param animateParentHierarchy A boolean value indicating whether the parents of
+     * transitioning views should also be animated during the transition. Default value is true.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.312 -0500", hash_original_method = "5ECFD2D430BE870F40C042D01FD8A2D6", hash_generated_method = "83C54A14C0718ED0F9CD4ADC14FF78AB")
     public void setAnimateParentHierarchy(boolean animateParentHierarchy) {
         mAnimateParentHierarchy = animateParentHierarchy;
-        // ---------- Original Method ----------
-        //mAnimateParentHierarchy = animateParentHierarchy;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.257 -0400", hash_original_method = "108854515942B7EF6A63499B84E31466", hash_generated_method = "DB554CE1174DC372D2649329C61FFB43")
+    /**
+     * Utility function called by runChangingTransition for both the children and the parent
+     * hierarchy.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.319 -0500", hash_original_method = "108854515942B7EF6A63499B84E31466", hash_generated_method = "08E07596C8E954E87ED92336E5211220")
     private void setupChangeAnimation(final ViewGroup parent, final int changeReason,
             Animator baseAnimator, final long duration, final View child) {
-        addTaint(child.getTaint());
-        addTaint(duration);
-        addTaint(baseAnimator.getTaint());
-        addTaint(changeReason);
-        addTaint(parent.getTaint());
-        if(layoutChangeListenerMap.get(child) != null)        
-        {
+
+        // If we already have a listener for this child, then we've already set up the
+        // changing animation we need. Multiple calls for a child may occur when several
+        // add/remove operations are run at once on a container; each one will trigger
+        // changes for the existing children in the container.
+        if (layoutChangeListenerMap.get(child) != null) {
             return;
-        } //End block
+        }
+
+        // Make a copy of the appropriate animation
         final Animator anim = baseAnimator.clone();
+
+        // Set the target object for the animation
         anim.setTarget(child);
+
+        // A ObjectAnimator (or AnimatorSet of them) can extract start values from
+        // its target object
         anim.setupStartValues();
+
+        // If there's an animation running on this view already, cancel it
         Animator currentAnimation = pendingAnimations.get(child);
-        if(currentAnimation != null)        
-        {
+        if (currentAnimation != null) {
             currentAnimation.cancel();
             pendingAnimations.remove(child);
-        } //End block
+        }
+        // Cache the animation in case we need to cancel it later
         pendingAnimations.put(child, anim);
+
+        // For the animations which don't get started, we have to have a means of
+        // removing them from the cache, lest we leak them and their target objects.
+        // We run an animator for the default duration+100 (an arbitrary time, but one
+        // which should far surpass the delay between setting them up here and
+        // handling layout events which start them.
         ValueAnimator pendingAnimRemover = ValueAnimator.ofFloat(0f, 1f).
                 setDuration(duration + 100);
-        pendingAnimRemover.addListener(new AnimatorListenerAdapter() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.242 -0400", hash_original_method = "81B18D5FBD0385E26F1E055D2C44BFFA", hash_generated_method = "1079FCB0C15F1BC3A19D8110EC8505CE")
-        @Override
-        public void onAnimationEnd(Animator animation) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
-            addTaint(animation.getTaint());
-            pendingAnimations.remove(child);
-            // ---------- Original Method ----------
-            //pendingAnimations.remove(child);
-        }
-});
+        pendingAnimRemover.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                pendingAnimations.remove(child);
+            }
+        });
         pendingAnimRemover.start();
+
+        // Add a listener to track layout changes on this view. If we don't get a callback,
+        // then there's nothing to animate.
         final View.OnLayoutChangeListener listener = new View.OnLayoutChangeListener() {
             public void onLayoutChange(View v, int left, int top, int right, int bottom,
                     int oldLeft, int oldTop, int oldRight, int oldBottom) {
+
+                // Tell the animation to extract end values from the changed object
                 anim.setupEndValues();
                 if (anim instanceof ValueAnimator) {
                     boolean valuesDiffer = false;
@@ -658,6 +649,7 @@ for(View view : views)
                         return;
                     }
                 }
+
                 long startDelay;
                 if (changeReason == APPEARING) {
                     startDelay = mChangingAppearingDelay + staggerDelay;
@@ -668,6 +660,7 @@ for(View view : views)
                 }
                 anim.setStartDelay(startDelay);
                 anim.setDuration(duration);
+
                 Animator prevAnimation = currentChangingAnimations.get(child);
                 if (prevAnimation != null) {
                     prevAnimation.cancel();
@@ -676,463 +669,198 @@ for(View view : views)
                 if (pendingAnimation != null) {
                     pendingAnimations.remove(child);
                 }
+                // Cache the animation in case we need to cancel it later
                 currentChangingAnimations.put(child, anim);
+
                 parent.requestTransitionStart(LayoutTransition.this);
+
+                // this only removes listeners whose views changed - must clear the
+                // other listeners later
                 child.removeOnLayoutChangeListener(this);
                 layoutChangeListenerMap.remove(child);
             }
         };
-        anim.addListener(new AnimatorListenerAdapter() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.247 -0400", hash_original_method = "E2B93FC024F741AE866ED6DC48631B6A", hash_generated_method = "E0A2CCFEBA9C8C648165E24C5108227E")
-        @Override
-        public void onAnimationStart(Animator animator) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
-            addTaint(animator.getTaint());
-            if(mListeners != null)            
-            {
-for(TransitionListener listener : mListeners)
-                {
-                    listener.startTransition(LayoutTransition.this, parent, child,
+        // Remove the animation from the cache when it ends
+        anim.addListener(new AnimatorListenerAdapter() {
+
+            @Override
+            public void onAnimationStart(Animator animator) {
+                if (mListeners != null) {
+                    for (TransitionListener listener : mListeners) {
+                        listener.startTransition(LayoutTransition.this, parent, child,
                                 changeReason == APPEARING ?
                                         CHANGE_APPEARING : CHANGE_DISAPPEARING);
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            //if (mListeners != null) {
-                    //for (TransitionListener listener : mListeners) {
-                        //listener.startTransition(LayoutTransition.this, parent, child,
-                                //changeReason == APPEARING ?
-                                        //CHANGE_APPEARING : CHANGE_DISAPPEARING);
-                    //}
-                //}
-        }
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.250 -0400", hash_original_method = "06655B4777E7383270776E7CEC1CCF7E", hash_generated_method = "8D5917F49C43A6647740D8F4530A3A1A")
-        @Override
-        public void onAnimationCancel(Animator animator) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
-            addTaint(animator.getTaint());
-            child.removeOnLayoutChangeListener(listener);
-            layoutChangeListenerMap.remove(child);
-            // ---------- Original Method ----------
-            //child.removeOnLayoutChangeListener(listener);
-            //layoutChangeListenerMap.remove(child);
-        }
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.253 -0400", hash_original_method = "DE5B5D0FB75885026A5DD6EBE7BC56A2", hash_generated_method = "91D9FC1C871CF46CE1C4B14181A8D322")
-        @Override
-        public void onAnimationEnd(Animator animator) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
-            addTaint(animator.getTaint());
-            currentChangingAnimations.remove(child);
-            if(mListeners != null)            
-            {
-for(TransitionListener listener : mListeners)
-                {
-                    listener.endTransition(LayoutTransition.this, parent, child,
+                    }
+                }
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animator) {
+                child.removeOnLayoutChangeListener(listener);
+                layoutChangeListenerMap.remove(child);
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animator) {
+                currentChangingAnimations.remove(child);
+                if (mListeners != null) {
+                    for (TransitionListener listener : mListeners) {
+                        listener.endTransition(LayoutTransition.this, parent, child,
                                 changeReason == APPEARING ?
                                         CHANGE_APPEARING : CHANGE_DISAPPEARING);
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            //currentChangingAnimations.remove(child);
-            //if (mListeners != null) {
-                    //for (TransitionListener listener : mListeners) {
-                        //listener.endTransition(LayoutTransition.this, parent, child,
-                                //changeReason == APPEARING ?
-                                        //CHANGE_APPEARING : CHANGE_DISAPPEARING);
-                    //}
-                //}
-        }
-});
+                    }
+                }
+            }
+        });
+
         child.addOnLayoutChangeListener(listener);
+        // cache the listener for later removal
         layoutChangeListenerMap.put(child, listener);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.262 -0400", hash_original_method = "7222BE89A56886A0CF62DC8766C00475", hash_generated_method = "58EB62EC444DDE7276F344F5BFB5B913")
+    /**
+     * Starts the animations set up for a CHANGING transition. We separate the setup of these
+     * animations from actually starting them, to avoid side-effects that starting the animations
+     * may have on the properties of the affected objects. After setup, we tell the affected parent
+     * that this transition should be started. The parent informs its ViewAncestor, which then
+     * starts the transition after the current layout/measurement phase, just prior to drawing
+     * the view hierarchy.
+     *
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.320 -0500", hash_original_method = "7222BE89A56886A0CF62DC8766C00475", hash_generated_method = "FAC29BD5275371BFCD9C73BB60490696")
     public void startChangingAnimations() {
-        LinkedHashMap<View, Animator> currentAnimCopy = (LinkedHashMap<View, Animator>) currentChangingAnimations.clone();
-for(Animator anim : currentAnimCopy.values())
-        {
-            if(anim instanceof ObjectAnimator)            
-            {
+        LinkedHashMap<View, Animator> currentAnimCopy =
+                (LinkedHashMap<View, Animator>) currentChangingAnimations.clone();
+        for (Animator anim : currentAnimCopy.values()) {
+            if (anim instanceof ObjectAnimator) {
                 ((ObjectAnimator) anim).setCurrentPlayTime(0);
-            } //End block
+            }
             anim.start();
-        } //End block
-        // ---------- Original Method ----------
-        //LinkedHashMap<View, Animator> currentAnimCopy =
-                //(LinkedHashMap<View, Animator>) currentChangingAnimations.clone();
-        //for (Animator anim : currentAnimCopy.values()) {
-            //if (anim instanceof ObjectAnimator) {
-                //((ObjectAnimator) anim).setCurrentPlayTime(0);
-            //}
-            //anim.start();
-        //}
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.264 -0400", hash_original_method = "7BA742550F1E1298AB8FE77F45C4383D", hash_generated_method = "18E4A07428D8738302E55F2CA66BB0BD")
+    /**
+     * Ends the animations that are set up for a CHANGING transition. This is a variant of
+     * startChangingAnimations() which is called when the window the transition is playing in
+     * is not visible. We need to make sure the animations put their targets in their end states
+     * and that the transition finishes to remove any mid-process state (such as isRunning()).
+     *
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.321 -0500", hash_original_method = "7BA742550F1E1298AB8FE77F45C4383D", hash_generated_method = "DDAB7213622B60870B3DDF4B8F9529AA")
     public void endChangingAnimations() {
-        LinkedHashMap<View, Animator> currentAnimCopy = (LinkedHashMap<View, Animator>) currentChangingAnimations.clone();
-for(Animator anim : currentAnimCopy.values())
-        {
+        LinkedHashMap<View, Animator> currentAnimCopy =
+                (LinkedHashMap<View, Animator>) currentChangingAnimations.clone();
+        for (Animator anim : currentAnimCopy.values()) {
             anim.start();
             anim.end();
-        } //End block
-        // ---------- Original Method ----------
-        //LinkedHashMap<View, Animator> currentAnimCopy =
-                //(LinkedHashMap<View, Animator>) currentChangingAnimations.clone();
-        //for (Animator anim : currentAnimCopy.values()) {
-            //anim.start();
-            //anim.end();
-        //}
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.266 -0400", hash_original_method = "8C9364165F532DD8BD43415668542398", hash_generated_method = "F2F80A57C16822F2CCD147BAF1820E61")
+    /**
+     * Returns true if animations are running which animate layout-related properties. This
+     * essentially means that either CHANGE_APPEARING or CHANGE_DISAPPEARING animations
+     * are running, since these animations operate on layout-related properties.
+     *
+     * @return true if CHANGE_APPEARING or CHANGE_DISAPPEARING animations are currently
+     * running.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.321 -0500", hash_original_method = "8C9364165F532DD8BD43415668542398", hash_generated_method = "D88BD879963879B9E1B8DEA5D63DE73C")
     public boolean isChangingLayout() {
-        boolean var8CFDE1B1575D1F7869D0994A7B5C63D5_2045830725 = ((currentChangingAnimations.size() > 0));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1313376339 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1313376339;
-        // ---------- Original Method ----------
-        //return (currentChangingAnimations.size() > 0);
+        return (currentChangingAnimations.size() > 0);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.271 -0400", hash_original_method = "7F683046BB72ECC23A172B1D3B81B266", hash_generated_method = "AE02B5C205F6FF10A049A7BC1DBC9577")
+    /**
+     * Returns true if any of the animations in this transition are currently running.
+     *
+     * @return true if any animations in the transition are running.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.322 -0500", hash_original_method = "7F683046BB72ECC23A172B1D3B81B266", hash_generated_method = "56869A7660E1C3AD74C0D688406DECD5")
     public boolean isRunning() {
-        boolean var89C9AB021B50A13092EFF1DF3FF89A96_645828448 = ((currentChangingAnimations.size() > 0 || currentAppearingAnimations.size() > 0 ||
-                currentDisappearingAnimations.size() > 0));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_262242901 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_262242901;
-        // ---------- Original Method ----------
-        //return (currentChangingAnimations.size() > 0 || currentAppearingAnimations.size() > 0 ||
-                //currentDisappearingAnimations.size() > 0);
+        return (currentChangingAnimations.size() > 0 || currentAppearingAnimations.size() > 0 ||
+                currentDisappearingAnimations.size() > 0);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.273 -0400", hash_original_method = "2E46A59670A61A0AF64FD97BDAF7B728", hash_generated_method = "1D55E8979FD40241915B035DFE60288E")
+    /**
+     * Cancels the currently running transition. Note that we cancel() the changing animations
+     * but end() the visibility animations. This is because this method is currently called
+     * in the context of starting a new transition, so we want to move things from their mid-
+     * transition positions, but we want them to have their end-transition visibility.
+     *
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.323 -0500", hash_original_method = "2E46A59670A61A0AF64FD97BDAF7B728", hash_generated_method = "828BE72ADF06D717936B8246B18C9535")
     public void cancel() {
-        if(currentChangingAnimations.size() > 0)        
-        {
-            LinkedHashMap<View, Animator> currentAnimCopy = (LinkedHashMap<View, Animator>) currentChangingAnimations.clone();
-for(Animator anim : currentAnimCopy.values())
-            {
+        if (currentChangingAnimations.size() > 0) {
+            LinkedHashMap<View, Animator> currentAnimCopy =
+                    (LinkedHashMap<View, Animator>) currentChangingAnimations.clone();
+            for (Animator anim : currentAnimCopy.values()) {
                 anim.cancel();
-            } //End block
+            }
             currentChangingAnimations.clear();
-        } //End block
-        if(currentAppearingAnimations.size() > 0)        
-        {
-            LinkedHashMap<View, Animator> currentAnimCopy = (LinkedHashMap<View, Animator>) currentAppearingAnimations.clone();
-for(Animator anim : currentAnimCopy.values())
-            {
+        }
+        if (currentAppearingAnimations.size() > 0) {
+            LinkedHashMap<View, Animator> currentAnimCopy =
+                    (LinkedHashMap<View, Animator>) currentAppearingAnimations.clone();
+            for (Animator anim : currentAnimCopy.values()) {
                 anim.end();
-            } //End block
+            }
             currentAppearingAnimations.clear();
-        } //End block
-        if(currentDisappearingAnimations.size() > 0)        
-        {
-            LinkedHashMap<View, Animator> currentAnimCopy = (LinkedHashMap<View, Animator>) currentDisappearingAnimations.clone();
-for(Animator anim : currentAnimCopy.values())
-            {
+        }
+        if (currentDisappearingAnimations.size() > 0) {
+            LinkedHashMap<View, Animator> currentAnimCopy =
+                    (LinkedHashMap<View, Animator>) currentDisappearingAnimations.clone();
+            for (Animator anim : currentAnimCopy.values()) {
                 anim.end();
-            } //End block
+            }
             currentDisappearingAnimations.clear();
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.278 -0400", hash_original_method = "19B870791205108BA3B602A2E8CB5138", hash_generated_method = "E0E967CC19174281F40087590A5817C5")
+    /**
+     * Cancels the specified type of transition. Note that we cancel() the changing animations
+     * but end() the visibility animations. This is because this method is currently called
+     * in the context of starting a new transition, so we want to move things from their mid-
+     * transition positions, but we want them to have their end-transition visibility.
+     *
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.324 -0500", hash_original_method = "19B870791205108BA3B602A2E8CB5138", hash_generated_method = "ED4F98EBA2B28BCF9848A8F63679AE29")
     public void cancel(int transitionType) {
-        addTaint(transitionType);
-switch(transitionType){
-        case CHANGE_APPEARING:
-        case CHANGE_DISAPPEARING:
-        if(currentChangingAnimations.size() > 0)        
-        {
-            LinkedHashMap<View, Animator> currentAnimCopy = (LinkedHashMap<View, Animator>) currentChangingAnimations.clone();
-for(Animator anim : currentAnimCopy.values())
-            {
-                anim.cancel();
-            } //End block
-            currentChangingAnimations.clear();
-        } //End block
-        break;
-        case APPEARING:
-        if(currentAppearingAnimations.size() > 0)        
-        {
-            LinkedHashMap<View, Animator> currentAnimCopy = (LinkedHashMap<View, Animator>) currentAppearingAnimations.clone();
-for(Animator anim : currentAnimCopy.values())
-            {
-                anim.end();
-            } //End block
-            currentAppearingAnimations.clear();
-        } //End block
-        break;
-        case DISAPPEARING:
-        if(currentDisappearingAnimations.size() > 0)        
-        {
-            LinkedHashMap<View, Animator> currentAnimCopy = (LinkedHashMap<View, Animator>) currentDisappearingAnimations.clone();
-for(Animator anim : currentAnimCopy.values())
-            {
-                anim.end();
-            } //End block
-            currentDisappearingAnimations.clear();
-        } //End block
-        break;
-}
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.291 -0400", hash_original_method = "071036D6A0EA050ACF09A35752DC1D52", hash_generated_method = "94A9C3BDD89E9DB1E2701526F96BB6D3")
-    private void runAppearingTransition(final ViewGroup parent, final View child) {
-        addTaint(child.getTaint());
-        addTaint(parent.getTaint());
-        Animator currentAnimation = currentDisappearingAnimations.get(child);
-        if(currentAnimation != null)        
-        {
-            currentAnimation.cancel();
-        } //End block
-        if(mAppearingAnim == null)        
-        {
-            if(mListeners != null)            
-            {
-for(TransitionListener listener : mListeners)
-                {
-                    listener.endTransition(LayoutTransition.this, parent, child, APPEARING);
-                } //End block
-            } //End block
-            return;
-        } //End block
-        Animator anim = mAppearingAnim.clone();
-        anim.setTarget(child);
-        anim.setStartDelay(mAppearingDelay);
-        anim.setDuration(mAppearingDuration);
-        if(anim instanceof ObjectAnimator)        
-        {
-            ((ObjectAnimator) anim).setCurrentPlayTime(0);
-        } //End block
-        if(mListeners != null)        
-        {
-            anim.addListener(new AnimatorListenerAdapter() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.289 -0400", hash_original_method = "494D571A7E2D39F79DD71B48D4E2ACB8", hash_generated_method = "63635027932472A32EB56E028843331F")
-        @Override
-        public void onAnimationEnd(Animator anim) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
-            addTaint(anim.getTaint());
-            currentAppearingAnimations.remove(child);
-for(TransitionListener listener : mListeners)
-            {
-                listener.endTransition(LayoutTransition.this, parent, child, APPEARING);
-            } //End block
-            // ---------- Original Method ----------
-            //currentAppearingAnimations.remove(child);
-            //for (TransitionListener listener : mListeners) {
-                        //listener.endTransition(LayoutTransition.this, parent, child, APPEARING);
-                    //}
+        switch (transitionType) {
+            case CHANGE_APPEARING:
+            case CHANGE_DISAPPEARING:
+                if (currentChangingAnimations.size() > 0) {
+                    LinkedHashMap<View, Animator> currentAnimCopy =
+                            (LinkedHashMap<View, Animator>) currentChangingAnimations.clone();
+                    for (Animator anim : currentAnimCopy.values()) {
+                        anim.cancel();
+                    }
+                    currentChangingAnimations.clear();
+                }
+                break;
+            case APPEARING:
+                if (currentAppearingAnimations.size() > 0) {
+                    LinkedHashMap<View, Animator> currentAnimCopy =
+                            (LinkedHashMap<View, Animator>) currentAppearingAnimations.clone();
+                    for (Animator anim : currentAnimCopy.values()) {
+                        anim.end();
+                    }
+                    currentAppearingAnimations.clear();
+                }
+                break;
+            case DISAPPEARING:
+                if (currentDisappearingAnimations.size() > 0) {
+                    LinkedHashMap<View, Animator> currentAnimCopy =
+                            (LinkedHashMap<View, Animator>) currentDisappearingAnimations.clone();
+                    for (Animator anim : currentAnimCopy.values()) {
+                        anim.end();
+                    }
+                    currentDisappearingAnimations.clear();
+                }
+                break;
         }
-});
-        } //End block
-        currentAppearingAnimations.put(child, anim);
-        anim.start();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.303 -0400", hash_original_method = "202CDBACC5F0926CC1D7E1540267464D", hash_generated_method = "1D79B123659B108ABE1A8C692FCDDCF2")
-    private void runDisappearingTransition(final ViewGroup parent, final View child) {
-        addTaint(child.getTaint());
-        addTaint(parent.getTaint());
-        Animator currentAnimation = currentAppearingAnimations.get(child);
-        if(currentAnimation != null)        
-        {
-            currentAnimation.cancel();
-        } //End block
-        if(mDisappearingAnim == null)        
-        {
-            if(mListeners != null)            
-            {
-for(TransitionListener listener : mListeners)
-                {
-                    listener.endTransition(LayoutTransition.this, parent, child, DISAPPEARING);
-                } //End block
-            } //End block
-            return;
-        } //End block
-        Animator anim = mDisappearingAnim.clone();
-        anim.setStartDelay(mDisappearingDelay);
-        anim.setDuration(mDisappearingDuration);
-        anim.setTarget(child);
-        if(mListeners != null)        
-        {
-            anim.addListener(new AnimatorListenerAdapter() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.299 -0400", hash_original_method = "29C17A3026C40266B26AB145A51034B4", hash_generated_method = "CC89B6A493F71D7A7D42EC97958C5C2A")
-        @Override
-        public void onAnimationEnd(Animator anim) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
-            addTaint(anim.getTaint());
-            currentDisappearingAnimations.remove(child);
-for(TransitionListener listener : mListeners)
-            {
-                listener.endTransition(LayoutTransition.this, parent, child, DISAPPEARING);
-            } //End block
-            // ---------- Original Method ----------
-            //currentDisappearingAnimations.remove(child);
-            //for (TransitionListener listener : mListeners) {
-                        //listener.endTransition(LayoutTransition.this, parent, child, DISAPPEARING);
-                    //}
-        }
-});
-        } //End block
-        if(anim instanceof ObjectAnimator)        
-        {
-            ((ObjectAnimator) anim).setCurrentPlayTime(0);
-        } //End block
-        currentDisappearingAnimations.put(child, anim);
-        anim.start();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.309 -0400", hash_original_method = "05533C05F33D5C5B655A5BABA4CC6F65", hash_generated_method = "9006C296C31DA364D85CE38CD4B03B17")
-    public void addChild(ViewGroup parent, View child) {
-        addTaint(child.getTaint());
-        addTaint(parent.getTaint());
-        cancel(DISAPPEARING);
-        cancel(CHANGE_APPEARING);
-        if(mListeners != null)        
-        {
-for(TransitionListener listener : mListeners)
-            {
-                listener.startTransition(this, parent, child, APPEARING);
-            } //End block
-        } //End block
-        runChangeTransition(parent, child, APPEARING);
-        runAppearingTransition(parent, child);
-        // ---------- Original Method ----------
-        //cancel(DISAPPEARING);
-        //cancel(CHANGE_APPEARING);
-        //if (mListeners != null) {
-            //for (TransitionListener listener : mListeners) {
-                //listener.startTransition(this, parent, child, APPEARING);
-            //}
-        //}
-        //runChangeTransition(parent, child, APPEARING);
-        //runAppearingTransition(parent, child);
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.312 -0400", hash_original_method = "5867E97EE566113A4AD2D7416A9B4CB1", hash_generated_method = "38BEB20D0EC47F8ABABFA70422C181EE")
-    public void showChild(ViewGroup parent, View child) {
-        addTaint(child.getTaint());
-        addTaint(parent.getTaint());
-        addChild(parent, child);
-        // ---------- Original Method ----------
-        //addChild(parent, child);
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.315 -0400", hash_original_method = "E23F457F66AC508EC3728A00193F4832", hash_generated_method = "869D8AE3398CB57F7C69061799E703A3")
-    public void removeChild(ViewGroup parent, View child) {
-        addTaint(child.getTaint());
-        addTaint(parent.getTaint());
-        cancel(APPEARING);
-        cancel(CHANGE_DISAPPEARING);
-        if(mListeners != null)        
-        {
-for(TransitionListener listener : mListeners)
-            {
-                listener.startTransition(this, parent, child, DISAPPEARING);
-            } //End block
-        } //End block
-        runChangeTransition(parent, child, DISAPPEARING);
-        runDisappearingTransition(parent, child);
-        // ---------- Original Method ----------
-        //cancel(APPEARING);
-        //cancel(CHANGE_DISAPPEARING);
-        //if (mListeners != null) {
-            //for (TransitionListener listener : mListeners) {
-                //listener.startTransition(this, parent, child, DISAPPEARING);
-            //}
-        //}
-        //runChangeTransition(parent, child, DISAPPEARING);
-        //runDisappearingTransition(parent, child);
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.318 -0400", hash_original_method = "59CF94EEC1336BEEB8FFF5467E6ED5F9", hash_generated_method = "85C90B8BAF899E593B220CBF90237093")
-    public void hideChild(ViewGroup parent, View child) {
-        addTaint(child.getTaint());
-        addTaint(parent.getTaint());
-        removeChild(parent, child);
-        // ---------- Original Method ----------
-        //removeChild(parent, child);
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.322 -0400", hash_original_method = "167EED27AB5F7469F2545513C43EBDC4", hash_generated_method = "A9FB58B1412AB9DB62334609B1D7CB5C")
-    public void addTransitionListener(TransitionListener listener) {
-        addTaint(listener.getTaint());
-        if(mListeners == null)        
-        {
-            mListeners = new ArrayList<TransitionListener>();
-        } //End block
-        mListeners.add(listener);
-        // ---------- Original Method ----------
-        //if (mListeners == null) {
-            //mListeners = new ArrayList<TransitionListener>();
-        //}
-        //mListeners.add(listener);
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.324 -0400", hash_original_method = "CD0DE6419C69039B8FDEE8C2D5BC497D", hash_generated_method = "9546D9F32DC5F91E191823FA4922C6C0")
-    public void removeTransitionListener(TransitionListener listener) {
-        addTaint(listener.getTaint());
-        if(mListeners == null)        
-        {
-            return;
-        } //End block
-        mListeners.remove(listener);
-        // ---------- Original Method ----------
-        //if (mListeners == null) {
-            //return;
-        //}
-        //mListeners.remove(listener);
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.327 -0400", hash_original_method = "F0DD3EC0CE94CE6304D7C3009A3E39A6", hash_generated_method = "FD694B1CFCC5A90927B6AB561503BD0D")
-    public List<TransitionListener> getTransitionListeners() {
-List<TransitionListener> var6F226E74DAC534764C2244A2BF49F27C_1562826823 =         mListeners;
-        var6F226E74DAC534764C2244A2BF49F27C_1562826823.addTaint(taint);
-        return var6F226E74DAC534764C2244A2BF49F27C_1562826823;
-        // ---------- Original Method ----------
-        //return mListeners;
     }
 
     
@@ -1146,33 +874,201 @@ List<TransitionListener> var6F226E74DAC534764C2244A2BF49F27C_1562826823 =       
         public void endTransition(LayoutTransition transition, ViewGroup container,
                 View view, int transitionType);
     }
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.329 -0400", hash_original_field = "D65A82112F44124A2B9FDE00A6246728", hash_generated_field = "E63A0521AAA8C6DC4279BA44E098FD23")
 
-    public static final int CHANGE_APPEARING = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.330 -0400", hash_original_field = "6F62B99E30E6B4CA586C12E8B13A3B4A", hash_generated_field = "A5E247EB4D6439D9A98E49F907931252")
+    /**
+     * This method runs the animation that makes an added item appear.
+     *
+     * @param parent The ViewGroup to which the View is being added.
+     * @param child The View being added to the ViewGroup.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.326 -0500", hash_original_method = "071036D6A0EA050ACF09A35752DC1D52", hash_generated_method = "AD15DD92D58E9CC695BBD917D3BF7904")
+    private void runAppearingTransition(final ViewGroup parent, final View child) {
+        Animator currentAnimation = currentDisappearingAnimations.get(child);
+        if (currentAnimation != null) {
+            currentAnimation.cancel();
+        }
+        if (mAppearingAnim == null) {
+            if (mListeners != null) {
+                for (TransitionListener listener : mListeners) {
+                    listener.endTransition(LayoutTransition.this, parent, child, APPEARING);
+                }
+            }
+            return;
+        }
+        Animator anim = mAppearingAnim.clone();
+        anim.setTarget(child);
+        anim.setStartDelay(mAppearingDelay);
+        anim.setDuration(mAppearingDuration);
+        if (anim instanceof ObjectAnimator) {
+            ((ObjectAnimator) anim).setCurrentPlayTime(0);
+        }
+        if (mListeners != null) {
+            anim.addListener(new AnimatorListenerAdapter() {
+                @Override
+                public void onAnimationEnd(Animator anim) {
+                    currentAppearingAnimations.remove(child);
+                    for (TransitionListener listener : mListeners) {
+                        listener.endTransition(LayoutTransition.this, parent, child, APPEARING);
+                    }
+                }
+            });
+        }
+        currentAppearingAnimations.put(child, anim);
+        anim.start();
+    }
 
-    public static final int CHANGE_DISAPPEARING = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.332 -0400", hash_original_field = "1C2C691552DB12B6637FB16180CB8DEE", hash_generated_field = "F22B7CC5AA7D7298C87C59E48B6986CB")
+    /**
+     * This method runs the animation that makes a removed item disappear.
+     *
+     * @param parent The ViewGroup from which the View is being removed.
+     * @param child The View being removed from the ViewGroup.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.328 -0500", hash_original_method = "202CDBACC5F0926CC1D7E1540267464D", hash_generated_method = "CDF12FD46F3BA8C8CF298C4F939667E9")
+    private void runDisappearingTransition(final ViewGroup parent, final View child) {
+        Animator currentAnimation = currentAppearingAnimations.get(child);
+        if (currentAnimation != null) {
+            currentAnimation.cancel();
+        }
+        if (mDisappearingAnim == null) {
+            if (mListeners != null) {
+                for (TransitionListener listener : mListeners) {
+                    listener.endTransition(LayoutTransition.this, parent, child, DISAPPEARING);
+                }
+            }
+            return;
+        }
+        Animator anim = mDisappearingAnim.clone();
+        anim.setStartDelay(mDisappearingDelay);
+        anim.setDuration(mDisappearingDuration);
+        anim.setTarget(child);
+        if (mListeners != null) {
+            anim.addListener(new AnimatorListenerAdapter() {
+                @Override
+                public void onAnimationEnd(Animator anim) {
+                    currentDisappearingAnimations.remove(child);
+                    for (TransitionListener listener : mListeners) {
+                        listener.endTransition(LayoutTransition.this, parent, child, DISAPPEARING);
+                    }
+                }
+            });
+        }
+        if (anim instanceof ObjectAnimator) {
+            ((ObjectAnimator) anim).setCurrentPlayTime(0);
+        }
+        currentDisappearingAnimations.put(child, anim);
+        anim.start();
+    }
 
-    public static final int APPEARING = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.332 -0400", hash_original_field = "26D6A6E008A00E881DA7073368B3FBCA", hash_generated_field = "2B4B660177B7589D2F5A7A330CB80759")
+    /**
+     * This method is called by ViewGroup when a child view is about to be added to the
+     * container. This callback starts the process of a transition; we grab the starting
+     * values, listen for changes to all of the children of the container, and start appropriate
+     * animations.
+     *
+     * @param parent The ViewGroup to which the View is being added.
+     * @param child The View being added to the ViewGroup.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.330 -0500", hash_original_method = "05533C05F33D5C5B655A5BABA4CC6F65", hash_generated_method = "97F066157AF6A5B4BB9E2F793964FAF4")
+    public void addChild(ViewGroup parent, View child) {
+        // Want disappearing animations to finish up before proceeding
+        cancel(DISAPPEARING);
+        // Also, cancel changing animations so that we start fresh ones from current locations
+        cancel(CHANGE_APPEARING);
+        if (mListeners != null) {
+            for (TransitionListener listener : mListeners) {
+                listener.startTransition(this, parent, child, APPEARING);
+            }
+        }
+        runChangeTransition(parent, child, APPEARING);
+        runAppearingTransition(parent, child);
+    }
 
-    public static final int DISAPPEARING = 3;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.333 -0400", hash_original_field = "F62AE2A917606476AA59A24B61225594", hash_generated_field = "F23425A4D82261A0713821E518F1C782")
+    /**
+     * This method is called by ViewGroup when a child view is about to be added to the
+     * container. This callback starts the process of a transition; we grab the starting
+     * values, listen for changes to all of the children of the container, and start appropriate
+     * animations.
+     *
+     * @param parent The ViewGroup to which the View is being added.
+     * @param child The View being added to the ViewGroup.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.331 -0500", hash_original_method = "5867E97EE566113A4AD2D7416A9B4CB1", hash_generated_method = "D390D692C34DE48F67E907E2804A3BE8")
+    public void showChild(ViewGroup parent, View child) {
+        addChild(parent, child);
+    }
 
-    private static ObjectAnimator defaultChangeIn;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.334 -0400", hash_original_field = "8FE2012C5D3B66F186AE3B5608F5506B", hash_generated_field = "383D2DB6CC8BE4F70A8FC6AE24EF0892")
+    /**
+     * This method is called by ViewGroup when a child view is about to be removed from the
+     * container. This callback starts the process of a transition; we grab the starting
+     * values, listen for changes to all of the children of the container, and start appropriate
+     * animations.
+     *
+     * @param parent The ViewGroup from which the View is being removed.
+     * @param child The View being removed from the ViewGroup.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.332 -0500", hash_original_method = "E23F457F66AC508EC3728A00193F4832", hash_generated_method = "B653AD6F86B79032AB814C58C8307159")
+    public void removeChild(ViewGroup parent, View child) {
+        // Want appearing animations to finish up before proceeding
+        cancel(APPEARING);
+        // Also, cancel changing animations so that we start fresh ones from current locations
+        cancel(CHANGE_DISAPPEARING);
+        if (mListeners != null) {
+            for (TransitionListener listener : mListeners) {
+                listener.startTransition(this, parent, child, DISAPPEARING);
+            }
+        }
+        runChangeTransition(parent, child, DISAPPEARING);
+        runDisappearingTransition(parent, child);
+    }
 
-    private static ObjectAnimator defaultChangeOut;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.335 -0400", hash_original_field = "9AB47D0B11CFD6785DD53FD6A9B89AC3", hash_generated_field = "9FE642298321DB1BFB3B90AC8C413400")
+    /**
+     * This method is called by ViewGroup when a child view is about to be removed from the
+     * container. This callback starts the process of a transition; we grab the starting
+     * values, listen for changes to all of the children of the container, and start appropriate
+     * animations.
+     *
+     * @param parent The ViewGroup from which the View is being removed.
+     * @param child The View being removed from the ViewGroup.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.332 -0500", hash_original_method = "59CF94EEC1336BEEB8FFF5467E6ED5F9", hash_generated_method = "63BFB9BB3D76E970A92ECED557CACBB5")
+    public void hideChild(ViewGroup parent, View child) {
+        removeChild(parent, child);
+    }
 
-    private static ObjectAnimator defaultFadeIn;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.335 -0400", hash_original_field = "32DE7577E5C8E88AE24A2E7B696BED9F", hash_generated_field = "25D149E4F7D04D3FBA535A38951E6CA0")
+    /**
+     * Add a listener that will be called when the bounds of the view change due to
+     * layout processing.
+     *
+     * @param listener The listener that will be called when layout bounds change.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.333 -0500", hash_original_method = "167EED27AB5F7469F2545513C43EBDC4", hash_generated_method = "22C1304A7D61036CDD4AFDF25D7CF527")
+    public void addTransitionListener(TransitionListener listener) {
+        if (mListeners == null) {
+            mListeners = new ArrayList<TransitionListener>();
+        }
+        mListeners.add(listener);
+    }
 
-    private static ObjectAnimator defaultFadeOut;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.336 -0400", hash_original_field = "2588F8D6DA58076995259889823B1880", hash_generated_field = "B0EA698E636B3BDA7398DDB39E975802")
+    /**
+     * Remove a listener for layout changes.
+     *
+     * @param listener The listener for layout bounds change.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.334 -0500", hash_original_method = "CD0DE6419C69039B8FDEE8C2D5BC497D", hash_generated_method = "248C1C952D163FCE25996597B9DE3951")
+    public void removeTransitionListener(TransitionListener listener) {
+        if (mListeners == null) {
+            return;
+        }
+        mListeners.remove(listener);
+    }
 
-    private static long DEFAULT_DURATION = 300;
+    /**
+     * Gets the current list of listeners for layout changes.
+     * @return
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:40.335 -0500", hash_original_method = "F0DD3EC0CE94CE6304D7C3009A3E39A6", hash_generated_method = "881B9E5CA5AA55FE67201917DF3AE25A")
+    public List<TransitionListener> getTransitionListeners() {
+        return mListeners;
+    }
 }
 

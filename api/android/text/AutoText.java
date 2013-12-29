@@ -1,6 +1,8 @@
 package android.text;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 import java.util.Locale;
@@ -20,306 +22,288 @@ import com.android.internal.util.XmlUtils;
 
 
 public class AutoText {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.406 -0400", hash_original_field = "5BDF724CD0456C44608769D876789E27", hash_generated_field = "88B4BB6C6C54F768FFBA5254BB72365D")
 
-    private char[] mTrie;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.406 -0400", hash_original_field = "A813945620FA1D05C4425C4C401B5023", hash_generated_field = "88631567A4C7FF89A1AFBFB0DA730CFF")
-
-    private char mTrieUsed;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.406 -0400", hash_original_field = "39624508B9E3028D8A5DDA741D3E3DDE", hash_generated_field = "2EBA23F479A3FA4159B4CC40D57E4F25")
-
-    private String mText;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.406 -0400", hash_original_field = "CF3890B8F9E27793E741F9D9569D3C34", hash_generated_field = "1A21143DB168F6FB0629A178DF0F089E")
-
-    private Locale mLocale;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.406 -0400", hash_original_field = "27DFA0EFE73BCB065533443A05E9DEE4", hash_generated_field = "1ADF00AF1A5D84662F00519BAA6EB9C0")
-
-    private int mSize;
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.406 -0400", hash_original_method = "09AEE40B99596F23FD7F50F9A174308F", hash_generated_method = "8A758FB35DD76CF0024FB127BB02DD22")
-    private  AutoText(Resources resources) {
-        mLocale = resources.getConfiguration().locale;
-        init(resources);
-        // ---------- Original Method ----------
-        //mLocale = resources.getConfiguration().locale;
-        //init(resources);
-    }
-
-    
-    @DSModeled(DSC.BAN)
+    /**
+     * Returns the instance of AutoText. If the locale has changed, it will create a new
+     * instance of AutoText for the locale.
+     * @param view to get the resources from
+     * @return the single instance of AutoText
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.675 -0500", hash_original_method = "B963EC3FF6AF03FE47485769AA0F03D8", hash_generated_method = "532C51C8F51A590EC036E55B5360FFCE")
     private static AutoText getInstance(View view) {
         Resources res = view.getContext().getResources();
         Locale locale = res.getConfiguration().locale;
         AutoText instance;
+
         synchronized (sLock) {
             instance = sInstance;
+
             if (!locale.equals(instance.mLocale)) {
                 instance = new AutoText(res);
                 sInstance = instance;
             }
         }
+        
         return instance;
     }
-
     
-    @DSModeled(DSC.SAFE)
+    /**
+     * Retrieves a possible spelling correction for the specified range
+     * of text.  Returns null if no correction can be found.
+     * The View is used to get the current Locale and Resources.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.675 -0500", hash_original_method = "935BB3B6BD2904ECB9104D13E520B1D5", hash_generated_method = "1DF004E5C6C7237197C1BF14A887866E")
     public static String get(CharSequence src, final int start, final int end,
                              View view) {
         return getInstance(view).lookup(src, start, end);
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Returns the size of the auto text dictionary. The return value can be zero if there is
+     * no auto correction data available for the current locale.
+     * @param view used to retrieve the current Locale and Resources.
+     * @return the number of entries in the auto text dictionary
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.676 -0500", hash_original_method = "7AF3B8B864AEDF2653F262298A569C32", hash_generated_method = "02CCA7C4FE6C8D8101D828F51FC687EA")
     public static int getSize(View view) {
-        return getInstance(view).getSize();
+
+        return getInstance(view).getSize(); 
+    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:33:10.723 -0500", hash_original_field = "7ACD966E718CD9FAE11DE97982CCD219", hash_generated_field = "2CEAA53A70CED92FC9849DB14E929503")
+
+    //     char c;
+    //     int off;
+    //     struct trie *child;
+    //     struct trie *next;
+    // };
+
+    private static final int TRIE_C = 0;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.660 -0500", hash_original_field = "0B3DFC490D15798DF5116FEB9BC89C69", hash_generated_field = "733F356794001EE1BAFE597C5874FCC6")
+
+    private static final int TRIE_OFF = 1;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.660 -0500", hash_original_field = "0B4AFCDA0EB29737CAAAC10E11C80622", hash_generated_field = "B7B2753F5EA07FFBDE831712F6D19202")
+
+    private static final int TRIE_CHILD = 2;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.661 -0500", hash_original_field = "6F38100F993FD4DA56B3FC88A996BCC1", hash_generated_field = "8867057A6192EFA48A711D904826054A")
+
+    private static final int TRIE_NEXT = 3;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.662 -0500", hash_original_field = "404EFA550AAC0DD93669441B94730B89", hash_generated_field = "1F844D101640222C3A1D40C43FB4C786")
+
+
+    private static final int TRIE_SIZEOF = 4;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.663 -0500", hash_original_field = "735CD36D1D3B61261EB9D9BAB8CB2423", hash_generated_field = "07E61E77484A4D134C2E87A238AFD5E0")
+
+    private static final char TRIE_NULL = (char) -1;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.664 -0500", hash_original_field = "6C7AB0D9A31B79A3E06C5C3C7B61871A", hash_generated_field = "F4888766DAE4DA3FE4E89A8E419D79F3")
+
+    private static final int TRIE_ROOT = 0;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.665 -0500", hash_original_field = "78E41A0FA92C32E4CF5FC0672065B3F4", hash_generated_field = "AFE8F2ECAFDB9F5B221DBA3F6D2395CC")
+
+
+    private static final int INCREMENT = 1024;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.666 -0500", hash_original_field = "DCF95085792D8BE9D2576CF23950BAEA", hash_generated_field = "4962220A561069893B9B4182571E46EF")
+
+
+    private static final int DEFAULT = 14337;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.667 -0500", hash_original_field = "75675FCA6F7A137C0B5CEDEC64AA77EE", hash_generated_field = "A173C71035C72942C03904EBEB219845")
+
+
+    private static final int RIGHT = 9300;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.668 -0500", hash_original_field = "CE1EE35B21242B56128D6BE8E887DD28", hash_generated_field = "2193FE5B55F6D09F6E5BF7372AB38D87")
+
+
+    private static AutoText sInstance = new AutoText(Resources.getSystem());
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.669 -0500", hash_original_field = "3892ABA92B7F95295E8CFDAE8B79791E", hash_generated_field = "E209496F9F2C9103A6260BCF69D3191B")
+
+    private static Object sLock = new Object();
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:33:10.736 -0500", hash_original_field = "505694FB7B011922830C19CD0C55C329", hash_generated_field = "A4A1BE76C5F63385249F95F73443C63F")
+
+    //
+    // Note the assumption that the destination strings total less than
+    // 64K characters and that the trie for the source side totals less
+    // than 64K chars/offsets/child pointers/next pointers.
+    //
+    // This seems very safe for English (currently 7K of destination,
+    // 14K of trie) but may need to be revisited.
+
+    private char[] mTrie;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.670 -0500", hash_original_field = "737FB1082DA6E93D11E6F86ECB58CDF3", hash_generated_field = "88631567A4C7FF89A1AFBFB0DA730CFF")
+
+    private char mTrieUsed;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.671 -0500", hash_original_field = "5C1E1D7AA24FFCA320ADE83B66FB0AC4", hash_generated_field = "2EBA23F479A3FA4159B4CC40D57E4F25")
+
+    private String mText;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.672 -0500", hash_original_field = "D959780368C6CA232CF8C3906CDDEDF3", hash_generated_field = "1A21143DB168F6FB0629A178DF0F089E")
+
+    private Locale mLocale;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.673 -0500", hash_original_field = "205262C28D2B190751535A4911B3B259", hash_generated_field = "1ADF00AF1A5D84662F00519BAA6EB9C0")
+
+    private int mSize;
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.674 -0500", hash_original_method = "09AEE40B99596F23FD7F50F9A174308F", hash_generated_method = "BEFAB2CB575C283560FE48E6C86967A3")
+    private AutoText(Resources resources) {
+        mLocale = resources.getConfiguration().locale;
+        init(resources);
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.408 -0400", hash_original_method = "2098B918320D3D5229820CAB47C60E59", hash_generated_method = "B134F8C13EB13F06D024E131972C22E2")
+    /**
+     * Returns the size of the dictionary.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.677 -0500", hash_original_method = "2098B918320D3D5229820CAB47C60E59", hash_generated_method = "078FDE03C7E88FE97FCC849E1A4FF824")
     private int getSize() {
-        int var27DFA0EFE73BCB065533443A05E9DEE4_1697508504 = (mSize);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1202043457 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1202043457;
-        // ---------- Original Method ----------
-        //return mSize;
+        return mSize;
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.409 -0400", hash_original_method = "A395619387E5FA987B6ED6EABB20C725", hash_generated_method = "13426B28078051E2FF3E17B8636EF2B3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.678 -0500", hash_original_method = "A395619387E5FA987B6ED6EABB20C725", hash_generated_method = "05E793881A14CB18369F587898F9ED46")
     private String lookup(CharSequence src, final int start, final int end) {
-        addTaint(end);
-        addTaint(start);
-        addTaint(src.getTaint());
         int here = mTrie[TRIE_ROOT];
-for(int i = start;i < end;i++)
-        {
+
+        for (int i = start; i < end; i++) {
             char c = src.charAt(i);
-for(;here != TRIE_NULL;here = mTrie[here + TRIE_NEXT])
-            {
-                if(c == mTrie[here + TRIE_C])                
-                {
-                    if((i == end - 1) 
-                            && (mTrie[here + TRIE_OFF] != TRIE_NULL))                    
-                    {
+
+            for (; here != TRIE_NULL; here = mTrie[here + TRIE_NEXT]) {
+                if (c == mTrie[here + TRIE_C]) {
+                    if ((i == end - 1) 
+                            && (mTrie[here + TRIE_OFF] != TRIE_NULL)) {
                         int off = mTrie[here + TRIE_OFF];
                         int len = mText.charAt(off);
-String varC4791C14A47CB79F698D052F2B83D1C7_1900107340 =                         mText.substring(off + 1, off + 1 + len);
-                        varC4791C14A47CB79F698D052F2B83D1C7_1900107340.addTaint(taint);
-                        return varC4791C14A47CB79F698D052F2B83D1C7_1900107340;
-                    } //End block
+
+                        return mText.substring(off + 1, off + 1 + len);
+                    }
+
                     here = mTrie[here + TRIE_CHILD];
                     break;
-                } //End block
-            } //End block
-            if(here == TRIE_NULL)            
-            {
-String var540C13E9E156B687226421B24F2DF178_808900270 =                 null;
-                var540C13E9E156B687226421B24F2DF178_808900270.addTaint(taint);
-                return var540C13E9E156B687226421B24F2DF178_808900270;
-            } //End block
-        } //End block
-String var540C13E9E156B687226421B24F2DF178_1228640314 =         null;
-        var540C13E9E156B687226421B24F2DF178_1228640314.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_1228640314;
-        // ---------- Original Method ----------
-        //int here = mTrie[TRIE_ROOT];
-        //for (int i = start; i < end; i++) {
-            //char c = src.charAt(i);
-            //for (; here != TRIE_NULL; here = mTrie[here + TRIE_NEXT]) {
-                //if (c == mTrie[here + TRIE_C]) {
-                    //if ((i == end - 1) 
-                            //&& (mTrie[here + TRIE_OFF] != TRIE_NULL)) {
-                        //int off = mTrie[here + TRIE_OFF];
-                        //int len = mText.charAt(off);
-                        //return mText.substring(off + 1, off + 1 + len);
-                    //}
-                    //here = mTrie[here + TRIE_CHILD];
-                    //break;
-                //}
-            //}
-            //if (here == TRIE_NULL) {
-                //return null;
-            //}
-        //}
-        //return null;
+                }
+            }
+
+            if (here == TRIE_NULL) {
+                return null;
+            }
+        }
+
+        return null;
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.411 -0400", hash_original_method = "E19B6C2A17EB3626AF05ED9F48AE64FD", hash_generated_method = "54E25F1FFFDDE125DC4BC12E7361C73F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.679 -0500", hash_original_method = "E19B6C2A17EB3626AF05ED9F48AE64FD", hash_generated_method = "B5E6AFF462B11169A04E76BBB3111B8F")
     private void init(Resources r) {
-        addTaint(r.getTaint());
         XmlResourceParser parser = r.getXml(com.android.internal.R.xml.autotext);
+
         StringBuilder right = new StringBuilder(RIGHT);
         mTrie = new char[DEFAULT];
         mTrie[TRIE_ROOT] = TRIE_NULL;
         mTrieUsed = TRIE_ROOT + 1;
-        try 
-        {
+
+        try {
             XmlUtils.beginDocument(parser, "words");
             String odest = "";
             char ooff = 0;
-            while
-(true)            
-            {
+
+            while (true) {
                 XmlUtils.nextElement(parser);
-                String element = parser.getName();
-                if(element == null || !(element.equals("word")))                
-                {
+
+                String element = parser.getName(); 
+                if (element == null || !(element.equals("word"))) {
                     break;
-                } //End block
+                }
+
                 String src = parser.getAttributeValue(null, "src");
-                if(parser.next() == XmlPullParser.TEXT)                
-                {
+                if (parser.next() == XmlPullParser.TEXT) {
                     String dest = parser.getText();
                     char off;
-                    if(dest.equals(odest))                    
-                    {
+
+                    if (dest.equals(odest)) {
                         off = ooff;
-                    } //End block
-                    else
-                    {
+                    } else {
                         off = (char) right.length();
                         right.append((char) dest.length());
                         right.append(dest);
-                    } //End block
+                    }
+
                     add(src, off);
-                } //End block
-            } //End block
+                }
+            }
+
+            // Don't let Resources cache a copy of all these strings.
             r.flushLayoutCache();
-        } //End block
-        catch (XmlPullParserException e)
-        {
-            RuntimeException varC76ADF009CE2FEDD948F7A54F409BA37_1416926630 = new RuntimeException(e);
-            varC76ADF009CE2FEDD948F7A54F409BA37_1416926630.addTaint(taint);
-            throw varC76ADF009CE2FEDD948F7A54F409BA37_1416926630;
-        } //End block
-        catch (IOException e)
-        {
-            RuntimeException varC76ADF009CE2FEDD948F7A54F409BA37_1489663199 = new RuntimeException(e);
-            varC76ADF009CE2FEDD948F7A54F409BA37_1489663199.addTaint(taint);
-            throw varC76ADF009CE2FEDD948F7A54F409BA37_1489663199;
-        } //End block
-        finally 
-        {
+        } catch (XmlPullParserException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } finally {
             parser.close();
-        } //End block
+        }
+
         mText = right.toString();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.415 -0400", hash_original_method = "0D3B451571572F26E1C81E0825865666", hash_generated_method = "AB2F9F3CDA283B47A8F2E1BB5630ACF5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.680 -0500", hash_original_method = "0D3B451571572F26E1C81E0825865666", hash_generated_method = "D354E0B76BC0B70613FD17D65D475832")
     private void add(String src, char off) {
-        addTaint(src.getTaint());
         int slen = src.length();
         int herep = TRIE_ROOT;
+        // Keep track of the size of the dictionary
         mSize++;
-for(int i = 0;i < slen;i++)
-        {
+        
+        for (int i = 0; i < slen; i++) {
             char c = src.charAt(i);
             boolean found = false;
-for(;mTrie[herep] != TRIE_NULL;herep = mTrie[herep] + TRIE_NEXT)
-            {
-                if(c == mTrie[mTrie[herep] + TRIE_C])                
-                {
-                    if(i == slen - 1)                    
-                    {
+
+            for (; mTrie[herep] != TRIE_NULL;
+                    herep = mTrie[herep] + TRIE_NEXT) {
+                if (c == mTrie[mTrie[herep] + TRIE_C]) {
+                    // There is a node for this letter, and this is the
+                    // end, so fill in the right hand side fields.
+
+                    if (i == slen - 1) {
                         mTrie[mTrie[herep] + TRIE_OFF] = off;
                         return;
-                    } //End block
+                    }
+
+                    // There is a node for this letter, and we need
+                    // to go deeper into it to fill in the rest.
+
                     herep = mTrie[herep] + TRIE_CHILD;
                     found = true;
                     break;
-                } //End block
-            } //End block
-            if(!found)            
-            {
+                }
+            }
+
+            if (!found) {
+                // No node for this letter yet.  Make one.
+
                 char node = newTrieNode();
                 mTrie[herep] = node;
+
                 mTrie[mTrie[herep] + TRIE_C] = c;
                 mTrie[mTrie[herep] + TRIE_OFF] = TRIE_NULL;
                 mTrie[mTrie[herep] + TRIE_NEXT] = TRIE_NULL;
                 mTrie[mTrie[herep] + TRIE_CHILD] = TRIE_NULL;
-                if(i == slen - 1)                
-                {
+
+                // If this is the end of the word, fill in the offset.
+
+                if (i == slen - 1) {
                     mTrie[mTrie[herep] + TRIE_OFF] = off;
                     return;
-                } //End block
+                }
+
+                // Otherwise, step in deeper and go to the next letter.
+
                 herep = mTrie[herep] + TRIE_CHILD;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            }
+        }
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.416 -0400", hash_original_method = "6974F5A5A1101E98F9450C35EFEECA6C", hash_generated_method = "D2C9FD827B77B85D05BD0D84A85F66FC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.681 -0500", hash_original_method = "6974F5A5A1101E98F9450C35EFEECA6C", hash_generated_method = "7434CE68F8D446D88144B235481167CA")
     private char newTrieNode() {
-        if(mTrieUsed + TRIE_SIZEOF > mTrie.length)        
-        {
+        if (mTrieUsed + TRIE_SIZEOF > mTrie.length) {
             char[] copy = new char[mTrie.length + INCREMENT];
             System.arraycopy(mTrie, 0, copy, 0, mTrie.length);
             mTrie = copy;
-        } //End block
+        }
+
         char ret = mTrieUsed;
         mTrieUsed += TRIE_SIZEOF;
-        char var2CB9DF9898E55FD0AD829DC202DDBD1C_1049830945 = (ret);
-                char varA87DEB01C5F539E6BDA34829C8EF2368_1860129203 = getTaintChar();
-        return varA87DEB01C5F539E6BDA34829C8EF2368_1860129203;
-        // ---------- Original Method ----------
-        //if (mTrieUsed + TRIE_SIZEOF > mTrie.length) {
-            //char[] copy = new char[mTrie.length + INCREMENT];
-            //System.arraycopy(mTrie, 0, copy, 0, mTrie.length);
-            //mTrie = copy;
-        //}
-        //char ret = mTrieUsed;
-        //mTrieUsed += TRIE_SIZEOF;
-        //return ret;
+
+        return ret;
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.416 -0400", hash_original_field = "F843573947761E50D4BED916D14D91A5", hash_generated_field = "3FE6508EBC729D0B912C75B1B3DE2E5D")
-
-    private static final int TRIE_C = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.416 -0400", hash_original_field = "C819392AFBD8C1FF66A68290C2EEE191", hash_generated_field = "733F356794001EE1BAFE597C5874FCC6")
-
-    private static final int TRIE_OFF = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.416 -0400", hash_original_field = "B87E7BBF06AD287D2FE2F1B7A71D292F", hash_generated_field = "B7B2753F5EA07FFBDE831712F6D19202")
-
-    private static final int TRIE_CHILD = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.416 -0400", hash_original_field = "8117DEE9EC7EF4001D67E168A59EB4C0", hash_generated_field = "8867057A6192EFA48A711D904826054A")
-
-    private static final int TRIE_NEXT = 3;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.416 -0400", hash_original_field = "72BF77CFA305DE86750F2C811D3ACC86", hash_generated_field = "1F844D101640222C3A1D40C43FB4C786")
-
-    private static final int TRIE_SIZEOF = 4;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.416 -0400", hash_original_field = "B5E768B7D87C45F5672F6BB7046642F9", hash_generated_field = "07E61E77484A4D134C2E87A238AFD5E0")
-
-    private static final char TRIE_NULL = (char) -1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.416 -0400", hash_original_field = "338CCA93F3F34751EDEB080061BE8417", hash_generated_field = "F4888766DAE4DA3FE4E89A8E419D79F3")
-
-    private static final int TRIE_ROOT = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.417 -0400", hash_original_field = "DE1C80478EF6CA3F4FD689ADB537A833", hash_generated_field = "AFE8F2ECAFDB9F5B221DBA3F6D2395CC")
-
-    private static final int INCREMENT = 1024;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.417 -0400", hash_original_field = "F3DED0AF5C96C4380594CDEF534B2D67", hash_generated_field = "4962220A561069893B9B4182571E46EF")
-
-    private static final int DEFAULT = 14337;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.417 -0400", hash_original_field = "CEB9B166F034367C50AD14B9DFF790F9", hash_generated_field = "A173C71035C72942C03904EBEB219845")
-
-    private static final int RIGHT = 9300;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.417 -0400", hash_original_field = "7740337A49D534D44BEE5DDBDE2FC6DD", hash_generated_field = "2193FE5B55F6D09F6E5BF7372AB38D87")
-
-    private static AutoText sInstance = new AutoText(Resources.getSystem());
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.417 -0400", hash_original_field = "6FBEC3E7BB69D1E09ECABF075E18871F", hash_generated_field = "E209496F9F2C9103A6260BCF69D3191B")
-
-    private static Object sLock = new Object();
 }
 

@@ -1,6 +1,9 @@
 package android.database.sqlite;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
+import android.util.Log;
 import droidsafe.annotations.*;
 import java.io.IOException;
 
@@ -14,376 +17,287 @@ import dalvik.system.BlockGuard;
 
 
 public class SQLiteStatement extends SQLiteProgram {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.056 -0400", hash_original_field = "E67780D6797A95AA13F04D47887933FA", hash_generated_field = "2F51843A821BD5FB98E893CC1830882F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:02.891 -0500", hash_original_field = "5D559E29F3B7D0D51AE5C73FE3F2D3F0", hash_generated_field = "B25F6A4CB29F6325E49F04F66EE5886C")
+
+    private static final String TAG = "SQLiteStatement";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:02.892 -0500", hash_original_field = "E63805B0E924F8ED616216BEB6CB6005", hash_generated_field = "DF1BFFA8AE77C9EB2467DB4A53480D19")
+
+
+    private static final boolean READ = true;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:02.893 -0500", hash_original_field = "FBD12BAEA28977523A9EA4EA7C38D0D0", hash_generated_field = "4E20ADB74C14AC29719A4662B74CC6FA")
+
+    private static final boolean WRITE = false;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:02.896 -0500", hash_original_field = "7C3FC1FC837C724A2D92EB1DEE1FF582", hash_generated_field = "51E8612B8DBE387C00FDA982510BC3C4")
+
+    private static final int TRANS_STARTED = 1;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:02.896 -0500", hash_original_field = "4ED2C00F9BF8DE47B9B586DFB9282DD5", hash_generated_field = "8F182F697D081190134825A0E369736C")
+
+    private static final int LOCK_ACQUIRED = 2;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:02.894 -0500", hash_original_field = "F226644BA47AF122E4485EA17FD2B3BB", hash_generated_field = "2F51843A821BD5FB98E893CC1830882F")
+
 
     private SQLiteDatabase mOrigDb;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.056 -0400", hash_original_field = "48A902C1D749B47EBC75C77370D5A1F0", hash_generated_field = "19B55F2750B971E6310D64ADB9B2D0CF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:02.895 -0500", hash_original_field = "7BB479D2050B776CF48FB8B4E674911B", hash_generated_field = "19B55F2750B971E6310D64ADB9B2D0CF")
 
     private int mState;
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.057 -0400", hash_original_method = "5DDFF8C2B7E2F1702052BA1709F992B7", hash_generated_method = "B26B6AE60396DF897D74969D9DC6B77E")
-      SQLiteStatement(SQLiteDatabase db, String sql, Object[] bindArgs) {
-        super(db, sql, bindArgs, false );
-        addTaint(bindArgs[0].getTaint());
-        addTaint(sql.getTaint());
-        addTaint(db.getTaint());
-        // ---------- Original Method ----------
+
+    /**
+     * Don't use SQLiteStatement constructor directly, please use
+     * {@link SQLiteDatabase#compileStatement(String)}
+     * @param db
+     * @param sql
+     */
+    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:02.897 -0500", hash_original_method = "5DDFF8C2B7E2F1702052BA1709F992B7", hash_generated_method = "B9E4508E756E5A8384F3CA53B674C040")
+    SQLiteStatement(SQLiteDatabase db, String sql, Object[] bindArgs) {
+        super(db, sql, bindArgs, false /* don't compile sql statement */);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.058 -0400", hash_original_method = "AF1FDD5D94DA5350C3682852D1772235", hash_generated_method = "9731E3368F2C01BE2CC3A6FD5F2FC446")
+    /**
+     * Execute this SQL statement, if it is not a SELECT / INSERT / DELETE / UPDATE, for example
+     * CREATE / DROP table, view, trigger, index etc.
+     *
+     * @throws android.database.SQLException If the SQL string is invalid for
+     *         some reason
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:02.898 -0500", hash_original_method = "AF1FDD5D94DA5350C3682852D1772235", hash_generated_method = "A885B32B2E08E78A2AC63B81A3B37E4B")
     public void execute() {
         executeUpdateDelete();
-        // ---------- Original Method ----------
-        //executeUpdateDelete();
     }
 
-    
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.058 -0400", hash_original_method = "66D9912335771E2036ED62B64CF3BC86", hash_generated_method = "062D012ACC0658844CBF23041E31F4BA")
+    /**
+     * Execute this SQL statement, if the the number of rows affected by execution of this SQL
+     * statement is of any importance to the caller - for example, UPDATE / DELETE SQL statements.
+     *
+     * @return the number of rows affected by this SQL statement execution.
+     * @throws android.database.SQLException If the SQL string is invalid for
+     *         some reason
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:02.899 -0500", hash_original_method = "66D9912335771E2036ED62B64CF3BC86", hash_generated_method = "268D0D68A247442B9D4A5C3F6F9FBAF9")
     public int executeUpdateDelete() {
-        try 
-        {
+        try {
             saveSqlAsLastSqlStatement();
             acquireAndLock(WRITE);
             int numChanges = 0;
-            if((mStatementType & STATEMENT_DONT_PREPARE) > 0)            
-            {
+            if ((mStatementType & STATEMENT_DONT_PREPARE) > 0) {
+                // since the statement doesn't have to be prepared,
+                // call the following native method which will not prepare
+                // the query plan
                 native_executeSql(mSql);
-            } //End block
-            else
-            {
+            } else {
                 numChanges = native_execute();
-            } //End block
-            int var0BA6E2D376AB963636F864563F7B8E93_1113489873 = (numChanges);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1159401672 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1159401672;
-        } //End block
-        finally 
-        {
+            }
+            return numChanges;
+        } finally {
             releaseAndUnlock();
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //saveSqlAsLastSqlStatement();
-            //acquireAndLock(WRITE);
-            //int numChanges = 0;
-            //if ((mStatementType & STATEMENT_DONT_PREPARE) > 0) {
-                //native_executeSql(mSql);
-            //} else {
-                //numChanges = native_execute();
-            //}
-            //return numChanges;
-        //} finally {
-            //releaseAndUnlock();
-        //}
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.060 -0400", hash_original_method = "78D2410201CEBD83C87275DB09AEC8B4", hash_generated_method = "B7441A4097BC0C1F105A001ED2B8EBAB")
+    /**
+     * Execute this SQL statement and return the ID of the row inserted due to this call.
+     * The SQL statement should be an INSERT for this to be a useful call.
+     *
+     * @return the row ID of the last row inserted, if this insert is successful. -1 otherwise.
+     *
+     * @throws android.database.SQLException If the SQL string is invalid for
+     *         some reason
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:02.900 -0500", hash_original_method = "78D2410201CEBD83C87275DB09AEC8B4", hash_generated_method = "2A4D5BD1B81B68465454108E8B5D9953")
     public long executeInsert() {
-        try 
-        {
+        try {
             saveSqlAsLastSqlStatement();
             acquireAndLock(WRITE);
-            long varFEF277E4A81284CFE5A5AC17F6A57582_276094477 = (native_executeInsert());
-                        long var0F5264038205EDFB1AC05FBB0E8C5E94_250605982 = getTaintLong();
-            return var0F5264038205EDFB1AC05FBB0E8C5E94_250605982;
-        } //End block
-        finally 
-        {
+            return native_executeInsert();
+        } finally {
             releaseAndUnlock();
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //saveSqlAsLastSqlStatement();
-            //acquireAndLock(WRITE);
-            //return native_executeInsert();
-        //} finally {
-            //releaseAndUnlock();
-        //}
+        }
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.060 -0400", hash_original_method = "7424F80A42A729003FCB274AD124711E", hash_generated_method = "7BBF6CA8F3FC8F268D1BE88F824B3398")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:02.901 -0500", hash_original_method = "7424F80A42A729003FCB274AD124711E", hash_generated_method = "3A989A9BAE3E3173B88012F0004E7441")
     private void saveSqlAsLastSqlStatement() {
-        if(((mStatementType & SQLiteProgram.STATEMENT_TYPE_MASK) ==
+        if (((mStatementType & SQLiteProgram.STATEMENT_TYPE_MASK) ==
                 DatabaseUtils.STATEMENT_UPDATE) ||
                 (mStatementType & SQLiteProgram.STATEMENT_TYPE_MASK) ==
-                DatabaseUtils.STATEMENT_BEGIN)        
-        {
+                DatabaseUtils.STATEMENT_BEGIN) {
             mDatabase.setLastSqlStatement(mSql);
-        } //End block
-        // ---------- Original Method ----------
-        //if (((mStatementType & SQLiteProgram.STATEMENT_TYPE_MASK) ==
-                //DatabaseUtils.STATEMENT_UPDATE) ||
-                //(mStatementType & SQLiteProgram.STATEMENT_TYPE_MASK) ==
-                //DatabaseUtils.STATEMENT_BEGIN) {
-            //mDatabase.setLastSqlStatement(mSql);
-        //}
+        }
     }
-
-    
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.061 -0400", hash_original_method = "12DB780B550F95E5C10FD5998E83FEFD", hash_generated_method = "266E560CEDC9D2BD7A8D2B849209BF31")
+    /**
+     * Execute a statement that returns a 1 by 1 table with a numeric value.
+     * For example, SELECT COUNT(*) FROM table;
+     *
+     * @return The result of the query.
+     *
+     * @throws android.database.sqlite.SQLiteDoneException if the query returns zero rows
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:02.902 -0500", hash_original_method = "12DB780B550F95E5C10FD5998E83FEFD", hash_generated_method = "704999B0017ADF597420BBE86A43C1B6")
     public long simpleQueryForLong() {
-        try 
-        {
+        try {
             long timeStart = acquireAndLock(READ);
             long retValue = native_1x1_long();
             mDatabase.logTimeStat(mSql, timeStart);
-            long var9C7BD17E8EB1C3D0F843684A79A18570_1773176118 = (retValue);
-                        long var0F5264038205EDFB1AC05FBB0E8C5E94_568445161 = getTaintLong();
-            return var0F5264038205EDFB1AC05FBB0E8C5E94_568445161;
-        } //End block
-        catch (SQLiteDoneException e)
-        {
-            SQLiteDoneException var509C73A4243220CC3BCDEFBCB7C17A34_1788818809 = new SQLiteDoneException(
+            return retValue;
+        } catch (SQLiteDoneException e) {
+            throw new SQLiteDoneException(
                     "expected 1 row from this query but query returned no data. check the query: " +
                     mSql);
-            var509C73A4243220CC3BCDEFBCB7C17A34_1788818809.addTaint(taint);
-            throw var509C73A4243220CC3BCDEFBCB7C17A34_1788818809;
-        } //End block
-        finally 
-        {
+        } finally {
             releaseAndUnlock();
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //long timeStart = acquireAndLock(READ);
-            //long retValue = native_1x1_long();
-            //mDatabase.logTimeStat(mSql, timeStart);
-            //return retValue;
-        //} catch (SQLiteDoneException e) {
-            //throw new SQLiteDoneException(
-                    //"expected 1 row from this query but query returned no data. check the query: " +
-                    //mSql);
-        //} finally {
-            //releaseAndUnlock();
-        //}
+        }
     }
 
-    
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.062 -0400", hash_original_method = "6D794A242164C6F60D732256A15CB380", hash_generated_method = "7D1682DD79401AD2EAF263F26FD5C2CB")
+    /**
+     * Execute a statement that returns a 1 by 1 table with a text value.
+     * For example, SELECT COUNT(*) FROM table;
+     *
+     * @return The result of the query.
+     *
+     * @throws android.database.sqlite.SQLiteDoneException if the query returns zero rows
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:02.902 -0500", hash_original_method = "6D794A242164C6F60D732256A15CB380", hash_generated_method = "F0BBF8BAAA27EEAEBE61BE18BA557A10")
     public String simpleQueryForString() {
-        try 
-        {
+        try {
             long timeStart = acquireAndLock(READ);
             String retValue = native_1x1_string();
             mDatabase.logTimeStat(mSql, timeStart);
-String var8A3AE42CF4D96FEAF203C6E7E2606E2D_1479796672 =             retValue;
-            var8A3AE42CF4D96FEAF203C6E7E2606E2D_1479796672.addTaint(taint);
-            return var8A3AE42CF4D96FEAF203C6E7E2606E2D_1479796672;
-        } //End block
-        catch (SQLiteDoneException e)
-        {
-            SQLiteDoneException var509C73A4243220CC3BCDEFBCB7C17A34_1130786527 = new SQLiteDoneException(
+            return retValue;
+        } catch (SQLiteDoneException e) {
+            throw new SQLiteDoneException(
                     "expected 1 row from this query but query returned no data. check the query: " +
                     mSql);
-            var509C73A4243220CC3BCDEFBCB7C17A34_1130786527.addTaint(taint);
-            throw var509C73A4243220CC3BCDEFBCB7C17A34_1130786527;
-        } //End block
-        finally 
-        {
+        } finally {
             releaseAndUnlock();
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //long timeStart = acquireAndLock(READ);
-            //String retValue = native_1x1_string();
-            //mDatabase.logTimeStat(mSql, timeStart);
-            //return retValue;
-        //} catch (SQLiteDoneException e) {
-            //throw new SQLiteDoneException(
-                    //"expected 1 row from this query but query returned no data. check the query: " +
-                    //mSql);
-        //} finally {
-            //releaseAndUnlock();
-        //}
+        }
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.064 -0400", hash_original_method = "6321C559FCE18D31DAAE4496BAD49A23", hash_generated_method = "DBEA05961CF0EE43D2C14D36199643E1")
+    /**
+     * Executes a statement that returns a 1 by 1 table with a blob value.
+     *
+     * @return A read-only file descriptor for a copy of the blob value, or {@code null}
+     *         if the value is null or could not be read for some reason.
+     *
+     * @throws android.database.sqlite.SQLiteDoneException if the query returns zero rows
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:02.903 -0500", hash_original_method = "6321C559FCE18D31DAAE4496BAD49A23", hash_generated_method = "26025A6DDCA536D8F17C08E177E19F12")
     public ParcelFileDescriptor simpleQueryForBlobFileDescriptor() {
-        try 
-        {
+        try {
             long timeStart = acquireAndLock(READ);
             ParcelFileDescriptor retValue = native_1x1_blob_ashmem();
             mDatabase.logTimeStat(mSql, timeStart);
-ParcelFileDescriptor var8A3AE42CF4D96FEAF203C6E7E2606E2D_985029802 =             retValue;
-            var8A3AE42CF4D96FEAF203C6E7E2606E2D_985029802.addTaint(taint);
-            return var8A3AE42CF4D96FEAF203C6E7E2606E2D_985029802;
-        } //End block
-        catch (IOException ex)
-        {
-ParcelFileDescriptor var540C13E9E156B687226421B24F2DF178_1916400177 =             null;
-            var540C13E9E156B687226421B24F2DF178_1916400177.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_1916400177;
-        } //End block
-        catch (SQLiteDoneException e)
-        {
-            SQLiteDoneException var509C73A4243220CC3BCDEFBCB7C17A34_1680121773 = new SQLiteDoneException(
+            return retValue;
+        } catch (IOException ex) {
+            Log.e(TAG, "simpleQueryForBlobFileDescriptor() failed", ex);
+            return null;
+        } catch (SQLiteDoneException e) {
+            throw new SQLiteDoneException(
                     "expected 1 row from this query but query returned no data. check the query: " +
                     mSql);
-            var509C73A4243220CC3BCDEFBCB7C17A34_1680121773.addTaint(taint);
-            throw var509C73A4243220CC3BCDEFBCB7C17A34_1680121773;
-        } //End block
-        finally 
-        {
+        } finally {
             releaseAndUnlock();
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //long timeStart = acquireAndLock(READ);
-            //ParcelFileDescriptor retValue = native_1x1_blob_ashmem();
-            //mDatabase.logTimeStat(mSql, timeStart);
-            //return retValue;
-        //} catch (IOException ex) {
-            //Log.e(TAG, "simpleQueryForBlobFileDescriptor() failed", ex);
-            //return null;
-        //} catch (SQLiteDoneException e) {
-            //throw new SQLiteDoneException(
-                    //"expected 1 row from this query but query returned no data. check the query: " +
-                    //mSql);
-        //} finally {
-            //releaseAndUnlock();
-        //}
+        }
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.068 -0400", hash_original_method = "7802DA1EF14C1A6C860FAB64147EEA65", hash_generated_method = "8AABFB05BAD41294769D01113CF324B3")
+    /**
+     * Called before every method in this class before executing a SQL statement,
+     * this method does the following:
+     * <ul>
+     *   <li>make sure the database is open</li>
+     *   <li>get a database connection from the connection pool,if possible</li>
+     *   <li>notifies {@link BlockGuard} of read/write</li>
+     *   <li>if the SQL statement is an update, start transaction if not already in one.
+     *   otherwise, get lock on the database</li>
+     *   <li>acquire reference on this object</li>
+     *   <li>and then return the current time _after_ the database lock was acquired</li>
+     * </ul>
+     * <p>
+     * This method removes the duplicate code from the other public
+     * methods in this class.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:02.905 -0500", hash_original_method = "7802DA1EF14C1A6C860FAB64147EEA65", hash_generated_method = "31DF08AA7DB680B5B797A6320AA8C336")
     private long acquireAndLock(boolean rwFlag) {
-        addTaint(rwFlag);
         mState = 0;
+        // use pooled database connection handles for SELECT SQL statements
         mDatabase.verifyDbIsOpen();
         SQLiteDatabase db = ((mStatementType & SQLiteProgram.STATEMENT_USE_POOLED_CONN) > 0)
                 ? mDatabase.getDbConnection(mSql) : mDatabase;
+        // use the database connection obtained above
         mOrigDb = mDatabase;
         mDatabase = db;
         setNativeHandle(mDatabase.mNativeHandle);
-        if(rwFlag == WRITE)        
-        {
+        if (rwFlag == WRITE) {
             BlockGuard.getThreadPolicy().onWriteToDisk();
-        } //End block
-        else
-        {
+        } else {
             BlockGuard.getThreadPolicy().onReadFromDisk();
-        } //End block
-        if((mStatementType & SQLiteProgram.STATEMENT_TYPE_MASK) == DatabaseUtils.STATEMENT_BEGIN)        
-        {
-            if(!mDatabase.isDbLockedByCurrentThread())            
-            {
+        }
+
+        /*
+         * Special case handling of SQLiteDatabase.execSQL("BEGIN transaction").
+         * we know it is execSQL("BEGIN transaction") from the caller IF there is no lock held.
+         * beginTransaction() methods in SQLiteDatabase call lockForced() before
+         * calling execSQL("BEGIN transaction").
+         */
+        if ((mStatementType & SQLiteProgram.STATEMENT_TYPE_MASK) == DatabaseUtils.STATEMENT_BEGIN) {
+            if (!mDatabase.isDbLockedByCurrentThread()) {
+                // transaction is  NOT started by calling beginTransaction() methods in
+                // SQLiteDatabase
                 mDatabase.setTransactionUsingExecSqlFlag();
-            } //End block
-        } //End block
-        else
-        if((mStatementType & SQLiteProgram.STATEMENT_TYPE_MASK) ==
-                DatabaseUtils.STATEMENT_UPDATE)        
-        {
-            if(!mDatabase.inTransaction())            
-            {
+            }
+        } else if ((mStatementType & SQLiteProgram.STATEMENT_TYPE_MASK) ==
+                DatabaseUtils.STATEMENT_UPDATE) {
+            // got update SQL statement. if there is NO pending transaction, start one
+            if (!mDatabase.inTransaction()) {
                 mDatabase.beginTransactionNonExclusive();
                 mState = TRANS_STARTED;
-            } //End block
-        } //End block
-        if(!mDatabase.isDbLockedByCurrentThread())        
-        {
+            }
+        }
+        // do I have database lock? if not, grab it.
+        if (!mDatabase.isDbLockedByCurrentThread()) {
             mDatabase.lock(mSql);
             mState = LOCK_ACQUIRED;
-        } //End block
+        }
+
         acquireReference();
         long startTime = SystemClock.uptimeMillis();
         mDatabase.closePendingStatements();
         compileAndbindAllArgs();
-        long var5B2A579F62087D17D79CE59F3DE5F6D1_1777135871 = (startTime);
-                long var0F5264038205EDFB1AC05FBB0E8C5E94_621305209 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_621305209;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        return startTime;
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.070 -0400", hash_original_method = "3195EF2C5595E73848E74AA3B0A84A6E", hash_generated_method = "C21D6BAFEEFA8F70ABEAE73AF2467CE1")
+    /**
+     * this method releases locks and references acquired in {@link #acquireAndLock(boolean)}
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:02.906 -0500", hash_original_method = "3195EF2C5595E73848E74AA3B0A84A6E", hash_generated_method = "46E7D271BFA3A6DF8E46090A8915A023")
     private void releaseAndUnlock() {
         releaseReference();
-        if(mState == TRANS_STARTED)        
-        {
-            try 
-            {
+        if (mState == TRANS_STARTED) {
+            try {
                 mDatabase.setTransactionSuccessful();
-            } //End block
-            finally 
-            {
+            } finally {
                 mDatabase.endTransaction();
-            } //End block
-        } //End block
-        else
-        if(mState == LOCK_ACQUIRED)        
-        {
+            }
+        } else if (mState == LOCK_ACQUIRED) {
             mDatabase.unlock();
-        } //End block
-        if((mStatementType & SQLiteProgram.STATEMENT_TYPE_MASK) ==
+        }
+        if ((mStatementType & SQLiteProgram.STATEMENT_TYPE_MASK) ==
                 DatabaseUtils.STATEMENT_COMMIT ||
                 (mStatementType & SQLiteProgram.STATEMENT_TYPE_MASK) ==
-                DatabaseUtils.STATEMENT_ABORT)        
-        {
+                DatabaseUtils.STATEMENT_ABORT) {
             mDatabase.resetTransactionUsingExecSqlFlag();
-        } //End block
+        }
         clearBindings();
+        // release the compiled sql statement so that the caller's SQLiteStatement no longer
+        // has a hard reference to a database object that may get deallocated at any point.
         release();
+        // restore the database connection handle to the original value
         mDatabase = mOrigDb;
         setNativeHandle(mDatabase.mNativeHandle);
-        // ---------- Original Method ----------
-        //releaseReference();
-        //if (mState == TRANS_STARTED) {
-            //try {
-                //mDatabase.setTransactionSuccessful();
-            //} finally {
-                //mDatabase.endTransaction();
-            //}
-        //} else if (mState == LOCK_ACQUIRED) {
-            //mDatabase.unlock();
-        //}
-        //if ((mStatementType & SQLiteProgram.STATEMENT_TYPE_MASK) ==
-                //DatabaseUtils.STATEMENT_COMMIT ||
-                //(mStatementType & SQLiteProgram.STATEMENT_TYPE_MASK) ==
-                //DatabaseUtils.STATEMENT_ABORT) {
-            //mDatabase.resetTransactionUsingExecSqlFlag();
-        //}
-        //clearBindings();
-        //release();
-        //mDatabase = mOrigDb;
-        //setNativeHandle(mDatabase.mNativeHandle);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.072 -0400", hash_original_method = "DA760EA6BB282F82E2B89FD24EBEEAD3", hash_generated_method = "210CF0241252D4DBF0D13B58900D7D94")
-    private final int native_execute() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_942614187 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_942614187;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.073 -0400", hash_original_method = "8482A8304EDF98FD537E7B2A3BC31388", hash_generated_method = "5E9544292D1FA84AD57EFA34C64A44A3")
-    private final long native_executeInsert() {
-        long var0F5264038205EDFB1AC05FBB0E8C5E94_303666488 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_303666488;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.073 -0400", hash_original_method = "FE0D02F573B183DE07F8BDF82793A3EA", hash_generated_method = "77FDB863DBDFDAD6CFB3311E05C24E12")
-    private final long native_1x1_long() {
-        long var0F5264038205EDFB1AC05FBB0E8C5E94_1607236002 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_1607236002;
-    }
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:33:25.349 -0500", hash_original_method = "DA760EA6BB282F82E2B89FD24EBEEAD3", hash_generated_method = "DC5161720DAB8EB47E5EA4047FBF472A")
+    private final native int native_execute();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:33:25.351 -0500", hash_original_method = "8482A8304EDF98FD537E7B2A3BC31388", hash_generated_method = "9F284F813ADAB367EF93E398BBFD5E94")
+    private final native long native_executeInsert();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:33:25.352 -0500", hash_original_method = "FE0D02F573B183DE07F8BDF82793A3EA", hash_generated_method = "109B3F1E1771FF600B0FC63E1CA1E863")
+    private final native long native_1x1_long();
 
     
     @DSModeled(DSC.SAFE)
@@ -399,28 +313,7 @@ ParcelFileDescriptor var540C13E9E156B687226421B24F2DF178_1916400177 =           
     private final ParcelFileDescriptor native_1x1_blob_ashmem() throws IOException {
     	return new ParcelFileDescriptor();
     }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.076 -0400", hash_original_method = "BD9AF961A0959F9D5CBC2D8FDDD3B169", hash_generated_method = "D10F7D0B2AF60F2190B0E6B997651F64")
-    private final void native_executeSql(String sql) {
-    }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.077 -0400", hash_original_field = "DD19317116B58B00292F949DD2B1E756", hash_generated_field = "B25F6A4CB29F6325E49F04F66EE5886C")
-
-    private static final String TAG = "SQLiteStatement";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.077 -0400", hash_original_field = "05ADA3F1E165472D313D165DAB44A6CC", hash_generated_field = "DF1BFFA8AE77C9EB2467DB4A53480D19")
-
-    private static final boolean READ = true;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.077 -0400", hash_original_field = "53B6455C8E3B4984E225565A855CEA76", hash_generated_field = "4E20ADB74C14AC29719A4662B74CC6FA")
-
-    private static final boolean WRITE = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.077 -0400", hash_original_field = "61939F59B722807810579AD50EC24088", hash_generated_field = "51E8612B8DBE387C00FDA982510BC3C4")
-
-    private static final int TRANS_STARTED = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.077 -0400", hash_original_field = "A9DDAD52531AA66AF93FF12F9D89A659", hash_generated_field = "8F182F697D081190134825A0E369736C")
-
-    private static final int LOCK_ACQUIRED = 2;
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:33:25.357 -0500", hash_original_method = "BD9AF961A0959F9D5CBC2D8FDDD3B169", hash_generated_method = "80B7D2E3456BEDA8261A1E0B72D02043")
+    private final native void native_executeSql(String sql);
 }
 

@@ -1,6 +1,8 @@
 package android.util;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -15,53 +17,95 @@ import com.android.internal.os.RuntimeInit;
 import droidsafe.helpers.DSUtils;
 
 public final class Log {
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.755 -0400", hash_original_method = "869367D375FC874369E92ACB08C85ECE", hash_generated_method = "A62EB914C3FFD50186C13765FE4CB4E6")
-    private  Log() {
-        // ---------- Original Method ----------
-    }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Send a {@link #VERBOSE} log message.
+     * @param tag Used to identify the source of a log message.  It usually identifies
+     *        the class or activity where the log call occurs.
+     * @param msg The message you would like logged.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:34.875 -0500", hash_original_method = "3D050B3246ABFA92814436071545CB13", hash_generated_method = "A1B3C1896BBBEB497B7178CE2AB2F833")
     public static int v(String tag, String msg) {
         return println_native(LOG_ID_MAIN, VERBOSE, tag, msg);
     }
 
-    
+    /**
+     * Send a {@link #VERBOSE} log message and log the exception.
+     * @param tag Used to identify the source of a log message.  It usually identifies
+     *        the class or activity where the log call occurs.
+     * @param msg The message you would like logged.
+     * @param tr An exception to log
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:34.876 -0500", hash_original_method = "6371CCA1AACEE15A82F0B64483CB973F", hash_generated_method = "A2C9957C0FB31C6DFA21C0116F594BB3")
     public static int v(String tag, String msg, Throwable tr) {
         return println_native(LOG_ID_MAIN, VERBOSE, tag, msg + '\n' + getStackTraceString(tr));
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Send a {@link #DEBUG} log message.
+     * @param tag Used to identify the source of a log message.  It usually identifies
+     *        the class or activity where the log call occurs.
+     * @param msg The message you would like logged.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:34.877 -0500", hash_original_method = "AFD39BBB2869311A4545E6AF5E18494B", hash_generated_method = "0C5D5AC5212DF40B5E19C863CBCB39D4")
     public static int d(String tag, String msg) {
         return println_native(LOG_ID_MAIN, DEBUG, tag, msg);
     }
 
-    
+    /**
+     * Send a {@link #DEBUG} log message and log the exception.
+     * @param tag Used to identify the source of a log message.  It usually identifies
+     *        the class or activity where the log call occurs.
+     * @param msg The message you would like logged.
+     * @param tr An exception to log
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:34.878 -0500", hash_original_method = "4492C71DA07A18BB6C5A18B63CA7FEE4", hash_generated_method = "1A551339626D67B9608E3578A9C1C58D")
     public static int d(String tag, String msg, Throwable tr) {
         return println_native(LOG_ID_MAIN, DEBUG, tag, msg + '\n' + getStackTraceString(tr));
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Send an {@link #INFO} log message.
+     * @param tag Used to identify the source of a log message.  It usually identifies
+     *        the class or activity where the log call occurs.
+     * @param msg The message you would like logged.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:34.879 -0500", hash_original_method = "90D3F6175B896C0304A3EF3A595CA2C2", hash_generated_method = "738EAED8F13FB872BEC6302B30228D6D")
     public static int i(String tag, String msg) {
         return println_native(LOG_ID_MAIN, INFO, tag, msg);
     }
 
-    
+    /**
+     * Send a {@link #INFO} log message and log the exception.
+     * @param tag Used to identify the source of a log message.  It usually identifies
+     *        the class or activity where the log call occurs.
+     * @param msg The message you would like logged.
+     * @param tr An exception to log
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:34.880 -0500", hash_original_method = "D380393FD3C099B2671AFD42E854EB56", hash_generated_method = "5C503D9C65E03A67736F030C07E440ED")
     public static int i(String tag, String msg, Throwable tr) {
         return println_native(LOG_ID_MAIN, INFO, tag, msg + '\n' + getStackTraceString(tr));
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Send a {@link #WARN} log message.
+     * @param tag Used to identify the source of a log message.  It usually identifies
+     *        the class or activity where the log call occurs.
+     * @param msg The message you would like logged.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:34.880 -0500", hash_original_method = "BB8A0F0F374EC19DB78F36BE9CB1080F", hash_generated_method = "7631A992905D8C63EED62786A2C0603F")
     public static int w(String tag, String msg) {
         return println_native(LOG_ID_MAIN, WARN, tag, msg);
     }
 
-    
+    /**
+     * Send a {@link #WARN} log message and log the exception.
+     * @param tag Used to identify the source of a log message.  It usually identifies
+     *        the class or activity where the log call occurs.
+     * @param msg The message you would like logged.
+     * @param tr An exception to log
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:34.881 -0500", hash_original_method = "56EF6624BA8DC40BA895131478A46CEE", hash_generated_method = "B9EE69E711B13C584EF8EBF2A38ED5F5")
     public static int w(String tag, String msg, Throwable tr) {
         return println_native(LOG_ID_MAIN, WARN, tag, msg + '\n' + getStackTraceString(tr));
     }
@@ -72,36 +116,73 @@ public final class Log {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
 
-    
+    /*
+     * Send a {@link #WARN} log message and log the exception.
+     * @param tag Used to identify the source of a log message.  It usually identifies
+     *        the class or activity where the log call occurs.
+     * @param tr An exception to log
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:34.884 -0500", hash_original_method = "FC76D95DCCFE80C9D53EB09BCEAF8146", hash_generated_method = "3E09D34AC66462E0DA241E5B3631A611")
     public static int w(String tag, Throwable tr) {
         return println_native(LOG_ID_MAIN, WARN, tag, getStackTraceString(tr));
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Send an {@link #ERROR} log message.
+     * @param tag Used to identify the source of a log message.  It usually identifies
+     *        the class or activity where the log call occurs.
+     * @param msg The message you would like logged.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:34.885 -0500", hash_original_method = "CCAD4AAF1B926E5A09DC6FEC20772811", hash_generated_method = "CDD9A8498CAE7BCCD00E7EBAC1BC7B11")
     public static int e(String tag, String msg) {
         return println_native(LOG_ID_MAIN, ERROR, tag, msg);
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Send a {@link #ERROR} log message and log the exception.
+     * @param tag Used to identify the source of a log message.  It usually identifies
+     *        the class or activity where the log call occurs.
+     * @param msg The message you would like logged.
+     * @param tr An exception to log
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:34.886 -0500", hash_original_method = "0E0F39B47315805DA235DB6910E951BD", hash_generated_method = "E9C2958DD82B5B86E3A87143494051BA")
     public static int e(String tag, String msg, Throwable tr) {
         return println_native(LOG_ID_MAIN, ERROR, tag, msg + '\n' + getStackTraceString(tr));
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * What a Terrible Failure: Report a condition that should never happen.
+     * The error will always be logged at level ASSERT with the call stack.
+     * Depending on system configuration, a report may be added to the
+     * {@link android.os.DropBoxManager} and/or the process may be terminated
+     * immediately with an error dialog.
+     * @param tag Used to identify the source of a log message.
+     * @param msg The message you would like logged.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:34.887 -0500", hash_original_method = "55ECF3B8141D5A99D3F9726C340DA85F", hash_generated_method = "BABAA912F5D364975590475B974ACC91")
     public static int wtf(String tag, String msg) {
         return wtf(tag, msg, null);
     }
 
-    
+    /**
+     * What a Terrible Failure: Report an exception that should never happen.
+     * Similar to {@link #wtf(String, String)}, with an exception to log.
+     * @param tag Used to identify the source of a log message.
+     * @param tr An exception to log.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:34.888 -0500", hash_original_method = "3EB47F02741364EE89C039A374330D1C", hash_generated_method = "B8CF05BFB9704480A0617E7DE2815CF3")
     public static int wtf(String tag, Throwable tr) {
         return wtf(tag, tr.getMessage(), tr);
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * What a Terrible Failure: Report an exception that should never happen.
+     * Similar to {@link #wtf(String, Throwable)}, with a message as well.
+     * @param tag Used to identify the source of a log message.
+     * @param msg The message you would like logged.
+     * @param tr An exception to log.  May be null.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:34.889 -0500", hash_original_method = "181C11BE6032133F9C5410C68DB86F4F", hash_generated_method = "9436003A1F0DDF141A169F89BD484EDA")
     public static int wtf(String tag, String msg, Throwable tr) {
         TerribleFailure what = new TerribleFailure(msg, tr);
         int bytes = println_native(LOG_ID_MAIN, ASSERT, tag, msg + '\n' + getStackTraceString(tr));
@@ -109,7 +190,14 @@ public final class Log {
         return bytes;
     }
 
-    
+    /**
+     * Sets the terrible failure handler, for testing.
+     *
+     * @return the old handler
+     *
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:34.889 -0500", hash_original_method = "C5025C206AD728CD6E603988CFF92F85", hash_generated_method = "9BE36ECEB34DE367488E4246F0618293")
     public static TerribleFailureHandler setWtfHandler(TerribleFailureHandler handler) {
         if (handler == null) {
             throw new NullPointerException("handler == null");
@@ -119,12 +207,18 @@ public final class Log {
         return oldHandler;
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Handy function to get a loggable stack trace from a Throwable
+     * @param tr An exception to log
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:34.890 -0500", hash_original_method = "7719F1A14DFF815E0B66B3EB7CF1C00E", hash_generated_method = "16AFC01DBED706B77B6A4AB015FDC5BD")
     public static String getStackTraceString(Throwable tr) {
         if (tr == null) {
             return "";
         }
+
+        // This is to reduce the amount of log spew that apps do in the non-error
+        // condition of the network being unavailable.
         Throwable t = tr;
         while (t != null) {
             if (t instanceof UnknownHostException) {
@@ -132,13 +226,22 @@ public final class Log {
             }
             t = t.getCause();
         }
+
         StringWriter sw = new StringWriter();
         PrintWriter pw = new PrintWriter(sw);
         tr.printStackTrace(pw);
         return sw.toString();
     }
 
-    
+    /**
+     * Low-level logging call.
+     * @param priority The priority/type of this log message
+     * @param tag Used to identify the source of a log message.  It usually identifies
+     *        the class or activity where the log call occurs.
+     * @param msg The message you would like logged.
+     * @return The number of bytes written.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:34.891 -0500", hash_original_method = "5FBBD39B6D46109F46B6F9786F21DE2B", hash_generated_method = "BA41CA312351027D578A271A03AF5AC6")
     public static int println(int priority, String tag, String msg) {
         return println_native(LOG_ID_MAIN, priority, tag, msg);
     }
@@ -149,18 +252,14 @@ public final class Log {
             int priority, String tag, String msg) {
         return DSUtils.UNKNOWN_INT;
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:34.864 -0500", hash_original_field = "F56CF3B1687883ED2E2E2F2BEB496CD9", hash_generated_field = "183ECC1630CBD890D38268E5859FD6F6")
+
+    public static final int VERBOSE = 2;
 
     
     private static class TerribleFailure extends Exception {
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.761 -0400", hash_original_method = "0F8223B52B3C6FF6727F78AC7E36D4B8", hash_generated_method = "D4E9593549451B34CCC4854683CBFDE8")
-          TerribleFailure(String msg, Throwable cause) {
-            super(msg, cause);
-            addTaint(cause.getTaint());
-            addTaint(msg.getTaint());
-            // ---------- Original Method ----------
-        }
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:34.870 -0500", hash_original_method = "0F8223B52B3C6FF6727F78AC7E36D4B8", hash_generated_method = "0F8223B52B3C6FF6727F78AC7E36D4B8")
+        TerribleFailure(String msg, Throwable cause) { super(msg, cause); }
 
         
     }
@@ -170,23 +269,19 @@ public final class Log {
     public interface TerribleFailureHandler {
         void onTerribleFailure(String tag, TerribleFailure what);
     }
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.761 -0400", hash_original_field = "CAD8C4DC986F95096FF26D44987A3C24", hash_generated_field = "183ECC1630CBD890D38268E5859FD6F6")
-
-    public static final int VERBOSE = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.761 -0400", hash_original_field = "8F6DDEBAE3A3DB44389E1FB1E5408AD7", hash_generated_field = "26AABFCC751A881E695E902E0608E346")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:34.865 -0500", hash_original_field = "B144CD9705E3AC63274D417A61CE1D03", hash_generated_field = "26AABFCC751A881E695E902E0608E346")
 
     public static final int DEBUG = 3;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.761 -0400", hash_original_field = "5759D9AAA2E6F04AD55217CD59B534EC", hash_generated_field = "6A8CBF4155F7D9169D37C74D4C14F8A9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:34.866 -0500", hash_original_field = "C860C995A9AFA74B4B8C41E7BFBB1983", hash_generated_field = "6A8CBF4155F7D9169D37C74D4C14F8A9")
 
     public static final int INFO = 4;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.761 -0400", hash_original_field = "394364B7D3297C26950D2238139AFF91", hash_generated_field = "6A26B7A055D881912AAB57C2278AA725")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:34.867 -0500", hash_original_field = "4E1517959C98EBF5F0F632F1C3274A8B", hash_generated_field = "6A26B7A055D881912AAB57C2278AA725")
 
     public static final int WARN = 5;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.761 -0400", hash_original_field = "7FD6D66B926D8917D561E5E98CA696D5", hash_generated_field = "B6B991924F4F8C2A773B84BA83915632")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:34.868 -0500", hash_original_field = "FFF95B6A33E6D621BE46667F83F04316", hash_generated_field = "B6B991924F4F8C2A773B84BA83915632")
 
     public static final int ERROR = 6;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.761 -0400", hash_original_field = "CBB8FCA07981B9789A4AC58A4B746FF2", hash_generated_field = "9BB2A0262D13A08A51875E90349F0239")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:34.869 -0500", hash_original_field = "43039C31AC83C2B46EA061924323B654", hash_generated_field = "9BB2A0262D13A08A51875E90349F0239")
 
     public static final int ASSERT = 7;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.354 -0400", hash_original_field = "1A1695BDB6E58ED53BC49925AFADC824", hash_generated_field = "EB9AD5727A6FE358590060E6265767B7")
@@ -205,17 +300,17 @@ public final class Log {
 
         
 };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.761 -0400", hash_original_field = "79AC738350B55062D8BE39604A4D333F", hash_generated_field = "7E86192626B20953FA1B583614101236")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:34.892 -0500", hash_original_field = "83BD1ED71CEFBE3B95929AA2F3198EB2", hash_generated_field = "7E86192626B20953FA1B583614101236")
+ public static final int LOG_ID_MAIN = 0;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:34.893 -0500", hash_original_field = "B472FBC86E68DA0F66AF47B72D3BD5F9", hash_generated_field = "E89D862BC59B25829A8E08E5B964FC9E")
+ public static final int LOG_ID_RADIO = 1;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:34.893 -0500", hash_original_field = "ED1311B52E952C9495AB4AD0697FBDEB", hash_generated_field = "4947723A852DD11847F2EDCCBC616E97")
+ public static final int LOG_ID_EVENTS = 2;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:34.894 -0500", hash_original_field = "48E6934BA361DE3880FF894B984C6ED6", hash_generated_field = "DBE2B7C9E039730F0529887D92D731CF")
+ public static final int LOG_ID_SYSTEM = 3;
 
-    public static final int LOG_ID_MAIN = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.761 -0400", hash_original_field = "9E1ECB1B07074063EAD437D86EF6B3AD", hash_generated_field = "E89D862BC59B25829A8E08E5B964FC9E")
-
-    public static final int LOG_ID_RADIO = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.761 -0400", hash_original_field = "FAA78458B5500C2103973A96E9E071A2", hash_generated_field = "4947723A852DD11847F2EDCCBC616E97")
-
-    public static final int LOG_ID_EVENTS = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.761 -0400", hash_original_field = "01DCA39D17DAA065D26E61F28B010BD3", hash_generated_field = "DBE2B7C9E039730F0529887D92D731CF")
-
-    public static final int LOG_ID_SYSTEM = 3;
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:34.874 -0500", hash_original_method = "869367D375FC874369E92ACB08C85ECE", hash_generated_method = "FA91EC1506EF8966CF2A314916866116")
+    private Log() {
+    }
 }
 

@@ -1,6 +1,8 @@
 package com.android.internal.telephony.cdma;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import static android.telephony.SmsManager.STATUS_ON_ICC_FREE;
 
@@ -26,13 +28,27 @@ import com.android.internal.telephony.SmsRawData;
 
 
 public class RuimSmsInterfaceManager extends IccSmsInterfaceManager {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.376 -0400", hash_original_field = "B89DEBA2CB26B1AC973763E3E152017B", hash_generated_field = "E59081251AD157907AA4CE8B3D8E654E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:23.820 -0500", hash_original_field = "DB10E3AE28CC9996A816C3CCD7216A83", hash_generated_field = "37C2AB96DD7CCDC96FF809DAC1A6D712")
+
+    static final String LOG_TAG = "CDMA";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:23.821 -0500", hash_original_field = "95D5733A0C83DB3D047D109C028C9F02", hash_generated_field = "3860CF443CF1EC2A1FAD1F55FBF8A7F5")
+
+    static final boolean DBG = true;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:23.825 -0500", hash_original_field = "CB2C30527400449D368083C9A417745F", hash_generated_field = "77BC6FD0DC199252047A7F7B64B6060D")
+
+
+    private static final int EVENT_LOAD_DONE = 1;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:23.826 -0500", hash_original_field = "5409277739A12236F0DB56D6F1D6490F", hash_generated_field = "15C9033C6CF121B938E3ED8FAF5BE197")
+
+    private static final int EVENT_UPDATE_DONE = 2;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:23.822 -0500", hash_original_field = "83DB9DCBBD2D99A708D9A1934D5CD5AB", hash_generated_field = "E59081251AD157907AA4CE8B3D8E654E")
+
 
     private final Object mLock = new Object();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.376 -0400", hash_original_field = "51D04CAF6B674687BDD02BD17453D38D", hash_generated_field = "E5C2960DEEDF8FDAD07F7DFD4E59E129")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:23.823 -0500", hash_original_field = "8DB7F83EC06955504CF74A8D7DB183AB", hash_generated_field = "E5C2960DEEDF8FDAD07F7DFD4E59E129")
 
     private boolean mSuccess;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.376 -0400", hash_original_field = "8226893332EC8B3D4C41881E93F86D0B", hash_generated_field = "ED139F0AF6AD2DEBB50AE480C594897C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:23.824 -0500", hash_original_field = "5370DAD9751D4F4C600491B1B9F2E288", hash_generated_field = "ED139F0AF6AD2DEBB50AE480C594897C")
 
     private List<SmsRawData> mSms;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.558 -0400", hash_original_field = "654C2E444ACAAB197BCB3C0E6DCC67BF", hash_generated_field = "AA89A217FED25E195A2047490DDFA22C")
@@ -73,251 +89,154 @@ public class RuimSmsInterfaceManager extends IccSmsInterfaceManager {
 
         
 };
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.376 -0400", hash_original_method = "BD8DF48547112A1ED89E06EF8DBAC147", hash_generated_method = "AEC21BB3A2F8351A81A22755BF88A93F")
-    public  RuimSmsInterfaceManager(CDMAPhone phone, SMSDispatcher dispatcher) {
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:23.829 -0500", hash_original_method = "BD8DF48547112A1ED89E06EF8DBAC147", hash_generated_method = "F4D1CD331742A5EFB7888DF430D5C3BE")
+    public RuimSmsInterfaceManager(CDMAPhone phone, SMSDispatcher dispatcher) {
         super(phone);
-        addTaint(dispatcher.getTaint());
-        addTaint(phone.getTaint());
         mDispatcher = dispatcher;
-        // ---------- Original Method ----------
-        //mDispatcher = dispatcher;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.376 -0400", hash_original_method = "090E1F04EFD80CF69ADD306ED1D79AE5", hash_generated_method = "614D737B8CBDA53A99A22331B445C19D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:23.830 -0500", hash_original_method = "090E1F04EFD80CF69ADD306ED1D79AE5", hash_generated_method = "5EA87569AF1433DF9A5120E4976B79C1")
     public void dispose() {
-        // ---------- Original Method ----------
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.377 -0400", hash_original_method = "4FA1DF67E8E2FEA7279C76FF6F2C28E0", hash_generated_method = "C0C43D8ACAFF0B71521D10DF8760751F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:23.831 -0500", hash_original_method = "4FA1DF67E8E2FEA7279C76FF6F2C28E0", hash_generated_method = "3DB391A506CF043C160FB3C9EC726A1B")
     protected void finalize() {
-        try 
-        {
+        try {
             super.finalize();
-        } //End block
-        catch (Throwable throwable)
-        {
-        } //End block
-        if(DBG)        
-        Log.d(LOG_TAG, "RuimSmsInterfaceManager finalized");
-        // ---------- Original Method ----------
-        //try {
-            //super.finalize();
-        //} catch (Throwable throwable) {
-            //Log.e(LOG_TAG, "Error while finalizing:", throwable);
-        //}
-        //if(DBG) Log.d(LOG_TAG, "RuimSmsInterfaceManager finalized");
+        } catch (Throwable throwable) {
+            Log.e(LOG_TAG, "Error while finalizing:", throwable);
+        }
+        if(DBG) Log.d(LOG_TAG, "RuimSmsInterfaceManager finalized");
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.377 -0400", hash_original_method = "4E34C2A3F0747FC60FF3AABB1F75DE9B", hash_generated_method = "3A86BCBED2D90F12A6D078F3B4B19D74")
-    public boolean updateMessageOnIccEf(int index, int status, byte[] pdu) {
-        addTaint(pdu[0]);
-        addTaint(status);
-        addTaint(index);
-        if(DBG)        
-        log("updateMessageOnIccEf: index=" + index +
+    /**
+     * Update the specified message on the RUIM.
+     *
+     * @param index record index of message to update
+     * @param status new message status (STATUS_ON_ICC_READ,
+     *                  STATUS_ON_ICC_UNREAD, STATUS_ON_ICC_SENT,
+     *                  STATUS_ON_ICC_UNSENT, STATUS_ON_ICC_FREE)
+     * @param pdu the raw PDU to store
+     * @return success or not
+     *
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:23.832 -0500", hash_original_method = "4E34C2A3F0747FC60FF3AABB1F75DE9B", hash_generated_method = "20C79CB174C727D459AFA4D98687B9EC")
+    public boolean
+    updateMessageOnIccEf(int index, int status, byte[] pdu) {
+        if (DBG) log("updateMessageOnIccEf: index=" + index +
                 " status=" + status + " ==> " +
                 "("+ pdu + ")");
         enforceReceiveAndSend("Updating message on RUIM");
-        synchronized
-(mLock)        {
+        synchronized(mLock) {
             mSuccess = false;
             Message response = mHandler.obtainMessage(EVENT_UPDATE_DONE);
-            if(status == STATUS_ON_ICC_FREE)            
-            {
+
+            if (status == STATUS_ON_ICC_FREE) {
+                // Special case FREE: call deleteSmsOnRuim instead of
+                // manipulating the RUIM record
                 mPhone.mCM.deleteSmsOnRuim(index, response);
-            } //End block
-            else
-            {
+            } else {
                 byte[] record = makeSmsRecordData(status, pdu);
                 mPhone.getIccFileHandler().updateEFLinearFixed(
                         IccConstants.EF_SMS, index, record, null, response);
-            } //End block
-            try 
-            {
+            }
+            try {
                 mLock.wait();
-            } //End block
-            catch (InterruptedException e)
-            {
+            } catch (InterruptedException e) {
                 log("interrupted while trying to update by index");
-            } //End block
-        } //End block
-        boolean var51D04CAF6B674687BDD02BD17453D38D_1655734029 = (mSuccess);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_482333093 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_482333093;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            }
+        }
+        return mSuccess;
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.378 -0400", hash_original_method = "F615398128ECEE16BD7E7D5E7CEBDFE4", hash_generated_method = "C9681350A558519AA2C672214E81F7C0")
+    /**
+     * Copy a raw SMS PDU to the RUIM.
+     *
+     * @param pdu the raw PDU to store
+     * @param status message status (STATUS_ON_ICC_READ, STATUS_ON_ICC_UNREAD,
+     *               STATUS_ON_ICC_SENT, STATUS_ON_ICC_UNSENT)
+     * @return success or not
+     *
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:23.833 -0500", hash_original_method = "F615398128ECEE16BD7E7D5E7CEBDFE4", hash_generated_method = "7EE087A2F1F7A7223DBED2AE012727B8")
     public boolean copyMessageToIccEf(int status, byte[] pdu, byte[] smsc) {
-        addTaint(smsc[0]);
-        addTaint(pdu[0]);
-        addTaint(status);
-        if(DBG)        
-        log("copyMessageToIccEf: status=" + status + " ==> " +
+        //NOTE smsc not used in RUIM
+        if (DBG) log("copyMessageToIccEf: status=" + status + " ==> " +
                 "pdu=("+ Arrays.toString(pdu) + ")");
         enforceReceiveAndSend("Copying message to RUIM");
-        synchronized
-(mLock)        {
+        synchronized(mLock) {
             mSuccess = false;
             Message response = mHandler.obtainMessage(EVENT_UPDATE_DONE);
+
             mPhone.mCM.writeSmsToRuim(status, IccUtils.bytesToHexString(pdu),
                     response);
-            try 
-            {
+
+            try {
                 mLock.wait();
-            } //End block
-            catch (InterruptedException e)
-            {
+            } catch (InterruptedException e) {
                 log("interrupted while trying to update by index");
-            } //End block
-        } //End block
-        boolean var51D04CAF6B674687BDD02BD17453D38D_1301599386 = (mSuccess);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1363623504 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1363623504;
-        // ---------- Original Method ----------
-        //if (DBG) log("copyMessageToIccEf: status=" + status + " ==> " +
-                //"pdu=("+ Arrays.toString(pdu) + ")");
-        //enforceReceiveAndSend("Copying message to RUIM");
-        //synchronized(mLock) {
-            //mSuccess = false;
-            //Message response = mHandler.obtainMessage(EVENT_UPDATE_DONE);
-            //mPhone.mCM.writeSmsToRuim(status, IccUtils.bytesToHexString(pdu),
-                    //response);
-            //try {
-                //mLock.wait();
-            //} catch (InterruptedException e) {
-                //log("interrupted while trying to update by index");
-            //}
-        //}
-        //return mSuccess;
+            }
+        }
+        return mSuccess;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.379 -0400", hash_original_method = "2942961FDF8C69DB3912CFC67A52E698", hash_generated_method = "C86287EB22C6B4EACF8EBF326DE4AC21")
+    /**
+     * Retrieves all messages currently stored on RUIM.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:23.834 -0500", hash_original_method = "2942961FDF8C69DB3912CFC67A52E698", hash_generated_method = "564225517A7967A3A00485EC8C906EB8")
     public List<SmsRawData> getAllMessagesFromIccEf() {
-        if(DBG)        
-        log("getAllMessagesFromEF");
+        if (DBG) log("getAllMessagesFromEF");
+
         Context context = mPhone.getContext();
+
         context.enforceCallingPermission(
                 "android.permission.RECEIVE_SMS",
                 "Reading messages from RUIM");
-        synchronized
-(mLock)        {
+        synchronized(mLock) {
             Message response = mHandler.obtainMessage(EVENT_LOAD_DONE);
             mPhone.getIccFileHandler().loadEFLinearFixedAll(IccConstants.EF_SMS, response);
-            try 
-            {
+
+            try {
                 mLock.wait();
-            } //End block
-            catch (InterruptedException e)
-            {
+            } catch (InterruptedException e) {
                 log("interrupted while trying to load from the RUIM");
-            } //End block
-        } //End block
-List<SmsRawData> var7BF1E9CBCC2022F70728CF07D46D244B_1158482755 =         mSms;
-        var7BF1E9CBCC2022F70728CF07D46D244B_1158482755.addTaint(taint);
-        return var7BF1E9CBCC2022F70728CF07D46D244B_1158482755;
-        // ---------- Original Method ----------
-        //if (DBG) log("getAllMessagesFromEF");
-        //Context context = mPhone.getContext();
-        //context.enforceCallingPermission(
-                //"android.permission.RECEIVE_SMS",
-                //"Reading messages from RUIM");
-        //synchronized(mLock) {
-            //Message response = mHandler.obtainMessage(EVENT_LOAD_DONE);
-            //mPhone.getIccFileHandler().loadEFLinearFixedAll(IccConstants.EF_SMS, response);
-            //try {
-                //mLock.wait();
-            //} catch (InterruptedException e) {
-                //log("interrupted while trying to load from the RUIM");
-            //}
-        //}
-        //return mSms;
+            }
+        }
+        return mSms;
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.379 -0400", hash_original_method = "B36353E8C6494764B604BA61C09FD3A9", hash_generated_method = "130CE4A09DB704C34C348B0B9965ACFE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:23.835 -0500", hash_original_method = "B36353E8C6494764B604BA61C09FD3A9", hash_generated_method = "98F57DD28C7372BBB2240111A6C0413C")
     public boolean enableCellBroadcast(int messageIdentifier) {
-        addTaint(messageIdentifier);
-        boolean var68934A3E9455FA72420237EB05902327_1358356484 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_135084364 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_135084364;
-        // ---------- Original Method ----------
-        //Log.e(LOG_TAG, "Error! Not implemented for CDMA.");
-        //return false;
+        // Not implemented
+        Log.e(LOG_TAG, "Error! Not implemented for CDMA.");
+        return false;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.379 -0400", hash_original_method = "4359F4C67258CB29FAAD950989F56651", hash_generated_method = "B7580A9DD7D4BA2C3A7870F122A51233")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:23.836 -0500", hash_original_method = "4359F4C67258CB29FAAD950989F56651", hash_generated_method = "FDFE31C60B5353C931CF43AB6C1F5B4C")
     public boolean disableCellBroadcast(int messageIdentifier) {
-        addTaint(messageIdentifier);
-        boolean var68934A3E9455FA72420237EB05902327_1665327373 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2097073661 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2097073661;
-        // ---------- Original Method ----------
-        //Log.e(LOG_TAG, "Error! Not implemented for CDMA.");
-        //return false;
+        // Not implemented
+        Log.e(LOG_TAG, "Error! Not implemented for CDMA.");
+        return false;
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.380 -0400", hash_original_method = "AEDCAF6C3B71A6FB2E26AFF2BA601D09", hash_generated_method = "D1A39160CCE4C012C588B324AAE3F7F0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:23.837 -0500", hash_original_method = "AEDCAF6C3B71A6FB2E26AFF2BA601D09", hash_generated_method = "0A79394AA2E9134C43EF0BCCB3C9425E")
     public boolean enableCellBroadcastRange(int startMessageId, int endMessageId) {
-        addTaint(endMessageId);
-        addTaint(startMessageId);
-        boolean var68934A3E9455FA72420237EB05902327_290997126 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1473437355 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1473437355;
-        // ---------- Original Method ----------
-        //Log.e(LOG_TAG, "Error! Not implemented for CDMA.");
-        //return false;
+        // Not implemented
+        Log.e(LOG_TAG, "Error! Not implemented for CDMA.");
+        return false;
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.380 -0400", hash_original_method = "395863C3AC4BAF6D1AC0ABA956E02C48", hash_generated_method = "E3988A77A29C04A8DDF633E69D7F77DC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:23.837 -0500", hash_original_method = "395863C3AC4BAF6D1AC0ABA956E02C48", hash_generated_method = "EDCE9DB9A6FCD1B4E24B267B7DACF37B")
     public boolean disableCellBroadcastRange(int startMessageId, int endMessageId) {
-        addTaint(endMessageId);
-        addTaint(startMessageId);
-        boolean var68934A3E9455FA72420237EB05902327_1163080644 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_166413093 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_166413093;
-        // ---------- Original Method ----------
-        //Log.e(LOG_TAG, "Error! Not implemented for CDMA.");
-        //return false;
+        // Not implemented
+        Log.e(LOG_TAG, "Error! Not implemented for CDMA.");
+        return false;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.380 -0400", hash_original_method = "A1B1A2F1E999A2614769F6F66BA1F268", hash_generated_method = "117A5F719F847BD2E92DAA06231A89A1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:23.838 -0500", hash_original_method = "A1B1A2F1E999A2614769F6F66BA1F268", hash_generated_method = "7D692F029AAA49546495605BFD7FB8A6")
     protected void log(String msg) {
-        addTaint(msg.getTaint());
         Log.d(LOG_TAG, "[RuimSmsInterfaceManager] " + msg);
-        // ---------- Original Method ----------
-        //Log.d(LOG_TAG, "[RuimSmsInterfaceManager] " + msg);
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.380 -0400", hash_original_field = "951C150E6D062E6AED2C45BB9B756185", hash_generated_field = "37C2AB96DD7CCDC96FF809DAC1A6D712")
-
-    static final String LOG_TAG = "CDMA";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.381 -0400", hash_original_field = "A4622F7F72162611C8E075EE443BC26E", hash_generated_field = "3860CF443CF1EC2A1FAD1F55FBF8A7F5")
-
-    static final boolean DBG = true;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.381 -0400", hash_original_field = "B0BA389891763CE058F1838506410614", hash_generated_field = "77BC6FD0DC199252047A7F7B64B6060D")
-
-    private static final int EVENT_LOAD_DONE = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.381 -0400", hash_original_field = "FA5C825AD4E8BE0B56282EA4E98C2D84", hash_generated_field = "15C9033C6CF121B938E3ED8FAF5BE197")
-
-    private static final int EVENT_UPDATE_DONE = 2;
 }
 

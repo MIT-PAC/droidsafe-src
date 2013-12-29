@@ -1,6 +1,8 @@
 package gov.nist.javax.sip.header;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import gov.nist.core.GenericObject;
 import gov.nist.core.GenericObjectList;
@@ -14,579 +16,364 @@ import java.lang.reflect.Modifier;
 
 
 public abstract class SIPObject extends GenericObject {
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.449 -0400", hash_original_method = "F2415C91D035ABB45320678077A163BD", hash_generated_method = "90A009E0ECCD723DE48100CDD9B85812")
-    protected  SIPObject() {
+
+    /** default Constructor
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.146 -0500", hash_original_method = "F2415C91D035ABB45320678077A163BD", hash_generated_method = "EF0377E88863F74D89719B23AA2BF7B9")
+    protected SIPObject() {
         super();
-        // ---------- Original Method ----------
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.450 -0400", hash_original_method = "BC21211AABBF5A727CE8CE0C8A5F5ABC", hash_generated_method = "07941E956AE5C75C7E5403F7A3FDE19E")
+
+
+    /** Debug function
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.147 -0500", hash_original_method = "BC21211AABBF5A727CE8CE0C8A5F5ABC", hash_generated_method = "07FA9249E0984A0CAE96B90D99799894")
     public void dbgPrint() {
         super.dbgPrint();
-        // ---------- Original Method ----------
-        //super.dbgPrint();
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /** Encode the header into a String.
+     * @return String
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.148 -0500", hash_original_method = "62F9CE492238F967486EB3E8B7CFE75A", hash_generated_method = "5BF421C60268DEDED1E2C31D57984D81")
     public abstract String encode();
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.450 -0400", hash_original_method = "23BD5BF1494AAB1936A4882B6C7896EB", hash_generated_method = "DFDDEF7511A9BD4C3806E1BA4634E7ED")
+    /** Encode the header into the given StringBuffer.
+     * Default implemation calls encode().
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.149 -0500", hash_original_method = "23BD5BF1494AAB1936A4882B6C7896EB", hash_generated_method = "E83555D6561D540C12E200451394DEB5")
     public StringBuffer encode(StringBuffer buffer) {
-        addTaint(buffer.getTaint());
-StringBuffer var7758A6E5CA5A3C31A1AD4D3B1CB2BC22_2063165486 =         buffer.append(encode());
-        var7758A6E5CA5A3C31A1AD4D3B1CB2BC22_2063165486.addTaint(taint);
-        return var7758A6E5CA5A3C31A1AD4D3B1CB2BC22_2063165486;
-        // ---------- Original Method ----------
-        //return buffer.append(encode());
+        return buffer.append(encode());
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.453 -0400", hash_original_method = "C625D56C28F833180267D6A3AE3C9C8E", hash_generated_method = "84602015D339249F758BBFE31456FD09")
+    /**
+     * An introspection based equality predicate for SIPObjects.
+     *@param other the other object to test against.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.152 -0500", hash_original_method = "C625D56C28F833180267D6A3AE3C9C8E", hash_generated_method = "3235E79C076831103811E5F9B5DBF5E3")
     public boolean equals(Object other) {
-        addTaint(other.getTaint());
-        if(!this.getClass().equals(other.getClass()))        
-        {
-        boolean var68934A3E9455FA72420237EB05902327_557361456 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1301421607 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1301421607;
-        }
+        if (!this.getClass().equals(other.getClass()))
+            return false;
         SIPObject that = (SIPObject) other;
         Class myclass = this.getClass();
         Class hisclass = other.getClass();
-        while
-(true)        
-        {
+        while (true) {
             Field[] fields = myclass.getDeclaredFields();
-            if(!hisclass.equals(myclass))            
-            {
-            boolean var68934A3E9455FA72420237EB05902327_691028500 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_118551298 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_118551298;
-            }
+            if (!hisclass.equals(myclass))
+                return false;
             Field[] hisfields = hisclass.getDeclaredFields();
-for(int i = 0;i < fields.length;i++)
-            {
+            for (int i = 0; i < fields.length; i++) {
                 Field f = fields[i];
                 Field g = hisfields[i];
+                // Only print protected and public members.
                 int modifier = f.getModifiers();
-                if((modifier & Modifier.PRIVATE) == Modifier.PRIVATE)                
-                continue;
+                if ((modifier & Modifier.PRIVATE) == Modifier.PRIVATE)
+                    continue;
                 Class fieldType = f.getType();
                 String fieldName = f.getName();
-                if(fieldName.compareTo("stringRepresentation") == 0)                
-                {
+                if (fieldName.compareTo("stringRepresentation") == 0) {
                     continue;
-                } //End block
-                if(fieldName.compareTo("indentation") == 0)                
-                {
+                }
+                if (fieldName.compareTo("indentation") == 0) {
                     continue;
-                } //End block
-                try 
-                {
-                    if(fieldType.isPrimitive())                    
-                    {
+                }
+                try {
+                    // Primitive fields are printed with type: value
+                    if (fieldType.isPrimitive()) {
                         String fname = fieldType.toString();
-                        if(fname.compareTo("int") == 0)                        
-                        {
-                            if(f.getInt(this) != g.getInt(that))                            
-                            {
-                            boolean var68934A3E9455FA72420237EB05902327_1046076982 = (false);
-                                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1764170146 = getTaintBoolean();
-                            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1764170146;
-                            }
-                        } //End block
-                        else
-                        if(fname.compareTo("short") == 0)                        
-                        {
-                            if(f.getShort(this) != g.getShort(that))                            
-                            {
-                            boolean var68934A3E9455FA72420237EB05902327_1987348433 = (false);
-                                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2141170576 = getTaintBoolean();
-                            return var84E2C64F38F78BA3EA5C905AB5A2DA27_2141170576;
-                            }
-                        } //End block
-                        else
-                        if(fname.compareTo("char") == 0)                        
-                        {
-                            if(f.getChar(this) != g.getChar(that))                            
-                            {
-                            boolean var68934A3E9455FA72420237EB05902327_1186043982 = (false);
-                                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1283380289 = getTaintBoolean();
-                            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1283380289;
-                            }
-                        } //End block
-                        else
-                        if(fname.compareTo("long") == 0)                        
-                        {
-                            if(f.getLong(this) != g.getLong(that))                            
-                            {
-                            boolean var68934A3E9455FA72420237EB05902327_567105785 = (false);
-                                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_973892479 = getTaintBoolean();
-                            return var84E2C64F38F78BA3EA5C905AB5A2DA27_973892479;
-                            }
-                        } //End block
-                        else
-                        if(fname.compareTo("boolean") == 0)                        
-                        {
-                            if(f.getBoolean(this) != g.getBoolean(that))                            
-                            {
-                            boolean var68934A3E9455FA72420237EB05902327_1076967734 = (false);
-                                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_111411886 = getTaintBoolean();
-                            return var84E2C64F38F78BA3EA5C905AB5A2DA27_111411886;
-                            }
-                        } //End block
-                        else
-                        if(fname.compareTo("double") == 0)                        
-                        {
-                            if(f.getDouble(this) != g.getDouble(that))                            
-                            {
-                            boolean var68934A3E9455FA72420237EB05902327_1076481536 = (false);
-                                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_366819589 = getTaintBoolean();
-                            return var84E2C64F38F78BA3EA5C905AB5A2DA27_366819589;
-                            }
-                        } //End block
-                        else
-                        if(fname.compareTo("float") == 0)                        
-                        {
-                            if(f.getFloat(this) != g.getFloat(that))                            
-                            {
-                            boolean var68934A3E9455FA72420237EB05902327_1469481578 = (false);
-                                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1213822291 = getTaintBoolean();
-                            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1213822291;
-                            }
-                        } //End block
-                    } //End block
-                    else
-                    if(g.get(that) == f.get(this))                    
-                    continue;
-                    else
-                    if(f.get(this) == null && g.get(that) != null)                    
-                    {
-                    boolean var68934A3E9455FA72420237EB05902327_556766350 = (false);
-                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_405646053 = getTaintBoolean();
-                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_405646053;
-                    }
-                    else
-                    if(g.get(that) == null && f.get(this) != null)                    
-                    {
-                    boolean var68934A3E9455FA72420237EB05902327_1276772077 = (false);
-                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_112979963 = getTaintBoolean();
-                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_112979963;
-                    }
-                    else
-                    if(!f.get(this).equals(g.get(that)))                    
-                    {
-                    boolean var68934A3E9455FA72420237EB05902327_1866816654 = (false);
-                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1720645374 = getTaintBoolean();
-                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_1720645374;
-                    }
-                } //End block
-                catch (IllegalAccessException ex1)
-                {
+                        if (fname.compareTo("int") == 0) {
+                            if (f.getInt(this) != g.getInt(that))
+                                return false;
+                        } else if (fname.compareTo("short") == 0) {
+                            if (f.getShort(this) != g.getShort(that))
+                                return false;
+                        } else if (fname.compareTo("char") == 0) {
+                            if (f.getChar(this) != g.getChar(that))
+                                return false;
+                        } else if (fname.compareTo("long") == 0) {
+                            if (f.getLong(this) != g.getLong(that))
+                                return false;
+                        } else if (fname.compareTo("boolean") == 0) {
+                            if (f.getBoolean(this) != g.getBoolean(that))
+                                return false;
+                        } else if (fname.compareTo("double") == 0) {
+                            if (f.getDouble(this) != g.getDouble(that))
+                                return false;
+                        } else if (fname.compareTo("float") == 0) {
+                            if (f.getFloat(this) != g.getFloat(that))
+                                return false;
+                        }
+                    } else if (g.get(that) == f.get(this))
+                        continue;
+                    else if (f.get(this) == null && g.get(that) != null)
+                        return false;
+                    else if (g.get(that) == null && f.get(this) != null)
+                        return false;
+                    else if (!f.get(this).equals(g.get(that)))
+                        return false;
+                } catch (IllegalAccessException ex1) {
                     System.out.println("accessed field " + fieldName);
                     System.out.println("modifier  " + modifier);
                     System.out.println("modifier.private  " + Modifier.PRIVATE);
                     InternalErrorHandler.handleException(ex1);
-                } //End block
-            } //End block
-            if(myclass.equals(SIPObject.class))            
-            break;
-            else
-            {
+                }
+            }
+            if (myclass.equals(SIPObject.class))
+                break;
+            else {
                 myclass = myclass.getSuperclass();
                 hisclass = hisclass.getSuperclass();
-            } //End block
-        } //End block
-        boolean varB326B5062B2F0E69046810717534CB09_172287983 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_766658687 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_766658687;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            }
+        }
+        return true;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.458 -0400", hash_original_method = "060178C12313F034DC0CE078907A1CE4", hash_generated_method = "4DF1C487ADE3094556FFE899C15CC9E9")
+    /** An introspection based predicate matching using a template
+     * object. Allows for partial match of two protocl Objects.
+     * You can set a generalized matcher (using regular expressions
+     * for example) by implementing the Match interface and registering
+     * it with the template.
+     *@param other the match pattern to test against. The match object
+     * has to be of the same type (class). Primitive types
+     * and non-sip fields that are non null are matched for equality.
+     * Null in any field  matches anything. Some book-keeping fields
+     * are ignored when making the comparison.
+     *
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.154 -0500", hash_original_method = "060178C12313F034DC0CE078907A1CE4", hash_generated_method = "A59E76E07226A59A509F31C28C1E52FB")
     public boolean match(Object other) {
-        addTaint(other.getTaint());
-        if(other == null)        
-        {
-            boolean varB326B5062B2F0E69046810717534CB09_255448499 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_517510635 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_517510635;
-        } //End block
-        if(!this.getClass().equals(other.getClass()))        
-        {
-        boolean var68934A3E9455FA72420237EB05902327_733224049 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2125156470 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2125156470;
+        if (other == null) {
+            return true;
         }
+
+        if (!this.getClass().equals(other.getClass()))
+            return false;
         GenericObject that = (GenericObject) other;
         Class myclass = this.getClass();
         Class hisclass = other.getClass();
-        while
-(true)        
-        {
+        while (true) {
             Field[] fields = myclass.getDeclaredFields();
             Field[] hisfields = hisclass.getDeclaredFields();
-for(int i = 0;i < fields.length;i++)
-            {
+            for (int i = 0; i < fields.length; i++) {
                 Field f = fields[i];
                 Field g = hisfields[i];
+                // Only print protected and public members.
                 int modifier = f.getModifiers();
-                if((modifier & Modifier.PRIVATE) == Modifier.PRIVATE)                
-                continue;
+                if ((modifier & Modifier.PRIVATE) == Modifier.PRIVATE)
+                    continue;
                 Class fieldType = f.getType();
                 String fieldName = f.getName();
-                if(fieldName.compareTo("stringRepresentation") == 0)                
-                {
+                if (fieldName.compareTo("stringRepresentation") == 0) {
                     continue;
-                } //End block
-                if(fieldName.compareTo("indentation") == 0)                
-                {
+                }
+                if (fieldName.compareTo("indentation") == 0) {
                     continue;
-                } //End block
-                try 
-                {
-                    if(fieldType.isPrimitive())                    
-                    {
+                }
+                try {
+                    if (fieldType.isPrimitive()) {
                         String fname = fieldType.toString();
-                        if(fname.compareTo("int") == 0)                        
-                        {
-                            if(f.getInt(this) != g.getInt(that))                            
-                            {
-                            boolean var68934A3E9455FA72420237EB05902327_153813666 = (false);
-                                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_763055633 = getTaintBoolean();
-                            return var84E2C64F38F78BA3EA5C905AB5A2DA27_763055633;
-                            }
-                        } //End block
-                        else
-                        if(fname.compareTo("short") == 0)                        
-                        {
-                            if(f.getShort(this) != g.getShort(that))                            
-                            {
-                            boolean var68934A3E9455FA72420237EB05902327_1219555851 = (false);
-                                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1293885926 = getTaintBoolean();
-                            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1293885926;
-                            }
-                        } //End block
-                        else
-                        if(fname.compareTo("char") == 0)                        
-                        {
-                            if(f.getChar(this) != g.getChar(that))                            
-                            {
-                            boolean var68934A3E9455FA72420237EB05902327_764131326 = (false);
-                                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2131384509 = getTaintBoolean();
-                            return var84E2C64F38F78BA3EA5C905AB5A2DA27_2131384509;
-                            }
-                        } //End block
-                        else
-                        if(fname.compareTo("long") == 0)                        
-                        {
-                            if(f.getLong(this) != g.getLong(that))                            
-                            {
-                            boolean var68934A3E9455FA72420237EB05902327_1395918801 = (false);
-                                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_559220741 = getTaintBoolean();
-                            return var84E2C64F38F78BA3EA5C905AB5A2DA27_559220741;
-                            }
-                        } //End block
-                        else
-                        if(fname.compareTo("boolean") == 0)                        
-                        {
-                            if(f.getBoolean(this) != g.getBoolean(that))                            
-                            {
-                            boolean var68934A3E9455FA72420237EB05902327_1821667622 = (false);
-                                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_459190953 = getTaintBoolean();
-                            return var84E2C64F38F78BA3EA5C905AB5A2DA27_459190953;
-                            }
-                        } //End block
-                        else
-                        if(fname.compareTo("double") == 0)                        
-                        {
-                            if(f.getDouble(this) != g.getDouble(that))                            
-                            {
-                            boolean var68934A3E9455FA72420237EB05902327_848509132 = (false);
-                                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1556778853 = getTaintBoolean();
-                            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1556778853;
-                            }
-                        } //End block
-                        else
-                        if(fname.compareTo("float") == 0)                        
-                        {
-                            if(f.getFloat(this) != g.getFloat(that))                            
-                            {
-                            boolean var68934A3E9455FA72420237EB05902327_663855374 = (false);
-                                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1916228905 = getTaintBoolean();
-                            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1916228905;
-                            }
-                        } //End block
-                        else
-                        {
+                        if (fname.compareTo("int") == 0) {
+                            if (f.getInt(this) != g.getInt(that))
+                                return false;
+                        } else if (fname.compareTo("short") == 0) {
+                            if (f.getShort(this) != g.getShort(that))
+                                return false;
+                        } else if (fname.compareTo("char") == 0) {
+                            if (f.getChar(this) != g.getChar(that))
+                                return false;
+                        } else if (fname.compareTo("long") == 0) {
+                            if (f.getLong(this) != g.getLong(that))
+                                return false;
+                        } else if (fname.compareTo("boolean") == 0) {
+                            if (f.getBoolean(this) != g.getBoolean(that))
+                                return false;
+                        } else if (fname.compareTo("double") == 0) {
+                            if (f.getDouble(this) != g.getDouble(that))
+                                return false;
+                        } else if (fname.compareTo("float") == 0) {
+                            if (f.getFloat(this) != g.getFloat(that))
+                                return false;
+                        } else {
                             InternalErrorHandler.handleException(
                                 "unknown type");
-                        } //End block
-                    } //End block
-                    else
-                    {
+                        }
+                    } else {
                         Object myObj = f.get(this);
                         Object hisObj = g.get(that);
-                        if(hisObj != null && myObj == null)                        
-                        {
-                        boolean var68934A3E9455FA72420237EB05902327_510596550 = (false);
-                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1746793874 = getTaintBoolean();
-                        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1746793874;
-                        }
-                        else
-                        if(hisObj == null && myObj != null)                        
-                        continue;
-                        else
-                        if(hisObj == null && myObj == null)                        
-                        continue;
-                        else
-                        if(hisObj instanceof java.lang.String
-                                && myObj instanceof java.lang.String)                        
-                        {
-                            if((((String) hisObj).trim()).equals(""))                            
+                        if (hisObj != null && myObj == null)
+                            return false;
+                        else if (hisObj == null && myObj != null)
                             continue;
-                            if(((String) myObj)
+                        else if (hisObj == null && myObj == null)
+                            continue;
+                        else if (
+                            hisObj instanceof java.lang.String
+                                && myObj instanceof java.lang.String) {
+                            if ((((String) hisObj).trim()).equals(""))
+                                continue;
+                            if (((String) myObj)
                                 .compareToIgnoreCase((String) hisObj)
-                                != 0)                            
-                            {
-                            boolean var68934A3E9455FA72420237EB05902327_1009108151 = (false);
-                                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1025740032 = getTaintBoolean();
-                            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1025740032;
-                            }
-                        } //End block
-                        else
-                        if(hisObj != null
+                                != 0)
+                                return false;
+                        } else if (
+                            hisObj != null
                                 && GenericObject.isMySubclass(myObj.getClass())
                                 && GenericObject.isMySubclass(hisObj.getClass())
                                 && myObj.getClass().equals(hisObj.getClass())
                                 && ((GenericObject) hisObj).getMatcher()
-                                    != null)                        
-                        {
-                            String myObjEncoded = ((GenericObject) myObj).encode();
-                            boolean retval = ((GenericObject) hisObj).getMatcher().match(
+                                    != null) {
+                            String myObjEncoded =
+                                ((GenericObject) myObj).encode();
+                            boolean retval =
+                                ((GenericObject) hisObj).getMatcher().match(
                                     myObjEncoded);
-                            if(!retval)                            
-                            {
-                            boolean var68934A3E9455FA72420237EB05902327_1406218976 = (false);
-                                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_542640240 = getTaintBoolean();
-                            return var84E2C64F38F78BA3EA5C905AB5A2DA27_542640240;
-                            }
-                        } //End block
-                        else
-                        if(GenericObject.isMySubclass(myObj.getClass())
-                                && !((GenericObject) myObj).match(hisObj))                        
-                        {
-                        boolean var68934A3E9455FA72420237EB05902327_848820339 = (false);
-                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_74590681 = getTaintBoolean();
-                        return var84E2C64F38F78BA3EA5C905AB5A2DA27_74590681;
-                        }
-                        else
-                        if(GenericObjectList.isMySubclass(myObj.getClass())
-                                && !((GenericObjectList) myObj).match(hisObj))                        
-                        {
-                        boolean var68934A3E9455FA72420237EB05902327_2111851781 = (false);
-                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1861569776 = getTaintBoolean();
-                        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1861569776;
-                        }
-                    } //End block
-                } //End block
-                catch (IllegalAccessException ex1)
-                {
+                            if (!retval)
+                                return false;
+                        } else if (
+                            GenericObject.isMySubclass(myObj.getClass())
+                                && !((GenericObject) myObj).match(hisObj))
+                            return false;
+                        else if (
+                            GenericObjectList.isMySubclass(myObj.getClass())
+                                && !((GenericObjectList) myObj).match(hisObj))
+                            return false;
+
+                    }
+                } catch (IllegalAccessException ex1) {
                     InternalErrorHandler.handleException(ex1);
-                } //End block
-            } //End block
-            if(myclass.equals(SIPObject.class))            
-            break;
-            else
-            {
+                }
+            }
+            if (myclass.equals(SIPObject.class))
+                break;
+            else {
                 myclass = myclass.getSuperclass();
                 hisclass = hisclass.getSuperclass();
-            } //End block
-        } //End block
-        boolean varB326B5062B2F0E69046810717534CB09_310460159 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_682602554 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_682602554;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            }
+        }
+        return true;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.461 -0400", hash_original_method = "8C7E8103DEE2671781774C37BABA3BB5", hash_generated_method = "C0CDED104083A96C84619A7CDA54C0CE")
+    /**
+     * An introspection based string formatting method. We need this because
+     * in this package (although it is an exact duplicate of the one in
+     * the superclass) because it needs to access the protected members
+     * of the other objects in this class.
+     * @return String
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.156 -0500", hash_original_method = "8C7E8103DEE2671781774C37BABA3BB5", hash_generated_method = "43ACE820E048560DD88C790458E7EB59")
     public String debugDump() {
         stringRepresentation = "";
         Class myclass = getClass();
         sprint(myclass.getName());
         sprint("{");
         Field[] fields = myclass.getDeclaredFields();
-for(int i = 0;i < fields.length;i++)
-        {
+        for (int i = 0; i < fields.length; i++) {
             Field f = fields[i];
+            // Only print protected and public members.
             int modifier = f.getModifiers();
-            if((modifier & Modifier.PRIVATE) == Modifier.PRIVATE)            
-            continue;
+            if ((modifier & Modifier.PRIVATE) == Modifier.PRIVATE)
+                continue;
             Class fieldType = f.getType();
             String fieldName = f.getName();
-            if(fieldName.compareTo("stringRepresentation") == 0)            
-            {
+            if (fieldName.compareTo("stringRepresentation") == 0) {
+                // avoid nasty recursions...
                 continue;
-            } //End block
-            if(fieldName.compareTo("indentation") == 0)            
-            {
+            }
+            if (fieldName.compareTo("indentation") == 0) {
+                // formatting stuff - not relevant here.
                 continue;
-            } //End block
+            }
             sprint(fieldName + ":");
-            try 
-            {
-                if(fieldType.isPrimitive())                
-                {
+            try {
+                // Primitive fields are printed with type: value
+                if (fieldType.isPrimitive()) {
                     String fname = fieldType.toString();
                     sprint(fname + ":");
-                    if(fname.compareTo("int") == 0)                    
-                    {
+                    if (fname.compareTo("int") == 0) {
                         int intfield = f.getInt(this);
                         sprint(intfield);
-                    } //End block
-                    else
-                    if(fname.compareTo("short") == 0)                    
-                    {
+                    } else if (fname.compareTo("short") == 0) {
                         short shortField = f.getShort(this);
                         sprint(shortField);
-                    } //End block
-                    else
-                    if(fname.compareTo("char") == 0)                    
-                    {
+                    } else if (fname.compareTo("char") == 0) {
                         char charField = f.getChar(this);
                         sprint(charField);
-                    } //End block
-                    else
-                    if(fname.compareTo("long") == 0)                    
-                    {
+                    } else if (fname.compareTo("long") == 0) {
                         long longField = f.getLong(this);
                         sprint(longField);
-                    } //End block
-                    else
-                    if(fname.compareTo("boolean") == 0)                    
-                    {
+                    } else if (fname.compareTo("boolean") == 0) {
                         boolean booleanField = f.getBoolean(this);
                         sprint(booleanField);
-                    } //End block
-                    else
-                    if(fname.compareTo("double") == 0)                    
-                    {
+                    } else if (fname.compareTo("double") == 0) {
                         double doubleField = f.getDouble(this);
                         sprint(doubleField);
-                    } //End block
-                    else
-                    if(fname.compareTo("float") == 0)                    
-                    {
+                    } else if (fname.compareTo("float") == 0) {
                         float floatField = f.getFloat(this);
                         sprint(floatField);
-                    } //End block
-                } //End block
-                else
-                if(GenericObject.class.isAssignableFrom(fieldType))                
-                {
-                    if(f.get(this) != null)                    
-                    {
+                    }
+                } else if (GenericObject.class.isAssignableFrom(fieldType)) {
+                    if (f.get(this) != null) {
                         sprint(
                             ((GenericObject) f.get(this)).debugDump(
                                 indentation + 1));
-                    } //End block
-                    else
-                    {
+                    } else {
                         sprint("<null>");
-                    } //End block
-                } //End block
-                else
-                if(GenericObjectList.class.isAssignableFrom(fieldType))                
-                {
-                    if(f.get(this) != null)                    
-                    {
+                    }
+
+                } else if (
+                    GenericObjectList.class.isAssignableFrom(fieldType)) {
+                    if (f.get(this) != null) {
                         sprint(
                             ((GenericObjectList) f.get(this)).debugDump(
                                 indentation + 1));
-                    } //End block
-                    else
-                    {
+                    } else {
                         sprint("<null>");
-                    } //End block
-                } //End block
-                else
-                {
-                    if(f.get(this) != null)                    
-                    {
+                    }
+
+                } else {
+                    // Dont do recursion on things that are not
+                    // of our header type...
+                    if (f.get(this) != null) {
                         sprint(f.get(this).getClass().getName() + ":");
-                    } //End block
-                    else
-                    {
+                    } else {
                         sprint(fieldType.getName() + ":");
-                    } //End block
+                    }
+
                     sprint("{");
-                    if(f.get(this) != null)                    
-                    {
+                    if (f.get(this) != null) {
                         sprint(f.get(this).toString());
-                    } //End block
-                    else
-                    {
+                    } else {
                         sprint("<null>");
-                    } //End block
+                    }
                     sprint("}");
-                } //End block
-            } //End block
-            catch (IllegalAccessException ex1)
-            {
-                continue;
-            } //End block
-        } //End block
+                }
+            } catch (IllegalAccessException ex1) {
+                continue; // we are accessing a private field...
+            }
+        }
         sprint("}");
-String var8D11C2D110975896438D6F91C60E6D6F_1261597753 =         stringRepresentation;
-        var8D11C2D110975896438D6F91C60E6D6F_1261597753.addTaint(taint);
-        return var8D11C2D110975896438D6F91C60E6D6F_1261597753;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        return stringRepresentation;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.463 -0400", hash_original_method = "85620320EA37710A8866ECA4B349D636", hash_generated_method = "989A55B4CEB4B80F7D39AE4F814777BB")
+    /**
+     * Formatter with a given starting indentation (for nested structs).
+     * @param indent int to set
+     * @return String
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.158 -0500", hash_original_method = "85620320EA37710A8866ECA4B349D636", hash_generated_method = "17B15A15CB497DC07A940E8E9144F966")
     public String debugDump(int indent) {
-        addTaint(indent);
         int save = indentation;
         indentation = indent;
         String retval = this.debugDump();
         indentation = save;
-String varF9E19AD6135C970F387F77C6F3DE4477_629488332 =         retval;
-        varF9E19AD6135C970F387F77C6F3DE4477_629488332.addTaint(taint);
-        return varF9E19AD6135C970F387F77C6F3DE4477_629488332;
-        // ---------- Original Method ----------
-        //int save = indentation;
-        //indentation = indent;
-        //String retval = this.debugDump();
-        //indentation = save;
-        //return retval;
+        return retval;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.463 -0400", hash_original_method = "9121421793EC5D37F14A312213FF0274", hash_generated_method = "9C0B4655B7D6393FB41F4CC4FA1C4B36")
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:53.159 -0500", hash_original_method = "9121421793EC5D37F14A312213FF0274", hash_generated_method = "0E38B803B5F7EA7FC3B7A952B8C48B78")
     public String toString() {
-String varB17575D7C845B2C662583710539AAEBB_123782198 =         this.encode();
-        varB17575D7C845B2C662583710539AAEBB_123782198.addTaint(taint);
-        return varB17575D7C845B2C662583710539AAEBB_123782198;
-        // ---------- Original Method ----------
-        //return this.encode();
+        return this.encode();
     }
 
     

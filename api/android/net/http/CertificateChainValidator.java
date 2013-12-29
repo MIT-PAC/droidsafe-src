@@ -1,6 +1,9 @@
 package android.net.http;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
+import android.util.Log;
 import droidsafe.annotations.*;
 import java.io.IOException;
 import java.security.cert.Certificate;
@@ -22,87 +25,69 @@ import com.android.internal.net.DomainNameValidator;
 
 
 class CertificateChainValidator {
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.818 -0400", hash_original_method = "2F959D748394792DE55923600092C8E9", hash_generated_method = "249781E5FCB4B7182831503E258AE636")
-    private  CertificateChainValidator() {
-        // ---------- Original Method ----------
-    }
 
-    
-    @DSModeled(DSC.BAN)
+    /**
+     * @return The singleton instance of the certificates chain validator
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.196 -0500", hash_original_method = "0F243599E8016F5D4F15CBBF70F43AE6", hash_generated_method = "02D8009B6E1299C3B3A212C7B30F1CD2")
     public static CertificateChainValidator getInstance() {
         return sInstance;
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.819 -0400", hash_original_method = "5B87AA85F76367E84F6A87186CEADEE5", hash_generated_method = "9517332374590B36965353B44FC1C720")
-    public SslError doHandshakeAndValidateServerCertificates(
-            HttpsConnection connection, SSLSocket sslSocket, String domain) throws IOException {
-        addTaint(domain.getTaint());
-        addTaint(sslSocket.getTaint());
-        addTaint(connection.getTaint());
-        SSLSession sslSession = sslSocket.getSession();
-        if(!sslSession.isValid())        
-        {
-            closeSocketThrowException(sslSocket, "failed to perform SSL handshake");
-        } //End block
-        Certificate[] peerCertificates = sslSocket.getSession().getPeerCertificates();
-        if(peerCertificates == null || peerCertificates.length == 0)        
-        {
-            closeSocketThrowException(
-                sslSocket, "failed to retrieve peer certificates");
-        } //End block
-        else
-        {
-            if(connection != null)            
-            {
-                if(peerCertificates[0] != null)                
-                {
-                    connection.setCertificate(
-                        new SslCertificate((X509Certificate)peerCertificates[0]));
-                } //End block
-            } //End block
-        } //End block
-SslError var5995AA76FBBB5331C788BBF94383B022_758865090 =         verifyServerDomainAndCertificates((X509Certificate[]) peerCertificates, domain, "RSA");
-        var5995AA76FBBB5331C788BBF94383B022_758865090.addTaint(taint);
-        return var5995AA76FBBB5331C788BBF94383B022_758865090;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
-
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Similar to doHandshakeAndValidateServerCertificates but exposed to JNI for use
+     * by Chromium HTTPS stack to validate the cert chain.
+     * @param certChain The bytes for certificates in ASN.1 DER encoded certificates format.
+     * @param domain The full website hostname and domain
+     * @param authType The authentication type for the cert chain
+     * @return An SSL error object if there is an error and null otherwise
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.199 -0500", hash_original_method = "18267EA0A2027BF86F0A85466039921C", hash_generated_method = "C96CA958F20C3743481DCCEA10551E2D")
     public static SslError verifyServerCertificates(
-        byte[][] certChain, String domain, String authType) throws IOException {
+        byte[][] certChain, String domain, String authType)
+        throws IOException {
+
         if (certChain == null || certChain.length == 0) {
             throw new IllegalArgumentException("bad certificate chain");
         }
+
         X509Certificate[] serverCertificates = new X509Certificate[certChain.length];
+
         for (int i = 0; i < certChain.length; ++i) {
             serverCertificates[i] = new X509CertImpl(certChain[i]);
         }
+
         return verifyServerDomainAndCertificates(serverCertificates, domain, authType);
     }
 
-    
-    @DSModeled(DSC.BAN)
+    /**
+     * Common code of doHandshakeAndValidateServerCertificates and verifyServerCertificates.
+     * Calls DomainNamevalidator to verify the domain, and TrustManager to verify the certs.
+     * @param chain the cert chain in X509 cert format.
+     * @param domain The full website hostname and domain
+     * @param authType The authentication type for the cert chain
+     * @return An SSL error object if there is an error and null otherwise
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.200 -0500", hash_original_method = "2785BD3BA93222E8AB5B460FDCCCF9E9", hash_generated_method = "3A258E0C2116CB2D762D495F6C5139B6")
     private static SslError verifyServerDomainAndCertificates(
-            X509Certificate[] chain, String domain, String authType) throws IOException {
+            X509Certificate[] chain, String domain, String authType)
+            throws IOException {
+        // check if the first certificate in the chain is for this site
         X509Certificate currCertificate = chain[0];
         if (currCertificate == null) {
             throw new IllegalArgumentException("certificate for this site is null");
         }
+
         if (!DomainNameValidator.match(currCertificate, domain)) {
             if (HttpLog.LOGV) {
                 HttpLog.v("certificate not for this host: " + domain);
             }
             return new SslError(SslError.SSL_IDMISMATCH, currCertificate);
         }
+
         try {
             SSLParametersImpl.getDefaultTrustManager().checkServerTrusted(chain, authType);
-            return null;  
+            return null;  // No errors.
         } catch (CertificateException e) {
             if (HttpLog.LOGV) {
                 HttpLog.v("failed to validate the certificate chain, error: " +
@@ -111,62 +96,84 @@ SslError var5995AA76FBBB5331C788BBF94383B022_758865090 =         verifyServerDom
             return new SslError(SslError.SSL_UNTRUSTED, currCertificate);
         }
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.195 -0500", hash_original_field = "C561100F7CA9F2EEB7E58CFBB92AFD83", hash_generated_field = "7025A8FFA19D23C3239F45040E6EE9F0")
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.820 -0400", hash_original_method = "768C411890F29309D1F137AF28998331", hash_generated_method = "05E0FE804B6759B78541079DC94C2EE6")
+    private static final CertificateChainValidator sInstance
+            = new CertificateChainValidator();
+
+    /**
+     * Creates a new certificate chain validator. This is a private constructor.
+     * If you need a Certificate chain validator, call getInstance().
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.197 -0500", hash_original_method = "2F959D748394792DE55923600092C8E9", hash_generated_method = "D74C4DFAD21CEF4FCC29B841FA38D1DA")
+    private CertificateChainValidator() {}
+
+    /**
+     * Performs the handshake and server certificates validation
+     * Notice a new chain will be rebuilt by tracing the issuer and subject
+     * before calling checkServerTrusted().
+     * And if the last traced certificate is self issued and it is expired, it
+     * will be dropped.
+     * @param sslSocket The secure connection socket
+     * @param domain The website domain
+     * @return An SSL error object if there is an error and null otherwise
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.198 -0500", hash_original_method = "5B87AA85F76367E84F6A87186CEADEE5", hash_generated_method = "216E1F74EE288CB17CA845827E206614")
+    public SslError doHandshakeAndValidateServerCertificates(
+            HttpsConnection connection, SSLSocket sslSocket, String domain)
+            throws IOException {
+        // get a valid SSLSession, close the socket if we fail
+        SSLSession sslSession = sslSocket.getSession();
+        if (!sslSession.isValid()) {
+            closeSocketThrowException(sslSocket, "failed to perform SSL handshake");
+        }
+
+        // retrieve the chain of the server peer certificates
+        Certificate[] peerCertificates =
+            sslSocket.getSession().getPeerCertificates();
+
+        if (peerCertificates == null || peerCertificates.length == 0) {
+            closeSocketThrowException(
+                sslSocket, "failed to retrieve peer certificates");
+        } else {
+            // update the SSL certificate associated with the connection
+            if (connection != null) {
+                if (peerCertificates[0] != null) {
+                    connection.setCertificate(
+                        new SslCertificate((X509Certificate)peerCertificates[0]));
+                }
+            }
+        }
+
+        return verifyServerDomainAndCertificates((X509Certificate[]) peerCertificates, domain, "RSA");
+    }
+
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.201 -0500", hash_original_method = "768C411890F29309D1F137AF28998331", hash_generated_method = "10AEA3ED4E1BC4F19C79B4C82569D499")
     private void closeSocketThrowException(
-            SSLSocket socket, String errorMessage, String defaultErrorMessage) throws IOException {
-        addTaint(defaultErrorMessage.getTaint());
-        addTaint(errorMessage.getTaint());
-        addTaint(socket.getTaint());
+            SSLSocket socket, String errorMessage, String defaultErrorMessage)
+            throws IOException {
         closeSocketThrowException(
             socket, errorMessage != null ? errorMessage : defaultErrorMessage);
-        // ---------- Original Method ----------
-        //closeSocketThrowException(
-            //socket, errorMessage != null ? errorMessage : defaultErrorMessage);
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.821 -0400", hash_original_method = "8DFE74A9ABEF1F34DE8E6B965DB51B9B", hash_generated_method = "FA44059FF83F8D6ACDDB4D15F416CA03")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:32.202 -0500", hash_original_method = "8DFE74A9ABEF1F34DE8E6B965DB51B9B", hash_generated_method = "6E9E025EFFEDA554EA38003B6695FACD")
     private void closeSocketThrowException(SSLSocket socket,
             String errorMessage) throws IOException {
-        addTaint(errorMessage.getTaint());
-        addTaint(socket.getTaint());
-        if(HttpLog.LOGV)        
-        {
+        if (HttpLog.LOGV) {
             HttpLog.v("validation error: " + errorMessage);
-        } //End block
-        if(socket != null)        
-        {
+        }
+
+        if (socket != null) {
             SSLSession session = socket.getSession();
-            if(session != null)            
-            {
+            if (session != null) {
                 session.invalidate();
-            } //End block
+            }
+
             socket.close();
-        } //End block
-        SSLHandshakeException varED9E2837C945A63AD04740882155F953_2071866238 = new SSLHandshakeException(errorMessage);
-        varED9E2837C945A63AD04740882155F953_2071866238.addTaint(taint);
-        throw varED9E2837C945A63AD04740882155F953_2071866238;
-        // ---------- Original Method ----------
-        //if (HttpLog.LOGV) {
-            //HttpLog.v("validation error: " + errorMessage);
-        //}
-        //if (socket != null) {
-            //SSLSession session = socket.getSession();
-            //if (session != null) {
-                //session.invalidate();
-            //}
-            //socket.close();
-        //}
-        //throw new SSLHandshakeException(errorMessage);
+        }
+
+        throw new SSLHandshakeException(errorMessage);
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.821 -0400", hash_original_field = "75E9E3354073877B40EBA5B806297F19", hash_generated_field = "7025A8FFA19D23C3239F45040E6EE9F0")
-
-    private static final CertificateChainValidator sInstance = new CertificateChainValidator();
 }
 

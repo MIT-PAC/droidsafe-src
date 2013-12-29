@@ -1,6 +1,8 @@
 package org.bouncycastle.asn1.sec;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import org.bouncycastle.asn1.ASN1ObjectIdentifier;
 import org.bouncycastle.asn1.x9.X9ObjectIdentifiers;

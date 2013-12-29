@@ -1,6 +1,8 @@
 package android.graphics.drawable.shapes;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -12,153 +14,103 @@ import android.graphics.RectF;
 
 
 public class RoundRectShape extends RectShape {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.827 -0400", hash_original_field = "68D931F8388C49D8823BCF532F82A9A6", hash_generated_field = "6830495B7E4516D5AD2F6812EB294538")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.438 -0500", hash_original_field = "FFD42C23F2C723747ED877F614CEF10A", hash_generated_field = "6830495B7E4516D5AD2F6812EB294538")
 
     private float[] mOuterRadii;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.827 -0400", hash_original_field = "CF7B030D6062D49C71B570885E3215E0", hash_generated_field = "D2729CA6AA6C83F02D0889C112109BB9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.438 -0500", hash_original_field = "8671536A7A0B8FD81624A39ADB80DD93", hash_generated_field = "D2729CA6AA6C83F02D0889C112109BB9")
 
-    private RectF mInset;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.827 -0400", hash_original_field = "A6A16C7DD74ADEEBC4B029FFD9506FDE", hash_generated_field = "F28D8A31EA09EA2173CBE320E200D4AF")
+    private RectF   mInset;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.439 -0500", hash_original_field = "0CA70E23DEE7C30ACCE020583DBFEDF8", hash_generated_field = "F28D8A31EA09EA2173CBE320E200D4AF")
 
     private float[] mInnerRadii;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.827 -0400", hash_original_field = "5B44FC9034F0DBA89B65AA417F353CFB", hash_generated_field = "8D82BE416946019DAC8D55ACEFBD37C0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.440 -0500", hash_original_field = "87E108BA533AD53ED54A9D43AC876571", hash_generated_field = "8D82BE416946019DAC8D55ACEFBD37C0")
 
-    private RectF mInnerRect;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.828 -0400", hash_original_field = "FB4FCB3508FC66D4E3F113990AC335C6", hash_generated_field = "101E51A8003B09B39CD3C51138473AB6")
-
-    private Path mPath;
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.829 -0400", hash_original_method = "BFB37C497FF277AFDA0C7FF1B797A20B", hash_generated_method = "1F814A3F2968FFDB92EE6971E87F69C9")
-    public  RoundRectShape(float[] outerRadii, RectF inset,
+    private RectF mInnerRect;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.440 -0500", hash_original_field = "BA85F34C67A3F4FFA171800FB1C1C633", hash_generated_field = "101E51A8003B09B39CD3C51138473AB6")
+
+    private Path  mPath;    // this is what we actually draw
+    
+    /**
+     * RoundRectShape constructor.
+     * Specifies an outer (round)rect and an optional inner (round)rect.
+     *
+     * @param outerRadii An array of 8 radius values, for the outer roundrect. 
+     *                   The first two floats are for the 
+     *                   top-left corner (remaining pairs correspond clockwise). 
+     *                   For no rounded corners on the outer rectangle, 
+     *                   pass null.
+     * @param inset      A RectF that specifies the distance from the inner 
+     *                   rect to each side of the outer rect. 
+     *                   For no inner, pass null.
+     * @param innerRadii An array of 8 radius values, for the inner roundrect.
+     *                   The first two floats are for the 
+     *                   top-left corner (remaining pairs correspond clockwise). 
+     *                   For no rounded corners on the inner rectangle, 
+     *                   pass null.
+     *                   If inset parameter is null, this parameter is ignored. 
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.441 -0500", hash_original_method = "BFB37C497FF277AFDA0C7FF1B797A20B", hash_generated_method = "69B629F93436596B6E6AC6E5DC0E2075")
+    public RoundRectShape(float[] outerRadii, RectF inset,
                           float[] innerRadii) {
-        if(outerRadii != null && outerRadii.length < 8)        
-        {
-            ArrayIndexOutOfBoundsException var8E9EFB62FA44DFF932FD8F4A104B3011_1409916621 = new ArrayIndexOutOfBoundsException("outer radii must have >= 8 values");
-            var8E9EFB62FA44DFF932FD8F4A104B3011_1409916621.addTaint(taint);
-            throw var8E9EFB62FA44DFF932FD8F4A104B3011_1409916621;
-        } //End block
-        if(innerRadii != null && innerRadii.length < 8)        
-        {
-            ArrayIndexOutOfBoundsException varEA92C32A253067335B2FC46E6E2144DE_320784810 = new ArrayIndexOutOfBoundsException("inner radii must have >= 8 values");
-            varEA92C32A253067335B2FC46E6E2144DE_320784810.addTaint(taint);
-            throw varEA92C32A253067335B2FC46E6E2144DE_320784810;
-        } //End block
+        if (outerRadii != null && outerRadii.length < 8) {
+            throw new ArrayIndexOutOfBoundsException("outer radii must have >= 8 values");
+        }
+        if (innerRadii != null && innerRadii.length < 8) {
+            throw new ArrayIndexOutOfBoundsException("inner radii must have >= 8 values");
+        }
         mOuterRadii = outerRadii;
         mInset = inset;
         mInnerRadii = innerRadii;
-        if(inset != null)        
-        {
+        
+        if (inset != null) {
             mInnerRect = new RectF();
-        } //End block
+        }
         mPath = new Path();
-        // ---------- Original Method ----------
-        //if (outerRadii != null && outerRadii.length < 8) {
-            //throw new ArrayIndexOutOfBoundsException("outer radii must have >= 8 values");
-        //}
-        //if (innerRadii != null && innerRadii.length < 8) {
-            //throw new ArrayIndexOutOfBoundsException("inner radii must have >= 8 values");
-        //}
-        //mOuterRadii = outerRadii;
-        //mInset = inset;
-        //mInnerRadii = innerRadii;
-        //if (inset != null) {
-            //mInnerRect = new RectF();
-        //}
-        //mPath = new Path();
     }
-
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.830 -0400", hash_original_method = "2040FB3810CEA26BCA97DD1BCDDED3AB", hash_generated_method = "5A8E3A9F0731F4E763FCC10657835012")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.442 -0500", hash_original_method = "2040FB3810CEA26BCA97DD1BCDDED3AB", hash_generated_method = "9CAFFE13CB93ED1E021F4AD5B012F36E")
     @Override
-    public void draw(Canvas canvas, Paint paint) {
-        addTaint(paint.getTaint());
-        addTaint(canvas.getTaint());
+public void draw(Canvas canvas, Paint paint) {
         canvas.drawPath(mPath, paint);
-        // ---------- Original Method ----------
-        //canvas.drawPath(mPath, paint);
     }
-
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.832 -0400", hash_original_method = "76E13F34AD3978846D0DA3AA18C0FAE1", hash_generated_method = "735F9B12D406D8A9FFB85CD16A55E733")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.443 -0500", hash_original_method = "76E13F34AD3978846D0DA3AA18C0FAE1", hash_generated_method = "55B2870296B4A02D7E1BD3D46D93E70B")
     @Override
-    protected void onResize(float w, float h) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(h);
-        addTaint(w);
+protected void onResize(float w, float h) {
         super.onResize(w, h);
+        
         RectF r = rect();
         mPath.reset();
-        if(mOuterRadii != null)        
-        {
+
+        if (mOuterRadii != null) {
             mPath.addRoundRect(r, mOuterRadii, Path.Direction.CW);
-        } //End block
-        else
-        {
+        } else {
             mPath.addRect(r, Path.Direction.CW);
-        } //End block
-        if(mInnerRect != null)        
-        {
+        }
+        if (mInnerRect != null) {
             mInnerRect.set(r.left + mInset.left, r.top + mInset.top,
                            r.right - mInset.right, r.bottom - mInset.bottom);
-            if(mInnerRect.width() < w && mInnerRect.height() < h)            
-            {
-                if(mInnerRadii != null)                
-                {
+            if (mInnerRect.width() < w && mInnerRect.height() < h) {
+                if (mInnerRadii != null) {
                     mPath.addRoundRect(mInnerRect, mInnerRadii, Path.Direction.CCW);
-                } //End block
-                else
-                {
+                } else {
                     mPath.addRect(mInnerRect, Path.Direction.CCW);
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //super.onResize(w, h);
-        //RectF r = rect();
-        //mPath.reset();
-        //if (mOuterRadii != null) {
-            //mPath.addRoundRect(r, mOuterRadii, Path.Direction.CW);
-        //} else {
-            //mPath.addRect(r, Path.Direction.CW);
-        //}
-        //if (mInnerRect != null) {
-            //mInnerRect.set(r.left + mInset.left, r.top + mInset.top,
-                           //r.right - mInset.right, r.bottom - mInset.bottom);
-            //if (mInnerRect.width() < w && mInnerRect.height() < h) {
-                //if (mInnerRadii != null) {
-                    //mPath.addRoundRect(mInnerRect, mInnerRadii, Path.Direction.CCW);
-                //} else {
-                    //mPath.addRect(mInnerRect, Path.Direction.CCW);
-                //}
-            //}
-        //}
+                }
+            }
+        }
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.833 -0400", hash_original_method = "C8F54F0C5741E48CA334E7AB381892D2", hash_generated_method = "A59533E21FE2984C493C8EB8E2803E85")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:54.444 -0500", hash_original_method = "C8F54F0C5741E48CA334E7AB381892D2", hash_generated_method = "278968F286E9DE55B66B86405F99994F")
     @Override
-    public RoundRectShape clone() throws CloneNotSupportedException {
+public RoundRectShape clone() throws CloneNotSupportedException {
         RoundRectShape shape = (RoundRectShape) super.clone();
         shape.mOuterRadii = mOuterRadii != null ? mOuterRadii.clone() : null;
         shape.mInnerRadii = mInnerRadii != null ? mInnerRadii.clone() : null;
         shape.mInset = new RectF(mInset);
         shape.mInnerRect = new RectF(mInnerRect);
         shape.mPath = new Path(mPath);
-RoundRectShape var1E03F90B1057A29F071E0E1A1AD4365B_478271271 =         shape;
-        var1E03F90B1057A29F071E0E1A1AD4365B_478271271.addTaint(taint);
-        return var1E03F90B1057A29F071E0E1A1AD4365B_478271271;
-        // ---------- Original Method ----------
-        //RoundRectShape shape = (RoundRectShape) super.clone();
-        //shape.mOuterRadii = mOuterRadii != null ? mOuterRadii.clone() : null;
-        //shape.mInnerRadii = mInnerRadii != null ? mInnerRadii.clone() : null;
-        //shape.mInset = new RectF(mInset);
-        //shape.mInnerRect = new RectF(mInnerRect);
-        //shape.mPath = new Path(mPath);
-        //return shape;
+        return shape;
     }
 
     

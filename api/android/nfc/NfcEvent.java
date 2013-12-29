@@ -1,21 +1,20 @@
 package android.nfc;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
 
 public final class NfcEvent {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.260 -0400", hash_original_field = "4A8BADE580C221E695275E8488E6ECA3", hash_generated_field = "3C5882DF1C6C01F0D0017D9C73957B88")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:45.101 -0500", hash_original_field = "B4202FF681DF4B4B15555A4F2703EC9C", hash_generated_field = "3C5882DF1C6C01F0D0017D9C73957B88")
 
-    public NfcAdapter nfcAdapter;
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.261 -0400", hash_original_method = "EC9DC1FF5D63DBE437BD3C224D5FA5E1", hash_generated_method = "C1D928D50AD6623D1CB143696CA7488A")
-      NfcEvent(NfcAdapter nfcAdapter) {
+    public  NfcAdapter nfcAdapter;
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:45.102 -0500", hash_original_method = "EC9DC1FF5D63DBE437BD3C224D5FA5E1", hash_generated_method = "EC9DC1FF5D63DBE437BD3C224D5FA5E1")
+    NfcEvent(NfcAdapter nfcAdapter) {
         this.nfcAdapter = nfcAdapter;
-        // ---------- Original Method ----------
-        //this.nfcAdapter = nfcAdapter;
     }
 
     

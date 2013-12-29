@@ -1,6 +1,8 @@
 package com.android.internal.telephony.gsm;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Arrays;
 import java.util.Calendar;
@@ -54,94 +56,189 @@ import com.android.internal.telephony.TelephonyProperties;
 
 
 final class GsmServiceStateTracker extends ServiceStateTracker {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.362 -0400", hash_original_field = "F7A42FE7211F98AC7A60A285AC3A9E87", hash_generated_field = "690DC9441FA6BD04E0472B4DF9E035F8")
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.345 -0500", hash_original_method = "44F3B84D65DA92E5C60AFFA193D2001B", hash_generated_method = "289EB8DAE8C0C12E22131068C4AD92E8")
+    private static int twoDigitsAt(String s, int offset) {
+        int a, b;
+
+        a = Character.digit(s.charAt(offset), 10);
+        b = Character.digit(s.charAt(offset+1), 10);
+
+        if (a < 0 || b < 0) {
+
+            throw new RuntimeException("invalid format");
+        }
+
+        return a*10 + b;
+    }
+
+    /**
+     * Provides the name of the algorithmic time zone for the specified
+     * offset.  Taken from TimeZone.java.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.348 -0500", hash_original_method = "373B413D23312B4F586E9709CD9454D3", hash_generated_method = "4885D96B2E3A8FE3ADAF1F0D12C568CC")
+    private static String displayNameFor(int off) {
+        off = off / 1000 / 60;
+
+        char[] buf = new char[9];
+        buf[0] = 'G';
+        buf[1] = 'M';
+        buf[2] = 'T';
+
+        if (off < 0) {
+            buf[3] = '-';
+            off = -off;
+        } else {
+            buf[3] = '+';
+        }
+
+        int hours = off / 60;
+        int minutes = off % 60;
+
+        buf[4] = (char) ('0' + hours / 10);
+        buf[5] = (char) ('0' + hours % 10);
+
+        buf[6] = ':';
+
+        buf[7] = (char) ('0' + minutes / 10);
+        buf[8] = (char) ('0' + minutes % 10);
+
+        return new String(buf);
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.361 -0500", hash_original_method = "EFB0A206AD54A96675C1A4594B55DCEF", hash_generated_method = "0159960090AFF387605731755E7C2327")
+    private static void sloge(String s) {
+        Log.e(LOG_TAG, "[GsmSST] " + s);
+    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.282 -0500", hash_original_field = "28DECCA9F494133CD6F61BCA99A50ECA", hash_generated_field = "B8386CD6D900777C9D6A0A5CA1D0B217")
+
+    static final String LOG_TAG = "GSM";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.283 -0500", hash_original_field = "95D5733A0C83DB3D047D109C028C9F02", hash_generated_field = "3860CF443CF1EC2A1FAD1F55FBF8A7F5")
+
+    static final boolean DBG = true;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.305 -0500", hash_original_field = "0F876ACCEEC633A27C8C9455ACA51A42", hash_generated_field = "3E784668308EA1C4770734C39504B13F")
+
+    private static final String WAKELOCK_TAG = "ServiceStateTracker";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.308 -0500", hash_original_field = "CD8623FD90A7024AF28C6B3221113ED6", hash_generated_field = "4A5D9F03FAE9E50AE63B4C35022FAF17")
+
+    static final int DEFAULT_GPRS_CHECK_PERIOD_MILLIS = 60 * 1000;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.309 -0500", hash_original_field = "75F833547C132ED63BFA8C4DCBA26B4D", hash_generated_field = "3591FCEB08077E36696EAEB77DBB3180")
+
+    static final int PS_ENABLED = 1001;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.309 -0500", hash_original_field = "CDA7B20B36034EDE1CD9AC04BAD72BEC", hash_generated_field = "8C26EED9E7268BEDBBAF04F084560166")
+
+    static final int PS_DISABLED = 1002;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.310 -0500", hash_original_field = "A1AAC2DC95CCC44850ED3FB85EA04960", hash_generated_field = "B2781F5CE66230CC973402FB9B2889B2")
+
+    static final int CS_ENABLED = 1003;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.311 -0500", hash_original_field = "49ADF54D164D5C923400B087336AED56", hash_generated_field = "D51C56159F181C83643165D845D52483")
+
+    static final int CS_DISABLED = 1004;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.312 -0500", hash_original_field = "66F1AE95BB8C6751509EF63493D8A684", hash_generated_field = "C31DA0EA8EA157BEB2FE7CB33DF402A6")
+
+    static final int CS_NORMAL_ENABLED = 1005;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.313 -0500", hash_original_field = "BEBD2FA32946C5A8BF0DA7656C71FF3E", hash_generated_field = "F9B78C4A6E79981FE3F71480BC07396C")
+
+    static final int CS_EMERGENCY_ENABLED = 1006;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.313 -0500", hash_original_field = "4AC213E3C6742CEE226FC0CB90B61092", hash_generated_field = "DE5A1C9C370E4A134E0B624298F21FBF")
+
+
+    /** Notification id. */
+    static final int PS_NOTIFICATION = 888;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.314 -0500", hash_original_field = "C669C8F2DF4796DE8E7F9F320259B28F", hash_generated_field = "EBBCDE09A71FA16B42C4199ACB2E765C")
+
+    static final int CS_NOTIFICATION = 999;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.284 -0500", hash_original_field = "690DC9441FA6BD04E0472B4DF9E035F8", hash_generated_field = "690DC9441FA6BD04E0472B4DF9E035F8")
+
 
     GSMPhone phone;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.362 -0400", hash_original_field = "B9C5653E1C2BC689F2CC98D72803F0E0", hash_generated_field = "6501E6CCC6A627167D828A01CEBF7711")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.284 -0500", hash_original_field = "6501E6CCC6A627167D828A01CEBF7711", hash_generated_field = "6501E6CCC6A627167D828A01CEBF7711")
 
     GsmCellLocation cellLoc;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.362 -0400", hash_original_field = "B325523B8771CAA3A7FB54CA6901D43A", hash_generated_field = "B261F7AD66455AA0C3F3A08229915B3D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.285 -0500", hash_original_field = "B261F7AD66455AA0C3F3A08229915B3D", hash_generated_field = "B261F7AD66455AA0C3F3A08229915B3D")
 
     GsmCellLocation newCellLoc;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.362 -0400", hash_original_field = "5E797CD98A6F48EA74102A194ABE8414", hash_generated_field = "5BA84AC7CBE58E4EDB6614D7B15D6E0E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.285 -0500", hash_original_field = "5BA84AC7CBE58E4EDB6614D7B15D6E0E", hash_generated_field = "5BA84AC7CBE58E4EDB6614D7B15D6E0E")
 
     int mPreferredNetworkType;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.362 -0400", hash_original_field = "09ADCB4D8E411083650BF094C0F5A282", hash_generated_field = "07B777CC7BF8F0F7679AC97DE6B0C153")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.286 -0500", hash_original_field = "83055EAFAFB668214C2B6EC078B7B3E2", hash_generated_field = "07B777CC7BF8F0F7679AC97DE6B0C153")
+
 
     private int gprsState = ServiceState.STATE_OUT_OF_SERVICE;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.363 -0400", hash_original_field = "3DD74F5CB43F87ECACC4768DBADF0137", hash_generated_field = "7035A3B0948B79A30C2C00DECE9F4570")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.287 -0500", hash_original_field = "C6527E6281F4752368634BFD36ACDDC3", hash_generated_field = "7035A3B0948B79A30C2C00DECE9F4570")
 
     private int newGPRSState = ServiceState.STATE_OUT_OF_SERVICE;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.363 -0400", hash_original_field = "2AFEACA217B557D16E803474269AC334", hash_generated_field = "5F1A31BADD427D5DFCB23ECFD73B8B95")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.288 -0500", hash_original_field = "DDB3AB1A1FF0690F730C60629E29B319", hash_generated_field = "5F1A31BADD427D5DFCB23ECFD73B8B95")
 
     private int mMaxDataCalls = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.363 -0400", hash_original_field = "E93FE6CD696F5691F32A4C7A9078BA63", hash_generated_field = "D1E578B67E4CC593BE870B60F03AA83C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.288 -0500", hash_original_field = "EC00539F8E7522B43D2503246976F845", hash_generated_field = "D1E578B67E4CC593BE870B60F03AA83C")
 
     private int mNewMaxDataCalls = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.363 -0400", hash_original_field = "A834835F3CEDAC8AC7E64228C76E5077", hash_generated_field = "981E84B4948A11F540AE3C83118D725F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.289 -0500", hash_original_field = "DF25BB449AB9C7CD7F3D1B531B784018", hash_generated_field = "981E84B4948A11F540AE3C83118D725F")
 
     private int mReasonDataDenied = -1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.363 -0400", hash_original_field = "D821D524FB7806A8991C807AE4CA7635", hash_generated_field = "3DCB78EC6066191396204C4D07EB7548")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.290 -0500", hash_original_field = "1488F6DF258F2CA22181E5C877D5DB15", hash_generated_field = "3DCB78EC6066191396204C4D07EB7548")
 
     private int mNewReasonDataDenied = -1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.363 -0400", hash_original_field = "9380C85BAA057C151A0AF0A172BD132A", hash_generated_field = "0E48791EFF44078585E96EA7C7ED6E26")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.291 -0500", hash_original_field = "07954A684167F148A8914FA007493141", hash_generated_field = "0E48791EFF44078585E96EA7C7ED6E26")
 
     private boolean mGsmRoaming = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.363 -0400", hash_original_field = "BD02E473C1C27AC87C52110872C4EBF8", hash_generated_field = "4F72E8DCBAFD6C5A4FC303F5B439CC14")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.291 -0500", hash_original_field = "2A29EE37081AF6083572102F6A3576C0", hash_generated_field = "4F72E8DCBAFD6C5A4FC303F5B439CC14")
 
     private boolean mDataRoaming = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.363 -0400", hash_original_field = "85105C0E76607ED02FD2FDEB8B0B0D87", hash_generated_field = "A81A887211F7F6A8BF5C317C7E4646E5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.292 -0500", hash_original_field = "A3D827A01022E81367E4D61DCB3324E6", hash_generated_field = "A81A887211F7F6A8BF5C317C7E4646E5")
 
     private boolean mEmergencyOnly = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.363 -0400", hash_original_field = "28BAF9CE3F67CB31A5C7E4A1C64709A2", hash_generated_field = "2D2C0A8AA7022D57AB24C477C9212676")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.293 -0500", hash_original_field = "94B5B9AC89B232E32297041934866E02", hash_generated_field = "2D2C0A8AA7022D57AB24C477C9212676")
 
     private boolean mNeedFixZone = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.363 -0400", hash_original_field = "F22170EE4512552F24101CBB42D416D7", hash_generated_field = "C126894205DFD14FA38D307801001C6F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.293 -0500", hash_original_field = "DC1A5CAE762F1B565AB4AF08E4221FD7", hash_generated_field = "C126894205DFD14FA38D307801001C6F")
 
     private int mZoneOffset;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.363 -0400", hash_original_field = "C93085FA426E2C8BDD28EDA54293198A", hash_generated_field = "63800483D80F5CB684E683BC24E0A820")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.295 -0500", hash_original_field = "1DBF7B28B2EC0A77610B942EE7357647", hash_generated_field = "63800483D80F5CB684E683BC24E0A820")
 
     private boolean mZoneDst;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.363 -0400", hash_original_field = "0A09D50B767A402C68BB8923B251B081", hash_generated_field = "7498B22AB24D6B5E081FF2DDE0FD21C8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.296 -0500", hash_original_field = "D1947C20B8C2350EE6EF3BB9DCA678E9", hash_generated_field = "7498B22AB24D6B5E081FF2DDE0FD21C8")
 
     private long mZoneTime;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.363 -0400", hash_original_field = "91657A67842D433756013CCE7BEFC8EA", hash_generated_field = "C304726703E30667C2FAD4B6BFDDEB63")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.297 -0500", hash_original_field = "287A0704804B91F0A9E2C49E33166DCA", hash_generated_field = "C304726703E30667C2FAD4B6BFDDEB63")
 
     private boolean mGotCountryCode = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.363 -0400", hash_original_field = "324D8A1D3F81E730D5099A48CEE0C5B6", hash_generated_field = "CC964D293F1703643DB273FCC0901562")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.298 -0500", hash_original_field = "00C84AE608A40C700303777F958158E6", hash_generated_field = "CC964D293F1703643DB273FCC0901562")
 
     private ContentResolver cr;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.363 -0400", hash_original_field = "629AB99995100B7F6B737671E7028A77", hash_generated_field = "30A17FCDED9983DC17E4B0241936D019")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.298 -0500", hash_original_field = "30A17FCDED9983DC17E4B0241936D019", hash_generated_field = "30A17FCDED9983DC17E4B0241936D019")
+
 
     String mSavedTimeZone;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.363 -0400", hash_original_field = "0870ED367B81A3D199CC36F4FF58F6E3", hash_generated_field = "56DFA99AB6C2048EFF6A2B28FFEF5620")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.299 -0500", hash_original_field = "56DFA99AB6C2048EFF6A2B28FFEF5620", hash_generated_field = "56DFA99AB6C2048EFF6A2B28FFEF5620")
 
     long mSavedTime;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.363 -0400", hash_original_field = "E11E42BBA30EA79639217C987535FA76", hash_generated_field = "2B2B2F1D0E3CAC70A6D7541E3BA2D300")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.300 -0500", hash_original_field = "2B2B2F1D0E3CAC70A6D7541E3BA2D300", hash_generated_field = "2B2B2F1D0E3CAC70A6D7541E3BA2D300")
 
     long mSavedAtTime;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.363 -0400", hash_original_field = "794B9E75544086325155A72AA171A32E", hash_generated_field = "1929EEEAE2485E3C7781EBAA0F354C99")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.301 -0500", hash_original_field = "9CDA950D3E6C0B00B91E478170316CB0", hash_generated_field = "1929EEEAE2485E3C7781EBAA0F354C99")
 
     private boolean mNeedToRegForSimLoaded;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.364 -0400", hash_original_field = "8845867B8D05D961286A1A19CE10D2DC", hash_generated_field = "EA9A1384C97DE38DCF8B990AF3F83712")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.301 -0500", hash_original_field = "4741178B9883215ED364D9345759060E", hash_generated_field = "EA9A1384C97DE38DCF8B990AF3F83712")
 
     private boolean mStartedGprsRegCheck = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.364 -0400", hash_original_field = "D7F7DA1A823510EF7DFA18A7D3740A12", hash_generated_field = "69E634E61A627800AF487B771D6ECAD0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.302 -0500", hash_original_field = "4DEBE88A90630CF11FE82B08E744C70F", hash_generated_field = "69E634E61A627800AF487B771D6ECAD0")
 
     private boolean mReportedGprsNoReg = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.364 -0400", hash_original_field = "FA180D1FC40F4514789E94C434050443", hash_generated_field = "74FBA8E8F4402404F407A6E0DBC8943E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.303 -0500", hash_original_field = "FA5D660465A99620D3F6AE3CFEC3CC66", hash_generated_field = "74FBA8E8F4402404F407A6E0DBC8943E")
 
     private Notification mNotification;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.364 -0400", hash_original_field = "69E45E7E240C011D8CB3CFDE90D76B33", hash_generated_field = "C0FF63B0998195CF037A71BFC5C5B113")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.304 -0500", hash_original_field = "87068C2348540A5517D7F6F40E0F6E43", hash_generated_field = "C0FF63B0998195CF037A71BFC5C5B113")
 
     private PowerManager.WakeLock mWakeLock;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.364 -0400", hash_original_field = "438E769CBE3194E31EE3583D475755E2", hash_generated_field = "D741E5B3B277519D91E4FE02D3FAFF01")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.305 -0500", hash_original_field = "9B68494A8CFDE41414863EA11005311E", hash_generated_field = "D741E5B3B277519D91E4FE02D3FAFF01")
 
     private String curSpn = null;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.364 -0400", hash_original_field = "8F0345704253C4ABC1429588E7767D95", hash_generated_field = "9047898EE9FB6E0F59121E370CC3C8CF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.306 -0500", hash_original_field = "DE59F64D212208232A5A13DE21480683", hash_generated_field = "9047898EE9FB6E0F59121E370CC3C8CF")
 
     private String curPlmn = null;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.364 -0400", hash_original_field = "980A06D55B7D1D17AD8917BD8B3AD170", hash_generated_field = "E51B211F12EB3D4199E57F38674CC690")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.307 -0500", hash_original_field = "A37A0CB2A2859DB5EA569A667B536F0E", hash_generated_field = "E51B211F12EB3D4199E57F38674CC690")
 
     private int curSpnRule = 0;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.697 -0400", hash_original_field = "AB74790817CE8598B3B84738E53E435A", hash_generated_field = "829A6BC80DDB03BAE60150DE88BC0EA8")
@@ -202,11 +299,11 @@ final class GsmServiceStateTracker extends ServiceStateTracker {
 
         
 };
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.366 -0400", hash_original_method = "89B681C68F2C3DCA55179D15C34AC4AC", hash_generated_method = "3674E78DB0738469C53C072BA81027AE")
-    public  GsmServiceStateTracker(GSMPhone phone) {
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.321 -0500", hash_original_method = "89B681C68F2C3DCA55179D15C34AC4AC", hash_generated_method = "C1F060AC8BDDA375DAFD697B629DA3CB")
+    public GsmServiceStateTracker(GSMPhone phone) {
         super();
+
         this.phone = phone;
         cm = phone.mCM;
         ss = new ServiceState();
@@ -214,19 +311,26 @@ final class GsmServiceStateTracker extends ServiceStateTracker {
         cellLoc = new GsmCellLocation();
         newCellLoc = new GsmCellLocation();
         mSignalStrength = new SignalStrength();
-        PowerManager powerManager = (PowerManager)phone.getContext().getSystemService(Context.POWER_SERVICE);
+
+        PowerManager powerManager =
+                (PowerManager)phone.getContext().getSystemService(Context.POWER_SERVICE);
         mWakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, WAKELOCK_TAG);
+
         cm.registerForAvailable(this, EVENT_RADIO_AVAILABLE, null);
         cm.registerForRadioStateChanged(this, EVENT_RADIO_STATE_CHANGED, null);
+
         cm.registerForVoiceNetworkStateChanged(this, EVENT_NETWORK_STATE_CHANGED, null);
         cm.setOnNITZTime(this, EVENT_NITZ_TIME, null);
         cm.setOnSignalStrengthUpdate(this, EVENT_SIGNAL_STRENGTH_UPDATE, null);
         cm.setOnRestrictedStateChanged(this, EVENT_RESTRICTED_STATE_CHANGED, null);
         cm.registerForSIMReady(this, EVENT_SIM_READY, null);
+
+        // system setting property AIRPLANE_MODE_ON is set in Settings.
         int airplaneMode = Settings.System.getInt(
                 phone.getContext().getContentResolver(),
                 Settings.System.AIRPLANE_MODE_ON, 0);
         mDesiredPowerState = ! (airplaneMode > 0);
+
         cr = phone.getContext().getContentResolver();
         cr.registerContentObserver(
                 Settings.System.getUriFor(Settings.System.AUTO_TIME), true,
@@ -234,296 +338,300 @@ final class GsmServiceStateTracker extends ServiceStateTracker {
         cr.registerContentObserver(
                 Settings.System.getUriFor(Settings.System.AUTO_TIME_ZONE), true,
                 mAutoTimeZoneObserver);
+
         setSignalStrengthDefaultValues();
         mNeedToRegForSimLoaded = true;
+
+        // Monitor locale change
         IntentFilter filter = new IntentFilter();
         filter.addAction(Intent.ACTION_LOCALE_CHANGED);
         phone.getContext().registerReceiver(mIntentReceiver, filter);
+
+        // Gsm doesn't support OTASP so its not needed
         phone.notifyOtaspChanged(OTASP_NOT_NEEDED);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.366 -0400", hash_original_method = "D8900B5121A238BBC317864D0A18F1DD", hash_generated_method = "B40ED7CB9364FAE6479A4D45B656DCB0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.321 -0500", hash_original_method = "D8900B5121A238BBC317864D0A18F1DD", hash_generated_method = "86AC7EEAC51DB924BE9E1C41F85E166F")
     public void dispose() {
+        // Unregister for all events.
         cm.unregisterForAvailable(this);
         cm.unregisterForRadioStateChanged(this);
         cm.unregisterForVoiceNetworkStateChanged(this);
         cm.unregisterForSIMReady(this);
+
         phone.mIccRecords.unregisterForRecordsLoaded(this);
         cm.unSetOnSignalStrengthUpdate(this);
         cm.unSetOnRestrictedStateChanged(this);
         cm.unSetOnNITZTime(this);
         cr.unregisterContentObserver(this.mAutoTimeObserver);
         cr.unregisterContentObserver(this.mAutoTimeZoneObserver);
-        // ---------- Original Method ----------
-        //cm.unregisterForAvailable(this);
-        //cm.unregisterForRadioStateChanged(this);
-        //cm.unregisterForVoiceNetworkStateChanged(this);
-        //cm.unregisterForSIMReady(this);
-        //phone.mIccRecords.unregisterForRecordsLoaded(this);
-        //cm.unSetOnSignalStrengthUpdate(this);
-        //cm.unSetOnRestrictedStateChanged(this);
-        //cm.unSetOnNITZTime(this);
-        //cr.unregisterContentObserver(this.mAutoTimeObserver);
-        //cr.unregisterContentObserver(this.mAutoTimeZoneObserver);
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.367 -0400", hash_original_method = "6FB50CEA8307C4B6093E637FBC3F2923", hash_generated_method = "40BDA4D14701B8CE588BCB1AD2B486E8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.322 -0500", hash_original_method = "6FB50CEA8307C4B6093E637FBC3F2923", hash_generated_method = "E743B6DABD28108918049040079C2592")
     protected void finalize() {
-        if(DBG)        
-        log("finalize");
-        // ---------- Original Method ----------
-        //if(DBG) log("finalize");
+        if(DBG) log("finalize");
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.367 -0400", hash_original_method = "A0DE0F5E4F4D4787509D60C270D17835", hash_generated_method = "6FA897DD3F2EF26DB6D9BA90E3F617CB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.323 -0500", hash_original_method = "A0DE0F5E4F4D4787509D60C270D17835", hash_generated_method = "7FA214E5FB8E9E7053C952EA5299E35F")
     @Override
-    protected Phone getPhone() {
-Phone var3DF544D9611CD6A47CD50808F9E2E7D5_1445475754 =         phone;
-        var3DF544D9611CD6A47CD50808F9E2E7D5_1445475754.addTaint(taint);
-        return var3DF544D9611CD6A47CD50808F9E2E7D5_1445475754;
-        // ---------- Original Method ----------
-        //return phone;
+protected Phone getPhone() {
+        return phone;
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.370 -0400", hash_original_method = "8D6E3CD042747DF0CD652F21C9ED2A0B", hash_generated_method = "60410A48D33DDE1A6DF861650696F9DF")
-    public void handleMessage(Message msg) {
-        addTaint(msg.getTaint());
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.326 -0500", hash_original_method = "8D6E3CD042747DF0CD652F21C9ED2A0B", hash_generated_method = "0E2A36178E18E7355EF62C3EF6C318DE")
+    public void handleMessage (Message msg) {
         AsyncResult ar;
         int[] ints;
         String[] strings;
         Message message;
-switch(msg.what){
-        case EVENT_RADIO_AVAILABLE:
-        break;
-        case EVENT_SIM_READY:
-        cm.setCurrentPreferredNetworkType();
-        if(mNeedToRegForSimLoaded)        
-        {
-            phone.mIccRecords.registerForRecordsLoaded(this,
+
+        switch (msg.what) {
+            case EVENT_RADIO_AVAILABLE:
+                //this is unnecessary
+                //setPowerStateToDesired();
+                break;
+
+            case EVENT_SIM_READY:
+                // Set the network type, in case the radio does not restore it.
+                cm.setCurrentPreferredNetworkType();
+
+                // The SIM is now ready i.e if it was locked
+                // it has been unlocked. At this stage, the radio is already
+                // powered on.
+                if (mNeedToRegForSimLoaded) {
+                    phone.mIccRecords.registerForRecordsLoaded(this,
                             EVENT_SIM_RECORDS_LOADED, null);
-            mNeedToRegForSimLoaded = false;
-        } //End block
-        boolean skipRestoringSelection = phone.getContext().getResources().getBoolean(
+                    mNeedToRegForSimLoaded = false;
+                }
+
+                boolean skipRestoringSelection = phone.getContext().getResources().getBoolean(
                         com.android.internal.R.bool.skip_restoring_network_selection);
-        if(!skipRestoringSelection)        
-        {
-            phone.restoreSavedNetworkSelection(null);
-        } //End block
-        pollState();
-        queueNextSignalStrengthPoll();
-        break;
-        case EVENT_RADIO_STATE_CHANGED:
-        setPowerStateToDesired();
-        pollState();
-        break;
-        case EVENT_NETWORK_STATE_CHANGED:
-        pollState();
-        break;
-        case EVENT_GET_SIGNAL_STRENGTH:
-        if(!(cm.getRadioState().isOn()) || (cm.getRadioState().isCdma()))        
-        {
-            return;
-        } //End block
-        ar = (AsyncResult) msg.obj;
-        onSignalStrengthResult(ar);
-        queueNextSignalStrengthPoll();
-        break;
-        case EVENT_GET_LOC_DONE:
-        ar = (AsyncResult) msg.obj;
-        if(ar.exception == null)        
-        {
-            String states[] = (String[])ar.result;
-            int lac = -1;
-            int cid = -1;
-            if(states.length >= 3)            
-            {
-                try 
-                {
-                    if(states[1] != null && states[1].length() > 0)                    
-                    {
-                        lac = Integer.parseInt(states[1], 16);
-                    } //End block
-                    if(states[2] != null && states[2].length() > 0)                    
-                    {
-                        cid = Integer.parseInt(states[2], 16);
-                    } //End block
-                } //End block
-                catch (NumberFormatException ex)
-                {
-                } //End block
-            } //End block
-            cellLoc.setLacAndCid(lac, cid);
-            phone.notifyLocationChanged();
-        } //End block
-        disableSingleLocationUpdate();
-        break;
-        case EVENT_POLL_STATE_REGISTRATION:
-        case EVENT_POLL_STATE_GPRS:
-        case EVENT_POLL_STATE_OPERATOR:
-        case EVENT_POLL_STATE_NETWORK_SELECTION_MODE:
-        ar = (AsyncResult) msg.obj;
-        handlePollStateResult(msg.what, ar);
-        break;
-        case EVENT_POLL_SIGNAL_STRENGTH:
-        cm.getSignalStrength(obtainMessage(EVENT_GET_SIGNAL_STRENGTH));
-        break;
-        case EVENT_NITZ_TIME:
-        ar = (AsyncResult) msg.obj;
-        String nitzString = (String)((Object[])ar.result)[0];
-        long nitzReceiveTime = ((Long)((Object[])ar.result)[1]).longValue();
-        setTimeFromNITZString(nitzString, nitzReceiveTime);
-        break;
-        case EVENT_SIGNAL_STRENGTH_UPDATE:
-        ar = (AsyncResult) msg.obj;
-        dontPollSignalStrength = true;
-        onSignalStrengthResult(ar);
-        break;
-        case EVENT_SIM_RECORDS_LOADED:
-        updateSpnDisplay();
-        break;
-        case EVENT_LOCATION_UPDATES_ENABLED:
-        ar = (AsyncResult) msg.obj;
-        if(ar.exception == null)        
-        {
-            cm.getVoiceRegistrationState(obtainMessage(EVENT_GET_LOC_DONE, null));
-        } //End block
-        break;
-        case EVENT_SET_PREFERRED_NETWORK_TYPE:
-        ar = (AsyncResult) msg.obj;
-        message = obtainMessage(EVENT_RESET_PREFERRED_NETWORK_TYPE, ar.userObj);
-        cm.setPreferredNetworkType(mPreferredNetworkType, message);
-        break;
-        case EVENT_RESET_PREFERRED_NETWORK_TYPE:
-        ar = (AsyncResult) msg.obj;
-        if(ar.userObj != null)        
-        {
-            AsyncResult.forMessage(((Message) ar.userObj)).exception
+
+                if (!skipRestoringSelection) {
+                    // restore the previous network selection.
+                    phone.restoreSavedNetworkSelection(null);
+                }
+                pollState();
+                // Signal strength polling stops when radio is off
+                queueNextSignalStrengthPoll();
+                break;
+
+            case EVENT_RADIO_STATE_CHANGED:
+                // This will do nothing in the radio not
+                // available case
+                setPowerStateToDesired();
+                pollState();
+                break;
+
+            case EVENT_NETWORK_STATE_CHANGED:
+                pollState();
+                break;
+
+            case EVENT_GET_SIGNAL_STRENGTH:
+                // This callback is called when signal strength is polled
+                // all by itself
+
+                if (!(cm.getRadioState().isOn()) || (cm.getRadioState().isCdma())) {
+                    // Polling will continue when radio turns back on and not CDMA
+                    return;
+                }
+                ar = (AsyncResult) msg.obj;
+                onSignalStrengthResult(ar);
+                queueNextSignalStrengthPoll();
+
+                break;
+
+            case EVENT_GET_LOC_DONE:
+                ar = (AsyncResult) msg.obj;
+
+                if (ar.exception == null) {
+                    String states[] = (String[])ar.result;
+                    int lac = -1;
+                    int cid = -1;
+                    if (states.length >= 3) {
+                        try {
+                            if (states[1] != null && states[1].length() > 0) {
+                                lac = Integer.parseInt(states[1], 16);
+                            }
+                            if (states[2] != null && states[2].length() > 0) {
+                                cid = Integer.parseInt(states[2], 16);
+                            }
+                        } catch (NumberFormatException ex) {
+                            Log.w(LOG_TAG, "error parsing location: " + ex);
+                        }
+                    }
+                    cellLoc.setLacAndCid(lac, cid);
+                    phone.notifyLocationChanged();
+                }
+
+                // Release any temporary cell lock, which could have been
+                // acquired to allow a single-shot location update.
+                disableSingleLocationUpdate();
+                break;
+
+            case EVENT_POLL_STATE_REGISTRATION:
+            case EVENT_POLL_STATE_GPRS:
+            case EVENT_POLL_STATE_OPERATOR:
+            case EVENT_POLL_STATE_NETWORK_SELECTION_MODE:
+                ar = (AsyncResult) msg.obj;
+
+                handlePollStateResult(msg.what, ar);
+                break;
+
+            case EVENT_POLL_SIGNAL_STRENGTH:
+                // Just poll signal strength...not part of pollState()
+
+                cm.getSignalStrength(obtainMessage(EVENT_GET_SIGNAL_STRENGTH));
+                break;
+
+            case EVENT_NITZ_TIME:
+                ar = (AsyncResult) msg.obj;
+
+                String nitzString = (String)((Object[])ar.result)[0];
+                long nitzReceiveTime = ((Long)((Object[])ar.result)[1]).longValue();
+
+                setTimeFromNITZString(nitzString, nitzReceiveTime);
+                break;
+
+            case EVENT_SIGNAL_STRENGTH_UPDATE:
+                // This is a notification from
+                // CommandsInterface.setOnSignalStrengthUpdate
+
+                ar = (AsyncResult) msg.obj;
+
+                // The radio is telling us about signal strength changes
+                // we don't have to ask it
+                dontPollSignalStrength = true;
+
+                onSignalStrengthResult(ar);
+                break;
+
+            case EVENT_SIM_RECORDS_LOADED:
+                updateSpnDisplay();
+                break;
+
+            case EVENT_LOCATION_UPDATES_ENABLED:
+                ar = (AsyncResult) msg.obj;
+
+                if (ar.exception == null) {
+                    cm.getVoiceRegistrationState(obtainMessage(EVENT_GET_LOC_DONE, null));
+                }
+                break;
+
+            case EVENT_SET_PREFERRED_NETWORK_TYPE:
+                ar = (AsyncResult) msg.obj;
+                // Don't care the result, only use for dereg network (COPS=2)
+                message = obtainMessage(EVENT_RESET_PREFERRED_NETWORK_TYPE, ar.userObj);
+                cm.setPreferredNetworkType(mPreferredNetworkType, message);
+                break;
+
+            case EVENT_RESET_PREFERRED_NETWORK_TYPE:
+                ar = (AsyncResult) msg.obj;
+                if (ar.userObj != null) {
+                    AsyncResult.forMessage(((Message) ar.userObj)).exception
                             = ar.exception;
-            ((Message) ar.userObj).sendToTarget();
-        } //End block
-        break;
-        case EVENT_GET_PREFERRED_NETWORK_TYPE:
-        ar = (AsyncResult) msg.obj;
-        if(ar.exception == null)        
-        {
-            mPreferredNetworkType = ((int[])ar.result)[0];
-        } //End block
-        else
-        {
-            mPreferredNetworkType = RILConstants.NETWORK_MODE_GLOBAL;
-        } //End block
-        message = obtainMessage(EVENT_SET_PREFERRED_NETWORK_TYPE, ar.userObj);
-        int toggledNetworkType = RILConstants.NETWORK_MODE_GLOBAL;
-        cm.setPreferredNetworkType(toggledNetworkType, message);
-        break;
-        case EVENT_CHECK_REPORT_GPRS:
-        if(ss != null && !isGprsConsistent(gprsState, ss.getState()))        
-        {
-            GsmCellLocation loc = ((GsmCellLocation)phone.getCellLocation());
-            EventLog.writeEvent(EventLogTags.DATA_NETWORK_REGISTRATION_FAIL,
+                    ((Message) ar.userObj).sendToTarget();
+                }
+                break;
+
+            case EVENT_GET_PREFERRED_NETWORK_TYPE:
+                ar = (AsyncResult) msg.obj;
+
+                if (ar.exception == null) {
+                    mPreferredNetworkType = ((int[])ar.result)[0];
+                } else {
+                    mPreferredNetworkType = RILConstants.NETWORK_MODE_GLOBAL;
+                }
+
+                message = obtainMessage(EVENT_SET_PREFERRED_NETWORK_TYPE, ar.userObj);
+                int toggledNetworkType = RILConstants.NETWORK_MODE_GLOBAL;
+
+                cm.setPreferredNetworkType(toggledNetworkType, message);
+                break;
+
+            case EVENT_CHECK_REPORT_GPRS:
+                if (ss != null && !isGprsConsistent(gprsState, ss.getState())) {
+
+                    // Can't register data service while voice service is ok
+                    // i.e. CREG is ok while CGREG is not
+                    // possible a network or baseband side error
+                    GsmCellLocation loc = ((GsmCellLocation)phone.getCellLocation());
+                    EventLog.writeEvent(EventLogTags.DATA_NETWORK_REGISTRATION_FAIL,
                             ss.getOperatorNumeric(), loc != null ? loc.getCid() : -1);
-            mReportedGprsNoReg = true;
-        } //End block
-        mStartedGprsRegCheck = false;
-        break;
-        case EVENT_RESTRICTED_STATE_CHANGED:
-        if(DBG)        
-        log("EVENT_RESTRICTED_STATE_CHANGED");
-        ar = (AsyncResult) msg.obj;
-        onRestrictedStateChanged(ar);
-        break;
-        default:
-        super.handleMessage(msg);
-        break;
-}
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                    mReportedGprsNoReg = true;
+                }
+                mStartedGprsRegCheck = false;
+                break;
+
+            case EVENT_RESTRICTED_STATE_CHANGED:
+                // This is a notification from
+                // CommandsInterface.setOnRestrictedStateChanged
+
+                if (DBG) log("EVENT_RESTRICTED_STATE_CHANGED");
+
+                ar = (AsyncResult) msg.obj;
+
+                onRestrictedStateChanged(ar);
+                break;
+
+            default:
+                super.handleMessage(msg);
+            break;
+        }
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.372 -0400", hash_original_method = "BC2E3346E1E8D048BB892FC104E776BC", hash_generated_method = "1EBDA37B0127C1DB8911540E5C24C3D7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.327 -0500", hash_original_method = "BC2E3346E1E8D048BB892FC104E776BC", hash_generated_method = "16D9EBDA8A61AC7512F1D264965BE0EF")
     protected void setPowerStateToDesired() {
-        if(mDesiredPowerState
-            && cm.getRadioState() == CommandsInterface.RadioState.RADIO_OFF)        
-        {
+        // If we want it on and it's off, turn it on
+        if (mDesiredPowerState
+            && cm.getRadioState() == CommandsInterface.RadioState.RADIO_OFF) {
             cm.setRadioPower(true, null);
-        } //End block
-        else
-        if(!mDesiredPowerState && cm.getRadioState().isOn())        
-        {
+        } else if (!mDesiredPowerState && cm.getRadioState().isOn()) {
+            // If it's on and available and we want it off gracefully
             DataConnectionTracker dcTracker = phone.mDataConnectionTracker;
             powerOffRadioSafely(dcTracker);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mDesiredPowerState
-            //&& cm.getRadioState() == CommandsInterface.RadioState.RADIO_OFF) {
-            //cm.setRadioPower(true, null);
-        //} else if (!mDesiredPowerState && cm.getRadioState().isOn()) {
-            //DataConnectionTracker dcTracker = phone.mDataConnectionTracker;
-            //powerOffRadioSafely(dcTracker);
-        //}
+        } // Otherwise, we're in the desired state
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.372 -0400", hash_original_method = "E3C7A91B3D91C3ACB7BE5D936C3A4029", hash_generated_method = "7B80391196098382748D93DB9B77989F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.328 -0500", hash_original_method = "E3C7A91B3D91C3ACB7BE5D936C3A4029", hash_generated_method = "A6422AA58BF6DBC7227B32CAF4C70C2F")
     @Override
-    protected void hangupAndPowerOff() {
-        if(phone.isInCall())        
-        {
+protected void hangupAndPowerOff() {
+        // hang up all active voice calls
+        if (phone.isInCall()) {
             phone.mCT.ringingCall.hangupIfAlive();
             phone.mCT.backgroundCall.hangupIfAlive();
             phone.mCT.foregroundCall.hangupIfAlive();
-        } //End block
+        }
+
         cm.setRadioPower(false, null);
-        // ---------- Original Method ----------
-        //if (phone.isInCall()) {
-            //phone.mCT.ringingCall.hangupIfAlive();
-            //phone.mCT.backgroundCall.hangupIfAlive();
-            //phone.mCT.foregroundCall.hangupIfAlive();
-        //}
-        //cm.setRadioPower(false, null);
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.373 -0400", hash_original_method = "12AE11DB9489E0514D18AAE66522FB76", hash_generated_method = "726EC9BA479C3BADDC83DA12A726D188")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.329 -0500", hash_original_method = "12AE11DB9489E0514D18AAE66522FB76", hash_generated_method = "C5E081E142C86616EF80FBD347E31ED2")
     protected void updateSpnDisplay() {
         int rule = phone.mIccRecords.getDisplayRule(ss.getOperatorNumeric());
         String spn = phone.mIccRecords.getServiceProviderName();
         String plmn = ss.getOperatorAlphaLong();
-        if(mEmergencyOnly && cm.getRadioState().isOn())        
-        {
+
+        // For emergency calls only, pass the EmergencyCallsOnly string via EXTRA_PLMN
+        if (mEmergencyOnly && cm.getRadioState().isOn()) {
             plmn = Resources.getSystem().
                 getText(com.android.internal.R.string.emergency_calls_only).toString();
-            if(DBG)            
-            log("updateSpnDisplay: emergency only and radio is on plmn='" + plmn + "'");
-        } //End block
-        if(rule != curSpnRule
+            if (DBG) log("updateSpnDisplay: emergency only and radio is on plmn='" + plmn + "'");
+        }
+
+        if (rule != curSpnRule
                 || !TextUtils.equals(spn, curSpn)
-                || !TextUtils.equals(plmn, curPlmn))        
-        {
+                || !TextUtils.equals(plmn, curPlmn)) {
             boolean showSpn = !mEmergencyOnly && !TextUtils.isEmpty(spn)
                 && (rule & SIMRecords.SPN_RULE_SHOW_SPN) == SIMRecords.SPN_RULE_SHOW_SPN;
             boolean showPlmn = !TextUtils.isEmpty(plmn) &&
                 (rule & SIMRecords.SPN_RULE_SHOW_PLMN) == SIMRecords.SPN_RULE_SHOW_PLMN;
-            if(DBG)            
-            {
+
+            if (DBG) {
                 log(String.format("updateSpnDisplay: changed sending intent" + " rule=" + rule +
                             " showPlmn='%b' plmn='%s' showSpn='%b' spn='%s'",
                             showPlmn, plmn, showSpn, spn));
-            } //End block
+            }
             Intent intent = new Intent(Intents.SPN_STRINGS_UPDATED_ACTION);
             intent.addFlags(Intent.FLAG_RECEIVER_REPLACE_PENDING);
             intent.putExtra(Intents.EXTRA_SHOW_SPN, showSpn);
@@ -531,239 +639,243 @@ switch(msg.what){
             intent.putExtra(Intents.EXTRA_SHOW_PLMN, showPlmn);
             intent.putExtra(Intents.EXTRA_PLMN, plmn);
             phone.getContext().sendStickyBroadcast(intent);
-        } //End block
+        }
+
         curSpnRule = rule;
         curSpn = spn;
         curPlmn = plmn;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.377 -0400", hash_original_method = "715C325B720DBA72DF5B4684F1B692D5", hash_generated_method = "39BCDF1C522917A80D14E71E0DA9061F")
-    protected void handlePollStateResult(int what, AsyncResult ar) {
-        addTaint(ar.getTaint());
-        addTaint(what);
+    /**
+     * Handle the result of one of the pollState()-related requests
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.330 -0500", hash_original_method = "715C325B720DBA72DF5B4684F1B692D5", hash_generated_method = "4053ED92DB11E8B700AA5900D7934C14")
+    protected void handlePollStateResult (int what, AsyncResult ar) {
         int ints[];
         String states[];
-        if(ar.userObj != pollingContext)        
-        return;
-        if(ar.exception != null)        
-        {
-            CommandException.Error err = null;
-            if(ar.exception instanceof CommandException)            
-            {
+
+        // Ignore stale requests from last poll
+        if (ar.userObj != pollingContext) return;
+
+        if (ar.exception != null) {
+            CommandException.Error err=null;
+
+            if (ar.exception instanceof CommandException) {
                 err = ((CommandException)(ar.exception)).getCommandError();
-            } //End block
-            if(err == CommandException.Error.RADIO_NOT_AVAILABLE)            
-            {
+            }
+
+            if (err == CommandException.Error.RADIO_NOT_AVAILABLE) {
+                // Radio has crashed or turned off
                 cancelPollState();
                 return;
-            } //End block
-            if(!cm.getRadioState().isOn())            
-            {
+            }
+
+            if (!cm.getRadioState().isOn()) {
+                // Radio has crashed or turned off
                 cancelPollState();
                 return;
-            } //End block
-            if(err != CommandException.Error.OP_NOT_ALLOWED_BEFORE_REG_NW)            
-            {
+            }
+
+            if (err != CommandException.Error.OP_NOT_ALLOWED_BEFORE_REG_NW) {
                 loge("RIL implementation has returned an error where it must succeed" +
                         ar.exception);
-            } //End block
-        } //End block
-        else
-        try 
-        {
-switch(what){
-            case EVENT_POLL_STATE_REGISTRATION:
-            states = (String[])ar.result;
-            int lac = -1;
-            int cid = -1;
-            int regState = -1;
-            int reasonRegStateDenied = -1;
-            int psc = -1;
-            if(states.length > 0)            
-            {
-                try 
-                {
-                    regState = Integer.parseInt(states[0]);
-                    if(states.length >= 3)                    
-                    {
-                        if(states[1] != null && states[1].length() > 0)                        
-                        {
-                            lac = Integer.parseInt(states[1], 16);
-                        } //End block
-                        if(states[2] != null && states[2].length() > 0)                        
-                        {
-                            cid = Integer.parseInt(states[2], 16);
-                        } //End block
-                    } //End block
-                    if(states.length > 14)                    
-                    {
-                        if(states[14] != null && states[14].length() > 0)                        
-                        {
-                            psc = Integer.parseInt(states[14], 16);
-                        } //End block
-                    } //End block
-                } //End block
-                catch (NumberFormatException ex)
-                {
-                    loge("error parsing RegistrationState: " + ex);
-                } //End block
-            } //End block
-            mGsmRoaming = regCodeIsRoaming(regState);
-            newSS.setState (regCodeToServiceState(regState));
-            if(regState == 10 || regState == 12 || regState == 13 || regState == 14)            
-            {
-                mEmergencyOnly = true;
-            } //End block
-            else
-            {
-                mEmergencyOnly = false;
-            } //End block
-            newCellLoc.setLacAndCid(lac, cid);
-            newCellLoc.setPsc(psc);
-            break;
-            case EVENT_POLL_STATE_GPRS:
-            states = (String[])ar.result;
-            int type = 0;
-            regState = -1;
-            mNewReasonDataDenied = -1;
-            mNewMaxDataCalls = 1;
-            if(states.length > 0)            
-            {
-                try 
-                {
-                    regState = Integer.parseInt(states[0]);
-                    if(states.length >= 4 && states[3] != null)                    
-                    {
-                        type = Integer.parseInt(states[3]);
-                    } //End block
-                    if((states.length >= 5 ) && (regState == 3))                    
-                    {
-                        mNewReasonDataDenied = Integer.parseInt(states[4]);
-                    } //End block
-                    if(states.length >= 6)                    
-                    {
-                        mNewMaxDataCalls = Integer.parseInt(states[5]);
-                    } //End block
-                } //End block
-                catch (NumberFormatException ex)
-                {
-                    loge("error parsing GprsRegistrationState: " + ex);
-                } //End block
-            } //End block
-            newGPRSState = regCodeToServiceState(regState);
-            mDataRoaming = regCodeIsRoaming(regState);
-            mNewRadioTechnology = type;
-            newSS.setRadioTechnology(type);
-            break;
-            case EVENT_POLL_STATE_OPERATOR:
-            String opNames[] = (String[])ar.result;
-            if(opNames != null && opNames.length >= 3)            
-            {
-                newSS.setOperatorName (
+            }
+        } else try {
+            switch (what) {
+                case EVENT_POLL_STATE_REGISTRATION:
+                    states = (String[])ar.result;
+                    int lac = -1;
+                    int cid = -1;
+                    int regState = -1;
+                    int reasonRegStateDenied = -1;
+                    int psc = -1;
+                    if (states.length > 0) {
+                        try {
+                            regState = Integer.parseInt(states[0]);
+                            if (states.length >= 3) {
+                                if (states[1] != null && states[1].length() > 0) {
+                                    lac = Integer.parseInt(states[1], 16);
+                                }
+                                if (states[2] != null && states[2].length() > 0) {
+                                    cid = Integer.parseInt(states[2], 16);
+                                }
+                            }
+                            if (states.length > 14) {
+                                if (states[14] != null && states[14].length() > 0) {
+                                    psc = Integer.parseInt(states[14], 16);
+                                }
+                            }
+                        } catch (NumberFormatException ex) {
+                            loge("error parsing RegistrationState: " + ex);
+                        }
+                    }
+
+                    mGsmRoaming = regCodeIsRoaming(regState);
+                    newSS.setState (regCodeToServiceState(regState));
+
+                    if (regState == 10 || regState == 12 || regState == 13 || regState == 14) {
+                        mEmergencyOnly = true;
+                    } else {
+                        mEmergencyOnly = false;
+                    }
+
+                    // LAC and CID are -1 if not avail
+                    newCellLoc.setLacAndCid(lac, cid);
+                    newCellLoc.setPsc(psc);
+                break;
+
+                case EVENT_POLL_STATE_GPRS:
+                    states = (String[])ar.result;
+
+                    int type = 0;
+                    regState = -1;
+                    mNewReasonDataDenied = -1;
+                    mNewMaxDataCalls = 1;
+                    if (states.length > 0) {
+                        try {
+                            regState = Integer.parseInt(states[0]);
+
+                            // states[3] (if present) is the current radio technology
+                            if (states.length >= 4 && states[3] != null) {
+                                type = Integer.parseInt(states[3]);
+                            }
+                            if ((states.length >= 5 ) && (regState == 3)) {
+                                mNewReasonDataDenied = Integer.parseInt(states[4]);
+                            }
+                            if (states.length >= 6) {
+                                mNewMaxDataCalls = Integer.parseInt(states[5]);
+                            }
+                        } catch (NumberFormatException ex) {
+                            loge("error parsing GprsRegistrationState: " + ex);
+                        }
+                    }
+                    newGPRSState = regCodeToServiceState(regState);
+                    mDataRoaming = regCodeIsRoaming(regState);
+                    mNewRadioTechnology = type;
+                    newSS.setRadioTechnology(type);
+                break;
+
+                case EVENT_POLL_STATE_OPERATOR:
+                    String opNames[] = (String[])ar.result;
+
+                    if (opNames != null && opNames.length >= 3) {
+                        newSS.setOperatorName (
                                 opNames[0], opNames[1], opNames[2]);
-            } //End block
-            break;
-            case EVENT_POLL_STATE_NETWORK_SELECTION_MODE:
-            ints = (int[])ar.result;
-            newSS.setIsManualSelection(ints[0] == 1);
-            break;
-}
-        } //End block
-        catch (RuntimeException ex)
-        {
+                    }
+                break;
+
+                case EVENT_POLL_STATE_NETWORK_SELECTION_MODE:
+                    ints = (int[])ar.result;
+                    newSS.setIsManualSelection(ints[0] == 1);
+                break;
+            }
+
+        } catch (RuntimeException ex) {
             loge("Exception while polling service state. Probably malformed RIL response." + ex);
-        } //End block
+        }
+
         pollingContext[0]--;
-        if(pollingContext[0] == 0)        
-        {
+
+        if (pollingContext[0] == 0) {
+            /**
+             *  Since the roaming states of gsm service (from +CREG) and
+             *  data service (from +CGREG) could be different, the new SS
+             *  is set roaming while either one is roaming.
+             *
+             *  There is an exception for the above rule. The new SS is not set
+             *  as roaming while gsm service reports roaming but indeed it is
+             *  not roaming between operators.
+             */
             boolean roaming = (mGsmRoaming || mDataRoaming);
-            if(mGsmRoaming && !isRoamingBetweenOperators(mGsmRoaming, newSS))            
-            {
+            if (mGsmRoaming && !isRoamingBetweenOperators(mGsmRoaming, newSS)) {
                 roaming = false;
-            } //End block
+            }
             newSS.setRoaming(roaming);
             newSS.setEmergencyOnly(mEmergencyOnly);
             pollStateDone();
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        }
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.379 -0400", hash_original_method = "76DE4C6A99E85827FF76DDCBD0A680F0", hash_generated_method = "FB6F947C716BD93C04B4BB847C77356E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.331 -0500", hash_original_method = "76DE4C6A99E85827FF76DDCBD0A680F0", hash_generated_method = "B0C2C0B0D952C99CD3EDED61001AC9FE")
     private void setSignalStrengthDefaultValues() {
         mSignalStrength = new SignalStrength(99, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, true);
-        // ---------- Original Method ----------
-        //mSignalStrength = new SignalStrength(99, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, true);
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.380 -0400", hash_original_method = "4A9AA9B5E92E73D941CD4914D7782EA3", hash_generated_method = "2717FBF28FEDF837B9CA385A0EBBCFAD")
+    /**
+     * A complete "service state" from our perspective is
+     * composed of a handful of separate requests to the radio.
+     *
+     * We make all of these requests at once, but then abandon them
+     * and start over again if the radio notifies us that some
+     * event has changed
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.332 -0500", hash_original_method = "4A9AA9B5E92E73D941CD4914D7782EA3", hash_generated_method = "02A627D0945B97FDD67839EED2C6B3C8")
     private void pollState() {
         pollingContext = new int[1];
         pollingContext[0] = 0;
-switch(cm.getRadioState()){
-        case RADIO_UNAVAILABLE:
-        newSS.setStateOutOfService();
-        newCellLoc.setStateInvalid();
-        setSignalStrengthDefaultValues();
-        mGotCountryCode = false;
-        pollStateDone();
-        break;
-        case RADIO_OFF:
-        newSS.setStateOff();
-        newCellLoc.setStateInvalid();
-        setSignalStrengthDefaultValues();
-        mGotCountryCode = false;
-        pollStateDone();
-        break;
-        case RUIM_NOT_READY:
-        case RUIM_READY:
-        case RUIM_LOCKED_OR_ABSENT:
-        case NV_NOT_READY:
-        case NV_READY:
-        if(DBG)        
-        log("Radio Technology Change ongoing, setting SS to off");
-        newSS.setStateOff();
-        newCellLoc.setStateInvalid();
-        setSignalStrengthDefaultValues();
-        mGotCountryCode = false;
-        break;
-        default:
-        pollingContext[0]++;
-        cm.getOperator(
+
+        switch (cm.getRadioState()) {
+            case RADIO_UNAVAILABLE:
+                newSS.setStateOutOfService();
+                newCellLoc.setStateInvalid();
+                setSignalStrengthDefaultValues();
+                mGotCountryCode = false;
+                pollStateDone();
+            break;
+
+            case RADIO_OFF:
+                newSS.setStateOff();
+                newCellLoc.setStateInvalid();
+                setSignalStrengthDefaultValues();
+                mGotCountryCode = false;
+                pollStateDone();
+            break;
+
+            case RUIM_NOT_READY:
+            case RUIM_READY:
+            case RUIM_LOCKED_OR_ABSENT:
+            case NV_NOT_READY:
+            case NV_READY:
+                if (DBG) log("Radio Technology Change ongoing, setting SS to off");
+                newSS.setStateOff();
+                newCellLoc.setStateInvalid();
+                setSignalStrengthDefaultValues();
+                mGotCountryCode = false;
+
+                //NOTE: pollStateDone() is not needed in this case
+                break;
+
+            default:
+                // Issue all poll-related commands at once
+                // then count down the responses, which
+                // are allowed to arrive out-of-order
+
+                pollingContext[0]++;
+                cm.getOperator(
                     obtainMessage(
                         EVENT_POLL_STATE_OPERATOR, pollingContext));
-        pollingContext[0]++;
-        cm.getDataRegistrationState(
+
+                pollingContext[0]++;
+                cm.getDataRegistrationState(
                     obtainMessage(
                         EVENT_POLL_STATE_GPRS, pollingContext));
-        pollingContext[0]++;
-        cm.getVoiceRegistrationState(
+
+                pollingContext[0]++;
+                cm.getVoiceRegistrationState(
                     obtainMessage(
                         EVENT_POLL_STATE_REGISTRATION, pollingContext));
-        pollingContext[0]++;
-        cm.getNetworkSelectionMode(
+
+                pollingContext[0]++;
+                cm.getNetworkSelectionMode(
                     obtainMessage(
                         EVENT_POLL_STATE_NETWORK_SELECTION_MODE, pollingContext));
-        break;
-}
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            break;
+        }
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.386 -0400", hash_original_method = "9E4E42BAC69A7F7033D249A5EA2291CC", hash_generated_method = "1AED95EF47C48D4E18180853867EAA78")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.335 -0500", hash_original_method = "9E4E42BAC69A7F7033D249A5EA2291CC", hash_generated_method = "58AB0E35886E80503849C8A24499D7A6")
     private void pollStateDone() {
-        if(DBG)        
-        {
+        if (DBG) {
             log("Poll ServiceState done: " +
                 " oldSS=[" + ss + "] newSS=[" + newSS +
                 "] oldGprs=" + gprsState + " newData=" + newGPRSState +
@@ -773,301 +885,273 @@ switch(cm.getRadioState()){
                 " mNewReasonDataDenied=" + mNewReasonDataDenied +
                 " oldType=" + ServiceState.radioTechnologyToString(mRadioTechnology) +
                 " newType=" + ServiceState.radioTechnologyToString(mNewRadioTechnology));
-        } //End block
-        boolean hasRegistered = ss.getState() != ServiceState.STATE_IN_SERVICE
+        }
+
+        boolean hasRegistered =
+            ss.getState() != ServiceState.STATE_IN_SERVICE
             && newSS.getState() == ServiceState.STATE_IN_SERVICE;
-        boolean hasDeregistered = ss.getState() == ServiceState.STATE_IN_SERVICE
+
+        boolean hasDeregistered =
+            ss.getState() == ServiceState.STATE_IN_SERVICE
             && newSS.getState() != ServiceState.STATE_IN_SERVICE;
-        boolean hasGprsAttached = gprsState != ServiceState.STATE_IN_SERVICE
+
+        boolean hasGprsAttached =
+                gprsState != ServiceState.STATE_IN_SERVICE
                 && newGPRSState == ServiceState.STATE_IN_SERVICE;
-        boolean hasGprsDetached = gprsState == ServiceState.STATE_IN_SERVICE
+
+        boolean hasGprsDetached =
+                gprsState == ServiceState.STATE_IN_SERVICE
                 && newGPRSState != ServiceState.STATE_IN_SERVICE;
+
         boolean hasRadioTechnologyChanged = mRadioTechnology != mNewRadioTechnology;
+
         boolean hasChanged = !newSS.equals(ss);
+
         boolean hasRoamingOn = !ss.getRoaming() && newSS.getRoaming();
+
         boolean hasRoamingOff = ss.getRoaming() && !newSS.getRoaming();
+
         boolean hasLocationChanged = !newCellLoc.equals(cellLoc);
-        if(ss.getState() != newSS.getState() || gprsState != newGPRSState)        
-        {
+
+        // Add an event log when connection state changes
+        if (ss.getState() != newSS.getState() || gprsState != newGPRSState) {
             EventLog.writeEvent(EventLogTags.GSM_SERVICE_STATE_CHANGE,
                 ss.getState(), gprsState, newSS.getState(), newGPRSState);
-        } //End block
+        }
+
         ServiceState tss;
         tss = ss;
         ss = newSS;
         newSS = tss;
+        // clean slate for next time
         newSS.setStateOutOfService();
+
         GsmCellLocation tcl = cellLoc;
         cellLoc = newCellLoc;
         newCellLoc = tcl;
-        if(hasRadioTechnologyChanged)        
-        {
+
+        // Add an event log when network type switched
+        // TODO: we may add filtering to reduce the event logged,
+        // i.e. check preferred network setting, only switch to 2G, etc
+        if (hasRadioTechnologyChanged) {
             int cid = -1;
             GsmCellLocation loc = ((GsmCellLocation)phone.getCellLocation());
-            if(loc != null)            
-            cid = loc.getCid();
+            if (loc != null) cid = loc.getCid();
             EventLog.writeEvent(EventLogTags.GSM_RAT_SWITCHED, cid, mRadioTechnology,
                     mNewRadioTechnology);
-            if(DBG)            
-            {
+            if (DBG) {
                 log("RAT switched " + ServiceState.radioTechnologyToString(mRadioTechnology) +
                         " -> " + ServiceState.radioTechnologyToString(mNewRadioTechnology) +
                         " at cell " + cid);
-            } //End block
-        } //End block
+            }
+        }
+
         gprsState = newGPRSState;
         mReasonDataDenied = mNewReasonDataDenied;
         mMaxDataCalls = mNewMaxDataCalls;
         mRadioTechnology = mNewRadioTechnology;
+        // this new state has been applied - forget it until we get a new new state
         mNewRadioTechnology = 0;
-        newSS.setStateOutOfService();
-        if(hasRadioTechnologyChanged)        
-        {
+
+
+        newSS.setStateOutOfService(); // clean slate for next time
+
+        if (hasRadioTechnologyChanged) {
             phone.setSystemProperty(TelephonyProperties.PROPERTY_DATA_NETWORK_TYPE,
                     ServiceState.radioTechnologyToString(mRadioTechnology));
-        } //End block
-        if(hasRegistered)        
-        {
+        }
+
+        if (hasRegistered) {
             mNetworkAttachedRegistrants.notifyRegistrants();
-        } //End block
-        if(hasChanged)        
-        {
+        }
+
+        if (hasChanged) {
             String operatorNumeric;
+
             updateSpnDisplay();
+
             phone.setSystemProperty(TelephonyProperties.PROPERTY_OPERATOR_ALPHA,
                 ss.getOperatorAlphaLong());
+
             operatorNumeric = ss.getOperatorNumeric();
             phone.setSystemProperty(TelephonyProperties.PROPERTY_OPERATOR_NUMERIC, operatorNumeric);
-            if(operatorNumeric == null)            
-            {
+
+            if (operatorNumeric == null) {
                 phone.setSystemProperty(TelephonyProperties.PROPERTY_OPERATOR_ISO_COUNTRY, "");
                 mGotCountryCode = false;
-            } //End block
-            else
-            {
+            } else {
                 String iso = "";
-                try 
-                {
+                try{
                     iso = MccTable.countryCodeForMcc(Integer.parseInt(
                             operatorNumeric.substring(0,3)));
-                } //End block
-                catch (NumberFormatException ex)
-                {
+                } catch ( NumberFormatException ex){
                     loge("countryCodeForMcc error" + ex);
-                } //End block
-                catch (StringIndexOutOfBoundsException ex)
-                {
+                } catch ( StringIndexOutOfBoundsException ex) {
                     loge("countryCodeForMcc error" + ex);
-                } //End block
+                }
+
                 phone.setSystemProperty(TelephonyProperties.PROPERTY_OPERATOR_ISO_COUNTRY, iso);
                 mGotCountryCode = true;
-                if(mNeedFixZone)                
-                {
+
+                if (mNeedFixZone) {
                     TimeZone zone = null;
+                    // If the offset is (0, false) and the timezone property
+                    // is set, use the timezone property rather than
+                    // GMT.
                     String zoneName = SystemProperties.get(TIMEZONE_PROPERTY);
-                    if((mZoneOffset == 0) && (mZoneDst == false) &&
+                    if ((mZoneOffset == 0) && (mZoneDst == false) &&
                         (zoneName != null) && (zoneName.length() > 0) &&
-                        (Arrays.binarySearch(GMT_COUNTRY_CODES, iso) < 0))                    
-                    {
+                        (Arrays.binarySearch(GMT_COUNTRY_CODES, iso) < 0)) {
                         zone = TimeZone.getDefault();
+                        // For NITZ string without timezone,
+                        // need adjust time to reflect default timezone setting
                         long tzOffset;
                         tzOffset = zone.getOffset(System.currentTimeMillis());
-                        if(getAutoTime())                        
-                        {
+                        if (getAutoTime()) {
                             setAndBroadcastNetworkSetTime(System.currentTimeMillis() - tzOffset);
-                        } //End block
-                        else
-                        {
+                        } else {
+                            // Adjust the saved NITZ time to account for tzOffset.
                             mSavedTime = mSavedTime - tzOffset;
-                        } //End block
-                    } //End block
-                    else
-                    if(iso.equals(""))                    
-                    {
+                        }
+                    } else if (iso.equals("")){
+                        // Country code not found.  This is likely a test network.
+                        // Get a TimeZone based only on the NITZ parameters (best guess).
                         zone = getNitzTimeZone(mZoneOffset, mZoneDst, mZoneTime);
-                    } //End block
-                    else
-                    {
+                    } else {
                         zone = TimeUtils.getTimeZone(mZoneOffset,
                             mZoneDst, mZoneTime, iso);
-                    } //End block
+                    }
+
                     mNeedFixZone = false;
-                    if(zone != null)                    
-                    {
-                        if(getAutoTimeZone())                        
-                        {
+
+                    if (zone != null) {
+                        if (getAutoTimeZone()) {
                             setAndBroadcastNetworkSetTimeZone(zone.getID());
-                        } //End block
+                        }
                         saveNitzTimeZone(zone.getID());
-                    } //End block
-                } //End block
-            } //End block
+                    }
+                }
+            }
+
             phone.setSystemProperty(TelephonyProperties.PROPERTY_OPERATOR_ISROAMING,
                 ss.getRoaming() ? "true" : "false");
+
             phone.notifyServiceStateChanged(ss);
-        } //End block
-        if(hasGprsAttached)        
-        {
+        }
+
+        if (hasGprsAttached) {
             mAttachedRegistrants.notifyRegistrants();
-        } //End block
-        if(hasGprsDetached)        
-        {
+        }
+
+        if (hasGprsDetached) {
             mDetachedRegistrants.notifyRegistrants();
-        } //End block
-        if(hasRadioTechnologyChanged)        
-        {
+        }
+
+        if (hasRadioTechnologyChanged) {
             phone.notifyDataConnection(Phone.REASON_NW_TYPE_CHANGED);
-        } //End block
-        if(hasRoamingOn)        
-        {
+        }
+
+        if (hasRoamingOn) {
             mRoamingOnRegistrants.notifyRegistrants();
-        } //End block
-        if(hasRoamingOff)        
-        {
+        }
+
+        if (hasRoamingOff) {
             mRoamingOffRegistrants.notifyRegistrants();
-        } //End block
-        if(hasLocationChanged)        
-        {
+        }
+
+        if (hasLocationChanged) {
             phone.notifyLocationChanged();
-        } //End block
-        if(! isGprsConsistent(gprsState, ss.getState()))        
-        {
-            if(!mStartedGprsRegCheck && !mReportedGprsNoReg)            
-            {
+        }
+
+        if (! isGprsConsistent(gprsState, ss.getState())) {
+            if (!mStartedGprsRegCheck && !mReportedGprsNoReg) {
                 mStartedGprsRegCheck = true;
+
                 int check_period = Settings.Secure.getInt(
                         phone.getContext().getContentResolver(),
                         Settings.Secure.GPRS_REGISTER_CHECK_PERIOD_MS,
                         DEFAULT_GPRS_CHECK_PERIOD_MILLIS);
                 sendMessageDelayed(obtainMessage(EVENT_CHECK_REPORT_GPRS),
                         check_period);
-            } //End block
-        } //End block
-        else
-        {
+            }
+        } else {
             mReportedGprsNoReg = false;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        }
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.387 -0400", hash_original_method = "FF36AACCF1BD8DBC263BCA1FAF3CB26B", hash_generated_method = "F0BAC818561997E232C8726B6014A4B7")
+    /**
+     * Check if GPRS got registered while voice is registered.
+     *
+     * @param gprsState for GPRS registration state, i.e. CGREG in GSM
+     * @param serviceState for voice registration state, i.e. CREG in GSM
+     * @return false if device only register to voice but not gprs
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.336 -0500", hash_original_method = "FF36AACCF1BD8DBC263BCA1FAF3CB26B", hash_generated_method = "D26E463E937B7643E724811284B0AD7C")
     private boolean isGprsConsistent(int gprsState, int serviceState) {
-        addTaint(serviceState);
-        addTaint(gprsState);
-        boolean var064A7DB196DAE6DE63C419EF1A1B4DD2_1987753618 = (!((serviceState == ServiceState.STATE_IN_SERVICE) &&
-                (gprsState != ServiceState.STATE_IN_SERVICE)));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_519628633 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_519628633;
-        // ---------- Original Method ----------
-        //return !((serviceState == ServiceState.STATE_IN_SERVICE) &&
-                //(gprsState != ServiceState.STATE_IN_SERVICE));
+        return !((serviceState == ServiceState.STATE_IN_SERVICE) &&
+                (gprsState != ServiceState.STATE_IN_SERVICE));
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.387 -0400", hash_original_method = "99CED85D89C5E9DD8967FF1E935BF80B", hash_generated_method = "BF5ED3C95264268108B9614078832ADC")
+    /**
+     * Returns a TimeZone object based only on parameters from the NITZ string.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.337 -0500", hash_original_method = "99CED85D89C5E9DD8967FF1E935BF80B", hash_generated_method = "BAD67707D674CDAD94F26509AB9FCB24")
     private TimeZone getNitzTimeZone(int offset, boolean dst, long when) {
-        addTaint(when);
-        addTaint(dst);
-        addTaint(offset);
         TimeZone guess = findTimeZone(offset, dst, when);
-        if(guess == null)        
-        {
+        if (guess == null) {
+            // Couldn't find a proper timezone.  Perhaps the DST data is wrong.
             guess = findTimeZone(offset, !dst, when);
-        } //End block
-        if(DBG)        
-        log("getNitzTimeZone returning " + (guess == null ? guess : guess.getID()));
-TimeZone varA35CE51C1E6ED128CADF188DCC68AF4C_491636324 =         guess;
-        varA35CE51C1E6ED128CADF188DCC68AF4C_491636324.addTaint(taint);
-        return varA35CE51C1E6ED128CADF188DCC68AF4C_491636324;
-        // ---------- Original Method ----------
-        //TimeZone guess = findTimeZone(offset, dst, when);
-        //if (guess == null) {
-            //guess = findTimeZone(offset, !dst, when);
-        //}
-        //if (DBG) log("getNitzTimeZone returning " + (guess == null ? guess : guess.getID()));
-        //return guess;
+        }
+        if (DBG) log("getNitzTimeZone returning " + (guess == null ? guess : guess.getID()));
+        return guess;
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.388 -0400", hash_original_method = "950DB35A634BB86898B3E74AA5BE6013", hash_generated_method = "8F6074FE685F0F87E322199F8392401C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.338 -0500", hash_original_method = "950DB35A634BB86898B3E74AA5BE6013", hash_generated_method = "049809E0CCBF5A32DA8C3BF574D8B5BF")
     private TimeZone findTimeZone(int offset, boolean dst, long when) {
-        addTaint(when);
-        addTaint(dst);
-        addTaint(offset);
         int rawOffset = offset;
-        if(dst)        
-        {
+        if (dst) {
             rawOffset -= 3600000;
-        } //End block
+        }
         String[] zones = TimeZone.getAvailableIDs(rawOffset);
         TimeZone guess = null;
         Date d = new Date(when);
-for(String zone : zones)
-        {
+        for (String zone : zones) {
             TimeZone tz = TimeZone.getTimeZone(zone);
-            if(tz.getOffset(when) == offset &&
-                tz.inDaylightTime(d) == dst)            
-            {
+            if (tz.getOffset(when) == offset &&
+                tz.inDaylightTime(d) == dst) {
                 guess = tz;
                 break;
-            } //End block
-        } //End block
-TimeZone varA35CE51C1E6ED128CADF188DCC68AF4C_1163831887 =         guess;
-        varA35CE51C1E6ED128CADF188DCC68AF4C_1163831887.addTaint(taint);
-        return varA35CE51C1E6ED128CADF188DCC68AF4C_1163831887;
-        // ---------- Original Method ----------
-        //int rawOffset = offset;
-        //if (dst) {
-            //rawOffset -= 3600000;
-        //}
-        //String[] zones = TimeZone.getAvailableIDs(rawOffset);
-        //TimeZone guess = null;
-        //Date d = new Date(when);
-        //for (String zone : zones) {
-            //TimeZone tz = TimeZone.getTimeZone(zone);
-            //if (tz.getOffset(when) == offset &&
-                //tz.inDaylightTime(d) == dst) {
-                //guess = tz;
-                //break;
-            //}
-        //}
-        //return guess;
+            }
+        }
+
+        return guess;
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.388 -0400", hash_original_method = "C454880D3BFCEEC9D9AA3258CF5DFAC4", hash_generated_method = "A81797C278C3BF65AB5D07A5FD8E56AD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.339 -0500", hash_original_method = "C454880D3BFCEEC9D9AA3258CF5DFAC4", hash_generated_method = "5C3439222E25E97699CF35046A0E3D45")
     private void queueNextSignalStrengthPoll() {
-        if(dontPollSignalStrength || (cm.getRadioState().isCdma()))        
-        {
+        if (dontPollSignalStrength || (cm.getRadioState().isCdma())) {
+            // The radio is telling us about signal strength changes
+            // we don't have to ask it
             return;
-        } //End block
+        }
+
         Message msg;
+
         msg = obtainMessage();
         msg.what = EVENT_POLL_SIGNAL_STRENGTH;
+
         long nextTime;
+
+        // TODO Don't poll signal strength if screen is off
         sendMessageDelayed(msg, POLL_PERIOD_MILLIS);
-        // ---------- Original Method ----------
-        //if (dontPollSignalStrength || (cm.getRadioState().isCdma())) {
-            //return;
-        //}
-        //Message msg;
-        //msg = obtainMessage();
-        //msg.what = EVENT_POLL_SIGNAL_STRENGTH;
-        //long nextTime;
-        //sendMessageDelayed(msg, POLL_PERIOD_MILLIS);
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.388 -0400", hash_original_method = "313D4989F4A5423E3CAD270FA74FCE9F", hash_generated_method = "335424F3BC3B0819809A2075A04A4AEB")
+    /**
+     *  Send signal-strength-changed notification if changed.
+     *  Called both for solicited and unsolicited signal strength updates.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.340 -0500", hash_original_method = "313D4989F4A5423E3CAD270FA74FCE9F", hash_generated_method = "D82190EFFD443E9437BE5E85D9A18C7A")
     private void onSignalStrengthResult(AsyncResult ar) {
-        addTaint(ar.getTaint());
         SignalStrength oldSignalStrength = mSignalStrength;
         int rssi = 99;
         int lteSignalStrength = -1;
@@ -1075,654 +1159,500 @@ TimeZone varA35CE51C1E6ED128CADF188DCC68AF4C_1163831887 =         guess;
         int lteRsrq = -1;
         int lteRssnr = -1;
         int lteCqi = -1;
-        if(ar.exception != null)        
-        {
+
+        if (ar.exception != null) {
+            // -1 = unknown
+            // most likely radio is resetting/disconnected
             setSignalStrengthDefaultValues();
-        } //End block
-        else
-        {
+        } else {
             int[] ints = (int[])ar.result;
-            if(ints.length != 0)            
-            {
+
+            // bug 658816 seems to be a case where the result is 0-length
+            if (ints.length != 0) {
                 rssi = ints[0];
                 lteSignalStrength = ints[7];
                 lteRsrp = ints[8];
                 lteRsrq = ints[9];
                 lteRssnr = ints[10];
                 lteCqi = ints[11];
-            } //End block
-            else
-            {
+            } else {
                 loge("Bogus signal strength response");
                 rssi = 99;
-            } //End block
-        } //End block
+            }
+        }
+
         mSignalStrength = new SignalStrength(rssi, -1, -1, -1,
                 -1, -1, -1, lteSignalStrength, lteRsrp, lteRsrq, lteRssnr, lteCqi, true);
-        if(!mSignalStrength.equals(oldSignalStrength))        
-        {
-            try 
-            {
+
+        if (!mSignalStrength.equals(oldSignalStrength)) {
+            try { // This takes care of delayed EVENT_POLL_SIGNAL_STRENGTH (scheduled after
+                  // POLL_PERIOD_MILLIS) during Radio Technology Change)
                 phone.notifySignalStrength();
-            } //End block
-            catch (NullPointerException ex)
-            {
+           } catch (NullPointerException ex) {
                 log("onSignalStrengthResult() Phone already destroyed: " + ex
                         + "SignalStrength not notified");
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+           }
+        }
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.389 -0400", hash_original_method = "F4F35E6AADE0C2C218C2CEC9E86259B9", hash_generated_method = "28EB821A759AC046ACDE147C4D566A78")
+    /**
+     * Set restricted state based on the OnRestrictedStateChanged notification
+     * If any voice or packet restricted state changes, trigger a UI
+     * notification and notify registrants when sim is ready.
+     *
+     * @param ar an int value of RIL_RESTRICTED_STATE_*
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.341 -0500", hash_original_method = "F4F35E6AADE0C2C218C2CEC9E86259B9", hash_generated_method = "550227B2DCC771FDF8535ACBAB7BE67A")
     private void onRestrictedStateChanged(AsyncResult ar) {
-        addTaint(ar.getTaint());
         RestrictedState newRs = new RestrictedState();
-        if(DBG)        
-        log("onRestrictedStateChanged: E rs "+ mRestrictedState);
-        if(ar.exception == null)        
-        {
+
+        if (DBG) log("onRestrictedStateChanged: E rs "+ mRestrictedState);
+
+        if (ar.exception == null) {
             int[] ints = (int[])ar.result;
             int state = ints[0];
+
             newRs.setCsEmergencyRestricted(
                     ((state & RILConstants.RIL_RESTRICTED_STATE_CS_EMERGENCY) != 0) ||
                     ((state & RILConstants.RIL_RESTRICTED_STATE_CS_ALL) != 0) );
-            if(phone.getIccCard().getState() == IccCard.State.READY)            
-            {
+            //ignore the normal call and data restricted state before SIM READY
+            if (phone.getIccCard().getState() == IccCard.State.READY) {
                 newRs.setCsNormalRestricted(
                         ((state & RILConstants.RIL_RESTRICTED_STATE_CS_NORMAL) != 0) ||
                         ((state & RILConstants.RIL_RESTRICTED_STATE_CS_ALL) != 0) );
                 newRs.setPsRestricted(
                         (state & RILConstants.RIL_RESTRICTED_STATE_PS_ALL)!= 0);
-            } //End block
-            if(DBG)            
-            log("onRestrictedStateChanged: new rs "+ newRs);
-            if(!mRestrictedState.isPsRestricted() && newRs.isPsRestricted())            
-            {
+            }
+
+            if (DBG) log("onRestrictedStateChanged: new rs "+ newRs);
+
+            if (!mRestrictedState.isPsRestricted() && newRs.isPsRestricted()) {
                 mPsRestrictEnabledRegistrants.notifyRegistrants();
                 setNotification(PS_ENABLED);
-            } //End block
-            else
-            if(mRestrictedState.isPsRestricted() && !newRs.isPsRestricted())            
-            {
+            } else if (mRestrictedState.isPsRestricted() && !newRs.isPsRestricted()) {
                 mPsRestrictDisabledRegistrants.notifyRegistrants();
                 setNotification(PS_DISABLED);
-            } //End block
-            if(mRestrictedState.isCsRestricted())            
-            {
-                if(!newRs.isCsRestricted())                
-                {
+            }
+
+            /**
+             * There are two kind of cs restriction, normal and emergency. So
+             * there are 4 x 4 combinations in current and new restricted states
+             * and we only need to notify when state is changed.
+             */
+            if (mRestrictedState.isCsRestricted()) {
+                if (!newRs.isCsRestricted()) {
+                    // remove all restriction
                     setNotification(CS_DISABLED);
-                } //End block
-                else
-                if(!newRs.isCsNormalRestricted())                
-                {
+                } else if (!newRs.isCsNormalRestricted()) {
+                    // remove normal restriction
                     setNotification(CS_EMERGENCY_ENABLED);
-                } //End block
-                else
-                if(!newRs.isCsEmergencyRestricted())                
-                {
+                } else if (!newRs.isCsEmergencyRestricted()) {
+                    // remove emergency restriction
                     setNotification(CS_NORMAL_ENABLED);
-                } //End block
-            } //End block
-            else
-            if(mRestrictedState.isCsEmergencyRestricted() &&
-                    !mRestrictedState.isCsNormalRestricted())            
-            {
-                if(!newRs.isCsRestricted())                
-                {
+                }
+            } else if (mRestrictedState.isCsEmergencyRestricted() &&
+                    !mRestrictedState.isCsNormalRestricted()) {
+                if (!newRs.isCsRestricted()) {
+                    // remove all restriction
                     setNotification(CS_DISABLED);
-                } //End block
-                else
-                if(newRs.isCsRestricted())                
-                {
+                } else if (newRs.isCsRestricted()) {
+                    // enable all restriction
                     setNotification(CS_ENABLED);
-                } //End block
-                else
-                if(newRs.isCsNormalRestricted())                
-                {
+                } else if (newRs.isCsNormalRestricted()) {
+                    // remove emergency restriction and enable normal restriction
                     setNotification(CS_NORMAL_ENABLED);
-                } //End block
-            } //End block
-            else
-            if(!mRestrictedState.isCsEmergencyRestricted() &&
-                    mRestrictedState.isCsNormalRestricted())            
-            {
-                if(!newRs.isCsRestricted())                
-                {
+                }
+            } else if (!mRestrictedState.isCsEmergencyRestricted() &&
+                    mRestrictedState.isCsNormalRestricted()) {
+                if (!newRs.isCsRestricted()) {
+                    // remove all restriction
                     setNotification(CS_DISABLED);
-                } //End block
-                else
-                if(newRs.isCsRestricted())                
-                {
+                } else if (newRs.isCsRestricted()) {
+                    // enable all restriction
                     setNotification(CS_ENABLED);
-                } //End block
-                else
-                if(newRs.isCsEmergencyRestricted())                
-                {
+                } else if (newRs.isCsEmergencyRestricted()) {
+                    // remove normal restriction and enable emergency restriction
                     setNotification(CS_EMERGENCY_ENABLED);
-                } //End block
-            } //End block
-            else
-            {
-                if(newRs.isCsRestricted())                
-                {
+                }
+            } else {
+                if (newRs.isCsRestricted()) {
+                    // enable all restriction
                     setNotification(CS_ENABLED);
-                } //End block
-                else
-                if(newRs.isCsEmergencyRestricted())                
-                {
+                } else if (newRs.isCsEmergencyRestricted()) {
+                    // enable emergency restriction
                     setNotification(CS_EMERGENCY_ENABLED);
-                } //End block
-                else
-                if(newRs.isCsNormalRestricted())                
-                {
+                } else if (newRs.isCsNormalRestricted()) {
+                    // enable normal restriction
                     setNotification(CS_NORMAL_ENABLED);
-                } //End block
-            } //End block
+                }
+            }
+
             mRestrictedState = newRs;
-        } //End block
+        }
         log("onRestrictedStateChanged: X rs "+ mRestrictedState);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.390 -0400", hash_original_method = "224D5C409E7F86CE5414891CFB70A981", hash_generated_method = "3D8EDF3B48C2C17EE8731B09A7F3712C")
+    /** code is registration state 0-5 from TS 27.007 7.2 */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.342 -0500", hash_original_method = "224D5C409E7F86CE5414891CFB70A981", hash_generated_method = "178E85B2327E05C49F9EEB00F2AE391D")
     private int regCodeToServiceState(int code) {
-        addTaint(code);
-switch(code){
-        case 0:
-        case 2:
-        case 3:
-        case 4:
-        case 10:
-        case 12:
-        case 13:
-        case 14:
-        int var71E69F293A199F4F0590F716ED221A1D_1466126559 = (ServiceState.STATE_OUT_OF_SERVICE);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_765464932 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_765464932;
-        case 1:
-        int varC8CBA89C9D33ADF2399F2C790EB21113_1869730664 = (ServiceState.STATE_IN_SERVICE);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1627758280 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1627758280;
-        case 5:
-        int varC8CBA89C9D33ADF2399F2C790EB21113_1091957987 = (ServiceState.STATE_IN_SERVICE);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_952315823 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_952315823;
-        default:
-        loge("regCodeToServiceState: unexpected service state " + code);
-        int var71E69F293A199F4F0590F716ED221A1D_1094515368 = (ServiceState.STATE_OUT_OF_SERVICE);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_416572822 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_416572822;
-}
-        // ---------- Original Method ----------
-        //switch (code) {
-            //case 0:
-            //case 2: 
-            //case 3: 
-            //case 4: 
-            //case 10:
-            //case 12:
-            //case 13:
-            //case 14:
-                //return ServiceState.STATE_OUT_OF_SERVICE;
-            //case 1:
-                //return ServiceState.STATE_IN_SERVICE;
-            //case 5:
-                //return ServiceState.STATE_IN_SERVICE;
-            //default:
-                //loge("regCodeToServiceState: unexpected service state " + code);
-                //return ServiceState.STATE_OUT_OF_SERVICE;
-        //}
+        switch (code) {
+            case 0:
+            case 2: // 2 is "searching"
+            case 3: // 3 is "registration denied"
+            case 4: // 4 is "unknown" no vaild in current baseband
+            case 10:// same as 0, but indicates that emergency call is possible.
+            case 12:// same as 2, but indicates that emergency call is possible.
+            case 13:// same as 3, but indicates that emergency call is possible.
+            case 14:// same as 4, but indicates that emergency call is possible.
+                return ServiceState.STATE_OUT_OF_SERVICE;
+
+            case 1:
+                return ServiceState.STATE_IN_SERVICE;
+
+            case 5:
+                // in service, roam
+                return ServiceState.STATE_IN_SERVICE;
+
+            default:
+                loge("regCodeToServiceState: unexpected service state " + code);
+                return ServiceState.STATE_OUT_OF_SERVICE;
+        }
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.390 -0400", hash_original_method = "19036A7D1DADA943DC912DAB6396B9AD", hash_generated_method = "AA2B480220D0A9A6A57F2074CF68FE7D")
-    private boolean regCodeIsRoaming(int code) {
-        addTaint(code);
-        boolean var9BC16EB4B57D49EAF3C5553D2A5A7562_139487852 = (5 == code);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_601598175 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_601598175;
-        // ---------- Original Method ----------
-        //return 5 == code;
+
+    /**
+     * code is registration state 0-5 from TS 27.007 7.2
+     * returns true if registered roam, false otherwise
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.343 -0500", hash_original_method = "19036A7D1DADA943DC912DAB6396B9AD", hash_generated_method = "6C0E3EFDD2ACA49FF7AF90314964240F")
+    private boolean regCodeIsRoaming (int code) {
+        // 5 is  "in service -- roam"
+        return 5 == code;
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.390 -0400", hash_original_method = "A83CC5F0F34C62E2D3BC7866CECAC756", hash_generated_method = "46D35B6B27430013E9C1DCCE862970B6")
+    /**
+     * Set roaming state when gsmRoaming is true and, if operator mcc is the
+     * same as sim mcc, ons is different from spn
+     * @param gsmRoaming TS 27.007 7.2 CREG registered roaming
+     * @param s ServiceState hold current ons
+     * @return true for roaming state set
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.344 -0500", hash_original_method = "A83CC5F0F34C62E2D3BC7866CECAC756", hash_generated_method = "3F7E094A08799DF950B6F0CB23A74E6A")
     private boolean isRoamingBetweenOperators(boolean gsmRoaming, ServiceState s) {
-        addTaint(s.getTaint());
-        addTaint(gsmRoaming);
         String spn = SystemProperties.get(TelephonyProperties.PROPERTY_ICC_OPERATOR_ALPHA, "empty");
+
         String onsl = s.getOperatorAlphaLong();
         String onss = s.getOperatorAlphaShort();
+
         boolean equalsOnsl = onsl != null && spn.equals(onsl);
         boolean equalsOnss = onss != null && spn.equals(onss);
+
         String simNumeric = SystemProperties.get(
                 TelephonyProperties.PROPERTY_ICC_OPERATOR_NUMERIC, "");
-        String operatorNumeric = s.getOperatorNumeric();
+        String  operatorNumeric = s.getOperatorNumeric();
+
         boolean equalsMcc = true;
-        try 
-        {
+        try {
             equalsMcc = simNumeric.substring(0, 3).
                     equals(operatorNumeric.substring(0, 3));
-        } //End block
-        catch (Exception e)
-        {
-        } //End block
-        boolean varA5D48A73A95542B1E929FEBE3FF47945_1705639473 = (gsmRoaming && !(equalsMcc && (equalsOnsl || equalsOnss)));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_367780145 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_367780145;
-        // ---------- Original Method ----------
-        //String spn = SystemProperties.get(TelephonyProperties.PROPERTY_ICC_OPERATOR_ALPHA, "empty");
-        //String onsl = s.getOperatorAlphaLong();
-        //String onss = s.getOperatorAlphaShort();
-        //boolean equalsOnsl = onsl != null && spn.equals(onsl);
-        //boolean equalsOnss = onss != null && spn.equals(onss);
-        //String simNumeric = SystemProperties.get(
-                //TelephonyProperties.PROPERTY_ICC_OPERATOR_NUMERIC, "");
-        //String  operatorNumeric = s.getOperatorNumeric();
-        //boolean equalsMcc = true;
-        //try {
-            //equalsMcc = simNumeric.substring(0, 3).
-                    //equals(operatorNumeric.substring(0, 3));
-        //} catch (Exception e){
-        //}
-        //return gsmRoaming && !(equalsMcc && (equalsOnsl || equalsOnss));
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    private static int twoDigitsAt(String s, int offset) {
-        int a, b;
-        a = Character.digit(s.charAt(offset), 10);
-        b = Character.digit(s.charAt(offset+1), 10);
-        if (a < 0 || b < 0) {
-            throw new RuntimeException("invalid format");
+        } catch (Exception e){
         }
-        return a*10 + b;
+
+        return gsmRoaming && !(equalsMcc && (equalsOnsl || equalsOnss));
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.390 -0400", hash_original_method = "462522C9E25E239E090C32F4DC1CCDBD", hash_generated_method = "07E56A0C2D3F24254D1B654C1B462652")
-     int getCurrentGprsState() {
-        int varAE002CCACEDC16E1ADAE58BCD2D9B837_1419119966 = (gprsState);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_818650271 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_818650271;
-        // ---------- Original Method ----------
-        //return gprsState;
+    /**
+     * @return The current GPRS state. IN_SERVICE is the same as "attached"
+     * and OUT_OF_SERVICE is the same as detached.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.345 -0500", hash_original_method = "462522C9E25E239E090C32F4DC1CCDBD", hash_generated_method = "462522C9E25E239E090C32F4DC1CCDBD")
+    int getCurrentGprsState() {
+        return gprsState;
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.391 -0400", hash_original_method = "76A0DFDE7E82168261B9485993735FA8", hash_generated_method = "A27D5D7F78BEAC76B85A32747D024249")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.346 -0500", hash_original_method = "76A0DFDE7E82168261B9485993735FA8", hash_generated_method = "068649D7EB132587836305BEE0BFD86C")
     public int getCurrentDataConnectionState() {
-        int varAE002CCACEDC16E1ADAE58BCD2D9B837_1575648048 = (gprsState);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2112793934 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2112793934;
-        // ---------- Original Method ----------
-        //return gprsState;
+        return gprsState;
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.391 -0400", hash_original_method = "35025CCE5222CF7AFA718FFADECE80EF", hash_generated_method = "5206F618B3A487865DA8EB5FE5BC6D83")
+    /**
+     * @return true if phone is camping on a technology (eg UMTS)
+     * that could support voice and data simultaneously.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.347 -0500", hash_original_method = "35025CCE5222CF7AFA718FFADECE80EF", hash_generated_method = "1ABD74EF19B1AAA1607A42C87F1E5122")
     public boolean isConcurrentVoiceAndDataAllowed() {
-        boolean var10896807F1D0D24F85768ECF425B98D6_756194061 = ((mRadioTechnology >= ServiceState.RADIO_TECHNOLOGY_UMTS));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_935649331 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_935649331;
-        // ---------- Original Method ----------
-        //return (mRadioTechnology >= ServiceState.RADIO_TECHNOLOGY_UMTS);
+        return (mRadioTechnology >= ServiceState.RADIO_TECHNOLOGY_UMTS);
     }
 
-    
-    @DSModeled(DSC.BAN)
-    private static String displayNameFor(int off) {
-        off = off / 1000 / 60;
-        char[] buf = new char[9];
-        buf[0] = 'G';
-        buf[1] = 'M';
-        buf[2] = 'T';
-        if (off < 0) {
-            buf[3] = '-';
-            off = -off;
-        } else {
-            buf[3] = '+';
-        }
-        int hours = off / 60;
-        int minutes = off % 60;
-        buf[4] = (char) ('0' + hours / 10);
-        buf[5] = (char) ('0' + hours % 10);
-        buf[6] = ':';
-        buf[7] = (char) ('0' + minutes / 10);
-        buf[8] = (char) ('0' + minutes % 10);
-        return new String(buf);
-    }
+    /**
+     * nitzReceiveTime is time_t that the NITZ time was posted
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.350 -0500", hash_original_method = "D8515350C34B3E7CC6A83CEBE4C1FE6C", hash_generated_method = "EB85272759649CA4DF27A1F46F285181")
+    private void setTimeFromNITZString (String nitz, long nitzReceiveTime) {
+        // "yy/mm/dd,hh:mm:ss(+/-)tz"
+        // tz is in number of quarter-hours
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.392 -0400", hash_original_method = "D8515350C34B3E7CC6A83CEBE4C1FE6C", hash_generated_method = "BF98506DF60295183DE892B5DAD82D9E")
-    private void setTimeFromNITZString(String nitz, long nitzReceiveTime) {
-        addTaint(nitzReceiveTime);
-        addTaint(nitz.getTaint());
         long start = SystemClock.elapsedRealtime();
-        if(DBG)        
-        {
-            log("NITZ: " + nitz + "," + nitzReceiveTime +
+        if (DBG) {log("NITZ: " + nitz + "," + nitzReceiveTime +
                         " start=" + start + " delay=" + (start - nitzReceiveTime));
-        } //End block
-        try 
-        {
+        }
+
+        try {
+            /* NITZ time (hour:min:sec) will be in UTC but it supplies the timezone
+             * offset as well (which we won't worry about until later) */
             Calendar c = Calendar.getInstance(TimeZone.getTimeZone("GMT"));
+
             c.clear();
             c.set(Calendar.DST_OFFSET, 0);
+
             String[] nitzSubs = nitz.split("[/:,+-]");
+
             int year = 2000 + Integer.parseInt(nitzSubs[0]);
             c.set(Calendar.YEAR, year);
+
+            // month is 0 based!
             int month = Integer.parseInt(nitzSubs[1]) - 1;
             c.set(Calendar.MONTH, month);
+
             int date = Integer.parseInt(nitzSubs[2]);
             c.set(Calendar.DATE, date);
+
             int hour = Integer.parseInt(nitzSubs[3]);
             c.set(Calendar.HOUR, hour);
+
             int minute = Integer.parseInt(nitzSubs[4]);
             c.set(Calendar.MINUTE, minute);
+
             int second = Integer.parseInt(nitzSubs[5]);
             c.set(Calendar.SECOND, second);
+
             boolean sign = (nitz.indexOf('-') == -1);
+
             int tzOffset = Integer.parseInt(nitzSubs[6]);
+
             int dst = (nitzSubs.length >= 8 ) ? Integer.parseInt(nitzSubs[7])
                                               : 0;
+
+            // The zone offset received from NITZ is for current local time,
+            // so DST correction is already applied.  Don't add it again.
+            //
+            // tzOffset += dst * 4;
+            //
+            // We could unapply it if we wanted the raw offset.
+
             tzOffset = (sign ? 1 : -1) * tzOffset * 15 * 60 * 1000;
-            TimeZone zone = null;
-            if(nitzSubs.length >= 9)            
-            {
-                String tzname = nitzSubs[8].replace('!','/');
+
+            TimeZone    zone = null;
+
+            // As a special extension, the Android emulator appends the name of
+            // the host computer's timezone to the nitz string. this is zoneinfo
+            // timezone name of the form Area!Location or Area!Location!SubLocation
+            // so we need to convert the ! into /
+            if (nitzSubs.length >= 9) {
+                String  tzname = nitzSubs[8].replace('!','/');
                 zone = TimeZone.getTimeZone( tzname );
-            } //End block
+            }
+
             String iso = SystemProperties.get(TelephonyProperties.PROPERTY_OPERATOR_ISO_COUNTRY);
-            if(zone == null)            
-            {
-                if(mGotCountryCode)                
-                {
-                    if(iso != null && iso.length() > 0)                    
-                    {
+
+            if (zone == null) {
+
+                if (mGotCountryCode) {
+                    if (iso != null && iso.length() > 0) {
                         zone = TimeUtils.getTimeZone(tzOffset, dst != 0,
                                 c.getTimeInMillis(),
                                 iso);
-                    } //End block
-                    else
-                    {
+                    } else {
+                        // We don't have a valid iso country code.  This is
+                        // most likely because we're on a test network that's
+                        // using a bogus MCC (eg, "001"), so get a TimeZone
+                        // based only on the NITZ parameters.
                         zone = getNitzTimeZone(tzOffset, (dst != 0), c.getTimeInMillis());
-                    } //End block
-                } //End block
-            } //End block
-            if(zone == null)            
-            {
+                    }
+                }
+            }
+
+            if (zone == null) {
+                // We got the time before the country, so we don't know
+                // how to identify the DST rules yet.  Save the information
+                // and hope to fix it up later.
+
                 mNeedFixZone = true;
                 mZoneOffset  = tzOffset;
                 mZoneDst     = dst != 0;
                 mZoneTime    = c.getTimeInMillis();
-            } //End block
-            if(zone != null)            
-            {
-                if(getAutoTimeZone())                
-                {
+            }
+
+            if (zone != null) {
+                if (getAutoTimeZone()) {
                     setAndBroadcastNetworkSetTimeZone(zone.getID());
-                } //End block
+                }
                 saveNitzTimeZone(zone.getID());
-            } //End block
+            }
+
             String ignore = SystemProperties.get("gsm.ignore-nitz");
-            if(ignore != null && ignore.equals("yes"))            
-            {
+            if (ignore != null && ignore.equals("yes")) {
                 log("NITZ: Not setting clock because gsm.ignore-nitz is set");
                 return;
-            } //End block
-            try 
-            {
+            }
+
+            try {
                 mWakeLock.acquire();
-                if(getAutoTime())                
-                {
-                    long millisSinceNitzReceived = SystemClock.elapsedRealtime() - nitzReceiveTime;
-                    if(millisSinceNitzReceived < 0)                    
-                    {
-                        if(DBG)                        
-                        {
+
+                if (getAutoTime()) {
+                    long millisSinceNitzReceived
+                            = SystemClock.elapsedRealtime() - nitzReceiveTime;
+
+                    if (millisSinceNitzReceived < 0) {
+                        // Sanity check: something is wrong
+                        if (DBG) {
                             log("NITZ: not setting time, clock has rolled "
                                             + "backwards since NITZ time was received, "
                                             + nitz);
-                        } //End block
+                        }
                         return;
-                    } //End block
-                    if(millisSinceNitzReceived > Integer.MAX_VALUE)                    
-                    {
-                        if(DBG)                        
-                        {
+                    }
+
+                    if (millisSinceNitzReceived > Integer.MAX_VALUE) {
+                        // If the time is this far off, something is wrong > 24 days!
+                        if (DBG) {
                             log("NITZ: not setting time, processing has taken "
                                         + (millisSinceNitzReceived / (1000 * 60 * 60 * 24))
                                         + " days");
-                        } //End block
+                        }
                         return;
-                    } //End block
+                    }
+
+                    // Note: with range checks above, cast to int is safe
                     c.add(Calendar.MILLISECOND, (int)millisSinceNitzReceived);
-                    if(DBG)                    
-                    {
+
+                    if (DBG) {
                         log("NITZ: Setting time of day to " + c.getTime()
                             + " NITZ receive delay(ms): " + millisSinceNitzReceived
                             + " gained(ms): "
                             + (c.getTimeInMillis() - System.currentTimeMillis())
                             + " from " + nitz);
-                    } //End block
+                    }
+
                     setAndBroadcastNetworkSetTime(c.getTimeInMillis());
-                } //End block
+                    Log.i(LOG_TAG, "NITZ: after Setting time of day");
+                }
                 SystemProperties.set("gsm.nitz.time", String.valueOf(c.getTimeInMillis()));
                 saveNitzTime(c.getTimeInMillis());
-                if(false)                
-                {
+                if (false) {
                     long end = SystemClock.elapsedRealtime();
                     log("NITZ: end=" + end + " dur=" + (end - start));
-                } //End block
-            } //End block
-            finally 
-            {
+                }
+            } finally {
                 mWakeLock.release();
-            } //End block
-        } //End block
-        catch (RuntimeException ex)
-        {
+            }
+        } catch (RuntimeException ex) {
             loge("NITZ: Parsing NITZ time " + nitz + " ex=" + ex);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        }
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.393 -0400", hash_original_method = "10C2AC47FB9B2FA38284A276FBC39461", hash_generated_method = "99EC6873A0BE00DC44AFE2B99B4CED10")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.351 -0500", hash_original_method = "10C2AC47FB9B2FA38284A276FBC39461", hash_generated_method = "8ADDF76F8C0FD6C596A9D8D444C83D54")
     private boolean getAutoTime() {
-        try 
-        {
-            boolean var23666C841658CCF993821D103DA1B99B_1178897314 = (Settings.System.getInt(phone.getContext().getContentResolver(),
-                    Settings.System.AUTO_TIME) > 0);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_282293238 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_282293238;
-        } //End block
-        catch (SettingNotFoundException snfe)
-        {
-            boolean varB326B5062B2F0E69046810717534CB09_1740061397 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_896005808 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_896005808;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return Settings.System.getInt(phone.getContext().getContentResolver(),
-                    //Settings.System.AUTO_TIME) > 0;
-        //} catch (SettingNotFoundException snfe) {
-            //return true;
-        //}
+        try {
+            return Settings.System.getInt(phone.getContext().getContentResolver(),
+                    Settings.System.AUTO_TIME) > 0;
+        } catch (SettingNotFoundException snfe) {
+            return true;
+        }
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.393 -0400", hash_original_method = "46367736BD7DFDD485A94174DBA3ECD3", hash_generated_method = "6DC911419E97CE0E18B68B5320163E3A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.352 -0500", hash_original_method = "46367736BD7DFDD485A94174DBA3ECD3", hash_generated_method = "D91C3E2D093F8D30DA1517385B483242")
     private boolean getAutoTimeZone() {
-        try 
-        {
-            boolean var67F2942DBB30A12A5915AD3396DFFCDF_150435234 = (Settings.System.getInt(phone.getContext().getContentResolver(),
-                    Settings.System.AUTO_TIME_ZONE) > 0);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1068433383 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1068433383;
-        } //End block
-        catch (SettingNotFoundException snfe)
-        {
-            boolean varB326B5062B2F0E69046810717534CB09_1667602340 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_254574838 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_254574838;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return Settings.System.getInt(phone.getContext().getContentResolver(),
-                    //Settings.System.AUTO_TIME_ZONE) > 0;
-        //} catch (SettingNotFoundException snfe) {
-            //return true;
-        //}
+        try {
+            return Settings.System.getInt(phone.getContext().getContentResolver(),
+                    Settings.System.AUTO_TIME_ZONE) > 0;
+        } catch (SettingNotFoundException snfe) {
+            return true;
+        }
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.393 -0400", hash_original_method = "AC4D6B705E7065D39BD6B0621414F077", hash_generated_method = "89E6488BB9B703C7CA9BBABF73A30618")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.353 -0500", hash_original_method = "AC4D6B705E7065D39BD6B0621414F077", hash_generated_method = "95607A7DB8A17A71A53B4FD9E4217C6A")
     private void saveNitzTimeZone(String zoneId) {
         mSavedTimeZone = zoneId;
-        // ---------- Original Method ----------
-        //mSavedTimeZone = zoneId;
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.393 -0400", hash_original_method = "BBC081DF5E9AA5E0F675E4C4D97D41FA", hash_generated_method = "FA812F2463447E256E093AB70BACE34A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.353 -0500", hash_original_method = "BBC081DF5E9AA5E0F675E4C4D97D41FA", hash_generated_method = "991AD641863713BBD57D3BA11477491D")
     private void saveNitzTime(long time) {
         mSavedTime = time;
         mSavedAtTime = SystemClock.elapsedRealtime();
-        // ---------- Original Method ----------
-        //mSavedTime = time;
-        //mSavedAtTime = SystemClock.elapsedRealtime();
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.393 -0400", hash_original_method = "28A8B5328B033F98ED5E62B240AD20B6", hash_generated_method = "984A6F220FA299B6040E2A27C2DE4419")
+    /**
+     * Set the timezone and send out a sticky broadcast so the system can
+     * determine if the timezone was set by the carrier.
+     *
+     * @param zoneId timezone set by carrier
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.354 -0500", hash_original_method = "28A8B5328B033F98ED5E62B240AD20B6", hash_generated_method = "0B5EAB3B98BE4495A7BB1CF24837488F")
     private void setAndBroadcastNetworkSetTimeZone(String zoneId) {
-        addTaint(zoneId.getTaint());
-        AlarmManager alarm = (AlarmManager) phone.getContext().getSystemService(Context.ALARM_SERVICE);
+        AlarmManager alarm =
+            (AlarmManager) phone.getContext().getSystemService(Context.ALARM_SERVICE);
         alarm.setTimeZone(zoneId);
         Intent intent = new Intent(TelephonyIntents.ACTION_NETWORK_SET_TIMEZONE);
         intent.addFlags(Intent.FLAG_RECEIVER_REPLACE_PENDING);
         intent.putExtra("time-zone", zoneId);
         phone.getContext().sendStickyBroadcast(intent);
-        // ---------- Original Method ----------
-        //AlarmManager alarm =
-            //(AlarmManager) phone.getContext().getSystemService(Context.ALARM_SERVICE);
-        //alarm.setTimeZone(zoneId);
-        //Intent intent = new Intent(TelephonyIntents.ACTION_NETWORK_SET_TIMEZONE);
-        //intent.addFlags(Intent.FLAG_RECEIVER_REPLACE_PENDING);
-        //intent.putExtra("time-zone", zoneId);
-        //phone.getContext().sendStickyBroadcast(intent);
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.394 -0400", hash_original_method = "062E38B571EEA7E979075562F8B40A5D", hash_generated_method = "5F6CE596255AD73B6FA27FE77554A384")
+    /**
+     * Set the time and Send out a sticky broadcast so the system can determine
+     * if the time was set by the carrier.
+     *
+     * @param time time set by network
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.356 -0500", hash_original_method = "062E38B571EEA7E979075562F8B40A5D", hash_generated_method = "292B45AEF44DD01DD907E884EEAFFEA9")
     private void setAndBroadcastNetworkSetTime(long time) {
-        addTaint(time);
         SystemClock.setCurrentTimeMillis(time);
         Intent intent = new Intent(TelephonyIntents.ACTION_NETWORK_SET_TIME);
         intent.addFlags(Intent.FLAG_RECEIVER_REPLACE_PENDING);
         intent.putExtra("time", time);
         phone.getContext().sendStickyBroadcast(intent);
-        // ---------- Original Method ----------
-        //SystemClock.setCurrentTimeMillis(time);
-        //Intent intent = new Intent(TelephonyIntents.ACTION_NETWORK_SET_TIME);
-        //intent.addFlags(Intent.FLAG_RECEIVER_REPLACE_PENDING);
-        //intent.putExtra("time", time);
-        //phone.getContext().sendStickyBroadcast(intent);
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.394 -0400", hash_original_method = "2770201C4A137564A500CEEFB3D4E467", hash_generated_method = "5BADBCC49182FF711778A01027AE3216")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.356 -0500", hash_original_method = "2770201C4A137564A500CEEFB3D4E467", hash_generated_method = "BD31AE8FE7648A5A40E8ED9BAC6BD7D1")
     private void revertToNitzTime() {
-        if(Settings.System.getInt(phone.getContext().getContentResolver(),
-                Settings.System.AUTO_TIME, 0) == 0)        
-        {
+        if (Settings.System.getInt(phone.getContext().getContentResolver(),
+                Settings.System.AUTO_TIME, 0) == 0) {
             return;
-        } //End block
-        if(DBG)        
-        {
+        }
+        if (DBG) {
             log("Reverting to NITZ Time: mSavedTime=" + mSavedTime
                 + " mSavedAtTime=" + mSavedAtTime);
-        } //End block
-        if(mSavedTime != 0 && mSavedAtTime != 0)        
-        {
+        }
+        if (mSavedTime != 0 && mSavedAtTime != 0) {
             setAndBroadcastNetworkSetTime(mSavedTime
                     + (SystemClock.elapsedRealtime() - mSavedAtTime));
-        } //End block
-        // ---------- Original Method ----------
-        //if (Settings.System.getInt(phone.getContext().getContentResolver(),
-                //Settings.System.AUTO_TIME, 0) == 0) {
-            //return;
-        //}
-        //if (DBG) {
-            //log("Reverting to NITZ Time: mSavedTime=" + mSavedTime
-                //+ " mSavedAtTime=" + mSavedAtTime);
-        //}
-        //if (mSavedTime != 0 && mSavedAtTime != 0) {
-            //setAndBroadcastNetworkSetTime(mSavedTime
-                    //+ (SystemClock.elapsedRealtime() - mSavedAtTime));
-        //}
+        }
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.394 -0400", hash_original_method = "846FA792EAB8BB56C921A6228BC9EB73", hash_generated_method = "B09F98EA2BB5CD5FB4D0F420DE98A6B4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.357 -0500", hash_original_method = "846FA792EAB8BB56C921A6228BC9EB73", hash_generated_method = "2087E0E4FA941D0A68247B4C15D57B8E")
     private void revertToNitzTimeZone() {
-        if(Settings.System.getInt(phone.getContext().getContentResolver(),
-                Settings.System.AUTO_TIME_ZONE, 0) == 0)        
-        {
+        if (Settings.System.getInt(phone.getContext().getContentResolver(),
+                Settings.System.AUTO_TIME_ZONE, 0) == 0) {
             return;
-        } //End block
-        if(DBG)        
-        log("Reverting to NITZ TimeZone: tz='" + mSavedTimeZone);
-        if(mSavedTimeZone != null)        
-        {
+        }
+        if (DBG) log("Reverting to NITZ TimeZone: tz='" + mSavedTimeZone);
+        if (mSavedTimeZone != null) {
             setAndBroadcastNetworkSetTimeZone(mSavedTimeZone);
-        } //End block
-        // ---------- Original Method ----------
-        //if (Settings.System.getInt(phone.getContext().getContentResolver(),
-                //Settings.System.AUTO_TIME_ZONE, 0) == 0) {
-            //return;
-        //}
-        //if (DBG) log("Reverting to NITZ TimeZone: tz='" + mSavedTimeZone);
-        //if (mSavedTimeZone != null) {
-            //setAndBroadcastNetworkSetTimeZone(mSavedTimeZone);
-        //}
+        }
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.395 -0400", hash_original_method = "90EFCD7762032B11006E493EA631CF1F", hash_generated_method = "D78259CB3733203062F28383224859A4")
+    /**
+     * Post a notification to NotificationManager for restricted state
+     *
+     * @param notifyType is one state of PS/CS_*_ENABLE/DISABLE
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.358 -0500", hash_original_method = "90EFCD7762032B11006E493EA631CF1F", hash_generated_method = "14DB405E9125015CFEA0258141800650")
     private void setNotification(int notifyType) {
-        addTaint(notifyType);
-        if(DBG)        
-        log("setNotification: create notification " + notifyType);
+
+        if (DBG) log("setNotification: create notification " + notifyType);
         Context context = phone.getContext();
+
         mNotification = new Notification();
         mNotification.when = System.currentTimeMillis();
         mNotification.flags = Notification.FLAG_AUTO_CANCEL;
@@ -1730,114 +1660,60 @@ switch(code){
         Intent intent = new Intent();
         mNotification.contentIntent = PendingIntent
         .getActivity(context, 0, intent, PendingIntent.FLAG_CANCEL_CURRENT);
+
         CharSequence details = "";
         CharSequence title = context.getText(com.android.internal.R.string.RestrictedChangedTitle);
         int notificationId = CS_NOTIFICATION;
-switch(notifyType){
+
+        switch (notifyType) {
         case PS_ENABLED:
-        notificationId = PS_NOTIFICATION;
-        details = context.getText(com.android.internal.R.string.RestrictedOnData);
-        ;
-        break;
+            notificationId = PS_NOTIFICATION;
+            details = context.getText(com.android.internal.R.string.RestrictedOnData);;
+            break;
         case PS_DISABLED:
-        notificationId = PS_NOTIFICATION;
-        break;
+            notificationId = PS_NOTIFICATION;
+            break;
         case CS_ENABLED:
-        details = context.getText(com.android.internal.R.string.RestrictedOnAllVoice);
-        ;
-        break;
+            details = context.getText(com.android.internal.R.string.RestrictedOnAllVoice);;
+            break;
         case CS_NORMAL_ENABLED:
-        details = context.getText(com.android.internal.R.string.RestrictedOnNormal);
-        ;
-        break;
+            details = context.getText(com.android.internal.R.string.RestrictedOnNormal);;
+            break;
         case CS_EMERGENCY_ENABLED:
-        details = context.getText(com.android.internal.R.string.RestrictedOnEmergency);
-        ;
-        break;
+            details = context.getText(com.android.internal.R.string.RestrictedOnEmergency);;
+            break;
         case CS_DISABLED:
-        break;
-}        if(DBG)        
-        log("setNotification: put notification " + title + " / " +details);
+            // do nothing and cancel the notification later
+            break;
+        }
+
+        if (DBG) log("setNotification: put notification " + title + " / " +details);
         mNotification.tickerText = title;
         mNotification.setLatestEventInfo(context, title, details,
                 mNotification.contentIntent);
+
         NotificationManager notificationManager = (NotificationManager)
             context.getSystemService(Context.NOTIFICATION_SERVICE);
-        if(notifyType == PS_DISABLED || notifyType == CS_DISABLED)        
-        {
+
+        if (notifyType == PS_DISABLED || notifyType == CS_DISABLED) {
+            // cancel previous post notification
             notificationManager.cancel(notificationId);
-        } //End block
-        else
-        {
+        } else {
+            // update restricted state notification
             notificationManager.notify(notificationId, mNotification);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        }
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.395 -0400", hash_original_method = "4109BBDDE3BB927415F4177275F054A2", hash_generated_method = "0C024BC85B4018640CE69C4B1B93B00C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.359 -0500", hash_original_method = "4109BBDDE3BB927415F4177275F054A2", hash_generated_method = "1F831F8FD4D8F89A199E81418065E539")
     @Override
-    protected void log(String s) {
-        addTaint(s.getTaint());
+protected void log(String s) {
         Log.d(LOG_TAG, "[GsmSST] " + s);
-        // ---------- Original Method ----------
-        //Log.d(LOG_TAG, "[GsmSST] " + s);
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.395 -0400", hash_original_method = "E8A9D45B999B20E24B18F0E2F50C667F", hash_generated_method = "5D4ED3A9E70D2AABB538EA7C903DDA44")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:12.360 -0500", hash_original_method = "E8A9D45B999B20E24B18F0E2F50C667F", hash_generated_method = "1E3A6A09B26348AED637A46775607049")
     @Override
-    protected void loge(String s) {
-        addTaint(s.getTaint());
-        // ---------- Original Method ----------
-        //Log.e(LOG_TAG, "[GsmSST] " + s);
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    private static void sloge(String s) {
+protected void loge(String s) {
         Log.e(LOG_TAG, "[GsmSST] " + s);
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.395 -0400", hash_original_field = "41EBE7F32B96C1E2E9C209710486A443", hash_generated_field = "B8386CD6D900777C9D6A0A5CA1D0B217")
-
-    static final String LOG_TAG = "GSM";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.395 -0400", hash_original_field = "A4622F7F72162611C8E075EE443BC26E", hash_generated_field = "3860CF443CF1EC2A1FAD1F55FBF8A7F5")
-
-    static final boolean DBG = true;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.395 -0400", hash_original_field = "8AA5488317F9A54E56045D1AAF74BB75", hash_generated_field = "3E784668308EA1C4770734C39504B13F")
-
-    private static final String WAKELOCK_TAG = "ServiceStateTracker";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.395 -0400", hash_original_field = "78DBFEDA4D4BF3B7443050756EB706DA", hash_generated_field = "4A5D9F03FAE9E50AE63B4C35022FAF17")
-
-    static final int DEFAULT_GPRS_CHECK_PERIOD_MILLIS = 60 * 1000;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.396 -0400", hash_original_field = "0EDCF36F1C7515917C6C8C6960C44E94", hash_generated_field = "3591FCEB08077E36696EAEB77DBB3180")
-
-    static final int PS_ENABLED = 1001;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.396 -0400", hash_original_field = "74ECF90DF353CA07A72C88F6756E63FD", hash_generated_field = "8C26EED9E7268BEDBBAF04F084560166")
-
-    static final int PS_DISABLED = 1002;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.396 -0400", hash_original_field = "B3D8643D85377D116361C3F5C8140E0B", hash_generated_field = "B2781F5CE66230CC973402FB9B2889B2")
-
-    static final int CS_ENABLED = 1003;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.396 -0400", hash_original_field = "AE9874F242E8D117F7BAE3E010B557AB", hash_generated_field = "D51C56159F181C83643165D845D52483")
-
-    static final int CS_DISABLED = 1004;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.396 -0400", hash_original_field = "8B193C5B10382A1D1FD53AB21D3BD2E3", hash_generated_field = "C31DA0EA8EA157BEB2FE7CB33DF402A6")
-
-    static final int CS_NORMAL_ENABLED = 1005;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.396 -0400", hash_original_field = "EEF6FD506D2FA8B090021A1D296EDD7B", hash_generated_field = "F9B78C4A6E79981FE3F71480BC07396C")
-
-    static final int CS_EMERGENCY_ENABLED = 1006;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.396 -0400", hash_original_field = "ED6B67AB4D0B4DF3C237651AC21D2816", hash_generated_field = "798CDAD9FDD0BFCBF4723E408D009540")
-
-    static final int PS_NOTIFICATION = 888;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.396 -0400", hash_original_field = "97AFCBF220761A84FA450E75A3CE004D", hash_generated_field = "EBBCDE09A71FA16B42C4199ACB2E765C")
-
-    static final int CS_NOTIFICATION = 999;
 }
 

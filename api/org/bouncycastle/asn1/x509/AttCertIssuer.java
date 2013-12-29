@@ -1,6 +1,8 @@
 package org.bouncycastle.asn1.x509;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import org.bouncycastle.asn1.ASN1Choice;
 import org.bouncycastle.asn1.ASN1Encodable;
@@ -15,39 +17,11 @@ import org.bouncycastle.asn1.DERTaggedObject;
 
 
 public class AttCertIssuer extends ASN1Encodable implements ASN1Choice {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.539 -0400", hash_original_field = "BE8F80182E0C983916DA7338C2C1C040", hash_generated_field = "0613618850853D8432B3C1A1BFC732A1")
-
-    ASN1Encodable obj;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.539 -0400", hash_original_field = "EFC75EED8DDBFE20EC53A6ED38038311", hash_generated_field = "7A86CED0F063083B43656D3132F9D6B0")
-
-    DERObject choiceObj;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.540 -0400", hash_original_method = "0FB35C20300C210362F151B3AD34290C", hash_generated_method = "16EA2BEC16866BF71D318015D3781AEA")
-    public  AttCertIssuer(
-        GeneralNames  names) {
-        obj = names;
-        choiceObj = obj.getDERObject();
-        // ---------- Original Method ----------
-        //obj = names;
-        //choiceObj = obj.getDERObject();
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.541 -0400", hash_original_method = "00B10A8614D975711EAEB4C98ED18D40", hash_generated_method = "BBC4E0FAA2339E503A4A984047E4A1BD")
-    public  AttCertIssuer(
-        V2Form  v2Form) {
-        obj = v2Form;
-        choiceObj = new DERTaggedObject(false, 0, obj);
-        // ---------- Original Method ----------
-        //obj = v2Form;
-        //choiceObj = new DERTaggedObject(false, 0, obj);
-    }
-
-    
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:53.720 -0500", hash_original_method = "2F8858F5DE6ECFCC121A6ECE4BE55FAB", hash_generated_method = "F4E2BBFDEC11298572704914612467E7")
     public static AttCertIssuer getInstance(
-        Object  obj) {
+        Object  obj)
+    {
         if (obj instanceof AttCertIssuer)
         {
             return (AttCertIssuer)obj;
@@ -68,37 +42,66 @@ public class AttCertIssuer extends ASN1Encodable implements ASN1Choice {
         {
             return new AttCertIssuer(GeneralNames.getInstance(obj));
         }
+
         throw new IllegalArgumentException("unknown object in factory: " + obj.getClass().getName());
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:53.721 -0500", hash_original_method = "50EB10983A327B84FF827D204CCF992A", hash_generated_method = "9B18C8574A9967C936A260CF5A65E298")
     public static AttCertIssuer getInstance(
         ASN1TaggedObject obj,
-        boolean          explicit) {
-        return getInstance(obj.getObject());
+        boolean          explicit)
+    {
+        return getInstance(obj.getObject()); // must be explicitly tagged
+    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:53.719 -0500", hash_original_field = "0613618850853D8432B3C1A1BFC732A1", hash_generated_field = "0613618850853D8432B3C1A1BFC732A1")
+
+    ASN1Encodable   obj;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:53.719 -0500", hash_original_field = "7A86CED0F063083B43656D3132F9D6B0", hash_generated_field = "7A86CED0F063083B43656D3132F9D6B0")
+
+    DERObject       choiceObj;
+
+    /**
+     * Don't use this one if you are trying to be RFC 3281 compliant.
+     * Use it for v1 attribute certificates only.
+     * 
+     * @param names our GeneralNames structure
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:53.722 -0500", hash_original_method = "0FB35C20300C210362F151B3AD34290C", hash_generated_method = "86B0B71615F5ABBB5F40E3D0C93CFFD7")
+    public AttCertIssuer(
+        GeneralNames  names)
+    {
+        obj = names;
+        choiceObj = obj.getDERObject();
+    }
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:53.723 -0500", hash_original_method = "00B10A8614D975711EAEB4C98ED18D40", hash_generated_method = "024B60BF653E505F445A2B8B58D1A101")
+    public AttCertIssuer(
+        V2Form  v2Form)
+    {
+        obj = v2Form;
+        choiceObj = new DERTaggedObject(false, 0, obj);
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.542 -0400", hash_original_method = "B549CE271C623D3D9A432BB134D69900", hash_generated_method = "EDFE3CF2A254A096FC2B4525C11624F3")
-    public ASN1Encodable getIssuer() {
-ASN1Encodable var2FDE1120F80AA4E8798ECDBDB1C0E85C_694791732 =         obj;
-        var2FDE1120F80AA4E8798ECDBDB1C0E85C_694791732.addTaint(taint);
-        return var2FDE1120F80AA4E8798ECDBDB1C0E85C_694791732;
-        // ---------- Original Method ----------
-        //return obj;
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:53.724 -0500", hash_original_method = "B549CE271C623D3D9A432BB134D69900", hash_generated_method = "2C1412B66084E65250F8E3ACEF655170")
+    public ASN1Encodable getIssuer()
+    {
+        return obj;
     }
-
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.542 -0400", hash_original_method = "6A55D157378C948D2010903EFE111848", hash_generated_method = "CDAECC2EB562E7FDEE23971A9D8A3FA5")
-    public DERObject toASN1Object() {
-DERObject var571917243FE92790CF9D7FC105A4CF06_344220108 =         choiceObj;
-        var571917243FE92790CF9D7FC105A4CF06_344220108.addTaint(taint);
-        return var571917243FE92790CF9D7FC105A4CF06_344220108;
-        // ---------- Original Method ----------
-        //return choiceObj;
+    /**
+     * Produce an object suitable for an ASN1OutputStream.
+     * <pre>
+     *  AttCertIssuer ::= CHOICE {
+     *       v1Form   GeneralNames,  -- MUST NOT be used in this
+     *                               -- profile
+     *       v2Form   [0] V2Form     -- v2 only
+     *  }
+     * </pre>
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:53.724 -0500", hash_original_method = "6A55D157378C948D2010903EFE111848", hash_generated_method = "CECF60C35AA80568DF6B9D6642D24A5B")
+    public DERObject toASN1Object()
+    {
+        return choiceObj;
     }
 
     

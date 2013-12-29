@@ -1,6 +1,8 @@
 package com.android.internal.telephony.cat;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
@@ -43,17 +45,28 @@ public enum ResultCode {
     ACCESS_TECH_UNABLE_TO_PROCESS(0x3b),
     FRAMES_ERROR(0x3c),
     MMS_ERROR(0x3d);
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:25.734 -0500", hash_original_field = "72DDC44E3DCFD57F1A99143C6BCFD37C", hash_generated_field = "814428A5309A583B3B018643DB7956B1")
+
+
+
     private int mCode;
-    @DSModeled(DSC.SAFE)
-    ResultCode(int code) {
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:25.735 -0500", hash_original_method = "8F24C9B06F9440EBB8D55C34DB4C46F4", hash_generated_method = "8F24C9B06F9440EBB8D55C34DB4C46F4")
+        ResultCode(int code) {
         mCode = code;
     }
-    @DSModeled(DSC.BAN)
-    public int value() {
+
+    /**
+     * Retrieves the actual result code that this object represents.
+     * @return Actual result code
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:25.736 -0500", hash_original_method = "107FF77B7A75BF457CAC3BECBA565481", hash_generated_method = "AF1F00321A509FB9157E483BB098C049")
+        public int value() {
         return mCode;
     }
-    @DSModeled(DSC.BAN)
-    public static ResultCode fromInt(int value) {
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:25.737 -0500", hash_original_method = "6AA8B8FE507776B08C03F9916581D2CC", hash_generated_method = "36806E655A9A215E5254C9836D902918")
+        public static ResultCode fromInt(int value) {
         for (ResultCode r : ResultCode.values()) {
             if (r.mCode == value) {
                 return r;

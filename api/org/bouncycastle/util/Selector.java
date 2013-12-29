@@ -1,6 +1,8 @@
 package org.bouncycastle.util;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 public interface Selector

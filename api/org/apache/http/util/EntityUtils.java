@@ -1,6 +1,8 @@
 package org.apache.http.util;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.InputStream;
@@ -19,14 +21,7 @@ import org.apache.http.protocol.HTTP;
 
 public final class EntityUtils {
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.521 -0400", hash_original_method = "A25F629EA0AE9AB637DBB7282029CCE6", hash_generated_method = "DF638A820C62149FB3BD6CF8B6EF2106")
-    private  EntityUtils() {
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.352 -0500", hash_original_method = "587F716D69EDEBB71A41980A33A137D7", hash_generated_method = "82582DC32500B03117C2BDB87A875035")
     public static byte[] toByteArray(final HttpEntity entity) throws IOException {
         if (entity == null) {
             throw new IllegalArgumentException("HTTP entity may not be null");
@@ -54,10 +49,11 @@ public final class EntityUtils {
         }
         return buffer.toByteArray();
     }
+        
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.353 -0500", hash_original_method = "5555AB28701ECF59BB1C29809B2D2844", hash_generated_method = "E36D02080AB4AA49CAB6057B1D272A55")
+    public static String getContentCharSet(final HttpEntity entity)
+        throws ParseException {
 
-    
-    @DSModeled(DSC.SAFE)
-    public static String getContentCharSet(final HttpEntity entity) throws ParseException {
         if (entity == null) {
             throw new IllegalArgumentException("HTTP entity may not be null");
         }
@@ -74,8 +70,7 @@ public final class EntityUtils {
         return charset;
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.354 -0500", hash_original_method = "4B671A2056DCAFA419AD0B6A2518D2B7", hash_generated_method = "F704420CD0989FC9C0C4A0ED6DD568ED")
     public static String toString(
             final HttpEntity entity, final String defaultCharset) throws IOException, ParseException {
         if (entity == null) {
@@ -100,7 +95,7 @@ public final class EntityUtils {
             charset = HTTP.DEFAULT_CONTENT_CHARSET;
         }
         Reader reader = new InputStreamReader(instream, charset);
-        CharArrayBuffer buffer = new CharArrayBuffer(i);
+        CharArrayBuffer buffer = new CharArrayBuffer(i); 
         try {
             char[] tmp = new char[1024];
             int l;
@@ -113,10 +108,15 @@ public final class EntityUtils {
         return buffer.toString();
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    public static String toString(final HttpEntity entity) throws IOException, ParseException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.355 -0500", hash_original_method = "18E1FD8C759BC52F17E10CB5464A552C", hash_generated_method = "39E83DFB0DA3AA8BED21A3D9EE4975C6")
+    public static String toString(final HttpEntity entity)
+        throws IOException, ParseException {
         return toString(entity, null);
+    }
+
+    /** Disabled default constructor. */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:25.351 -0500", hash_original_method = "A25F629EA0AE9AB637DBB7282029CCE6", hash_generated_method = "05B004EC72AE6F289D8E7DD337B56445")
+    private EntityUtils() {
     }
 
     

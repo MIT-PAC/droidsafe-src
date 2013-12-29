@@ -1,6 +1,8 @@
 package org.apache.http.conn.ssl;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import javax.net.ssl.SSLException;
 
@@ -17,30 +19,18 @@ public class BrowserCompatHostnameVerifier extends AbstractVerifier {
         //Synthesized constructor
     }
 
-
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.055 -0400", hash_original_method = "D9F365CDBDB058C6F5810F830DF6A39F", hash_generated_method = "36EE49EF0B1D4D7CABEA5838C792DC29")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:17.550 -0500", hash_original_method = "D9F365CDBDB058C6F5810F830DF6A39F", hash_generated_method = "2C9FA89D7947D66CE9FC6A380CD42816")
     public final void verify(
             final String host, 
             final String[] cns,
             final String[] subjectAlts) throws SSLException {
-        addTaint(subjectAlts[0].getTaint());
-        addTaint(cns[0].getTaint());
-        addTaint(host.getTaint());
         verify(host, cns, subjectAlts, false);
-        // ---------- Original Method ----------
-        //verify(host, cns, subjectAlts, false);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.055 -0400", hash_original_method = "94D0B9A8609089C8ED7C7100365BC140", hash_generated_method = "E5AD7C18D4E1F25D66578CB53964DD39")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:17.550 -0500", hash_original_method = "94D0B9A8609089C8ED7C7100365BC140", hash_generated_method = "BE653C5EDDDF61D380B1C56384ED39D2")
     @Override
-    public final String toString() {
-String var93D67A1E1EEEED16843593CFCB51A602_1706337829 =         "BROWSER_COMPATIBLE";
-        var93D67A1E1EEEED16843593CFCB51A602_1706337829.addTaint(taint);
-        return var93D67A1E1EEEED16843593CFCB51A602_1706337829;
-        // ---------- Original Method ----------
-        //return "BROWSER_COMPATIBLE";
+public final String toString() { 
+        return "BROWSER_COMPATIBLE"; 
     }
 
     

@@ -1,6 +1,8 @@
 package java.net;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 
@@ -8,35 +10,33 @@ import java.io.IOException;
 
 
 public class MalformedURLException extends IOException {
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.759 -0400", hash_original_method = "6F3415F478603350217F65D672585814", hash_generated_method = "AD568FEDA3A16AFE9C14138F3CCC4B4D")
-    public  MalformedURLException() {
-        // ---------- Original Method ----------
-    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:04.562 -0500", hash_original_field = "E744E5E5145E24C62ED6FDA618DBC852", hash_generated_field = "B44A4BD557582E4A416B968EA462C43E")
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.759 -0400", hash_original_method = "1BAAD892782075B201BE55BD9DAC535A", hash_generated_method = "2B443BF0D497DC20D8C94025C945071B")
-    public  MalformedURLException(String detailMessage) {
-        super(detailMessage);
-        addTaint(detailMessage.getTaint());
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.760 -0400", hash_original_method = "ACF50FF54717652ACCF5120218FC2A60", hash_generated_method = "8387E598B6C25BB03E3569D4E90956E0")
-    public  MalformedURLException(String detailMessage, Throwable cause) {
-        super(detailMessage, cause);
-        addTaint(cause.getTaint());
-        addTaint(detailMessage.getTaint());
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.760 -0400", hash_original_field = "461BDBAF1E8B8B185701E277A76730F6", hash_generated_field = "B44A4BD557582E4A416B968EA462C43E")
 
     private static final long serialVersionUID = -182787522200415866L;
+
+    /**
+     * Constructs a new instance.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:04.562 -0500", hash_original_method = "6F3415F478603350217F65D672585814", hash_generated_method = "0E236ABE9114E40AAA3268CD6473B8F7")
+    public MalformedURLException() {
+    }
+
+    /**
+     * Constructs a new instance with the given detail message.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:04.563 -0500", hash_original_method = "1BAAD892782075B201BE55BD9DAC535A", hash_generated_method = "AA9F9CC55712E63E74CB29634AA09FCD")
+    public MalformedURLException(String detailMessage) {
+        super(detailMessage);
+    }
+
+    /**
+     * Constructs a new instance with given detail message and cause.
+     * @hide internal use only
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:04.564 -0500", hash_original_method = "ACF50FF54717652ACCF5120218FC2A60", hash_generated_method = "9C7671ACA56F81AE7FE116893866060D")
+    public MalformedURLException(String detailMessage, Throwable cause) {
+        super(detailMessage, cause);
+    }
 }
 

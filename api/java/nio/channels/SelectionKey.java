@@ -1,6 +1,8 @@
 package java.nio.channels;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
@@ -8,125 +10,196 @@ import droidsafe.annotations.*;
 
 
 public abstract class SelectionKey {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.273 -0400", hash_original_field = "F7F53EC97D9FAA3231B5FB90D8D61205", hash_generated_field = "7B0B71636F0A6FD9185511547501EE96")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.159 -0500", hash_original_field = "EBC0869EFF30D5C8BE613FC946BA1AD7", hash_generated_field = "C7033B07AB2380EEC61C6B834AFE8243")
+
+    public static final int OP_ACCEPT = 16;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.160 -0500", hash_original_field = "636457CFB89B5B3335991CE64A9FB882", hash_generated_field = "98D8B6069299F205A6C0690AECE873DE")
+
+    public static final int OP_CONNECT = 8;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.161 -0500", hash_original_field = "FAFABCC820046F43A238617C0905202D", hash_generated_field = "D875CBDC7BEE6AE76B8093E3ABE67080")
+
+    public static final int OP_READ = 1;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.162 -0500", hash_original_field = "69A5A46D0A9CFF8D359B6273C2AA533B", hash_generated_field = "774DF0D205A7727252316C3B8AA23F6A")
+
+    public static final int OP_WRITE = 4;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.163 -0500", hash_original_field = "CD4901CD0ECA070EC6EEA4569BB6F20E", hash_generated_field = "7B0B71636F0A6FD9185511547501EE96")
+
 
     private volatile Object attachment = null;
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.273 -0400", hash_original_method = "506BAEF14D6E9F731FF32E7686B78589", hash_generated_method = "C9F592136899BF1C8C66719DB1AAC6AF")
-    protected  SelectionKey() {
-        // ---------- Original Method ----------
+
+    /**
+     * Constructs a new {@code SelectionKey}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.164 -0500", hash_original_method = "506BAEF14D6E9F731FF32E7686B78589", hash_generated_method = "F0644C046FE50CCFCA76332566892C03")
+    protected SelectionKey() {
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.275 -0400", hash_original_method = "AFA38A9E30799729C39292277D62F43D", hash_generated_method = "4CCA8E3C40C44D7ED5C556DA58591304")
+    /**
+     * Attaches an object to this key. It is acceptable to attach {@code null},
+     * this discards the old attachment.
+     *
+     * @param anObject
+     *            the object to attach, or {@code null} to discard the current
+     *            attachment.
+     * @return the last attached object or {@code null} if no object has been
+     *         attached.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.165 -0500", hash_original_method = "AFA38A9E30799729C39292277D62F43D", hash_generated_method = "B54AE609D7C0FC0B67C4C164D9302A9E")
     public final Object attach(Object anObject) {
         Object oldAttachment = attachment;
         attachment = anObject;
-Object var12F0D7B0ACC665DAE79CBE5C1E855DC9_736033836 =         oldAttachment;
-        var12F0D7B0ACC665DAE79CBE5C1E855DC9_736033836.addTaint(taint);
-        return var12F0D7B0ACC665DAE79CBE5C1E855DC9_736033836;
-        // ---------- Original Method ----------
-        //Object oldAttachment = attachment;
-        //attachment = anObject;
-        //return oldAttachment;
+        return oldAttachment;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.275 -0400", hash_original_method = "F29A40DBFBA770DAC2D3ED3DF7881B6F", hash_generated_method = "67EAFC0E79AD7C0E5AADC57207A233E6")
+    /**
+     * Gets the attached object.
+     *
+     * @return the attached object or {@code null} if no object has been
+     *         attached.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.166 -0500", hash_original_method = "F29A40DBFBA770DAC2D3ED3DF7881B6F", hash_generated_method = "8BA2F3446477E1CEF6EBC6E7B1482BDB")
     public final Object attachment() {
-Object var654DB21DFA380501361FCD413C8E6A16_1233369378 =         attachment;
-        var654DB21DFA380501361FCD413C8E6A16_1233369378.addTaint(taint);
-        return var654DB21DFA380501361FCD413C8E6A16_1233369378;
-        // ---------- Original Method ----------
-        //return attachment;
+        return attachment;
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Cancels this key.
+     * <p>
+     * A key that has been canceled is no longer valid. Calling this method on
+     * an already canceled key does nothing.
+     * <p>
+     * Calling this method is safe at any time. The call might block until
+     * another ongoing call to a method of this selector has finished. The
+     * reason is that it is synchronizing on the key set of the selector. After
+     * this call finishes, the key will have been added to the selectors
+     * canceled-keys set and will not be included in any future selects of this
+     * selector.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.167 -0500", hash_original_method = "BA1BF94FB859172DDE80A7E9000639D0", hash_generated_method = "6D2C251EA0784ADEFD27C351E9E0B5A6")
     public abstract void cancel();
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Gets the channel of this key.
+     *
+     * @return the channel of this key.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.167 -0500", hash_original_method = "A96F47B526978A006380DE215C852EE6", hash_generated_method = "8FEDD3EB21EEFBE8F103B7BB3A0ADFEB")
     public abstract SelectableChannel channel();
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Gets this key's {@link SelectionKey interest set}. The returned set has
+     * only those bits set that are valid for this key's channel.
+     *
+     * @return the interest set of this key.
+     * @throws CancelledKeyException
+     *             if the key has already been canceled.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.168 -0500", hash_original_method = "78422C81123C4D37C8FE06F27419342C", hash_generated_method = "F65B80C6BA29ABE55D61E052EE9CA5D7")
     public abstract int interestOps();
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Sets the {@link SelectionKey interest set} for this key.
+     *
+     * @param operations
+     *            the new interest set.
+     * @return this key.
+     * @throws IllegalArgumentException
+     *             if a bit in {@code operations} is not in the set of
+     *             {@link SelectableChannel#validOps() valid operations} of this
+     *             key's channel.
+     * @throws CancelledKeyException
+     *             if the key has already been canceled.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.169 -0500", hash_original_method = "80BDE0F6570E7C1C49E762ED6594C3D2", hash_generated_method = "873E1FA71A8833E8EB21E863581A8F49")
     public abstract SelectionKey interestOps(int operations);
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.277 -0400", hash_original_method = "ED231557F3875B4504449502DA9771AC", hash_generated_method = "FF5E8C9FBF77EC134158842D70BCFCC8")
+    /**
+     * Indicates whether this key's channel is interested in the accept
+     * operation and is ready to accept new connections. A call to this method
+     * is equal to executing {@code (readyOps() & OP_ACCEPT) == OP_ACCEPT}.
+     *
+     * @return {@code true} if the channel is interested in the accept operation
+     *         and is ready to accept new connections, {@code false} otherwise.
+     * @throws CancelledKeyException
+     *             if the key has already been canceled.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.170 -0500", hash_original_method = "ED231557F3875B4504449502DA9771AC", hash_generated_method = "277DEE9DB38700130441807200B4F2BD")
     public final boolean isAcceptable() {
-        boolean var184BFDC257D997348D948C238F624ED0_1534615599 = ((readyOps() & OP_ACCEPT) == OP_ACCEPT);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1900249532 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1900249532;
-        // ---------- Original Method ----------
-        //return (readyOps() & OP_ACCEPT) == OP_ACCEPT;
+        return (readyOps() & OP_ACCEPT) == OP_ACCEPT;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.277 -0400", hash_original_method = "2F2EE0183B49AF3C16598E47DE1FB088", hash_generated_method = "4B91BB86F437BCD4315DA4C20B2E8FF1")
+    /**
+     * Indicates whether this key's channel is interested in the connect
+     * operation and is ready to connect. A call to this method is equal to
+     * executing {@code (readyOps() & OP_CONNECT) == OP_CONNECT}.
+     *
+     * @return {@code true} if the channel is interested in the connect
+     *         operation and is ready to connect, {@code false} otherwise.
+     * @throws CancelledKeyException
+     *             if the key has already been canceled.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.171 -0500", hash_original_method = "2F2EE0183B49AF3C16598E47DE1FB088", hash_generated_method = "D843236A4EA7EB5401F715B6298F7961")
     public final boolean isConnectable() {
-        boolean varF330DA86349725C7DD104FDBFF474BC8_548903452 = ((readyOps() & OP_CONNECT) == OP_CONNECT);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1515801761 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1515801761;
-        // ---------- Original Method ----------
-        //return (readyOps() & OP_CONNECT) == OP_CONNECT;
+        return (readyOps() & OP_CONNECT) == OP_CONNECT;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.277 -0400", hash_original_method = "B9D7CCBAB6757F436C28ADF7D4904FD5", hash_generated_method = "C9881A59CE0AE3F5977BBEAE321475E2")
+    /**
+     * Indicates whether this key's channel is interested in the read operation
+     * and is ready to read. A call to this method is equal to executing
+     * {@code (readyOps() & OP_READ) == OP_READ}.
+     *
+     * @return {@code true} if the channel is interested in the read operation
+     *         and is ready to read, {@code false} otherwise.
+     * @throws CancelledKeyException
+     *             if the key has already been canceled.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.172 -0500", hash_original_method = "B9D7CCBAB6757F436C28ADF7D4904FD5", hash_generated_method = "27947B142D3B5371E4A37141CC41BEF5")
     public final boolean isReadable() {
-        boolean var5BCD0D05F92B38BD9369FBE6A9C7F333_1084926686 = ((readyOps() & OP_READ) == OP_READ);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1502652660 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1502652660;
-        // ---------- Original Method ----------
-        //return (readyOps() & OP_READ) == OP_READ;
+        return (readyOps() & OP_READ) == OP_READ;
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Indicates whether this key is valid. A key is valid as long as it has not
+     * been canceled.
+     *
+     * @return {@code true} if this key has not been canceled, {@code false}
+     *         otherwise.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.173 -0500", hash_original_method = "F1240C06AF1BA9E648B2E780B8155F1C", hash_generated_method = "DEB105C1692FABA897B5C0B0EC6247FE")
     public abstract boolean isValid();
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.278 -0400", hash_original_method = "FD6385C69AD88B8295913B1A01B9080B", hash_generated_method = "F479E98B32F5540C1647174033A098C4")
+    /**
+     * Indicates whether this key's channel is interested in the write operation
+     * and is ready to write. A call to this method is equal to executing
+     * {@code (readyOps() & OP_WRITE) == OP_WRITE}.
+     *
+     * @return {@code true} if the channel is interested in the write operation
+     *         and is ready to write, {@code false} otherwise.
+     * @throws CancelledKeyException
+     *             if the key has already been canceled.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.173 -0500", hash_original_method = "FD6385C69AD88B8295913B1A01B9080B", hash_generated_method = "4EE9117D91CF5E1B1523A5C13C09F778")
     public final boolean isWritable() {
-        boolean var3E834C73360B37193989B72021E0B1A0_1540431269 = ((readyOps() & OP_WRITE) == OP_WRITE);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1494228092 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1494228092;
-        // ---------- Original Method ----------
-        //return (readyOps() & OP_WRITE) == OP_WRITE;
+        return (readyOps() & OP_WRITE) == OP_WRITE;
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Gets the set of operations that are ready. The returned set has only
+     * those bits set that are valid for this key's channel.
+     *
+     * @return the operations for which this key's channel is ready.
+     * @throws CancelledKeyException
+     *             if the key has already been canceled.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.174 -0500", hash_original_method = "D8A25344F20E8DE2EBB055E5538E1A27", hash_generated_method = "7694C63AEE61E2806F98612DA5B82C38")
     public abstract int readyOps();
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Gets the selector for which this key's channel is registered.
+     *
+     * @return the related selector.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:36.176 -0500", hash_original_method = "4643185428A8E030AC9F19E1ADCCCBAB", hash_generated_method = "04BCA10CE76B374DE12BB83FBF9321FC")
     public abstract Selector selector();
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.279 -0400", hash_original_field = "DBBC1F1E4CF8E2C8950D3C421EAB6668", hash_generated_field = "C7033B07AB2380EEC61C6B834AFE8243")
-
-    public static final int OP_ACCEPT = 16;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.279 -0400", hash_original_field = "20BAE7A1B61C03BBBC60FBA895374759", hash_generated_field = "98D8B6069299F205A6C0690AECE873DE")
-
-    public static final int OP_CONNECT = 8;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.279 -0400", hash_original_field = "CEB32A79E20403AC7E6CCE4BA29D2805", hash_generated_field = "D875CBDC7BEE6AE76B8093E3ABE67080")
-
-    public static final int OP_READ = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.279 -0400", hash_original_field = "3DDDC137B525E34E28EADF89D092C4AA", hash_generated_field = "774DF0D205A7727252316C3B8AA23F6A")
-
-    public static final int OP_WRITE = 4;
 }
 

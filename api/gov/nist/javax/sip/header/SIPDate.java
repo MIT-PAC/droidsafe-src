@@ -1,6 +1,8 @@
 package gov.nist.javax.sip.header;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import gov.nist.core.InternalErrorHandler;
 import gov.nist.core.Separators;
@@ -17,40 +19,105 @@ import java.util.TimeZone;
 
 
 public class SIPDate implements Cloneable, Serializable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.124 -0400", hash_original_field = "717AAECF4D718C53F4246C571B5CAE89", hash_generated_field = "2BD9D52B8925416FAD31A17813ACA6C8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:56.581 -0500", hash_original_field = "526C029BED3197AA2313CE0C8E30D713", hash_generated_field = "9AD574E6092CE8903697183A4F17A37E")
+
+    private static final long serialVersionUID = 8544101899928346909L;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:56.582 -0500", hash_original_field = "ABC13833BC0EFECD002D7D1AFB75D45F", hash_generated_field = "90A017F290A00288C0F071E9A1EBD88C")
+
+    public static final String GMT = "GMT";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:56.583 -0500", hash_original_field = "A9DA87AF4D77D3BF3B99B1E440D1B6F5", hash_generated_field = "D993B191F18C7C2A2ACF77D43C481204")
+
+    public static final String MON = "Mon";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:56.584 -0500", hash_original_field = "3C878DD3CAD1E2F42E08A0839DA1FB30", hash_generated_field = "A396BE9DE9586E197D6C0B3E443E0D95")
+
+    public static final String TUE = "Tue";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:56.585 -0500", hash_original_field = "3B632C671668CD99178E3B2CB5E2A8DA", hash_generated_field = "3D06F8133C09119B26C6E278798CF1A9")
+
+    public static final String WED = "Wed";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:56.586 -0500", hash_original_field = "F4CE9E15DCF7EFEA6673D65760ABBF83", hash_generated_field = "09A162F56D2A9384083E7AAF03183FD6")
+
+    public static final String THU = "Thu";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:56.588 -0500", hash_original_field = "DA919786D40C7CE6C41687705B2B69F1", hash_generated_field = "130AB4377BFA7580AE1512EA43195FBC")
+
+    public static final String FRI = "Fri";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:56.589 -0500", hash_original_field = "3B57FEF7D6E5A1C6824FD8555FB6A934", hash_generated_field = "F219533A1B8112292C40A0B685C35CFD")
+
+    public static final String SAT = "Sat";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:56.591 -0500", hash_original_field = "0240BF6D19B48E08A573F269E4EC0C25", hash_generated_field = "6C1848B20607A097704760E1650C2678")
+
+    public static final String SUN = "Sun";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:56.592 -0500", hash_original_field = "A7664447352F7B186E4E5202A3442A3E", hash_generated_field = "F2D1780B5CE22050F6158996B8E61999")
+
+    public static final String JAN = "Jan";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:56.593 -0500", hash_original_field = "5E92B89D0A9E45CBFEAF5984AD0E9A4F", hash_generated_field = "6FADB9C3303C0BDE49C3B4B5539EFD6E")
+
+    public static final String FEB = "Feb";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:56.594 -0500", hash_original_field = "C851F35E5915AAC45BBF5199B8CC61BB", hash_generated_field = "6303D6FBD3F71C8EE38712E28705023E")
+
+    public static final String MAR = "Mar";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:56.595 -0500", hash_original_field = "F3BC763F1E5F38EA231972394CA92559", hash_generated_field = "23DBF8FEC46857D1C97D6E3A64C4C782")
+
+    public static final String APR = "Apr";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:56.597 -0500", hash_original_field = "5E01A670A4FCDF8E6436BA4377820361", hash_generated_field = "47FD9EBB6C303C4777A0424A8CB9008B")
+
+    public static final String MAY = "May";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:56.598 -0500", hash_original_field = "3B1275D7B946A5DCDEE17156B962297B", hash_generated_field = "24E1CBE6524227A554B498F7E7BFA54C")
+
+    public static final String JUN = "Jun";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:56.599 -0500", hash_original_field = "2706381DB3FD3178850B87789FE196F9", hash_generated_field = "E960EB8D455449B7DD7F8DF660D9E443")
+
+    public static final String JUL = "Jul";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:56.600 -0500", hash_original_field = "131C6450536E5279CB988A860031FDB8", hash_generated_field = "CE558222EA08CDFDCA2D75DF00FE2DF9")
+
+    public static final String AUG = "Aug";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:56.601 -0500", hash_original_field = "BF3B5CA66DC4BA91B8489EC7915D05F2", hash_generated_field = "54D87D6819D3255A8690058A26F311B4")
+
+    public static final String SEP = "Sep";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:56.602 -0500", hash_original_field = "54431E16396A6D90E5C3B2D9E93399C8", hash_generated_field = "3EB1F3DE2F9DBA4FAD368F5BCB02D165")
+
+    public static final String OCT = "Oct";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:56.603 -0500", hash_original_field = "6F1E9159B7BC497F40D221AF19E4D6AD", hash_generated_field = "1B59DBC9E66C4388573EE99FDE2F7799")
+
+    public static final String NOV = "Nov";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:56.605 -0500", hash_original_field = "50203058D0C9402469D23B3609965FDF", hash_generated_field = "033F25F46987BBA69C5EC9DD661A40F0")
+
+    public static final String DEC = "Dec";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:56.606 -0500", hash_original_field = "3565028AF84A4EC5A887E1C4BD27B428", hash_generated_field = "2BD9D52B8925416FAD31A17813ACA6C8")
 
     protected String sipWkDay;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.124 -0400", hash_original_field = "E23A549557EC421F126860CDF6AF3E27", hash_generated_field = "A80823C4CD33F3F3AF953060F7AED1B1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:56.607 -0500", hash_original_field = "6F9F3C20A1BA06EE6C8E9CB275F82577", hash_generated_field = "A80823C4CD33F3F3AF953060F7AED1B1")
 
     protected String sipMonth;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.124 -0400", hash_original_field = "DCDCC83A4B23617019C9F14EA7F5BC77", hash_generated_field = "596F87319AF1E1308C1EB0CCEED33A9B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:56.608 -0500", hash_original_field = "383B95F34A748C804FD21AA199440D42", hash_generated_field = "596F87319AF1E1308C1EB0CCEED33A9B")
 
     protected int wkday;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.124 -0400", hash_original_field = "628B7DB04235F228D40ADC671413A8C8", hash_generated_field = "B2F58CEAE0DE7FF9484606598C0B67F1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:56.609 -0500", hash_original_field = "7B9E331B9FA77276F82C941B252DC90D", hash_generated_field = "B2F58CEAE0DE7FF9484606598C0B67F1")
 
     protected int day;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.124 -0400", hash_original_field = "7436F942D5EA836CB84F1BB2527D8286", hash_generated_field = "2F8C5F97A36CC740C18AB87771CBAEAF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:56.610 -0500", hash_original_field = "D47DF9EB6B827E7A5A09905C90EC13DE", hash_generated_field = "2F8C5F97A36CC740C18AB87771CBAEAF")
 
     protected int month;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.124 -0400", hash_original_field = "84CDC76CABF41BD7C961F6AB12F117D8", hash_generated_field = "3748125DBF788D9E5C4BD7C78EC4D962")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:56.611 -0500", hash_original_field = "A74C473B668E5186D1BA6112E0F14F77", hash_generated_field = "3748125DBF788D9E5C4BD7C78EC4D962")
 
     protected int year;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.124 -0400", hash_original_field = "896C55CC5E46FAB38CE9F51EBF7BFCD3", hash_generated_field = "BF1D48E6FF386AD255CBE290B36EF4AB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:56.612 -0500", hash_original_field = "6CAA30872566AAC3D8208DA318F04BBD", hash_generated_field = "BF1D48E6FF386AD255CBE290B36EF4AB")
 
     protected int hour;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.124 -0400", hash_original_field = "0A7D55BE9D12A369A6A8DA0FB517FBA4", hash_generated_field = "59841BABE93C0194E018D6000A755537")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:56.613 -0500", hash_original_field = "56A69BE5A6B1DCF64B7123BACE74483B", hash_generated_field = "59841BABE93C0194E018D6000A755537")
 
     protected int minute;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.125 -0400", hash_original_field = "A9F0E61A137D86AA9DB53465E0801612", hash_generated_field = "B5AC3CA74A56A5C24E7CCD8912B6592B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:56.614 -0500", hash_original_field = "662760B0A001432CFE4D3F18F01B3CEF", hash_generated_field = "B5AC3CA74A56A5C24E7CCD8912B6592B")
 
     protected int second;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.125 -0400", hash_original_field = "F7ED2965F033A6E702D82C1AEC8D0C79", hash_generated_field = "A3E3EEB6FF939AF7B2782A68BB29796C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:56.615 -0500", hash_original_field = "C57EA28ABCE9FAD4752E087EA5082A25", hash_generated_field = "A3E3EEB6FF939AF7B2782A68BB29796C")
 
     private java.util.Calendar javaCal;
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.126 -0400", hash_original_method = "C73CBA236E994654D9EB18CB745C41F4", hash_generated_method = "B8FAD3ED34CC8D51B2A635E7C63EE33A")
-    public  SIPDate() {
+
+    /**
+     * Initializer, sets all the fields to invalid values.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:56.617 -0500", hash_original_method = "C73CBA236E994654D9EB18CB745C41F4", hash_generated_method = "DBE8EADF017633BD71ABF01BC72E1357")
+    public SIPDate() {
         wkday = -1;
         day = -1;
         month = -1;
@@ -59,22 +126,14 @@ public class SIPDate implements Cloneable, Serializable {
         minute = -1;
         second = -1;
         javaCal = null;
-        // ---------- Original Method ----------
-        //wkday = -1;
-        //day = -1;
-        //month = -1;
-        //year = -1;
-        //hour = -1;
-        //minute = -1;
-        //second = -1;
-        //javaCal = null;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.130 -0400", hash_original_method = "7A2DC6C5A2282C24FE6927FC780CB71C", hash_generated_method = "FE04B2941AB15E971CA4F39146792012")
-    public  SIPDate(long timeMillis) {
-        addTaint(timeMillis);
+    /**
+     * Construct a SIP date from the time offset given in miliseconds
+     * @param timeMillis long to set
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:56.619 -0500", hash_original_method = "7A2DC6C5A2282C24FE6927FC780CB71C", hash_generated_method = "3134FCB24E4888B80FEFDDE016120A55")
+    public SIPDate(long timeMillis) {
         javaCal =
             new GregorianCalendar(
                 TimeZone.getTimeZone("GMT:0"),
@@ -82,152 +141,141 @@ public class SIPDate implements Cloneable, Serializable {
         java.util.Date date = new java.util.Date(timeMillis);
         javaCal.setTime(date);
         wkday = javaCal.get(Calendar.DAY_OF_WEEK);
-switch(wkday){
-        case Calendar.MONDAY :
-        sipWkDay = MON;
-        break;
-        case Calendar.TUESDAY :
-        sipWkDay = TUE;
-        break;
-        case Calendar.WEDNESDAY :
-        sipWkDay = WED;
-        break;
-        case Calendar.THURSDAY :
-        sipWkDay = THU;
-        break;
-        case Calendar.FRIDAY :
-        sipWkDay = FRI;
-        break;
-        case Calendar.SATURDAY :
-        sipWkDay = SAT;
-        break;
-        case Calendar.SUNDAY :
-        sipWkDay = SUN;
-        break;
-        default :
-        InternalErrorHandler.handleException(
+        switch (wkday) {
+            case Calendar.MONDAY :
+                sipWkDay = MON;
+                break;
+            case Calendar.TUESDAY :
+                sipWkDay = TUE;
+                break;
+            case Calendar.WEDNESDAY :
+                sipWkDay = WED;
+                break;
+            case Calendar.THURSDAY :
+                sipWkDay = THU;
+                break;
+            case Calendar.FRIDAY :
+                sipWkDay = FRI;
+                break;
+            case Calendar.SATURDAY :
+                sipWkDay = SAT;
+                break;
+            case Calendar.SUNDAY :
+                sipWkDay = SUN;
+                break;
+            default :
+                InternalErrorHandler.handleException(
                     "No date map for wkday " + wkday);
-}        day = javaCal.get(Calendar.DAY_OF_MONTH);
+        }
+
+        day = javaCal.get(Calendar.DAY_OF_MONTH);
         month = javaCal.get(Calendar.MONTH);
-switch(month){
-        case Calendar.JANUARY :
-        sipMonth = JAN;
-        break;
-        case Calendar.FEBRUARY :
-        sipMonth = FEB;
-        break;
-        case Calendar.MARCH :
-        sipMonth = MAR;
-        break;
-        case Calendar.APRIL :
-        sipMonth = APR;
-        break;
-        case Calendar.MAY :
-        sipMonth = MAY;
-        break;
-        case Calendar.JUNE :
-        sipMonth = JUN;
-        break;
-        case Calendar.JULY :
-        sipMonth = JUL;
-        break;
-        case Calendar.AUGUST :
-        sipMonth = AUG;
-        break;
-        case Calendar.SEPTEMBER :
-        sipMonth = SEP;
-        break;
-        case Calendar.OCTOBER :
-        sipMonth = OCT;
-        break;
-        case Calendar.NOVEMBER :
-        sipMonth = NOV;
-        break;
-        case Calendar.DECEMBER :
-        sipMonth = DEC;
-        break;
-        default :
-        InternalErrorHandler.handleException(
+        switch (month) {
+            case Calendar.JANUARY :
+                sipMonth = JAN;
+                break;
+            case Calendar.FEBRUARY :
+                sipMonth = FEB;
+                break;
+            case Calendar.MARCH :
+                sipMonth = MAR;
+                break;
+            case Calendar.APRIL :
+                sipMonth = APR;
+                break;
+            case Calendar.MAY :
+                sipMonth = MAY;
+                break;
+            case Calendar.JUNE :
+                sipMonth = JUN;
+                break;
+            case Calendar.JULY :
+                sipMonth = JUL;
+                break;
+            case Calendar.AUGUST :
+                sipMonth = AUG;
+                break;
+            case Calendar.SEPTEMBER :
+                sipMonth = SEP;
+                break;
+            case Calendar.OCTOBER :
+                sipMonth = OCT;
+                break;
+            case Calendar.NOVEMBER :
+                sipMonth = NOV;
+                break;
+            case Calendar.DECEMBER :
+                sipMonth = DEC;
+                break;
+            default :
+                InternalErrorHandler.handleException(
                     "No date map for month " + month);
-}        year = javaCal.get(Calendar.YEAR);
+        }
+        year = javaCal.get(Calendar.YEAR);
+        // Bug report by Bruno Konik
         hour = javaCal.get(Calendar.HOUR_OF_DAY);
         minute = javaCal.get(Calendar.MINUTE);
         second = javaCal.get(Calendar.SECOND);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.130 -0400", hash_original_method = "17EF9A3AE37B7BA0C102396D80392A03", hash_generated_method = "546467EB8B2743C5586368B58192E79F")
-    public boolean equals(Object that) {
-        addTaint(that.getTaint());
-        if(that.getClass() != this.getClass())        
-        {
-        boolean var68934A3E9455FA72420237EB05902327_1891537257 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_331271594 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_331271594;
-        }
+    /** equality check.
+     *
+     *@return true if the two date fields are equals
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:56.616 -0500", hash_original_method = "17EF9A3AE37B7BA0C102396D80392A03", hash_generated_method = "FAE582568400939A0014202099B768BE")
+    public boolean equals(Object that){
+        if (that.getClass() != this.getClass())return false;
         SIPDate other = (SIPDate)that;
-        boolean varE175A802FC6D3A5111811FF681ACB261_524511198 = (this.wkday == other.wkday &&
+        return this.wkday == other.wkday &&
         this.day == other.day &&
         this.month == other.month &&
         this.year == other.year &&
         this.hour == other.hour &&
         this.minute == other.minute &&
-        this.second == other.second);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2015534048 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2015534048;
-        // ---------- Original Method ----------
-        //if (that.getClass() != this.getClass())return false;
-        //SIPDate other = (SIPDate)that;
-        //return this.wkday == other.wkday &&
-        //this.day == other.day &&
-        //this.month == other.month &&
-        //this.year == other.year &&
-        //this.hour == other.hour &&
-        //this.minute == other.minute &&
-        //this.second == other.second;
+        this.second == other.second;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.132 -0400", hash_original_method = "124CFAD93358C90C664BE8C1CAE8945E", hash_generated_method = "01DE08D42920503B50BF94CE600F84E1")
+    /**
+     * Get canonical string representation.
+     * @return String
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:56.621 -0500", hash_original_method = "124CFAD93358C90C664BE8C1CAE8945E", hash_generated_method = "4983D95CB1196E5796EB9C6C952CAE2F")
     public String encode() {
+
         String dayString;
-        if(day < 10)        
-        {
+        if (day < 10) {
             dayString = "0" + day;
-        } //End block
-        else
-        dayString = "" + day;
+        } else
+            dayString = "" + day;
+
         String hourString;
-        if(hour < 10)        
-        {
+        if (hour < 10) {
             hourString = "0" + hour;
-        } //End block
-        else
-        hourString = "" + hour;
+        } else
+            hourString = "" + hour;
+
         String minuteString;
-        if(minute < 10)        
-        {
+        if (minute < 10) {
             minuteString = "0" + minute;
-        } //End block
-        else
-        minuteString = "" + minute;
+        } else
+            minuteString = "" + minute;
+
         String secondString;
-        if(second < 10)        
-        {
+        if (second < 10) {
             secondString = "0" + second;
-        } //End block
-        else
-        secondString = "" + second;
+        } else
+            secondString = "" + second;
+
         String encoding = "";
-        if(sipWkDay != null)        
-        encoding += sipWkDay + Separators.COMMA + Separators.SP;
+
+        if (sipWkDay != null)
+            encoding += sipWkDay + Separators.COMMA + Separators.SP;
+
         encoding += dayString + Separators.SP;
-        if(sipMonth != null)        
-        encoding += sipMonth + Separators.SP;
+
+        if (sipMonth != null)
+            encoding += sipMonth + Separators.SP;
+
         encoding += year
             + Separators.SP
             + hourString
@@ -237,484 +285,250 @@ switch(month){
             + secondString
             + Separators.SP
             + GMT;
-String varE424DD5E6E58EB63E1272B71B5A81966_1926312919 =         encoding;
-        varE424DD5E6E58EB63E1272B71B5A81966_1926312919.addTaint(taint);
-        return varE424DD5E6E58EB63E1272B71B5A81966_1926312919;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+
+        return encoding;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.132 -0400", hash_original_method = "AA358655086B2D4E31F8BC09FB299576", hash_generated_method = "13FBFB1F7F2CA3A5912C8F50D41CA4EC")
+    /**
+     * The only accessor we allow is to the java calendar record.
+     * All other fields are for this package only.
+     * @return Calendar
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:56.622 -0500", hash_original_method = "AA358655086B2D4E31F8BC09FB299576", hash_generated_method = "5EDBD0906F60C65F22784211163D0ABB")
     public java.util.Calendar getJavaCal() {
-        if(javaCal == null)        
-        setJavaCal();
-java.util.Calendar varB9F9E543D49F5A6C9B26B757C6434821_1490701633 =         javaCal;
-        varB9F9E543D49F5A6C9B26B757C6434821_1490701633.addTaint(taint);
-        return varB9F9E543D49F5A6C9B26B757C6434821_1490701633;
-        // ---------- Original Method ----------
-        //if (javaCal == null)
-            //setJavaCal();
-        //return javaCal;
+        if (javaCal == null)
+            setJavaCal();
+        return javaCal;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.133 -0400", hash_original_method = "457D7CE469867FC10EBD436F0D51643B", hash_generated_method = "EF8CC0F458B66D5AE4A1C50ACA67B53E")
+    /** get the WkDay field
+     * @return String
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:56.623 -0500", hash_original_method = "457D7CE469867FC10EBD436F0D51643B", hash_generated_method = "8998CC9BA5D098C6473AA8918E4D9328")
     public String getWkday() {
-String varAF8BC7AE70F97D08A2C5ED767D4202A4_1133435571 =         sipWkDay;
-        varAF8BC7AE70F97D08A2C5ED767D4202A4_1133435571.addTaint(taint);
-        return varAF8BC7AE70F97D08A2C5ED767D4202A4_1133435571;
-        // ---------- Original Method ----------
-        //return sipWkDay;
+        return sipWkDay;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.133 -0400", hash_original_method = "A22F3A31D7F5863E790748C0D0AB40F6", hash_generated_method = "B1F23896470BFBF28ED4B6C0814DE52A")
+    /** get the month
+     * @return String
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:56.624 -0500", hash_original_method = "A22F3A31D7F5863E790748C0D0AB40F6", hash_generated_method = "57B0669886903D03FF0699FBDD3E38C0")
     public String getMonth() {
-String var2A647B1AB7CAB288D6A463E2252BABED_1250520621 =         sipMonth;
-        var2A647B1AB7CAB288D6A463E2252BABED_1250520621.addTaint(taint);
-        return var2A647B1AB7CAB288D6A463E2252BABED_1250520621;
-        // ---------- Original Method ----------
-        //return sipMonth;
+        return sipMonth;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.133 -0400", hash_original_method = "4346EB52B1E97382E292AD2394C76CAA", hash_generated_method = "87627A7FC0E5E24F2ADFFC9FE77D4397")
+    /** get the hour
+     * @return int
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:56.624 -0500", hash_original_method = "4346EB52B1E97382E292AD2394C76CAA", hash_generated_method = "A194E1C992B75D4090BBB66E32375345")
     public int getHour() {
-        int var896C55CC5E46FAB38CE9F51EBF7BFCD3_2520111 = (hour);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_96426333 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_96426333;
-        // ---------- Original Method ----------
-        //return hour;
+        return hour;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.133 -0400", hash_original_method = "ADC91C6D58A75EA1079C93B22A777A18", hash_generated_method = "55353AB28BC90A293E0C9CE173C9C049")
+    /** get the minute
+     * @return int
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:56.625 -0500", hash_original_method = "ADC91C6D58A75EA1079C93B22A777A18", hash_generated_method = "CF49E8A6A214CF4A858F7AB8E9FFF007")
     public int getMinute() {
-        int var0A7D55BE9D12A369A6A8DA0FB517FBA4_796864005 = (minute);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2002544122 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2002544122;
-        // ---------- Original Method ----------
-        //return minute;
+        return minute;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.133 -0400", hash_original_method = "033202145FC9480CAEE9B3FD508F85AB", hash_generated_method = "9A6D5DAC1033501FAACDFC267801AEDF")
+    /** get the second
+     *  @return int
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:56.626 -0500", hash_original_method = "033202145FC9480CAEE9B3FD508F85AB", hash_generated_method = "689D20C84E5FD4B8743042815D0E5131")
     public int getSecond() {
-        int varA9F0E61A137D86AA9DB53465E0801612_2111603261 = (second);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_570502363 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_570502363;
-        // ---------- Original Method ----------
-        //return second;
+        return second;
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.134 -0400", hash_original_method = "ED081120415B25517E6A51D04161FC1C", hash_generated_method = "D96D5D4772A1CFC8C90621C14BC511EE")
+    /**
+     * convert the SIP Date of this structure to a Java Date.
+     * SIP Dates are forced to be GMT. Stores the converted time
+     * as a java Calendar class.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:56.628 -0500", hash_original_method = "ED081120415B25517E6A51D04161FC1C", hash_generated_method = "3BC81C23A89DB0C3F2683CBF46971FAA")
     private void setJavaCal() {
         javaCal =
             new GregorianCalendar(
                 TimeZone.getTimeZone("GMT:0"),
                 Locale.getDefault());
-        if(year != -1)        
-        javaCal.set(Calendar.YEAR, year);
-        if(day != -1)        
-        javaCal.set(Calendar.DAY_OF_MONTH, day);
-        if(month != -1)        
-        javaCal.set(Calendar.MONTH, month);
-        if(wkday != -1)        
-        javaCal.set(Calendar.DAY_OF_WEEK, wkday);
-        if(hour != -1)        
-        javaCal.set(Calendar.HOUR, hour);
-        if(minute != -1)        
-        javaCal.set(Calendar.MINUTE, minute);
-        if(second != -1)        
-        javaCal.set(Calendar.SECOND, second);
-        // ---------- Original Method ----------
-        //javaCal =
-            //new GregorianCalendar(
-                //TimeZone.getTimeZone("GMT:0"),
-                //Locale.getDefault());
-        //if (year != -1)
-            //javaCal.set(Calendar.YEAR, year);
-        //if (day != -1)
-            //javaCal.set(Calendar.DAY_OF_MONTH, day);
-        //if (month != -1)
-            //javaCal.set(Calendar.MONTH, month);
-        //if (wkday != -1)
-            //javaCal.set(Calendar.DAY_OF_WEEK, wkday);
-        //if (hour != -1)
-            //javaCal.set(Calendar.HOUR, hour);
-        //if (minute != -1)
-            //javaCal.set(Calendar.MINUTE, minute);
-        //if (second != -1)
-            //javaCal.set(Calendar.SECOND, second);
+        if (year != -1)
+            javaCal.set(Calendar.YEAR, year);
+        if (day != -1)
+            javaCal.set(Calendar.DAY_OF_MONTH, day);
+        if (month != -1)
+            javaCal.set(Calendar.MONTH, month);
+        if (wkday != -1)
+            javaCal.set(Calendar.DAY_OF_WEEK, wkday);
+        if (hour != -1)
+            javaCal.set(Calendar.HOUR, hour);
+        if (minute != -1)
+            javaCal.set(Calendar.MINUTE, minute);
+        if (second != -1)
+            javaCal.set(Calendar.SECOND, second);
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.135 -0400", hash_original_method = "AC7B5ED74AB02B130D63CC72231A28FF", hash_generated_method = "4A6BB8FA55D654D153E730A758B5D3B3")
+    /**
+     * Set the wkday member
+     * @param w String to set
+     * @throws IllegalArgumentException if w is not a valid day.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:56.629 -0500", hash_original_method = "AC7B5ED74AB02B130D63CC72231A28FF", hash_generated_method = "BB4D9737AD7D1B22E65DB0F98DA428CC")
     public void setWkday(String w) throws IllegalArgumentException {
         sipWkDay = w;
-        if(sipWkDay.compareToIgnoreCase(MON) == 0)        
-        {
+        if (sipWkDay.compareToIgnoreCase(MON) == 0) {
             wkday = Calendar.MONDAY;
-        } //End block
-        else
-        if(sipWkDay.compareToIgnoreCase(TUE) == 0)        
-        {
+        } else if (sipWkDay.compareToIgnoreCase(TUE) == 0) {
             wkday = Calendar.TUESDAY;
-        } //End block
-        else
-        if(sipWkDay.compareToIgnoreCase(WED) == 0)        
-        {
+        } else if (sipWkDay.compareToIgnoreCase(WED) == 0) {
             wkday = Calendar.WEDNESDAY;
-        } //End block
-        else
-        if(sipWkDay.compareToIgnoreCase(THU) == 0)        
-        {
+        } else if (sipWkDay.compareToIgnoreCase(THU) == 0) {
             wkday = Calendar.THURSDAY;
-        } //End block
-        else
-        if(sipWkDay.compareToIgnoreCase(FRI) == 0)        
-        {
+        } else if (sipWkDay.compareToIgnoreCase(FRI) == 0) {
             wkday = Calendar.FRIDAY;
-        } //End block
-        else
-        if(sipWkDay.compareToIgnoreCase(SAT) == 0)        
-        {
+        } else if (sipWkDay.compareToIgnoreCase(SAT) == 0) {
             wkday = Calendar.SATURDAY;
-        } //End block
-        else
-        if(sipWkDay.compareToIgnoreCase(SUN) == 0)        
-        {
+        } else if (sipWkDay.compareToIgnoreCase(SUN) == 0) {
             wkday = Calendar.SUNDAY;
-        } //End block
-        else
-        {
-            IllegalArgumentException var1737B0A32D4320C1D8085D8F308E9CDC_254753306 = new IllegalArgumentException("Illegal Week day :" + w);
-            var1737B0A32D4320C1D8085D8F308E9CDC_254753306.addTaint(taint);
-            throw var1737B0A32D4320C1D8085D8F308E9CDC_254753306;
-        } //End block
-        // ---------- Original Method ----------
-        //sipWkDay = w;
-        //if (sipWkDay.compareToIgnoreCase(MON) == 0) {
-            //wkday = Calendar.MONDAY;
-        //} else if (sipWkDay.compareToIgnoreCase(TUE) == 0) {
-            //wkday = Calendar.TUESDAY;
-        //} else if (sipWkDay.compareToIgnoreCase(WED) == 0) {
-            //wkday = Calendar.WEDNESDAY;
-        //} else if (sipWkDay.compareToIgnoreCase(THU) == 0) {
-            //wkday = Calendar.THURSDAY;
-        //} else if (sipWkDay.compareToIgnoreCase(FRI) == 0) {
-            //wkday = Calendar.FRIDAY;
-        //} else if (sipWkDay.compareToIgnoreCase(SAT) == 0) {
-            //wkday = Calendar.SATURDAY;
-        //} else if (sipWkDay.compareToIgnoreCase(SUN) == 0) {
-            //wkday = Calendar.SUNDAY;
-        //} else {
-            //throw new IllegalArgumentException("Illegal Week day :" + w);
-        //}
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.136 -0400", hash_original_method = "79BC1DF7B5884941473DA919072706C3", hash_generated_method = "34BF413FA8F336901A1167F997C8566A")
-    public void setDay(int d) throws IllegalArgumentException {
-        if(d < 1 || d > 31)        
-        {
-        IllegalArgumentException var58BC0D4AC5876E17BC897F22DA7D304A_1337527074 = new IllegalArgumentException(
-                "Illegal Day of the month " + Integer.toString(d));
-        var58BC0D4AC5876E17BC897F22DA7D304A_1337527074.addTaint(taint);
-        throw var58BC0D4AC5876E17BC897F22DA7D304A_1337527074;
+        } else {
+            throw new IllegalArgumentException("Illegal Week day :" + w);
         }
-        day = d;
-        // ---------- Original Method ----------
-        //if (d < 1 || d > 31)
-            //throw new IllegalArgumentException(
-                //"Illegal Day of the month " + Integer.toString(d));
-        //day = d;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.136 -0400", hash_original_method = "F81F66CB2E9CA66D72BD9964B3A16CCB", hash_generated_method = "C54AB99DE158C68D5209872D40951D66")
+    /**
+     * Set the day member
+     * @param d int to set
+     * @throws IllegalArgumentException if d is not a valid day
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:56.630 -0500", hash_original_method = "79BC1DF7B5884941473DA919072706C3", hash_generated_method = "9AA748BB5213C66F910F366F20787DB1")
+    public void setDay(int d) throws IllegalArgumentException {
+        if (d < 1 || d > 31)
+            throw new IllegalArgumentException(
+                "Illegal Day of the month " + Integer.toString(d));
+        day = d;
+    }
+
+    /**
+     * Set the month member
+     * @param m String to set.
+     * @throws IllegalArgumentException if m is not a valid month
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:56.631 -0500", hash_original_method = "F81F66CB2E9CA66D72BD9964B3A16CCB", hash_generated_method = "DC4A4DBF91384FE83B071D5B966C80EE")
     public void setMonth(String m) throws IllegalArgumentException {
         sipMonth = m;
-        if(sipMonth.compareToIgnoreCase(JAN) == 0)        
-        {
+        if (sipMonth.compareToIgnoreCase(JAN) == 0) {
             month = Calendar.JANUARY;
-        } //End block
-        else
-        if(sipMonth.compareToIgnoreCase(FEB) == 0)        
-        {
+        } else if (sipMonth.compareToIgnoreCase(FEB) == 0) {
             month = Calendar.FEBRUARY;
-        } //End block
-        else
-        if(sipMonth.compareToIgnoreCase(MAR) == 0)        
-        {
+        } else if (sipMonth.compareToIgnoreCase(MAR) == 0) {
             month = Calendar.MARCH;
-        } //End block
-        else
-        if(sipMonth.compareToIgnoreCase(APR) == 0)        
-        {
+        } else if (sipMonth.compareToIgnoreCase(APR) == 0) {
             month = Calendar.APRIL;
-        } //End block
-        else
-        if(sipMonth.compareToIgnoreCase(MAY) == 0)        
-        {
+        } else if (sipMonth.compareToIgnoreCase(MAY) == 0) {
             month = Calendar.MAY;
-        } //End block
-        else
-        if(sipMonth.compareToIgnoreCase(JUN) == 0)        
-        {
+        } else if (sipMonth.compareToIgnoreCase(JUN) == 0) {
             month = Calendar.JUNE;
-        } //End block
-        else
-        if(sipMonth.compareToIgnoreCase(JUL) == 0)        
-        {
+        } else if (sipMonth.compareToIgnoreCase(JUL) == 0) {
             month = Calendar.JULY;
-        } //End block
-        else
-        if(sipMonth.compareToIgnoreCase(AUG) == 0)        
-        {
+        } else if (sipMonth.compareToIgnoreCase(AUG) == 0) {
             month = Calendar.AUGUST;
-        } //End block
-        else
-        if(sipMonth.compareToIgnoreCase(SEP) == 0)        
-        {
+        } else if (sipMonth.compareToIgnoreCase(SEP) == 0) {
             month = Calendar.SEPTEMBER;
-        } //End block
-        else
-        if(sipMonth.compareToIgnoreCase(OCT) == 0)        
-        {
+        } else if (sipMonth.compareToIgnoreCase(OCT) == 0) {
             month = Calendar.OCTOBER;
-        } //End block
-        else
-        if(sipMonth.compareToIgnoreCase(NOV) == 0)        
-        {
+        } else if (sipMonth.compareToIgnoreCase(NOV) == 0) {
             month = Calendar.NOVEMBER;
-        } //End block
-        else
-        if(sipMonth.compareToIgnoreCase(DEC) == 0)        
-        {
+        } else if (sipMonth.compareToIgnoreCase(DEC) == 0) {
             month = Calendar.DECEMBER;
-        } //End block
-        else
-        {
-            IllegalArgumentException var814901485D303FC431FC64CE9D4A23C4_207716460 = new IllegalArgumentException("Illegal Month :" + m);
-            var814901485D303FC431FC64CE9D4A23C4_207716460.addTaint(taint);
-            throw var814901485D303FC431FC64CE9D4A23C4_207716460;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } else {
+            throw new IllegalArgumentException("Illegal Month :" + m);
+        }
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.137 -0400", hash_original_method = "65E0B59727307B53E2290DE9B41E88A5", hash_generated_method = "EDCF8F5D88ED19C398CFD7C8CE22F5D8")
+    /**
+     * Set the year member
+     * @param y int to set
+     * @throws IllegalArgumentException if y is not a valid year.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:56.632 -0500", hash_original_method = "65E0B59727307B53E2290DE9B41E88A5", hash_generated_method = "984D6566035E6D50851D70DC75F0A028")
     public void setYear(int y) throws IllegalArgumentException {
-        if(y < 0)        
-        {
-        IllegalArgumentException var761671DB2F006B7529C9E0EE186CCC93_72177347 = new IllegalArgumentException("Illegal year : " + y);
-        var761671DB2F006B7529C9E0EE186CCC93_72177347.addTaint(taint);
-        throw var761671DB2F006B7529C9E0EE186CCC93_72177347;
-        }
+        if (y < 0)
+            throw new IllegalArgumentException("Illegal year : " + y);
         javaCal = null;
         year = y;
-        // ---------- Original Method ----------
-        //if (y < 0)
-            //throw new IllegalArgumentException("Illegal year : " + y);
-        //javaCal = null;
-        //year = y;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.137 -0400", hash_original_method = "685E9F12E07BC44AEFABA3E87A7BA88C", hash_generated_method = "C1802E4455444A291C93FCABB031105E")
+    /**
+    * Get the year member.
+    */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:56.633 -0500", hash_original_method = "685E9F12E07BC44AEFABA3E87A7BA88C", hash_generated_method = "AB2E34C40AC19F4A97DAF5C4A789B7FF")
     public int getYear() {
-        int var84CDC76CABF41BD7C961F6AB12F117D8_48100602 = (year);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1459675673 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1459675673;
-        // ---------- Original Method ----------
-        //return year;
+        return year;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.137 -0400", hash_original_method = "8F41240A07063AF12A20DAC696350061", hash_generated_method = "E2EB16C45666CCF8051909D78B67932A")
+    /**
+     * Set the hour member
+     * @param h int to set
+     * @throws IllegalArgumentException if h is not a valid hour.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:56.635 -0500", hash_original_method = "8F41240A07063AF12A20DAC696350061", hash_generated_method = "9A2359DBCAD87AA216C635C1D118D7EA")
     public void setHour(int h) throws IllegalArgumentException {
-        if(h < 0 || h > 24)        
-        {
-        IllegalArgumentException varDCCCEE311583A34F434E3972BC6281E8_478334999 = new IllegalArgumentException("Illegal hour : " + h);
-        varDCCCEE311583A34F434E3972BC6281E8_478334999.addTaint(taint);
-        throw varDCCCEE311583A34F434E3972BC6281E8_478334999;
-        }
+        if (h < 0 || h > 24)
+            throw new IllegalArgumentException("Illegal hour : " + h);
         javaCal = null;
         hour = h;
-        // ---------- Original Method ----------
-        //if (h < 0 || h > 24)
-            //throw new IllegalArgumentException("Illegal hour : " + h);
-        //javaCal = null;
-        //hour = h;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.137 -0400", hash_original_method = "0A40A5D1C091DEF2AA14C093CC6460BC", hash_generated_method = "A6EA9380E40AD9F2CAE2723D89ACB94F")
+    /**
+     * Set the minute member
+     * @param m int to set
+     * @throws IllegalArgumentException if m is not a valid minute
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:56.637 -0500", hash_original_method = "0A40A5D1C091DEF2AA14C093CC6460BC", hash_generated_method = "3EC470ECE1874F7EF2483641D759978D")
     public void setMinute(int m) throws IllegalArgumentException {
-        if(m < 0 || m >= 60)        
-        {
-        IllegalArgumentException varC1E0C203BF279C8FFF509002E5C1A9DF_1887737867 = new IllegalArgumentException(
+        if (m < 0 || m >= 60)
+            throw new IllegalArgumentException(
                 "Illegal minute : " + (Integer.toString(m)));
-        varC1E0C203BF279C8FFF509002E5C1A9DF_1887737867.addTaint(taint);
-        throw varC1E0C203BF279C8FFF509002E5C1A9DF_1887737867;
-        }
         javaCal = null;
         minute = m;
-        // ---------- Original Method ----------
-        //if (m < 0 || m >= 60)
-            //throw new IllegalArgumentException(
-                //"Illegal minute : " + (Integer.toString(m)));
-        //javaCal = null;
-        //minute = m;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.137 -0400", hash_original_method = "2AD3B3771A5FA25E5792A620A7EA9BAA", hash_generated_method = "41FE01834C01DFC36B712432D9C06962")
+    /**
+     * Set the second member
+     * @param s int to set
+     * @throws IllegalArgumentException if s is not a valid second
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:56.638 -0500", hash_original_method = "2AD3B3771A5FA25E5792A620A7EA9BAA", hash_generated_method = "749C8C89D10A7DFF1187E00EA60343F0")
     public void setSecond(int s) throws IllegalArgumentException {
-        if(s < 0 || s >= 60)        
-        {
-        IllegalArgumentException var75CA8C32692CF5CB66F50F1441721D47_1742960663 = new IllegalArgumentException(
+        if (s < 0 || s >= 60)
+            throw new IllegalArgumentException(
                 "Illegal second : " + Integer.toString(s));
-        var75CA8C32692CF5CB66F50F1441721D47_1742960663.addTaint(taint);
-        throw var75CA8C32692CF5CB66F50F1441721D47_1742960663;
-        }
         javaCal = null;
         second = s;
-        // ---------- Original Method ----------
-        //if (s < 0 || s >= 60)
-            //throw new IllegalArgumentException(
-                //"Illegal second : " + Integer.toString(s));
-        //javaCal = null;
-        //second = s;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.138 -0400", hash_original_method = "2F4F469E30C2F586A40940F33F0E1586", hash_generated_method = "DF770916CED6F4BE9F5844985A1BBA99")
+    /** Get the time offset from the current time.
+     *
+     *@return offset from the current time.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:56.639 -0500", hash_original_method = "2F4F469E30C2F586A40940F33F0E1586", hash_generated_method = "66492B98EA48DC7248B81F0EF8DBD816")
     public int getDeltaSeconds() {
+        // long ctime = this.getJavaCal().getTimeInMillis();
         long ctime = this.getJavaCal().getTime().getTime();
-        int var912A5FE0D780AF2A90211073F0C20C13_366725848 = ((int) (ctime - System.currentTimeMillis()) / 1000);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1798786671 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1798786671;
-        // ---------- Original Method ----------
-        //long ctime = this.getJavaCal().getTime().getTime();
-        //return (int) (ctime - System.currentTimeMillis()) / 1000;
+        return (int) (ctime - System.currentTimeMillis()) / 1000;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.138 -0400", hash_original_method = "4BA050DE2121A2990466253CFC8AD778", hash_generated_method = "6BA4ABBE4D5CED56D0044FB4B2F0BDF9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:56.640 -0500", hash_original_method = "4BA050DE2121A2990466253CFC8AD778", hash_generated_method = "E79E38E590026C56FD1D0DB753A809E7")
     public Object clone() {
         SIPDate retval;
-        try 
-        {
+        try {
             retval = (SIPDate) super.clone();
-        } //End block
-        catch (CloneNotSupportedException e)
-        {
-            RuntimeException var1A3D561C49733FF4B8E39ED1A5C8FCCD_1874092380 = new RuntimeException("Internal error");
-            var1A3D561C49733FF4B8E39ED1A5C8FCCD_1874092380.addTaint(taint);
-            throw var1A3D561C49733FF4B8E39ED1A5C8FCCD_1874092380;
-        } //End block
-        if(javaCal != null)        
-        retval.javaCal = (java.util.Calendar) javaCal.clone();
-Object varF9E19AD6135C970F387F77C6F3DE4477_1468644416 =         retval;
-        varF9E19AD6135C970F387F77C6F3DE4477_1468644416.addTaint(taint);
-        return varF9E19AD6135C970F387F77C6F3DE4477_1468644416;
-        // ---------- Original Method ----------
-        //SIPDate retval;
-        //try {
-            //retval = (SIPDate) super.clone();
-        //} catch (CloneNotSupportedException e) {
-            //throw new RuntimeException("Internal error");
-        //}
-        //if (javaCal != null)
-            //retval.javaCal = (java.util.Calendar) javaCal.clone();
-        //return retval;
+        } catch (CloneNotSupportedException e) {
+            throw new RuntimeException("Internal error");
+        }
+        if (javaCal != null)
+            retval.javaCal = (java.util.Calendar) javaCal.clone();
+        return retval;
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.138 -0400", hash_original_field = "3711CF8C305348C83A69C259D4169CD2", hash_generated_field = "9AD574E6092CE8903697183A4F17A37E")
-
-    private static final long serialVersionUID = 8544101899928346909L;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.138 -0400", hash_original_field = "37C601F2036A369A76BDEF09EBA13B29", hash_generated_field = "90A017F290A00288C0F071E9A1EBD88C")
-
-    public static final String GMT = "GMT";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.138 -0400", hash_original_field = "F822252C460E43C68512DB19F2238272", hash_generated_field = "D993B191F18C7C2A2ACF77D43C481204")
-
-    public static final String MON = "Mon";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.138 -0400", hash_original_field = "E13C5035426328FC96F60CE16D367A0B", hash_generated_field = "A396BE9DE9586E197D6C0B3E443E0D95")
-
-    public static final String TUE = "Tue";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.138 -0400", hash_original_field = "6A9E479F2EE6BFA965B32747936DB368", hash_generated_field = "3D06F8133C09119B26C6E278798CF1A9")
-
-    public static final String WED = "Wed";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.138 -0400", hash_original_field = "8E00C2EA9118ED41470E465C34E26A8D", hash_generated_field = "09A162F56D2A9384083E7AAF03183FD6")
-
-    public static final String THU = "Thu";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.138 -0400", hash_original_field = "36999DD3216BCBE23BAF2D3CAAE0DEA6", hash_generated_field = "130AB4377BFA7580AE1512EA43195FBC")
-
-    public static final String FRI = "Fri";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.138 -0400", hash_original_field = "6788CE2821B811132FCA00FCCB7843A4", hash_generated_field = "F219533A1B8112292C40A0B685C35CFD")
-
-    public static final String SAT = "Sat";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.138 -0400", hash_original_field = "B9D6E5F089E0857DB21C9E08AC8B26ED", hash_generated_field = "6C1848B20607A097704760E1650C2678")
-
-    public static final String SUN = "Sun";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.138 -0400", hash_original_field = "DBF7DFB7502E55498300890F933767D9", hash_generated_field = "F2D1780B5CE22050F6158996B8E61999")
-
-    public static final String JAN = "Jan";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.139 -0400", hash_original_field = "2637ECF938440EAF8F10DD7278DB2BB9", hash_generated_field = "6FADB9C3303C0BDE49C3B4B5539EFD6E")
-
-    public static final String FEB = "Feb";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.139 -0400", hash_original_field = "52518F50DABA9229AF40AE891A8B4D1C", hash_generated_field = "6303D6FBD3F71C8EE38712E28705023E")
-
-    public static final String MAR = "Mar";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.139 -0400", hash_original_field = "5DDBC7FEC87EB31DEB50BB5F94FAFBD7", hash_generated_field = "23DBF8FEC46857D1C97D6E3A64C4C782")
-
-    public static final String APR = "Apr";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.139 -0400", hash_original_field = "D89AC508A90A47AF7CBB472BE8533349", hash_generated_field = "47FD9EBB6C303C4777A0424A8CB9008B")
-
-    public static final String MAY = "May";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.139 -0400", hash_original_field = "992F14AD77E8C98E19366CD5CDA3E041", hash_generated_field = "24E1CBE6524227A554B498F7E7BFA54C")
-
-    public static final String JUN = "Jun";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.139 -0400", hash_original_field = "34DA4E467F087737AA361D2038E50450", hash_generated_field = "E960EB8D455449B7DD7F8DF660D9E443")
-
-    public static final String JUL = "Jul";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.139 -0400", hash_original_field = "8FCD505B4B8FDF8BEEB4E2E40FD7BDE2", hash_generated_field = "CE558222EA08CDFDCA2D75DF00FE2DF9")
-
-    public static final String AUG = "Aug";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.139 -0400", hash_original_field = "6221BDBC2CC6ACE69A93E417555690F7", hash_generated_field = "54D87D6819D3255A8690058A26F311B4")
-
-    public static final String SEP = "Sep";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.139 -0400", hash_original_field = "557FFA803FDA695A6ED3D7584ABAE5B4", hash_generated_field = "3EB1F3DE2F9DBA4FAD368F5BCB02D165")
-
-    public static final String OCT = "Oct";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.139 -0400", hash_original_field = "3B4841F2F7185A7963DE3F3042F923E5", hash_generated_field = "1B59DBC9E66C4388573EE99FDE2F7799")
-
-    public static final String NOV = "Nov";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.139 -0400", hash_original_field = "3810CF0AA1237E029D6EC618BF9E9F4D", hash_generated_field = "033F25F46987BBA69C5EC9DD661A40F0")
-
-    public static final String DEC = "Dec";
 }
 

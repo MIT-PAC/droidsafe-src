@@ -1,6 +1,8 @@
 package android.app.backup;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.content.Context;
 import android.os.RemoteException;
@@ -10,20 +12,8 @@ import android.util.Log;
 
 
 public class BackupManager {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.261 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
 
-    private Context mContext;
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.262 -0400", hash_original_method = "85561994F0AAB46E3AEAAB82C9107690", hash_generated_method = "0B376C856E6AD2AF391165CD38C9A30E")
-    public  BackupManager(Context context) {
-        mContext = context;
-        // ---------- Original Method ----------
-        //mContext = context;
-    }
-
-    
-    @DSModeled(DSC.BAN)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:23.519 -0500", hash_original_method = "BC0D552591769CED3EC0FA61A524F186", hash_generated_method = "2015B4D91CD8E20A9296C83B2EBCE38E")
     private static void checkServiceBinder() {
         if (sService == null) {
             sService = IBackupManager.Stub.asInterface(
@@ -31,35 +21,18 @@ public class BackupManager {
         }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.263 -0400", hash_original_method = "ADE0596EF26D37CE11FFEC5E571C37D4", hash_generated_method = "57BE6CAFE4A4A5E54E5CCB7B51EC1DD7")
-    public void dataChanged() {
-        checkServiceBinder();
-        if(sService != null)        
-        {
-            try 
-            {
-                sService.dataChanged(mContext.getPackageName());
-            } //End block
-            catch (RemoteException e)
-            {
-                Log.d(TAG, "dataChanged() couldn't connect");
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //checkServiceBinder();
-        //if (sService != null) {
-            //try {
-                //sService.dataChanged(mContext.getPackageName());
-            //} catch (RemoteException e) {
-                //Log.d(TAG, "dataChanged() couldn't connect");
-            //}
-        //}
-    }
-
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Convenience method for callers who need to indicate that some other package
+     * needs a backup pass.  This can be useful in the case of groups of packages
+     * that share a uid.
+     * <p>
+     * This method requires that the application hold the "android.permission.BACKUP"
+     * permission if the package named in the argument does not run under the same uid
+     * as the caller.
+     *
+     * @param packageName The package name identifying the application to back up.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:23.522 -0500", hash_original_method = "E185CA33D450CA66833DFDB97B746452", hash_generated_method = "EE09CEB717C5A8328067564E6B457ED5")
     public static void dataChanged(String packageName) {
         checkServiceBinder();
         if (sService != null) {
@@ -70,98 +43,107 @@ public class BackupManager {
             }
         }
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:23.517 -0500", hash_original_field = "E34B48711840A988E73B949944521997", hash_generated_field = "46BC9109135FC2CB00B0B600F09C9710")
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.265 -0400", hash_original_method = "0F46E379860B99708825D89131970D97", hash_generated_method = "22C78B7FDCCE19171BB35BB77B620756")
+    private static final String TAG = "BackupManager";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:23.519 -0500", hash_original_field = "34E00A576BAA32509DB5DBD95E7AD9F9", hash_generated_field = "A0386DA53DF2919548B4DED4A07BF9FC")
+
+    private static IBackupManager sService;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:23.518 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
+
+
+    private Context mContext;
+
+    /**
+     * Constructs a BackupManager object through which the application can
+     * communicate with the Android backup system.
+     *
+     * @param context The {@link android.content.Context} that was provided when
+     *                one of your application's {@link android.app.Activity Activities}
+     *                was created.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:23.520 -0500", hash_original_method = "85561994F0AAB46E3AEAAB82C9107690", hash_generated_method = "6E365403833B142A6AA999CAEB020FAC")
+    public BackupManager(Context context) {
+        mContext = context;
+    }
+
+    /**
+     * Notifies the Android backup system that your application wishes to back up
+     * new changes to its data.  A backup operation using your application's
+     * {@link android.app.backup.BackupAgent} subclass will be scheduled when you
+     * call this method.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:23.521 -0500", hash_original_method = "ADE0596EF26D37CE11FFEC5E571C37D4", hash_generated_method = "BF4AC2D842D44FB6ABE35CE29B125D9F")
+    public void dataChanged() {
+        checkServiceBinder();
+        if (sService != null) {
+            try {
+                sService.dataChanged(mContext.getPackageName());
+            } catch (RemoteException e) {
+                Log.d(TAG, "dataChanged() couldn't connect");
+            }
+        }
+    }
+
+    /**
+     * Restore the calling application from backup.  The data will be restored from the
+     * current backup dataset if the application has stored data there, or from
+     * the dataset used during the last full device setup operation if the current
+     * backup dataset has no matching data.  If no backup data exists for this application
+     * in either source, a nonzero value will be returned.
+     *
+     * <p>If this method returns zero (meaning success), the OS will attempt to retrieve
+     * a backed-up dataset from the remote transport, instantiate the application's
+     * backup agent, and pass the dataset to the agent's
+     * {@link android.app.backup.BackupAgent#onRestore(BackupDataInput, int, android.os.ParcelFileDescriptor) onRestore()}
+     * method.
+     *
+     * @param observer The {@link RestoreObserver} to receive callbacks during the restore
+     * operation. This must not be null.
+     *
+     * @return Zero on success; nonzero on error.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:23.523 -0500", hash_original_method = "0F46E379860B99708825D89131970D97", hash_generated_method = "4F9C77C32BC694F410AB977B57EE9DF9")
     public int requestRestore(RestoreObserver observer) {
-        addTaint(observer.getTaint());
         int result = -1;
         checkServiceBinder();
-        if(sService != null)        
-        {
+        if (sService != null) {
             RestoreSession session = null;
-            try 
-            {
+            try {
                 IRestoreSession binder = sService.beginRestoreSession(mContext.getPackageName(),
                         null);
                 session = new RestoreSession(mContext, binder);
                 result = session.restorePackage(mContext.getPackageName(), observer);
-            } //End block
-            catch (RemoteException e)
-            {
-            } //End block
-            finally 
-            {
-                if(session != null)                
-                {
+            } catch (RemoteException e) {
+                Log.w(TAG, "restoreSelf() unable to contact service");
+            } finally {
+                if (session != null) {
                     session.endRestoreSession();
-                } //End block
-            } //End block
-        } //End block
-        int varB4A88417B3D0170D754C647C30B7216A_1272729260 = (result);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1619837343 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1619837343;
-        // ---------- Original Method ----------
-        //int result = -1;
-        //checkServiceBinder();
-        //if (sService != null) {
-            //RestoreSession session = null;
-            //try {
-                //IRestoreSession binder = sService.beginRestoreSession(mContext.getPackageName(),
-                        //null);
-                //session = new RestoreSession(mContext, binder);
-                //result = session.restorePackage(mContext.getPackageName(), observer);
-            //} catch (RemoteException e) {
-                //Log.w(TAG, "restoreSelf() unable to contact service");
-            //} finally {
-                //if (session != null) {
-                    //session.endRestoreSession();
-                //}
-            //}
-        //}
-        //return result;
+                }
+            }
+        }
+        return result;
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.267 -0400", hash_original_method = "4E9AC35DE965C4DA64E27C8C094DFEC3", hash_generated_method = "C8FFCB3AB176ED67BC4BC695D851FFFF")
+    /**
+     * Begin the process of restoring data from backup.  See the
+     * {@link android.app.backup.RestoreSession} class for documentation on that process.
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:23.524 -0500", hash_original_method = "4E9AC35DE965C4DA64E27C8C094DFEC3", hash_generated_method = "43192FDADA33ECB0B0000D4A4C95DF09")
     public RestoreSession beginRestoreSession() {
         RestoreSession session = null;
         checkServiceBinder();
-        if(sService != null)        
-        {
-            try 
-            {
+        if (sService != null) {
+            try {
+                // All packages, current transport
                 IRestoreSession binder = sService.beginRestoreSession(null, null);
                 session = new RestoreSession(mContext, binder);
-            } //End block
-            catch (RemoteException e)
-            {
-            } //End block
-        } //End block
-RestoreSession varD555E544A66E0F97DA6BCDE940E3E79C_632619107 =         session;
-        varD555E544A66E0F97DA6BCDE940E3E79C_632619107.addTaint(taint);
-        return varD555E544A66E0F97DA6BCDE940E3E79C_632619107;
-        // ---------- Original Method ----------
-        //RestoreSession session = null;
-        //checkServiceBinder();
-        //if (sService != null) {
-            //try {
-                //IRestoreSession binder = sService.beginRestoreSession(null, null);
-                //session = new RestoreSession(mContext, binder);
-            //} catch (RemoteException e) {
-                //Log.w(TAG, "beginRestoreSession() couldn't connect");
-            //}
-        //}
-        //return session;
+            } catch (RemoteException e) {
+                Log.w(TAG, "beginRestoreSession() couldn't connect");
+            }
+        }
+        return session;
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.267 -0400", hash_original_field = "A4EEA6554760A3C457438AA5B4D89B19", hash_generated_field = "46BC9109135FC2CB00B0B600F09C9710")
-
-    private static final String TAG = "BackupManager";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.268 -0400", hash_original_field = "5B4BCAAF27A7649717520CAA43216111", hash_generated_field = "A0386DA53DF2919548B4DED4A07BF9FC")
-
-    private static IBackupManager sService;
 }
 

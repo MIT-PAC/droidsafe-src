@@ -1,6 +1,8 @@
 package gov.nist.javax.sip.parser;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import gov.nist.core.Token;
 import gov.nist.javax.sip.header.ContentDisposition;
@@ -14,60 +16,60 @@ import java.text.ParseException;
 
 
 public class ContentDispositionParser extends ParametersParser {
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:37.038 -0400", hash_original_method = "04008A13B0A5E88C87B63AAF08ED822A", hash_generated_method = "690DFA335DDBFB3F5251BBC4962C114D")
-    public  ContentDispositionParser(String contentDisposition) {
+
+    /**
+     * Creates a new instance of ContentDispositionParser
+     * @param contentDisposition the header to parse
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:11.464 -0500", hash_original_method = "04008A13B0A5E88C87B63AAF08ED822A", hash_generated_method = "1F99FB9C48EE9EEFAE67593C4664A6F1")
+    public ContentDispositionParser(String contentDisposition) {
         super(contentDisposition);
-        addTaint(contentDisposition.getTaint());
-        // ---------- Original Method ----------
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:37.039 -0400", hash_original_method = "7D9894E3DD1592FE62F944EB2803724D", hash_generated_method = "523EE1F84C89EE7708D60186E2EC3461")
-    protected  ContentDispositionParser(Lexer lexer) {
+    /**
+     * Constructor
+     * @param lexer the lexer to use to parse the header
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:11.464 -0500", hash_original_method = "7D9894E3DD1592FE62F944EB2803724D", hash_generated_method = "AD65E80CA37E68032C8E9C98D5A3DE29")
+    protected ContentDispositionParser(Lexer lexer) {
         super(lexer);
-        addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:37.091 -0400", hash_original_method = "C25B69CBC1412EAEFB170FBF9B530EF5", hash_generated_method = "C850C3D417E1FEDBE760BFF338ECE625")
+    /**
+     * parse the ContentDispositionHeader String header
+     * @return SIPHeader (ContentDispositionList object)
+     * @throws SIPParseException if the message does not respect the spec.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:11.467 -0500", hash_original_method = "C25B69CBC1412EAEFB170FBF9B530EF5", hash_generated_method = "AD0F03654918E48BE3984210F2815FEB")
     public SIPHeader parse() throws ParseException {
-        if(debug)        
-        dbg_enter("ContentDispositionParser.parse");
-        try 
-        {
+
+        if (debug)
+            dbg_enter("ContentDispositionParser.parse");
+
+        try {
             headerName(TokenTypes.CONTENT_DISPOSITION);
+
             ContentDisposition cd = new ContentDisposition();
             cd.setHeaderName(SIPHeaderNames.CONTENT_DISPOSITION);
+
             this.lexer.SPorHT();
             this.lexer.match(TokenTypes.ID);
+
             Token token = lexer.getNextToken();
             cd.setDispositionType(token.getTokenValue());
             this.lexer.SPorHT();
             super.parse(cd);
+
             this.lexer.SPorHT();
             this.lexer.match('\n');
-SIPHeader var001A6EEFB4DC63CD7C230871097073C8_1893789385 =             cd;
-            var001A6EEFB4DC63CD7C230871097073C8_1893789385.addTaint(taint);
-            return var001A6EEFB4DC63CD7C230871097073C8_1893789385;
-        } //End block
-        catch (ParseException ex)
-        {
-            java.text.ParseException varB8C80F72F95BF6A850D07F4EC5726C09_135305603 = createParseException(ex.getMessage());
-            varB8C80F72F95BF6A850D07F4EC5726C09_135305603.addTaint(taint);
-            throw varB8C80F72F95BF6A850D07F4EC5726C09_135305603;
-        } //End block
-        finally 
-        {
-            if(debug)            
-            dbg_leave("ContentDispositionParser.parse");
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+
+            return cd;
+        } catch (ParseException ex) {
+            throw createParseException(ex.getMessage());
+        } finally {
+            if (debug)
+                dbg_leave("ContentDispositionParser.parse");
+        }
     }
 
     

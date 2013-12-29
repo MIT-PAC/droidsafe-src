@@ -1,6 +1,8 @@
 package com.android.internal.telephony;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.app.Activity;
 import android.content.ComponentName;
@@ -17,109 +19,217 @@ import android.util.Log;
 
 
 public class WapPushOverSms {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.520 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:13.960 -0500", hash_original_field = "85CC68C3A5EDE562AE97B9341E829CBB", hash_generated_field = "D83C831CD0AB23E53B0E52B2C0EB27F8")
 
-    private Context mContext;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.520 -0400", hash_original_field = "0AA6A27FDD2FC4686B0130DC2EF1F1A6", hash_generated_field = "FBAD2745825D1B222348829BBBC8E895")
+    private static final String LOG_TAG = "WAP PUSH";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:13.961 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
+
+
+    private  Context mContext;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:13.962 -0500", hash_original_field = "1B4082614F898F1FF2AD2C831A38F19A", hash_generated_field = "FBAD2745825D1B222348829BBBC8E895")
 
     private WspTypeDecoder pduDecoder;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.520 -0400", hash_original_field = "F11105C2360034694823CFE7B5E6E57A", hash_generated_field = "8A503E14FA7AF8D4DA2D53FAF75ACC91")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:13.962 -0500", hash_original_field = "C8FE6578494C231B743C9C1EA246FA58", hash_generated_field = "8A503E14FA7AF8D4DA2D53FAF75ACC91")
 
     private SMSDispatcher mSmsDispatcher;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.520 -0400", hash_original_field = "B59EE70074140F54FE9A40B8C9352A9F", hash_generated_field = "13F904337FC0CFFAC686B97782F492B2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:13.963 -0500", hash_original_field = "65EAEBF48EC2BD9FC227F227DB04505F", hash_generated_field = "13F904337FC0CFFAC686B97782F492B2")
 
     private final int WAKE_LOCK_TIMEOUT = 5000;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.520 -0400", hash_original_field = "4979845A35EE0C8B32FFD337F10C9BAB", hash_generated_field = "12DDD756FBB753EEF6004C34AE7CA6CD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:13.964 -0500", hash_original_field = "E56C4EABE2BBC91E0B9CFA0D3B38E10B", hash_generated_field = "12DDD756FBB753EEF6004C34AE7CA6CD")
+
 
     private final int BIND_RETRY_INTERVAL = 1000;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.520 -0400", hash_original_field = "6071D8563814B2E940C241A34283E2C4", hash_generated_field = "3B39AAC7E4A10A6ACE8511A3256C9AEB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:13.965 -0500", hash_original_field = "7A83276FAA2520390E1A3F73EB912AC9", hash_generated_field = "3B39AAC7E4A10A6ACE8511A3256C9AEB")
 
     private WapPushConnection mWapConn = null;
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.521 -0400", hash_original_method = "7408CC3A8D1F62FE40C38A48E5413064", hash_generated_method = "ACDB8A63C6AB0F97DDE14EB0A53DC58A")
-    public  WapPushOverSms(Phone phone, SMSDispatcher smsDispatcher) {
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:13.976 -0500", hash_original_method = "7408CC3A8D1F62FE40C38A48E5413064", hash_generated_method = "C53A8DCBFDEAACEC48A627AEEF68DCF1")
+    public WapPushOverSms(Phone phone, SMSDispatcher smsDispatcher) {
         mSmsDispatcher = smsDispatcher;
         mContext = phone.getContext();
         mWapConn = new WapPushConnection(mContext);
         mWapConn.bindWapPushManager();
-        // ---------- Original Method ----------
-        //mSmsDispatcher = smsDispatcher;
-        //mContext = phone.getContext();
-        //mWapConn = new WapPushConnection(mContext);
-        //mWapConn.bindWapPushManager();
     }
 
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.527 -0400", hash_original_method = "B943BA9A516C7D27398DA677689F619E", hash_generated_method = "FDF34C1A58F270ACD9A55CFC287C081A")
+    private class WapPushConnection implements ServiceConnection {
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:13.966 -0500", hash_original_field = "FF42D57D225A7A9CD1DC06929143A36F", hash_generated_field = "A8578F8CE8534FC6D53552C1463CAA5B")
+
+        private IWapPushManager mWapPushMan;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:13.967 -0500", hash_original_field = "9B508B3FD5C5AA8153F426F3B8A40D4C", hash_generated_field = "21FCFBF4943D37471C748C457AFF3D5B")
+
+        private Context mOwner;
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:13.968 -0500", hash_original_method = "0BE0ADFB7F6B93B695220B7DE6F98A35", hash_generated_method = "9E371D0715DFE0D9B7F52215C1806AB2")
+        public WapPushConnection(Context ownerContext) {
+            mOwner = ownerContext;
+        }
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:13.969 -0500", hash_original_method = "D2C26FA4308EBF4ECDE771359B9348B6", hash_generated_method = "E135E608FA487F7F33C718CD19447E08")
+        public void onServiceConnected(ComponentName name, IBinder service) {
+            mWapPushMan = IWapPushManager.Stub.asInterface(service);
+            if (false) Log.v(LOG_TAG, "wappush manager connected to " +
+                    mOwner.hashCode());
+        }
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:13.970 -0500", hash_original_method = "645B7220F43862050D99493B740CC6E9", hash_generated_method = "C66970BFB63742D267B0EEF1F3F61CFA")
+        public void onServiceDisconnected(ComponentName name) {
+            mWapPushMan = null;
+            if (false) Log.v(LOG_TAG, "wappush manager disconnected.");
+            // WapPushManager must be always attached.
+            rebindWapPushManager();
+        }
+
+        /**
+         * bind WapPushManager
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:13.970 -0500", hash_original_method = "A9E3FC2EB163E786A448AD9CCAE84A6D", hash_generated_method = "C54848E78054E85DFE1AED8613ED028C")
+        public void bindWapPushManager() {
+            if (mWapPushMan != null) return;
+
+            final ServiceConnection wapPushConnection = this;
+
+            mOwner.bindService(new Intent(IWapPushManager.class.getName()),
+                    wapPushConnection, Context.BIND_AUTO_CREATE);
+        }
+
+        /**
+         * rebind WapPushManager
+         * This method is called when WapPushManager is disconnected unexpectedly.
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:13.973 -0500", hash_original_method = "701141D5EA76AC5255B679005307FF1D", hash_generated_method = "3573F6A47326F70B456013249D3568B2")
+        private void rebindWapPushManager() {
+            if (mWapPushMan != null) return;
+
+            final ServiceConnection wapPushConnection = this;
+            new Thread() {
+                public void run() {
+                    while (mWapPushMan == null) {
+                        mOwner.bindService(new Intent(IWapPushManager.class.getName()),
+                                wapPushConnection, Context.BIND_AUTO_CREATE);
+                        try {
+                            Thread.sleep(BIND_RETRY_INTERVAL);
+                        } catch (InterruptedException e) {
+                            if (false) Log.v(LOG_TAG, "sleep interrupted.");
+                        }
+                    }
+                }
+            }.start();
+        }
+
+        /**
+         * Returns interface to WapPushManager
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:13.973 -0500", hash_original_method = "12BA8034F310D7C3159CADAC53085388", hash_generated_method = "0978255B4A9C6F66D3DBBD2273DF1954")
+        public IWapPushManager getWapPushManager() {
+            return mWapPushMan;
+        }
+
+        
+    }
+
+
+    /**
+     * Dispatches inbound messages that are in the WAP PDU format. See
+     * wap-230-wsp-20010705-a section 8 for details on the WAP PDU format.
+     *
+     * @param pdu The WAP PDU, made up of one or more SMS PDUs
+     * @return a result code from {@link Telephony.Sms.Intents}, or
+     *         {@link Activity#RESULT_OK} if the message has been broadcast
+     *         to applications
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:13.977 -0500", hash_original_method = "B943BA9A516C7D27398DA677689F619E", hash_generated_method = "AF61DDA6338265B622ECA4BC7473512D")
     public int dispatchWapPdu(byte[] pdu) {
-        if(false)        
-        Log.d(LOG_TAG, "Rx: " + IccUtils.bytesToHexString(pdu));
+
+        if (false) Log.d(LOG_TAG, "Rx: " + IccUtils.bytesToHexString(pdu));
+
         int index = 0;
         int transactionId = pdu[index++] & 0xFF;
         int pduType = pdu[index++] & 0xFF;
         int headerLength = 0;
-        if((pduType != WspTypeDecoder.PDU_TYPE_PUSH) &&
-                (pduType != WspTypeDecoder.PDU_TYPE_CONFIRMED_PUSH))        
-        {
-            if(false){ }            int var0A0A6D68560CC5EF46A3B9603DD175AA_1214993262 = (Intents.RESULT_SMS_HANDLED);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1019517137 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1019517137;
-        } //End block
+
+        if ((pduType != WspTypeDecoder.PDU_TYPE_PUSH) &&
+                (pduType != WspTypeDecoder.PDU_TYPE_CONFIRMED_PUSH)) {
+            if (false) Log.w(LOG_TAG, "Received non-PUSH WAP PDU. Type = " + pduType);
+            return Intents.RESULT_SMS_HANDLED;
+        }
+
         pduDecoder = new WspTypeDecoder(pdu);
-        if(pduDecoder.decodeUintvarInteger(index) == false)        
-        {
-            if(false){ }            int varFCC16322707A95E5743FED9CA64177EC_1505239715 = (Intents.RESULT_SMS_GENERIC_ERROR);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1771317327 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1771317327;
-        } //End block
+
+        /**
+         * Parse HeaderLen(unsigned integer).
+         * From wap-230-wsp-20010705-a section 8.1.2
+         * The maximum size of a uintvar is 32 bits.
+         * So it will be encoded in no more than 5 octets.
+         */
+        if (pduDecoder.decodeUintvarInteger(index) == false) {
+            if (false) Log.w(LOG_TAG, "Received PDU. Header Length error.");
+            return Intents.RESULT_SMS_GENERIC_ERROR;
+        }
         headerLength = (int)pduDecoder.getValue32();
         index += pduDecoder.getDecodedDataLength();
+
         int headerStartIndex = index;
-        if(pduDecoder.decodeContentType(index) == false)        
-        {
-            if(false){ }            int varFCC16322707A95E5743FED9CA64177EC_2112150779 = (Intents.RESULT_SMS_GENERIC_ERROR);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_583513906 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_583513906;
-        } //End block
+
+        /**
+         * Parse Content-Type.
+         * From wap-230-wsp-20010705-a section 8.4.2.24
+         *
+         * Content-type-value = Constrained-media | Content-general-form
+         * Content-general-form = Value-length Media-type
+         * Media-type = (Well-known-media | Extension-Media) *(Parameter)
+         * Value-length = Short-length | (Length-quote Length)
+         * Short-length = <Any octet 0-30>   (octet <= WAP_PDU_SHORT_LENGTH_MAX)
+         * Length-quote = <Octet 31>         (WAP_PDU_LENGTH_QUOTE)
+         * Length = Uintvar-integer
+         */
+        if (pduDecoder.decodeContentType(index) == false) {
+            if (false) Log.w(LOG_TAG, "Received PDU. Header Content-Type error.");
+            return Intents.RESULT_SMS_GENERIC_ERROR;
+        }
+
         String mimeType = pduDecoder.getValueString();
         long binaryContentType = pduDecoder.getValue32();
         index += pduDecoder.getDecodedDataLength();
+
         byte[] header = new byte[headerLength];
         System.arraycopy(pdu, headerStartIndex, header, 0, header.length);
+
         byte[] intentData;
-        if(mimeType != null && mimeType.equals(WspTypeDecoder.CONTENT_TYPE_B_PUSH_CO))        
-        {
+
+        if (mimeType != null && mimeType.equals(WspTypeDecoder.CONTENT_TYPE_B_PUSH_CO)) {
             intentData = pdu;
-        } //End block
-        else
-        {
+        } else {
             int dataIndex = headerStartIndex + headerLength;
             intentData = new byte[pdu.length - dataIndex];
             System.arraycopy(pdu, dataIndex, intentData, 0, intentData.length);
-        } //End block
-        if(pduDecoder.seekXWapApplicationId(index, index + headerLength - 1))        
-        {
+        }
+
+        /**
+         * Seek for application ID field in WSP header.
+         * If application ID is found, WapPushManager substitute the message
+         * processing. Since WapPushManager is optional module, if WapPushManager
+         * is not found, legacy message processing will be continued.
+         */
+        if (pduDecoder.seekXWapApplicationId(index, index + headerLength - 1)) {
             index = (int) pduDecoder.getValue32();
             pduDecoder.decodeXWapApplicationId(index);
             String wapAppId = pduDecoder.getValueString();
-            if(wapAppId == null)            
-            {
+            if (wapAppId == null) {
                 wapAppId = Integer.toString((int) pduDecoder.getValue32());
-            } //End block
+            }
+
             String contentType = ((mimeType == null) ?
                                   Long.toString(binaryContentType) : mimeType);
-            if(false){ }            try 
-            {
+            if (false) Log.v(LOG_TAG, "appid found: " + wapAppId + ":" + contentType);
+
+            try {
                 boolean processFurther = true;
                 IWapPushManager wapPushMan = mWapConn.getWapPushManager();
-                if(wapPushMan == null)                
-                {
-                    if(false){ }
-                } //End block
-                else
-                {
+
+                if (wapPushMan == null) {
+                    if (false) Log.w(LOG_TAG, "wap push manager not found!");
+                } else {
                     Intent intent = new Intent();
                     intent.putExtra("transactionId", transactionId);
                     intent.putExtra("pduType", pduType);
@@ -127,40 +237,36 @@ public class WapPushOverSms {
                     intent.putExtra("data", intentData);
                     intent.putExtra("contentTypeParameters",
                             pduDecoder.getContentParameters());
+
                     int procRet = wapPushMan.processMessage(wapAppId, contentType, intent);
-                    if(false){ }                    if((procRet & WapPushManagerParams.MESSAGE_HANDLED) > 0
-                        && (procRet & WapPushManagerParams.FURTHER_PROCESSING) == 0)                    
-                    {
+                    if (false) Log.v(LOG_TAG, "procRet:" + procRet);
+                    if ((procRet & WapPushManagerParams.MESSAGE_HANDLED) > 0
+                        && (procRet & WapPushManagerParams.FURTHER_PROCESSING) == 0) {
                         processFurther = false;
-                    } //End block
-                } //End block
-                if(!processFurther)                
-                {
-                    int var0A0A6D68560CC5EF46A3B9603DD175AA_345173609 = (Intents.RESULT_SMS_HANDLED);
-                                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_525933841 = getTaintInt();
-                    return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_525933841;
-                } //End block
-            } //End block
-            catch (RemoteException e)
-            {
-                if(false){ }
-            } //End block
-        } //End block
-        if(false){ }        if(mimeType == null)        
-        {
-            if(false){ }            int varFCC16322707A95E5743FED9CA64177EC_327096110 = (Intents.RESULT_SMS_GENERIC_ERROR);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_347839016 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_347839016;
-        } //End block
+                    }
+                }
+                if (!processFurther) {
+                    return Intents.RESULT_SMS_HANDLED;
+                }
+            } catch (RemoteException e) {
+                if (false) Log.w(LOG_TAG, "remote func failed...");
+            }
+        }
+        if (false) Log.v(LOG_TAG, "fall back to existing handler");
+
+        if (mimeType == null) {
+            if (false) Log.w(LOG_TAG, "Header Content-Type error.");
+            return Intents.RESULT_SMS_GENERIC_ERROR;
+        }
+
         String permission;
-        if(mimeType.equals(WspTypeDecoder.CONTENT_TYPE_B_MMS))        
-        {
+
+        if (mimeType.equals(WspTypeDecoder.CONTENT_TYPE_B_MMS)) {
             permission = "android.permission.RECEIVE_MMS";
-        } //End block
-        else
-        {
+        } else {
             permission = "android.permission.RECEIVE_WAP_PUSH";
-        } //End block
+        }
+
         Intent intent = new Intent(Intents.WAP_PUSH_RECEIVED_ACTION);
         intent.setType(mimeType);
         intent.putExtra("transactionId", transactionId);
@@ -168,147 +274,10 @@ public class WapPushOverSms {
         intent.putExtra("header", header);
         intent.putExtra("data", intentData);
         intent.putExtra("contentTypeParameters", pduDecoder.getContentParameters());
+
         mSmsDispatcher.dispatch(intent, permission);
-        int var4C0737507AD994723C875A6D0646D112_1478046893 = (Activity.RESULT_OK);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_57713942 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_57713942;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+
+        return Activity.RESULT_OK;
     }
-
-    
-    private class WapPushConnection implements ServiceConnection {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.529 -0400", hash_original_field = "CCA62189095B8E2A2A60E84892187701", hash_generated_field = "A8578F8CE8534FC6D53552C1463CAA5B")
-
-        private IWapPushManager mWapPushMan;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.529 -0400", hash_original_field = "4AA3D5C224CE197897B9C6F17BF367CD", hash_generated_field = "21FCFBF4943D37471C748C457AFF3D5B")
-
-        private Context mOwner;
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.530 -0400", hash_original_method = "0BE0ADFB7F6B93B695220B7DE6F98A35", hash_generated_method = "6773F021BC021CF2B844CE5946D38111")
-        public  WapPushConnection(Context ownerContext) {
-            mOwner = ownerContext;
-            // ---------- Original Method ----------
-            //mOwner = ownerContext;
-        }
-
-        
-        @DSModeled(DSC.BAN)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.530 -0400", hash_original_method = "D2C26FA4308EBF4ECDE771359B9348B6", hash_generated_method = "BA01D31387E9E544C417CDE93BF74D3B")
-        public void onServiceConnected(ComponentName name, IBinder service) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
-            addTaint(name.getTaint());
-            mWapPushMan = IWapPushManager.Stub.asInterface(service);
-            if(false){ }
-            // ---------- Original Method ----------
-            //mWapPushMan = IWapPushManager.Stub.asInterface(service);
-            //if (false) Log.v(LOG_TAG, "wappush manager connected to " +
-                    //mOwner.hashCode());
-        }
-
-        
-        @DSModeled(DSC.BAN)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.531 -0400", hash_original_method = "645B7220F43862050D99493B740CC6E9", hash_generated_method = "87B539341ED60A91E0FF00E74F73D6E0")
-        public void onServiceDisconnected(ComponentName name) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
-            addTaint(name.getTaint());
-            mWapPushMan = null;
-            if(false){ }            rebindWapPushManager();
-            // ---------- Original Method ----------
-            //mWapPushMan = null;
-            //if (false) Log.v(LOG_TAG, "wappush manager disconnected.");
-            //rebindWapPushManager();
-        }
-
-        
-        @DSModeled(DSC.BAN)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.531 -0400", hash_original_method = "A9E3FC2EB163E786A448AD9CCAE84A6D", hash_generated_method = "DA76A9D86BC32FCA02677E35464696A9")
-        public void bindWapPushManager() {
-            if(mWapPushMan != null)            
-            return;
-            final ServiceConnection wapPushConnection = this;
-            mOwner.bindService(new Intent(IWapPushManager.class.getName()),
-                    wapPushConnection, Context.BIND_AUTO_CREATE);
-            // ---------- Original Method ----------
-            //if (mWapPushMan != null) return;
-            //final ServiceConnection wapPushConnection = this;
-            //mOwner.bindService(new Intent(IWapPushManager.class.getName()),
-                    //wapPushConnection, Context.BIND_AUTO_CREATE);
-        }
-
-        
-        @DSModeled(DSC.BAN)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.532 -0400", hash_original_method = "701141D5EA76AC5255B679005307FF1D", hash_generated_method = "BA4CF9086DEB25F99A69D90AAAB229F2")
-        private void rebindWapPushManager() {
-            if(mWapPushMan != null)            
-            return;
-            final ServiceConnection wapPushConnection = this;
-            new Thread() {            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.532 -0400", hash_original_method = "D137F80D797649529A6233BF034F00A3", hash_generated_method = "1CCA105E185A52B120ADF38133E95DE3")
-            public void run() {
-                while
-(mWapPushMan == null)                
-                {
-                    mOwner.bindService(new Intent(IWapPushManager.class.getName()),
-                                wapPushConnection, Context.BIND_AUTO_CREATE);
-                    try 
-                    {
-                        Thread.sleep(BIND_RETRY_INTERVAL);
-                    } //End block
-                    catch (InterruptedException e)
-                    {
-                        if(false){ }
-                    } //End block
-                } //End block
-                // ---------- Original Method ----------
-                //while (mWapPushMan == null) {
-                        //mOwner.bindService(new Intent(IWapPushManager.class.getName()),
-                                //wapPushConnection, Context.BIND_AUTO_CREATE);
-                        //try {
-                            //Thread.sleep(BIND_RETRY_INTERVAL);
-                        //} catch (InterruptedException e) {
-                            //if (false) Log.v(LOG_TAG, "sleep interrupted.");
-                        //}
-                    //}
-            }
-}.start();
-            // ---------- Original Method ----------
-            //if (mWapPushMan != null) return;
-            //final ServiceConnection wapPushConnection = this;
-            //new Thread() {
-                //public void run() {
-                    //while (mWapPushMan == null) {
-                        //mOwner.bindService(new Intent(IWapPushManager.class.getName()),
-                                //wapPushConnection, Context.BIND_AUTO_CREATE);
-                        //try {
-                            //Thread.sleep(BIND_RETRY_INTERVAL);
-                        //} catch (InterruptedException e) {
-                            //if (false) Log.v(LOG_TAG, "sleep interrupted.");
-                        //}
-                    //}
-                //}
-            //}.start();
-        }
-
-        
-                @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.533 -0400", hash_original_method = "12BA8034F310D7C3159CADAC53085388", hash_generated_method = "BA1A53792580C60BD95F25C0B231EEFF")
-        public IWapPushManager getWapPushManager() {
-IWapPushManager var28BA9EE784314DA2EAA57CCAF5310288_859252770 =             mWapPushMan;
-            var28BA9EE784314DA2EAA57CCAF5310288_859252770.addTaint(taint);
-            return var28BA9EE784314DA2EAA57CCAF5310288_859252770;
-            // ---------- Original Method ----------
-            //return mWapPushMan;
-        }
-
-        
-    }
-
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.533 -0400", hash_original_field = "F65C4BFC2898CC57B0F9A23376622D99", hash_generated_field = "D83C831CD0AB23E53B0E52B2C0EB27F8")
-
-    private static final String LOG_TAG = "WAP PUSH";
 }
 

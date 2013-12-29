@@ -1,6 +1,8 @@
 package gov.nist.javax.sip.header;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.text.ParseException;
 
@@ -12,75 +14,61 @@ import javax.sip.header.PriorityHeader;
 
 
 public class Priority extends SIPHeader implements PriorityHeader {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.708 -0400", hash_original_field = "B988295C268025B49DFB3DF26171DDC3", hash_generated_field = "3213DCF322A558FDF513E235035DAC3E")
-
-    protected String priority;
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.708 -0400", hash_original_method = "33A980E78264A96D694E0BA8D4330749", hash_generated_method = "2DAB64ED9F1F75184A9783CA81667401")
-    public  Priority() {
-        super(NAME);
-        // ---------- Original Method ----------
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.708 -0400", hash_original_method = "275A06F50E7B2077A23380B094FCE956", hash_generated_method = "6F108122CE9DBE8CE66B2C636A4DE140")
-    public String encodeBody() {
-String var9141C1D2D467F4F6FF150C27DE3F01A3_1754981098 =         priority;
-        var9141C1D2D467F4F6FF150C27DE3F01A3_1754981098.addTaint(taint);
-        return var9141C1D2D467F4F6FF150C27DE3F01A3_1754981098;
-        // ---------- Original Method ----------
-        //return priority;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.708 -0400", hash_original_method = "6DFC1BDF5FFE5EB6A183C3674CCE0974", hash_generated_method = "34466CCC91BC14A30897C912A837CF05")
-    public String getPriority() {
-String var9141C1D2D467F4F6FF150C27DE3F01A3_345002813 =         priority;
-        var9141C1D2D467F4F6FF150C27DE3F01A3_345002813.addTaint(taint);
-        return var9141C1D2D467F4F6FF150C27DE3F01A3_345002813;
-        // ---------- Original Method ----------
-        //return priority;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.708 -0400", hash_original_method = "5B52FF98236754242B91AFCB31F1DBDC", hash_generated_method = "0BA2DA62C6F0917C4ED256C9B4FD9D37")
-    public void setPriority(String p) throws ParseException {
-        if(p == null)        
-        {
-        NullPointerException var80B54727C42D176719B12B809902E010_608672526 = new NullPointerException(
-                "JAIN-SIP Exception,"
-                    + "Priority, setPriority(), the priority parameter is null");
-        var80B54727C42D176719B12B809902E010_608672526.addTaint(taint);
-        throw var80B54727C42D176719B12B809902E010_608672526;
-        }
-        priority = p;
-        // ---------- Original Method ----------
-        //if (p == null)
-            //throw new NullPointerException(
-                //"JAIN-SIP Exception,"
-                    //+ "Priority, setPriority(), the priority parameter is null");
-        //priority = p;
-    }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.708 -0400", hash_original_field = "15599D2D677E6A7B13001FEF9BCBB005", hash_generated_field = "08C77E58ECE13B5F92FDDB2CA5776347")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:50.962 -0500", hash_original_field = "848E2B3143C5F231FA6514A1307BC5FE", hash_generated_field = "08C77E58ECE13B5F92FDDB2CA5776347")
 
     private static final long serialVersionUID = 3837543366074322106L;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.708 -0400", hash_original_field = "B4E1857BDD42E529FF9F0717407D27E3", hash_generated_field = "974D541B27585CA7CCC3558FD38E5F46")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:50.964 -0500", hash_original_field = "62931C2B164572514472A308741C0A04", hash_generated_field = "974D541B27585CA7CCC3558FD38E5F46")
 
     public static final String EMERGENCY = ParameterNames.EMERGENCY;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.708 -0400", hash_original_field = "B5314418DF7687530255EE3F9E5D979D", hash_generated_field = "DC111FCED25D7B0BDCFAF701C81B9E39")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:50.966 -0500", hash_original_field = "1F04EBCFD74E7FD4B4F9BC878863F113", hash_generated_field = "DC111FCED25D7B0BDCFAF701C81B9E39")
 
     public static final String URGENT = ParameterNames.URGENT;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.708 -0400", hash_original_field = "817286F64D1A3CFEF1DCF2231AA95ED7", hash_generated_field = "5C1C119AD4B0CA221BA8B1EA80B22E62")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:50.967 -0500", hash_original_field = "837FD7EB392AFB7D4D8BE19B493CFECD", hash_generated_field = "5C1C119AD4B0CA221BA8B1EA80B22E62")
 
     public static final String NORMAL = ParameterNames.NORMAL;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.708 -0400", hash_original_field = "1BEBA7101F60A007E5E51365EC3D71E4", hash_generated_field = "8E6E668A799B5A2A683603F90AA71AE4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:50.969 -0500", hash_original_field = "C2218FA553DF484EE682050CC00D5B43", hash_generated_field = "8E6E668A799B5A2A683603F90AA71AE4")
 
     public static final String NON_URGENT = ParameterNames.NON_URGENT;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:50.970 -0500", hash_original_field = "3AFE74759F73A0F8C851062A74D90B90", hash_generated_field = "3213DCF322A558FDF513E235035DAC3E")
+
+    protected String priority;
+
+    /** Default constructor
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:50.971 -0500", hash_original_method = "33A980E78264A96D694E0BA8D4330749", hash_generated_method = "7FF26A4D98728ABCE057147217E7CBD7")
+    public Priority() {
+        super(NAME);
+    }
+
+    /**
+     * Encode into canonical form.
+     * @return String
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:50.973 -0500", hash_original_method = "275A06F50E7B2077A23380B094FCE956", hash_generated_method = "B8740801FE90617FA5508CD7847DB756")
+    public String encodeBody() {
+        return priority;
+    }
+
+    /**
+     * get the priority value.
+     * @return String
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:50.974 -0500", hash_original_method = "6DFC1BDF5FFE5EB6A183C3674CCE0974", hash_generated_method = "53896D5026D00DD79FACC76A82BCC15D")
+    public String getPriority() {
+        return priority;
+    }
+
+    /**
+     * Set the priority member
+     * @param p String to set
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:50.975 -0500", hash_original_method = "5B52FF98236754242B91AFCB31F1DBDC", hash_generated_method = "1294EA76144DDF20E2E1D0834E0174D1")
+    public void setPriority(String p) throws ParseException {
+        if (p == null)
+            throw new NullPointerException(
+                "JAIN-SIP Exception,"
+                    + "Priority, setPriority(), the priority parameter is null");
+        priority = p;
+    }
 }
 

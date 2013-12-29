@@ -1,6 +1,8 @@
 package java.lang;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -13,15 +15,17 @@ import java.util.List;
 import droidsafe.helpers.DSUtils;
 
 class VMClassLoader {
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.695 -0400", hash_original_method = "4AEDA864BABA59DB003EAC2DE676238C", hash_generated_method = "4AEDA864BABA59DB003EAC2DE676238C")
-    public VMClassLoader ()
-    {
-        //Synthesized constructor
-    }
 
-
-    @DSModeled(DSC.SPEC)
+    /**
+     * Get a resource from a file in the bootstrap class path.
+     *
+     * It would be simpler to just walk through the class path elements
+     * ourselves, but that would require reopening Jar files.
+     *
+     * We assume that the bootclasspath can't change once the VM has
+     * started.  This assumption seems to be supported by the spec.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.384 -0500", hash_original_method = "AF486A7D7E964EDE4DDBB83EBC604A43", hash_generated_method = "6271D690045E117ED2B73930093ED883")
     static URL getResource(String name) {
         int numEntries = getBootClassPathSize();
         for (int i = 0; i < numEntries; i++) {
@@ -31,14 +35,17 @@ class VMClassLoader {
                     return new URL(urlStr);
                 } catch (MalformedURLException mue) {
                     mue.printStackTrace();
+                    // unexpected; keep going
                 }
             }
         }
         return null;
     }
 
-    
-    @DSModeled(DSC.SPEC)
+    /*
+     * Get an enumeration with all matching resources.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:26.385 -0500", hash_original_method = "41BB43040C33BB8F9D26EFBD637FF5E0", hash_generated_method = "BA6F8EFE5770630EF076EF012F1DAE80")
     static List<URL> getResources(String name) {
         ArrayList<URL> list = new ArrayList<URL>();
         int numEntries = getBootClassPathSize();
@@ -49,6 +56,7 @@ class VMClassLoader {
                     list.add(new URL(urlStr));
                 } catch (MalformedURLException mue) {
                     mue.printStackTrace();
+                    // unexpected; keep going
                 }
             }
         }
@@ -117,6 +125,12 @@ class VMClassLoader {
     	ret.addTaint(name.taint);
     	ret.addTaint(index);
     	return ret;
+    }
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.695 -0400", hash_original_method = "4AEDA864BABA59DB003EAC2DE676238C", hash_generated_method = "4AEDA864BABA59DB003EAC2DE676238C")
+    public VMClassLoader ()
+    {
+        //Synthesized constructor
     }
 
     

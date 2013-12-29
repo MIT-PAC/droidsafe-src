@@ -1,6 +1,8 @@
 package com.android.internal.telephony;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 public interface ITelephonyRegistry extends android.os.IInterface
@@ -8,14 +10,15 @@ public interface ITelephonyRegistry extends android.os.IInterface
 
 public static abstract class Stub extends android.os.Binder implements com.android.internal.telephony.ITelephonyRegistry
 {
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:14.292 -0500", hash_original_field = "2896C9B69F1B56C5513DF86BAE858FAD", hash_generated_field = "1CED6E19DC6AF8FE6836E7E60A489694")
+
 private static final java.lang.String DESCRIPTOR = "com.android.internal.telephony.ITelephonyRegistry";
-
-public Stub()
-{
-this.attachInterface(this, DESCRIPTOR);
-}
-
-public static com.android.internal.telephony.ITelephonyRegistry asInterface(android.os.IBinder obj)
+/**
+ * Cast an IBinder object into an com.android.internal.telephony.ITelephonyRegistry interface,
+ * generating a proxy if needed.
+ */
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:14.295 -0500", hash_original_method = "D46F75458154A9A00ACDE68DFB7D73CA", hash_generated_method = "68B947F06570FC092F513BE4C8093123")
+        public static com.android.internal.telephony.ITelephonyRegistry asInterface(android.os.IBinder obj)
 {
 if ((obj==null)) {
 return null;
@@ -26,12 +29,293 @@ return ((com.android.internal.telephony.ITelephonyRegistry)iin);
 }
 return new com.android.internal.telephony.ITelephonyRegistry.Stub.Proxy(obj);
 }
-@DSModeled(DSC.SAFE)
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:14.316 -0500", hash_original_field = "AC7CF00952E0A127E5DB498137B5F1C0", hash_generated_field = "1F73E6BB0B09D3DD139C56AA8166F73A")
+
+static final int TRANSACTION_listen = (android.os.IBinder.FIRST_CALL_TRANSACTION + 0);
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:14.317 -0500", hash_original_field = "703E65EEB9C2CC15A5E9764C6C928852", hash_generated_field = "2980FF19EE97B87AAB1A331E8D28E462")
+
+static final int TRANSACTION_notifyCallState = (android.os.IBinder.FIRST_CALL_TRANSACTION + 1);
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:14.318 -0500", hash_original_field = "A902BB48C4769A59B3C5E665F386B1A4", hash_generated_field = "DA9A1084D997129F937CA598448EFA4C")
+
+static final int TRANSACTION_notifyServiceState = (android.os.IBinder.FIRST_CALL_TRANSACTION + 2);
+private static class Proxy implements com.android.internal.telephony.ITelephonyRegistry
+{
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:14.299 -0500", hash_original_field = "5DDD4F5248ED0D91FD55F73F7CBF8A12", hash_generated_field = "9ADA791533F2FB6F0AFD94406D571674")
+
+private android.os.IBinder mRemote;
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:14.300 -0500", hash_original_method = "EE9C5A5BCE6D08AEA2E7E52F04E87C0D", hash_generated_method = "EE9C5A5BCE6D08AEA2E7E52F04E87C0D")
+            Proxy(android.os.IBinder remote)
+{
+mRemote = remote;
+}
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:14.301 -0500", hash_original_method = "417FB855FBDF4B61E12822ECB3981D2C", hash_generated_method = "759C8A668582B1083BBB5B7173EDF02D")
+            public android.os.IBinder asBinder()
+{
+return mRemote;
+}
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:14.301 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
+            public java.lang.String getInterfaceDescriptor()
+{
+return DESCRIPTOR;
+}
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:14.302 -0500", hash_original_method = "CB42527524D57638A7575C6E2EB9011E", hash_generated_method = "446C3474D561A39F11525BCD70A2B4A2")
+            public void listen(java.lang.String pkg, com.android.internal.telephony.IPhoneStateListener callback, int events, boolean notifyNow) throws android.os.RemoteException
+{
+android.os.Parcel _data = android.os.Parcel.obtain();
+android.os.Parcel _reply = android.os.Parcel.obtain();
+try {
+_data.writeInterfaceToken(DESCRIPTOR);
+_data.writeString(pkg);
+_data.writeStrongBinder((((callback!=null))?(callback.asBinder()):(null)));
+_data.writeInt(events);
+_data.writeInt(((notifyNow)?(1):(0)));
+mRemote.transact(Stub.TRANSACTION_listen, _data, _reply, 0);
+_reply.readException();
+}
+finally {
+_reply.recycle();
+_data.recycle();
+}
+}
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:14.303 -0500", hash_original_method = "35CB5747D5BA6980C0EF266373043129", hash_generated_method = "9112C58D21C041FE18647FB0349D9954")
+            public void notifyCallState(int state, java.lang.String incomingNumber) throws android.os.RemoteException
+{
+android.os.Parcel _data = android.os.Parcel.obtain();
+android.os.Parcel _reply = android.os.Parcel.obtain();
+try {
+_data.writeInterfaceToken(DESCRIPTOR);
+_data.writeInt(state);
+_data.writeString(incomingNumber);
+mRemote.transact(Stub.TRANSACTION_notifyCallState, _data, _reply, 0);
+_reply.readException();
+}
+finally {
+_reply.recycle();
+_data.recycle();
+}
+}
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:14.304 -0500", hash_original_method = "D8C767D34D20211D217609AFA3CE6AC9", hash_generated_method = "7B1FEBDF9478F32F0BBBD65F1E201643")
+            public void notifyServiceState(android.telephony.ServiceState state) throws android.os.RemoteException
+{
+android.os.Parcel _data = android.os.Parcel.obtain();
+android.os.Parcel _reply = android.os.Parcel.obtain();
+try {
+_data.writeInterfaceToken(DESCRIPTOR);
+if ((state!=null)) {
+_data.writeInt(1);
+state.writeToParcel(_data, 0);
+}
+else {
+_data.writeInt(0);
+}
+mRemote.transact(Stub.TRANSACTION_notifyServiceState, _data, _reply, 0);
+_reply.readException();
+}
+finally {
+_reply.recycle();
+_data.recycle();
+}
+}
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:14.305 -0500", hash_original_method = "B0C0B6A06DEFD4397E6A5F5781AECC3C", hash_generated_method = "0474748EE4EAB0E17C0A15A70680CCF2")
+            public void notifySignalStrength(android.telephony.SignalStrength signalStrength) throws android.os.RemoteException
+{
+android.os.Parcel _data = android.os.Parcel.obtain();
+android.os.Parcel _reply = android.os.Parcel.obtain();
+try {
+_data.writeInterfaceToken(DESCRIPTOR);
+if ((signalStrength!=null)) {
+_data.writeInt(1);
+signalStrength.writeToParcel(_data, 0);
+}
+else {
+_data.writeInt(0);
+}
+mRemote.transact(Stub.TRANSACTION_notifySignalStrength, _data, _reply, 0);
+_reply.readException();
+}
+finally {
+_reply.recycle();
+_data.recycle();
+}
+}
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:14.307 -0500", hash_original_method = "20754C544EE5635E5689D06DBA2642A7", hash_generated_method = "15734DC91938E0FD4BCF526EB6A5327C")
+            public void notifyMessageWaitingChanged(boolean mwi) throws android.os.RemoteException
+{
+android.os.Parcel _data = android.os.Parcel.obtain();
+android.os.Parcel _reply = android.os.Parcel.obtain();
+try {
+_data.writeInterfaceToken(DESCRIPTOR);
+_data.writeInt(((mwi)?(1):(0)));
+mRemote.transact(Stub.TRANSACTION_notifyMessageWaitingChanged, _data, _reply, 0);
+_reply.readException();
+}
+finally {
+_reply.recycle();
+_data.recycle();
+}
+}
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:14.308 -0500", hash_original_method = "CF98D6625B6BD52ED6D603B308890939", hash_generated_method = "7E16748FF9F2EC08D6966BC838EE48E0")
+            public void notifyCallForwardingChanged(boolean cfi) throws android.os.RemoteException
+{
+android.os.Parcel _data = android.os.Parcel.obtain();
+android.os.Parcel _reply = android.os.Parcel.obtain();
+try {
+_data.writeInterfaceToken(DESCRIPTOR);
+_data.writeInt(((cfi)?(1):(0)));
+mRemote.transact(Stub.TRANSACTION_notifyCallForwardingChanged, _data, _reply, 0);
+_reply.readException();
+}
+finally {
+_reply.recycle();
+_data.recycle();
+}
+}
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:14.309 -0500", hash_original_method = "F39D4F665CA868DE1FA03947F1216D8B", hash_generated_method = "3421F709B680ECCBF5E6A623596AC54F")
+            public void notifyDataActivity(int state) throws android.os.RemoteException
+{
+android.os.Parcel _data = android.os.Parcel.obtain();
+android.os.Parcel _reply = android.os.Parcel.obtain();
+try {
+_data.writeInterfaceToken(DESCRIPTOR);
+_data.writeInt(state);
+mRemote.transact(Stub.TRANSACTION_notifyDataActivity, _data, _reply, 0);
+_reply.readException();
+}
+finally {
+_reply.recycle();
+_data.recycle();
+}
+}
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:14.310 -0500", hash_original_method = "55A9CCD0AAC626E26768DEE46A3751F2", hash_generated_method = "A87A9F4F525FF449FA17E90FC61EE77E")
+            public void notifyDataConnection(int state, boolean isDataConnectivityPossible, java.lang.String reason, java.lang.String apn, java.lang.String apnType, android.net.LinkProperties linkProperties, android.net.LinkCapabilities linkCapabilities, int networkType, boolean roaming) throws android.os.RemoteException
+{
+android.os.Parcel _data = android.os.Parcel.obtain();
+android.os.Parcel _reply = android.os.Parcel.obtain();
+try {
+_data.writeInterfaceToken(DESCRIPTOR);
+_data.writeInt(state);
+_data.writeInt(((isDataConnectivityPossible)?(1):(0)));
+_data.writeString(reason);
+_data.writeString(apn);
+_data.writeString(apnType);
+if ((linkProperties!=null)) {
+_data.writeInt(1);
+linkProperties.writeToParcel(_data, 0);
+}
+else {
+_data.writeInt(0);
+}
+if ((linkCapabilities!=null)) {
+_data.writeInt(1);
+linkCapabilities.writeToParcel(_data, 0);
+}
+else {
+_data.writeInt(0);
+}
+_data.writeInt(networkType);
+_data.writeInt(((roaming)?(1):(0)));
+mRemote.transact(Stub.TRANSACTION_notifyDataConnection, _data, _reply, 0);
+_reply.readException();
+}
+finally {
+_reply.recycle();
+_data.recycle();
+}
+}
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:14.311 -0500", hash_original_method = "5BFB3DB9002BBCAB41A2AB8C517A4D24", hash_generated_method = "623532AA36A7DF95C67DB360AB19ABAB")
+            public void notifyDataConnectionFailed(java.lang.String reason, java.lang.String apnType) throws android.os.RemoteException
+{
+android.os.Parcel _data = android.os.Parcel.obtain();
+android.os.Parcel _reply = android.os.Parcel.obtain();
+try {
+_data.writeInterfaceToken(DESCRIPTOR);
+_data.writeString(reason);
+_data.writeString(apnType);
+mRemote.transact(Stub.TRANSACTION_notifyDataConnectionFailed, _data, _reply, 0);
+_reply.readException();
+}
+finally {
+_reply.recycle();
+_data.recycle();
+}
+}
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:14.312 -0500", hash_original_method = "4FD9173A19128AADB5D4D2B306027FB0", hash_generated_method = "CB34F7933D240426421D859A503BB6AE")
+            public void notifyCellLocation(android.os.Bundle cellLocation) throws android.os.RemoteException
+{
+android.os.Parcel _data = android.os.Parcel.obtain();
+android.os.Parcel _reply = android.os.Parcel.obtain();
+try {
+_data.writeInterfaceToken(DESCRIPTOR);
+if ((cellLocation!=null)) {
+_data.writeInt(1);
+cellLocation.writeToParcel(_data, 0);
+}
+else {
+_data.writeInt(0);
+}
+mRemote.transact(Stub.TRANSACTION_notifyCellLocation, _data, _reply, 0);
+_reply.readException();
+}
+finally {
+_reply.recycle();
+_data.recycle();
+}
+}
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:14.313 -0500", hash_original_method = "A4A83CE89E465C1521B2B11208F4F43D", hash_generated_method = "1817BDD58AEAF1B5C5A9B8A6DA1CEE06")
+            public void notifyOtaspChanged(int otaspMode) throws android.os.RemoteException
+{
+android.os.Parcel _data = android.os.Parcel.obtain();
+android.os.Parcel _reply = android.os.Parcel.obtain();
+try {
+_data.writeInterfaceToken(DESCRIPTOR);
+_data.writeInt(otaspMode);
+mRemote.transact(Stub.TRANSACTION_notifyOtaspChanged, _data, _reply, 0);
+_reply.readException();
+}
+finally {
+_reply.recycle();
+_data.recycle();
+}
+}
+}
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:14.319 -0500", hash_original_field = "49F5A60931834EB0D25FA98253C59068", hash_generated_field = "9B91359237079430A7A79E44FCC7F3AF")
+
+static final int TRANSACTION_notifySignalStrength = (android.os.IBinder.FIRST_CALL_TRANSACTION + 3);
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:14.319 -0500", hash_original_field = "A533430C8F291C1C1D86098CF4847EFB", hash_generated_field = "1734A50B0F020CFA18ADFF8C2D66587B")
+
+static final int TRANSACTION_notifyMessageWaitingChanged = (android.os.IBinder.FIRST_CALL_TRANSACTION + 4);
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:14.320 -0500", hash_original_field = "610C1424575B134971E0AF9DC0362769", hash_generated_field = "F29639E2387A258ED0617290FDF25AAD")
+
+static final int TRANSACTION_notifyCallForwardingChanged = (android.os.IBinder.FIRST_CALL_TRANSACTION + 5);
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:14.321 -0500", hash_original_field = "2562BE3A98E21398D65BFDF735BE7060", hash_generated_field = "AB945E8B5AC65510089FC300F7B7C5D9")
+
+static final int TRANSACTION_notifyDataActivity = (android.os.IBinder.FIRST_CALL_TRANSACTION + 6);
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:14.322 -0500", hash_original_field = "C11C6B72EA5D928A7931DCB3555AA0B7", hash_generated_field = "BE62FC11DDEE0B44442A7A22C6FA37D2")
+
+static final int TRANSACTION_notifyDataConnection = (android.os.IBinder.FIRST_CALL_TRANSACTION + 7);
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:14.323 -0500", hash_original_field = "F2D702D08EB069AA043BFEE06B51DCD8", hash_generated_field = "11CBEEB4C2675EF16556F0561C65E9AC")
+
+static final int TRANSACTION_notifyDataConnectionFailed = (android.os.IBinder.FIRST_CALL_TRANSACTION + 8);
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:14.324 -0500", hash_original_field = "C3790A53C45315DFC199C53C03B2D3E7", hash_generated_field = "83A4E6A7ED4F1EAF5181195F4C7C002B")
+
+static final int TRANSACTION_notifyCellLocation = (android.os.IBinder.FIRST_CALL_TRANSACTION + 9);
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:14.325 -0500", hash_original_field = "AE3B613D9F3C1B9AB9FF3CB191C13AB1", hash_generated_field = "35F5046BF829F09C94BC49D6129EA775")
+
+static final int TRANSACTION_notifyOtaspChanged = (android.os.IBinder.FIRST_CALL_TRANSACTION + 10);
+/** Construct the stub at attach it to the interface. */
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:14.294 -0500", hash_original_method = "02D67B7BBDDCEC9BC9A477128D96A70E", hash_generated_method = "73DCA79669D2BAEA0D08C443D09F446C")
+        public Stub()
+{
+this.attachInterface(this, DESCRIPTOR);
+}
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:14.296 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
         public android.os.IBinder asBinder()
 {
 return this;
 }
-@Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
+@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:14.297 -0500", hash_original_method = "46C8B47770D502C554977C67222EC884", hash_generated_method = "327BA7ECEE0684191AF337A18C3E867A")
+        @Override
+public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
 {
 switch (code)
 {
@@ -193,245 +477,6 @@ return true;
 }
 return super.onTransact(code, data, reply, flags);
 }
-private static class Proxy implements com.android.internal.telephony.ITelephonyRegistry
-{
-private android.os.IBinder mRemote;
-@DSModeled(DSC.SAFE)
-            Proxy(android.os.IBinder remote)
-{
-mRemote = remote;
-}
-@DSModeled(DSC.SAFE)
-            public android.os.IBinder asBinder()
-{
-return mRemote;
-}
-@DSModeled(DSC.SAFE)
-            public java.lang.String getInterfaceDescriptor()
-{
-return DESCRIPTOR;
-}
-@DSModeled(DSC.SAFE)
-            public void listen(java.lang.String pkg, com.android.internal.telephony.IPhoneStateListener callback, int events, boolean notifyNow) throws android.os.RemoteException
-{
-android.os.Parcel _data = android.os.Parcel.obtain();
-android.os.Parcel _reply = android.os.Parcel.obtain();
-try {
-_data.writeInterfaceToken(DESCRIPTOR);
-_data.writeString(pkg);
-_data.writeStrongBinder((((callback!=null))?(callback.asBinder()):(null)));
-_data.writeInt(events);
-_data.writeInt(((notifyNow)?(1):(0)));
-mRemote.transact(Stub.TRANSACTION_listen, _data, _reply, 0);
-_reply.readException();
-}
-finally {
-_reply.recycle();
-_data.recycle();
-}
-}
-public void notifyCallState(int state, java.lang.String incomingNumber) throws android.os.RemoteException
-{
-android.os.Parcel _data = android.os.Parcel.obtain();
-android.os.Parcel _reply = android.os.Parcel.obtain();
-try {
-_data.writeInterfaceToken(DESCRIPTOR);
-_data.writeInt(state);
-_data.writeString(incomingNumber);
-mRemote.transact(Stub.TRANSACTION_notifyCallState, _data, _reply, 0);
-_reply.readException();
-}
-finally {
-_reply.recycle();
-_data.recycle();
-}
-}
-public void notifyServiceState(android.telephony.ServiceState state) throws android.os.RemoteException
-{
-android.os.Parcel _data = android.os.Parcel.obtain();
-android.os.Parcel _reply = android.os.Parcel.obtain();
-try {
-_data.writeInterfaceToken(DESCRIPTOR);
-if ((state!=null)) {
-_data.writeInt(1);
-state.writeToParcel(_data, 0);
-}
-else {
-_data.writeInt(0);
-}
-mRemote.transact(Stub.TRANSACTION_notifyServiceState, _data, _reply, 0);
-_reply.readException();
-}
-finally {
-_reply.recycle();
-_data.recycle();
-}
-}
-public void notifySignalStrength(android.telephony.SignalStrength signalStrength) throws android.os.RemoteException
-{
-android.os.Parcel _data = android.os.Parcel.obtain();
-android.os.Parcel _reply = android.os.Parcel.obtain();
-try {
-_data.writeInterfaceToken(DESCRIPTOR);
-if ((signalStrength!=null)) {
-_data.writeInt(1);
-signalStrength.writeToParcel(_data, 0);
-}
-else {
-_data.writeInt(0);
-}
-mRemote.transact(Stub.TRANSACTION_notifySignalStrength, _data, _reply, 0);
-_reply.readException();
-}
-finally {
-_reply.recycle();
-_data.recycle();
-}
-}
-public void notifyMessageWaitingChanged(boolean mwi) throws android.os.RemoteException
-{
-android.os.Parcel _data = android.os.Parcel.obtain();
-android.os.Parcel _reply = android.os.Parcel.obtain();
-try {
-_data.writeInterfaceToken(DESCRIPTOR);
-_data.writeInt(((mwi)?(1):(0)));
-mRemote.transact(Stub.TRANSACTION_notifyMessageWaitingChanged, _data, _reply, 0);
-_reply.readException();
-}
-finally {
-_reply.recycle();
-_data.recycle();
-}
-}
-public void notifyCallForwardingChanged(boolean cfi) throws android.os.RemoteException
-{
-android.os.Parcel _data = android.os.Parcel.obtain();
-android.os.Parcel _reply = android.os.Parcel.obtain();
-try {
-_data.writeInterfaceToken(DESCRIPTOR);
-_data.writeInt(((cfi)?(1):(0)));
-mRemote.transact(Stub.TRANSACTION_notifyCallForwardingChanged, _data, _reply, 0);
-_reply.readException();
-}
-finally {
-_reply.recycle();
-_data.recycle();
-}
-}
-public void notifyDataActivity(int state) throws android.os.RemoteException
-{
-android.os.Parcel _data = android.os.Parcel.obtain();
-android.os.Parcel _reply = android.os.Parcel.obtain();
-try {
-_data.writeInterfaceToken(DESCRIPTOR);
-_data.writeInt(state);
-mRemote.transact(Stub.TRANSACTION_notifyDataActivity, _data, _reply, 0);
-_reply.readException();
-}
-finally {
-_reply.recycle();
-_data.recycle();
-}
-}
-public void notifyDataConnection(int state, boolean isDataConnectivityPossible, java.lang.String reason, java.lang.String apn, java.lang.String apnType, android.net.LinkProperties linkProperties, android.net.LinkCapabilities linkCapabilities, int networkType, boolean roaming) throws android.os.RemoteException
-{
-android.os.Parcel _data = android.os.Parcel.obtain();
-android.os.Parcel _reply = android.os.Parcel.obtain();
-try {
-_data.writeInterfaceToken(DESCRIPTOR);
-_data.writeInt(state);
-_data.writeInt(((isDataConnectivityPossible)?(1):(0)));
-_data.writeString(reason);
-_data.writeString(apn);
-_data.writeString(apnType);
-if ((linkProperties!=null)) {
-_data.writeInt(1);
-linkProperties.writeToParcel(_data, 0);
-}
-else {
-_data.writeInt(0);
-}
-if ((linkCapabilities!=null)) {
-_data.writeInt(1);
-linkCapabilities.writeToParcel(_data, 0);
-}
-else {
-_data.writeInt(0);
-}
-_data.writeInt(networkType);
-_data.writeInt(((roaming)?(1):(0)));
-mRemote.transact(Stub.TRANSACTION_notifyDataConnection, _data, _reply, 0);
-_reply.readException();
-}
-finally {
-_reply.recycle();
-_data.recycle();
-}
-}
-public void notifyDataConnectionFailed(java.lang.String reason, java.lang.String apnType) throws android.os.RemoteException
-{
-android.os.Parcel _data = android.os.Parcel.obtain();
-android.os.Parcel _reply = android.os.Parcel.obtain();
-try {
-_data.writeInterfaceToken(DESCRIPTOR);
-_data.writeString(reason);
-_data.writeString(apnType);
-mRemote.transact(Stub.TRANSACTION_notifyDataConnectionFailed, _data, _reply, 0);
-_reply.readException();
-}
-finally {
-_reply.recycle();
-_data.recycle();
-}
-}
-public void notifyCellLocation(android.os.Bundle cellLocation) throws android.os.RemoteException
-{
-android.os.Parcel _data = android.os.Parcel.obtain();
-android.os.Parcel _reply = android.os.Parcel.obtain();
-try {
-_data.writeInterfaceToken(DESCRIPTOR);
-if ((cellLocation!=null)) {
-_data.writeInt(1);
-cellLocation.writeToParcel(_data, 0);
-}
-else {
-_data.writeInt(0);
-}
-mRemote.transact(Stub.TRANSACTION_notifyCellLocation, _data, _reply, 0);
-_reply.readException();
-}
-finally {
-_reply.recycle();
-_data.recycle();
-}
-}
-public void notifyOtaspChanged(int otaspMode) throws android.os.RemoteException
-{
-android.os.Parcel _data = android.os.Parcel.obtain();
-android.os.Parcel _reply = android.os.Parcel.obtain();
-try {
-_data.writeInterfaceToken(DESCRIPTOR);
-_data.writeInt(otaspMode);
-mRemote.transact(Stub.TRANSACTION_notifyOtaspChanged, _data, _reply, 0);
-_reply.readException();
-}
-finally {
-_reply.recycle();
-_data.recycle();
-}
-}
-}
-static final int TRANSACTION_listen = (android.os.IBinder.FIRST_CALL_TRANSACTION + 0);
-static final int TRANSACTION_notifyCallState = (android.os.IBinder.FIRST_CALL_TRANSACTION + 1);
-static final int TRANSACTION_notifyServiceState = (android.os.IBinder.FIRST_CALL_TRANSACTION + 2);
-static final int TRANSACTION_notifySignalStrength = (android.os.IBinder.FIRST_CALL_TRANSACTION + 3);
-static final int TRANSACTION_notifyMessageWaitingChanged = (android.os.IBinder.FIRST_CALL_TRANSACTION + 4);
-static final int TRANSACTION_notifyCallForwardingChanged = (android.os.IBinder.FIRST_CALL_TRANSACTION + 5);
-static final int TRANSACTION_notifyDataActivity = (android.os.IBinder.FIRST_CALL_TRANSACTION + 6);
-static final int TRANSACTION_notifyDataConnection = (android.os.IBinder.FIRST_CALL_TRANSACTION + 7);
-static final int TRANSACTION_notifyDataConnectionFailed = (android.os.IBinder.FIRST_CALL_TRANSACTION + 8);
-static final int TRANSACTION_notifyCellLocation = (android.os.IBinder.FIRST_CALL_TRANSACTION + 9);
-static final int TRANSACTION_notifyOtaspChanged = (android.os.IBinder.FIRST_CALL_TRANSACTION + 10);
 }
 public void listen(java.lang.String pkg, com.android.internal.telephony.IPhoneStateListener callback, int events, boolean notifyNow) throws android.os.RemoteException;
 public void notifyCallState(int state, java.lang.String incomingNumber) throws android.os.RemoteException;

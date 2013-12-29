@@ -1,6 +1,10 @@
 package android.content;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
+import android.util.Log;
+import android.util.Slog;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -20,307 +24,363 @@ import android.os.RemoteException;
 
 
 public abstract class BroadcastReceiver {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.475 -0400", hash_original_field = "6DD50A78846A573507CD3027E97E1EA6", hash_generated_field = "56CC6D10D54B274449EA4D95649A29AE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:08.009 -0500", hash_original_field = "B6F0ED1C97BC5319472703C5AFA1B37B", hash_generated_field = "56CC6D10D54B274449EA4D95649A29AE")
 
     private PendingResult mPendingResult;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.475 -0400", hash_original_field = "531E6956D9AF6ECA54301749A881CFAD", hash_generated_field = "D63712D72C7DEA3780B2E3ED680A7016")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:08.010 -0500", hash_original_field = "A79B6E0166802F3342C33F0FE8F46913", hash_generated_field = "D63712D72C7DEA3780B2E3ED680A7016")
 
     private boolean mDebugUnregister;
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.475 -0400", hash_original_method = "2900F07960080430406180ADD3872CDD", hash_generated_method = "4949473B0E069ABC52AE38A1EB5EC2B1")
-    public  BroadcastReceiver() {
-        // ---------- Original Method ----------
+    private Application mApplication;
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:08.038 -0500", hash_original_method = "2900F07960080430406180ADD3872CDD", hash_generated_method = "D3FA3C172476927ED563AFCC971E4A9A")
+    public BroadcastReceiver() {
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * This method is called when the BroadcastReceiver is receiving an Intent
+     * broadcast.  During this time you can use the other methods on
+     * BroadcastReceiver to view/modify the current result values.  The function
+     * is normally called within the main thread of its process, so you should
+     * never perform long-running operations in it (there is a timeout of
+     * 10 seconds that the system allows before considering the receiver to
+     * be blocked and a candidate to be killed). You cannot launch a popup dialog
+     * in your implementation of onReceive().
+     * 
+     * <p><b>If this BroadcastReceiver was launched through a &lt;receiver&gt; tag,
+     * then the object is no longer alive after returning from this
+     * function.</b>  This means you should not perform any operations that
+     * return a result to you asynchronously -- in particular, for interacting
+     * with services, you should use
+     * {@link Context#startService(Intent)} instead of
+     * {@link Context#bindService(Intent, ServiceConnection, int)}.  If you wish
+     * to interact with a service that is already running, you can use
+     * {@link #peekService}.
+     * 
+     * <p>The Intent filters used in {@link android.content.Context#registerReceiver}
+     * and in application manifests are <em>not</em> guaranteed to be exclusive. They
+     * are hints to the operating system about how to find suitable recipients. It is
+     * possible for senders to force delivery to specific recipients, bypassing filter
+     * resolution.  For this reason, {@link #onReceive(Context, Intent) onReceive()}
+     * implementations should respond only to known actions, ignoring any unexpected
+     * Intents that they may receive.
+     * 
+     * @param context The Context in which the receiver is running.
+     * @param intent The Intent being received.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:08.039 -0500", hash_original_method = "938B84A43002091BA0754FF3EF2C5C0E", hash_generated_method = "694CB25ED6D3FBC56A56AD38523219EB")
     public abstract void onReceive(Context context, Intent intent);
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.477 -0400", hash_original_method = "A694EC135053AF2FEB071A12D3EE4319", hash_generated_method = "3D3C32CC997962EEFE82DC13F967E7DC")
+    /**
+     * This can be called by an application in {@link #onReceive} to allow
+     * it to keep the broadcast active after returning from that function.
+     * This does <em>not</em> change the expectation of being relatively
+     * responsive to the broadcast (finishing it within 10s), but does allow
+     * the implementation to move work related to it over to another thread
+     * to avoid glitching the main UI thread due to disk IO.
+     * 
+     * @return Returns a {@link PendingResult} representing the result of
+     * the active broadcast.  The BroadcastRecord itself is no longer active;
+     * all data and other interaction must go through {@link PendingResult}
+     * APIs.  The {@link PendingResult#finish PendingResult.finish()} method
+     * must be called once processing of the broadcast is done.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:08.040 -0500", hash_original_method = "A694EC135053AF2FEB071A12D3EE4319", hash_generated_method = "BE715AB72252288900126FB579872EE2")
     public final PendingResult goAsync() {
         PendingResult res = mPendingResult;
         mPendingResult = null;
-PendingResult varB5053E025797B3BF768F5C37934C244D_764991345 =         res;
-        varB5053E025797B3BF768F5C37934C244D_764991345.addTaint(taint);
-        return varB5053E025797B3BF768F5C37934C244D_764991345;
-        // ---------- Original Method ----------
-        //PendingResult res = mPendingResult;
-        //mPendingResult = null;
-        //return res;
+        return res;
     }
-
     
-        @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.477 -0400", hash_original_method = "891D062EE6B5DF300B0D5F817EBA802C", hash_generated_method = "EB459FE1F36850BD3E9C89F744DFE2B8")
+    /**
+     * Provide a binder to an already-running service.  This method is synchronous
+     * and will not start the target service if it is not present, so it is safe
+     * to call from {@link #onReceive}.
+     * 
+     * @param myContext The Context that had been passed to {@link #onReceive(Context, Intent)}
+     * @param service The Intent indicating the service you wish to use.  See {@link
+     * Context#startService(Intent)} for more information.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:08.041 -0500", hash_original_method = "891D062EE6B5DF300B0D5F817EBA802C", hash_generated_method = "A37EB1F6A113B613535C93793351ED22")
     public IBinder peekService(Context myContext, Intent service) {
-        addTaint(service.getTaint());
-        addTaint(myContext.getTaint());
         IActivityManager am = ActivityManagerNative.getDefault();
         IBinder binder = null;
-        try 
-        {
+        try {
             service.setAllowFds(false);
             binder = am.peekService(service, service.resolveTypeIfNeeded(
                     myContext.getContentResolver()));
-        } //End block
-        catch (RemoteException e)
-        {
-        } //End block
-IBinder varE3C074C8A98249A08331B334269AEB91_1562396205 =         binder;
-        varE3C074C8A98249A08331B334269AEB91_1562396205.addTaint(taint);
-        return varE3C074C8A98249A08331B334269AEB91_1562396205;
-        // ---------- Original Method ----------
-        //IActivityManager am = ActivityManagerNative.getDefault();
-        //IBinder binder = null;
-        //try {
-            //service.setAllowFds(false);
-            //binder = am.peekService(service, service.resolveTypeIfNeeded(
-                    //myContext.getContentResolver()));
-        //} catch (RemoteException e) {
-        //}
-        //return binder;
+        } catch (RemoteException e) {
+        }
+        return binder;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.478 -0400", hash_original_method = "D9C6679B9D8E9806D41E73EFA120BCFE", hash_generated_method = "D8B058A84574659F09A9DE8C943A316A")
+    /**
+     * Change the current result code of this broadcast; only works with
+     * broadcasts sent through
+     * {@link Context#sendOrderedBroadcast(Intent, String)
+     * Context.sendOrderedBroadcast}.  Often uses the
+     * Activity {@link android.app.Activity#RESULT_CANCELED} and
+     * {@link android.app.Activity#RESULT_OK} constants, though the
+     * actual meaning of this value is ultimately up to the broadcaster.
+     * 
+     * <p class="note">This method does not work with non-ordered broadcasts such
+     * as those sent with {@link Context#sendBroadcast(Intent)
+     * Context.sendBroadcast}</p>
+     * 
+     * @param code The new result code.
+     * 
+     * @see #setResult(int, String, Bundle)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:08.041 -0500", hash_original_method = "D9C6679B9D8E9806D41E73EFA120BCFE", hash_generated_method = "4728470787842C4041B9F512D6E54F97")
     public final void setResultCode(int code) {
         checkSynchronousHint();
         mPendingResult.mResultCode = code;
-        // ---------- Original Method ----------
-        //checkSynchronousHint();
-        //mPendingResult.mResultCode = code;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.479 -0400", hash_original_method = "413D4442793CB2CD30088D833172245E", hash_generated_method = "57FA9A32A4986C882A6FE9A858AB03AD")
+    /**
+     * Retrieve the current result code, as set by the previous receiver.
+     * 
+     * @return int The current result code.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:08.042 -0500", hash_original_method = "413D4442793CB2CD30088D833172245E", hash_generated_method = "880C511B5BE77BEBC42FD95480D19EEC")
     public final int getResultCode() {
-        int var2B2BA4CA037129453C2092D8613C9F0D_1289854707 = (mPendingResult != null ? mPendingResult.mResultCode : 0);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1730359693 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1730359693;
-        // ---------- Original Method ----------
-        //return mPendingResult != null ? mPendingResult.mResultCode : 0;
+        return mPendingResult != null ? mPendingResult.mResultCode : 0;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.479 -0400", hash_original_method = "326C45A93CAC69AE5F40CC5662FD4E21", hash_generated_method = "C90A109DB604318B2505A1C010330879")
+    /**
+     * Change the current result data of this broadcast; only works with
+     * broadcasts sent through
+     * {@link Context#sendOrderedBroadcast(Intent, String)
+     * Context.sendOrderedBroadcast}.  This is an arbitrary
+     * string whose interpretation is up to the broadcaster.
+     * 
+     * <p><strong>This method does not work with non-ordered broadcasts such
+     * as those sent with {@link Context#sendBroadcast(Intent)
+     * Context.sendBroadcast}</strong></p>
+     * 
+     * @param data The new result data; may be null.
+     * 
+     * @see #setResult(int, String, Bundle)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:08.043 -0500", hash_original_method = "326C45A93CAC69AE5F40CC5662FD4E21", hash_generated_method = "E4DE2260ED5DD490E9332E22785D5122")
     public final void setResultData(String data) {
         checkSynchronousHint();
         mPendingResult.mResultData = data;
-        // ---------- Original Method ----------
-        //checkSynchronousHint();
-        //mPendingResult.mResultData = data;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.480 -0400", hash_original_method = "4500B5844C9E31997AA4128C2B631832", hash_generated_method = "C4C005E76AC52373C1A608284756C1A5")
+    /**
+     * Retrieve the current result data, as set by the previous receiver.
+     * Often this is null.
+     * 
+     * @return String The current result data; may be null.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:08.044 -0500", hash_original_method = "4500B5844C9E31997AA4128C2B631832", hash_generated_method = "F3267C287ABB4521B4DB8DAD802FFCAB")
     public final String getResultData() {
-String var6A28DDDD6F2A36E80C7DF082C1A737CB_841002546 =         mPendingResult != null ? mPendingResult.mResultData : null;
-        var6A28DDDD6F2A36E80C7DF082C1A737CB_841002546.addTaint(taint);
-        return var6A28DDDD6F2A36E80C7DF082C1A737CB_841002546;
-        // ---------- Original Method ----------
-        //return mPendingResult != null ? mPendingResult.mResultData : null;
+        return mPendingResult != null ? mPendingResult.mResultData : null;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.480 -0400", hash_original_method = "A002D9C66CF7F2AA1D1827503AAC99EC", hash_generated_method = "AE999306C66D9D7D9F87E31E8790C266")
+    /**
+     * Change the current result extras of this broadcast; only works with
+     * broadcasts sent through
+     * {@link Context#sendOrderedBroadcast(Intent, String)
+     * Context.sendOrderedBroadcast}.  This is a Bundle
+     * holding arbitrary data, whose interpretation is up to the
+     * broadcaster.  Can be set to null.  Calling this method completely
+     * replaces the current map (if any).
+     * 
+     * <p><strong>This method does not work with non-ordered broadcasts such
+     * as those sent with {@link Context#sendBroadcast(Intent)
+     * Context.sendBroadcast}</strong></p>
+     * 
+     * @param extras The new extra data map; may be null.
+     * 
+     * @see #setResult(int, String, Bundle)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:08.044 -0500", hash_original_method = "A002D9C66CF7F2AA1D1827503AAC99EC", hash_generated_method = "569D36CAC8A5C7CB261AB149A764B2A9")
     public final void setResultExtras(Bundle extras) {
         checkSynchronousHint();
         mPendingResult.mResultExtras = extras;
-        // ---------- Original Method ----------
-        //checkSynchronousHint();
-        //mPendingResult.mResultExtras = extras;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.481 -0400", hash_original_method = "4CB90710C7A856F1CF5FAF169A56650C", hash_generated_method = "FC52532D27D6E9BB1D1C0F1576552F25")
+    /**
+     * Retrieve the current result extra data, as set by the previous receiver.
+     * Any changes you make to the returned Map will be propagated to the next
+     * receiver.
+     * 
+     * @param makeMap If true then a new empty Map will be made for you if the
+     *                current Map is null; if false you should be prepared to
+     *                receive a null Map.
+     * 
+     * @return Map The current extras map.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:08.045 -0500", hash_original_method = "4CB90710C7A856F1CF5FAF169A56650C", hash_generated_method = "F071904FD5E94C95688CCF90728424FC")
     public final Bundle getResultExtras(boolean makeMap) {
-        addTaint(makeMap);
-        if(mPendingResult == null)        
-        {
-Bundle var540C13E9E156B687226421B24F2DF178_951492598 =             null;
-            var540C13E9E156B687226421B24F2DF178_951492598.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_951492598;
-        } //End block
-        Bundle e = mPendingResult.mResultExtras;
-        if(!makeMap)        
-        {
-Bundle var6BFFBFA2F1D556BA80433C2335198CE9_1151458938 =         e;
-        var6BFFBFA2F1D556BA80433C2335198CE9_1151458938.addTaint(taint);
-        return var6BFFBFA2F1D556BA80433C2335198CE9_1151458938;
+        if (mPendingResult == null) {
+            return null;
         }
-        if(e == null)        
-        mPendingResult.mResultExtras = e = new Bundle();
-Bundle var6BFFBFA2F1D556BA80433C2335198CE9_1781030247 =         e;
-        var6BFFBFA2F1D556BA80433C2335198CE9_1781030247.addTaint(taint);
-        return var6BFFBFA2F1D556BA80433C2335198CE9_1781030247;
-        // ---------- Original Method ----------
-        //if (mPendingResult == null) {
-            //return null;
-        //}
-        //Bundle e = mPendingResult.mResultExtras;
-        //if (!makeMap) return e;
-        //if (e == null) mPendingResult.mResultExtras = e = new Bundle();
-        //return e;
+        Bundle e = mPendingResult.mResultExtras;
+        if (!makeMap) return e;
+        if (e == null) mPendingResult.mResultExtras = e = new Bundle();
+        return e;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.483 -0400", hash_original_method = "71BA20FC3DD345B39DB950803A39A1ED", hash_generated_method = "4E29E8202B08EC6E81632318D3263996")
+    /**
+     * Change all of the result data returned from this broadcasts; only works
+     * with broadcasts sent through
+     * {@link Context#sendOrderedBroadcast(Intent, String)
+     * Context.sendOrderedBroadcast}.  All current result data is replaced
+     * by the value given to this method.
+     * 
+     * <p><strong>This method does not work with non-ordered broadcasts such
+     * as those sent with {@link Context#sendBroadcast(Intent)
+     * Context.sendBroadcast}</strong></p>
+     * 
+     * @param code The new result code.  Often uses the
+     * Activity {@link android.app.Activity#RESULT_CANCELED} and
+     * {@link android.app.Activity#RESULT_OK} constants, though the
+     * actual meaning of this value is ultimately up to the broadcaster.
+     * @param data The new result data.  This is an arbitrary
+     * string whose interpretation is up to the broadcaster; may be null.
+     * @param extras The new extra data map.  This is a Bundle
+     * holding arbitrary data, whose interpretation is up to the
+     * broadcaster.  Can be set to null.  This completely
+     * replaces the current map (if any).
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:08.046 -0500", hash_original_method = "71BA20FC3DD345B39DB950803A39A1ED", hash_generated_method = "ED3154BE987877FA0FF2943FC85107BB")
     public final void setResult(int code, String data, Bundle extras) {
         checkSynchronousHint();
         mPendingResult.mResultCode = code;
         mPendingResult.mResultData = data;
         mPendingResult.mResultExtras = extras;
-        // ---------- Original Method ----------
-        //checkSynchronousHint();
-        //mPendingResult.mResultCode = code;
-        //mPendingResult.mResultData = data;
-        //mPendingResult.mResultExtras = extras;
     }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.483 -0400", hash_original_method = "AC60D9C3BD95277DA035DD6FF45A8CCB", hash_generated_method = "B831C58D52756D5876CD69A019EBA8F0")
+ 
+    /**
+     * Returns the flag indicating whether or not this receiver should
+     * abort the current broadcast.
+     * 
+     * @return True if the broadcast should be aborted.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:08.047 -0500", hash_original_method = "AC60D9C3BD95277DA035DD6FF45A8CCB", hash_generated_method = "149DAF27069326FB25F67A39BB4A2D01")
     public final boolean getAbortBroadcast() {
-        boolean var52C3658BA601DC218244C3815749219A_1813491114 = (mPendingResult != null ? mPendingResult.mAbortBroadcast : false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1055032856 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1055032856;
-        // ---------- Original Method ----------
-        //return mPendingResult != null ? mPendingResult.mAbortBroadcast : false;
+        return mPendingResult != null ? mPendingResult.mAbortBroadcast : false;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.484 -0400", hash_original_method = "EA4258D43E5FA594C300ACFA62523E77", hash_generated_method = "6C8DB09AA240CF4D79E5212B6813BBD7")
+    /**
+     * Sets the flag indicating that this receiver should abort the
+     * current broadcast; only works with broadcasts sent through
+     * {@link Context#sendOrderedBroadcast(Intent, String)
+     * Context.sendOrderedBroadcast}.  This will prevent
+     * any other broadcast receivers from receiving the broadcast. It will still
+     * call {@link #onReceive} of the BroadcastReceiver that the caller of 
+     * {@link Context#sendOrderedBroadcast(Intent, String)
+     * Context.sendOrderedBroadcast} passed in.
+     * 
+     * <p><strong>This method does not work with non-ordered broadcasts such
+     * as those sent with {@link Context#sendBroadcast(Intent)
+     * Context.sendBroadcast}</strong></p>
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:08.048 -0500", hash_original_method = "EA4258D43E5FA594C300ACFA62523E77", hash_generated_method = "48E8F953F737C5875A829159CC0D6592")
     public final void abortBroadcast() {
         checkSynchronousHint();
         mPendingResult.mAbortBroadcast = true;
-        // ---------- Original Method ----------
-        //checkSynchronousHint();
-        //mPendingResult.mAbortBroadcast = true;
     }
-
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.485 -0400", hash_original_method = "7C3FDE5990F70723754AFB92AED4E2CB", hash_generated_method = "CC309946A2203D49B8CD5BCA74F2152C")
+    /**
+     * Clears the flag indicating that this receiver should abort the current
+     * broadcast.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:08.048 -0500", hash_original_method = "7C3FDE5990F70723754AFB92AED4E2CB", hash_generated_method = "DB1338A5242336FF55C4115BBF7D31DF")
     public final void clearAbortBroadcast() {
-        if(mPendingResult != null)        
-        {
+        if (mPendingResult != null) {
             mPendingResult.mAbortBroadcast = false;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mPendingResult != null) {
-            //mPendingResult.mAbortBroadcast = false;
-        //}
+        }
     }
-
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.485 -0400", hash_original_method = "E46A4317E3055902B5625099FF6F383B", hash_generated_method = "9828040EE9C47B4E90B2122AF1FBD15A")
+    /**
+     * Returns true if the receiver is currently processing an ordered
+     * broadcast.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:08.050 -0500", hash_original_method = "E46A4317E3055902B5625099FF6F383B", hash_generated_method = "72669CEA6CC031D5B1734B7741B935E0")
     public final boolean isOrderedBroadcast() {
-        boolean varE1622B765B214B5C9D5BBE9448B09A07_1790388835 = (mPendingResult != null ? mPendingResult.mOrderedHint : false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_654327134 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_654327134;
-        // ---------- Original Method ----------
-        //return mPendingResult != null ? mPendingResult.mOrderedHint : false;
+        return mPendingResult != null ? mPendingResult.mOrderedHint : false;
     }
-
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.486 -0400", hash_original_method = "85C5802A7642DD110CD6FEA4F9597134", hash_generated_method = "BAA85BE96906CCEF9BD2A1500D7E613D")
+    /**
+     * Returns true if the receiver is currently processing the initial
+     * value of a sticky broadcast -- that is, the value that was last
+     * broadcast and is currently held in the sticky cache, so this is
+     * not directly the result of a broadcast right now.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:08.051 -0500", hash_original_method = "85C5802A7642DD110CD6FEA4F9597134", hash_generated_method = "F81B94039206930553F82F985768EA83")
     public final boolean isInitialStickyBroadcast() {
-        boolean var45A355815E07CFCC76BFC8EF62D962F5_400030764 = (mPendingResult != null ? mPendingResult.mInitialStickyHint : false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_439674732 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_439674732;
-        // ---------- Original Method ----------
-        //return mPendingResult != null ? mPendingResult.mInitialStickyHint : false;
+        return mPendingResult != null ? mPendingResult.mInitialStickyHint : false;
     }
-
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.486 -0400", hash_original_method = "68B6314C0DA1E37C298D89B55CAE3400", hash_generated_method = "69D814F3B32F84B57634F91799811317")
+    /**
+     * For internal use, sets the hint about whether this BroadcastReceiver is
+     * running in ordered mode.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:08.052 -0500", hash_original_method = "68B6314C0DA1E37C298D89B55CAE3400", hash_generated_method = "D3F7606173D6DF39314EA2B2AF34E3EE")
     public final void setOrderedHint(boolean isOrdered) {
-        addTaint(isOrdered);
-        // ---------- Original Method ----------
+        // Accidentally left in the SDK.
     }
-
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.487 -0400", hash_original_method = "D4C333B718143025A27C15902000FB77", hash_generated_method = "D9AD103DE2626E233CF20E2D5E772BFB")
+    /**
+     * For internal use to set the result data that is active. @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:08.052 -0500", hash_original_method = "D4C333B718143025A27C15902000FB77", hash_generated_method = "3655C594E563935225D30259AECDD6E6")
     public final void setPendingResult(PendingResult result) {
         mPendingResult = result;
-        // ---------- Original Method ----------
-        //mPendingResult = result;
     }
-
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.487 -0400", hash_original_method = "DB63B22B6D1F06710FF3BD6349434467", hash_generated_method = "679D54BC127BA76F1E925A2784F83AC3")
+    /**
+     * For internal use to set the result data that is active. @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:08.053 -0500", hash_original_method = "DB63B22B6D1F06710FF3BD6349434467", hash_generated_method = "0A667A34B1A427078E19EEC72E5E076A")
     public final PendingResult getPendingResult() {
-PendingResult varFDA66089EEC27D31589A7C2426B1144F_638966810 =         mPendingResult;
-        varFDA66089EEC27D31589A7C2426B1144F_638966810.addTaint(taint);
-        return varFDA66089EEC27D31589A7C2426B1144F_638966810;
-        // ---------- Original Method ----------
-        //return mPendingResult;
+        return mPendingResult;
     }
-
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.488 -0400", hash_original_method = "A942596201048EAFD951F2DD414301FD", hash_generated_method = "AE10474DE2420C2D522388046B0DF067")
+    /**
+     * Control inclusion of debugging help for mismatched
+     * calls to {@ Context#registerReceiver(BroadcastReceiver, IntentFilter)
+     * Context.registerReceiver()}.
+     * If called with true, before given to registerReceiver(), then the
+     * callstack of the following {@link Context#unregisterReceiver(BroadcastReceiver)
+     * Context.unregisterReceiver()} call is retained, to be printed if a later
+     * incorrect unregister call is made.  Note that doing this requires retaining
+     * information about the BroadcastReceiver for the lifetime of the app,
+     * resulting in a leak -- this should only be used for debugging.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:08.054 -0500", hash_original_method = "A942596201048EAFD951F2DD414301FD", hash_generated_method = "34A7224FEC930EA15D4DBCAD3444AB28")
     public final void setDebugUnregister(boolean debug) {
         mDebugUnregister = debug;
-        // ---------- Original Method ----------
-        //mDebugUnregister = debug;
     }
-
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.488 -0400", hash_original_method = "19A67BCF6BEB94B2ECFD54D952C17B9D", hash_generated_method = "A9B3C61A52FF461B78042E73DE732E54")
+    /**
+     * Return the last value given to {@link #setDebugUnregister}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:08.055 -0500", hash_original_method = "19A67BCF6BEB94B2ECFD54D952C17B9D", hash_generated_method = "9DECD4B98E264D80CCBAA5A6F4CBE4AD")
     public final boolean getDebugUnregister() {
-        boolean var531E6956D9AF6ECA54301749A881CFAD_528722185 = (mDebugUnregister);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1644204449 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1644204449;
-        // ---------- Original Method ----------
-        //return mDebugUnregister;
+        return mDebugUnregister;
     }
-
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.488 -0400", hash_original_method = "719234F696D75BD5E624E0997AEC2529", hash_generated_method = "E5D5CF20344AEC3559FCD970892B1BDB")
-     void checkSynchronousHint() {
-        if(mPendingResult == null)        
-        {
-            IllegalStateException varA46F5C53644BC71E9397C965D29AAAEC_1951667471 = new IllegalStateException("Call while result is not pending");
-            varA46F5C53644BC71E9397C965D29AAAEC_1951667471.addTaint(taint);
-            throw varA46F5C53644BC71E9397C965D29AAAEC_1951667471;
-        } //End block
-        if(mPendingResult.mOrderedHint || mPendingResult.mInitialStickyHint)        
-        {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:08.056 -0500", hash_original_method = "719234F696D75BD5E624E0997AEC2529", hash_generated_method = "C57D981D6CEF7C694F836FD9B92626F6")
+    void checkSynchronousHint() {
+        if (mPendingResult == null) {
+            throw new IllegalStateException("Call while result is not pending");
+        }
+        
+        // Note that we don't assert when receiving the initial sticky value,
+        // since that may have come from an ordered broadcast.  We'll catch
+        // them later when the real broadcast happens again.
+        if (mPendingResult.mOrderedHint || mPendingResult.mInitialStickyHint) {
             return;
-        } //End block
+        }
         RuntimeException e = new RuntimeException(
                 "BroadcastReceiver trying to return result during a non-ordered broadcast");
         e.fillInStackTrace();
-        // ---------- Original Method ----------
-        //if (mPendingResult == null) {
-            //throw new IllegalStateException("Call while result is not pending");
-        //}
-        //if (mPendingResult.mOrderedHint || mPendingResult.mInitialStickyHint) {
-            //return;
-        //}
-        //RuntimeException e = new RuntimeException(
-                //"BroadcastReceiver trying to return result during a non-ordered broadcast");
-        //e.fillInStackTrace();
-        //Log.e("BroadcastReceiver", e.getMessage(), e);
+        Log.e("BroadcastReceiver", e.getMessage(), e);
     }
     
     // Broadcast receiver really belongs to application so, we call register intentfilter from
@@ -332,45 +392,54 @@ PendingResult varFDA66089EEC27D31589A7C2426B1144F_638966810 =         mPendingRe
             mApplication.__ds__intentFilters.add(intentFilter);
     }
     
-    private Application mApplication;
-    
     @DSModeled(DSC.BAN)
     public void setApplication(Application app) { 
         this.mApplication = app;
     }
     
     public static class PendingResult {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.489 -0400", hash_original_field = "3462A1A18A0EE070E8953CCF1DD788C0", hash_generated_field = "B93BF1EFA6B57CC598632E54B97CD147")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:08.012 -0500", hash_original_field = "65E5C0613955484CFCF43BA9410EBE24", hash_generated_field = "E4EA6E7A3F4417E09164CDDBDCB8CDCE")
 
-        int mType;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.489 -0400", hash_original_field = "4543096C53DE46C32336566088E0F654", hash_generated_field = "CDB2CA9D2DC3E6D40D3791F468236C61")
+        public static final int TYPE_COMPONENT = 0;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:08.012 -0500", hash_original_field = "5F7083133FA2B534E59CD5D2DFB4FFFF", hash_generated_field = "06907A658310DA1AD3781E70CEE869F6")
 
-        boolean mOrderedHint;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.489 -0400", hash_original_field = "E325CA8F9CFD351DD035C72EEE389226", hash_generated_field = "13A087E46995ABA3C3337E0311BCBB18")
+        public static final int TYPE_REGISTERED = 1;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:08.013 -0500", hash_original_field = "3FD93F9C18D621243552B0472B0A196F", hash_generated_field = "502D0CFA37619833702608E6E5D5B79C")
 
-        boolean mInitialStickyHint;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.489 -0400", hash_original_field = "98E8D2ECD335C543A384E2B940159AF2", hash_generated_field = "DD6EB7EC256F1225D4C6DC1A42FB765B")
+        public static final int TYPE_UNREGISTERED = 2;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:08.014 -0500", hash_original_field = "B93BF1EFA6B57CC598632E54B97CD147", hash_generated_field = "B93BF1EFA6B57CC598632E54B97CD147")
 
-        IBinder mToken;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.489 -0400", hash_original_field = "E5CED19E692744D577EC9F38B767773F", hash_generated_field = "457E6BFD9A88F809DF3F4A88B9B7B893")
+        
+         int mType;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:08.015 -0500", hash_original_field = "CDB2CA9D2DC3E6D40D3791F468236C61", hash_generated_field = "CDB2CA9D2DC3E6D40D3791F468236C61")
 
+         boolean mOrderedHint;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:08.016 -0500", hash_original_field = "13A087E46995ABA3C3337E0311BCBB18", hash_generated_field = "13A087E46995ABA3C3337E0311BCBB18")
+
+         boolean mInitialStickyHint;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:08.017 -0500", hash_original_field = "DD6EB7EC256F1225D4C6DC1A42FB765B", hash_generated_field = "DD6EB7EC256F1225D4C6DC1A42FB765B")
+
+         IBinder mToken;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:08.018 -0500", hash_original_field = "457E6BFD9A88F809DF3F4A88B9B7B893", hash_generated_field = "457E6BFD9A88F809DF3F4A88B9B7B893")
+
+        
         int mResultCode;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.490 -0400", hash_original_field = "3EAEFB392DB2F84FAED87A71E79A1093", hash_generated_field = "9297DC4168CE0E61BD9D0F02E127B543")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:08.018 -0500", hash_original_field = "9297DC4168CE0E61BD9D0F02E127B543", hash_generated_field = "9297DC4168CE0E61BD9D0F02E127B543")
 
         String mResultData;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.490 -0400", hash_original_field = "15A7BDFA2595DFC979A8B0D8A65ABE14", hash_generated_field = "F5C1D34888409EAA7782FD08EA76AE47")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:08.019 -0500", hash_original_field = "F5C1D34888409EAA7782FD08EA76AE47", hash_generated_field = "F5C1D34888409EAA7782FD08EA76AE47")
 
         Bundle mResultExtras;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.490 -0400", hash_original_field = "9D0CE3E2384F7D542D6BE0E686CC1587", hash_generated_field = "BE6D043F13884118A46F3E134D0352F1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:08.020 -0500", hash_original_field = "BE6D043F13884118A46F3E134D0352F1", hash_generated_field = "BE6D043F13884118A46F3E134D0352F1")
 
         boolean mAbortBroadcast;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.490 -0400", hash_original_field = "BB077E6B2FCDFA3F0EF71EB099A18F49", hash_generated_field = "10598AB9B4F301B505526794EAE9EAF0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:08.021 -0500", hash_original_field = "10598AB9B4F301B505526794EAE9EAF0", hash_generated_field = "10598AB9B4F301B505526794EAE9EAF0")
 
         boolean mFinished;
         
-        @DSModeled(DSC.BAN)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.492 -0400", hash_original_method = "A092172050E6E1EA8E89A6BB2F65A5D7", hash_generated_method = "7104FB540206A2CEFCEAF057A7D40607")
-        public  PendingResult(int resultCode, String resultData, Bundle resultExtras,
+        /** @hide */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:08.022 -0500", hash_original_method = "A092172050E6E1EA8E89A6BB2F65A5D7", hash_generated_method = "A85F5B1897850D29BBF53C42AE629823")
+        public PendingResult(int resultCode, String resultData, Bundle resultExtras,
                 int type, boolean ordered, boolean sticky, IBinder token) {
             mResultCode = resultCode;
             mResultData = resultData;
@@ -379,276 +448,204 @@ PendingResult varFDA66089EEC27D31589A7C2426B1144F_638966810 =         mPendingRe
             mOrderedHint = ordered;
             mInitialStickyHint = sticky;
             mToken = token;
-            // ---------- Original Method ----------
-            //mResultCode = resultCode;
-            //mResultData = resultData;
-            //mResultExtras = resultExtras;
-            //mType = type;
-            //mOrderedHint = ordered;
-            //mInitialStickyHint = sticky;
-            //mToken = token;
         }
-
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.493 -0400", hash_original_method = "8D188219D9B47ACA890A3A3FC0E4CDB9", hash_generated_method = "91B3DF7FB9FA90724BCAFC16EA2AF10F")
+        /**
+         * Version of {@link BroadcastReceiver#setResultCode(int)
+         * BroadcastReceiver.setResultCode(int)} for
+         * asynchronous broadcast handling.
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:08.022 -0500", hash_original_method = "8D188219D9B47ACA890A3A3FC0E4CDB9", hash_generated_method = "E32022466188A7DAF782DFC9003CFD6F")
         public final void setResultCode(int code) {
             checkSynchronousHint();
             mResultCode = code;
-            // ---------- Original Method ----------
-            //checkSynchronousHint();
-            //mResultCode = code;
         }
 
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.494 -0400", hash_original_method = "DAC102A9F551BEDDEF83F16167EFAEA6", hash_generated_method = "082452ADF6F65CB58677C9159936DDC0")
+        /**
+         * Version of {@link BroadcastReceiver#getResultCode()
+         * BroadcastReceiver.getResultCode()} for
+         * asynchronous broadcast handling.
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:08.023 -0500", hash_original_method = "DAC102A9F551BEDDEF83F16167EFAEA6", hash_generated_method = "465ACAC5613A6099E1AF6CE8D2EEE8B1")
         public final int getResultCode() {
-            int varE5CED19E692744D577EC9F38B767773F_979558469 = (mResultCode);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_495144054 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_495144054;
-            // ---------- Original Method ----------
-            //return mResultCode;
+            return mResultCode;
         }
 
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.495 -0400", hash_original_method = "70EE21896C4793F2CD7F1124D2F52609", hash_generated_method = "C6722180D7D266018ABE6FE095677B2C")
+        /**
+         * Version of {@link BroadcastReceiver#setResultData(String)
+         * BroadcastReceiver.setResultData(String)} for
+         * asynchronous broadcast handling.
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:08.024 -0500", hash_original_method = "70EE21896C4793F2CD7F1124D2F52609", hash_generated_method = "184B0DE368B365C6EE3EFE3877A399AC")
         public final void setResultData(String data) {
             checkSynchronousHint();
             mResultData = data;
-            // ---------- Original Method ----------
-            //checkSynchronousHint();
-            //mResultData = data;
         }
 
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.496 -0400", hash_original_method = "AF28EEAF3BA9B8705C009D1FCC834AB4", hash_generated_method = "4D0561BD46EA57F7FB91516D4A0B4D87")
+        /**
+         * Version of {@link BroadcastReceiver#getResultData()
+         * BroadcastReceiver.getResultData()} for
+         * asynchronous broadcast handling.
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:08.025 -0500", hash_original_method = "AF28EEAF3BA9B8705C009D1FCC834AB4", hash_generated_method = "5C6F3660000895054189DB24D79089B0")
         public final String getResultData() {
-String var7AF81C367EA4623980C8741236739982_1514784894 =             mResultData;
-            var7AF81C367EA4623980C8741236739982_1514784894.addTaint(taint);
-            return var7AF81C367EA4623980C8741236739982_1514784894;
-            // ---------- Original Method ----------
-            //return mResultData;
+            return mResultData;
         }
 
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.498 -0400", hash_original_method = "043EFA68A5EC6A2685391992580FAB4F", hash_generated_method = "3DC41E1A385242FB4F17457AEFAB3F81")
+        /**
+         * Version of {@link BroadcastReceiver#setResultExtras(Bundle)
+         * BroadcastReceiver.setResultExtras(Bundle)} for
+         * asynchronous broadcast handling.
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:08.026 -0500", hash_original_method = "043EFA68A5EC6A2685391992580FAB4F", hash_generated_method = "90BC11B88935DBA281C46408CD5CD07A")
         public final void setResultExtras(Bundle extras) {
             checkSynchronousHint();
             mResultExtras = extras;
-            // ---------- Original Method ----------
-            //checkSynchronousHint();
-            //mResultExtras = extras;
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.499 -0400", hash_original_method = "48408ADF0828FD95531740A7B634349C", hash_generated_method = "EDA5D3D25AE471D45C51BD32FD8B4EFF")
+        /**
+         * Version of {@link BroadcastReceiver#getResultExtras(boolean)
+         * BroadcastReceiver.getResultExtras(boolean)} for
+         * asynchronous broadcast handling.
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:08.027 -0500", hash_original_method = "48408ADF0828FD95531740A7B634349C", hash_generated_method = "9EE4A1D648D3CFF409DC710800479791")
         public final Bundle getResultExtras(boolean makeMap) {
-            addTaint(makeMap);
             Bundle e = mResultExtras;
-            if(!makeMap)            
-            {
-Bundle var6BFFBFA2F1D556BA80433C2335198CE9_1594589124 =             e;
-            var6BFFBFA2F1D556BA80433C2335198CE9_1594589124.addTaint(taint);
-            return var6BFFBFA2F1D556BA80433C2335198CE9_1594589124;
-            }
-            if(e == null)            
-            mResultExtras = e = new Bundle();
-Bundle var6BFFBFA2F1D556BA80433C2335198CE9_521450656 =             e;
-            var6BFFBFA2F1D556BA80433C2335198CE9_521450656.addTaint(taint);
-            return var6BFFBFA2F1D556BA80433C2335198CE9_521450656;
-            // ---------- Original Method ----------
-            //Bundle e = mResultExtras;
-            //if (!makeMap) return e;
-            //if (e == null) mResultExtras = e = new Bundle();
-            //return e;
+            if (!makeMap) return e;
+            if (e == null) mResultExtras = e = new Bundle();
+            return e;
         }
 
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.500 -0400", hash_original_method = "48338FF93B0D949C9CE50695C92AC674", hash_generated_method = "E3572DCCD03AA2F0DB19C6D7EC1CD89E")
+        /**
+         * Version of {@link BroadcastReceiver#setResult(int, String, Bundle)
+         * BroadcastReceiver.setResult(int, String, Bundle)} for
+         * asynchronous broadcast handling.
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:08.028 -0500", hash_original_method = "48338FF93B0D949C9CE50695C92AC674", hash_generated_method = "1B0E51B76DF4CEB770F6DDC75DD56316")
         public final void setResult(int code, String data, Bundle extras) {
             checkSynchronousHint();
             mResultCode = code;
             mResultData = data;
             mResultExtras = extras;
-            // ---------- Original Method ----------
-            //checkSynchronousHint();
-            //mResultCode = code;
-            //mResultData = data;
-            //mResultExtras = extras;
         }
-
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.500 -0400", hash_original_method = "27570BF34E94ABF03E65F54A5F2272E5", hash_generated_method = "44105CE74293B5376D7C3D421E4FD3C8")
+     
+        /**
+         * Version of {@link BroadcastReceiver#getAbortBroadcast()
+         * BroadcastReceiver.getAbortBroadcast()} for
+         * asynchronous broadcast handling.
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:08.029 -0500", hash_original_method = "27570BF34E94ABF03E65F54A5F2272E5", hash_generated_method = "F83BD098FE1867AE62400EBE8D0FCBE8")
         public final boolean getAbortBroadcast() {
-            boolean var9D0CE3E2384F7D542D6BE0E686CC1587_2083036703 = (mAbortBroadcast);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1090957412 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1090957412;
-            // ---------- Original Method ----------
-            //return mAbortBroadcast;
+            return mAbortBroadcast;
         }
 
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.501 -0400", hash_original_method = "1D9776C1F73983B7C91D53BC3475252B", hash_generated_method = "0F92C63DCD6A0EC0FE789EDB71DC5FA6")
+        /**
+         * Version of {@link BroadcastReceiver#abortBroadcast()
+         * BroadcastReceiver.abortBroadcast()} for
+         * asynchronous broadcast handling.
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:08.030 -0500", hash_original_method = "1D9776C1F73983B7C91D53BC3475252B", hash_generated_method = "AE6A9BD50FCC1EBD6EA286BBC71104B6")
         public final void abortBroadcast() {
             checkSynchronousHint();
             mAbortBroadcast = true;
-            // ---------- Original Method ----------
-            //checkSynchronousHint();
-            //mAbortBroadcast = true;
         }
-
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.501 -0400", hash_original_method = "D4C82CDA8EB6714DAE416B0884FCBC85", hash_generated_method = "6C1AABD9192E1E0A43D3F6EB36BA7FB9")
+        /**
+         * Version of {@link BroadcastReceiver#clearAbortBroadcast()
+         * BroadcastReceiver.clearAbortBroadcast()} for
+         * asynchronous broadcast handling.
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:08.030 -0500", hash_original_method = "D4C82CDA8EB6714DAE416B0884FCBC85", hash_generated_method = "E219B0B0EF571715A899CC59EED367B9")
         public final void clearAbortBroadcast() {
             mAbortBroadcast = false;
-            // ---------- Original Method ----------
-            //mAbortBroadcast = false;
         }
-
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.505 -0400", hash_original_method = "D8A44D8DD1BCA140D23101E83E968FA0", hash_generated_method = "2DBEA386C58955DAD283AEB312C94BE1")
+        /**
+         * Finish the broadcast.  The current result will be sent and the
+         * next broadcast will proceed.
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:08.033 -0500", hash_original_method = "D8A44D8DD1BCA140D23101E83E968FA0", hash_generated_method = "3112768060D5949EC2B35E71F665E4A6")
         public final void finish() {
-            if(mType == TYPE_COMPONENT)            
-            {
+            if (mType == TYPE_COMPONENT) {
                 final IActivityManager mgr = ActivityManagerNative.getDefault();
-                if(QueuedWork.hasPendingWork())                
-                {
-                    QueuedWork.singleThreadExecutor().execute( new Runnable() {            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.502 -0400", hash_original_method = "30493EB99D3B9C52A729521ECBA96102", hash_generated_method = "2E3B4BD7FCAEF2D6AFF3CFDB9A996A23")
-            @Override
-            public void run() {
-                if(ActivityThread.DEBUG_BROADCAST){ }                sendFinished(mgr);
-                // ---------- Original Method ----------
-                //if (ActivityThread.DEBUG_BROADCAST) Slog.i(ActivityThread.TAG,
-                                    //"Finishing broadcast after work to component " + mToken);
-                //sendFinished(mgr);
-            }
-});
-                } //End block
-                else
-                {
-                    if(ActivityThread.DEBUG_BROADCAST){ }                    sendFinished(mgr);
-                } //End block
-            } //End block
-            else
-            if(mOrderedHint && mType != TYPE_UNREGISTERED)            
-            {
-                if(ActivityThread.DEBUG_BROADCAST){ }                final IActivityManager mgr = ActivityManagerNative.getDefault();
+                if (QueuedWork.hasPendingWork()) {
+                    // If this is a broadcast component, we need to make sure any
+                    // queued work is complete before telling AM we are done, so
+                    // we don't have our process killed before that.  We now know
+                    // there is pending work; put another piece of work at the end
+                    // of the list to finish the broadcast, so we don't block this
+                    // thread (which may be the main thread) to have it finished.
+                    //
+                    // Note that we don't need to use QueuedWork.add() with the
+                    // runnable, since we know the AM is waiting for us until the
+                    // executor gets to it.
+                    QueuedWork.singleThreadExecutor().execute( new Runnable() {
+                        @Override public void run() {
+                            if (ActivityThread.DEBUG_BROADCAST) Slog.i(ActivityThread.TAG,
+                                    "Finishing broadcast after work to component " + mToken);
+                            sendFinished(mgr);
+                        }
+                    });
+                } else {
+                    if (ActivityThread.DEBUG_BROADCAST) Slog.i(ActivityThread.TAG,
+                            "Finishing broadcast to component " + mToken);
+                    sendFinished(mgr);
+                }
+            } else if (mOrderedHint && mType != TYPE_UNREGISTERED) {
+                if (ActivityThread.DEBUG_BROADCAST) Slog.i(ActivityThread.TAG,
+                        "Finishing broadcast to " + mToken);
+                final IActivityManager mgr = ActivityManagerNative.getDefault();
                 sendFinished(mgr);
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            }
         }
-
         
-                @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.506 -0400", hash_original_method = "09CFE321AB9E3444E3559F2B522AB2BE", hash_generated_method = "F089507397C23DBABECD9B2914B0838D")
+        /** @hide */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:08.034 -0500", hash_original_method = "09CFE321AB9E3444E3559F2B522AB2BE", hash_generated_method = "270A7467DBBC424A0346BC1B0BEB0CE4")
         public void setExtrasClassLoader(ClassLoader cl) {
-            addTaint(cl.getTaint());
-            if(mResultExtras != null)            
-            {
+            if (mResultExtras != null) {
                 mResultExtras.setClassLoader(cl);
-            } //End block
-            // ---------- Original Method ----------
-            //if (mResultExtras != null) {
-                //mResultExtras.setClassLoader(cl);
-            //}
+            }
         }
-
         
-        @DSModeled(DSC.BAN)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.507 -0400", hash_original_method = "AADF9DDAF1334800EDC66F9968E01FC0", hash_generated_method = "537DD9B6578B3F4D2391CFBA18FC3A11")
+        /** @hide */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:08.035 -0500", hash_original_method = "AADF9DDAF1334800EDC66F9968E01FC0", hash_generated_method = "A3DF577E6135F4F98DF945D23062A031")
         public void sendFinished(IActivityManager am) {
-            addTaint(am.getTaint());
-            synchronized
-(this)            {
-                if(mFinished)                
-                {
-                    IllegalStateException var837E39E2EF22E9FDB9F1F742200C5639_1380086018 = new IllegalStateException("Broadcast already finished");
-                    var837E39E2EF22E9FDB9F1F742200C5639_1380086018.addTaint(taint);
-                    throw var837E39E2EF22E9FDB9F1F742200C5639_1380086018;
-                } //End block
+            synchronized (this) {
+                if (mFinished) {
+                    throw new IllegalStateException("Broadcast already finished");
+                }
                 mFinished = true;
-                try 
-                {
-                    if(mResultExtras != null)                    
-                    {
+            
+                try {
+                    if (mResultExtras != null) {
                         mResultExtras.setAllowFds(false);
-                    } //End block
-                    if(mOrderedHint)                    
-                    {
+                    }
+                    if (mOrderedHint) {
                         am.finishReceiver(mToken, mResultCode, mResultData, mResultExtras,
                                 mAbortBroadcast);
-                    } //End block
-                    else
-                    {
+                    } else {
+                        // This broadcast was sent to a component; it is not ordered,
+                        // but we still need to tell the activity manager we are done.
                         am.finishReceiver(mToken, 0, null, null, false);
-                    } //End block
-                } //End block
-                catch (RemoteException ex)
-                {
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            //synchronized (this) {
-                //if (mFinished) {
-                    //throw new IllegalStateException("Broadcast already finished");
-                //}
-                //mFinished = true;
-                //try {
-                    //if (mResultExtras != null) {
-                        //mResultExtras.setAllowFds(false);
-                    //}
-                    //if (mOrderedHint) {
-                        //am.finishReceiver(mToken, mResultCode, mResultData, mResultExtras,
-                                //mAbortBroadcast);
-                    //} else {
-                        //am.finishReceiver(mToken, 0, null, null, false);
-                    //}
-                //} catch (RemoteException ex) {
-                //}
-            //}
+                    }
+                } catch (RemoteException ex) {
+                }
+            }
         }
-
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.509 -0400", hash_original_method = "82A6C5AFD458725D364E088D203D4257", hash_generated_method = "81BBA58E125434C90F87F7362C620BCF")
-         void checkSynchronousHint() {
-            if(mOrderedHint || mInitialStickyHint)            
-            {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:08.036 -0500", hash_original_method = "82A6C5AFD458725D364E088D203D4257", hash_generated_method = "D3D9B52B557CC655E4E6062D42823B33")
+        void checkSynchronousHint() {
+            // Note that we don't assert when receiving the initial sticky value,
+            // since that may have come from an ordered broadcast.  We'll catch
+            // them later when the real broadcast happens again.
+            if (mOrderedHint || mInitialStickyHint) {
                 return;
-            } //End block
+            }
             RuntimeException e = new RuntimeException(
                     "BroadcastReceiver trying to return result during a non-ordered broadcast");
             e.fillInStackTrace();
-            // ---------- Original Method ----------
-            //if (mOrderedHint || mInitialStickyHint) {
-                //return;
-            //}
-            //RuntimeException e = new RuntimeException(
-                    //"BroadcastReceiver trying to return result during a non-ordered broadcast");
-            //e.fillInStackTrace();
-            //Log.e("BroadcastReceiver", e.getMessage(), e);
+            Log.e("BroadcastReceiver", e.getMessage(), e);
         }
-
-        
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.509 -0400", hash_original_field = "E9B12079BA81E4A9E223E3E69CBCC96B", hash_generated_field = "E4EA6E7A3F4417E09164CDDBDCB8CDCE")
-
-        public static final int TYPE_COMPONENT = 0;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.509 -0400", hash_original_field = "C0B0EFB5AB40BA1A534DADDC23FCCDC9", hash_generated_field = "06907A658310DA1AD3781E70CEE869F6")
-
-        public static final int TYPE_REGISTERED = 1;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.510 -0400", hash_original_field = "98C92357CF58CE0F12209D8C57F14ED1", hash_generated_field = "502D0CFA37619833702608E6E5D5B79C")
-
-        public static final int TYPE_UNREGISTERED = 2;
     }
 
 

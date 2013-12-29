@@ -1,6 +1,8 @@
 package android.animation;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -23,16 +25,19 @@ import android.view.animation.AnimationUtils;
 
 
 public class AnimatorInflater {
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:13.942 -0400", hash_original_method = "755519606CB6AC3A2C6456CA27261C19", hash_generated_method = "755519606CB6AC3A2C6456CA27261C19")
-    @DSModeled(DSC.SAFE)
-    public AnimatorInflater ()
-    {
-        //Synthesized constructor
-    }
 
-    @DSModeled(DSC.SAFE)
-    public static Animator loadAnimator(Context context, int id) throws NotFoundException {
+    /**
+     * Loads an {@link Animator} object from a resource
+     *
+     * @param context Application context used to access resources
+     * @param id The resource id of the animation to load
+     * @return The animator object reference by the specified id
+     * @throws android.content.res.Resources.NotFoundException when the animation cannot be loaded
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:39.542 -0500", hash_original_method = "867C489934B793819C9588902A365D13", hash_generated_method = "EEB112F6BC658F8BBAC093C2FF604E3F")
+    public static Animator loadAnimator(Context context, int id)
+            throws NotFoundException {
+
         XmlResourceParser parser = null;
         try {
             parser = context.getResources().getAnimation(id);
@@ -54,26 +59,34 @@ public class AnimatorInflater {
         }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    private static Animator createAnimatorFromXml(Context c, XmlPullParser parser) throws XmlPullParserException, IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:39.542 -0500", hash_original_method = "7F7EA310E666B8E19447863365BDF46E", hash_generated_method = "C62519A7EB69E1240EEEEA6CBC44ADD6")
+    private static Animator createAnimatorFromXml(Context c, XmlPullParser parser)
+            throws XmlPullParserException, IOException {
+
         return createAnimatorFromXml(c, parser, Xml.asAttributeSet(parser), null, 0);
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:39.544 -0500", hash_original_method = "0F6E721FE23D631E8AAECB95FEB62E01", hash_generated_method = "4F6E63F01B981F64B6F855BE1323A4D1")
     private static Animator createAnimatorFromXml(Context c, XmlPullParser parser,
-            AttributeSet attrs, AnimatorSet parent, int sequenceOrdering) throws XmlPullParserException, IOException {
+            AttributeSet attrs, AnimatorSet parent, int sequenceOrdering)
+            throws XmlPullParserException, IOException {
+
         Animator anim = null;
         ArrayList<Animator> childAnims = null;
+
+        // Make sure we are on a start tag.
         int type;
         int depth = parser.getDepth();
+
         while (((type=parser.next()) != XmlPullParser.END_TAG || parser.getDepth() > depth)
                && type != XmlPullParser.END_DOCUMENT) {
+
             if (type != XmlPullParser.START_TAG) {
                 continue;
             }
+
             String  name = parser.getName();
+
             if (name.equals("objectAnimator")) {
                 anim = loadObjectAnimator(c, attrs);
             } else if (name.equals("animator")) {
@@ -89,6 +102,7 @@ public class AnimatorInflater {
             } else {
                 throw new RuntimeException("Unknown animator name: " + parser.getName());
             }
+
             if (parent != null) {
                 if (childAnims == null) {
                     childAnims = new ArrayList<Animator>();
@@ -108,51 +122,78 @@ public class AnimatorInflater {
                 parent.playSequentially(animsArray);
             }
         }
+
         return anim;
+
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    private static ObjectAnimator loadObjectAnimator(Context context, AttributeSet attrs) throws NotFoundException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:39.545 -0500", hash_original_method = "E9BE17E1756C0F9FBDB33E7DB58F62ED", hash_generated_method = "CC986DE9F94EA317F16E7242BD770100")
+    private static ObjectAnimator loadObjectAnimator(Context context, AttributeSet attrs)
+            throws NotFoundException {
+
         ObjectAnimator anim = new ObjectAnimator();
+
         loadAnimator(context, attrs, anim);
+
         TypedArray a =
                 context.obtainStyledAttributes(attrs, com.android.internal.R.styleable.PropertyAnimator);
+
         String propertyName = a.getString(com.android.internal.R.styleable.PropertyAnimator_propertyName);
+
         anim.setPropertyName(propertyName);
+
         a.recycle();
+
         return anim;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    private static ValueAnimator loadAnimator(Context context, AttributeSet attrs, ValueAnimator anim) throws NotFoundException {
+    /**
+     * Creates a new animation whose parameters come from the specified context and
+     * attributes set.
+     *
+     * @param context the application environment
+     * @param attrs the set of attributes holding the animation parameters
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:39.546 -0500", hash_original_method = "1948BDF01397223EDF19839C0F7A1A0C", hash_generated_method = "152B565EDC78596A805BD7DF2E407430")
+    private static ValueAnimator loadAnimator(Context context, AttributeSet attrs, ValueAnimator anim)
+            throws NotFoundException {
+
         TypedArray a =
                 context.obtainStyledAttributes(attrs, com.android.internal.R.styleable.Animator);
+
         long duration = a.getInt(com.android.internal.R.styleable.Animator_duration, 0);
+
         long startDelay = a.getInt(com.android.internal.R.styleable.Animator_startOffset, 0);
+
         int valueType = a.getInt(com.android.internal.R.styleable.Animator_valueType,
                 VALUE_TYPE_FLOAT);
+
         if (anim == null) {
             anim = new ValueAnimator();
         }
         TypeEvaluator evaluator = null;
+
         int valueFromIndex = com.android.internal.R.styleable.Animator_valueFrom;
         int valueToIndex = com.android.internal.R.styleable.Animator_valueTo;
+
         boolean getFloats = (valueType == VALUE_TYPE_FLOAT);
+
         TypedValue tvFrom = a.peekValue(valueFromIndex);
         boolean hasFrom = (tvFrom != null);
         int fromType = hasFrom ? tvFrom.type : 0;
         TypedValue tvTo = a.peekValue(valueToIndex);
         boolean hasTo = (tvTo != null);
         int toType = hasTo ? tvTo.type : 0;
+
         if ((hasFrom && (fromType >= TypedValue.TYPE_FIRST_COLOR_INT) &&
                 (fromType <= TypedValue.TYPE_LAST_COLOR_INT)) ||
             (hasTo && (toType >= TypedValue.TYPE_FIRST_COLOR_INT) &&
                 (toType <= TypedValue.TYPE_LAST_COLOR_INT))) {
+            // special case for colors: ignore valueType and get ints
             getFloats = false;
             anim.setEvaluator(new ArgbEvaluator());
         }
+
         if (getFloats) {
             float valueFrom;
             float valueTo;
@@ -219,8 +260,10 @@ public class AnimatorInflater {
                 }
             }
         }
+
         anim.setDuration(duration);
         anim.setStartDelay(startDelay);
+
         if (a.hasValue(com.android.internal.R.styleable.Animator_repeatCount)) {
             anim.setRepeatCount(
                     a.getInt(com.android.internal.R.styleable.Animator_repeatCount, 0));
@@ -233,33 +276,40 @@ public class AnimatorInflater {
         if (evaluator != null) {
             anim.setEvaluator(evaluator);
         }
+
         final int resID =
                 a.getResourceId(com.android.internal.R.styleable.Animator_interpolator, 0);
         if (resID > 0) {
             anim.setInterpolator(AnimationUtils.loadInterpolator(context, resID));
         }
         a.recycle();
+
         return anim;
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:13.953 -0400", hash_original_field = "C1FCEF32161A7BF89FDA53D614301098", hash_generated_field = "490BA40ECAC7401230E37F6CEBA3BA68")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:39.537 -0500", hash_original_field = "31840C65EBCC9B611F2D04F9CD2949C0", hash_generated_field = "490BA40ECAC7401230E37F6CEBA3BA68")
 
     private static final int TOGETHER = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:13.954 -0400", hash_original_field = "B568DA5D545ECA4D1ECFB6CD119EC659", hash_generated_field = "44AD87916965B5BF828EB108EEBE456E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:39.537 -0500", hash_original_field = "A210847C0A06CE4FC0BB17DB93B5E26D", hash_generated_field = "44AD87916965B5BF828EB108EEBE456E")
 
     private static final int SEQUENTIALLY = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:13.955 -0400", hash_original_field = "10812D1AA64AC84BBC01F77ADD149F5F", hash_generated_field = "A27617DD31601E2EB156A76530E8379C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:39.538 -0500", hash_original_field = "A6F462C5EAE714D6348E8DA2CBD708BB", hash_generated_field = "A27617DD31601E2EB156A76530E8379C")
 
-    private static final int VALUE_TYPE_FLOAT = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:13.956 -0400", hash_original_field = "011B104C1718919D9F0DE0394AE94E7A", hash_generated_field = "6D21C1ED6B4C00EAB281850A3EBEE6B8")
+    private static final int VALUE_TYPE_FLOAT       = 0;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:39.539 -0500", hash_original_field = "73143FA054095D5564BA085C7AF6288D", hash_generated_field = "6D21C1ED6B4C00EAB281850A3EBEE6B8")
 
-    private static final int VALUE_TYPE_INT = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:13.957 -0400", hash_original_field = "F5C489E68DFCBFC6812B2F1E6603C7E4", hash_generated_field = "238B1727D7604A09A087EB88A85EC858")
+    private static final int VALUE_TYPE_INT         = 1;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:39.540 -0500", hash_original_field = "97D0936CEE70AC481C0C794DE5E68EC8", hash_generated_field = "238B1727D7604A09A087EB88A85EC858")
 
-    private static final int VALUE_TYPE_COLOR = 4;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:13.957 -0400", hash_original_field = "03B5A78BF4EF38ED0FA277295CCE4F73", hash_generated_field = "1D53AE501AADB1CB9CB4D59D5FF93934")
+    private static final int VALUE_TYPE_COLOR       = 4;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:39.541 -0500", hash_original_field = "1BE817A8943CC13D3B5E3B4DC58A3131", hash_generated_field = "1D53AE501AADB1CB9CB4D59D5FF93934")
 
-    private static final int VALUE_TYPE_CUSTOM = 5;
+    private static final int VALUE_TYPE_CUSTOM      = 5;
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:13.942 -0400", hash_original_method = "755519606CB6AC3A2C6456CA27261C19", hash_generated_method = "755519606CB6AC3A2C6456CA27261C19")
+    @DSModeled(DSC.SAFE)
+    public AnimatorInflater ()
+    {
+        //Synthesized constructor
+    }
 }
 

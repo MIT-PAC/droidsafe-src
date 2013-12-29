@@ -1,6 +1,8 @@
 package libcore.io;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.FileDescriptor;
 
@@ -8,16 +10,16 @@ import java.io.FileDescriptor;
 
 
 public final class StructPollfd {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.801 -0400", hash_original_field = "36EBA1E1E343279857EA7F69A597324E", hash_generated_field = "4ED9B7CD0F5862CC649C5C4B2E5F5F51")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:40.348 -0500", hash_original_field = "DC35B29CA7114A0CAB311A30B93CBE5F", hash_generated_field = "4ED9B7CD0F5862CC649C5C4B2E5F5F51")
 
     public FileDescriptor fd;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.801 -0400", hash_original_field = "16908B0605F2645DFCB4C3A8D248CEF3", hash_generated_field = "AD8CCCEA5DD927CFDD38AD64D7260A1F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:40.349 -0500", hash_original_field = "273D8FB48892528212EED9DFB057B35D", hash_generated_field = "AD8CCCEA5DD927CFDD38AD64D7260A1F")
 
     public short events;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.801 -0400", hash_original_field = "7C6F5B9F008B99872B2AFF44748410C8", hash_generated_field = "C9E09D1AC67432C58BB6B9E4573BBE5A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:40.350 -0500", hash_original_field = "4314AA1D2E8C5A91EC0704E0954B8F0D", hash_generated_field = "C9E09D1AC67432C58BB6B9E4573BBE5A")
 
     public short revents;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.801 -0400", hash_original_field = "56491F2E1C74898E18BB6E47D2425B19", hash_generated_field = "CB5AE7A6476A1E6BA040395757BE0AEE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:40.351 -0500", hash_original_field = "64F9C8FFBF59E1349A604124A0E0710A", hash_generated_field = "CB5AE7A6476A1E6BA040395757BE0AEE")
 
     public Object userData;
     
@@ -28,16 +30,10 @@ public final class StructPollfd {
         //Synthesized constructor
     }
 
-
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.801 -0400", hash_original_method = "A14B5D7144ADE29CBA1A23DAE6B04BC8", hash_generated_method = "C09B88E9366B716401C47351ADEEF190")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:40.352 -0500", hash_original_method = "A14B5D7144ADE29CBA1A23DAE6B04BC8", hash_generated_method = "C524CB084AA16F2A7514F3446CA9F741")
     @Override
-    public String toString() {
-String varD1A9934F92FC0D47E0956E235ABDEC62_687273017 =         "StructPollfd[fd=" + fd + ",events=" + events + ",revents=" + revents + "]";
-        varD1A9934F92FC0D47E0956E235ABDEC62_687273017.addTaint(taint);
-        return varD1A9934F92FC0D47E0956E235ABDEC62_687273017;
-        // ---------- Original Method ----------
-        //return "StructPollfd[fd=" + fd + ",events=" + events + ",revents=" + revents + "]";
+public String toString() {
+        return "StructPollfd[fd=" + fd + ",events=" + events + ",revents=" + revents + "]";
     }
 
     

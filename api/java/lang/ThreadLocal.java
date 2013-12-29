@@ -1,6 +1,8 @@
 package java.lang;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.lang.ref.Reference;
 import java.lang.ref.WeakReference;
@@ -12,169 +14,147 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 
 public class ThreadLocal<T> {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.570 -0400", hash_original_field = "426DC84987C4B2179AAC3652CD9F0630", hash_generated_field = "E19C4AFB9937521DCDC693F15C42E2A7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:24.999 -0500", hash_original_field = "65EF0C9DFC0E92D7EED5F56DE419D25E", hash_generated_field = "D0904C715877D79D507857C3DBB2EE5E")
 
-    private final Reference<ThreadLocal<T>> reference = new WeakReference<ThreadLocal<T>>(this);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.570 -0400", hash_original_field = "2D91048F537A2D73A5B9E4039D2A22B5", hash_generated_field = "B643A854DCD11F044BA6D1951F01CE6B")
+    private static AtomicInteger hashCounter = new AtomicInteger(0);
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:24.998 -0500", hash_original_field = "C19D8ED4807D46DB1FCA44799C1FDD28", hash_generated_field = "E19C4AFB9937521DCDC693F15C42E2A7")
+
+    private final Reference<ThreadLocal<T>> reference
+            = new WeakReference<ThreadLocal<T>>(this);
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.001 -0500", hash_original_field = "5323E62630847103A2D18086F1AC9418", hash_generated_field = "B643A854DCD11F044BA6D1951F01CE6B")
 
     private final int hash = hashCounter.getAndAdd(0x61c88647 * 2);
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.571 -0400", hash_original_method = "CCBA978684365F19FBD68BD48C79C23F", hash_generated_method = "A892989B2AACDC92217F9E3C26407114")
-    public  ThreadLocal() {
-        // ---------- Original Method ----------
-    }
 
-    
-        @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.571 -0400", hash_original_method = "17AB1D63AD8B7EADE4880D6FD1744965", hash_generated_method = "DB375446CD45C419BAE9E10F9ACFE7B7")
+    /* Thanks to Josh Bloch and Doug Lea for code reviews and impl advice. */
+
+    /**
+     * Creates a new thread-local variable.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:24.992 -0500", hash_original_method = "CCBA978684365F19FBD68BD48C79C23F", hash_generated_method = "D0C2DD8281FBEC9648419EC2F2A6CF45")
+    public ThreadLocal() {}
+
+    /**
+     * Returns the value of this variable for the current thread. If an entry
+     * doesn't yet exist for this variable on this thread, this method will
+     * create an entry, populating the value with the result of
+     * {@link #initialValue()}.
+     *
+     * @return the current value of the variable for the calling thread.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:24.993 -0500", hash_original_method = "17AB1D63AD8B7EADE4880D6FD1744965", hash_generated_method = "487B38E97D772D8EDC85719FC3E88B3F")
     @SuppressWarnings("unchecked")
-    public T get() {
+public T get() {
+        // Optimized for the fast path.
         Thread currentThread = Thread.currentThread();
         Values values = values(currentThread);
-        if(values != null)        
-        {
+        if (values != null) {
             Object[] table = values.table;
             int index = hash & values.mask;
-            if(this.reference == table[index])            
-            {
-T var9970D4A3573A4344C3E661AA6C50079B_1605452362 =                 (T) table[index + 1];
-                var9970D4A3573A4344C3E661AA6C50079B_1605452362.addTaint(taint);
-                return var9970D4A3573A4344C3E661AA6C50079B_1605452362;
-            } //End block
-        } //End block
-        else
-        {
+            if (this.reference == table[index]) {
+                return (T) table[index + 1];
+            }
+        } else {
             values = initializeValues(currentThread);
-        } //End block
-T var118A24DDA3996835C16B7CD567861DDA_133760240 =         (T) values.getAfterMiss(this);
-        var118A24DDA3996835C16B7CD567861DDA_133760240.addTaint(taint);
-        return var118A24DDA3996835C16B7CD567861DDA_133760240;
-        // ---------- Original Method ----------
-        //Thread currentThread = Thread.currentThread();
-        //Values values = values(currentThread);
-        //if (values != null) {
-            //Object[] table = values.table;
-            //int index = hash & values.mask;
-            //if (this.reference == table[index]) {
-                //return (T) table[index + 1];
-            //}
-        //} else {
-            //values = initializeValues(currentThread);
-        //}
-        //return (T) values.getAfterMiss(this);
+        }
+
+        return (T) values.getAfterMiss(this);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.572 -0400", hash_original_method = "65001977AEEFEE3DB28BF88E33FB8DD1", hash_generated_method = "16AE615B2449DE60313CA0EA10BB30B3")
-        @DSModeled(DSC.SAFE)
+    /**
+     * Provides the initial value of this variable for the current thread.
+     * The default implementation returns {@code null}.
+     *
+     * @return the initial value of the variable.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:24.994 -0500", hash_original_method = "65001977AEEFEE3DB28BF88E33FB8DD1", hash_generated_method = "999537292646B413D625B8DA30E8F6C8")
     protected T initialValue() {
-T var540C13E9E156B687226421B24F2DF178_825544989 =         null;
-        var540C13E9E156B687226421B24F2DF178_825544989.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_825544989;
-        // ---------- Original Method ----------
-        //return null;
+        return null;
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.572 -0400", hash_original_method = "93D51722B7CB3C8EF0C38EE234F866B9", hash_generated_method = "B84BF9B7A80E78478B3BF914CB380E6C")
-        @DSModeled(DSC.SAFE)
+    /**
+     * Sets the value of this variable for the current thread. If set to
+     * {@code null}, the value will be set to null and the underlying entry will
+     * still be present.
+     *
+     * @param value the new value of the variable for the caller thread.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:24.994 -0500", hash_original_method = "93D51722B7CB3C8EF0C38EE234F866B9", hash_generated_method = "F4573C2031B961898558E7070BE21319")
     public void set(T value) {
-        addTaint(value.getTaint());
         Thread currentThread = Thread.currentThread();
         Values values = values(currentThread);
-        if(values == null)        
-        {
+        if (values == null) {
             values = initializeValues(currentThread);
-        } //End block
+        }
         values.put(this, value);
-        // ---------- Original Method ----------
-        //Thread currentThread = Thread.currentThread();
-        //Values values = values(currentThread);
-        //if (values == null) {
-            //values = initializeValues(currentThread);
-        //}
-        //values.put(this, value);
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.573 -0400", hash_original_method = "E12F04AD7D9687B33AD1C273DE0809EB", hash_generated_method = "A14A226AF2819BF3400FDF5EDD63BABE")
+    /**
+     * Removes the entry for this variable in the current thread. If this call
+     * is followed by a {@link #get()} before a {@link #set},
+     * {@code #get()} will call {@link #initialValue()} and create a new
+     * entry with the resulting value.
+     *
+     * @since 1.5
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:24.995 -0500", hash_original_method = "E12F04AD7D9687B33AD1C273DE0809EB", hash_generated_method = "ACDA24ADC78949A9692E989598D5396F")
     public void remove() {
         Thread currentThread = Thread.currentThread();
         Values values = values(currentThread);
-        if(values != null)        
-        {
+        if (values != null) {
             values.remove(this);
-        } //End block
-        // ---------- Original Method ----------
-        //Thread currentThread = Thread.currentThread();
-        //Values values = values(currentThread);
-        //if (values != null) {
-            //values.remove(this);
-        //}
+        }
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.573 -0400", hash_original_method = "F6756F2BA503B7A43E41A22536745AD1", hash_generated_method = "6C3F0940472BAD8A50C865E14B6FFEEE")
-        @DSModeled(DSC.SAFE)
-     Values initializeValues(Thread current) {
-        addTaint(current.getTaint());
-Values varDD5B551295F7C93CAA721FF5B869F41E_406192561 =         current.localValues = new Values();
-        varDD5B551295F7C93CAA721FF5B869F41E_406192561.addTaint(taint);
-        return varDD5B551295F7C93CAA721FF5B869F41E_406192561;
-        // ---------- Original Method ----------
-        //return current.localValues = new Values();
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.573 -0400", hash_original_method = "303C743BABF91BBE1D2B949725040AC0", hash_generated_method = "2652D6D7D05B6BC7928228BDE3FB4900")
-     Values values(Thread current) {
-        addTaint(current.getTaint());
-Values var1FEE96EDD34FFCA0D4CE1EAE7413BA9A_1338540838 =         current.localValues;
-        var1FEE96EDD34FFCA0D4CE1EAE7413BA9A_1338540838.addTaint(taint);
-        return var1FEE96EDD34FFCA0D4CE1EAE7413BA9A_1338540838;
-        // ---------- Original Method ----------
-        //return current.localValues;
+    /**
+     * Creates Values instance for this thread and variable type.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:24.996 -0500", hash_original_method = "F6756F2BA503B7A43E41A22536745AD1", hash_generated_method = "F6756F2BA503B7A43E41A22536745AD1")
+    Values initializeValues(Thread current) {
+        return current.localValues = new Values();
     }
 
     
     static class Values {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.574 -0400", hash_original_field = "AAB9E1DE16F38176F86D7A92BA337A8D", hash_generated_field = "FD72DCEA1BA087F9DFD15C7A360AA526")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.002 -0500", hash_original_field = "5815EB4F0C5C8D237058EB34C5FEE776", hash_generated_field = "FC71C8361E3E0D880F15510AF5EACDF8")
+
+        private static final int INITIAL_SIZE = 16;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.003 -0500", hash_original_field = "9E0F247113117F4A5C23BCB7A2797F8A", hash_generated_field = "AB47CE0D72E31CB661DFF9FA386FCB35")
+
+        private static final Object TOMBSTONE = new Object();
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.004 -0500", hash_original_field = "36DF4CEC834ED362235F0669E6FA3F95", hash_generated_field = "FD72DCEA1BA087F9DFD15C7A360AA526")
 
         private Object[] table;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.574 -0400", hash_original_field = "F2CE11EBF110993621BEDD8E747D7B1B", hash_generated_field = "CB9C3356548F555F843424D7B01932DE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.005 -0500", hash_original_field = "DB965A11139AB665B00B4D2E2ABFFB32", hash_generated_field = "CB9C3356548F555F843424D7B01932DE")
 
         private int mask;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.574 -0400", hash_original_field = "F7BD60B75B29D79B660A2859395C1A24", hash_generated_field = "F06612A05C836674433E69C513561353")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.005 -0500", hash_original_field = "673BDAEBF4FBC900963E210E042549D6", hash_generated_field = "F06612A05C836674433E69C513561353")
 
         private int size;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.574 -0400", hash_original_field = "F665DDFDFDD1E28A26618501F76D7106", hash_generated_field = "97BD139A14B9108FDB72C084E57FF305")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.006 -0500", hash_original_field = "6A2EF5F02E565CDE4F1ED655E81BCFA4", hash_generated_field = "97BD139A14B9108FDB72C084E57FF305")
 
         private int tombstones;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.575 -0400", hash_original_field = "41A009FBDA3ED027F977216A29F00D00", hash_generated_field = "84B0D7BDAD4BEF6EA743B0D3D294E91E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.007 -0500", hash_original_field = "CC184D2D90DB7295BCCC119BF2899AB8", hash_generated_field = "84B0D7BDAD4BEF6EA743B0D3D294E91E")
 
         private int maximumLoad;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.575 -0400", hash_original_field = "123402C04DCFB6625F688F771A5FC05D", hash_generated_field = "D443419CB814AFCD3668DE2EA3A4C6CB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.008 -0500", hash_original_field = "BB67A37237C25198C973F0AF97F1FEB9", hash_generated_field = "D443419CB814AFCD3668DE2EA3A4C6CB")
 
         private int clean;
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.575 -0400", hash_original_method = "8603CA8C8DA2F2A8742D0D3D57F85A73", hash_generated_method = "0F4D9E6506A7695CFEA2C062F4777A67")
-        @DSModeled(DSC.SAFE)
-          Values() {
+
+        /**
+         * Constructs a new, empty instance.
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.009 -0500", hash_original_method = "8603CA8C8DA2F2A8742D0D3D57F85A73", hash_generated_method = "8603CA8C8DA2F2A8742D0D3D57F85A73")
+        Values() {
             initializeTable(INITIAL_SIZE);
             this.size = 0;
             this.tombstones = 0;
-            // ---------- Original Method ----------
-            //initializeTable(INITIAL_SIZE);
-            //this.size = 0;
-            //this.tombstones = 0;
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.577 -0400", hash_original_method = "1543F2E70FF0D503FC0C174797134204", hash_generated_method = "F7721AC4BA5FF82A1C46E64C289CD04E")
-        @DSModeled(DSC.SAFE)
-          Values(Values fromParent) {
+        /**
+         * Used for InheritableThreadLocals.
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.010 -0500", hash_original_method = "1543F2E70FF0D503FC0C174797134204", hash_generated_method = "1543F2E70FF0D503FC0C174797134204")
+        Values(Values fromParent) {
             this.table = fromParent.table.clone();
             this.mask = fromParent.mask;
             this.size = fromParent.size;
@@ -182,352 +162,359 @@ Values var1FEE96EDD34FFCA0D4CE1EAE7413BA9A_1338540838 =         current.localVal
             this.maximumLoad = fromParent.maximumLoad;
             this.clean = fromParent.clean;
             inheritValues(fromParent);
-            // ---------- Original Method ----------
-            //this.table = fromParent.table.clone();
-            //this.mask = fromParent.mask;
-            //this.size = fromParent.size;
-            //this.tombstones = fromParent.tombstones;
-            //this.maximumLoad = fromParent.maximumLoad;
-            //this.clean = fromParent.clean;
-            //inheritValues(fromParent);
         }
 
-        
-        @DSModeled(DSC.BAN)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.579 -0400", hash_original_method = "9BD4203D3E5EBD7464FA7B2A4E6BD9E0", hash_generated_method = "379E049E21CBC2DE337CB3BE0A2DB8BC")
+        /**
+         * Inherits values from a parent thread.
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.011 -0500", hash_original_method = "9BD4203D3E5EBD7464FA7B2A4E6BD9E0", hash_generated_method = "2901E5EF19F5713990C93D0D25796978")
         @SuppressWarnings({"unchecked"})
-        private void inheritValues(Values fromParent) {
+private void inheritValues(Values fromParent) {
+            // Transfer values from parent to child thread.
             Object[] table = this.table;
-for(int i = table.length - 2;i >= 0;i -= 2)
-            {
+            for (int i = table.length - 2; i >= 0; i -= 2) {
                 Object k = table[i];
-                if(k == null || k == TOMBSTONE)                
-                {
+
+                if (k == null || k == TOMBSTONE) {
+                    // Skip this entry.
                     continue;
-                } //End block
-                Reference<InheritableThreadLocal<?>> reference = (Reference<InheritableThreadLocal<?>>) k;
+                }
+
+                // The table can only contain null, tombstones and references.
+                Reference<InheritableThreadLocal<?>> reference
+                        = (Reference<InheritableThreadLocal<?>>) k;
+                // Raw type enables us to pass in an Object below.
                 InheritableThreadLocal key = reference.get();
-                if(key != null)                
-                {
+                if (key != null) {
+                    // Replace value with filtered value.
+                    // We should just let exceptions bubble out and tank
+                    // the thread creation
                     table[i + 1] = key.childValue(fromParent.table[i + 1]);
-                } //End block
-                else
-                {
+                } else {
+                    // The key was reclaimed.
                     table[i] = TOMBSTONE;
                     table[i + 1] = null;
                     fromParent.table[i] = TOMBSTONE;
                     fromParent.table[i + 1] = null;
+
                     tombstones++;
                     fromParent.tombstones++;
+
                     size--;
                     fromParent.size--;
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+                }
+            }
         }
 
-        
-                @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.581 -0400", hash_original_method = "8D46CF6663407215221C449D596ED15A", hash_generated_method = "C7EB45EBDA4EAA513131B1354BE102DF")
+        /**
+         * Creates a new, empty table with the given capacity.
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.012 -0500", hash_original_method = "8D46CF6663407215221C449D596ED15A", hash_generated_method = "CBACA53A8D3C7D66DABA127668E3E13D")
         private void initializeTable(int capacity) {
             this.table = new Object[capacity * 2];
             this.mask = table.length - 1;
             this.clean = 0;
-            this.maximumLoad = capacity * 2 / 3;
-            // ---------- Original Method ----------
-            //this.table = new Object[capacity * 2];
-            //this.mask = table.length - 1;
-            //this.clean = 0;
-            //this.maximumLoad = capacity * 2 / 3;
+            this.maximumLoad = capacity * 2 / 3; // 2/3
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.583 -0400", hash_original_method = "9C8BB7874FA14669E3E1A4855CFECE2B", hash_generated_method = "EA2CD0921D8A0BFC314FC53447F193A3")
-        @DSModeled(DSC.BAN)
+        /**
+         * Cleans up after garbage-collected thread locals.
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.013 -0500", hash_original_method = "9C8BB7874FA14669E3E1A4855CFECE2B", hash_generated_method = "1E4AE75F15E21F869CCCFC0572EF8EC7")
         private void cleanUp() {
-            if(rehash())            
-            {
+            if (rehash()) {
+                // If we rehashed, we needn't clean up (clean up happens as
+                // a side effect).
                 return;
-            } //End block
-            if(size == 0)            
-            {
+            }
+
+            if (size == 0) {
+                // No live entries == nothing to clean.
                 return;
-            } //End block
+            }
+
+            // Clean log(table.length) entries picking up where we left off
+            // last time.
             int index = clean;
             Object[] table = this.table;
-for(int counter = table.length;counter > 0;counter >>= 1,index = next(index))
-            {
+            for (int counter = table.length; counter > 0; counter >>= 1,
+                    index = next(index)) {
                 Object k = table[index];
-                if(k == TOMBSTONE || k == null)                
-                {
-                    continue;
-                } //End block
-                @SuppressWarnings("unchecked") Reference<ThreadLocal<?>> reference = (Reference<ThreadLocal<?>>) k;
-                if(reference.get() == null)                
-                {
+
+                if (k == TOMBSTONE || k == null) {
+                    continue; // on to next entry
+                }
+
+                // The table can only contain null, tombstones and references.
+                @SuppressWarnings("unchecked")
+                Reference<ThreadLocal<?>> reference
+                        = (Reference<ThreadLocal<?>>) k;
+                if (reference.get() == null) {
+                    // This thread local was reclaimed by the garbage collector.
                     table[index] = TOMBSTONE;
                     table[index + 1] = null;
                     tombstones++;
                     size--;
-                } //End block
-            } //End block
+                }
+            }
+
+            // Point cursor to next index.
             clean = index;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.585 -0400", hash_original_method = "D5329B07F2A83D8B781C7C8F5FD2D30A", hash_generated_method = "52D56192824852B32E18F20CB4F6E2BD")
-        @DSModeled(DSC.BAN)
+        /**
+         * Rehashes the table, expanding or contracting it as necessary.
+         * Gets rid of tombstones. Returns true if a rehash occurred.
+         * We must rehash every time we fill a null slot; we depend on the
+         * presence of null slots to end searches (otherwise, we'll infinitely
+         * loop).
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.014 -0500", hash_original_method = "D5329B07F2A83D8B781C7C8F5FD2D30A", hash_generated_method = "99C56485AD9D5B0DEEDA3A46BA4195ED")
         private boolean rehash() {
-            if(tombstones + size < maximumLoad)            
-            {
-                boolean var68934A3E9455FA72420237EB05902327_1699888602 = (false);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1980319989 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1980319989;
-            } //End block
+            if (tombstones + size < maximumLoad) {
+                return false;
+            }
+
             int capacity = table.length >> 1;
+
+            // Default to the same capacity. This will create a table of the
+            // same size and move over the live entries, analogous to a
+            // garbage collection. This should only happen if you churn a
+            // bunch of thread local garbage (removing and reinserting
+            // the same thread locals over and over will overwrite tombstones
+            // and not fill up the table).
             int newCapacity = capacity;
-            if(size > (capacity >> 1))            
-            {
+
+            if (size > (capacity >> 1)) {
+                // More than 1/2 filled w/ live entries.
+                // Double size.
                 newCapacity = capacity * 2;
-            } //End block
+            }
+
             Object[] oldTable = this.table;
+
+            // Allocate new table.
             initializeTable(newCapacity);
+
+            // We won't have any tombstones after this.
             this.tombstones = 0;
-            if(size == 0)            
-            {
-                boolean varB326B5062B2F0E69046810717534CB09_516518402 = (true);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1163153529 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1163153529;
-            } //End block
-for(int i = oldTable.length - 2;i >= 0;i -= 2)
-            {
+
+            // If we have no live entries, we can quit here.
+            if (size == 0) {
+                return true;
+            }
+
+            // Move over entries.
+            for (int i = oldTable.length - 2; i >= 0; i -= 2) {
                 Object k = oldTable[i];
-                if(k == null || k == TOMBSTONE)                
-                {
+                if (k == null || k == TOMBSTONE) {
+                    // Skip this entry.
                     continue;
-                } //End block
-                @SuppressWarnings("unchecked") Reference<ThreadLocal<?>> reference = (Reference<ThreadLocal<?>>) k;
+                }
+
+                // The table can only contain null, tombstones and references.
+                @SuppressWarnings("unchecked")
+                Reference<ThreadLocal<?>> reference
+                        = (Reference<ThreadLocal<?>>) k;
                 ThreadLocal<?> key = reference.get();
-                if(key != null)                
-                {
+                if (key != null) {
+                    // Entry is still live. Move it over.
                     add(key, oldTable[i + 1]);
-                } //End block
-                else
-                {
+                } else {
+                    // The key was reclaimed.
                     size--;
-                } //End block
-            } //End block
-            boolean varB326B5062B2F0E69046810717534CB09_1451288270 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2033944454 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_2033944454;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+                }
+            }
+
+            return true;
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.586 -0400", hash_original_method = "8FD2790587F2719E68EBC052DE90327C", hash_generated_method = "E62CC5EF7AA1C7DD16254B6AE78605A9")
-        @DSModeled(DSC.SAFE)
-         void add(ThreadLocal<?> key, Object value) {
-for(int index = key.hash & mask;;index = next(index))
-            {
+        /**
+         * Adds an entry during rehashing. Compared to put(), this method
+         * doesn't have to clean up, check for existing entries, account for
+         * tombstones, etc.
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.015 -0500", hash_original_method = "8FD2790587F2719E68EBC052DE90327C", hash_generated_method = "8FD2790587F2719E68EBC052DE90327C")
+        void add(ThreadLocal<?> key, Object value) {
+            for (int index = key.hash & mask;; index = next(index)) {
                 Object k = table[index];
-                if(k == null)                
-                {
+                if (k == null) {
                     table[index] = key.reference;
                     table[index + 1] = value;
                     return;
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            //for (int index = key.hash & mask;; index = next(index)) {
-                //Object k = table[index];
-                //if (k == null) {
-                    //table[index] = key.reference;
-                    //table[index + 1] = value;
-                    //return;
-                //}
-            //}
+                }
+            }
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.587 -0400", hash_original_method = "F7F8B7C8923C08ADEC94E7E7276E0E2F", hash_generated_method = "3D20AB52033DCF442222D2199DDFB962")
-        @DSModeled(DSC.SAFE)
-         void put(ThreadLocal<?> key, Object value) {
+        /**
+         * Sets entry for given ThreadLocal to given value, creating an
+         * entry if necessary.
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.016 -0500", hash_original_method = "F7F8B7C8923C08ADEC94E7E7276E0E2F", hash_generated_method = "CA50C82AAEBCCFC857040B17FF4D0BBA")
+        void put(ThreadLocal<?> key, Object value) {
             cleanUp();
+
+            // Keep track of first tombstone. That's where we want to go back
+            // and add an entry if necessary.
             int firstTombstone = -1;
-for(int index = key.hash & mask;;index = next(index))
-            {
+
+            for (int index = key.hash & mask;; index = next(index)) {
                 Object k = table[index];
-                if(k == key.reference)                
-                {
+
+                if (k == key.reference) {
+                    // Replace existing entry.
                     table[index + 1] = value;
                     return;
-                } //End block
-                if(k == null)                
-                {
-                    if(firstTombstone == -1)                    
-                    {
+                }
+
+                if (k == null) {
+                    if (firstTombstone == -1) {
+                        // Fill in null slot.
                         table[index] = key.reference;
                         table[index + 1] = value;
                         size++;
                         return;
-                    } //End block
+                    }
+
+                    // Go back and replace first tombstone.
                     table[firstTombstone] = key.reference;
                     table[firstTombstone + 1] = value;
                     tombstones--;
                     size++;
                     return;
-                } //End block
-                if(firstTombstone == -1 && k == TOMBSTONE)                
-                {
+                }
+
+                // Remember first tombstone.
+                if (firstTombstone == -1 && k == TOMBSTONE) {
                     firstTombstone = index;
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+                }
+            }
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.588 -0400", hash_original_method = "27C70593962E283B71D24D73AE4C9368", hash_generated_method = "96E3FE28FCBAAB4D226B4FDE3130C05C")
-        @DSModeled(DSC.SAFE)
-         Object getAfterMiss(ThreadLocal<?> key) {
+        /**
+         * Gets value for given ThreadLocal after not finding it in the first
+         * slot.
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.018 -0500", hash_original_method = "27C70593962E283B71D24D73AE4C9368", hash_generated_method = "CB49CB1736028974189EF007283FC22C")
+        Object getAfterMiss(ThreadLocal<?> key) {
             Object[] table = this.table;
             int index = key.hash & mask;
-            if(table[index] == null)            
-            {
+
+            // If the first slot is empty, the search is over.
+            if (table[index] == null) {
                 Object value = key.initialValue();
-                if(this.table == table && table[index] == null)                
-                {
+
+                // If the table is still the same and the slot is still empty...
+                if (this.table == table && table[index] == null) {
                     table[index] = key.reference;
                     table[index + 1] = value;
                     size++;
+
                     cleanUp();
-Object varAF280DA2BC37D8BE783D8499160168DE_163827339 =                     value;
-                    varAF280DA2BC37D8BE783D8499160168DE_163827339.addTaint(taint);
-                    return varAF280DA2BC37D8BE783D8499160168DE_163827339;
-                } //End block
+                    return value;
+                }
+
+                // The table changed during initialValue().
                 put(key, value);
-Object varAF280DA2BC37D8BE783D8499160168DE_227067233 =                 value;
-                varAF280DA2BC37D8BE783D8499160168DE_227067233.addTaint(taint);
-                return varAF280DA2BC37D8BE783D8499160168DE_227067233;
-            } //End block
+                return value;
+            }
+
+            // Keep track of first tombstone. That's where we want to go back
+            // and add an entry if necessary.
             int firstTombstone = -1;
-for(index = next(index);;index = next(index))
-            {
+
+            // Continue search.
+            for (index = next(index);; index = next(index)) {
                 Object reference = table[index];
-                if(reference == key.reference)                
-                {
-Object varD4194754A17F2690B3CAEDCBB197DB14_996159275 =                     table[index + 1];
-                    varD4194754A17F2690B3CAEDCBB197DB14_996159275.addTaint(taint);
-                    return varD4194754A17F2690B3CAEDCBB197DB14_996159275;
-                } //End block
-                if(reference == null)                
-                {
+                if (reference == key.reference) {
+                    return table[index + 1];
+                }
+
+                // If no entry was found...
+                if (reference == null) {
                     Object value = key.initialValue();
-                    if(this.table == table)                    
-                    {
-                        if(firstTombstone > -1
-                                && table[firstTombstone] == TOMBSTONE)                        
-                        {
+
+                    // If the table is still the same...
+                    if (this.table == table) {
+                        // If we passed a tombstone and that slot still
+                        // contains a tombstone...
+                        if (firstTombstone > -1
+                                && table[firstTombstone] == TOMBSTONE) {
                             table[firstTombstone] = key.reference;
                             table[firstTombstone + 1] = value;
                             tombstones--;
                             size++;
-Object varAF280DA2BC37D8BE783D8499160168DE_598471577 =                             value;
-                            varAF280DA2BC37D8BE783D8499160168DE_598471577.addTaint(taint);
-                            return varAF280DA2BC37D8BE783D8499160168DE_598471577;
-                        } //End block
-                        if(table[index] == null)                        
-                        {
+
+                            // No need to clean up here. We aren't filling
+                            // in a null slot.
+                            return value;
+                        }
+
+                        // If this slot is still empty...
+                        if (table[index] == null) {
                             table[index] = key.reference;
                             table[index + 1] = value;
                             size++;
+
                             cleanUp();
-Object varAF280DA2BC37D8BE783D8499160168DE_1575597174 =                             value;
-                            varAF280DA2BC37D8BE783D8499160168DE_1575597174.addTaint(taint);
-                            return varAF280DA2BC37D8BE783D8499160168DE_1575597174;
-                        } //End block
-                    } //End block
+                            return value;
+                        }
+                    }
+
+                    // The table changed during initialValue().
                     put(key, value);
-Object varAF280DA2BC37D8BE783D8499160168DE_491885437 =                     value;
-                    varAF280DA2BC37D8BE783D8499160168DE_491885437.addTaint(taint);
-                    return varAF280DA2BC37D8BE783D8499160168DE_491885437;
-                } //End block
-                if(firstTombstone == -1 && reference == TOMBSTONE)                
-                {
+                    return value;
+                }
+
+                if (firstTombstone == -1 && reference == TOMBSTONE) {
+                    // Keep track of this tombstone so we can overwrite it.
                     firstTombstone = index;
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+                }
+            }
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.590 -0400", hash_original_method = "0360B175C51ABE1598A686E1C95592B6", hash_generated_method = "978540942665A6ED3922A2985BB0FD65")
-         void remove(ThreadLocal<?> key) {
-            addTaint(key.getTaint());
+        /**
+         * Removes entry for the given ThreadLocal.
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.019 -0500", hash_original_method = "0360B175C51ABE1598A686E1C95592B6", hash_generated_method = "90506082E3D0459E2C81EA8FB00BD16F")
+        void remove(ThreadLocal<?> key) {
             cleanUp();
-for(int index = key.hash & mask;;index = next(index))
-            {
+
+            for (int index = key.hash & mask;; index = next(index)) {
                 Object reference = table[index];
-                if(reference == key.reference)                
-                {
+
+                if (reference == key.reference) {
+                    // Success!
                     table[index] = TOMBSTONE;
                     table[index + 1] = null;
                     tombstones++;
                     size--;
                     return;
-                } //End block
-                if(reference == null)                
-                {
+                }
+
+                if (reference == null) {
+                    // No entry found.
                     return;
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            //cleanUp();
-            //for (int index = key.hash & mask;; index = next(index)) {
-                //Object reference = table[index];
-                //if (reference == key.reference) {
-                    //table[index] = TOMBSTONE;
-                    //table[index + 1] = null;
-                    //tombstones++;
-                    //size--;
-                    //return;
-                //}
-                //if (reference == null) {
-                    //return;
-                //}
-            //}
+                }
+            }
         }
 
-        
-                @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.590 -0400", hash_original_method = "A1B9AE6202C436A7C194238B45D86066", hash_generated_method = "F58CC3BF68255592FF21F5E76AA23B62")
+        /**
+         * Gets the next index. If we're at the end of the table, we wrap back
+         * around to 0.
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:25.020 -0500", hash_original_method = "A1B9AE6202C436A7C194238B45D86066", hash_generated_method = "2CC1E2DA13B47C46DCCB446A48AA4134")
         private int next(int index) {
-            addTaint(index);
-            int var893A2141F64F7BF774008DBF6E57D059_766775793 = ((index + 2) & mask);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_845601852 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_845601852;
-            // ---------- Original Method ----------
-            //return (index + 2) & mask;
+            return (index + 2) & mask;
         }
-
-        
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.590 -0400", hash_original_field = "DA9469906E1F2A2491D3A90AD3EDBF47", hash_generated_field = "FC71C8361E3E0D880F15510AF5EACDF8")
-
-        private static final int INITIAL_SIZE = 16;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.590 -0400", hash_original_field = "7FF9D9BF98FB0E986E1BEB357C0948A3", hash_generated_field = "AB47CE0D72E31CB661DFF9FA386FCB35")
-
-        private static final Object TOMBSTONE = new Object();
     }
 
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.591 -0400", hash_original_field = "4E607393E03575F758B020F7E9FA37D7", hash_generated_field = "D0904C715877D79D507857C3DBB2EE5E")
-
-    private static AtomicInteger hashCounter = new AtomicInteger(0);
+    /**
+     * Gets Values instance for this thread and variable type.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:24.997 -0500", hash_original_method = "303C743BABF91BBE1D2B949725040AC0", hash_generated_method = "303C743BABF91BBE1D2B949725040AC0")
+    Values values(Thread current) {
+        return current.localValues;
+    }
 }
 

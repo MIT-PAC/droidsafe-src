@@ -1,6 +1,8 @@
 package java.io;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Arrays;
 
@@ -10,205 +12,217 @@ import java.util.Arrays;
 
 
 public class ByteArrayOutputStream extends OutputStream {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.465 -0400", hash_original_field = "CB7E52B21171FB9A53B498202607F0BD", hash_generated_field = "083037218D1B4F9535944A48D3FD1BCA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.183 -0500", hash_original_field = "001DD3820C6A6A544AB42831C6F17A05", hash_generated_field = "083037218D1B4F9535944A48D3FD1BCA")
 
     protected byte[] buf;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.465 -0400", hash_original_field = "E2942A04780E223B215EB8B663CF5353", hash_generated_field = "CADFF8C1F208C99E14B28CFC1A04442F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.184 -0500", hash_original_field = "B83BF7ED7F5719DA923E1BC0AC69952B", hash_generated_field = "CADFF8C1F208C99E14B28CFC1A04442F")
 
     protected int count;
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.465 -0400", hash_original_method = "4DC3C0B5ECFA05562A9AFEF7B1CF9D45", hash_generated_method = "269B013234340EC0E9870BCC0641CB1F")
-    public  ByteArrayOutputStream() {
+
+    /**
+     * Constructs a new ByteArrayOutputStream with a default size of 32 bytes.
+     * If more than 32 bytes are written to this instance, the underlying byte
+     * array will expand.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.185 -0500", hash_original_method = "4DC3C0B5ECFA05562A9AFEF7B1CF9D45", hash_generated_method = "FDFBFEB3E3EF5CD81ADCFCD518080293")
+    public ByteArrayOutputStream() {
         buf = new byte[32];
-        // ---------- Original Method ----------
-        //buf = new byte[32];
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.466 -0400", hash_original_method = "931B663776F41DA70E9677006016F16F", hash_generated_method = "109FDE0F61DF78A99222AB72BE070E82")
-    public  ByteArrayOutputStream(int size) {
-        if(size >= 0)        
-        {
+    /**
+     * Constructs a new {@code ByteArrayOutputStream} with a default size of
+     * {@code size} bytes. If more than {@code size} bytes are written to this
+     * instance, the underlying byte array will expand.
+     *
+     * @param size
+     *            initial size for the underlying byte array, must be
+     *            non-negative.
+     * @throws IllegalArgumentException
+     *             if {@code size} < 0.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.186 -0500", hash_original_method = "931B663776F41DA70E9677006016F16F", hash_generated_method = "CE24AC27B7B66339EC71838E2850BE11")
+    public ByteArrayOutputStream(int size) {
+        if (size >= 0) {
             buf = new byte[size];
-        } //End block
-        else
-        {
-            IllegalArgumentException var2382BBC2482763F398967EC587DEA9AE_660968886 = new IllegalArgumentException("size < 0");
-            var2382BBC2482763F398967EC587DEA9AE_660968886.addTaint(taint);
-            throw var2382BBC2482763F398967EC587DEA9AE_660968886;
-        } //End block
-        // ---------- Original Method ----------
-        //if (size >= 0) {
-            //buf = new byte[size];
-        //} else {
-            //throw new IllegalArgumentException("size < 0");
-        //}
+        } else {
+            throw new IllegalArgumentException("size < 0");
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.467 -0400", hash_original_method = "04777FE12371C5E12A689BB328BF05B3", hash_generated_method = "56FC2307CB6D5F5D1217DE945E7131B9")
+    /**
+     * Closes this stream. This releases system resources used for this stream.
+     *
+     * @throws IOException
+     *             if an error occurs while attempting to close this stream.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.187 -0500", hash_original_method = "04777FE12371C5E12A689BB328BF05B3", hash_generated_method = "81559B248840B4A8460F72A02952056A")
     @Override
-    public void close() throws IOException {
+public void close() throws IOException {
+        /**
+         * Although the spec claims "A closed stream cannot perform output
+         * operations and cannot be reopened.", this implementation must do
+         * nothing.
+         */
         super.close();
-        // ---------- Original Method ----------
-        //super.close();
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.468 -0400", hash_original_method = "D6EC9446F27E74EA041BF330AAB72CEF", hash_generated_method = "B52DA47CB0E5954795B9200C0FED4F41")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.188 -0500", hash_original_method = "D6EC9446F27E74EA041BF330AAB72CEF", hash_generated_method = "92873E091686E9A0835B54C164A67468")
     private void expand(int i) {
-        addTaint(i);
-        if(count + i <= buf.length)        
-        {
+        /* Can the buffer handle @i more bytes, if not expand it */
+        if (count + i <= buf.length) {
             return;
-        } //End block
+        }
+
         byte[] newbuf = new byte[(count + i) * 2];
         System.arraycopy(buf, 0, newbuf, 0, count);
         buf = newbuf;
-        // ---------- Original Method ----------
-        //if (count + i <= buf.length) {
-            //return;
-        //}
-        //byte[] newbuf = new byte[(count + i) * 2];
-        //System.arraycopy(buf, 0, newbuf, 0, count);
-        //buf = newbuf;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.469 -0400", hash_original_method = "D84F167B372983A8A32E17B936FA6E9B", hash_generated_method = "400ADB088DB2A9073490DD652F495E0B")
+    /**
+     * Resets this stream to the beginning of the underlying byte array. All
+     * subsequent writes will overwrite any bytes previously stored in this
+     * stream.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.189 -0500", hash_original_method = "D84F167B372983A8A32E17B936FA6E9B", hash_generated_method = "ABCB19599E50D7E02937CF8C013B8534")
     public synchronized void reset() {
         count = 0;
-        // ---------- Original Method ----------
-        //count = 0;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.470 -0400", hash_original_method = "F417CE3385B772AADA134FBE4FF63C9E", hash_generated_method = "8B3200B8A25CEEF09ABB1B7B54470113")
+    /**
+     * Returns the total number of bytes written to this stream so far.
+     *
+     * @return the number of bytes written to this stream.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.189 -0500", hash_original_method = "F417CE3385B772AADA134FBE4FF63C9E", hash_generated_method = "CF994FCC7B87BF04A6C8FECB8C53A973")
     public int size() {
-        int varE2942A04780E223B215EB8B663CF5353_782386443 = (count);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1552362184 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1552362184;
-        // ---------- Original Method ----------
-        //return count;
+        return count;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.471 -0400", hash_original_method = "F52D84F15F793E7D52B479C7891604F2", hash_generated_method = "D4C3C3BC6F80C9DBDF114717DF06E0A4")
+    /**
+     * Returns the contents of this ByteArrayOutputStream as a byte array. Any
+     * changes made to the receiver after returning will not be reflected in the
+     * byte array returned to the caller.
+     *
+     * @return this stream's current contents as a byte array.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.190 -0500", hash_original_method = "F52D84F15F793E7D52B479C7891604F2", hash_generated_method = "5951B27DBA1F36D666752B978F5E613C")
     public synchronized byte[] toByteArray() {
         byte[] newArray = new byte[count];
         System.arraycopy(buf, 0, newArray, 0, count);
-        byte[] var59B359CCE81DCBF6F03CEDFA21E9B7A3_1437403344 = (newArray);
-                byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1487963903 = {getTaintByte()};
-        return var2F9C81BC6E497382285CD6B7A7E33DE1_1487963903;
-        // ---------- Original Method ----------
-        //byte[] newArray = new byte[count];
-        //System.arraycopy(buf, 0, newArray, 0, count);
-        //return newArray;
+        return newArray;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.472 -0400", hash_original_method = "2951DD657350D2DCE6E576199EA1BCE5", hash_generated_method = "3D5643F3A2B58EF07761D2B821FC20AC")
+    /**
+     * Returns the contents of this ByteArrayOutputStream as a string. Any
+     * changes made to the receiver after returning will not be reflected in the
+     * string returned to the caller.
+     *
+     * @return this stream's current contents as a string.
+     */
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.191 -0500", hash_original_method = "2951DD657350D2DCE6E576199EA1BCE5", hash_generated_method = "7968FA611011C95228850E21792E4778")
     @Override
-    public String toString() {
-String var284A4624AC5D82C1992013009E0FB870_737994891 =         new String(buf, 0, count);
-        var284A4624AC5D82C1992013009E0FB870_737994891.addTaint(taint);
-        return var284A4624AC5D82C1992013009E0FB870_737994891;
-        // ---------- Original Method ----------
-        //return new String(buf, 0, count);
+public String toString() {
+        return new String(buf, 0, count);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.474 -0400", hash_original_method = "3E105C3C1F43529FE32D861B80701B8D", hash_generated_method = "1CEC4B79548298F1CCAC859875943B86")
+    /**
+     * Returns the contents of this ByteArrayOutputStream as a string. Each byte
+     * {@code b} in this stream is converted to a character {@code c} using the
+     * following function:
+     * {@code c == (char)(((hibyte & 0xff) << 8) | (b & 0xff))}. This method is
+     * deprecated and either {@link #toString()} or {@link #toString(String)}
+     * should be used.
+     *
+     * @param hibyte
+     *            the high byte of each resulting Unicode character.
+     * @return this stream's current contents as a string with the high byte set
+     *         to {@code hibyte}.
+     * @deprecated Use {@link #toString()}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.192 -0500", hash_original_method = "3E105C3C1F43529FE32D861B80701B8D", hash_generated_method = "C6CFEEA61A0DCD6BB1F2236DA0668836")
     @Deprecated
-    public String toString(int hibyte) {
-        addTaint(hibyte);
+public String toString(int hibyte) {
         char[] newBuf = new char[size()];
-for(int i = 0;i < newBuf.length;i++)
-        {
+        for (int i = 0; i < newBuf.length; i++) {
             newBuf[i] = (char) (((hibyte & 0xff) << 8) | (buf[i] & 0xff));
-        } //End block
-String varB2A77A3F22A466F171E40117F4960755_1534551633 =         new String(newBuf);
-        varB2A77A3F22A466F171E40117F4960755_1534551633.addTaint(taint);
-        return varB2A77A3F22A466F171E40117F4960755_1534551633;
-        // ---------- Original Method ----------
-        //char[] newBuf = new char[size()];
-        //for (int i = 0; i < newBuf.length; i++) {
-            //newBuf[i] = (char) (((hibyte & 0xff) << 8) | (buf[i] & 0xff));
-        //}
-        //return new String(newBuf);
+        }
+        return new String(newBuf);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.475 -0400", hash_original_method = "E8B99C45FE2629BCCA1491714FD1F75F", hash_generated_method = "BF900D0BBB2D6BA1A7F0FB3A101B991B")
+    /**
+     * Returns the contents of this ByteArrayOutputStream as a string converted
+     * according to the encoding declared in {@code enc}.
+     *
+     * @param enc
+     *            a string representing the encoding to use when translating
+     *            this stream to a string.
+     * @return this stream's current contents as an encoded string.
+     * @throws UnsupportedEncodingException
+     *             if the provided encoding is not supported.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.193 -0500", hash_original_method = "E8B99C45FE2629BCCA1491714FD1F75F", hash_generated_method = "F57D6B578A28E83BF8E89D2D606E161E")
     public String toString(String enc) throws UnsupportedEncodingException {
-        addTaint(enc.getTaint());
-String var5E21685371F07E75C95D47BDF9CF6168_777958475 =         new String(buf, 0, count, enc);
-        var5E21685371F07E75C95D47BDF9CF6168_777958475.addTaint(taint);
-        return var5E21685371F07E75C95D47BDF9CF6168_777958475;
-        // ---------- Original Method ----------
-        //return new String(buf, 0, count, enc);
+        return new String(buf, 0, count, enc);
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.476 -0400", hash_original_method = "6803EEF19C65AA8F03D81EBEC2EC6C85", hash_generated_method = "E5E384291269A029D32437DA8898098C")
+    /**
+     * Writes {@code count} bytes from the byte array {@code buffer} starting at
+     * offset {@code index} to this stream.
+     *
+     * @param buffer
+     *            the buffer to be written.
+     * @param offset
+     *            the initial position in {@code buffer} to retrieve bytes.
+     * @param len
+     *            the number of bytes of {@code buffer} to write.
+     * @throws NullPointerException
+     *             if {@code buffer} is {@code null}.
+     * @throws IndexOutOfBoundsException
+     *             if {@code offset < 0} or {@code len < 0}, or if
+     *             {@code offset + len} is greater than the length of
+     *             {@code buffer}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.194 -0500", hash_original_method = "6803EEF19C65AA8F03D81EBEC2EC6C85", hash_generated_method = "E48309311986BABB80FA0DD25BCC37B3")
     @Override
-    public synchronized void write(byte[] buffer, int offset, int len) {
-        addTaint(offset);
-        addTaint(buffer[0]);
+public synchronized void write(byte[] buffer, int offset, int len) {
         Arrays.checkOffsetAndCount(buffer.length, offset, len);
-        if(len == 0)        
-        {
+        if (len == 0) {
             return;
-        } //End block
+        }
         expand(len);
         System.arraycopy(buffer, offset, buf, this.count, len);
         this.count += len;
-        // ---------- Original Method ----------
-        //Arrays.checkOffsetAndCount(buffer.length, offset, len);
-        //if (len == 0) {
-            //return;
-        //}
-        //expand(len);
-        //System.arraycopy(buffer, offset, buf, this.count, len);
-        //this.count += len;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.477 -0400", hash_original_method = "0E8EDDE6C6CD9DF7AD28FE0F8F877448", hash_generated_method = "BE160943C7DF044D7B8FE8E01BF770C8")
+    /**
+     * Writes the specified byte {@code oneByte} to the OutputStream. Only the
+     * low order byte of {@code oneByte} is written.
+     *
+     * @param oneByte
+     *            the byte to be written.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.196 -0500", hash_original_method = "0E8EDDE6C6CD9DF7AD28FE0F8F877448", hash_generated_method = "EC4AA14B7223D43B9330AFEFE8B74404")
     @Override
-    public synchronized void write(int oneByte) {
-        if(count == buf.length)        
-        {
+public synchronized void write(int oneByte) {
+        if (count == buf.length) {
             expand(1);
-        } //End block
+        }
         buf[count++] = (byte) oneByte;
-        // ---------- Original Method ----------
-        //if (count == buf.length) {
-            //expand(1);
-        //}
-        //buf[count++] = (byte) oneByte;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.478 -0400", hash_original_method = "19AD6C910070CA1BF00692AA88EF7627", hash_generated_method = "BC4F34D67DFB39ED5B878BDE02A99196")
+    /**
+     * Takes the contents of this stream and writes it to the output stream
+     * {@code out}.
+     *
+     * @param out
+     *            an OutputStream on which to write the contents of this stream.
+     * @throws IOException
+     *             if an error occurs while writing to {@code out}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:34.197 -0500", hash_original_method = "19AD6C910070CA1BF00692AA88EF7627", hash_generated_method = "E8A59A9914B35A8F5F08030434E3B1BF")
     public synchronized void writeTo(OutputStream out) throws IOException {
-        addTaint(out.getTaint());
         out.write(buf, 0, count);
-        // ---------- Original Method ----------
-        //out.write(buf, 0, count);
     }
 
     

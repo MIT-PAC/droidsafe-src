@@ -1,6 +1,8 @@
 package java.lang;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
@@ -8,25 +10,29 @@ import droidsafe.annotations.*;
 
 
 public class NoSuchFieldError extends IncompatibleClassChangeError {
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.360 -0400", hash_original_method = "F8D799539E9A974C8BB35DC17F7C342D", hash_generated_method = "F310D0DF0C26994229A44A3EEEF18445")
-    public  NoSuchFieldError() {
-        // ---------- Original Method ----------
-    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:21.705 -0500", hash_original_field = "1FD3F7DD4B1CF5CF07A63A13F979FC45", hash_generated_field = "39947703B673C19D13F76ABAA2393C33")
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.361 -0400", hash_original_method = "18AA8F00FBF3130F84A1236717EEB4A7", hash_generated_method = "0EFA84EA99FF806B4CF8E9A39B8D5343")
-    public  NoSuchFieldError(String detailMessage) {
-        super(detailMessage);
-        addTaint(detailMessage.getTaint());
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.361 -0400", hash_original_field = "7619DA8FAE56FFEB65AC088E02923838", hash_generated_field = "39947703B673C19D13F76ABAA2393C33")
 
     private static final long serialVersionUID = -3456430195886129035L;
+
+    /**
+     * Constructs a new {@code NoSuchFieldError} that includes the current stack
+     * trace.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:21.706 -0500", hash_original_method = "F8D799539E9A974C8BB35DC17F7C342D", hash_generated_method = "352CEF8E94D13F803AA2EA8F75A0A4C0")
+    public NoSuchFieldError() {
+    }
+
+    /**
+     * Constructs a new {@code NoSuchFieldError} with the current stack trace
+     * and the specified detail message.
+     *
+     * @param detailMessage
+     *            the detail message for this error.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:21.707 -0500", hash_original_method = "18AA8F00FBF3130F84A1236717EEB4A7", hash_generated_method = "35FD2A8EF2A43BB57E6D7E15D88960D1")
+    public NoSuchFieldError(String detailMessage) {
+        super(detailMessage);
+    }
 }
 

@@ -1,6 +1,8 @@
 package android.graphics;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
@@ -8,10 +10,15 @@ import droidsafe.annotations.*;
 
 
 public class ColorFilter {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.003 -0400", hash_original_field = "7E2E7BFEC42581BDE25254C4BB512478", hash_generated_field = "1353DF0D3FEF59358BA81F3F4AC59875")
+
+    
+    @DSModeled(DSC.SAFE)
+    private static void finalizer(int native_instance, int nativeColorFilter) {
+    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:56.425 -0500", hash_original_field = "1353DF0D3FEF59358BA81F3F4AC59875", hash_generated_field = "1353DF0D3FEF59358BA81F3F4AC59875")
 
     int native_instance;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.003 -0400", hash_original_field = "9081852C2AA2EBCBA75216A7298619DA", hash_generated_field = "356D3DECEC4831614887BA02809E06EA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:56.425 -0500", hash_original_field = "18E9845A71E43900124F08ED6B6E0199", hash_generated_field = "356D3DECEC4831614887BA02809E06EA")
 
     public int nativeColorFilter;
     
@@ -22,29 +29,13 @@ public class ColorFilter {
         //Synthesized constructor
     }
 
-
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.004 -0400", hash_original_method = "4AD2A6CCCDD358BAD652AE03056C36C3", hash_generated_method = "705C0CD94FF3798AD8571A1588FCA6C7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:56.426 -0500", hash_original_method = "4AD2A6CCCDD358BAD652AE03056C36C3", hash_generated_method = "C4DD20B802A13FAC6510C3A64139B70A")
     protected void finalize() throws Throwable {
-        try 
-        {
+        try {
             super.finalize();
-        } //End block
-        finally 
-        {
+        } finally {
             finalizer(native_instance, nativeColorFilter);
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //super.finalize();
-        //} finally {
-            //finalizer(native_instance, nativeColorFilter);
-        //}
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    private static void finalizer(int native_instance, int nativeColorFilter) {
+        }
     }
 
     

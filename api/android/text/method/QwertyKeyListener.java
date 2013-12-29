@@ -1,6 +1,8 @@
 package android.text.method;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.text.AutoText;
 import android.text.Editable;
@@ -19,50 +21,28 @@ import android.view.View;
 
 
 public class QwertyKeyListener extends BaseKeyListener {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.632 -0400", hash_original_field = "7B00CDF214A58D964DB1FD6D561A182A", hash_generated_field = "BEDDE5D3B36AFDA96122F6739A399D24")
 
-    private Capitalize mAutoCap;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.633 -0400", hash_original_field = "3D18F8DF226A678B64C4D4C4D035A79A", hash_generated_field = "C101024EE87082E36D969AEA4683627E")
-
-    private boolean mAutoText;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.633 -0400", hash_original_field = "E8D5C34ACA787EB4A26CCB5E05F46B2C", hash_generated_field = "3DB509C5642BF3C24769763A7E5EACB0")
-
-    private boolean mFullKeyboard;
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.633 -0400", hash_original_method = "49C27B077A312737DD85C2ED4E150C41", hash_generated_method = "25D87651643C9B230153ECA71855D847")
-    private  QwertyKeyListener(Capitalize cap, boolean autoText, boolean fullKeyboard) {
-        mAutoCap = cap;
-        mAutoText = autoText;
-        mFullKeyboard = fullKeyboard;
-        // ---------- Original Method ----------
-        //mAutoCap = cap;
-        //mAutoText = autoText;
-        //mFullKeyboard = fullKeyboard;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.633 -0400", hash_original_method = "603DCE8018B8306CEBEFEE75734ABE47", hash_generated_method = "FA006C201779DC6F947B6B1B5A38693F")
-    public  QwertyKeyListener(Capitalize cap, boolean autoText) {
-        this(cap, autoText, false);
-        addTaint(autoText);
-        addTaint(cap.getTaint());
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Returns a new or existing instance with the specified capitalization
+     * and correction properties.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.054 -0500", hash_original_method = "FC0371B93FC0F7C1604A0BCD86E92DAE", hash_generated_method = "2D57DB30E5854ED40516B092DEA8C728")
     public static QwertyKeyListener getInstance(boolean autoText, Capitalize cap) {
         int off = cap.ordinal() * 2 + (autoText ? 1 : 0);
+
         if (sInstance[off] == null) {
             sInstance[off] = new QwertyKeyListener(cap, autoText);
         }
+
         return sInstance[off];
     }
 
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Gets an instance of the listener suitable for use with full keyboards.
+     * Disables auto-capitalization, auto-text and long-press initiated on-screen
+     * character pickers.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.055 -0500", hash_original_method = "28036565923896767649070FCEAD63E9", hash_generated_method = "0B8DEE85B85265AA92FB2339489EC029")
     public static QwertyKeyListener getInstanceForFullKeyboard() {
         if (sFullKeyboardInstance == null) {
             sFullKeyboardInstance = new QwertyKeyListener(Capitalize.NONE, false, true);
@@ -70,451 +50,428 @@ public class QwertyKeyListener extends BaseKeyListener {
         return sFullKeyboardInstance;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.634 -0400", hash_original_method = "77B762D33BA1CBC4DB995B196C907EDB", hash_generated_method = "C6609BA15504632293008B212F2337A7")
-    public int getInputType() {
-        int varE5795ACE23B9034FFE40B80EEAF10896_1475507397 = (makeTextContentType(mAutoCap, mAutoText));
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1286570550 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1286570550;
-        // ---------- Original Method ----------
-        //return makeTextContentType(mAutoCap, mAutoText);
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.642 -0400", hash_original_method = "516B59E01E71ED9ADC80D2A022ED13A5", hash_generated_method = "BE283DF66DEF925D92D5E44F4FE63E68")
-    public boolean onKeyDown(View view, Editable content,
-                             int keyCode, KeyEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(event.getTaint());
-        addTaint(keyCode);
-        addTaint(content.getTaint());
-        addTaint(view.getTaint());
-        int selStart;
-        int selEnd;
-        int pref = 0;
-        if(view != null)        
-        {
-            pref = TextKeyListener.getInstance().getPrefs(view.getContext());
-        } //End block
-        {
-            int a = Selection.getSelectionStart(content);
-            int b = Selection.getSelectionEnd(content);
-            selStart = Math.min(a, b);
-            selEnd = Math.max(a, b);
-            if(selStart < 0 || selEnd < 0)            
-            {
-                selStart = selEnd = 0;
-                Selection.setSelection(content, 0, 0);
-            } //End block
-        } //End block
-        int activeStart = content.getSpanStart(TextKeyListener.ACTIVE);
-        int activeEnd = content.getSpanEnd(TextKeyListener.ACTIVE);
-        int i = event.getUnicodeChar(event.getMetaState() | getMetaState(content));
-        if(!mFullKeyboard)        
-        {
-            int count = event.getRepeatCount();
-            if(count > 0 && selStart == selEnd && selStart > 0)            
-            {
-                char c = content.charAt(selStart - 1);
-                if(c == i || c == Character.toUpperCase(i) && view != null)                
-                {
-                    if(showCharacterPicker(view, content, c, false, count))                    
-                    {
-                        resetMetaState(content);
-                        boolean varB326B5062B2F0E69046810717534CB09_542723587 = (true);
-                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_691202795 = getTaintBoolean();
-                        return var84E2C64F38F78BA3EA5C905AB5A2DA27_691202795;
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
-        if(i == KeyCharacterMap.PICKER_DIALOG_INPUT)        
-        {
-            if(view != null)            
-            {
-                showCharacterPicker(view, content,
-                                    KeyCharacterMap.PICKER_DIALOG_INPUT, true, 1);
-            } //End block
-            resetMetaState(content);
-            boolean varB326B5062B2F0E69046810717534CB09_1385492642 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1378333075 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1378333075;
-        } //End block
-        if(i == KeyCharacterMap.HEX_INPUT)        
-        {
-            int start;
-            if(selStart == selEnd)            
-            {
-                start = selEnd;
-                while
-(start > 0 && selEnd - start < 4 &&
-                       Character.digit(content.charAt(start - 1), 16) >= 0)                
-                {
-                    start--;
-                } //End block
-            } //End block
-            else
-            {
-                start = selStart;
-            } //End block
-            int ch = -1;
-            try 
-            {
-                String hex = TextUtils.substring(content, start, selEnd);
-                ch = Integer.parseInt(hex, 16);
-            } //End block
-            catch (NumberFormatException nfe)
-            {
-            } //End block
-            if(ch >= 0)            
-            {
-                selStart = start;
-                Selection.setSelection(content, selStart, selEnd);
-                i = ch;
-            } //End block
-            else
-            {
-                i = 0;
-            } //End block
-        } //End block
-        if(i != 0)        
-        {
-            boolean dead = false;
-            if((i & KeyCharacterMap.COMBINING_ACCENT) != 0)            
-            {
-                dead = true;
-                i = i & KeyCharacterMap.COMBINING_ACCENT_MASK;
-            } //End block
-            if(activeStart == selStart && activeEnd == selEnd)            
-            {
-                boolean replace = false;
-                if(selEnd - selStart - 1 == 0)                
-                {
-                    char accent = content.charAt(selStart);
-                    int composed = event.getDeadChar(accent, i);
-                    if(composed != 0)                    
-                    {
-                        i = composed;
-                        replace = true;
-                    } //End block
-                } //End block
-                if(!replace)                
-                {
-                    Selection.setSelection(content, selEnd);
-                    content.removeSpan(TextKeyListener.ACTIVE);
-                    selStart = selEnd;
-                } //End block
-            } //End block
-            if((pref & TextKeyListener.AUTO_CAP) != 0 &&
-                Character.isLowerCase(i) && 
-                TextKeyListener.shouldCap(mAutoCap, content, selStart))            
-            {
-                int where = content.getSpanEnd(TextKeyListener.CAPPED);
-                int flags = content.getSpanFlags(TextKeyListener.CAPPED);
-                if(where == selStart && (((flags >> 16) & 0xFFFF) == i))                
-                {
-                    content.removeSpan(TextKeyListener.CAPPED);
-                } //End block
-                else
-                {
-                    flags = i << 16;
-                    i = Character.toUpperCase(i);
-                    if(selStart == 0)                    
-                    content.setSpan(TextKeyListener.CAPPED, 0, 0,
-                                        Spannable.SPAN_MARK_MARK | flags);
-                    else
-                    content.setSpan(TextKeyListener.CAPPED,
-                                        selStart - 1, selStart,
-                                        Spannable.SPAN_EXCLUSIVE_EXCLUSIVE |
-                                        flags);
-                } //End block
-            } //End block
-            if(selStart != selEnd)            
-            {
-                Selection.setSelection(content, selEnd);
-            } //End block
-            content.setSpan(OLD_SEL_START, selStart, selStart,
-                            Spannable.SPAN_MARK_MARK);
-            content.replace(selStart, selEnd, String.valueOf((char) i));
-            int oldStart = content.getSpanStart(OLD_SEL_START);
-            selEnd = Selection.getSelectionEnd(content);
-            if(oldStart < selEnd)            
-            {
-                content.setSpan(TextKeyListener.LAST_TYPED,
-                                oldStart, selEnd,
-                                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-                if(dead)                
-                {
-                    Selection.setSelection(content, oldStart, selEnd);
-                    content.setSpan(TextKeyListener.ACTIVE, oldStart, selEnd,
-                        Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-                } //End block
-            } //End block
-            adjustMetaAfterKeypress(content);
-            if((pref & TextKeyListener.AUTO_TEXT) != 0 && mAutoText &&
-                (i == ' ' || i == '\t' || i == '\n' ||
-                 i == ',' || i == '.' || i == '!' || i == '?' ||
-                 i == '"' || Character.getType(i) == Character.END_PUNCTUATION) &&
-                 content.getSpanEnd(TextKeyListener.INHIBIT_REPLACEMENT)
-                     != oldStart)            
-            {
-                int x;
-for(x = oldStart;x > 0;x--)
-                {
-                    char c = content.charAt(x - 1);
-                    if(c != '\'' && !Character.isLetter(c))                    
-                    {
-                        break;
-                    } //End block
-                } //End block
-                String rep = getReplacement(content, x, oldStart, view);
-                if(rep != null)                
-                {
-                    Replaced[] repl = content.getSpans(0, content.length(),
-                                                     Replaced.class);
-for(int a = 0;a < repl.length;a++)
-                    content.removeSpan(repl[a]);
-                    char[] orig = new char[oldStart - x];
-                    TextUtils.getChars(content, x, oldStart, orig, 0);
-                    content.setSpan(new Replaced(orig), x, oldStart,
-                                    Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-                    content.replace(x, oldStart, rep);
-                } //End block
-            } //End block
-            if((pref & TextKeyListener.AUTO_PERIOD) != 0 && mAutoText)            
-            {
-                selEnd = Selection.getSelectionEnd(content);
-                if(selEnd - 3 >= 0)                
-                {
-                    if(content.charAt(selEnd - 1) == ' ' &&
-                        content.charAt(selEnd - 2) == ' ')                    
-                    {
-                        char c = content.charAt(selEnd - 3);
-for(int j = selEnd - 3;j > 0;j--)
-                        {
-                            if(c == '"' ||
-                                Character.getType(c) == Character.END_PUNCTUATION)                            
-                            {
-                                c = content.charAt(j - 1);
-                            } //End block
-                            else
-                            {
-                                break;
-                            } //End block
-                        } //End block
-                        if(Character.isLetter(c) || Character.isDigit(c))                        
-                        {
-                            content.replace(selEnd - 2, selEnd - 1, ".");
-                        } //End block
-                    } //End block
-                } //End block
-            } //End block
-            boolean varB326B5062B2F0E69046810717534CB09_21140624 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_209872960 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_209872960;
-        } //End block
-        else
-        if(keyCode == KeyEvent.KEYCODE_DEL
-                && (event.hasNoModifiers() || event.hasModifiers(KeyEvent.META_ALT_ON))
-                && selStart == selEnd)        
-        {
-            int consider = 1;
-            if(content.getSpanEnd(TextKeyListener.LAST_TYPED) == selStart)            
-            {
-                if(content.charAt(selStart - 1) != '\n')                
-                consider = 2;
-            } //End block
-            Replaced[] repl = content.getSpans(selStart - consider, selStart,
-                                             Replaced.class);
-            if(repl.length > 0)            
-            {
-                int st = content.getSpanStart(repl[0]);
-                int en = content.getSpanEnd(repl[0]);
-                String old = new String(repl[0].mText);
-                content.removeSpan(repl[0]);
-                if(selStart >= en)                
-                {
-                    content.setSpan(TextKeyListener.INHIBIT_REPLACEMENT,
-                                    en, en, Spannable.SPAN_POINT_POINT);
-                    content.replace(st, en, old);
-                    en = content.getSpanStart(TextKeyListener.INHIBIT_REPLACEMENT);
-                    if(en - 1 >= 0)                    
-                    {
-                        content.setSpan(TextKeyListener.INHIBIT_REPLACEMENT,
-                                        en - 1, en,
-                                        Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-                    } //End block
-                    else
-                    {
-                        content.removeSpan(TextKeyListener.INHIBIT_REPLACEMENT);
-                    } //End block
-                    adjustMetaAfterKeypress(content);
-                } //End block
-                else
-                {
-                    adjustMetaAfterKeypress(content);
-                    boolean var5F21C6842D9E32D23C5A1CD0B3EB473F_1569894050 = (super.onKeyDown(view, content, keyCode, event));
-                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_867394654 = getTaintBoolean();
-                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_867394654;
-                } //End block
-                boolean varB326B5062B2F0E69046810717534CB09_1809549838 = (true);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1443153269 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1443153269;
-            } //End block
-        } //End block
-        boolean var5F21C6842D9E32D23C5A1CD0B3EB473F_1280962285 = (super.onKeyDown(view, content, keyCode, event));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1211517336 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1211517336;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
-
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.645 -0400", hash_original_method = "56CD99307A3C343252D0E9D8CB37E313", hash_generated_method = "099D6115B137FE85F1389976786A920C")
-    private String getReplacement(CharSequence src, int start, int end,
-                                  View view) {
-        addTaint(view.getTaint());
-        addTaint(end);
-        addTaint(start);
-        addTaint(src.getTaint());
-        int len = end - start;
-        boolean changecase = false;
-        String replacement = AutoText.get(src, start, end, view);
-        if(replacement == null)        
-        {
-            String key = TextUtils.substring(src, start, end).toLowerCase();
-            replacement = AutoText.get(key, 0, end - start, view);
-            changecase = true;
-            if(replacement == null)            
-            {
-String var540C13E9E156B687226421B24F2DF178_998120640 =             null;
-            var540C13E9E156B687226421B24F2DF178_998120640.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_998120640;
-            }
-        } //End block
-        int caps = 0;
-        if(changecase)        
-        {
-for(int j = start;j < end;j++)
-            {
-                if(Character.isUpperCase(src.charAt(j)))                
-                caps++;
-            } //End block
-        } //End block
-        String out;
-        if(caps == 0)        
-        out = replacement;
-        else
-        if(caps == 1)        
-        out = toTitleCase(replacement);
-        else
-        if(caps == len)        
-        out = replacement.toUpperCase();
-        else
-        out = toTitleCase(replacement);
-        if(out.length() == len &&
-            TextUtils.regionMatches(src, start, out, 0, len))        
-        {
-String var540C13E9E156B687226421B24F2DF178_1684318211 =         null;
-        var540C13E9E156B687226421B24F2DF178_1684318211.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_1684318211;
-        }
-String varFE81D892BE5757A0E16305825903D324_171204131 =         out;
-        varFE81D892BE5757A0E16305825903D324_171204131.addTaint(taint);
-        return varFE81D892BE5757A0E16305825903D324_171204131;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
-
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Marks the specified region of <code>content</code> as having
+     * contained <code>original</code> prior to AutoText replacement.
+     * Call this method when you have done or are about to do an
+     * AutoText-style replacement on a region of text and want to let
+     * the same mechanism (the user pressing DEL immediately after the
+     * change) undo the replacement.
+     *
+     * @param content the Editable text where the replacement was made
+     * @param start the start of the replaced region
+     * @param end the end of the replaced region; the location of the cursor
+     * @param original the text to be restored if the user presses DEL
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.061 -0500", hash_original_method = "F1AEE3667206B123E352DC3A76F57C2B", hash_generated_method = "346DD33C10E5D2CF0A9A7E95BB803763")
     public static void markAsReplaced(Spannable content, int start, int end,
                                       String original) {
         Replaced[] repl = content.getSpans(0, content.length(), Replaced.class);
         for (int a = 0; a < repl.length; a++) {
             content.removeSpan(repl[a]);
         }
+
         int len = original.length();
         char[] orig = new char[len];
         original.getChars(0, len, orig, 0);
+
         content.setSpan(new Replaced(orig), start, end,
                         Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.646 -0400", hash_original_method = "2E7DB5AEEB189920125EB7B1E5F21218", hash_generated_method = "4A5450C386022F5B49A650D57D7C064B")
-    private boolean showCharacterPicker(View view, Editable content, char c,
-                                        boolean insert, int count) {
-        addTaint(count);
-        addTaint(insert);
-        addTaint(c);
-        addTaint(content.getTaint());
-        addTaint(view.getTaint());
-        String set = PICKER_SETS.get(c);
-        if(set == null)        
-        {
-            boolean var68934A3E9455FA72420237EB05902327_733951467 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_871332612 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_871332612;
-        } //End block
-        if(count == 1)        
-        {
-            new CharacterPickerDialog(view.getContext(),
-                                      view, content, set, insert).show();
-        } //End block
-        boolean varB326B5062B2F0E69046810717534CB09_1639010618 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_20423311 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_20423311;
-        // ---------- Original Method ----------
-        //String set = PICKER_SETS.get(c);
-        //if (set == null) {
-            //return false;
-        //}
-        //if (count == 1) {
-            //new CharacterPickerDialog(view.getContext(),
-                                      //view, content, set, insert).show();
-        //}
-        //return true;
-    }
-
-    
-    @DSModeled(DSC.BAN)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.064 -0500", hash_original_method = "5F2215F5D4894B08250EC6D68589E01F", hash_generated_method = "6A1FF60FA257FF03CDBB3F944ECF8324")
     private static String toTitleCase(String src) {
         return Character.toUpperCase(src.charAt(0)) + src.substring(1);
+    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.048 -0500", hash_original_field = "55641515C59146D89CDD62EBC67B1B6C", hash_generated_field = "A353237BA01032703B8EE72570666A29")
+
+    private static QwertyKeyListener[] sInstance =
+        new QwertyKeyListener[Capitalize.values().length * 2];
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.049 -0500", hash_original_field = "3B04CDD553AA26B16E0F547A58841763", hash_generated_field = "651B32B3E93CD00CBF35BC8DCF79F33D")
+
+    private static QwertyKeyListener sFullKeyboardInstance;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.062 -0500", hash_original_field = "CC50BA795F37D7C55E085B5638CF7E91", hash_generated_field = "874843BFD3C716ACB6504590F54D3C63")
+
+
+    private static SparseArray<String> PICKER_SETS =
+                        new SparseArray<String>();
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.050 -0500", hash_original_field = "3B5E34829A96BDB56A96B72761630C9F", hash_generated_field = "BEDDE5D3B36AFDA96122F6739A399D24")
+
+
+    private Capitalize mAutoCap;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.051 -0500", hash_original_field = "CD7A811405529AA08CC45A606C53B887", hash_generated_field = "C101024EE87082E36D969AEA4683627E")
+
+    private boolean mAutoText;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.052 -0500", hash_original_field = "84AFEAB079E57626B1626EFE3FF5F02F", hash_generated_field = "3DB509C5642BF3C24769763A7E5EACB0")
+
+    private boolean mFullKeyboard;
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.053 -0500", hash_original_method = "49C27B077A312737DD85C2ED4E150C41", hash_generated_method = "C56BFDC508189D9103C6171D887F04F0")
+    private QwertyKeyListener(Capitalize cap, boolean autoText, boolean fullKeyboard) {
+        mAutoCap = cap;
+        mAutoText = autoText;
+        mFullKeyboard = fullKeyboard;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.053 -0500", hash_original_method = "603DCE8018B8306CEBEFEE75734ABE47", hash_generated_method = "C37ECC5045B93CBDF03F1998D764A9A7")
+    public QwertyKeyListener(Capitalize cap, boolean autoText) {
+        this(cap, autoText, false);
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.056 -0500", hash_original_method = "77B762D33BA1CBC4DB995B196C907EDB", hash_generated_method = "514B58733981F5CADFDD316D670DD46D")
+    public int getInputType() {
+        return makeTextContentType(mAutoCap, mAutoText);
     }
 
     
     static class Replaced implements NoCopySpan {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.646 -0400", hash_original_field = "39624508B9E3028D8A5DDA741D3E3DDE", hash_generated_field = "6CB0C9E6186F94D00B15A6B38EEADB93")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.066 -0500", hash_original_field = "FE2DC1C4E7D46875FA268CEDC057D0E8", hash_generated_field = "6CB0C9E6186F94D00B15A6B38EEADB93")
+
 
         private char[] mText;
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.647 -0400", hash_original_method = "573A0A1D2F4880FCE39DFE2EE4242AA3", hash_generated_method = "F3CF1157AFAB5B17CB35BAA0BE11F0EA")
-        public  Replaced(char[] text) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.065 -0500", hash_original_method = "573A0A1D2F4880FCE39DFE2EE4242AA3", hash_generated_method = "CCF842D94F2C1571A5886311B3A7F89C")
+        public Replaced(char[] text) {
             mText = text;
-            // ---------- Original Method ----------
-            //mText = text;
         }
 
         
     }
-
-
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.647 -0400", hash_original_field = "F9206C96BBCA189D22081DA724E73D1B", hash_generated_field = "A353237BA01032703B8EE72570666A29")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.059 -0500", hash_original_method = "516B59E01E71ED9ADC80D2A022ED13A5", hash_generated_method = "86735E5613BD276499A17AEDC581B3E9")
+    public boolean onKeyDown(View view, Editable content,
+                             int keyCode, KeyEvent event) {
+        int selStart, selEnd;
+        int pref = 0;
 
-    private static QwertyKeyListener[] sInstance = new QwertyKeyListener[Capitalize.values().length * 2];
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.647 -0400", hash_original_field = "F53CA65E6FEC35EFA0729594589A1225", hash_generated_field = "651B32B3E93CD00CBF35BC8DCF79F33D")
+        if (view != null) {
+            pref = TextKeyListener.getInstance().getPrefs(view.getContext());
+        }
 
-    private static QwertyKeyListener sFullKeyboardInstance;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.647 -0400", hash_original_field = "2CC1FA577466A7C6E331BBC4411C3419", hash_generated_field = "874843BFD3C716ACB6504590F54D3C63")
+        {
+            int a = Selection.getSelectionStart(content);
+            int b = Selection.getSelectionEnd(content);
 
-    private static SparseArray<String> PICKER_SETS = new SparseArray<String>();
+            selStart = Math.min(a, b);
+            selEnd = Math.max(a, b);
+
+            if (selStart < 0 || selEnd < 0) {
+                selStart = selEnd = 0;
+                Selection.setSelection(content, 0, 0);
+            }
+        }
+
+        int activeStart = content.getSpanStart(TextKeyListener.ACTIVE);
+        int activeEnd = content.getSpanEnd(TextKeyListener.ACTIVE);
+
+        // QWERTY keyboard normal case
+
+        int i = event.getUnicodeChar(event.getMetaState() | getMetaState(content));
+
+        if (!mFullKeyboard) {
+            int count = event.getRepeatCount();
+            if (count > 0 && selStart == selEnd && selStart > 0) {
+                char c = content.charAt(selStart - 1);
+
+                if (c == i || c == Character.toUpperCase(i) && view != null) {
+                    if (showCharacterPicker(view, content, c, false, count)) {
+                        resetMetaState(content);
+                        return true;
+                    }
+                }
+            }
+        }
+
+        if (i == KeyCharacterMap.PICKER_DIALOG_INPUT) {
+            if (view != null) {
+                showCharacterPicker(view, content,
+                                    KeyCharacterMap.PICKER_DIALOG_INPUT, true, 1);
+            }
+            resetMetaState(content);
+            return true;
+        }
+
+        if (i == KeyCharacterMap.HEX_INPUT) {
+            int start;
+
+            if (selStart == selEnd) {
+                start = selEnd;
+
+                while (start > 0 && selEnd - start < 4 &&
+                       Character.digit(content.charAt(start - 1), 16) >= 0) {
+                    start--;
+                }
+            } else {
+                start = selStart;
+            }
+
+            int ch = -1;
+            try {
+                String hex = TextUtils.substring(content, start, selEnd);
+                ch = Integer.parseInt(hex, 16);
+            } catch (NumberFormatException nfe) { }
+
+            if (ch >= 0) {
+                selStart = start;
+                Selection.setSelection(content, selStart, selEnd);
+                i = ch;
+            } else {
+                i = 0;
+            }
+        }
+
+        if (i != 0) {
+            boolean dead = false;
+
+            if ((i & KeyCharacterMap.COMBINING_ACCENT) != 0) {
+                dead = true;
+                i = i & KeyCharacterMap.COMBINING_ACCENT_MASK;
+            }
+
+            if (activeStart == selStart && activeEnd == selEnd) {
+                boolean replace = false;
+
+                if (selEnd - selStart - 1 == 0) {
+                    char accent = content.charAt(selStart);
+                    int composed = event.getDeadChar(accent, i);
+
+                    if (composed != 0) {
+                        i = composed;
+                        replace = true;
+                    }
+                }
+
+                if (!replace) {
+                    Selection.setSelection(content, selEnd);
+                    content.removeSpan(TextKeyListener.ACTIVE);
+                    selStart = selEnd;
+                }
+            }
+
+            if ((pref & TextKeyListener.AUTO_CAP) != 0 &&
+                Character.isLowerCase(i) && 
+                TextKeyListener.shouldCap(mAutoCap, content, selStart)) {
+                int where = content.getSpanEnd(TextKeyListener.CAPPED);
+                int flags = content.getSpanFlags(TextKeyListener.CAPPED);
+
+                if (where == selStart && (((flags >> 16) & 0xFFFF) == i)) {
+                    content.removeSpan(TextKeyListener.CAPPED);
+                } else {
+                    flags = i << 16;
+                    i = Character.toUpperCase(i);
+
+                    if (selStart == 0)
+                        content.setSpan(TextKeyListener.CAPPED, 0, 0,
+                                        Spannable.SPAN_MARK_MARK | flags);
+                    else
+                        content.setSpan(TextKeyListener.CAPPED,
+                                        selStart - 1, selStart,
+                                        Spannable.SPAN_EXCLUSIVE_EXCLUSIVE |
+                                        flags);
+                }
+            }
+
+            if (selStart != selEnd) {
+                Selection.setSelection(content, selEnd);
+            }
+            content.setSpan(OLD_SEL_START, selStart, selStart,
+                            Spannable.SPAN_MARK_MARK);
+
+            content.replace(selStart, selEnd, String.valueOf((char) i));
+
+            int oldStart = content.getSpanStart(OLD_SEL_START);
+            selEnd = Selection.getSelectionEnd(content);
+
+            if (oldStart < selEnd) {
+                content.setSpan(TextKeyListener.LAST_TYPED,
+                                oldStart, selEnd,
+                                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+                if (dead) {
+                    Selection.setSelection(content, oldStart, selEnd);
+                    content.setSpan(TextKeyListener.ACTIVE, oldStart, selEnd,
+                        Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                }
+            }
+
+            adjustMetaAfterKeypress(content);
+
+            // potentially do autotext replacement if the character
+            // that was typed was an autotext terminator
+
+            if ((pref & TextKeyListener.AUTO_TEXT) != 0 && mAutoText &&
+                (i == ' ' || i == '\t' || i == '\n' ||
+                 i == ',' || i == '.' || i == '!' || i == '?' ||
+                 i == '"' || Character.getType(i) == Character.END_PUNCTUATION) &&
+                 content.getSpanEnd(TextKeyListener.INHIBIT_REPLACEMENT)
+                     != oldStart) {
+                int x;
+
+                for (x = oldStart; x > 0; x--) {
+                    char c = content.charAt(x - 1);
+                    if (c != '\'' && !Character.isLetter(c)) {
+                        break;
+                    }
+                }
+
+                String rep = getReplacement(content, x, oldStart, view);
+
+                if (rep != null) {
+                    Replaced[] repl = content.getSpans(0, content.length(),
+                                                     Replaced.class);
+                    for (int a = 0; a < repl.length; a++)
+                        content.removeSpan(repl[a]);
+
+                    char[] orig = new char[oldStart - x];
+                    TextUtils.getChars(content, x, oldStart, orig, 0);
+
+                    content.setSpan(new Replaced(orig), x, oldStart,
+                                    Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                    content.replace(x, oldStart, rep);
+                }
+            }
+
+            // Replace two spaces by a period and a space.
+
+            if ((pref & TextKeyListener.AUTO_PERIOD) != 0 && mAutoText) {
+                selEnd = Selection.getSelectionEnd(content);
+                if (selEnd - 3 >= 0) {
+                    if (content.charAt(selEnd - 1) == ' ' &&
+                        content.charAt(selEnd - 2) == ' ') {
+                        char c = content.charAt(selEnd - 3);
+
+                        for (int j = selEnd - 3; j > 0; j--) {
+                            if (c == '"' ||
+                                Character.getType(c) == Character.END_PUNCTUATION) {
+                                c = content.charAt(j - 1);
+                            } else {
+                                break;
+                            }
+                        }
+
+                        if (Character.isLetter(c) || Character.isDigit(c)) {
+                            content.replace(selEnd - 2, selEnd - 1, ".");
+                        }
+                    }
+                }
+            }
+
+            return true;
+        } else if (keyCode == KeyEvent.KEYCODE_DEL
+                && (event.hasNoModifiers() || event.hasModifiers(KeyEvent.META_ALT_ON))
+                && selStart == selEnd) {
+            // special backspace case for undoing autotext
+
+            int consider = 1;
+
+            // if backspacing over the last typed character,
+            // it undoes the autotext prior to that character
+            // (unless the character typed was newline, in which
+            // case this behavior would be confusing)
+
+            if (content.getSpanEnd(TextKeyListener.LAST_TYPED) == selStart) {
+                if (content.charAt(selStart - 1) != '\n')
+                    consider = 2;
+            }
+
+            Replaced[] repl = content.getSpans(selStart - consider, selStart,
+                                             Replaced.class);
+
+            if (repl.length > 0) {
+                int st = content.getSpanStart(repl[0]);
+                int en = content.getSpanEnd(repl[0]);
+                String old = new String(repl[0].mText);
+
+                content.removeSpan(repl[0]);
+
+                // only cancel the autocomplete if the cursor is at the end of
+                // the replaced span (or after it, because the user is
+                // backspacing over the space after the word, not the word
+                // itself).
+                if (selStart >= en) {
+                    content.setSpan(TextKeyListener.INHIBIT_REPLACEMENT,
+                                    en, en, Spannable.SPAN_POINT_POINT);
+                    content.replace(st, en, old);
+
+                    en = content.getSpanStart(TextKeyListener.INHIBIT_REPLACEMENT);
+                    if (en - 1 >= 0) {
+                        content.setSpan(TextKeyListener.INHIBIT_REPLACEMENT,
+                                        en - 1, en,
+                                        Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                    } else {
+                        content.removeSpan(TextKeyListener.INHIBIT_REPLACEMENT);
+                    }
+                    adjustMetaAfterKeypress(content);
+                } else {
+                    adjustMetaAfterKeypress(content);
+                    return super.onKeyDown(view, content, keyCode, event);
+                }
+
+                return true;
+            }
+        }
+
+        return super.onKeyDown(view, content, keyCode, event);
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.060 -0500", hash_original_method = "56CD99307A3C343252D0E9D8CB37E313", hash_generated_method = "D0295F52687B48DD7A8E2092641C5A5A")
+    private String getReplacement(CharSequence src, int start, int end,
+                                  View view) {
+        int len = end - start;
+        boolean changecase = false;
+        
+        String replacement = AutoText.get(src, start, end, view);
+        
+        if (replacement == null) {
+            String key = TextUtils.substring(src, start, end).toLowerCase();
+            replacement = AutoText.get(key, 0, end - start, view);
+            changecase = true;
+
+            if (replacement == null)
+                return null;
+        }
+        
+        int caps = 0;
+
+        if (changecase) {
+            for (int j = start; j < end; j++) {
+                if (Character.isUpperCase(src.charAt(j)))
+                    caps++;
+            }
+        }
+
+        String out;
+
+        if (caps == 0)
+            out = replacement;
+        else if (caps == 1)
+            out = toTitleCase(replacement);
+        else if (caps == len)
+            out = replacement.toUpperCase();
+        else
+            out = toTitleCase(replacement);
+
+        if (out.length() == len &&
+            TextUtils.regionMatches(src, start, out, 0, len))
+            return null;
+
+        return out;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:50.063 -0500", hash_original_method = "2E7DB5AEEB189920125EB7B1E5F21218", hash_generated_method = "5F5E4F8AE9B822D595A482D15393A8AF")
+    private boolean showCharacterPicker(View view, Editable content, char c,
+                                        boolean insert, int count) {
+        String set = PICKER_SETS.get(c);
+        if (set == null) {
+            return false;
+        }
+
+        if (count == 1) {
+            new CharacterPickerDialog(view.getContext(),
+                                      view, content, set, insert).show();
+        }
+
+        return true;
+    }
     static {
         PICKER_SETS.put('A', "\u00C0\u00C1\u00C2\u00C4\u00C6\u00C3\u00C5\u0104\u0100");
         PICKER_SETS.put('C', "\u00C7\u0106\u010C");

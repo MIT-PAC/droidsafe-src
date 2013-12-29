@@ -1,6 +1,8 @@
 package gov.nist.javax.sip.parser;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import gov.nist.core.NameValue;
 import gov.nist.core.Token;
@@ -13,100 +15,74 @@ import java.text.ParseException;
 
 
 public abstract class ChallengeParser extends HeaderParser {
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:36.978 -0400", hash_original_method = "0297ABBADD5BD655B8C4CB1A6717CB49", hash_generated_method = "719892B1E8D278F5962FC3FCB6618200")
-    protected  ChallengeParser(String challenge) {
+
+    /**
+     * Constructor
+     * @param String challenge  message to parse to set
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:07.978 -0500", hash_original_method = "0297ABBADD5BD655B8C4CB1A6717CB49", hash_generated_method = "839C6AD57343C084EB74731E43FFB334")
+    protected ChallengeParser(String challenge) {
         super(challenge);
-        addTaint(challenge.getTaint());
-        // ---------- Original Method ----------
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:36.979 -0400", hash_original_method = "FE6E9A1011CEBAC8DED6715FCD76DE94", hash_generated_method = "36BC49D420A570C5A7102D5D60C3B1AC")
-    protected  ChallengeParser(Lexer lexer) {
+    /**
+     * Constructor
+     * @param String challenge  message to parse to set
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:07.979 -0500", hash_original_method = "FE6E9A1011CEBAC8DED6715FCD76DE94", hash_generated_method = "1A860CFBC41B90F5507D1EE6C3314F82")
+    protected ChallengeParser(Lexer lexer) {
         super(lexer);
-        addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:36.979 -0400", hash_original_method = "9DA7C681662806B106F4C258133C7994", hash_generated_method = "E6D914E68849AB28C98C072C729961EF")
-    protected void parseParameter(AuthenticationHeader header) throws ParseException {
-        addTaint(header.getTaint());
-        if(debug)        
-        dbg_enter("parseParameter");
-        try 
-        {
+    /**
+     * Get the parameter of the challenge string
+     * @return NameValue containing the parameter
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:07.980 -0500", hash_original_method = "9DA7C681662806B106F4C258133C7994", hash_generated_method = "6546AA35598C4BC540E52130C96D42F4")
+    protected void parseParameter(AuthenticationHeader header)
+        throws ParseException {
+
+        if (debug)
+            dbg_enter("parseParameter");
+        try {
             NameValue nv = this.nameValue('=');
             header.setParameter(nv);
-        } //End block
-        finally 
-        {
-            if(debug)            
-            dbg_leave("parseParameter");
-        } //End block
-        // ---------- Original Method ----------
-        //if (debug)
-            //dbg_enter("parseParameter");
-        //try {
-            //NameValue nv = this.nameValue('=');
-            //header.setParameter(nv);
-        //} finally {
-            //if (debug)
-                //dbg_leave("parseParameter");
-        //}
+        } finally {
+            if (debug)
+                dbg_leave("parseParameter");
+        }
+
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:36.981 -0400", hash_original_method = "B311542306ECD32A0F10ABE0BAAE80D2", hash_generated_method = "32C3EF3462ACE09F76E0F629C07D6C33")
+    /**
+     * parser the String message.
+     * @param header - header structure to fill in.
+     * @throws ParseException if the message does not respect the spec.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:07.981 -0500", hash_original_method = "B311542306ECD32A0F10ABE0BAAE80D2", hash_generated_method = "C756A705C3626349AFC522FCA146EF5D")
     public void parse(AuthenticationHeader header) throws ParseException {
-        addTaint(header.getTaint());
+
+        // the Scheme:
         this.lexer.SPorHT();
         lexer.match(TokenTypes.ID);
         Token type = lexer.getNextToken();
         this.lexer.SPorHT();
         header.setScheme(type.getTokenValue());
-        try 
-        {
-            while
-(lexer.lookAhead(0) != '\n')            
-            {
+
+        // The parameters:
+        try {
+            while (lexer.lookAhead(0) != '\n') {
                 this.parseParameter(header);
                 this.lexer.SPorHT();
                 char la = lexer.lookAhead(0);
-                if(la == '\n' || la == '\0')                
-                break;
+                if (la == '\n' || la == '\0')
+                    break;
                 this.lexer.match(',');
                 this.lexer.SPorHT();
-            } //End block
-        } //End block
-        catch (ParseException ex)
-        {
-            ex.addTaint(taint);
+            }
+        } catch (ParseException ex) {
             throw ex;
-        } //End block
-        // ---------- Original Method ----------
-        //this.lexer.SPorHT();
-        //lexer.match(TokenTypes.ID);
-        //Token type = lexer.getNextToken();
-        //this.lexer.SPorHT();
-        //header.setScheme(type.getTokenValue());
-        //try {
-            //while (lexer.lookAhead(0) != '\n') {
-                //this.parseParameter(header);
-                //this.lexer.SPorHT();
-                //char la = lexer.lookAhead(0);
-                //if (la == '\n' || la == '\0')
-                    //break;
-                //this.lexer.match(',');
-                //this.lexer.SPorHT();
-            //}
-        //} catch (ParseException ex) {
-            //throw ex;
-        //}
+        }
     }
 
     

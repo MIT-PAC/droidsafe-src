@@ -1,156 +1,183 @@
 package java.util.concurrent;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.concurrent.locks.AbstractQueuedSynchronizer;
 
 
 
 public class CountDownLatch {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.897 -0400", hash_original_field = "63AD9D34F3503826E5F649AE6B7AC92C", hash_generated_field = "A4B34EF3CE38520839B34A2F06599243")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:44.002 -0500", hash_original_field = "791C2888A6F5CDC158445182FD1E3538", hash_generated_field = "A4B34EF3CE38520839B34A2F06599243")
 
-    private Sync sync;
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.898 -0400", hash_original_method = "4C9DACB295593778FC44AB86E8E7D747", hash_generated_method = "878EEFAED4F1781557AF5F6F93883A06")
-    public  CountDownLatch(int count) {
-        if(count < 0)        
-        {
-        IllegalArgumentException varAEB2F18A5228FBCF89210BA55B20E012_1573907968 = new IllegalArgumentException("count < 0");
-        varAEB2F18A5228FBCF89210BA55B20E012_1573907968.addTaint(taint);
-        throw varAEB2F18A5228FBCF89210BA55B20E012_1573907968;
-        }
+
+    private  Sync sync;
+
+    /**
+     * Constructs a {@code CountDownLatch} initialized with the given count.
+     *
+     * @param count the number of times {@link #countDown} must be invoked
+     *        before threads can pass through {@link #await}
+     * @throws IllegalArgumentException if {@code count} is negative
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:44.003 -0500", hash_original_method = "4C9DACB295593778FC44AB86E8E7D747", hash_generated_method = "8222E2A72B8FE1E111921C80733077A6")
+    public CountDownLatch(int count) {
+        if (count < 0) throw new IllegalArgumentException("count < 0");
         this.sync = new Sync(count);
-        // ---------- Original Method ----------
-        //if (count < 0) throw new IllegalArgumentException("count < 0");
-        //this.sync = new Sync(count);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.898 -0400", hash_original_method = "A9727D614A84DE128F63540E6073A44B", hash_generated_method = "D070BA44558B523604A261CE2882A091")
+    /**
+     * Causes the current thread to wait until the latch has counted down to
+     * zero, unless the thread is {@linkplain Thread#interrupt interrupted}.
+     *
+     * <p>If the current count is zero then this method returns immediately.
+     *
+     * <p>If the current count is greater than zero then the current
+     * thread becomes disabled for thread scheduling purposes and lies
+     * dormant until one of two things happen:
+     * <ul>
+     * <li>The count reaches zero due to invocations of the
+     * {@link #countDown} method; or
+     * <li>Some other thread {@linkplain Thread#interrupt interrupts}
+     * the current thread.
+     * </ul>
+     *
+     * <p>If the current thread:
+     * <ul>
+     * <li>has its interrupted status set on entry to this method; or
+     * <li>is {@linkplain Thread#interrupt interrupted} while waiting,
+     * </ul>
+     * then {@link InterruptedException} is thrown and the current thread's
+     * interrupted status is cleared.
+     *
+     * @throws InterruptedException if the current thread is interrupted
+     *         while waiting
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:44.004 -0500", hash_original_method = "A9727D614A84DE128F63540E6073A44B", hash_generated_method = "CF7FF344DF6993EC0E05DDF0673776FB")
     public void await() throws InterruptedException {
         sync.acquireSharedInterruptibly(1);
-        // ---------- Original Method ----------
-        //sync.acquireSharedInterruptibly(1);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.898 -0400", hash_original_method = "0AAF9EA81FFD8AD9617435605CC7D253", hash_generated_method = "0E37C8C4F11E9D5F535DD9C80AE9F369")
-    public boolean await(long timeout, TimeUnit unit) throws InterruptedException {
-        addTaint(unit.getTaint());
-        addTaint(timeout);
-        boolean varF9FFBA7272EE05E2720644344A388E0D_1588427728 = (sync.tryAcquireSharedNanos(1, unit.toNanos(timeout)));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_267514312 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_267514312;
-        // ---------- Original Method ----------
-        //return sync.tryAcquireSharedNanos(1, unit.toNanos(timeout));
+    /**
+     * Causes the current thread to wait until the latch has counted down to
+     * zero, unless the thread is {@linkplain Thread#interrupt interrupted},
+     * or the specified waiting time elapses.
+     *
+     * <p>If the current count is zero then this method returns immediately
+     * with the value {@code true}.
+     *
+     * <p>If the current count is greater than zero then the current
+     * thread becomes disabled for thread scheduling purposes and lies
+     * dormant until one of three things happen:
+     * <ul>
+     * <li>The count reaches zero due to invocations of the
+     * {@link #countDown} method; or
+     * <li>Some other thread {@linkplain Thread#interrupt interrupts}
+     * the current thread; or
+     * <li>The specified waiting time elapses.
+     * </ul>
+     *
+     * <p>If the count reaches zero then the method returns with the
+     * value {@code true}.
+     *
+     * <p>If the current thread:
+     * <ul>
+     * <li>has its interrupted status set on entry to this method; or
+     * <li>is {@linkplain Thread#interrupt interrupted} while waiting,
+     * </ul>
+     * then {@link InterruptedException} is thrown and the current thread's
+     * interrupted status is cleared.
+     *
+     * <p>If the specified waiting time elapses then the value {@code false}
+     * is returned.  If the time is less than or equal to zero, the method
+     * will not wait at all.
+     *
+     * @param timeout the maximum time to wait
+     * @param unit the time unit of the {@code timeout} argument
+     * @return {@code true} if the count reached zero and {@code false}
+     *         if the waiting time elapsed before the count reached zero
+     * @throws InterruptedException if the current thread is interrupted
+     *         while waiting
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:44.005 -0500", hash_original_method = "0AAF9EA81FFD8AD9617435605CC7D253", hash_generated_method = "5BB6AD48275B5A220105DCB79FEF6DCD")
+    public boolean await(long timeout, TimeUnit unit)
+        throws InterruptedException {
+        return sync.tryAcquireSharedNanos(1, unit.toNanos(timeout));
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.899 -0400", hash_original_method = "ACB2575EE39865032078A7B67E3D5076", hash_generated_method = "5F72B9A21B37F73F93872F70DF24474A")
+    /**
+     * Decrements the count of the latch, releasing all waiting threads if
+     * the count reaches zero.
+     *
+     * <p>If the current count is greater than zero then it is decremented.
+     * If the new count is zero then all waiting threads are re-enabled for
+     * thread scheduling purposes.
+     *
+     * <p>If the current count equals zero then nothing happens.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:44.006 -0500", hash_original_method = "ACB2575EE39865032078A7B67E3D5076", hash_generated_method = "195A2AA97CBD5879C8602CD14B86D68C")
     public void countDown() {
         sync.releaseShared(1);
-        // ---------- Original Method ----------
-        //sync.releaseShared(1);
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.899 -0400", hash_original_method = "ABE42AE497B23B643FDF7DC2348A1AF5", hash_generated_method = "30FAD490185C65E7B12A80092F1080CD")
+    /**
+     * Returns the current count.
+     *
+     * <p>This method is typically used for debugging and testing purposes.
+     *
+     * @return the current count
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:44.007 -0500", hash_original_method = "ABE42AE497B23B643FDF7DC2348A1AF5", hash_generated_method = "A790BC05DE38C8C5892565B190DA5B88")
     public long getCount() {
-        long varEADBA8DEF1BC9738D4EDEC8923318B63_1820788281 = (sync.getCount());
-                long var0F5264038205EDFB1AC05FBB0E8C5E94_1325019285 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_1325019285;
-        // ---------- Original Method ----------
-        //return sync.getCount();
+        return sync.getCount();
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.899 -0400", hash_original_method = "45A2072B871660339FAF307330C7F60C", hash_generated_method = "50F7417895D9E7B702988A410A8D0DD6")
+    /**
+     * Returns a string identifying this latch, as well as its state.
+     * The state, in brackets, includes the String {@code "Count ="}
+     * followed by the current count.
+     *
+     * @return a string identifying this latch, as well as its state
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:44.007 -0500", hash_original_method = "45A2072B871660339FAF307330C7F60C", hash_generated_method = "41ADB59B8147396DF82915F74BFC5DB7")
     public String toString() {
-String var4D62EFEC3E50E2AF5780683B34D1CC77_1047917073 =         super.toString() + "[Count = " + sync.getCount() + "]";
-        var4D62EFEC3E50E2AF5780683B34D1CC77_1047917073.addTaint(taint);
-        return var4D62EFEC3E50E2AF5780683B34D1CC77_1047917073;
-        // ---------- Original Method ----------
-        //return super.toString() + "[Count = " + sync.getCount() + "]";
+        return super.toString() + "[Count = " + sync.getCount() + "]";
     }
 
     
     private static final class Sync extends AbstractQueuedSynchronizer {
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.899 -0400", hash_original_method = "9968F5AA54B3A1250121D3E0CFE14724", hash_generated_method = "8A0C888A5DA83A3653D6DAE983FA987D")
-          Sync(int count) {
-            addTaint(count);
-            setState(count);
-            // ---------- Original Method ----------
-            //setState(count);
-        }
-
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.899 -0400", hash_original_method = "192D38E698A214D58DA93C3298AD6AD3", hash_generated_method = "D76C126A40078DAB75BE277EFD8A3565")
-         int getCount() {
-            int var118C4F58F1303398C344B8AAB7CE6EE1_61522169 = (getState());
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_408057163 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_408057163;
-            // ---------- Original Method ----------
-            //return getState();
-        }
-
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.900 -0400", hash_original_method = "5121E365AD686AC5D590ECBA2BCA053C", hash_generated_method = "B94527C2B27C967EA2772D1810BD27BF")
-        protected int tryAcquireShared(int acquires) {
-            addTaint(acquires);
-            int var3EC71F3BC01146A4D6BAB5C90EB4C53B_1219580340 = ((getState() == 0) ? 1 : -1);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1824123277 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1824123277;
-            // ---------- Original Method ----------
-            //return (getState() == 0) ? 1 : -1;
-        }
-
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.900 -0400", hash_original_method = "136302DDF9CF08EA1ED73402F05AC756", hash_generated_method = "D56D384F8B12CB6AC2A8D982FFA88460")
-        protected boolean tryReleaseShared(int releases) {
-            addTaint(releases);
-for(;;)
-            {
-                int c = getState();
-                if(c == 0)                
-                {
-                boolean var68934A3E9455FA72420237EB05902327_813315639 = (false);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1559443340 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1559443340;
-                }
-                int nextc = c-1;
-                if(compareAndSetState(c, nextc))                
-                {
-                boolean varFE567596D7CBF2AAC320D09D88315819_522854758 = (nextc == 0);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1309037808 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1309037808;
-                }
-            } //End block
-            // ---------- Original Method ----------
-            //for (;;) {
-                //int c = getState();
-                //if (c == 0)
-                    //return false;
-                //int nextc = c-1;
-                //if (compareAndSetState(c, nextc))
-                    //return nextc == 0;
-            //}
-        }
-
-        
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.901 -0400", hash_original_field = "69F97A85B2FBB03A012E5B08317FA038", hash_generated_field = "CC4AEE6AD5E042E09631015E4C8CF188")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:43.997 -0500", hash_original_field = "7D8247BB2ABAC952D1BFA8DC7E09642F", hash_generated_field = "CC4AEE6AD5E042E09631015E4C8CF188")
 
         private static final long serialVersionUID = 4982264981922014374L;
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:43.998 -0500", hash_original_method = "9968F5AA54B3A1250121D3E0CFE14724", hash_generated_method = "9968F5AA54B3A1250121D3E0CFE14724")
+        Sync(int count) {
+            setState(count);
+        }
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:43.999 -0500", hash_original_method = "192D38E698A214D58DA93C3298AD6AD3", hash_generated_method = "192D38E698A214D58DA93C3298AD6AD3")
+        int getCount() {
+            return getState();
+        }
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:44.000 -0500", hash_original_method = "5121E365AD686AC5D590ECBA2BCA053C", hash_generated_method = "45811DDDB90A03F1CA2CB1D6F37D7BE7")
+        protected int tryAcquireShared(int acquires) {
+            return (getState() == 0) ? 1 : -1;
+        }
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:44.001 -0500", hash_original_method = "136302DDF9CF08EA1ED73402F05AC756", hash_generated_method = "FC86F2600A618C4FB7C8FFD0AC4DAA9A")
+        protected boolean tryReleaseShared(int releases) {
+            // Decrement count; signal when transition to zero
+            for (;;) {
+                int c = getState();
+                if (c == 0)
+                    return false;
+                int nextc = c-1;
+                if (compareAndSetState(c, nextc))
+                    return nextc == 0;
+            }
+        }
     }
 
 

@@ -1,6 +1,9 @@
 package android.nfc.tech;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
+import android.util.Log;
 import droidsafe.annotations.*;
 import java.io.IOException;
 import java.nio.ByteBuffer;
@@ -16,75 +19,18 @@ import android.os.RemoteException;
 
 
 public final class MifareClassic extends BasicTagTechnology {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.551 -0400", hash_original_field = "70A0825F7C8424D762F96A4610B5A4E1", hash_generated_field = "A5FF4684C8ADE9FC7594EE2E1226C64D")
 
-    private boolean mIsEmulated;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.551 -0400", hash_original_field = "3462A1A18A0EE070E8953CCF1DD788C0", hash_generated_field = "E6B4AC7A48E0E54E09A504C828AF50C5")
-
-    private int mType;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.551 -0400", hash_original_field = "27DFA0EFE73BCB065533443A05E9DEE4", hash_generated_field = "1ADF00AF1A5D84662F00519BAA6EB9C0")
-
-    private int mSize;
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.554 -0400", hash_original_method = "05B1EEC895D259A0FF8852CB7B561E5D", hash_generated_method = "D4D0EE0A8E2D2D5BBE77C39DCCDBE127")
-    public  MifareClassic(Tag tag) throws RemoteException {
-        super(tag, TagTechnology.MIFARE_CLASSIC);
-        addTaint(tag.getTaint());
-        NfcA a = NfcA.get(tag);
-        mIsEmulated = false;
-switch(a.getSak()){
-        case 0x08:
-        mType = TYPE_CLASSIC;
-        mSize = SIZE_1K;
-        break;
-        case 0x09:
-        mType = TYPE_CLASSIC;
-        mSize = SIZE_MINI;
-        break;
-        case 0x10:
-        mType = TYPE_PLUS;
-        mSize = SIZE_2K;
-        break;
-        case 0x11:
-        mType = TYPE_PLUS;
-        mSize = SIZE_4K;
-        break;
-        case 0x18:
-        mType = TYPE_CLASSIC;
-        mSize = SIZE_4K;
-        break;
-        case 0x28:
-        mType = TYPE_CLASSIC;
-        mSize = SIZE_1K;
-        mIsEmulated = true;
-        break;
-        case 0x38:
-        mType = TYPE_CLASSIC;
-        mSize = SIZE_4K;
-        mIsEmulated = true;
-        break;
-        case 0x88:
-        mType = TYPE_CLASSIC;
-        mSize = SIZE_1K;
-        break;
-        case 0x98:
-        case 0xB8:
-        mType = TYPE_PRO;
-        mSize = SIZE_4K;
-        break;
-        default:
-        RuntimeException varFFE52C29C2E8B2FABC3C722855C1BF37_1453873985 = new RuntimeException(
-                    "Tag incorrectly enumerated as MIFARE Classic, SAK = " + a.getSak());
-        varFFE52C29C2E8B2FABC3C722855C1BF37_1453873985.addTaint(taint);
-        throw varFFE52C29C2E8B2FABC3C722855C1BF37_1453873985;
-}
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
-
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Get an instance of {@link MifareClassic} for the given tag.
+     * <p>Does not cause any RF activity and does not block.
+     * <p>Returns null if {@link MifareClassic} was not enumerated in {@link Tag#getTechList}.
+     * This indicates the tag is not MIFARE Classic compatible, or this Android
+     * device does not support MIFARE Classic.
+     *
+     * @param tag an MIFARE Classic compatible tag
+     * @return MIFARE Classic object
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:44.154 -0500", hash_original_method = "E256682DB559ACD3975BBE21D7BE6E4D", hash_generated_method = "9F064CCAD2CBFBF1159E2F336F20BB74")
     public static MifareClassic get(Tag tag) {
         if (!tag.hasTech(TagTechnology.MIFARE_CLASSIC)) return null;
         try {
@@ -94,547 +40,597 @@ switch(a.getSak()){
         }
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.556 -0400", hash_original_method = "E9AD68D49398B2B9D86D12D221B14582", hash_generated_method = "0405737CA7133554AC4E17962616CB74")
-    public int getType() {
-        int var3462A1A18A0EE070E8953CCF1DD788C0_701824047 = (mType);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2025432750 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2025432750;
-        // ---------- Original Method ----------
-        //return mType;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.557 -0400", hash_original_method = "2098B918320D3D5229820CAB47C60E59", hash_generated_method = "2D83BEB09EF2CB762DCEF114E8AD6A59")
-    public int getSize() {
-        int var27DFA0EFE73BCB065533443A05E9DEE4_1410359394 = (mSize);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_224850777 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_224850777;
-        // ---------- Original Method ----------
-        //return mSize;
-    }
-
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.557 -0400", hash_original_method = "571F1D61EE68738D4B1083BD48C02876", hash_generated_method = "29E4275E64C287A2E8EB9C51B40B02E4")
-    public boolean isEmulated() {
-        boolean var70A0825F7C8424D762F96A4610B5A4E1_921489645 = (mIsEmulated);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_930352728 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_930352728;
-        // ---------- Original Method ----------
-        //return mIsEmulated;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.558 -0400", hash_original_method = "4AAA3C3D329C939FDD63EF1F58378EDA", hash_generated_method = "D26B00840B2A99854D11BCC18D9A1C8D")
-    public int getSectorCount() {
-switch(mSize){
-        case SIZE_1K:
-        int varC74D97B01EAE257E44AA9D5BADE97BAF_286287406 = (16);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_475365890 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_475365890;
-        case SIZE_2K:
-        int var6364D3F0F495B6AB9DCF8D3B5C6E0B01_1799281336 = (32);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1306492872 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1306492872;
-        case SIZE_4K:
-        int varD645920E395FEDAD7BBBED0ECA3FE2E0_899423034 = (40);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_571630435 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_571630435;
-        case SIZE_MINI:
-        int varE4DA3B7FBBCE2345D7772B0674A318D5_735034960 = (5);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1020951080 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1020951080;
-        default:
-        int varCFCD208495D565EF66E7DFF9F98764DA_1625971087 = (0);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1924729749 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1924729749;
-}
-        // ---------- Original Method ----------
-        //switch (mSize) {
-        //case SIZE_1K:
-            //return 16;
-        //case SIZE_2K:
-            //return 32;
-        //case SIZE_4K:
-            //return 40;
-        //case SIZE_MINI:
-            //return 5;
-        //default:
-            //return 0;
-        //}
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.558 -0400", hash_original_method = "94025DFC316C8F4CE80BFCF15B00E224", hash_generated_method = "6BBFDC38C91511848DB99F8FE0559CC9")
-    public int getBlockCount() {
-        int var113D873C42A5D92E1679C450278154BF_324801039 = (mSize / BLOCK_SIZE);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2095230521 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2095230521;
-        // ---------- Original Method ----------
-        //return mSize / BLOCK_SIZE;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.559 -0400", hash_original_method = "4046C9F5F79A621BBA2F7BE2C9D1103D", hash_generated_method = "36B527F6B452FF4B44043D252894FD78")
-    public int getBlockCountInSector(int sectorIndex) {
-        addTaint(sectorIndex);
-        validateSector(sectorIndex);
-        if(sectorIndex < 32)        
-        {
-            int varA87FF679A2F3E71D9181A67B7542122C_492170171 = (4);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1887874516 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1887874516;
-        } //End block
-        else
-        {
-            int varC74D97B01EAE257E44AA9D5BADE97BAF_259922494 = (16);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1359376953 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1359376953;
-        } //End block
-        // ---------- Original Method ----------
-        //validateSector(sectorIndex);
-        //if (sectorIndex < 32) {
-            //return 4;
-        //} else {
-            //return 16;
-        //}
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.560 -0400", hash_original_method = "54173D46B73CE605A7C420967C72CF9C", hash_generated_method = "8A57AAC7329BDB6288FB81D221567748")
-    public int blockToSector(int blockIndex) {
-        addTaint(blockIndex);
-        validateBlock(blockIndex);
-        if(blockIndex < 32 * 4)        
-        {
-            int var0015FE85A31D4CBD4804C5ED179A7867_1207582972 = (blockIndex / 4);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_345242009 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_345242009;
-        } //End block
-        else
-        {
-            int varB23432549961640CAF87951035F1E1F0_341721670 = (32 + (blockIndex - 32 * 4) / 16);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1500016293 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1500016293;
-        } //End block
-        // ---------- Original Method ----------
-        //validateBlock(blockIndex);
-        //if (blockIndex < 32 * 4) {
-            //return blockIndex / 4;
-        //} else {
-            //return 32 + (blockIndex - 32 * 4) / 16;
-        //}
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.561 -0400", hash_original_method = "9D4F0360D229F71B4914DA14E59850F0", hash_generated_method = "BBC4A5D0339F2ECC0837B56E76DF1970")
-    public int sectorToBlock(int sectorIndex) {
-        addTaint(sectorIndex);
-        if(sectorIndex < 32)        
-        {
-            int var136421ED6951E9BB95FB381D03527187_501766595 = (sectorIndex * 4);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1358092062 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1358092062;
-        } //End block
-        else
-        {
-            int varA4B180D9D27D6B3BCAF06B1197A9E8BF_2104570217 = (32 * 4 + (sectorIndex - 32) * 16);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_436297592 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_436297592;
-        } //End block
-        // ---------- Original Method ----------
-        //if (sectorIndex < 32) {
-            //return sectorIndex * 4;
-        //} else {
-            //return 32 * 4 + (sectorIndex - 32) * 16;
-        //}
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.561 -0400", hash_original_method = "88C199BE0D888C3B911ED6B5CDCE45B3", hash_generated_method = "65431B118B521C1802994084C7AC8E11")
-    public boolean authenticateSectorWithKeyA(int sectorIndex, byte[] key) throws IOException {
-        addTaint(key[0]);
-        addTaint(sectorIndex);
-        boolean var5BF5E05162BABE5DBE45048BE905ABBA_1034539090 = (authenticate(sectorIndex, key, true));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_488994534 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_488994534;
-        // ---------- Original Method ----------
-        //return authenticate(sectorIndex, key, true);
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.562 -0400", hash_original_method = "18C51006B4E85BDBA44E7C237EA48ACA", hash_generated_method = "C6FE9A7190EC367C4BED4B4361B35C12")
-    public boolean authenticateSectorWithKeyB(int sectorIndex, byte[] key) throws IOException {
-        addTaint(key[0]);
-        addTaint(sectorIndex);
-        boolean var66A4C56497054A57701BBBB567B4841D_530999372 = (authenticate(sectorIndex, key, false));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1300266291 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1300266291;
-        // ---------- Original Method ----------
-        //return authenticate(sectorIndex, key, false);
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.563 -0400", hash_original_method = "A4BE9C6E30E6595D3E1AAF1825AE0C43", hash_generated_method = "3A52CAAC64501F1AB35C44AD36AF6871")
-    private boolean authenticate(int sector, byte[] key, boolean keyA) throws IOException {
-        addTaint(keyA);
-        addTaint(key[0]);
-        addTaint(sector);
-        validateSector(sector);
-        checkConnected();
-        byte[] cmd = new byte[12];
-        if(keyA)        
-        {
-            cmd[0] = 0x60;
-        } //End block
-        else
-        {
-            cmd[0] = 0x61;
-        } //End block
-        cmd[1] = (byte) sectorToBlock(sector);
-        byte[] uid = getTag().getId();
-        System.arraycopy(uid, uid.length - 4, cmd, 2, 4);
-        System.arraycopy(key, 0, cmd, 6, 6);
-        try 
-        {
-            if(transceive(cmd, false) != null)            
-            {
-                boolean varB326B5062B2F0E69046810717534CB09_356412868 = (true);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_104087201 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_104087201;
-            } //End block
-        } //End block
-        catch (TagLostException e)
-        {
-            e.addTaint(taint);
-            throw e;
-        } //End block
-        catch (IOException e)
-        {
-        } //End block
-        boolean var68934A3E9455FA72420237EB05902327_859100884 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_462807431 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_462807431;
-        // ---------- Original Method ----------
-        //validateSector(sector);
-        //checkConnected();
-        //byte[] cmd = new byte[12];
-        //if (keyA) {
-            //cmd[0] = 0x60; 
-        //} else {
-            //cmd[0] = 0x61; 
-        //}
-        //cmd[1] = (byte) sectorToBlock(sector);
-        //byte[] uid = getTag().getId();
-        //System.arraycopy(uid, uid.length - 4, cmd, 2, 4);
-        //System.arraycopy(key, 0, cmd, 6, 6);
-        //try {
-            //if (transceive(cmd, false) != null) {
-                //return true;
-            //}
-        //} catch (TagLostException e) {
-            //throw e;
-        //} catch (IOException e) {
-        //}
-        //return false;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.564 -0400", hash_original_method = "540E686F2680F6F111FB5FE029F249C7", hash_generated_method = "23BE0C4CE488FB69A7503EB3C3F4FAC2")
-    public byte[] readBlock(int blockIndex) throws IOException {
-        addTaint(blockIndex);
-        validateBlock(blockIndex);
-        checkConnected();
-        byte[] cmd = { 0x30, (byte) blockIndex };
-        byte[] var8E202568BEDD06F864FDA8E60E6C3088_1195197920 = (transceive(cmd, false));
-                byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1060460059 = {getTaintByte()};
-        return var2F9C81BC6E497382285CD6B7A7E33DE1_1060460059;
-        // ---------- Original Method ----------
-        //validateBlock(blockIndex);
-        //checkConnected();
-        //byte[] cmd = { 0x30, (byte) blockIndex };
-        //return transceive(cmd, false);
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.565 -0400", hash_original_method = "6EB213EA4DA32B7A4304947C71CED66E", hash_generated_method = "CBEC081C3191C5D4F733B3B3D8E79A3A")
-    public void writeBlock(int blockIndex, byte[] data) throws IOException {
-        addTaint(data[0]);
-        addTaint(blockIndex);
-        validateBlock(blockIndex);
-        checkConnected();
-        if(data.length != 16)        
-        {
-            IllegalArgumentException var07B10BE9B977BFFA5B3348AF3692E843_1435473747 = new IllegalArgumentException("must write 16-bytes");
-            var07B10BE9B977BFFA5B3348AF3692E843_1435473747.addTaint(taint);
-            throw var07B10BE9B977BFFA5B3348AF3692E843_1435473747;
-        } //End block
-        byte[] cmd = new byte[data.length + 2];
-        cmd[0] = (byte) 0xA0;
-        cmd[1] = (byte) blockIndex;
-        System.arraycopy(data, 0, cmd, 2, data.length);
-        transceive(cmd, false);
-        // ---------- Original Method ----------
-        //validateBlock(blockIndex);
-        //checkConnected();
-        //if (data.length != 16) {
-            //throw new IllegalArgumentException("must write 16-bytes");
-        //}
-        //byte[] cmd = new byte[data.length + 2];
-        //cmd[0] = (byte) 0xA0;
-        //cmd[1] = (byte) blockIndex;
-        //System.arraycopy(data, 0, cmd, 2, data.length);
-        //transceive(cmd, false);
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.566 -0400", hash_original_method = "B8563CE393F659B55E0B9D3772EFE7A6", hash_generated_method = "14DC8825D4A008830017DD5E3C6EBDDA")
-    public void increment(int blockIndex, int value) throws IOException {
-        addTaint(value);
-        addTaint(blockIndex);
-        validateBlock(blockIndex);
-        validateValueOperand(value);
-        checkConnected();
-        ByteBuffer cmd = ByteBuffer.allocate(6);
-        cmd.order(ByteOrder.LITTLE_ENDIAN);
-        cmd.put( (byte) 0xC1 );
-        cmd.put( (byte) blockIndex );
-        cmd.putInt(value);
-        transceive(cmd.array(), false);
-        // ---------- Original Method ----------
-        //validateBlock(blockIndex);
-        //validateValueOperand(value);
-        //checkConnected();
-        //ByteBuffer cmd = ByteBuffer.allocate(6);
-        //cmd.order(ByteOrder.LITTLE_ENDIAN);
-        //cmd.put( (byte) 0xC1 );
-        //cmd.put( (byte) blockIndex );
-        //cmd.putInt(value);
-        //transceive(cmd.array(), false);
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.568 -0400", hash_original_method = "FAA38C9F5E4C186E0FA530C9A1909DAD", hash_generated_method = "865ADA2554C62F7D68EFD0A04A86AE35")
-    public void decrement(int blockIndex, int value) throws IOException {
-        addTaint(value);
-        addTaint(blockIndex);
-        validateBlock(blockIndex);
-        validateValueOperand(value);
-        checkConnected();
-        ByteBuffer cmd = ByteBuffer.allocate(6);
-        cmd.order(ByteOrder.LITTLE_ENDIAN);
-        cmd.put( (byte) 0xC0 );
-        cmd.put( (byte) blockIndex );
-        cmd.putInt(value);
-        transceive(cmd.array(), false);
-        // ---------- Original Method ----------
-        //validateBlock(blockIndex);
-        //validateValueOperand(value);
-        //checkConnected();
-        //ByteBuffer cmd = ByteBuffer.allocate(6);
-        //cmd.order(ByteOrder.LITTLE_ENDIAN);
-        //cmd.put( (byte) 0xC0 );
-        //cmd.put( (byte) blockIndex );
-        //cmd.putInt(value);
-        //transceive(cmd.array(), false);
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.568 -0400", hash_original_method = "25F048093BEC30F816A6E356A5759AAE", hash_generated_method = "FDFD3069D79BEAF0B3B3816A69516298")
-    public void transfer(int blockIndex) throws IOException {
-        addTaint(blockIndex);
-        validateBlock(blockIndex);
-        checkConnected();
-        byte[] cmd = { (byte) 0xB0, (byte) blockIndex };
-        transceive(cmd, false);
-        // ---------- Original Method ----------
-        //validateBlock(blockIndex);
-        //checkConnected();
-        //byte[] cmd = { (byte) 0xB0, (byte) blockIndex };
-        //transceive(cmd, false);
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.569 -0400", hash_original_method = "CA1FBC952F4C8F3DF96DFF31BC2893A2", hash_generated_method = "543532807DF5ECC1DB1D1BF1E2CD8C19")
-    public void restore(int blockIndex) throws IOException {
-        addTaint(blockIndex);
-        validateBlock(blockIndex);
-        checkConnected();
-        byte[] cmd = { (byte) 0xC2, (byte) blockIndex };
-        transceive(cmd, false);
-        // ---------- Original Method ----------
-        //validateBlock(blockIndex);
-        //checkConnected();
-        //byte[] cmd = { (byte) 0xC2, (byte) blockIndex };
-        //transceive(cmd, false);
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.570 -0400", hash_original_method = "E43990821CE38E04B46B3E901EFDFA24", hash_generated_method = "8CD59A27F84D265E34A6C9A08FA6F918")
-    public byte[] transceive(byte[] data) throws IOException {
-        addTaint(data[0]);
-        byte[] varEE32C696607EBC614D9A30134ACB1AE3_332225921 = (transceive(data, true));
-                byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_578347709 = {getTaintByte()};
-        return var2F9C81BC6E497382285CD6B7A7E33DE1_578347709;
-        // ---------- Original Method ----------
-        //return transceive(data, true);
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.570 -0400", hash_original_method = "CF96EF3BF3FCE4DA3D9E7FBB541AEB70", hash_generated_method = "1EE8D5191D2D75FCC220BB1B62FCC20E")
-    public int getMaxTransceiveLength() {
-        int var534FE261D7083B235B3B010A14A83EE1_769533552 = (getMaxTransceiveLengthInternal());
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1412092425 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1412092425;
-        // ---------- Original Method ----------
-        //return getMaxTransceiveLengthInternal();
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.571 -0400", hash_original_method = "F9EC6D04AED06B3DFE22DC9A2A8AC0C3", hash_generated_method = "20DAA7AE25EB326F1404DAF540866468")
-    public void setTimeout(int timeout) {
-        addTaint(timeout);
-        try 
-        {
-            int err = mTag.getTagService().setTimeout(TagTechnology.MIFARE_CLASSIC, timeout);
-            if(err != ErrorCodes.SUCCESS)            
-            {
-                IllegalArgumentException varDB68BEF11A046B44BA82450BD6BDD1ED_1149383367 = new IllegalArgumentException("The supplied timeout is not valid");
-                varDB68BEF11A046B44BA82450BD6BDD1ED_1149383367.addTaint(taint);
-                throw varDB68BEF11A046B44BA82450BD6BDD1ED_1149383367;
-            } //End block
-        } //End block
-        catch (RemoteException e)
-        {
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //int err = mTag.getTagService().setTimeout(TagTechnology.MIFARE_CLASSIC, timeout);
-            //if (err != ErrorCodes.SUCCESS) {
-                //throw new IllegalArgumentException("The supplied timeout is not valid");
-            //}
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "NFC service dead", e);
-        //}
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.572 -0400", hash_original_method = "59718E6CF1FABD433F7C060A44E5C453", hash_generated_method = "CAE6B6FB9F61648A1713599E6718A15B")
-    public int getTimeout() {
-        try 
-        {
-            int varBD614B0B67E6D92251E0598487623CAE_620474165 = (mTag.getTagService().getTimeout(TagTechnology.MIFARE_CLASSIC));
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1006135230 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1006135230;
-        } //End block
-        catch (RemoteException e)
-        {
-            int varCFCD208495D565EF66E7DFF9F98764DA_1257620226 = (0);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1028922800 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1028922800;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return mTag.getTagService().getTimeout(TagTechnology.MIFARE_CLASSIC);
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "NFC service dead", e);
-            //return 0;
-        //}
-    }
-
-    
-    @DSModeled(DSC.BAN)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:44.174 -0500", hash_original_method = "6AEBAB1312792C7703187110E11F13AB", hash_generated_method = "D3B8644AAE9BC8E492D40EC59854C738")
     private static void validateSector(int sector) {
+        // Do not be too strict on upper bounds checking, since some cards
+        // have more addressable memory than they report. For example,
+        // MIFARE Plus 2k cards will appear as MIFARE Classic 1k cards when in
+        // MIFARE Classic compatibility mode.
+        // Note that issuing a command to an out-of-bounds block is safe - the
+        // tag should report error causing IOException. This validation is a
+        // helper to guard against obvious programming mistakes.
         if (sector < 0 || sector >= MAX_SECTOR_COUNT) {
             throw new IndexOutOfBoundsException("sector out of bounds: " + sector);
         }
     }
 
-    
-    @DSModeled(DSC.BAN)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:44.175 -0500", hash_original_method = "CFA9481E8F030900CA0048919D894F77", hash_generated_method = "C34B68B047A4989525857FEB4C250D12")
     private static void validateBlock(int block) {
+        // Just looking for obvious out of bounds...
         if (block < 0 || block >= MAX_BLOCK_COUNT) {
             throw new IndexOutOfBoundsException("block out of bounds: " + block);
         }
     }
 
-    
-    @DSModeled(DSC.BAN)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:44.176 -0500", hash_original_method = "F036ABF163B31A4495D232DA6641AE31", hash_generated_method = "CDE5A15CE101FB85B5C6757A52726679")
     private static void validateValueOperand(int value) {
         if (value < 0) {
             throw new IllegalArgumentException("value operand negative");
         }
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.573 -0400", hash_original_field = "839E89798F641D78E99C5732B39CA844", hash_generated_field = "BC8F11E4AEAD11E0412B7B53DF0CA6C8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:44.138 -0500", hash_original_field = "76B42502A850F1BA8F9A78C316486025", hash_generated_field = "BC8F11E4AEAD11E0412B7B53DF0CA6C8")
 
     private static final String TAG = "NFC";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.573 -0400", hash_original_field = "F43B62ACBEF62955A892A0125C4E97AC", hash_generated_field = "54FD0024ABE4EEEC2428AB757D9F3016")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:44.139 -0500", hash_original_field = "568A5AF0E2D7D166BEA1301C59CC2B40", hash_generated_field = "54FD0024ABE4EEEC2428AB757D9F3016")
 
     public static final byte[] KEY_DEFAULT =
             {(byte)0xFF,(byte)0xFF,(byte)0xFF,(byte)0xFF,(byte)0xFF,(byte)0xFF};
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.574 -0400", hash_original_field = "21F9D525110FC9DDAD2D96449A9406BF", hash_generated_field = "15DB5DCB955364C48035DA5E4E953740")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:44.139 -0500", hash_original_field = "13BA65685947D1AA3A3063BE4D3A4240", hash_generated_field = "15DB5DCB955364C48035DA5E4E953740")
 
     public static final byte[] KEY_MIFARE_APPLICATION_DIRECTORY =
             {(byte)0xA0,(byte)0xA1,(byte)0xA2,(byte)0xA3,(byte)0xA4,(byte)0xA5};
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.574 -0400", hash_original_field = "E003BDDE321126A7175909200065CC96", hash_generated_field = "12E87E1D5AC9EA588363E4D80F1B1001")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:44.141 -0500", hash_original_field = "0B71AB72F9C67F75BDD47653DBC0F1F8", hash_generated_field = "12E87E1D5AC9EA588363E4D80F1B1001")
 
     public static final byte[] KEY_NFC_FORUM =
             {(byte)0xD3,(byte)0xF7,(byte)0xD3,(byte)0xF7,(byte)0xD3,(byte)0xF7};
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.574 -0400", hash_original_field = "5034A85BF931B74EFB4900211957B4BB", hash_generated_field = "384725A35AE2048CC01CB14C667E6F8D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:44.142 -0500", hash_original_field = "4E3213304A9AE81B4AE58CC302F1CDF6", hash_generated_field = "384725A35AE2048CC01CB14C667E6F8D")
 
     public static final int TYPE_UNKNOWN = -1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.574 -0400", hash_original_field = "296852A8BBEF25A87785985C2BC0DFC5", hash_generated_field = "7061FCCEF7055B824FD2AA480431DCC6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:44.143 -0500", hash_original_field = "CA23C1EFE8B94F090EE8F755F08A2362", hash_generated_field = "7061FCCEF7055B824FD2AA480431DCC6")
 
     public static final int TYPE_CLASSIC = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.574 -0400", hash_original_field = "ECD0E35FE52D2DE30F387A5A130B6976", hash_generated_field = "4E9412DEFDF67F37DBAB413F0A64A35E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:44.144 -0500", hash_original_field = "04F9C862049EB6F3FEABC8834B994268", hash_generated_field = "4E9412DEFDF67F37DBAB413F0A64A35E")
 
     public static final int TYPE_PLUS = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.574 -0400", hash_original_field = "6712F118318BDDE896831243EAB79997", hash_generated_field = "E54C8D8F5C6AB4014CB13C1AA7F26768")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:44.145 -0500", hash_original_field = "EFFFF72CBC30B276E36F01D6F78ED854", hash_generated_field = "E54C8D8F5C6AB4014CB13C1AA7F26768")
 
     public static final int TYPE_PRO = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.574 -0400", hash_original_field = "44E5C75C5C9E25B08F5E8DAB7426A47C", hash_generated_field = "1768559A5BB2B8E1D785D5C51528A7E2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:44.146 -0500", hash_original_field = "357C56F4AAE2A9253051CEF7AAE2F8F5", hash_generated_field = "1768559A5BB2B8E1D785D5C51528A7E2")
 
     public static final int SIZE_1K = 1024;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.574 -0400", hash_original_field = "38245792A1CA3B41429F8B68D818111D", hash_generated_field = "29839D581DC916610DC52670577D996D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:44.146 -0500", hash_original_field = "F323C7F0693506F0180DBE5A6D1E000E", hash_generated_field = "29839D581DC916610DC52670577D996D")
 
     public static final int SIZE_2K = 2048;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.574 -0400", hash_original_field = "CAB6DD92345B3C8AFAF46DAB9D8D88A7", hash_generated_field = "901EEE828F9926FE0467F5BB2C7B7D08")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:44.147 -0500", hash_original_field = "CA4C64740611919A41F7D46531BA3821", hash_generated_field = "901EEE828F9926FE0467F5BB2C7B7D08")
 
     public static final int SIZE_4K = 4096;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.575 -0400", hash_original_field = "2DBC1251377F3758534631A170319E57", hash_generated_field = "042D532175870A55F83E79C5988117F4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:44.148 -0500", hash_original_field = "270A7469AFB7D89E6A467EA06638C66B", hash_generated_field = "042D532175870A55F83E79C5988117F4")
 
     public static final int SIZE_MINI = 320;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.575 -0400", hash_original_field = "B38149A434660ADA03E33C84BD3F6CED", hash_generated_field = "195B8DA56AF39DED77508EB085D1B2A5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:44.149 -0500", hash_original_field = "22CAEF6299D730132E9AD238F610AAF5", hash_generated_field = "195B8DA56AF39DED77508EB085D1B2A5")
 
     public static final int BLOCK_SIZE = 16;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.575 -0400", hash_original_field = "BD15FD57804DE3BC7D61C9ABF03CBDC3", hash_generated_field = "BC260A9D029BA6EDF18C45D0AF8942E9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:44.150 -0500", hash_original_field = "52FA28BBF5C30D3FFD109260D6B78CCB", hash_generated_field = "BC260A9D029BA6EDF18C45D0AF8942E9")
+
 
     private static final int MAX_BLOCK_COUNT = 256;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.575 -0400", hash_original_field = "B6DBE45B32DD2B5C973502062E9E9DAD", hash_generated_field = "D29CA245349D4EF940C9F42785B91E3A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:44.151 -0500", hash_original_field = "18D1231F189EEF295B834E3AC6952D5E", hash_generated_field = "D29CA245349D4EF940C9F42785B91E3A")
 
     private static final int MAX_SECTOR_COUNT = 40;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:44.151 -0500", hash_original_field = "A8195C44C78CB64F7BEB74D57C77637D", hash_generated_field = "A5FF4684C8ADE9FC7594EE2E1226C64D")
+
+
+    private boolean mIsEmulated;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:44.152 -0500", hash_original_field = "B93BF1EFA6B57CC598632E54B97CD147", hash_generated_field = "E6B4AC7A48E0E54E09A504C828AF50C5")
+
+    private int mType;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:44.153 -0500", hash_original_field = "205262C28D2B190751535A4911B3B259", hash_generated_field = "1ADF00AF1A5D84662F00519BAA6EB9C0")
+
+    private int mSize;
+
+    /** @hide */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:44.155 -0500", hash_original_method = "05B1EEC895D259A0FF8852CB7B561E5D", hash_generated_method = "D5703B9D179A855AEC267C65F05B7ECB")
+    public MifareClassic(Tag tag) throws RemoteException {
+        super(tag, TagTechnology.MIFARE_CLASSIC);
+
+        NfcA a = NfcA.get(tag);  // MIFARE Classic is always based on NFC a
+
+        mIsEmulated = false;
+
+        switch (a.getSak()) {
+        case 0x08:
+            mType = TYPE_CLASSIC;
+            mSize = SIZE_1K;
+            break;
+        case 0x09:
+            mType = TYPE_CLASSIC;
+            mSize = SIZE_MINI;
+            break;
+        case 0x10:
+            mType = TYPE_PLUS;
+            mSize = SIZE_2K;
+            // SecLevel = SL2
+            break;
+        case 0x11:
+            mType = TYPE_PLUS;
+            mSize = SIZE_4K;
+            // Seclevel = SL2
+            break;
+        case 0x18:
+            mType = TYPE_CLASSIC;
+            mSize = SIZE_4K;
+            break;
+        case 0x28:
+            mType = TYPE_CLASSIC;
+            mSize = SIZE_1K;
+            mIsEmulated = true;
+            break;
+        case 0x38:
+            mType = TYPE_CLASSIC;
+            mSize = SIZE_4K;
+            mIsEmulated = true;
+            break;
+        case 0x88:
+            mType = TYPE_CLASSIC;
+            mSize = SIZE_1K;
+            // NXP-tag: false
+            break;
+        case 0x98:
+        case 0xB8:
+            mType = TYPE_PRO;
+            mSize = SIZE_4K;
+            break;
+        default:
+            // Stack incorrectly reported a MifareClassic. We cannot handle this
+            // gracefully - we have no idea of the memory layout. Bail.
+            throw new RuntimeException(
+                    "Tag incorrectly enumerated as MIFARE Classic, SAK = " + a.getSak());
+        }
+    }
+
+    /**
+     * Return the type of this MIFARE Classic compatible tag.
+     * <p>One of {@link #TYPE_UNKNOWN}, {@link #TYPE_CLASSIC}, {@link #TYPE_PLUS} or
+     * {@link #TYPE_PRO}.
+     * <p>Does not cause any RF activity and does not block.
+     *
+     * @return type
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:44.156 -0500", hash_original_method = "E9AD68D49398B2B9D86D12D221B14582", hash_generated_method = "32498FCDA3AC1E9A676800B51A331335")
+    public int getType() {
+        return mType;
+    }
+
+    /**
+     * Return the size of the tag in bytes
+     * <p>One of {@link #SIZE_MINI}, {@link #SIZE_1K}, {@link #SIZE_2K}, {@link #SIZE_4K}.
+     * These constants are equal to their respective size in bytes.
+     * <p>Does not cause any RF activity and does not block.
+     * @return size in bytes
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:44.157 -0500", hash_original_method = "2098B918320D3D5229820CAB47C60E59", hash_generated_method = "5C0A5CB4DD3116647C99AA4ADB19626C")
+    public int getSize() {
+        return mSize;
+    }
+
+    /**
+     * Return true if the tag is emulated, determined at discovery time.
+     * These are actually smart-cards that emulate a MIFARE Classic interface.
+     * They can be treated identically to a MIFARE Classic tag.
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:44.158 -0500", hash_original_method = "571F1D61EE68738D4B1083BD48C02876", hash_generated_method = "E5E6612EE5F6102975B877338E28BF26")
+    public boolean isEmulated() {
+        return mIsEmulated;
+    }
+
+    /**
+     * Return the number of MIFARE Classic sectors.
+     * <p>Does not cause any RF activity and does not block.
+     * @return number of sectors
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:44.159 -0500", hash_original_method = "4AAA3C3D329C939FDD63EF1F58378EDA", hash_generated_method = "4D2FADE42AC7537391D9250404E1EABD")
+    public int getSectorCount() {
+        switch (mSize) {
+        case SIZE_1K:
+            return 16;
+        case SIZE_2K:
+            return 32;
+        case SIZE_4K:
+            return 40;
+        case SIZE_MINI:
+            return 5;
+        default:
+            return 0;
+        }
+    }
+
+    /**
+     * Return the total number of MIFARE Classic blocks.
+     * <p>Does not cause any RF activity and does not block.
+     * @return total number of blocks
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:44.159 -0500", hash_original_method = "94025DFC316C8F4CE80BFCF15B00E224", hash_generated_method = "702BC6C3AD9C09E630E017F6B5D91E64")
+    public int getBlockCount() {
+        return mSize / BLOCK_SIZE;
+    }
+
+    /**
+     * Return the number of blocks in the given sector.
+     * <p>Does not cause any RF activity and does not block.
+     *
+     * @param sectorIndex index of sector, starting from 0
+     * @return number of blocks in the sector
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:44.160 -0500", hash_original_method = "4046C9F5F79A621BBA2F7BE2C9D1103D", hash_generated_method = "73213613B5EED476EAA815B3DE45523F")
+    public int getBlockCountInSector(int sectorIndex) {
+        validateSector(sectorIndex);
+
+        if (sectorIndex < 32) {
+            return 4;
+        } else {
+            return 16;
+        }
+    }
+
+    /**
+     * Return the sector that contains a given block.
+     * <p>Does not cause any RF activity and does not block.
+     *
+     * @param blockIndex index of block to lookup, starting from 0
+     * @return sector index that contains the block
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:44.161 -0500", hash_original_method = "54173D46B73CE605A7C420967C72CF9C", hash_generated_method = "4A017C2D04B7D7BF7D39E350F3E8682F")
+    public int blockToSector(int blockIndex) {
+        validateBlock(blockIndex);
+
+        if (blockIndex < 32 * 4) {
+            return blockIndex / 4;
+        } else {
+            return 32 + (blockIndex - 32 * 4) / 16;
+        }
+    }
+
+    /**
+     * Return the first block of a given sector.
+     * <p>Does not cause any RF activity and does not block.
+     *
+     * @param sectorIndex index of sector to lookup, starting from 0
+     * @return block index of first block in sector
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:44.162 -0500", hash_original_method = "9D4F0360D229F71B4914DA14E59850F0", hash_generated_method = "DF81E847F0CB6237B109B3D92602C5BF")
+    public int sectorToBlock(int sectorIndex) {
+        if (sectorIndex < 32) {
+            return sectorIndex * 4;
+        } else {
+            return 32 * 4 + (sectorIndex - 32) * 16;
+        }
+    }
+
+    /**
+     * Authenticate a sector with key A.
+     *
+     * <p>Successful authentication of a sector with key A enables other
+     * I/O operations on that sector. The set of operations granted by key A
+     * key depends on the ACL bits set in that sector. For more information
+     * see the MIFARE Classic specification on {@see http://www.nxp.com}.
+     *
+     * <p>A failed authentication attempt causes an implicit reconnection to the
+     * tag, so authentication to other sectors will be lost.
+     *
+     * <p>This is an I/O operation and will block until complete. It must
+     * not be called from the main application thread. A blocked call will be canceled with
+     * {@link IOException} if {@link #close} is called from another thread.
+     *
+     * <p class="note">Requires the {@link android.Manifest.permission#NFC} permission.
+     *
+     * @param sectorIndex index of sector to authenticate, starting from 0
+     * @param key 6-byte authentication key
+     * @return true on success, false on authentication failure
+     * @throws TagLostException if the tag leaves the field
+     * @throws IOException if there is an I/O failure, or the operation is canceled
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:44.163 -0500", hash_original_method = "88C199BE0D888C3B911ED6B5CDCE45B3", hash_generated_method = "2F30C532D366C8631223F424EE7BD491")
+    public boolean authenticateSectorWithKeyA(int sectorIndex, byte[] key) throws IOException {
+        return authenticate(sectorIndex, key, true);
+    }
+
+    /**
+     * Authenticate a sector with key B.
+     *
+     * <p>Successful authentication of a sector with key B enables other
+     * I/O operations on that sector. The set of operations granted by key B
+     * depends on the ACL bits set in that sector. For more information
+     * see the MIFARE Classic specification on {@see http://www.nxp.com}.
+     *
+     * <p>A failed authentication attempt causes an implicit reconnection to the
+     * tag, so authentication to other sectors will be lost.
+     *
+     * <p>This is an I/O operation and will block until complete. It must
+     * not be called from the main application thread. A blocked call will be canceled with
+     * {@link IOException} if {@link #close} is called from another thread.
+     *
+     * <p class="note">Requires the {@link android.Manifest.permission#NFC} permission.
+     *
+     * @param sectorIndex index of sector to authenticate, starting from 0
+     * @param key 6-byte authentication key
+     * @return true on success, false on authentication failure
+     * @throws TagLostException if the tag leaves the field
+     * @throws IOException if there is an I/O failure, or the operation is canceled
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:44.164 -0500", hash_original_method = "18C51006B4E85BDBA44E7C237EA48ACA", hash_generated_method = "B369F0B3F0D5020EBD23E4B5F61711FA")
+    public boolean authenticateSectorWithKeyB(int sectorIndex, byte[] key) throws IOException {
+        return authenticate(sectorIndex, key, false);
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:44.165 -0500", hash_original_method = "A4BE9C6E30E6595D3E1AAF1825AE0C43", hash_generated_method = "E27CCEFD3D52E13A0552F8D874A1AC02")
+    private boolean authenticate(int sector, byte[] key, boolean keyA) throws IOException {
+        validateSector(sector);
+        checkConnected();
+
+        byte[] cmd = new byte[12];
+
+        // First byte is the command
+        if (keyA) {
+            cmd[0] = 0x60; // phHal_eMifareAuthentA
+        } else {
+            cmd[0] = 0x61; // phHal_eMifareAuthentB
+        }
+
+        // Second byte is block address
+        // Authenticate command takes a block address. Authenticating a block
+        // of a sector will authenticate the entire sector.
+        cmd[1] = (byte) sectorToBlock(sector);
+
+        // Next 4 bytes are last 4 bytes of UID
+        byte[] uid = getTag().getId();
+        System.arraycopy(uid, uid.length - 4, cmd, 2, 4);
+
+        // Next 6 bytes are key
+        System.arraycopy(key, 0, cmd, 6, 6);
+
+        try {
+            if (transceive(cmd, false) != null) {
+                return true;
+            }
+        } catch (TagLostException e) {
+            throw e;
+        } catch (IOException e) {
+            // No need to deal with, will return false anyway
+        }
+        return false;
+    }
+
+    /**
+     * Read 16-byte block.
+     *
+     * <p>This is an I/O operation and will block until complete. It must
+     * not be called from the main application thread. A blocked call will be canceled with
+     * {@link IOException} if {@link #close} is called from another thread.
+     *
+     * <p class="note">Requires the {@link android.Manifest.permission#NFC} permission.
+     *
+     * @param blockIndex index of block to read, starting from 0
+     * @return 16 byte block
+     * @throws TagLostException if the tag leaves the field
+     * @throws IOException if there is an I/O failure, or the operation is canceled
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:44.165 -0500", hash_original_method = "540E686F2680F6F111FB5FE029F249C7", hash_generated_method = "ED987BFD8349BF414FD2365B04E64336")
+    public byte[] readBlock(int blockIndex) throws IOException {
+        validateBlock(blockIndex);
+        checkConnected();
+
+        byte[] cmd = { 0x30, (byte) blockIndex };
+        return transceive(cmd, false);
+    }
+
+    /**
+     * Write 16-byte block.
+     *
+     * <p>This is an I/O operation and will block until complete. It must
+     * not be called from the main application thread. A blocked call will be canceled with
+     * {@link IOException} if {@link #close} is called from another thread.
+     *
+     * <p class="note">Requires the {@link android.Manifest.permission#NFC} permission.
+     *
+     * @param blockIndex index of block to write, starting from 0
+     * @param data 16 bytes of data to write
+     * @throws TagLostException if the tag leaves the field
+     * @throws IOException if there is an I/O failure, or the operation is canceled
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:44.167 -0500", hash_original_method = "6EB213EA4DA32B7A4304947C71CED66E", hash_generated_method = "A7EEC08B0AA170934CACE7AC814DF49A")
+    public void writeBlock(int blockIndex, byte[] data) throws IOException {
+        validateBlock(blockIndex);
+        checkConnected();
+        if (data.length != 16) {
+            throw new IllegalArgumentException("must write 16-bytes");
+        }
+
+        byte[] cmd = new byte[data.length + 2];
+        cmd[0] = (byte) 0xA0; // MF write command
+        cmd[1] = (byte) blockIndex;
+        System.arraycopy(data, 0, cmd, 2, data.length);
+
+        transceive(cmd, false);
+    }
+
+    /**
+     * Increment a value block, storing the result in the temporary block on the tag.
+     *
+     * <p>This is an I/O operation and will block until complete. It must
+     * not be called from the main application thread. A blocked call will be canceled with
+     * {@link IOException} if {@link #close} is called from another thread.
+     *
+     * <p class="note">Requires the {@link android.Manifest.permission#NFC} permission.
+     *
+     * @param blockIndex index of block to increment, starting from 0
+     * @param value non-negative to increment by
+     * @throws TagLostException if the tag leaves the field
+     * @throws IOException if there is an I/O failure, or the operation is canceled
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:44.167 -0500", hash_original_method = "B8563CE393F659B55E0B9D3772EFE7A6", hash_generated_method = "5AF5E8C91CAD8B0F8CC6116D65C3A94A")
+    public void increment(int blockIndex, int value) throws IOException {
+        validateBlock(blockIndex);
+        validateValueOperand(value);
+        checkConnected();
+
+        ByteBuffer cmd = ByteBuffer.allocate(6);
+        cmd.order(ByteOrder.LITTLE_ENDIAN);
+        cmd.put( (byte) 0xC1 );
+        cmd.put( (byte) blockIndex );
+        cmd.putInt(value);
+
+        transceive(cmd.array(), false);
+    }
+
+    /**
+     * Decrement a value block, storing the result in the temporary block on the tag.
+     *
+     * <p>This is an I/O operation and will block until complete. It must
+     * not be called from the main application thread. A blocked call will be canceled with
+     * {@link IOException} if {@link #close} is called from another thread.
+     *
+     * <p class="note">Requires the {@link android.Manifest.permission#NFC} permission.
+     *
+     * @param blockIndex index of block to decrement, starting from 0
+     * @param value non-negative to decrement by
+     * @throws TagLostException if the tag leaves the field
+     * @throws IOException if there is an I/O failure, or the operation is canceled
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:44.168 -0500", hash_original_method = "FAA38C9F5E4C186E0FA530C9A1909DAD", hash_generated_method = "A92A75E89900C5ABB49245ACA28AF5B3")
+    public void decrement(int blockIndex, int value) throws IOException {
+        validateBlock(blockIndex);
+        validateValueOperand(value);
+        checkConnected();
+
+        ByteBuffer cmd = ByteBuffer.allocate(6);
+        cmd.order(ByteOrder.LITTLE_ENDIAN);
+        cmd.put( (byte) 0xC0 );
+        cmd.put( (byte) blockIndex );
+        cmd.putInt(value);
+
+        transceive(cmd.array(), false);
+    }
+
+    /**
+     * Copy from the temporary block to a value block.
+     *
+     * <p>This is an I/O operation and will block until complete. It must
+     * not be called from the main application thread. A blocked call will be canceled with
+     * {@link IOException} if {@link #close} is called from another thread.
+     *
+     * <p class="note">Requires the {@link android.Manifest.permission#NFC} permission.
+     *
+     * @param blockIndex index of block to copy to
+     * @throws TagLostException if the tag leaves the field
+     * @throws IOException if there is an I/O failure, or the operation is canceled
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:44.169 -0500", hash_original_method = "25F048093BEC30F816A6E356A5759AAE", hash_generated_method = "DDC50391C15E331393724933E98CF089")
+    public void transfer(int blockIndex) throws IOException {
+        validateBlock(blockIndex);
+        checkConnected();
+
+        byte[] cmd = { (byte) 0xB0, (byte) blockIndex };
+
+        transceive(cmd, false);
+    }
+
+    /**
+     * Copy from a value block to the temporary block.
+     *
+     * <p>This is an I/O operation and will block until complete. It must
+     * not be called from the main application thread. A blocked call will be canceled with
+     * {@link IOException} if {@link #close} is called from another thread.
+     *
+     * <p class="note">Requires the {@link android.Manifest.permission#NFC} permission.
+     *
+     * @param blockIndex index of block to copy from
+     * @throws TagLostException if the tag leaves the field
+     * @throws IOException if there is an I/O failure, or the operation is canceled
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:44.170 -0500", hash_original_method = "CA1FBC952F4C8F3DF96DFF31BC2893A2", hash_generated_method = "AA3D315461AC5D8F483597DB8508AC33")
+    public void restore(int blockIndex) throws IOException {
+        validateBlock(blockIndex);
+        checkConnected();
+
+        byte[] cmd = { (byte) 0xC2, (byte) blockIndex };
+
+        transceive(cmd, false);
+    }
+
+    /**
+     * Send raw NfcA data to a tag and receive the response.
+     *
+     * <p>This is equivalent to connecting to this tag via {@link NfcA}
+     * and calling {@link NfcA#transceive}. Note that all MIFARE Classic
+     * tags are based on {@link NfcA} technology.
+     *
+     * <p>Use {@link #getMaxTransceiveLength} to retrieve the maximum number of bytes
+     * that can be sent with {@link #transceive}.
+     *
+     * <p>This is an I/O operation and will block until complete. It must
+     * not be called from the main application thread. A blocked call will be canceled with
+     * {@link IOException} if {@link #close} is called from another thread.
+     *
+     * <p class="note">Requires the {@link android.Manifest.permission#NFC} permission.
+     *
+     * @see NfcA#transceive
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:44.171 -0500", hash_original_method = "E43990821CE38E04B46B3E901EFDFA24", hash_generated_method = "CC13A29AED45E04C4807822531800242")
+    public byte[] transceive(byte[] data) throws IOException {
+        return transceive(data, true);
+    }
+
+    /**
+     * Return the maximum number of bytes that can be sent with {@link #transceive}.
+     * @return the maximum number of bytes that can be sent with {@link #transceive}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:44.172 -0500", hash_original_method = "CF96EF3BF3FCE4DA3D9E7FBB541AEB70", hash_generated_method = "ECC61C711C2C081CEFB91A790D67A4A8")
+    public int getMaxTransceiveLength() {
+        return getMaxTransceiveLengthInternal();
+    }
+
+    /**
+     * Set the {@link #transceive} timeout in milliseconds.
+     *
+     * <p>The timeout only applies to {@link #transceive} on this object,
+     * and is reset to a default value when {@link #close} is called.
+     *
+     * <p>Setting a longer timeout may be useful when performing
+     * transactions that require a long processing time on the tag
+     * such as key generation.
+     *
+     * <p class="note">Requires the {@link android.Manifest.permission#NFC} permission.
+     *
+     * @param timeout timeout value in milliseconds
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:44.173 -0500", hash_original_method = "F9EC6D04AED06B3DFE22DC9A2A8AC0C3", hash_generated_method = "9E5730519065B43D0F999CFF9537BF7D")
+    public void setTimeout(int timeout) {
+        try {
+            int err = mTag.getTagService().setTimeout(TagTechnology.MIFARE_CLASSIC, timeout);
+            if (err != ErrorCodes.SUCCESS) {
+                throw new IllegalArgumentException("The supplied timeout is not valid");
+            }
+        } catch (RemoteException e) {
+            Log.e(TAG, "NFC service dead", e);
+        }
+    }
+
+    /**
+     * Get the current {@link #transceive} timeout in milliseconds.
+     *
+     * <p class="note">Requires the {@link android.Manifest.permission#NFC} permission.
+     *
+     * @return timeout value in milliseconds
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:44.173 -0500", hash_original_method = "59718E6CF1FABD433F7C060A44E5C453", hash_generated_method = "502A195A8ADED54A1910871BDD9CE087")
+    public int getTimeout() {
+        try {
+            return mTag.getTagService().getTimeout(TagTechnology.MIFARE_CLASSIC);
+        } catch (RemoteException e) {
+            Log.e(TAG, "NFC service dead", e);
+            return 0;
+        }
+    }
 }
 

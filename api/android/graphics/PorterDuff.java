@@ -1,6 +1,8 @@
 package android.graphics;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
@@ -35,11 +37,14 @@ public class PorterDuff {
         SCREEN      (15),
         ADD         (16),
         OVERLAY     (17);
-        @DSModeled(DSC.SAFE)
-        Mode(int nativeInt) {
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:49.151 -0500", hash_original_method = "787C81E539A7EA8A7036FAB09EA6039E", hash_generated_method = "787C81E539A7EA8A7036FAB09EA6039E")
+            Mode(int nativeInt) {
             this.nativeInt = nativeInt;
         }
-        public final int nativeInt;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:49.151 -0500", hash_original_field = "6B116C6445FBD920A2653C64D32C9FB3", hash_generated_field = "98EAA4A55387890AE1074B767C7F1464")
+
+        public  int nativeInt;
     }
 
     

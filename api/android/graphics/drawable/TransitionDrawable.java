@@ -1,6 +1,8 @@
 package android.graphics.drawable;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.content.res.Resources;
 import android.graphics.Canvas;
@@ -11,87 +13,86 @@ import android.os.SystemClock;
 
 
 public class TransitionDrawable extends LayerDrawable implements Drawable.Callback {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.793 -0400", hash_original_field = "A7B20EF19631195D4CD5E5E59BE8ED91", hash_generated_field = "D70F55987D084695053B74ED3F9477FE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:51.432 -0500", hash_original_field = "75C926C83BBFDB17FFBF28EC90F80F69", hash_generated_field = "1A633D536EE3F439C073F10EBA919A97")
+
+    private static final int TRANSITION_STARTING = 0;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:51.433 -0500", hash_original_field = "43FEA14DBDEBEAC7E0F3C270B7319611", hash_generated_field = "D6BAF07E7FDE629B17C0001BE3132290")
+
+    private static final int TRANSITION_RUNNING = 1;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:51.434 -0500", hash_original_field = "55B79D003ACFD8A7BAD42DCF3543E63B", hash_generated_field = "0E71F11924CBF54A46E740E3338A6F34")
+
+    private static final int TRANSITION_NONE = 2;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:51.434 -0500", hash_original_field = "3B8614A2378385C9F1789079D2F28F0D", hash_generated_field = "D70F55987D084695053B74ED3F9477FE")
 
     private int mTransitionState = TRANSITION_NONE;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.793 -0400", hash_original_field = "AB79369A0ECA69C81F7483142CAC41A8", hash_generated_field = "589AC6E67EEDC8ABFD20242996FB9ED2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:51.435 -0500", hash_original_field = "CAEDC7360129F326D2D0FC7BDB4F9CC0", hash_generated_field = "589AC6E67EEDC8ABFD20242996FB9ED2")
+
 
     private boolean mReverse;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.793 -0400", hash_original_field = "06C1DC6DB6A0E567DBC1AE1191EA3893", hash_generated_field = "B83C8955E1DA3FA0CE0799F8A1CE7B42")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:51.436 -0500", hash_original_field = "509D3898CD21540946E17C915247FD75", hash_generated_field = "B83C8955E1DA3FA0CE0799F8A1CE7B42")
 
     private long mStartTimeMillis;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.793 -0400", hash_original_field = "EDE7DB5B0C4E79BD52B42E685F59B951", hash_generated_field = "24B6498B57A4DDD67F7E9CE57E59205C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:51.437 -0500", hash_original_field = "90BBA3355E6267427C684DA37D63DEF0", hash_generated_field = "24B6498B57A4DDD67F7E9CE57E59205C")
 
     private int mFrom;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.793 -0400", hash_original_field = "6F69D0C4D879F039DD614BB6C1B21419", hash_generated_field = "E7DD6E411B4567693D5B14849913048F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:51.437 -0500", hash_original_field = "F0AA2A81D33FE51B8231CFC923AA9D0D", hash_generated_field = "E7DD6E411B4567693D5B14849913048F")
 
     private int mTo;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.793 -0400", hash_original_field = "25395741BFE51A7D136A5C7109AAD2D8", hash_generated_field = "A658ABE5235D82E385D992CF2A9ACD3B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:51.438 -0500", hash_original_field = "BC345057CF9CBE8611DA24E477E3EC27", hash_generated_field = "A658ABE5235D82E385D992CF2A9ACD3B")
 
     private int mDuration;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.793 -0400", hash_original_field = "4C263818ED1EE4BAECC2BAA9218DCD4C", hash_generated_field = "63DA7996CEEB5E2E849F56A3032ADA4C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:51.439 -0500", hash_original_field = "FCAF05B55D4F9E28FA3B30134B5B1E8F", hash_generated_field = "63DA7996CEEB5E2E849F56A3032ADA4C")
 
     private int mOriginalDuration;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.793 -0400", hash_original_field = "9CC0C3263C2F5A54D93804A95FB61F85", hash_generated_field = "F0AD14C6D1BAF0FD9600F81F877732D7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:51.440 -0500", hash_original_field = "68FBD3BDBF461995193FB1B35370CCAA", hash_generated_field = "F0AD14C6D1BAF0FD9600F81F877732D7")
 
     private int mAlpha = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.793 -0400", hash_original_field = "FE86BE5975CEB5DDCB3330F16B6C060D", hash_generated_field = "3D2C4B8BEF089824EBF65466777785F1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:51.441 -0500", hash_original_field = "4DC75675F6AEB055FE11E036617403C9", hash_generated_field = "3D2C4B8BEF089824EBF65466777785F1")
 
     private boolean mCrossFade;
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.793 -0400", hash_original_method = "C5B06968060DB82F171AE45EB2B5A112", hash_generated_method = "96BB954A38E0D98DFDF4DA5977B5DDA9")
-    public  TransitionDrawable(Drawable[] layers) {
+
+    /**
+     * Create a new transition drawable with the specified list of layers. At least
+     * 2 layers are required for this drawable to work properly.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:51.441 -0500", hash_original_method = "C5B06968060DB82F171AE45EB2B5A112", hash_generated_method = "ABEADF15FB58787DF6D3E6D297120009")
+    public TransitionDrawable(Drawable[] layers) {
         this(new TransitionState(null, null, null), layers);
-        addTaint(layers[0].getTaint());
-        // ---------- Original Method ----------
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.793 -0400", hash_original_method = "F9A92C9D3CD4AD3DBA18C1A12C406B85", hash_generated_method = "DD0146F709A79835F04688F1C0174458")
-      TransitionDrawable() {
+    /**
+     * Create a new transition drawable with no layer. To work correctly, at least 2
+     * layers must be added to this drawable.
+     *
+     * @see #TransitionDrawable(Drawable[])
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:51.442 -0500", hash_original_method = "F9A92C9D3CD4AD3DBA18C1A12C406B85", hash_generated_method = "F9A92C9D3CD4AD3DBA18C1A12C406B85")
+    TransitionDrawable() {
         this(new TransitionState(null, null, null), (Resources)null);
-        // ---------- Original Method ----------
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.793 -0400", hash_original_method = "EA80240A8BFE15F4A059DA8EDA5E6B2D", hash_generated_method = "783646D46B8A867D755590D4F91771E7")
-    private  TransitionDrawable(TransitionState state, Resources res) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:51.443 -0500", hash_original_method = "EA80240A8BFE15F4A059DA8EDA5E6B2D", hash_generated_method = "17FC28862B642C3E0C6574EC9040F8EE")
+    private TransitionDrawable(TransitionState state, Resources res) {
         super(state, res);
-        addTaint(res.getTaint());
-        addTaint(state.getTaint());
-        // ---------- Original Method ----------
     }
 
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.794 -0400", hash_original_method = "63330FC0726BC441343F8A6C1CE8445A", hash_generated_method = "420E6B132C9C9B47A613EB096B3CB9C3")
-    private  TransitionDrawable(TransitionState state, Drawable[] layers) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:51.444 -0500", hash_original_method = "63330FC0726BC441343F8A6C1CE8445A", hash_generated_method = "49B677147A982D39F64B032921BEEDD3")
+    private TransitionDrawable(TransitionState state, Drawable[] layers) {
         super(layers, state);
-        addTaint(layers[0].getTaint());
-        addTaint(state.getTaint());
-        // ---------- Original Method ----------
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.794 -0400", hash_original_method = "7DD647D65429090EAAF6E9E0252444A1", hash_generated_method = "A536A52FAC67E381347B2DC63ED6B4D2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:51.445 -0500", hash_original_method = "7DD647D65429090EAAF6E9E0252444A1", hash_generated_method = "35F871EB482059AD21F524DB6B3ABD1D")
     @Override
-     LayerState createConstantState(LayerState state, Resources res) {
-        addTaint(res.getTaint());
-        addTaint(state.getTaint());
-LayerState varFFA472989BFBC8AFAFFFC0942052C9D3_2030270608 =         new TransitionState((TransitionState) state, this, res);
-        varFFA472989BFBC8AFAFFFC0942052C9D3_2030270608.addTaint(taint);
-        return varFFA472989BFBC8AFAFFFC0942052C9D3_2030270608;
-        // ---------- Original Method ----------
-        //return new TransitionState((TransitionState) state, this, res);
+LayerState createConstantState(LayerState state, Resources res) {
+        return new TransitionState((TransitionState) state, this, res);
     }
-
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.794 -0400", hash_original_method = "97CEB1054BCE489E9912047DDD2569CF", hash_generated_method = "F9D2E61B8448C0EE75387020F1EB758E")
+    /**
+     * Begin the second layer on top of the first layer.
+     * 
+     * @param durationMillis The length of the transition in milliseconds
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:51.446 -0500", hash_original_method = "97CEB1054BCE489E9912047DDD2569CF", hash_generated_method = "5A3261347299998869D5339D00F41336")
     public void startTransition(int durationMillis) {
         mFrom = 0;
         mTo = 255;
@@ -100,213 +101,167 @@ LayerState varFFA472989BFBC8AFAFFFC0942052C9D3_2030270608 =         new Transiti
         mReverse = false;
         mTransitionState = TRANSITION_STARTING;
         invalidateSelf();
-        // ---------- Original Method ----------
-        //mFrom = 0;
-        //mTo = 255;
-        //mAlpha = 0;
-        //mDuration = mOriginalDuration = durationMillis;
-        //mReverse = false;
-        //mTransitionState = TRANSITION_STARTING;
-        //invalidateSelf();
     }
-
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.794 -0400", hash_original_method = "08F42BFD1EBF12CF3276DCDF0956FF23", hash_generated_method = "01E2910E8D9B446F13286E8FD4E61ED2")
+    /**
+     * Show only the first layer.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:51.447 -0500", hash_original_method = "08F42BFD1EBF12CF3276DCDF0956FF23", hash_generated_method = "8E0CE9AD094D416BA7CB8E50F612FB48")
     public void resetTransition() {
         mAlpha = 0;
         mTransitionState = TRANSITION_NONE;
         invalidateSelf();
-        // ---------- Original Method ----------
-        //mAlpha = 0;
-        //mTransitionState = TRANSITION_NONE;
-        //invalidateSelf();
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.796 -0400", hash_original_method = "46AFBEEBA20F3F34CF5FEC703E9F1E57", hash_generated_method = "20C9EC76B5FC8287A5A5E6DFDF51AF6B")
+    /**
+     * Reverses the transition, picking up where the transition currently is.
+     * If the transition is not currently running, this will start the transition
+     * with the specified duration. If the transition is already running, the last
+     * known duration will be used.
+     *
+     * @param duration The duration to use if no transition is running.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:51.448 -0500", hash_original_method = "46AFBEEBA20F3F34CF5FEC703E9F1E57", hash_generated_method = "D908623F6D5052BD806272F7A2E73E18")
     public void reverseTransition(int duration) {
         final long time = SystemClock.uptimeMillis();
-        if(time - mStartTimeMillis > mDuration)        
-        {
-            if(mTo == 0)            
-            {
+        // Animation is over
+        if (time - mStartTimeMillis > mDuration) {
+            if (mTo == 0) {
                 mFrom = 0;
                 mTo = 255;
                 mAlpha = 0;
                 mReverse = false;
-            } //End block
-            else
-            {
+            } else {
                 mFrom = 255;
                 mTo = 0;
                 mAlpha = 255;
                 mReverse = true;
-            } //End block
+            }
             mDuration = mOriginalDuration = duration;
             mTransitionState = TRANSITION_STARTING;
             invalidateSelf();
             return;
-        } //End block
+        }
+
         mReverse = !mReverse;
         mFrom = mAlpha;
         mTo = mReverse ? 0 : 255;
         mDuration = (int) (mReverse ? time - mStartTimeMillis :
                 mOriginalDuration - (time - mStartTimeMillis));
         mTransitionState = TRANSITION_STARTING;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.798 -0400", hash_original_method = "1FBAB3689755625C733FF3C6D865C65F", hash_generated_method = "437D900A71B2C5DEBF93B2342ED6AF4C")
-    @Override
-    public void draw(Canvas canvas) {
-        addTaint(canvas.getTaint());
-        boolean done = true;
-switch(mTransitionState){
-        case TRANSITION_STARTING:
-        mStartTimeMillis = SystemClock.uptimeMillis();
-        done = false;
-        mTransitionState = TRANSITION_RUNNING;
-        break;
-        case TRANSITION_RUNNING:
-        if(mStartTimeMillis >= 0)        
-        {
-            float normalized = (float)
-                            (SystemClock.uptimeMillis() - mStartTimeMillis) / mDuration;
-            done = normalized >= 1.0f;
-            normalized = Math.min(normalized, 1.0f);
-            mAlpha = (int) (mFrom  + (mTo - mFrom) * normalized);
-        } //End block
-        break;
-}        final int alpha = mAlpha;
-        final boolean crossFade = mCrossFade;
-        final ChildDrawable[] array = mLayerState.mChildren;
-        if(done)        
-        {
-            if(!crossFade || alpha == 0)            
-            {
-                array[0].mDrawable.draw(canvas);
-            } //End block
-            if(alpha == 0xFF)            
-            {
-                array[1].mDrawable.draw(canvas);
-            } //End block
-            return;
-        } //End block
-        Drawable d;
-        d = array[0].mDrawable;
-        if(crossFade)        
-        {
-            d.setAlpha(255 - alpha);
-        } //End block
-        d.draw(canvas);
-        if(crossFade)        
-        {
-            d.setAlpha(0xFF);
-        } //End block
-        if(alpha > 0)        
-        {
-            d = array[1].mDrawable;
-            d.setAlpha(alpha);
-            d.draw(canvas);
-            d.setAlpha(0xFF);
-        } //End block
-        if(!done)        
-        {
-            invalidateSelf();
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.799 -0400", hash_original_method = "2CD6D3E73358D8CBD280E6EE92F2D07C", hash_generated_method = "2A0623106A5089E5FAC47F6638E31C5E")
-    public void setCrossFadeEnabled(boolean enabled) {
-        mCrossFade = enabled;
-        // ---------- Original Method ----------
-        //mCrossFade = enabled;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.799 -0400", hash_original_method = "CD2EAE34D95290C8C0E6CBB8BD3A8C00", hash_generated_method = "E4F107AE9440AACA838957F3B17D5354")
-    public boolean isCrossFadeEnabled() {
-        boolean varFE86BE5975CEB5DDCB3330F16B6C060D_1689565847 = (mCrossFade);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_438331093 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_438331093;
-        // ---------- Original Method ----------
-        //return mCrossFade;
     }
 
     
     static class TransitionState extends LayerState {
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.799 -0400", hash_original_method = "F1D0B45B3E25602A3478E0025FE64518", hash_generated_method = "4C0EC10F321A055E513D635268A6AFC3")
-          TransitionState(TransitionState orig, TransitionDrawable owner,
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:51.451 -0500", hash_original_method = "F1D0B45B3E25602A3478E0025FE64518", hash_generated_method = "F1D0B45B3E25602A3478E0025FE64518")
+        TransitionState(TransitionState orig, TransitionDrawable owner,
                 Resources res) {
             super(orig, owner, res);
-            addTaint(res.getTaint());
-            addTaint(owner.getTaint());
-            addTaint(orig.getTaint());
-            // ---------- Original Method ----------
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.800 -0400", hash_original_method = "74F5798AEA04A77B6E31B76C53519B4C", hash_generated_method = "DC6787DA6780149F74C68E150FB23643")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:51.452 -0500", hash_original_method = "74F5798AEA04A77B6E31B76C53519B4C", hash_generated_method = "68DED141956BBFCC7DB396CF672EAE1A")
         @Override
-        public Drawable newDrawable() {
-Drawable varF0BC0AD4EF24A0E6AA445EF832DC562E_1249444462 =             new TransitionDrawable(this, (Resources)null);
-            varF0BC0AD4EF24A0E6AA445EF832DC562E_1249444462.addTaint(taint);
-            return varF0BC0AD4EF24A0E6AA445EF832DC562E_1249444462;
-            // ---------- Original Method ----------
-            //return new TransitionDrawable(this, (Resources)null);
+public Drawable newDrawable() {
+            return new TransitionDrawable(this, (Resources)null);
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.800 -0400", hash_original_method = "2864DA5070788F66F2135B6D59FADE5D", hash_generated_method = "BBAF12901B5DC69CE68A78D882111413")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:51.453 -0500", hash_original_method = "2864DA5070788F66F2135B6D59FADE5D", hash_generated_method = "9FC7C6FFA92003CA8B436189770C5389")
         @Override
-        public Drawable newDrawable(Resources res) {
-            addTaint(res.getTaint());
-Drawable var48E8606C81CF3892E5F36CD4FED5C949_916425650 =             new TransitionDrawable(this, res);
-            var48E8606C81CF3892E5F36CD4FED5C949_916425650.addTaint(taint);
-            return var48E8606C81CF3892E5F36CD4FED5C949_916425650;
-            // ---------- Original Method ----------
-            //return new TransitionDrawable(this, res);
+public Drawable newDrawable(Resources res) {
+            return new TransitionDrawable(this, res);
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.801 -0400", hash_original_method = "9E7D7C67EAC365FF19BD4971762612A5", hash_generated_method = "8D3A891B726E8D3FCD8797C52A444CD2")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:51.454 -0500", hash_original_method = "9E7D7C67EAC365FF19BD4971762612A5", hash_generated_method = "3AB30668ED270F2EDF2E0129C706FE4D")
         @Override
-        public int getChangingConfigurations() {
-            int var276E0645C4E2084773D0EB8C5576428C_1173292643 = (mChangingConfigurations);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_100610271 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_100610271;
-            // ---------- Original Method ----------
-            //return mChangingConfigurations;
+public int getChangingConfigurations() {
+            return mChangingConfigurations;
         }
 
         
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:51.449 -0500", hash_original_method = "1FBAB3689755625C733FF3C6D865C65F", hash_generated_method = "FC82F7FA3DEABE0ADAA5A9978DBA3FA6")
+    @Override
+public void draw(Canvas canvas) {
+        boolean done = true;
 
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.801 -0400", hash_original_field = "99F4F884549DF7DED5FD87C6CD079884", hash_generated_field = "1A633D536EE3F439C073F10EBA919A97")
+        switch (mTransitionState) {
+            case TRANSITION_STARTING:
+                mStartTimeMillis = SystemClock.uptimeMillis();
+                done = false;
+                mTransitionState = TRANSITION_RUNNING;
+                break;
 
-    private static final int TRANSITION_STARTING = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.801 -0400", hash_original_field = "31A8D263187C21143B9D5E2F830DCCD2", hash_generated_field = "D6BAF07E7FDE629B17C0001BE3132290")
+            case TRANSITION_RUNNING:
+                if (mStartTimeMillis >= 0) {
+                    float normalized = (float)
+                            (SystemClock.uptimeMillis() - mStartTimeMillis) / mDuration;
+                    done = normalized >= 1.0f;
+                    normalized = Math.min(normalized, 1.0f);
+                    mAlpha = (int) (mFrom  + (mTo - mFrom) * normalized);
+                }
+                break;
+        }
+      
+        final int alpha = mAlpha;
+        final boolean crossFade = mCrossFade;
+        final ChildDrawable[] array = mLayerState.mChildren;
 
-    private static final int TRANSITION_RUNNING = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.801 -0400", hash_original_field = "14B56706A40CD3E949C9B658F0CEEAC4", hash_generated_field = "0E71F11924CBF54A46E740E3338A6F34")
+        if (done) {
+            // the setAlpha() calls below trigger invalidation and redraw. If we're done, just draw
+            // the appropriate drawable[s] and return
+            if (!crossFade || alpha == 0) {
+                array[0].mDrawable.draw(canvas);
+            }
+            if (alpha == 0xFF) {
+                array[1].mDrawable.draw(canvas);
+            }
+            return;
+        }
 
-    private static final int TRANSITION_NONE = 2;
+        Drawable d;
+        d = array[0].mDrawable;
+        if (crossFade) {
+            d.setAlpha(255 - alpha);
+        }
+        d.draw(canvas);
+        if (crossFade) {
+            d.setAlpha(0xFF);
+        }
+
+        if (alpha > 0) {
+            d = array[1].mDrawable;
+            d.setAlpha(alpha);
+            d.draw(canvas);
+            d.setAlpha(0xFF);
+        }
+        
+        if (!done) {
+            invalidateSelf();
+        }
+    }
+
+    /**
+     * Enables or disables the cross fade of the drawables. When cross fade
+     * is disabled, the first drawable is always drawn opaque. With cross
+     * fade enabled, the first drawable is drawn with the opposite alpha of
+     * the second drawable. Cross fade is disabled by default.
+     *
+     * @param enabled True to enable cross fading, false otherwise.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:51.450 -0500", hash_original_method = "2CD6D3E73358D8CBD280E6EE92F2D07C", hash_generated_method = "72A640F9B98E6463FF6F6AE927DBEB70")
+    public void setCrossFadeEnabled(boolean enabled) {
+        mCrossFade = enabled;
+    }
+
+    /**
+     * Indicates whether the cross fade is enabled for this transition.
+     *
+     * @return True if cross fading is enabled, false otherwise.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:51.450 -0500", hash_original_method = "CD2EAE34D95290C8C0E6CBB8BD3A8C00", hash_generated_method = "BB4BB6AEDC75FA056864FEC70F3EB226")
+    public boolean isCrossFadeEnabled() {
+        return mCrossFade;
+    }
 }
 

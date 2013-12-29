@@ -1,6 +1,8 @@
 package gov.nist.javax.sip.header;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import javax.sip.header.ErrorInfoHeader;
 
@@ -10,32 +12,22 @@ import javax.sip.header.ErrorInfoHeader;
 
 
 public class ErrorInfoList extends SIPHeaderList<ErrorInfo> {
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.337 -0400", hash_original_method = "BE8380000E3CB2DA0A370B790F9454ED", hash_generated_method = "314469C48167DD93726734246BAB2F4B")
-    public  ErrorInfoList() {
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:50.269 -0500", hash_original_field = "7D07EDF60BE7D52BF87500AC6D8FE154", hash_generated_field = "712212474A80BD328114C4C1DC66CBA3")
+
+    private static final long serialVersionUID = 1L;
+    /**
+     * Default constructor.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:50.273 -0500", hash_original_method = "BE8380000E3CB2DA0A370B790F9454ED", hash_generated_method = "3D4DC9EEAD92566346F6E429E5110470")
+    public ErrorInfoList() {
         super(ErrorInfo.class, ErrorInfoHeader.NAME);
-        // ---------- Original Method ----------
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.338 -0400", hash_original_method = "DEBEF33CFB4944E55BD5A9FB315B228C", hash_generated_method = "2A5391CFBCA89446C83248CCE5B70204")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:50.271 -0500", hash_original_method = "DEBEF33CFB4944E55BD5A9FB315B228C", hash_generated_method = "FF06FB136A220D2966F87D546FDCCD26")
     public Object clone() {
         ErrorInfoList retval = new ErrorInfoList();
         retval.clonehlist(this.hlist);
-Object varF9E19AD6135C970F387F77C6F3DE4477_639500071 =         retval;
-        varF9E19AD6135C970F387F77C6F3DE4477_639500071.addTaint(taint);
-        return varF9E19AD6135C970F387F77C6F3DE4477_639500071;
-        // ---------- Original Method ----------
-        //ErrorInfoList retval = new ErrorInfoList();
-        //retval.clonehlist(this.hlist);
-        //return retval;
+        return retval;
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.338 -0400", hash_original_field = "0B32F171B7F0DF451D414BE461B5698C", hash_generated_field = "712212474A80BD328114C4C1DC66CBA3")
-
-    private static final long serialVersionUID = 1L;
 }
 

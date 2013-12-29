@@ -1,6 +1,8 @@
 package android.app;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.HashMap;
 import java.util.Map;
@@ -12,7 +14,18 @@ import dalvik.system.PathClassLoader;
 
 
 class ApplicationLoaders {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.315 -0400", hash_original_field = "384EB772DF8EAF619DFA5F79B74771D8", hash_generated_field = "8341D47F664C030006757000CF63480B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.018 -0500", hash_original_method = "76DB5D07DDEAAF71FF7BD101A2CCF328", hash_generated_method = "164C60B2F6F9D106EE1CEAF9EA0DCC60")
+    public static ApplicationLoaders getDefault()
+    {
+        return gApplicationLoaders;
+    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.020 -0500", hash_original_field = "EAC090BECD5412DDCDEA99C0EA394D14", hash_generated_field = "FDBBA88BBDA6D0EE426E19208B3BA381")
+
+
+    private static final ApplicationLoaders gApplicationLoaders
+        = new ApplicationLoaders();
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.020 -0500", hash_original_field = "64F1E474B03EB6AA58F12CB4E98D2462", hash_generated_field = "8341D47F664C030006757000CF63480B")
+
 
     private final Map<String, ClassLoader> mLoaders = new HashMap<String, ClassLoader>();
     
@@ -23,68 +36,42 @@ class ApplicationLoaders {
         //Synthesized constructor
     }
 
-
-    @DSModeled(DSC.SAFE)
-    public static ApplicationLoaders getDefault() {
-        return gApplicationLoaders;
-    }
-
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.321 -0400", hash_original_method = "EA4DC0433A5C7A22C1BA1C659599A634", hash_generated_method = "C0151DF1CCD25F8DD9BAB049BC0A8388")
-    public ClassLoader getClassLoader(String zip, String libPath, ClassLoader parent) {
-        addTaint(parent.getTaint());
-        addTaint(libPath.getTaint());
-        addTaint(zip.getTaint());
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:50:27.019 -0500", hash_original_method = "EA4DC0433A5C7A22C1BA1C659599A634", hash_generated_method = "CBA9A0CE4A50ED64B8154F5699F116CF")
+    public ClassLoader getClassLoader(String zip, String libPath, ClassLoader parent)
+    {
+        /*
+         * This is the parent we use if they pass "null" in.  In theory
+         * this should be the "system" class loader; in practice we
+         * don't use that and can happily (and more efficiently) use the
+         * bootstrap class loader.
+         */
         ClassLoader baseParent = ClassLoader.getSystemClassLoader().getParent();
-        synchronized
-(mLoaders)        {
-            if(parent == null)            
-            {
+
+        synchronized (mLoaders) {
+            if (parent == null) {
                 parent = baseParent;
-            } //End block
-            if(parent == baseParent)            
-            {
+            }
+
+            /*
+             * If we're one step up from the base class loader, find
+             * something in our cache.  Otherwise, we create a whole
+             * new ClassLoader for the zip archive.
+             */
+            if (parent == baseParent) {
                 ClassLoader loader = mLoaders.get(zip);
-                if(loader != null)                
-                {
-ClassLoader var556906CF8230EF926A9ABDA8D8CDBEFA_536238637 =                     loader;
-                    var556906CF8230EF926A9ABDA8D8CDBEFA_536238637.addTaint(taint);
-                    return var556906CF8230EF926A9ABDA8D8CDBEFA_536238637;
-                } //End block
-                PathClassLoader pathClassloader = new PathClassLoader(zip, libPath, parent);
-                mLoaders.put(zip, pathClassloader);
-ClassLoader var11BD277B934D6BB854C5E9693754CBD2_1974034617 =                 pathClassloader;
-                var11BD277B934D6BB854C5E9693754CBD2_1974034617.addTaint(taint);
-                return var11BD277B934D6BB854C5E9693754CBD2_1974034617;
-            } //End block
-ClassLoader var5C909D560907FF186591EB06317A564A_155378792 =             new PathClassLoader(zip, parent);
-            var5C909D560907FF186591EB06317A564A_155378792.addTaint(taint);
-            return var5C909D560907FF186591EB06317A564A_155378792;
-        } //End block
-        // ---------- Original Method ----------
-        //ClassLoader baseParent = ClassLoader.getSystemClassLoader().getParent();
-        //synchronized (mLoaders) {
-            //if (parent == null) {
-                //parent = baseParent;
-            //}
-            //if (parent == baseParent) {
-                //ClassLoader loader = mLoaders.get(zip);
-                //if (loader != null) {
-                    //return loader;
-                //}
-                //PathClassLoader pathClassloader =
-                    //new PathClassLoader(zip, libPath, parent);
-                //mLoaders.put(zip, pathClassloader);
-                //return pathClassloader;
-            //}
-            //return new PathClassLoader(zip, parent);
-        //}
-    }
-
+                if (loader != null) {
+                    return loader;
+                }
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.322 -0400", hash_original_field = "601B3B02B74793AF6319AF165B317296", hash_generated_field = "FDBBA88BBDA6D0EE426E19208B3BA381")
+                PathClassLoader pathClassloader =
+                    new PathClassLoader(zip, libPath, parent);
+                
+                mLoaders.put(zip, pathClassloader);
+                return pathClassloader;
+            }
 
-    private static final ApplicationLoaders gApplicationLoaders = new ApplicationLoaders();
+            return new PathClassLoader(zip, parent);
+        }
+    }
 }
 

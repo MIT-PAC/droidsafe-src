@@ -1,6 +1,8 @@
 package java.util;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
@@ -8,53 +10,43 @@ import droidsafe.annotations.*;
 
 
 public class UnknownFormatConversionException extends IllegalFormatException {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.666 -0400", hash_original_field = "03C7C0ACE395D80182DB07AE2C30F034", hash_generated_field = "E79B5AF8B4B7B1E184AA763B4F896620")
-
-    private String s;
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.666 -0400", hash_original_method = "0FB4C71CADE23BA4642C2B1DAECF427B", hash_generated_method = "449E31B12F22A7138A8902190BD17FB4")
-    public  UnknownFormatConversionException(String s) {
-        if(s == null)        
-        {
-            NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_1381634394 = new NullPointerException();
-            var7338BC9F48D81FE0BBD6183F4014DCC4_1381634394.addTaint(taint);
-            throw var7338BC9F48D81FE0BBD6183F4014DCC4_1381634394;
-        } //End block
-        this.s = s;
-        // ---------- Original Method ----------
-        //if (s == null) {
-            //throw new NullPointerException();
-        //}
-        //this.s = s;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.667 -0400", hash_original_method = "F42E87FF5499AB643BB7E67C5DADAA6D", hash_generated_method = "CB064A4775E1EE92AFAE44509A820DE5")
-    public String getConversion() {
-String var0478718F0636FB61899C13801CE9FE09_1324939476 =         s;
-        var0478718F0636FB61899C13801CE9FE09_1324939476.addTaint(taint);
-        return var0478718F0636FB61899C13801CE9FE09_1324939476;
-        // ---------- Original Method ----------
-        //return s;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.667 -0400", hash_original_method = "E0B7E8AB02E28C66CE17D4B71D9F5BCF", hash_generated_method = "B67A8DB88B2E151F4474CDAD2FE90E5C")
-    @Override
-    public String getMessage() {
-String var04C013E7FF0CB0D9D0FF7C21A91E8CEF_1867119917 =         "Conversion: " + s;
-        var04C013E7FF0CB0D9D0FF7C21A91E8CEF_1867119917.addTaint(taint);
-        return var04C013E7FF0CB0D9D0FF7C21A91E8CEF_1867119917;
-        // ---------- Original Method ----------
-        //return "Conversion: " + s;
-    }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.667 -0400", hash_original_field = "08597A3199DE8E22FA177F8DC6A38F35", hash_generated_field = "3D86292F0E1219DE043B5F4188CBC598")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:02.883 -0500", hash_original_field = "B070DAF3B31EE569742856B867E8AAD1", hash_generated_field = "3D86292F0E1219DE043B5F4188CBC598")
 
     private static final long serialVersionUID = 19060418L;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:02.884 -0500", hash_original_field = "6F3CB884E38CB76988A52AA9FBE92CE9", hash_generated_field = "E79B5AF8B4B7B1E184AA763B4F896620")
+
+
+    private  String s;
+
+    /**
+     * Constructs an {@code UnknownFormatConversionException} with the unknown
+     * format conversion.
+     *
+     * @param s
+     *           the unknown format conversion.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:02.885 -0500", hash_original_method = "0FB4C71CADE23BA4642C2B1DAECF427B", hash_generated_method = "9F8C527BA3A3717904184BAE31D0F555")
+    public UnknownFormatConversionException(String s) {
+        if (s == null) {
+            throw new NullPointerException();
+        }
+        this.s = s;
+    }
+
+    /**
+     * Returns the conversion associated with the exception.
+     *
+     * @return the conversion associated with the exception.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:02.886 -0500", hash_original_method = "F42E87FF5499AB643BB7E67C5DADAA6D", hash_generated_method = "7B92C0D01D97BD03D9BBBD6EC1C575FD")
+    public String getConversion() {
+        return s;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:02.887 -0500", hash_original_method = "E0B7E8AB02E28C66CE17D4B71D9F5BCF", hash_generated_method = "83D675AFF486DD80DDF90F3450A72621")
+    @Override
+public String getMessage() {
+        return "Conversion: " + s;
+    }
 }
 

@@ -1,6 +1,8 @@
 package android.bluetooth;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 import java.util.Arrays;
@@ -28,34 +30,16 @@ import android.util.Pair;
 
 
 public final class BluetoothAdapter {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.993 -0400", hash_original_field = "D96EB21FC1A83B484FAE33A12B05D9CB", hash_generated_field = "40876FBB70C48F89ADB2F95E8DF8AB42")
 
-    private IBluetooth mService;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.994 -0400", hash_original_field = "4897335790D5679094DD492969ED75AA", hash_generated_field = "4E8B81D96B452AEF852F97E41FBCDFCC")
-
-    private Handler mServiceRecordHandler;
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.994 -0400", hash_original_method = "5CDBAADAD73677B9DBA69CD49D17E787", hash_generated_method = "8B970260DC247EBB28E12BF3BB9CECD0")
-    public  BluetoothAdapter(IBluetooth service) {
-        if(service == null)        
-        {
-            IllegalArgumentException varF7AC7A3C61DFD44AABDCE9021F9BE9CA_1492067650 = new IllegalArgumentException("service is null");
-            varF7AC7A3C61DFD44AABDCE9021F9BE9CA_1492067650.addTaint(taint);
-            throw varF7AC7A3C61DFD44AABDCE9021F9BE9CA_1492067650;
-        } //End block
-        mService = service;
-        mServiceRecordHandler = null;
-        // ---------- Original Method ----------
-        //if (service == null) {
-            //throw new IllegalArgumentException("service is null");
-        //}
-        //mService = service;
-        //mServiceRecordHandler = null;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
+    /**
+     * Get a handle to the default local Bluetooth adapter.
+     * <p>Currently Android only supports one Bluetooth adapter, but the API
+     * could be extended to support more. This will always return the default
+     * adapter.
+     * @return the default local adapter, or null if Bluetooth is not supported
+     *         on this hardware platform
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.361 -0500", hash_original_method = "0EA032C93B9BB6C4C1D29146E96BABA8", hash_generated_method = "2A85D30D637B72EC36DE7AF12AA14DD7")
     public static synchronized BluetoothAdapter getDefaultAdapter() {
         if (sAdapter == null) {
             IBinder b = ServiceManager.getService(BluetoothAdapter.BLUETOOTH_SERVICE);
@@ -67,793 +51,15 @@ public final class BluetoothAdapter {
         return sAdapter;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.996 -0400", hash_original_method = "BAA9CF7F2ACFCBAB9569C2DACFA96981", hash_generated_method = "3BC90A8B06DAF9BCEA7C32471E4C702E")
-    public BluetoothDevice getRemoteDevice(String address) {
-        addTaint(address.getTaint());
-BluetoothDevice varA8C88F08C60970168666AAFC50FDB9D0_236867484 =         new BluetoothDevice(address);
-        varA8C88F08C60970168666AAFC50FDB9D0_236867484.addTaint(taint);
-        return varA8C88F08C60970168666AAFC50FDB9D0_236867484;
-        // ---------- Original Method ----------
-        //return new BluetoothDevice(address);
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.997 -0400", hash_original_method = "D4868B88346C10F14C8F7C77B49B5DE2", hash_generated_method = "299819F3926B71687D82C491ABF71C5D")
-    public boolean isEnabled() {
-        try 
-        {
-            boolean var4983BE3E160A6114C5F2C1168FF31C99_1320302306 = (mService.isEnabled());
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1496271794 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1496271794;
-        } //End block
-        catch (RemoteException e)
-        {
-        } //End block
-        boolean var68934A3E9455FA72420237EB05902327_411909298 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_856004892 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_856004892;
-        // ---------- Original Method ----------
-        //try {
-            //return mService.isEnabled();
-        //} catch (RemoteException e) {Log.e(TAG, "", e);}
-        //return false;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.998 -0400", hash_original_method = "FCF9C6106F07630DEF71CB873FCC3D8F", hash_generated_method = "2E79D02AF31D3DDD6D03E2464CF4DF09")
-    public int getState() {
-        try 
-        {
-            int var2B334D76CCE2BDB5B78F0D5680DAE99D_1302249195 = (mService.getBluetoothState());
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2092441262 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2092441262;
-        } //End block
-        catch (RemoteException e)
-        {
-        } //End block
-        int var086B7832E6E767B5DF57BC1BEDB6288B_105724569 = (STATE_OFF);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_670929556 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_670929556;
-        // ---------- Original Method ----------
-        //try {
-            //return mService.getBluetoothState();
-        //} catch (RemoteException e) {Log.e(TAG, "", e);}
-        //return STATE_OFF;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.999 -0400", hash_original_method = "F70C75CE8A3147FA6677C79F04CF4B02", hash_generated_method = "D0E832C0B2EF7AB5695D9591199C5161")
-    public boolean enable() {
-        try 
-        {
-            boolean var751005C663F7670EFA072318E4BBB147_449543422 = (mService.enable());
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1878467241 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1878467241;
-        } //End block
-        catch (RemoteException e)
-        {
-        } //End block
-        boolean var68934A3E9455FA72420237EB05902327_140205075 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1485255051 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1485255051;
-        // ---------- Original Method ----------
-        //try {
-            //return mService.enable();
-        //} catch (RemoteException e) {Log.e(TAG, "", e);}
-        //return false;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.000 -0400", hash_original_method = "DC1BB7EEB209838517C27214CEB71072", hash_generated_method = "432FD1A21A5A1F3B1C7CE99E84D6DC24")
-    public boolean disable() {
-        try 
-        {
-            boolean var68FC723498B7A5700A03664DED0CF2BB_929086429 = (mService.disable(true));
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1671559379 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1671559379;
-        } //End block
-        catch (RemoteException e)
-        {
-        } //End block
-        boolean var68934A3E9455FA72420237EB05902327_1664642898 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1478561008 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1478561008;
-        // ---------- Original Method ----------
-        //try {
-            //return mService.disable(true);
-        //} catch (RemoteException e) {Log.e(TAG, "", e);}
-        //return false;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.001 -0400", hash_original_method = "45FE79E8525553C566F03D519E5189F4", hash_generated_method = "07BF2263BAC66E71269921CA2CFF0C92")
-    public String getAddress() {
-        try 
-        {
-String var13828B60C28DDCB10C9E298867AD149C_1978199561 =             mService.getAddress();
-            var13828B60C28DDCB10C9E298867AD149C_1978199561.addTaint(taint);
-            return var13828B60C28DDCB10C9E298867AD149C_1978199561;
-        } //End block
-        catch (RemoteException e)
-        {
-        } //End block
-String var540C13E9E156B687226421B24F2DF178_1372111249 =         null;
-        var540C13E9E156B687226421B24F2DF178_1372111249.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_1372111249;
-        // ---------- Original Method ----------
-        //try {
-            //return mService.getAddress();
-        //} catch (RemoteException e) {Log.e(TAG, "", e);}
-        //return null;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.002 -0400", hash_original_method = "AA5C06C383156A346DC521053F89AB2B", hash_generated_method = "F2F2D76E6DB90B0A350D730DBCCA137D")
-    public String getName() {
-        try 
-        {
-String varACE59E9AE3E1C25ADA45C88057569C87_1449226774 =             mService.getName();
-            varACE59E9AE3E1C25ADA45C88057569C87_1449226774.addTaint(taint);
-            return varACE59E9AE3E1C25ADA45C88057569C87_1449226774;
-        } //End block
-        catch (RemoteException e)
-        {
-        } //End block
-String var540C13E9E156B687226421B24F2DF178_1442591724 =         null;
-        var540C13E9E156B687226421B24F2DF178_1442591724.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_1442591724;
-        // ---------- Original Method ----------
-        //try {
-            //return mService.getName();
-        //} catch (RemoteException e) {Log.e(TAG, "", e);}
-        //return null;
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.003 -0400", hash_original_method = "1404BBF93844A5B6047C7A268CEA1843", hash_generated_method = "3736097BA2785F54E57CE7FC0E2B8A89")
-    public ParcelUuid[] getUuids() {
-        if(getState() != STATE_ON)        
-        {
-ParcelUuid[] var540C13E9E156B687226421B24F2DF178_1159898855 =         null;
-        var540C13E9E156B687226421B24F2DF178_1159898855.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_1159898855;
-        }
-        try 
-        {
-ParcelUuid[] var0D176EA231D9DB2C5E0E841429622377_455157475 =             mService.getUuids();
-            var0D176EA231D9DB2C5E0E841429622377_455157475.addTaint(taint);
-            return var0D176EA231D9DB2C5E0E841429622377_455157475;
-        } //End block
-        catch (RemoteException e)
-        {
-        } //End block
-ParcelUuid[] var540C13E9E156B687226421B24F2DF178_1745016148 =         null;
-        var540C13E9E156B687226421B24F2DF178_1745016148.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_1745016148;
-        // ---------- Original Method ----------
-        //if (getState() != STATE_ON) return null;
-        //try {
-            //return mService.getUuids();
-        //} catch (RemoteException e) {Log.e(TAG, "", e);}
-        //return null;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.003 -0400", hash_original_method = "08F81801C25A11FE898E4D65E015413F", hash_generated_method = "59741371900B0360B8F2F6FCFF20955F")
-    public boolean setName(String name) {
-        addTaint(name.getTaint());
-        if(getState() != STATE_ON)        
-        {
-        boolean var68934A3E9455FA72420237EB05902327_874803047 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1548600958 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1548600958;
-        }
-        try 
-        {
-            boolean var63E72F5F92D563AB016C0EC31405D265_1005238416 = (mService.setName(name));
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_855786619 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_855786619;
-        } //End block
-        catch (RemoteException e)
-        {
-        } //End block
-        boolean var68934A3E9455FA72420237EB05902327_1498540653 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1322089108 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1322089108;
-        // ---------- Original Method ----------
-        //if (getState() != STATE_ON) return false;
-        //try {
-            //return mService.setName(name);
-        //} catch (RemoteException e) {Log.e(TAG, "", e);}
-        //return false;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.004 -0400", hash_original_method = "76CF52E29182798DA67FD15A9B155F30", hash_generated_method = "5CEB29684D98BBDE2FC5B261BA29ABCD")
-    public int getScanMode() {
-        if(getState() != STATE_ON)        
-        {
-        int varA1CEDDAA20CDBA863194C58B2CFCC7E4_151982041 = (SCAN_MODE_NONE);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2142964030 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2142964030;
-        }
-        try 
-        {
-            int varB8CA5B84998AE66751392A9E3BE1DBAF_391051271 = (mService.getScanMode());
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2108889481 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2108889481;
-        } //End block
-        catch (RemoteException e)
-        {
-        } //End block
-        int varA1CEDDAA20CDBA863194C58B2CFCC7E4_1423840246 = (SCAN_MODE_NONE);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1630243660 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1630243660;
-        // ---------- Original Method ----------
-        //if (getState() != STATE_ON) return SCAN_MODE_NONE;
-        //try {
-            //return mService.getScanMode();
-        //} catch (RemoteException e) {Log.e(TAG, "", e);}
-        //return SCAN_MODE_NONE;
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.005 -0400", hash_original_method = "EAE2AE792A5A03E2A7F346C251F56DAF", hash_generated_method = "3836BDE25B638DE1A6B698C33D44F8B4")
-    public boolean setScanMode(int mode, int duration) {
-        addTaint(duration);
-        addTaint(mode);
-        if(getState() != STATE_ON)        
-        {
-        boolean var68934A3E9455FA72420237EB05902327_1401923018 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1413436863 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1413436863;
-        }
-        try 
-        {
-            boolean var7B1D24A9A4CCC6C7243AB0FC62CDCE43_1924916999 = (mService.setScanMode(mode, duration));
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1655358346 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1655358346;
-        } //End block
-        catch (RemoteException e)
-        {
-        } //End block
-        boolean var68934A3E9455FA72420237EB05902327_2145361780 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_848192378 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_848192378;
-        // ---------- Original Method ----------
-        //if (getState() != STATE_ON) return false;
-        //try {
-            //return mService.setScanMode(mode, duration);
-        //} catch (RemoteException e) {Log.e(TAG, "", e);}
-        //return false;
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.006 -0400", hash_original_method = "5FA36C89B86406F549228E4F23C31FB5", hash_generated_method = "6C90D87F8D3D742BB03486F4CF8CEAB5")
-    public boolean setScanMode(int mode) {
-        addTaint(mode);
-        if(getState() != STATE_ON)        
-        {
-        boolean var68934A3E9455FA72420237EB05902327_1831417279 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1628345432 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1628345432;
-        }
-        boolean varDD38457F8B656D9E612A212409C7808F_1670043724 = (setScanMode(mode, 120));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1492297521 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1492297521;
-        // ---------- Original Method ----------
-        //if (getState() != STATE_ON) return false;
-        //return setScanMode(mode, 120);
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.006 -0400", hash_original_method = "9BECEF34E1AD2659C72AC1024F8DAE1C", hash_generated_method = "5D29E8F74712BBF3C6AE67D6203A916C")
-    public int getDiscoverableTimeout() {
-        if(getState() != STATE_ON)        
-        {
-        int var6BB61E3B7BCE0931DA574D19D1D82C88_1467045327 = (-1);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2001230515 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2001230515;
-        }
-        try 
-        {
-            int varE1B8738345572D0901B5E0CC725A1459_1072203506 = (mService.getDiscoverableTimeout());
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1466159171 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1466159171;
-        } //End block
-        catch (RemoteException e)
-        {
-        } //End block
-        int var6BB61E3B7BCE0931DA574D19D1D82C88_971743469 = (-1);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1099784479 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1099784479;
-        // ---------- Original Method ----------
-        //if (getState() != STATE_ON) return -1;
-        //try {
-            //return mService.getDiscoverableTimeout();
-        //} catch (RemoteException e) {Log.e(TAG, "", e);}
-        //return -1;
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.007 -0400", hash_original_method = "040DE868F00C15E58DE726DEE9429CA3", hash_generated_method = "6F690F9072FD88D289A99A2F0A554F2A")
-    public void setDiscoverableTimeout(int timeout) {
-        addTaint(timeout);
-        if(getState() != STATE_ON)        
-        return;
-        try 
-        {
-            mService.setDiscoverableTimeout(timeout);
-        } //End block
-        catch (RemoteException e)
-        {
-        } //End block
-        // ---------- Original Method ----------
-        //if (getState() != STATE_ON) return;
-        //try {
-            //mService.setDiscoverableTimeout(timeout);
-        //} catch (RemoteException e) {Log.e(TAG, "", e);}
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.008 -0400", hash_original_method = "10268AD378D15FC8A51253E10EC3C6B2", hash_generated_method = "B9D7352B657CF65D674E3BDFC3C5E3CD")
-    public boolean startDiscovery() {
-        if(getState() != STATE_ON)        
-        {
-        boolean var68934A3E9455FA72420237EB05902327_1791844300 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2114537898 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2114537898;
-        }
-        try 
-        {
-            boolean varBF99621D08455D541D00830742175B6A_189125761 = (mService.startDiscovery());
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1687224999 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1687224999;
-        } //End block
-        catch (RemoteException e)
-        {
-        } //End block
-        boolean var68934A3E9455FA72420237EB05902327_1414015657 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_744950777 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_744950777;
-        // ---------- Original Method ----------
-        //if (getState() != STATE_ON) return false;
-        //try {
-            //return mService.startDiscovery();
-        //} catch (RemoteException e) {Log.e(TAG, "", e);}
-        //return false;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.010 -0400", hash_original_method = "63E67EB5C61EED8D2B51A1BF56472E25", hash_generated_method = "844EA85CE80DE5945AC810EE92FB2B3B")
-    public boolean cancelDiscovery() {
-        if(getState() != STATE_ON)        
-        {
-        boolean var68934A3E9455FA72420237EB05902327_685631944 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1179263484 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1179263484;
-        }
-        try 
-        {
-            boolean var24B8C58BBFE355AF38874A0571AD14D5_1813911660 = (mService.cancelDiscovery());
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_742065399 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_742065399;
-        } //End block
-        catch (RemoteException e)
-        {
-        } //End block
-        boolean var68934A3E9455FA72420237EB05902327_338734802 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_194331882 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_194331882;
-        // ---------- Original Method ----------
-        //if (getState() != STATE_ON) return false;
-        //try {
-            //return mService.cancelDiscovery();
-        //} catch (RemoteException e) {Log.e(TAG, "", e);}
-        //return false;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.011 -0400", hash_original_method = "C88946A48EEE076D7E3C1C6C5F371E49", hash_generated_method = "2E55BF93DCF74FF13634E323329BF91A")
-    public boolean isDiscovering() {
-        if(getState() != STATE_ON)        
-        {
-        boolean var68934A3E9455FA72420237EB05902327_196859093 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1388993706 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1388993706;
-        }
-        try 
-        {
-            boolean var780562F0150B90F23E039B9FA6E9FCCF_598487516 = (mService.isDiscovering());
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_114614253 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_114614253;
-        } //End block
-        catch (RemoteException e)
-        {
-        } //End block
-        boolean var68934A3E9455FA72420237EB05902327_695909818 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1880465529 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1880465529;
-        // ---------- Original Method ----------
-        //if (getState() != STATE_ON) return false;
-        //try {
-            //return mService.isDiscovering();
-        //} catch (RemoteException e) {Log.e(TAG, "", e);}
-        //return false;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.011 -0400", hash_original_method = "A20534464E90E0C8E439D633BB81432E", hash_generated_method = "51C8AE64CD9AC174D35DE61E69B42C79")
-    public Set<BluetoothDevice> getBondedDevices() {
-        if(getState() != STATE_ON)        
-        {
-Set<BluetoothDevice> var7CC87EB030EA04400B2D3AFB878F1678_2134220653 =             toDeviceSet(new String[0]);
-            var7CC87EB030EA04400B2D3AFB878F1678_2134220653.addTaint(taint);
-            return var7CC87EB030EA04400B2D3AFB878F1678_2134220653;
-        } //End block
-        try 
-        {
-Set<BluetoothDevice> varE2359B343EAAD093229952EED1A0151C_20785153 =             toDeviceSet(mService.listBonds());
-            varE2359B343EAAD093229952EED1A0151C_20785153.addTaint(taint);
-            return varE2359B343EAAD093229952EED1A0151C_20785153;
-        } //End block
-        catch (RemoteException e)
-        {
-        } //End block
-Set<BluetoothDevice> var540C13E9E156B687226421B24F2DF178_1711038359 =         null;
-        var540C13E9E156B687226421B24F2DF178_1711038359.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_1711038359;
-        // ---------- Original Method ----------
-        //if (getState() != STATE_ON) {
-            //return toDeviceSet(new String[0]);
-        //}
-        //try {
-            //return toDeviceSet(mService.listBonds());
-        //} catch (RemoteException e) {Log.e(TAG, "", e);}
-        //return null;
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.012 -0400", hash_original_method = "456CF28BE83652F494DDCF30722C3BAD", hash_generated_method = "6D74CDA586A6A6929A99DD4D6C6393C2")
-    public int getConnectionState() {
-        if(getState() != STATE_ON)        
-        {
-        int var1F640F1F529317692947FAA04DB1C39E_340587578 = (BluetoothAdapter.STATE_DISCONNECTED);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1682124541 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1682124541;
-        }
-        try 
-        {
-            int var89BBF539AAAFA06798B9D48DA63C267B_1842123831 = (mService.getAdapterConnectionState());
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1462662169 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1462662169;
-        } //End block
-        catch (RemoteException e)
-        {
-        } //End block
-        int var1F640F1F529317692947FAA04DB1C39E_509801105 = (BluetoothAdapter.STATE_DISCONNECTED);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1257629540 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1257629540;
-        // ---------- Original Method ----------
-        //if (getState() != STATE_ON) return BluetoothAdapter.STATE_DISCONNECTED;
-        //try {
-            //return mService.getAdapterConnectionState();
-        //} catch (RemoteException e) {Log.e(TAG, "getConnectionState:", e);}
-        //return BluetoothAdapter.STATE_DISCONNECTED;
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.014 -0400", hash_original_method = "0796F6753B11E4CA7CEE3403756A4526", hash_generated_method = "08D9396C44984E65C20C27F543EC59BA")
-    public int getProfileConnectionState(int profile) {
-        addTaint(profile);
-        if(getState() != STATE_ON)        
-        {
-        int var6DC267D6C0363C5B94F222673460F45F_1199378388 = (BluetoothProfile.STATE_DISCONNECTED);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2038690141 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2038690141;
-        }
-        try 
-        {
-            int var0CA70D65B3B1B1B80DBB7215C5CEEE86_1344122406 = (mService.getProfileConnectionState(profile));
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_482099709 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_482099709;
-        } //End block
-        catch (RemoteException e)
-        {
-        } //End block
-        int var6DC267D6C0363C5B94F222673460F45F_1895566464 = (BluetoothProfile.STATE_DISCONNECTED);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1413223218 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1413223218;
-        // ---------- Original Method ----------
-        //if (getState() != STATE_ON) return BluetoothProfile.STATE_DISCONNECTED;
-        //try {
-            //return mService.getProfileConnectionState(profile);
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "getProfileConnectionState:", e);
-        //}
-        //return BluetoothProfile.STATE_DISCONNECTED;
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.016 -0400", hash_original_method = "71D512ADABDF23669C5DC04339CD42B4", hash_generated_method = "763899B078D53F38B1F8221607D200A1")
-    public BluetoothServerSocket listenUsingRfcommOn(int channel) throws IOException {
-        addTaint(channel);
-        BluetoothServerSocket socket = new BluetoothServerSocket(
-                BluetoothSocket.TYPE_RFCOMM, true, true, channel);
-        int errno = socket.mSocket.bindListen();
-        if(errno != 0)        
-        {
-            try 
-            {
-                socket.close();
-            } //End block
-            catch (IOException e)
-            {
-            } //End block
-            socket.mSocket.throwErrnoNative(errno);
-        } //End block
-BluetoothServerSocket varA63412D4E099639C1BBCBDC8D705186B_1991734853 =         socket;
-        varA63412D4E099639C1BBCBDC8D705186B_1991734853.addTaint(taint);
-        return varA63412D4E099639C1BBCBDC8D705186B_1991734853;
-        // ---------- Original Method ----------
-        //BluetoothServerSocket socket = new BluetoothServerSocket(
-                //BluetoothSocket.TYPE_RFCOMM, true, true, channel);
-        //int errno = socket.mSocket.bindListen();
-        //if (errno != 0) {
-            //try {
-                //socket.close();
-            //} catch (IOException e) {}
-            //socket.mSocket.throwErrnoNative(errno);
-        //}
-        //return socket;
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.018 -0400", hash_original_method = "89D65DC00BFA81C813C9155DE20CC833", hash_generated_method = "67285F78739E16E6E3A44D13B90856A6")
-    public BluetoothServerSocket listenUsingRfcommWithServiceRecord(String name, UUID uuid) throws IOException {
-        addTaint(uuid.getTaint());
-        addTaint(name.getTaint());
-BluetoothServerSocket var3EE707F51EA2594385CD32B6F83259E2_1441070260 =         createNewRfcommSocketAndRecord(name, uuid, true, true);
-        var3EE707F51EA2594385CD32B6F83259E2_1441070260.addTaint(taint);
-        return var3EE707F51EA2594385CD32B6F83259E2_1441070260;
-        // ---------- Original Method ----------
-        //return createNewRfcommSocketAndRecord(name, uuid, true, true);
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.019 -0400", hash_original_method = "67A9DCDB5D1364F0197D124A8C117BDF", hash_generated_method = "A900FA48479FE0DAC230605702BFEA99")
-    public BluetoothServerSocket listenUsingInsecureRfcommWithServiceRecord(String name, UUID uuid) throws IOException {
-        addTaint(uuid.getTaint());
-        addTaint(name.getTaint());
-BluetoothServerSocket var05024ABE095066C27AB01BCCC3793A7A_886547672 =         createNewRfcommSocketAndRecord(name, uuid, false, false);
-        var05024ABE095066C27AB01BCCC3793A7A_886547672.addTaint(taint);
-        return var05024ABE095066C27AB01BCCC3793A7A_886547672;
-        // ---------- Original Method ----------
-        //return createNewRfcommSocketAndRecord(name, uuid, false, false);
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.019 -0400", hash_original_method = "D75F65DB3EAF8C02EDFD121756834A36", hash_generated_method = "743449FCB39D75F1140BA5474469BF8D")
-    public BluetoothServerSocket listenUsingEncryptedRfcommWithServiceRecord(
-            String name, UUID uuid) throws IOException {
-        addTaint(uuid.getTaint());
-        addTaint(name.getTaint());
-BluetoothServerSocket varA840502DB9CC6BBE7D7E5732FE39C01F_2062017337 =         createNewRfcommSocketAndRecord(name, uuid, false, true);
-        varA840502DB9CC6BBE7D7E5732FE39C01F_2062017337.addTaint(taint);
-        return varA840502DB9CC6BBE7D7E5732FE39C01F_2062017337;
-        // ---------- Original Method ----------
-        //return createNewRfcommSocketAndRecord(name, uuid, false, true);
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.022 -0400", hash_original_method = "ABCD96E52C8B56B2C4BF1A6AB6CFAB37", hash_generated_method = "43A3937F4C2CE3B437A6FAD4AA6BD063")
-    private BluetoothServerSocket createNewRfcommSocketAndRecord(String name, UUID uuid,
-            boolean auth, boolean encrypt) throws IOException {
-        addTaint(encrypt);
-        addTaint(auth);
-        addTaint(uuid.getTaint());
-        addTaint(name.getTaint());
-        RfcommChannelPicker picker = new RfcommChannelPicker(uuid);
-        BluetoothServerSocket socket;
-        int channel;
-        int errno;
-        while
-(true)        
-        {
-            channel = picker.nextChannel();
-            if(channel == -1)            
-            {
-                IOException var817A124666112FE225ECD899E78D5369_1239343807 = new IOException("No available channels");
-                var817A124666112FE225ECD899E78D5369_1239343807.addTaint(taint);
-                throw var817A124666112FE225ECD899E78D5369_1239343807;
-            } //End block
-            socket = new BluetoothServerSocket(
-                    BluetoothSocket.TYPE_RFCOMM, auth, encrypt, channel);
-            errno = socket.mSocket.bindListen();
-            if(errno == 0)            
-            {
-                if(DBG)                
-                Log.d(TAG, "listening on RFCOMM channel " + channel);
-                break;
-            } //End block
-            else
-            if(errno == BluetoothSocket.EADDRINUSE)            
-            {
-                if(DBG)                
-                Log.d(TAG, "RFCOMM channel " + channel + " in use");
-                try 
-                {
-                    socket.close();
-                } //End block
-                catch (IOException e)
-                {
-                } //End block
-                continue;
-            } //End block
-            else
-            {
-                try 
-                {
-                    socket.close();
-                } //End block
-                catch (IOException e)
-                {
-                } //End block
-                socket.mSocket.throwErrnoNative(errno);
-            } //End block
-        } //End block
-        int handle = -1;
-        try 
-        {
-            handle = mService.addRfcommServiceRecord(name, new ParcelUuid(uuid), channel,
-                    new Binder());
-        } //End block
-        catch (RemoteException e)
-        {
-        } //End block
-        if(handle == -1)        
-        {
-            try 
-            {
-                socket.close();
-            } //End block
-            catch (IOException e)
-            {
-            } //End block
-            IOException var49D6C1F0F64242D5209A78D1088C7196_444949901 = new IOException("Not able to register SDP record for " + name);
-            var49D6C1F0F64242D5209A78D1088C7196_444949901.addTaint(taint);
-            throw var49D6C1F0F64242D5209A78D1088C7196_444949901;
-        } //End block
-        if(mServiceRecordHandler == null)        
-        {
-            mServiceRecordHandler = new Handler(Looper.getMainLooper()) {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.022 -0400", hash_original_method = "FF0612DF3BD9B7FF527D2060CCF1E773", hash_generated_method = "0BD5BF60733B3D8A3685E449CA69EB68")
-        public void handleMessage(Message msg) {
-            addTaint(msg.getTaint());
-            int handle = msg.what;
-            try 
-            {
-                if(DBG)                
-                Log.d(TAG, "Removing service record " +
-                                           Integer.toHexString(handle));
-                mService.removeServiceRecord(handle);
-            } //End block
-            catch (RemoteException e)
-            {
-            } //End block
-            // ---------- Original Method ----------
-            //int handle = msg.what;
-            //try {
-                            //if (DBG) Log.d(TAG, "Removing service record " +
-                                           //Integer.toHexString(handle));
-                            //mService.removeServiceRecord(handle);
-                        //} catch (RemoteException e) {Log.e(TAG, "", e);}
-        }
-};
-        } //End block
-        socket.setCloseHandler(mServiceRecordHandler, handle);
-BluetoothServerSocket varA63412D4E099639C1BBCBDC8D705186B_1266025259 =         socket;
-        varA63412D4E099639C1BBCBDC8D705186B_1266025259.addTaint(taint);
-        return varA63412D4E099639C1BBCBDC8D705186B_1266025259;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.025 -0400", hash_original_method = "27EC1A367A39F94DC128CEF34B5C5DD2", hash_generated_method = "F1E9DF02B9C75AB3EAC4C07A70E95838")
-    public BluetoothServerSocket listenUsingInsecureRfcommOn(int port) throws IOException {
-        addTaint(port);
-        BluetoothServerSocket socket = new BluetoothServerSocket(
-                BluetoothSocket.TYPE_RFCOMM, false, false, port);
-        int errno = socket.mSocket.bindListen();
-        if(errno != 0)        
-        {
-            try 
-            {
-                socket.close();
-            } //End block
-            catch (IOException e)
-            {
-            } //End block
-            socket.mSocket.throwErrnoNative(errno);
-        } //End block
-BluetoothServerSocket varA63412D4E099639C1BBCBDC8D705186B_1122783218 =         socket;
-        varA63412D4E099639C1BBCBDC8D705186B_1122783218.addTaint(taint);
-        return varA63412D4E099639C1BBCBDC8D705186B_1122783218;
-        // ---------- Original Method ----------
-        //BluetoothServerSocket socket = new BluetoothServerSocket(
-                //BluetoothSocket.TYPE_RFCOMM, false, false, port);
-        //int errno = socket.mSocket.bindListen();
-        //if (errno != 0) {
-            //try {
-                //socket.close();
-            //} catch (IOException e) {}
-            //socket.mSocket.throwErrnoNative(errno);
-        //}
-        //return socket;
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.027 -0400", hash_original_method = "7C75ECDC8A8B7963B0A9DF6AD0038A85", hash_generated_method = "E75BC1EF0793F2F36C80BDBE96DD31DE")
-    public BluetoothServerSocket listenUsingEncryptedRfcommOn(int port) throws IOException {
-        addTaint(port);
-        BluetoothServerSocket socket = new BluetoothServerSocket(
-                BluetoothSocket.TYPE_RFCOMM, false, true, port);
-        int errno = socket.mSocket.bindListen();
-        if(errno != 0)        
-        {
-            try 
-            {
-                socket.close();
-            } //End block
-            catch (IOException e)
-            {
-            } //End block
-            socket.mSocket.throwErrnoNative(errno);
-        } //End block
-BluetoothServerSocket varA63412D4E099639C1BBCBDC8D705186B_589566989 =         socket;
-        varA63412D4E099639C1BBCBDC8D705186B_589566989.addTaint(taint);
-        return varA63412D4E099639C1BBCBDC8D705186B_589566989;
-        // ---------- Original Method ----------
-        //BluetoothServerSocket socket = new BluetoothServerSocket(
-                //BluetoothSocket.TYPE_RFCOMM, false, true, port);
-        //int errno = socket.mSocket.bindListen();
-        //if (errno != 0) {
-            //try {
-                //socket.close();
-            //} catch (IOException e) {}
-            //socket.mSocket.throwErrnoNative(errno);
-        //}
-        //return socket;
-    }
-
-    
-    @DSModeled(DSC.BAN)
+    /**
+     * Construct a SCO server socket.
+     * Call #accept to retrieve connections to this socket.
+     * @return A SCO BluetoothServerSocket
+     * @throws IOException On error, for example Bluetooth not available, or
+     *                     insufficient permissions.
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.394 -0500", hash_original_method = "4FDEAA2F9CA614612C71A6D8B4280274", hash_generated_method = "C37696850A86CCBE485C3A2F5F2792B2")
     public static BluetoothServerSocket listenUsingScoOn() throws IOException {
         BluetoothServerSocket socket = new BluetoothServerSocket(
                 BluetoothSocket.TYPE_SCO, false, false, -1);
@@ -867,217 +73,14 @@ BluetoothServerSocket varA63412D4E099639C1BBCBDC8D705186B_589566989 =         so
         return socket;
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.029 -0400", hash_original_method = "ABFDDF29A52D91D363C001D4DD695916", hash_generated_method = "0CB505FA4E3626542B103BFEA9ABBC73")
-    public Pair<byte[], byte[]> readOutOfBandData() {
-        if(getState() != STATE_ON)        
-        {
-Pair<byte[], byte[]> var540C13E9E156B687226421B24F2DF178_244445897 =         null;
-        var540C13E9E156B687226421B24F2DF178_244445897.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_244445897;
-        }
-        try 
-        {
-            byte[] hash;
-            byte[] randomizer;
-            byte[] ret = mService.readOutOfBandData();
-            if(ret  == null || ret.length != 32)            
-            {
-Pair<byte[], byte[]> var540C13E9E156B687226421B24F2DF178_589643905 =             null;
-            var540C13E9E156B687226421B24F2DF178_589643905.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_589643905;
-            }
-            hash = Arrays.copyOfRange(ret, 0, 16);
-            randomizer = Arrays.copyOfRange(ret, 16, 32);
-            if(DBG)            
-            {
-                Log.d(TAG, "readOutOfBandData:" + Arrays.toString(hash) +
-                  ":" + Arrays.toString(randomizer));
-            } //End block
-Pair<byte[], byte[]> varA95A3D48A90C7F180DAC8D6CC18BFF1D_1080737529 =             new Pair<byte[], byte[]>(hash, randomizer);
-            varA95A3D48A90C7F180DAC8D6CC18BFF1D_1080737529.addTaint(taint);
-            return varA95A3D48A90C7F180DAC8D6CC18BFF1D_1080737529;
-        } //End block
-        catch (RemoteException e)
-        {
-        } //End block
-Pair<byte[], byte[]> var540C13E9E156B687226421B24F2DF178_8562257 =         null;
-        var540C13E9E156B687226421B24F2DF178_8562257.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_8562257;
-        // ---------- Original Method ----------
-        //if (getState() != STATE_ON) return null;
-        //try {
-            //byte[] hash;
-            //byte[] randomizer;
-            //byte[] ret = mService.readOutOfBandData();
-            //if (ret  == null || ret.length != 32) return null;
-            //hash = Arrays.copyOfRange(ret, 0, 16);
-            //randomizer = Arrays.copyOfRange(ret, 16, 32);
-            //if (DBG) {
-                //Log.d(TAG, "readOutOfBandData:" + Arrays.toString(hash) +
-                  //":" + Arrays.toString(randomizer));
-            //}
-            //return new Pair<byte[], byte[]>(hash, randomizer);
-        //} catch (RemoteException e) {Log.e(TAG, "", e);}
-        //return null;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.031 -0400", hash_original_method = "7E4371B1FE17235BDA29BC99978F2247", hash_generated_method = "8A5DE5A8CA70649D1A2FF7FD54C6D1EA")
-    public boolean getProfileProxy(Context context, BluetoothProfile.ServiceListener listener,
-                                   int profile) {
-        addTaint(profile);
-        addTaint(listener.getTaint());
-        addTaint(context.getTaint());
-        if(context == null || listener == null)        
-        {
-        boolean var68934A3E9455FA72420237EB05902327_1014691844 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1113870369 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1113870369;
-        }
-        if(profile == BluetoothProfile.HEADSET)        
-        {
-            BluetoothHeadset headset = new BluetoothHeadset(context, listener);
-            boolean varB326B5062B2F0E69046810717534CB09_1954476487 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_692242755 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_692242755;
-        } //End block
-        else
-        if(profile == BluetoothProfile.A2DP)        
-        {
-            BluetoothA2dp a2dp = new BluetoothA2dp(context, listener);
-            boolean varB326B5062B2F0E69046810717534CB09_1920809976 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1927603767 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1927603767;
-        } //End block
-        else
-        if(profile == BluetoothProfile.INPUT_DEVICE)        
-        {
-            BluetoothInputDevice iDev = new BluetoothInputDevice(context, listener);
-            boolean varB326B5062B2F0E69046810717534CB09_1023040694 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1536278455 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1536278455;
-        } //End block
-        else
-        if(profile == BluetoothProfile.PAN)        
-        {
-            BluetoothPan pan = new BluetoothPan(context, listener);
-            boolean varB326B5062B2F0E69046810717534CB09_355390469 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_846353400 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_846353400;
-        } //End block
-        else
-        if(profile == BluetoothProfile.HEALTH)        
-        {
-            BluetoothHealth health = new BluetoothHealth(context, listener);
-            boolean varB326B5062B2F0E69046810717534CB09_1606105346 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_710042 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_710042;
-        } //End block
-        else
-        {
-            boolean var68934A3E9455FA72420237EB05902327_576002819 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2115740077 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_2115740077;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.032 -0400", hash_original_method = "C3F4A021A34A1F5D994F708A9A411E49", hash_generated_method = "CAB6AE6FD56BC92B5E5FDAFA853F0AF8")
-    public void closeProfileProxy(int profile, BluetoothProfile proxy) {
-        addTaint(proxy.getTaint());
-        addTaint(profile);
-        if(proxy == null)        
-        return;
-switch(profile){
-        case BluetoothProfile.HEADSET:
-        BluetoothHeadset headset = (BluetoothHeadset)proxy;
-        headset.close();
-        break;
-        case BluetoothProfile.A2DP:
-        BluetoothA2dp a2dp = (BluetoothA2dp)proxy;
-        a2dp.close();
-        break;
-        case BluetoothProfile.INPUT_DEVICE:
-        BluetoothInputDevice iDev = (BluetoothInputDevice)proxy;
-        iDev.close();
-        break;
-        case BluetoothProfile.PAN:
-        BluetoothPan pan = (BluetoothPan)proxy;
-        pan.close();
-        break;
-        case BluetoothProfile.HEALTH:
-        BluetoothHealth health = (BluetoothHealth)proxy;
-        health.close();
-        break;
-}
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.033 -0400", hash_original_method = "A99B511CC77AEC21CDC5C0D9EF322DC5", hash_generated_method = "89143B50C0E9A69A09B0A0DD8328B046")
-    public boolean changeApplicationBluetoothState(boolean on,
-                                                   BluetoothStateChangeCallback callback) {
-        addTaint(callback.getTaint());
-        addTaint(on);
-        if(callback == null)        
-        {
-        boolean var68934A3E9455FA72420237EB05902327_102613749 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_316140474 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_316140474;
-        }
-        try 
-        {
-            boolean var296BD035DD8DE34572CEB9D119011347_1514137863 = (mService.changeApplicationBluetoothState(on, new
-                    StateChangeCallbackWrapper(callback), new Binder()));
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_975497045 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_975497045;
-        } //End block
-        catch (RemoteException e)
-        {
-        } //End block
-        boolean var68934A3E9455FA72420237EB05902327_1552004252 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_628503920 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_628503920;
-        // ---------- Original Method ----------
-        //if (callback == null) return false;
-        //try {
-            //return mService.changeApplicationBluetoothState(on, new
-                    //StateChangeCallbackWrapper(callback), new Binder());
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "changeBluetoothState", e);
-        //}
-        //return false;
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.034 -0400", hash_original_method = "513CC86480EBB28E1771EE0ECDF9AF42", hash_generated_method = "31456BEC3B2C4EA87F75E8BC3A6BDE11")
-    private Set<BluetoothDevice> toDeviceSet(String[] addresses) {
-        addTaint(addresses[0].getTaint());
-        Set<BluetoothDevice> devices = new HashSet<BluetoothDevice>(addresses.length);
-for(int i = 0;i < addresses.length;i++)
-        {
-            devices.add(getRemoteDevice(addresses[i]));
-        } //End block
-Set<BluetoothDevice> var32AED13893C8FE4C204BFFE342C4B1B8_1874773146 =         Collections.unmodifiableSet(devices);
-        var32AED13893C8FE4C204BFFE342C4B1B8_1874773146.addTaint(taint);
-        return var32AED13893C8FE4C204BFFE342C4B1B8_1874773146;
-        // ---------- Original Method ----------
-        //Set<BluetoothDevice> devices = new HashSet<BluetoothDevice>(addresses.length);
-        //for (int i = 0; i < addresses.length; i++) {
-            //devices.add(getRemoteDevice(addresses[i]));
-        //}
-        //return Collections.unmodifiableSet(devices);
-    }
-
-    
+    /**
+     * Validate a Bluetooth address, such as "00:43:A8:23:10:F0"
+     * <p>Alphabetic characters must be uppercase to be valid.
+     *
+     * @param address Bluetooth address as string
+     * @return true if the address is valid, false otherwise
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.404 -0500", hash_original_method = "880F9FAA13E21096CB5A27114BEEE514", hash_generated_method = "7BE9747E8CCC1F68589B7009AE29D172")
     public static boolean checkBluetoothAddress(String address) {
         if (address == null || address.length() != ADDRESS_LENGTH) {
             return false;
@@ -1088,125 +91,220 @@ Set<BluetoothDevice> var32AED13893C8FE4C204BFFE342C4B1B8_1874773146 =         Co
             case 0:
             case 1:
                 if ((c >= '0' && c <= '9') || (c >= 'A' && c <= 'F')) {
+                    // hex character, OK
                     break;
                 }
                 return false;
             case 2:
                 if (c == ':') {
-                    break;  
+                    break;  // OK
                 }
                 return false;
             }
         }
         return true;
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.329 -0500", hash_original_field = "6ECBBB5DF00C0AA03EAAD481028AD37A", hash_generated_field = "FFFD667AA4E6F86F94D79F85ECFC7E6D")
+
+    private static final String TAG = "BluetoothAdapter";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.330 -0500", hash_original_field = "B2601CA7445F6BA19FA7884763D82281", hash_generated_field = "1A61763F9CABC9206BB5AE6E570AB8AE")
+
+    private static final boolean DBG = false;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.331 -0500", hash_original_field = "84E830C145C042EC11E2544A046AA563", hash_generated_field = "6AF8DDE3A6777A538F89C7DEB17C8CE1")
+
+    public static final int ERROR = Integer.MIN_VALUE;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.332 -0500", hash_original_field = "7CD7331191E4225238B58030DB3546FB", hash_generated_field = "5A65F3D9BB4DC5EE1ACABB74F4D18B98")
+
+    @SdkConstant(SdkConstantType.BROADCAST_INTENT_ACTION)
+    public static final String ACTION_STATE_CHANGED =
+            "android.bluetooth.adapter.action.STATE_CHANGED";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.333 -0500", hash_original_field = "CF09A60259AADD3E916029EFF6BE60B0", hash_generated_field = "3A8F0DB6CD97AEFE65404050A24D57D6")
+
+    public static final String EXTRA_STATE =
+            "android.bluetooth.adapter.extra.STATE";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.334 -0500", hash_original_field = "8818AB4FD552D4ACBEB084724F8434F7", hash_generated_field = "098410645A4730D25E72FBEEA0EBA213")
+
+    public static final String EXTRA_PREVIOUS_STATE =
+            "android.bluetooth.adapter.extra.PREVIOUS_STATE";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.335 -0500", hash_original_field = "5D2A8531C845F0E8D8582473DBAA5D5E", hash_generated_field = "2492744ADB13576C94E35244EFC60698")
+
+    public static final int STATE_OFF = 10;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.336 -0500", hash_original_field = "896A4EB5C5C2C8332B20757044F468F8", hash_generated_field = "45415AACDC0741F932680326DAEA7F57")
+
+    public static final int STATE_TURNING_ON = 11;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.337 -0500", hash_original_field = "A965CF41F46392712C160957D2E46B1A", hash_generated_field = "340CAEE29AEFA1ABD8C4C313C4031A11")
+
+    public static final int STATE_ON = 12;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.338 -0500", hash_original_field = "DE1E884CBE29CABB1C7604947EEB9DA2", hash_generated_field = "91D0FBAD29D8289C8DA9131914260E33")
+
+    public static final int STATE_TURNING_OFF = 13;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.339 -0500", hash_original_field = "CADC6E1689288342D6D262F8EBF5E379", hash_generated_field = "E66A7598AB7D1F40474FB8CB4B9F29EC")
+
+    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION)
+    public static final String ACTION_REQUEST_DISCOVERABLE =
+            "android.bluetooth.adapter.action.REQUEST_DISCOVERABLE";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.340 -0500", hash_original_field = "959F7021B065FA8AAB76D9EA31D0CD6A", hash_generated_field = "C3FF7E67DDBDF7B18E42691E003AD77D")
+
+    public static final String EXTRA_DISCOVERABLE_DURATION =
+            "android.bluetooth.adapter.extra.DISCOVERABLE_DURATION";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.341 -0500", hash_original_field = "3CC29408BE7A0B2CC3EF43DC5E5054AF", hash_generated_field = "8BE216E12192E77765DCF2441EA0666F")
+
+    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION)
+    public static final String ACTION_REQUEST_ENABLE =
+            "android.bluetooth.adapter.action.REQUEST_ENABLE";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.342 -0500", hash_original_field = "44C026F58E3EA696F7746846EBDEA2D6", hash_generated_field = "6018A97AE0B0501F7D8F354A46F12C4A")
+
+    @SdkConstant(SdkConstantType.BROADCAST_INTENT_ACTION)
+    public static final String ACTION_SCAN_MODE_CHANGED =
+            "android.bluetooth.adapter.action.SCAN_MODE_CHANGED";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.342 -0500", hash_original_field = "6416582FB5B81750A115144534BB5C89", hash_generated_field = "E3AFC80C21F6F85837BE05DF19B0CF20")
+
+    public static final String EXTRA_SCAN_MODE = "android.bluetooth.adapter.extra.SCAN_MODE";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.343 -0500", hash_original_field = "097346B02C82A6D05DD6F6F395FA6CAE", hash_generated_field = "517F6F861E87657DEE5840B6E4814935")
+
+    public static final String EXTRA_PREVIOUS_SCAN_MODE =
+            "android.bluetooth.adapter.extra.PREVIOUS_SCAN_MODE";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.344 -0500", hash_original_field = "B15510E3FECF884CAADBC39BD8AEADD6", hash_generated_field = "BC414FEE775A8ACF5083694FB05C9DAD")
+
+    public static final int SCAN_MODE_NONE = 20;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.345 -0500", hash_original_field = "38A2382FA9900659CFC7E706FE4FBAA7", hash_generated_field = "9A2023C029A688C61AF0AFB65BB59898")
+
+    public static final int SCAN_MODE_CONNECTABLE = 21;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.346 -0500", hash_original_field = "7558E29AE8865A726F8A0C4965EAB9F6", hash_generated_field = "84C8E5952616DC34E8514798F84FF7CC")
+
+    public static final int SCAN_MODE_CONNECTABLE_DISCOVERABLE = 23;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.347 -0500", hash_original_field = "EC7DF8F5D6557412179DD22133614241", hash_generated_field = "2FFDB6078656359E095CF8DDA030577E")
+
+    @SdkConstant(SdkConstantType.BROADCAST_INTENT_ACTION)
+    public static final String ACTION_DISCOVERY_STARTED =
+            "android.bluetooth.adapter.action.DISCOVERY_STARTED";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.348 -0500", hash_original_field = "6088470273042577925974FEDCF9F58B", hash_generated_field = "C7669A14687A25449EC9A09E5FF5CB75")
+
+    @SdkConstant(SdkConstantType.BROADCAST_INTENT_ACTION)
+    public static final String ACTION_DISCOVERY_FINISHED =
+            "android.bluetooth.adapter.action.DISCOVERY_FINISHED";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.349 -0500", hash_original_field = "1D48F3942DB74100CB174AFF14CFD5B4", hash_generated_field = "EEA8D509F766113EFBE364F807BA0A7F")
+
+    @SdkConstant(SdkConstantType.BROADCAST_INTENT_ACTION)
+    public static final String ACTION_LOCAL_NAME_CHANGED =
+            "android.bluetooth.adapter.action.LOCAL_NAME_CHANGED";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.350 -0500", hash_original_field = "3C240245AEA0DA78C6689385B8177174", hash_generated_field = "7052E6CE58614BD821917BC7308EEA5A")
+
+    public static final String EXTRA_LOCAL_NAME = "android.bluetooth.adapter.extra.LOCAL_NAME";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.351 -0500", hash_original_field = "7544C5A5626A814DD053C56B0A1735D4", hash_generated_field = "922348319A52FBC21E79D50738C951E7")
+
+    @SdkConstant(SdkConstantType.BROADCAST_INTENT_ACTION)
+    public static final String ACTION_CONNECTION_STATE_CHANGED =
+        "android.bluetooth.adapter.action.CONNECTION_STATE_CHANGED";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.351 -0500", hash_original_field = "FBCDB2AA1D01AC2CC50CD8E4DD57BB21", hash_generated_field = "1D3AAB8543C4C934AB7CEF233BD62CE4")
+
+    public static final String EXTRA_CONNECTION_STATE =
+        "android.bluetooth.adapter.extra.CONNECTION_STATE";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.352 -0500", hash_original_field = "643232BAC24EE8E21FBA44257FA4AE86", hash_generated_field = "CB9396A90BE9EE705FF77742B2727CEA")
+
+    public static final String EXTRA_PREVIOUS_CONNECTION_STATE =
+          "android.bluetooth.adapter.extra.PREVIOUS_CONNECTION_STATE";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.353 -0500", hash_original_field = "1D68C8F7C30276313FF74EEBEDEBB1AC", hash_generated_field = "84173E1866F23EE943EF8008ED8CFAFC")
+
+    public static final int STATE_DISCONNECTED  = 0;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.354 -0500", hash_original_field = "89700172BAD89C181A3F425C56815959", hash_generated_field = "8CB4E5E77EC98D8CA7B9ED27A25245FB")
+
+    public static final int STATE_CONNECTING    = 1;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.355 -0500", hash_original_field = "06D554ABD776B22289EDC7EEB1C08911", hash_generated_field = "3F851151E1E65F1A69352C1A55C34451")
+
+    public static final int STATE_CONNECTED     = 2;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.356 -0500", hash_original_field = "ED4A1DA3BF07593A201CFCB62AB55022", hash_generated_field = "CDC0147D8DF471B389406236B4CDE4C6")
+
+    public static final int STATE_DISCONNECTING = 3;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.357 -0500", hash_original_field = "7AB4C4978577E5B263182CBED8F51AE5", hash_generated_field = "3D6035B10EF8E7EF00722E60E1BC0101")
+
+    public static final String BLUETOOTH_SERVICE = "bluetooth";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.357 -0500", hash_original_field = "DA4EF7DDA5FEBC2397ABAEFEF1473AA8", hash_generated_field = "4E1CB78F3E71AAE2C4C5EEAF9B65762C")
+
+
+    private static final int ADDRESS_LENGTH = 17;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.358 -0500", hash_original_field = "2CFB7D085BB9AA78E2DC60D69D574C57", hash_generated_field = "774AD1565F074633E7FB49926516258A")
+
+    private static BluetoothAdapter sAdapter;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.359 -0500", hash_original_field = "E6C68E4A2725AB507547EA6B7D87DBDC", hash_generated_field = "40876FBB70C48F89ADB2F95E8DF8AB42")
+
+
+    private  IBluetooth mService;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.360 -0500", hash_original_field = "5E2493EBFED94E57584631305B612A35", hash_generated_field = "4E8B81D96B452AEF852F97E41FBCDFCC")
+
+
+    private Handler mServiceRecordHandler;
 
     
     private static class RfcommChannelPicker {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.036 -0400", hash_original_field = "56278F1BC8E273243C72753A9B24D943", hash_generated_field = "1480456E24B96E56BF1C53CE053D6C57")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.379 -0500", hash_original_field = "613461EFCF7CF9698C97F2645CDC813F", hash_generated_field = "85605CCAEEE7035FF329E0599B7B7F2A")
 
-        private LinkedList<Integer> mChannels;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.036 -0400", hash_original_field = "6D1083D630EED7814896F0D75349A34B", hash_generated_field = "318090B38C1325AB0A6BDE7565479F55")
-
-        private UUID mUuid;
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.037 -0400", hash_original_method = "28D5B18AE357E7C373AB413DE32AB5A2", hash_generated_method = "42EE177EE930235F899EEB09E2052EC9")
-        public  RfcommChannelPicker(UUID uuid) {
-            synchronized
-(RfcommChannelPicker.class)            {
-                if(sChannels == null)                
-                {
-                    sChannels = new LinkedList<Integer>();
-for(int i = 1;i <= BluetoothSocket.MAX_RFCOMM_CHANNEL;i++)
-                    {
-                        sChannels.addLast(new Integer(i));
-                    } //End block
-for(int reserved : RESERVED_RFCOMM_CHANNELS)
-                    {
-                        sChannels.remove(new Integer(reserved));
-                    } //End block
-                    sRandom = new Random();
-                } //End block
-                mChannels = (LinkedList<Integer>)sChannels.clone();
-            } //End block
-            mUuid = uuid;
-            // ---------- Original Method ----------
-            //synchronized (RfcommChannelPicker.class) {
-                //if (sChannels == null) {
-                    //sChannels = new LinkedList<Integer>();
-                    //for (int i = 1; i <= BluetoothSocket.MAX_RFCOMM_CHANNEL; i++) {
-                        //sChannels.addLast(new Integer(i));
-                    //}
-                    //for (int reserved : RESERVED_RFCOMM_CHANNELS) {
-                        //sChannels.remove(new Integer(reserved));
-                    //}
-                    //sRandom = new Random();
-                //}
-                //mChannels = (LinkedList<Integer>)sChannels.clone();
-            //}
-            //mUuid = uuid;
-        }
-
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.038 -0400", hash_original_method = "81BCBA018F169CE48612651EBB944AF7", hash_generated_method = "D8D364D5C120A52B17E9FE00279B9113")
-        public int nextChannel() {
-            if(mChannels.size() == 0)            
-            {
-                int var6BB61E3B7BCE0931DA574D19D1D82C88_494550957 = (-1);
-                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1310688881 = getTaintInt();
-                return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1310688881;
-            } //End block
-            int varA376C04E532E2783FDA95959A08257BE_1240213465 = (mChannels.remove(sRandom.nextInt(mChannels.size())));
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_345014743 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_345014743;
-            // ---------- Original Method ----------
-            //if (mChannels.size() == 0) {
-                //return -1;
-            //}
-            //return mChannels.remove(sRandom.nextInt(mChannels.size()));
-        }
-
-        
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.038 -0400", hash_original_field = "85DCCAEA585C9B4E6F240D0A0175374A", hash_generated_field = "A260FC333D7D19144D063EA361E7F085")
-
-        private static final int[] RESERVED_RFCOMM_CHANNELS = new int[] {
-            10,  
-            11,  
-            12,  
-            19,  
+        private static final int[] RESERVED_RFCOMM_CHANNELS =  new int[] {
+            10,  // HFAG
+            11,  // HSAG
+            12,  // OPUSH
+            19,  // PBAP
         };
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.038 -0400", hash_original_field = "31E97CDBA7EFB3E4452049029D3BD620", hash_generated_field = "EAB378A7CC265D715759023A5AA5F13F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.381 -0500", hash_original_field = "BA60E1D6408CD9986C1BCEF03138B777", hash_generated_field = "EAB378A7CC265D715759023A5AA5F13F")
 
         private static LinkedList<Integer> sChannels;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.038 -0400", hash_original_field = "DA6A95610AF6CFF99C6F1D09E1E56D06", hash_generated_field = "62AF39559879372551FBEA5130DF03B8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.381 -0500", hash_original_field = "54CB46C0272167CB4575146907BD50D2", hash_generated_field = "62AF39559879372551FBEA5130DF03B8")
 
         private static Random sRandom;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.382 -0500", hash_original_field = "AC71322F2F096CDDBCFE03BB1EDC8510", hash_generated_field = "1480456E24B96E56BF1C53CE053D6C57")
+
+
+        private  LinkedList<Integer> mChannels;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.383 -0500", hash_original_field = "AFE074E0052115B31F5D8A3FD1E72383", hash_generated_field = "318090B38C1325AB0A6BDE7565479F55")
+
+
+        private  UUID mUuid;
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.384 -0500", hash_original_method = "28D5B18AE357E7C373AB413DE32AB5A2", hash_generated_method = "E5A934A39287F9E82E22E7AE85452B95")
+        public RfcommChannelPicker(UUID uuid) {
+            synchronized (RfcommChannelPicker.class) {
+                if (sChannels == null) {
+                    // lazy initialization of non-reserved rfcomm channels
+                    sChannels = new LinkedList<Integer>();
+                    for (int i = 1; i <= BluetoothSocket.MAX_RFCOMM_CHANNEL; i++) {
+                        sChannels.addLast(new Integer(i));
+                    }
+                    for (int reserved : RESERVED_RFCOMM_CHANNELS) {
+                        sChannels.remove(new Integer(reserved));
+                    }
+                    sRandom = new Random();
+                }
+                mChannels = (LinkedList<Integer>)sChannels.clone();
+            }
+            mUuid = uuid;
+        }
+        /* Returns next random channel, or -1 if we're out */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.385 -0500", hash_original_method = "81BCBA018F169CE48612651EBB944AF7", hash_generated_method = "66C0F948CA9B9467AA6D37A575844737")
+        public int nextChannel() {
+            if (mChannels.size() == 0) {
+                return -1;
+            }
+            return mChannels.remove(sRandom.nextInt(mChannels.size()));
+        }
     }
 
 
     
     public class StateChangeCallbackWrapper extends IBluetoothStateChangeCallback.Stub {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.039 -0400", hash_original_field = "1804C5EC7AAE0B28B15CFDA061D25829", hash_generated_field = "A57455FF422F35D91E260F65043C7D89")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.400 -0500", hash_original_field = "98DB69D7F94A15337DEA3D2D22420182", hash_generated_field = "A57455FF422F35D91E260F65043C7D89")
 
         private BluetoothStateChangeCallback mCallback;
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.040 -0400", hash_original_method = "A0CF36872107300FB780BF535F8F7268", hash_generated_method = "752E88FB50F1EB2CC75629594B1B73B5")
-          StateChangeCallbackWrapper(BluetoothStateChangeCallback
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.401 -0500", hash_original_method = "A0CF36872107300FB780BF535F8F7268", hash_generated_method = "A0CF36872107300FB780BF535F8F7268")
+        StateChangeCallbackWrapper(BluetoothStateChangeCallback
                 callback) {
             mCallback = callback;
-            // ---------- Original Method ----------
-            //mCallback = callback;
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.041 -0400", hash_original_method = "A0576354509BA338556525A396FF4F6A", hash_generated_method = "B57E300F8427C46DB1C911A50605A193")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.402 -0500", hash_original_method = "A0576354509BA338556525A396FF4F6A", hash_generated_method = "FAE3BF3CC12E352AA64B77886111B508")
         @Override
-        public void onBluetoothStateChange(boolean on) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
-            addTaint(on);
+public void onBluetoothStateChange(boolean on) {
             mCallback.onBluetoothStateChange(on);
-            // ---------- Original Method ----------
-            //mCallback.onBluetoothStateChange(on);
         }
 
         
@@ -1217,127 +315,858 @@ for(int reserved : RESERVED_RFCOMM_CHANNELS)
     public interface BluetoothStateChangeCallback {
         public void onBluetoothStateChange(boolean on);
     }
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.042 -0400", hash_original_field = "E5B219C7FEED88DB7F5399CF079A118F", hash_generated_field = "FFFD667AA4E6F86F94D79F85ECFC7E6D")
 
-    private static final String TAG = "BluetoothAdapter";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.042 -0400", hash_original_field = "0F6F0EB642B3F46DE2B2DF48DA4427EF", hash_generated_field = "1A61763F9CABC9206BB5AE6E570AB8AE")
+    /**
+     * Use {@link #getDefaultAdapter} to get the BluetoothAdapter instance.
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.362 -0500", hash_original_method = "5CDBAADAD73677B9DBA69CD49D17E787", hash_generated_method = "A92D76E8D2D07E91B8D83A7C553C1B3B")
+    public BluetoothAdapter(IBluetooth service) {
+        if (service == null) {
+            throw new IllegalArgumentException("service is null");
+        }
+        mService = service;
+        mServiceRecordHandler = null;
+    }
 
-    private static final boolean DBG = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.042 -0400", hash_original_field = "5AB9C566BA0BF4C0BC165F176F8A6669", hash_generated_field = "6AF8DDE3A6777A538F89C7DEB17C8CE1")
+    /**
+     * Get a {@link BluetoothDevice} object for the given Bluetooth hardware
+     * address.
+     * <p>Valid Bluetooth hardware addresses must be upper case, in a format
+     * such as "00:11:22:33:AA:BB". The helper {@link #checkBluetoothAddress} is
+     * available to validate a Bluetooth address.
+     * <p>A {@link BluetoothDevice} will always be returned for a valid
+     * hardware address, even if this adapter has never seen that device.
+     *
+     * @param address valid Bluetooth MAC address
+     * @throws IllegalArgumentException if address is invalid
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.363 -0500", hash_original_method = "BAA9CF7F2ACFCBAB9569C2DACFA96981", hash_generated_method = "1F9B813339B83D60C44F63FEA48A9FA1")
+    public BluetoothDevice getRemoteDevice(String address) {
+        return new BluetoothDevice(address);
+    }
 
-    public static final int ERROR = Integer.MIN_VALUE;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.042 -0400", hash_original_field = "3AB282C61CADC4E1F512891196CC6E2C", hash_generated_field = "5A65F3D9BB4DC5EE1ACABB74F4D18B98")
+    /**
+     * Return true if Bluetooth is currently enabled and ready for use.
+     * <p>Equivalent to:
+     * <code>getBluetoothState() == STATE_ON</code>
+     * <p>Requires {@link android.Manifest.permission#BLUETOOTH}
+     *
+     * @return true if the local adapter is turned on
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.363 -0500", hash_original_method = "D4868B88346C10F14C8F7C77B49B5DE2", hash_generated_method = "D53B4842436BB152E99B9340AD85BE2C")
+    public boolean isEnabled() {
+        try {
+            return mService.isEnabled();
+        } catch (RemoteException e) {Log.e(TAG, "", e);}
+        return false;
+    }
 
-    @SdkConstant(SdkConstantType.BROADCAST_INTENT_ACTION)
-    public static final String ACTION_STATE_CHANGED =
-            "android.bluetooth.adapter.action.STATE_CHANGED";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.042 -0400", hash_original_field = "B19E90743E46DF6F2A6518E33FAFE704", hash_generated_field = "3A8F0DB6CD97AEFE65404050A24D57D6")
+    /**
+     * Get the current state of the local Bluetooth adapter.
+     * <p>Possible return values are
+     * {@link #STATE_OFF},
+     * {@link #STATE_TURNING_ON},
+     * {@link #STATE_ON},
+     * {@link #STATE_TURNING_OFF}.
+     * <p>Requires {@link android.Manifest.permission#BLUETOOTH}
+     *
+     * @return current state of Bluetooth adapter
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.364 -0500", hash_original_method = "FCF9C6106F07630DEF71CB873FCC3D8F", hash_generated_method = "2D88E30A9F2E10CEA5D3C897F991A4CB")
+    public int getState() {
+        try {
+            return mService.getBluetoothState();
+        } catch (RemoteException e) {Log.e(TAG, "", e);}
+        return STATE_OFF;
+    }
 
-    public static final String EXTRA_STATE =
-            "android.bluetooth.adapter.extra.STATE";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.043 -0400", hash_original_field = "D33E66DF36BC6E913E9B0A30A31CAFD9", hash_generated_field = "098410645A4730D25E72FBEEA0EBA213")
+    /**
+     * Turn on the local Bluetooth adapter&mdash;do not use without explicit
+     * user action to turn on Bluetooth.
+     * <p>This powers on the underlying Bluetooth hardware, and starts all
+     * Bluetooth system services.
+     * <p class="caution"><strong>Bluetooth should never be enabled without
+     * direct user consent</strong>. If you want to turn on Bluetooth in order
+     * to create a wireless connection, you should use the {@link
+     * #ACTION_REQUEST_ENABLE} Intent, which will raise a dialog that requests
+     * user permission to turn on Bluetooth. The {@link #enable()} method is
+     * provided only for applications that include a user interface for changing
+     * system settings, such as a "power manager" app.</p>
+     * <p>This is an asynchronous call: it will return immediately, and
+     * clients should listen for {@link #ACTION_STATE_CHANGED}
+     * to be notified of subsequent adapter state changes. If this call returns
+     * true, then the adapter state will immediately transition from {@link
+     * #STATE_OFF} to {@link #STATE_TURNING_ON}, and some time
+     * later transition to either {@link #STATE_OFF} or {@link
+     * #STATE_ON}. If this call returns false then there was an
+     * immediate problem that will prevent the adapter from being turned on -
+     * such as Airplane mode, or the adapter is already turned on.
+     * <p>Requires the {@link android.Manifest.permission#BLUETOOTH_ADMIN}
+     * permission
+     *
+     * @return true to indicate adapter startup has begun, or false on
+     *         immediate error
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.365 -0500", hash_original_method = "F70C75CE8A3147FA6677C79F04CF4B02", hash_generated_method = "73BA2DEB4E03F699509A9F12FD5E370A")
+    public boolean enable() {
+        try {
+            return mService.enable();
+        } catch (RemoteException e) {Log.e(TAG, "", e);}
+        return false;
+    }
 
-    public static final String EXTRA_PREVIOUS_STATE =
-            "android.bluetooth.adapter.extra.PREVIOUS_STATE";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.043 -0400", hash_original_field = "F2BA1189D66798C5C9E28C3F0E29AAEF", hash_generated_field = "2492744ADB13576C94E35244EFC60698")
+    /**
+     * Turn off the local Bluetooth adapter&mdash;do not use without explicit
+     * user action to turn off Bluetooth.
+     * <p>This gracefully shuts down all Bluetooth connections, stops Bluetooth
+     * system services, and powers down the underlying Bluetooth hardware.
+     * <p class="caution"><strong>Bluetooth should never be disabled without
+     * direct user consent</strong>. The {@link #disable()} method is
+     * provided only for applications that include a user interface for changing
+     * system settings, such as a "power manager" app.</p>
+     * <p>This is an asynchronous call: it will return immediately, and
+     * clients should listen for {@link #ACTION_STATE_CHANGED}
+     * to be notified of subsequent adapter state changes. If this call returns
+     * true, then the adapter state will immediately transition from {@link
+     * #STATE_ON} to {@link #STATE_TURNING_OFF}, and some time
+     * later transition to either {@link #STATE_OFF} or {@link
+     * #STATE_ON}. If this call returns false then there was an
+     * immediate problem that will prevent the adapter from being turned off -
+     * such as the adapter already being turned off.
+     * <p>Requires the {@link android.Manifest.permission#BLUETOOTH_ADMIN}
+     * permission
+     *
+     * @return true to indicate adapter shutdown has begun, or false on
+     *         immediate error
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.366 -0500", hash_original_method = "DC1BB7EEB209838517C27214CEB71072", hash_generated_method = "F00D9C8CF9106920486544559C110E2A")
+    public boolean disable() {
+        try {
+            return mService.disable(true);
+        } catch (RemoteException e) {Log.e(TAG, "", e);}
+        return false;
+    }
 
-    public static final int STATE_OFF = 10;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.043 -0400", hash_original_field = "605D5F48DA9575FBAD04C22948B589ED", hash_generated_field = "45415AACDC0741F932680326DAEA7F57")
+    /**
+     * Returns the hardware address of the local Bluetooth adapter.
+     * <p>For example, "00:11:22:AA:BB:CC".
+     * <p>Requires {@link android.Manifest.permission#BLUETOOTH}
+     *
+     * @return Bluetooth hardware address as string
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.367 -0500", hash_original_method = "45FE79E8525553C566F03D519E5189F4", hash_generated_method = "626CD83604485177DC397D8A0A5F6A77")
+    public String getAddress() {
+        try {
+            return mService.getAddress();
+        } catch (RemoteException e) {Log.e(TAG, "", e);}
+        return null;
+    }
 
-    public static final int STATE_TURNING_ON = 11;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.044 -0400", hash_original_field = "2823B51CEBD1F668B2D995E1B1631DE2", hash_generated_field = "340CAEE29AEFA1ABD8C4C313C4031A11")
+    /**
+     * Get the friendly Bluetooth name of the local Bluetooth adapter.
+     * <p>This name is visible to remote Bluetooth devices.
+     * <p>Requires {@link android.Manifest.permission#BLUETOOTH}
+     *
+     * @return the Bluetooth name, or null on error
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.368 -0500", hash_original_method = "AA5C06C383156A346DC521053F89AB2B", hash_generated_method = "0D10205F1F5B2392B89D40CFF8F1A6B3")
+    public String getName() {
+        try {
+            return mService.getName();
+        } catch (RemoteException e) {Log.e(TAG, "", e);}
+        return null;
+    }
 
-    public static final int STATE_ON = 12;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.044 -0400", hash_original_field = "AD9E665D9D9EE8B9123C20C0E39477EF", hash_generated_field = "91D0FBAD29D8289C8DA9131914260E33")
+    /**
+     * Get the UUIDs supported by the local Bluetooth adapter.
+     *
+     * <p>Requires {@link android.Manifest.permission#BLUETOOTH}
+     *
+     * @return the UUIDs supported by the local Bluetooth Adapter.
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.368 -0500", hash_original_method = "1404BBF93844A5B6047C7A268CEA1843", hash_generated_method = "ABCBF1EDB912A18A3423CC825D16A3FE")
+    public ParcelUuid[] getUuids() {
+        if (getState() != STATE_ON) return null;
+        try {
+            return mService.getUuids();
+        } catch (RemoteException e) {Log.e(TAG, "", e);}
+        return null;
+    }
 
-    public static final int STATE_TURNING_OFF = 13;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.044 -0400", hash_original_field = "C7838C3AA721CFD286AF6DFE48A16AB1", hash_generated_field = "E66A7598AB7D1F40474FB8CB4B9F29EC")
+    /**
+     * Set the friendly Bluetooth name of the local Bluetooth adapter.
+     * <p>This name is visible to remote Bluetooth devices.
+     * <p>Valid Bluetooth names are a maximum of 248 bytes using UTF-8
+     * encoding, although many remote devices can only display the first
+     * 40 characters, and some may be limited to just 20.
+     * <p>If Bluetooth state is not {@link #STATE_ON}, this API
+     * will return false. After turning on Bluetooth,
+     * wait for {@link #ACTION_STATE_CHANGED} with {@link #STATE_ON}
+     * to get the updated value.
+     * <p>Requires {@link android.Manifest.permission#BLUETOOTH_ADMIN}
+     *
+     * @param name a valid Bluetooth name
+     * @return     true if the name was set, false otherwise
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.369 -0500", hash_original_method = "08F81801C25A11FE898E4D65E015413F", hash_generated_method = "53EEA2ADC26BB2303B2DC2FE9996B2B5")
+    public boolean setName(String name) {
+        if (getState() != STATE_ON) return false;
+        try {
+            return mService.setName(name);
+        } catch (RemoteException e) {Log.e(TAG, "", e);}
+        return false;
+    }
 
-    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION)
-    public static final String ACTION_REQUEST_DISCOVERABLE =
-            "android.bluetooth.adapter.action.REQUEST_DISCOVERABLE";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.044 -0400", hash_original_field = "3D26FB4A99C70F031C238F081ADA951A", hash_generated_field = "C3FF7E67DDBDF7B18E42691E003AD77D")
+    /**
+     * Get the current Bluetooth scan mode of the local Bluetooth adapter.
+     * <p>The Bluetooth scan mode determines if the local adapter is
+     * connectable and/or discoverable from remote Bluetooth devices.
+     * <p>Possible values are:
+     * {@link #SCAN_MODE_NONE},
+     * {@link #SCAN_MODE_CONNECTABLE},
+     * {@link #SCAN_MODE_CONNECTABLE_DISCOVERABLE}.
+     * <p>If Bluetooth state is not {@link #STATE_ON}, this API
+     * will return {@link #SCAN_MODE_NONE}. After turning on Bluetooth,
+     * wait for {@link #ACTION_STATE_CHANGED} with {@link #STATE_ON}
+     * to get the updated value.
+     * <p>Requires {@link android.Manifest.permission#BLUETOOTH}
+     *
+     * @return scan mode
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.370 -0500", hash_original_method = "76CF52E29182798DA67FD15A9B155F30", hash_generated_method = "6BAD701C64E12D890B0CCFBF2CD1BC86")
+    public int getScanMode() {
+        if (getState() != STATE_ON) return SCAN_MODE_NONE;
+        try {
+            return mService.getScanMode();
+        } catch (RemoteException e) {Log.e(TAG, "", e);}
+        return SCAN_MODE_NONE;
+    }
 
-    public static final String EXTRA_DISCOVERABLE_DURATION =
-            "android.bluetooth.adapter.extra.DISCOVERABLE_DURATION";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.045 -0400", hash_original_field = "EC25ECA9455F985693786E1F8AB53CFF", hash_generated_field = "8BE216E12192E77765DCF2441EA0666F")
+    /**
+     * Set the Bluetooth scan mode of the local Bluetooth adapter.
+     * <p>The Bluetooth scan mode determines if the local adapter is
+     * connectable and/or discoverable from remote Bluetooth devices.
+     * <p>For privacy reasons, discoverable mode is automatically turned off
+     * after <code>duration</code> seconds. For example, 120 seconds should be
+     * enough for a remote device to initiate and complete its discovery
+     * process.
+     * <p>Valid scan mode values are:
+     * {@link #SCAN_MODE_NONE},
+     * {@link #SCAN_MODE_CONNECTABLE},
+     * {@link #SCAN_MODE_CONNECTABLE_DISCOVERABLE}.
+     * <p>If Bluetooth state is not {@link #STATE_ON}, this API
+     * will return false. After turning on Bluetooth,
+     * wait for {@link #ACTION_STATE_CHANGED} with {@link #STATE_ON}
+     * to get the updated value.
+     * <p>Requires {@link android.Manifest.permission#WRITE_SECURE_SETTINGS}
+     * <p>Applications cannot set the scan mode. They should use
+     * <code>startActivityForResult(
+     * BluetoothAdapter.ACTION_REQUEST_DISCOVERABLE})
+     * </code>instead.
+     *
+     * @param mode valid scan mode
+     * @param duration time in seconds to apply scan mode, only used for
+     *                 {@link #SCAN_MODE_CONNECTABLE_DISCOVERABLE}
+     * @return     true if the scan mode was set, false otherwise
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.371 -0500", hash_original_method = "EAE2AE792A5A03E2A7F346C251F56DAF", hash_generated_method = "B1DB08C03AB68172F4AAB21799A98B9B")
+    public boolean setScanMode(int mode, int duration) {
+        if (getState() != STATE_ON) return false;
+        try {
+            return mService.setScanMode(mode, duration);
+        } catch (RemoteException e) {Log.e(TAG, "", e);}
+        return false;
+    }
 
-    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION)
-    public static final String ACTION_REQUEST_ENABLE =
-            "android.bluetooth.adapter.action.REQUEST_ENABLE";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.045 -0400", hash_original_field = "A51D0480E64772A55B460C63900F3963", hash_generated_field = "6018A97AE0B0501F7D8F354A46F12C4A")
+    /** @hide */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.372 -0500", hash_original_method = "5FA36C89B86406F549228E4F23C31FB5", hash_generated_method = "CB34F3E05DFFE57777A4686C6F21D51C")
+    public boolean setScanMode(int mode) {
+        if (getState() != STATE_ON) return false;
+        return setScanMode(mode, 120);
+    }
 
-    @SdkConstant(SdkConstantType.BROADCAST_INTENT_ACTION)
-    public static final String ACTION_SCAN_MODE_CHANGED =
-            "android.bluetooth.adapter.action.SCAN_MODE_CHANGED";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.045 -0400", hash_original_field = "E605E9682827A4B0A7412B7F2C71DDA9", hash_generated_field = "E3AFC80C21F6F85837BE05DF19B0CF20")
+    /** @hide */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.372 -0500", hash_original_method = "9BECEF34E1AD2659C72AC1024F8DAE1C", hash_generated_method = "966E262C602EB7E00E678FFBDDAF49F1")
+    public int getDiscoverableTimeout() {
+        if (getState() != STATE_ON) return -1;
+        try {
+            return mService.getDiscoverableTimeout();
+        } catch (RemoteException e) {Log.e(TAG, "", e);}
+        return -1;
+    }
 
-    public static final String EXTRA_SCAN_MODE = "android.bluetooth.adapter.extra.SCAN_MODE";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.045 -0400", hash_original_field = "A3BC40D09C9B188BA7CF938F189E0FC3", hash_generated_field = "517F6F861E87657DEE5840B6E4814935")
+    /** @hide */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.373 -0500", hash_original_method = "040DE868F00C15E58DE726DEE9429CA3", hash_generated_method = "9DA3EF71F67CBAB9135D65344F449CD2")
+    public void setDiscoverableTimeout(int timeout) {
+        if (getState() != STATE_ON) return;
+        try {
+            mService.setDiscoverableTimeout(timeout);
+        } catch (RemoteException e) {Log.e(TAG, "", e);}
+    }
 
-    public static final String EXTRA_PREVIOUS_SCAN_MODE =
-            "android.bluetooth.adapter.extra.PREVIOUS_SCAN_MODE";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.045 -0400", hash_original_field = "DDCBE28C85DE1AF89DE31E4FEF94BCB9", hash_generated_field = "BC414FEE775A8ACF5083694FB05C9DAD")
+    /**
+     * Start the remote device discovery process.
+     * <p>The discovery process usually involves an inquiry scan of about 12
+     * seconds, followed by a page scan of each new device to retrieve its
+     * Bluetooth name.
+     * <p>This is an asynchronous call, it will return immediately. Register
+     * for {@link #ACTION_DISCOVERY_STARTED} and {@link
+     * #ACTION_DISCOVERY_FINISHED} intents to determine exactly when the
+     * discovery starts and completes. Register for {@link
+     * BluetoothDevice#ACTION_FOUND} to be notified as remote Bluetooth devices
+     * are found.
+     * <p>Device discovery is a heavyweight procedure. New connections to
+     * remote Bluetooth devices should not be attempted while discovery is in
+     * progress, and existing connections will experience limited bandwidth
+     * and high latency. Use {@link #cancelDiscovery()} to cancel an ongoing
+     * discovery. Discovery is not managed by the Activity,
+     * but is run as a system service, so an application should always call
+     * {@link BluetoothAdapter#cancelDiscovery()} even if it
+     * did not directly request a discovery, just to be sure.
+     * <p>Device discovery will only find remote devices that are currently
+     * <i>discoverable</i> (inquiry scan enabled). Many Bluetooth devices are
+     * not discoverable by default, and need to be entered into a special mode.
+     * <p>If Bluetooth state is not {@link #STATE_ON}, this API
+     * will return false. After turning on Bluetooth,
+     * wait for {@link #ACTION_STATE_CHANGED} with {@link #STATE_ON}
+     * to get the updated value.
+     * <p>Requires {@link android.Manifest.permission#BLUETOOTH_ADMIN}.
+     *
+     * @return true on success, false on error
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.374 -0500", hash_original_method = "10268AD378D15FC8A51253E10EC3C6B2", hash_generated_method = "4C98BE48E60EF5B7E0123B8C32683AE8")
+    public boolean startDiscovery() {
+        if (getState() != STATE_ON) return false;
+        try {
+            return mService.startDiscovery();
+        } catch (RemoteException e) {Log.e(TAG, "", e);}
+        return false;
+    }
 
-    public static final int SCAN_MODE_NONE = 20;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.045 -0400", hash_original_field = "DD7046A2D1B48ECB2578F6FAFE3033E3", hash_generated_field = "9A2023C029A688C61AF0AFB65BB59898")
+    /**
+     * Cancel the current device discovery process.
+     * <p>Requires {@link android.Manifest.permission#BLUETOOTH_ADMIN}.
+     * <p>Because discovery is a heavyweight procedure for the Bluetooth
+     * adapter, this method should always be called before attempting to connect
+     * to a remote device with {@link
+     * android.bluetooth.BluetoothSocket#connect()}. Discovery is not managed by
+     * the  Activity, but is run as a system service, so an application should
+     * always call cancel discovery even if it did not directly request a
+     * discovery, just to be sure.
+     * <p>If Bluetooth state is not {@link #STATE_ON}, this API
+     * will return false. After turning on Bluetooth,
+     * wait for {@link #ACTION_STATE_CHANGED} with {@link #STATE_ON}
+     * to get the updated value.
+     *
+     * @return true on success, false on error
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.375 -0500", hash_original_method = "63E67EB5C61EED8D2B51A1BF56472E25", hash_generated_method = "F7942577CAE00601FEFDA72DBAA0ACA7")
+    public boolean cancelDiscovery() {
+        if (getState() != STATE_ON) return false;
+        try {
+            return mService.cancelDiscovery();
+        } catch (RemoteException e) {Log.e(TAG, "", e);}
+        return false;
+    }
 
-    public static final int SCAN_MODE_CONNECTABLE = 21;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.045 -0400", hash_original_field = "306ADEE0D99C10D2C3F1DBCC28CE1031", hash_generated_field = "84C8E5952616DC34E8514798F84FF7CC")
+    /**
+     * Return true if the local Bluetooth adapter is currently in the device
+     * discovery process.
+     * <p>Device discovery is a heavyweight procedure. New connections to
+     * remote Bluetooth devices should not be attempted while discovery is in
+     * progress, and existing connections will experience limited bandwidth
+     * and high latency. Use {@link #cancelDiscovery()} to cancel an ongoing
+     * discovery.
+     * <p>Applications can also register for {@link #ACTION_DISCOVERY_STARTED}
+     * or {@link #ACTION_DISCOVERY_FINISHED} to be notified when discovery
+     * starts or completes.
+     * <p>If Bluetooth state is not {@link #STATE_ON}, this API
+     * will return false. After turning on Bluetooth,
+     * wait for {@link #ACTION_STATE_CHANGED} with {@link #STATE_ON}
+     * to get the updated value.
+     * <p>Requires {@link android.Manifest.permission#BLUETOOTH}.
+     *
+     * @return true if discovering
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.376 -0500", hash_original_method = "C88946A48EEE076D7E3C1C6C5F371E49", hash_generated_method = "BB3D75AB1B1024BD4A2A9F722E4EC328")
+    public boolean isDiscovering() {
+        if (getState() != STATE_ON) return false;
+        try {
+            return mService.isDiscovering();
+        } catch (RemoteException e) {Log.e(TAG, "", e);}
+        return false;
+    }
 
-    public static final int SCAN_MODE_CONNECTABLE_DISCOVERABLE = 23;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.046 -0400", hash_original_field = "D993C840F07CBC812EC7C8EF0555F0B9", hash_generated_field = "2FFDB6078656359E095CF8DDA030577E")
+    /**
+     * Return the set of {@link BluetoothDevice} objects that are bonded
+     * (paired) to the local adapter.
+     * <p>If Bluetooth state is not {@link #STATE_ON}, this API
+     * will return an empty set. After turning on Bluetooth,
+     * wait for {@link #ACTION_STATE_CHANGED} with {@link #STATE_ON}
+     * to get the updated value.
+     * <p>Requires {@link android.Manifest.permission#BLUETOOTH}.
+     *
+     * @return unmodifiable set of {@link BluetoothDevice}, or null on error
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.376 -0500", hash_original_method = "A20534464E90E0C8E439D633BB81432E", hash_generated_method = "8DFF70138B4700F7BF958EFE26D4B00D")
+    public Set<BluetoothDevice> getBondedDevices() {
+        if (getState() != STATE_ON) {
+            return toDeviceSet(new String[0]);
+        }
+        try {
+            return toDeviceSet(mService.listBonds());
+        } catch (RemoteException e) {Log.e(TAG, "", e);}
+        return null;
+    }
 
-    @SdkConstant(SdkConstantType.BROADCAST_INTENT_ACTION)
-    public static final String ACTION_DISCOVERY_STARTED =
-            "android.bluetooth.adapter.action.DISCOVERY_STARTED";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.046 -0400", hash_original_field = "CAE947F91A835371C3BC0C6DFCF14D7A", hash_generated_field = "C7669A14687A25449EC9A09E5FF5CB75")
+    /**
+     * Get the current connection state of the local Bluetooth adapter.
+     * This can be used to check whether the local Bluetooth adapter is connected
+     * to any profile of any other remote Bluetooth Device.
+     *
+     * <p> Use this function along with {@link #ACTION_CONNECTION_STATE_CHANGED}
+     * intent to get the connection state of the adapter.
+     *
+     * @return One of {@link #STATE_CONNECTED}, {@link #STATE_DISCONNECTED},
+     * {@link #STATE_CONNECTING} or {@link #STATE_DISCONNECTED}
+     *
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.377 -0500", hash_original_method = "456CF28BE83652F494DDCF30722C3BAD", hash_generated_method = "02C30F0CC577DAFC0D6C90F1C7112F7C")
+    public int getConnectionState() {
+        if (getState() != STATE_ON) return BluetoothAdapter.STATE_DISCONNECTED;
+        try {
+            return mService.getAdapterConnectionState();
+        } catch (RemoteException e) {Log.e(TAG, "getConnectionState:", e);}
+        return BluetoothAdapter.STATE_DISCONNECTED;
+    }
 
-    @SdkConstant(SdkConstantType.BROADCAST_INTENT_ACTION)
-    public static final String ACTION_DISCOVERY_FINISHED =
-            "android.bluetooth.adapter.action.DISCOVERY_FINISHED";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.046 -0400", hash_original_field = "C3194CF52F26B3ECD3376886AC513B6A", hash_generated_field = "EEA8D509F766113EFBE364F807BA0A7F")
+    /**
+     * Get the current connection state of a profile.
+     * This function can be used to check whether the local Bluetooth adapter
+     * is connected to any remote device for a specific profile.
+     * Profile can be one of {@link BluetoothProfile#HEALTH}, {@link BluetoothProfile#HEADSET},
+     * {@link BluetoothProfile#A2DP}.
+     *
+     * <p>Requires {@link android.Manifest.permission#BLUETOOTH}.
+     *
+     * <p> Return value can be one of
+     * {@link BluetoothProfile#STATE_DISCONNECTED},
+     * {@link BluetoothProfile#STATE_CONNECTING},
+     * {@link BluetoothProfile#STATE_CONNECTED},
+     * {@link BluetoothProfile#STATE_DISCONNECTING}
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.378 -0500", hash_original_method = "0796F6753B11E4CA7CEE3403756A4526", hash_generated_method = "74F7080804FE0738DEFDF7779680E1A9")
+    public int getProfileConnectionState(int profile) {
+        if (getState() != STATE_ON) return BluetoothProfile.STATE_DISCONNECTED;
+        try {
+            return mService.getProfileConnectionState(profile);
+        } catch (RemoteException e) {
+            Log.e(TAG, "getProfileConnectionState:", e);
+        }
+        return BluetoothProfile.STATE_DISCONNECTED;
+    }
 
-    @SdkConstant(SdkConstantType.BROADCAST_INTENT_ACTION)
-    public static final String ACTION_LOCAL_NAME_CHANGED =
-            "android.bluetooth.adapter.action.LOCAL_NAME_CHANGED";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.046 -0400", hash_original_field = "473D77A718344FC564A43A3F835ABC09", hash_generated_field = "7052E6CE58614BD821917BC7308EEA5A")
+    /**
+     * Create a listening, secure RFCOMM Bluetooth socket.
+     * <p>A remote device connecting to this socket will be authenticated and
+     * communication on this socket will be encrypted.
+     * <p>Use {@link BluetoothServerSocket#accept} to retrieve incoming
+     * connections from a listening {@link BluetoothServerSocket}.
+     * <p>Valid RFCOMM channels are in range 1 to 30.
+     * <p>Requires {@link android.Manifest.permission#BLUETOOTH_ADMIN}
+     * @param channel RFCOMM channel to listen on
+     * @return a listening RFCOMM BluetoothServerSocket
+     * @throws IOException on error, for example Bluetooth not available, or
+     *                     insufficient permissions, or channel in use.
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.387 -0500", hash_original_method = "71D512ADABDF23669C5DC04339CD42B4", hash_generated_method = "DFDD73F9DA82EB7C72F604402D0F3CA3")
+    public BluetoothServerSocket listenUsingRfcommOn(int channel) throws IOException {
+        BluetoothServerSocket socket = new BluetoothServerSocket(
+                BluetoothSocket.TYPE_RFCOMM, true, true, channel);
+        int errno = socket.mSocket.bindListen();
+        if (errno != 0) {
+            try {
+                socket.close();
+            } catch (IOException e) {}
+            socket.mSocket.throwErrnoNative(errno);
+        }
+        return socket;
+    }
 
-    public static final String EXTRA_LOCAL_NAME = "android.bluetooth.adapter.extra.LOCAL_NAME";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.046 -0400", hash_original_field = "EFF2719457B3D26AC78B8F8219CB95B2", hash_generated_field = "922348319A52FBC21E79D50738C951E7")
+    /**
+     * Create a listening, secure RFCOMM Bluetooth socket with Service Record.
+     * <p>A remote device connecting to this socket will be authenticated and
+     * communication on this socket will be encrypted.
+     * <p>Use {@link BluetoothServerSocket#accept} to retrieve incoming
+     * connections from a listening {@link BluetoothServerSocket}.
+     * <p>The system will assign an unused RFCOMM channel to listen on.
+     * <p>The system will also register a Service Discovery
+     * Protocol (SDP) record with the local SDP server containing the specified
+     * UUID, service name, and auto-assigned channel. Remote Bluetooth devices
+     * can use the same UUID to query our SDP server and discover which channel
+     * to connect to. This SDP record will be removed when this socket is
+     * closed, or if this application closes unexpectedly.
+     * <p>Use {@link BluetoothDevice#createRfcommSocketToServiceRecord} to
+     * connect to this socket from another device using the same {@link UUID}.
+     * <p>Requires {@link android.Manifest.permission#BLUETOOTH}
+     * @param name service name for SDP record
+     * @param uuid uuid for SDP record
+     * @return a listening RFCOMM BluetoothServerSocket
+     * @throws IOException on error, for example Bluetooth not available, or
+     *                     insufficient permissions, or channel in use.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.388 -0500", hash_original_method = "89D65DC00BFA81C813C9155DE20CC833", hash_generated_method = "AA0B571615BD66A7221573AAB6D9A596")
+    public BluetoothServerSocket listenUsingRfcommWithServiceRecord(String name, UUID uuid)
+            throws IOException {
+        return createNewRfcommSocketAndRecord(name, uuid, true, true);
+    }
 
-    @SdkConstant(SdkConstantType.BROADCAST_INTENT_ACTION)
-    public static final String ACTION_CONNECTION_STATE_CHANGED =
-        "android.bluetooth.adapter.action.CONNECTION_STATE_CHANGED";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.046 -0400", hash_original_field = "E46BA6434A04E096D6171CDD7C97AE62", hash_generated_field = "1D3AAB8543C4C934AB7CEF233BD62CE4")
+    /**
+     * Create a listening, insecure RFCOMM Bluetooth socket with Service Record.
+     * <p>The link key is not required to be authenticated, i.e the communication may be
+     * vulnerable to Man In the Middle attacks. For Bluetooth 2.1 devices,
+     * the link will be encrypted, as encryption is mandartory.
+     * For legacy devices (pre Bluetooth 2.1 devices) the link will not
+     * be encrypted. Use {@link #listenUsingRfcommWithServiceRecord}, if an
+     * encrypted and authenticated communication channel is desired.
+     * <p>Use {@link BluetoothServerSocket#accept} to retrieve incoming
+     * connections from a listening {@link BluetoothServerSocket}.
+     * <p>The system will assign an unused RFCOMM channel to listen on.
+     * <p>The system will also register a Service Discovery
+     * Protocol (SDP) record with the local SDP server containing the specified
+     * UUID, service name, and auto-assigned channel. Remote Bluetooth devices
+     * can use the same UUID to query our SDP server and discover which channel
+     * to connect to. This SDP record will be removed when this socket is
+     * closed, or if this application closes unexpectedly.
+     * <p>Use {@link BluetoothDevice#createRfcommSocketToServiceRecord} to
+     * connect to this socket from another device using the same {@link UUID}.
+     * <p>Requires {@link android.Manifest.permission#BLUETOOTH}
+     * @param name service name for SDP record
+     * @param uuid uuid for SDP record
+     * @return a listening RFCOMM BluetoothServerSocket
+     * @throws IOException on error, for example Bluetooth not available, or
+     *                     insufficient permissions, or channel in use.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.388 -0500", hash_original_method = "67A9DCDB5D1364F0197D124A8C117BDF", hash_generated_method = "90612B5446974B89F9A6D22C87E098DD")
+    public BluetoothServerSocket listenUsingInsecureRfcommWithServiceRecord(String name, UUID uuid)
+            throws IOException {
+        return createNewRfcommSocketAndRecord(name, uuid, false, false);
+    }
 
-    public static final String EXTRA_CONNECTION_STATE =
-        "android.bluetooth.adapter.extra.CONNECTION_STATE";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.046 -0400", hash_original_field = "407A73B6D95C44B7D5905E0A6913F591", hash_generated_field = "CB9396A90BE9EE705FF77742B2727CEA")
+     /**
+     * Create a listening, encrypted,
+     * RFCOMM Bluetooth socket with Service Record.
+     * <p>The link will be encrypted, but the link key is not required to be authenticated
+     * i.e the communication is vulnerable to Man In the Middle attacks. Use
+     * {@link #listenUsingRfcommWithServiceRecord}, to ensure an authenticated link key.
+     * <p> Use this socket if authentication of link key is not possible.
+     * For example, for Bluetooth 2.1 devices, if any of the devices does not have
+     * an input and output capability or just has the ability to display a numeric key,
+     * a secure socket connection is not possible and this socket can be used.
+     * Use {@link #listenUsingInsecureRfcommWithServiceRecord}, if encryption is not required.
+     * For Bluetooth 2.1 devices, the link will be encrypted, as encryption is mandartory.
+     * For more details, refer to the Security Model section 5.2 (vol 3) of
+     * Bluetooth Core Specification version 2.1 + EDR.
+     * <p>Use {@link BluetoothServerSocket#accept} to retrieve incoming
+     * connections from a listening {@link BluetoothServerSocket}.
+     * <p>The system will assign an unused RFCOMM channel to listen on.
+     * <p>The system will also register a Service Discovery
+     * Protocol (SDP) record with the local SDP server containing the specified
+     * UUID, service name, and auto-assigned channel. Remote Bluetooth devices
+     * can use the same UUID to query our SDP server and discover which channel
+     * to connect to. This SDP record will be removed when this socket is
+     * closed, or if this application closes unexpectedly.
+     * <p>Use {@link BluetoothDevice#createRfcommSocketToServiceRecord} to
+     * connect to this socket from another device using the same {@link UUID}.
+     * <p>Requires {@link android.Manifest.permission#BLUETOOTH}
+     * @param name service name for SDP record
+     * @param uuid uuid for SDP record
+     * @return a listening RFCOMM BluetoothServerSocket
+     * @throws IOException on error, for example Bluetooth not available, or
+     *                     insufficient permissions, or channel in use.
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.389 -0500", hash_original_method = "D75F65DB3EAF8C02EDFD121756834A36", hash_generated_method = "D613945F77AF014955830F1ADE0F04B3")
+    public BluetoothServerSocket listenUsingEncryptedRfcommWithServiceRecord(
+            String name, UUID uuid) throws IOException {
+        return createNewRfcommSocketAndRecord(name, uuid, false, true);
+    }
 
-    public static final String EXTRA_PREVIOUS_CONNECTION_STATE =
-          "android.bluetooth.adapter.extra.PREVIOUS_CONNECTION_STATE";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.046 -0400", hash_original_field = "2D50E5D85E482FA800E087638A951161", hash_generated_field = "84173E1866F23EE943EF8008ED8CFAFC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.392 -0500", hash_original_method = "ABCD96E52C8B56B2C4BF1A6AB6CFAB37", hash_generated_method = "9CB34745B967B422C46BDF238B65C9D8")
+    private BluetoothServerSocket createNewRfcommSocketAndRecord(String name, UUID uuid,
+            boolean auth, boolean encrypt) throws IOException {
+        RfcommChannelPicker picker = new RfcommChannelPicker(uuid);
 
-    public static final int STATE_DISCONNECTED  = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.046 -0400", hash_original_field = "D535FF7624C6447AFFCBE6542703375F", hash_generated_field = "8CB4E5E77EC98D8CA7B9ED27A25245FB")
+        BluetoothServerSocket socket;
+        int channel;
+        int errno;
+        while (true) {
+            channel = picker.nextChannel();
 
-    public static final int STATE_CONNECTING    = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.046 -0400", hash_original_field = "C08867EE19B193B18FAEE380F460DEBA", hash_generated_field = "3F851151E1E65F1A69352C1A55C34451")
+            if (channel == -1) {
+                throw new IOException("No available channels");
+            }
 
-    public static final int STATE_CONNECTED     = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.047 -0400", hash_original_field = "679A7218E870C82A9EAE6C14FFDE108F", hash_generated_field = "CDC0147D8DF471B389406236B4CDE4C6")
+            socket = new BluetoothServerSocket(
+                    BluetoothSocket.TYPE_RFCOMM, auth, encrypt, channel);
+            errno = socket.mSocket.bindListen();
+            if (errno == 0) {
+                if (DBG) Log.d(TAG, "listening on RFCOMM channel " + channel);
+                break;  // success
+            } else if (errno == BluetoothSocket.EADDRINUSE) {
+                if (DBG) Log.d(TAG, "RFCOMM channel " + channel + " in use");
+                try {
+                    socket.close();
+                } catch (IOException e) {}
+                continue;  // try another channel
+            } else {
+                try {
+                    socket.close();
+                } catch (IOException e) {}
+                socket.mSocket.throwErrnoNative(errno);  // Exception as a result of bindListen()
+            }
+        }
 
-    public static final int STATE_DISCONNECTING = 3;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.047 -0400", hash_original_field = "C7432917623607E06320445454C2A3B8", hash_generated_field = "3D6035B10EF8E7EF00722E60E1BC0101")
+        int handle = -1;
+        try {
+            handle = mService.addRfcommServiceRecord(name, new ParcelUuid(uuid), channel,
+                    new Binder());
+        } catch (RemoteException e) {Log.e(TAG, "", e);}
+        if (handle == -1) {
+            try {
+                socket.close();
+            } catch (IOException e) {}
+            throw new IOException("Not able to register SDP record for " + name);
+        }
 
-    public static final String BLUETOOTH_SERVICE = "bluetooth";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.047 -0400", hash_original_field = "65464FBE0B2850776189D4464C82B733", hash_generated_field = "4E1CB78F3E71AAE2C4C5EEAF9B65762C")
+        if (mServiceRecordHandler == null) {
+            mServiceRecordHandler = new Handler(Looper.getMainLooper()) {
+                    public void handleMessage(Message msg) {
+                        /* handle socket closing */
+                        int handle = msg.what;
+                        try {
+                            if (DBG) Log.d(TAG, "Removing service record " +
+                                           Integer.toHexString(handle));
+                            mService.removeServiceRecord(handle);
+                        } catch (RemoteException e) {Log.e(TAG, "", e);}
+                    }
+                };
+        }
+        socket.setCloseHandler(mServiceRecordHandler, handle);
+        return socket;
+    }
 
-    private static final int ADDRESS_LENGTH = 17;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.047 -0400", hash_original_field = "A437836ADAE531779FE0DF7D1A772174", hash_generated_field = "774AD1565F074633E7FB49926516258A")
 
-    private static BluetoothAdapter sAdapter;
+    /**
+     * Construct an unencrypted, unauthenticated, RFCOMM server socket.
+     * Call #accept to retrieve connections to this socket.
+     * @return An RFCOMM BluetoothServerSocket
+     * @throws IOException On error, for example Bluetooth not available, or
+     *                     insufficient permissions.
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.393 -0500", hash_original_method = "27EC1A367A39F94DC128CEF34B5C5DD2", hash_generated_method = "F27CF6FED5CB33D92FFCA3018685AC58")
+    public BluetoothServerSocket listenUsingInsecureRfcommOn(int port) throws IOException {
+        BluetoothServerSocket socket = new BluetoothServerSocket(
+                BluetoothSocket.TYPE_RFCOMM, false, false, port);
+        int errno = socket.mSocket.bindListen();
+        if (errno != 0) {
+            try {
+                socket.close();
+            } catch (IOException e) {}
+            socket.mSocket.throwErrnoNative(errno);
+        }
+        return socket;
+    }
+
+     /**
+     * Construct an encrypted, RFCOMM server socket.
+     * Call #accept to retrieve connections to this socket.
+     * @return An RFCOMM BluetoothServerSocket
+     * @throws IOException On error, for example Bluetooth not available, or
+     *                     insufficient permissions.
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.393 -0500", hash_original_method = "7C75ECDC8A8B7963B0A9DF6AD0038A85", hash_generated_method = "82D550392FB6A853EAD59C52F7BA86DC")
+    public BluetoothServerSocket listenUsingEncryptedRfcommOn(int port)
+            throws IOException {
+        BluetoothServerSocket socket = new BluetoothServerSocket(
+                BluetoothSocket.TYPE_RFCOMM, false, true, port);
+        int errno = socket.mSocket.bindListen();
+        if (errno != 0) {
+            try {
+                socket.close();
+            } catch (IOException e) {}
+            socket.mSocket.throwErrnoNative(errno);
+        }
+        return socket;
+    }
+
+    /**
+     * Read the local Out of Band Pairing Data
+     * <p>Requires {@link android.Manifest.permission#BLUETOOTH}
+     *
+     * @return Pair<byte[], byte[]> of Hash and Randomizer
+     *
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.395 -0500", hash_original_method = "ABFDDF29A52D91D363C001D4DD695916", hash_generated_method = "94B98A6215F63FD4A2726DE1483DA678")
+    public Pair<byte[], byte[]> readOutOfBandData() {
+        if (getState() != STATE_ON) return null;
+        try {
+            byte[] hash;
+            byte[] randomizer;
+
+            byte[] ret = mService.readOutOfBandData();
+
+            if (ret  == null || ret.length != 32) return null;
+
+            hash = Arrays.copyOfRange(ret, 0, 16);
+            randomizer = Arrays.copyOfRange(ret, 16, 32);
+
+            if (DBG) {
+                Log.d(TAG, "readOutOfBandData:" + Arrays.toString(hash) +
+                  ":" + Arrays.toString(randomizer));
+            }
+            return new Pair<byte[], byte[]>(hash, randomizer);
+
+        } catch (RemoteException e) {Log.e(TAG, "", e);}
+        return null;
+    }
+
+    /**
+     * Get the profile proxy object associated with the profile.
+     *
+     * <p>Profile can be one of {@link BluetoothProfile#HEALTH}, {@link BluetoothProfile#HEADSET} or
+     * {@link BluetoothProfile#A2DP}. Clients must implements
+     * {@link BluetoothProfile.ServiceListener} to get notified of
+     * the connection status and to get the proxy object.
+     *
+     * @param context Context of the application
+     * @param listener The service Listener for connection callbacks.
+     * @param profile The Bluetooth profile; either {@link BluetoothProfile#HEALTH},
+     *                {@link BluetoothProfile#HEADSET} or {@link BluetoothProfile#A2DP}.
+     * @return true on success, false on error
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.396 -0500", hash_original_method = "7E4371B1FE17235BDA29BC99978F2247", hash_generated_method = "481450F9772A97ADC062BEEEA4CF19CB")
+    public boolean getProfileProxy(Context context, BluetoothProfile.ServiceListener listener,
+                                   int profile) {
+        if (context == null || listener == null) return false;
+
+        if (profile == BluetoothProfile.HEADSET) {
+            BluetoothHeadset headset = new BluetoothHeadset(context, listener);
+            return true;
+        } else if (profile == BluetoothProfile.A2DP) {
+            BluetoothA2dp a2dp = new BluetoothA2dp(context, listener);
+            return true;
+        } else if (profile == BluetoothProfile.INPUT_DEVICE) {
+            BluetoothInputDevice iDev = new BluetoothInputDevice(context, listener);
+            return true;
+        } else if (profile == BluetoothProfile.PAN) {
+            BluetoothPan pan = new BluetoothPan(context, listener);
+            return true;
+        } else if (profile == BluetoothProfile.HEALTH) {
+            BluetoothHealth health = new BluetoothHealth(context, listener);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     * Close the connection of the profile proxy to the Service.
+     *
+     * <p> Clients should call this when they are no longer using
+     * the proxy obtained from {@link #getProfileProxy}.
+     * Profile can be one of  {@link BluetoothProfile#HEALTH}, {@link BluetoothProfile#HEADSET} or
+     * {@link BluetoothProfile#A2DP}
+     *
+     * @param profile
+     * @param proxy Profile proxy object
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.397 -0500", hash_original_method = "C3F4A021A34A1F5D994F708A9A411E49", hash_generated_method = "627135BC10C38B8D046B80CC915172AC")
+    public void closeProfileProxy(int profile, BluetoothProfile proxy) {
+        if (proxy == null) return;
+
+        switch (profile) {
+            case BluetoothProfile.HEADSET:
+                BluetoothHeadset headset = (BluetoothHeadset)proxy;
+                headset.close();
+                break;
+            case BluetoothProfile.A2DP:
+                BluetoothA2dp a2dp = (BluetoothA2dp)proxy;
+                a2dp.close();
+                break;
+            case BluetoothProfile.INPUT_DEVICE:
+                BluetoothInputDevice iDev = (BluetoothInputDevice)proxy;
+                iDev.close();
+                break;
+            case BluetoothProfile.PAN:
+                BluetoothPan pan = (BluetoothPan)proxy;
+                pan.close();
+                break;
+            case BluetoothProfile.HEALTH:
+                BluetoothHealth health = (BluetoothHealth)proxy;
+                health.close();
+                break;
+        }
+    }
+
+    /**
+     * Enable control of the Bluetooth Adapter for a single application.
+     *
+     * <p>Some applications need to use Bluetooth for short periods of time to
+     * transfer data but don't want all the associated implications like
+     * automatic connection to headsets etc.
+     *
+     * <p> Multiple applications can call this. This is reference counted and
+     * Bluetooth disabled only when no one else is using it. There will be no UI
+     * shown to the user while bluetooth is being enabled. Any user action will
+     * override this call. For example, if user wants Bluetooth on and the last
+     * user of this API wanted to disable Bluetooth, Bluetooth will not be
+     * turned off.
+     *
+     * <p> This API is only meant to be used by internal applications. Third
+     * party applications but use {@link #enable} and {@link #disable} APIs.
+     *
+     * <p> If this API returns true, it means the callback will be called.
+     * The callback will be called with the current state of Bluetooth.
+     * If the state is not what was requested, an internal error would be the
+     * reason. If Bluetooth is already on and if this function is called to turn
+     * it on, the api will return true and a callback will be called.
+     *
+     * <p>Requires {@link android.Manifest.permission#BLUETOOTH}
+     *
+     * @param on True for on, false for off.
+     * @param callback The callback to notify changes to the state.
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.398 -0500", hash_original_method = "A99B511CC77AEC21CDC5C0D9EF322DC5", hash_generated_method = "6C2AEF43554D18273F9052041D685062")
+    public boolean changeApplicationBluetoothState(boolean on,
+                                                   BluetoothStateChangeCallback callback) {
+        if (callback == null) return false;
+
+        try {
+            return mService.changeApplicationBluetoothState(on, new
+                    StateChangeCallbackWrapper(callback), new Binder());
+        } catch (RemoteException e) {
+            Log.e(TAG, "changeBluetoothState", e);
+        }
+        return false;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:20.403 -0500", hash_original_method = "513CC86480EBB28E1771EE0ECDF9AF42", hash_generated_method = "15978A1300991F5A9204D32F4FD9DC28")
+    private Set<BluetoothDevice> toDeviceSet(String[] addresses) {
+        Set<BluetoothDevice> devices = new HashSet<BluetoothDevice>(addresses.length);
+        for (int i = 0; i < addresses.length; i++) {
+            devices.add(getRemoteDevice(addresses[i]));
+        }
+        return Collections.unmodifiableSet(devices);
+    }
 }
 

@@ -1,6 +1,8 @@
 package android.view.inputmethod;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -11,148 +13,6 @@ import android.text.TextUtils;
 
 
 public final class CompletionInfo implements Parcelable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.269 -0400", hash_original_field = "6AC7F06B6413A1BE9C136DC7DF0D2B60", hash_generated_field = "CF2A5FB7C7BB55BD451D113BD690151D")
-
-    private long mId;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.269 -0400", hash_original_field = "2A02BDE12D932CD9DCA97106D487F8F5", hash_generated_field = "D614AE7D1AAE0276EA05A974DCBF0210")
-
-    private int mPosition;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.269 -0400", hash_original_field = "39624508B9E3028D8A5DDA741D3E3DDE", hash_generated_field = "E579ED9F2DADADEB46C981CAFDEE5BA5")
-
-    private CharSequence mText;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.269 -0400", hash_original_field = "D9334C2D55F77CE82F97CD28EFAAD24C", hash_generated_field = "35633BB7C9814BC2D57023D255065F26")
-
-    private CharSequence mLabel;
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.270 -0400", hash_original_method = "38A4F60AF5C7022C0469BD89E2BC1895", hash_generated_method = "D6B60C1928D87BD96AB25374114499A6")
-    public  CompletionInfo(long id, int index, CharSequence text) {
-        mId = id;
-        mPosition = index;
-        mText = text;
-        mLabel = null;
-        // ---------- Original Method ----------
-        //mId = id;
-        //mPosition = index;
-        //mText = text;
-        //mLabel = null;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.271 -0400", hash_original_method = "D296F749900FBC5242D181AA06D4E27C", hash_generated_method = "667A7C128440F1F71DE8EF37E7CD55D5")
-    public  CompletionInfo(long id, int index, CharSequence text, CharSequence label) {
-        mId = id;
-        mPosition = index;
-        mText = text;
-        mLabel = label;
-        // ---------- Original Method ----------
-        //mId = id;
-        //mPosition = index;
-        //mText = text;
-        //mLabel = label;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.272 -0400", hash_original_method = "2F837EEA33DB685519494240B032A81B", hash_generated_method = "C11433F17D9EF2D0AE8DAB57B3FD60E2")
-    private  CompletionInfo(Parcel source) {
-        mId = source.readLong();
-        mPosition = source.readInt();
-        mText = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(source);
-        mLabel = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(source);
-        // ---------- Original Method ----------
-        //mId = source.readLong();
-        //mPosition = source.readInt();
-        //mText = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(source);
-        //mLabel = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(source);
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.272 -0400", hash_original_method = "6AF16C815DE6FE4144432EF99CDC825B", hash_generated_method = "2395EE89689F26E92B1741AC3F65A4E0")
-    public long getId() {
-        long var6AC7F06B6413A1BE9C136DC7DF0D2B60_780243680 = (mId);
-                long var0F5264038205EDFB1AC05FBB0E8C5E94_279831777 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_279831777;
-        // ---------- Original Method ----------
-        //return mId;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.272 -0400", hash_original_method = "88750DD9C7394A9CF6B657A7AF77F3EB", hash_generated_method = "A549AFA37CE9FA4F44E5C0DECD985256")
-    public int getPosition() {
-        int var2A02BDE12D932CD9DCA97106D487F8F5_2008403227 = (mPosition);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1617822202 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1617822202;
-        // ---------- Original Method ----------
-        //return mPosition;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.272 -0400", hash_original_method = "D3D56665E0CC0B43413FBFB4C720E96C", hash_generated_method = "2A1FBA10A7AA99392658BBC9A9F9F055")
-    public CharSequence getText() {
-CharSequence var7F7ECB4B14362FFBA020956966B29A66_65742482 =         mText;
-        var7F7ECB4B14362FFBA020956966B29A66_65742482.addTaint(taint);
-        return var7F7ECB4B14362FFBA020956966B29A66_65742482;
-        // ---------- Original Method ----------
-        //return mText;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.273 -0400", hash_original_method = "4A1E1E1996A16BAAC783C4D4608DA412", hash_generated_method = "F723DB250E867ECE5619D10575BF4101")
-    public CharSequence getLabel() {
-CharSequence var21E4126FD2EB7A90E0B7B540C066F29D_1994638552 =         mLabel;
-        var21E4126FD2EB7A90E0B7B540C066F29D_1994638552.addTaint(taint);
-        return var21E4126FD2EB7A90E0B7B540C066F29D_1994638552;
-        // ---------- Original Method ----------
-        //return mLabel;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.273 -0400", hash_original_method = "3B6D1C61D70E52042FDD9DC9240A1E79", hash_generated_method = "48811115C9C8C70DEB414BDE7E79042C")
-    @Override
-    public String toString() {
-String var589E935FF15E9B2705C963D280AA9F32_1477591424 =         "CompletionInfo{#" + mPosition + " \"" + mText
-                + "\" id=" + mId + " label=" + mLabel + "}";
-        var589E935FF15E9B2705C963D280AA9F32_1477591424.addTaint(taint);
-        return var589E935FF15E9B2705C963D280AA9F32_1477591424;
-        // ---------- Original Method ----------
-        //return "CompletionInfo{#" + mPosition + " \"" + mText
-                //+ "\" id=" + mId + " label=" + mLabel + "}";
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.273 -0400", hash_original_method = "9E5F84EC05F73AE374617C14B6E91B86", hash_generated_method = "9879AA80B6B83FF505E7B4F125A8C8EE")
-    public void writeToParcel(Parcel dest, int flags) {
-        addTaint(flags);
-        addTaint(dest.getTaint());
-        dest.writeLong(mId);
-        dest.writeInt(mPosition);
-        TextUtils.writeToParcel(mText, dest, flags);
-        TextUtils.writeToParcel(mLabel, dest, flags);
-        // ---------- Original Method ----------
-        //dest.writeLong(mId);
-        //dest.writeInt(mPosition);
-        //TextUtils.writeToParcel(mText, dest, flags);
-        //TextUtils.writeToParcel(mLabel, dest, flags);
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.274 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "ECC22AC86442E0A529BAE3525A44F7E9")
-    public int describeContents() {
-        int varCFCD208495D565EF66E7DFF9F98764DA_717414087 = (0);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2031118622 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2031118622;
-        // ---------- Original Method ----------
-        //return 0;
-    }
 
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.274 -0400", hash_original_field = "31621134870CBAE679681892F3003DDF", hash_generated_field = "B610E87A4A96E260678AA4BA5F15A953")
@@ -165,11 +25,116 @@ String var589E935FF15E9B2705C963D280AA9F32_1477591424 =         "CompletionInfo{
             return new CompletionInfo(source);
         }
 
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.934 -0500", hash_original_method = "9EBF5EB5FCCD856E192DB9AAF0B8CB87", hash_generated_method = "144ACBE0ECB989A2411C7B29B3FC804E")
         public CompletionInfo[] newArray(int size) {
             return new CompletionInfo[size];
         }
     };
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.922 -0500", hash_original_field = "52AFBBC2CD3BAB47936915EE533B9C32", hash_generated_field = "CF2A5FB7C7BB55BD451D113BD690151D")
+
+    private  long mId;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.923 -0500", hash_original_field = "4EE731A4D843C99A130C2ED24E5FDDEA", hash_generated_field = "D614AE7D1AAE0276EA05A974DCBF0210")
+
+    private  int mPosition;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.924 -0500", hash_original_field = "A59BBC07E5E46996D793B2F37E80BD24", hash_generated_field = "E579ED9F2DADADEB46C981CAFDEE5BA5")
+
+    private  CharSequence mText;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.924 -0500", hash_original_field = "3688992A2E5C86A7BA94DE38FB1043D1", hash_generated_field = "35633BB7C9814BC2D57023D255065F26")
+
+    private  CharSequence mLabel;
+
+    /**
+     * Create a simple completion with just text, no label.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.925 -0500", hash_original_method = "38A4F60AF5C7022C0469BD89E2BC1895", hash_generated_method = "045043271B86F52234688B4AF50F6AD1")
+    public CompletionInfo(long id, int index, CharSequence text) {
+        mId = id;
+        mPosition = index;
+        mText = text;
+        mLabel = null;
+    }
+
+    /**
+     * Create a full completion with both text and label.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.926 -0500", hash_original_method = "D296F749900FBC5242D181AA06D4E27C", hash_generated_method = "CF60C697F2C4C7E7F70C896F2825A3FA")
+    public CompletionInfo(long id, int index, CharSequence text, CharSequence label) {
+        mId = id;
+        mPosition = index;
+        mText = text;
+        mLabel = label;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.927 -0500", hash_original_method = "2F837EEA33DB685519494240B032A81B", hash_generated_method = "8865555D59E011AE2F343A4AFB517F20")
+    private CompletionInfo(Parcel source) {
+        mId = source.readLong();
+        mPosition = source.readInt();
+        mText = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(source);
+        mLabel = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(source);
+    }
+    
+    /**
+     * Return the abstract identifier for this completion, typically
+     * corresponding to the id associated with it in the original adapter.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.928 -0500", hash_original_method = "6AF16C815DE6FE4144432EF99CDC825B", hash_generated_method = "2AC5D8EEAADC6329A2ECEA8ACD04E2AF")
+    public long getId() {
+        return mId;
+    }
+    
+    /**
+     * Return the original position of this completion, typically
+     * corresponding to its position in the original adapter.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.929 -0500", hash_original_method = "88750DD9C7394A9CF6B657A7AF77F3EB", hash_generated_method = "3D08F75A7598BA1F4BA734B82B3D54E3")
+    public int getPosition() {
+        return mPosition;
+    }
+    
+    /**
+     * Return the actual text associated with this completion.  This is the
+     * real text that will be inserted into the editor if the user selects it.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.930 -0500", hash_original_method = "D3D56665E0CC0B43413FBFB4C720E96C", hash_generated_method = "3C5AE00E10DCE5E04049FCC58EEF7C48")
+    public CharSequence getText() {
+        return mText;
+    }
+    
+    /**
+     * Return the user-visible label for the completion, or null if the plain
+     * text should be shown.  If non-null, this will be what the user sees as
+     * the completion option instead of the actual text.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.930 -0500", hash_original_method = "4A1E1E1996A16BAAC783C4D4608DA412", hash_generated_method = "BF2D8CE2895BA065BC033E2D2EA0072E")
+    public CharSequence getLabel() {
+        return mLabel;
+    }
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.931 -0500", hash_original_method = "3B6D1C61D70E52042FDD9DC9240A1E79", hash_generated_method = "55BB63A6EC3B3C0821629E09253CFB6A")
+    @Override
+public String toString() {
+        return "CompletionInfo{#" + mPosition + " \"" + mText
+                + "\" id=" + mId + " label=" + mLabel + "}";
+    }
+
+    /**
+     * Used to package this object into a {@link Parcel}.
+     *
+     * @param dest The {@link Parcel} to be written.
+     * @param flags The flags used for parceling.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.932 -0500", hash_original_method = "9E5F84EC05F73AE374617C14B6E91B86", hash_generated_method = "9377A1A9D88A52D4256ECA929657229D")
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeLong(mId);
+        dest.writeInt(mPosition);
+        TextUtils.writeToParcel(mText, dest, flags);
+        TextUtils.writeToParcel(mLabel, dest, flags);
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:48:14.936 -0500", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "D90463461B2A94FF94D13FDF69BB80C9")
+    public int describeContents() {
+        return 0;
+    }
     /*
     // orphaned legacy method
     public CompletionInfo createFromParcel(Parcel source) {

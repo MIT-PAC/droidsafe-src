@@ -1,6 +1,8 @@
 package java.lang;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -17,28 +19,62 @@ public abstract class Process {
         //Synthesized constructor
     }
 
-
-    @DSModeled(DSC.SAFE)
+    /**
+     * Terminates this process and closes any associated streams.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:21.271 -0500", hash_original_method = "73111F72F4AB0474EB2CFBD7E4AF4E1A", hash_generated_method = "FF0E335625027EFCFF9FC16BC675F34B")
     public abstract void destroy();
 
-    
-    @DSModeled(DSC.SPEC)
+    /**
+     * Returns the exit value of the native process represented by this object.
+     * It is available only when the native process has terminated.
+     *
+     * @return the exit value of this process.
+     * @throws IllegalThreadStateException
+     *             if this process has not terminated.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:21.271 -0500", hash_original_method = "1EAA7B24F2B50944782A0CE60B3B8E75", hash_generated_method = "647CE9E2E70D98F5A5572B4451C53331")
     public abstract int exitValue();
 
-    
-    @DSModeled(DSC.SPEC)
+    /**
+     * Returns an input stream that is connected to the error stream
+     * <em>(stderr)</em> of the native process represented by this object.
+     *
+     * @return the input stream to read from the error stream associated with
+     *         the native process.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:21.272 -0500", hash_original_method = "FB318E2B3F5B4555B4080C28AE106FDF", hash_generated_method = "DFAA796C158DC4EA4430C868D9AB59F0")
     public abstract InputStream getErrorStream();
 
-    
-    @DSModeled(DSC.SPEC)
+    /**
+     * Returns an input stream that is connected to the standard output stream
+     * <em>(stdout)</em> of the native process represented by this object.
+     *
+     * @return the input stream to read from the output stream associated with
+     *         the native process.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:21.273 -0500", hash_original_method = "422D86606304C3F8D9976A0E2284F13F", hash_generated_method = "556020BF6265A6C5614B1CFEE9E2FBA9")
     public abstract InputStream getInputStream();
 
-    
-    @DSModeled(DSC.SPEC)
+    /**
+     * Returns an output stream that is connected to the standard input stream
+     * <em>(stdin)</em> of the native process represented by this object.
+     *
+     * @return the output stream to write to the input stream associated with
+     *         the native process.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:21.274 -0500", hash_original_method = "4331060E74BEB71DFC1779059CAED65C", hash_generated_method = "EB193755F22F39A086883299C85DF0E2")
     public abstract OutputStream getOutputStream();
 
-    
-    @DSModeled(DSC.SPEC)
+    /**
+     * Causes the calling thread to wait for the native process associated with
+     * this object to finish executing.
+     *
+     * @return the exit value of the native process being waited on.
+     * @throws InterruptedException
+     *             if the calling thread is interrupted.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:21.275 -0500", hash_original_method = "1FBBA10249C9A6533D34170DE8056745", hash_generated_method = "691F1C6425EB7CF64F1CD4B894D399D7")
     public abstract int waitFor() throws InterruptedException;
 
     

@@ -1,6 +1,9 @@
 package android.os.storage;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
+import android.util.Log;
 import droidsafe.annotations.*;
 import droidsafe.runtime.DroidSafeAndroidRuntime;
 
@@ -22,45 +25,50 @@ import android.util.SparseArray;
 
 
 public class StorageManager {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.065 -0400", hash_original_field = "B37A65C8E4C16F5F00CB3D4C405B1D2D", hash_generated_field = "824B06D572005F1C1B35E543BCE5CB91")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.039 -0500", hash_original_field = "4FFA6AABE302BD622ED70CB179957D24", hash_generated_field = "666FAAC497550CA891D002F26E180573")
+
+    private static final String TAG = "StorageManager";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.041 -0500", hash_original_field = "1AED0F53FD70627DC20E88694679CD73", hash_generated_field = "824B06D572005F1C1B35E543BCE5CB91")
 
     private IMountService mMountService;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.065 -0400", hash_original_field = "5692822DD64189A155C0B07187EEFFB3", hash_generated_field = "E3C963BED00097FA8564C04087A24015")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.041 -0500", hash_original_field = "E3C963BED00097FA8564C04087A24015", hash_generated_field = "E3C963BED00097FA8564C04087A24015")
 
     Looper mTgtLooper;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.065 -0400", hash_original_field = "F81851926FFC4DCF86E6D654AB1BBAAA", hash_generated_field = "5F09598E7B5B6EF08AE05EA113FDAB16")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.042 -0500", hash_original_field = "0428DC1C8F523713FF1210B891E217B1", hash_generated_field = "5F09598E7B5B6EF08AE05EA113FDAB16")
 
     private MountServiceBinderListener mBinderListener;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.065 -0400", hash_original_field = "8E1997AA994FFA9E245B45EC4669EE3A", hash_generated_field = "D62245B7A50796BE5B27202ED9DFC7AD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.043 -0500", hash_original_field = "53B21F5EC8762A658BBB16C4B55E582C", hash_generated_field = "D62245B7A50796BE5B27202ED9DFC7AD")
 
     private List<ListenerDelegate> mListeners = new ArrayList<ListenerDelegate>();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.066 -0400", hash_original_field = "356408C1C2A45791A2F283870313B4EF", hash_generated_field = "E8636BBC4F419661BC591AE94E3D2193")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.044 -0500", hash_original_field = "B5440E114F6E91371BC57B652A21F785", hash_generated_field = "E8636BBC4F419661BC591AE94E3D2193")
 
     final private AtomicInteger mNextNonce = new AtomicInteger(0);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.066 -0400", hash_original_field = "7E22501E409D142941C1EB6DB191FCD0", hash_generated_field = "AE3A24000EF445332EEED071836A65E2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.047 -0500", hash_original_field = "F8941EC9D1C7AB1FFE9DAC8E94340730", hash_generated_field = "AE3A24000EF445332EEED071836A65E2")
 
     private final ObbActionListener mObbActionListener = new ObbActionListener();
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.066 -0400", hash_original_method = "1751DA8EA422A6A8B82F8F3E4926F05B", hash_generated_method = "42B5B1F86354DDB212884BE19E30C173")
-    public  StorageManager(Looper tgtLooper) throws RemoteException {
+
+    /**
+     * Constructs a StorageManager object through which an application can
+     * can communicate with the systems mount service.
+     * 
+     * @param tgtLooper The {@android.os.Looper} which events will be received on.
+     *
+     * <p>Applications can get instance of this class by calling
+     * {@link android.content.Context#getSystemService(java.lang.String)} with an argument
+     * of {@link android.content.Context#STORAGE_SERVICE}.
+     *
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.083 -0500", hash_original_method = "1751DA8EA422A6A8B82F8F3E4926F05B", hash_generated_method = "4029DB65867D78066586999C19B204AF")
+    public StorageManager(Looper tgtLooper) throws RemoteException {
         mMountService = IMountService.Stub.asInterface(ServiceManager.getService("mount"));
-        if(mMountService == null)        
-        {
+        if (mMountService == null) {
+            Log.e(TAG, "Unable to connect to mount service! - is it running yet?");
             return;
-        } //End block
+        }
         mTgtLooper = tgtLooper;
         mBinderListener = new MountServiceBinderListener();
         mMountService.registerListener(mBinderListener);
-        // ---------- Original Method ----------
-        //mMountService = IMountService.Stub.asInterface(ServiceManager.getService("mount"));
-        //if (mMountService == null) {
-            //Log.e(TAG, "Unable to connect to mount service! - is it running yet?");
-            //return;
-        //}
-        //mTgtLooper = tgtLooper;
-        //mBinderListener = new MountServiceBinderListener();
-        //mMountService.registerListener(mBinderListener);
     }
     
     //Added by manual modeling
@@ -84,435 +92,276 @@ public class StorageManager {
         //mMountService.registerListener(mBinderListener);
     }
 
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.067 -0400", hash_original_method = "E880709C72C5FA3A0762DDC8432351B1", hash_generated_method = "D2C2E713385AF1193DE7985D35017373")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.052 -0500", hash_original_method = "E880709C72C5FA3A0762DDC8432351B1", hash_generated_method = "1BDA18804B31B850A5DCE1FC2F7164A3")
     private int getNextNonce() {
-        int varF17C7CA92AB3E11E07554CE3600EEE39_679676827 = (mNextNonce.getAndIncrement());
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1873709800 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1873709800;
-        // ---------- Original Method ----------
-        //return mNextNonce.getAndIncrement();
+        return mNextNonce.getAndIncrement();
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.067 -0400", hash_original_method = "99C6C81E5E38E1D6866033383A8A6E37", hash_generated_method = "A9DB10DE2A9C23118659BEBF39A888AB")
+
+    /**
+     * Registers a {@link android.os.storage.StorageEventListener StorageEventListener}.
+     *
+     * @param listener A {@link android.os.storage.StorageEventListener StorageEventListener} object.
+     *
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.084 -0500", hash_original_method = "99C6C81E5E38E1D6866033383A8A6E37", hash_generated_method = "2676283840BE4ED637EE660BA3A534DC")
     public void registerListener(StorageEventListener listener) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
-        addTaint(listener.getTaint());
-        if(listener == null)        
-        {
+        if (listener == null) {
             return;
-        } //End block
-        synchronized
-(mListeners)        {
+        }
+
+        synchronized (mListeners) {
             mListeners.add(new ListenerDelegate(listener));
-        } //End block
-        // ---------- Original Method ----------
-        //if (listener == null) {
-            //return;
-        //}
-        //synchronized (mListeners) {
-            //mListeners.add(new ListenerDelegate(listener));
-        //}
+        }
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.068 -0400", hash_original_method = "3AB3B2EFDC587B358784DA10414214BD", hash_generated_method = "F9B27539C17BEDC602562E17022AACFA")
+    /**
+     * Unregisters a {@link android.os.storage.StorageEventListener StorageEventListener}.
+     *
+     * @param listener A {@link android.os.storage.StorageEventListener StorageEventListener} object.
+     *
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.085 -0500", hash_original_method = "3AB3B2EFDC587B358784DA10414214BD", hash_generated_method = "DFCCA512FB143EBC6592A7B885F1AF80")
     public void unregisterListener(StorageEventListener listener) {
-        addTaint(listener.getTaint());
-        if(listener == null)        
-        {
+        if (listener == null) {
             return;
-        } //End block
-        synchronized
-(mListeners)        {
+        }
+
+        synchronized (mListeners) {
             final int size = mListeners.size();
-for(int i=0;i<size;i++)
-            {
+            for (int i=0 ; i<size ; i++) {
                 ListenerDelegate l = mListeners.get(i);
-                if(l.getListener() == listener)                
-                {
+                if (l.getListener() == listener) {
                     mListeners.remove(i);
                     break;
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (listener == null) {
-            //return;
-        //}
-        //synchronized (mListeners) {
-            //final int size = mListeners.size();
-            //for (int i=0 ; i<size ; i++) {
-                //ListenerDelegate l = mListeners.get(i);
-                //if (l.getListener() == listener) {
-                    //mListeners.remove(i);
-                    //break;
-                //}
-            //}
-        //}
+                }
+            }
+        }
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.068 -0400", hash_original_method = "5EB71443ECA98B5E7A476E0AE8AAD3AD", hash_generated_method = "515D0C5145970309938C634DF9201311")
+    /**
+     * Enables USB Mass Storage (UMS) on the device.
+     *
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.086 -0500", hash_original_method = "5EB71443ECA98B5E7A476E0AE8AAD3AD", hash_generated_method = "62CB1773BC4A8736669D2F5295750AC7")
     public void enableUsbMassStorage() {
-        try 
-        {
+        try {
             mMountService.setUsbMassStorageEnabled(true);
-        } //End block
-        catch (Exception ex)
-        {
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //mMountService.setUsbMassStorageEnabled(true);
-        //} catch (Exception ex) {
-            //Log.e(TAG, "Failed to enable UMS", ex);
-        //}
+        } catch (Exception ex) {
+            Log.e(TAG, "Failed to enable UMS", ex);
+        }
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.069 -0400", hash_original_method = "663240D4ECB8ED0B06161F54AFBC5E98", hash_generated_method = "F672D3156A9AB066614E0A47A20BF4E2")
+    /**
+     * Disables USB Mass Storage (UMS) on the device.
+     *
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.087 -0500", hash_original_method = "663240D4ECB8ED0B06161F54AFBC5E98", hash_generated_method = "15CE50ABB94FDE3D22996CF27581D9F6")
     public void disableUsbMassStorage() {
-        try 
-        {
+        try {
             mMountService.setUsbMassStorageEnabled(false);
-        } //End block
-        catch (Exception ex)
-        {
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //mMountService.setUsbMassStorageEnabled(false);
-        //} catch (Exception ex) {
-            //Log.e(TAG, "Failed to disable UMS", ex);
-        //}
+        } catch (Exception ex) {
+            Log.e(TAG, "Failed to disable UMS", ex);
+        }
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.069 -0400", hash_original_method = "09220D6F0F0E5ED3096951AEB948E338", hash_generated_method = "C9A5CBE9914AF3500C7EEC9B0ED17FBE")
+    /**
+     * Query if a USB Mass Storage (UMS) host is connected.
+     * @return true if UMS host is connected.
+     *
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.088 -0500", hash_original_method = "09220D6F0F0E5ED3096951AEB948E338", hash_generated_method = "166AC376709BDDAC5DCE7B2AB2EF199D")
     public boolean isUsbMassStorageConnected() {
-        try 
-        {
-            boolean varC125BD4E4540DF7BF627DAC332790CCC_1505912686 = (mMountService.isUsbMassStorageConnected());
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1618536686 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1618536686;
-        } //End block
-        catch (Exception ex)
-        {
-        } //End block
-        boolean var68934A3E9455FA72420237EB05902327_278428493 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1609987964 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1609987964;
-        // ---------- Original Method ----------
-        //try {
-            //return mMountService.isUsbMassStorageConnected();
-        //} catch (Exception ex) {
-            //Log.e(TAG, "Failed to get UMS connection state", ex);
-        //}
-        //return false;
+        try {
+            return mMountService.isUsbMassStorageConnected();
+        } catch (Exception ex) {
+            Log.e(TAG, "Failed to get UMS connection state", ex);
+        }
+        return false;
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.069 -0400", hash_original_method = "D60840A90A5B0A49A8865BA4D2E3CCDB", hash_generated_method = "26361634816D27E23EC8EB7FC4DC22D6")
+    /**
+     * Query if a USB Mass Storage (UMS) is enabled on the device.
+     * @return true if UMS host is enabled.
+     *
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.088 -0500", hash_original_method = "D60840A90A5B0A49A8865BA4D2E3CCDB", hash_generated_method = "2A08F84E8DDA7BA51CCFD77423024341")
     public boolean isUsbMassStorageEnabled() {
-        try 
-        {
-            boolean var996FFC1DB90C8C5CC1E0E677BC837271_915702413 = (mMountService.isUsbMassStorageEnabled());
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1800226683 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1800226683;
-        } //End block
-        catch (RemoteException rex)
-        {
-        } //End block
-        boolean var68934A3E9455FA72420237EB05902327_1559005794 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1971967157 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1971967157;
-        // ---------- Original Method ----------
-        //try {
-            //return mMountService.isUsbMassStorageEnabled();
-        //} catch (RemoteException rex) {
-            //Log.e(TAG, "Failed to get UMS enable state", rex);
-        //}
-        //return false;
+        try {
+            return mMountService.isUsbMassStorageEnabled();
+        } catch (RemoteException rex) {
+            Log.e(TAG, "Failed to get UMS enable state", rex);
+        }
+        return false;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.070 -0400", hash_original_method = "534072486045B703901D00BD8CC513FF", hash_generated_method = "4BEF998E0CAC5058771D34305EFB7725")
+    /**
+     * Mount an Opaque Binary Blob (OBB) file. If a <code>key</code> is
+     * specified, it is supplied to the mounting process to be used in any
+     * encryption used in the OBB.
+     * <p>
+     * The OBB will remain mounted for as long as the StorageManager reference
+     * is held by the application. As soon as this reference is lost, the OBBs
+     * in use will be unmounted. The {@link OnObbStateChangeListener} registered
+     * with this call will receive the success or failure of this operation.
+     * <p>
+     * <em>Note:</em> you can only mount OBB files for which the OBB tag on the
+     * file matches a package ID that is owned by the calling program's UID.
+     * That is, shared UID applications can attempt to mount any other
+     * application's OBB that shares its UID.
+     * 
+     * @param filename the path to the OBB file
+     * @param key secret used to encrypt the OBB; may be <code>null</code> if no
+     *            encryption was used on the OBB.
+     * @param listener will receive the success or failure of the operation
+     * @return whether the mount call was successfully queued or not
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.089 -0500", hash_original_method = "534072486045B703901D00BD8CC513FF", hash_generated_method = "FE12E897D3C4ABDCB8D1AFCD86B32D2B")
     public boolean mountObb(String filename, String key, OnObbStateChangeListener listener) {
-        addTaint(listener.getTaint());
-        addTaint(key.getTaint());
-        addTaint(filename.getTaint());
-        if(filename == null)        
-        {
-            IllegalArgumentException varE5D084DE90EB64D0C8D7A6EE830EF430_1247494190 = new IllegalArgumentException("filename cannot be null");
-            varE5D084DE90EB64D0C8D7A6EE830EF430_1247494190.addTaint(taint);
-            throw varE5D084DE90EB64D0C8D7A6EE830EF430_1247494190;
-        } //End block
-        if(listener == null)        
-        {
-            IllegalArgumentException var17149778A254271D1845C418D4DDF7E3_966481953 = new IllegalArgumentException("listener cannot be null");
-            var17149778A254271D1845C418D4DDF7E3_966481953.addTaint(taint);
-            throw var17149778A254271D1845C418D4DDF7E3_966481953;
-        } //End block
-        try 
-        {
+        if (filename == null) {
+            throw new IllegalArgumentException("filename cannot be null");
+        }
+
+        if (listener == null) {
+            throw new IllegalArgumentException("listener cannot be null");
+        }
+
+        try {
             final int nonce = mObbActionListener.addListener(listener);
             mMountService.mountObb(filename, key, mObbActionListener, nonce);
-            boolean varB326B5062B2F0E69046810717534CB09_603592140 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1616748324 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1616748324;
-        } //End block
-        catch (RemoteException e)
-        {
-        } //End block
-        boolean var68934A3E9455FA72420237EB05902327_1917692560 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1715103510 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1715103510;
-        // ---------- Original Method ----------
-        //if (filename == null) {
-            //throw new IllegalArgumentException("filename cannot be null");
-        //}
-        //if (listener == null) {
-            //throw new IllegalArgumentException("listener cannot be null");
-        //}
-        //try {
-            //final int nonce = mObbActionListener.addListener(listener);
-            //mMountService.mountObb(filename, key, mObbActionListener, nonce);
-            //return true;
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "Failed to mount OBB", e);
-        //}
-        //return false;
+            return true;
+        } catch (RemoteException e) {
+            Log.e(TAG, "Failed to mount OBB", e);
+        }
+
+        return false;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.071 -0400", hash_original_method = "49ADFC5746B1589055920681F4A3DF66", hash_generated_method = "B58A7E223C6902898997E7FC518AE603")
+    /**
+     * Unmount an Opaque Binary Blob (OBB) file asynchronously. If the
+     * <code>force</code> flag is true, it will kill any application needed to
+     * unmount the given OBB (even the calling application).
+     * <p>
+     * The {@link OnObbStateChangeListener} registered with this call will
+     * receive the success or failure of this operation.
+     * <p>
+     * <em>Note:</em> you can only mount OBB files for which the OBB tag on the
+     * file matches a package ID that is owned by the calling program's UID.
+     * That is, shared UID applications can obtain access to any other
+     * application's OBB that shares its UID.
+     * <p>
+     * 
+     * @param filename path to the OBB file
+     * @param force whether to kill any programs using this in order to unmount
+     *            it
+     * @param listener will receive the success or failure of the operation
+     * @return whether the unmount call was successfully queued or not
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.090 -0500", hash_original_method = "49ADFC5746B1589055920681F4A3DF66", hash_generated_method = "927825FD2C3F7ABCF1005F8D2B37C011")
     public boolean unmountObb(String filename, boolean force, OnObbStateChangeListener listener) {
-        addTaint(listener.getTaint());
-        addTaint(force);
-        addTaint(filename.getTaint());
-        if(filename == null)        
-        {
-            IllegalArgumentException varE5D084DE90EB64D0C8D7A6EE830EF430_1351068798 = new IllegalArgumentException("filename cannot be null");
-            varE5D084DE90EB64D0C8D7A6EE830EF430_1351068798.addTaint(taint);
-            throw varE5D084DE90EB64D0C8D7A6EE830EF430_1351068798;
-        } //End block
-        if(listener == null)        
-        {
-            IllegalArgumentException var17149778A254271D1845C418D4DDF7E3_2010428439 = new IllegalArgumentException("listener cannot be null");
-            var17149778A254271D1845C418D4DDF7E3_2010428439.addTaint(taint);
-            throw var17149778A254271D1845C418D4DDF7E3_2010428439;
-        } //End block
-        try 
-        {
+        if (filename == null) {
+            throw new IllegalArgumentException("filename cannot be null");
+        }
+
+        if (listener == null) {
+            throw new IllegalArgumentException("listener cannot be null");
+        }
+
+        try {
             final int nonce = mObbActionListener.addListener(listener);
             mMountService.unmountObb(filename, force, mObbActionListener, nonce);
-            boolean varB326B5062B2F0E69046810717534CB09_634435993 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1553470263 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1553470263;
-        } //End block
-        catch (RemoteException e)
-        {
-        } //End block
-        boolean var68934A3E9455FA72420237EB05902327_55059256 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_545937422 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_545937422;
-        // ---------- Original Method ----------
-        //if (filename == null) {
-            //throw new IllegalArgumentException("filename cannot be null");
-        //}
-        //if (listener == null) {
-            //throw new IllegalArgumentException("listener cannot be null");
-        //}
-        //try {
-            //final int nonce = mObbActionListener.addListener(listener);
-            //mMountService.unmountObb(filename, force, mObbActionListener, nonce);
-            //return true;
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "Failed to mount OBB", e);
-        //}
-        //return false;
+            return true;
+        } catch (RemoteException e) {
+            Log.e(TAG, "Failed to mount OBB", e);
+        }
+
+        return false;
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.072 -0400", hash_original_method = "4111120C74906E4EF74CC0B96E5C85EA", hash_generated_method = "BE44C5620F935728291D7B21551A2975")
+    /**
+     * Check whether an Opaque Binary Blob (OBB) is mounted or not.
+     * 
+     * @param filename path to OBB image
+     * @return true if OBB is mounted; false if not mounted or on error
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.091 -0500", hash_original_method = "4111120C74906E4EF74CC0B96E5C85EA", hash_generated_method = "5CE4857D25FF91B9771ACE3CA8E56D49")
     public boolean isObbMounted(String filename) {
-        addTaint(filename.getTaint());
-        if(filename == null)        
-        {
-            IllegalArgumentException varE5D084DE90EB64D0C8D7A6EE830EF430_1347173489 = new IllegalArgumentException("filename cannot be null");
-            varE5D084DE90EB64D0C8D7A6EE830EF430_1347173489.addTaint(taint);
-            throw varE5D084DE90EB64D0C8D7A6EE830EF430_1347173489;
-        } //End block
-        try 
-        {
-            boolean varFA4570C50619C718929E2DA7D33A31E5_1831126411 = (mMountService.isObbMounted(filename));
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2095620421 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_2095620421;
-        } //End block
-        catch (RemoteException e)
-        {
-        } //End block
-        boolean var68934A3E9455FA72420237EB05902327_1508690479 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1308666408 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1308666408;
-        // ---------- Original Method ----------
-        //if (filename == null) {
-            //throw new IllegalArgumentException("filename cannot be null");
-        //}
-        //try {
-            //return mMountService.isObbMounted(filename);
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "Failed to check if OBB is mounted", e);
-        //}
-        //return false;
+        if (filename == null) {
+            throw new IllegalArgumentException("filename cannot be null");
+        }
+
+        try {
+            return mMountService.isObbMounted(filename);
+        } catch (RemoteException e) {
+            Log.e(TAG, "Failed to check if OBB is mounted", e);
+        }
+
+        return false;
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.073 -0400", hash_original_method = "4524FA5E45068B5E619708F061E65DAB", hash_generated_method = "BD4C608C7A42F6849EF663D4BACFDC09")
+    /**
+     * Check the mounted path of an Opaque Binary Blob (OBB) file. This will
+     * give you the path to where you can obtain access to the internals of the
+     * OBB.
+     * 
+     * @param filename path to OBB image
+     * @return absolute path to mounted OBB image data or <code>null</code> if
+     *         not mounted or exception encountered trying to read status
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.092 -0500", hash_original_method = "4524FA5E45068B5E619708F061E65DAB", hash_generated_method = "0F4BAE3ECC3FDE074D70F5170D657C41")
     public String getMountedObbPath(String filename) {
-        addTaint(filename.getTaint());
-        if(filename == null)        
-        {
-            IllegalArgumentException varE5D084DE90EB64D0C8D7A6EE830EF430_1295490398 = new IllegalArgumentException("filename cannot be null");
-            varE5D084DE90EB64D0C8D7A6EE830EF430_1295490398.addTaint(taint);
-            throw varE5D084DE90EB64D0C8D7A6EE830EF430_1295490398;
-        } //End block
-        try 
-        {
-String var9435347AB9BFACE72FF856025DB5F289_1967252447 =             mMountService.getMountedObbPath(filename);
-            var9435347AB9BFACE72FF856025DB5F289_1967252447.addTaint(taint);
-            return var9435347AB9BFACE72FF856025DB5F289_1967252447;
-        } //End block
-        catch (RemoteException e)
-        {
-        } //End block
-String var540C13E9E156B687226421B24F2DF178_943358471 =         null;
-        var540C13E9E156B687226421B24F2DF178_943358471.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_943358471;
-        // ---------- Original Method ----------
-        //if (filename == null) {
-            //throw new IllegalArgumentException("filename cannot be null");
-        //}
-        //try {
-            //return mMountService.getMountedObbPath(filename);
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "Failed to find mounted path for OBB", e);
-        //}
-        //return null;
+        if (filename == null) {
+            throw new IllegalArgumentException("filename cannot be null");
+        }
+
+        try {
+            return mMountService.getMountedObbPath(filename);
+        } catch (RemoteException e) {
+            Log.e(TAG, "Failed to find mounted path for OBB", e);
+        }
+
+        return null;
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.073 -0400", hash_original_method = "9BA3F19D0DE55EC9B6B86E9B817FE10B", hash_generated_method = "24CD9EE3C56ABA24EBF2E62DE851B74F")
+    /**
+     * Gets the state of a volume via its mountpoint.
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.093 -0500", hash_original_method = "9BA3F19D0DE55EC9B6B86E9B817FE10B", hash_generated_method = "D81876DE63D0AD390F244C6C56BDEE91")
     public String getVolumeState(String mountPoint) {
-        addTaint(mountPoint.getTaint());
-        try 
-        {
-String var56CD6C6B849E2ECC1076CBB7B5EF2887_1420786250 =             mMountService.getVolumeState(mountPoint);
-            var56CD6C6B849E2ECC1076CBB7B5EF2887_1420786250.addTaint(taint);
-            return var56CD6C6B849E2ECC1076CBB7B5EF2887_1420786250;
-        } //End block
-        catch (RemoteException e)
-        {
-String var540C13E9E156B687226421B24F2DF178_2103583109 =             null;
-            var540C13E9E156B687226421B24F2DF178_2103583109.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_2103583109;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return mMountService.getVolumeState(mountPoint);
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "Failed to get volume state", e);
-            //return null;
-        //}
+        try {
+            return mMountService.getVolumeState(mountPoint);
+        } catch (RemoteException e) {
+            Log.e(TAG, "Failed to get volume state", e);
+            return null;
+        }
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.074 -0400", hash_original_method = "7E321C52EE616E46A0C899410949AC4D", hash_generated_method = "C2240FD04729B49E24DBF431832572A8")
+    /**
+     * Returns list of all mountable volumes.
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.094 -0500", hash_original_method = "7E321C52EE616E46A0C899410949AC4D", hash_generated_method = "A4186C0F929126F46AA2F6469447BA79")
     public StorageVolume[] getVolumeList() {
-        try 
-        {
+        try {
             Parcelable[] list = mMountService.getVolumeList();
-            if(list == null)            
-            {
-StorageVolume[] varBFB4120FBFD8A09418DEA018C35F36DA_1259249855 =             new StorageVolume[0];
-            varBFB4120FBFD8A09418DEA018C35F36DA_1259249855.addTaint(taint);
-            return varBFB4120FBFD8A09418DEA018C35F36DA_1259249855;
-            }
+            if (list == null) return new StorageVolume[0];
             int length = list.length;
             StorageVolume[] result = new StorageVolume[length];
-for(int i = 0;i < length;i++)
-            {
+            for (int i = 0; i < length; i++) {
                 result[i] = (StorageVolume)list[i];
-            } //End block
-StorageVolume[] varDC838461EE2FA0CA4C9BBB70A15456B0_864981235 =             result;
-            varDC838461EE2FA0CA4C9BBB70A15456B0_864981235.addTaint(taint);
-            return varDC838461EE2FA0CA4C9BBB70A15456B0_864981235;
-        } //End block
-        catch (RemoteException e)
-        {
-StorageVolume[] var540C13E9E156B687226421B24F2DF178_1531371435 =             null;
-            var540C13E9E156B687226421B24F2DF178_1531371435.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_1531371435;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //Parcelable[] list = mMountService.getVolumeList();
-            //if (list == null) return new StorageVolume[0];
-            //int length = list.length;
-            //StorageVolume[] result = new StorageVolume[length];
-            //for (int i = 0; i < length; i++) {
-                //result[i] = (StorageVolume)list[i];
-            //}
-            //return result;
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "Failed to get volume list", e);
-            //return null;
-        //}
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.075 -0400", hash_original_method = "32FCB28C74C473CB8B8088CF6B7B3DD3", hash_generated_method = "9C08E64E79C44E067A8D35571B3E634A")
-    public String[] getVolumePaths() {
-        StorageVolume[] volumes = getVolumeList();
-        if(volumes == null)        
-        {
-String[] var540C13E9E156B687226421B24F2DF178_1615329362 =         null;
-        var540C13E9E156B687226421B24F2DF178_1615329362.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_1615329362;
+            }
+            return result;
+        } catch (RemoteException e) {
+            Log.e(TAG, "Failed to get volume list", e);
+            return null;
         }
-        int count = volumes.length;
-        String[] paths = new String[count];
-for(int i = 0;i < count;i++)
-        {
-            paths[i] = volumes[i].getPath();
-        } //End block
-String[] var8B4D6CF8BBF4DB57F1BB90F2C89984B1_1223356005 =         paths;
-        var8B4D6CF8BBF4DB57F1BB90F2C89984B1_1223356005.addTaint(taint);
-        return var8B4D6CF8BBF4DB57F1BB90F2C89984B1_1223356005;
-        // ---------- Original Method ----------
-        //StorageVolume[] volumes = getVolumeList();
-        //if (volumes == null) return null;
-        //int count = volumes.length;
-        //String[] paths = new String[count];
-        //for (int i = 0; i < count; i++) {
-            //paths[i] = volumes[i].getPath();
-        //}
-        //return paths;
     }
 
     
@@ -523,43 +372,20 @@ String[] var8B4D6CF8BBF4DB57F1BB90F2C89984B1_1223356005 =         paths;
         {
             //Synthesized constructor
         }
-
-
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.075 -0400", hash_original_method = "3247F72E228BC8CA6CB0EFFDE0587175", hash_generated_method = "A00097831F4AFE00836623180CBA9AF6")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.045 -0500", hash_original_method = "3247F72E228BC8CA6CB0EFFDE0587175", hash_generated_method = "B6CDF41B8392D00636461509E8ACBF35")
         public void onUsbMassStorageConnectionChanged(boolean available) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
-            addTaint(available);
             final int size = mListeners.size();
-for(int i = 0;i < size;i++)
-            {
+            for (int i = 0; i < size; i++) {
                 mListeners.get(i).sendShareAvailabilityChanged(available);
-            } //End block
-            // ---------- Original Method ----------
-            //final int size = mListeners.size();
-            //for (int i = 0; i < size; i++) {
-                //mListeners.get(i).sendShareAvailabilityChanged(available);
-            //}
+            }
         }
 
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.075 -0400", hash_original_method = "3412F22C5256750E7F040A232BDF8730", hash_generated_method = "C18F1537470C818B09833135EFD30C5F")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.046 -0500", hash_original_method = "3412F22C5256750E7F040A232BDF8730", hash_generated_method = "750426AD55B9B0F2E3D1F3F0958781E9")
         public void onStorageStateChanged(String path, String oldState, String newState) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
-            addTaint(newState.getTaint());
-            addTaint(oldState.getTaint());
-            addTaint(path.getTaint());
             final int size = mListeners.size();
-for(int i = 0;i < size;i++)
-            {
+            for (int i = 0; i < size; i++) {
                 mListeners.get(i).sendStorageStateChanged(path, oldState, newState);
-            } //End block
-            // ---------- Original Method ----------
-            //final int size = mListeners.size();
-            //for (int i = 0; i < size; i++) {
-                //mListeners.get(i).sendStorageStateChanged(path, oldState, newState);
-            //}
+            }
         }
 
         
@@ -568,9 +394,10 @@ for(int i = 0;i < size;i++)
 
     
     private class ObbActionListener extends IObbActionListener.Stub {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.076 -0400", hash_original_field = "F5548429C14A65BFC2537D3DA1DC8B9A", hash_generated_field = "B401ACBFDEFD68175AFBDCAE004213C6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.048 -0500", hash_original_field = "23C5790839FDFB2DAD01EEE256FA3566", hash_generated_field = "B401ACBFDEFD68175AFBDCAE004213C6")
 
-        @SuppressWarnings("hiding") private SparseArray<ObbListenerDelegate> mListeners = new SparseArray<ObbListenerDelegate>();
+        @SuppressWarnings("hiding")
+        private SparseArray<ObbListenerDelegate> mListeners = new SparseArray<ObbListenerDelegate>();
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.076 -0400", hash_original_method = "A19676FD811ED2BA9E2295E50F44897A", hash_generated_method = "A19676FD811ED2BA9E2295E50F44897A")
         public ObbActionListener ()
@@ -578,58 +405,31 @@ for(int i = 0;i < size;i++)
             //Synthesized constructor
         }
 
-
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.076 -0400", hash_original_method = "DBB9E3A59C6BF6EF37DBBFBCC6A9357E", hash_generated_method = "651D4E4A131CFAC8FAFA1CCE7A0D773B")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.050 -0500", hash_original_method = "DBB9E3A59C6BF6EF37DBBFBCC6A9357E", hash_generated_method = "894F6BA3EC6B0139D5B22F5C240BC907")
         @Override
-        public void onObbResult(String filename, int nonce, int status) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
-            addTaint(status);
-            addTaint(nonce);
-            addTaint(filename.getTaint());
-            ObbListenerDelegate delegate;
-            synchronized
-(mListeners)            {
+public void onObbResult(String filename, int nonce, int status) {
+            final ObbListenerDelegate delegate;
+            synchronized (mListeners) {
                 delegate = mListeners.get(nonce);
-                if(delegate != null)                
-                {
+                if (delegate != null) {
                     mListeners.remove(nonce);
-                } //End block
-            } //End block
-            if(delegate != null)            
-            {
+                }
+            }
+
+            if (delegate != null) {
                 delegate.sendObbStateChanged(filename, status);
-            } //End block
-            // ---------- Original Method ----------
-            //final ObbListenerDelegate delegate;
-            //synchronized (mListeners) {
-                //delegate = mListeners.get(nonce);
-                //if (delegate != null) {
-                    //mListeners.remove(nonce);
-                //}
-            //}
-            //if (delegate != null) {
-                //delegate.sendObbStateChanged(filename, status);
-            //}
+            }
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.077 -0400", hash_original_method = "8B6662593D8FF2E95312263F2E6C8A4E", hash_generated_method = "2A4A75DBC4271A43EDEA44277B2912E3")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.050 -0500", hash_original_method = "8B6662593D8FF2E95312263F2E6C8A4E", hash_generated_method = "E26E5F1ED0096FD7B4E0D244EF6DF5EA")
         public int addListener(OnObbStateChangeListener listener) {
-            addTaint(listener.getTaint());
             final ObbListenerDelegate delegate = new ObbListenerDelegate(listener);
-            synchronized
-(mListeners)            {
+
+            synchronized (mListeners) {
                 mListeners.put(delegate.nonce, delegate);
-            } //End block
-            int varC67461545013B5F131CD98ABBB8A4FBA_702586406 = (delegate.nonce);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1690456459 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1690456459;
-            // ---------- Original Method ----------
-            //final ObbListenerDelegate delegate = new ObbListenerDelegate(listener);
-            //synchronized (mListeners) {
-                //mListeners.put(delegate.nonce, delegate);
-            //}
-            //return delegate.nonce;
+            }
+
+            return delegate.nonce;
         }
 
         
@@ -638,88 +438,53 @@ for(int i = 0;i < size;i++)
 
     
     private class ObbListenerDelegate {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.077 -0400", hash_original_field = "CFA53EA895A869226B9A782B15E824C5", hash_generated_field = "9765B2BB1BD930598C2982AB60432360")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.053 -0500", hash_original_field = "89BE479661C8257EB0C4B86BAF60CD99", hash_generated_field = "9765B2BB1BD930598C2982AB60432360")
 
-        private WeakReference<OnObbStateChangeListener> mObbEventListenerRef;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.077 -0400", hash_original_field = "C78BEDFC523DB73DF63EFB071AF1C35B", hash_generated_field = "03E47BA0CE42772601F0A13D178B12B5")
+        private  WeakReference<OnObbStateChangeListener> mObbEventListenerRef;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.054 -0500", hash_original_field = "A163099B522120C606A3CA562F90E927", hash_generated_field = "03E47BA0CE42772601F0A13D178B12B5")
 
-        private Handler mHandler;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.077 -0400", hash_original_field = "CB584E44C43ED6BD0BC2D9C7E242837D", hash_generated_field = "025203DA6E702827C569DA1096B5E235")
+        private  Handler mHandler;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.055 -0500", hash_original_field = "5C0AC92679469CD4F266AD5EA3C62C10", hash_generated_field = "025203DA6E702827C569DA1096B5E235")
 
-        private int nonce;
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.078 -0400", hash_original_method = "669DF05D8F2AD5FF486346330C6EAF78", hash_generated_method = "DA09D4C568A5A5BD724CCE7EC826DE9C")
-          ObbListenerDelegate(OnObbStateChangeListener listener) {
+
+        private  int nonce;
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.057 -0500", hash_original_method = "669DF05D8F2AD5FF486346330C6EAF78", hash_generated_method = "669DF05D8F2AD5FF486346330C6EAF78")
+        ObbListenerDelegate(OnObbStateChangeListener listener) {
             nonce = getNextNonce();
             mObbEventListenerRef = new WeakReference<OnObbStateChangeListener>(listener);
-            mHandler = new Handler(mTgtLooper) {            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.078 -0400", hash_original_method = "DAAB8678F7ABEFF803CFD82CEA9641F0", hash_generated_method = "58491B527D6BFAE6854AF10E2154DFC9")
-            @Override
-            public void handleMessage(Message msg) {
-                addTaint(msg.getTaint());
-                final OnObbStateChangeListener changeListener = getListener();
-                if(changeListener == null)                
-                {
-                    return;
-                } //End block
-                StorageEvent e = (StorageEvent) msg.obj;
-                if(msg.what == StorageEvent.EVENT_OBB_STATE_CHANGED)                
-                {
-                    ObbStateChangedStorageEvent ev = (ObbStateChangedStorageEvent) e;
-                    changeListener.onObbStateChange(ev.path, ev.state);
-                } //End block
-                else
-                {
-                } //End block
-                // ---------- Original Method ----------
-                //final OnObbStateChangeListener changeListener = getListener();
-                //if (changeListener == null) {
-                        //return;
-                    //}
-                //StorageEvent e = (StorageEvent) msg.obj;
-                //if (msg.what == StorageEvent.EVENT_OBB_STATE_CHANGED) {
-                        //ObbStateChangedStorageEvent ev = (ObbStateChangedStorageEvent) e;
-                        //changeListener.onObbStateChange(ev.path, ev.state);
-                    //} else {
-                        //Log.e(TAG, "Unsupported event " + msg.what);
-                    //}
+            mHandler = new Handler(mTgtLooper) {
+                @Override
+                public void handleMessage(Message msg) {
+                    final OnObbStateChangeListener changeListener = getListener();
+                    if (changeListener == null) {
+                        return;
+                    }
+
+                    StorageEvent e = (StorageEvent) msg.obj;
+
+                    if (msg.what == StorageEvent.EVENT_OBB_STATE_CHANGED) {
+                        ObbStateChangedStorageEvent ev = (ObbStateChangedStorageEvent) e;
+                        changeListener.onObbStateChange(ev.path, ev.state);
+                    } else {
+                        Log.e(TAG, "Unsupported event " + msg.what);
+                    }
+                }
+            };
+        }
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.058 -0500", hash_original_method = "834954D068AF2864C85CCAD9D321B725", hash_generated_method = "834954D068AF2864C85CCAD9D321B725")
+        OnObbStateChangeListener getListener() {
+            if (mObbEventListenerRef == null) {
+                return null;
             }
-};
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            return mObbEventListenerRef.get();
         }
 
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.078 -0400", hash_original_method = "834954D068AF2864C85CCAD9D321B725", hash_generated_method = "F9FE1E4DB54C2545F19A9754F59A1E06")
-         OnObbStateChangeListener getListener() {
-            if(mObbEventListenerRef == null)            
-            {
-OnObbStateChangeListener var540C13E9E156B687226421B24F2DF178_2036034865 =                 null;
-                var540C13E9E156B687226421B24F2DF178_2036034865.addTaint(taint);
-                return var540C13E9E156B687226421B24F2DF178_2036034865;
-            } //End block
-OnObbStateChangeListener varCF4F6E9DEC208F220177AFF7A2E8BD7A_91045438 =             mObbEventListenerRef.get();
-            varCF4F6E9DEC208F220177AFF7A2E8BD7A_91045438.addTaint(taint);
-            return varCF4F6E9DEC208F220177AFF7A2E8BD7A_91045438;
-            // ---------- Original Method ----------
-            //if (mObbEventListenerRef == null) {
-                //return null;
-            //}
-            //return mObbEventListenerRef.get();
-        }
-
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.078 -0400", hash_original_method = "E278FF9F38CD6580E6FCEF436B6AB830", hash_generated_method = "6DEBFD25277C0EC31E213CE1AC291962")
-         void sendObbStateChanged(String path, int state) {
-            addTaint(state);
-            addTaint(path.getTaint());
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.059 -0500", hash_original_method = "E278FF9F38CD6580E6FCEF436B6AB830", hash_generated_method = "E278FF9F38CD6580E6FCEF436B6AB830")
+        void sendObbStateChanged(String path, int state) {
             ObbStateChangedStorageEvent e = new ObbStateChangedStorageEvent(path, state);
             mHandler.sendMessage(e.getMessage());
-            // ---------- Original Method ----------
-            //ObbStateChangedStorageEvent e = new ObbStateChangedStorageEvent(path, state);
-            //mHandler.sendMessage(e.getMessage());
         }
 
         
@@ -728,22 +493,19 @@ OnObbStateChangeListener varCF4F6E9DEC208F220177AFF7A2E8BD7A_91045438 =         
 
     
     private class ObbStateChangedStorageEvent extends StorageEvent {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.079 -0400", hash_original_field = "D6FE1D0BE6347B8EF2427FA629C04485", hash_generated_field = "58104DC4D068DCE57A6D46AB8F30ECAD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.060 -0500", hash_original_field = "4936DBCD90EF1129A7D9F03C4DB55EE0", hash_generated_field = "58104DC4D068DCE57A6D46AB8F30ECAD")
 
-        public String path;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.079 -0400", hash_original_field = "9ED39E2EA931586B6A985A6942EF573E", hash_generated_field = "47895903500EF3C437D3B693442F9718")
+        public  String path;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.061 -0500", hash_original_field = "962E680994F097CBCF73193974918C63", hash_generated_field = "47895903500EF3C437D3B693442F9718")
 
-        public int state;
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.079 -0400", hash_original_method = "B6A5FB82143B81E65B529E1CD0C6BFE8", hash_generated_method = "D7B87FD5151A53761078D39156714F78")
-        public  ObbStateChangedStorageEvent(String path, int state) {
+
+        public  int state;
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.062 -0500", hash_original_method = "B6A5FB82143B81E65B529E1CD0C6BFE8", hash_generated_method = "B874632B62AC079E6AA6018652B7E897")
+        public ObbStateChangedStorageEvent(String path, int state) {
             super(EVENT_OBB_STATE_CHANGED);
             this.path = path;
             this.state = state;
-            // ---------- Original Method ----------
-            //this.path = path;
-            //this.state = state;
         }
 
         
@@ -752,57 +514,44 @@ OnObbStateChangeListener varCF4F6E9DEC208F220177AFF7A2E8BD7A_91045438 =         
 
     
     private class StorageEvent {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.080 -0400", hash_original_field = "E40274F3EBBA90624D5314C8AC41E0C5", hash_generated_field = "C86344D57FB924DFB1BCA88A74120A66")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.064 -0500", hash_original_field = "1D0CB625E04594AF40C5EFDB4C571DCB", hash_generated_field = "F25F6D444BE5A1CFBE4DF466A9A1F864")
+
+        static final int EVENT_UMS_CONNECTION_CHANGED = 1;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.065 -0500", hash_original_field = "8347F6BE42533287A205C5B8281902F3", hash_generated_field = "583879D14E1BDFFE9CB4B6C78D72E1EC")
+
+        static final int EVENT_STORAGE_STATE_CHANGED = 2;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.065 -0500", hash_original_field = "71E4BFCB12515BFF148031FE2E958077", hash_generated_field = "C550BF0DE2FD736DF2E8992E748ECE57")
+
+        static final int EVENT_OBB_STATE_CHANGED = 3;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.066 -0500", hash_original_field = "2D41D548AF5E6C9BAD3BF2AC7B0EDE61", hash_generated_field = "C86344D57FB924DFB1BCA88A74120A66")
+
 
         private Message mMessage;
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.081 -0400", hash_original_method = "546E2CE4C7A72D6081E7A50312A352DB", hash_generated_method = "5CD343B512863C315F98F2AEA9C011F5")
-        public  StorageEvent(int what) {
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.067 -0500", hash_original_method = "546E2CE4C7A72D6081E7A50312A352DB", hash_generated_method = "9F23D8C4297A1A2036D6FAE9022F5B35")
+        public StorageEvent(int what) {
             mMessage = Message.obtain();
             mMessage.what = what;
             mMessage.obj = this;
-            // ---------- Original Method ----------
-            //mMessage = Message.obtain();
-            //mMessage.what = what;
-            //mMessage.obj = this;
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.082 -0400", hash_original_method = "237083C18B821DBF98088C4FF8F2E015", hash_generated_method = "4F361928DAE5EB0CFF21640335B8F18D")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.068 -0500", hash_original_method = "237083C18B821DBF98088C4FF8F2E015", hash_generated_method = "5056BEB71FDB17C74971DA0D39E93C75")
         public Message getMessage() {
-Message varF433E876D1576C042493660DEE33CDC1_1737579052 =             mMessage;
-            varF433E876D1576C042493660DEE33CDC1_1737579052.addTaint(taint);
-            return varF433E876D1576C042493660DEE33CDC1_1737579052;
-            // ---------- Original Method ----------
-            //return mMessage;
+            return mMessage;
         }
-
-        
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.082 -0400", hash_original_field = "1564EF349AB04E42B8AE80445E8A296E", hash_generated_field = "F25F6D444BE5A1CFBE4DF466A9A1F864")
-
-        static final int EVENT_UMS_CONNECTION_CHANGED = 1;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.082 -0400", hash_original_field = "C5FC45E4D75061C27D49818F135CA8F5", hash_generated_field = "583879D14E1BDFFE9CB4B6C78D72E1EC")
-
-        static final int EVENT_STORAGE_STATE_CHANGED = 2;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.082 -0400", hash_original_field = "4455CDC446630A55078BE82059DCDB56", hash_generated_field = "C550BF0DE2FD736DF2E8992E748ECE57")
-
-        static final int EVENT_OBB_STATE_CHANGED = 3;
     }
 
 
     
     private class UmsConnectionChangedStorageEvent extends StorageEvent {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.082 -0400", hash_original_field = "E4894CA167B08880BFC35862F18575EB", hash_generated_field = "5C92C83D4651FA2CBBBE9F57619106E0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.070 -0500", hash_original_field = "661415AE147552A97B5A8383FA088351", hash_generated_field = "5C92C83D4651FA2CBBBE9F57619106E0")
 
         public boolean available;
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.083 -0400", hash_original_method = "DA139192DF79A1B6AF4FBD170F57C738", hash_generated_method = "455690CD38D17C90E3960C0D3AE6FBD7")
-        public  UmsConnectionChangedStorageEvent(boolean a) {
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.071 -0500", hash_original_method = "DA139192DF79A1B6AF4FBD170F57C738", hash_generated_method = "48C5906EC8CD71CC6F80D22783D8E10E")
+        public UmsConnectionChangedStorageEvent(boolean a) {
             super(EVENT_UMS_CONNECTION_CHANGED);
             available = a;
-            // ---------- Original Method ----------
-            //available = a;
         }
 
         
@@ -811,26 +560,22 @@ Message varF433E876D1576C042493660DEE33CDC1_1737579052 =             mMessage;
 
     
     private class StorageStateChangedStorageEvent extends StorageEvent {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.083 -0400", hash_original_field = "D6FE1D0BE6347B8EF2427FA629C04485", hash_generated_field = "58104DC4D068DCE57A6D46AB8F30ECAD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.072 -0500", hash_original_field = "4936DBCD90EF1129A7D9F03C4DB55EE0", hash_generated_field = "58104DC4D068DCE57A6D46AB8F30ECAD")
 
         public String path;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.083 -0400", hash_original_field = "72D6992B63A3C6CEDED7A4F910A17DB4", hash_generated_field = "BCBDB4C878C0401D1D7D5840C50DA786")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.073 -0500", hash_original_field = "6E37E782D442014276C3C2F6D99603C8", hash_generated_field = "BCBDB4C878C0401D1D7D5840C50DA786")
 
         public String oldState;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.083 -0400", hash_original_field = "C12B256FB80BF45233F7969DDAD635A8", hash_generated_field = "BBB1EB05FA22C108537691E37AFB1F82")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.074 -0500", hash_original_field = "39E0D75E86893E16E4C50E11A5D0482E", hash_generated_field = "BBB1EB05FA22C108537691E37AFB1F82")
 
         public String newState;
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.084 -0400", hash_original_method = "492691CEB211515F22C314109DCC65E2", hash_generated_method = "AEFC7259D8036A6EC5FA18B5B26F25C2")
-        public  StorageStateChangedStorageEvent(String p, String oldS, String newS) {
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.075 -0500", hash_original_method = "492691CEB211515F22C314109DCC65E2", hash_generated_method = "C6F4B369500F4ACE514A82D44DFF202A")
+        public StorageStateChangedStorageEvent(String p, String oldS, String newS) {
             super(EVENT_STORAGE_STATE_CHANGED);
             path = p;
             oldState = oldS;
             newState = newS;
-            // ---------- Original Method ----------
-            //path = p;
-            //oldState = oldS;
-            //newState = newS;
         }
 
         
@@ -839,97 +584,68 @@ Message varF433E876D1576C042493660DEE33CDC1_1737579052 =             mMessage;
 
     
     private class ListenerDelegate {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.084 -0400", hash_original_field = "FF21AF7F25ACB77348D1744416043B3F", hash_generated_field = "7A1C33253FE6C5A1C1F7242C2999F45E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.076 -0500", hash_original_field = "7A1C33253FE6C5A1C1F7242C2999F45E", hash_generated_field = "7A1C33253FE6C5A1C1F7242C2999F45E")
 
-        StorageEventListener mStorageEventListener;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.084 -0400", hash_original_field = "C78BEDFC523DB73DF63EFB071AF1C35B", hash_generated_field = "03E47BA0CE42772601F0A13D178B12B5")
+         StorageEventListener mStorageEventListener;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.077 -0500", hash_original_field = "A163099B522120C606A3CA562F90E927", hash_generated_field = "03E47BA0CE42772601F0A13D178B12B5")
 
-        private Handler mHandler;
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.085 -0400", hash_original_method = "9AED46AC5CC711FE51A627C97DCCA6A0", hash_generated_method = "4BDF51206D9C521E57479CA6E4CEA118")
-          ListenerDelegate(StorageEventListener listener) {
+        private  Handler mHandler;
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.079 -0500", hash_original_method = "9AED46AC5CC711FE51A627C97DCCA6A0", hash_generated_method = "9AED46AC5CC711FE51A627C97DCCA6A0")
+        ListenerDelegate(StorageEventListener listener) {
             mStorageEventListener = listener;
-            mHandler = new Handler(mTgtLooper) {            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.084 -0400", hash_original_method = "366C40A0CA9BA10DE636D79A04377DDA", hash_generated_method = "2E18563152040950832F72FBC36E136A")
-            @Override
-            public void handleMessage(Message msg) {
-                addTaint(msg.getTaint());
-                StorageEvent e = (StorageEvent) msg.obj;
-                if(msg.what == StorageEvent.EVENT_UMS_CONNECTION_CHANGED)                
-                {
-                    UmsConnectionChangedStorageEvent ev = (UmsConnectionChangedStorageEvent) e;
-                    mStorageEventListener.onUsbMassStorageConnectionChanged(ev.available);
-                } //End block
-                else
-                if(msg.what == StorageEvent.EVENT_STORAGE_STATE_CHANGED)                
-                {
-                    StorageStateChangedStorageEvent ev = (StorageStateChangedStorageEvent) e;
-                    mStorageEventListener.onStorageStateChanged(ev.path, ev.oldState, ev.newState);
-                } //End block
-                else
-                {
-                } //End block
-                // ---------- Original Method ----------
-                //StorageEvent e = (StorageEvent) msg.obj;
-                //if (msg.what == StorageEvent.EVENT_UMS_CONNECTION_CHANGED) {
-                        //UmsConnectionChangedStorageEvent ev = (UmsConnectionChangedStorageEvent) e;
-                        //mStorageEventListener.onUsbMassStorageConnectionChanged(ev.available);
-                    //} else if (msg.what == StorageEvent.EVENT_STORAGE_STATE_CHANGED) {
-                        //StorageStateChangedStorageEvent ev = (StorageStateChangedStorageEvent) e;
-                        //mStorageEventListener.onStorageStateChanged(ev.path, ev.oldState, ev.newState);
-                    //} else {
-                        //Log.e(TAG, "Unsupported event " + msg.what);
-                    //}
-            }
-};
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            mHandler = new Handler(mTgtLooper) {
+                @Override
+                public void handleMessage(Message msg) {
+                    StorageEvent e = (StorageEvent) msg.obj;
+
+                    if (msg.what == StorageEvent.EVENT_UMS_CONNECTION_CHANGED) {
+                        UmsConnectionChangedStorageEvent ev = (UmsConnectionChangedStorageEvent) e;
+                        mStorageEventListener.onUsbMassStorageConnectionChanged(ev.available);
+                    } else if (msg.what == StorageEvent.EVENT_STORAGE_STATE_CHANGED) {
+                        StorageStateChangedStorageEvent ev = (StorageStateChangedStorageEvent) e;
+                        mStorageEventListener.onStorageStateChanged(ev.path, ev.oldState, ev.newState);
+                    } else {
+                        Log.e(TAG, "Unsupported event " + msg.what);
+                    }
+                }
+            };
         }
 
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.085 -0400", hash_original_method = "DA2EC644741ABB32C38C92FF70A87DA0", hash_generated_method = "14F9989F27446BDBD63667A618B9C120")
-         StorageEventListener getListener() {
-StorageEventListener varE7702B5CA1C4D4B989CA9AA0E2DA9878_419910665 =             mStorageEventListener;
-            varE7702B5CA1C4D4B989CA9AA0E2DA9878_419910665.addTaint(taint);
-            return varE7702B5CA1C4D4B989CA9AA0E2DA9878_419910665;
-            // ---------- Original Method ----------
-            //return mStorageEventListener;
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.080 -0500", hash_original_method = "DA2EC644741ABB32C38C92FF70A87DA0", hash_generated_method = "DA2EC644741ABB32C38C92FF70A87DA0")
+        StorageEventListener getListener() {
+            return mStorageEventListener;
         }
 
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.085 -0400", hash_original_method = "2B1B76FC8373F60078A15952F701EC30", hash_generated_method = "02E226889414FA9CC2064DE3C95335B0")
-         void sendShareAvailabilityChanged(boolean available) {
-            addTaint(available);
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.081 -0500", hash_original_method = "2B1B76FC8373F60078A15952F701EC30", hash_generated_method = "2B1B76FC8373F60078A15952F701EC30")
+        void sendShareAvailabilityChanged(boolean available) {
             UmsConnectionChangedStorageEvent e = new UmsConnectionChangedStorageEvent(available);
             mHandler.sendMessage(e.getMessage());
-            // ---------- Original Method ----------
-            //UmsConnectionChangedStorageEvent e = new UmsConnectionChangedStorageEvent(available);
-            //mHandler.sendMessage(e.getMessage());
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.085 -0400", hash_original_method = "6996CC17777F13485A3BD31F01C08054", hash_generated_method = "2EC0C513477C5698507768AD75CBBFE7")
-         void sendStorageStateChanged(String path, String oldState, String newState) {
-            addTaint(newState.getTaint());
-            addTaint(oldState.getTaint());
-            addTaint(path.getTaint());
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.081 -0500", hash_original_method = "6996CC17777F13485A3BD31F01C08054", hash_generated_method = "6996CC17777F13485A3BD31F01C08054")
+        void sendStorageStateChanged(String path, String oldState, String newState) {
             StorageStateChangedStorageEvent e = new StorageStateChangedStorageEvent(path, oldState, newState);
             mHandler.sendMessage(e.getMessage());
-            // ---------- Original Method ----------
-            //StorageStateChangedStorageEvent e = new StorageStateChangedStorageEvent(path, oldState, newState);
-            //mHandler.sendMessage(e.getMessage());
         }
 
         
     }
 
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.085 -0400", hash_original_field = "414DE376B4CE8230DB4AAE54D9434AD8", hash_generated_field = "666FAAC497550CA891D002F26E180573")
-
-    private static final String TAG = "StorageManager";
+    /**
+     * Returns list of paths for all mountable volumes.
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:49:39.095 -0500", hash_original_method = "32FCB28C74C473CB8B8088CF6B7B3DD3", hash_generated_method = "0482A7B4132D28A95CDD142BB4ACF07C")
+    public String[] getVolumePaths() {
+        StorageVolume[] volumes = getVolumeList();
+        if (volumes == null) return null;
+        int count = volumes.length;
+        String[] paths = new String[count];
+        for (int i = 0; i < count; i++) {
+            paths[i] = volumes[i].getPath();
+        }
+        return paths;
+    }
 }
 

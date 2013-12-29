@@ -1,6 +1,8 @@
 package org.apache.http.entity;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -16,138 +18,77 @@ import org.apache.http.util.EntityUtils;
 
 
 public class BufferedHttpEntity extends HttpEntityWrapper {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.236 -0400", hash_original_field = "7F2DB423A49B305459147332FB01CF87", hash_generated_field = "67DBC7965A32AEE1CAB7B25294021930")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.607 -0500", hash_original_field = "3923F3F9F9ECABE8D28493E863FC2CD8", hash_generated_field = "67DBC7965A32AEE1CAB7B25294021930")
 
-    private byte[] buffer;
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.247 -0400", hash_original_method = "9933624B15A1F62492A5E829A3A364D0", hash_generated_method = "34411053CF28BA65BDAD703427BE5863")
-    public  BufferedHttpEntity(final HttpEntity entity) throws IOException {
+      
+    private  byte[] buffer;
+      
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.608 -0500", hash_original_method = "9933624B15A1F62492A5E829A3A364D0", hash_generated_method = "7365481014051F2C49B60B2ABC35D68E")
+    public BufferedHttpEntity(final HttpEntity entity) throws IOException {
         super(entity);
-        if(!entity.isRepeatable() || entity.getContentLength() < 0)        
-        {
+        if (!entity.isRepeatable() || entity.getContentLength() < 0) {
             this.buffer = EntityUtils.toByteArray(entity);
-        } //End block
-        else
-        {
+        } else {
             this.buffer = null;
-        } //End block
-        // ---------- Original Method ----------
-        //if (!entity.isRepeatable() || entity.getContentLength() < 0) {
-            //this.buffer = EntityUtils.toByteArray(entity);
-        //} else {
-            //this.buffer = null;
-        //}
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.248 -0400", hash_original_method = "26AA3A162E430A9FEBBBBE7476A32626", hash_generated_method = "89CF2D207425D2C8DEF1667333A09AE8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.609 -0500", hash_original_method = "26AA3A162E430A9FEBBBBE7476A32626", hash_generated_method = "FE7798FDA94ED939F34AA0192E837B3C")
     public long getContentLength() {
-        if(this.buffer != null)        
-        {
-            long var52B286FBAC396E14EB741753BEC48E2E_786359027 = (this.buffer.length);
-                        long var0F5264038205EDFB1AC05FBB0E8C5E94_1765056367 = getTaintLong();
-            return var0F5264038205EDFB1AC05FBB0E8C5E94_1765056367;
-        } //End block
-        else
-        {
-            long varE16A3D9A28884C197B737656D3267561_1748651151 = (wrappedEntity.getContentLength());
-                        long var0F5264038205EDFB1AC05FBB0E8C5E94_1452177457 = getTaintLong();
-            return var0F5264038205EDFB1AC05FBB0E8C5E94_1452177457;
-        } //End block
-        // ---------- Original Method ----------
-        //if (this.buffer != null) {
-            //return this.buffer.length;
-        //} else {
-            //return wrappedEntity.getContentLength();
-        //}
+        if (this.buffer != null) {
+            return this.buffer.length;
+        } else {
+            return wrappedEntity.getContentLength();
+        }
     }
-
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.248 -0400", hash_original_method = "C66624A0F56D5B3373911F6483E82581", hash_generated_method = "665E98BF087D054D5E1EB52B4CB85DE1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.610 -0500", hash_original_method = "C66624A0F56D5B3373911F6483E82581", hash_generated_method = "92D13803F2C5D004E4F8464E7AD317ED")
     public InputStream getContent() throws IOException {
-        if(this.buffer != null)        
-        {
-InputStream varFB8BC527E57C1094D1FA48F51FC1BD49_1561635265 =             new ByteArrayInputStream(this.buffer);
-            varFB8BC527E57C1094D1FA48F51FC1BD49_1561635265.addTaint(taint);
-            return varFB8BC527E57C1094D1FA48F51FC1BD49_1561635265;
-        } //End block
-        else
-        {
-InputStream varF6ACD77A5F5C16B8B8AB61A8E0321333_824349158 =             wrappedEntity.getContent();
-            varF6ACD77A5F5C16B8B8AB61A8E0321333_824349158.addTaint(taint);
-            return varF6ACD77A5F5C16B8B8AB61A8E0321333_824349158;
-        } //End block
-        // ---------- Original Method ----------
-        //if (this.buffer != null) {
-            //return new ByteArrayInputStream(this.buffer);
-        //} else {
-            //return wrappedEntity.getContent();
-        //}
+        if (this.buffer != null) {
+            return new ByteArrayInputStream(this.buffer);
+        } else {
+            return wrappedEntity.getContent();
+        }
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.248 -0400", hash_original_method = "2A121AFE9268A901CC611E90FC00D0E8", hash_generated_method = "CC49D171D7F780462D89837F96B9CB51")
+    /**
+     * Tells that this entity does not have to be chunked.
+     *
+     * @return  <code>false</code>
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.611 -0500", hash_original_method = "2A121AFE9268A901CC611E90FC00D0E8", hash_generated_method = "8EAEAA8DF652C30AE6AA4AA6CB855AEB")
     public boolean isChunked() {
-        boolean varEDC1D0D5ABDB221CF275D0292D0CB0A7_2002702624 = ((buffer == null) && wrappedEntity.isChunked());
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2135986407 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2135986407;
-        // ---------- Original Method ----------
-        //return (buffer == null) && wrappedEntity.isChunked();
+        return (buffer == null) && wrappedEntity.isChunked();
     }
-
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.248 -0400", hash_original_method = "8850B92ED3324DB77471CF2A1052D726", hash_generated_method = "1041D669569FAC7AE82FC23882272721")
+    /**
+     * Tells that this entity is repeatable.
+     *
+     * @return  <code>true</code>
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.612 -0500", hash_original_method = "8850B92ED3324DB77471CF2A1052D726", hash_generated_method = "827F310DEB1F388C181FD1C8E221D99B")
     public boolean isRepeatable() {
-        boolean varB326B5062B2F0E69046810717534CB09_1775769101 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1352988794 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1352988794;
-        // ---------- Original Method ----------
-        //return true;
+        return true;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.248 -0400", hash_original_method = "6978AFF2D6BA6FB48D86DE86B3A93492", hash_generated_method = "A71CC268CCA2EE0E37EBEE72613B23F3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.613 -0500", hash_original_method = "6978AFF2D6BA6FB48D86DE86B3A93492", hash_generated_method = "C76A5C9ECA2850EB6E2362D1F4C588D4")
     public void writeTo(final OutputStream outstream) throws IOException {
-        addTaint(outstream.getTaint());
-        if(outstream == null)        
-        {
-            IllegalArgumentException var8C9256F172D6E7DD26CC6F974ABC4716_318167720 = new IllegalArgumentException("Output stream may not be null");
-            var8C9256F172D6E7DD26CC6F974ABC4716_318167720.addTaint(taint);
-            throw var8C9256F172D6E7DD26CC6F974ABC4716_318167720;
-        } //End block
-        if(this.buffer != null)        
-        {
+        if (outstream == null) {
+            throw new IllegalArgumentException("Output stream may not be null");
+        }
+        if (this.buffer != null) {
             outstream.write(this.buffer);
-        } //End block
-        else
-        {
+        } else {
             wrappedEntity.writeTo(outstream);
-        } //End block
-        // ---------- Original Method ----------
-        //if (outstream == null) {
-            //throw new IllegalArgumentException("Output stream may not be null");
-        //}
-        //if (this.buffer != null) {
-            //outstream.write(this.buffer);
-        //} else {
-            //wrappedEntity.writeTo(outstream);
-        //}
+        }
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.248 -0400", hash_original_method = "298A03178432926E5E6E7F0EA9A50E03", hash_generated_method = "1C06E706B10A826BA8C9341133FBF1B9")
+
+    // non-javadoc, see interface HttpEntity
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.613 -0500", hash_original_method = "298A03178432926E5E6E7F0EA9A50E03", hash_generated_method = "391960D0CDAF5FB656465768F0570EFD")
     public boolean isStreaming() {
-        boolean var3E6A1689093D41868EEEA62EB3AFDCAD_436194721 = ((buffer == null) && wrappedEntity.isStreaming());
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1860275755 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1860275755;
-        // ---------- Original Method ----------
-        //return (buffer == null) && wrappedEntity.isStreaming();
+        return (buffer == null) && wrappedEntity.isStreaming();
     }
 
     

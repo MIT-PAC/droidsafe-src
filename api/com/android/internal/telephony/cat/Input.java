@@ -1,6 +1,8 @@
 package com.android.internal.telephony.cat;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.graphics.Bitmap;
 import android.os.Parcel;
@@ -11,46 +13,60 @@ import android.os.Parcelable;
 
 
 public class Input implements Parcelable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.369 -0400", hash_original_field = "1CB251EC0D568DE6A929B520C4AED8D1", hash_generated_field = "67BF1EF40348032263B5C952F69B65D0")
+
+    
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.376 -0400", hash_original_field = "C55BBAE9BA652C2BEDEB4F6E28BCA10E", hash_generated_field = "449B79E7C316C34FDDF2E2D2B21F2438")
+
+    public static final Parcelable.Creator<Input> CREATOR = new Parcelable.Creator<Input>() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:26.510 -0500", hash_original_method = "A3060A4F3D5664F92DE2DC8B971AB968", hash_generated_method = "5E43F3E1FFE6B7ACCFD3135E6F83943B")
+        public Input createFromParcel(Parcel in) {
+            return new Input(in);
+        }
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:26.511 -0500", hash_original_method = "B3E4B71B9877E87E02262381214C0C55", hash_generated_method = "AE01488B1AABB7935E7F3229671E868D")
+        public Input[] newArray(int size) {
+            return new Input[size];
+        }
+    };
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:26.496 -0500", hash_original_field = "9EF4B8A5DE4B8BD37EE465C3BB62CC6C", hash_generated_field = "67BF1EF40348032263B5C952F69B65D0")
 
     public String text;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.369 -0400", hash_original_field = "0DB17AA1D80E20064FE42736B1C76DE8", hash_generated_field = "A8DF562F814A84BD8B13A7B79A300691")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:26.497 -0500", hash_original_field = "AD7E58A82EEDD02E2FB67C4EA69C0D37", hash_generated_field = "A8DF562F814A84BD8B13A7B79A300691")
 
     public String defaultText;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.369 -0400", hash_original_field = "BAEC6461B0D69DDE1B861AEFBE375D8A", hash_generated_field = "18C3710E837ABC3ED3609E8E9E147C46")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:26.498 -0500", hash_original_field = "0C64FDDDE16C63294C62EE068DB291C9", hash_generated_field = "18C3710E837ABC3ED3609E8E9E147C46")
 
     public Bitmap icon;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.369 -0400", hash_original_field = "EF74CC6AE7569E44DE58A472EBA0B735", hash_generated_field = "559AEAAC15E5C4835D9479E681F79909")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:26.499 -0500", hash_original_field = "54B61E7BA82EDAA45F98208022D8682C", hash_generated_field = "559AEAAC15E5C4835D9479E681F79909")
 
     public int minLen;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.369 -0400", hash_original_field = "0957793E23A382F3649C3CEC380DB3A0", hash_generated_field = "9F8EB648BC0BC25A3F4696D10FA41BEE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:26.500 -0500", hash_original_field = "F86765D8132FDA293DFA51AE9486778D", hash_generated_field = "9F8EB648BC0BC25A3F4696D10FA41BEE")
 
     public int maxLen;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.369 -0400", hash_original_field = "A4BA4F0B30716F95C1284D0AC6911172", hash_generated_field = "60136D1376A0D0806BAE1A241EDF215D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:26.501 -0500", hash_original_field = "6208CB3AFDC0D988EB4E973D956FC7FE", hash_generated_field = "60136D1376A0D0806BAE1A241EDF215D")
 
     public boolean ucs2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.369 -0400", hash_original_field = "F59DCD306EC32930F1E78A1D82280B48", hash_generated_field = "95529D02420F333E71AD2716B27758C5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:26.502 -0500", hash_original_field = "9A33E1285A9FC44C7B610BBE7F0B3939", hash_generated_field = "95529D02420F333E71AD2716B27758C5")
 
     public boolean packed;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.369 -0400", hash_original_field = "48E53685F06F1F31FDA1CBA710CD28E3", hash_generated_field = "9D804976FE6B1146D40D36456C1A46E9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:26.502 -0500", hash_original_field = "BE7F39004779D8E41D0A0E3316948386", hash_generated_field = "9D804976FE6B1146D40D36456C1A46E9")
 
     public boolean digitOnly;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.369 -0400", hash_original_field = "CBB11ED87DC8A95D81400C7F33C7C171", hash_generated_field = "2E48F9DD9C53D0B8088EE166780CCB5D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:26.503 -0500", hash_original_field = "A587E40F34E75E876A2C1E1FAFD435CB", hash_generated_field = "2E48F9DD9C53D0B8088EE166780CCB5D")
 
     public boolean echo;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.370 -0400", hash_original_field = "6BF80F7828EEF303F66AC6014B4B4930", hash_generated_field = "5C4B993DEA53816FAF6C9A570B469DEC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:26.504 -0500", hash_original_field = "3A80EEEAC83D8DC8D53544B7E152DFAF", hash_generated_field = "5C4B993DEA53816FAF6C9A570B469DEC")
 
     public boolean yesNo;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.370 -0400", hash_original_field = "95C3E9257A5998B6C3758B36FBDB8DD8", hash_generated_field = "B089F8BA7DD3EF733FF9A54CE2F03291")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:26.505 -0500", hash_original_field = "E131DAF35CC59A8CEE38290A7F7F7AD8", hash_generated_field = "B089F8BA7DD3EF733FF9A54CE2F03291")
 
     public boolean helpAvailable;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.370 -0400", hash_original_field = "B85EC314BF443B797EF8A66B3B03F8A4", hash_generated_field = "F627176E1C35421D662BC9D4AD138316")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:26.506 -0500", hash_original_field = "A6070A7BA087BD42A534C9AD7E3C0404", hash_generated_field = "F627176E1C35421D662BC9D4AD138316")
 
     public Duration duration;
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.371 -0400", hash_original_method = "3E111AA938495B7C4FDD9DF56E63C31E", hash_generated_method = "E9D74EB192B2133709AE56F6372F5254")
-      Input() {
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:26.507 -0500", hash_original_method = "3E111AA938495B7C4FDD9DF56E63C31E", hash_generated_method = "3E111AA938495B7C4FDD9DF56E63C31E")
+    Input() {
         text = "";
         defaultText = null;
         icon = null;
@@ -63,25 +79,10 @@ public class Input implements Parcelable {
         yesNo = false;
         helpAvailable = false;
         duration = null;
-        // ---------- Original Method ----------
-        //text = "";
-        //defaultText = null;
-        //icon = null;
-        //minLen = 0;
-        //maxLen = 1;
-        //ucs2 = false;
-        //packed = false;
-        //digitOnly = false;
-        //echo = false;
-        //yesNo = false;
-        //helpAvailable = false;
-        //duration = null;
     }
 
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.374 -0400", hash_original_method = "C5B4E51AE4A5E722D5F00F3982A6F022", hash_generated_method = "D5B42A943E8383C6B6B370B4111F91AC")
-    private  Input(Parcel in) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:26.508 -0500", hash_original_method = "C5B4E51AE4A5E722D5F00F3982A6F022", hash_generated_method = "1F0E029113220D7EAC6362860E2C3DE0")
+    private Input(Parcel in) {
         text = in.readString();
         defaultText = in.readString();
         icon = in.readParcelable(null);
@@ -94,38 +95,15 @@ public class Input implements Parcelable {
         yesNo = in.readInt() == 1 ? true : false;
         helpAvailable = in.readInt() == 1 ? true : false;
         duration = in.readParcelable(null);
-        // ---------- Original Method ----------
-        //text = in.readString();
-        //defaultText = in.readString();
-        //icon = in.readParcelable(null);
-        //minLen = in.readInt();
-        //maxLen = in.readInt();
-        //ucs2 = in.readInt() == 1 ? true : false;
-        //packed = in.readInt() == 1 ? true : false;
-        //digitOnly = in.readInt() == 1 ? true : false;
-        //echo = in.readInt() == 1 ? true : false;
-        //yesNo = in.readInt() == 1 ? true : false;
-        //helpAvailable = in.readInt() == 1 ? true : false;
-        //duration = in.readParcelable(null);
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.374 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "4DA2EE5A306BFA79F0F7045B0B682B1F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:26.508 -0500", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "D90463461B2A94FF94D13FDF69BB80C9")
     public int describeContents() {
-        int varCFCD208495D565EF66E7DFF9F98764DA_1408684872 = (0);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_805960642 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_805960642;
-        // ---------- Original Method ----------
-        //return 0;
+        return 0;
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.375 -0400", hash_original_method = "B53B93ABACC072A2D5F958A02DC16FEB", hash_generated_method = "62FE11E4E09A13FA877C65CE5133C729")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:26.509 -0500", hash_original_method = "B53B93ABACC072A2D5F958A02DC16FEB", hash_generated_method = "DAF036CF71375F716CB667CACF625CBA")
     public void writeToParcel(Parcel dest, int flags) {
-        addTaint(flags);
-        addTaint(dest.getTaint());
         dest.writeString(text);
         dest.writeString(defaultText);
         dest.writeParcelable(icon, 0);
@@ -138,47 +116,10 @@ public class Input implements Parcelable {
         dest.writeInt(yesNo ? 1 : 0);
         dest.writeInt(helpAvailable ? 1 : 0);
         dest.writeParcelable(duration, 0);
-        // ---------- Original Method ----------
-        //dest.writeString(text);
-        //dest.writeString(defaultText);
-        //dest.writeParcelable(icon, 0);
-        //dest.writeInt(minLen);
-        //dest.writeInt(maxLen);
-        //dest.writeInt(ucs2 ? 1 : 0);
-        //dest.writeInt(packed ? 1 : 0);
-        //dest.writeInt(digitOnly ? 1 : 0);
-        //dest.writeInt(echo ? 1 : 0);
-        //dest.writeInt(yesNo ? 1 : 0);
-        //dest.writeInt(helpAvailable ? 1 : 0);
-        //dest.writeParcelable(duration, 0);
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.375 -0400", hash_original_method = "B234C4FFCAD94565C16D3A43A2454835", hash_generated_method = "A3E9F33CAC63F5202BF19108A7BC2EDE")
-     boolean setIcon(Bitmap Icon) {
-        addTaint(Icon.getTaint());
-        boolean varB326B5062B2F0E69046810717534CB09_372768813 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1669958827 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1669958827;
-        // ---------- Original Method ----------
-        //return true;
-    }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.376 -0400", hash_original_field = "C55BBAE9BA652C2BEDEB4F6E28BCA10E", hash_generated_field = "449B79E7C316C34FDDF2E2D2B21F2438")
-
-    public static final Parcelable.Creator<Input> CREATOR = new Parcelable.Creator<Input>() {
-        @DSModeled(DSC.SAFE)
-        public Input createFromParcel(Parcel in) {
-            return new Input(in);
-        }
-
-        @DSModeled(DSC.SAFE)
-        public Input[] newArray(int size) {
-            return new Input[size];
-        }
-    };
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:26.513 -0500", hash_original_method = "B234C4FFCAD94565C16D3A43A2454835", hash_generated_method = "B234C4FFCAD94565C16D3A43A2454835")
+    boolean setIcon(Bitmap Icon) { return true; }
     // orphaned legacy method
     public Input createFromParcel(Parcel in) {
             return new Input(in);

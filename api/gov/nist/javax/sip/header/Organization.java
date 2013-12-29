@@ -1,6 +1,8 @@
 package gov.nist.javax.sip.header;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.text.ParseException;
 
@@ -12,63 +14,50 @@ import javax.sip.header.OrganizationHeader;
 
 
 public class Organization extends SIPHeader implements OrganizationHeader {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.613 -0400", hash_original_field = "B4C1948C087FAFC89A88450FCBB64C77", hash_generated_field = "7B6519A46F5BF8862075151D042F1E20")
-
-    protected String organization;
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.613 -0400", hash_original_method = "A22A45BA0A2B2678454705CA5BB968BD", hash_generated_method = "77544CC18B49DD4CBC9F054FA924E69C")
-    public  Organization() {
-        super(ORGANIZATION);
-        // ---------- Original Method ----------
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.613 -0400", hash_original_method = "64094CFB244C647C5657F3E488B1D7D6", hash_generated_method = "FD20A299C6FF7602A4E30034AFDD0662")
-    public String encodeBody() {
-String var86B932A706B81240694A9B2D316B40FE_2035440169 =         organization;
-        var86B932A706B81240694A9B2D316B40FE_2035440169.addTaint(taint);
-        return var86B932A706B81240694A9B2D316B40FE_2035440169;
-        // ---------- Original Method ----------
-        //return organization;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.614 -0400", hash_original_method = "9435FCCFD7C054307D934681F7070D26", hash_generated_method = "0FAE80E51ACFD867B774FE9CBD9DA43F")
-    public String getOrganization() {
-String var86B932A706B81240694A9B2D316B40FE_1947973207 =         organization;
-        var86B932A706B81240694A9B2D316B40FE_1947973207.addTaint(taint);
-        return var86B932A706B81240694A9B2D316B40FE_1947973207;
-        // ---------- Original Method ----------
-        //return organization;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.614 -0400", hash_original_method = "525AB078049049253D355424AD5A3E65", hash_generated_method = "57A0521248BC9414C73D1DC174CB43C1")
-    public void setOrganization(String o) throws ParseException {
-        if(o == null)        
-        {
-        NullPointerException var1C649641E447788F72462AC460039BB1_1236106549 = new NullPointerException(
-                "JAIN-SIP Exception,"
-                    + " Organization, setOrganization(), the organization parameter is null");
-        var1C649641E447788F72462AC460039BB1_1236106549.addTaint(taint);
-        throw var1C649641E447788F72462AC460039BB1_1236106549;
-        }
-        organization = o;
-        // ---------- Original Method ----------
-        //if (o == null)
-            //throw new NullPointerException(
-                //"JAIN-SIP Exception,"
-                    //+ " Organization, setOrganization(), the organization parameter is null");
-        //organization = o;
-    }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.614 -0400", hash_original_field = "4141766911F0F3B58A3082026A876C2C", hash_generated_field = "BF1069295545422BFA1A0647DDAC00E1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.020 -0500", hash_original_field = "DD7DE6DAF2CCCB3596A2E5B031D9F680", hash_generated_field = "BF1069295545422BFA1A0647DDAC00E1")
 
     private static final long serialVersionUID = -2775003113740192712L;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.021 -0500", hash_original_field = "31E9A831E4D0696A4D40D066FD5E431A", hash_generated_field = "7B6519A46F5BF8862075151D042F1E20")
+
+    protected String organization;
+
+    /**
+     * Default constructor
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.023 -0500", hash_original_method = "A22A45BA0A2B2678454705CA5BB968BD", hash_generated_method = "31BA1324E7F2B90B300FFF12A86A746C")
+    public Organization() {
+        super(ORGANIZATION);
+    }
+
+    /**
+     * Return encoding of value of the header.
+     * @return String
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.022 -0500", hash_original_method = "64094CFB244C647C5657F3E488B1D7D6", hash_generated_method = "DFD6F8FCBE676C5DD63A9C319CD53D2C")
+    public String encodeBody() {
+        return organization;
+    }
+
+    /**
+     * Get the organization field.
+     * @return String
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.024 -0500", hash_original_method = "9435FCCFD7C054307D934681F7070D26", hash_generated_method = "F2D3B499E982D449130D084429540356")
+    public String getOrganization() {
+        return organization;
+    }
+
+    /**
+     * Set the organization member
+     * @param o String to set
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:44:55.025 -0500", hash_original_method = "525AB078049049253D355424AD5A3E65", hash_generated_method = "B1187D7450B6D65C83157AC88175AEBD")
+    public void setOrganization(String o) throws ParseException {
+        if (o == null)
+            throw new NullPointerException(
+                "JAIN-SIP Exception,"
+                    + " Organization, setOrganization(), the organization parameter is null");
+        organization = o;
+    }
 }
 

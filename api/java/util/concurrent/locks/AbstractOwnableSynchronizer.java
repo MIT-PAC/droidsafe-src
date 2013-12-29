@@ -1,6 +1,8 @@
 package java.util.concurrent.locks;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
@@ -8,39 +10,40 @@ import droidsafe.annotations.*;
 
 
 public abstract class AbstractOwnableSynchronizer implements java.io.Serializable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.183 -0400", hash_original_field = "132FCF3C7BFF939868B511E35AD62FD4", hash_generated_field = "C1E5D5F5CE2C40C66D9F63320FBEDDDF")
-
-    private transient Thread exclusiveOwnerThread;
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.183 -0400", hash_original_method = "09FACEDDA2CFE0BD4863CBAC9CCC5DB1", hash_generated_method = "D297C3151434464F48AC3AE139C059A0")
-    protected  AbstractOwnableSynchronizer() {
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.184 -0400", hash_original_method = "54BE2CB7A2B251833C1274201519DC0B", hash_generated_method = "13F014A12C92310672C211F0153DBA38")
-    protected final void setExclusiveOwnerThread(Thread t) {
-        exclusiveOwnerThread = t;
-        // ---------- Original Method ----------
-        //exclusiveOwnerThread = t;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.184 -0400", hash_original_method = "B27D03344136636BB9AA0892188CCAE3", hash_generated_method = "DE6754E88FB3FA04F61B477633509742")
-    protected final Thread getExclusiveOwnerThread() {
-Thread var1272617ED476BD050F7F4F8E5B1A0ED8_1457579399 =         exclusiveOwnerThread;
-        var1272617ED476BD050F7F4F8E5B1A0ED8_1457579399.addTaint(taint);
-        return var1272617ED476BD050F7F4F8E5B1A0ED8_1457579399;
-        // ---------- Original Method ----------
-        //return exclusiveOwnerThread;
-    }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.185 -0400", hash_original_field = "FA409379A41D70A7326C19C768F673CD", hash_generated_field = "F2F59C783D5C1305604BF875D65980D6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:45.028 -0500", hash_original_field = "57384E69ACC4D85F20AFA905BC1CC919", hash_generated_field = "F2F59C783D5C1305604BF875D65980D6")
 
     private static final long serialVersionUID = 3737899427754241961L;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:45.029 -0500", hash_original_field = "DE1D7AAF330FAAEDB911F8AFB0518211", hash_generated_field = "C1E5D5F5CE2C40C66D9F63320FBEDDDF")
+
+    private transient Thread exclusiveOwnerThread;
+
+    /**
+     * Empty constructor for use by subclasses.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:45.028 -0500", hash_original_method = "09FACEDDA2CFE0BD4863CBAC9CCC5DB1", hash_generated_method = "6B42B7C527A821C460743CB35B5EAA52")
+    protected AbstractOwnableSynchronizer() { }
+
+    /**
+     * Sets the thread that currently owns exclusive access. A
+     * <tt>null</tt> argument indicates that no thread owns access.
+     * This method does not otherwise impose any synchronization or
+     * <tt>volatile</tt> field accesses.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:45.030 -0500", hash_original_method = "54BE2CB7A2B251833C1274201519DC0B", hash_generated_method = "A15DE0D04E1C22FF9C6D35B6BFC96607")
+    protected final void setExclusiveOwnerThread(Thread t) {
+        exclusiveOwnerThread = t;
+    }
+
+    /**
+     * Returns the thread last set by
+     * <tt>setExclusiveOwnerThread</tt>, or <tt>null</tt> if never
+     * set.  This method does not otherwise impose any synchronization
+     * or <tt>volatile</tt> field accesses.
+     * @return the owner thread
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:45:45.031 -0500", hash_original_method = "B27D03344136636BB9AA0892188CCAE3", hash_generated_method = "00E8F599BB6FB5931DFFDB7FA6FB10B1")
+    protected final Thread getExclusiveOwnerThread() {
+        return exclusiveOwnerThread;
+    }
 }
 

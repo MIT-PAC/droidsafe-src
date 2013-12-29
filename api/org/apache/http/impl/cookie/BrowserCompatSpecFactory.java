@@ -1,6 +1,8 @@
 package org.apache.http.impl.cookie;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import org.apache.http.cookie.CookieSpec;
 import org.apache.http.cookie.CookieSpecFactory;
@@ -15,33 +17,16 @@ public class BrowserCompatSpecFactory implements CookieSpecFactory {
     public BrowserCompatSpecFactory ()
     {
         //Synthesized constructor
-    }
+    }    
 
-
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.786 -0400", hash_original_method = "57B736694D04F685316FEE33170F38F5", hash_generated_method = "74BC54B47A46E8ABA6EEAA64BBD5B14F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:21.004 -0500", hash_original_method = "57B736694D04F685316FEE33170F38F5", hash_generated_method = "2C1B2580A18DE9489D6122D8998BC612")
     public CookieSpec newInstance(final HttpParams params) {
-        addTaint(params.getTaint());
-        if(params != null)        
-        {
-CookieSpec varA92262F24103FC4C591891F9D85E18F5_554708820 =             new BrowserCompatSpec(
+        if (params != null) {
+            return new BrowserCompatSpec(
                     (String []) params.getParameter(CookieSpecPNames.DATE_PATTERNS));
-            varA92262F24103FC4C591891F9D85E18F5_554708820.addTaint(taint);
-            return varA92262F24103FC4C591891F9D85E18F5_554708820;
-        } //End block
-        else
-        {
-CookieSpec varAD59FB221DD4883BDB7567C50D9CE114_1529421919 =             new BrowserCompatSpec();
-            varAD59FB221DD4883BDB7567C50D9CE114_1529421919.addTaint(taint);
-            return varAD59FB221DD4883BDB7567C50D9CE114_1529421919;
-        } //End block
-        // ---------- Original Method ----------
-        //if (params != null) {
-            //return new BrowserCompatSpec(
-                    //(String []) params.getParameter(CookieSpecPNames.DATE_PATTERNS));
-        //} else {
-            //return new BrowserCompatSpec();
-        //}
+        } else {
+            return new BrowserCompatSpec();
+        }
     }
 
     

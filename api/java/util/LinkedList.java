@@ -1,6 +1,8 @@
 package java.util;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.DroidSafeAndroidRuntime;
 
@@ -11,21 +13,29 @@ import java.io.Serializable;
 
 
 public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>, Deque<E>, Queue<E>, Cloneable, Serializable {
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:02.416 -0500", hash_original_field = "D4754C466E323241A04755DA938EB9AF", hash_generated_field = "5F23BECC14072AFC76D2F21910086550")
+
+
+    private static final long serialVersionUID = 876323262645176354L;
 
     @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.114 -0400", hash_original_method = "4832DB7F32D79BC3832C9989ACB7B916", hash_generated_method = "8DFD03108CDD2A33CB7D765F5A450A4F")
     public  LinkedList() {
     }
 
-
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.115 -0400", hash_original_method = "0B559D29C113071CE6BE3D63B71465EB", hash_generated_method = "C5AA269F9975EBBFEE953030F41D5191")
-    public  LinkedList(Collection<? extends E> collection) {
+    /**
+     * Constructs a new instance of {@code LinkedList} that holds all of the
+     * elements contained in the specified {@code collection}. The order of the
+     * elements in this new {@code LinkedList} will be determined by the
+     * iteration order of {@code collection}.
+     *
+     * @param collection
+     *            the collection of elements to add.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:02.444 -0500", hash_original_method = "0B559D29C113071CE6BE3D63B71465EB", hash_generated_method = "99A0B50156378254E3DBEB1D97EE7EF1")
+    public LinkedList(Collection<? extends E> collection) {
         this();
-        addTaint(collection.getTaint());
         addAll(collection);
-        // ---------- Original Method ----------
-        //addAll(collection);
     }
 
     @DSModeled(DSC.SAFE)
@@ -263,37 +273,16 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
         return false;
     }
 
-
-
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.135 -0400", hash_original_method = "0DC759074C3911B534EFB2ED69CB80D3", hash_generated_method = "9DDC0B1D5E05429D7358050E932B03D0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:46:02.476 -0500", hash_original_method = "0DC759074C3911B534EFB2ED69CB80D3", hash_generated_method = "DDEABE8AC9FFECDA965CB2DE2681E456")
     private boolean removeOneOccurrence(Object o, Iterator<E> iter) {
-        addTaint(iter.getTaint());
-        addTaint(o.getTaint());
-        while
-            (iter.hasNext())        
-        {
+        while (iter.hasNext()) {
             E element = iter.next();
-            if(o == null ? element == null : o.equals(element))            
-            {
+            if (o == null ? element == null : o.equals(element)) {
                 iter.remove();
-                boolean varB326B5062B2F0E69046810717534CB09_513971781 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2041370075 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_2041370075;
-            } //End block
-        } //End block
-        boolean var68934A3E9455FA72420237EB05902327_175531948 = (false);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_226030117 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_226030117;
-        // ---------- Original Method ----------
-        //while (iter.hasNext()) {
-        //E element = iter.next();
-        //if (o == null ? element == null : o.equals(element)) {
-        //iter.remove();
-        //return true;
-        //}
-        //}
-        //return false;
+                return true;
+            }
+        }
+        return false;
     }
 
 
@@ -388,10 +377,6 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
         // TODO Auto-generated method stub
         return getListIterator(location);
     }
-
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.142 -0400", hash_original_field = "A91BB42ABDC7657C70EC735A482E86B5", hash_generated_field = "5F23BECC14072AFC76D2F21910086550")
-
-    private static final long serialVersionUID = 876323262645176354L;
 
 
 }

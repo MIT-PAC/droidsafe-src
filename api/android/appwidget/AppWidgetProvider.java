@@ -1,6 +1,8 @@
 package android.appwidget;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -11,93 +13,123 @@ import android.os.Bundle;
 
 
 public class AppWidgetProvider extends BroadcastReceiver {
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.781 -0400", hash_original_method = "9EAF442CC86F0B5BA1B1B46FB2948CE7", hash_generated_method = "3C7FFC20A8A1FC0D5303AF1AED86D932")
-    public  AppWidgetProvider() {
-        // ---------- Original Method ----------
+    /**
+     * Constructor to initialize AppWidgetProvider.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:48.244 -0500", hash_original_method = "9EAF442CC86F0B5BA1B1B46FB2948CE7", hash_generated_method = "DEB53658D67F140D3EE8EB0F32F20711")
+    public AppWidgetProvider() {
     }
 
-    
-        @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.784 -0400", hash_original_method = "8B20EBF206EE708E791CD471F78F9BAE", hash_generated_method = "C286A2A8722EE9FF877C2D4BC18CE87A")
+    /**
+     * Implements {@link BroadcastReceiver#onReceive} to dispatch calls to the various
+     * other methods on AppWidgetProvider.  
+     *
+     * @param context The Context in which the receiver is running.
+     * @param intent The Intent being received.
+     */
+    // BEGIN_INCLUDE(onReceive)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:48.245 -0500", hash_original_method = "8B20EBF206EE708E791CD471F78F9BAE", hash_generated_method = "EF342D23D1577697EF78747946840D49")
     public void onReceive(Context context, Intent intent) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(intent.getTaint());
-        addTaint(context.getTaint());
+        // Protect against rogue update broadcasts (not really a security issue,
+        // just filter bad broacasts out so subclasses are less likely to crash).
         String action = intent.getAction();
-        if(AppWidgetManager.ACTION_APPWIDGET_UPDATE.equals(action))        
-        {
+        if (AppWidgetManager.ACTION_APPWIDGET_UPDATE.equals(action)) {
             Bundle extras = intent.getExtras();
-            if(extras != null)            
-            {
+            if (extras != null) {
                 int[] appWidgetIds = extras.getIntArray(AppWidgetManager.EXTRA_APPWIDGET_IDS);
-                if(appWidgetIds != null && appWidgetIds.length > 0)                
-                {
+                if (appWidgetIds != null && appWidgetIds.length > 0) {
                     this.onUpdate(context, AppWidgetManager.getInstance(context), appWidgetIds);
-                } //End block
-            } //End block
-        } //End block
-        else
-        if(AppWidgetManager.ACTION_APPWIDGET_DELETED.equals(action))        
-        {
+                }
+            }
+        }
+        else if (AppWidgetManager.ACTION_APPWIDGET_DELETED.equals(action)) {
             Bundle extras = intent.getExtras();
-            if(extras != null && extras.containsKey(AppWidgetManager.EXTRA_APPWIDGET_ID))            
-            {
+            if (extras != null && extras.containsKey(AppWidgetManager.EXTRA_APPWIDGET_ID)) {
                 final int appWidgetId = extras.getInt(AppWidgetManager.EXTRA_APPWIDGET_ID);
                 this.onDeleted(context, new int[] { appWidgetId });
-            } //End block
-        } //End block
-        else
-        if(AppWidgetManager.ACTION_APPWIDGET_ENABLED.equals(action))        
-        {
+            }
+        }
+        else if (AppWidgetManager.ACTION_APPWIDGET_ENABLED.equals(action)) {
             this.onEnabled(context);
-        } //End block
-        else
-        if(AppWidgetManager.ACTION_APPWIDGET_DISABLED.equals(action))        
-        {
+        }
+        else if (AppWidgetManager.ACTION_APPWIDGET_DISABLED.equals(action)) {
             this.onDisabled(context);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        }
     }
-
+    // END_INCLUDE(onReceive)
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.787 -0400", hash_original_method = "A2E84788BA84189ABE3F219EBDAC629C", hash_generated_method = "3998F9E365E6902957A08F14D1CE8DF6")
+    /**
+     * Called in response to the {@link AppWidgetManager#ACTION_APPWIDGET_UPDATE} broadcast when
+     * this AppWidget provider is being asked to provide {@link android.widget.RemoteViews RemoteViews}
+     * for a set of AppWidgets.  Override this method to implement your own AppWidget functionality.
+     *
+     * {@more}
+     * 
+     * @param context   The {@link android.content.Context Context} in which this receiver is
+     *                  running.
+     * @param appWidgetManager A {@link AppWidgetManager} object you can call {@link
+     *                  AppWidgetManager#updateAppWidget} on.
+     * @param appWidgetIds The appWidgetIds for which an update is needed.  Note that this
+     *                  may be all of the AppWidget instances for this provider, or just
+     *                  a subset of them.
+     *
+     * @see AppWidgetManager#ACTION_APPWIDGET_UPDATE
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:48.246 -0500", hash_original_method = "A2E84788BA84189ABE3F219EBDAC629C", hash_generated_method = "DA35BFFBEC9E2DD7C21FA7CA2CB56F93")
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(appWidgetIds[0]);
-        addTaint(appWidgetManager.getTaint());
-        addTaint(context.getTaint());
-        // ---------- Original Method ----------
     }
-
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.788 -0400", hash_original_method = "0AB37BC4D28009D0D79CD2D0DC9B7953", hash_generated_method = "3FF9074FBCBC54386E250B91C39D9F63")
+    /**
+     * Called in response to the {@link AppWidgetManager#ACTION_APPWIDGET_DELETED} broadcast when
+     * one or more AppWidget instances have been deleted.  Override this method to implement
+     * your own AppWidget functionality.
+     *
+     * {@more}
+     * 
+     * @param context   The {@link android.content.Context Context} in which this receiver is
+     *                  running.
+     * @param appWidgetIds The appWidgetIds that have been deleted from their host.
+     *
+     * @see AppWidgetManager#ACTION_APPWIDGET_DELETED
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:48.247 -0500", hash_original_method = "0AB37BC4D28009D0D79CD2D0DC9B7953", hash_generated_method = "0A2F587359EF4FFC4CE003D359E17721")
     public void onDeleted(Context context, int[] appWidgetIds) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(appWidgetIds[0]);
-        addTaint(context.getTaint());
-        // ---------- Original Method ----------
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.789 -0400", hash_original_method = "A066DA52DDA31A9511487AE3845ED018", hash_generated_method = "0B915167097F155742FBB7F56749B7EC")
+    /**
+     * Called in response to the {@link AppWidgetManager#ACTION_APPWIDGET_ENABLED} broadcast when
+     * the a AppWidget for this provider is instantiated.  Override this method to implement your
+     * own AppWidget functionality.
+     *
+     * {@more}
+     * When the last AppWidget for this provider is deleted,
+     * {@link AppWidgetManager#ACTION_APPWIDGET_DISABLED} is sent by the AppWidget manager, and
+     * {@link #onDisabled} is called.  If after that, an AppWidget for this provider is created
+     * again, onEnabled() will be called again.
+     *
+     * @param context   The {@link android.content.Context Context} in which this receiver is
+     *                  running.
+     *
+     * @see AppWidgetManager#ACTION_APPWIDGET_ENABLED
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:48.248 -0500", hash_original_method = "A066DA52DDA31A9511487AE3845ED018", hash_generated_method = "633E65C488AD0A62FAB2CA13D96145CE")
     public void onEnabled(Context context) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(context.getTaint());
-        // ---------- Original Method ----------
     }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.790 -0400", hash_original_method = "D927F2373817E24DFC9B3FEAB7D30B31", hash_generated_method = "BBBA003B1A0C8AA6F2BE99EB08B19D4C")
+    /**
+     * Called in response to the {@link AppWidgetManager#ACTION_APPWIDGET_DISABLED} broadcast, which
+     * is sent when the last AppWidget instance for this provider is deleted.  Override this method
+     * to implement your own AppWidget functionality.
+     *
+     * {@more}
+     * 
+     * @param context   The {@link android.content.Context Context} in which this receiver is
+     *                  running.
+     *
+     * @see AppWidgetManager#ACTION_APPWIDGET_DISABLED
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:48.248 -0500", hash_original_method = "D927F2373817E24DFC9B3FEAB7D30B31", hash_generated_method = "C0B79C8D02E20A27718E8BEE80E6A67D")
     public void onDisabled(Context context) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(context.getTaint());
-        // ---------- Original Method ----------
     }
 
     

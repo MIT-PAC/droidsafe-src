@@ -1,6 +1,8 @@
 package org.apache.http.client;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 
@@ -8,48 +10,30 @@ import java.io.IOException;
 
 
 public class ClientProtocolException extends IOException {
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.358 -0400", hash_original_method = "3260DCF079E7C772EA6A90502130DC83", hash_generated_method = "FCE7E5BB85943B23D2128F2BCBDDA47B")
-    public  ClientProtocolException() {
-        super();
-        // ---------- Original Method ----------
-    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.071 -0500", hash_original_field = "462EACB3E829F46C6323C58C66DC2496", hash_generated_field = "849904E61BBB72520A629731F16C7F17")
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.358 -0400", hash_original_method = "98A3EFA06D403E8456E33B2220E5EB15", hash_generated_method = "949A737D612AA78E26792D75B72DA50C")
-    public  ClientProtocolException(String s) {
-        super(s);
-        addTaint(s.getTaint());
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.359 -0400", hash_original_method = "CE5566FA43618E2C322AA845802DCAD6", hash_generated_method = "C9B1F6D51076DFC5A5B2355C62E3F42B")
-    @DSModeled(DSC.SPEC)
-    public  ClientProtocolException(Throwable cause) {
-        addTaint(cause.getTaint());
-        initCause(cause);
-        // ---------- Original Method ----------
-        //initCause(cause);
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.360 -0400", hash_original_method = "3D3F161C5740C8F0A7A6AC126178E78A", hash_generated_method = "64DF560EFBBAFB9D815177AFC3D2FD6A")
-    @DSModeled(DSC.SPEC)
-    public  ClientProtocolException(String message, Throwable cause) {
-        super(message);
-        addTaint(cause.getTaint());
-        addTaint(message.getTaint());
-        initCause(cause);
-        // ---------- Original Method ----------
-        //initCause(cause);
-    }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.360 -0400", hash_original_field = "817BD87F42299068DB46E89E05708687", hash_generated_field = "849904E61BBB72520A629731F16C7F17")
-
     private static final long serialVersionUID = -5596590843227115865L;
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.071 -0500", hash_original_method = "3260DCF079E7C772EA6A90502130DC83", hash_generated_method = "679FD2C496E1A6B6BEF706416CA3D15F")
+    public ClientProtocolException() {
+        super();
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.072 -0500", hash_original_method = "98A3EFA06D403E8456E33B2220E5EB15", hash_generated_method = "B644FD530B41216E74AE8EC4DF1521AE")
+    public ClientProtocolException(String s) {
+        super(s);
+    }
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.073 -0500", hash_original_method = "CE5566FA43618E2C322AA845802DCAD6", hash_generated_method = "D718F5176578EB652CC36E17D75FE886")
+    public ClientProtocolException(Throwable cause) {
+        initCause(cause);
+    }
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-27 12:47:23.074 -0500", hash_original_method = "3D3F161C5740C8F0A7A6AC126178E78A", hash_generated_method = "62033BAF67972676DEC151E2A00F0CD5")
+    public ClientProtocolException(String message, Throwable cause) {
+        super(message);
+        initCause(cause);
+    }
 }
 
